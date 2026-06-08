@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 WC — 今日赛事预测 · Daily Match Analysis</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── TICKER ── */
+    .ticker-bar { position: sticky; top: 58px; z-index: 90; background: rgba(4,13,28,0.96); border-bottom: 1px solid rgba(255,68,85,0.25); padding: 0.5rem 0; overflow: hidden; display: flex; align-items: center; }
+    .ticker-label { flex-shrink: 0; font-size: 0.6rem; font-weight: 800; letter-spacing: 2px; color: #ff4455; background: rgba(255,68,85,0.15); padding: 0.25rem 0.75rem; margin-right: 1rem; border-right: 1px solid rgba(255,68,85,0.3); white-space: nowrap; }
+    .ticker-scroll { flex: 1; overflow: hidden; position: relative; }
+    #ticker-inner { display: flex; gap: 2rem; align-items: center; white-space: nowrap; animation: scroll-left 40s linear infinite; font-size: 0.75rem; color: var(--txt2); }
+    @keyframes scroll-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .tick-item { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.1rem 1rem; }
+    .tick-tag { font-size: 0.58rem; font-weight: 800; letter-spacing: 1px; padding: 0.1rem 0.4rem; border-radius: 2px; color: #040d1c; }
+    .tick-time { font-size: 0.62rem; color: rgba(122,143,181,0.6); }
+    .tick-sep { color: rgba(255,255,255,0.15); }
+
+    /* ── TOP BAR ── */
+    .top-bar { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0.75rem 2rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 58px; }
+    .live-badge { display: flex; align-items: center; gap: 0.4rem; font-size: 0.65rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); font-weight: 700; }
+    #live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: blink 1.5s ease-in-out infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+    .top-date { font-size: 0.8rem; font-weight: 600; color: var(--txt); }
+    .top-updated { font-size: 0.72rem; color: var(--txt2); margin-left: auto; }
+    #refresh-btn { font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; padding: 0.35rem 0.9rem; border: 1px solid var(--border); border-radius: 3px; background: transparent; color: var(--txt2); cursor: pointer; transition: all 0.2s; font-family: inherit; }
+    #refresh-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+
+    /* ── MATCH FULL CARD ── */
+    .match-full-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 2rem; }
+    .mf-header { padding: 0.75rem 1.25rem; background: rgba(255,255,255,0.025); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .mf-meta { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .mf-kickoff { font-size: 1.1rem; font-weight: 800; color: var(--gold); font-variant-numeric: tabular-nums; }
+
+    .mf-teams-hero { padding: 2rem 1.5rem; display: flex; align-items: center; gap: 1.5rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+    .mf-team-side { flex: 1; min-width: 120px; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; text-align: center; }
+    .mf-team-right { }
+    .mf-flag { width: 72px; height: 50px; object-fit: cover; border-radius: 6px; }
+    .mf-team-name { font-size: 1.2rem; font-weight: 800; }
+    .mf-team-rating { font-size: 0.72rem; color: var(--txt2); }
+    .mf-team-form { display: flex; gap: 4px; justify-content: center; }
+    .mf-vs-col { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .mf-vs-text { font-size: 1rem; font-weight: 800; color: var(--txt2); letter-spacing: 4px; }
+    .mf-prob-trio { display: flex; gap: 1.5rem; text-align: center; }
+
+    .mf-detail-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0; }
+    .mf-panel { padding: 1.25rem; border-top: 1px solid var(--border); border-right: 1px solid var(--border); }
+    .mf-panel:nth-child(even) { border-right: none; }
+    @media (min-width: 1200px) { .mf-detail-grid { grid-template-columns: 1fr 1fr 1fr 1fr; } .mf-panel:nth-child(4n) { border-right: none; } .mf-panel:nth-child(-n+4) { border-top: 1px solid var(--border); } }
+    .mf-panel-label { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--txt2); margin-bottom: 0.75rem; font-weight: 600; }
+    .star-row { display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border); }
+    .star-row:last-child { border-bottom: none; }
+
+    /* ── NEXT MATCH ── */
+    .next-match-section { background: rgba(255,215,0,0.02); border-top: 1px solid rgba(255,215,0,0.1); border-bottom: 1px solid rgba(255,215,0,0.1); }
+    #next-match-card { background: var(--card); border: 1px solid rgba(255,215,0,0.2); border-radius: 8px; padding: 1.5rem; max-width: 900px; margin: 0 auto; }
+
+    /* ── REAL-TIME INFO BOX ── */
+    .rt-info-box { background: rgba(0,229,255,0.04); border: 1px solid rgba(0,229,255,0.15); border-radius: 6px; padding: 1.25rem; margin-top: 2rem; }
+    .rt-info-box h3 { font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.75rem; }
+    .rt-tiers { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.75rem; }
+    .rt-tier { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 0.85rem; }
+    .rt-tier-name { font-size: 0.72rem; font-weight: 700; color: var(--gold); margin-bottom: 0.3rem; }
+    .rt-tier-desc { font-size: 0.68rem; color: var(--txt2); line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav>
+  <a href="index.html" class="nav-logo">WC 2026</a>
+  <ul class="nav-links">
+    <li><a href="index.html#champion">夺冠概率</a></li>
+    <li><a href="index.html#groups">小组赛</a></li>
+    <li><a href="matches.html" style="color:var(--gold)">今日赛事</a></li>
+    <li><a href="index.html#bracket">淘汰赛</a></li>
+    <li><a href="index.html#teams">球队战力</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════ TOP INFO BAR ══════════════ -->
+<div class="top-bar">
+  <div class="live-badge"><span id="live-dot"></span> LIVE DATA</div>
+  <div class="top-date" id="today-date">📅 June 11, 2026 — Tournament Day 1</div>
+  <div class="top-updated">Last updated: <strong id="last-updated">loading...</strong></div>
+  <button id="refresh-btn">Refresh Data</button>
+</div>
+
+<!-- ══════════════ BREAKING NEWS TICKER ══════════════ -->
+<div class="ticker-bar">
+  <div class="ticker-label">BREAKING</div>
+  <div class="ticker-scroll">
+    <div id="ticker-inner">Loading news...</div>
+  </div>
+</div>
+
+<!-- ══════════════ PAGE HEADER ══════════════ -->
+<section style="padding:3rem 2rem 2rem;position:relative;z-index:1">
+  <div class="container">
+    <div class="section-header fade-in" style="margin-bottom:2rem">
+      <span class="section-tag">Today's Matches · 今日赛事</span>
+      <h2>赛前深度预测分析</h2>
+      <p>阵容、球星、伤病、更衣室动态、裁判偏向、历史交锋 — 全维度综合预测</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ MATCHES ══════════════ -->
+<section style="padding:0 2rem 4rem;position:relative;z-index:1">
+  <div class="container">
+    <div id="matches-container"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════ NEXT MATCH PREVIEW ══════════════ -->
+<section class="next-match-section" style="padding:4rem 2rem">
+  <div class="container">
+    <div class="section-header fade-in" style="margin-bottom:2rem">
+      <span class="section-tag">明日预告 · Next Match Preview</span>
+      <h2>下一场赛事抢先看</h2>
+      <p>提前了解明日关键赛事背景与胜负分析</p>
+    </div>
+    <div id="next-match-card" class="fade-in">Loading...</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════ REAL-TIME ARCHITECTURE ══════════════ -->
+<section style="padding:4rem 2rem;position:relative;z-index:1">
+  <div class="container">
+    <div class="section-header fade-in" style="margin-bottom:2rem">
+      <span class="section-tag">技术说明 · How Real-Time Works</span>
+      <h2>实时更新能力说明</h2>
+      <p>当前版本为高精度静态模拟。以下是三种升级方案，实现真正的每日自动更新</p>
+    </div>
+    <div class="rt-info-box fade-in">
+      <h3>升级路线图 — 实时更新方案</h3>
+      <div class="rt-tiers">
+        <div class="rt-tier">
+          <div class="rt-tier-name">Level 1 · 当前版本（已完成）</div>
+          <div class="rt-tier-desc">手动更新 <code>js/matches-data.js</code> 文件即可刷新全部内容。每天只需 5 分钟维护，适合个人使用。</div>
+        </div>
+        <div class="rt-tier">
+          <div class="rt-tier-name">Level 2 · 半自动（免费 API）</div>
+          <div class="rt-tier-desc">接入 <strong>API-Football</strong>（每日 100 次免费调用）或 <strong>TheSportsDB</strong>（完全免费）。用 Node.js 脚本每天拉取阵容、赛果数据，自动更新 JSON 文件。</div>
+        </div>
+        <div class="rt-tier">
+          <div class="rt-tier-name">Level 3 · 全自动（带新闻）</div>
+          <div class="rt-tier-desc">增加 <strong>Google News RSS</strong> 爬虫（通过 CORS 代理），自动抓取伤病、更衣室新闻。结合 AI 摘要生成预测调整理由。每小时自动刷新。</div>
+        </div>
+        <div class="rt-tier">
+          <div class="rt-tier-name">裁判数据来源</div>
+          <div class="rt-tier-desc">FIFA 官网裁判历史数据 + RSSSF 存档 + Opta 裁判执法统计。每届世界杯执法数据可追溯到 1994 年。</div>
+        </div>
+        <div class="rt-tier">
+          <div class="rt-tier-name">需要什么才能做到？</div>
+          <div class="rt-tier-desc">最简方案：一个 Node.js 脚本（约 50 行）+ 免费 API Key，放在任意服务器或 GitHub Actions 每天定时执行，数据直接写回本项目。</div>
+        </div>
+        <div class="rt-tier">
+          <div class="rt-tier-name">概率动态调整机制</div>
+          <div class="rt-tier-desc">当检测到伤病/停赛消息时，系统自动按 Elo 影响系数调整胜率：主力前锋缺席 → 对应队胜率 -5% 至 -12%。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="footer-disclaimer">
+    赛前预测基于公开数据与统计模型，伤病与传言信息来源为模拟新闻报道。实际比赛结果受众多不可预测因素影响。
+    数据最后更新：<span id="footer-updated">June 11, 2026, 09:30 ET</span>
+  </div>
+  <div class="footer-copy">2026 FIFA World Cup · Daily Match Intelligence Dashboard</div>
+</footer>
+
+<script src="js/matches-data.js"></script>
+<script src="js/matches-app.js"></script>
+</body>
+</html>

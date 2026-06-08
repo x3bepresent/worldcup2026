@@ -1,0 +1,11 @@
+{
+  "name": "worldcup2026-predictor",
+  "version": "1.0.0",
+  "description": "2026 FIFA World Cup Pre-Tournament Prediction Dashboard",
+  "scripts": {
+    "update": "node scripts/fetch-matches.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
