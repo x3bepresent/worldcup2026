@@ -2,7 +2,7 @@
 //  2026 WC — Today's Matches App Logic
 // ============================================================
 
-const FLAG = iso => `https://flagcdn.com/w40/${iso.toLowerCase()}.png`;
+const FLAG = iso => iso ? `flags/${iso.toLowerCase()}.png` : '';
 
 // ── Live Update Simulation ─────────────────────────────────
 let secondsAgo = 0;
@@ -18,13 +18,15 @@ function startLiveTimer() {
 }
 
 // ── Breaking News Ticker ───────────────────────────────────
+// ⚠ 快讯内容基于赛前公开情报整理，标签为信息类别而非更新时间
 function renderTicker() {
   const ticker = document.getElementById('ticker-inner');
-  const tagColors = { INJURY:'#ff4455', RUMOR:'#ffd700', LINEUP:'#00e5ff', OFFICIAL:'#00ff88', REFEREE:'#bb88ff' };
+  const tagColors = { INJURY:'#D95F6A', RUMOR:'#C8A96E', LINEUP:'#7BB8D4', OFFICIAL:'#5BBF8A', REFEREE:'#bb88ff' };
+  const tagCN = { INJURY:'伤情', RUMOR:'传言', LINEUP:'阵容', OFFICIAL:'官方', REFEREE:'裁判' };
   const items = MATCH_DATA.breakingNews.map(n =>
     `<span class="tick-item">
-      <span class="tick-tag" style="background:${tagColors[n.tag]||'#888'}">${n.tag}</span>
-      <span class="tick-time">${n.time}</span>
+      <span class="tick-tag" style="background:${tagColors[n.tag]||'#888'}" title="${n.tag}">${tagCN[n.tag]||n.tag}</span>
+      <span class="tick-time" style="opacity:0.55">${n.time}</span>
       ${n.text}
     </span>`
   ).join('<span class="tick-sep">◆</span>');
@@ -47,27 +49,38 @@ function simulateRefresh() {
 
 // ── Injury Status Badge ────────────────────────────────────
 function injuryBadge(status) {
-  const map = { OUT:'#ff4455', DOUBT:'#ffd700', FIT:'#00ff88' };
+  const map = { OUT:'#D95F6A', DOUBT:'#C8A96E', FIT:'#5BBF8A' };
   return `<span style="font-size:0.58rem;font-weight:700;letter-spacing:1px;padding:0.12rem 0.4rem;border-radius:2px;background:${map[status]||'#888'}22;color:${map[status]||'#888'};border:1px solid ${map[status]||'#888'}44">${status}</span>`;
 }
 
 // ── Form Dots ──────────────────────────────────────────────
+// Renders last-5-match results as colored dots (newest on right)
+// 🟢 green=Win  ⚪ grey=Draw  🔴 red=Loss
 function formDots(form) {
-  return form.map(r => `<span style="width:9px;height:9px;border-radius:50%;background:${r==='W'?'#00ff88':r==='D'?'rgba(255,255,255,0.25)':'#ff4455'};display:inline-block;"></span>`).join('');
+  const label = {'W':'胜','D':'平','L':'负'};
+  const color = {'W':'#5BBF8A','D':'rgba(255,255,255,0.28)','L':'#D95F6A'};
+  const dots = form.map((r,i) =>
+    `<span title="${label[r]||r}" style="width:10px;height:10px;border-radius:50%;background:${color[r]||'#888'};display:inline-block;cursor:default" aria-label="${label[r]}"></span>`
+  ).join('');
+  return `<div style="display:flex;align-items:center;gap:3px">${dots}</div>`;
 }
 
 // ── Head to Head Bar ───────────────────────────────────────
 function h2hBar(h2h, homeName, awayName) {
-  const total = h2h.all_time.home_wins + h2h.all_time.draws + h2h.all_time.away_wins || 1;
-  const hw = Math.round(h2h.all_time.home_wins / total * 100);
-  const dw = Math.round(h2h.all_time.draws / total * 100);
+  const hw_val = h2h.home_wins || 0;
+  const d_val  = h2h.draws    || 0;
+  const aw_val = h2h.away_wins|| 0;
+  const total  = (hw_val + d_val + aw_val) || 1;
+  const hw = Math.round(hw_val / total * 100);
+  const dw = Math.round(d_val  / total * 100);
   const aw = 100 - hw - dw;
+  const recent = h2h.recent || h2h.last10 || [];
   return `
     <div style="margin-bottom:0.75rem">
       <div style="display:flex;justify-content:space-between;font-size:0.72rem;margin-bottom:4px">
-        <span style="color:var(--cyan);font-weight:700">${homeName} ${h2h.all_time.home_wins}W</span>
-        <span style="color:var(--txt2)">${h2h.all_time.draws}D</span>
-        <span style="color:var(--red);font-weight:700">${h2h.all_time.away_wins}W ${awayName}</span>
+        <span style="color:var(--cyan);font-weight:700">${homeName} ${hw_val}W</span>
+        <span style="color:var(--txt2)">${d_val}D</span>
+        <span style="color:var(--red);font-weight:700">${aw_val}W ${awayName}</span>
       </div>
       <div style="display:flex;height:7px;border-radius:4px;overflow:hidden">
         <div style="width:${hw}%;background:var(--cyan)"></div>
@@ -75,14 +88,14 @@ function h2hBar(h2h, homeName, awayName) {
         <div style="width:${aw}%;background:var(--red)"></div>
       </div>
     </div>
-    <div style="font-size:0.72rem;color:var(--txt2);line-height:1.6">${h2h.notes}</div>
+    <div style="font-size:0.72rem;color:var(--txt2);line-height:1.6">${h2h.note || h2h.notes || ''}</div>
     <div style="margin-top:0.75rem">
       <div style="font-size:0.62rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt2);margin-bottom:0.6rem">近期交手记录</div>
       <!-- 表头 -->
       <div style="display:grid;grid-template-columns:60px 1fr auto auto;gap:0.4rem;font-size:0.58rem;color:rgba(122,143,181,0.5);text-transform:uppercase;letter-spacing:1px;padding:0 0 0.3rem 0;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:0.3rem">
         <span>年份</span><span>赛事</span><span style="text-align:center">比分</span><span style="text-align:right">举办地</span>
       </div>
-      ${h2h.last10.slice(0,5).map(g => {
+      ${recent.slice(0,5).map(g => {
         const venueLabel = g.venue === 'Neutral' ? '中立场' : g.venue === homeName ? `${homeName}主场` : `${g.venue}主场`;
         const venueColor = g.venue === 'Neutral' ? 'var(--txt2)' : g.venue === homeName ? 'var(--cyan)' : 'var(--red)';
         return `
@@ -94,6 +107,102 @@ function h2hBar(h2h, homeName, awayName) {
         </div>`;
       }).join('')}
       <div style="font-size:0.65rem;color:rgba(122,143,181,0.45);margin-top:0.5rem">※ 举办地说明：「主场」指该队在本国踢 ·「中立场」指第三地举办</div>
+    </div>`;
+}
+
+// ── Weather Panel ─────────────────────────────────────────
+function weatherPanel(w, homeName, awayName) {
+  if (!w) return '';
+
+  const impactColor = { HIGH:'#D95F6A', MEDIUM:'#C8A96E', LOW:'#5BBF8A' }[w.impact_level] || '#888';
+  const tempC = w.temp_c || w.temp || 20;
+  const tempF = w.temp_f || Math.round(tempC * 9/5 + 32);
+  const altM  = w.altitude_m || w.altitude || 0;
+  const windStr = w.wind || (w.wind_kmh != null ? w.wind_kmh + ' km/h' : '—');
+  const condition = w.condition_cn || w.condition || '';
+  const impactText = w.impact_summary || w.impact || '';
+  const icon = w.icon || (altM > 2000 ? '⛰' : w.rain_chance > 50 ? '🌧' : w.rain_chance > 20 ? '⛅' : '☀');
+
+  const homeAdaptScore = w.home_adapt != null ? w.home_adapt : 70;
+  const awayAdaptScore = w.away_adapt != null ? w.away_adapt : 70;
+  const homeAdaptColor = homeAdaptScore >= 80 ? '#5BBF8A' : homeAdaptScore >= 55 ? '#C8A96E' : '#D95F6A';
+  const awayAdaptColor = awayAdaptScore >= 80 ? '#5BBF8A' : awayAdaptScore >= 55 ? '#C8A96E' : '#D95F6A';
+  const homeAdaptLabel = homeAdaptScore >= 80 ? '高度适应' : homeAdaptScore >= 55 ? '一般适应' : '适应困难';
+  const awayAdaptLabel = awayAdaptScore >= 80 ? '高度适应' : awayAdaptScore >= 55 ? '一般适应' : '适应困难';
+
+  const adaptBar = (team, score, color, label, note) => `
+    <div style="margin-bottom:0.75rem;padding:0.65rem;background:rgba(255,255,255,0.03);border-radius:4px;border-left:3px solid ${color}">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem">
+        <span style="font-size:0.8rem;font-weight:700">${team}</span>
+        <div style="display:flex;align-items:center;gap:0.4rem">
+          <div style="width:80px;height:5px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden">
+            <div style="width:${score}%;height:100%;background:${color};border-radius:3px"></div>
+          </div>
+          <span style="font-size:0.75rem;font-weight:700;color:${color}">${score}/100</span>
+        </div>
+      </div>
+      <div style="font-size:0.65rem;color:${color};margin-bottom:0.3rem;font-weight:600">${label}</div>
+      <div style="font-size:0.68rem;color:var(--txt2);line-height:1.55">${note || ''}</div>
+    </div>`;
+
+  const factors = w.weather_factors || [];
+  const impactRgb = impactColor.replace('#','').match(/../g).map(h=>parseInt(h,16)).join(',');
+
+  return `
+    <div class="mf-panel" style="grid-column: 1 / -1; border-right:none; background:rgba(0,229,255,0.015)">
+      <div class="mf-panel-label" style="color:var(--cyan)">🌤 赛场气候分析 · 对推演的影响</div>
+      <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:1rem;line-height:1.5">气候条件（温度、湿度、海拔、降雨）对球队体能、战术风格产生直接影响，已纳入本场胜率计算权重</div>
+
+      <!-- 天气概览 -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:0.75rem;margin-bottom:1.25rem">
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:4px;padding:0.75rem;text-align:center">
+          <div style="font-size:1.8rem;line-height:1">${icon}</div>
+          <div style="font-size:0.85rem;font-weight:700;margin-top:0.3rem">${tempC}°C / ${tempF}°F</div>
+          <div style="font-size:0.62rem;color:var(--txt2)">${condition}</div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:4px;padding:0.75rem;text-align:center">
+          <div style="font-size:1.4rem;font-weight:800;color:var(--cyan)">${w.humidity}%</div>
+          <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.2rem">相对湿度</div>
+          <div style="font-size:0.6rem;color:var(--txt2)">${w.humidity > 70 ? '⚠ 高湿度影响体能' : w.humidity > 50 ? '中等湿度' : '干燥舒适'}</div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:4px;padding:0.75rem;text-align:center">
+          <div style="font-size:1.4rem;font-weight:800;color:var(--gold)">${altM}m</div>
+          <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.2rem">海拔高度</div>
+          <div style="font-size:0.6rem;color:var(--txt2)">${altM > 2000 ? '⚠ 高原缺氧影响大' : altM > 1000 ? '中海拔，轻微影响' : '海平面，无影响'}</div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:4px;padding:0.75rem;text-align:center">
+          <div style="font-size:1.4rem;font-weight:800;color:${w.rain_chance > 50 ? 'var(--red)' : w.rain_chance > 20 ? 'var(--gold)' : 'var(--green)'}">${w.rain_chance}%</div>
+          <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.2rem">降雨概率</div>
+          <div style="font-size:0.6rem;color:var(--txt2)">${w.rain_chance > 50 ? '⚠ 场地积水风险' : w.rain_chance > 20 ? '轻度降雨可能' : '干燥场地'}</div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:4px;padding:0.75rem;text-align:center">
+          <div style="font-size:1rem;font-weight:800;color:var(--txt)">${windStr}</div>
+          <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.2rem">风向风力</div>
+          <div style="font-size:0.6rem;color:var(--txt2)">影响高空球落点</div>
+        </div>
+        <div style="background:rgba(${impactRgb},0.1);border:1px solid ${impactColor}44;border-radius:4px;padding:0.75rem;text-align:center">
+          <div style="font-size:0.65rem;font-weight:800;color:${impactColor};letter-spacing:1px">${w.impact_level} IMPACT</div>
+          <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.3rem;line-height:1.5">${impactText}</div>
+        </div>
+      </div>
+
+      <!-- 双队气候适应性 -->
+      <div style="font-size:0.62rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt2);margin-bottom:0.6rem">各队气候适应度评分</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1rem">
+        ${adaptBar(homeName, homeAdaptScore, homeAdaptColor, homeAdaptLabel, w.home_note)}
+        ${adaptBar(awayName, awayAdaptScore, awayAdaptColor, awayAdaptLabel, w.away_note)}
+      </div>
+
+      <!-- 气候对预测的影响 -->
+      <div style="font-size:0.62rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt2);margin-bottom:0.5rem">气候因素 → 推演影响</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0.4rem;margin-bottom:0.75rem">
+        ${factors.map(f => `
+          <div style="display:flex;gap:0.4rem;font-size:0.72rem;line-height:1.55;padding:0.35rem 0.5rem;background:rgba(255,255,255,0.02);border-radius:3px">
+            <span style="color:var(--cyan);flex-shrink:0">◆</span>
+            <span><strong>${f.label || f}</strong>${f.impact ? ' · ' + f.impact : ''}${f.detail ? ' — ' + f.detail : ''}</span>
+          </div>`).join('')}
+      </div>
+      <div style="font-size:0.65rem;color:rgba(122,143,181,0.5);line-height:1.5">📌 ${w.historical_note || ''}</div>
     </div>`;
 }
 
@@ -122,11 +231,15 @@ function renderMatch(m) {
     <!-- MATCH HEADER -->
     <div class="mf-header">
       <div class="mf-meta">
-        ${tag('GROUP ' + m.group, '#00e5ff')}
+        ${tag('GROUP ' + m.group, '#7BB8D4')}
         ${tag('MATCHDAY ' + m.matchday, '#888888')}
         <span style="font-size:0.72rem;color:var(--txt2)">${m.venue} · ${m.city}</span>
       </div>
-      <div class="mf-kickoff">${m.time} <span style="font-size:0.65rem;color:var(--txt2)">${m.timezone}</span></div>
+      <div class="mf-kickoff" style="text-align:right">
+        <div style="font-size:0.6rem;letter-spacing:1.5px;color:var(--gold);font-weight:700;margin-bottom:2px">🇨🇳 北京时间</div>
+        <div style="font-size:1.1rem;font-weight:800;color:var(--gold);letter-spacing:1px;line-height:1.1">${m.date_beijing||''} ${m.time_beijing||m.time}</div>
+        <div style="font-size:0.6rem;color:var(--txt2);margin-top:2px">当地 ${m.time_local||m.time} · ${m.timezone}</div>
+      </div>
     </div>
 
     <!-- TEAMS HERO ROW -->
@@ -135,6 +248,7 @@ function renderMatch(m) {
         <img src="${FLAG(m.home.iso)}" class="mf-flag" alt="${m.home.name}" onerror="this.style.display='none'">
         <div class="mf-team-name">${m.home.name}</div>
         <div class="mf-team-rating">Rating <strong style="color:var(--cyan)">${m.home.rating}</strong></div>
+        <div style="font-size:0.55rem;color:rgba(255,255,255,0.3);letter-spacing:1.5px;text-transform:uppercase;margin-top:0.4rem;margin-bottom:2px">近5场 🟢胜 ⬜平 🔴负</div>
         <div class="mf-team-form">${formDots(m.home.form)}</div>
       </div>
       <div class="mf-vs-col">
@@ -149,17 +263,20 @@ function renderMatch(m) {
           <div style="width:${p.draw}%;background:rgba(255,255,255,0.15)"></div>
           <div style="width:${p.away_win}%;background:var(--red)"></div>
         </div>
+        <div class="play-note" style="margin-top:0.35rem">模型推演胜率 · 娱乐参考</div>
         <div style="margin-top:0.75rem;text-align:center">
-          <div style="font-size:0.6rem;letter-spacing:2px;color:var(--txt2);text-transform:uppercase;margin-bottom:0.25rem">预测比分</div>
-          <div style="font-size:2rem;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums">${p.predicted_score.home} — ${p.predicted_score.away}</div>
-          <div style="font-size:0.62rem;color:var(--txt2)">期望进球 xG：${p.xG.home} — ${p.xG.away}</div>
-          <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.2rem">模型置信度：<strong style="color:${p.confidence>=80?'#00ff88':p.confidence>=60?'#ffd700':'#ff8855'}">${p.confidence}%</strong></div>
+          <div style="font-size:0.6rem;letter-spacing:2px;color:var(--txt2);text-transform:uppercase;margin-bottom:0.25rem">娱乐推演比分</div>
+          <div style="font-size:2rem;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums">${p.score}</div>
+          <div class="play-note">通过公开数据模型的娱乐推演 · 不代表真实赛果</div>
+          <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.35rem" title="xG（期望进球数）= 根据射门位置、角度、质量统计出的理论进球数，反映攻击质量而非实际比分">期望进球 xG：<strong style="color:var(--cyan)">${p.xg_home}</strong> — <strong style="color:var(--red)">${p.xg_away}</strong> <span style="opacity:.45;font-size:0.55rem">ⓘ</span></div>
+          <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.2rem">推演置信度（娱乐参考）：<strong style="color:${p.confidence>=80?'#5BBF8A':p.confidence>=60?'#C8A96E':'#ff8855'}">${p.confidence}%</strong></div>
         </div>
       </div>
       <div class="mf-team-side mf-team-right">
         <img src="${FLAG(m.away.iso)}" class="mf-flag" alt="${m.away.name}" onerror="this.style.display='none'">
         <div class="mf-team-name">${m.away.name}</div>
         <div class="mf-team-rating">Rating <strong style="color:var(--red)">${m.away.rating}</strong></div>
+        <div style="font-size:0.55rem;color:rgba(255,255,255,0.3);letter-spacing:1.5px;text-transform:uppercase;margin-top:0.4rem;margin-bottom:2px">近5场 🟢胜 ⬜平 🔴负</div>
         <div class="mf-team-form">${formDots(m.away.form)}</div>
       </div>
     </div>
@@ -171,38 +288,28 @@ function renderMatch(m) {
       <div class="mf-panel">
         <div class="mf-panel-label" style="color:var(--cyan)">⭐ ${m.home.name} 核心球员</div>
         <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">本场最具威胁的球员 — 包含位置、所在俱乐部、近期状态与赛前特别说明</div>
-        ${m.home.stars.map(s => `
+        ${(()=>{ const s=m.home.star; return s ? `
           <div class="star-row">
             <div style="flex:1">
               <div style="font-size:0.85rem;font-weight:700">${s.name}</div>
-              <div style="font-size:0.68rem;color:var(--txt2)">${s.pos}位 · ${s.club}</div>
-              <div style="font-size:0.68rem;color:var(--txt2)">赛季数据：${s.stat}</div>
-              <div style="font-size:0.7rem;color:var(--txt);margin-top:0.15rem">📌 ${s.notable}</div>
+              <div style="font-size:0.68rem;color:var(--txt2)">${s.pos} · ${s.club}</div>
+              <div style="font-size:0.7rem;color:var(--txt);margin-top:0.25rem">📌 ${s.desc}</div>
             </div>
-            <div style="text-align:right;flex-shrink:0">
-              <div style="font-size:0.62rem;color:var(--txt2);margin-bottom:2px">近期状态</div>
-              <span style="font-size:0.75rem;white-space:nowrap">${s.form}</span>
-            </div>
-          </div>`).join('')}
+          </div>` : '<div style="color:var(--txt2);font-size:0.72rem">暂无数据</div>'; })()}
       </div>
 
       <!-- STAR PLAYERS AWAY -->
       <div class="mf-panel">
         <div class="mf-panel-label" style="color:var(--red)">⭐ ${m.away.name} 核心球员</div>
         <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">本场最具威胁的球员 — 包含位置、所在俱乐部、近期状态与赛前特别说明</div>
-        ${m.away.stars.map(s => `
+        ${(()=>{ const s=m.away.star; return s ? `
           <div class="star-row">
             <div style="flex:1">
               <div style="font-size:0.85rem;font-weight:700">${s.name}</div>
-              <div style="font-size:0.68rem;color:var(--txt2)">${s.pos}位 · ${s.club}</div>
-              <div style="font-size:0.68rem;color:var(--txt2)">赛季数据：${s.stat}</div>
-              <div style="font-size:0.7rem;color:var(--txt);margin-top:0.15rem">📌 ${s.notable}</div>
+              <div style="font-size:0.68rem;color:var(--txt2)">${s.pos} · ${s.club}</div>
+              <div style="font-size:0.7rem;color:var(--txt);margin-top:0.25rem">📌 ${s.desc}</div>
             </div>
-            <div style="text-align:right;flex-shrink:0">
-              <div style="font-size:0.62rem;color:var(--txt2);margin-bottom:2px">近期状态</div>
-              <span style="font-size:0.75rem;white-space:nowrap">${s.form}</span>
-            </div>
-          </div>`).join('')}
+          </div>` : '<div style="color:var(--txt2);font-size:0.72rem">暂无数据</div>'; })()}
       </div>
 
       <!-- H2H -->
@@ -215,31 +322,31 @@ function renderMatch(m) {
       <!-- REFEREE -->
       <div class="mf-panel">
         <div class="mf-panel-label">🧑‍⚖️ 本场裁判分析</div>
-        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">执法本场的裁判员资料 — 含平均出牌率、判罚风格与潜在偏向分析，对预测有直接影响</div>
+        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">执法本场的裁判员资料 — 含平均出牌率、判罚风格与潜在偏向分析，已纳入模型推演参考</div>
         <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.75rem">
-          <img src="${FLAG(m.referee.iso)}" style="width:28px;height:19px;object-fit:cover;border-radius:2px" onerror="this.style.display='none'">
+          <img src="${FLAG((m.referee.iso||'un'))}" style="width:28px;height:19px;object-fit:cover;border-radius:2px" onerror="this.style.display='none'">
           <div>
             <div style="font-weight:700;font-size:0.9rem">${m.referee.name}</div>
-            <div style="font-size:0.68rem;color:var(--txt2)">${m.referee.nationality} · FIFA since ${m.referee.fifa_since}</div>
+            <div style="font-size:0.68rem;color:var(--txt2)">${m.referee.nation} · FIFA since ${'FIFA 执法'}</div>
           </div>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-bottom:0.75rem">
           <div style="text-align:center;background:rgba(255,215,0,0.06);border:1px solid rgba(255,215,0,0.15);border-radius:4px;padding:0.4rem">
-            <div style="font-size:1.1rem;font-weight:800;color:var(--gold)">${m.referee.yellows_per_game}</div>
+            <div style="font-size:1.1rem;font-weight:800;color:var(--gold)">${m.referee.avg_yellow}</div>
             <div style="font-size:0.58rem;color:var(--txt2)">Yellow/Game</div>
           </div>
-          <div style="text-align:center;background:rgba(255,68,85,0.06);border:1px solid rgba(255,68,85,0.15);border-radius:4px;padding:0.4rem">
-            <div style="font-size:1.1rem;font-weight:800;color:var(--red)">${m.referee.reds_per_game}</div>
+          <div style="text-align:center;background:rgba(217,95,106,0.06);border:1px solid rgba(217,95,106,0.15);border-radius:4px;padding:0.4rem">
+            <div style="font-size:1.1rem;font-weight:800;color:var(--red)">${m.referee.avg_red}</div>
             <div style="font-size:0.58rem;color:var(--txt2)">Red/Game</div>
           </div>
           <div style="text-align:center;background:rgba(0,229,255,0.06);border:1px solid rgba(0,229,255,0.15);border-radius:4px;padding:0.4rem">
-            <div style="font-size:1.1rem;font-weight:800;color:var(--cyan)">${m.referee.penalties_per_game}</div>
+            <div style="font-size:1.1rem;font-weight:800;color:var(--cyan)">${'-'}</div>
             <div style="font-size:0.58rem;color:var(--txt2)">Pen/Game</div>
           </div>
         </div>
-        <div style="font-size:0.72rem;color:var(--txt2);line-height:1.6;margin-bottom:0.5rem">${m.referee.style}</div>
-        <div style="font-size:0.7rem;background:rgba(255,215,0,0.05);border:1px solid rgba(255,215,0,0.15);border-radius:3px;padding:0.5rem;color:var(--gold);line-height:1.5">
-          ⚠ ${m.referee.bias_notes}
+        <div style="font-size:0.72rem;color:var(--txt2);line-height:1.6;margin-bottom:0.5rem">${m.referee.bias_note}</div>
+        <div style="font-size:0.7rem;background:rgba(200,169,110,0.07);border:1px solid rgba(255,215,0,0.15);border-radius:3px;padding:0.5rem;color:var(--gold);line-height:1.5">
+          ⚠ ${(m.referee.tendencies||[]).join(' · ')}
         </div>
       </div>
 
@@ -251,9 +358,9 @@ function renderMatch(m) {
           <div style="display:flex;align-items:flex-start;gap:0.5rem;margin-bottom:0.5rem;padding:0.5rem;background:rgba(255,68,85,0.05);border-radius:3px;border:1px solid rgba(255,68,85,0.12)">
             ${injuryBadge(inj.status)}
             <div>
-              <div style="font-size:0.8rem;font-weight:600">${inj.name}</div>
-              <div style="font-size:0.67rem;color:var(--txt2)">${inj.reason}</div>
-              ${inj.confirmed ? '<span style="font-size:0.6rem;color:#ff4455">● Officially confirmed</span>' : '<span style="font-size:0.6rem;color:#ffd700">● Unconfirmed report</span>'}
+              <div style="font-size:0.8rem;font-weight:600">${inj.player}</div>
+              <div style="font-size:0.67rem;color:var(--txt2)">${inj.note}</div>
+              ${inj.confirmed ? '<span style="font-size:0.6rem;color:#D95F6A">● Officially confirmed</span>' : '<span style="font-size:0.6rem;color:#C8A96E">● Unconfirmed report</span>'}
             </div>
           </div>`).join('')}
         <div style="margin-top:0.6rem">
@@ -270,9 +377,9 @@ function renderMatch(m) {
           <div style="display:flex;align-items:flex-start;gap:0.5rem;margin-bottom:0.5rem;padding:0.5rem;background:rgba(255,68,85,0.05);border-radius:3px;border:1px solid rgba(255,68,85,0.12)">
             ${injuryBadge(inj.status)}
             <div>
-              <div style="font-size:0.8rem;font-weight:600">${inj.name}</div>
-              <div style="font-size:0.67rem;color:var(--txt2)">${inj.reason}</div>
-              ${inj.confirmed ? '<span style="font-size:0.6rem;color:#ff4455">● Officially confirmed</span>' : '<span style="font-size:0.6rem;color:#ffd700">● Unconfirmed report</span>'}
+              <div style="font-size:0.8rem;font-weight:600">${inj.player}</div>
+              <div style="font-size:0.67rem;color:var(--txt2)">${inj.note}</div>
+              ${inj.confirmed ? '<span style="font-size:0.6rem;color:#D95F6A">● Officially confirmed</span>' : '<span style="font-size:0.6rem;color:#C8A96E">● Unconfirmed report</span>'}
             </div>
           </div>`).join('')}
         <div style="margin-top:0.6rem">
@@ -283,37 +390,39 @@ function renderMatch(m) {
 
       <!-- KEY FACTORS -->
       <div class="mf-panel">
-        <div class="mf-panel-label">🔑 综合预测关键因素</div>
-        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">模型判断本场胜负最重要的几个变量 — 这些因素已纳入上方的胜率计算中</div>
-        ${p.key_factors.map((f,i) => `
-          <div style="display:flex;gap:0.5rem;margin-bottom:0.6rem;font-size:0.75rem;line-height:1.55;padding:0.4rem;background:rgba(255,255,255,0.03);border-radius:3px;border-left:2px solid var(--gold)">
-            <span style="color:var(--gold);font-weight:700;flex-shrink:0">${i+1}.</span>
-            <span>${f}</span>
-          </div>`).join('')}
+        <div class="mf-panel-label">🔑 综合推演关键因素</div>
+        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">模型判断本场走势的重要变量 — 已纳入上方胜率娱乐推演</div>
+        <div style="display:flex;gap:0.5rem;font-size:0.75rem;line-height:1.6;padding:0.4rem;
+    background:rgba(255,255,255,0.03);border-radius:3px;border-left:2px solid var(--gold)">
+    <span style="color:var(--gold);font-weight:700;flex-shrink:0">→</span>
+    <span>${p.key_factor||'综合因素分析'}</span>
+  </div>
       </div>
 
       <!-- SCORE DISTRIBUTION -->
       <div class="mf-panel">
         <div class="mf-panel-label">📈 本场比分概率分布</div>
         <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">
-          模型预测<strong style="color:var(--txt)">本场比赛</strong>各种比分出现的概率。<span style="color:var(--gold)">金色柱</span>为最可能比分，柱越高概率越大。<br>
-          注：与裁判无关，纯为本场进球数量的概率预测。
+          模型对<strong style="color:var(--txt)">本场比赛</strong>各种比分的娱乐推演概率。<span style="color:var(--gold)">金色柱</span>为最可能比分，柱越高概率越大。<br>
+          注：与裁判无关，纯为数据模型娱乐推演，不代表真实赛果。
         </div>
-        ${scoreDistribution(p.score_distribution)}
+        ${scoreDistribution(p.score_dist)}
         <div style="margin-top:1.25rem">
           <div style="font-size:0.62rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt2);margin-bottom:0.5rem">📋 ${m.home.name} 近5场战绩</div>
-          ${m.home.last5.map(g => `
-            <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.7rem;padding:0.25rem 0;border-bottom:1px solid rgba(255,255,255,0.04)">
-              <span style="color:var(--txt2)">${g.date} vs <strong style="color:var(--txt)">${g.opp}</strong></span>
-              <span style="display:flex;align-items:center;gap:0.35rem">
-                <span style="font-variant-numeric:tabular-nums;font-weight:700">${g.score}</span>
-                <span style="font-size:0.6rem;font-weight:700;padding:0.08rem 0.3rem;border-radius:2px;background:${g.result==='W'?'rgba(0,255,136,0.15)':g.result==='D'?'rgba(255,255,255,0.08)':'rgba(255,68,85,0.15)'};color:${g.result==='W'?'var(--green)':g.result==='D'?'var(--txt2)':'var(--red)'}">${g.result==='W'?'胜':g.result==='D'?'平':'负'}</span>
-              </span>
-            </div>`).join('')}
+          ${m.home.form.map(r=>`<span style="display:inline-block;width:22px;height:22px;line-height:22px;
+    text-align:center;border-radius:50%;font-size:0.7rem;font-weight:700;margin-right:3px;
+    background:${r==='W'?'rgba(91,191,138,0.25)':r==='D'?'rgba(150,150,150,0.15)':'rgba(217,95,106,0.2)'};
+    color:${r==='W'?'#5BBF8A':r==='D'?'#aaa':'#D95F6A'}">${r}</span>`).join('')}
         </div>
       </div>
 
+      <!-- WEATHER PANEL (full width) -->
+      ${weatherPanel(m.weather, m.home.name, m.away.name)}
+
     </div><!-- end detail grid -->
+
+    <!-- MYSTIC PANEL (outside grid, full width) -->
+    ${mysticPanel(m.mystic, m.home.name, m.away.name)}
   </div>`;
 }
 
@@ -331,9 +440,11 @@ function renderNextMatch() {
         </div>
       </div>
       <div style="flex:1;text-align:center;min-width:120px">
-        <div style="font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold)">Group ${nm.group} · Tomorrow</div>
-        <div style="font-size:1.6rem;font-weight:800;color:var(--gold);margin:0.25rem 0">${nm.time}</div>
-        <div style="font-size:0.7rem;color:var(--txt2)">${nm.venue} · ${nm.city}</div>
+        <div style="font-size:0.62rem;letter-spacing:1.5px;color:var(--gold)">GROUP ${nm.group} · 明日赛事</div>
+        <div style="font-size:0.58rem;font-weight:700;color:var(--gold);letter-spacing:1px;margin-top:3px">🇨🇳 北京时间</div>
+        <div style="font-size:1.55rem;font-weight:800;color:var(--gold);margin:0.1rem 0;line-height:1.1">${nm.date_beijing||''} ${nm.time_beijing||nm.time}</div>
+        <div style="font-size:0.62rem;color:var(--txt2)">当地 ${nm.time_local||nm.time} · ${nm.timezone||''}</div>
+        <div style="font-size:0.62rem;color:var(--txt2);margin-top:2px">${nm.venue} · ${nm.city}</div>
       </div>
       <div style="display:flex;align-items:center;gap:0.6rem;text-align:right">
         <div>
@@ -345,14 +456,255 @@ function renderNextMatch() {
     </div>
     <p style="font-size:0.82rem;color:var(--txt2);line-height:1.7;margin-bottom:1rem">${nm.teaser}</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0.5rem;margin-bottom:1rem">
-      ${nm.preview_points.map(pt => `<div style="font-size:0.72rem;color:var(--txt2);display:flex;gap:0.4rem;line-height:1.5"><span style="color:var(--gold);flex-shrink:0">→</span>${pt}</div>`).join('')}
+      <div style="font-size:0.72rem;color:var(--txt2);line-height:1.7">${nm.teaser||''}</div>
     </div>
-    <div style="background:rgba(255,215,0,0.05);border:1px solid rgba(255,215,0,0.2);border-radius:4px;padding:0.75rem;display:flex;gap:2rem;flex-wrap:wrap;align-items:center">
-      <div style="text-align:center"><div style="font-size:0.6rem;color:var(--txt2);letter-spacing:1px">主队胜率</div><div style="font-size:1.4rem;font-weight:800;color:var(--cyan)">${nm.prediction.home_win}%</div></div>
-      <div style="text-align:center"><div style="font-size:0.6rem;color:var(--txt2);letter-spacing:1px">平局概率</div><div style="font-size:1.4rem;font-weight:800;color:var(--txt2)">${nm.prediction.draw}%</div></div>
-      <div style="text-align:center"><div style="font-size:0.6rem;color:var(--txt2);letter-spacing:1px">冷门概率</div><div style="font-size:1.4rem;font-weight:800;color:var(--red)">${nm.prediction.away_win}%</div></div>
-      <div style="margin-left:auto;text-align:right"><div style="font-size:0.6rem;color:var(--txt2);letter-spacing:1px;margin-bottom:0.2rem">预测比分</div><div style="font-size:2rem;font-weight:800;color:var(--gold)">${nm.prediction.score}</div></div>
+    <div style="background:rgba(200,169,110,0.07);border:1px solid rgba(255,215,0,0.2);border-radius:4px;padding:0.75rem;display:flex;gap:2rem;flex-wrap:wrap;align-items:center">
+      <div style="text-align:center"><div style="font-size:0.6rem;color:var(--txt2);letter-spacing:1px">模型推演胜率</div><div style="font-size:1.4rem;font-weight:800;color:var(--cyan)">${nm.home_win}%</div></div>
+      <div style="text-align:center"><div style="font-size:0.6rem;color:var(--txt2);letter-spacing:1px">平局推演</div><div style="font-size:1.4rem;font-weight:800;color:var(--txt2)">${nm.draw||0}%</div></div>
+      <div style="text-align:center"><div style="font-size:0.6rem;color:var(--txt2);letter-spacing:1px">冷门推演</div><div style="font-size:1.4rem;font-weight:800;color:var(--red)">${nm.away_win}%</div></div>
+      <div style="margin-left:auto;text-align:right">
+        <div style="font-size:0.6rem;color:var(--txt2);letter-spacing:1px;margin-bottom:0.2rem">娱乐推演比分</div>
+        <div style="font-size:2rem;font-weight:800;color:var(--gold)">${nm.predicted_score}</div>
+        <div class="play-note">数据模型娱乐推演</div>
+      </div>
     </div>`;
+}
+
+// ── Hexagram Scenario Card ─────────────────────────────────
+function renderScenario(icon, title, body, favors, prob, bg, border, color) {
+  return `
+    <div style="padding:0.65rem 0.8rem;background:${bg};border:1px solid ${border};border-radius:4px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.35rem;flex-wrap:wrap;gap:0.3rem">
+        <div style="font-size:0.7rem;font-weight:700;color:${color}">${icon} ${title}</div>
+        <div style="font-size:0.62rem;padding:0.1rem 0.45rem;border-radius:3px;background:${color}20;
+          color:${color};border:1px solid ${color}40;white-space:nowrap">
+          有利方 ${favors} · ${prob}%
+        </div>
+      </div>
+      <div style="font-size:0.67rem;color:rgba(210,195,235,0.7);line-height:1.6">${body}</div>
+    </div>`;
+}
+
+// ── Mystic / Taoist Panel ─────────────────────────────────
+function mysticPanel(mx, homeName, awayName) {
+  if (!mx) return '';
+
+  const P = 'rgba(120,85,185,'; // purple shorthand
+  const elColors = {'木':'#5C9E78','火':'#C06848','土':'#A8853A','金':'#B0A070','水':'#5080A0'};
+  const elTag = el => {
+    const k = Object.keys(elColors).find(k => el.includes(k))||'土';
+    return `<span style="font-size:0.62rem;padding:0.1rem 0.4rem;border-radius:2px;background:${elColors[k]}22;color:${elColors[k]};border:1px solid ${elColors[k]}44;margin-right:3px;white-space:nowrap">${el}</span>`;
+  };
+  const elTags = s => s.split('、').map(elTag).join('');
+
+  const scoreBar = (name, score, color, verdict) => `
+    <div style="background:rgba(255,255,255,0.03);border:1px solid ${P}0.15);border-radius:5px;padding:0.7rem">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.4rem">
+        <span style="font-size:0.82rem;font-weight:700">${name}</span>
+        <span style="font-size:0.72rem;font-weight:800;padding:0.1rem 0.5rem;border-radius:3px;
+          background:${color}22;color:${color};border:1px solid ${color}44">${verdict}</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:0.5rem">
+        <div style="flex:1;height:7px;background:rgba(255,255,255,0.07);border-radius:4px;overflow:hidden">
+          <div style="width:${score}%;height:100%;background:${color};border-radius:4px"></div>
+        </div>
+        <span style="font-size:0.78rem;font-weight:800;color:${color};width:38px;text-align:right">${score}/100</span>
+      </div>
+    </div>`;
+
+  const wx = mx.wuxing;
+  const hx = mx.hexagram;
+  const cardRiskColor = {'高':'#D95F6A','中':'#C8A96E','低':'#5BBF8A','低至中':'#7BAF8A'}[hx.yellow_card_risk]||'#888';
+
+  return `
+  <div style="margin-top:0.5rem;border:1px solid ${P}0.3);border-radius:8px;overflow:hidden;
+    background:linear-gradient(160deg,rgba(28,18,52,0.45) 0%,rgba(14,10,28,0.55) 100%)">
+
+    <!-- 标题栏 -->
+    <div style="padding:0.85rem 1.25rem;border-bottom:1px solid ${P}0.2);
+      display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem">
+      <div style="display:flex;align-items:center;gap:0.75rem">
+        <span style="font-size:1.6rem">☯</span>
+        <div>
+          <div style="font-size:1rem;font-weight:800;color:#9B7DD4;letter-spacing:2px">灵力分析</div>
+          <div style="font-size:0.62rem;color:${P}0.55);letter-spacing:1px">道家五行 · 赛日八字 · 卦象推演 · 走势解读</div>
+        </div>
+      </div>
+      <span style="font-size:0.6rem;color:${P}0.35);letter-spacing:1px">文化解读 · 非竞技推演</span>
+    </div>
+
+    <div style="padding:1.25rem;display:flex;flex-direction:column;gap:1.25rem">
+
+      <!-- ① 赛日八字 -->
+      <div style="background:rgba(255,255,255,0.025);border:1px solid ${P}0.15);border-radius:6px;padding:1rem">
+        <div style="font-size:0.62rem;letter-spacing:2px;color:#9B7DD4;margin-bottom:0.4rem">
+          📅 赛日八字 · ${mx.date_bazi.day}（比赛当天，非打开页面的日期）
+        </div>
+        <div style="display:flex;gap:0.5rem;margin-bottom:0.75rem;flex-wrap:wrap">
+          ${['year','month','day'].map(k=>`
+            <div style="flex:1;min-width:72px;text-align:center;background:${P}0.08);border:1px solid ${P}0.2);border-radius:4px;padding:0.45rem">
+              <div style="font-size:1.05rem;font-weight:800;color:#9B7DD4">${mx.date_bazi[k].replace(/[年月日]/g,'')}</div>
+              <div style="font-size:0.55rem;color:${P}0.5);margin-top:2px">${{year:'年柱',month:'月柱',day:'日柱'}[k]}</div>
+            </div>`).join('')}
+          <div style="flex:1;min-width:72px;text-align:center;background:${elColors[mx.date_bazi.hour_home_element]||'#888'}18;
+            border:1px solid ${elColors[mx.date_bazi.hour_home_element]||'#888'}44;border-radius:4px;padding:0.45rem">
+            <div style="font-size:0.72rem;font-weight:700;color:${elColors[mx.date_bazi.hour_home_element]||'#9B7DD4'}">${mx.date_bazi.hour_home.split('（')[0]}</div>
+            <div style="font-size:0.55rem;color:${P}0.5);margin-top:2px">开球时辰 · ${mx.date_bazi.hour_home_element}属</div>
+          </div>
+        </div>
+        <div style="font-size:0.7rem;color:${P}0.65);line-height:1.7">${mx.date_bazi.day_summary}</div>
+      </div>
+
+      <!-- ② 五行优劣势 —— 核心对比 -->
+      <div>
+        <div style="font-size:0.65rem;letter-spacing:2px;color:#9B7DD4;margin-bottom:0.75rem">☯ 五行优劣势 · 队服配局分析</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem">
+          <!-- 主队 -->
+          <div style="border:2px solid ${wx.home.verdict_color}55;border-radius:6px;overflow:hidden">
+            <div style="padding:0.5rem 0.75rem;background:${wx.home.verdict_color}18;
+              display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid ${wx.home.verdict_color}33">
+              <span style="font-weight:800;font-size:0.88rem">${wx.home.team}</span>
+              <span style="font-size:0.78rem;font-weight:800;color:${wx.home.verdict_color};
+                padding:0.1rem 0.5rem;border-radius:3px;background:${wx.home.verdict_color}20">
+                ${wx.home.verdict==='有利'?'✅ 有利':'❌ 不利'}
+              </span>
+            </div>
+            <div style="padding:0.65rem 0.75rem">
+              <div style="font-size:0.68rem;color:rgba(210,195,235,0.5);margin-bottom:0.3rem">队服：${wx.home.colors}</div>
+              <div style="margin-bottom:0.5rem">${elTags(wx.home.elements)}</div>
+              <div style="font-size:0.72rem;color:${wx.home.verdict_color};font-weight:700;margin-bottom:0.4rem">${wx.home.wuxing_short}</div>
+              <div style="font-size:0.68rem;color:rgba(210,195,235,0.68);line-height:1.6;margin-bottom:0.5rem">${wx.home.reason}</div>
+              <div style="font-size:0.65rem;padding:0.35rem 0.5rem;background:${wx.home.verdict_color}15;
+                border-radius:3px;color:${wx.home.verdict_color};line-height:1.5">
+                ${wx.home.verdict==='有利'?'↑ 加成：':'↓ 减分：'}${wx.home.advantage||wx.home.disadvantage}
+              </div>
+            </div>
+          </div>
+          <!-- 客队 -->
+          <div style="border:2px solid ${wx.away.verdict_color}55;border-radius:6px;overflow:hidden">
+            <div style="padding:0.5rem 0.75rem;background:${wx.away.verdict_color}18;
+              display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid ${wx.away.verdict_color}33">
+              <span style="font-weight:800;font-size:0.88rem">${wx.away.team}</span>
+              <span style="font-size:0.78rem;font-weight:800;color:${wx.away.verdict_color};
+                padding:0.1rem 0.5rem;border-radius:3px;background:${wx.away.verdict_color}20">
+                ${wx.away.verdict==='有利'?'✅ 有利':'❌ 不利'}
+              </span>
+            </div>
+            <div style="padding:0.65rem 0.75rem">
+              <div style="font-size:0.68rem;color:rgba(210,195,235,0.5);margin-bottom:0.3rem">队服：${wx.away.colors}</div>
+              <div style="margin-bottom:0.5rem">${elTags(wx.away.elements)}</div>
+              <div style="font-size:0.72rem;color:${wx.away.verdict_color};font-weight:700;margin-bottom:0.4rem">${wx.away.wuxing_short}</div>
+              <div style="font-size:0.68rem;color:rgba(210,195,235,0.68);line-height:1.6;margin-bottom:0.5rem">${wx.away.reason}</div>
+              <div style="font-size:0.65rem;padding:0.35rem 0.5rem;background:${wx.away.verdict_color}15;
+                border-radius:3px;color:${wx.away.verdict_color};line-height:1.5">
+                ${wx.away.verdict==='有利'?'↑ 加成：':'↓ 减分：'}${wx.away.advantage||wx.away.disadvantage}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="font-size:0.72rem;color:rgba(210,195,235,0.48);text-align:center;
+          padding:0.4rem;background:${P}0.06);border-radius:3px">
+          五行裁定：${wx.summary}
+        </div>
+      </div>
+
+      <!-- ③ 卦象推演 全情景分析 -->
+      <div style="background:rgba(255,255,255,0.025);border:1px solid ${P}0.15);border-radius:6px;overflow:hidden">
+
+        <!-- 卦象标题栏 -->
+        <div style="padding:0.85rem 1rem;border-bottom:1px solid ${P}0.12);display:flex;gap:1rem;align-items:center;flex-wrap:wrap">
+          <div style="text-align:center;min-width:64px">
+            <div style="font-size:2.2rem;line-height:1;color:#9B7DD4">${hx.symbol}</div>
+            <div style="font-size:0.78rem;font-weight:800;color:rgba(255,255,255,0.9);margin-top:2px">${hx.name}</div>
+            <div style="font-size:0.55rem;color:${P}0.45)">第${hx.number}卦 · ${hx.upper}/${hx.lower}</div>
+          </div>
+          <div style="flex:1;min-width:200px">
+            <div style="font-size:0.62rem;letter-spacing:2px;color:#9B7DD4;margin-bottom:0.35rem">🀄 卦象推演 · 全情景分析</div>
+            <div style="font-size:0.68rem;color:rgba(210,195,235,0.5);line-height:1.65;font-style:italic;margin-bottom:0.35rem">「${hx.quote.replace(/《.*?》：/,'')}」</div>
+            <div style="font-size:0.7rem;color:rgba(210,195,235,0.78);line-height:1.6">${hx.general}</div>
+          </div>
+        </div>
+
+        <div style="padding:1rem;display:flex;flex-direction:column;gap:0.85rem">
+
+          <!-- 有利/不利 + 比赛基本性质 -->
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0.5rem">
+            <div style="padding:0.5rem 0.6rem;background:rgba(91,191,138,0.07);border:1px solid rgba(91,191,138,0.22);border-radius:4px;text-align:center">
+              <div style="font-size:0.58rem;color:rgba(0,255,136,0.55);margin-bottom:0.2rem">卦象有利</div>
+              <div style="font-size:0.78rem;font-weight:800;color:#5BBF8A">✅ ${hx.advantage_team}</div>
+            </div>
+            <div style="padding:0.5rem 0.6rem;background:rgba(217,95,106,0.06);border:1px solid rgba(217,95,106,0.2);border-radius:4px;text-align:center">
+              <div style="font-size:0.58rem;color:rgba(255,68,85,0.55);margin-bottom:0.2rem">卦象不利</div>
+              <div style="font-size:0.78rem;font-weight:800;color:#D95F6A">❌ ${hx.disadvantage_team}</div>
+            </div>
+            <div style="padding:0.5rem 0.6rem;background:rgba(255,215,0,0.06);border:1px solid rgba(255,215,0,0.2);border-radius:4px;text-align:center">
+              <div style="font-size:0.58rem;color:rgba(255,215,0,0.55);margin-bottom:0.2rem">比赛性质</div>
+              <div style="font-size:0.75rem;font-weight:800;color:#C8A96E">${hx.match_nature}</div>
+            </div>
+            <div style="padding:0.5rem 0.6rem;background:${cardRiskColor}12;border:1px solid ${cardRiskColor}33;border-radius:4px;text-align:center">
+              <div style="font-size:0.58rem;color:${cardRiskColor}99;margin-bottom:0.2rem">🟨 纪律风险</div>
+              <div style="font-size:0.75rem;font-weight:800;color:${cardRiskColor}">${hx.yellow_card_risk}</div>
+            </div>
+          </div>
+
+          <!-- 基本预测5项 -->
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.45rem">
+            ${hx.scenarios.map(s=>`
+              <div style="padding:0.5rem 0.65rem;background:${P}0.04);border:1px solid ${P}0.1);border-radius:4px">
+                <div style="font-size:0.72rem;font-weight:700;margin-bottom:0.2rem">${s.icon} ${s.label}</div>
+                <div style="font-size:0.66rem;color:rgba(210,195,235,0.62);line-height:1.5">${s.text}</div>
+              </div>`).join('')}
+          </div>
+
+          <!-- 分情景推演 标题 -->
+          <div style="font-size:0.62rem;letter-spacing:2px;color:${P}0.6);padding-bottom:0.35rem;border-bottom:1px solid ${P}0.12)">
+            📌 分情景推演 · 各种比赛走向完整解析
+          </div>
+
+          <!-- 情景1：强队先进球 -->
+          ${renderScenario('🟢', hx.early_goal.scenario, hx.early_goal.prediction, hx.early_goal.favors, hx.early_goal.favors_prob, 'rgba(91,191,138,0.07)', 'rgba(91,191,138,0.22)', '#5BBF8A')}
+
+          <!-- 情景2：前段无进球 -->
+          ${renderScenario('🟡', hx.no_early_goal.scenario, hx.no_early_goal.prediction, hx.no_early_goal.favors, hx.no_early_goal.favors_prob, 'rgba(200,169,110,0.07)', 'rgba(200,169,110,0.22)', '#C8A96E')}
+
+          <!-- 情景3：弱队先进球 -->
+          ${renderScenario('🔴', hx.away_goal.scenario, hx.away_goal.prediction, hx.away_goal.favors, hx.away_goal.favors_prob, 'rgba(217,95,106,0.07)', 'rgba(217,95,106,0.2)', '#ff8888')}
+
+          <!-- 情景4：上半场0-0 -->
+          ${renderScenario('⬜', hx.halftime.scenario, hx.halftime.prediction, hx.halftime.favors, hx.halftime.favors_prob, 'rgba(150,150,200,0.05)', 'rgba(150,150,200,0.15)', '#aaaadd')}
+
+          <!-- 情景5：加时赛 -->
+          ${renderScenario('⏰', hx.extra_time.scenario, hx.extra_time.prediction, hx.extra_time.favors, hx.extra_time.favors_prob, 'rgba(100,150,255,0.05)', 'rgba(100,150,255,0.15)', '#88aaff')}
+
+          <!-- 黄牌详细分析 -->
+          <div style="padding:0.6rem 0.75rem;background:${cardRiskColor}10;border:1px solid ${cardRiskColor}30;border-radius:4px;
+            display:flex;gap:0.6rem;align-items:flex-start">
+            <span style="font-size:1rem;flex-shrink:0">🟨</span>
+            <div>
+              <div style="font-size:0.68rem;font-weight:700;color:${cardRiskColor};margin-bottom:0.2rem">纪律详解 · 风险等级：${hx.yellow_card_risk}</div>
+              <div style="font-size:0.67rem;color:rgba(210,195,235,0.62);line-height:1.55">${hx.yellow_card_reason}</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ④ 灵力胜率总裁定 -->
+      <div style="background:${P}0.05);border:1px solid ${P}0.2);border-radius:6px;padding:1rem">
+        <div style="font-size:0.62rem;letter-spacing:2px;color:#9B7DD4;margin-bottom:0.75rem">⚖ 灵力胜率总裁定</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.85rem">
+          ${scoreBar(homeName, mx.home_score, '#9B7DD4', mx.wuxing.home.verdict==='有利'?'天时有利':'逆势')}
+          ${scoreBar(awayName, mx.away_score, 'rgba(120,85,185,0.45)', mx.wuxing.away.verdict==='有利'?'天时有利':'逆势')}
+        </div>
+        <div style="font-size:0.82rem;color:rgba(230,200,255,0.88);line-height:1.75;
+          padding:0.85rem 1rem;background:${P}0.08);border-radius:4px;border-left:3px solid #9B7DD4;margin-bottom:0.6rem">
+          ${mx.mystic_verdict}
+        </div>
+        <div style="font-size:0.6rem;color:${P}0.3);line-height:1.5">${mx.disclaimer}</div>
+      </div>
+
+    </div>
+  </div>`;
 }
 
 // ── Init ───────────────────────────────────────────────────

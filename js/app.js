@@ -2,7 +2,7 @@
 //  2026 World Cup — App Logic
 // ============================================================
 
-const FLAG = iso => `https://flagcdn.com/w40/${iso.toLowerCase()}.png`;
+const FLAG = iso => iso ? `flags/${iso.toLowerCase()}.png` : '';
 
 // ── Countdown ──────────────────────────────────────────────
 function startCountdown() {
@@ -31,16 +31,16 @@ function startCountdown() {
 
 // ── Champ Probability Bars ─────────────────────────────────
 function renderChampBars() {
-  const max = WC2026.champOdds[0].prob;
+  const max = WC2026.champProbs[0].prob;
   const cont = document.getElementById('champ-bars');
-  cont.innerHTML = WC2026.champOdds.map((t, i) => {
+  cont.innerHTML = WC2026.champProbs.map((t, i) => {
     const pct = (t.prob / max * 100).toFixed(1);
-    const colors = ['rgba(255,215,0,0.9)','rgba(0,229,255,0.9)','rgba(0,255,136,0.8)',
-      'rgba(0,229,255,0.7)','rgba(255,140,0,0.8)','rgba(180,180,255,0.7)',
-      'rgba(0,200,100,0.7)','rgba(255,160,0,0.7)','rgba(220,100,100,0.7)',
-      'rgba(100,200,220,0.7)','rgba(200,100,200,0.7)','rgba(150,200,150,0.7)',
-      'rgba(220,200,100,0.7)','rgba(200,150,100,0.7)','rgba(200,200,100,0.7)',
-      'rgba(150,150,150,0.5)'];
+    const colors = ['rgba(200,169,110,0.92)','rgba(123,184,212,0.88)','rgba(91,191,138,0.82)',
+      'rgba(155,125,212,0.82)','rgba(212,164,83,0.82)','rgba(140,168,200,0.75)',
+      'rgba(91,155,138,0.75)','rgba(200,140,80,0.75)','rgba(200,100,110,0.72)',
+      'rgba(100,168,200,0.72)','rgba(180,110,180,0.72)','rgba(140,190,140,0.70)',
+      'rgba(200,185,100,0.68)','rgba(190,140,100,0.68)','rgba(180,180,110,0.65)',
+      'rgba(130,130,140,0.55)'];
     return `<div class="cbar-item fade-in" style="animation-delay:${i*0.05}s">
       <span class="cbar-rank">#${i+1}</span>
       <img class="cbar-flag" src="${FLAG(t.iso)}" alt="${t.name}" onerror="this.style.display='none'">
@@ -59,19 +59,19 @@ function renderChampBars() {
 
 // ── Chart.js: Doughnut Champion Probability ────────────────
 function renderChampChart() {
-  const top8 = WC2026.champOdds.slice(0, 8);
+  const top8 = WC2026.champProbs.slice(0, 8);
   const ctx = document.getElementById('champChart').getContext('2d');
   const colors = ['#003189','#74ACDF','#009C3B','#CF1124','#AA151B','#888','#006600','#FF6600'];
   new Chart(ctx, {
     type: 'doughnut',
     data: {
       labels: top8.map(t => t.name),
-      datasets: [{ data: top8.map(t => t.prob), backgroundColor: colors, borderColor: '#040d1c', borderWidth: 2 }]
+      datasets: [{ data: top8.map(t => t.prob), backgroundColor: colors, borderColor: '#080810', borderWidth: 3 }]
     },
     options: {
-      responsive: true, maintainAspectRatio: false, cutout: '62%',
+      responsive: true, maintainAspectRatio: false, cutout: '65%',
       plugins: {
-        legend: { position: 'right', labels: { color: '#7a8fb5', font: { size: 11 }, padding: 10, boxWidth: 12 } },
+        legend: { position: 'right', labels: { color: '#7D7D92', font: { size: 11 }, padding: 10, boxWidth: 12 } },
         tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.parsed}%` } }
       }
     }
@@ -104,43 +104,46 @@ function renderGroups() {
     panel.className = 'group-panel' + (gi === 0 ? ' active' : '');
     panel.innerHTML = `<div class="gcard fade-in">
       <div class="gcard-hdr">
-        <span class="gcard-title">第 ${g.id} 组 — 预测排名</span>
-        <span style="font-size:0.62rem;color:var(--txt2)">48 Teams · 12 Groups</span>
+        <span class="gcard-title">第 ${g.id} 组 — 推演排名</span>
+        <span style="font-size:0.62rem;color:var(--txt2)">48队 · 12组</span>
       </div>
       <div class="gcard-body">
         ${g.teams.map(t => `
-          <div class="team-row pr-${t.predicted}">
-            <span class="t-pos">${t.predicted}</span>
+          <div class="team-row pr-${t.finish}">
+            <span class="t-pos">${t.finish}</span>
             <img class="t-flag" src="${FLAG(t.iso)}" alt="${t.name}" onerror="this.style.display='none'">
             <span class="t-name">${t.name}</span>
             <span class="t-rating">${t.rating}</span>
             <div class="t-form">${formHtml(t.form)}</div>
-            <span class="adv-pill ${badgeClass(t.predicted)}">${badgeText(t.predicted)}</span>
+            <span class="adv-pill ${badgeClass(t.finish)}">${badgeText(t.finish)}</span>
           </div>`).join('')}
       </div>
     </div>
     <div class="gcard fade-in" style="animation-delay:0.1s">
-      <div class="gcard-hdr"><span class="gcard-title">Advance Probability</span></div>
+      <div class="gcard-hdr"><span class="gcard-title">晋级概率推演</span></div>
       <div class="gcard-body">
         ${g.teams.map(t => `
           <div style="margin-bottom:0.6rem;">
             <div style="display:flex;justify-content:space-between;font-size:0.75rem;margin-bottom:3px;">
-              <span>${t.name}</span><span style="color:var(--cyan);font-weight:700">${t.adv}%</span>
+              <span>${t.name}</span><span style="color:var(--cyan);font-weight:700">${t.advProb}%</span>
             </div>
             <div style="height:5px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden">
-              <div style="height:100%;width:${t.adv}%;background:linear-gradient(90deg,var(--cyan),var(--gold));border-radius:3px;"></div>
+              <div style="height:100%;width:${t.advProb}%;background:linear-gradient(90deg,var(--cyan),var(--gold));border-radius:3px;"></div>
             </div>
           </div>`).join('')}
       </div>
     </div>
     <div class="gcard fade-in" style="animation-delay:0.2s">
-      <div class="gcard-hdr"><span class="gcard-title">Key Players</span></div>
+      <div class="gcard-hdr"><span class="gcard-title">关键球星</span></div>
       <div class="gcard-body">
         ${g.teams.map(t => `
-          <div class="team-row pr-${t.predicted}">
+          <div class="team-row pr-${t.finish}">
             <img class="t-flag" src="${FLAG(t.iso)}" alt="" onerror="this.style.display='none'">
-            <div style="flex:1"><div style="font-size:0.82rem;font-weight:600">${t.name}</div><div style="font-size:0.68rem;color:var(--txt2)">${t.player} · ${t.role}</div></div>
-            <span style="font-size:0.65rem;color:var(--txt2)">${t.role}</span>
+            <div style="flex:1">
+              <div style="font-size:0.82rem;font-weight:600">${t.name}</div>
+              <div style="font-size:0.68rem;color:var(--txt2)">${t.player}</div>
+            </div>
+            <span style="font-size:0.65rem;color:var(--gold)">FIFA #${t.rank}</span>
           </div>`).join('')}
       </div>
     </div>`;
@@ -150,19 +153,22 @@ function renderGroups() {
 
 // ── Name → ISO lookup for bracket flags ───────────────────
 const ISO = {
-  'France':'fr','Argentina':'ar','Brazil':'br','England':'gb','Spain':'es',
+  'France':'fr','Argentina':'ar','Brazil':'br','England':'gb-eng','Spain':'es',
   'Germany':'de','Portugal':'pt','Netherlands':'nl','Morocco':'ma','Italy':'it',
   'Belgium':'be','Croatia':'hr','Uruguay':'uy','Colombia':'co','USA':'us',
   'Mexico':'mx','Japan':'jp','South Korea':'kr','Denmark':'dk','Serbia':'rs',
-  'Turkey':'tr','Switzerland':'ch','Poland':'pl','Nigeria':'ng','Ghana':'gh',
-  'Senegal':'sn','Egypt':'eg','Austria':'at','Chile':'cl','Paraguay':'py',
-  'Uruguay':'uy','Ecuador':'ec','Tunisia':'tn','Saudi Arabia':'sa',
-  'South Africa':'za','Iraq':'iq','Honduras':'hn','Costa Rica':'cr',
-  'Bolivia':'bo','Canada':'ca','Jamaica':'jm','Panama':'pa','Iran':'ir',
-  'New Zealand':'nz','Scotland':'gb','Venezuela':'ve','Cameroon':'cm',
-  'Australia':'au','Jordan':'jo','Iraq':'iq'
+  'Türkiye':'tr','Turkey':'tr','Switzerland':'ch','Poland':'pl','Nigeria':'ng',
+  'Ghana':'gh','Senegal':'sn','Egypt':'eg','Austria':'at','Chile':'cl',
+  'Paraguay':'py','Ecuador':'ec','Tunisia':'tn','Saudi Arabia':'sa',
+  'South Africa':'za','Iraq':'iq','Canada':'ca','Panama':'pa','Iran':'ir',
+  'New Zealand':'nz','Scotland':'gb-sct','Australia':'au','Jordan':'jo',
+  'Algeria':'dz','Norway':'no','Sweden':'se','Czechia':'cz','Slovakia':'sk',
+  'Bosnia and Herzegovina':'ba','Bosnia Herz.':'ba','Bosnia & Herzegovina':'ba',
+  'Qatar':'qa','Uzbekistan':'uz','Congo DR':'cd','Cabo Verde':'cv','Cape Verde':'cv',
+  "Côte d'Ivoire":'ci','Curaçao':'cw','Haiti':'ht','Bolivia':'bo',
+  'Suriname':'sr'
 };
-const FLAGN = name => FLAG(ISO[name] || 'un');
+const FLAGN = name => FLAG(name && (ISO[name] || 'un'));
 
 // ── Bracket ────────────────────────────────────────────────
 function renderBracket() {
@@ -207,7 +213,7 @@ function renderRadar() {
     const card = document.createElement('div');
     card.className = 'radar-card fade-in';
     card.style.animationDelay = (i * 0.08) + 's';
-    const champ = WC2026.champOdds.find(c => c.name === t.name);
+    const champ = WC2026.champProbs.find(c => c.name === t.name);
     card.innerHTML = `<div class="rcard-hdr">
       <img src="${FLAG(champ ? champ.iso : 'un')}" alt="${t.name}" onerror="this.style.display='none'">
       <div><div class="rcard-title">${t.name}</div>
@@ -238,9 +244,9 @@ function renderRadar() {
           r: {
             min: 70, max: 100,
             ticks: { display: false, stepSize: 10 },
-            grid: { color: 'rgba(255,255,255,0.06)' },
-            angleLines: { color: 'rgba(255,255,255,0.05)' },
-            pointLabels: { color: '#7a8fb5', font: { size: 10 } }
+            grid: { color: 'rgba(255,255,255,0.05)' },
+            angleLines: { color: 'rgba(255,255,255,0.04)' },
+            pointLabels: { color: '#7D7D92', font: { size: 10 } }
           }
         }
       }
@@ -253,37 +259,37 @@ function renderMatches() {
   const grid = document.getElementById('matches-grid');
   grid.innerHTML = WC2026.matches.map((m, i) => {
     const isFinal = m.stage === 'THE FINAL';
-    return `<div class="match-card fade-in${isFinal ? '" style="border-color:rgba(255,215,0,0.35)' : ''}" style="animation-delay:${i*0.05}s">
+    return `<div class="match-card fade-in${isFinal ? '" style="border-color:rgba(200,169,110,0.35)' : ''}" style="animation-delay:${i*0.05}s">
       <div class="m-stage"><span>${m.stage}</span><span class="m-date">${m.date}</span></div>
       <div class="m-teams">
         <div class="m-team">
-          <img src="${FLAG(m.ha)}" alt="${m.home}" onerror="this.style.display='none'">
+          <img src="${FLAGN(m.home)}" alt="${m.home}" onerror="this.style.display='none'">
           <span class="m-team-name">${m.home}</span>
         </div>
         <div style="text-align:center;flex-shrink:0">
-          <div class="m-score">${m.sH}<span class="m-sep"> : </span>${m.sA}</div>
-          <div style="font-size:0.58rem;color:var(--txt2);letter-spacing:1px">预测比分</div>
+          <div class="m-score">${m.home_score}<span class="m-sep"> : </span>${m.away_score}</div>
+          <div style="font-size:0.58rem;color:var(--txt2);letter-spacing:1px">${m.note||'娱乐推演比分'}</div>
+          <div class="play-note">数据模型娱乐推演</div>
         </div>
         <div class="m-team right">
-          <img src="${FLAG(m.ba)}" alt="${m.away}" onerror="this.style.display='none'">
+          <img src="${FLAGN(m.away)}" alt="${m.away}" onerror="this.style.display='none'">
           <span class="m-team-name">${m.away}</span>
         </div>
       </div>
       <div class="m-xg">
-        <span>期望进球 xG 主队：<span>${m.xH}</span></span>
-        <span>期望进球 xG 客队：<span>${m.xA}</span></span>
+        <span>期望进球 xG 主队：<strong>${m.xg_h}</strong></span>
+        <span>期望进球 xG 客队：<strong>${m.xg_a}</strong></span>
       </div>
       <div class="m-prob">
-        <div class="prob-h" style="width:${m.hw}%"></div>
-        <div class="prob-d" style="width:${m.d}%"></div>
-        <div class="prob-a" style="width:${m.aw}%"></div>
+        <div class="prob-h" style="width:${m.prob_h}%"></div>
+        <div class="prob-d" style="width:${m.prob_d}%"></div>
+        <div class="prob-a" style="width:${m.prob_a}%"></div>
       </div>
       <div class="m-prob-labels">
-        <span>${m.home} Win ${m.hw}%</span>
-        <span>Draw ${m.d}%</span>
-        <span>${m.away} Win ${m.aw}%</span>
+        <span>${m.home} 胜 ${m.prob_h}%</span>
+        <span>平局 ${m.prob_d}%</span>
+        <span>${m.away} 胜 ${m.prob_a}%</span>
       </div>
-      <div class="m-basis">${m.basis}</div>
     </div>`;
   }).join('');
 }
@@ -291,26 +297,31 @@ function renderMatches() {
 // ── Final Prediction Card ──────────────────────────────────
 function renderFinal() {
   const f = WC2026.bracket.final;
+  const champYear = { 'Argentina':'2022冠军', 'France':'2018冠军', 'Brazil':'2002冠军',
+    'England':'1966冠军', 'Spain':'2010冠军', 'Germany':'2014冠军', 'Portugal':'首次决赛',
+    'Netherlands':'首次夺冠' };
   document.getElementById('final-card').innerHTML = `
-    <span class="final-lbl">FIFA World Cup Final · Jul 19, 2026 · MetLife Stadium, NJ</span>
+    <span class="final-lbl">🏆 FIFA 世界杯决赛 · 2026年7月19日 · MetLife Stadium, 新泽西</span>
     <div class="final-teams">
       <div class="final-team">
-        <img src="${FLAG('fr')}" alt="${f.home}">
+        <img src="${FLAGN(f.home)}" alt="${f.home}" onerror="this.style.display='none'">
         <div class="final-team-name">${f.home}</div>
-        <div style="font-size:0.72rem;color:var(--txt2)">2018 Champions</div>
+        <div style="font-size:0.72rem;color:var(--txt2)">${champYear[f.home]||'决赛热门'}</div>
       </div>
       <div>
         <div class="final-score">${f.sH}<span class="final-score-sep">—</span>${f.sA}</div>
-        <div style="font-size:0.65rem;color:var(--txt2);margin-top:0.25rem">加时赛 · 预测结果</div>
+        <div style="font-size:0.65rem;color:var(--txt2);margin-top:0.25rem">加时赛 · 娱乐推演</div>
+        <div style="font-size:0.62rem;color:var(--gold);margin-top:0.2rem">🇨🇳 北京时间 7月20日 06:00</div>
       </div>
       <div class="final-team">
-        <img src="${FLAG('ar')}" alt="${f.away}">
+        <img src="${FLAGN(f.away)}" alt="${f.away}" onerror="this.style.display='none'">
         <div class="final-team-name">${f.away}</div>
-        <div style="font-size:0.72rem;color:var(--txt2)">2022 Champions</div>
+        <div style="font-size:0.72rem;color:var(--txt2)">${champYear[f.away]||'决赛热门'}</div>
       </div>
     </div>
     <div class="final-note">${f.note}</div>
-    <div class="final-mvp">Tournament MVP: ${f.mvp} · Top Scorer: ${f.topScorer} (${f.goals} goals)</div>`;
+    <div class="final-mvp">赛事MVP推演：${f.mvp} · 最佳射手推演：${f.topScorer}（${f.goals}球）</div>
+    <div class="play-note-block">※ 以上均为模型娱乐推演，不代表真实赛果</div>`;
 }
 
 // ── Methodology ────────────────────────────────────────────

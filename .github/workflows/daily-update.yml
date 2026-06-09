@@ -2,10 +2,22 @@ name: 每日自动更新世界杯数据
 
 on:
   schedule:
-    # 每天北京时间 08:00 自动运行（UTC 00:00）
+    # 每天北京时间 08:00 自动运行 (UTC 00:00)
     - cron: '0 0 * * *'
-  # 也可以在 GitHub 网页手动点击运行
+  # GitHub 网页手动触发
   workflow_dispatch:
+    inputs:
+      force_update:
+        description: '强制提交（即使数据无变化）'
+        required: false
+        default: 'false'
+
+# 允许工作流向仓库写入（推送数据更新必须）
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   update-match-data:
@@ -14,36 +26,44 @@ jobs:
     steps:
       - name: 拉取仓库代码
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 安装 Node.js 20
+      - name: 安装 Node.js 24
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
-      - name: 安装依赖
-        run: npm install
-
-      - name: 运行数据抓取脚本
+      - name: 运行 API-Football 数据抓取脚本
         env:
-          # 可选：在 GitHub Secrets 里设置 API_KEY
-          # 不设置也能运行（使用免费的 TheSportsDB）
-          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
-        run: node scripts/fetch-matches.js
+          API_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+        run: |
+          echo "🔄 开始更新，北京时间：$(TZ=Asia/Shanghai date)"
+          node scripts/update-data.js
+          echo "✅ 脚本执行完毕"
 
       - name: 检查是否有数据更新
         id: check
         run: |
-          if git diff --quiet js/matches-data.js; then
+          if git diff --quiet js/live-data.js 2>/dev/null; then
             echo "changed=false" >> $GITHUB_OUTPUT
+            echo "📋 数据无变化"
           else
             echo "changed=true" >> $GITHUB_OUTPUT
+            echo "✅ 检测到数据更新"
           fi
 
       - name: 提交并推送更新
-        if: steps.check.outputs.changed == 'true'
+        if: steps.check.outputs.changed == 'true' || github.event.inputs.force_update == 'true'
         run: |
-          git config user.name "WC2026 Bot"
+          git config user.name "WC2026-Bot"
           git config user.email "bot@worldcup2026.auto"
-          git add js/matches-data.js
-          git commit -m "🤖 自动更新 $(date +'%Y-%m-%d %H:%M') UTC 赛事数据"
-          git push
+          git add js/live-data.js
+          git commit -m "🤖 自动更新 $(TZ=Asia/Shanghai date +'%m月%d日 %H:%M') 北京时间"
+          git push origin HEAD
+          echo "🚀 已推送，GitHub Pages 将自动部署"
+
+      - name: 完成摘要
+        run: |
+          echo "📅 北京时间：$(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M')"
+          echo "✅ 工作流完成"

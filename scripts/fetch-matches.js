@@ -169,6 +169,113 @@ async function fetchNewsHeadlines(teamName) {
   }
 }
 
+// ── 天气数据抓取（Open-Meteo 免费，无需 Key） ────────────
+
+const VENUE_COORDS = {
+  'AT&T Stadium':    { lat: 32.748, lon: -97.093, alt: 142, city: 'Dallas, TX' },
+  'Rose Bowl':       { lat: 34.162, lon: -118.168, alt: 90,  city: 'Los Angeles, CA' },
+  'MetLife Stadium': { lat: 40.813, lon: -74.074, alt: 10,  city: 'East Rutherford, NJ' },
+  'SoFi Stadium':    { lat: 33.953, lon: -118.339, alt: 30,  city: 'Los Angeles, CA' },
+  'Estadio Azteca':  { lat: 19.303, lon: -99.151, alt: 2240, city: 'Mexico City' },
+  'Estadio AKRON':   { lat: 20.685, lon: -103.468, alt: 1600, city: 'Guadalajara' },
+  'BC Place':        { lat: 49.277, lon: -123.112, alt: 10,  city: 'Vancouver, BC' },
+  'BMO Field':       { lat: 43.633, lon: -79.418, alt: 100, city: 'Toronto, ON' },
+};
+
+// 各球队气候适应性数据库
+const CLIMATE_ADAPT = {
+  heat: { // 高温（>30°C）适应度
+    France:80, Argentina:82, Brazil:95, England:58, Spain:85, Germany:62,
+    Portugal:80, Netherlands:60, Morocco:92, Italy:75, Belgium:58,
+    Mexico:93, USA:80, Japan:72, Uruguay:78, Ecuador:60, Colombia:88,
+    Croatia:70, Denmark:52, Senegal:95, 'South Korea':68, Australia:76,
+    'Saudi Arabia':96, Honduras:90, Canada:65
+  },
+  cold: { // 低温（<10°C）适应度
+    France:88, Argentina:75, Brazil:50, England:92, Spain:80, Germany:95,
+    Portugal:78, Netherlands:90, Morocco:55, Italy:82, Belgium:92,
+    Mexico:65, USA:82, Japan:80, Uruguay:72, Ecuador:78, Colombia:60,
+    Croatia:85, Denmark:96, Senegal:45, 'South Korea':85, Australia:72,
+    'Saudi Arabia':40, Honduras:55, Canada:95
+  },
+  altitude: { // 高原适应度（>1500m）
+    France:62, Argentina:78, Brazil:65, England:55, Spain:60, Germany:58,
+    Portugal:62, Netherlands:55, Morocco:68, Italy:60, Belgium:55,
+    Mexico:95, USA:72, Japan:65, Uruguay:70, Ecuador:96, Colombia:90,
+    Croatia:62, Denmark:55, Senegal:65, 'South Korea':65, Australia:68,
+    'Saudi Arabia':60, Honduras:75, Canada:68
+  },
+  rain: { // 潮湿/降雨适应度
+    France:82, Argentina:78, Brazil:88, England:85, Spain:72, Germany:85,
+    Portugal:75, Netherlands:88, Morocco:60, Italy:72, Belgium:88,
+    Mexico:75, USA:78, Japan:82, Uruguay:80, Ecuador:78, Colombia:82,
+    Croatia:80, Denmark:90, Senegal:72, 'South Korea':78, Australia:75,
+    'Saudi Arabia':45, Honduras:80, Canada:88
+  }
+};
+
+async function fetchWeather(venue, date) {
+  const coords = VENUE_COORDS[venue];
+  if (!coords) return null;
+
+  try {
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${coords.lat}&longitude=${coords.lon}&daily=temperature_2m_max,precipitation_probability_max,windspeed_10m_max,relative_humidity_2m_max&timezone=auto&start_date=${date}&end_date=${date}`;
+    const data = await fetchJSON(url);
+    const d = data.daily;
+    if (!d) return null;
+
+    return {
+      temp_c:      Math.round(d.temperature_2m_max[0]),
+      temp_f:      Math.round(d.temperature_2m_max[0] * 9/5 + 32),
+      humidity:    d.relative_humidity_2m_max[0],
+      wind_kmh:    Math.round(d.windspeed_10m_max[0]),
+      rain_chance: d.precipitation_probability_max[0],
+      altitude_m:  coords.alt,
+      venue_city:  coords.city,
+      _live: true
+    };
+  } catch (e) {
+    log(`天气API失败 (${venue}): ${e.message}`);
+    return null;
+  }
+}
+
+function buildWeatherAdaptability(weather, homeName, awayName) {
+  if (!weather) return {};
+
+  const getScore = (team, w) => {
+    let score = 75; // 基础分
+    const temp = w.temp_c;
+    const alt  = w.altitude_m;
+    const rain = w.rain_chance;
+
+    if (temp > 32)       score = (CLIMATE_ADAPT.heat[team]    || 70) * 0.6 + score * 0.4;
+    else if (temp < 10)  score = (CLIMATE_ADAPT.cold[team]    || 70) * 0.6 + score * 0.4;
+    if (alt > 1500)      score = (score + (CLIMATE_ADAPT.altitude[team] || 65)) / 2;
+    if (rain > 50)       score = (score + (CLIMATE_ADAPT.rain[team]    || 75)) / 2;
+
+    return Math.round(score);
+  };
+
+  const homeScore = getScore(homeName, weather);
+  const awayScore = getScore(awayName, weather);
+
+  return {
+    [homeName]: {
+      score: homeScore,
+      label: homeScore >= 80 ? '适应良好' : homeScore >= 65 ? '中等适应' : '气候劣势',
+      color: homeScore >= 80 ? '#00ff88' : homeScore >= 65 ? '#ffd700' : '#ff4455',
+      detail: `综合气候评分 ${homeScore}/100`
+    },
+    [awayName]: {
+      score: awayScore,
+      label: awayScore >= 80 ? '适应良好' : awayScore >= 65 ? '中等适应' : '气候劣势',
+      color: awayScore >= 80 ? '#00ff88' : awayScore >= 65 ? '#ffd700' : '#ff4455',
+      detail: `综合气候评分 ${awayScore}/100`
+    }
+  };
+}
+
 // ── 格式化今日赛事数据 ────────────────────────────────────
 
 async function buildTodayMatches(sportsdbEvents, apiFootballData) {

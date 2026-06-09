@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>赛程总表 | 2026 FIFA World Cup</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    * { box-sizing: border-box; }
+
+    body { background: var(--bg); color: var(--txt); font-family: var(--font); }
+
+    /* ── NAV ── */
+    .top-nav {
+      display: flex; align-items: center; gap: 1.25rem;
+      padding: 0.8rem 2rem;
+      background: rgba(8,6,20,0.97);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .top-nav a { font-size: 0.8rem; color: var(--txt2); text-decoration: none; letter-spacing: 0.5px; transition: color .15s; }
+    .top-nav a:hover { color: var(--txt); }
+    .top-nav .active-link { color: var(--gold) !important; font-weight: 700; }
+    .nav-sep { color: var(--border); font-size: 0.7rem; }
+    .nav-right { margin-left: auto; display: flex; align-items: center; gap: 0.6rem; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, rgba(15,10,30,1) 0%, rgba(8,6,18,1) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 2rem 2rem;
+      text-align: center;
+    }
+    .hero h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; color: var(--gold); letter-spacing: 2px; margin: 0 0 0.4rem; }
+    .hero p  { font-size: 0.82rem; color: var(--txt2); letter-spacing: 1px; margin: 0 0 1.5rem; }
+    .hero-stats { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+    .hs-item .num { font-size: 2rem; font-weight: 900; color: var(--cyan); line-height: 1; }
+    .hs-item .lbl { font-size: 0.62rem; color: var(--txt2); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; }
+
+    /* ── TZ NOTICE ── */
+    .tz-bar {
+      background: rgba(255,215,0,0.07);
+      border-bottom: 1px solid rgba(255,215,0,0.18);
+      padding: 0.55rem 2rem;
+      font-size: 0.78rem; color: var(--gold); text-align: center; letter-spacing: 0.5px;
+    }
+
+    /* ── FILTERS ── */
+    .filter-bar {
+      padding: 0.9rem 2rem;
+      display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;
+      background: rgba(255,255,255,0.015);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 49px; z-index: 90;
+      backdrop-filter: blur(8px);
+    }
+    .fl { font-size: 0.68rem; color: var(--txt2); letter-spacing: 1.5px; text-transform: uppercase; margin-right: 0.25rem; white-space: nowrap; }
+    .fb {
+      padding: 0.3rem 0.85rem; border-radius: 3px;
+      border: 1px solid var(--border);
+      background: transparent; color: var(--txt2);
+      font-size: 0.75rem; cursor: pointer; font-family: inherit;
+      transition: all .18s;
+    }
+    .fb:hover, .fb.active { background: rgba(255,215,0,0.12); border-color: rgba(255,215,0,0.4); color: var(--gold); }
+    .search {
+      margin-left: auto; padding: 0.3rem 0.9rem;
+      border-radius: 3px; border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04); color: var(--txt);
+      font-size: 0.78rem; font-family: inherit; width: 200px; outline: none;
+    }
+    .search:focus { border-color: rgba(255,215,0,0.4); }
+    .search::placeholder { color: var(--txt2); }
+
+    /* ── CONTENT WRAPPER ── */
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+    /* ── PHASE HEADER ── */
+    .phase-hdr {
+      display: flex; align-items: baseline; gap: 1rem;
+      padding: 2rem 0 0.6rem;
+      border-bottom: 2px solid;
+      margin-bottom: 0;
+    }
+    .phase-hdr .title { font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 900; }
+    .phase-hdr .sub   { font-size: 0.72rem; color: var(--txt2); }
+    .phase-hdr .cnt   { margin-left: auto; font-size: 0.65rem; color: var(--txt2); letter-spacing: 1px; }
+
+    /* ── DATE HEADER ── */
+    .date-hdr {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 1.1rem 0 0.4rem; margin-top: 0.5rem;
+    }
+    .date-hdr .d-main { font-size: 1rem; font-weight: 800; color: var(--txt); }
+    .date-hdr .d-day  { font-size: 0.72rem; color: var(--txt2); }
+    .date-hdr .d-cnt  { font-size: 0.65rem; color: var(--txt2); margin-left: auto; letter-spacing: 0.5px; }
+    .date-hdr::after  { content: ''; flex: 1; height: 1px; background: var(--border); margin-left: 0.5rem; order: 10; }
+
+    /* ── MATCH ROW ── */
+    .mrow {
+      display: grid;
+      grid-template-columns: 64px 1fr 72px 190px;
+      gap: 0; align-items: center;
+      padding: 0.7rem 0.75rem;
+      border-radius: 5px;
+      border: 1px solid transparent;
+      transition: background .15s, border-color .15s;
+      margin-bottom: 2px;
+    }
+    .mrow:hover { background: rgba(255,255,255,0.03); border-color: var(--border); }
+    .mrow.live    { background: rgba(255,68,85,0.05); border-color: rgba(255,68,85,0.2); }
+    .mrow.finished { opacity: 0.6; }
+    .mrow.hidden  { display: none !important; }
+
+    /* time cell */
+    .mc-time { text-align: center; line-height: 1.25; padding-right: 0.5rem; }
+    .mc-time .t-time   { font-size: 1.05rem; font-weight: 800; color: var(--gold); letter-spacing: 1px; }
+    .mc-time .t-status { font-size: 0.55rem; letter-spacing: 1.5px; font-weight: 700; }
+    .mc-time .t-match  { font-size: 0.52rem; color: rgba(255,255,255,0.22); margin-top: 1px; }
+
+    /* ── match centre: home | score | away (single flex row) ── */
+    .mc-match {
+      display: flex; align-items: center;
+      border-left: 1px solid rgba(255,255,255,0.06);
+      border-right: 1px solid rgba(255,255,255,0.06);
+      padding: 0 0.75rem;
+    }
+    .mc-home {
+      flex: 1; display: flex; align-items: center;
+      justify-content: flex-end; gap: 0.45rem;
+      text-align: right;
+    }
+    .mc-away {
+      flex: 1; display: flex; align-items: center;
+      justify-content: flex-start; gap: 0.45rem;
+      text-align: left;
+    }
+    .t-name  { font-size: 0.9rem; font-weight: 700; color: var(--txt); white-space: nowrap; }
+    .t-eflag { width: 28px; height: 20px; object-fit: cover; border-radius: 2px; flex-shrink: 0; display: inline-block; vertical-align: middle; }
+
+    /* score/vs centre pill */
+    .mc-score {
+      width: 68px; flex-shrink: 0;
+      text-align: center; line-height: 1.2;
+    }
+    .mc-score .s-live { font-size: 1.15rem; font-weight: 900; color: #ff4455; }
+    .mc-score .s-done { font-size: 1.15rem; font-weight: 900; color: var(--gold); }
+    .mc-score .s-tbd  { font-size: 0.75rem; color: rgba(255,255,255,0.22); letter-spacing: 1px; }
+
+    /* group badge */
+    .mc-grp { text-align: center; padding: 0 0.4rem; }
+    .grp-badge {
+      display: inline-block; font-size: 0.68rem; font-weight: 800;
+      letter-spacing: 1.5px; padding: 0.2rem 0.55rem;
+      border-radius: 3px; text-transform: uppercase; white-space: nowrap;
+    }
+
+    /* venue cell */
+    .mc-venue { padding-left: 0.75rem; line-height: 1.45; }
+    .v-city  { font-size: 0.78rem; color: var(--txt); font-weight: 600; }
+    .v-tag   { font-size: 0.58rem; color: rgba(255,215,0,0.5); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1px; }
+    .v-name  { font-size: 0.62rem; color: var(--txt2); }
+
+    /* group badge colors */
+    .gb-A { background: rgba(0,229,255,0.1); color: #00E5FF; border: 1px solid rgba(0,229,255,0.2); }
+    .gb-B { background: rgba(91,191,138,0.1); color: #5BBF8A; border: 1px solid rgba(91,191,138,0.2); }
+    .gb-C { background: rgba(200,169,110,0.1); color: #C8A96E; border: 1px solid rgba(200,169,110,0.2); }
+    .gb-D { background: rgba(123,184,212,0.1); color: #7BB8D4; border: 1px solid rgba(123,184,212,0.2); }
+    .gb-E { background: rgba(217,95,106,0.1); color: #D95F6A; border: 1px solid rgba(217,95,106,0.2); }
+    .gb-F { background: rgba(155,125,212,0.1); color: #9B7DD4; border: 1px solid rgba(155,125,212,0.2); }
+    .gb-G { background: rgba(91,211,150,0.1); color: #5BD396; border: 1px solid rgba(91,211,150,0.2); }
+    .gb-H { background: rgba(255,165,0,0.1);  color: #FFA500; border: 1px solid rgba(255,165,0,0.2); }
+    .gb-I { background: rgba(116,156,255,0.1); color: #749CFF; border: 1px solid rgba(116,156,255,0.2); }
+    .gb-J { background: rgba(116,172,223,0.1); color: #74ACDF; border: 1px solid rgba(116,172,223,0.2); }
+    .gb-K { background: rgba(255,90,110,0.1);  color: #FF5A6E; border: 1px solid rgba(255,90,110,0.2); }
+    .gb-L { background: rgba(207,17,36,0.1);   color: #CF1124; border: 1px solid rgba(207,17,36,0.2); }
+
+    /* status pills */
+    .sp-up   { color: var(--cyan); }
+    .sp-live { color: #ff4455; animation: blink 1.2s infinite; }
+    .sp-done { color: rgba(255,255,255,0.3); }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+    /* ── KO ROUND SECTION ── */
+    .ko-round-hdr {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 1.1rem 0 0.5rem; margin-top: 0.3rem;
+    }
+    .ko-round-hdr .rnd-name { font-size: 0.85rem; font-weight: 800; }
+    .ko-round-hdr::after    { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    .ko-row {
+      display: grid;
+      grid-template-columns: 56px 90px 1fr 160px;
+      gap: 0.75rem; align-items: center;
+      padding: 0.75rem 0.75rem;
+      border-radius: 5px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.015);
+      margin-bottom: 4px;
+      transition: background .15s;
+    }
+    .ko-row:hover { background: rgba(255,255,255,0.03); }
+    .ko-row.final-row {
+      border-color: rgba(255,215,0,0.35);
+      background: rgba(255,215,0,0.04);
+    }
+    .ko-row.hidden { display: none !important; }
+
+    .kr-no    { font-size: 0.65rem; color: var(--txt2); text-align: center; }
+    .kr-time  { line-height: 1.3; }
+    .kr-time .kt { font-size: 0.95rem; font-weight: 800; color: var(--gold); }
+    .kr-time .kd { font-size: 0.68rem; color: var(--txt2); }
+    .kr-desc  { font-size: 0.82rem; color: rgba(255,255,255,0.55); font-style: italic; }
+    .kr-venue { line-height: 1.4; text-align: right; }
+    .kr-venue .kvc { font-size: 0.78rem; color: var(--txt); font-weight: 600; }
+    .kr-venue .kvn { font-size: 0.62rem; color: var(--txt2); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .mrow { grid-template-columns: 58px 1fr 64px; }
+      .mc-venue { display: none; }
+    }
+    @media (max-width: 600px) {
+      .wrap { padding: 0 0.5rem 3rem; }
+      .mrow { grid-template-columns: 52px 1fr; }
+      .mc-grp { display: none; }
+      .t-name { font-size: 0.8rem; }
+      .t-eflag { width: 22px; height: 16px; }
+      .mc-score { width: 56px; }
+      .ko-row { grid-template-columns: 36px 72px 1fr; }
+      .kr-venue { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top-nav">
+  <a href="index.html">← 主页</a>
+  <span class="nav-sep">|</span>
+  <a href="matches.html">今日赛事</a>
+  <span class="nav-sep">|</span>
+  <a href="schedule.html" class="active-link">📋 赛程总表</a>
+  <div class="nav-right">
+    <span style="font-size:0.68rem;color:var(--txt2)">所有时间 = 北京时间</span>
+  </div>
+</nav>
+
+<!-- TZ NOTICE -->
+<div class="tz-bar">🇨🇳 页面所有时间均为 <strong>北京时间 CST (UTC+8)</strong>，比赛在北美举行，请注意时差</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>📋 2026 FIFA World Cup 完整赛程</h1>
+  <p>2026年6月11日 — 7月19日 · 美国 · 加拿大 · 墨西哥 · 16座城市</p>
+  <div class="hero-stats">
+    <div class="hs-item"><div class="num">104</div><div class="lbl">总场次</div></div>
+    <div class="hs-item"><div class="num">48</div><div class="lbl">参赛球队</div></div>
+    <div class="hs-item"><div class="num">16</div><div class="lbl">比赛场馆</div></div>
+    <div class="hs-item"><div class="num">39</div><div class="lbl">赛期天数</div></div>
+    <div class="hs-item"><div class="num">12</div><div class="lbl">小组</div></div>
+  </div>
+</div>
+
+<!-- FILTERS -->
+<div class="filter-bar">
+  <span class="fl">赛组筛选</span>
+  <button class="fb active" data-f="all">全部</button>
+  <button class="fb" data-f="A">A组</button>
+  <button class="fb" data-f="B">B组</button>
+  <button class="fb" data-f="C">C组</button>
+  <button class="fb" data-f="D">D组</button>
+  <button class="fb" data-f="E">E组</button>
+  <button class="fb" data-f="F">F组</button>
+  <button class="fb" data-f="G">G组</button>
+  <button class="fb" data-f="H">H组</button>
+  <button class="fb" data-f="I">I组</button>
+  <button class="fb" data-f="J">J组</button>
+  <button class="fb" data-f="K">K组</button>
+  <button class="fb" data-f="L">L组</button>
+  <button class="fb" data-f="KO">淘汰赛</button>
+  <input type="text" class="search" id="qsearch" placeholder="🔍 搜索球队...">
+</div>
+
+<!-- SCHEDULE BODY -->
+<div class="wrap" id="sched-body"></div>
+
+<script src="js/live-data.js"></script>
+<script>
+// ═══════════════════════════════════════════════════════════
+//  COMPLETE 2026 WC SCHEDULE  —  All times in Beijing (UTC+8)
+//  Converted from local / ET.  formula: EDT (UTC-4) + 12h
+// ═══════════════════════════════════════════════════════════
+const MATCHES = [
+  // ── Group A ──────────────────────────────────────────────
+  { no:1,  m:6, d:12, t:'03:00', home:'Mexico',              away:'South Africa',          g:'A', venue:'Estadio Azteca',           city:'墨西哥城' },
+  { no:2,  m:6, d:12, t:'10:00', home:'South Korea',         away:'Czechia',               g:'A', venue:'Estadio Akron',            city:'瓜达拉哈拉' },
+  { no:25, m:6, d:19, t:'00:00', home:'Czechia',             away:'South Africa',          g:'A', venue:'Mercedes-Benz Stadium',    city:'亚特兰大' },
+  { no:28, m:6, d:19, t:'09:00', home:'Mexico',              away:'South Korea',           g:'A', venue:'Estadio Akron',            city:'瓜达拉哈拉' },
+  { no:53, m:6, d:25, t:'09:00', home:'Czechia',             away:'Mexico',                g:'A', venue:'Estadio Azteca',           city:'墨西哥城' },
+  { no:54, m:6, d:25, t:'09:00', home:'South Africa',        away:'South Korea',           g:'A', venue:'Estadio BBVA',             city:'蒙特雷' },
+  // ── Group B ──────────────────────────────────────────────
+  { no:3,  m:6, d:13, t:'03:00', home:'Canada',              away:'Bosnia & Herz.',        g:'B', venue:'BMO Field',                city:'多伦多' },
+  { no:8,  m:6, d:14, t:'03:00', home:'Qatar',               away:'Switzerland',           g:'B', venue:"Levi's Stadium",           city:'旧金山湾区' },
+  { no:26, m:6, d:19, t:'03:00', home:'Switzerland',         away:'Bosnia & Herz.',        g:'B', venue:'SoFi Stadium',             city:'洛杉矶' },
+  { no:27, m:6, d:19, t:'06:00', home:'Canada',              away:'Qatar',                 g:'B', venue:'BC Place',                 city:'温哥华' },
+  { no:51, m:6, d:25, t:'03:00', home:'Switzerland',         away:'Canada',                g:'B', venue:'BC Place',                 city:'温哥华' },
+  { no:52, m:6, d:25, t:'03:00', home:'Bosnia & Herz.',      away:'Qatar',                 g:'B', venue:'Lumen Field',              city:'西雅图' },
+  // ── Group C ──────────────────────────────────────────────
+  { no:7,  m:6, d:14, t:'06:00', home:'Brazil',              away:'Morocco',               g:'C', venue:'MetLife Stadium',          city:'纽约/新泽西' },
+  { no:5,  m:6, d:14, t:'09:00', home:'Haiti',               away:'Scotland',              g:'C', venue:'Gillette Stadium',         city:'波士顿' },
+  { no:30, m:6, d:20, t:'06:00', home:'Scotland',            away:'Morocco',               g:'C', venue:'Gillette Stadium',         city:'波士顿' },
+  { no:29, m:6, d:20, t:'09:00', home:'Brazil',              away:'Haiti',                 g:'C', venue:'Lincoln Financial Field',  city:'费城' },
+  { no:49, m:6, d:25, t:'06:00', home:'Scotland',            away:'Brazil',                g:'C', venue:'Hard Rock Stadium',        city:'迈阿密' },
+  { no:50, m:6, d:25, t:'06:00', home:'Morocco',             away:'Haiti',                 g:'C', venue:'Mercedes-Benz Stadium',    city:'亚特兰大' },
+  // ── Group D ──────────────────────────────────────────────
+  { no:4,  m:6, d:13, t:'09:00', home:'USA',                 away:'Paraguay',              g:'D', venue:'SoFi Stadium',             city:'洛杉矶' },
+  { no:6,  m:6, d:14, t:'12:00', home:'Australia',           away:'Türkiye',               g:'D', venue:'BC Place',                 city:'温哥华' },
+  { no:32, m:6, d:20, t:'03:00', home:'USA',                 away:'Australia',             g:'D', venue:'Lumen Field',              city:'西雅图' },
+  { no:31, m:6, d:20, t:'11:00', home:'Türkiye',             away:'Paraguay',              g:'D', venue:"Levi's Stadium",           city:'旧金山湾区' },
+  { no:59, m:6, d:26, t:'10:00', home:'Türkiye',             away:'USA',                   g:'D', venue:'SoFi Stadium',             city:'洛杉矶' },
+  { no:60, m:6, d:26, t:'10:00', home:'Paraguay',            away:'Australia',             g:'D', venue:"Levi's Stadium",           city:'旧金山湾区' },
+  // ── Group E ──────────────────────────────────────────────
+  { no:10, m:6, d:15, t:'01:00', home:'Germany',             away:'Curaçao',               g:'E', venue:'NRG Stadium',              city:'休斯顿' },
+  { no:9,  m:6, d:15, t:'07:00', home:"Côte d'Ivoire",       away:'Ecuador',               g:'E', venue:'Lincoln Financial Field',  city:'费城' },
+  { no:33, m:6, d:21, t:'04:00', home:'Germany',             away:"Côte d'Ivoire",         g:'E', venue:'BMO Field',                city:'多伦多' },
+  { no:34, m:6, d:21, t:'08:00', home:'Ecuador',             away:'Curaçao',               g:'E', venue:'Arrowhead Stadium',        city:'堪萨斯城' },
+  { no:55, m:6, d:26, t:'04:00', home:'Curaçao',             away:"Côte d'Ivoire",         g:'E', venue:'Lincoln Financial Field',  city:'费城' },
+  { no:56, m:6, d:26, t:'04:00', home:'Ecuador',             away:'Germany',               g:'E', venue:'MetLife Stadium',          city:'纽约/新泽西' },
+  // ── Group F ──────────────────────────────────────────────
+  { no:11, m:6, d:15, t:'04:00', home:'Netherlands',         away:'Japan',                 g:'F', venue:'AT&T Stadium',             city:'达拉斯' },
+  { no:12, m:6, d:15, t:'10:00', home:'Sweden',              away:'Tunisia',               g:'F', venue:'Estadio BBVA',             city:'蒙特雷' },
+  { no:36, m:6, d:21, t:'12:00', home:'Tunisia',             away:'Japan',                 g:'F', venue:'Estadio BBVA',             city:'蒙特雷' },
+  { no:35, m:6, d:22, t:'01:00', home:'Netherlands',         away:'Sweden',                g:'F', venue:'NRG Stadium',              city:'休斯顿' },
+  { no:57, m:6, d:26, t:'07:00', home:'Japan',               away:'Sweden',                g:'F', venue:'AT&T Stadium',             city:'达拉斯' },
+  { no:58, m:6, d:26, t:'07:00', home:'Tunisia',             away:'Netherlands',           g:'F', venue:'Arrowhead Stadium',        city:'堪萨斯城' },
+  // ── Group G ──────────────────────────────────────────────
+  { no:16, m:6, d:16, t:'03:00', home:'Belgium',             away:'Egypt',                 g:'G', venue:'Lumen Field',              city:'西雅图' },
+  { no:15, m:6, d:16, t:'09:00', home:'Iran',                away:'New Zealand',           g:'G', venue:'SoFi Stadium',             city:'洛杉矶' },
+  { no:39, m:6, d:22, t:'03:00', home:'Belgium',             away:'Iran',                  g:'G', venue:'SoFi Stadium',             city:'洛杉矶' },
+  { no:40, m:6, d:22, t:'09:00', home:'New Zealand',         away:'Egypt',                 g:'G', venue:'BC Place',                 city:'温哥华' },
+  { no:63, m:6, d:27, t:'11:00', home:'Egypt',               away:'Iran',                  g:'G', venue:'Lumen Field',              city:'西雅图' },
+  { no:64, m:6, d:27, t:'11:00', home:'New Zealand',         away:'Belgium',               g:'G', venue:'BC Place',                 city:'温哥华' },
+  // ── Group H ──────────────────────────────────────────────
+  { no:14, m:6, d:16, t:'00:00', home:'Spain',               away:'Cape Verde',            g:'H', venue:'Mercedes-Benz Stadium',   city:'亚特兰大' },
+  { no:13, m:6, d:16, t:'06:00', home:'Saudi Arabia',        away:'Uruguay',               g:'H', venue:'Hard Rock Stadium',        city:'迈阿密' },
+  { no:38, m:6, d:22, t:'00:00', home:'Spain',               away:'Saudi Arabia',          g:'H', venue:'Mercedes-Benz Stadium',   city:'亚特兰大' },
+  { no:37, m:6, d:22, t:'06:00', home:'Uruguay',             away:'Cape Verde',            g:'H', venue:'Hard Rock Stadium',        city:'迈阿密' },
+  { no:65, m:6, d:27, t:'08:00', home:'Cape Verde',          away:'Saudi Arabia',          g:'H', venue:'NRG Stadium',              city:'休斯顿' },
+  { no:66, m:6, d:27, t:'08:00', home:'Uruguay',             away:'Spain',                 g:'H', venue:'Estadio Akron',            city:'瓜达拉哈拉' },
+  // ── Group I ──────────────────────────────────────────────
+  { no:17, m:6, d:17, t:'03:00', home:'France',              away:'Senegal',               g:'I', venue:'MetLife Stadium',          city:'纽约/新泽西' },
+  { no:18, m:6, d:17, t:'06:00', home:'Iraq',                away:'Norway',                g:'I', venue:'Gillette Stadium',         city:'波士顿' },
+  { no:42, m:6, d:23, t:'05:00', home:'France',              away:'Iraq',                  g:'I', venue:'Lincoln Financial Field',  city:'费城' },
+  { no:41, m:6, d:23, t:'08:00', home:'Norway',              away:'Senegal',               g:'I', venue:'MetLife Stadium',          city:'纽约/新泽西' },
+  { no:61, m:6, d:27, t:'03:00', home:'Norway',              away:'France',                g:'I', venue:'Gillette Stadium',         city:'波士顿' },
+  { no:62, m:6, d:27, t:'03:00', home:'Senegal',             away:'Iraq',                  g:'I', venue:'BMO Field',                city:'多伦多' },
+  // ── Group J ──────────────────────────────────────────────
+  { no:20, m:6, d:17, t:'12:00', home:'Austria',             away:'Jordan',                g:'J', venue:"Levi's Stadium",           city:'旧金山湾区' },
+  { no:19, m:6, d:17, t:'09:00', home:'Argentina',           away:'Algeria',               g:'J', venue:'Arrowhead Stadium',        city:'堪萨斯城' },
+  { no:43, m:6, d:23, t:'01:00', home:'Argentina',           away:'Austria',               g:'J', venue:'AT&T Stadium',             city:'达拉斯' },
+  { no:44, m:6, d:23, t:'11:00', home:'Jordan',              away:'Algeria',               g:'J', venue:"Levi's Stadium",           city:'旧金山湾区' },
+  { no:69, m:6, d:28, t:'10:00', home:'Algeria',             away:'Austria',               g:'J', venue:'Arrowhead Stadium',        city:'堪萨斯城' },
+  { no:70, m:6, d:28, t:'10:00', home:'Jordan',              away:'Argentina',             g:'J', venue:'AT&T Stadium',             city:'达拉斯' },
+  // ── Group K ──────────────────────────────────────────────
+  { no:23, m:6, d:18, t:'01:00', home:'Portugal',            away:'Congo DR',              g:'K', venue:'NRG Stadium',              city:'休斯顿' },
+  { no:24, m:6, d:18, t:'10:00', home:'Uzbekistan',          away:'Colombia',              g:'K', venue:'Estadio Azteca',           city:'墨西哥城' },
+  { no:47, m:6, d:24, t:'01:00', home:'Portugal',            away:'Uzbekistan',            g:'K', venue:'NRG Stadium',              city:'休斯顿' },
+  { no:48, m:6, d:24, t:'10:00', home:'Colombia',            away:'Congo DR',              g:'K', venue:'Estadio Akron',            city:'瓜达拉哈拉' },
+  { no:71, m:6, d:28, t:'07:30', home:'Colombia',            away:'Portugal',              g:'K', venue:'Hard Rock Stadium',        city:'迈阿密' },
+  { no:72, m:6, d:28, t:'07:30', home:'Congo DR',            away:'Uzbekistan',            g:'K', venue:'Mercedes-Benz Stadium',   city:'亚特兰大' },
+  // ── Group L ──────────────────────────────────────────────
+  { no:22, m:6, d:18, t:'04:00', home:'England',             away:'Croatia',               g:'L', venue:'AT&T Stadium',             city:'达拉斯' },
+  { no:21, m:6, d:18, t:'07:00', home:'Ghana',               away:'Panama',                g:'L', venue:'BMO Field',                city:'多伦多' },
+  { no:45, m:6, d:24, t:'04:00', home:'England',             away:'Ghana',                 g:'L', venue:'Gillette Stadium',         city:'波士顿' },
+  { no:46, m:6, d:24, t:'07:00', home:'Panama',              away:'Croatia',               g:'L', venue:'BMO Field',                city:'多伦多' },
+  { no:67, m:6, d:28, t:'05:00', home:'Panama',              away:'England',               g:'L', venue:'MetLife Stadium',          city:'纽约/新泽西' },
+  { no:68, m:6, d:28, t:'05:00', home:'Croatia',             away:'Ghana',                 g:'L', venue:'Lincoln Financial Field',  city:'费城' },
+];
+
+const KO_ROUNDS = [
+  { round:'⚔️ 32强赛', color:'#7BB8D4', matches:[
+    { no:73,  d:'6月29日', t:'00:00', desc:'A组亚军 vs B组亚军',             venue:'SoFi Stadium',          city:'洛杉矶' },
+    { no:74,  d:'6月30日', t:'04:30', desc:'E组冠军 vs 最佳第三名（ABCDFH）',venue:'Gillette Stadium',       city:'波士顿' },
+    { no:75,  d:'6月30日', t:'09:00', desc:'F组冠军 vs C组亚军',             venue:'Estadio BBVA',           city:'蒙特雷' },
+    { no:76,  d:'6月30日', t:'01:00', desc:'C组冠军 vs F组亚军',             venue:'NRG Stadium',            city:'休斯顿' },
+    { no:77,  d:'7月1日',  t:'05:00', desc:'I组冠军 vs 最佳第三名（CDFGH）', venue:'MetLife Stadium',        city:'纽约/新泽西' },
+    { no:78,  d:'7月1日',  t:'01:00', desc:'E组亚军 vs I组亚军',             venue:'AT&T Stadium',           city:'达拉斯' },
+    { no:79,  d:'7月1日',  t:'09:00', desc:'A组冠军 vs 最佳第三名（CEFHI）', venue:'Estadio Azteca',         city:'墨西哥城' },
+    { no:80,  d:'7月2日',  t:'00:00', desc:'L组冠军 vs 最佳第三名（EHIJK）', venue:'Mercedes-Benz Stadium',  city:'亚特兰大' },
+    { no:81,  d:'7月2日',  t:'08:00', desc:'D组冠军 vs 最佳第三名（BEFIJ）', venue:"Levi's Stadium",         city:'旧金山湾区' },
+    { no:82,  d:'7月2日',  t:'04:00', desc:'G组冠军 vs 最佳第三名（AEHIJ）', venue:'Lumen Field',            city:'西雅图' },
+    { no:83,  d:'7月3日',  t:'07:00', desc:'K组亚军 vs L组亚军',             venue:'BMO Field',              city:'多伦多' },
+    { no:84,  d:'7月3日',  t:'03:00', desc:'H组冠军 vs J组亚军',             venue:'SoFi Stadium',           city:'洛杉矶' },
+    { no:85,  d:'7月3日',  t:'11:00', desc:'B组冠军 vs 最佳第三名（EFGIJ）', venue:'BC Place',               city:'温哥华' },
+    { no:86,  d:'7月4日',  t:'06:00', desc:'J组冠军 vs H组亚军',             venue:'Hard Rock Stadium',      city:'迈阿密' },
+    { no:87,  d:'7月4日',  t:'09:30', desc:'K组冠军 vs 最佳第三名（DEIJL）', venue:'Arrowhead Stadium',      city:'堪萨斯城' },
+    { no:88,  d:'7月4日',  t:'02:00', desc:'D组亚军 vs G组亚军',             venue:'AT&T Stadium',           city:'达拉斯' },
+  ]},
+  { round:'⚡ 16强赛', color:'#C8A96E', matches:[
+    { no:89,  d:'7月5日',  t:'05:00', desc:'M74胜者 vs M77胜者', venue:'Lincoln Financial Field', city:'费城' },
+    { no:90,  d:'7月5日',  t:'01:00', desc:'M73胜者 vs M75胜者', venue:'NRG Stadium',             city:'休斯顿' },
+    { no:91,  d:'7月6日',  t:'04:00', desc:'M76胜者 vs M78胜者', venue:'MetLife Stadium',         city:'纽约/新泽西' },
+    { no:92,  d:'7月6日',  t:'08:00', desc:'M79胜者 vs M80胜者', venue:'Estadio Azteca',          city:'墨西哥城' },
+    { no:93,  d:'7月7日',  t:'03:00', desc:'M83胜者 vs M84胜者', venue:'AT&T Stadium',            city:'达拉斯' },
+    { no:94,  d:'7月7日',  t:'08:00', desc:'M81胜者 vs M82胜者', venue:'Lumen Field',             city:'西雅图' },
+    { no:95,  d:'7月8日',  t:'00:00', desc:'M86胜者 vs M88胜者', venue:'Mercedes-Benz Stadium',  city:'亚特兰大' },
+    { no:96,  d:'7月8日',  t:'04:00', desc:'M85胜者 vs M87胜者', venue:'BC Place',                city:'温哥华' },
+  ]},
+  { round:'🔥 四分之一决赛', color:'#5BBF8A', matches:[
+    { no:97,  d:'7月10日', t:'04:00', desc:'M89胜者 vs M90胜者', venue:'Gillette Stadium',  city:'波士顿' },
+    { no:98,  d:'7月11日', t:'03:00', desc:'M93胜者 vs M94胜者', venue:'SoFi Stadium',      city:'洛杉矶' },
+    { no:99,  d:'7月12日', t:'05:00', desc:'M91胜者 vs M92胜者', venue:'Hard Rock Stadium', city:'迈阿密' },
+    { no:100, d:'7月12日', t:'09:00', desc:'M95胜者 vs M96胜者', venue:'Arrowhead Stadium', city:'堪萨斯城' },
+  ]},
+  { round:'🌟 半决赛', color:'#FF8855', matches:[
+    { no:101, d:'7月15日', t:'03:00', desc:'M97胜者 vs M98胜者',   venue:'AT&T Stadium',          city:'达拉斯' },
+    { no:102, d:'7月16日', t:'03:00', desc:'M99胜者 vs M100胜者',  venue:'Mercedes-Benz Stadium', city:'亚特兰大' },
+  ]},
+  { round:'🥉 季军赛', color:'#9B7DD4', matches:[
+    { no:103, d:'7月19日', t:'05:00', desc:'M101负者 vs M102负者', venue:'Hard Rock Stadium', city:'迈阿密' },
+  ]},
+  { round:'🏆 决赛 FINAL', color:'#FFD700', matches:[
+    { no:104, d:'7月20日', t:'03:00', desc:'M101胜者 vs M102胜者 · 冠军之战', venue:'MetLife Stadium', city:'纽约/新泽西' },
+  ]},
+];
+
+// ── Local flag ISO map  (images in /flags/*.png, downloaded locally) ──
+const ISO = {
+  'Mexico':'mx',          'South Africa':'za',   'South Korea':'kr',  'Czechia':'cz',
+  'Canada':'ca',          'Bosnia & Herz.':'ba', 'Qatar':'qa',        'Switzerland':'ch',
+  'Haiti':'ht',           'Scotland':'gb-sct',   'Brazil':'br',       'Morocco':'ma',
+  'USA':'us',             'Paraguay':'py',        'Australia':'au',   'Türkiye':'tr',
+  "Côte d'Ivoire":'ci',  'Ecuador':'ec',         'Germany':'de',     'Curaçao':'cw',
+  'Netherlands':'nl',     'Japan':'jp',           'Sweden':'se',      'Tunisia':'tn',
+  'Iran':'ir',            'New Zealand':'nz',     'Belgium':'be',     'Egypt':'eg',
+  'Saudi Arabia':'sa',    'Uruguay':'uy',         'Spain':'es',       'Cape Verde':'cv',
+  'France':'fr',          'Senegal':'sn',         'Iraq':'iq',        'Norway':'no',
+  'Argentina':'ar',       'Algeria':'dz',         'Austria':'at',     'Jordan':'jo',
+  'Portugal':'pt',        'Uzbekistan':'uz',      'Colombia':'co',    'Congo DR':'cd',
+  'England':'gb-eng',     'Croatia':'hr',         'Ghana':'gh',       'Panama':'pa'
+};
+
+function flag(team) {
+  const iso = ISO[team];
+  if (!iso) return `<span class="t-eflag" style="opacity:.3">?</span>`;
+  return `<img src="flags/${iso}.png" class="t-eflag" alt="${team}" title="${team}">`;
+}
+
+// ── Sort all group matches strictly by (month, day, time) ──
+function sortKey(m) {
+  const [h, mi] = m.t.split(':').map(Number);
+  return m.m * 10000 + m.d * 100 + h + mi / 100;
+}
+MATCHES.sort((a, b) => sortKey(a) - sortKey(b));
+
+// ── Status detection ───────────────────────────────────────
+function status(m) {
+  const now = new Date();
+  const start = new Date(2026, m.m-1, m.d, ...m.t.split(':').map(Number));
+  const end   = new Date(start.getTime() + 105 * 60000);
+  if (now > end)   return 'finished';
+  if (now >= start) return 'live';
+  return 'upcoming';
+}
+
+function statusHtml(st) {
+  if (st === 'live')     return `<span class="t-status sp-live">● 直播</span>`;
+  if (st === 'finished') return `<span class="t-status sp-done">已结束</span>`;
+  return `<span class="t-status sp-up">待赛</span>`;
+}
+
+function scoreHtml(st, fix, home, away) {
+  // Check live-data.js for real scores
+  if (typeof LIVE_DATA !== 'undefined' && LIVE_DATA.fixtures?.length) {
+    const found = LIVE_DATA.fixtures.find(f =>
+      f.home?.toLowerCase().includes(home.split(' ')[0].toLowerCase()) &&
+      f.away?.toLowerCase().includes(away.split(' ')[0].toLowerCase())
+    );
+    if (found && found.home_score !== null) {
+      const statusLabel = {FT:'全场',AET:'加时',PEN:'点球',HT:'中场','1H':'上半场','2H':'下半场'}[found.status] || '';
+      if (['FT','AET','PEN'].includes(found.status))
+        return `<span class="s-done">${found.home_score}–${found.away_score}</span><br><span style="font-size:0.52rem;color:var(--txt2)">${statusLabel}</span>`;
+      return `<span class="s-live">${found.home_score}–${found.away_score}</span><br><span style="font-size:0.52rem;color:#ff4455">${statusLabel}</span>`;
+    }
+  }
+  if (st === 'live')     return `<span class="s-live">● ●</span>`;
+  if (st === 'finished') return `<span class="s-done">—</span>`;
+  return `<span class="s-tbd">VS</span>`;
+}
+
+// ── Render group stage ─────────────────────────────────────
+function renderGroupStage() {
+  let html = `
+  <div class="phase-hdr" style="border-color:#5B8FA8" id="ph-group">
+    <span class="title" style="color:#7BB8D4">⚽ 小组赛阶段</span>
+    <span class="sub">第1-3比赛日 · 72场 · 2026年6月12日—6月28日</span>
+    <span class="cnt">共 72 场</span>
+  </div>`;
+
+  let lastKey = -1;
+  MATCHES.forEach(m => {
+    const key = m.m * 100 + m.d;
+    if (key !== lastKey) {
+      lastKey = key;
+      const weekdays = ['日','一','二','三','四','五','六'];
+      const dt = new Date(2026, m.m-1, m.d);
+      const wday = weekdays[dt.getDay()];
+      const dayMatches = MATCHES.filter(x => x.m === m.m && x.d === m.d).length;
+      html += `
+      <div class="date-hdr" data-key="${key}" data-gs="1">
+        <span class="d-main">${m.m}月${m.d}日（周${wday}）</span>
+        <span class="d-day">${m.m === 6 ? '6月' : '7月'}</span>
+        <span class="d-cnt">${dayMatches} 场比赛</span>
+      </div>`;
+    }
+
+    const st = status(m);
+    html += `
+    <div class="mrow ${st}" data-g="${m.g}" data-teams="${m.home.toLowerCase()} ${m.away.toLowerCase()}" data-key="${m.m*100+m.d}" data-gs="1">
+      <div class="mc-time">
+        <div class="t-time">${m.t}</div>
+        ${statusHtml(st)}
+        <div class="t-match">#${m.no}</div>
+      </div>
+      <div class="mc-match">
+        <div class="mc-home">
+          <span class="t-name">${m.home}</span>
+          ${flag(m.home)}
+        </div>
+        <div class="mc-score">${scoreHtml(st, null, m.home, m.away)}</div>
+        <div class="mc-away">
+          ${flag(m.away)}
+          <span class="t-name">${m.away}</span>
+        </div>
+      </div>
+      <div class="mc-grp"><span class="grp-badge gb-${m.g}">${m.g}组</span></div>
+      <div class="mc-venue">
+        <div class="v-tag">🏟 场馆</div>
+        <div class="v-city">${m.city}</div>
+        <div class="v-name">${m.venue}</div>
+      </div>
+    </div>`;
+  });
+  return html;
+}
+
+// ── Render knockout ────────────────────────────────────────
+function renderKO() {
+  let html = `
+  <div class="phase-hdr" style="border-color:#C8A96E;margin-top:1rem" id="ph-ko">
+    <span class="title" style="color:var(--gold)">🏆 淘汰赛阶段</span>
+    <span class="sub">32强 → 16强 → 8强 → 4强 → 决赛 · 2026年6月29日—7月20日</span>
+    <span class="cnt">共 32 场</span>
+  </div>`;
+
+  KO_ROUNDS.forEach(rnd => {
+    html += `
+    <div class="ko-round-hdr" data-ko="1">
+      <span class="rnd-name" style="color:${rnd.color}">${rnd.round}</span>
+    </div>`;
+    rnd.matches.forEach(m => {
+      const isFinal = rnd.round.includes('决赛 FINAL');
+      html += `
+      <div class="ko-row${isFinal?' final-row':''}" data-ko="1">
+        <div class="kr-no" style="font-size:0.7rem;color:rgba(255,255,255,0.3)">#${m.no}</div>
+        <div class="kr-time">
+          <div class="kt">${m.t}</div>
+          <div class="kd">🇨🇳 ${m.d}</div>
+        </div>
+        <div class="kr-desc" style="${isFinal?'color:var(--gold);font-style:normal;font-weight:700;font-size:0.88rem':''}">
+          ${m.desc}
+        </div>
+        <div class="kr-venue">
+          <div style="font-size:0.55rem;color:rgba(255,215,0,0.45);letter-spacing:1px;text-transform:uppercase;margin-bottom:1px">🏟 场馆</div>
+          <div class="kvc">${m.city}</div>
+          <div class="kvn">${m.venue}</div>
+        </div>
+      </div>`;
+    });
+  });
+  return html;
+}
+
+// ── Init ───────────────────────────────────────────────────
+document.getElementById('sched-body').innerHTML = renderGroupStage() + renderKO();
+
+// ── Filter logic ───────────────────────────────────────────
+document.querySelectorAll('.fb').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.fb').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilters();
+  });
+});
+document.getElementById('qsearch').addEventListener('input', applyFilters);
+
+function applyFilters() {
+  const grp    = document.querySelector('.fb.active')?.dataset.f || 'all';
+  const search = document.getElementById('qsearch').value.toLowerCase().trim();
+
+  const isKO   = grp === 'KO';
+  const isAll  = grp === 'all';
+
+  // Group match rows
+  document.querySelectorAll('.mrow').forEach(row => {
+    const g  = row.dataset.g;
+    const tm = row.dataset.teams || '';
+    const gOk = isAll || (!isKO && g === grp);
+    const sOk = !search || tm.includes(search);
+    row.classList.toggle('hidden', !(gOk && sOk));
+  });
+
+  // Date headers — show if any child row visible
+  document.querySelectorAll('.date-hdr[data-gs]').forEach(hdr => {
+    const key = hdr.dataset.key;
+    const anyVis = [...document.querySelectorAll(`.mrow[data-key="${key}"]`)]
+      .some(r => !r.classList.contains('hidden'));
+    hdr.classList.toggle('hidden', !anyVis || isKO);
+  });
+
+  // Group stage phase header
+  const phGroup = document.getElementById('ph-group');
+  if (phGroup) phGroup.classList.toggle('hidden', isKO);
+
+  // KO rows and headers
+  document.querySelectorAll('.ko-row, .ko-round-hdr').forEach(el => {
+    el.classList.toggle('hidden', !isAll && !isKO);
+  });
+  const phKO = document.getElementById('ph-ko');
+  if (phKO) phKO.classList.toggle('hidden', !isAll && !isKO);
+}
+</script>
+
+<footer style="margin-top:3rem">
+  <div class="legal-box">
+    <div class="legal-title">重要声明 · Legal Notice</div>
+    <ol>
+      <li>本站为 <span class="legal-em">2026 世界杯体育数据分析与娱乐交流网站</span>，展示公开赛事信息与统计模型推算结果，仅供体育爱好者个人学习与交流娱乐之用。</li>
+      <li>本网站<span class="legal-em">仅作信息展示</span>，不涉及任何金钱交易、场外竞猜、有奖竞猜或类似活动，不引导、不鼓励用户参与任何违法或不当行为，与任何博彩或赌博平台无任何关联。</li>
+      <li>页面中的胜率、比分等内容均为模型娱乐推演结果，不代表真实赛果；足球比赛存在高度不确定性，<span class="legal-em">本站不对推演准确性作任何保证，不对因浏览或参考本站内容而产生的任何直接或间接损失承担责任</span>。</li>
+      <li>本站内容不得用于任何商业用途或违法活动。用户应自觉遵守中华人民共和国相关法律法规，<span class="legal-em">请理性看球、健康娱乐</span>。未满 18 周岁的用户请在监护人指导下浏览。</li>
+    </ol>
+  </div>
+  <div class="footer-copy">2026 FIFA World Cup · 完整赛程总表 &nbsp;·&nbsp; <a href="terms.html" style="color:rgba(122,143,181,0.6);text-decoration:none">用户服务协议</a></div>
+</footer>
+
+</body>
+</html>
