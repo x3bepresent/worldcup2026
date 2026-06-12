@@ -11,6 +11,7 @@
 
 const fs = require('fs');
 const https = require('https');
+const { computeScoreDistribution } = require('./score-model');
 
 // ── 工具函数 ──────────────────────────────────────────────
 
@@ -479,15 +480,7 @@ function calculatePrediction(homeName, awayName, homeNews, awayNews) {
       awayInjuries > 0 ? `${awayName} 有伤病压力` : `${awayName} 全员可用`,
       '综合 Elo 评级与历史交锋数据自动计算'
     ],
-    score_distribution: [
-      { score: `${predH}-0`,   prob: 18 },
-      { score: `${predH}-1`,   prob: 22 },
-      { score: `${Math.max(0,predH-1)}-0`, prob: 14 },
-      { score: '1-1',          prob: 16 },
-      { score: '0-0',          prob: 8  },
-      { score: `${predH+1}-1`, prob: 12 },
-      { score: 'other',        prob: 10 }
-    ]
+    score_distribution: computeScoreDistribution(parseFloat(xGHome), parseFloat(xGAway)),
   };
 }
 
