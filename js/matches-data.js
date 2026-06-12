@@ -2,9 +2,14 @@
 // Last API sync: 2026-06-12T16:38:07.436Z
 // score_dist 已废弃 — 页面由 score-model.js 按 xG 实时泊松计算，勿手写比分概率
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-12T16:38:07.436Z",
-  "syncSource": "API-Football",
+  "lastUpdated": "2026-06-13T03:30:00+08:00",
+  "syncSource": "API-Football + Goal.com 官方首发",
   "breakingNews": [
+    {
+      "tag": "LINEUP",
+      "text": "✅ 官方首发 · 加拿大 vs 波黑：加拿大与 ESPN 预测 11 人完全一致；波黑 Džeko 替补，Lukić 首发，后防 Dedić-Katić-Kolašinac 入替预测名单",
+      "time": "6月13日 03:00 · Goal.com 确认"
+    },
     {
       "tag": "OFFICIAL",
       "text": "📅 今日赛事 · 加拿大 vs 波黑（03:00）· 美国 vs 巴拉圭（09:00）· 北京时间 6月13日",
@@ -17,8 +22,8 @@ const MATCH_DATA = {
     },
     {
       "tag": "LINEUP",
-      "text": "加拿大预测首发：Crépeau；Johnston-de Fougerolles-Cornelius-Laryea；Buchanan-Eustáquio-Koné-Millar；David-Larin（4-4-2）",
-      "time": "赛前阵容"
+      "text": "⏳ 美国 vs 巴拉圭：官方首发尚未公布（通常开球前约1小时），当前仍为 ESPN/SI 媒体预测",
+      "time": "6月13日 · 待 09:00 开球前"
     },
     {
       "tag": "INJURY",
@@ -27,8 +32,8 @@ const MATCH_DATA = {
     },
     {
       "tag": "LINEUP",
-      "text": "波黑预测首发：Vasilj；Burnic-Gigović-Muharemović-Memić；Celik-Basic-Bajraktarević；Mahmić-Demirović-Bazdar",
-      "time": "赛前阵容"
+      "text": "波黑官方首发已确认：Džeko 替补 · Demirović 队长 · Lukić 突前 · Kolašinac 左后卫",
+      "time": "6月13日 · 官方"
     },
     {
       "tag": "OFFICIAL",
@@ -80,20 +85,25 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月13日 03:00",
       "venue": "BMO Field",
       "city": "Toronto, Canada",
-      "note": "B组揭幕 · 东道主加拿大主场首战 · Davies 缺阵 · Marsch 改打 4-4-2",
+      "note": "B组揭幕 · 官方首发已确认 · Davies 缺阵 · Bombito 替补 · 波黑 Džeko 替补",
       "lineup": {
-        "confirmed": false,
-        "formation": null,
-        "home": "等待官方确认",
-        "away": "等待官方确认",
-        "note": "官方首发将于赛前约1小时由 FIFA / 球队公布。确认后请将 lineup.confirmed 设为 true 并填入正式名单。",
+        "confirmed": true,
+        "formation": "4-4-2",
+        "home": "Crépeau; Johnston, de Fougerolles, Cornelius, Laryea; Buchanan, Eustáquio (C), Koné, Millar; David, Larin",
+        "away": "Vasilj; Dedić, Katić, Muharemović, Kolašinac; Alajbegović, Bašić, Tahirović, Bajraktarević; Demirović (C), Lukić",
+        "note": "Goal.com / 赛前官方确认首发（2026-06-12）。加拿大与 ESPN 预测 11 人完全一致。波黑与预测出入较大：Džeko 替补；Burnic/Gigović/Memić/Celik/Bazdar 均未首发。",
         "predicted": {
           "formation": "4-4-2",
           "home": "Crépeau; Johnston, de Fougerolles, Cornelius, Laryea; Buchanan, Eustáquio, Koné, Millar; David, Larin",
           "away": "Vasilj; Burnic, Gigović, Muharemović, Memić; Celik, Basic, Bajraktarević; Mahmić, Demirović, Bazdar",
           "source": "ESPN / SI 赛前预测 · 非官方"
         },
-        "updated": "2026-06-13T18:00:00+08:00"
+        "diff": {
+          "home": "✅ 与预测完全一致（11/11）。Bombito 可出战但未进首发，de Fougerolles 搭档 Cornelius 中卫。",
+          "away": "⚠️ 与预测 5 处出入：① Džeko 替补（最大意外）② Kolašinac 左后卫 ③ Dedić/Katić 中卫 ④ Lukić 顶替 Bazdar ⑤ Alajbegović+Tahirović 中场（预测无此二人）"
+        },
+        "source": "Goal.com confirmed XI · 2026-06-12",
+        "updated": "2026-06-13T03:30:00+08:00"
       },
       "home": {
         "name": "Canada",
@@ -157,7 +167,7 @@ const MATCH_DATA = {
           {
             "player": "Moïse Bombito",
             "status": "FIT",
-            "note": "胫骨骨折后加速康复，Marsch 确认可出战揭幕战；尚未100%但已进入大名单，有望搭档 Cornelius 中卫",
+            "note": "已通过体检可出战，但官方首发由 de Fougerolles 搭档 Cornelius 中卫，Bombito 替补席待命",
             "confirmed": true
           },
           {
@@ -245,13 +255,7 @@ const MATCH_DATA = {
           {
             "player": "Edin Džeko",
             "status": "FIT",
-            "note": "40岁前锋完全健康，将首发担任支点中锋",
-            "confirmed": true
-          },
-          {
-            "player": "Sead Kolašinac",
-            "status": "FIT",
-            "note": "2014世界杯老将，附加赛主力中卫，身体状态正常",
+            "note": "40岁传奇完全健康，但官方首发 Lukić 突前、Demirović 任队长——Džeko 替补（赛前最大意外之一）",
             "confirmed": true
           },
           {
@@ -263,7 +267,19 @@ const MATCH_DATA = {
           {
             "player": "Ermedin Demirović",
             "status": "FIT",
-            "note": "预计与 Džeko 搭档锋线或担任第二前锋",
+            "note": "官方队长并首发，与 Lukić 搭档锋线（非 Džeko）",
+            "confirmed": true
+          },
+          {
+            "player": "Sead Kolašinac",
+            "status": "FIT",
+            "note": "官方确认左后卫首发（预测名单为 Burnic/Memić 防线）",
+            "confirmed": true
+          },
+          {
+            "player": "Jovo Lukić",
+            "status": "FIT",
+            "note": "官方首发前锋，顶替预测中的 Bazdar/Džeko 支点角色",
             "confirmed": true
           }
         ],
@@ -532,20 +548,25 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月13日 09:00",
       "venue": "SoFi Stadium",
       "city": "Los Angeles, USA",
-      "note": "D组揭幕 · SoFi 主场 · 26人全员可用 · Enciso 存疑",
+      "note": "D组揭幕 · SoFi 主场 · 26人全员可用 · Enciso 存疑 · 官方首发待开球前公布",
       "lineup": {
         "confirmed": false,
         "formation": null,
         "home": "等待官方确认",
         "away": "等待官方确认",
-        "note": "官方首发将于赛前约1小时公布。以下为 ESPN 等媒体预测，非 FIFA 确认名单。",
+        "note": "美国 vs 巴拉圭官方首发尚未公布（开球 09:00 北京时间，通常赛前约1小时确认）。下方为 ESPN/SI 最新媒体预测，非 FIFA 确认名单。",
         "predicted": {
           "formation": "4-2-3-1",
           "home": "Freese; Freeman, McKenzie, Ream, Robinson; McKennie, Adams; Dest, Tillman, Pulisic; Balogun",
           "away": "Fernández; Cáceres, G. Gómez, Alderete, Alonso; Cubas, D. Gómez; Almirón, Bobadilla, Sosa; Sanabria",
-          "source": "ESPN 赛前预测 · 非官方"
+          "source": "ESPN 赛前预测 · 非官方",
+          "alt": {
+            "formation": "3-5-2",
+            "home": "Freese; Freeman, McKenzie, Ream; Dest, McKennie, Adams, Tillman, Robinson; Balogun, Pulisic",
+            "source": "SI 最新预测 · Richards 可能替补 · 非官方"
+          }
         },
-        "updated": "2026-06-13T22:00:00+08:00"
+        "updated": "2026-06-13T03:30:00+08:00"
       },
       "home": {
         "name": "USA",

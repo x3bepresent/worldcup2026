@@ -58,6 +58,13 @@ function renderLineupPanel(m) {
         <div style="margin-bottom:0.5rem"><strong>${lu.formation || ''}</strong></div>
         <div><strong style="color:var(--cyan)">${m.home.name}</strong>：${lu.home}</div>
         <div style="margin-top:0.35rem"><strong style="color:var(--red)">${m.away.name}</strong>：${lu.away}</div>
+        ${lu.note ? `<div style="font-size:0.65rem;color:var(--txt2);margin-top:0.5rem;line-height:1.55">${lu.note}</div>` : ''}
+        ${lu.diff ? `
+        <div style="margin-top:0.65rem;padding:0.5rem;background:rgba(255,255,255,0.03);border-radius:3px;border-left:2px solid var(--gold);font-size:0.65rem;line-height:1.6;color:var(--txt2)">
+          <div style="font-weight:700;color:var(--gold);margin-bottom:0.25rem">与预测对比</div>
+          <div>${lu.diff.home || ''}</div>
+          <div style="margin-top:0.25rem">${lu.diff.away || ''}</div>
+        </div>` : ''}
         ${lu.source ? `<div style="font-size:0.62rem;color:rgba(255,255,255,0.35);margin-top:0.5rem">来源：${lu.source}</div>` : ''}
       </div>
     </div>`;
