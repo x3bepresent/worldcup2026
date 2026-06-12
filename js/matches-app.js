@@ -327,6 +327,13 @@ function weatherPanel(w, homeName, awayName) {
     </div>`;
 }
 
+function getMatchScoreDistribution(p) {
+  if (typeof computeScoreDistribution === 'function' && p.xg_home != null && p.xg_away != null) {
+    return computeScoreDistribution(p.xg_home, p.xg_away, { topN: 5 });
+  }
+  return (p.score_dist || []).filter(d => d.score !== '其他').slice(0, 5);
+}
+
 // ── Score Distribution ─────────────────────────────────────
 function scoreDistribution(dist) {
   const max = Math.max(...dist.map(d => d.prob));
@@ -355,10 +362,10 @@ function renderRightAnalysisPanel(p, m) {
         </div>
         <div class="mf-panel-label" style="margin-top:0.25rem">📈 本场比分概率分布</div>
         <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">
-          模型对<strong style="color:var(--txt)">本场比赛</strong>各种比分的娱乐推演概率。<span style="color:var(--gold)">金色柱</span>为最可能比分，柱越高概率越大。<br>
-          注：与裁判无关，纯为数据模型娱乐推演，不代表真实赛果。
+          基于 xG 对 <strong style="color:var(--txt)">0-0 至 5-5 全表</strong>（36 种）独立泊松推演，展示概率最高的 <strong style="color:var(--txt)">5</strong> 项。<br>
+          注：纯模型娱乐推演，不代表真实赛果。
         </div>
-        ${scoreDistribution(p.score_dist)}
+        ${scoreDistribution(getMatchScoreDistribution(p))}
         <div style="margin-top:1.25rem">
           <div style="font-size:0.62rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt2);margin-bottom:0.5rem">📋 ${m.home.name} 近5场战绩</div>
           ${m.home.form.map(r => `<span style="display:inline-block;width:22px;height:22px;line-height:22px;
