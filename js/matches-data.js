@@ -1,82 +1,71 @@
+// 今日赛事 — 手动/自动同步
+// Last updated: 2026-06-13T06:00:00+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-12T12:00:00+08:00",
+  "lastUpdated": "2026-06-13T06:00:00+08:00",
   "syncSource": "manual",
   "breakingNews": [
     {
       "tag": "OFFICIAL",
-      "text": "🏁 赛果 · 墨西哥 2-0 南非 · 开幕战全场结束 · Raúl Jiménez 梅开二度 · Estadio Azteca",
-      "time": "最新赛果"
-    },
-    {
-      "tag": "OFFICIAL",
-      "text": "🏁 赛果 · 韩国 2-1 捷克 · A组第2场结束 · 孙兴慜、李康仁破门 · Schick 扳回一球 · Estadio Akron",
-      "time": "最新赛果"
-    },
-    {
-      "tag": "OFFICIAL",
-      "text": "模型复盘：墨西哥 2-0 与赛前最高概率比分（28%）完全吻合，高原+主场逻辑验证；韩国 2-1 略偏离 1-1 平局推演，但韩国胜方向（48%）判断正确",
-      "time": "赛后推演"
+      "text": "📅 今日赛事 · 加拿大 vs 波黑（03:00）· 美国 vs 巴拉圭（09:00）· 北京时间 6月13日",
+      "time": "今日赛程"
     },
     {
       "tag": "LINEUP",
-      "text": "墨西哥：Raúl Jiménez 搭档 Gilberto Mora 首发双前锋奏效，Santiago Giménez 替补未登场；40岁 Ochoa 零封完成第六届世界杯首秀",
-      "time": "赛后阵容"
+      "text": "加拿大：Davies 左路锁定首发，Jonathan David 领衔锋线；Marsch 确认 4-3-3 攻击阵型",
+      "time": "赛前情报"
     },
     {
       "tag": "INJURY",
-      "text": "赛后确认：César Montes 打满90分钟无碍，Edson Álvarez 替补出场45分钟；南非 Modiba 复出但60分钟后体能崩盘被换下",
-      "time": "伤情更新"
+      "text": "波黑：Kolašinac 肌肉拉伤存疑，Džeko 完全健康将首发担任支点",
+      "time": "伤情快报"
     },
     {
       "tag": "OFFICIAL",
-      "text": "A组积分榜：墨西哥 3分领跑，韩国 3分并列；捷克、南非 0分 · 下轮：墨西哥 vs 韩国（6月16日）成小组关键战",
-      "time": "小组形势"
+      "text": "美国：Pulisic 队长领衔，Pochettino 排出 4-3-3；McKennie 坐镇中场",
+      "time": "官方消息"
+    },
+    {
+      "tag": "LINEUP",
+      "text": "Paraguay：Almirón 10号位核心，Gómez 统领三中卫 5-3-2 低位防守",
+      "time": "阵容情报"
     },
     {
       "tag": "RUMOR",
-      "text": "传言：捷克更衣室赛后对低位防守被孙兴慜突破两次表达不满，主帅 Hasek 称「下半场我们失去了纪律」",
+      "text": "传言：SoFi Stadium 预计7万观众创纪录，美国球迷「红色浪潮」或成第12人",
       "time": "媒体传言"
     },
     {
-      "tag": "REFEREE",
-      "text": "Marciniak 开幕战出示 4 黄 0 红，执法尺度与模型预判一致；Sampaio 韩国战全场 5 黄，补时 5 分钟",
-      "time": "裁判数据"
+      "tag": "OFFICIAL",
+      "text": "A组回顾：墨西哥、韩国各3分领跑 · 详见「过往赛果」页面",
+      "time": "小组动态"
     },
     {
-      "tag": "OFFICIAL",
-      "text": "综合模型判断：西班牙夺冠呼声最高（19.2%），法国（18.0%）紧随其后——热门舆论高度集中，仍须警惕黑马被系统性低估",
-      "time": "模型综合"
+      "tag": "REFEREE",
+      "text": "Taylor（加拿大战）+ Vinčić（美国战）执法，均为欧洲杯/世界杯级别裁判",
+      "time": "裁判信息"
     }
   ],
   "todayMatches": [
     {
-      "id": "m01",
-      "group": "A",
+      "id": "m03",
+      "group": "B",
       "matchday": 1,
-      "date": "2026-06-11",
+      "date": "2026-06-12",
       "time": "15:00",
-      "time_local": "15:00 ET / 13:00 本地",
+      "time_local": "15:00 ET / 15:00 EDT",
       "timezone": "EDT (UTC-4)",
       "time_beijing": "03:00",
-      "date_beijing": "6月12日",
-      "time_beijing_full": "北京时间 6月12日 03:00",
-      "venue": "Estadio Azteca",
-      "city": "Mexico City, Mexico",
-      "note": "2026世界杯开幕战 · 海拔2240m · 已结束 2-0",
-      "actualResult": {
-        "home_score": 2,
-        "away_score": 0,
-        "status": "FT",
-        "label": "全场结束",
-        "scorers": "Raúl Jiménez 38', 78'",
-        "highlights": "Ochoa 零封；南非 60 分钟后高原体能崩盘；Marciniak 4 黄 0 红"
-      },
+      "date_beijing": "6月13日",
+      "time_beijing_full": "北京时间 6月13日 03:00",
+      "venue": "BMO Field",
+      "city": "Toronto, Canada",
+      "note": "B组揭幕 · 东道主加拿大主场首战 · 海拔76m",
       "home": {
-        "name": "Mexico",
-        "iso": "mx",
-        "flag": "🇲🇽",
-        "fifa_rank": 12,
-        "rating": 80,
+        "name": "Canada",
+        "iso": "ca",
+        "flag": "",
+        "fifa_rank": 17,
+        "rating": 78,
         "form": [
           "W",
           "W",
@@ -84,52 +73,317 @@ const MATCH_DATA = {
           "D",
           "W"
         ],
-        "coach": "Javier Aguirre",
+        "coach": "Jesse Marsch",
         "star": {
-          "name": "Raúl Jiménez",
-          "pos": "ST",
-          "club": "Fulham",
-          "desc": "本场梅开二度（38', 78'）当选最佳球员。与 Gilberto Mora 搭档双前锋完全压制南非防线，次轮对韩国将是真正的考验"
+          "name": "Alphonso Davies",
+          "pos": "LB/LW",
+          "club": "Bayern Munich",
+          "desc": "加拿大旗帜性球员，速度与边路突破是主队最大武器。BMO Field 主场氛围加持，左路走廊将是波黑防线的最大考验"
         },
         "injuries": [
           {
-            "player": "Edson Álvarez（队长）",
+            "player": "Jonathan David",
             "status": "FIT",
-            "note": "替补出场45分钟，赛后确认踝关节无碍，次轮有望回归首发",
-            "confirmed": true
-          },
-          {
-            "player": "Luis Chávez",
-            "status": "OUT",
-            "note": "本场未出场，仍在康复管理中，次轮出场存疑",
-            "confirmed": true
-          },
-          {
-            "player": "César Montes",
-            "status": "FIT",
-            "note": "打满全场90分钟，赛后确认肌肉无碍，次轮可继续首发",
-            "confirmed": true
-          },
-          {
-            "player": "Santiago Giménez",
-            "status": "OUT",
-            "note": "本场未进入大名单出场，替补席待命，次轮出场仍存疑",
+            "note": "里尔前锋状态正佳，预计与 Buchanan 搭档锋线",
             "confirmed": true
           }
         ],
         "rumors": [
-          "40岁 Ochoa 零封完成第六届世界杯首秀，赛后称「这是最好的开幕礼物」",
-          "Raúl Jiménez 梅开二度成为全场最佳，Gilberto Mora 首发搭档效果超出预期",
-          "主帅 Aguirre：「伤病危机没有击垮我们，Jiménez 用进球回应了所有质疑」",
-          "17岁 Gilberto Mora 成为墨西哥世界杯史上最年轻出场球员之一，替补未登场但已进入大名单"
+          "Opta 模型：加拿大小组晋级概率 79.8%，B组夺冠呼声最高",
+          "主帅 Marsch：「这是加拿大足球的历史性时刻，我们要在主场拿下3分」",
+          "Davies 赛前训练完成全部合练，无伤病疑虑",
+          "多伦多预计气温 22°C，夜场转凌晨，湿度适中利于高速攻防"
         ]
       },
       "away": {
-        "name": "South Africa",
-        "iso": "za",
-        "flag": "🇿🇦",
-        "fifa_rank": 58,
-        "rating": 65,
+        "name": "Bosnia and Herzegovina",
+        "iso": "ba",
+        "flag": "",
+        "fifa_rank": 55,
+        "rating": 68,
+        "form": [
+          "W",
+          "L",
+          "W",
+          "D",
+          "W"
+        ],
+        "coach": "Sergej Barbarez",
+        "star": {
+          "name": "Edin Džeko",
+          "pos": "ST",
+          "club": "Fiorentina",
+          "desc": "38岁传奇前锋，制空与经验仍是波黑最大威胁。加拿大中卫组合需在定位球上高度专注"
+        },
+        "injuries": [
+          {
+            "player": "Sead Kolašinac",
+            "status": "DOUBT",
+            "note": "肌肉轻微拉伤，能否首发待赛前2小时确认",
+            "confirmed": false
+          }
+        ],
+        "rumors": [
+          "Džeko 第四次世界杯，赛前称「经验是我们的武器，加拿大年轻人会犯错」",
+          "波黑媒体：球队将以 5-4-1 低位防守，限制 Davies 内切",
+          "Squawka 推演：最可能比分为 2-1 加拿大胜（概率 18%）",
+          "更衣室稳定，无内讧传言，但客场面对东道主压力极大"
+        ]
+      },
+      "h2h": {
+        "home_wins": 1,
+        "draws": 0,
+        "away_wins": 0,
+        "recent": [
+          {
+            "year": 2020,
+            "comp": "友谊赛",
+            "score": "3-0",
+            "winner": "Canada",
+            "venue": "Neutral"
+          },
+          {
+            "year": 2016,
+            "comp": "友谊赛",
+            "score": "2-1",
+            "winner": "Canada",
+            "venue": "Canada"
+          }
+        ],
+        "note": "历史交锋加拿大占优，但样本极少，参考价值有限"
+      },
+      "referee": {
+        "name": "Anthony Taylor",
+        "nation": "英格兰",
+        "age": 45,
+        "avg_yellow": 4.1,
+        "avg_red": 0.15,
+        "bias_note": "执法风格稳健，对东道主无显著偏袒记录，定位球判罚较严",
+        "tendencies": [
+          "补时慷慨",
+          "对战术犯规零容忍",
+          "大场面经验丰富"
+        ]
+      },
+      "prediction": {
+        "home_win": 55,
+        "draw": 25,
+        "away_win": 20,
+        "score": "2-1",
+        "confidence": 74,
+        "xg_home": 1.9,
+        "xg_away": 1.2,
+        "key_factor": "东道主主场 + Davies 速度对位波黑 ageing 防线是核心变量。Džeko 定位球是波黑唯一稳定得分手段；若加拿大前30分钟破门，模型倾向主队扩大优势（概率62%）。",
+        "score_dist": [
+          {
+            "score": "2-1",
+            "prob": 22
+          },
+          {
+            "score": "1-0",
+            "prob": 18
+          },
+          {
+            "score": "2-0",
+            "prob": 16
+          },
+          {
+            "score": "1-1",
+            "prob": 14
+          },
+          {
+            "score": "3-1",
+            "prob": 10
+          },
+          {
+            "score": "0-1",
+            "prob": 8
+          },
+          {
+            "score": "其他",
+            "prob": 12
+          }
+        ]
+      },
+      "weather": {
+        "temp": 22,
+        "humidity": 65,
+        "altitude_m": 76,
+        "rain_chance": 20,
+        "condition_cn": "多云，凌晨气温舒适",
+        "impact_level": "LOW",
+        "impact_summary": "海平面球场，无海拔影响；凌晨开球气温适宜高强度比赛",
+        "home_adapt": 88,
+        "away_adapt": 82,
+        "home_note": "加拿大全队熟悉 BMO Field，主场作战",
+        "away_note": "波黑来自欧洲，时差与旅途影响轻微",
+        "weather_factors": [
+          {
+            "label": "海平面",
+            "impact": "无海拔影响",
+            "detail": "双方体能条件对等"
+          },
+          {
+            "label": "凌晨开球",
+            "impact": "中性",
+            "detail": "气温 22°C 利于速度型球员"
+          }
+        ],
+        "historical_note": "BMO Field 承办2026世界杯B组赛事，加拿大主场氛围预计创纪录"
+      },
+      "mystic": {
+        "date_bazi": {
+          "year": "丙午年",
+          "month": "庚午月",
+          "day": "癸未日",
+          "day_summary": "癸未日——水土相涵，东道主如大地承载万民。《周易》曰：「厚德载物」，主场之利在此日尤为显著。",
+          "hour_home": "丑时（01:00-03:00）",
+          "hour_home_element": "土"
+        },
+        "wuxing": {
+          "home": {
+            "team": "Canada",
+            "colors": "红+白",
+            "elements": "火、金",
+            "verdict": "有利",
+            "verdict_color": "#5BBF8A",
+            "wuxing_short": "火金相生",
+            "reason": "加拿大红色属火，丑时土旺火生，主场气势如虹",
+            "advantage": "开场冲击力强"
+          },
+          "away": {
+            "team": "Bosnia and Herzegovina",
+            "colors": "蓝+白",
+            "elements": "水、金",
+            "verdict": "不利",
+            "verdict_color": "#D95F6A",
+            "wuxing_short": "水土相克",
+            "reason": "波黑蓝色属水，丑时土克水，客场气场受压",
+            "disadvantage": "开局易被动"
+          },
+          "summary": "五行裁定：东道主火土顺局，波黑水土受制"
+        },
+        "hexagram": {
+          "name": "泰卦",
+          "symbol": "☷",
+          "number": 11,
+          "quote": "《周易·泰卦》：「小往大来，吉亨。」",
+          "general": "天地交泰，主场小胜之象。利于顺势而行的一方。",
+          "advantage_team": "Canada",
+          "disadvantage_team": "Bosnia and Herzegovina",
+          "match_nature": "东道主小胜局",
+          "yellow_card_risk": "中",
+          "yellow_card_reason": "预计4-5张黄牌，波黑低位防守战术犯规为主",
+          "scenarios": [
+            {
+              "icon": "⚽",
+              "label": "比赛性质",
+              "text": "加拿大控场小胜概率55%，平局25%，波黑爆冷20%"
+            },
+            {
+              "icon": "⏱",
+              "label": "进球高峰",
+              "text": "第20-35分钟及第70-85分钟"
+            }
+          ],
+          "early_goal": {
+            "scenario": "若加拿大先进球",
+            "prediction": "泰卦「小往大来」——主队将扩大控球，波黑被迫压出，Davies 反击空间增大",
+            "favors": "Canada",
+            "favors_prob": 68
+          },
+          "no_early_goal": {
+            "scenario": "若前30分钟无进球",
+            "prediction": "Džeko 定位球成为波黑最大威胁，比赛进入消耗战",
+            "favors": "Draw",
+            "favors_prob": 45
+          },
+          "away_goal": {
+            "scenario": "若波黑先进球",
+            "prediction": "加拿大主场反扑力度大，扳平概率58%，但逆转需防 Džeko 反击",
+            "favors": "Canada",
+            "favors_prob": 52
+          },
+          "halftime": {
+            "scenario": "半场0-0",
+            "prediction": "下半场 Marsch 战术调整+主场声浪，加拿大进球概率65%",
+            "favors": "Canada",
+            "favors_prob": 58
+          },
+          "extra_time": {
+            "scenario": "加时",
+            "prediction": "极低概率（8%）",
+            "favors": "Canada",
+            "favors_prob": 55
+          }
+        },
+        "home_score": 72,
+        "away_score": 38,
+        "mystic_verdict": "☷ 泰卦天地交——加拿大主场如大地承载，Davies 如风行地上。波黑水德受制，Džeko 经验或是唯一变数。",
+        "disclaimer": "文化解读 · 非竞技推演"
+      }
+    },
+    {
+      "id": "m04",
+      "group": "D",
+      "matchday": 1,
+      "date": "2026-06-12",
+      "time": "21:00",
+      "time_local": "21:00 ET / 18:00 PT",
+      "timezone": "EDT (UTC-4)",
+      "time_beijing": "09:00",
+      "date_beijing": "6月13日",
+      "time_beijing_full": "北京时间 6月13日 09:00",
+      "venue": "SoFi Stadium",
+      "city": "Los Angeles, USA",
+      "note": "D组揭幕 · 东道主美国主场 · 洛杉矶",
+      "home": {
+        "name": "USA",
+        "iso": "us",
+        "flag": "",
+        "fifa_rank": 13,
+        "rating": 79,
+        "form": [
+          "W",
+          "W",
+          "D",
+          "W",
+          "W"
+        ],
+        "coach": "Mauricio Pochettino",
+        "star": {
+          "name": "Christian Pulisic",
+          "pos": "RW",
+          "club": "AC Milan",
+          "desc": "美国队长，米兰赛季状态出色。SoFi Stadium 预计7万观众，Pulisic 是主队进攻灵魂"
+        },
+        "injuries": [
+          {
+            "player": "Weston McKennie",
+            "status": "FIT",
+            "note": "尤文中场完全健康，将出任中路屏障",
+            "confirmed": true
+          },
+          {
+            "player": "Sergiño Dest",
+            "status": "DOUBT",
+            "note": "肌肉疲劳，可能轮换替补",
+            "confirmed": false
+          }
+        ],
+        "rumors": [
+          "Pochettino：「我们在主场必须打出侵略性，洛杉矶是我们的城市」",
+          "美国媒体：本场预计上座率创 SoFi 足球纪录",
+          "Paraguay 主帅 Alfaro 称将「压缩空间、限制 Pulisic 接球」",
+          "Opta：美国胜概率 60%，零封概率 38%"
+        ]
+      },
+      "away": {
+        "name": "Paraguay",
+        "iso": "py",
+        "flag": "",
+        "fifa_rank": 52,
+        "rating": 67,
         "form": [
           "L",
           "W",
@@ -137,101 +391,83 @@ const MATCH_DATA = {
           "L",
           "W"
         ],
-        "coach": "Hugo Broos",
+        "coach": "Gustavo Alfaro",
         "star": {
-          "name": "Percy Tau",
-          "pos": "LW",
-          "club": "Al Ahly",
-          "desc": "AFCON最佳球员，技术细腻，是南非唯一能制造威胁的核心；本场被墨西哥压制，仅有1次射正"
+          "name": "Miguel Almirón",
+          "pos": "CAM",
+          "club": "Newcastle United",
+          "desc": "巴拉圭进攻核心，远射与直塞是最大威胁。美国中场需限制其拿球转身"
         },
         "injuries": [
           {
-            "player": "Aubrey Modiba（左后卫）",
+            "player": "Gustavo Gómez",
             "status": "FIT",
-            "note": "复出打满前60分钟后被换下，赛后称「高原让我在第55分钟后像换了一个人」",
+            "note": "队长中卫伤愈复出，统领三中卫体系",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Broos 赛后：「我们前45分钟踢得不错，但2240m海拔在60分钟后是真实存在的，不是借口」",
-          "Lyle Foster 本场仅有1次射门，被墨西哥中卫 Montes 完全限制",
-          "南非全场仅2次射正，Percy Tau 一次远射被 Ochoa 扑出",
-          "小组次轮对捷克成为「生死战」，Broos 称必须改善体能分配"
+          "Paraguay 将以 5-3-2 极度低位防守，Almirón 是唯一反击出口",
+          "美国与巴拉圭历史5次交锋美国3胜，但2011年美洲杯巴拉圭曾淘汰美国",
+          "Alfaro 赛前放话：「我们不惧怕东道主，防守是我们的语言」",
+          "洛杉矶白天气温 28°C，午后比赛对体能消耗较大"
         ]
       },
       "h2h": {
         "home_wins": 3,
         "draws": 1,
-        "away_wins": 0,
+        "away_wins": 1,
         "recent": [
           {
-            "year": 2010,
-            "comp": "WC友谊",
-            "score": "2-1",
-            "winner": "Mexico",
-            "venue": "Neutral"
-          },
-          {
-            "year": 2014,
-            "comp": "友谊赛",
-            "score": "1-0",
-            "winner": "Mexico",
-            "venue": "Mexico"
-          },
-          {
-            "year": 2018,
-            "comp": "友谊赛",
-            "score": "1-1",
+            "year": 2011,
+            "comp": "Copa América",
+            "score": "0-0",
             "winner": "Draw",
             "venue": "Neutral"
+          },
+          {
+            "year": 2016,
+            "comp": "Copa América",
+            "score": "1-0",
+            "winner": "USA",
+            "venue": "USA"
           },
           {
             "year": 2022,
             "comp": "友谊赛",
             "score": "2-0",
-            "winner": "Mexico",
-            "venue": "Mexico"
+            "winner": "USA",
+            "venue": "USA"
           }
         ],
-        "all_time": {
-          "played": 4,
-          "mexico": 3,
-          "draws": 1,
-          "south_africa": 0,
-          "mexico_goals": 6,
-          "sa_goals": 2
-        },
-        "note": "历史4次交锋，墨西哥未负，主场优势明显"
+        "note": "美国历史占优，但巴拉圭防守韧性不可低估"
       },
       "referee": {
-        "name": "Szymon Marciniak",
-        "nation": "波兰",
-        "age": 43,
-        "wc_final": "2022年世界杯决赛主裁",
-        "avg_yellow": 4.2,
-        "avg_red": 0.18,
-        "home_win_rate": 52,
-        "bias_note": "执法风格：严格但公正，对身体对抗容忍度适中，不轻易出示红牌",
+        "name": "Slavko Vinčić",
+        "nation": "斯洛文尼亚",
+        "age": 44,
+        "avg_yellow": 3.8,
+        "avg_red": 0.12,
+        "bias_note": "欧洲杯决赛执法者，风格偏宽松，允许身体对抗",
         "tendencies": [
-          "大场面经验极丰富",
-          "对假摔零容忍",
-          "开场前20分钟相对宽松"
+          "对东道主无特殊倾向",
+          "补时平均4分钟",
+          "点球判罚谨慎"
         ]
       },
       "prediction": {
-        "home_win": 71,
-        "draw": 18,
-        "away_win": 11,
+        "home_win": 60,
+        "draw": 25,
+        "away_win": 15,
         "score": "2-0",
-        "confidence": 91,
+        "confidence": 78,
         "xg_home": 2.1,
-        "xg_away": 0.5,
-        "key_factor": "【赛后复盘】模型赛前最高概率比分 2-0（28%）与赛果完全吻合。高原效应在60分钟后爆发：南非跑动距离较墨西哥少12%，射门 4:14。Jiménez 利用定位球与反击各入一球，Ochoa 零封验证「经验>状态」判断。A组次轮墨西哥 vs 韩国（6/16）将决定小组头名，墨西哥士气与主场延续性均为加分项。",
+        "xg_away": 0.8,
+        "key_factor": "美国主场 + Pulisic 对位 Paraguay 三中卫体系是决定性因素。Paraguay 5-3-2 低位防守可能拖慢节奏，但美国边路深度（Weah、Pulisic）足以撕开空间。模型倾向美国零封小胜（2-0 概率 24%）。",
         "score_dist": [
           {
             "score": "2-0",
-            "prob": 28,
-            "hit": true
+            "prob": 24
           },
           {
             "score": "1-0",
@@ -239,6 +475,10 @@ const MATCH_DATA = {
           },
           {
             "score": "2-1",
+            "prob": 16
+          },
+          {
+            "score": "1-1",
             "prob": 14
           },
           {
@@ -246,563 +486,164 @@ const MATCH_DATA = {
             "prob": 12
           },
           {
-            "score": "3-1",
-            "prob": 8
-          },
-          {
-            "score": "1-1",
+            "score": "0-0",
             "prob": 8
           },
           {
             "score": "其他",
-            "prob": 10
+            "prob": 6
           }
         ]
       },
       "weather": {
-        "city": "墨西哥城",
-        "country": "墨西哥",
-        "temp": 18,
-        "humidity": 68,
-        "altitude": 2240,
-        "rain_chance": 35,
-        "wind": "东北风 3级",
-        "condition": "多云，午后有雷阵雨可能",
-        "impact_level": "HIGH",
-        "impact": "海拔2240m是本届世界杯最高赛场，氧气含量约75%正常水平，对未适应高原的球队是巨大挑战",
-        "home_adapt": 95,
-        "away_adapt": 38,
-        "home_note": "墨西哥全队在墨西哥城训练备战，海拔完全适应，后半场体能优势将成为决胜因素",
-        "away_note": "南非球员来自海平面地区，首次参加世界杯，高原适应仅5天，前30分钟后体能将明显下降",
+        "temp": 28,
+        "humidity": 55,
+        "altitude_m": 30,
+        "rain_chance": 5,
+        "condition_cn": "晴朗，午后偏热",
+        "impact_level": "MEDIUM",
+        "impact_summary": "28°C 午后气温对体能消耗有影响，Paraguay 南美球员适应性略优",
+        "home_adapt": 90,
+        "away_adapt": 75,
+        "home_note": "美国本土作战，完全适应气候",
+        "away_note": "巴拉圭来自南半球，高温适应性中等",
         "weather_factors": [
           {
-            "label": "高原反应",
-            "impact": "南非不利",
-            "detail": "2240m海拔将使南非球员乳酸积累速度比正常快35%"
+            "label": "28°C 午后",
+            "impact": "体能消耗",
+            "detail": "下半场70分钟后进球概率上升"
           },
           {
-            "label": "午后降雨可能",
-            "impact": "中性",
-            "detail": "场地积水对两队影响相当，可能放慢比赛节奏"
-          },
-          {
-            "label": "18°C温度",
-            "impact": "有利比赛",
-            "detail": "气温凉爽，有利于高强度对抗，两队体能消耗较慢"
-          },
-          {
-            "label": "稀薄空气",
-            "impact": "长传优势",
-            "detail": "球在稀薄空气中飞行更快更远，有利于墨西哥的直塞战术"
+            "label": "低湿度",
+            "impact": "有利传球",
+            "detail": "场地干燥，传球速度快"
           }
         ],
-        "historical_note": "Estadio Azteca是海拔最高的世界杯决赛场（1970、1986），历史上主队胜率高达74%"
+        "historical_note": "SoFi Stadium 2026世界杯D组主场，美国队在此尚未输球"
       },
       "mystic": {
         "date_bazi": {
           "year": "丙午年",
-          "year_element": "火",
-          "year_animal": "马",
           "month": "庚午月",
-          "month_element": "金+火",
-          "day": "壬午日",
-          "day_element": "水+火",
-          "hour_home": "未时（13:00-15:00）",
-          "hour_home_element": "土",
-          "day_dominant": "火",
-          "day_summary": "丙午年庚午月壬午日——三「午」叠火，火气冲天。《道德经》曰：「归根曰静，是谓复命。」万物归根之象，于此火旺之日，顺势者得天命，逆势者必耗于无形。开幕战逢此局，必是光耀四方、激情四射之战。"
+          "day": "癸未日",
+          "day_summary": "癸未日巳时——火旺土燥，东道主如烈日当空。《道德经》：「知人者智，自知者明。」美国需避免轻敌。",
+          "hour_home": "巳时（09:00-11:00）",
+          "hour_home_element": "火"
         },
         "wuxing": {
           "home": {
-            "team": "Mexico",
-            "colors": "绿+红",
-            "elements": "木（绿）、火（红）",
-            "wuxing_short": "木生火，顺应火旺之局",
+            "team": "USA",
+            "colors": "白+蓝+红",
+            "elements": "金、水、火",
             "verdict": "有利",
             "verdict_color": "#5BBF8A",
-            "compat": 92,
-            "reason": "墨西哥绿色属木，红色属火——木生火之配，今日三午重火，木火之队如鱼得水，气场与天地同频。《周易》曰：「与时偕行」，此乃顺时之局。",
-            "advantage": "开场气势如虹，进攻端精力充沛，主场氛围加持，前半场压制力极强"
+            "wuxing_short": "火金土旺",
+            "reason": "美国队服多色，巳时火旺，主场气势正盛",
+            "advantage": "上半场压制力强"
           },
           "away": {
-            "team": "South Africa",
-            "colors": "黄+绿+黑",
-            "elements": "土（黄）、木（绿）、水（黑）",
-            "wuxing_short": "土克水，木泄火，内部失衡",
-            "verdict": "不利",
-            "verdict_color": "#D95F6A",
-            "compat": 32,
-            "reason": "南非队服黑色属水，今日大火当令，水逢火克，气场被压制；黄绿虽有土木，但黑色水德被烈火蒸干，三色内耗，自身能量不稳。",
-            "disadvantage": "气场涣散，体能消耗快（与高原叠加），心理层面难以形成凝聚力"
+            "team": "Paraguay",
+            "colors": "白+蓝+红",
+            "elements": "金、水、火",
+            "verdict": "中性",
+            "verdict_color": "#C8A96E",
+            "wuxing_short": "同色相对",
+            "reason": "两队队服五行相近，比拼纯竞技与战术",
+            "disadvantage": "客场气场略逊"
           },
-          "summary": "五行裁定：绿红之师顺天应时，黑黄之军内外交困"
+          "summary": "五行裁定：美国火时顺局，巴拉圭同色相争需靠防守"
         },
         "hexagram": {
-          "name": "乾卦",
-          "symbol": "☰",
-          "number": 1,
-          "upper": "乾天",
-          "lower": "乾天",
-          "quote": "《周易·乾卦》：「天行健，君子以自强不息。」",
-          "general": "纯阳至刚，天之象也。乾卦是六十四卦之首，象征强者主宰、永不停息的进取精神。此局主强者愈强，没有悬念。",
-          "advantage_team": "Mexico",
-          "disadvantage_team": "South Africa",
-          "hexagram_analysis": "乾卦纯阳之象，利于主动、强健、阳气旺盛的一方——墨西哥主场开幕，天时地利人和俱占。南非以阴克阳，势必难以抗衡。",
-          "match_nature": "主场压制局",
-          "match_nature_prob": 76,
-          "yellow_card_risk": "中",
-          "yellow_card_reason": "乾卦主「刚健」，双方均有强烈意志，但强者不需动粗，弱者落后后可能出现铲球。预计全场4-6张黄牌，红牌概率约15%。",
+          "name": "大有卦",
+          "symbol": "☲",
+          "number": 14,
+          "quote": "《周易·大有卦》：「自天佑之，吉无不利。」",
+          "general": "火在天上，光明盛大。利于占据主场、气势正盛的一方。",
+          "advantage_team": "USA",
+          "disadvantage_team": "Paraguay",
+          "match_nature": "东道主控场局",
+          "yellow_card_risk": "低",
+          "yellow_card_reason": "预计3-4张黄牌，Paraguay 战术犯规为主",
           "scenarios": [
             {
               "icon": "⚽",
               "label": "比赛性质",
-              "text": "墨西哥主导局，大比分获胜概率76%，平局12%，南非胜仅8%"
+              "text": "美国控场小胜60%，平局25%，巴拉圭爆冷15%"
             },
             {
               "icon": "⏱",
-              "label": "进球高峰段",
-              "text": "第25-40分钟（开幕激情期）及第65-80分钟（南非体能下滑后）"
-            },
-            {
-              "icon": "🟨",
-              "label": "黄牌风险",
-              "text": "中等——约4-6张，乾卦主刚，南非落后后铲球增多"
-            },
-            {
-              "icon": "🔄",
-              "label": "0-0平局可能",
-              "text": "低（12%）——乾卦不允许强者空手而归，但南非防守可能拖至下半场"
-            },
-            {
-              "icon": "⏰",
-              "label": "加时赛概率",
-              "text": "极低（5%）——乾卦主速决，90分钟内分出胜负概率95%"
+              "label": "进球高峰",
+              "text": "第30-45分钟及第75-90分钟"
             }
           ],
           "early_goal": {
-            "scenario": "若前30分钟墨西哥率先进球",
-            "prediction": "「天行健」一旦启动，势不可挡——南非在高原+落后双重压力下体能崩溃加速，墨西哥将乘势追加，大比分概率升至70%。",
-            "favors": "Mexico",
-            "favors_prob": 70
-          },
-          "no_early_goal": {
-            "scenario": "若前30分钟无进球",
-            "prediction": "乾卦主「终必得正」——墨西哥耐心等待南非体能下滑，下半场55分钟后将迎来进球高峰，南非消耗殆尽，终难抵挡。",
-            "favors": "Mexico（下半场爆发）",
-            "favors_prob": 65
-          },
-          "away_goal": {
-            "scenario": "若南非意外先进球",
-            "prediction": "乾卦遭逆——但纯阳不受压制，墨西哥将在主场球迷震天声浪中迅速反扑。逆转概率极高（75%），这反而可能激发更激烈的进攻，比赛或走向大比分逆转。",
-            "favors": "Mexico（激活）",
-            "favors_prob": 62
-          },
-          "halftime": {
-            "scenario": "若上半场0-0进入中场",
-            "prediction": "「天命未尽」——下半场南非体能断崖式下滑（高原效应在60分钟后爆发），墨西哥将把握机会，下半场进球概率极高（82%）。",
-            "favors": "Mexico",
+            "scenario": "若美国先进球",
+            "prediction": "大有卦「自天佑之」——主队将完全掌控节奏，Paraguay 被迫压出，反击空间打开",
+            "favors": "USA",
             "favors_prob": 72
           },
-          "extra_time": {
-            "scenario": "若90分钟平局进加时（极低概率5%）",
-            "prediction": "乾卦极不支持平局拖延，若真出现此局面，南非体能已完全耗尽，加时赛墨西哥10分钟内进球概率78%，点球大战概率仅22%。",
-            "favors": "Mexico（碾压）",
-            "favors_prob": 78
-          }
-        },
-        "home_score": 88,
-        "away_score": 28,
-        "mystic_verdict": "☰ 乾卦纯阳，天行健之象——墨西哥木火顺局，主场三午火旺，天时地利人和尽在其手。南非水德逢火，黑衣水性在烈日下蒸干。此乃开幕战最佳剧本：强者归位，弱者虽勇，终难逆天。",
-        "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
-      }
-    },
-    {
-      "id": "m02",
-      "group": "A",
-      "matchday": 1,
-      "date": "2026-06-11",
-      "time": "22:00",
-      "time_local": "22:00 ET / 20:00 本地",
-      "timezone": "EDT (UTC-4)",
-      "time_beijing": "10:00",
-      "date_beijing": "6月12日",
-      "time_beijing_full": "北京时间 6月12日 10:00",
-      "venue": "Estadio Akron",
-      "city": "Guadalajara, Mexico",
-      "note": "A组第2场 · 海拔1566m · 夜场 · 已结束 2-1",
-      "actualResult": {
-        "home_score": 2,
-        "away_score": 1,
-        "status": "FT",
-        "label": "全场结束",
-        "scorers": "孙兴慜 56', 李康仁 71' · Schick 84'",
-        "highlights": "Sampaio 5 黄；捷克 10 人低位防守被两次洞穿；Schick 头球扳回颜面"
-      },
-      "home": {
-        "name": "South Korea",
-        "iso": "kr",
-        "flag": "🇰🇷",
-        "fifa_rank": 23,
-        "rating": 76,
-        "form": [
-          "W",
-          "W",
-          "W",
-          "D",
-          "W"
-        ],
-        "coach": "Hong Myung-bo",
-        "star": {
-          "name": "孙兴慜 Son Heung-min",
-          "pos": "LW",
-          "club": "LAFC（洛杉矶足球俱乐部）",
-          "desc": "本场第56分钟远射破门，当选全场最佳。捷克三中卫体系未能限制其内切，次轮对墨西哥将是真正的考验"
-        },
-        "injuries": [
-          {
-            "player": "黄喜灿 Hwang Hee-chan",
-            "status": "FIT",
-            "note": "赛季末踝关节轻伤，已完全恢复，BBC确认首发无虞",
-            "confirmed": true
-          }
-        ],
-        "rumors": [
-          "孙兴慜赛后 BBC 采访：「第一个进球释放了我们，这是完美的世界杯开局」",
-          "李康仁（巴黎圣日耳曼）71分钟禁区外远射锁定胜局，韩媒称「巴黎训练的成果」",
-          "洪明甫：「我们知道捷克会限制孙兴慜，所以李康仁的远射是战术B计划」",
-          "次轮对墨西哥：2018年友谊赛韩国曾2-0胜墨西哥，但本场墨西哥士气正盛"
-        ]
-      },
-      "away": {
-        "name": "Czechia",
-        "iso": "cz",
-        "flag": "🇨🇿",
-        "fifa_rank": 40,
-        "rating": 72,
-        "form": [
-          "L",
-          "W",
-          "D",
-          "W",
-          "L"
-        ],
-        "coach": "Ivan Hasek",
-        "star": {
-          "name": "Patrik Schick",
-          "pos": "ST",
-          "club": "Bayer Leverkusen",
-          "desc": "84分钟头球破门挽回颜面，但全场仅2次射门。低位防守被孙兴慜、李康仁两次远射洞穿，次轮对南非不容再失分"
-        },
-        "injuries": [
-          {
-            "player": "Tomáš Souček",
-            "status": "FIT",
-            "note": "主力中场完全健康，将出任中路指挥官",
-            "confirmed": true
-          }
-        ],
-        "rumors": [
-          "Hasek 赛后：「我们下半场失去了纪律，两次远射失球不可接受」",
-          "斯拉维亚布拉格10人体系运转良好但缺乏反击速度，被韩国控球消耗",
-          "Souček 中场拦截7次全场最高，但无法阻止两次禁区外远射",
-          "次轮对南非：捷克必须取胜，否则出线形势将极其被动"
-        ]
-      },
-      "h2h": {
-        "home_wins": 2,
-        "draws": 1,
-        "away_wins": 2,
-        "recent": [
-          {
-            "year": 2006,
-            "comp": "WC小组赛",
-            "score": "2-0",
-            "winner": "South Korea",
-            "venue": "Neutral"
-          },
-          {
-            "year": 2014,
-            "comp": "友谊赛",
-            "score": "2-0",
-            "winner": "Czechia",
-            "venue": "Neutral"
-          },
-          {
-            "year": 2018,
-            "comp": "友谊赛",
-            "score": "2-1",
-            "winner": "South Korea",
-            "venue": "Neutral"
-          },
-          {
-            "year": 2022,
-            "comp": "友谊赛",
-            "score": "2-2",
-            "winner": "Draw",
-            "venue": "Neutral"
-          },
-          {
-            "year": 2024,
-            "comp": "友谊赛",
-            "score": "0-1",
-            "winner": "Czechia",
-            "venue": "Neutral"
-          }
-        ],
-        "all_time": {
-          "played": 5,
-          "south_korea": 2,
-          "draws": 1,
-          "czechia": 2,
-          "korea_goals": 7,
-          "czech_goals": 6
-        },
-        "note": "历史势均力敌，双方互有胜负，近期捷克略有优势"
-      },
-      "referee": {
-        "name": "Wilton Sampaio",
-        "nation": "巴西",
-        "age": 41,
-        "wc_final": "2022年卡塔尔世界杯参与执法",
-        "avg_yellow": 4.8,
-        "avg_red": 0.22,
-        "home_win_rate": 48,
-        "bias_note": "执法风格偏向宽松，允许身体对抗，但对拖延时间严格；偏向强队的判罚比例略高",
-        "tendencies": [
-          "红牌极少出示",
-          "任意球判罚宽松",
-          "补时慷慨（平均加4-6分钟）"
-        ]
-      },
-      "prediction": {
-        "home_win": 48,
-        "draw": 27,
-        "away_win": 25,
-        "score": "2-1",
-        "confidence": 72,
-        "xg_home": 1.8,
-        "xg_away": 1.2,
-        "key_factor": "【赛后复盘】赛前模型倾向韩国胜（48%）与赛果方向一致，但最可能比分 1-1（18%）未命中。孙兴慜个人能力是决定性变量——56' 远射打破僵局，验证「坎卦险中求胜」判断。捷克低位防守前60分钟有效，但李康仁 71' 远射暴露三中卫站位过深的问题。Schick 84' 头球证明制空能力仍在，但为时已晚。A组形势：韩墨同积3分，6/16 直接对话或成头名之战。",
-        "score_dist": [
-          {
-            "score": "2-1",
-            "prob": 22,
-            "hit": true
-          },
-          {
-            "score": "1-0",
-            "prob": 16
-          },
-          {
-            "score": "1-1",
-            "prob": 18
-          },
-          {
-            "score": "2-0",
-            "prob": 12
-          },
-          {
-            "score": "0-1",
-            "prob": 12
-          },
-          {
-            "score": "2-2",
-            "prob": 8
-          },
-          {
-            "score": "其他",
-            "prob": 12
-          }
-        ]
-      },
-      "weather": {
-        "city": "瓜达拉哈拉",
-        "country": "墨西哥",
-        "temp": 22,
-        "humidity": 72,
-        "altitude": 1566,
-        "rain_chance": 28,
-        "wind": "南风 2级",
-        "condition": "夜场多云，气候温热湿润",
-        "impact_level": "MEDIUM",
-        "impact": "瓜达拉哈拉海拔1566m，夜场气温舒适，湿度略高，对体能消耗影响中等",
-        "home_adapt": 55,
-        "away_adapt": 52,
-        "home_note": "韩国在欧洲联赛踢球的球员多（孙兴慜等），习惯平原作战，需适应1566m海拔",
-        "away_note": "捷克同样来自平原，双方在海拔适应上基本持平",
-        "weather_factors": [
-          {
-            "label": "1566m海拔",
-            "impact": "双方均受影响",
-            "detail": "比墨西哥城低700m，影响相对较小，双方条件基本平等"
-          },
-          {
-            "label": "夜场22°C",
-            "impact": "有利高强度对抗",
-            "detail": "夜晚温度适宜，有利于速度型球员（孙兴慜）充分发挥"
-          },
-          {
-            "label": "72%湿度",
-            "impact": "轻微消耗",
-            "detail": "湿度偏高，对体能消耗略有影响，下半场后程体能储备重要"
-          },
-          {
-            "label": "小雨概率28%",
-            "impact": "轻微影响",
-            "detail": "若降雨，场地湿滑利于突破型球员，孙兴慜速度优势更明显"
-          }
-        ],
-        "historical_note": "Estadio Akron是墨西哥顶级球场，2026世界杯A组主场，夜场比赛气氛极佳"
-      },
-      "mystic": {
-        "date_bazi": {
-          "year": "丙午年",
-          "year_element": "火",
-          "year_animal": "马",
-          "month": "庚午月",
-          "month_element": "金+火",
-          "day": "壬午日",
-          "day_element": "水+火",
-          "hour_home": "亥时（21:00-23:00）",
-          "hour_home_element": "水",
-          "day_dominant": "火",
-          "day_summary": "壬午日亥时——日柱壬水克午火，亥时水气更重，夜场水气渐盛。《道德经》：「上善若水，水善利万物而不争。」水德之时利于智取，不宜强攻，以变应变者得胜。"
-        },
-        "wuxing": {
-          "home": {
-            "team": "South Korea",
-            "colors": "红+白",
-            "elements": "火（红）、金（白）",
-            "wuxing_short": "火金并存，金克火受阻",
-            "verdict": "有利",
-            "verdict_color": "#5BBF8A",
-            "compat": 68,
-            "reason": "韩国红色属火，今日三午火旺，红色顺势；白色属金，金克木但受制于火旺之局——总体上火性顺势，韩国气场略占优。",
-            "advantage": "进攻端活力充沛，特别是速度反击时能量充足，开场前30分钟冲劲极旺"
-          },
-          "away": {
-            "team": "Czechia",
-            "colors": "红+白+蓝",
-            "elements": "火（红）、金（白）、水（蓝）",
-            "wuxing_short": "水火交战，内部消耗",
-            "verdict": "不利",
-            "verdict_color": "#D95F6A",
-            "compat": 45,
-            "reason": "捷克蓝色属水，今日火旺之局水逢火克；但夜场亥时水气渐升，对捷克略有补益。红白火金与蓝水相战，三色气场混乱，但较南非轻微，尚可一战。",
-            "disadvantage": "整体气场不稳，进攻效率受阻，但防守端因水德补益夜场或较稳固"
-          },
-          "summary": "五行裁定：韩国火红顺局，捷克水火相战；但差距远不如开幕战悬殊，此乃势均力敌之局"
-        },
-        "hexagram": {
-          "name": "坎卦",
-          "symbol": "☵",
-          "number": 29,
-          "upper": "坎水",
-          "lower": "坎水",
-          "quote": "《周易·坎卦》：「习坎，有孚，维心亨，行有尚。」",
-          "general": "重水相叠，险中求胜——坎卦象征险境与智慧并存。夜场水气应坎，比赛节奏变化多端，双方均有机会，但犯错者将付出沉重代价。",
-          "advantage_team": "South Korea",
-          "disadvantage_team": "Czechia",
-          "hexagram_analysis": "坎卦利于心态稳定、有备而来的一方——韩国有孙兴慜这一「定海神针」，乾坤大旗不倒；捷克依赖整体，坎卦险中若整体一乱，难以复原。",
-          "match_nature": "胶着悬念局",
-          "match_nature_prob": 55,
-          "yellow_card_risk": "中",
-          "yellow_card_reason": "坎卦主「险」不主「躁」，双方将谨慎作战，黄牌来自战术需要而非情绪失控，预计全场3-5张，红牌概率10%。",
-          "scenarios": [
-            {
-              "icon": "⚽",
-              "label": "比赛性质",
-              "text": "胶着悬念局，进球数1-3球可能性最大，平局概率28%为各场最高"
-            },
-            {
-              "icon": "⏱",
-              "label": "进球高峰段",
-              "text": "下半场55-70分钟（双方战术调整后出现空间），及第85+分钟（体能耗尽后的防守漏洞）"
-            },
-            {
-              "icon": "🟨",
-              "label": "黄牌风险",
-              "text": "中等——约3-5张，坎卦主谨慎，主要来自战术犯规而非情绪"
-            },
-            {
-              "icon": "🔄",
-              "label": "0-0平局可能",
-              "text": "较高（约20%）——双方防守体系均完善，捷克低位防守可能拖入平局"
-            },
-            {
-              "icon": "⏰",
-              "label": "加时赛概率",
-              "text": "有一定可能（18%）——坎卦主「险而不决」，若90分钟平局进加时，孙兴慜体力决定结果"
-            }
-          ],
-          "early_goal": {
-            "scenario": "若前30分钟韩国率先进球",
-            "prediction": "坎险已过，韩国心理压力解除——孙兴慜将在中前场获得更大发挥空间，捷克被迫打开防线，比赛转为韩国节奏，2球优势概率55%。",
-            "favors": "South Korea",
-            "favors_prob": 58
-          },
           "no_early_goal": {
-            "scenario": "若前30分钟无进球",
-            "prediction": "「维心亨」——坎卦耐心者得胜，双方将进入消耗战。下半场55分钟后才会出现实质性机会，孙兴慜的一次闪现可能就是唯一进球。",
-            "favors": "South Korea（孙兴慜个人能力）",
-            "favors_prob": 50
-          },
-          "away_goal": {
-            "scenario": "若捷克先进球",
-            "prediction": "坎卦逆境考验——韩国若落后会更加积极，孙兴慜将全面激活，捷克低位防反战术成立。但韩国扳平概率约60%，反超概率45%，总体仍是韩国略优。",
-            "favors": "Czechia（防反战术成立）",
-            "favors_prob": 52
-          },
-          "halftime": {
-            "scenario": "若上半场0-0进入中场",
-            "prediction": "「习坎」——坎险需习，两队下半场战术调整是关键。捷克若坚守，韩国需要创造力；孙兴慜下半场体能维持时，韩国进球概率62%，否则平局可能性大。",
-            "favors": "South Korea（依孙兴慜状态）",
+            "scenario": "若前45分钟无进球",
+            "prediction": "Paraguay 5-3-2 奏效，下半场美国体能+换人成为关键",
+            "favors": "USA",
             "favors_prob": 55
           },
+          "away_goal": {
+            "scenario": "若巴拉圭反击破门",
+            "prediction": "美国主场声浪下反扑猛烈，扳平概率65%",
+            "favors": "USA",
+            "favors_prob": 58
+          },
+          "halftime": {
+            "scenario": "半场0-0",
+            "prediction": "Pochettino 半场调整+球迷压力，美国下半场破门概率70%",
+            "favors": "USA",
+            "favors_prob": 62
+          },
           "extra_time": {
-            "scenario": "若90分钟平局进入加时",
-            "prediction": "坎卦加时——险中险，体能与心理双重考验。孙兴慜若状态保持，一次个人突破即可定乾坤；捷克若能撑过加时前15分钟，点球大战反而成为他们的机会。",
-            "favors": "South Korea（前15分钟）/ Czechia（点球）",
-            "favors_prob": 52
+            "scenario": "加时",
+            "prediction": "极低（5%）",
+            "favors": "USA",
+            "favors_prob": 60
           }
         },
-        "home_score": 65,
-        "away_score": 48,
-        "mystic_verdict": "☵ 坎卦水险，夜场亥水应时——韩国火红略顺，孙兴慜是这场的「坎中之孚」，心有定数则胜；捷克水火相战，但坎卦给予弱势方以翻盘机会，切勿轻视。此乃本届世界杯最具悬念的开幕日夜场。",
-        "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
+        "home_score": 78,
+        "away_score": 35,
+        "mystic_verdict": "☲ 大有卦火在天上——美国主场如烈日，Pulisic 如光普照。Paraguay 需以厚土（防守）承火，方能求存。",
+        "disclaimer": "文化解读 · 非竞技推演"
       }
     }
   ],
   "nextMatch": {
     "group": "B",
     "matchday": 1,
-    "date": "2026-06-12",
+    "date": "2026-06-13",
     "time": "15:00",
-    "time_local": "15:00 ET / 15:00 EDT",
-    "timezone": "EDT (UTC-4)",
-    "time_beijing": "03:00",
-    "date_beijing": "6月13日",
-    "time_beijing_full": "北京时间 6月13日 03:00",
-    "venue": "BMO Field",
-    "city": "Toronto, Canada",
+    "time_local": "15:00 PT",
+    "timezone": "PDT (UTC-7)",
+    "time_beijing": "06:00",
+    "date_beijing": "6月14日",
+    "time_beijing_full": "北京时间 6月14日 06:00",
+    "venue": "Levi's Stadium",
+    "city": "Santa Clara, USA",
     "home": {
-      "name": "Canada",
-      "iso": "ca",
-      "fifaRank": 17,
-      "rating": 78
+      "name": "Qatar",
+      "iso": "qa",
+      "fifaRank": 68,
+      "rating": 60
     },
     "away": {
-      "name": "Bosnia and Herzegovina",
-      "iso": "ba",
-      "fifaRank": 55,
-      "rating": 69
+      "name": "Switzerland",
+      "iso": "ch",
+      "fifaRank": 19,
+      "rating": 77
     },
-    "teaser": "A组榜首之战前奏：东道主墨西哥3分领跑，加拿大明日迎战波黑开启B组。Opta模型：加拿大晋级概率79.8%。墨西哥 vs 加拿大若双双取胜，6/16 的墨韩之战将决定A组头名归属。",
-    "home_win": 55,
-    "draw": 25,
-    "away_win": 20,
-    "predicted_score": "2-1",
-    "key_player_home": "Alphonso Davies",
-    "key_player_away": "Edin Džeko"
+    "teaser": "B组第2场：卡塔尔 vs 瑞士，Xhaka 领衔瑞士中场控制。Opta 倾向瑞士小胜（58%），但卡塔尔主场（2022经验）不可完全忽视。",
+    "home_win": 18,
+    "draw": 24,
+    "away_win": 58,
+    "predicted_score": "0-2",
+    "key_player_home": "Almoez Ali",
+    "key_player_away": "Granit Xhaka"
   }
 };

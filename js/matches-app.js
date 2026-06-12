@@ -14,10 +14,24 @@ function canonTeam(n) {
   return TEAM_CANON[n.toLowerCase().trim()] || n;
 }
 
-function getLastSyncTime() {
-  const times = [MATCH_DATA.lastUpdated];
-  if (typeof LIVE_DATA !== 'undefined' && LIVE_DATA.lastUpdated) times.push(LIVE_DATA.lastUpdated);
-  return new Date(Math.max(...times.map(t => new Date(t).getTime())));
+function getLastSyncTime(src) {
+  const times = [src?.lastUpdated || (typeof MATCH_DATA !== 'undefined' ? MATCH_DATA.lastUpdated : null)];
+  if (!src && typeof LIVE_DATA !== 'undefined' && LIVE_DATA.lastUpdated) times.push(LIVE_DATA.lastUpdated);
+  return new Date(Math.max(...times.filter(Boolean).map(t => new Date(t).getTime())));
+}
+
+function startLiveTimer(src) {
+  const el = document.getElementById('last-updated');
+  if (!el) return;
+  const base = getLastSyncTime(src);
+  const tick = () => {
+    const diff = Math.round((Date.now() - base) / 60000);
+    if (diff < 1) el.textContent = '刚刚同步';
+    else if (diff < 60) el.textContent = `${diff} 分钟前`;
+    else el.textContent = `${Math.floor(diff / 60)} 小时前`;
+  };
+  tick();
+  setInterval(tick, 10000);
 }
 
 function findLiveFixture(m) {
@@ -46,35 +60,13 @@ function mergeLiveIntoMatch(m) {
   return copy;
 }
 
-function startLiveTimer() {
-  const el = document.getElementById('last-updated');
-  if (!el) return;
-  const base = getLastSyncTime();
-  const tick = () => {
-    const diff = Math.round((Date.now() - base) / 60000);
-    if (diff < 1) el.textContent = '刚刚同步';
-    else if (diff < 60) el.textContent = `${diff} 分钟前`;
-    else el.textContent = `${Math.floor(diff / 60)} 小时前`;
-  };
-  tick();
-  setInterval(tick, 10000);
-}
-
 // ── Breaking News Ticker ───────────────────────────────────
-// ⚠ 快讯内容基于赛前公开情报整理，标签为信息类别而非更新时间
-function renderTicker() {
+function renderTicker(newsSource) {
   const ticker = document.getElementById('ticker-inner');
+  if (!ticker) return;
   const tagColors = { INJURY:'#D95F6A', RUMOR:'#C8A96E', LINEUP:'#7BB8D4', OFFICIAL:'#5BBF8A', REFEREE:'#bb88ff' };
   const tagCN = { INJURY:'伤情', RUMOR:'传言', LINEUP:'阵容', OFFICIAL:'官方', REFEREE:'裁判' };
-  const news = [...MATCH_DATA.breakingNews];
-  if (typeof LIVE_DATA !== 'undefined' && LIVE_DATA.allResults?.length) {
-    LIVE_DATA.allResults.forEach(f => {
-      const text = `🏁 赛果 · ${f.home} ${f.home_score}-${f.away_score} ${f.away} · API 官方同步`;
-      if (!news.some(n => n.text.includes(`${f.home_score}-${f.away_score}`) && n.text.includes(f.home))) {
-        news.unshift({ tag: 'OFFICIAL', text, time: '最新赛果' });
-      }
-    });
-  }
+  const news = newsSource || (typeof MATCH_DATA !== 'undefined' ? MATCH_DATA.breakingNews : []);
   const items = news.map(n =>
     `<span class="tick-item">
       <span class="tick-tag" style="background:${tagColors[n.tag]||'#888'}" title="${n.tag}">${tagCN[n.tag]||n.tag}</span>
@@ -772,9 +764,32 @@ function mysticPanel(mx, homeName, awayName) {
   </div>`;
 }
 
+// ── Group Standings (results page) ─────────────────────────
+function renderGroupSnapshots(snapshots) {
+  if (!snapshots?.length) return '';
+  return snapshots.map(g => `
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1.5rem">
+      <div style="font-size:0.65rem;letter-spacing:2px;color:var(--gold);margin-bottom:0.75rem;font-weight:700">${g.label || '小组积分榜'}</div>
+      <div style="display:grid;grid-template-columns:2fr repeat(7,1fr);gap:0.35rem;font-size:0.68rem;padding-bottom:0.4rem;border-bottom:1px solid var(--border);color:var(--txt2)">
+        <span>球队</span><span style="text-align:center">赛</span><span style="text-align:center">胜</span><span style="text-align:center">平</span><span style="text-align:center">负</span><span style="text-align:center">进</span><span style="text-align:center">失</span><span style="text-align:center">分</span>
+      </div>
+      ${g.table.map((r,i) => `
+        <div style="display:grid;grid-template-columns:2fr repeat(7,1fr);gap:0.35rem;font-size:0.75rem;padding:0.45rem 0;border-bottom:1px solid rgba(255,255,255,0.04);align-items:center">
+          <span style="font-weight:${i<2?'700':'500'};color:${i<2?'var(--cyan)':'var(--txt)'}">${i+1}. ${r.team}</span>
+          <span style="text-align:center;color:var(--txt2)">${r.p}</span>
+          <span style="text-align:center">${r.w}</span>
+          <span style="text-align:center">${r.d}</span>
+          <span style="text-align:center">${r.l}</span>
+          <span style="text-align:center">${r.gf}</span>
+          <span style="text-align:center">${r.ga}</span>
+          <span style="text-align:center;font-weight:800;color:var(--gold)">${r.pts}</span>
+        </div>`).join('')}
+    </div>`).join('');
+}
+
 // ── Init ───────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  renderTicker();
+function initMatchesPage() {
+  renderTicker(MATCH_DATA.breakingNews);
   startLiveTimer();
 
   const syncEl = document.getElementById('sync-status');
@@ -782,7 +797,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hasLive = typeof LIVE_DATA !== 'undefined' && LIVE_DATA.fixtures?.length;
     syncEl.textContent = hasLive
       ? `API 已同步 · ${LIVE_DATA.fixtures.length} 场赛事`
-      : '等待 API 同步（每日自动更新）';
+      : '手动更新 · 每日自动同步';
     syncEl.style.color = hasLive ? 'var(--green)' : 'var(--txt2)';
   }
 
@@ -790,6 +805,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (footerUpd) footerUpd.textContent = getLastSyncTime().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' }) + ' 北京时间';
 
   const cont = document.getElementById('matches-container');
+  if (!cont) return;
   MATCH_DATA.todayMatches.forEach(raw => {
     const m = mergeLiveIntoMatch(raw);
     cont.innerHTML += renderMatch(m);
@@ -798,11 +814,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderNextMatch();
 
-  // Scroll fade
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
   }, { threshold: 0.05 });
   setTimeout(() => document.querySelectorAll('.fade-in').forEach(el => obs.observe(el)), 200);
 
-  document.getElementById('refresh-btn').addEventListener('click', refreshData);
+  const btn = document.getElementById('refresh-btn');
+  if (btn) btn.addEventListener('click', refreshData);
+}
+
+function initResultsPage() {
+  if (typeof RESULTS_DATA === 'undefined') return;
+  renderTicker(RESULTS_DATA.breakingNews);
+  startLiveTimer(RESULTS_DATA);
+
+  const footerUpd = document.getElementById('footer-updated');
+  if (footerUpd) footerUpd.textContent = getLastSyncTime(RESULTS_DATA).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' }) + ' 北京时间';
+
+  const snap = document.getElementById('standings-snapshots');
+  if (snap) snap.innerHTML = renderGroupSnapshots(RESULTS_DATA.groupSnapshots);
+
+  const cont = document.getElementById('results-container');
+  if (!cont) return;
+  RESULTS_DATA.finishedMatches.forEach(m => {
+    cont.innerHTML += renderMatch(m);
+    cont.innerHTML += '<div style="height:2rem"></div>';
+  });
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.05 });
+  setTimeout(() => document.querySelectorAll('.fade-in').forEach(el => obs.observe(el)), 200);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('results-container')) initResultsPage();
+  else initMatchesPage();
 });

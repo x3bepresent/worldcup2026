@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 WC — 过往赛果 · 娱乐推演复盘</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .ticker-bar { position: sticky; top: 58px; z-index: 90; background: rgba(4,13,28,0.96); border-bottom: 1px solid rgba(255,68,85,0.25); padding: 0.5rem 0; overflow: hidden; display: flex; align-items: center; }
+    .ticker-label { flex-shrink: 0; font-size: 0.6rem; font-weight: 800; letter-spacing: 2px; color: #D95F6A; background: rgba(217,95,106,0.12); padding: 0.25rem 0.75rem; margin-right: 1rem; border-right: 1px solid rgba(217,95,106,0.25); white-space: nowrap; }
+    .ticker-scroll { flex: 1; overflow: hidden; position: relative; }
+    #ticker-inner { display: flex; gap: 2rem; align-items: center; white-space: nowrap; animation: scroll-left 40s linear infinite; font-size: 0.75rem; color: var(--txt2); }
+    @keyframes scroll-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .tick-item { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.1rem 1rem; }
+    .tick-tag { font-size: 0.58rem; font-weight: 800; letter-spacing: 1px; padding: 0.1rem 0.4rem; border-radius: 2px; color: #040d1c; }
+    .tick-time { font-size: 0.62rem; color: rgba(122,143,181,0.6); }
+    .tick-sep { color: rgba(255,255,255,0.15); }
+    .top-bar { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0.75rem 2rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .top-date { font-size: 0.8rem; font-weight: 600; color: var(--txt); }
+    .top-updated { font-size: 0.72rem; color: var(--txt2); margin-left: auto; }
+    .match-full-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 2rem; }
+    .mf-header { padding: 0.75rem 1.25rem; background: rgba(255,255,255,0.025); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .mf-teams-hero { padding: 2rem 1.5rem; display: flex; align-items: center; gap: 1.5rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+    .mf-detail-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0; }
+    .mf-panel { padding: 1.25rem; border-top: 1px solid var(--border); border-right: 1px solid var(--border); }
+    @media (min-width: 1200px) { .mf-detail-grid { grid-template-columns: 1fr 1fr 1fr 1fr; } .mf-panel:nth-child(4n) { border-right: none; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">WC 2026</a>
+  <ul class="nav-links">
+    <li><a href="index.html#champion">夺冠概率</a></li>
+    <li><a href="index.html#groups">小组赛</a></li>
+    <li><a href="matches.html">今日赛事</a></li>
+    <li><a href="results.html" style="color:var(--gold)">过往赛果</a></li>
+    <li><a href="schedule.html" style="color:var(--cyan)">📋 赛程总表</a></li>
+    <li><a href="index.html#bracket">淘汰赛</a></li>
+    <li><a href="index.html#teams">球队战力</a></li>
+  </ul>
+</nav>
+
+<div class="top-bar">
+  <div style="font-size:0.65rem;letter-spacing:1.5px;color:var(--green);font-weight:700">🏁 已结束赛事</div>
+  <div class="top-date">📅 2026年6月12日 · A组第1轮 · 2场已结束</div>
+  <div class="top-updated">数据更新：<strong id="last-updated">加载中…</strong></div>
+</div>
+
+<div style="background:rgba(200,169,110,0.08);border-bottom:1px solid rgba(200,169,110,0.18);
+  padding:0.45rem 2rem;display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-top:58px">
+  <span style="font-size:0.68rem;color:var(--txt2)">本页收录</span>
+  <span style="font-size:0.72rem;font-weight:700;color:var(--gold)">全场已结束</span>
+  <span style="font-size:0.68rem;color:var(--txt2)">的比赛 — 含官方赛果、赛后模型复盘与完整分析存档</span>
+  <a href="matches.html" style="margin-left:auto;font-size:0.68rem;color:var(--cyan);text-decoration:none">→ 查看今日待赛分析</a>
+</div>
+
+<div class="ticker-bar" style="margin-top:0">
+  <div class="ticker-label">BREAKING</div>
+  <div class="ticker-scroll">
+    <div id="ticker-inner">Loading news...</div>
+  </div>
+</div>
+
+<section style="padding:3rem 2rem 1rem;position:relative;z-index:1">
+  <div class="container">
+    <div class="section-header fade-in" style="margin-bottom:2rem">
+      <span class="section-tag">Past Results · 过往赛果</span>
+      <h2>已结束比赛 · 赛果与复盘</h2>
+      <p>官方比分、进球信息、赛后伤病更新、模型推演验证 — 完整分析存档</p>
+      <p class="play-note">※ 赛果为手动/官方同步数据；推演复盘仅供娱乐参考</p>
+    </div>
+    <div id="standings-snapshots"></div>
+  </div>
+</section>
+
+<section style="padding:0 2rem 4rem;position:relative;z-index:1">
+  <div class="container">
+    <div id="results-container"></div>
+  </div>
+</section>
+
+<section style="padding:3rem 2rem 1rem">
+  <div class="container fade-in">
+    <div class="site-notice">
+      <div class="sn-title">数据说明 · Data Notice</div>
+      <p>赛果数据随赛事进程更新。新比赛结束后将自动归档至本页，今日待赛分析请见「今日赛事」。</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="legal-box">
+    <div class="legal-title">重要声明 · Legal Notice</div>
+    <ol>
+      <li>本站为 <span class="legal-em">2026 世界杯体育数据分析与娱乐交流网站</span>，展示公开赛事信息与统计模型推算结果，仅供体育爱好者个人学习与交流娱乐之用。</li>
+      <li>本网站<span class="legal-em">仅作信息展示</span>，不涉及任何金钱交易、场外竞猜、有奖竞猜或类似活动。</li>
+      <li>页面中的胜率、比分等内容均为模型娱乐推演结果，不代表真实赛果；<span class="legal-em">本站不对推演准确性作任何保证</span>。</li>
+      <li>请理性看球、健康娱乐。未满 18 周岁的用户请在监护人指导下浏览。</li>
+    </ol>
+  </div>
+  <div class="footer-disclaimer">
+    数据最后更新：<span id="footer-updated">—</span>
+    &nbsp;·&nbsp; <a href="terms.html" style="color:var(--cyan);text-decoration:none">用户服务协议</a>
+  </div>
+  <div class="footer-copy">2026 FIFA World Cup · Past Results Archive</div>
+</footer>
+
+<script src="js/results-data.js"></script>
+<script src="js/matches-app.js"></script>
+</body>
+</html>
