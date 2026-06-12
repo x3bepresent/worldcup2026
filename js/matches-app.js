@@ -276,6 +276,61 @@ function resultBanner(m) {
     </div>`;
 }
 
+function renderStarPanel(team) {
+  const list = team.stars?.length ? team.stars : (team.star ? [team.star] : []);
+  if (!list.length) return '<div style="color:var(--txt2);font-size:0.72rem">暂无数据</div>';
+  return list.map(s => `
+    <div class="star-row">
+      <div style="flex:1">
+        <div style="font-size:0.85rem;font-weight:700">${s.name}${s.rating ? ` <span style="font-size:0.62rem;color:var(--gold)">★ ${s.rating}</span>` : ''}</div>
+        <div style="font-size:0.68rem;color:var(--txt2)">${s.pos} · ${s.club}${s.stats ? ` · ${s.stats}` : ''}</div>
+        <div style="font-size:0.7rem;color:var(--txt);margin-top:0.25rem">📌 ${s.desc}</div>
+      </div>
+    </div>`).join('');
+}
+
+function refereeQuantPanel(ref) {
+  const pen = ref.avg_penalty != null ? ref.avg_penalty : '—';
+  const hwr = ref.home_win_rate;
+  const bias = ref.bias_index;
+  const biasLabel = bias == null ? '' : bias >= 58 ? '略倾向主队' : bias <= 42 ? '略倾向客队' : '相对中立';
+  const biasColor = bias == null ? 'var(--txt2)' : bias >= 58 ? 'var(--cyan)' : bias <= 42 ? 'var(--red)' : 'var(--gold)';
+  return `
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-bottom:0.75rem">
+          <div style="text-align:center;background:rgba(255,215,0,0.06);border:1px solid rgba(255,215,0,0.15);border-radius:4px;padding:0.4rem">
+            <div style="font-size:1.1rem;font-weight:800;color:var(--gold)">${ref.avg_yellow}</div>
+            <div style="font-size:0.58rem;color:var(--txt2)">黄牌/场</div>
+          </div>
+          <div style="text-align:center;background:rgba(217,95,106,0.06);border:1px solid rgba(217,95,106,0.15);border-radius:4px;padding:0.4rem">
+            <div style="font-size:1.1rem;font-weight:800;color:var(--red)">${ref.avg_red}</div>
+            <div style="font-size:0.58rem;color:var(--txt2)">红牌/场</div>
+          </div>
+          <div style="text-align:center;background:rgba(0,229,255,0.06);border:1px solid rgba(0,229,255,0.15);border-radius:4px;padding:0.4rem">
+            <div style="font-size:1.1rem;font-weight:800;color:var(--cyan)">${pen}</div>
+            <div style="font-size:0.58rem;color:var(--txt2)">点球/场</div>
+          </div>
+        </div>
+        ${hwr != null ? `
+        <div style="margin-bottom:0.75rem;padding:0.6rem;background:rgba(255,255,255,0.03);border-radius:4px;border:1px solid var(--border)">
+          <div style="font-size:0.62rem;letter-spacing:1px;color:var(--txt2);margin-bottom:0.35rem">量化执法倾向（模型参考）</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;font-size:0.72rem">
+            <div>执法后<strong style="color:var(--cyan)">主队胜率 ${hwr}%</strong></div>
+            <div>偏向指数 <strong style="color:${biasColor}">${bias ?? '—'}/100</strong> · ${biasLabel}</div>
+          </div>
+          ${bias != null ? `<div style="margin-top:0.4rem;height:5px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden">
+            <div style="width:${bias}%;height:100%;background:${biasColor};border-radius:3px"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:0.55rem;color:var(--txt2);margin-top:2px">
+            <span>客队</span><span>中立50</span><span>主队</span>
+          </div>` : ''}
+        </div>` : ''}
+        ${ref.wc_final ? `<div style="font-size:0.68rem;color:var(--gold);margin-bottom:0.5rem">🏆 ${ref.wc_final}</div>` : ''}
+        <div style="font-size:0.72rem;color:var(--txt2);line-height:1.6;margin-bottom:0.5rem">${ref.bias_note}</div>
+        <div style="font-size:0.7rem;background:rgba(200,169,110,0.07);border:1px solid rgba(255,215,0,0.15);border-radius:3px;padding:0.5rem;color:var(--gold);line-height:1.5">
+          ⚠ ${(ref.tendencies||[]).join(' · ')}
+        </div>`;
+}
+
 function renderMatch(m) {
   const p = m.prediction;
   const tag = (label, color) => `<span style="font-size:0.58rem;letter-spacing:1.5px;text-transform:uppercase;padding:0.12rem 0.5rem;border-radius:2px;background:${color}22;color:${color};border:1px solid ${color}44;font-weight:700">${label}</span>`;
@@ -344,29 +399,15 @@ function renderMatch(m) {
       <!-- STAR PLAYERS HOME -->
       <div class="mf-panel">
         <div class="mf-panel-label" style="color:var(--cyan)">⭐ ${m.home.name} 核心球员</div>
-        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">本场最具威胁的球员 — 包含位置、所在俱乐部、近期状态与赛前特别说明</div>
-        ${(()=>{ const s=m.home.star; return s ? `
-          <div class="star-row">
-            <div style="flex:1">
-              <div style="font-size:0.85rem;font-weight:700">${s.name}</div>
-              <div style="font-size:0.68rem;color:var(--txt2)">${s.pos} · ${s.club}</div>
-              <div style="font-size:0.7rem;color:var(--txt);margin-top:0.25rem">📌 ${s.desc}</div>
-            </div>
-          </div>` : '<div style="color:var(--txt2);font-size:0.72rem">暂无数据</div>'; })()}
+        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">本场最具威胁的球员（3人）— 位置、俱乐部、数据与赛前状态</div>
+        ${renderStarPanel(m.home)}
       </div>
 
       <!-- STAR PLAYERS AWAY -->
       <div class="mf-panel">
         <div class="mf-panel-label" style="color:var(--red)">⭐ ${m.away.name} 核心球员</div>
-        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">本场最具威胁的球员 — 包含位置、所在俱乐部、近期状态与赛前特别说明</div>
-        ${(()=>{ const s=m.away.star; return s ? `
-          <div class="star-row">
-            <div style="flex:1">
-              <div style="font-size:0.85rem;font-weight:700">${s.name}</div>
-              <div style="font-size:0.68rem;color:var(--txt2)">${s.pos} · ${s.club}</div>
-              <div style="font-size:0.7rem;color:var(--txt);margin-top:0.25rem">📌 ${s.desc}</div>
-            </div>
-          </div>` : '<div style="color:var(--txt2);font-size:0.72rem">暂无数据</div>'; })()}
+        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">本场最具威胁的球员（3人）— 位置、俱乐部、数据与赛前状态</div>
+        ${renderStarPanel(m.away)}
       </div>
 
       <!-- H2H -->
@@ -384,27 +425,10 @@ function renderMatch(m) {
           <img src="${FLAG((m.referee.iso||'un'))}" style="width:28px;height:19px;object-fit:cover;border-radius:2px" onerror="this.style.display='none'">
           <div>
             <div style="font-weight:700;font-size:0.9rem">${m.referee.name}</div>
-            <div style="font-size:0.68rem;color:var(--txt2)">${m.referee.nation} · FIFA since ${'FIFA 执法'}</div>
+            <div style="font-size:0.68rem;color:var(--txt2)">${m.referee.nation}${m.referee.wc_experience ? ' · ' + m.referee.wc_experience : ' · FIFA 执法'}</div>
           </div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-bottom:0.75rem">
-          <div style="text-align:center;background:rgba(255,215,0,0.06);border:1px solid rgba(255,215,0,0.15);border-radius:4px;padding:0.4rem">
-            <div style="font-size:1.1rem;font-weight:800;color:var(--gold)">${m.referee.avg_yellow}</div>
-            <div style="font-size:0.58rem;color:var(--txt2)">Yellow/Game</div>
-          </div>
-          <div style="text-align:center;background:rgba(217,95,106,0.06);border:1px solid rgba(217,95,106,0.15);border-radius:4px;padding:0.4rem">
-            <div style="font-size:1.1rem;font-weight:800;color:var(--red)">${m.referee.avg_red}</div>
-            <div style="font-size:0.58rem;color:var(--txt2)">Red/Game</div>
-          </div>
-          <div style="text-align:center;background:rgba(0,229,255,0.06);border:1px solid rgba(0,229,255,0.15);border-radius:4px;padding:0.4rem">
-            <div style="font-size:1.1rem;font-weight:800;color:var(--cyan)">${'-'}</div>
-            <div style="font-size:0.58rem;color:var(--txt2)">Pen/Game</div>
-          </div>
-        </div>
-        <div style="font-size:0.72rem;color:var(--txt2);line-height:1.6;margin-bottom:0.5rem">${m.referee.bias_note}</div>
-        <div style="font-size:0.7rem;background:rgba(200,169,110,0.07);border:1px solid rgba(255,215,0,0.15);border-radius:3px;padding:0.5rem;color:var(--gold);line-height:1.5">
-          ⚠ ${(m.referee.tendencies||[]).join(' · ')}
-        </div>
+        ${refereeQuantPanel(m.referee)}
       </div>
 
       <!-- INJURIES HOME -->
