@@ -2,9 +2,10 @@ name: 每日自动更新世界杯数据
 
 on:
   schedule:
-    # 每天北京时间 08:00 自动运行 (UTC 00:00)
+    # 北京时间 08:00 / 14:00 / 22:00（UTC 00:00 / 06:00 / 14:00）
     - cron: '0 0 * * *'
-  # GitHub 网页手动触发
+    - cron: '0 6 * * *'
+    - cron: '0 14 * * *'
   workflow_dispatch:
     inputs:
       force_update:
@@ -12,7 +13,6 @@ on:
         required: false
         default: 'false'
 
-# 允许工作流向仓库写入（推送数据更新必须）
 permissions:
   contents: write
 
@@ -34,6 +34,15 @@ jobs:
         with:
           node-version: '24'
 
+      - name: 检查 API Key
+        run: |
+          if [ -z "${{ secrets.API_FOOTBALL_KEY }}" ]; then
+            echo "❌ 未配置 API_FOOTBALL_KEY Secret"
+            echo "请在 GitHub → Settings → Secrets → Actions 中添加"
+            exit 1
+          fi
+          echo "✅ API Key 已配置"
+
       - name: 运行 API-Football 数据抓取脚本
         env:
           API_KEY: ${{ secrets.API_FOOTBALL_KEY }}
@@ -45,20 +54,21 @@ jobs:
       - name: 检查是否有数据更新
         id: check
         run: |
-          if git diff --quiet js/live-data.js 2>/dev/null; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-            echo "📋 数据无变化"
-          else
-            echo "changed=true" >> $GITHUB_OUTPUT
-            echo "✅ 检测到数据更新"
-          fi
+          CHANGED=false
+          for f in js/live-data.js js/matches-data.js; do
+            if ! git diff --quiet "$f" 2>/dev/null; then
+              CHANGED=true
+              echo "✅ $f 有变化"
+            fi
+          done
+          echo "changed=$CHANGED" >> $GITHUB_OUTPUT
 
       - name: 提交并推送更新
         if: steps.check.outputs.changed == 'true' || github.event.inputs.force_update == 'true'
         run: |
           git config user.name "WC2026-Bot"
           git config user.email "bot@worldcup2026.auto"
-          git add js/live-data.js
+          git add js/live-data.js js/matches-data.js
           git commit -m "🤖 自动更新 $(TZ=Asia/Shanghai date +'%m月%d日 %H:%M') 北京时间"
           git push origin HEAD
           echo "🚀 已推送，GitHub Pages 将自动部署"

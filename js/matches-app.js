@@ -4,17 +4,60 @@
 
 const FLAG = iso => iso ? `flags/${iso.toLowerCase()}.png` : '';
 
-// ── Live Update Simulation ─────────────────────────────────
-let secondsAgo = 0;
+const TEAM_CANON = {
+  'mexico': 'Mexico', 'south africa': 'South Africa',
+  'korea republic': 'South Korea', 'south korea': 'South Korea',
+  'czechia': 'Czechia', 'czech republic': 'Czechia',
+};
+function canonTeam(n) {
+  if (!n) return '';
+  return TEAM_CANON[n.toLowerCase().trim()] || n;
+}
+
+function getLastSyncTime() {
+  const times = [MATCH_DATA.lastUpdated];
+  if (typeof LIVE_DATA !== 'undefined' && LIVE_DATA.lastUpdated) times.push(LIVE_DATA.lastUpdated);
+  return new Date(Math.max(...times.map(t => new Date(t).getTime())));
+}
+
+function findLiveFixture(m) {
+  if (typeof LIVE_DATA === 'undefined' || !LIVE_DATA.fixtures) return null;
+  return LIVE_DATA.fixtures.find(f =>
+    canonTeam(f.home) === m.home.name && canonTeam(f.away) === m.away.name
+  ) || null;
+}
+
+function mergeLiveIntoMatch(m) {
+  const live = findLiveFixture(m);
+  if (!live) return m;
+  const copy = JSON.parse(JSON.stringify(m));
+  const finished = ['FT', 'AET', 'PEN'].includes(live.status);
+  if (live.home_score != null && live.away_score != null) {
+    copy.actualResult = {
+      home_score: live.home_score,
+      away_score: live.away_score,
+      status: live.status,
+      label: finished ? '全场结束' : live.status === 'HT' ? '中场' : live.status,
+      elapsed: live.elapsed,
+    };
+    if (finished) copy.prediction.score = `${live.home_score}-${live.away_score}`;
+  }
+  copy._liveStatus = live.status;
+  return copy;
+}
+
 function startLiveTimer() {
   const el = document.getElementById('last-updated');
   if (!el) return;
-  const base = new Date(MATCH_DATA.lastUpdated);
-  setInterval(() => {
+  const base = getLastSyncTime();
+  const tick = () => {
     const diff = Math.round((Date.now() - base) / 60000);
-    el.textContent = diff < 1 ? 'just now' : `${diff} min ago`;
-  }, 10000);
-  el.textContent = 'just now';
+    if (diff < 1) el.textContent = '刚刚同步';
+    else if (diff < 60) el.textContent = `${diff} 分钟前`;
+    else el.textContent = `${Math.floor(diff / 60)} 小时前`;
+  };
+  tick();
+  setInterval(tick, 10000);
 }
 
 // ── Breaking News Ticker ───────────────────────────────────
@@ -23,7 +66,16 @@ function renderTicker() {
   const ticker = document.getElementById('ticker-inner');
   const tagColors = { INJURY:'#D95F6A', RUMOR:'#C8A96E', LINEUP:'#7BB8D4', OFFICIAL:'#5BBF8A', REFEREE:'#bb88ff' };
   const tagCN = { INJURY:'伤情', RUMOR:'传言', LINEUP:'阵容', OFFICIAL:'官方', REFEREE:'裁判' };
-  const items = MATCH_DATA.breakingNews.map(n =>
+  const news = [...MATCH_DATA.breakingNews];
+  if (typeof LIVE_DATA !== 'undefined' && LIVE_DATA.allResults?.length) {
+    LIVE_DATA.allResults.forEach(f => {
+      const text = `🏁 赛果 · ${f.home} ${f.home_score}-${f.away_score} ${f.away} · API 官方同步`;
+      if (!news.some(n => n.text.includes(`${f.home_score}-${f.away_score}`) && n.text.includes(f.home))) {
+        news.unshift({ tag: 'OFFICIAL', text, time: '最新赛果' });
+      }
+    });
+  }
+  const items = news.map(n =>
     `<span class="tick-item">
       <span class="tick-tag" style="background:${tagColors[n.tag]||'#888'}" title="${n.tag}">${tagCN[n.tag]||n.tag}</span>
       <span class="tick-time" style="opacity:0.55">${n.time}</span>
@@ -33,18 +85,11 @@ function renderTicker() {
   ticker.innerHTML = items + '<span class="tick-sep">◆</span>' + items;
 }
 
-// ── Refresh Simulation ─────────────────────────────────────
-function simulateRefresh() {
+function refreshData() {
   const btn = document.getElementById('refresh-btn');
-  btn.textContent = 'Updating...';
+  btn.textContent = '刷新中…';
   btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = 'Refreshed!';
-    document.getElementById('last-updated').textContent = 'just now';
-    const dot = document.getElementById('live-dot');
-    if (dot) { dot.style.animation = 'none'; setTimeout(() => dot.style.animation = '', 100); }
-    setTimeout(() => { btn.textContent = 'Refresh Data'; btn.disabled = false; }, 2000);
-  }, 1800);
+  location.reload();
 }
 
 // ── Injury Status Badge ────────────────────────────────────
@@ -222,17 +267,37 @@ function scoreDistribution(dist) {
 }
 
 // ── Render Single Match ────────────────────────────────────
+function resultBanner(m) {
+  const r = m.actualResult;
+  if (!r || r.home_score == null) return '';
+  const finished = ['FT', 'AET', 'PEN'].includes(r.status);
+  const live = !finished && r.status && r.status !== 'NS';
+  const bg = finished ? 'rgba(91,191,138,0.12)' : 'rgba(200,169,110,0.12)';
+  const border = finished ? 'rgba(91,191,138,0.35)' : 'rgba(200,169,110,0.35)';
+  const color = finished ? '#5BBF8A' : '#C8A96E';
+  const label = finished ? '官方赛果' : (r.label || r.status) + (r.elapsed ? ` ${r.elapsed}'` : '');
+  return `
+    <div style="padding:0.65rem 1.25rem;background:${bg};border-bottom:1px solid ${border};display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap">
+      <span style="font-size:0.62rem;font-weight:800;letter-spacing:2px;color:${color}">${label}</span>
+      <span style="font-size:1.35rem;font-weight:800;color:var(--gold)">${m.home.name} ${r.home_score} — ${r.away_score} ${m.away.name}</span>
+      ${finished ? '<span style="font-size:0.65rem;color:var(--txt2)">数据来源 API 官方同步</span>' : ''}
+    </div>`;
+}
+
 function renderMatch(m) {
   const p = m.prediction;
   const tag = (label, color) => `<span style="font-size:0.58rem;letter-spacing:1.5px;text-transform:uppercase;padding:0.12rem 0.5rem;border-radius:2px;background:${color}22;color:${color};border:1px solid ${color}44;font-weight:700">${label}</span>`;
+  const finished = m.actualResult && ['FT', 'AET', 'PEN'].includes(m.actualResult.status);
 
   return `
   <div class="match-full-card fade-in">
+    ${resultBanner(m)}
     <!-- MATCH HEADER -->
     <div class="mf-header">
       <div class="mf-meta">
         ${tag('GROUP ' + m.group, '#7BB8D4')}
         ${tag('MATCHDAY ' + m.matchday, '#888888')}
+        ${finished ? tag('已结束', '#5BBF8A') : tag('待赛', '#C8A96E')}
         <span style="font-size:0.72rem;color:var(--txt2)">${m.venue} · ${m.city}</span>
       </div>
       <div class="mf-kickoff" style="text-align:right">
@@ -265,9 +330,9 @@ function renderMatch(m) {
         </div>
         <div class="play-note" style="margin-top:0.35rem">模型推演胜率 · 娱乐参考</div>
         <div style="margin-top:0.75rem;text-align:center">
-          <div style="font-size:0.6rem;letter-spacing:2px;color:var(--txt2);text-transform:uppercase;margin-bottom:0.25rem">娱乐推演比分</div>
+          <div style="font-size:0.6rem;letter-spacing:2px;color:var(--txt2);text-transform:uppercase;margin-bottom:0.25rem">${finished ? '最终比分' : '娱乐推演比分'}</div>
           <div style="font-size:2rem;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums">${p.score}</div>
-          <div class="play-note">通过公开数据模型的娱乐推演 · 不代表真实赛果</div>
+          <div class="play-note">${finished ? '比赛已结束 · 上方为官方赛果' : '通过公开数据模型的娱乐推演 · 不代表真实赛果'}</div>
           <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.35rem" title="xG（期望进球数）= 根据射门位置、角度、质量统计出的理论进球数，反映攻击质量而非实际比分">期望进球 xG：<strong style="color:var(--cyan)">${p.xg_home}</strong> — <strong style="color:var(--red)">${p.xg_away}</strong> <span style="opacity:.45;font-size:0.55rem">ⓘ</span></div>
           <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.2rem">推演置信度（娱乐参考）：<strong style="color:${p.confidence>=80?'#5BBF8A':p.confidence>=60?'#C8A96E':'#ff8855'}">${p.confidence}%</strong></div>
         </div>
@@ -712,8 +777,21 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTicker();
   startLiveTimer();
 
+  const syncEl = document.getElementById('sync-status');
+  if (syncEl) {
+    const hasLive = typeof LIVE_DATA !== 'undefined' && LIVE_DATA.fixtures?.length;
+    syncEl.textContent = hasLive
+      ? `API 已同步 · ${LIVE_DATA.fixtures.length} 场赛事`
+      : '等待 API 同步（每日自动更新）';
+    syncEl.style.color = hasLive ? 'var(--green)' : 'var(--txt2)';
+  }
+
+  const footerUpd = document.getElementById('footer-updated');
+  if (footerUpd) footerUpd.textContent = getLastSyncTime().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' }) + ' 北京时间';
+
   const cont = document.getElementById('matches-container');
-  MATCH_DATA.todayMatches.forEach(m => {
+  MATCH_DATA.todayMatches.forEach(raw => {
+    const m = mergeLiveIntoMatch(raw);
     cont.innerHTML += renderMatch(m);
     cont.innerHTML += '<div style="height:2rem"></div>';
   });
@@ -726,5 +804,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.05 });
   setTimeout(() => document.querySelectorAll('.fade-in').forEach(el => obs.observe(el)), 200);
 
-  document.getElementById('refresh-btn').addEventListener('click', simulateRefresh);
+  document.getElementById('refresh-btn').addEventListener('click', refreshData);
 });
