@@ -1,5 +1,7 @@
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-12T08:12:49.095Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-11T06:00:00Z",
+  "lastUpdated": "2026-06-12T08:12:49.094Z",
   "breakingNews": [
     {
       "tag": "INJURY",
@@ -786,5 +788,6 @@ const MATCH_DATA = {
     "predicted_score": "2-1",
     "key_player_home": "Alphonso Davies",
     "key_player_away": "Edin Džeko"
-  }
+  },
+  "syncSource": "API-Football"
 };
