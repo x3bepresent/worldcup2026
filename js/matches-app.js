@@ -342,6 +342,33 @@ function scoreDistribution(dist) {
   </div>`;
 }
 
+/** 右侧第2行：综合推演关键因素 + 其下方的比分概率分布（同一格内堆叠） */
+function renderRightAnalysisPanel(p, m) {
+  return `
+      <div class="mf-panel mf-panel-right-stack">
+        <div class="mf-panel-label">🔑 综合推演关键因素</div>
+        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">模型判断本场走势的重要变量 — 已纳入上方胜率娱乐推演</div>
+        <div style="display:flex;gap:0.5rem;font-size:0.75rem;line-height:1.6;padding:0.4rem;
+          background:rgba(255,255,255,0.03);border-radius:3px;border-left:2px solid var(--gold);margin-bottom:1.25rem">
+          <span style="color:var(--gold);font-weight:700;flex-shrink:0">→</span>
+          <span>${p.key_factor || '综合因素分析'}</span>
+        </div>
+        <div class="mf-panel-label" style="margin-top:0.25rem">📈 本场比分概率分布</div>
+        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">
+          模型对<strong style="color:var(--txt)">本场比赛</strong>各种比分的娱乐推演概率。<span style="color:var(--gold)">金色柱</span>为最可能比分，柱越高概率越大。<br>
+          注：与裁判无关，纯为数据模型娱乐推演，不代表真实赛果。
+        </div>
+        ${scoreDistribution(p.score_dist)}
+        <div style="margin-top:1.25rem">
+          <div style="font-size:0.62rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt2);margin-bottom:0.5rem">📋 ${m.home.name} 近5场战绩</div>
+          ${m.home.form.map(r => `<span style="display:inline-block;width:22px;height:22px;line-height:22px;
+            text-align:center;border-radius:50%;font-size:0.7rem;font-weight:700;margin-right:3px;
+            background:${r === 'W' ? 'rgba(91,191,138,0.25)' : r === 'D' ? 'rgba(150,150,150,0.15)' : 'rgba(217,95,106,0.2)'};
+            color:${r === 'W' ? '#5BBF8A' : r === 'D' ? '#aaa' : '#D95F6A'}">${r}</span>`).join('')}
+        </div>
+      </div>`;
+}
+
 // ── Render Single Match ────────────────────────────────────
 function resultBanner(m) {
   const r = m.actualResult;
@@ -551,33 +578,7 @@ function renderMatch(m) {
         </div>
       </div>
 
-      <!-- KEY FACTORS -->
-      <div class="mf-panel">
-        <div class="mf-panel-label">🔑 综合推演关键因素</div>
-        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">模型判断本场走势的重要变量 — 已纳入上方胜率娱乐推演</div>
-        <div style="display:flex;gap:0.5rem;font-size:0.75rem;line-height:1.6;padding:0.4rem;
-    background:rgba(255,255,255,0.03);border-radius:3px;border-left:2px solid var(--gold)">
-    <span style="color:var(--gold);font-weight:700;flex-shrink:0">→</span>
-    <span>${p.key_factor||'综合因素分析'}</span>
-  </div>
-      </div>
-
-      <!-- SCORE DISTRIBUTION -->
-      <div class="mf-panel">
-        <div class="mf-panel-label">📈 本场比分概率分布</div>
-        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">
-          模型对<strong style="color:var(--txt)">本场比赛</strong>各种比分的娱乐推演概率。<span style="color:var(--gold)">金色柱</span>为最可能比分，柱越高概率越大。<br>
-          注：与裁判无关，纯为数据模型娱乐推演，不代表真实赛果。
-        </div>
-        ${scoreDistribution(p.score_dist)}
-        <div style="margin-top:1.25rem">
-          <div style="font-size:0.62rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt2);margin-bottom:0.5rem">📋 ${m.home.name} 近5场战绩</div>
-          ${m.home.form.map(r=>`<span style="display:inline-block;width:22px;height:22px;line-height:22px;
-    text-align:center;border-radius:50%;font-size:0.7rem;font-weight:700;margin-right:3px;
-    background:${r==='W'?'rgba(91,191,138,0.25)':r==='D'?'rgba(150,150,150,0.15)':'rgba(217,95,106,0.2)'};
-    color:${r==='W'?'#5BBF8A':r==='D'?'#aaa':'#D95F6A'}">${r}</span>`).join('')}
-        </div>
-      </div>
+      ${renderRightAnalysisPanel(p, m)}
 
       <!-- WEATHER PANEL (full width) -->
       ${weatherPanel(m.weather, m.home.name, m.away.name)}

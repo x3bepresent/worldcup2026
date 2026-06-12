@@ -23,7 +23,17 @@
     .mf-teams-hero { padding: 2rem 1.5rem; display: flex; align-items: center; gap: 1.5rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
     .mf-detail-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0; }
     .mf-panel { padding: 1.25rem; border-top: 1px solid var(--border); border-right: 1px solid var(--border); }
-    @media (min-width: 1200px) { .mf-detail-grid { grid-template-columns: 1fr 1fr 1fr 1fr; } .mf-panel:nth-child(4n) { border-right: none; } }
+    .mf-panel:nth-child(even) { border-right: none; }
+    @media (min-width: 1200px) {
+      .mf-detail-grid { grid-template-columns: 1fr 1fr 1fr 1fr; }
+      .mf-panel:nth-child(4n) { border-right: none; }
+      .mf-panel-right-stack {
+        grid-column: 4;
+        grid-row: 2;
+        align-self: start;
+        border-right: none;
+      }
+    }
   </style>
 </head>
 <body>
