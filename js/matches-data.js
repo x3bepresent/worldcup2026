@@ -2,13 +2,13 @@
 // Last API sync: 2026-06-12T16:38:07.436Z
 // score_dist 已废弃 — 页面由 score-model.js 按 xG 实时泊松计算，勿手写比分概率
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-13T03:30:00+08:00",
+  "lastUpdated": "2026-06-13T04:15:00+08:00",
   "syncSource": "API-Football + Goal.com 官方首发",
   "breakingNews": [
     {
-      "tag": "LINEUP",
-      "text": "✅ 官方首发 · 加拿大 vs 波黑：加拿大与 ESPN 预测 11 人完全一致；波黑 Džeko 替补，Lukić 首发，后防 Dedić-Katić-Kolašinac 入替预测名单",
-      "time": "6月13日 03:00 · Goal.com 确认"
+      "tag": "OFFICIAL",
+      "text": "📊 推演重算 · 加拿大 vs 波黑：官方首发后 xG 调至 1.65-0.92，主胜53%（↑3），最可能比分 1-0；Džeko 替补削弱波黑定位球威胁",
+      "time": "6月13日 · 首发确认后"
     },
     {
       "tag": "OFFICIAL",
@@ -85,7 +85,7 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月13日 03:00",
       "venue": "BMO Field",
       "city": "Toronto, Canada",
-      "note": "B组揭幕 · 官方首发已确认 · Davies 缺阵 · Bombito 替补 · 波黑 Džeko 替补",
+      "note": "B组揭幕 · 官方首发已确认 · 推演已重算 · Džeko 替补",
       "lineup": {
         "confirmed": true,
         "formation": "4-4-2",
@@ -367,14 +367,14 @@ const MATCH_DATA = {
         ]
       },
       "prediction": {
-        "home_win": 50,
-        "draw": 28,
-        "away_win": 22,
-        "score": "1-1",
-        "confidence": 68,
-        "xg_home": 1.6,
-        "xg_away": 1.1,
-        "key_factor": "【阵容更新后重算】Davies 缺阵是最大变量：主队边路爆点与反击速度下降，Marsch 改4-4-2（David+Larin）更依赖中路与定位球。Bombito 复出部分抵消后防损失，但 Flores 报销削弱进攻深度。波黑低位反击（Bajraktarević+Džeko）专克高位压迫；Davies 不在使波黑可收缩宽度。模型主胜从55%下调至50%，平局升至28%，最可能比分由2-1调整为1-1（xG 1.6-1.1 泊松最可能 1-1）。Tello 执法偏流畅，利于波黑拖延节奏。"
+        "home_win": 53,
+        "draw": 26,
+        "away_win": 21,
+        "score": "1-0",
+        "confidence": 70,
+        "xg_home": 1.65,
+        "xg_away": 0.92,
+        "key_factor": "【官方首发后重算】加拿大 11 人与预测完全一致，Davies 缺阵 + de Fougerolles 中卫组合不变。波黑最大变数：Džeko 替补、Lukić 突前、Demirović 任队长——定位球与制空威胁显著下降，客 xG 由 1.1 下调至 0.92。Kolašinac 左后卫经验仍在，但缺少 Džeko 后反击更依赖 Bajraktarević 个人。综合模型主胜 53%（↑3），平局 26%（↓2），客胜 21%（↓1）；xG 1.65-0.92 泊松最可能 1-0（约12.6%）。"
       },
       "weather": {
         "city": "多伦多",
@@ -450,11 +450,11 @@ const MATCH_DATA = {
             "wuxing_short": "水土相克",
             "verdict": "不利",
             "verdict_color": "#D95F6A",
-            "compat": 38,
-            "reason": "波黑蓝色属水，丑时土克水，客场气场受压",
-            "disadvantage": "开局易被动"
+            "compat": 35,
+            "reason": "Džeko 替补后「水德」大减；Kolašinac 左卫如堤，但 Lukic 突前难承支点之重",
+            "disadvantage": "定位球与经验断档"
           },
-          "summary": "五行裁定：东道主火土顺局，波黑水土受制"
+          "summary": "五行裁定：东道主火土顺局；波黑 Džeko 未首发，水土之势再弱"
         },
         "hexagram": {
           "name": "泰卦",
@@ -463,19 +463,19 @@ const MATCH_DATA = {
           "upper": "坤地",
           "lower": "乾天",
           "quote": "《周易·泰卦》：「小往大来，吉亨。」",
-          "general": "天地交泰，主场小胜之象。利于顺势而行的一方。",
+          "general": "天地交泰，主场小胜之象。Džeko 替补后客队「暗流」减弱。",
           "advantage_team": "Canada",
           "disadvantage_team": "Bosnia and Herzegovina",
-          "hexagram_analysis": "泰卦天地交而万物通，东道主仍有地利。但 Davies 缺阵如「风行」受阻，加拿大改走中路厚土之道；波黑水土虽受制，反击如暗流伺机。",
-          "match_nature": "东道主小胜或平局局",
-          "match_nature_prob": 50,
+          "hexagram_analysis": "泰卦仍利东道主。加拿大官方首发与预测一致，David+Larin 中路厚土不变；波黑 Džeko 替补如「老将藏锋」，Lukić 突前、Kolašinac 守左——反击仍靠 Bajraktarević，但定位球威胁大减。",
+          "match_nature": "东道主小胜局",
+          "match_nature_prob": 53,
           "yellow_card_risk": "中",
           "yellow_card_reason": "预计4-5张黄牌，波黑低位防守战术犯规为主",
           "scenarios": [
             {
               "icon": "⚽",
               "label": "比赛性质",
-              "text": "加拿大控场小胜概率50%，平局28%，波黑爆冷22%"
+              "text": "加拿大控场小胜53%，平局26%，波黑爆冷21%"
             },
             {
               "icon": "⏱",
@@ -490,7 +490,7 @@ const MATCH_DATA = {
             {
               "icon": "🔄",
               "label": "0-0平局可能",
-              "text": "中（28%）——Davies 缺阵削弱破局能力，Džeko 定位球成关键"
+              "text": "低（约7.7% 泊松）——Džeko 替补后定位球破局手段减少"
             },
             {
               "icon": "⏰",
@@ -500,27 +500,27 @@ const MATCH_DATA = {
           ],
           "early_goal": {
             "scenario": "若加拿大先进球",
-            "prediction": "泰卦「小往大来」——主队仍扩控球权，但缺少 Davies 边路提速，波黑收缩更从容",
+            "prediction": "泰卦「小往大来」——Džeko 未在场，波黑更难通过定位球反扑，主队控局概率上升",
             "favors": "Canada",
-            "favors_prob": 58
+            "favors_prob": 62
           },
           "no_early_goal": {
             "scenario": "若前30分钟无进球",
-            "prediction": "Džeko 定位球 + Bajraktarević 反击成为波黑最大威胁，消耗战平局概率上升",
+            "prediction": "Bajraktarević 个人反击仍是波黑主要手段，但无 Džeko 支点后消耗战平局概率略降",
             "favors": "Draw",
-            "favors_prob": 52
+            "favors_prob": 48
           },
           "away_goal": {
             "scenario": "若波黑先进球",
-            "prediction": "加拿大主场反扑力度仍大，但缺少 Davies 破密集防守手段，扳平概率52%",
+            "prediction": "加拿大主场反扑力度仍大；Lukić 突前难持续牵制，主队扳平概率55%",
             "favors": "Canada",
-            "favors_prob": 48
+            "favors_prob": 52
           },
           "halftime": {
             "scenario": "半场0-0",
-            "prediction": "下半场 Marsch 换战术+主场声浪，加拿大进球概率58%，但破僵难度高于预期",
+            "prediction": "下半场 Marsch 换战术+主场声浪；Džeko 若替补登场或成变数，但首发阶段加拿大破门概率60%",
             "favors": "Canada",
-            "favors_prob": 52
+            "favors_prob": 58
           },
           "extra_time": {
             "scenario": "加时",
@@ -529,9 +529,9 @@ const MATCH_DATA = {
             "favors_prob": 55
           }
         },
-        "home_score": 65,
-        "away_score": 42,
-        "mystic_verdict": "☷ 泰卦天地交——加拿大主场仍占地利，但 Davies 缺阵如风行受阻。David、Larin 中路厚土，波黑 Džeko 暗流伺机，平局概率上升。",
+        "home_score": 68,
+        "away_score": 38,
+        "mystic_verdict": "☷ 泰卦天地交——加拿大官方首发不变、地利仍存；波黑 Džeko 替补如「老将藏锋」，Lukić 难承支点，主队小胜之势略增。",
         "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
       }
     },
