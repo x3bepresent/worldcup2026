@@ -4,6 +4,90 @@
 
 const FLAG = iso => iso ? `flags/${iso.toLowerCase()}.png` : '';
 
+/** 与 index.html #methodology 口径一致 */
+const MODEL_TAGLINE = '100,000 次蒙特卡洛模拟 — 综合 Elo 评级、xG 数据、阵容深度与历史战绩加权计算';
+const MODEL_SUBLINE = '基于 Elo 评级、xG 期望进球、100,000 次蒙特卡洛模拟及多维度大数据模型';
+const PLAY_NOTE_STD = '本站所有胜率、比分均为模型娱乐推演结果，不代表真实赛果，仅供交流娱乐。';
+
+function isPending(obj) {
+  return typeof DATA_INTEGRITY !== 'undefined' && DATA_INTEGRITY.isPending(obj);
+}
+
+function matchPendingFactors(m) {
+  return typeof DATA_INTEGRITY !== 'undefined' ? DATA_INTEGRITY.matchPendingFactors(m) : [];
+}
+
+function pendingBanner(m) {
+  const factors = matchPendingFactors(m);
+  if (!factors.length) return '';
+  return `
+    <div style="margin:0 0 1rem;padding:0.65rem 1rem;background:rgba(200,169,110,0.08);border:1px solid rgba(200,169,110,0.25);border-radius:4px;font-size:0.72rem;color:var(--gold);line-height:1.6">
+      ⏳ 以下信息尚未完全官方确认：<strong>${factors.join('、')}</strong>。对应栏目显示「等待官方确认」或标注「预测参考」，相关细节暂不纳入推演权重。
+    </div>`;
+}
+
+function renderLineupPanel(m) {
+  const lu = m.lineup;
+  if (!lu) return '';
+  const label = '📋 首发阵容';
+  if (isPending(lu)) {
+    const pred = lu.predicted;
+    return `
+      <div class="mf-panel">
+        <div class="mf-panel-label">${label}</div>
+        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">仅展示 FIFA / 球队官方确认的首发。未确认前不使用占位数据充数。</div>
+        <div style="padding:0.75rem;background:rgba(200,169,110,0.08);border:1px solid rgba(200,169,110,0.22);border-radius:4px;margin-bottom:0.75rem">
+          <div style="font-size:0.85rem;font-weight:700;color:var(--gold)">${DATA_INTEGRITY?.PENDING_LABEL || '等待官方确认'}</div>
+          <div style="font-size:0.68rem;color:var(--txt2);margin-top:0.35rem;line-height:1.55">${lu.note || '官方首发名单尚未公布。'}</div>
+        </div>
+        ${pred ? `
+        <div style="font-size:0.62rem;letter-spacing:1px;color:var(--txt2);margin-bottom:0.4rem">媒体预测参考（非官方 · 不计入已确认推演）</div>
+        <div style="font-size:0.72rem;color:var(--txt2);line-height:1.65">
+          <div><strong style="color:var(--cyan)">${m.home.name}</strong> ${pred.formation || ''}</div>
+          <div style="margin:0.25rem 0 0.5rem;padding-left:0.5rem;color:var(--txt)">${pred.home}</div>
+          <div><strong style="color:var(--red)">${m.away.name}</strong></div>
+          <div style="margin:0.25rem 0;padding-left:0.5rem;color:var(--txt)">${pred.away}</div>
+          ${pred.source ? `<div style="font-size:0.62rem;color:rgba(255,255,255,0.35);margin-top:0.35rem">来源：${pred.source}</div>` : ''}
+        </div>` : ''}
+      </div>`;
+  }
+  return `
+    <div class="mf-panel">
+      <div class="mf-panel-label">${label} <span style="font-size:0.58rem;color:#5BBF8A">● 已确认</span></div>
+      <div style="font-size:0.72rem;color:var(--txt2);line-height:1.65">
+        <div style="margin-bottom:0.5rem"><strong>${lu.formation || ''}</strong></div>
+        <div><strong style="color:var(--cyan)">${m.home.name}</strong>：${lu.home}</div>
+        <div style="margin-top:0.35rem"><strong style="color:var(--red)">${m.away.name}</strong>：${lu.away}</div>
+        ${lu.source ? `<div style="font-size:0.62rem;color:rgba(255,255,255,0.35);margin-top:0.5rem">来源：${lu.source}</div>` : ''}
+      </div>
+    </div>`;
+}
+
+function renderRefereePanel(ref) {
+  if (isPending(ref)) {
+    return `
+        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">执法本场的裁判员资料。未获 FIFA 官方确认前，不展示虚假姓名或统计数据。</div>
+        <div style="padding:0.85rem;background:rgba(200,169,110,0.08);border:1px solid rgba(200,169,110,0.25);border-radius:4px;margin-bottom:0.75rem">
+          <div style="font-size:0.95rem;font-weight:700;color:var(--gold)">${ref.name || (DATA_INTEGRITY?.PENDING_LABEL || '等待官方确认')}</div>
+          <div style="font-size:0.72rem;color:var(--txt2);margin-top:0.4rem;line-height:1.6">${ref.bias_note || ''}</div>
+        </div>
+        <div style="font-size:0.68rem;color:var(--txt2);line-height:1.55">
+          ${(ref.tendencies || []).map(t => `· ${t}`).join('<br>')}
+        </div>
+        <div class="play-note" style="margin-top:0.65rem">裁判数据待确认 · 当前推演未纳入执法风格权重</div>`;
+  }
+  return `
+        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">执法本场的裁判员资料 — 含平均出牌率、判罚风格与潜在偏向分析<span style="color:#5BBF8A">（已官方确认，已纳入推演参考）</span></div>
+        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.75rem">
+          <img src="${FLAG((ref.iso||'un'))}" style="width:28px;height:19px;object-fit:cover;border-radius:2px" onerror="this.style.display='none'">
+          <div>
+            <div style="font-weight:700;font-size:0.9rem">${ref.name}</div>
+            <div style="font-size:0.68rem;color:var(--txt2)">${ref.nation}${ref.wc_experience ? ' · ' + ref.wc_experience : ' · FIFA 执法'}${ref.source ? ' · ' + ref.source : ''}</div>
+          </div>
+        </div>
+        ${refereeQuantPanel(ref)}`;
+}
+
 const TEAM_CANON = {
   'mexico': 'Mexico', 'south africa': 'South Africa',
   'korea republic': 'South Korea', 'south korea': 'South Korea',
@@ -290,6 +374,7 @@ function renderStarPanel(team) {
 }
 
 function refereeQuantPanel(ref) {
+  if (isPending(ref)) return '';
   const pen = ref.avg_penalty != null ? ref.avg_penalty : '—';
   const hwr = ref.home_win_rate;
   const bias = ref.bias_index;
@@ -339,6 +424,7 @@ function renderMatch(m) {
   return `
   <div class="match-full-card fade-in">
     ${resultBanner(m)}
+    ${pendingBanner(m)}
     <!-- MATCH HEADER -->
     <div class="mf-header">
       <div class="mf-meta">
@@ -375,11 +461,13 @@ function renderMatch(m) {
           <div style="width:${p.draw}%;background:rgba(255,255,255,0.15)"></div>
           <div style="width:${p.away_win}%;background:var(--red)"></div>
         </div>
-        <div class="play-note" style="margin-top:0.35rem">模型推演胜率 · 娱乐参考</div>
+        <div class="play-note" style="margin-top:0.35rem">${MODEL_TAGLINE}</div>
+        <div class="play-note">模型推演胜率 · ${PLAY_NOTE_STD}</div>
         <div style="margin-top:0.75rem;text-align:center">
           <div style="font-size:0.6rem;letter-spacing:2px;color:var(--txt2);text-transform:uppercase;margin-bottom:0.25rem">${finished ? '最终比分' : '娱乐推演比分'}</div>
           <div style="font-size:2rem;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums">${p.score}</div>
-          <div class="play-note">${finished ? '比赛已结束 · 上方为官方赛果' : '通过公开数据模型的娱乐推演 · 不代表真实赛果'}</div>
+          <div class="play-note">${MODEL_TAGLINE}</div>
+          <div class="play-note">${finished ? '比赛已结束 · 上方为官方赛果' : PLAY_NOTE_STD}</div>
           <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.35rem" title="xG（期望进球数）= 根据射门位置、角度、质量统计出的理论进球数，反映攻击质量而非实际比分">期望进球 xG：<strong style="color:var(--cyan)">${p.xg_home}</strong> — <strong style="color:var(--red)">${p.xg_away}</strong> <span style="opacity:.45;font-size:0.55rem">ⓘ</span></div>
           <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.2rem">推演置信度（娱乐参考）：<strong style="color:${p.confidence>=80?'#5BBF8A':p.confidence>=60?'#C8A96E':'#ff8855'}">${p.confidence}%</strong></div>
         </div>
@@ -420,16 +508,10 @@ function renderMatch(m) {
       <!-- REFEREE -->
       <div class="mf-panel">
         <div class="mf-panel-label">🧑‍⚖️ 本场裁判分析</div>
-        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">执法本场的裁判员资料 — 含平均出牌率、判罚风格与潜在偏向分析，已纳入模型推演参考</div>
-        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.75rem">
-          <img src="${FLAG((m.referee.iso||'un'))}" style="width:28px;height:19px;object-fit:cover;border-radius:2px" onerror="this.style.display='none'">
-          <div>
-            <div style="font-weight:700;font-size:0.9rem">${m.referee.name}</div>
-            <div style="font-size:0.68rem;color:var(--txt2)">${m.referee.nation}${m.referee.wc_experience ? ' · ' + m.referee.wc_experience : ' · FIFA 执法'}</div>
-          </div>
-        </div>
-        ${refereeQuantPanel(m.referee)}
+        ${renderRefereePanel(m.referee)}
       </div>
+
+      ${m.lineup ? renderLineupPanel(m) : ''}
 
       <!-- INJURIES HOME -->
       <div class="mf-panel">
@@ -441,7 +523,7 @@ function renderMatch(m) {
             <div>
               <div style="font-size:0.8rem;font-weight:600">${inj.player}</div>
               <div style="font-size:0.67rem;color:var(--txt2)">${inj.note}</div>
-              ${inj.confirmed ? '<span style="font-size:0.6rem;color:#D95F6A">● Officially confirmed</span>' : '<span style="font-size:0.6rem;color:#C8A96E">● Unconfirmed report</span>'}
+              ${inj.confirmed ? '<span style="font-size:0.6rem;color:#D95F6A">● 官方确认</span>' : '<span style="font-size:0.6rem;color:#C8A96E">● 待核实 / 媒体报道</span>'}
             </div>
           </div>`).join('')}
         <div style="margin-top:0.6rem">
@@ -460,7 +542,7 @@ function renderMatch(m) {
             <div>
               <div style="font-size:0.8rem;font-weight:600">${inj.player}</div>
               <div style="font-size:0.67rem;color:var(--txt2)">${inj.note}</div>
-              ${inj.confirmed ? '<span style="font-size:0.6rem;color:#D95F6A">● Officially confirmed</span>' : '<span style="font-size:0.6rem;color:#C8A96E">● Unconfirmed report</span>'}
+              ${inj.confirmed ? '<span style="font-size:0.6rem;color:#D95F6A">● 官方确认</span>' : '<span style="font-size:0.6rem;color:#C8A96E">● 待核实 / 媒体报道</span>'}
             </div>
           </div>`).join('')}
         <div style="margin-top:0.6rem">
@@ -546,7 +628,7 @@ function renderNextMatch() {
       <div style="margin-left:auto;text-align:right">
         <div style="font-size:0.6rem;color:var(--txt2);letter-spacing:1px;margin-bottom:0.2rem">娱乐推演比分</div>
         <div style="font-size:2rem;font-weight:800;color:var(--gold)">${nm.predicted_score}</div>
-        <div class="play-note">数据模型娱乐推演</div>
+        <div class="play-note">数据模型娱乐推演 · ${MODEL_TAGLINE}</div>
       </div>
     </div>`;
 }

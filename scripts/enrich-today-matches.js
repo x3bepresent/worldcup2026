@@ -1,10 +1,14 @@
 /**
  * Enrich todayMatches in js/matches-data.js to A-group opening quality (Mexico m01 structure).
  * Usage: node scripts/enrich-today-matches.js
+ *
+ * ⚠️ 数据完整性：本脚本不会编造裁判/阵容。未确认项使用 pending-templates 占位。
+ *    日常请以 js/matches-data.js 手动更新为准，慎用本脚本覆盖已核实内容。
  */
 
 const fs = require('fs');
 const path = require('path');
+const { pendingReferee, pendingLineup, lineupFromPrediction } = require('./pending-templates');
 
 const ROOT = path.join(__dirname, '..');
 const MATCH_PATH = path.join(ROOT, 'js', 'matches-data.js');
@@ -217,20 +221,7 @@ function buildM03() {
       },
       note: '历史交锋加拿大占优，但样本极少，参考价值有限',
     },
-    referee: {
-      name: 'Anthony Taylor',
-      nation: '英格兰',
-      iso: 'gb-eng',
-      age: 45,
-      wc_experience: 'Qatar 2022 · 欧洲杯 2024 半决赛',
-      avg_yellow: 4.1,
-      avg_red: 0.15,
-      avg_penalty: 0.28,
-      home_win_rate: 51,
-      bias_index: 52,
-      bias_note: '执法风格稳健，对东道主无显著偏袒记录，定位球判罚较严。英格兰裁判体系以公正著称，Taylor 大场面经验丰富',
-      tendencies: ['补时慷慨', '对战术犯规零容忍', '大场面经验丰富', '点球判罚谨慎'],
-    },
+    referee: pendingReferee(),
     prediction: {
       home_win: 55,
       draw: 25,
@@ -240,7 +231,7 @@ function buildM03() {
       xg_home: 1.9,
       xg_away: 1.2,
       key_factor:
-        '东道主主场 + Davies 速度对位波黑 ageing 防线是核心变量。Džeko 定位球是波黑唯一稳定得分手段；若加拿大前30分钟破门，模型倾向主队扩大优势（概率62%）。Taylor 执法下定位球判罚尺度需关注。',
+        '东道主主场 + 边路速度对位波黑 ageing 防线是核心变量。Džeko 定位球是波黑主要得分手段。裁判信息待官方确认，暂未纳入执法风格权重。',
       score_dist: [
         { score: '2-1', prob: 22 },
         { score: '1-0', prob: 18 },
@@ -566,21 +557,7 @@ function buildM04() {
       },
       note: '美国历史占优，但巴拉圭防守韧性不可低估',
     },
-    referee: {
-      name: 'Slavko Vinčić',
-      nation: '斯洛文尼亚',
-      iso: 'si',
-      age: 44,
-      wc_final: '2022年卡塔尔世界杯参与执法',
-      wc_experience: 'Russia 2018 · Qatar 2022 · 欧洲杯 2024',
-      avg_yellow: 3.8,
-      avg_red: 0.12,
-      avg_penalty: 0.22,
-      home_win_rate: 49,
-      bias_index: 50,
-      bias_note: '欧洲杯决赛执法者，风格偏宽松，允许身体对抗。对东道主无特殊倾向，点球判罚谨慎',
-      tendencies: ['对东道主无特殊倾向', '补时平均4分钟', '点球判罚谨慎', '允许身体对抗'],
-    },
+    referee: pendingReferee(),
     prediction: {
       home_win: 60,
       draw: 25,
@@ -590,7 +567,7 @@ function buildM04() {
       xg_home: 2.1,
       xg_away: 0.8,
       key_factor:
-        '美国主场 + Pulisic 对位 Paraguay 三中卫体系是决定性因素。Paraguay 5-3-2 低位防守可能拖慢节奏，但美国边路深度（Weah、Pulisic）足以撕开空间。28°C 午后高温或影响下半场体能分配。模型倾向美国零封小胜（2-0 概率 24%）。',
+        '美国主场 + Pulisic 对位 Paraguay 三中卫体系是决定性因素。Paraguay 5-3-2 低位防守可能拖慢节奏。裁判信息待官方确认，暂未纳入执法风格权重。',
       score_dist: [
         { score: '2-0', prob: 24 },
         { score: '1-0', prob: 20 },

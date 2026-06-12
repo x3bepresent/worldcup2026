@@ -432,12 +432,8 @@ function getH2H(home, away) {
 }
 
 function getDefaultReferee() {
-  const refs = [
-    { name:'César Ramos',             nationality:'Mexico',  iso:'mx', yellows_per_game:3.8, reds_per_game:0.22, penalties_per_game:0.31, style:'严格，快速出牌', bias_notes:'执法风格偏严', fifa_since:2013, wc_experience:'Qatar 2022', big_games:[], tendency:'对犯规零容忍' },
-    { name:'Abdulrahman Al-Jassim',   nationality:'Qatar',   iso:'qa', yellows_per_game:4.1, reds_per_game:0.18, penalties_per_game:0.28, style:'允许身体对抗，大局观好', bias_notes:'广受好评，公正', fifa_since:2015, wc_experience:'Qatar 2022 QF', big_games:[], tendency:'严打假摔' },
-    { name:'Slavko Vinčić',           nationality:'Slovenia',iso:'si', yellows_per_game:3.2, reds_per_game:0.14, penalties_per_game:0.22, style:'相对宽松', bias_notes:'倾向让比赛流畅进行', fifa_since:2012, wc_experience:'Russia 2018, Qatar 2022', big_games:[], tendency:'点球判罚保守' },
-  ];
-  return refs[Math.floor(Math.random() * refs.length)];
+  const { pendingReferee } = require('./pending-templates');
+  return pendingReferee();
 }
 
 function calculatePrediction(homeName, awayName, homeNews, awayNews) {

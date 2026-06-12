@@ -1,9 +1,12 @@
 /**
  * Split finished matches → results-data.js
  * Rebuild todayMatches → Canada vs Bosnia, USA vs Paraguay
+ *
+ * ⚠️ 未确认数据使用 pending-templates，禁止编造裁判姓名。
  */
 const fs = require('fs');
 const path = require('path');
+const { pendingReferee } = require('./pending-templates');
 
 const ROOT = path.join(__dirname, '..');
 const MATCH_PATH = path.join(ROOT, 'js', 'matches-data.js');
@@ -127,17 +130,12 @@ const todayMatches = [
       ],
       note: '历史交锋加拿大占优，但样本极少，参考价值有限',
     },
-    referee: {
-      name: 'Anthony Taylor', nation: '英格兰', age: 45,
-      avg_yellow: 4.1, avg_red: 0.15,
-      bias_note: '执法风格稳健，对东道主无显著偏袒记录，定位球判罚较严',
-      tendencies: ['补时慷慨', '对战术犯规零容忍', '大场面经验丰富'],
-    },
+    referee: pendingReferee(),
     prediction: {
       home_win: 55, draw: 25, away_win: 20,
       score: '2-1', confidence: 74,
       xg_home: 1.9, xg_away: 1.2,
-      key_factor: '东道主主场 + Davies 速度对位波黑 ageing 防线是核心变量。Džeko 定位球是波黑唯一稳定得分手段；若加拿大前30分钟破门，模型倾向主队扩大优势（概率62%）。',
+      key_factor: '东道主主场 + 边路对位是核心变量。Džeko 定位球是波黑主要得分手段。裁判待官方确认，未纳入执法权重。',
       score_dist: [
         { score: '2-1', prob: 22 }, { score: '1-0', prob: 18 }, { score: '2-0', prob: 16 },
         { score: '1-1', prob: 14 }, { score: '3-1', prob: 10 }, { score: '0-1', prob: 8 }, { score: '其他', prob: 12 },
@@ -249,17 +247,12 @@ const todayMatches = [
       ],
       note: '美国历史占优，但巴拉圭防守韧性不可低估',
     },
-    referee: {
-      name: 'Slavko Vinčić', nation: '斯洛文尼亚', age: 44,
-      avg_yellow: 3.8, avg_red: 0.12,
-      bias_note: '欧洲杯决赛执法者，风格偏宽松，允许身体对抗',
-      tendencies: ['对东道主无特殊倾向', '补时平均4分钟', '点球判罚谨慎'],
-    },
+    referee: pendingReferee(),
     prediction: {
       home_win: 60, draw: 25, away_win: 15,
       score: '2-0', confidence: 78,
       xg_home: 2.1, xg_away: 0.8,
-      key_factor: '美国主场 + Pulisic 对位 Paraguay 三中卫体系是决定性因素。Paraguay 5-3-2 低位防守可能拖慢节奏，但美国边路深度（Weah、Pulisic）足以撕开空间。模型倾向美国零封小胜（2-0 概率 24%）。',
+      key_factor: '美国主场 + Pulisic 对位 Paraguay 三中卫是核心变量。裁判待官方确认，未纳入执法权重。',
       score_dist: [
         { score: '2-0', prob: 24 }, { score: '1-0', prob: 20 }, { score: '2-1', prob: 16 },
         { score: '1-1', prob: 14 }, { score: '3-0', prob: 12 }, { score: '0-0', prob: 8 }, { score: '其他', prob: 6 },
@@ -324,7 +317,7 @@ const NEW_MATCH_DATA = {
     { tag: 'LINEUP', text: 'Paraguay：Almirón 10号位核心，Gómez 统领三中卫 5-3-2 低位防守', time: '阵容情报' },
     { tag: 'RUMOR', text: '传言：SoFi Stadium 预计7万观众创纪录，美国球迷「红色浪潮」或成第12人', time: '媒体传言' },
     { tag: 'OFFICIAL', text: 'A组回顾：墨西哥、韩国各3分领跑 · 详见「过往赛果」页面', time: '小组动态' },
-    { tag: 'REFEREE', text: 'Taylor（加拿大战）+ Vinčić（美国战）执法，均为欧洲杯/世界杯级别裁判', time: '裁判信息' },
+    { tag: 'REFEREE', text: '裁判信息：已确认场次手动更新 matches-data.js；未确认显示「等待官方确认」', time: '裁判信息' },
   ],
   todayMatches,
   nextMatch: {

@@ -1,7 +1,14 @@
 // 今日赛事 — 手动/自动同步
-// Last updated: 2026-06-13T10:00:00+08:00
+//
+// ═══ 手动更新规范（必读）═══
+// 1. 未获官方确认：设 confirmed: false，姓名/阵容栏填「等待官方确认」，勿编造统计数据
+// 2. 媒体预测阵容：仅写入 lineup.predicted，lineup.confirmed 保持 false
+// 3. 已官方确认：设 confirmed: true，填写 source 与 updated 时间戳
+// 4. 脚本 enrich/rebuild 默认输出占位结构；以本文件手动内容为准
+//
+// Last updated: 2026-06-13T22:00:00+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-13T10:00:00+08:00",
+  "lastUpdated": "2026-06-13T22:00:00+08:00",
   "syncSource": "manual",
   "breakingNews": [
     {
@@ -10,24 +17,44 @@ const MATCH_DATA = {
       "time": "今日赛程"
     },
     {
+      "tag": "INJURY",
+      "text": "⚠️ 官方：队长 Alphonso Davies 大腿伤缺阵揭幕战；Marcelo Flores ACL 赛季报销",
+      "time": "6月11日 · Marsch 发布会"
+    },
+    {
       "tag": "LINEUP",
-      "text": "加拿大：Davies 左路锁定首发，Jonathan David 领衔锋线；Marsch 确认 4-3-3 攻击阵型",
-      "time": "赛前情报"
+      "text": "加拿大预测首发：Crépeau；Johnston-de Fougerolles-Cornelius-Laryea；Buchanan-Eustáquio-Koné-Millar；David-Larin（4-4-2）",
+      "time": "赛前阵容"
     },
     {
       "tag": "INJURY",
-      "text": "波黑：Kolašinac 肌肉拉伤存疑，Džeko 完全健康将首发担任支点",
-      "time": "伤情快报"
-    },
-    {
-      "tag": "OFFICIAL",
-      "text": "美国：Pulisic 队长领衔，Pochettino 排出 4-3-3；McKennie 坐镇中场",
-      "time": "官方消息"
+      "text": "Moïse Bombito 已通过体检可出战；Laryea（多伦多FC）顶替 Davies 左后卫",
+      "time": "伤情更新"
     },
     {
       "tag": "LINEUP",
-      "text": "Paraguay：Almirón 10号位核心，Gómez 统领三中卫 5-3-2 低位防守",
-      "time": "阵容情报"
+      "text": "波黑预测首发：Vasilj；Burnic-Gigović-Muharemović-Memić；Celik-Basic-Bajraktarević；Mahmić-Demirović-Bazdar",
+      "time": "赛前阵容"
+    },
+    {
+      "tag": "OFFICIAL",
+      "text": "Džeko（40岁）领衔；门将 Hadžikić 伤退，Jurkas 递补入队",
+      "time": "波黑官方"
+    },
+    {
+      "tag": "OFFICIAL",
+      "text": "美国：Pochettino 确认26人全员可用 · Richards 踝伤已愈 · 裁判 Danny Makkelie（荷兰）",
+      "time": "6月11日 · 赛前发布会"
+    },
+    {
+      "tag": "INJURY",
+      "text": "巴拉圭：Julio Enciso 肌肉伤存疑，揭幕战大概率缺阵；其余主力可出战",
+      "time": "伤情快报"
+    },
+    {
+      "tag": "LINEUP",
+      "text": "预测：美国 4-2-3-1（Balogun 中锋 · Dest 边锋）· 巴拉圭 4-4-1-1（Almirón 核心）",
+      "time": "媒体预测 · 非官方"
     },
     {
       "tag": "RUMOR",
@@ -41,7 +68,7 @@ const MATCH_DATA = {
     },
     {
       "tag": "REFEREE",
-      "text": "Taylor（加拿大战）+ Vinčić（美国战）执法，均为欧洲杯/世界杯级别裁判",
+      "text": "Danny Makkelie（荷兰）执法美国战 · Facundo Tello 执法加拿大战",
       "time": "裁判信息"
     }
   ],
@@ -59,7 +86,21 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月13日 03:00",
       "venue": "BMO Field",
       "city": "Toronto, Canada",
-      "note": "B组揭幕 · 东道主加拿大主场首战 · 海拔76m",
+      "note": "B组揭幕 · 东道主加拿大主场首战 · Davies 缺阵 · Marsch 改打 4-4-2",
+      "lineup": {
+        "confirmed": false,
+        "formation": null,
+        "home": "等待官方确认",
+        "away": "等待官方确认",
+        "note": "官方首发将于赛前约1小时由 FIFA / 球队公布。确认后请将 lineup.confirmed 设为 true 并填入正式名单。",
+        "predicted": {
+          "formation": "4-4-2",
+          "home": "Crépeau; Johnston, de Fougerolles, Cornelius, Laryea; Buchanan, Eustáquio, Koné, Millar; David, Larin",
+          "away": "Vasilj; Burnic, Gigović, Muharemović, Memić; Celik, Basic, Bajraktarević; Mahmić, Demirović, Bazdar",
+          "source": "ESPN / SI 赛前预测 · 非官方"
+        },
+        "updated": "2026-06-13T18:00:00+08:00"
+      },
       "home": {
         "name": "Canada",
         "iso": "ca",
@@ -76,41 +117,41 @@ const MATCH_DATA = {
         "coach": "Jesse Marsch",
         "stars": [
           {
-            "name": "Alphonso Davies",
-            "pos": "LB/LW",
-            "club": "Bayern Munich",
-            "stats": "WC 12场 · 3助 · 速度 36.5 km/h",
-            "rating": 8.4,
-            "desc": "加拿大旗帜性球员，速度与边路突破是主队最大武器。BMO Field 主场氛围加持，左路走廊将是波黑防线的最大考验"
-          },
-          {
             "name": "Jonathan David",
             "pos": "ST",
             "club": "Lille",
             "stats": "国家队 48场 27球 · 本赛季 18球",
-            "rating": 8.1,
-            "desc": "加拿大头号射手，跑位与终结能力俱佳。与 Buchanan 搭档双前锋，是破解波黑五后卫体系的关键"
+            "rating": 8.2,
+            "desc": "Davies 缺阵后进攻重担落在 David 肩上。预计与 Larin 双前锋搭档，是破解波黑紧凑防线的首要得分点"
           },
           {
-            "name": "Stephen Eustáquio",
-            "pos": "CM",
-            "club": "Porto",
-            "stats": "传球成功率 89% · 关键传球 2.1/场",
+            "name": "Tajon Buchanan",
+            "pos": "RM/RW",
+            "club": "Villarreal",
+            "stats": "本赛季 7球 · 关键传球 1.8/场",
+            "rating": 7.8,
+            "desc": "Davies 缺席后右路/肋部突破重任加大。Villarreal 赛季表现起伏，但 Marsch 体系下仍是连接中场与锋线的关键纽带"
+          },
+          {
+            "name": "Cyle Larin",
+            "pos": "ST",
+            "club": "Mallorca",
+            "stats": "国家队 70+ 场 30球 · 空中争顶 65%",
             "rating": 7.6,
-            "desc": "中场节拍器，长传调度与远射是加拿大由守转攻的枢纽。Marsch 4-3-3 中担任 8 号位核心"
+            "desc": "身体型中锋，与 David 组成双塔。波黑中卫 Gigović、Muharemović 偏年轻，Larin 的制空与背身能力是主队重要变招"
           }
         ],
         "injuries": [
           {
-            "player": "Jonathan David",
-            "status": "FIT",
-            "note": "里尔前锋状态正佳，预计与 Buchanan 搭档锋线",
+            "player": "Alphonso Davies（队长）",
+            "status": "OUT",
+            "note": "拜仁欧冠半决赛大腿肌肉伤，Marsch 6月11日发布会官方确认缺席揭幕战；恢复进度良好，小组赛后续场次有望复出",
             "confirmed": true
           },
           {
-            "player": "Alphonso Davies",
-            "status": "FIT",
-            "note": "赛前完成全部合练，肌肉状态良好，左路锁定首发",
+            "player": "Marcelo Flores",
+            "status": "OUT",
+            "note": "入选大名单后前十字韧带断裂，确定缺席整届世界杯",
             "confirmed": true
           },
           {
@@ -120,32 +161,44 @@ const MATCH_DATA = {
             "confirmed": true
           },
           {
-            "player": "Liam Millar",
-            "status": "DOUBT",
-            "note": "踝关节轻微扭伤，能否进入大名单待赛前 24 小时确认",
-            "confirmed": false
+            "player": "Moïse Bombito",
+            "status": "FIT",
+            "note": "胫骨骨折后加速康复，Marsch 确认可出战揭幕战；尚未100%但已进入大名单，有望搭档 Cornelius 中卫",
+            "confirmed": true
           },
           {
             "player": "Ismaël Koné",
-            "status": "OUT",
-            "note": "大腿肌肉拉伤，预计至少缺席前两场小组赛",
+            "status": "FIT",
+            "note": "赛前曾出现轻微发烧，已恢复训练；预计与 Eustáquio 搭档双中场",
+            "confirmed": true
+          },
+          {
+            "player": "Liam Millar",
+            "status": "FIT",
+            "note": "踝关节问题已缓解，预计出任左边前卫",
+            "confirmed": true
+          },
+          {
+            "player": "Jonathan David",
+            "status": "FIT",
+            "note": "里尔前锋状态正佳，与 Larin 搭档锋线",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Opta 模型：加拿大小组晋级概率 79.8%，B组夺冠呼声最高",
-          "主帅 Marsch：「这是加拿大足球的历史性时刻，我们要在主场拿下3分」",
-          "Davies 赛前训练完成全部合练，无伤病疑虑",
-          "多伦多预计气温 22°C，夜场转凌晨，湿度适中利于高速攻防",
-          "TSN 报道：BMO Field 预计 3 万观众创加拿大世界杯上座纪录"
+          "Marsch 发布会：「Davies 恢复符合预期，但揭幕战无法出场；Bombito 是好消息」",
+          "Richie Laryea（多伦多FC）顶替 Davies 左后卫，熟悉 BMO Field 草皮与氛围",
+          "更衣室：Flores 报销打击进攻深度，但 Bombito 复出提振后防士气；Eustáquio 场上领袖角色加重",
+          "加拿大近11场友谊赛6胜5平不败，但缺少队长边路爆点，Marsch 改打 4-4-2 强调中路与定位球",
+          "TSN：BMO Field 预计创加拿大世界杯上座纪录，主场压力与动力并存"
         ],
         "star": {
-          "name": "Alphonso Davies",
-          "pos": "LB/LW",
-          "club": "Bayern Munich",
-          "desc": "加拿大旗帜性球员，速度与边路突破是主队最大武器。BMO Field 主场氛围加持，左路走廊将是波黑防线的最大考验",
-          "rating": 8.4,
-          "stats": "WC 12场 · 3助 · 速度 36.5 km/h"
+          "name": "Jonathan David",
+          "pos": "ST",
+          "club": "Lille",
+          "desc": "Davies 缺阵后进攻重担落在 David 肩上。预计与 Larin 双前锋搭档，是破解波黑紧凑防线的首要得分点",
+          "rating": 8.2,
+          "stats": "国家队 48场 27球 · 本赛季 18球"
         }
       },
       "away": {
@@ -167,38 +220,44 @@ const MATCH_DATA = {
             "name": "Edin Džeko",
             "pos": "ST",
             "club": "Fiorentina",
-            "stats": "国家队 130+ 场 68球 · 四届世界杯",
+            "stats": "国家队 130+ 场 68球 · 40岁 · 2014+2026 两届世界杯",
             "rating": 7.8,
-            "desc": "38岁传奇前锋，制空与经验仍是波黑最大威胁。加拿大中卫组合需在定位球上高度专注"
+            "desc": "40岁传奇前锋，与 Kolašinac 是队中仅存的2014世界杯成员。制空、经验与定位球是波黑在反击中的最大威胁"
           },
           {
-            "name": "Miralem Pjanić",
-            "pos": "CM",
-            "club": "Sharjah",
-            "stats": "国家队 120+ 场 · 任意球专家",
+            "name": "Esmir Bajraktarević",
+            "pos": "RW/AM",
+            "club": "New England Revolution",
+            "stats": "对阵意大利附加赛表现亮眼 · 速度型边锋",
             "rating": 7.5,
-            "desc": "中场大师，长传与定位球是波黑由守转攻的核心。Marsch 需限制其拿球空间"
+            "desc": "淘汰意大利的关键球员之一，快速反击中的核心爆点。加拿大压上时，Bajraktarević 的冲刺是 Barbarez 战术的胜负手"
           },
           {
             "name": "Sead Kolašinac",
-            "pos": "LB/CB",
+            "pos": "CB/LB",
             "club": "Marseille",
-            "stats": "铲球 3.2/场 · 空中争顶 68%",
-            "rating": 7.2,
-            "desc": "左路防守悍将，肌肉拉伤存疑。若首发将直接对位 Davies，是波黑防线的关键对位"
+            "stats": "铲球 3.2/场 · 2014世界杯经验",
+            "rating": 7.4,
+            "desc": "后防老将，附加赛对阵威尔士、意大利表现稳健。Davies 缺阵后波黑左路压力减轻，Kolašinac 经验价值上升"
           }
         ],
         "injuries": [
           {
-            "player": "Sead Kolašinac",
-            "status": "DOUBT",
-            "note": "肌肉轻微拉伤，能否首发待赛前2小时确认",
-            "confirmed": false
+            "player": "Osman Hadžikić",
+            "status": "OUT",
+            "note": "第三门将肩伤退队，Mladen Jurkas 递补入26人大名单",
+            "confirmed": true
           },
           {
             "player": "Edin Džeko",
             "status": "FIT",
-            "note": "38岁前锋完全健康，将首发担任支点中锋",
+            "note": "40岁前锋完全健康，将首发担任支点中锋",
+            "confirmed": true
+          },
+          {
+            "player": "Sead Kolašinac",
+            "status": "FIT",
+            "note": "2014世界杯老将，附加赛主力中卫，身体状态正常",
             "confirmed": true
           },
           {
@@ -209,31 +268,25 @@ const MATCH_DATA = {
           },
           {
             "player": "Ermedin Demirović",
-            "status": "DOUBT",
-            "note": "小腿疲劳，可能替补待命",
-            "confirmed": false
-          },
-          {
-            "player": "Ibrahim Šehić",
-            "status": "OUT",
-            "note": "门将肩伤，第三门将位置由 Hadžikadić 顶替",
+            "status": "FIT",
+            "note": "预计与 Džeko 搭档锋线或担任第二前锋",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Džeko 第四次世界杯，赛前称「经验是我们的武器，加拿大年轻人会犯错」",
-          "波黑媒体：球队将以 5-4-1 低位防守，限制 Davies 内切",
-          "Squawka 推演：最可能比分为 2-1 加拿大胜（概率 18%）",
-          "更衣室稳定，无内讧传言，但客场面对东道主压力极大",
-          "Barbarez 确认 Pjanić 将出任拖后组织核心，定位球是主要得分手段"
+          "Džeko（40岁）：「经验是我们的武器，加拿大年轻人会在压力下犯错」",
+          "Barbarez 战术：低位紧凑防守 + 快速边路反击，专克 Marsch 高位压迫",
+          "淘汰意大利后更衣室士气高涨，年轻球员 Muharemović、Bajraktarević 信心十足",
+          "Davies 缺阵对波黑是重大利好——边路威胁下降，可更专注限制 David 与 Larin",
+          "赛前友谊赛0-0北马其顿、1-1巴拿马，进攻效率一般，但防守组织稳固"
         ],
         "star": {
           "name": "Edin Džeko",
           "pos": "ST",
           "club": "Fiorentina",
-          "desc": "38岁传奇前锋，制空与经验仍是波黑最大威胁。加拿大中卫组合需在定位球上高度专注",
+          "desc": "40岁传奇前锋，与 Kolašinac 是队中仅存的2014世界杯成员。制空、经验与定位球是波黑在反击中的最大威胁",
           "rating": 7.8,
-          "stats": "国家队 130+ 场 68球 · 四届世界杯"
+          "stats": "国家队 130+ 场 68球 · 40岁 · 2014+2026 两届世界杯"
         }
       },
       "h2h": {
@@ -281,61 +334,65 @@ const MATCH_DATA = {
         "note": "历史交锋加拿大占优，但样本极少，参考价值有限"
       },
       "referee": {
-        "name": "Anthony Taylor",
-        "nation": "英格兰",
-        "iso": "gb-eng",
-        "age": 45,
-        "wc_experience": "Qatar 2022 · 欧洲杯 2024 半决赛",
-        "avg_yellow": 4.1,
-        "avg_red": 0.15,
-        "avg_penalty": 0.28,
-        "home_win_rate": 51,
-        "bias_index": 52,
-        "bias_note": "执法风格稳健，对东道主无显著偏袒记录，定位球判罚较严。英格兰裁判体系以公正著称，Taylor 大场面经验丰富",
+        "confirmed": true,
+        "pending": false,
+        "name": "Facundo Tello",
+        "nation": "阿根廷",
+        "iso": "ar",
+        "age": 42,
+        "source": "FIFA 官方任命 · 2026-06-09",
+        "wc_experience": "Qatar 2022（3场）· 欧洲杯 2024 · 2026世预赛附加赛",
+        "var": "Hernán Mastrangelo（阿根廷）",
+        "avg_yellow": 3.0,
+        "avg_red": 0.33,
+        "avg_penalty": 0.22,
+        "home_win_rate": 48,
+        "bias_index": 50,
+        "bias_note": "2022世界杯3场共9黄1红，场均3黄，上半场出牌较少、下半场收紧。国际赛场执法相对克制，但允许一定身体对抗——有利于波黑低位防守",
         "tendencies": [
-          "补时慷慨",
-          "对战术犯规零容忍",
+          "上半场流畅度优先",
+          "下半场黄牌增多",
           "大场面经验丰富",
-          "点球判罚谨慎"
+          "对东道主无显著偏袒记录"
         ]
       },
       "prediction": {
-        "home_win": 55,
-        "draw": 25,
-        "away_win": 20,
-        "score": "2-1",
-        "confidence": 74,
-        "xg_home": 1.9,
-        "xg_away": 1.2,
-        "key_factor": "东道主主场 + Davies 速度对位波黑 ageing 防线是核心变量。Džeko 定位球是波黑唯一稳定得分手段；若加拿大前30分钟破门，模型倾向主队扩大优势（概率62%）。Taylor 执法下定位球判罚尺度需关注。",
+        "home_win": 50,
+        "draw": 28,
+        "away_win": 22,
+        "score": "1-1",
+        "confidence": 68,
+        "xg_home": 1.6,
+        "xg_away": 1.1,
+        "key_factor": "【阵容更新后重算】Davies 缺阵是最大变量：主队边路爆点与反击速度下降，Marsch 改4-4-2（David+Larin）更依赖中路与定位球。Bombito 复出部分抵消后防损失，但 Flores 报销削弱进攻深度。波黑低位反击（Bajraktarević+Džeko）专克高位压迫；Davies 不在使波黑可收缩宽度。模型主胜从55%下调至50%，平局升至28%，最可能比分由2-1调整为1-1。Tello 执法偏流畅，利于波黑拖延节奏。",
         "score_dist": [
           {
-            "score": "2-1",
-            "prob": 22
+            "score": "1-1",
+            "prob": 20
           },
           {
-            "score": "1-0",
+            "score": "2-1",
             "prob": 18
           },
           {
-            "score": "2-0",
+            "score": "1-0",
             "prob": 16
           },
           {
-            "score": "1-1",
-            "prob": 14
-          },
-          {
-            "score": "3-1",
-            "prob": 10
+            "score": "2-0",
+            "prob": 12
           },
           {
             "score": "0-1",
+            "prob": 10
+          },
+          {
+            "score": "3-1",
             "prob": 8
           },
           {
             "score": "其他",
-            "prob": 12
+            "prob": 16
           }
         ]
       },
@@ -429,16 +486,16 @@ const MATCH_DATA = {
           "general": "天地交泰，主场小胜之象。利于顺势而行的一方。",
           "advantage_team": "Canada",
           "disadvantage_team": "Bosnia and Herzegovina",
-          "hexagram_analysis": "泰卦天地交而万物通，东道主顺天应人。加拿大主场如大地承载，Davies 如风行地上；波黑水土受制，Džeko 经验或是唯一变数。",
-          "match_nature": "东道主小胜局",
-          "match_nature_prob": 55,
+          "hexagram_analysis": "泰卦天地交而万物通，东道主仍有地利。但 Davies 缺阵如「风行」受阻，加拿大改走中路厚土之道；波黑水土虽受制，反击如暗流伺机。",
+          "match_nature": "东道主小胜或平局局",
+          "match_nature_prob": 50,
           "yellow_card_risk": "中",
           "yellow_card_reason": "预计4-5张黄牌，波黑低位防守战术犯规为主",
           "scenarios": [
             {
               "icon": "⚽",
               "label": "比赛性质",
-              "text": "加拿大控场小胜概率55%，平局25%，波黑爆冷20%"
+              "text": "加拿大控场小胜概率50%，平局28%，波黑爆冷22%"
             },
             {
               "icon": "⏱",
@@ -453,7 +510,7 @@ const MATCH_DATA = {
             {
               "icon": "🔄",
               "label": "0-0平局可能",
-              "text": "低（25%）——泰卦主小往大来，主队终有收获"
+              "text": "中（28%）——Davies 缺阵削弱破局能力，Džeko 定位球成关键"
             },
             {
               "icon": "⏰",
@@ -463,27 +520,27 @@ const MATCH_DATA = {
           ],
           "early_goal": {
             "scenario": "若加拿大先进球",
-            "prediction": "泰卦「小往大来」——主队将扩大控球，波黑被迫压出，Davies 反击空间增大",
+            "prediction": "泰卦「小往大来」——主队仍扩控球权，但缺少 Davies 边路提速，波黑收缩更从容",
             "favors": "Canada",
-            "favors_prob": 68
+            "favors_prob": 58
           },
           "no_early_goal": {
             "scenario": "若前30分钟无进球",
-            "prediction": "Džeko 定位球成为波黑最大威胁，比赛进入消耗战",
+            "prediction": "Džeko 定位球 + Bajraktarević 反击成为波黑最大威胁，消耗战平局概率上升",
             "favors": "Draw",
-            "favors_prob": 45
+            "favors_prob": 52
           },
           "away_goal": {
             "scenario": "若波黑先进球",
-            "prediction": "加拿大主场反扑力度大，扳平概率58%，但逆转需防 Džeko 反击",
+            "prediction": "加拿大主场反扑力度仍大，但缺少 Davies 破密集防守手段，扳平概率52%",
             "favors": "Canada",
-            "favors_prob": 52
+            "favors_prob": 48
           },
           "halftime": {
             "scenario": "半场0-0",
-            "prediction": "下半场 Marsch 战术调整+主场声浪，加拿大进球概率65%",
+            "prediction": "下半场 Marsch 换战术+主场声浪，加拿大进球概率58%，但破僵难度高于预期",
             "favors": "Canada",
-            "favors_prob": 58
+            "favors_prob": 52
           },
           "extra_time": {
             "scenario": "加时",
@@ -492,9 +549,9 @@ const MATCH_DATA = {
             "favors_prob": 55
           }
         },
-        "home_score": 72,
-        "away_score": 38,
-        "mystic_verdict": "☷ 泰卦天地交——加拿大主场如大地承载，Davies 如风行地上。波黑水德受制，Džeko 经验或是唯一变数。",
+        "home_score": 65,
+        "away_score": 42,
+        "mystic_verdict": "☷ 泰卦天地交——加拿大主场仍占地利，但 Davies 缺阵如风行受阻。David、Larin 中路厚土，波黑 Džeko 暗流伺机，平局概率上升。",
         "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
       }
     },
@@ -511,7 +568,21 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月13日 09:00",
       "venue": "SoFi Stadium",
       "city": "Los Angeles, USA",
-      "note": "D组揭幕 · 东道主美国主场 · 洛杉矶",
+      "note": "D组揭幕 · SoFi 主场 · 26人全员可用 · Enciso 存疑",
+      "lineup": {
+        "confirmed": false,
+        "formation": null,
+        "home": "等待官方确认",
+        "away": "等待官方确认",
+        "note": "官方首发将于赛前约1小时公布。以下为 ESPN 等媒体预测，非 FIFA 确认名单。",
+        "predicted": {
+          "formation": "4-2-3-1",
+          "home": "Freese; Freeman, McKenzie, Ream, Robinson; McKennie, Adams; Dest, Tillman, Pulisic; Balogun",
+          "away": "Fernández; Cáceres, G. Gómez, Alderete, Alonso; Cubas, D. Gómez; Almirón, Bobadilla, Sosa; Sanabria",
+          "source": "ESPN 赛前预测 · 非官方"
+        },
+        "updated": "2026-06-13T22:00:00+08:00"
+      },
       "home": {
         "name": "USA",
         "iso": "us",
@@ -519,85 +590,85 @@ const MATCH_DATA = {
         "fifa_rank": 13,
         "rating": 79,
         "form": [
+          "L",
+          "L",
+          "L",
           "W",
-          "W",
-          "D",
-          "W",
-          "W"
+          "D"
         ],
         "coach": "Mauricio Pochettino",
         "stars": [
           {
             "name": "Christian Pulisic",
-            "pos": "RW",
+            "pos": "LW/AM",
             "club": "AC Milan",
-            "stats": "国家队 70+ 场 30球 · 米兰赛季 12球",
-            "rating": 8.5,
-            "desc": "美国队长，米兰赛季状态出色。SoFi Stadium 预计7万观众，Pulisic 是主队进攻灵魂"
+            "stats": "84 caps · 30+ 球 · 对塞内加尔破门",
+            "rating": 8.6,
+            "desc": "队长兼进攻核心，热身赛打破进球荒状态回升。Pochettino 4-2-3-1 中担任左路/肋部威胁点，是撕开巴拉圭防线的第一突破口"
+          },
+          {
+            "name": "Folarin Balogun",
+            "pos": "ST",
+            "club": "AS Monaco",
+            "stats": "国家队 18+ 场 · 热身赛主力中锋",
+            "rating": 7.9,
+            "desc": "预计首发中锋，与 Pulisic、Dest 组成前场三角。巴拉圭中卫 Gómez-Alderete 组合需限制其跑位与二点攻击"
           },
           {
             "name": "Weston McKennie",
             "pos": "CM",
             "club": "Juventus",
-            "stats": "拦截 2.8/场 · 空中争顶 72%",
+            "stats": "拦截 2.8/场 · 对德葡比均首发",
             "rating": 7.8,
-            "desc": "尤文中场屏障，防守覆盖与插上进攻兼备。Pochettino 4-3-3 中担任 6 号位核心"
-          },
-          {
-            "name": "Tim Weah",
-            "pos": "RW/LW",
-            "club": "Juventus",
-            "stats": "速度 34.2 km/h · 本赛季 6助",
-            "rating": 7.5,
-            "desc": "边路爆点，与 Pulisic 形成双翼压制。巴拉圭三中卫体系的最大考验来自边路深度"
+            "desc": "与 Tyler Adams 组成双后腰，负责限制 Almirón 与 Paraguay 反击出球。热身赛全程主力，体能与覆盖是中场关键"
           }
         ],
         "injuries": [
           {
-            "player": "Weston McKennie",
+            "player": "全队（26人）",
             "status": "FIT",
-            "note": "尤文中场完全健康，将出任中路屏障",
+            "note": "Pochettino 6月11日洛杉矶赛前发布会官方确认：26人大名单全部可供选择，无伤病缺阵",
+            "confirmed": true
+          },
+          {
+            "player": "Chris Richards",
+            "status": "FIT",
+            "note": "5月水晶宫时期踝伤已愈，缺席对塞内加尔/德国热身后复出；可搭档 McKenzie 或 Ream 中卫，首发与否待公布",
             "confirmed": true
           },
           {
             "player": "Christian Pulisic",
             "status": "FIT",
-            "note": "队长状态正佳，米兰赛季末无伤病，锁定首发",
+            "note": "米兰赛季末无伤病，热身对塞内加尔进球，锁定首发",
+            "confirmed": true
+          },
+          {
+            "player": "Giovanni Reyna",
+            "status": "FIT",
+            "note": "Pochettino 确认全员可用，Reyna 可替补提供进攻变化",
             "confirmed": true
           },
           {
             "player": "Sergiño Dest",
-            "status": "DOUBT",
-            "note": "肌肉疲劳，可能轮换替补",
-            "confirmed": false
-          },
-          {
-            "player": "Gio Reyna",
-            "status": "OUT",
-            "note": "小腿肌肉拉伤，预计缺席揭幕战",
-            "confirmed": true
-          },
-          {
-            "player": "Walker Zimmerman",
-            "status": "DOUBT",
-            "note": "膝伤恢复中，可能替补待命",
+            "status": "FIT",
+            "note": "预计出任右翼锋（非传统边卫），ESPN/SBI 预测首发，为 Balogun 输送传中",
             "confirmed": false
           }
         ],
         "rumors": [
-          "Pochettino：「我们在主场必须打出侵略性，洛杉矶是我们的城市」",
-          "美国媒体：本场预计上座率创 SoFi 足球纪录",
-          "Paraguay 主帅 Alfaro 称将「压缩空间、限制 Pulisic 接球」",
-          "Opta：美国胜概率 60%，零封概率 38%",
-          "ESPN：Pulisic 与 Weah 双翼组合是 Pochettino 战术核心，边路宽度将拉满"
+          "Pochettino：「26人全部可用，这是医疗团队了不起的工作；对 Paraguay 会非常艰难」",
+          "2026年4场热身3负（德国、葡萄牙、比利时），仅3-2胜塞内加尔——东道主压力与近期状态成反差",
+          "Pochettino 熟悉南美风格，称 Paraguay「像兄弟一样难缠」，警告不可轻敌",
+          "SoFi Stadium 开幕仪式 + 9pm ET 开球，预计7万观众，Fox 全美直播",
+          "Dest 改打边锋、Balogun 中锋的 4-2-3-1 是本场最可能阵型（媒体预测，待官方确认）"
         ],
         "star": {
           "name": "Christian Pulisic",
-          "pos": "RW",
+          "pos": "LW/AM",
           "club": "AC Milan",
-          "desc": "美国队长，米兰赛季状态出色。SoFi Stadium 预计7万观众，Pulisic 是主队进攻灵魂",
-          "rating": 8.5,
-          "stats": "国家队 70+ 场 30球 · 米兰赛季 12球"
+          "desc": "队长兼进攻核心，热身赛打破进球荒状态回升。Pochettino 4-2-3-1 中担任左路/肋部威胁点，是撕开巴拉圭防线的第一突破口",
+          "rating": 8.6,
+          "stats": "84 caps · 30+ 球 · 对塞内加尔破门"
         }
       },
       "away": {
@@ -607,85 +678,85 @@ const MATCH_DATA = {
         "fifa_rank": 52,
         "rating": 67,
         "form": [
-          "L",
-          "W",
           "D",
-          "L",
-          "W"
+          "D",
+          "W",
+          "W",
+          "L"
         ],
         "coach": "Gustavo Alfaro",
         "stars": [
           {
             "name": "Miguel Almirón",
-            "pos": "CAM",
-            "club": "Newcastle United",
-            "stats": "国家队 60+ 场 12球 · 英超经验",
+            "pos": "RW/AM",
+            "club": "Atlanta United",
+            "stats": "国家队 60+ 场 · 预选赛关键创造者",
             "rating": 7.9,
-            "desc": "巴拉圭进攻核心，远射与直塞是最大威胁。美国中场需限制其拿球转身"
+            "desc": "进攻唯一稳定核心，Enciso 缺阵后创造力重任全落其肩。美国双后腰 McKennie-Adams 需重点限制其接球转身"
           },
           {
             "name": "Gustavo Gómez",
             "pos": "CB",
             "club": "Palmeiras",
-            "stats": "队长 · 解放者杯冠军 · 铲球 2.5/场",
-            "rating": 7.6,
-            "desc": "队长中卫，统领三中卫体系。伤愈复出，是巴拉圭低位防守的定海神针"
+            "stats": "队长 · 解放者杯冠军 · 预选赛7场零封参与",
+            "rating": 7.7,
+            "desc": "队长中卫，Alfaro 体系防守基石。与 Alderete 搭档四后卫，定位球防守是美国角球/传中重点"
           },
           {
             "name": "Antonio Sanabria",
             "pos": "ST",
             "club": "Torino",
-            "stats": "意甲 15球 · 制空 65%",
-            "rating": 7.3,
-            "desc": "支点中锋，定位球与反击中的目标点。美国中卫需限制其背身拿球"
+            "stats": "意甲经验 · 支点与反击终结",
+            "rating": 7.4,
+            "desc": "单前锋支点，Enciso 不在时反击依赖 Almirón-Bobadilla 支援。美国中卫 Ream-McKenzie 需限制其背身拿球"
           }
         ],
         "injuries": [
           {
+            "player": "Julio Enciso",
+            "status": "DOUBT",
+            "note": "对尼加拉瓜热身赛肌肉拉伤，揭幕战大概率缺阵；非整届报销，后续场次有望复出",
+            "confirmed": true
+          },
+          {
             "player": "Gustavo Gómez",
             "status": "FIT",
-            "note": "队长中卫伤愈复出，统领三中卫体系",
+            "note": "队长中卫完全健康，预计与 Alderete 搭档四后卫",
             "confirmed": true
           },
           {
             "player": "Miguel Almirón",
             "status": "FIT",
-            "note": "纽卡核心完全健康，10号位锁定首发",
-            "confirmed": true
-          },
-          {
-            "player": "Julio Enciso",
-            "status": "OUT",
-            "note": "膝伤手术，确定缺席世界杯",
+            "note": "完全健康，进攻核心锁定首发",
             "confirmed": true
           },
           {
             "player": "Omar Alderete",
-            "status": "DOUBT",
-            "note": "肌肉轻微拉伤，能否首发待确认",
+            "status": "FIT",
+            "note": "ESPN 预测首发中卫，媒体预测尚未官方确认",
             "confirmed": false
           },
           {
             "player": "Diego Gómez",
-            "status": "OUT",
-            "note": "踝关节扭伤，预计缺席前两场",
-            "confirmed": true
+            "status": "FIT",
+            "note": "ESPN 预测首发中场，与 Cubas 搭档；媒体预测尚未官方确认",
+            "confirmed": false
           }
         ],
         "rumors": [
-          "Paraguay 将以 5-3-2 极度低位防守，Almirón 是唯一反击出口",
-          "美国与巴拉圭历史5次交锋美国3胜，但2011年美洲杯巴拉圭曾淘汰美国",
-          "Alfaro 赛前放话：「我们不惧怕东道主，防守是我们的语言」",
-          "洛杉矶白天气温 28°C，午后比赛对体能消耗较大",
-          "巴拉圭媒体：Gómez 复出后防线稳定性提升，但进攻端仍依赖 Almirón 个人能力"
+          "Alfaro 回归传统：高位身体对抗 + 紧凑四后卫，预选赛12场仅1负、7场零封",
+          "Enciso 缺阵削弱前腰创造力，Bobadilla/Sosa 或顶替其位置，反击更依赖 Almirón 个人",
+          "Alfaro 赛前：「我们不惧怕东道主，防守是我们的语言」",
+          "2010年后首次世界杯，2010年曾进八强；预选赛曾胜巴西、阿根廷",
+          "热身赛0-0北马其顿、1-1巴拿马，进攻效率一般但防守组织稳固"
         ],
         "star": {
           "name": "Miguel Almirón",
-          "pos": "CAM",
-          "club": "Newcastle United",
-          "desc": "巴拉圭进攻核心，远射与直塞是最大威胁。美国中场需限制其拿球转身",
+          "pos": "RW/AM",
+          "club": "Atlanta United",
+          "desc": "进攻唯一稳定核心，Enciso 缺阵后创造力重任全落其肩。美国双后腰 McKennie-Adams 需重点限制其接球转身",
           "rating": 7.9,
-          "stats": "国家队 60+ 场 12球 · 英超经验"
+          "stats": "国家队 60+ 场 · 预选赛关键创造者"
         }
       },
       "h2h": {
@@ -740,38 +811,41 @@ const MATCH_DATA = {
         "note": "美国历史占优，但巴拉圭防守韧性不可低估"
       },
       "referee": {
-        "name": "Slavko Vinčić",
-        "nation": "斯洛文尼亚",
-        "iso": "si",
-        "age": 44,
-        "wc_final": "2022年卡塔尔世界杯参与执法",
-        "wc_experience": "Russia 2018 · Qatar 2022 · 欧洲杯 2024",
-        "avg_yellow": 3.8,
-        "avg_red": 0.12,
-        "avg_penalty": 0.22,
-        "home_win_rate": 49,
+        "confirmed": true,
+        "pending": false,
+        "name": "Danny Makkelie",
+        "nation": "荷兰",
+        "iso": "nl",
+        "age": 43,
+        "source": "FIFA / ESPN · 2026-06-12",
+        "var": "Carlos del Cerro Grande（哥斯达黎加）",
+        "wc_experience": "Qatar 2022（2场）· 欧洲杯 2020 半决赛 · 欧联杯 2020 决赛",
+        "avg_yellow": 3.0,
+        "avg_red": 0.0,
+        "avg_penalty": 0.25,
+        "home_win_rate": 50,
         "bias_index": 50,
-        "bias_note": "欧洲杯决赛执法者，风格偏宽松，允许身体对抗。对东道主无特殊倾向，点球判罚谨慎",
+        "bias_note": "2022世界杯2场共6黄0红，场均3黄。补时倾向较慷慨（欧洲杯曾补时8分钟引发讨论），执法尺度职业、对东道主无显著偏袒。Paraguay 身体对抗风格下黄牌风险中等",
         "tendencies": [
-          "对东道主无特殊倾向",
-          "补时平均4分钟",
-          "点球判罚谨慎",
-          "允许身体对抗"
+          "补时倾向偏长",
+          "大赛经验丰富",
+          "对东道主无显著偏袒",
+          "点球判罚标准职业"
         ]
       },
       "prediction": {
-        "home_win": 60,
-        "draw": 25,
+        "home_win": 61,
+        "draw": 24,
         "away_win": 15,
         "score": "2-0",
-        "confidence": 78,
-        "xg_home": 2.1,
-        "xg_away": 0.8,
-        "key_factor": "美国主场 + Pulisic 对位 Paraguay 三中卫体系是决定性因素。Paraguay 5-3-2 低位防守可能拖慢节奏，但美国边路深度（Weah、Pulisic）足以撕开空间。28°C 午后高温或影响下半场体能分配。模型倾向美国零封小胜（2-0 概率 24%）。",
+        "confidence": 75,
+        "xg_home": 2.2,
+        "xg_away": 0.85,
+        "key_factor": "【阵容核实后重算】美国26人全员可用（Reyna/Richards 均可选）较旧数据大幅利好；但2026年热身3负1胜（德葡比）反映状态起伏，东道主心理压力抵消部分优势。Paraguay Enciso 揭幕战大概率缺阵，进攻创造力下降，Almirón 成唯一爆点。阵型由误报的5-3-2修正为4-4-1-1紧凑防守。Makkelie 执法已确认，补时偏长或利于落后方。综合：主胜61%（↑1），零封概率上升，2-0仍为最可能比分（22%）。",
         "score_dist": [
           {
             "score": "2-0",
-            "prob": 24
+            "prob": 22
           },
           {
             "score": "1-0",
@@ -783,7 +857,7 @@ const MATCH_DATA = {
           },
           {
             "score": "1-1",
-            "prob": 14
+            "prob": 13
           },
           {
             "score": "3-0",
@@ -791,11 +865,11 @@ const MATCH_DATA = {
           },
           {
             "score": "0-0",
-            "prob": 8
+            "prob": 9
           },
           {
             "score": "其他",
-            "prob": 6
+            "prob": 8
           }
         ]
       },
@@ -889,16 +963,16 @@ const MATCH_DATA = {
           "general": "火在天上，光明盛大。利于占据主场、气势正盛的一方。",
           "advantage_team": "USA",
           "disadvantage_team": "Paraguay",
-          "hexagram_analysis": "大有卦火在天上，美国主场如烈日当空。Paraguay 需以厚土（防守）承火，方能求存；Almirón 如星火，或成唯一变数。",
+          "hexagram_analysis": "大有卦火在天上，美国主场如烈日当空。全员可用+Pulisic 状态回升为「自天佑之」；但近期热身3负显骄躁隐患。Paraguay 缺 Enciso 如星火将熄，Almirón 成唯一变数。",
           "match_nature": "东道主控场局",
-          "match_nature_prob": 60,
+          "match_nature_prob": 61,
           "yellow_card_risk": "低",
           "yellow_card_reason": "预计3-4张黄牌，Paraguay 战术犯规为主",
           "scenarios": [
             {
               "icon": "⚽",
               "label": "比赛性质",
-              "text": "美国控场小胜60%，平局25%，巴拉圭爆冷15%"
+              "text": "美国控场小胜61%，平局24%，巴拉圭爆冷15%"
             },
             {
               "icon": "⏱",
@@ -929,7 +1003,7 @@ const MATCH_DATA = {
           },
           "no_early_goal": {
             "scenario": "若前45分钟无进球",
-            "prediction": "Paraguay 5-3-2 奏效，下半场美国体能+换人成为关键",
+            "prediction": "Paraguay 4-4-1-1 压缩空间奏效，但 Enciso 不在削弱反击；下半场美国换人+主场声浪成为关键",
             "favors": "USA",
             "favors_prob": 55
           },
@@ -954,7 +1028,7 @@ const MATCH_DATA = {
         },
         "home_score": 78,
         "away_score": 35,
-        "mystic_verdict": "☲ 大有卦火在天上——美国主场如烈日，Pulisic 如光普照。Paraguay 需以厚土（防守）承火，方能求存。",
+        "mystic_verdict": "☲ 大有卦火在天上——美国26人齐聚如天助，Pulisic 光热渐盛。Paraguay 缺 Enciso 星火将熄，Almirón 独撑难支。然热身三负警示：骄者必败，顺者吉亨。",
         "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
       }
     }
