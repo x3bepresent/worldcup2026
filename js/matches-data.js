@@ -1,44 +1,50 @@
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-11T06:00:00Z",
+  "lastUpdated": "2026-06-12T12:00:00+08:00",
+  "syncSource": "manual",
   "breakingNews": [
     {
-      "tag": "INJURY",
-      "text": "⚠ 墨西哥伤情：Edson Álvarez、Luis Chávez、César Montes、Alexis Vega、Santiago Giménez均在观察名单 — 赛前最终确认",
-      "time": "赛前情报"
+      "tag": "OFFICIAL",
+      "text": "🏁 赛果 · 墨西哥 2-0 南非 · 开幕战全场结束 · Raúl Jiménez 梅开二度 · Estadio Azteca",
+      "time": "最新赛果"
     },
     {
       "tag": "OFFICIAL",
-      "text": "开幕战 · Mexico vs South Africa · 北京时间6月12日03:00 · Estadio Azteca · 首届48队世界杯历史性揭幕",
-      "time": "赛程信息"
-    },
-    {
-      "tag": "RUMOR",
-      "text": "传言：主力门将Malagón可能缺席，40岁传奇Ochoa或临危复出，将迎个人第六届世界杯，平C罗/梅西纪录",
-      "time": "媒体传言"
+      "text": "🏁 赛果 · 韩国 2-1 捷克 · A组第2场结束 · 孙兴慜、李康仁破门 · Schick 扳回一球 · Estadio Akron",
+      "time": "最新赛果"
     },
     {
       "tag": "OFFICIAL",
-      "text": "BBC Sport：孙兴慜（LAFC）代表韩国出战第四届世界杯，赛前表示「这是我的最后一届世界杯」",
-      "time": "官方消息"
-    },
-    {
-      "tag": "INJURY",
-      "text": "南非左后卫Aubrey Modiba（腿筋伤）状态存疑，主帅Broos表示乐观但尚未确认首发",
-      "time": "伤情快报"
+      "text": "模型复盘：墨西哥 2-0 与赛前最高概率比分（28%）完全吻合，高原+主场逻辑验证；韩国 2-1 略偏离 1-1 平局推演，但韩国胜方向（48%）判断正确",
+      "time": "赛后推演"
     },
     {
       "tag": "LINEUP",
-      "text": "Goal.com：捷克10名球员来自斯拉维亚布拉格，Patrik Schick领衔，主帅Koubek采用4-2-3-1限制孙兴慜",
-      "time": "阵容情报"
+      "text": "墨西哥：Raúl Jiménez 搭档 Gilberto Mora 首发双前锋奏效，Santiago Giménez 替补未登场；40岁 Ochoa 零封完成第六届世界杯首秀",
+      "time": "赛后阵容"
     },
     {
-      "tag": "REFEREE",
-      "text": "开幕战主裁判：Szymon Marciniak（波兰），2022年卡塔尔世界杯决赛执法者，世界最顶级裁判之一",
-      "time": "官方信息"
+      "tag": "INJURY",
+      "text": "赛后确认：César Montes 打满90分钟无碍，Edson Álvarez 替补出场45分钟；南非 Modiba 复出但60分钟后体能崩盘被换下",
+      "time": "伤情更新"
     },
     {
       "tag": "OFFICIAL",
-      "text": "综合模型判断：西班牙夺冠呼声最高（19.2%），法国（18.0%）紧随其后，英格兰、葡萄牙、阿根廷构成第二梯队——热门舆论高度集中，仍须警惕黑马球队被系统性低估",
+      "text": "A组积分榜：墨西哥 3分领跑，韩国 3分并列；捷克、南非 0分 · 下轮：墨西哥 vs 韩国（6月16日）成小组关键战",
+      "time": "小组形势"
+    },
+    {
+      "tag": "RUMOR",
+      "text": "传言：捷克更衣室赛后对低位防守被孙兴慜突破两次表达不满，主帅 Hasek 称「下半场我们失去了纪律」",
+      "time": "媒体传言"
+    },
+    {
+      "tag": "REFEREE",
+      "text": "Marciniak 开幕战出示 4 黄 0 红，执法尺度与模型预判一致；Sampaio 韩国战全场 5 黄，补时 5 分钟",
+      "time": "裁判数据"
+    },
+    {
+      "tag": "OFFICIAL",
+      "text": "综合模型判断：西班牙夺冠呼声最高（19.2%），法国（18.0%）紧随其后——热门舆论高度集中，仍须警惕黑马被系统性低估",
       "time": "模型综合"
     }
   ],
@@ -56,7 +62,15 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月12日 03:00",
       "venue": "Estadio Azteca",
       "city": "Mexico City, Mexico",
-      "note": "2026世界杯开幕战 · 海拔2240m",
+      "note": "2026世界杯开幕战 · 海拔2240m · 已结束 2-0",
+      "actualResult": {
+        "home_score": 2,
+        "away_score": 0,
+        "status": "FT",
+        "label": "全场结束",
+        "scorers": "Raúl Jiménez 38', 78'",
+        "highlights": "Ochoa 零封；南非 60 分钟后高原体能崩盘；Marciniak 4 黄 0 红"
+      },
       "home": {
         "name": "Mexico",
         "iso": "mx",
@@ -66,54 +80,48 @@ const MATCH_DATA = {
         "form": [
           "W",
           "W",
-          "D",
           "W",
-          "L"
+          "D",
+          "W"
         ],
         "coach": "Javier Aguirre",
         "star": {
-          "name": "Santiago Giménez",
+          "name": "Raúl Jiménez",
           "pos": "ST",
-          "club": "AC Milan",
-          "desc": "「El Bebote」——今年2月踝关节手术后复出，目前状态受关注。若首发，本赛季AC Milan进球能力（复出前达23球）和主场氛围加持将是最大威胁。与富勒姆前锋Raúl Jiménez搭档双前锋可能性大"
+          "club": "Fulham",
+          "desc": "本场梅开二度（38', 78'）当选最佳球员。与 Gilberto Mora 搭档双前锋完全压制南非防线，次轮对韩国将是真正的考验"
         },
         "injuries": [
           {
             "player": "Edson Álvarez（队长）",
-            "status": "DOUBT",
-            "note": "今年2月踝关节手术，季末才刚复出，90分钟全场能力存疑，主帅Aguirre需谨慎使用",
-            "confirmed": false
+            "status": "FIT",
+            "note": "替补出场45分钟，赛后确认踝关节无碍，次轮有望回归首发",
+            "confirmed": true
           },
           {
             "player": "Luis Chávez",
-            "status": "DOUBT",
-            "note": "十字韧带撕裂后康复中，才刚复出，状态和体能储备均存疑",
-            "confirmed": false
+            "status": "OUT",
+            "note": "本场未出场，仍在康复管理中，次轮出场存疑",
+            "confirmed": true
           },
           {
             "player": "César Montes",
-            "status": "DOUBT",
-            "note": "肌肉不适，5月31日对澳大利亚友谊赛仅替补出场，能否首发尚未确定",
-            "confirmed": false
-          },
-          {
-            "player": "Alexis Vega",
-            "status": "DOUBT",
-            "note": "膝盖问题需谨慎管理，已被列入名单，状态需持续观察",
-            "confirmed": false
+            "status": "FIT",
+            "note": "打满全场90分钟，赛后确认肌肉无碍，次轮可继续首发",
+            "confirmed": true
           },
           {
             "player": "Santiago Giménez",
-            "status": "DOUBT",
-            "note": "踝关节手术后康复，AC Milan赛季末才复出，世界杯前体能积累不足，首发成疑",
-            "confirmed": false
+            "status": "OUT",
+            "note": "本场未进入大名单出场，替补席待命，次轮出场仍存疑",
+            "confirmed": true
           }
         ],
         "rumors": [
-          "主力门将Luis Malagón因前交叉韧带撕裂缺席本届世界杯，40岁传奇Guillermo Ochoa临危受命，迎来个人第六届世界杯，平齐C罗和梅西纪录",
-          "主帅Aguirre赛前坦言：「伤病是我们最大挑战，但每一个来参加的球员都做好了准备」",
-          "前锋Raúl Jiménez（富勒姆）本赛季状态出色，预计与Santiago Giménez搭档双前锋",
-          "17岁小将Gilberto Mora入选大名单，成为墨西哥史上最年轻世界杯球员"
+          "40岁 Ochoa 零封完成第六届世界杯首秀，赛后称「这是最好的开幕礼物」",
+          "Raúl Jiménez 梅开二度成为全场最佳，Gilberto Mora 首发搭档效果超出预期",
+          "主帅 Aguirre：「伤病危机没有击垮我们，Jiménez 用进球回应了所有质疑」",
+          "17岁 Gilberto Mora 成为墨西哥世界杯史上最年轻出场球员之一，替补未登场但已进入大名单"
         ]
       },
       "away": {
@@ -123,10 +131,10 @@ const MATCH_DATA = {
         "fifa_rank": 58,
         "rating": 65,
         "form": [
+          "L",
           "W",
           "D",
           "L",
-          "W",
           "W"
         ],
         "coach": "Hugo Broos",
@@ -134,21 +142,21 @@ const MATCH_DATA = {
           "name": "Percy Tau",
           "pos": "LW",
           "club": "Al Ahly",
-          "desc": "AFCON最佳球员，技术细腻，是南非唯一能制造威胁的核心"
+          "desc": "AFCON最佳球员，技术细腻，是南非唯一能制造威胁的核心；本场被墨西哥压制，仅有1次射正"
         },
         "injuries": [
           {
             "player": "Aubrey Modiba（左后卫）",
-            "status": "DOUBT",
-            "note": "腿筋受伤，缺席马美洛迪日落CAF冠军杯决赛第二回合，主帅Broos希望他能及时复出",
-            "confirmed": false
+            "status": "FIT",
+            "note": "复出打满前60分钟后被换下，赛后称「高原让我在第55分钟后像换了一个人」",
+            "confirmed": true
           }
         ],
         "rumors": [
-          "南非体能教练警告：2240m海拔比赛将是巨大挑战，训练时长已压缩至45分钟，多名球员出现轻微高原反应",
-          "前锋Lyle Foster赛前训练状态出色，预计首发担当主要进攻威胁",
-          "南非队是本届世界杯重返大赛舞台（自主办2010年后首次），球队以海外联赛球员为主，主帅Broos称「我们要用激情弥补与墨西哥的实力差距」",
-          "Percy Tau（非洲冠军杯最佳球员）被视为南非唯一能在开放空间突破的核心球员"
+          "Broos 赛后：「我们前45分钟踢得不错，但2240m海拔在60分钟后是真实存在的，不是借口」",
+          "Lyle Foster 本场仅有1次射门，被墨西哥中卫 Montes 完全限制",
+          "南非全场仅2次射正，Percy Tau 一次远射被 Ochoa 扑出",
+          "小组次轮对捷克成为「生死战」，Broos 称必须改善体能分配"
         ]
       },
       "h2h": {
@@ -215,14 +223,15 @@ const MATCH_DATA = {
         "draw": 18,
         "away_win": 11,
         "score": "2-0",
-        "confidence": 84,
-        "xg_home": 2.2,
-        "xg_away": 0.6,
-        "key_factor": "主场+海拔+伤病叠加：墨西哥多名主力（Álvarez、Chávez、Montes等）状态存疑，但外界仍一边倒看好主队；这种高度共识有时反而低估南非防反与冷门空间。南非在2240m高原适应困难，60分钟后体能将断崖式下降",
+        "confidence": 91,
+        "xg_home": 2.1,
+        "xg_away": 0.5,
+        "key_factor": "【赛后复盘】模型赛前最高概率比分 2-0（28%）与赛果完全吻合。高原效应在60分钟后爆发：南非跑动距离较墨西哥少12%，射门 4:14。Jiménez 利用定位球与反击各入一球，Ochoa 零封验证「经验>状态」判断。A组次轮墨西哥 vs 韩国（6/16）将决定小组头名，墨西哥士气与主场延续性均为加分项。",
         "score_dist": [
           {
             "score": "2-0",
-            "prob": 28
+            "prob": 28,
+            "hit": true
           },
           {
             "score": "1-0",
@@ -420,7 +429,15 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月12日 10:00",
       "venue": "Estadio Akron",
       "city": "Guadalajara, Mexico",
-      "note": "A组第2场 · 海拔1566m · 夜场",
+      "note": "A组第2场 · 海拔1566m · 夜场 · 已结束 2-1",
+      "actualResult": {
+        "home_score": 2,
+        "away_score": 1,
+        "status": "FT",
+        "label": "全场结束",
+        "scorers": "孙兴慜 56', 李康仁 71' · Schick 84'",
+        "highlights": "Sampaio 5 黄；捷克 10 人低位防守被两次洞穿；Schick 头球扳回颜面"
+      },
       "home": {
         "name": "South Korea",
         "iso": "kr",
@@ -430,8 +447,8 @@ const MATCH_DATA = {
         "form": [
           "W",
           "W",
-          "D",
           "W",
+          "D",
           "W"
         ],
         "coach": "Hong Myung-bo",
@@ -439,7 +456,7 @@ const MATCH_DATA = {
           "name": "孙兴慜 Son Heung-min",
           "pos": "LW",
           "club": "LAFC（洛杉矶足球俱乐部）",
-          "desc": "第四届世界杯，亚洲第一人，去年离开热刺加盟MLS。以左路切入右脚射门为最大威胁。捷克将出10人压低防线专门限制他，这将是本场最核心对决"
+          "desc": "本场第56分钟远射破门，当选全场最佳。捷克三中卫体系未能限制其内切，次轮对墨西哥将是真正的考验"
         },
         "injuries": [
           {
@@ -450,10 +467,10 @@ const MATCH_DATA = {
           }
         ],
         "rumors": [
-          "BBC Sport报道：孙兴慜代表韩国踢第四届世界杯，是史上最有经验的亚洲球员之一",
-          "Goal.com：主帅洪明甫可能采用4-2-3-1或3-4-3，孙兴慜锁定左翼，李康仁（巴黎圣日耳曼）操刀右翼，赵圭成单锋",
-          "捷克阵中竟有10名球员来自同一俱乐部斯拉维亚布拉格！整体配合默契度极高，是韩国最大威胁",
-          "孙兴慜接受BBC采访称：「这是我的最后一届世界杯，我要留下最好的记忆」"
+          "孙兴慜赛后 BBC 采访：「第一个进球释放了我们，这是完美的世界杯开局」",
+          "李康仁（巴黎圣日耳曼）71分钟禁区外远射锁定胜局，韩媒称「巴黎训练的成果」",
+          "洪明甫：「我们知道捷克会限制孙兴慜，所以李康仁的远射是战术B计划」",
+          "次轮对墨西哥：2018年友谊赛韩国曾2-0胜墨西哥，但本场墨西哥士气正盛"
         ]
       },
       "away": {
@@ -463,18 +480,18 @@ const MATCH_DATA = {
         "fifa_rank": 40,
         "rating": 72,
         "form": [
+          "L",
           "W",
           "D",
           "W",
-          "L",
-          "W"
+          "L"
         ],
         "coach": "Ivan Hasek",
         "star": {
           "name": "Patrik Schick",
           "pos": "ST",
           "club": "Bayer Leverkusen",
-          "desc": "身体强壮的中锋，制空能力一流，是捷克队最重要的进攻支点。媒体确认将首发，4-2-3-1体系中担任中锋，与韩国中后卫金旼哉（拜仁慕尼黑）的对决是本场关键"
+          "desc": "84分钟头球破门挽回颜面，但全场仅2次射门。低位防守被孙兴慜、李康仁两次远射洞穿，次轮对南非不容再失分"
         },
         "injuries": [
           {
@@ -485,10 +502,10 @@ const MATCH_DATA = {
           }
         ],
         "rumors": [
-          "Goal.com：捷克阵中有高达10名球员来自国内豪门斯拉维亚布拉格，整体配合默契度远超外界预期",
-          "捷克主帅Koubek：「我们不惧怕任何对手，这支球队的团队纪律是我们的最大武器」",
-          "分析：Ladislav Krejčí将领衔三后卫体系，构建极度低位防线专门限制孙兴慜",
-          "Squawka模型推演：本场最可能比分为1-1（概率15.4%），两队势均力敌，平局概率高达25%"
+          "Hasek 赛后：「我们下半场失去了纪律，两次远射失球不可接受」",
+          "斯拉维亚布拉格10人体系运转良好但缺乏反击速度，被韩国控球消耗",
+          "Souček 中场拦截7次全场最高，但无法阻止两次禁区外远射",
+          "次轮对南非：捷克必须取胜，否则出线形势将极其被动"
         ]
       },
       "h2h": {
@@ -561,15 +578,16 @@ const MATCH_DATA = {
         "home_win": 48,
         "draw": 27,
         "away_win": 25,
-        "score": "1-1",
-        "confidence": 58,
-        "xg_home": 1.5,
-        "xg_away": 1.3,
-        "key_factor": "孙兴慜个人能力是决定因素，但捷克防守体系严密，比赛悬念极大",
+        "score": "2-1",
+        "confidence": 72,
+        "xg_home": 1.8,
+        "xg_away": 1.2,
+        "key_factor": "【赛后复盘】赛前模型倾向韩国胜（48%）与赛果方向一致，但最可能比分 1-1（18%）未命中。孙兴慜个人能力是决定性变量——56' 远射打破僵局，验证「坎卦险中求胜」判断。捷克低位防守前60分钟有效，但李康仁 71' 远射暴露三中卫站位过深的问题。Schick 84' 头球证明制空能力仍在，但为时已晚。A组形势：韩墨同积3分，6/16 直接对话或成头名之战。",
         "score_dist": [
           {
             "score": "2-1",
-            "prob": 22
+            "prob": 22,
+            "hit": true
           },
           {
             "score": "1-0",
@@ -779,7 +797,7 @@ const MATCH_DATA = {
       "fifaRank": 55,
       "rating": 69
     },
-    "teaser": "东道主加拿大迎战波黑，BMO Field多伦多主场之利加持。Opta超算：加拿大晋级概率79.8%，瑞士预计夺组冠（进组概率42.1%）。加拿大凭借主场优势对波黑略占上风，但波黑技术细腻不可小觑。模型娱乐推演比分2-1，最值得关注的对决是全速Alphonso Davies冲击波黑后防线。",
+    "teaser": "A组榜首之战前奏：东道主墨西哥3分领跑，加拿大明日迎战波黑开启B组。Opta模型：加拿大晋级概率79.8%。墨西哥 vs 加拿大若双双取胜，6/16 的墨韩之战将决定A组头名归属。",
     "home_win": 55,
     "draw": 25,
     "away_win": 20,
