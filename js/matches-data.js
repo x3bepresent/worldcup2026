@@ -1,5 +1,6 @@
 // Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
 // Last API sync: 2026-06-12T16:38:07.436Z
+// score_dist optional; page uses score-model.js Poisson grid (0-0..5-5) for Top5 from xG
 const MATCH_DATA = {
   "lastUpdated": "2026-06-12T16:38:07.436Z",
   "syncSource": "API-Football",
@@ -1059,3 +1060,4 @@ const MATCH_DATA = {
     "key_player_away": "Granit Xhaka"
   }
 };
+
