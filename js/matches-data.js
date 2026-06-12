@@ -1,15 +1,8 @@
-// 今日赛事 — 手动/自动同步
-//
-// ═══ 手动更新规范（必读）═══
-// 1. 未获官方确认：设 confirmed: false，姓名/阵容栏填「等待官方确认」，勿编造统计数据
-// 2. 媒体预测阵容：仅写入 lineup.predicted，lineup.confirmed 保持 false
-// 3. 已官方确认：设 confirmed: true，填写 source 与 updated 时间戳
-// 4. 脚本 enrich/rebuild 默认输出占位结构；以本文件手动内容为准
-//
-// Last updated: 2026-06-13T22:00:00+08:00
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-12T16:38:07.436Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-13T22:00:00+08:00",
-  "syncSource": "manual",
+  "lastUpdated": "2026-06-12T16:38:07.436Z",
+  "syncSource": "API-Football",
   "breakingNews": [
     {
       "tag": "OFFICIAL",
@@ -343,7 +336,7 @@ const MATCH_DATA = {
         "source": "FIFA 官方任命 · 2026-06-09",
         "wc_experience": "Qatar 2022（3场）· 欧洲杯 2024 · 2026世预赛附加赛",
         "var": "Hernán Mastrangelo（阿根廷）",
-        "avg_yellow": 3.0,
+        "avg_yellow": 3,
         "avg_red": 0.33,
         "avg_penalty": 0.22,
         "home_win_rate": 48,
@@ -820,8 +813,8 @@ const MATCH_DATA = {
         "source": "FIFA / ESPN · 2026-06-12",
         "var": "Carlos del Cerro Grande（哥斯达黎加）",
         "wc_experience": "Qatar 2022（2场）· 欧洲杯 2020 半决赛 · 欧联杯 2020 决赛",
-        "avg_yellow": 3.0,
-        "avg_red": 0.0,
+        "avg_yellow": 3,
+        "avg_red": 0,
         "avg_penalty": 0.25,
         "home_win_rate": 50,
         "bias_index": 50,
