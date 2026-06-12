@@ -1,6 +1,6 @@
 // Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
 // Last API sync: 2026-06-12T16:38:07.436Z
-// score_dist optional; page uses score-model.js Poisson grid (0-0..5-5) for Top5 from xG
+// score_dist 已废弃 — 页面由 score-model.js 按 xG 实时泊松计算，勿手写比分概率
 const MATCH_DATA = {
   "lastUpdated": "2026-06-12T16:38:07.436Z",
   "syncSource": "API-Football",
@@ -358,37 +358,7 @@ const MATCH_DATA = {
         "confidence": 68,
         "xg_home": 1.6,
         "xg_away": 1.1,
-        "key_factor": "【阵容更新后重算】Davies 缺阵是最大变量：主队边路爆点与反击速度下降，Marsch 改4-4-2（David+Larin）更依赖中路与定位球。Bombito 复出部分抵消后防损失，但 Flores 报销削弱进攻深度。波黑低位反击（Bajraktarević+Džeko）专克高位压迫；Davies 不在使波黑可收缩宽度。模型主胜从55%下调至50%，平局升至28%，最可能比分由2-1调整为1-1。Tello 执法偏流畅，利于波黑拖延节奏。",
-        "score_dist": [
-          {
-            "score": "1-1",
-            "prob": 20
-          },
-          {
-            "score": "2-1",
-            "prob": 18
-          },
-          {
-            "score": "1-0",
-            "prob": 16
-          },
-          {
-            "score": "2-0",
-            "prob": 12
-          },
-          {
-            "score": "0-1",
-            "prob": 10
-          },
-          {
-            "score": "3-1",
-            "prob": 8
-          },
-          {
-            "score": "其他",
-            "prob": 16
-          }
-        ]
+        "key_factor": "【阵容更新后重算】Davies 缺阵是最大变量：主队边路爆点与反击速度下降，Marsch 改4-4-2（David+Larin）更依赖中路与定位球。Bombito 复出部分抵消后防损失，但 Flores 报销削弱进攻深度。波黑低位反击（Bajraktarević+Džeko）专克高位压迫；Davies 不在使波黑可收缩宽度。模型主胜从55%下调至50%，平局升至28%，最可能比分由2-1调整为1-1（xG 1.6-1.1 泊松最可能 1-1）。Tello 执法偏流畅，利于波黑拖延节奏。"
       },
       "weather": {
         "city": "多伦多",
@@ -835,37 +805,7 @@ const MATCH_DATA = {
         "confidence": 75,
         "xg_home": 2.2,
         "xg_away": 0.85,
-        "key_factor": "【阵容核实后重算】美国26人全员可用（Reyna/Richards 均可选）较旧数据大幅利好；但2026年热身3负1胜（德葡比）反映状态起伏，东道主心理压力抵消部分优势。Paraguay Enciso 揭幕战大概率缺阵，进攻创造力下降，Almirón 成唯一爆点。阵型由误报的5-3-2修正为4-4-1-1紧凑防守。Makkelie 执法已确认，补时偏长或利于落后方。综合：主胜61%（↑1），零封概率上升，2-0仍为最可能比分（22%）。",
-        "score_dist": [
-          {
-            "score": "2-0",
-            "prob": 22
-          },
-          {
-            "score": "1-0",
-            "prob": 20
-          },
-          {
-            "score": "2-1",
-            "prob": 16
-          },
-          {
-            "score": "1-1",
-            "prob": 13
-          },
-          {
-            "score": "3-0",
-            "prob": 12
-          },
-          {
-            "score": "0-0",
-            "prob": 9
-          },
-          {
-            "score": "其他",
-            "prob": 8
-          }
-        ]
+        "key_factor": "【阵容核实后重算】美国26人全员可用（Reyna/Richards 均可选）较旧数据大幅利好；但2026年热身3负1胜（德葡比）反映状态起伏，东道主心理压力抵消部分优势。Paraguay Enciso 揭幕战大概率缺阵，进攻创造力下降，Almirón 成唯一爆点。阵型由误报的5-3-2修正为4-4-1-1紧凑防守。Makkelie 执法已确认，补时偏长或利于落后方。综合：主胜61%，xG 2.2-0.85 泊松最可能 2-0（约11.5%）。"
       },
       "weather": {
         "city": "洛杉矶",

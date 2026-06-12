@@ -327,15 +327,26 @@ function weatherPanel(w, homeName, awayName) {
     </div>`;
 }
 
+function hasPoissonInputs(p) {
+  return p && p.xg_home != null && p.xg_away != null
+    && Number(p.xg_home) >= 0 && Number(p.xg_away) >= 0;
+}
+
+/** 比分分布：仅由 xG 泊松实时计算，不使用 JSON 手写 score_dist */
 function getMatchScoreDistribution(p) {
-  if (typeof computeScoreDistribution === 'function' && p.xg_home != null && p.xg_away != null) {
+  if (typeof computeScoreDistribution === 'function' && hasPoissonInputs(p)) {
     return computeScoreDistribution(p.xg_home, p.xg_away, { topN: 5 });
   }
-  return (p.score_dist || []).filter(d => d.score !== '其他').slice(0, 5);
+  return null;
 }
 
 // ── Score Distribution ─────────────────────────────────────
 function scoreDistribution(dist) {
+  if (!dist?.length) {
+    return `<div style="padding:0.65rem;background:rgba(200,169,110,0.08);border:1px solid rgba(200,169,110,0.22);border-radius:4px;font-size:0.72rem;color:var(--gold);line-height:1.55">
+      暂无 xG 数据，无法推算比分概率分布。
+    </div>`;
+  }
   const max = Math.max(...dist.map(d => d.prob));
   return `<div style="display:flex;flex-wrap:wrap;gap:0.4rem">
     ${dist.map(d => `
@@ -346,6 +357,16 @@ function scoreDistribution(dist) {
         <div style="height:${Math.round(d.prob/max*50)+8}px;background:${d.prob===max?'var(--gold)':'rgba(255,255,255,0.1)'};border-radius:2px 2px 0 0;margin-top:2px;transition:height 0.5s"></div>
         <div style="font-size:0.65rem;color:var(--txt2)">${d.prob}%</div>
       </div>`).join('')}
+  </div>`;
+}
+
+function poissonScoreFootnote(p) {
+  if (!hasPoissonInputs(p) || typeof computeOutcomeFromXg !== 'function') return '';
+  const o = computeOutcomeFromXg(p.xg_home, p.xg_away);
+  return `<div style="font-size:0.62rem;color:rgba(122,143,181,0.65);line-height:1.55;margin-top:0.5rem">
+    泊松最可能比分 <strong style="color:var(--txt)">${o.score}</strong>（${o.score_prob}%）·
+    网格内胜平负 ${o.home_win}% / ${o.draw}% / ${o.away_win}%
+    ${o.tail_mass_pct > 0 ? ` · 未列入表内的高比分约 ${o.tail_mass_pct}%` : ''}
   </div>`;
 }
 
@@ -362,10 +383,11 @@ function renderRightAnalysisPanel(p, m) {
         </div>
         <div class="mf-panel-label" style="margin-top:0.25rem">📈 本场比分概率分布</div>
         <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">
-          基于 xG 对 <strong style="color:var(--txt)">0-0 至 5-5 全表</strong>（36 种）独立泊松推演，展示概率最高的 <strong style="color:var(--txt)">5</strong> 项。<br>
-          注：纯模型娱乐推演，不代表真实赛果。
+          由本场 xG（<strong style="color:var(--cyan)">${p.xg_home ?? '—'}</strong> — <strong style="color:var(--red)">${p.xg_away ?? '—'}</strong>）对 <strong style="color:var(--txt)">0-0 至 5-5</strong> 共 36 种比分做独立泊松推演，实时计算、不存手写概率；展示 Top <strong style="color:var(--txt)">5</strong>。<br>
+          上方胜平负为综合模型（含主场、伤病等），与此处 xG 泊松比分分布为不同口径。
         </div>
         ${scoreDistribution(getMatchScoreDistribution(p))}
+        ${poissonScoreFootnote(p)}
         <div style="margin-top:1.25rem">
           <div style="font-size:0.62rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt2);margin-bottom:0.5rem">📋 ${m.home.name} 近5场战绩</div>
           ${m.home.form.map(r => `<span style="display:inline-block;width:22px;height:22px;line-height:22px;

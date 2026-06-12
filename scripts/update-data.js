@@ -262,10 +262,16 @@ function applyPrediction(match, pred) {
 
   const goals = p.goals;
   if (goals?.home != null && goals?.away != null) {
-    const gh = String(goals.home).replace(/[^0-9.-]/g, '');
-    const ga = String(goals.away).replace(/[^0-9.-]/g, '');
-    if (gh && ga && !gh.includes('.') && !ga.includes('.')) {
-      match.prediction.score = `${gh}-${ga}`;
+    const ghRaw = String(goals.home).replace(/[^0-9.-]/g, '');
+    const gaRaw = String(goals.away).replace(/[^0-9.-]/g, '');
+    const gh = parseFloat(ghRaw);
+    const ga = parseFloat(gaRaw);
+    if (Number.isFinite(gh) && Number.isFinite(ga)) {
+      match.prediction.xg_home = Math.round(gh * 100) / 100;
+      match.prediction.xg_away = Math.round(ga * 100) / 100;
+      if (Number.isInteger(gh) && Number.isInteger(ga) && ghRaw === String(Math.trunc(gh)) && gaRaw === String(Math.trunc(ga))) {
+        match.prediction.score = `${gh}-${ga}`;
+      }
     }
   }
 

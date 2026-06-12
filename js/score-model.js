@@ -52,12 +52,43 @@ function computeScoreDistribution(xgHome, xgAway, opts = {}) {
     .map(c => ({ score: c.score, prob: Math.round(c.prob * 1000) / 10 }));
 }
 
+/** 由 xG 泊松全表汇总胜平负与最可能比分（0-0…5-5 网格内） */
+function computeOutcomeFromXg(xgHome, xgAway, maxGoals = 5) {
+  const { cells, gridMass, tailMass } = computeFullScoreMatrix(xgHome, xgAway, maxGoals);
+  let homeWin = 0;
+  let draw = 0;
+  let awayWin = 0;
+  let top = cells[0];
+  for (const c of cells) {
+    if (c.home > c.away) homeWin += c.prob;
+    else if (c.home === c.away) draw += c.prob;
+    else awayWin += c.prob;
+    if (c.prob > top.prob) top = c;
+  }
+  const mass = gridMass || 1;
+  return {
+    home_win: Math.round((homeWin / mass) * 1000) / 10,
+    draw: Math.round((draw / mass) * 1000) / 10,
+    away_win: Math.round((awayWin / mass) * 1000) / 10,
+    score: top.score,
+    score_prob: Math.round(top.prob * 1000) / 10,
+    grid_mass_pct: Math.round(gridMass * 1000) / 10,
+    tail_mass_pct: Math.round(tailMass * 1000) / 10,
+  };
+}
+
 if (typeof window !== 'undefined') {
   window.computeFullScoreGrid = computeFullScoreGrid;
   window.computeFullScoreMatrix = computeFullScoreMatrix;
   window.computeScoreDistribution = computeScoreDistribution;
+  window.computeOutcomeFromXg = computeOutcomeFromXg;
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { computeFullScoreGrid, computeFullScoreMatrix, computeScoreDistribution };
+  module.exports = {
+    computeFullScoreGrid,
+    computeFullScoreMatrix,
+    computeScoreDistribution,
+    computeOutcomeFromXg,
+  };
 }
