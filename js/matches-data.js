@@ -2,7 +2,7 @@
 // Last API sync: 2026-06-13T15:25:03.814Z
 // Last media refresh: 2026-06-14T20:00:00+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-14T20:00:00+08:00",
+  "lastUpdated": "2026-06-14T21:00:00+08:00",
   "syncSource": "FotMob official XI + media",
   "breakingNews": [
     {
@@ -37,7 +37,7 @@ const MATCH_DATA = {
     },
     {
       "tag": "REFEREE",
-      "text": "FotMob m05 Martínez(HON) · m06 Vinčić(SVN) · m07 Ghorbal(ALG) · m08 Valenzuela(VEN) · 均已确认",
+      "text": "FotMob 四场主裁执法分析已入库：Martínez 4.2黄/场 · Vinčić 世界杯4黄/场 · Ghorbal/Valenzuela 世界杯≤2黄/场",
       "time": "裁判情报"
     }
   ],
@@ -278,11 +278,22 @@ const MATCH_DATA = {
         "name": "Héctor Saíd Martínez Sorto",
         "nation": "Honduras",
         "iso": "hn",
-        "bias_note": "FotMob / FIFA match sheet 确认主裁 Héctor Saíd Martínez Sorto（洪都拉斯）。",
+        "age": 34,
         "source": "FotMob · FIFA match sheet · 2026-06-13",
+        "var": "Mauro Vigliano（阿根廷）",
+        "wc_experience": "Qatar 2022（9场助理裁判）· 2026 史首名洪都拉斯主裁 · Gold Cup 2021/2023 决赛",
+        "avg_yellow": 4.2,
+        "avg_red": 0.18,
+        "avg_penalty": 0.12,
+        "home_win_rate": 48,
+        "bias_index": 50,
+        "bias_note": "CONCACAF 区域执法：165场场均约4.2黄、0.18红（Sportstar/PlayerStats），尺度偏严但不滥发红牌。2022世界杯仅任助理裁判，本场为世界杯主裁首秀——对低位铲抢与高位压迫战术犯规出牌果断，瑞士传控型球队需控制犯规次数。",
         "tendencies": [
-          "FotMob 官方执法名单 · 2026-06-13",
-          "SI.com 6/13 同向报道"
+          "CONCACAF 大赛经验丰富（金杯赛决赛×2）",
+          "场均黄牌高于世界杯均值，战术犯规易吃牌",
+          "红牌率相对克制（约5场1红）",
+          "对东道主/弱队无显著偏袒记录",
+          "2026 世界杯主裁首秀，上半场或略宽松"
         ]
       },
       "prediction": {
@@ -422,8 +433,8 @@ const MATCH_DATA = {
           "hexagram_analysis": "困卦非纯凶——「亨，贞」示守正者可无咎。然「大人吉」指向金德完整、行止有常之一方：兑泽在上，金气下行，客队如泽润万物。主队坎水在下，火性受困，唯「有言尚」——口号与士气尚在，难改卦象大势。",
           "match_nature": "客队控场小胜",
           "match_nature_prob": 58,
-          "yellow_card_risk": "中",
-          "yellow_card_reason": "预计4-5张；卡塔尔低位铲抢+瑞士高位压迫战术犯规",
+          "yellow_card_risk": "中高",
+          "yellow_card_reason": "Martínez 生涯场均4.2黄；卡塔尔低位铲抢+瑞士压迫战术犯规，预计4-6张",
           "scenarios": [
             {
               "icon": "⚽",
@@ -725,11 +736,21 @@ const MATCH_DATA = {
         "name": "Slavko Vinčić",
         "nation": "Slovenia",
         "iso": "si",
-        "bias_note": "FotMob / FIFA match sheet 确认主裁 Slavko Vinčić（斯洛文尼亚）。",
+        "age": 45,
         "source": "FotMob · FIFA match sheet · 2026-06-13",
+        "wc_experience": "Qatar 2022（2场：阿根廷-沙特6黄、威尔士-英格兰2黄）· 2024 欧冠决赛 · 欧洲杯执法",
+        "avg_yellow": 4,
+        "avg_red": 0,
+        "avg_penalty": 0.5,
+        "home_win_rate": 50,
+        "bias_index": 48,
+        "bias_note": "2022世界杯2场共8黄0红，场均4黄；阿根廷-沙特一战出牌较多但允许比赛流畅进行。2024欧冠决赛主裁，大场面经验丰富。本场巴西-摩洛哥边路对位激烈（Vinícius vs Hakimi），战术犯规与抗议吃牌风险偏高，但世界杯阶段红牌极少。",
         "tendencies": [
-          "FotMob 官方执法名单 · 2026-06-13",
-          "ESPN 6/13 同向报道"
+          "世界杯场均4黄，高于 Ghorbal/Valenzuela",
+          "允许一定身体对抗，关键阶段才收紧",
+          "2022 零红牌记录",
+          "大赛决赛级经验（欧冠2024）",
+          "对非洲/南美球队无显著判罚偏向"
         ]
       },
       "prediction": {
@@ -869,8 +890,8 @@ const MATCH_DATA = {
           "hexagram_analysis": "大壮非纯攻——「利贞」为戒。震雷在乾天，如龙行天上，利于木土得时、阳气正固之一方。摩洛哥火木受制，若学「羝羊触藩」则羸不能退，触藩而困。巴西木土顺卯时，当行「贞」道，不妄动而自强。",
           "match_nature": "主队小胜多球局",
           "match_nature_prob": 58,
-          "yellow_card_risk": "中",
-          "yellow_card_reason": "预计5-6张；Hakimi 对位 Vinícius 边路缠斗+Amrabat 战术犯规",
+          "yellow_card_risk": "中高",
+          "yellow_card_reason": "Vinčić 世界杯场均4黄；Hakimi-Vinícius 边路缠斗+中场绞杀，预计5-7张",
           "scenarios": [
             {
               "icon": "⚽",
@@ -1159,11 +1180,21 @@ const MATCH_DATA = {
         "name": "Mustapha Ghorbal",
         "nation": "Algeria",
         "iso": "dz",
-        "bias_note": "FotMob / FIFA match sheet 确认主裁 Mustapha Ghorbal（阿尔及利亚）。",
+        "age": 40,
         "source": "FotMob · FIFA match sheet · 2026-06-14",
+        "wc_experience": "Qatar 2022（2场：荷兰-厄瓜多尔1黄、澳大利亚-丹麦3黄）· 2024 非洲杯 · 2025 世俱杯",
+        "avg_yellow": 2,
+        "avg_red": 0,
+        "avg_penalty": 0,
+        "home_win_rate": 50,
+        "bias_index": 50,
+        "bias_note": "2022世界杯2场仅4黄0红，场均2黄——本届世界杯最克制主裁之一。执法风格偏流畅、少打断比赛节奏，有利于海地低位密集防守拖延时间；苏格兰若缺乏穿透力，黄牌压力较低。IFFHS 2025 最佳裁判提名。",
         "tendencies": [
-          "FotMob 官方执法名单 · 2026-06-14",
-          "ESPN 6/14 同向报道"
+          "世界杯出牌克制（场均2黄）",
+          "允许身体对抗，不轻易中断比赛",
+          "2022 零红牌、零点球",
+          "非洲/世俱杯大赛经验丰富",
+          "对弱队/强队判罚尺度相对一致"
         ]
       },
       "prediction": {
@@ -1303,8 +1334,8 @@ const MATCH_DATA = {
           "hexagram_analysis": "蹇卦主险途——非力之大小，乃「利西南」与「不利东北」之位势。苏格兰水金顺甲申金日，如行西南；海地水火内耗，如蹇于东北。艮为山、为止，主队若守如山可暂「见险而止」，然终非「利西南」之途。",
           "match_nature": "客队小胜低比分",
           "match_nature_prob": 50,
-          "yellow_card_risk": "低至中",
-          "yellow_card_reason": "预计3-4张；海地低位防守+苏格兰耐心控球，冲突有限",
+          "yellow_card_risk": "低",
+          "yellow_card_reason": "Ghorbal 世界杯场均2黄；海地低位+苏格兰控球，预计2-4张",
           "scenarios": [
             {
               "icon": "⚽",
@@ -1588,11 +1619,21 @@ const MATCH_DATA = {
         "name": "Jesús Noel Valenzuela Sáez",
         "nation": "Venezuela",
         "iso": "ve",
-        "bias_note": "FotMob / FIFA match sheet 确认主裁 Jesús Noel Valenzuela Sáez（委内瑞拉）。",
+        "age": 38,
         "source": "FotMob · FIFA match sheet · 2026-06-14",
+        "wc_experience": "Qatar 2022（2场：英格兰-美国0-0、法国-波兰3黄）· 2024/2021 美洲杯 · 解放者杯/南美杯决赛",
+        "avg_yellow": 2,
+        "avg_red": 0,
+        "avg_penalty": 0,
+        "home_win_rate": 50,
+        "bias_index": 52,
+        "bias_note": "2022世界杯2场共3黄0红，场均1.5黄——世界杯阶段执法极为流畅。美洲杯俱乐部赛事出牌较多（生涯约5黄/场），但大赛关键战倾向少打断。澳土中场绞杀+BC Place 人工草对抗，整体黄牌风险中等偏低。",
         "tendencies": [
-          "FotMob 官方执法名单 · 2026-06-14",
-          "WAGNH 6/13 同向报道"
+          "世界杯场均1.5黄，流畅度优先",
+          "2022 零红牌",
+          "南美俱乐部决赛经验丰富",
+          "补时相对规范，少过度拖延",
+          "对东道主/客队无显著偏袒"
         ]
       },
       "prediction": {
@@ -1738,8 +1779,8 @@ const MATCH_DATA = {
           "hexagram_analysis": "未济卦主「亨而未终」——非胜负已分，乃阴阳未济、水火不交。午时离火在上，澳大利亚火生土略占地利；土耳其火金同气于午而受申金之制，如「小狐汔济」——近成慎尾。此卦最忌以力断之，宜观气运流转。",
           "match_nature": "势均力敌平局局",
           "match_nature_prob": 28,
-          "yellow_card_risk": "中",
-          "yellow_card_reason": "预计4-5张；D组形势微妙，中场绞杀+定位球争抢",
+          "yellow_card_risk": "低至中",
+          "yellow_card_reason": "Valenzuela 世界杯场均1.5黄；澳土中场对抗+定位球，预计3-5张",
           "scenarios": [
             {
               "icon": "⚽",
