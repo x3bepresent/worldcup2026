@@ -48,6 +48,17 @@ function renderLineupPanel(m) {
           <div><strong style="color:var(--red)">${m.away.name}</strong></div>
           <div style="margin:0.25rem 0;padding-left:0.5rem;color:var(--txt)">${pred.away}</div>
           ${pred.source ? `<div style="font-size:0.62rem;color:rgba(255,255,255,0.35);margin-top:0.35rem">来源：${pred.source}</div>` : ''}
+        ${pred.alt ? `
+        <div style="margin-top:0.75rem;padding-top:0.65rem;border-top:1px solid rgba(255,255,255,0.06)">
+          <div style="font-size:0.62rem;letter-spacing:1px;color:var(--txt2);margin-bottom:0.35rem">备选预测（非官方）</div>
+          <div style="font-size:0.72rem;color:var(--txt2);line-height:1.65">
+            <div><strong style="color:var(--cyan)">${m.home.name}</strong> ${pred.alt.formation || ''}</div>
+            <div style="margin:0.25rem 0 0.5rem;padding-left:0.5rem;color:var(--txt)">${pred.alt.home}</div>
+            <div><strong style="color:var(--red)">${m.away.name}</strong></div>
+            <div style="margin:0.25rem 0;padding-left:0.5rem;color:var(--txt)">${pred.alt.away}</div>
+            ${pred.alt.source ? `<div style="font-size:0.62rem;color:rgba(255,255,255,0.35);margin-top:0.35rem">来源：${pred.alt.source}</div>` : ''}
+          </div>
+        </div>` : ''}
         </div>` : ''}
       </div>`;
   }
@@ -864,6 +875,12 @@ function mysticPanel(mx, homeName, awayName) {
               <div style="font-size:0.58rem;color:${cardRiskColor}99;margin-bottom:0.2rem">🟨 纪律风险</div>
               <div style="font-size:0.75rem;font-weight:800;color:${cardRiskColor}">${hx.yellow_card_risk}</div>
             </div>
+          </div>
+
+          <!-- 竞技推演（xG / 泊松 / 球员） -->
+          <div style="font-size:0.62rem;letter-spacing:2px;color:${P}0.55);padding:0.35rem 0;border-bottom:1px solid ${P}0.12)">
+            📊 竞技推演 · xG / 泊松 / 球员对位
+            <span style="font-weight:400;letter-spacing:0.5px;color:${P}0.4);margin-left:0.35rem">（进球高峰、胜率分布、分情景走势）</span>
           </div>
 
           <!-- 基本预测5项 -->
