@@ -1,10 +1,20 @@
 // 过往赛果 — 手动/自动同步
 // score_dist 已废弃 — 页面按 xG 泊松实时计算
-// Last updated: 2026-06-14T12:00:00+08:00
+// Last updated: 2026-06-14T22:30:00+08:00
 const RESULTS_DATA = {
-  "lastUpdated": "2026-06-14T12:00:00+08:00",
+  "lastUpdated": "2026-06-14T22:30:00+08:00",
   "syncSource": "manual + RotoWire 赛果",
   "breakingNews": [
+    {
+      "tag": "OFFICIAL",
+      "text": "🏁 卡塔尔 1-1 瑞士 · Embolo 点球 · Khoukhi 90+4' 绝平 · B组四队各1分",
+      "time": "6月14日"
+    },
+    {
+      "tag": "UPDATE",
+      "text": "瑞士实际 4-3-3 非 3-4-3 · xG 3.24-0.76 · Vargas 8.1 全场最佳",
+      "time": "赛后"
+    },
     {
       "tag": "OFFICIAL",
       "text": "🏁 6月13日（北京时间）· 加拿大 1-1 波黑 · 美国 4-1 巴拉圭 · 全部结束",
@@ -1700,6 +1710,471 @@ const RESULTS_DATA = {
         "scorers": "Bobadilla OG 7'; Balogun 31', 45+5 (Pulisic/Tillman); Mauricio 73' (Enciso); Reyna 90+8 (Freeman)",
         "highlights": "Balogun 双响；Enciso 替补送出助攻；美国主场4-1大胜领跑D组"
       }
+    },
+    {
+      "id": "m05",
+      "group": "B",
+      "matchday": 1,
+      "date": "2026-06-13",
+      "time": "12:00",
+      "time_local": "12:00 PT / 15:00 ET",
+      "timezone": "PDT (UTC-7)",
+      "time_beijing": "03:00",
+      "date_beijing": "6月14日",
+      "time_beijing_full": "北京时间 6月14日 03:00",
+      "venue": "Levi's Stadium",
+      "city": "Santa Clara, USA",
+      "note": "B组第2场 · 卡塔尔 vs 瑞士 · 已结束 1-1",
+      "lineup": {
+        "confirmed": true,
+        "formation": "4-3-3 / 4-3-3",
+        "home": "Abunada; Al Oui, Pedro Miguel, Khoukhi (C), Homam Elamin; Gaber, Madibo, Laye; Edmilson, Abdurisag, Afif",
+        "away": "Kobel; Zakaria, Elvedi, Akanji, Rodríguez; Aebischer, Xhaka (C), Freuler; Ndoye, Embolo, Vargas",
+        "note": "FotMob · FIFA 官方 team sheet · 全场 1-1。瑞士实际 4-3-3（Zakaria 后腰、Rodríguez 左后卫）；Khoukhi 90+4' 绝平 Embolo 17' 点球。",
+        "predicted": {
+          "formation": "4-3-3",
+          "home": "Abunada; Al-Oui, Pedro Miguel, Khoukhi, Homam Ahmed; Laye, Fathi, Gaber; Edmilson, Almoez Ali, Afif",
+          "away": "Kobel; Widmer, Elvedi, Akanji, Rodríguez; Freuler, Xhaka; Ndoye, Rieder, Vargas; Embolo",
+          "source": "Sportstar · 2026-06-13 22:38 预测 · 非官方",
+          "alt": {
+            "formation": "4-3-3",
+            "home": "Abunada; Al-Oui, Khoukhi, Pedro Miguel, Homam Ahmed; Laye, Fathi, Gaber; Abdurisag, Afif, Edmilson",
+            "away": "Kobel; Widmer, Akanji, Elvedi, Rodríguez; Xhaka, Freuler; Vargas, Rieder, Ndoye; Amdouni",
+            "source": "Sports Mole · 2026-06-13 预测 · 非官方"
+          }
+        },
+        "diff": {
+          "home": "✅ 与预测基本一致：Homam Elamin 左后卫、Madibo 后腰、Abdurisag 锋线",
+          "away": "⚠️ 实际 4-3-3 非部分媒体赛前 3-4-3 预测；Zakaria 后腰非中卫、Rodríguez 左后卫"
+        },
+        "source": "FotMob · FIFA 官方 team sheet · 2026-06-14",
+        "updated": "2026-06-14T22:30:00+08:00"
+      },
+      "home": {
+        "name": "Qatar",
+        "iso": "qa",
+        "flag": "",
+        "fifa_rank": 68,
+        "rating": 60,
+        "form": [
+          "L",
+          "D",
+          "L",
+          "W",
+          "L"
+        ],
+        "coach": "Julen Lopetegui",
+        "stars": [
+          {
+            "name": "Akram Afif",
+            "pos": "LW/AM",
+            "club": "Al-Sadd",
+            "stats": "125+ caps · 39 国家队进球 · 队长",
+            "rating": 8.2,
+            "desc": "卡塔尔进攻核心，预选赛15次参与进球。SI/Sports Mole 均预计与 Abdurisag、Edmilson 组成锋线三叉戟",
+            "number": 11,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
+          },
+          {
+            "name": "Boualem Khoukhi",
+            "pos": "CB",
+            "club": "Al-Sadd",
+            "stats": "19 国家队进球 · 定位球威胁",
+            "rating": 7.4,
+            "desc": "中卫+定位球得分点，Sports Mole 预计与 Pedro Miguel 搭档中卫；瑞士高位压迫下后场出球关键",
+            "number": 16,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
+          },
+          {
+            "name": "Hassan Al-Haydos",
+            "pos": "CM",
+            "club": "Al-Sadd",
+            "stats": "186 国家队出场 · 队长（大名单）",
+            "rating": 7.3,
+            "desc": "队史出场王，SI 称可能替补；若未首发则 Afif 领衔 younger front three",
+            "number": 10,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
+          }
+        ],
+        "star": {
+          "name": "Akram Afif",
+          "pos": "LW/AM",
+          "club": "Al-Sadd",
+          "desc": "卡塔尔进攻核心，预选赛15次参与进球。SI/Sports Mole 均预计与 Abdurisag、Edmilson 组成锋线三叉戟",
+          "rating": 8.2,
+          "stats": "125+ caps · 39 国家队进球",
+          "number": 11,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
+        },
+        "injuries": [
+          {
+            "player": "全队（26人）",
+            "status": "FIT",
+            "note": "Yahoo Sports / Sports Mole：Lopetegui 全员健康，无报告伤病缺阵",
+            "confirmed": true
+          },
+          {
+            "player": "Mahmud Abunada",
+            "status": "FIT",
+            "note": "FotMob 官方首发确认：Abunada 一门",
+            "confirmed": true
+          },
+          {
+            "player": "Almoez Ali",
+            "status": "FIT",
+            "note": "官方 XI：替补席；Abdurisag 与 Afif、Edmilson 组成锋线三叉戟",
+            "confirmed": true
+          }
+        ],
+        "rumors": [
+          "Lopetegui（Yahoo Sports）：首次通过竞技途径晋级，需保持防守纪律但不被动退缩",
+          "Sports Mole：Afif + Abdurisag + Edmilson 为首选进攻组合；Abunada 门将位置领先 Barsham",
+          "WorldCupWiki：26人中25人效力卡塔尔联赛，Homam Ahmed（Cultural Leonesa）唯一海外球员",
+          "B组：加拿大、波黑各1分，卡塔尔/瑞士均为0分——揭幕战抢分压力大",
+          "2018 友谊赛卡塔尔曾 1-0 胜瑞士，但 Opta 仍倾向瑞士控场小胜"
+        ]
+      },
+      "away": {
+        "name": "Switzerland",
+        "iso": "ch",
+        "flag": "",
+        "fifa_rank": 19,
+        "rating": 77,
+        "form": [
+          "W",
+          "D",
+          "W",
+          "W",
+          "D"
+        ],
+        "coach": "Murat Yakin",
+        "stars": [
+          {
+            "name": "Granit Xhaka",
+            "pos": "CM",
+            "club": "Sunderland",
+            "stats": "队长 · 100+ caps",
+            "rating": 8,
+            "desc": "中场节拍器，SI 确认与 Freuler 双后腰；Yakin 战术核心",
+            "number": 10,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
+          },
+          {
+            "name": "Breel Embolo",
+            "pos": "ST",
+            "club": "Rennes",
+            "stats": "24 国家队进球",
+            "rating": 7.8,
+            "desc": "FotMob 官方首发确认中锋；Amdouni 替补",
+            "number": 7,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
+          },
+          {
+            "name": "Dan Ndoye",
+            "pos": "RW",
+            "club": "Nottingham Forest",
+            "stats": "速度型边锋",
+            "rating": 7.6,
+            "desc": "FotMob 官方首发确认：3-4-3 左路宽度",
+            "number": 11,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
+          }
+        ],
+        "star": {
+          "name": "Granit Xhaka",
+          "pos": "CM",
+          "club": "Sunderland",
+          "desc": "中场节拍器，官方 XI 与 Freuler 双后腰；Yakin 战术核心",
+          "rating": 8,
+          "stats": "队长 · 100+ caps",
+          "number": 10,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
+        },
+        "injuries": [
+          {
+            "player": "Rubén Vargas",
+            "status": "FIT",
+            "note": "FotMob 官方首发确认：3-4-3 右翼",
+            "confirmed": true
+          },
+          {
+            "player": "Manuel Akanji",
+            "status": "FIT",
+            "note": "FotMob 官方首发确认：三中卫居中",
+            "confirmed": true
+          },
+          {
+            "player": "Gregor Kobel",
+            "status": "FIT",
+            "note": "FotMob 官方首发确认",
+            "confirmed": true
+          }
+        ],
+        "rumors": [
+          "Sports Mole 6/12：卡塔尔、瑞士均无报告伤病缺阵",
+          "Yakin 攻击线人选未定：Embolo（SI）vs Amdouni（Sports Mole）中锋之争",
+          "SI：中场 Sow/Jashari/Zakaria 可能替补，Xhaka-Freuler 搭档锁定",
+          "101 Great Goals / SI 预测瑞士 2-0 至 0-3 不等，均认为卡塔尔难以破局",
+          "近四届世界杯三次进16强，Yakin 强调高位逼抢+快速转移",
+          "媒体报道主裁或为 Said Martínez（洪都拉斯）· 待 FIFA 确认"
+        ]
+      },
+      "h2h": {
+        "home_wins": 0,
+        "draws": 1,
+        "away_wins": 1,
+        "recent": [
+          {
+            "year": 2018,
+            "comp": "友谊赛",
+            "score": "0-1",
+            "winner": "Switzerland"
+          }
+        ],
+        "note": "瑞士历史占优"
+      },
+      "referee": {
+        "confirmed": true,
+        "pending": false,
+        "name": "Héctor Saíd Martínez Sorto",
+        "nation": "Honduras",
+        "iso": "hn",
+        "age": 34,
+        "source": "FotMob · FIFA match sheet · 2026-06-13",
+        "var": "Mauro Vigliano（阿根廷）",
+        "wc_experience": "Qatar 2022（9场助理裁判）· 2026 史首名洪都拉斯主裁 · Gold Cup 2021/2023 决赛",
+        "avg_yellow": 4.2,
+        "avg_red": 0.18,
+        "avg_penalty": 0.12,
+        "home_win_rate": 48,
+        "bias_index": 50,
+        "bias_note": "CONCACAF 区域执法：165场场均约4.2黄、0.18红（Sportstar/PlayerStats），尺度偏严但不滥发红牌。2022世界杯仅任助理裁判，本场为世界杯主裁首秀——对低位铲抢与高位压迫战术犯规出牌果断，瑞士传控型球队需控制犯规次数。",
+        "tendencies": [
+          "CONCACAF 大赛经验丰富（金杯赛决赛×2）",
+          "场均黄牌高于世界杯均值，战术犯规易吃牌",
+          "红牌率相对克制（约5场1红）",
+          "对东道主/弱队无显著偏袒记录",
+          "2026 世界杯主裁首秀，上半场或略宽松"
+        ]
+      },
+      "prediction": {
+        "home_win": 18,
+        "draw": 24,
+        "away_win": 58,
+        "score": "0-2",
+        "confidence": 76,
+        "xg_home": 0.92,
+        "xg_away": 1.78,
+        "key_factor": "瑞士控场却仅平——Embolo 点球首开，Khoukhi 90+4' 绝平。xG 0.76-3.24 反映瑞士浪费大量机会；卡塔尔 Homam Elamin 助攻绝平。"
+      },
+      "upset_alert": {
+        "favorite": "瑞士",
+        "underdog": "卡塔尔",
+        "favorite_iso": "CH",
+        "index": 26,
+        "level": "LOW",
+        "level_cn": "偏低",
+        "cold_result_pct": 42,
+        "verdict": "瑞士控场能力稳定，卡塔尔爆冷取胜概率偏低；更现实的冷门形态是 0-0 / 1-1 逼平。",
+        "tactical": "Yakin 高位逼抢+快速转移，卡塔尔双后腰易被 Xhaka 调度拉扯；但若 Widmer/Rodríguez 压上过深，Afif 一对一速度仍有偷袭窗口。",
+        "psychology": "卡塔尔 2022 东道主经验尚在，落后时不易崩盘；瑞士近四届世界杯三次进 16 强，小组赛心态成熟，先丢球后内讧风险低。",
+        "historical": "2018 友谊赛卡塔尔 1-0 瑞士（样本小）；瑞士近三届世界杯小组赛仅 1 负（2018 0-1 瑞典），对「非传统强队」失分记录少。",
+        "factors": [
+          {
+            "tag": "克制",
+            "impact": "弱",
+            "detail": "瑞士中场控制+防线高度，卡塔尔反击难成体系"
+          },
+          {
+            "tag": "速度错配",
+            "impact": "中",
+            "detail": "Afif 若孤立拿球，瑞士边卫回追速度足够"
+          },
+          {
+            "tag": "定位球",
+            "impact": "中",
+            "detail": "卡塔尔 Khoukhi/Almoez 头球是少数破局手段"
+          },
+          {
+            "tag": "心理",
+            "impact": "弱",
+            "detail": "瑞士大赛稳定性高，不易被早进球击垮"
+          }
+        ]
+      },
+      "weather": {
+        "city": "圣克拉拉",
+        "country": "美国",
+        "temp": 24,
+        "humidity": 50,
+        "altitude_m": 7,
+        "rain_chance": 5,
+        "wind": "西北风 2级",
+        "condition_cn": "晴朗，湾区午后气温舒适",
+        "impact_level": "LOW",
+        "impact": "Levi's Stadium 海平面7m，湾区午后24°C干燥晴朗，几乎无气候变量",
+        "impact_summary": "湾区午后24°C干燥晴朗，利于传控与高位压迫；无海拔、无降雨干扰",
+        "home_adapt": 75,
+        "away_adapt": 82,
+        "home_note": "卡塔尔球员习惯高温干燥，24°C 对其反而偏凉，需开场快速进入节奏；2022 东道主经验仍在",
+        "away_note": "瑞士来自温带气候，50% 湿度与 24°C 完全适应；Xhaka 领衔的传控打法不受天气制约",
+        "weather_factors": [
+          {
+            "label": "24°C 干燥晴朗",
+            "impact": "有利传控",
+            "detail": "低湿度+无雨，传球速度快，瑞士中场转移与卡塔尔反击均不受场地拖累"
+          },
+          {
+            "label": "海平面 7m",
+            "impact": "无海拔影响",
+            "detail": "双方体能条件对等，不存在高原缺氧变量"
+          },
+          {
+            "label": "湾区午后开球",
+            "impact": "瑞士略优",
+            "detail": "本地 12:00 PT 开球，气温尚未升至日间峰值；瑞士整体适应度评分略高（82 vs 75）"
+          },
+          {
+            "label": "低降雨 5%",
+            "impact": "中性",
+            "detail": "天然草皮干燥，有利于地面配合，不利于长传冲吊"
+          }
+        ],
+        "historical_note": "Levi's Stadium 承办世界杯B组赛事；湾区气候稳定，历来极少因天气改期"
+      },
+      "mystic": {
+        "date_bazi": {
+          "year": "丙午年",
+          "year_element": "火",
+          "year_animal": "马",
+          "month": "庚午月",
+          "month_element": "金+火",
+          "day": "甲申日",
+          "day_element": "木+金",
+          "hour_home": "寅时（03:00-05:00）",
+          "hour_home_element": "木",
+          "day_dominant": "金",
+          "day_summary": "甲申日——天干甲木与地支申金相冲，日柱金气为当日之主。《道德经》曰：「金玉满堂，莫之能守。」金旺之日，宜以金德行事后进，不宜火性妄动。寅时木气初升，木生火有限，难改日柱金势。"
+        },
+        "wuxing": {
+          "home": {
+            "team": "Qatar",
+            "colors": "酒红+白",
+            "elements": "火、金",
+            "wuxing_short": "火金相战，金多火熄",
+            "verdict": "不利",
+            "verdict_color": "#D95F6A",
+            "compat": 38,
+            "reason": "酒红属火，白属金。甲申日金旺当令，卡塔尔双金（服色+日柱）叠见，火被金泄而难伸，如「孤火遇金风」。《周易·说卦》：「兑为泽、为金」——主队气场如泽下之火，受金气所困。",
+            "disadvantage": "火性不得伸张，宜守不宜攻"
+          },
+          "away": {
+            "team": "Switzerland",
+            "colors": "红+白",
+            "elements": "火、金",
+            "wuxing_short": "金火顺局，兑泽在上",
+            "verdict": "有利",
+            "verdict_color": "#5BBF8A",
+            "compat": 78,
+            "reason": "红白亦属火金，然客队行兑金之位，与申日金气同频共振。庚午月金火并见，金气归行于外，如「金声玉振」。《道德经》：「大制不割」——瑞士金德完整，流转而不散。",
+            "advantage": "金气顺日，泽润而进"
+          },
+          "summary": "五行裁定：甲申金日，双队同火金而位势不同——客队兑金顺天，主队火熄于泽；寅时木助有限，难改大局"
+        },
+        "hexagram": {
+          "name": "困卦",
+          "symbol": "☱",
+          "number": 47,
+          "upper": "兑泽",
+          "lower": "坎水",
+          "quote": "《周易·困卦》：「困，亨，贞，大人吉，无咎。有言尚。」",
+          "general": "泽水困——上兑为泽、下坎为水，泽无水之源则困。主队如泽下之火，受困而难亨；大人（金德顺局者）贞守则吉。",
+          "advantage_team": "Switzerland",
+          "disadvantage_team": "Qatar",
+          "hexagram_analysis": "困卦非纯凶——「亨，贞」示守正者可无咎。然「大人吉」指向金德完整、行止有常之一方：兑泽在上，金气下行，客队如泽润万物。主队坎水在下，火性受困，唯「有言尚」——口号与士气尚在，难改卦象大势。",
+          "match_nature": "客队控场小胜",
+          "match_nature_prob": 58,
+          "yellow_card_risk": "中高",
+          "yellow_card_reason": "Martínez 生涯场均4.2黄；卡塔尔低位铲抢+瑞士压迫战术犯规，预计4-6张",
+          "scenarios": [
+            {
+              "icon": "⚽",
+              "label": "比赛性质",
+              "text": "瑞士客胜58%，平局24%，卡塔尔爆冷18%"
+            },
+            {
+              "icon": "⏱",
+              "label": "进球高峰",
+              "text": "第25-40分钟及第70-85分钟——瑞士转移提速段"
+            },
+            {
+              "icon": "🟨",
+              "label": "黄牌风险",
+              "text": "中等——卡塔尔防守三区犯规增多"
+            },
+            {
+              "icon": "🔄",
+              "label": "0-0平局可能",
+              "text": "低（约12% 泊松）——瑞士破局手段明显更多"
+            },
+            {
+              "icon": "⏰",
+              "label": "加时赛概率",
+              "text": "极低（5%）——90分钟内分胜负概率95%"
+            }
+          ],
+          "early_goal": {
+            "scenario": "若瑞士先进球",
+            "prediction": "困卦「大人吉」——卡塔尔被迫压上，Afif 反击空间增大但防线漏洞亦增，瑞士再下一城概率58%",
+            "favors": "Switzerland",
+            "favors_prob": 62
+          },
+          "no_early_goal": {
+            "scenario": "若前30分钟无进球",
+            "prediction": "卡塔尔密集防守消耗体力；Xhaka 远射与定位球成破局关键，瑞士下半场破门概率55%",
+            "favors": "Switzerland",
+            "favors_prob": 55
+          },
+          "away_goal": {
+            "scenario": "若卡塔尔先进球",
+            "prediction": "瑞士整体实力占优，Embolo 支点+边路传中反扑力度大；扳平并反超概率52%",
+            "favors": "Switzerland",
+            "favors_prob": 52
+          },
+          "halftime": {
+            "scenario": "半场0-0",
+            "prediction": "下半场瑞士体能与板凳深度占优，Yakin 换边后提速，客队破局概率58%",
+            "favors": "Switzerland",
+            "favors_prob": 58
+          },
+          "extra_time": {
+            "scenario": "加时",
+            "prediction": "极低概率（5%）",
+            "favors": "Switzerland",
+            "favors_prob": 55
+          }
+        },
+        "home_score": 38,
+        "away_score": 78,
+        "mystic_verdict": "☱ 困卦泽水困——甲申金日，卡塔尔火金相战而火熄；瑞士兑金顺天，如「金玉满堂」之守而有度。大人吉在贞守金德者，非力之强弱，乃气之顺逆。",
+        "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
+      },
+      "actualResult": {
+        "home_score": 1,
+        "away_score": 1,
+        "status": "FT",
+        "label": "全场结束",
+        "scorers": "Embolo 17' (pen); Khoukhi 90+4'",
+        "highlights": "瑞士控球 68%、xG 3.24 vs 0.76 仍被逼平；Khoukhi 头球绝平 · 出席 67,966"
+      }
     }
   ],
   "groupSnapshots": [
@@ -1751,8 +2226,28 @@ const RESULTS_DATA = {
     },
     {
       "group": "B",
-      "label": "B组 · 第1轮后",
+      "label": "B组 · 第1轮（卡塔尔-瑞士已赛）",
       "table": [
+        {
+          "team": "Switzerland",
+          "pts": 1,
+          "p": 1,
+          "w": 0,
+          "d": 1,
+          "l": 0,
+          "gf": 1,
+          "ga": 1
+        },
+        {
+          "team": "Qatar",
+          "pts": 1,
+          "p": 1,
+          "w": 0,
+          "d": 1,
+          "l": 0,
+          "gf": 1,
+          "ga": 1
+        },
         {
           "team": "Canada",
           "pts": 1,
@@ -1772,26 +2267,6 @@ const RESULTS_DATA = {
           "l": 0,
           "gf": 1,
           "ga": 1
-        },
-        {
-          "team": "Switzerland",
-          "pts": 0,
-          "p": 0,
-          "w": 0,
-          "d": 0,
-          "l": 0,
-          "gf": 0,
-          "ga": 0
-        },
-        {
-          "team": "Qatar",
-          "pts": 0,
-          "p": 0,
-          "w": 0,
-          "d": 0,
-          "l": 0,
-          "gf": 0,
-          "ga": 0
         }
       ]
     },
