@@ -1,9 +1,20 @@
 // Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
 // Last API sync: 2026-06-13T15:25:03.814Z
+// Last media refresh: 2026-06-14T20:00:00+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-13T15:25:03.814Z",
-  "syncSource": "API-Football",
+  "lastUpdated": "2026-06-14T20:00:00+08:00",
+  "syncSource": "FotMob official XI + media",
   "breakingNews": [
+    {
+      "tag": "LINEUP",
+      "text": "✅ m05 卡塔尔-瑞士 FIFA 官方首发已确认（FotMob team sheet）· m06-m08 仍待开球前最终名单",
+      "time": "首发确认"
+    },
+    {
+      "tag": "UPDATE",
+      "text": "瑞士变阵 3-4-3：Zakaria 中卫、Aebischer 翼卫、Embolo 中锋 · 卡塔尔 Abdurisag 取代 Almoez 先发",
+      "time": "阵容要点"
+    },
     {
       "tag": "OFFICIAL",
       "text": "📅 今日4场 · 卡塔尔-瑞士(03:00) · 巴西-摩洛哥(06:00) · 海地-苏格兰(09:00) · 澳-土(12:00) · 北京时间6月14日",
@@ -11,13 +22,13 @@ const MATCH_DATA = {
     },
     {
       "tag": "LINEUP",
-      "text": "四场官方首发均未公布 · 页面已汇总 Sports Mole / SI.com / ESPN 预测阵容 · 开球前约1小时确认",
-      "time": "阵容状态"
+      "text": "Sportstar/ESPN/FotMob 预测 XI · m06-m08 官方 team sheet 仍标注 Predicted · 开球前约1小时更新",
+      "time": "阵容预测"
     },
     {
       "tag": "INJURY",
-      "text": "巴西 Neymar 缺阵 · 摩洛哥 Aguerd/Abde 报销 · 苏格兰 Gilmour 报销 · 土耳其 Yildiz 存疑",
-      "time": "伤病汇总"
+      "text": "McTominay 可首发 · Neymar 缺阵 · FotMob 预测 Yildiz 进入土队 XI · McKenna 未进预测名单",
+      "time": "伤病更新"
     },
     {
       "tag": "OFFICIAL",
@@ -26,7 +37,7 @@ const MATCH_DATA = {
     },
     {
       "tag": "REFEREE",
-      "text": "SI 报道 m05 Martínez(HON)、m06 Vinčić(SVN) 主裁 · 均待 FIFA 最终名单确认",
+      "text": "FotMob m05 Martínez(HON) · m06 Vinčić(SVN) · m07 Ghorbal(ALG) · m08 Valenzuela(VEN) · 均已确认",
       "time": "裁判情报"
     }
   ],
@@ -44,26 +55,31 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月14日 03:00",
       "venue": "Levi's Stadium",
       "city": "Santa Clara, USA",
-      "note": "B组第2场 · 卡塔尔 vs 瑞士 · 旧金山湾区 · 官方首发待确认",
+      "note": "B组第2场 · 卡塔尔 vs 瑞士 · 官方首发已确认",
       "lineup": {
-        "confirmed": false,
-        "formation": null,
-        "home": "等待官方确认",
-        "away": "等待官方确认",
-        "note": "FIFA 官方首发尚未公布（通常开球前约1小时确认）。下方为 Sports Mole 6月13日预测为主、SI.com 备选，非官方。",
+        "confirmed": true,
+        "formation": "4-3-3 / 3-4-3",
+        "home": "Abunada; Al Oui, Pedro Miguel, Khoukhi (C), Elamin; Gaber, Madibo, Laye; Edmilson, Abdurisag, Afif",
+        "away": "Kobel; Zakaria, Akanji, Elvedi, Aebischer; Freuler, Xhaka (C), Rodríguez; Ndoye, Embolo, Vargas",
+        "note": "FotMob · FIFA 官方 team sheet（2026-06-13/14 赛前确认）。瑞士改打 3-4-3，Zakaria 进中卫、Aebischer 翼卫；卡塔尔 Madibo 后腰、Abdurisag 锋线取代 Almoez。",
         "predicted": {
           "formation": "4-3-3",
-          "home": "Abunada; Al-Oui, Khoukhi, Pedro Miguel, Homam Ahmed; Laye, Fathi, Gaber; Abdurisag, Afif, Edmilson",
-          "away": "Kobel; Widmer, Akanji, Elvedi, Rodríguez; Xhaka, Freuler; Vargas, Rieder, Ndoye; Amdouni",
-          "source": "Sports Mole · 2026-06-13 预测 · 非官方",
+          "home": "Abunada; Al-Oui, Pedro Miguel, Khoukhi, Homam Ahmed; Laye, Fathi, Gaber; Edmilson, Almoez Ali, Afif",
+          "away": "Kobel; Widmer, Elvedi, Akanji, Rodríguez; Freuler, Xhaka; Ndoye, Rieder, Vargas; Embolo",
+          "source": "Sportstar · 2026-06-13 22:38 预测 · 非官方",
           "alt": {
-            "formation": "4-3-3 / 4-2-3-1",
-            "home": "Abunada; Al-Oui, Pedro Miguel, Khoukhi, Ahmed; Gaber, Fathy, Laye; Abdurisag, Afif, Edmilson Junior",
-            "away": "Kobel; Widmer, Elvedi, Akanji, Rodríguez; Xhaka, Freuler; Vargas, Manzambi, Ndoye; Embolo",
-            "source": "SI.com · 2026-06-13 预测 · 非官方"
+            "formation": "4-3-3",
+            "home": "Abunada; Al-Oui, Khoukhi, Pedro Miguel, Homam Ahmed; Laye, Fathi, Gaber; Abdurisag, Afif, Edmilson",
+            "away": "Kobel; Widmer, Akanji, Elvedi, Rodríguez; Xhaka, Freuler; Vargas, Rieder, Ndoye; Amdouni",
+            "source": "Sports Mole · 2026-06-13 预测 · 非官方"
           }
         },
-        "updated": "2026-06-14T18:00:00+08:00"
+        "diff": {
+          "home": "⚠️ 3 处出入：① Elamin 替 Homam Ahmed 左后卫 ② Madibo 替 Fathi 后腰 ③ Abdurisag 替 Almoez 前锋（Almoez 替补）",
+          "away": "⚠️ 战术变阵：3-4-3 非预测 4-3-3/4-2-3-1；Zakaria+Aebischer 替 Widmer 传统四后卫；Rieder 替补、Amdouni 替补"
+        },
+        "source": "FotMob · FIFA 官方 team sheet · 2026-06-14",
+        "updated": "2026-06-14T20:00:00+08:00"
       },
       "home": {
         "name": "Qatar",
@@ -86,7 +102,10 @@ const MATCH_DATA = {
             "club": "Al-Sadd",
             "stats": "125+ caps · 39 国家队进球 · 队长",
             "rating": 8.2,
-            "desc": "卡塔尔进攻核心，预选赛15次参与进球。SI/Sports Mole 均预计与 Abdurisag、Edmilson 组成锋线三叉戟"
+            "desc": "卡塔尔进攻核心，预选赛15次参与进球。SI/Sports Mole 均预计与 Abdurisag、Edmilson 组成锋线三叉戟",
+            "number": 11,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Boualem Khoukhi",
@@ -94,7 +113,10 @@ const MATCH_DATA = {
             "club": "Al-Sadd",
             "stats": "19 国家队进球 · 定位球威胁",
             "rating": 7.4,
-            "desc": "中卫+定位球得分点，Sports Mole 预计与 Pedro Miguel 搭档中卫；瑞士高位压迫下后场出球关键"
+            "desc": "中卫+定位球得分点，Sports Mole 预计与 Pedro Miguel 搭档中卫；瑞士高位压迫下后场出球关键",
+            "number": 16,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Hassan Al-Haydos",
@@ -102,7 +124,10 @@ const MATCH_DATA = {
             "club": "Al-Sadd",
             "stats": "186 国家队出场 · 队长（大名单）",
             "rating": 7.3,
-            "desc": "队史出场王，SI 称可能替补；若未首发则 Afif 领衔 younger front three"
+            "desc": "队史出场王，SI 称可能替补；若未首发则 Afif 领衔 younger front three",
+            "number": 10,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           }
         ],
         "star": {
@@ -111,7 +136,10 @@ const MATCH_DATA = {
           "club": "Al-Sadd",
           "desc": "卡塔尔进攻核心，预选赛15次参与进球。SI/Sports Mole 均预计与 Abdurisag、Edmilson 组成锋线三叉戟",
           "rating": 8.2,
-          "stats": "125+ caps · 39 国家队进球"
+          "stats": "125+ caps · 39 国家队进球",
+          "number": 11,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
         },
         "injuries": [
           {
@@ -123,14 +151,14 @@ const MATCH_DATA = {
           {
             "player": "Mahmud Abunada",
             "status": "FIT",
-            "note": "热身赛主力门将，与 Barsham 竞争；Sports Mole/Yahoo 预测首发",
-            "confirmed": false
+            "note": "FotMob 官方首发确认：Abunada 一门",
+            "confirmed": true
           },
           {
             "player": "Almoez Ali",
             "status": "FIT",
-            "note": "2019 亚洲杯金靴，媒体预测锋线为 Afif/Abdurisag/Edmilson，Almoez 可能替补",
-            "confirmed": false
+            "note": "官方 XI：替补席；Abdurisag 与 Afif、Edmilson 组成锋线三叉戟",
+            "confirmed": true
           }
         ],
         "rumors": [
@@ -162,7 +190,10 @@ const MATCH_DATA = {
             "club": "Sunderland",
             "stats": "队长 · 100+ caps",
             "rating": 8,
-            "desc": "中场节拍器，SI 确认与 Freuler 双后腰；Yakin 战术核心"
+            "desc": "中场节拍器，SI 确认与 Freuler 双后腰；Yakin 战术核心",
+            "number": 10,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Breel Embolo",
@@ -170,7 +201,10 @@ const MATCH_DATA = {
             "club": "Rennes",
             "stats": "24 国家队进球",
             "rating": 7.8,
-            "desc": "SI 预测首发中锋；Sports Mole 倾向 Burnley 的 Zeki Amdouni，锋线存在悬念"
+            "desc": "FotMob 官方首发确认中锋；Amdouni 替补",
+            "number": 7,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Dan Ndoye",
@@ -178,38 +212,45 @@ const MATCH_DATA = {
             "club": "Nottingham Forest",
             "stats": "速度型边锋",
             "rating": 7.6,
-            "desc": "SI/Sports Mole 均出现在右路预测；与 Vargas、Manzambi/Rieder 竞争攻击线位置"
+            "desc": "FotMob 官方首发确认：3-4-3 左路宽度",
+            "number": 11,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           }
         ],
         "star": {
           "name": "Granit Xhaka",
           "pos": "CM",
           "club": "Sunderland",
-          "desc": "中场节拍器，SI 确认与 Freuler 双后腰；Yakin 战术核心",
+          "desc": "中场节拍器，官方 XI 与 Freuler 双后腰；Yakin 战术核心",
           "rating": 8,
-          "stats": "队长 · 100+ caps"
+          "stats": "队长 · 100+ caps",
+          "number": 10,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
         },
         "injuries": [
           {
             "player": "Rubén Vargas",
-            "status": "DOUBT",
-            "note": "Sports Mole / WorldCupWiki：右翼若通过体检则首发，否则 Rieder 顶替",
-            "confirmed": false
+            "status": "FIT",
+            "note": "FotMob 官方首发确认：3-4-3 右翼",
+            "confirmed": true
           },
           {
             "player": "Manuel Akanji",
             "status": "FIT",
-            "note": "SI：防线常规四人组 Akanji-Elvedi-Rodríguez-Widmer 预计不变",
+            "note": "FotMob 官方首发确认：三中卫居中",
             "confirmed": true
           },
           {
             "player": "Gregor Kobel",
             "status": "FIT",
-            "note": "Sports Mole/SI 均预测首发门将（非 Sommer）",
-            "confirmed": false
+            "note": "FotMob 官方首发确认",
+            "confirmed": true
           }
         ],
         "rumors": [
+          "Sports Mole 6/12：卡塔尔、瑞士均无报告伤病缺阵",
           "Yakin 攻击线人选未定：Embolo（SI）vs Amdouni（Sports Mole）中锋之争",
           "SI：中场 Sow/Jashari/Zakaria 可能替补，Xhaka-Freuler 搭档锁定",
           "101 Great Goals / SI 预测瑞士 2-0 至 0-3 不等，均认为卡塔尔难以破局",
@@ -232,15 +273,16 @@ const MATCH_DATA = {
         "note": "瑞士历史占优"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "FIFA 官方裁判名单尚未最终确认。SI.com 报道主裁或为 Said Martínez（洪都拉斯）；确认前本站不纳入执法统计推演。",
+        "confirmed": true,
+        "pending": false,
+        "name": "Héctor Saíd Martínez Sorto",
+        "nation": "Honduras",
+        "iso": "hn",
+        "bias_note": "FotMob / FIFA match sheet 确认主裁 Héctor Saíd Martínez Sorto（洪都拉斯）。",
+        "source": "FotMob · FIFA match sheet · 2026-06-13",
         "tendencies": [
-          "媒体报道：Said Martínez（HON）· SI.com 6/13 · 待 FIFA 确认",
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+          "FotMob 官方执法名单 · 2026-06-13",
+          "SI.com 6/13 同向报道"
         ]
       },
       "prediction": {
@@ -251,7 +293,7 @@ const MATCH_DATA = {
         "confidence": 76,
         "xg_home": 0.92,
         "xg_away": 1.78,
-        "key_factor": "瑞士整体实力与中场控制明显占优，Xhaka 对位卡塔尔双后腰是核心。卡塔尔需靠 Afif/Almoez 反击，但面对 Akanji 领衔防线难度较大。xG 0.92-1.78 泊松最可能 0-2。"
+        "key_factor": "瑞士 3-4-3 变阵（Zakaria 中卫、Aebischer 翼卫）中场控制仍占优。卡塔尔 Abdurisag 替 Almoez 先发，反击点集中在 Afif。xG 0.92-1.78 泊松最可能 0-2。"
       },
       "upset_alert": {
         "favorite": "瑞士",
@@ -266,10 +308,26 @@ const MATCH_DATA = {
         "psychology": "卡塔尔 2022 东道主经验尚在，落后时不易崩盘；瑞士近四届世界杯三次进 16 强，小组赛心态成熟，先丢球后内讧风险低。",
         "historical": "2018 友谊赛卡塔尔 1-0 瑞士（样本小）；瑞士近三届世界杯小组赛仅 1 负（2018 0-1 瑞典），对「非传统强队」失分记录少。",
         "factors": [
-          { "tag": "克制", "impact": "弱", "detail": "瑞士中场控制+防线高度，卡塔尔反击难成体系" },
-          { "tag": "速度错配", "impact": "中", "detail": "Afif 若孤立拿球，瑞士边卫回追速度足够" },
-          { "tag": "定位球", "impact": "中", "detail": "卡塔尔 Khoukhi/Almoez 头球是少数破局手段" },
-          { "tag": "心理", "impact": "弱", "detail": "瑞士大赛稳定性高，不易被早进球击垮" }
+          {
+            "tag": "克制",
+            "impact": "弱",
+            "detail": "瑞士中场控制+防线高度，卡塔尔反击难成体系"
+          },
+          {
+            "tag": "速度错配",
+            "impact": "中",
+            "detail": "Afif 若孤立拿球，瑞士边卫回追速度足够"
+          },
+          {
+            "tag": "定位球",
+            "impact": "中",
+            "detail": "卡塔尔 Khoukhi/Almoez 头球是少数破局手段"
+          },
+          {
+            "tag": "心理",
+            "impact": "弱",
+            "detail": "瑞士大赛稳定性高，不易被早进球击垮"
+          }
         ]
       },
       "weather": {
@@ -443,26 +501,26 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月14日 06:00",
       "venue": "MetLife Stadium",
       "city": "East Rutherford, USA",
-      "note": "C组焦点战 · 巴西 vs 摩洛哥 · 新泽西 · 官方首发待确认",
+      "note": "C组焦点战 · 巴西 vs 摩洛哥 · 新泽西 · FotMob 预测 XI 已同步",
       "lineup": {
         "confirmed": false,
         "formation": null,
         "home": "等待官方确认",
         "away": "等待官方确认",
-        "note": "FIFA 官方首发尚未公布。主预测来源 Sports Mole（6/13），备选 SI.com / The Standard。",
+        "note": "FIFA 官方 team sheet 尚未确认（FotMob 标注 Predicted）。主预测 FotMob 6/14：Cunha 中锋、Paquetá 前腰、摩洛哥 Bouaddi 后腰。",
         "predicted": {
           "formation": "4-2-3-1",
           "home": "Alisson; Danilo, Marquinhos, Gabriel, Alex Sandro; Casemiro, Guimarães; Raphinha, Paquetá, Vinícius Jr; Cunha",
-          "away": "Bounou; Hakimi, Diop, Riad, Mazraoui; Amrabat, El Aynaoui, Ounahi; Díaz, Saibari, El Khannouss",
-          "source": "Sports Mole · 2026-06-13 预测 · 非官方",
+          "away": "Bounou; Hakimi, Diop, Riad, Mazraoui; Bouaddi, El Aynaoui; Díaz, Ounahi, El Khannouss; Saibari",
+          "source": "FotMob · 2026-06-14 Predicted · 非官方",
           "alt": {
             "formation": "4-2-3-1",
             "home": "Alisson; Danilo, Marquinhos, Gabriel, Alex Sandro; Casemiro, Guimarães; Raphinha, Paquetá, Vinícius Jr; Cunha",
-            "away": "Bono; Hakimi, Diop, Riad, Mazraoui; Bouaddi, El Aynaoui; Díaz, Ounahi, El Khannouss; Saibari",
-            "source": "SI.com · 2026-06-13 预测 · 非官方"
+            "away": "Bounou; Hakimi, Diop, Riad, Mazraoui; Amrabat, El Aynaoui; Díaz, Ounahi, El Khannouss; Saibari",
+            "source": "Sports Mole · 2026-06-13 预测 · 非官方"
           }
         },
-        "updated": "2026-06-14T18:00:00+08:00"
+        "updated": "2026-06-14T20:00:00+08:00"
       },
       "home": {
         "name": "Brazil",
@@ -485,7 +543,10 @@ const MATCH_DATA = {
             "club": "Real Madrid",
             "stats": "皇马赛季核心 · 左路爆点",
             "rating": 9,
-            "desc": "The Standard/SI 几乎锁定左路首发；对位摩洛哥 Hakimi 是本场关键对位"
+            "desc": "The Standard/SI 几乎锁定左路首发；对位摩洛哥 Hakimi 是本场关键对位",
+            "number": 7,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Lucas Paquetá",
@@ -493,7 +554,10 @@ const MATCH_DATA = {
             "club": "West Ham",
             "stats": "10号位竞争者",
             "rating": 8.2,
-            "desc": "SI/Sports Mole 预测前腰；The Standard 称 Raphinha 可能居中，右路存疑"
+            "desc": "SI/Sports Mole 预测前腰；The Standard 称 Raphinha 可能居中，右路存疑",
+            "number": 20,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Matheus Cunha",
@@ -501,7 +565,10 @@ const MATCH_DATA = {
             "club": "Manchester United",
             "stats": "对巴拿马热身首发",
             "rating": 8,
-            "desc": "SI/Standard 预测首发中锋（非 Endrick/Igor Thiago）；João Pedro 未入选大名单"
+            "desc": "SI/Standard 预测首发中锋（非 Endrick/Igor Thiago）；João Pedro 未入选大名单",
+            "number": 9,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           }
         ],
         "star": {
@@ -510,13 +577,16 @@ const MATCH_DATA = {
           "club": "Real Madrid",
           "desc": "The Standard/SI 几乎锁定左路首发；对位摩洛哥 Hakimi 是本场关键对位",
           "rating": 9,
-          "stats": "皇马赛季核心"
+          "stats": "皇马赛季核心",
+          "number": 7,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
         },
         "injuries": [
           {
             "player": "Neymar",
             "status": "OUT",
-            "note": "The Standard / Sports Mole：二级小腿伤未愈，仍穿10号球衣但揭幕战缺阵",
+            "note": "Ancelotti/BBC 6/13 官宣缺阵揭幕战；二级小腿伤，预计下周归队合练，对海地战亦存疑",
             "confirmed": true
           },
           {
@@ -543,7 +613,7 @@ const MATCH_DATA = {
           "The Standard：Raphinha 可能踢中路，右路 Endrick/Rayan/Martinelli 竞争",
           "CBS Sports：巴西右卫 Alex Sandro 存疑，Hakimi-Díaz 右路将考验巴西边路",
           "Sports Mole 预测 3-1；SI 预测 2-1——均认为摩洛哥防线经验不足",
-          "SI 报道主裁 Slavko Vinčić（斯洛文尼亚）· 待 FIFA 确认"
+          "SI 报道主裁 Slavko Vinčić（斯洛文尼亚）· FotMob 已确认"
         ]
       },
       "away": {
@@ -567,7 +637,10 @@ const MATCH_DATA = {
             "club": "PSG",
             "stats": "2022 四强主力 · 边路往返",
             "rating": 8.5,
-            "desc": "SI/Sports Mole 均锁定右后卫；与 Brahim Díaz 组成右路威胁"
+            "desc": "SI/Sports Mole 均锁定右后卫；与 Brahim Díaz 组成右路威胁",
+            "number": 2,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Brahim Díaz",
@@ -575,7 +648,10 @@ const MATCH_DATA = {
             "club": "Real Madrid",
             "stats": "26场14球 · 对挪威破门",
             "rating": 8.3,
-            "desc": "Sports Mole 预计首发；SI 与 El Khannouss、Ounahi 组成攻击线"
+            "desc": "Sports Mole 预计首发；SI 与 El Khannouss、Ounahi 组成攻击线",
+            "number": 10,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Sofyan Amrabat",
@@ -583,7 +659,10 @@ const MATCH_DATA = {
             "club": "Fenerbahçe",
             "stats": "2022 世界杯主力后腰",
             "rating": 7.8,
-            "desc": "Sports Mole 预测首发屏障；SI 备选 Bouaddi/El Aynaoui 双后腰"
+            "desc": "Sports Mole 预测首发屏障；SI 备选 Bouaddi/El Aynaoui 双后腰",
+            "number": 4,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           }
         ],
         "star": {
@@ -592,7 +671,10 @@ const MATCH_DATA = {
           "club": "PSG",
           "desc": "SI/Sports Mole 均锁定右后卫；与 Brahim Díaz 组成右路威胁",
           "rating": 8.5,
-          "stats": "2022 四强主力"
+          "stats": "2022 四强主力",
+          "number": 2,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
         },
         "injuries": [
           {
@@ -609,12 +691,13 @@ const MATCH_DATA = {
           },
           {
             "player": "Noussair Mazraoui",
-            "status": "DOUBT",
-            "note": "SI：对挪威肩部伤后已恢复训练，预计首发左后卫；RotoWire 仍标 QUES",
+            "status": "FIT",
+            "note": "SI 6/13：对挪威肩部伤后已恢复训练，预计首发左后卫（Hakimi 右、Mazraoui 左）",
             "confirmed": false
           }
         ],
         "rumors": [
+          "BBC/SI 6/13：Ancelotti 确认 Neymar 缺席揭幕战，Vinícius 领衔进攻",
           "Regragui：Aguerd/Abde 缺阵削弱防线与定位球，Diop（Fulham）+ Riad（Crystal Palace）新中卫组合",
           "SI：Saibari 灵活中锋，El Khannouss 10号位——无 Abde 后定位球选项减少",
           "Sports Mole：Amrabat 仍在预测 XI，与 SI 的 Bouaddi 方案存在分歧",
@@ -637,15 +720,16 @@ const MATCH_DATA = {
         "note": "巴西历史占优"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "FIFA 官方裁判尚未最终确认。SI.com 报道主裁或为 Slavko Vinčić（斯洛文尼亚）；确认前本站不纳入执法统计推演。",
+        "confirmed": true,
+        "pending": false,
+        "name": "Slavko Vinčić",
+        "nation": "Slovenia",
+        "iso": "si",
+        "bias_note": "FotMob / FIFA match sheet 确认主裁 Slavko Vinčić（斯洛文尼亚）。",
+        "source": "FotMob · FIFA match sheet · 2026-06-13",
         "tendencies": [
-          "媒体报道：Slavko Vinčić（SVN）· SI.com 6/13 · 待 FIFA 确认",
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+          "FotMob 官方执法名单 · 2026-06-13",
+          "ESPN 6/13 同向报道"
         ]
       },
       "prediction": {
@@ -671,10 +755,26 @@ const MATCH_DATA = {
         "psychology": "巴西东道主+五冠压力，Ancelotti 首战容错低；摩洛哥 2022 已证明大赛心理硬度，先破门后更可能收缩执行防反而非慌乱。",
         "historical": "摩洛哥 2022 爆冷比利时、西班牙进四强；巴西近三届世界杯首战 2 平 1 胜（2014 克罗地亚、2018 瑞士、2022 塞尔维亚），慢热+被克制平局有前例。",
         "factors": [
-          { "tag": "克制", "impact": "强", "detail": "摩洛哥低位+快速转换，专打巴西控球压上后的身后空档" },
-          { "tag": "速度错配", "impact": "强", "detail": "Hakimi 对位巴西左卫，Díaz 可惩罚中卫转身" },
-          { "tag": "伤病", "impact": "中", "detail": "Neymar 缺阵削弱巴西破局；Aguerd 缺阵削弱摩洛哥防空——双向" },
-          { "tag": "心理", "impact": "中", "detail": "巴西大赛期望值过高，先丢球时年轻球员易急躁" }
+          {
+            "tag": "克制",
+            "impact": "强",
+            "detail": "摩洛哥低位+快速转换，专打巴西控球压上后的身后空档"
+          },
+          {
+            "tag": "速度错配",
+            "impact": "强",
+            "detail": "Hakimi 对位巴西左卫，Díaz 可惩罚中卫转身"
+          },
+          {
+            "tag": "伤病",
+            "impact": "中",
+            "detail": "Neymar 缺阵削弱巴西破局；Aguerd 缺阵削弱摩洛哥防空——双向"
+          },
+          {
+            "tag": "心理",
+            "impact": "中",
+            "detail": "巴西大赛期望值过高，先丢球时年轻球员易急躁"
+          }
         ]
       },
       "weather": {
@@ -812,7 +912,7 @@ const MATCH_DATA = {
           },
           "away_goal": {
             "scenario": "若摩洛哥先进球",
-            "prediction": "巴西整体实力与板凳深度占优，Dorival 换边后加强边路，扳平并反超概率55%",
+            "prediction": "巴西整体实力与板凳深度占优，Ancelotti 换边后加强边路，扳平并反超概率55%",
             "favors": "Brazil",
             "favors_prob": 55
           },
@@ -848,20 +948,26 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月14日 09:00",
       "venue": "Gillette Stadium",
       "city": "Foxborough, USA",
-      "note": "C组第2场 · 海地 vs 苏格兰 · 波士顿 · 官方首发待确认",
+      "note": "C组第2场 · 海地 vs 苏格兰 · 波士顿 · FotMob 预测 XI 已同步",
       "lineup": {
         "confirmed": false,
         "formation": null,
         "home": "等待官方确认",
         "away": "等待官方确认",
-        "note": "FIFA 官方首发尚未公布。预测来源 Sports Mole（6/13），海地预计 4-4-2、苏格兰 4-4-2。",
+        "note": "FIFA 官方 team sheet 尚未确认（FotMob 仍标注 Predicted）。最新预测 FotMob 6/14：海地 Pierrot 中锋、苏格兰 Christie 中场。",
         "predicted": {
           "formation": "4-4-2",
-          "home": "Placide; Arcus, Ade, Delcroix, Experience; Deedson, Jean Jacques, Bellegarde, Providence; Isidor, Nazon",
-          "away": "Gunn; Hickey, Hanley, Souttar, Robertson; Doak, McTominay, Ferguson, McGinn; Adams, Shankland",
-          "source": "Sports Mole · 2026-06-13 预测 · 非官方"
+          "home": "Placide; Arcus, Ade, Delcroix, Experience; Casimir, Jean Jacques, Bellegarde, Providence; Isidor, Pierrot",
+          "away": "Gunn; Hickey, Hanley, Souttar, Robertson; Gannon-Doak, McTominay, Ferguson, Christie; Adams, Shankland",
+          "source": "FotMob · 2026-06-14 Predicted · 非官方",
+          "alt": {
+            "formation": "4-4-2",
+            "home": "Placide; Arcus, Ade, Delcroix, Experience; Casimir, Jean Jacques, Bellegarde, Providence; Nazon, Isidor",
+            "away": "Gunn; Hickey, Souttar, McKenna, Robertson; Gannon-Doak, McTominay, Ferguson, Christie; Adams, Shankland",
+            "source": "ESPN · 2026-06-14 预测 · 非官方"
+          }
         },
-        "updated": "2026-06-14T18:00:00+08:00"
+        "updated": "2026-06-14T20:00:00+08:00"
       },
       "home": {
         "name": "Haiti",
@@ -884,7 +990,10 @@ const MATCH_DATA = {
             "club": "Austin FC",
             "stats": "44 球/78 场 · 队史射手王",
             "rating": 7.5,
-            "desc": "Sports Mole 预计与 Sunderland 的 Wilson Isidor 双前锋搭档"
+            "desc": "FotMob 预测替补；Pierrot 与 Isidor 双前锋先发",
+            "number": 9,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Johny Placide",
@@ -892,7 +1001,10 @@ const MATCH_DATA = {
             "club": "Saint-Étienne",
             "stats": "81 caps · 38岁 · 队长",
             "rating": 7.2,
-            "desc": "队史最年长+最多出场，Sports Mole 预计首发门将"
+            "desc": "队史最年长+最多出场，Sports Mole 预计首发门将",
+            "number": 1,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Jean-Ricner Bellegarde",
@@ -900,16 +1012,22 @@ const MATCH_DATA = {
             "club": "Wolves",
             "stats": "英超经验",
             "rating": 7.3,
-            "desc": "Sports Mole 预计中场核心，与 Jean Jacques 搭档"
+            "desc": "Sports Mole 预计中场核心，与 Jean Jacques 搭档",
+            "number": 10,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           }
         ],
         "star": {
           "name": "Duckens Nazon",
           "pos": "ST",
           "club": "Austin FC",
-          "desc": "Sports Mole 预计与 Wilson Isidor 双前锋；队史44球",
+          "desc": "FotMob 预测 Isidor+Pierrot 双前锋；Nazon 替补",
           "rating": 7.5,
-          "stats": "44 球/78 场"
+          "stats": "44 球/78 场",
+          "number": 9,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
         },
         "injuries": [
           {
@@ -948,7 +1066,10 @@ const MATCH_DATA = {
             "club": "Napoli",
             "stats": "那不勒斯赛季核心",
             "rating": 8.5,
-            "desc": "周五恢复训练（此前肠胃不适），Sports Mole 预计首发中场"
+            "desc": "周五恢复训练（此前肠胃不适），Sports Mole 预计首发中场",
+            "number": 4,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Andrew Robertson",
@@ -956,7 +1077,10 @@ const MATCH_DATA = {
             "club": "Tottenham",
             "stats": "队长 · 刚转会热刺",
             "rating": 8.2,
-            "desc": "Sports Mole 预计左后卫首发，与 Hickey-Hanley-Souttar 组成四后卫"
+            "desc": "Sports Mole 预计左后卫首发，与 Hickey-Hanley-Souttar 组成四后卫",
+            "number": 3,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Lawrence Shankland",
@@ -964,18 +1088,30 @@ const MATCH_DATA = {
             "club": "Rangers",
             "stats": "热身 3球1助/8球",
             "rating": 7.9,
-            "desc": "Sports Mole 预计与 Che Adams 双前锋；对库拉索/玻利维亚表现抢眼"
+            "desc": "Sports Mole 预计与 Che Adams 双前锋；对库拉索/玻利维亚表现抢眼",
+            "number": 20,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           }
         ],
         "star": {
           "name": "Scott McTominay",
           "pos": "CM",
           "club": "Napoli",
-          "desc": "周五恢复训练，Sports Mole 预计首发；苏格兰进攻发起点",
+          "desc": "Clarke 官宣「perfect and ready to go」；Standard 6/14 确认可首发",
           "rating": 8.5,
-          "stats": "那不勒斯赛季核心"
+          "stats": "那不勒斯赛季核心",
+          "number": 4,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
         },
         "injuries": [
+          {
+            "player": "Che Adams",
+            "status": "DOUBT",
+            "note": "ESPN 6/14：前锋线存疑标注 DOUBT，Shankland 仍预计搭档",
+            "confirmed": false
+          },
           {
             "player": "Billy Gilmour",
             "status": "OUT",
@@ -985,18 +1121,25 @@ const MATCH_DATA = {
           {
             "player": "Scott McKenna",
             "status": "DOUBT",
-            "note": "Sports Mole：周五未参加训练，撞击伤，揭幕战存疑",
+            "note": "FotMob 预测 Hanley 中卫先发；McKenna 未进预测 XI",
             "confirmed": false
           },
           {
             "player": "Scott McTominay",
             "status": "FIT",
-            "note": "周四缺席训练（肠胃不适）后周五归队，Sports Mole 预计首发",
+            "note": "Clarke 6/14 官宣「perfect and ready to go」（Standard）；肠胃不适已恢复",
+            "confirmed": true
+          },
+          {
+            "player": "Nathan Patterson",
+            "status": "DOUBT",
+            "note": "Yahoo 6/14：轻微撞击伤，与 McKenna 一同被医疗组观察",
             "confirmed": false
           }
         ],
         "rumors": [
-          "Clarke（Sports Mole）：Gunn 预计首发门将，43岁 Gordon 为队史最年长世界杯球员",
+          "Clarke（Standard 6/14）：McTominay 可首发，Gilmour 缺阵后中场责任更重",
+          "ESPN 主裁 Mustapha Ghorbal（阿尔及利亚）· 待 FIFA 最终确认",
           "Sports Mole：4-4-2，Doak 右路 + McGinn 左路宽度，Ferguson 与 McTominay 中路",
           "McGinn 刚随维拉夺得欧联杯，更衣室士气高涨",
           "Sports Mole 预测 1-3 苏格兰胜；海地密集防守+定位球是主要策略",
@@ -1011,14 +1154,16 @@ const MATCH_DATA = {
         "note": "无正式交锋记录"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "本场裁判尚未经 FIFA 官方确认。本站不使用占位裁判数据；确认后将更新执法统计并重新纳入推演。",
+        "confirmed": true,
+        "pending": false,
+        "name": "Mustapha Ghorbal",
+        "nation": "Algeria",
+        "iso": "dz",
+        "bias_note": "FotMob / FIFA match sheet 确认主裁 Mustapha Ghorbal（阿尔及利亚）。",
+        "source": "FotMob · FIFA match sheet · 2026-06-14",
         "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+          "FotMob 官方执法名单 · 2026-06-14",
+          "ESPN 6/14 同向报道"
         ]
       },
       "prediction": {
@@ -1029,10 +1174,10 @@ const MATCH_DATA = {
         "confidence": 74,
         "xg_home": 0.85,
         "xg_away": 1.42,
-        "key_factor": "苏格兰中场 McTominay 控制力强（Gilmour 缺阵），海地大概率低位防守。苏格兰需破解密集防守，定位球与远射是破局手段。xG 0.85-1.42 泊松最可能 0-1。"
+        "key_factor": "McTominay FotMob/Clarke 确认可首发。FotMob 预测 Christie 中场、Hanley 中卫（McKenna 未进 XI）。海地 Pierrot+Isidor 双锋。xG 0.85-1.42 泊松最可能 0-1。"
       },
       "upset_alert": {
-        "favorite": "苏格兰",
+        "favorite": "Scotland",
         "underdog": "海地",
         "favorite_iso": "GB-SCT",
         "index": 33,
@@ -1044,10 +1189,26 @@ const MATCH_DATA = {
         "psychology": "海地世界杯首秀，无历史包袱、易「光脚不怕穿鞋」；苏格兰大赛有久攻不下急躁传统（欧洲杯预选赛曾意外失分），先被破门时心态波动需警惕。",
         "historical": "海地无世界杯交锋史；苏格兰近十年对 FIFA 排名 70+ 球队偶有平局（如 2022 对乌克兰附加赛胶着），对完全陌生对手开局谨慎。",
         "factors": [
-          { "tag": "克制", "impact": "中", "detail": "密集低位+雨战减速度，专克苏格兰地面渗透" },
-          { "tag": "速度错配", "impact": "弱", "detail": "海地反击有速度但整体火力有限" },
-          { "tag": "伤病", "impact": "中", "detail": "Gilmour 缺阵、McKenna 存疑削弱苏格兰中场与防空" },
-          { "tag": "心理", "impact": "中", "detail": "苏格兰必须抢开局，久攻不下易冒进留反击空档" }
+          {
+            "tag": "克制",
+            "impact": "中",
+            "detail": "密集低位+雨战减速度，专克苏格兰地面渗透"
+          },
+          {
+            "tag": "速度错配",
+            "impact": "弱",
+            "detail": "海地反击有速度但整体火力有限"
+          },
+          {
+            "tag": "伤病",
+            "impact": "中",
+            "detail": "Gilmour 缺阵、McKenna 存疑削弱苏格兰中场与防空"
+          },
+          {
+            "tag": "心理",
+            "impact": "中",
+            "detail": "苏格兰必须抢开局，久攻不下易冒进留反击空档"
+          }
         ]
       },
       "weather": {
@@ -1221,20 +1382,20 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月14日 12:00",
       "venue": "BC Place",
       "city": "Vancouver, Canada",
-      "note": "D组第2场 · 澳大利亚 vs 土耳其 · 温哥华 · 官方首发待确认",
+      "note": "D组第2场 · 澳大利亚 vs 土耳其 · 温哥华 · FotMob 预测 XI 已同步",
       "lineup": {
         "confirmed": false,
         "formation": null,
         "home": "等待官方确认",
         "away": "等待官方确认",
-        "note": "FIFA 官方首发尚未公布。预测来源 Sports Mole（6/12-13）；澳大利亚采用五后卫体系预测。",
+        "note": "FIFA 官方 team sheet 尚未确认（FotMob 仍标注 Predicted）。最新 FotMob：澳 3-4-2-1、土 4-2-3-1，Yildiz 进入预测 XI。",
         "predicted": {
-          "formation": "5-4-1",
-          "home": "Ryan; Italiano, Circati, Souttar, Herrington, Bos; Metcalfe, Irvine, O'Neill, Leckie; Toure",
-          "away": "Cakir; Celik, Demiral, Bardakci, Elmali; Calhanoglu, Yuksek; Guler, Kokcu, Yilmaz; Gul",
-          "source": "Sports Mole · 2026-06-12/13 预测 · 非官方"
+          "formation": "3-4-2-1",
+          "home": "Ryan; Circati, Souttar, Burgess; Italiano, O'Neill, Irvine, Bos; Leckie, Metcalfe; Toure",
+          "away": "Cakir; Celik, Demiral, Bardakci, Kadioglu; Kokcu, Calhanoglu; Yilmaz, Guler, Yildiz; Akturkoglu",
+          "source": "FotMob · 2026-06-14 Predicted · 非官方"
         },
-        "updated": "2026-06-14T18:00:00+08:00"
+        "updated": "2026-06-14T20:00:00+08:00"
       },
       "home": {
         "name": "Australia",
@@ -1257,7 +1418,10 @@ const MATCH_DATA = {
             "club": "Roma",
             "stats": "105 caps 在即 · 10 场世界杯经验",
             "rating": 7.8,
-            "desc": "Sports Mole 预计首发，Leckie 同具10场世界杯出场"
+            "desc": "FotMob 预测首发，Leckie+Metcalfe 双前腰",
+            "number": 1,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Mohamed Toure",
@@ -1265,7 +1429,10 @@ const MATCH_DATA = {
             "club": "Norwich City",
             "stats": "诺维奇下半程 10球/12场",
             "rating": 7.9,
-            "desc": "Sports Mole/101 Great Goals 预测单前锋；Popovic 重点培养的年轻支点"
+            "desc": "FotMob 预测单前锋；3-4-2-1 体系支点",
+            "number": 9,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Jackson Irvine",
@@ -1273,7 +1440,10 @@ const MATCH_DATA = {
             "club": "St. Pauli",
             "stats": "14 国家队进球 · 33岁",
             "rating": 7.7,
-            "desc": "Sports Mole 预计首发中场，与 Metcalfe、O'Neill 组成中场"
+            "desc": "Sports Mole 预计首发中场，与 Metcalfe、O'Neill 组成中场",
+            "number": 22,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           }
         ],
         "star": {
@@ -1282,7 +1452,10 @@ const MATCH_DATA = {
           "club": "Roma",
           "desc": "Sports Mole 预计第105场国家队；BC Place 人工草经验",
           "rating": 7.8,
-          "stats": "10 场世界杯 · 105 caps"
+          "stats": "10 场世界杯 · 105 caps",
+          "number": 1,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
         },
         "injuries": [
           {
@@ -1327,7 +1500,10 @@ const MATCH_DATA = {
             "club": "Inter Milan",
             "stats": "队长 · 22球/105场",
             "rating": 8.5,
-            "desc": "Sports Mole 锁定中场核心，与 Yuksek 搭档"
+            "desc": "Sports Mole 锁定中场核心，与 Yuksek 搭档",
+            "number": 10,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Arda Güler",
@@ -1335,7 +1511,10 @@ const MATCH_DATA = {
             "club": "Real Madrid",
             "stats": "皇马赛季末伤愈",
             "rating": 8.3,
-            "desc": "Sports Mole：已完全恢复，预计首发前腰/攻击中场"
+            "desc": "Sports Mole：已完全恢复，预计首发前腰/攻击中场",
+            "number": 8,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Kenan Yildiz",
@@ -1343,7 +1522,10 @@ const MATCH_DATA = {
             "club": "Juventus",
             "stats": "5 国家队进球",
             "rating": 8,
-            "desc": "Sports Mole/101 Great Goals： calf 伤单独训练，揭幕战大概率缺阵"
+            "desc": "FotMob 预测 XI 左路；Akturkoglu 中锋",
+            "number": 11,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           }
         ],
         "star": {
@@ -1352,30 +1534,34 @@ const MATCH_DATA = {
           "club": "Inter Milan",
           "desc": "Sports Mole 锁定中场；任意球与长传是土耳其进攻发起点",
           "rating": 8.5,
-          "stats": "队长 · 105 caps"
+          "stats": "队长 · 105 caps",
+          "number": 10,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
         },
         "injuries": [
           {
             "player": "Kenan Yildiz",
-            "status": "DOUBT",
-            "note": "Sports Mole / 101 Great Goals：小腿伤单独训练，对澳大利亚出场「会是 surprise」",
+            "status": "FIT",
+            "note": "FotMob 6/14 预测 XI 含 Yildiz 左路；与早前 DOUBT 报道有变，开球前以官方 sheet 为准",
             "confirmed": false
           },
           {
             "player": "Arda Güler",
             "status": "FIT",
-            "note": "Sports Mole：皇马赛季末伤病已愈，预计首发",
-            "confirmed": true
+            "note": "FotMob 预测首发前腰",
+            "confirmed": false
           },
           {
             "player": "Deniz Gul",
             "status": "FIT",
-            "note": "Sports Mole 预测首发中锋（2球/8场），Yildiz 缺阵时进攻重心",
+            "note": "FotMob 预测 Akturkoglu 中锋，Gul 替补",
             "confirmed": false
           }
         ],
         "rumors": [
-          "Montella（Sports Mole 语境）：Yildiz 存疑，Gul 领衔锋线，Guler+Kokcu+Yilmaz 攻击线",
+          "Sports Mole 6/13 05:00：澳大利亚 Out/Doubtful 均为 None；土耳其仅 Yildiz 存疑",
+          "Montella 6/14：FotMob 预测 Yildiz+Guler+Akturkoglu 攻击线 · Kokcu 搭档 Çalhanoğlu",
           "101 Great Goals 预测土耳其 2-0；Sports Mole 预测 0-1 土耳其小胜——均认为质量占优",
           "Sports Mole：Bardakci 顶替 Soyuncu 中卫位置（非旧预测 Soyuncu）",
           "土耳其时隔多年重返世界杯，Montella 强调 Çalhanoğlu 组织核心",
@@ -1397,14 +1583,16 @@ const MATCH_DATA = {
         "note": "交锋互有胜负"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "本场裁判尚未经 FIFA 官方确认。本站不使用占位裁判数据；确认后将更新执法统计并重新纳入推演。",
+        "confirmed": true,
+        "pending": false,
+        "name": "Jesús Noel Valenzuela Sáez",
+        "nation": "Venezuela",
+        "iso": "ve",
+        "bias_note": "FotMob / FIFA match sheet 确认主裁 Jesús Noel Valenzuela Sáez（委内瑞拉）。",
+        "source": "FotMob · FIFA match sheet · 2026-06-14",
         "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+          "FotMob 官方执法名单 · 2026-06-14",
+          "WAGNH 6/13 同向报道"
         ]
       },
       "prediction": {
@@ -1415,7 +1603,7 @@ const MATCH_DATA = {
         "confidence": 70,
         "xg_home": 1.35,
         "xg_away": 1.28,
-        "key_factor": "澳土实力接近，中场 Çalhanoğlu 对位 Irvine 是核心。Sports Mole 预测澳 5-4-1、土 Güler 首发但 Yildiz 存疑。BC Place 人工草澳大利亚更熟。xG 1.35-1.28 泊松最可能 1-1。"
+        "key_factor": "澳土实力接近。FotMob 预测澳 3-4-2-1（Burgess 中卫）、土 4-2-3-1（Yildiz 左路、Akturkoglu 中锋）。BC Place 人工草澳大利亚更熟。xG 1.35-1.28 泊松最可能 1-1。"
       },
       "upset_alert": {
         "favorite": "澳大利亚",
@@ -1430,10 +1618,26 @@ const MATCH_DATA = {
         "psychology": "D 组首场双方均需抢分，澳大利亚主场声浪有利但大赛经验不如土耳其；土耳其若早进球，澳大利亚压上后身后空档增大。",
         "historical": "澳土无大赛交锋；澳大利亚 2006、2022 世界杯均有「对欧洲球队逼平」记录（2022 0-0 丹麦）；土耳其 2002 季军证明大赛爆发能力。",
         "factors": [
-          { "tag": "克制", "impact": "中", "detail": "土耳其技术中场可破解澳式身体足球，定位球+远射是破局点" },
-          { "tag": "速度错配", "impact": "中", "detail": "Goodwin/Yi 反击 vs 土耳其边卫回追，互有窗口" },
-          { "tag": "伤病", "impact": "中", "detail": "Yildiz 存疑削弱土耳其左路；澳大利亚全员健康" },
-          { "tag": "心理", "impact": "中", "detail": "实力接近，任一方先丢球均可能演变为对攻乱战" }
+          {
+            "tag": "克制",
+            "impact": "中",
+            "detail": "土耳其技术中场可破解澳式身体足球，定位球+远射是破局点"
+          },
+          {
+            "tag": "速度错配",
+            "impact": "中",
+            "detail": "Goodwin/Yi 反击 vs 土耳其边卫回追，互有窗口"
+          },
+          {
+            "tag": "伤病",
+            "impact": "中",
+            "detail": "Yildiz 存疑削弱土耳其左路；澳大利亚全员健康"
+          },
+          {
+            "tag": "心理",
+            "impact": "中",
+            "detail": "实力接近，任一方先丢球均可能演变为对攻乱战"
+          }
         ],
         "reverse_note": "若按 Sports Mole 倾向土耳其小胜，则澳大利亚爆冷取胜指数约 35，仍为中等。"
       },

@@ -92,7 +92,10 @@ const RESULTS_DATA = {
           "name": "Raúl Jiménez",
           "pos": "ST",
           "club": "Fulham",
-          "desc": "本场梅开二度（38', 78'）当选最佳球员。与 Gilberto Mora 搭档双前锋完全压制南非防线，次轮对韩国将是真正的考验"
+          "desc": "本场梅开二度（38', 78'）当选最佳球员。与 Gilberto Mora 搭档双前锋完全压制南非防线，次轮对韩国将是真正的考验",
+          "number": 9,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
         },
         "injuries": [
           {
@@ -428,7 +431,10 @@ const RESULTS_DATA = {
           "name": "孙兴慜 Son Heung-min",
           "pos": "LW",
           "club": "LAFC（洛杉矶足球俱乐部）",
-          "desc": "本场第56分钟远射破门，当选全场最佳。捷克三中卫体系未能限制其内切，次轮对墨西哥将是真正的考验"
+          "desc": "本场第56分钟远射破门，当选全场最佳。捷克三中卫体系未能限制其内切，次轮对墨西哥将是真正的考验",
+          "number": 7,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
         },
         "injuries": [
           {
@@ -463,7 +469,10 @@ const RESULTS_DATA = {
           "name": "Patrik Schick",
           "pos": "ST",
           "club": "Bayer Leverkusen",
-          "desc": "84分钟头球破门挽回颜面，但全场仅2次射门。低位防守被孙兴慜、李康仁两次远射洞穿，次轮对南非不容再失分"
+          "desc": "84分钟头球破门挽回颜面，但全场仅2次射门。低位防守被孙兴慜、李康仁两次远射洞穿，次轮对南非不容再失分",
+          "number": 10,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
         },
         "injuries": [
           {
@@ -767,7 +776,10 @@ const RESULTS_DATA = {
             "club": "Lille",
             "stats": "国家队 48场 27球 · 本赛季 18球",
             "rating": 8.2,
-            "desc": "Davies 缺阵后进攻重担落在 David 肩上。预计与 Larin 双前锋搭档，是破解波黑紧凑防线的首要得分点"
+            "desc": "Davies 缺阵后进攻重担落在 David 肩上。预计与 Larin 双前锋搭档，是破解波黑紧凑防线的首要得分点",
+            "number": 10,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Tajon Buchanan",
@@ -775,7 +787,10 @@ const RESULTS_DATA = {
             "club": "Villarreal",
             "stats": "本赛季 7球 · 关键传球 1.8/场",
             "rating": 7.8,
-            "desc": "Davies 缺席后右路/肋部突破重任加大。Villarreal 赛季表现起伏，但 Marsch 体系下仍是连接中场与锋线的关键纽带"
+            "desc": "Davies 缺席后右路/肋部突破重任加大。Villarreal 赛季表现起伏，但 Marsch 体系下仍是连接中场与锋线的关键纽带",
+            "number": 17,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Cyle Larin",
@@ -783,7 +798,10 @@ const RESULTS_DATA = {
             "club": "Mallorca",
             "stats": "国家队 70+ 场 30球 · 空中争顶 65%",
             "rating": 7.6,
-            "desc": "身体型中锋，与 David 组成双塔。波黑中卫 Gigović、Muharemović 偏年轻，Larin 的制空与背身能力是主队重要变招"
+            "desc": "身体型中锋，与 David 组成双塔。波黑中卫 Gigović、Muharemović 偏年轻，Larin 的制空与背身能力是主队重要变招",
+            "number": 9,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           }
         ],
         "injuries": [
@@ -843,7 +861,10 @@ const RESULTS_DATA = {
           "club": "Lille",
           "desc": "Davies 缺阵后进攻重担落在 David 肩上。预计与 Larin 双前锋搭档，是破解波黑紧凑防线的首要得分点",
           "rating": 8.2,
-          "stats": "国家队 48场 27球 · 本赛季 18球"
+          "stats": "国家队 48场 27球 · 本赛季 18球",
+          "number": 10,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
         }
       },
       "away": {
@@ -867,7 +888,10 @@ const RESULTS_DATA = {
             "club": "Fiorentina",
             "stats": "国家队 130+ 场 68球 · 40岁 · 2014+2026 两届世界杯",
             "rating": 7.8,
-            "desc": "40岁传奇前锋，与 Kolašinac 是队中仅存的2014世界杯成员。制空、经验与定位球是波黑在反击中的最大威胁"
+            "desc": "40岁传奇前锋，与 Kolašinac 是队中仅存的2014世界杯成员。制空、经验与定位球是波黑在反击中的最大威胁",
+            "number": 11,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Esmir Bajraktarević",
@@ -875,7 +899,10 @@ const RESULTS_DATA = {
             "club": "New England Revolution",
             "stats": "对阵意大利附加赛表现亮眼 · 速度型边锋",
             "rating": 7.5,
-            "desc": "淘汰意大利的关键球员之一，快速反击中的核心爆点。加拿大压上时，Bajraktarević 的冲刺是 Barbarez 战术的胜负手"
+            "desc": "淘汰意大利的关键球员之一，快速反击中的核心爆点。加拿大压上时，Bajraktarević 的冲刺是 Barbarez 战术的胜负手",
+            "number": 20,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Sead Kolašinac",
@@ -883,7 +910,10 @@ const RESULTS_DATA = {
             "club": "Marseille",
             "stats": "铲球 3.2/场 · 2014世界杯经验",
             "rating": 7.4,
-            "desc": "后防老将，附加赛对阵威尔士、意大利表现稳健。Davies 缺阵后波黑左路压力减轻，Kolašinac 经验价值上升"
+            "desc": "后防老将，附加赛对阵威尔士、意大利表现稳健。Davies 缺阵后波黑左路压力减轻，Kolašinac 经验价值上升",
+            "number": 5,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           }
         ],
         "injuries": [
@@ -937,7 +967,10 @@ const RESULTS_DATA = {
           "club": "Fiorentina",
           "desc": "40岁传奇前锋，与 Kolašinac 是队中仅存的2014世界杯成员。制空、经验与定位球是波黑在反击中的最大威胁",
           "rating": 7.8,
-          "stats": "国家队 130+ 场 68球 · 40岁 · 2014+2026 两届世界杯"
+          "stats": "国家队 130+ 场 68球 · 40岁 · 2014+2026 两届世界杯",
+          "number": 11,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
         }
       },
       "h2h": {
@@ -1238,7 +1271,10 @@ const RESULTS_DATA = {
             "club": "AC Milan",
             "stats": "84 caps · 30+ 球 · 对塞内加尔破门",
             "rating": 8.6,
-            "desc": "队长兼进攻核心，热身赛打破进球荒状态回升。Pochettino 4-2-3-1 中担任左路/肋部威胁点，是撕开巴拉圭防线的第一突破口"
+            "desc": "队长兼进攻核心，热身赛打破进球荒状态回升。Pochettino 4-2-3-1 中担任左路/肋部威胁点，是撕开巴拉圭防线的第一突破口",
+            "number": 10,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Folarin Balogun",
@@ -1246,7 +1282,10 @@ const RESULTS_DATA = {
             "club": "AS Monaco",
             "stats": "国家队 18+ 场 · 热身赛主力中锋",
             "rating": 7.9,
-            "desc": "预计首发中锋，与 Pulisic、Dest 组成前场三角。巴拉圭中卫 Gómez-Alderete 组合需限制其跑位与二点攻击"
+            "desc": "预计首发中锋，与 Pulisic、Dest 组成前场三角。巴拉圭中卫 Gómez-Alderete 组合需限制其跑位与二点攻击",
+            "number": 20,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Weston McKennie",
@@ -1254,7 +1293,10 @@ const RESULTS_DATA = {
             "club": "Juventus",
             "stats": "拦截 2.8/场 · 对德葡比均首发",
             "rating": 7.8,
-            "desc": "与 Tyler Adams 组成双后腰，负责限制 Almirón 与 Paraguay 反击出球。热身赛全程主力，体能与覆盖是中场关键"
+            "desc": "与 Tyler Adams 组成双后腰，负责限制 Almirón 与 Paraguay 反击出球。热身赛全程主力，体能与覆盖是中场关键",
+            "number": 8,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           }
         ],
         "injuries": [
@@ -1302,7 +1344,10 @@ const RESULTS_DATA = {
           "club": "AC Milan",
           "desc": "队长兼进攻核心，热身赛打破进球荒状态回升。Pochettino 4-2-3-1 中担任左路/肋部威胁点，是撕开巴拉圭防线的第一突破口",
           "rating": 8.6,
-          "stats": "84 caps · 30+ 球 · 对塞内加尔破门"
+          "stats": "84 caps · 30+ 球 · 对塞内加尔破门",
+          "number": 10,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
         }
       },
       "away": {
@@ -1326,7 +1371,10 @@ const RESULTS_DATA = {
             "club": "Atlanta United",
             "stats": "国家队 60+ 场 · 预选赛关键创造者",
             "rating": 7.9,
-            "desc": "进攻唯一稳定核心，Enciso 缺阵后创造力重任全落其肩。美国双后腰 McKennie-Adams 需重点限制其接球转身"
+            "desc": "进攻唯一稳定核心，Enciso 缺阵后创造力重任全落其肩。美国双后腰 McKennie-Adams 需重点限制其接球转身",
+            "number": 10,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Gustavo Gómez",
@@ -1334,7 +1382,10 @@ const RESULTS_DATA = {
             "club": "Palmeiras",
             "stats": "队长 · 解放者杯冠军 · 预选赛7场零封参与",
             "rating": 7.7,
-            "desc": "队长中卫，Alfaro 体系防守基石。与 Alderete 搭档四后卫，定位球防守是美国角球/传中重点"
+            "desc": "队长中卫，Alfaro 体系防守基石。与 Alderete 搭档四后卫，定位球防守是美国角球/传中重点",
+            "number": 15,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           },
           {
             "name": "Antonio Sanabria",
@@ -1342,7 +1393,10 @@ const RESULTS_DATA = {
             "club": "Torino",
             "stats": "意甲经验 · 支点与反击终结",
             "rating": 7.4,
-            "desc": "单前锋支点，Enciso 不在时反击依赖 Almirón-Bobadilla 支援。美国中卫 Ream-McKenzie 需限制其背身拿球"
+            "desc": "单前锋支点，Enciso 不在时反击依赖 Almirón-Bobadilla 支援。美国中卫 Ream-McKenzie 需限制其背身拿球",
+            "number": 9,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
           }
         ],
         "injuries": [
@@ -1390,7 +1444,10 @@ const RESULTS_DATA = {
           "club": "Atlanta United",
           "desc": "进攻唯一稳定核心，Enciso 缺阵后创造力重任全落其肩。美国双后腰 McKennie-Adams 需重点限制其接球转身",
           "rating": 7.9,
-          "stats": "国家队 60+ 场 · 预选赛关键创造者"
+          "stats": "国家队 60+ 场 · 预选赛关键创造者",
+          "number": 10,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
         }
       },
       "h2h": {

@@ -514,17 +514,38 @@ function resultBanner(m) {
     </div>`;
 }
 
+function renderStarNumberBadge(s) {
+  const hasOfficial = typeof DATA_INTEGRITY !== 'undefined' && DATA_INTEGRITY.hasOfficialNumber(s);
+  if (hasOfficial) {
+    return `<span style="display:inline-flex;align-items:center;gap:0.3rem;flex-shrink:0;margin-right:0.4rem">
+      <span style="font-size:0.82rem;font-weight:800;color:var(--cyan);min-width:1.75rem;text-align:center;font-variant-numeric:tabular-nums;line-height:1">#${s.number}</span>
+      <span style="font-size:0.5rem;font-weight:700;letter-spacing:0.5px;padding:0.06rem 0.28rem;border-radius:2px;background:rgba(91,191,138,0.12);color:#5BBF8A;border:1px solid rgba(91,191,138,0.32)" title="${s.number_source || 'FIFA 官方名单'}">官方</span>
+    </span>`;
+  }
+  return `<span style="display:inline-flex;align-items:center;gap:0.25rem;flex-shrink:0;margin-right:0.4rem" title="号码尚未经 FIFA 最终名单官方确认">
+    <span style="font-size:0.72rem;font-weight:700;color:rgba(122,143,181,0.45);min-width:1.75rem;text-align:center">—</span>
+  </span>`;
+}
+
 function renderStarPanel(team) {
   const list = team.stars?.length ? team.stars : (team.star ? [team.star] : []);
   if (!list.length) return '<div style="color:var(--txt2);font-size:0.72rem">暂无数据</div>';
+  const officialCount = list.filter(s => typeof DATA_INTEGRITY !== 'undefined' && DATA_INTEGRITY.hasOfficialNumber(s)).length;
+  const footnote = officialCount
+    ? `<div style="font-size:0.58rem;color:rgba(122,143,181,0.65);margin-top:0.5rem;line-height:1.45">球衣号码来源：FIFA 2026 世界杯最终名单（${officialCount}/${list.length} 人已官方确认）</div>`
+    : '';
   return list.map(s => `
     <div class="star-row">
       <div style="flex:1">
-        <div style="font-size:0.85rem;font-weight:700">${s.name}${s.rating ? ` <span style="font-size:0.62rem;color:var(--gold)">★ ${s.rating}</span>` : ''}</div>
-        <div style="font-size:0.68rem;color:var(--txt2)">${s.pos} · ${s.club}${s.stats ? ` · ${s.stats}` : ''}</div>
-        <div style="font-size:0.7rem;color:var(--txt);margin-top:0.25rem">📌 ${s.desc}</div>
+        <div style="display:flex;align-items:center;flex-wrap:wrap;gap:0.15rem;font-size:0.85rem;font-weight:700;line-height:1.35">
+          ${renderStarNumberBadge(s)}
+          <span>${s.name}</span>
+          ${s.rating ? `<span style="font-size:0.62rem;color:var(--gold);font-weight:700">★ ${s.rating}</span>` : ''}
+        </div>
+        <div style="font-size:0.68rem;color:var(--txt2);margin-top:0.2rem;padding-left:2.15rem">${s.pos} · ${s.club}${s.stats ? ` · ${s.stats}` : ''}</div>
+        <div style="font-size:0.7rem;color:var(--txt);margin-top:0.25rem;padding-left:2.15rem">📌 ${s.desc}</div>
       </div>
-    </div>`).join('');
+    </div>`).join('') + footnote;
 }
 
 function refereeQuantPanel(ref) {
@@ -649,14 +670,14 @@ function renderMatch(m) {
       <!-- STAR PLAYERS HOME -->
       <div class="mf-panel">
         <div class="mf-panel-label" style="color:var(--cyan)">⭐ ${m.home.name} 核心球员</div>
-        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">本场最具威胁的球员（3人）— 位置、俱乐部、数据与赛前状态</div>
+        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">本场最具威胁的球员（3人）— 名称前为 FIFA 最终名单球衣号，带「官方」标签为已确认号码</div>
         ${renderStarPanel(m.home)}
       </div>
 
       <!-- STAR PLAYERS AWAY -->
       <div class="mf-panel">
         <div class="mf-panel-label" style="color:var(--red)">⭐ ${m.away.name} 核心球员</div>
-        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">本场最具威胁的球员（3人）— 位置、俱乐部、数据与赛前状态</div>
+        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">本场最具威胁的球员（3人）— 名称前为 FIFA 最终名单球衣号，带「官方」标签为已确认号码</div>
         ${renderStarPanel(m.away)}
       </div>
 

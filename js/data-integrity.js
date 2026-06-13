@@ -4,9 +4,14 @@
  *   · 未官方确认 → confirmed: false，显示「等待官方确认」，勿填虚假统计
  *   · 已官方确认 → confirmed: true，填写 source / updated
  *   · 媒体预测阵容 → 仅放在 lineup.predicted，lineup.confirmed 保持 false
+ *   · 核心球员号码 → number + number_confirmed: true + number_source（FIFA 最终名单）
  */
 const DATA_INTEGRITY = {
   PENDING_LABEL: '等待官方确认',
+
+  hasOfficialNumber(star) {
+    return star != null && star.number != null && star.number_confirmed === true;
+  },
 
   isPending(obj) {
     if (!obj) return true;
