@@ -388,6 +388,86 @@ function poissonScoreFootnote(p) {
   </div>`;
 }
 
+function upsetLevelStyle(level) {
+  const map = {
+    LOW: { color: '#5BBF8A', bg: 'rgba(91,191,138,0.08)', border: 'rgba(91,191,138,0.28)' },
+    MEDIUM: { color: '#C8A96E', bg: 'rgba(200,169,110,0.08)', border: 'rgba(200,169,110,0.28)' },
+    ELEVATED: { color: '#ff8855', bg: 'rgba(255,136,85,0.1)', border: 'rgba(255,136,85,0.32)' },
+    HIGH: { color: '#D95F6A', bg: 'rgba(217,95,106,0.1)', border: 'rgba(217,95,106,0.32)' },
+  };
+  return map[level] || map.MEDIUM;
+}
+
+function upsetImpactColor(impact) {
+  if (impact === '强') return '#ff8855';
+  if (impact === '中') return '#C8A96E';
+  return '#7a8fb5';
+}
+
+/** 强队爆冷防范 · 爆冷指数（打法克制 / 心理 / 历史冷门） */
+function upsetAlertPanel(ua) {
+  if (!ua) return '';
+  const s = upsetLevelStyle(ua.level);
+  const idx = Math.min(100, Math.max(0, Number(ua.index) || 0));
+  const factors = (ua.factors || []).map(f => `
+    <div style="font-size:0.72rem;line-height:1.55;padding:0.45rem 0.55rem;background:rgba(255,255,255,0.03);border-radius:3px;border-left:2px solid ${upsetImpactColor(f.impact)}">
+      <span style="font-weight:700;color:${upsetImpactColor(f.impact)}">${f.tag || '因素'} · ${f.impact || '—'}</span>
+      <span style="color:var(--txt2)"> — ${f.detail || ''}</span>
+    </div>`).join('');
+
+  return `
+    <div class="mf-panel" style="grid-column:1 / -1;border-right:none;background:${s.bg};border:1px solid ${s.border}">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:0.85rem">
+        <div>
+          <div class="mf-panel-label" style="color:${s.color}">⚡ 强队爆冷防范 · 预演分析</div>
+          <div style="font-size:0.68rem;color:var(--txt2);line-height:1.5;margin-top:0.25rem">
+            针对官方排名/模型热门 <strong style="color:var(--txt)">${ua.favorite}</strong> — 评估
+            <strong style="color:var(--red)">${ua.underdog}</strong> 以克制打法、心理弱点或历史冷门制造 upset 的可能
+          </div>
+        </div>
+        <div style="text-align:center;min-width:120px;padding:0.5rem 0.75rem;background:rgba(0,0,0,0.2);border-radius:6px;border:1px solid ${s.border}">
+          <div style="font-size:0.58rem;letter-spacing:1.5px;color:var(--txt2);text-transform:uppercase">爆冷指数</div>
+          <div style="font-size:2rem;font-weight:800;color:${s.color};line-height:1.1">${idx}</div>
+          <div style="font-size:0.68rem;font-weight:700;color:${s.color}">${ua.level_cn || ua.level}</div>
+          ${ua.cold_result_pct != null ? `<div style="font-size:0.6rem;color:var(--txt2);margin-top:0.25rem">冷门赛果区间 ${ua.cold_result_pct}%<br><span style="opacity:0.75">（${ua.underdog} 胜或逼平）</span></div>` : ''}
+        </div>
+      </div>
+
+      <div style="height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;margin-bottom:0.85rem">
+        <div style="width:${idx}%;height:100%;background:linear-gradient(90deg,${s.color}88,${s.color});border-radius:3px"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:0.55rem;color:var(--txt2);margin-top:-0.65rem;margin-bottom:0.85rem">
+        <span>0 稳</span><span>25</span><span>40 警戒</span><span>55+ 高危</span>
+      </div>
+
+      <div style="font-size:0.78rem;line-height:1.65;padding:0.55rem 0.65rem;background:rgba(255,255,255,0.04);border-radius:4px;border-left:3px solid ${s.color};margin-bottom:0.85rem">
+        <strong style="color:${s.color}">结论 · </strong>${ua.verdict || ''}
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.65rem;margin-bottom:0.75rem">
+        <div style="font-size:0.72rem;line-height:1.6;padding:0.5rem;background:rgba(255,255,255,0.02);border-radius:3px">
+          <div style="font-size:0.6rem;letter-spacing:1px;color:var(--cyan);margin-bottom:0.3rem">打法克制</div>
+          ${ua.tactical || '—'}
+        </div>
+        <div style="font-size:0.72rem;line-height:1.6;padding:0.5rem;background:rgba(255,255,255,0.02);border-radius:3px">
+          <div style="font-size:0.6rem;letter-spacing:1px;color:var(--gold);margin-bottom:0.3rem">心理防线</div>
+          ${ua.psychology || '—'}
+        </div>
+        <div style="font-size:0.72rem;line-height:1.6;padding:0.5rem;background:rgba(255,255,255,0.02);border-radius:3px">
+          <div style="font-size:0.6rem;letter-spacing:1px;color:var(--txt2);margin-bottom:0.3rem">历史冷门</div>
+          ${ua.historical || '—'}
+        </div>
+      </div>
+
+      <div style="font-size:0.62rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt2);margin-bottom:0.45rem">风险因子矩阵</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0.4rem">
+        ${factors}
+      </div>
+      ${ua.reverse_note ? `<div style="font-size:0.65rem;color:rgba(122,143,181,0.75);line-height:1.5;margin-top:0.65rem">📌 ${ua.reverse_note}</div>` : ''}
+      <div style="font-size:0.6rem;color:rgba(122,143,181,0.55);line-height:1.5;margin-top:0.5rem">指数口径：打法错配 + 心理韧性 + 伤病扰动 + 历史被爆冷频率；仅供娱乐推演，非投注建议。</div>
+    </div>`;
+}
+
 /** 右侧第2行：综合推演关键因素 + 其下方的比分概率分布（同一格内堆叠） */
 function renderRightAnalysisPanel(p, m) {
   return `
@@ -544,6 +624,14 @@ function renderMatch(m) {
           <div class="play-note">${finished ? '比赛已结束 · 上方为官方赛果' : PLAY_NOTE_STD}</div>
           <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.35rem" title="xG（期望进球数）= 根据射门位置、角度、质量统计出的理论进球数，反映攻击质量而非实际比分">期望进球 xG：<strong style="color:var(--cyan)">${p.xg_home}</strong> — <strong style="color:var(--red)">${p.xg_away}</strong> <span style="opacity:.45;font-size:0.55rem">ⓘ</span></div>
           <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.2rem">推演置信度（娱乐参考）：<strong style="color:${p.confidence>=80?'#5BBF8A':p.confidence>=60?'#C8A96E':'#ff8855'}">${p.confidence}%</strong></div>
+          ${m.upset_alert ? (() => {
+            const ua = m.upset_alert;
+            const s = upsetLevelStyle(ua.level);
+            return `<div style="margin-top:0.55rem;padding:0.35rem 0.5rem;border-radius:3px;background:${s.bg};border:1px solid ${s.border};font-size:0.62rem;line-height:1.45">
+              <span style="color:${s.color};font-weight:700">爆冷指数 ${ua.index}</span>
+              <span style="color:var(--txt2)"> · ${ua.favorite} 需防 ${ua.underdog}</span>
+            </div>`;
+          })() : ''}
         </div>
       </div>
       <div class="mf-team-side mf-team-right">
@@ -626,6 +714,8 @@ function renderMatch(m) {
       </div>
 
       ${renderRightAnalysisPanel(p, m)}
+
+      ${upsetAlertPanel(m.upset_alert)}
 
       <!-- WEATHER PANEL (full width) -->
       ${weatherPanel(m.weather, m.home.name, m.away.name)}

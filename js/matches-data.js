@@ -253,6 +253,25 @@ const MATCH_DATA = {
         "xg_away": 1.78,
         "key_factor": "瑞士整体实力与中场控制明显占优，Xhaka 对位卡塔尔双后腰是核心。卡塔尔需靠 Afif/Almoez 反击，但面对 Akanji 领衔防线难度较大。xG 0.92-1.78 泊松最可能 0-2。"
       },
+      "upset_alert": {
+        "favorite": "瑞士",
+        "underdog": "卡塔尔",
+        "favorite_iso": "CH",
+        "index": 26,
+        "level": "LOW",
+        "level_cn": "偏低",
+        "cold_result_pct": 42,
+        "verdict": "瑞士控场能力稳定，卡塔尔爆冷取胜概率偏低；更现实的冷门形态是 0-0 / 1-1 逼平。",
+        "tactical": "Yakin 高位逼抢+快速转移，卡塔尔双后腰易被 Xhaka 调度拉扯；但若 Widmer/Rodríguez 压上过深，Afif 一对一速度仍有偷袭窗口。",
+        "psychology": "卡塔尔 2022 东道主经验尚在，落后时不易崩盘；瑞士近四届世界杯三次进 16 强，小组赛心态成熟，先丢球后内讧风险低。",
+        "historical": "2018 友谊赛卡塔尔 1-0 瑞士（样本小）；瑞士近三届世界杯小组赛仅 1 负（2018 0-1 瑞典），对「非传统强队」失分记录少。",
+        "factors": [
+          { "tag": "克制", "impact": "弱", "detail": "瑞士中场控制+防线高度，卡塔尔反击难成体系" },
+          { "tag": "速度错配", "impact": "中", "detail": "Afif 若孤立拿球，瑞士边卫回追速度足够" },
+          { "tag": "定位球", "impact": "中", "detail": "卡塔尔 Khoukhi/Almoez 头球是少数破局手段" },
+          { "tag": "心理", "impact": "弱", "detail": "瑞士大赛稳定性高，不易被早进球击垮" }
+        ]
+      },
       "weather": {
         "city": "圣克拉拉",
         "country": "美国",
@@ -639,6 +658,25 @@ const MATCH_DATA = {
         "xg_away": 1.05,
         "key_factor": "巴西纸面实力占优，Vinícius 对位摩洛哥防线是破局点；摩洛哥 2022 防反经验不可低估，Hakimi 速度可惩罚巴西压上。xG 2.05-1.05 泊松最可能 2-1。"
       },
+      "upset_alert": {
+        "favorite": "巴西",
+        "underdog": "摩洛哥",
+        "favorite_iso": "BR",
+        "index": 44,
+        "level": "ELEVATED",
+        "level_cn": "偏高",
+        "cold_result_pct": 42,
+        "verdict": "四场中爆冷风险最高的一场——摩洛哥并非弱旅，边路速度+2022 防反 DNA 对巴西压上型打法有明确克制面；需重点防范。",
+        "tactical": "Hakimi/Díaz 反击速度 vs 巴西边卫压上（媒体多次点出 Sandro 一侧回追隐患）；Aguerd 缺阵削弱摩洛哥防空，但巴西无 Neymar 后中路渗透效率下降，僵局时易被偷反击。",
+        "psychology": "巴西东道主+五冠压力，Ancelotti 首战容错低；摩洛哥 2022 已证明大赛心理硬度，先破门后更可能收缩执行防反而非慌乱。",
+        "historical": "摩洛哥 2022 爆冷比利时、西班牙进四强；巴西近三届世界杯首战 2 平 1 胜（2014 克罗地亚、2018 瑞士、2022 塞尔维亚），慢热+被克制平局有前例。",
+        "factors": [
+          { "tag": "克制", "impact": "强", "detail": "摩洛哥低位+快速转换，专打巴西控球压上后的身后空档" },
+          { "tag": "速度错配", "impact": "强", "detail": "Hakimi 对位巴西左卫，Díaz 可惩罚中卫转身" },
+          { "tag": "伤病", "impact": "中", "detail": "Neymar 缺阵削弱巴西破局；Aguerd 缺阵削弱摩洛哥防空——双向" },
+          { "tag": "心理", "impact": "中", "detail": "巴西大赛期望值过高，先丢球时年轻球员易急躁" }
+        ]
+      },
       "weather": {
         "city": "东卢瑟福",
         "country": "美国",
@@ -991,7 +1029,26 @@ const MATCH_DATA = {
         "confidence": 74,
         "xg_home": 0.85,
         "xg_away": 1.42,
-        "key_factor": "苏格兰中场 McTominay-Gilmour 控制力强，海地大概率低位防守。苏格兰需破解密集防守，定位球与远射是破局手段。xG 0.85-1.42 泊松最可能 0-1。"
+        "key_factor": "苏格兰中场 McTominay 控制力强（Gilmour 缺阵），海地大概率低位防守。苏格兰需破解密集防守，定位球与远射是破局手段。xG 0.85-1.42 泊松最可能 0-1。"
+      },
+      "upset_alert": {
+        "favorite": "苏格兰",
+        "underdog": "海地",
+        "favorite_iso": "GB-SCT",
+        "index": 33,
+        "level": "MEDIUM",
+        "level_cn": "中等",
+        "cold_result_pct": 50,
+        "verdict": "苏格兰纸面占优但非顶级强队；海地五后卫+雨战低节奏下，逼平或小胜爆冷有一定空间，需防久攻不下。",
+        "tactical": "海地预计 5-4-1 低位+身体对抗，苏格兰缺少 Gilmour 后中场创造力下降，McKenna 存疑削弱防空；海地 Nazon/Jean 反击与定位球是主要威胁。",
+        "psychology": "海地世界杯首秀，无历史包袱、易「光脚不怕穿鞋」；苏格兰大赛有久攻不下急躁传统（欧洲杯预选赛曾意外失分），先被破门时心态波动需警惕。",
+        "historical": "海地无世界杯交锋史；苏格兰近十年对 FIFA 排名 70+ 球队偶有平局（如 2022 对乌克兰附加赛胶着），对完全陌生对手开局谨慎。",
+        "factors": [
+          { "tag": "克制", "impact": "中", "detail": "密集低位+雨战减速度，专克苏格兰地面渗透" },
+          { "tag": "速度错配", "impact": "弱", "detail": "海地反击有速度但整体火力有限" },
+          { "tag": "伤病", "impact": "中", "detail": "Gilmour 缺阵、McKenna 存疑削弱苏格兰中场与防空" },
+          { "tag": "心理", "impact": "中", "detail": "苏格兰必须抢开局，久攻不下易冒进留反击空档" }
+        ]
       },
       "weather": {
         "city": "福克斯堡",
@@ -1359,6 +1416,26 @@ const MATCH_DATA = {
         "xg_home": 1.35,
         "xg_away": 1.28,
         "key_factor": "澳土实力接近，中场 Çalhanoğlu 对位 Irvine 是核心。Sports Mole 预测澳 5-4-1、土 Güler 首发但 Yildiz 存疑。BC Place 人工草澳大利亚更熟。xG 1.35-1.28 泊松最可能 1-1。"
+      },
+      "upset_alert": {
+        "favorite": "澳大利亚",
+        "underdog": "土耳其",
+        "favorite_iso": "AU",
+        "index": 38,
+        "level": "MEDIUM",
+        "level_cn": "中等",
+        "cold_result_pct": 62,
+        "verdict": "名义主队略被看好，但 xG 几乎持平——土耳其创造力（Güler/Çalhanoğlu）若打穿 5-4-1 即具备爆冷取胜能力；双向冷门均需防范。",
+        "tactical": "Popovic 5-4-1 压缩中路，但土耳其 Güler 前腰创造力+Çalhanoğlu 远射/任意球专克低位；Yildiz 若缺阵则左路威胁降档。澳大利亚 Goodwin 反击与 Souttar 定位球是主队反制手段。",
+        "psychology": "D 组首场双方均需抢分，澳大利亚主场声浪有利但大赛经验不如土耳其；土耳其若早进球，澳大利亚压上后身后空档增大。",
+        "historical": "澳土无大赛交锋；澳大利亚 2006、2022 世界杯均有「对欧洲球队逼平」记录（2022 0-0 丹麦）；土耳其 2002 季军证明大赛爆发能力。",
+        "factors": [
+          { "tag": "克制", "impact": "中", "detail": "土耳其技术中场可破解澳式身体足球，定位球+远射是破局点" },
+          { "tag": "速度错配", "impact": "中", "detail": "Goodwin/Yi 反击 vs 土耳其边卫回追，互有窗口" },
+          { "tag": "伤病", "impact": "中", "detail": "Yildiz 存疑削弱土耳其左路；澳大利亚全员健康" },
+          { "tag": "心理", "impact": "中", "detail": "实力接近，任一方先丢球均可能演变为对攻乱战" }
+        ],
+        "reverse_note": "若按 Sports Mole 倾向土耳其小胜，则澳大利亚爆冷取胜指数约 35，仍为中等。"
       },
       "weather": {
         "city": "温哥华",
