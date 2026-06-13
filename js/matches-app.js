@@ -695,7 +695,7 @@ function mysticPanel(mx, homeName, awayName) {
     const k = Object.keys(elColors).find(k => el.includes(k))||'土';
     return `<span style="font-size:0.62rem;padding:0.1rem 0.4rem;border-radius:2px;background:${elColors[k]}22;color:${elColors[k]};border:1px solid ${elColors[k]}44;margin-right:3px;white-space:nowrap">${el}</span>`;
   };
-  const elTags = s => s.split('、').map(elTag).join('');
+  const elTags = s => String(s || '土').split('、').filter(Boolean).map(elTag).join('') || elTag('土');
 
   const scoreBar = (name, score, color, verdict) => `
     <div style="background:rgba(255,255,255,0.03);border:1px solid ${P}0.15);border-radius:5px;padding:0.7rem">
@@ -712,9 +712,28 @@ function mysticPanel(mx, homeName, awayName) {
       </div>
     </div>`;
 
-  const wx = mx.wuxing;
-  const hx = mx.hexagram;
+  const wx = mx.wuxing || {};
+  const homeWx = { colors: '—', elements: '土', advantage: '', disadvantage: '', ...wx.home, team: wx.home?.team || homeName };
+  const awayWx = { colors: '—', elements: '水', advantage: '', disadvantage: '', ...wx.away, team: wx.away?.team || awayName };
+  const hx = {
+    symbol: '☯',
+    name: '待卦',
+    number: 0,
+    upper: '—',
+    lower: '—',
+    quote: '赛前更新',
+    general: '开赛前结合阵容与时辰再行解读。',
+    advantage_team: homeName,
+    disadvantage_team: awayName,
+    match_nature: '待观察',
+    yellow_card_risk: '中',
+    yellow_card_reason: '赛前暂无执法数据',
+    scenarios: [],
+    ...(mx.hexagram || {}),
+  };
+  if (!Array.isArray(hx.scenarios)) hx.scenarios = [];
   const cardRiskColor = {'高':'#D95F6A','中':'#C8A96E','低':'#5BBF8A','低至中':'#7BAF8A'}[hx.yellow_card_risk]||'#888';
+  const verdictLabel = v => (v === '有利' ? '✅ 有利' : v === '不利' ? '❌ 不利' : '⏳ 待定');
 
   return `
   <div style="margin-top:0.5rem;border:1px solid ${P}0.3);border-radius:8px;overflow:hidden;
@@ -763,48 +782,48 @@ function mysticPanel(mx, homeName, awayName) {
           <div style="border:2px solid ${wx.home.verdict_color}55;border-radius:6px;overflow:hidden">
             <div style="padding:0.5rem 0.75rem;background:${wx.home.verdict_color}18;
               display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid ${wx.home.verdict_color}33">
-              <span style="font-weight:800;font-size:0.88rem">${wx.home.team}</span>
-              <span style="font-size:0.78rem;font-weight:800;color:${wx.home.verdict_color};
-                padding:0.1rem 0.5rem;border-radius:3px;background:${wx.home.verdict_color}20">
-                ${wx.home.verdict==='有利'?'✅ 有利':'❌ 不利'}
+              <span style="font-weight:800;font-size:0.88rem">${homeWx.team}</span>
+              <span style="font-size:0.78rem;font-weight:800;color:${homeWx.verdict_color||'#C8A96E'};
+                padding:0.1rem 0.5rem;border-radius:3px;background:${(homeWx.verdict_color||'#C8A96E')}20">
+                ${verdictLabel(homeWx.verdict)}
               </span>
             </div>
             <div style="padding:0.65rem 0.75rem">
-              <div style="font-size:0.68rem;color:rgba(210,195,235,0.5);margin-bottom:0.3rem">队服：${wx.home.colors}</div>
-              <div style="margin-bottom:0.5rem">${elTags(wx.home.elements)}</div>
-              <div style="font-size:0.72rem;color:${wx.home.verdict_color};font-weight:700;margin-bottom:0.4rem">${wx.home.wuxing_short}</div>
-              <div style="font-size:0.68rem;color:rgba(210,195,235,0.68);line-height:1.6;margin-bottom:0.5rem">${wx.home.reason}</div>
-              <div style="font-size:0.65rem;padding:0.35rem 0.5rem;background:${wx.home.verdict_color}15;
-                border-radius:3px;color:${wx.home.verdict_color};line-height:1.5">
-                ${wx.home.verdict==='有利'?'↑ 加成：':'↓ 减分：'}${wx.home.advantage||wx.home.disadvantage}
+              <div style="font-size:0.68rem;color:rgba(210,195,235,0.5);margin-bottom:0.3rem">队服：${homeWx.colors}</div>
+              <div style="margin-bottom:0.5rem">${elTags(homeWx.elements)}</div>
+              <div style="font-size:0.72rem;color:${homeWx.verdict_color||'#C8A96E'};font-weight:700;margin-bottom:0.4rem">${homeWx.wuxing_short||'—'}</div>
+              <div style="font-size:0.68rem;color:rgba(210,195,235,0.68);line-height:1.6;margin-bottom:0.5rem">${homeWx.reason||''}</div>
+              <div style="font-size:0.65rem;padding:0.35rem 0.5rem;background:${(homeWx.verdict_color||'#C8A96E')}15;
+                border-radius:3px;color:${homeWx.verdict_color||'#C8A96E'};line-height:1.5">
+                ${homeWx.verdict==='有利'?'↑ 加成：':homeWx.verdict==='不利'?'↓ 减分：':'◆ '}${homeWx.advantage||homeWx.disadvantage||'待更新'}
               </div>
             </div>
           </div>
           <!-- 客队 -->
-          <div style="border:2px solid ${wx.away.verdict_color}55;border-radius:6px;overflow:hidden">
-            <div style="padding:0.5rem 0.75rem;background:${wx.away.verdict_color}18;
-              display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid ${wx.away.verdict_color}33">
-              <span style="font-weight:800;font-size:0.88rem">${wx.away.team}</span>
-              <span style="font-size:0.78rem;font-weight:800;color:${wx.away.verdict_color};
-                padding:0.1rem 0.5rem;border-radius:3px;background:${wx.away.verdict_color}20">
-                ${wx.away.verdict==='有利'?'✅ 有利':'❌ 不利'}
+          <div style="border:2px solid ${(awayWx.verdict_color||'#C8A96E')}55;border-radius:6px;overflow:hidden">
+            <div style="padding:0.5rem 0.75rem;background:${(awayWx.verdict_color||'#C8A96E')}18;
+              display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid ${(awayWx.verdict_color||'#C8A96E')}33">
+              <span style="font-weight:800;font-size:0.88rem">${awayWx.team}</span>
+              <span style="font-size:0.78rem;font-weight:800;color:${awayWx.verdict_color||'#C8A96E'};
+                padding:0.1rem 0.5rem;border-radius:3px;background:${(awayWx.verdict_color||'#C8A96E')}20">
+                ${verdictLabel(awayWx.verdict)}
               </span>
             </div>
             <div style="padding:0.65rem 0.75rem">
-              <div style="font-size:0.68rem;color:rgba(210,195,235,0.5);margin-bottom:0.3rem">队服：${wx.away.colors}</div>
-              <div style="margin-bottom:0.5rem">${elTags(wx.away.elements)}</div>
-              <div style="font-size:0.72rem;color:${wx.away.verdict_color};font-weight:700;margin-bottom:0.4rem">${wx.away.wuxing_short}</div>
-              <div style="font-size:0.68rem;color:rgba(210,195,235,0.68);line-height:1.6;margin-bottom:0.5rem">${wx.away.reason}</div>
-              <div style="font-size:0.65rem;padding:0.35rem 0.5rem;background:${wx.away.verdict_color}15;
-                border-radius:3px;color:${wx.away.verdict_color};line-height:1.5">
-                ${wx.away.verdict==='有利'?'↑ 加成：':'↓ 减分：'}${wx.away.advantage||wx.away.disadvantage}
+              <div style="font-size:0.68rem;color:rgba(210,195,235,0.5);margin-bottom:0.3rem">队服：${awayWx.colors}</div>
+              <div style="margin-bottom:0.5rem">${elTags(awayWx.elements)}</div>
+              <div style="font-size:0.72rem;color:${awayWx.verdict_color||'#C8A96E'};font-weight:700;margin-bottom:0.4rem">${awayWx.wuxing_short||'—'}</div>
+              <div style="font-size:0.68rem;color:rgba(210,195,235,0.68);line-height:1.6;margin-bottom:0.5rem">${awayWx.reason||''}</div>
+              <div style="font-size:0.65rem;padding:0.35rem 0.5rem;background:${(awayWx.verdict_color||'#C8A96E')}15;
+                border-radius:3px;color:${awayWx.verdict_color||'#C8A96E'};line-height:1.5">
+                ${awayWx.verdict==='有利'?'↑ 加成：':awayWx.verdict==='不利'?'↓ 减分：':'◆ '}${awayWx.advantage||awayWx.disadvantage||'待更新'}
               </div>
             </div>
           </div>
         </div>
         <div style="font-size:0.72rem;color:rgba(210,195,235,0.48);text-align:center;
           padding:0.4rem;background:${P}0.06);border-radius:3px">
-          五行裁定：${wx.summary}
+          五行裁定：${wx.summary||'赛前更新'}
         </div>
       </div>
 
@@ -862,19 +881,15 @@ function mysticPanel(mx, homeName, awayName) {
           </div>
 
           <!-- 情景1：强队先进球 -->
-          ${renderScenario('🟢', hx.early_goal.scenario, hx.early_goal.prediction, hx.early_goal.favors, hx.early_goal.favors_prob, 'rgba(91,191,138,0.07)', 'rgba(91,191,138,0.22)', '#5BBF8A')}
+          ${hx.early_goal ? renderScenario('🟢', hx.early_goal.scenario, hx.early_goal.prediction, hx.early_goal.favors, hx.early_goal.favors_prob, 'rgba(91,191,138,0.07)', 'rgba(91,191,138,0.22)', '#5BBF8A') : ''}
 
-          <!-- 情景2：前段无进球 -->
-          ${renderScenario('🟡', hx.no_early_goal.scenario, hx.no_early_goal.prediction, hx.no_early_goal.favors, hx.no_early_goal.favors_prob, 'rgba(200,169,110,0.07)', 'rgba(200,169,110,0.22)', '#C8A96E')}
+          ${hx.no_early_goal ? renderScenario('🟡', hx.no_early_goal.scenario, hx.no_early_goal.prediction, hx.no_early_goal.favors, hx.no_early_goal.favors_prob, 'rgba(200,169,110,0.07)', 'rgba(200,169,110,0.22)', '#C8A96E') : ''}
 
-          <!-- 情景3：弱队先进球 -->
-          ${renderScenario('🔴', hx.away_goal.scenario, hx.away_goal.prediction, hx.away_goal.favors, hx.away_goal.favors_prob, 'rgba(217,95,106,0.07)', 'rgba(217,95,106,0.2)', '#ff8888')}
+          ${hx.away_goal ? renderScenario('🔴', hx.away_goal.scenario, hx.away_goal.prediction, hx.away_goal.favors, hx.away_goal.favors_prob, 'rgba(217,95,106,0.07)', 'rgba(217,95,106,0.2)', '#ff8888') : ''}
 
-          <!-- 情景4：上半场0-0 -->
-          ${renderScenario('⬜', hx.halftime.scenario, hx.halftime.prediction, hx.halftime.favors, hx.halftime.favors_prob, 'rgba(150,150,200,0.05)', 'rgba(150,150,200,0.15)', '#aaaadd')}
+          ${hx.halftime ? renderScenario('⬜', hx.halftime.scenario, hx.halftime.prediction, hx.halftime.favors, hx.halftime.favors_prob, 'rgba(150,150,200,0.05)', 'rgba(150,150,200,0.15)', '#aaaadd') : ''}
 
-          <!-- 情景5：加时赛 -->
-          ${renderScenario('⏰', hx.extra_time.scenario, hx.extra_time.prediction, hx.extra_time.favors, hx.extra_time.favors_prob, 'rgba(100,150,255,0.05)', 'rgba(100,150,255,0.15)', '#88aaff')}
+          ${hx.extra_time ? renderScenario('⏰', hx.extra_time.scenario, hx.extra_time.prediction, hx.extra_time.favors, hx.extra_time.favors_prob, 'rgba(100,150,255,0.05)', 'rgba(100,150,255,0.15)', '#88aaff') : ''}
 
           <!-- 黄牌详细分析 -->
           <div style="padding:0.6rem 0.75rem;background:${cardRiskColor}10;border:1px solid ${cardRiskColor}30;border-radius:4px;
@@ -893,8 +908,8 @@ function mysticPanel(mx, homeName, awayName) {
       <div style="background:${P}0.05);border:1px solid ${P}0.2);border-radius:6px;padding:1rem">
         <div style="font-size:0.62rem;letter-spacing:2px;color:#9B7DD4;margin-bottom:0.75rem">⚖ 灵力胜率总裁定</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.85rem">
-          ${scoreBar(homeName, mx.home_score, '#9B7DD4', mx.wuxing.home.verdict==='有利'?'天时有利':'逆势')}
-          ${scoreBar(awayName, mx.away_score, 'rgba(120,85,185,0.45)', mx.wuxing.away.verdict==='有利'?'天时有利':'逆势')}
+          ${scoreBar(homeName, mx.home_score, '#9B7DD4', homeWx.verdict==='有利'?'天时有利':'逆势')}
+          ${scoreBar(awayName, mx.away_score, 'rgba(120,85,185,0.45)', awayWx.verdict==='有利'?'天时有利':'逆势')}
         </div>
         <div style="font-size:0.82rem;color:rgba(230,200,255,0.88);line-height:1.75;
           padding:0.85rem 1rem;background:${P}0.08);border-radius:4px;border-left:3px solid #9B7DD4;margin-bottom:0.6rem">
@@ -947,6 +962,12 @@ function initMatchesPage() {
   const footerUpd = document.getElementById('footer-updated');
   if (footerUpd) footerUpd.textContent = getLastSyncTime().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' }) + ' 北京时间';
 
+  const dateEl = document.getElementById('today-date');
+  if (dateEl && MATCH_DATA.todayMatches?.length) {
+    const groups = [...new Set(MATCH_DATA.todayMatches.map(m => m.group))].sort().join('/');
+    dateEl.textContent = `📅 ${MATCH_DATA.todayMatches[0].date_beijing || '今日'} — ${MATCH_DATA.todayMatches.length} 场待赛 · ${groups}组`;
+  }
+
   const cont = document.getElementById('matches-container');
   if (!cont) return;
   MATCH_DATA.todayMatches.forEach(raw => {
@@ -976,6 +997,11 @@ function initResultsPage() {
 
   const snap = document.getElementById('standings-snapshots');
   if (snap) snap.innerHTML = renderGroupSnapshots(RESULTS_DATA.groupSnapshots);
+
+  const dateEl = document.getElementById('results-date');
+  if (dateEl) {
+    dateEl.textContent = `📅 已归档 ${RESULTS_DATA.finishedMatches.length} 场 · 含加拿大/美国揭幕战`;
+  }
 
   const cont = document.getElementById('results-container');
   if (!cont) return;
