@@ -1,9 +1,8 @@
 // Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
-// Last API sync: 2026-06-12T16:38:07.436Z
-// score_dist 已废弃 — 页面由 score-model.js 按 xG 实时泊松计算，勿手写比分概率
+// Last API sync: 2026-06-13T03:40:17.145Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-13T04:15:00+08:00",
-  "syncSource": "API-Football + Goal.com 官方首发",
+  "lastUpdated": "2026-06-13T03:40:17.144Z",
+  "syncSource": "API-Football",
   "breakingNews": [
     {
       "tag": "OFFICIAL",
@@ -64,11 +63,6 @@ const MATCH_DATA = {
       "tag": "OFFICIAL",
       "text": "A组回顾：墨西哥、韩国各3分领跑 · 详见「过往赛果」页面",
       "time": "小组动态"
-    },
-    {
-      "tag": "REFEREE",
-      "text": "Danny Makkelie（荷兰）执法美国战 · Facundo Tello 执法加拿大战",
-      "time": "裁判信息"
     }
   ],
   "todayMatches": [
@@ -1021,4 +1015,3 @@ const MATCH_DATA = {
     "key_player_away": "Granit Xhaka"
   }
 };
-
