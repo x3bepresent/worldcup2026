@@ -1,8 +1,8 @@
-// 今日赛事 — Day 4 preview
-// Last updated: 2026-06-15T18:00:00+08:00
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-14T15:41:36.689Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-15T18:00:00+08:00",
-  "syncSource": "FotMob + Sports Mole + 赛前发布会 · Day 4 team news",
+  "lastUpdated": "2026-06-14T15:41:36.689Z",
+  "syncSource": "API-Football",
   "breakingNews": [
     {
       "tag": "PREVIEW",
