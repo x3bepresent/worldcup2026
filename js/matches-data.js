@@ -1,9 +1,8 @@
 // Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
-// Last API sync: 2026-06-13T15:25:03.814Z
-// Last media refresh: 2026-06-15T03:00:00+08:00
+// Last API sync: 2026-06-14T04:01:27.568Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-15T03:00:00+08:00",
-  "syncSource": "FotMob official XI + live results",
+  "lastUpdated": "2026-06-14T04:01:27.568Z",
+  "syncSource": "API-Football",
   "breakingNews": [
     {
       "tag": "OFFICIAL",
