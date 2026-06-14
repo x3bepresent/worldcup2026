@@ -1,8 +1,8 @@
 // Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
 // Last API sync: 2026-06-13T15:25:03.814Z
-// Last media refresh: 2026-06-15T01:30:00+08:00
+// Last media refresh: 2026-06-15T03:00:00+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-15T01:30:00+08:00",
+  "lastUpdated": "2026-06-15T03:00:00+08:00",
   "syncSource": "FotMob official XI + live results",
   "breakingNews": [
     {
@@ -17,8 +17,8 @@ const MATCH_DATA = {
     },
     {
       "tag": "LINEUP",
-      "text": "m08 澳-土仍 Predicted · 开球 12:00 北京时间",
-      "time": "待赛"
+      "text": "✅ m08 澳-土 FIFA 官方 XI：Beach #18 替 Ryan · Irankunda #17 · 土 Yildiz #11 替补",
+      "time": "首发确认"
     },
     {
       "tag": "OFFICIAL",
@@ -498,20 +498,25 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月14日 12:00",
       "venue": "BC Place",
       "city": "Vancouver, Canada",
-      "note": "D组第2场 · 澳大利亚 vs 土耳其 · 温哥华 · FotMob 预测 XI 已同步",
+      "note": "D组第2场 · 澳大利亚 vs 土耳其 · FIFA 官方首发已确认 · 主裁 Valenzuela",
       "lineup": {
-        "confirmed": false,
-        "formation": null,
-        "home": "等待官方确认",
-        "away": "等待官方确认",
-        "note": "FotMob 仍标注 Predicted（6/15 开球前）。澳 3-4-2-1、土 4-2-3-1，Yildiz 在列。",
+        "confirmed": true,
+        "formation": "3-4-2-1 / 4-2-3-1",
+        "home": "Beach #18; Circati #3, Souttar (C) #19, Burgess #21; Italiano #4, O'Neill #13, Okon-Engstler #24, Bos #5; Irankunda #17, Metcalfe #8; Touré #9",
+        "away": "Çakır #23; Çelik #2, Demiral #3, Bardakcı #14, Kadioglu #20; Çalhanoğlu (C) #10, Yüksek #16; Güler #8, Kökcü #6, Yilmaz #21; Aktürkoglu #7",
+        "note": "FotMob · FIFA 官方 team sheet · Popovic 3-4-2-1 / Montella 4-2-3-1。澳大利亚大幅变阵：Beach 一门、Irankunda 双前腰之一；土耳其 Yüksek 后腰、Yildiz 替补。",
         "predicted": {
-          "formation": "3-4-2-1",
-          "home": "Ryan; Circati, Souttar, Burgess; Italiano, O'Neill, Irvine, Bos; Leckie, Metcalfe; Touré",
-          "away": "Çakır; Çelik, Demiral, Bardakcı, Kadioglu; Kökcü, Çalhanoğlu; Yilmaz, Güler, Yildiz; Aktürkoglu",
+          "formation": "3-4-2-1 / 4-2-3-1",
+          "home": "Ryan #1; Circati #3, Souttar #19, Burgess #21; Italiano #4, O'Neill #13, Irvine #22, Bos #5; Leckie #7, Metcalfe #8; Touré #9",
+          "away": "Çakır #23; Çelik #2, Demiral #3, Bardakcı #14, Kadioglu #20; Kökcü #6, Çalhanoğlu #10; Yilmaz #21, Güler #8, Yildiz #11; Aktürkoglu #7",
           "source": "FotMob · 2026-06-14 Predicted · 非官方"
         },
-        "updated": "2026-06-15T00:00:00+08:00"
+        "diff": {
+          "home": "⚠️ 3 处大变阵：Beach #18 替 Ryan #1 一门 · Okon-Engstler #24 替 Irvine #22 · Irankunda #17 替 Leckie #7（Ryan/Irvine/Leckie 替补）",
+          "away": "⚠️ Yüksek #16 进首发后腰 · Kökcü #6 前移 · Yildiz #11 未进 XI（替补）；Aktürkoglu #7 中锋"
+        },
+        "source": "FotMob · FIFA 官方 team sheet · 2026-06-14",
+        "updated": "2026-06-15T03:00:00+08:00"
       },
       "home": {
         "name": "Australia",
@@ -529,13 +534,24 @@ const MATCH_DATA = {
         "coach": "Tony Popovic",
         "stars": [
           {
-            "name": "Mathew Ryan",
+            "name": "Patrick Beach",
             "pos": "GK",
-            "club": "Roma",
-            "stats": "105 caps 在即 · 10 场世界杯经验",
+            "club": "Melbourne City",
+            "stats": "FIFA 官方 XI 先发一门",
+            "rating": 7.5,
+            "desc": "FotMob 官方 XI #18 替预测 Ryan；Ryan #1 替补席",
+            "number": 18,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
+          },
+          {
+            "name": "Nestory Irankunda",
+            "pos": "AM",
+            "club": "Brighton",
+            "stats": "19岁 · 英超",
             "rating": 7.8,
-            "desc": "FotMob 预测首发，Leckie+Metcalfe 双前腰",
-            "number": 1,
+            "desc": "FIFA 官方 XI 双前腰 #17 之一，替预测 Leckie #7",
+            "number": 17,
             "number_confirmed": true,
             "number_source": "FIFA 2026 世界杯最终名单"
           },
@@ -545,7 +561,7 @@ const MATCH_DATA = {
             "club": "Norwich City",
             "stats": "诺维奇下半程 10球/12场",
             "rating": 7.9,
-            "desc": "FotMob 预测单前锋；3-4-2-1 体系支点",
+            "desc": "FIFA 官方 XI 单前锋 #9；3-4-2-1 支点",
             "number": 9,
             "number_confirmed": true,
             "number_source": "FIFA 2026 世界杯最终名单"
@@ -556,20 +572,20 @@ const MATCH_DATA = {
             "club": "St. Pauli",
             "stats": "14 国家队进球 · 33岁",
             "rating": 7.7,
-            "desc": "Sports Mole 预计首发中场，与 Metcalfe、O'Neill 组成中场",
+            "desc": "FIFA 官方 XI 中场 #22 未进先发；Okon-Engstler #24 替其位置",
             "number": 22,
             "number_confirmed": true,
             "number_source": "FIFA 2026 世界杯最终名单"
           }
         ],
         "star": {
-          "name": "Mathew Ryan",
-          "pos": "GK",
-          "club": "Roma",
-          "desc": "Sports Mole 预计第105场国家队；BC Place 人工草经验",
-          "rating": 7.8,
-          "stats": "10 场世界杯 · 105 caps",
-          "number": 1,
+          "name": "Harry Souttar",
+          "pos": "CB",
+          "club": "Sheffield United",
+          "desc": "FIFA 官方 XI 队长中卫 #19；Beach 替 Ryan 一门是最大变阵",
+          "rating": 7.9,
+          "stats": "队长 · BC Place 人工草",
+          "number": 19,
           "number_confirmed": true,
           "number_source": "FIFA 2026 世界杯最终名单"
         },
@@ -577,14 +593,20 @@ const MATCH_DATA = {
           {
             "player": "全队（26人）",
             "status": "FIT",
-            "note": "Sports Mole：澳大利亚无伤病疑虑，Ryan/Irvine/Leckie 预计均在阵",
+            "note": "FotMob 官方 XI 确认；Popovic 赛前续约至 2027 亚洲杯",
+            "confirmed": true
+          },
+          {
+            "player": "Mathew Ryan",
+            "status": "FIT",
+            "note": "FotMob 官方 XI：Beach #18 先发，Ryan #1 替补席",
             "confirmed": true
           },
           {
             "player": "Harry Souttar",
             "status": "FIT",
-            "note": "Sports Mole 预测三中卫之一（与 Circati、Herrington 搭档）",
-            "confirmed": false
+            "note": "FIFA 官方 XI 队长中卫 #19（Circati #3、Burgess #21 搭档）",
+            "confirmed": true
           }
         ],
         "rumors": [
@@ -616,7 +638,7 @@ const MATCH_DATA = {
             "club": "Inter Milan",
             "stats": "队长 · 22球/105场",
             "rating": 8.5,
-            "desc": "Sports Mole 锁定中场核心，与 Yuksek 搭档",
+            "desc": "FIFA 官方 XI 队长 #10，与 Yüksek #16 双后腰",
             "number": 10,
             "number_confirmed": true,
             "number_source": "FIFA 2026 世界杯最终名单"
@@ -627,7 +649,7 @@ const MATCH_DATA = {
             "club": "Real Madrid",
             "stats": "皇马赛季末伤愈",
             "rating": 8.3,
-            "desc": "Sports Mole：已完全恢复，预计首发前腰/攻击中场",
+            "desc": "FIFA 官方 XI 攻击中场 #8",
             "number": 8,
             "number_confirmed": true,
             "number_source": "FIFA 2026 世界杯最终名单"
@@ -638,7 +660,7 @@ const MATCH_DATA = {
             "club": "Juventus",
             "stats": "5 国家队进球",
             "rating": 8,
-            "desc": "FotMob 预测 XI 左路；Akturkoglu 中锋",
+            "desc": "FotMob 官方 XI：#11 替补未进先发；Yilmaz #21 与 Güler #8 在列",
             "number": 11,
             "number_confirmed": true,
             "number_source": "FIFA 2026 世界杯最终名单"
@@ -648,7 +670,7 @@ const MATCH_DATA = {
           "name": "Hakan Çalhanoğlu",
           "pos": "CM",
           "club": "Inter Milan",
-          "desc": "Sports Mole 锁定中场；任意球与长传是土耳其进攻发起点",
+          "desc": "FIFA 官方 XI #10 队长；Yüksek #16 后腰、Güler #8 前腰",
           "rating": 8.5,
           "stats": "队长 · 105 caps",
           "number": 10,
@@ -659,20 +681,20 @@ const MATCH_DATA = {
           {
             "player": "Kenan Yildiz",
             "status": "FIT",
-            "note": "FotMob 6/14 预测 XI 含 Yildiz 左路；与早前 DOUBT 报道有变，开球前以官方 sheet 为准",
-            "confirmed": false
+            "note": "FotMob 官方 XI：#11 替补席，未进先发（Yilmaz #21 在列）",
+            "confirmed": true
           },
           {
             "player": "Arda Güler",
             "status": "FIT",
-            "note": "FotMob 预测首发前腰",
-            "confirmed": false
+            "note": "FIFA 官方 XI 攻击中场 #8",
+            "confirmed": true
           },
           {
-            "player": "Deniz Gul",
+            "player": "Kerem Aktürkoglu",
             "status": "FIT",
-            "note": "FotMob 预测 Akturkoglu 中锋，Gul 替补",
-            "confirmed": false
+            "note": "FIFA 官方 XI 中锋 #7",
+            "confirmed": true
           }
         ],
         "rumors": [
@@ -729,7 +751,7 @@ const MATCH_DATA = {
         "confidence": 70,
         "xg_home": 1.35,
         "xg_away": 1.28,
-        "key_factor": "澳土实力接近。FotMob 预测澳 3-4-2-1（Burgess 中卫）、土 4-2-3-1（Yildiz 左路、Akturkoglu 中锋）。BC Place 人工草澳大利亚更熟。xG 1.35-1.28 泊松最可能 1-1。"
+        "key_factor": "官方 XI 大变阵：Beach #18 替 Ryan、Irankunda #17 替 Leckie；土耳其 Yildiz #11 替补、Yüksek #16 后腰。BC Place 人工草澳更熟。xG 1.35-1.28 最可能 1-1。"
       },
       "upset_alert": {
         "favorite": "澳大利亚",
@@ -757,7 +779,7 @@ const MATCH_DATA = {
           {
             "tag": "伤病",
             "impact": "中",
-            "detail": "Yildiz 存疑削弱土耳其左路；澳大利亚全员健康"
+            "detail": "Yildiz #11 官方替补削弱左路；Beach 替 Ryan 一门变阵"
           },
           {
             "tag": "心理",
