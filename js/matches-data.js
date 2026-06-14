@@ -1,8 +1,8 @@
 // Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
 // Last API sync: 2026-06-13T15:25:03.814Z
-// Last media refresh: 2026-06-15T00:00:00+08:00
+// Last media refresh: 2026-06-15T01:30:00+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-15T00:00:00+08:00",
+  "lastUpdated": "2026-06-15T01:30:00+08:00",
   "syncSource": "FotMob official XI + live results",
   "breakingNews": [
     {
@@ -12,7 +12,7 @@ const MATCH_DATA = {
     },
     {
       "tag": "LINEUP",
-      "text": "✅ m07 海地-苏格兰 FIFA 官方首发：Louicius/Hendry/McGinn 三处变阵",
+      "text": "✅ m07 海地-苏格兰 FIFA 官方 XI：Louicius #11 · Hendry #13 · McGinn #7 · Adams #10 先发",
       "time": "首发确认"
     },
     {
@@ -53,15 +53,15 @@ const MATCH_DATA = {
       "time_beijing": "09:00",
       "date_beijing": "6月14日",
       "time_beijing_full": "北京时间 6月14日 09:00",
-      "venue": "Gillette Stadium",
+      "venue": "Gillette Stadium (Boston Stadium)",
       "city": "Foxborough, USA",
-      "note": "C组第2场 · 海地 vs 苏格兰 · FIFA 官方首发已确认",
+      "note": "C组第2场 · 海地 vs 苏格兰 · FIFA 官方首发已确认 · 主裁 Ghorbal",
       "lineup": {
         "confirmed": true,
         "formation": "4-4-2 / 4-4-2",
-        "home": "Placide (C); Arcus, Adé, Delcroix, Expérience; Louicius, Jean Jacques, Bellegarde, Providence; Pierrot, Isidor",
-        "away": "Gunn; Hickey, Hendry, Hanley, Robertson (C); Gannon-Doak, McTominay, Ferguson, McGinn; Shankland, Adams",
-        "note": "FotMob · FIFA 官方 team sheet（2026-06-14 赛前确认）。",
+        "home": "Placide (C) #1; Arcus #2, Adé #4, Delcroix #5, Expérience #8; Louicius #11, Jean Jacques #17, Bellegarde #10, Providence #15; Pierrot #20, Isidor #18",
+        "away": "Gunn #1; Hickey #2, Hendry #13, Hanley #5, Robertson (C) #3; Gannon-Doak #17, McTominay #4, Ferguson #19, McGinn #7; Shankland #20, Adams #10",
+        "note": "FotMob · FIFA 官方 team sheet · Migné 4-4-2 / Clarke 4-4-2。海地 Louicius 右翼替预测 Casimir；苏格兰 Hendry 中卫、McGinn 左路替 Christie/Souttar 预测组合。",
         "predicted": {
           "formation": "4-4-2",
           "home": "Placide; Arcus, Adé, Delcroix, Expérience; Casimir, Jean Jacques, Bellegarde, Providence; Isidor, Pierrot",
@@ -69,11 +69,11 @@ const MATCH_DATA = {
           "source": "FotMob · 2026-06-14 Predicted · 非官方"
         },
         "diff": {
-          "home": "⚠️ Louicius 替 Casimir 右翼（Casimir 替补席）",
-          "away": "⚠️ Hendry 替 Souttar 中卫 · McGinn 替 Christie 中场（Souttar/Christie 替补）"
+          "home": "⚠️ Louicius #11 替 Casimir #21 右翼（Casimir、Nazon #9 替补）",
+          "away": "⚠️ Hendry #13 替 Souttar #15 中卫 · McGinn #7 替 Christie #11 左路（Souttar/Christie/McKenna 替补）"
         },
         "source": "FotMob · FIFA 官方 team sheet · 2026-06-14",
-        "updated": "2026-06-15T00:00:00+08:00"
+        "updated": "2026-06-15T01:30:00+08:00"
       },
       "home": {
         "name": "Haiti",
@@ -96,7 +96,7 @@ const MATCH_DATA = {
             "club": "Austin FC",
             "stats": "44 球/78 场 · 队史射手王",
             "rating": 7.5,
-            "desc": "FotMob 预测替补；Pierrot 与 Isidor 双前锋先发",
+            "desc": "FIFA 官方 XI：Pierrot #20 + Isidor #18 双前锋；Nazon #9 替补席",
             "number": 9,
             "number_confirmed": true,
             "number_source": "FIFA 2026 世界杯最终名单"
@@ -107,7 +107,7 @@ const MATCH_DATA = {
             "club": "Saint-Étienne",
             "stats": "81 caps · 38岁 · 队长",
             "rating": 7.2,
-            "desc": "队史最年长+最多出场，Sports Mole 预计首发门将",
+            "desc": "FIFA 官方 XI 先发门将+队长 #1",
             "number": 1,
             "number_confirmed": true,
             "number_source": "FIFA 2026 世界杯最终名单"
@@ -118,7 +118,7 @@ const MATCH_DATA = {
             "club": "Wolves",
             "stats": "英超经验",
             "rating": 7.3,
-            "desc": "Sports Mole 预计中场核心，与 Jean Jacques 搭档",
+            "desc": "FIFA 官方 XI 中场 #10，与 Jean Jacques #17 搭档",
             "number": 10,
             "number_confirmed": true,
             "number_source": "FIFA 2026 世界杯最终名单"
@@ -128,7 +128,7 @@ const MATCH_DATA = {
           "name": "Duckens Nazon",
           "pos": "ST",
           "club": "Austin FC",
-          "desc": "FotMob 预测 Isidor+Pierrot 双前锋；Nazon 替补",
+          "desc": "官方 XI：Pierrot+Isidor 先发；Nazon 替补",
           "rating": 7.5,
           "stats": "44 球/78 场",
           "number": 9,
@@ -172,7 +172,7 @@ const MATCH_DATA = {
             "club": "Napoli",
             "stats": "那不勒斯赛季核心",
             "rating": 8.5,
-            "desc": "周五恢复训练（此前肠胃不适），Sports Mole 预计首发中场",
+            "desc": "FIFA 官方 XI 中场 #4；Clarke 确认可战",
             "number": 4,
             "number_confirmed": true,
             "number_source": "FIFA 2026 世界杯最终名单"
@@ -183,7 +183,7 @@ const MATCH_DATA = {
             "club": "Tottenham",
             "stats": "队长 · 刚转会热刺",
             "rating": 8.2,
-            "desc": "Sports Mole 预计左后卫首发，与 Hickey-Hanley-Souttar 组成四后卫",
+            "desc": "FIFA 官方 XI 队长左后卫 #3；Hendry #13 替 Souttar 中卫",
             "number": 3,
             "number_confirmed": true,
             "number_source": "FIFA 2026 世界杯最终名单"
@@ -194,7 +194,7 @@ const MATCH_DATA = {
             "club": "Rangers",
             "stats": "热身 3球1助/8球",
             "rating": 7.9,
-            "desc": "Sports Mole 预计与 Che Adams 双前锋；对库拉索/玻利维亚表现抢眼",
+            "desc": "FIFA 官方 XI 与 Adams #10 双前锋 #20",
             "number": 20,
             "number_confirmed": true,
             "number_source": "FIFA 2026 世界杯最终名单"
@@ -204,7 +204,7 @@ const MATCH_DATA = {
           "name": "Scott McTominay",
           "pos": "CM",
           "club": "Napoli",
-          "desc": "Clarke 官宣「perfect and ready to go」；Standard 6/14 确认可首发",
+          "desc": "FIFA 官方 XI 中场 #4；Gannon-Doak #17 右路、McGinn #7 左路",
           "rating": 8.5,
           "stats": "那不勒斯赛季核心",
           "number": 4,
@@ -214,9 +214,9 @@ const MATCH_DATA = {
         "injuries": [
           {
             "player": "Che Adams",
-            "status": "DOUBT",
-            "note": "ESPN 6/14：前锋线存疑标注 DOUBT，Shankland 仍预计搭档",
-            "confirmed": false
+            "status": "FIT",
+            "note": "FotMob 官方 XI：#10 与 Shankland #20 双前锋先发",
+            "confirmed": true
           },
           {
             "player": "Billy Gilmour",
@@ -226,9 +226,9 @@ const MATCH_DATA = {
           },
           {
             "player": "Scott McKenna",
-            "status": "DOUBT",
-            "note": "FotMob 预测 Hanley 中卫先发；McKenna 未进预测 XI",
-            "confirmed": false
+            "status": "FIT",
+            "note": "FotMob 官方 XI：Hendry #13 中卫先发；McKenna #26 替补席",
+            "confirmed": true
           },
           {
             "player": "Scott McTominay",
@@ -290,7 +290,7 @@ const MATCH_DATA = {
         "confidence": 74,
         "xg_home": 0.85,
         "xg_away": 1.42,
-        "key_factor": "McTominay FotMob/Clarke 确认可首发。FotMob 预测 Christie 中场、Hanley 中卫（McKenna 未进 XI）。海地 Pierrot+Isidor 双锋。xG 0.85-1.42 泊松最可能 0-1。"
+        "key_factor": "McTominay #4、Adams #10 官方 XI 确认。苏格兰 Hendry #13 + McGinn #7 替预测 Souttar/Christie；海地 Louicius #11 替 Casimir。xG 0.85-1.42 最可能 0-1。"
       },
       "upset_alert": {
         "favorite": "Scotland",
