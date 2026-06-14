@@ -290,7 +290,10 @@ function weatherPanel(w, homeName, awayName) {
   return `
     <div class="mf-panel" style="grid-column: 1 / -1; border-right:none; background:rgba(0,229,255,0.015)">
       <div class="mf-panel-label" style="color:var(--cyan)">🌤 赛场气候分析 · 对推演的影响</div>
-      <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:1rem;line-height:1.5">气候条件（温度、湿度、海拔、降雨）对球队体能、战术风格产生直接影响，已纳入本场胜率计算权重</div>
+      <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:1rem;line-height:1.5">
+        ${w.venue ? `<strong style="color:var(--txt)">${w.venue}</strong>${w.city ? ` · ${w.city}${w.country ? '，' + w.country : ''}` : ''} · ` : ''}
+        气候条件（温度、湿度、海拔、降雨）对球队体能、战术风格产生直接影响，已纳入本场胜率计算权重
+      </div>
 
       <!-- 天气概览 -->
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:0.75rem;margin-bottom:1.25rem">
@@ -335,11 +338,12 @@ function weatherPanel(w, homeName, awayName) {
       <!-- 气候对预测的影响 -->
       <div style="font-size:0.62rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt2);margin-bottom:0.5rem">气候因素 → 推演影响</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0.4rem;margin-bottom:0.75rem">
-        ${factors.map(f => `
+        ${factors.length ? factors.map(f => `
           <div style="display:flex;gap:0.4rem;font-size:0.72rem;line-height:1.55;padding:0.35rem 0.5rem;background:rgba(255,255,255,0.02);border-radius:3px">
             <span style="color:var(--cyan);flex-shrink:0">◆</span>
             <span><strong>${f.label || f}</strong>${f.impact ? ' · ' + f.impact : ''}${f.detail ? ' — ' + f.detail : ''}</span>
-          </div>`).join('')}
+          </div>`).join('') : `
+          <div style="font-size:0.72rem;color:var(--txt2);padding:0.5rem;line-height:1.55">暂无分项推演影响数据 · 请参考上方综合影响评级</div>`}
       </div>
       <div style="font-size:0.65rem;color:rgba(122,143,181,0.5);line-height:1.5">📌 ${w.historical_note || ''}</div>
     </div>`;
@@ -402,6 +406,90 @@ function upsetImpactColor(impact) {
   if (impact === '强') return '#ff8855';
   if (impact === '中') return '#C8A96E';
   return '#7a8fb5';
+}
+
+/** 主教练深度分析 — 战术风格 / 换人 / 领先落后 / 强弱队策略 */
+function coachScenarioBlock(icon, title, label, detail, accent) {
+  const color = accent || 'var(--gold)';
+  return `
+    <div style="padding:0.55rem 0.65rem;background:rgba(255,255,255,0.025);border-radius:4px;border-left:3px solid ${color};margin-bottom:0.45rem">
+      <div style="font-size:0.62rem;letter-spacing:1px;color:${color};margin-bottom:0.2rem">${icon} ${title}${label ? ` · <strong>${label}</strong>` : ''}</div>
+      <div style="font-size:0.72rem;color:var(--txt2);line-height:1.6">${detail || '—'}</div>
+    </div>`;
+}
+
+function renderCoachCard(c, teamName, sideColor) {
+  if (!c) return '';
+  const tags = (c.style_tags || []).map(t =>
+    `<span style="font-size:0.58rem;padding:0.12rem 0.4rem;border-radius:2px;background:${sideColor}18;color:${sideColor};border:1px solid ${sideColor}33;margin:0 0.25rem 0.25rem 0;display:inline-block">${t}</span>`
+  ).join('');
+
+  return `
+    <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:6px;padding:1rem;height:100%">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.75rem;margin-bottom:0.75rem;flex-wrap:wrap">
+        <div>
+          <div style="font-size:1rem;font-weight:800;color:${sideColor}">${c.name}</div>
+          <div style="font-size:0.68rem;color:var(--txt2);margin-top:0.2rem">${teamName} · ${c.nation || ''}${c.age ? ` · ${c.age}岁` : ''}${c.tenure ? ` · ${c.tenure}` : ''}</div>
+          ${c.wc_exp ? `<div style="font-size:0.65rem;color:var(--txt2);margin-top:0.25rem;line-height:1.5">🏆 ${c.wc_exp}</div>` : ''}
+        </div>
+        <div style="text-align:right;font-size:0.65rem;color:var(--txt2);line-height:1.5">
+          <div>偏好阵型</div>
+          <div style="font-weight:700;color:var(--txt);margin-top:0.15rem">${c.formation_pref || '—'}</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:0.65rem">${tags}</div>
+      <div style="font-size:0.74rem;line-height:1.65;color:var(--txt);margin-bottom:0.85rem;padding:0.55rem;background:rgba(255,255,255,0.03);border-radius:4px">
+        ${c.style_summary || ''}
+      </div>
+
+      <div style="font-size:0.62rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt2);margin-bottom:0.45rem">换人习惯</div>
+      ${coachScenarioBlock('🔄', '换人窗口', c.subs?.timing, c.subs?.pattern, sideColor)}
+      <div style="font-size:0.65rem;color:var(--txt2);margin:-0.25rem 0 0.65rem 0.5rem;line-height:1.5">
+        场均首换约 <strong style="color:${sideColor}">${c.subs?.avg_first_sub || '—'}</strong>${c.subs?.note ? ` · ${c.subs.note}` : ''}
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.45rem;margin-bottom:0.65rem">
+        ${coachScenarioBlock('🟢', '领先时', c.when_leading?.label, c.when_leading?.detail, '#5BBF8A')}
+        ${coachScenarioBlock('🔴', '落后时', c.when_trailing?.label, c.when_trailing?.detail, '#D95F6A')}
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.45rem;margin-bottom:0.65rem">
+        ${coachScenarioBlock('💪', '对强队', c.vs_strong?.label, c.vs_strong?.detail, '#ff8855')}
+        ${coachScenarioBlock('🎯', '对弱队', c.vs_weak?.label, c.vs_weak?.detail, '#7BB8D4')}
+      </div>
+
+      ${c.tournament ? `
+      <div style="font-size:0.72rem;line-height:1.6;padding:0.5rem 0.6rem;background:rgba(255,255,255,0.03);border-radius:4px;margin-bottom:0.65rem;border:1px solid rgba(255,255,255,0.06)">
+        <span style="font-size:0.6rem;letter-spacing:1px;color:var(--gold)">大赛心态 · </span>${c.tournament}
+      </div>` : ''}
+
+      ${(c.traits || []).length ? `
+      <div style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:0.65rem">
+        ${c.traits.map(t => `<span style="font-size:0.6rem;padding:0.15rem 0.45rem;border-radius:2px;background:rgba(255,255,255,0.05);color:var(--txt2);border:1px solid var(--border)">${t}</span>`).join('')}
+      </div>` : ''}
+
+      ${c.match_note ? `
+      <div style="font-size:0.72rem;line-height:1.65;padding:0.55rem 0.65rem;background:${sideColor}0a;border-radius:4px;border:1px solid ${sideColor}28">
+        <strong style="color:${sideColor}">本场预判 · </strong>${c.match_note}
+      </div>` : ''}
+    </div>`;
+}
+
+function coachAnalysisPanel(ca, homeName, awayName) {
+  if (!ca || (!ca.home && !ca.away)) return '';
+  return `
+    <div class="mf-panel" style="grid-column:1 / -1;border-right:none;background:rgba(100,120,180,0.04);border:1px solid rgba(100,120,180,0.15)">
+      <div class="mf-panel-label" style="color:#9aadff">👔 主教练深度分析 · 战术与临场决策</div>
+      <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:1rem;line-height:1.55">
+        风格标签、换人窗口、领先/落后决策、对强弱队不同策略及大赛心态——供推演临场变阵与比赛走势参考
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem">
+        ${renderCoachCard(ca.home, homeName, 'var(--cyan)')}
+        ${renderCoachCard(ca.away, awayName, 'var(--red)')}
+      </div>
+      <div style="font-size:0.58rem;color:rgba(122,143,181,0.55);line-height:1.5;margin-top:0.75rem">基于公开执教履历、大赛样本与媒体报道归纳 · 仅供娱乐推演 · 非官方战术指令</div>
+    </div>`;
 }
 
 /** 强队爆冷防范 · 爆冷指数（打法克制 / 心理 / 历史冷门） */
@@ -700,7 +788,7 @@ function renderMatch(m) {
       <div class="mf-panel">
         <div class="mf-panel-label" style="color:var(--red)">🏥 ${m.home.name} — 伤病 & 更衣室动态</div>
         <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">赛前确认的伤病停赛信息（红色 = 确认缺阵 / 黄色 = 存疑），以及来自训练营的内部传言</div>
-        ${m.home.injuries.map(inj => `
+        ${(m.home.injuries || []).map(inj => `
           <div style="display:flex;align-items:flex-start;gap:0.5rem;margin-bottom:0.5rem;padding:0.5rem;background:rgba(255,68,85,0.05);border-radius:3px;border:1px solid rgba(255,68,85,0.12)">
             ${injuryBadge(inj.status)}
             <div>
@@ -711,7 +799,7 @@ function renderMatch(m) {
           </div>`).join('')}
         <div style="margin-top:0.6rem">
           <div style="font-size:0.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt2);margin-bottom:0.4rem">Camp Rumors</div>
-          ${m.home.rumors.map(r => `<div style="font-size:0.7rem;color:var(--txt2);line-height:1.55;padding:0.4rem 0;border-bottom:1px solid rgba(255,255,255,0.04)">💬 ${r}</div>`).join('')}
+          ${(m.home.rumors || []).map(r => `<div style="font-size:0.7rem;color:var(--txt2);line-height:1.55;padding:0.4rem 0;border-bottom:1px solid rgba(255,255,255,0.04)">💬 ${r}</div>`).join('')}
         </div>
       </div>
 
@@ -719,7 +807,7 @@ function renderMatch(m) {
       <div class="mf-panel">
         <div class="mf-panel-label" style="color:var(--red)">🏥 ${m.away.name} — 伤病 & 更衣室动态</div>
         <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">赛前确认的伤病停赛信息（红色 = 确认缺阵 / 黄色 = 存疑），以及来自训练营的内部传言</div>
-        ${m.away.injuries.map(inj => `
+        ${(m.away.injuries || []).map(inj => `
           <div style="display:flex;align-items:flex-start;gap:0.5rem;margin-bottom:0.5rem;padding:0.5rem;background:rgba(255,68,85,0.05);border-radius:3px;border:1px solid rgba(255,68,85,0.12)">
             ${injuryBadge(inj.status)}
             <div>
@@ -730,13 +818,15 @@ function renderMatch(m) {
           </div>`).join('')}
         <div style="margin-top:0.6rem">
           <div style="font-size:0.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt2);margin-bottom:0.4rem">Camp Rumors</div>
-          ${m.away.rumors.map(r => `<div style="font-size:0.7rem;color:var(--txt2);line-height:1.55;padding:0.4rem 0;border-bottom:1px solid rgba(255,255,255,0.04)">💬 ${r}</div>`).join('')}
+          ${(m.away.rumors || []).map(r => `<div style="font-size:0.7rem;color:var(--txt2);line-height:1.55;padding:0.4rem 0;border-bottom:1px solid rgba(255,255,255,0.04)">💬 ${r}</div>`).join('')}
         </div>
       </div>
 
       ${renderRightAnalysisPanel(p, m)}
 
       ${upsetAlertPanel(m.upset_alert)}
+
+      ${coachAnalysisPanel(m.coach_analysis, m.home.name, m.away.name)}
 
       <!-- WEATHER PANEL (full width) -->
       ${weatherPanel(m.weather, m.home.name, m.away.name)}
@@ -963,6 +1053,7 @@ function mysticPanel(mx, homeName, awayName) {
             <div style="font-size:0.62rem;letter-spacing:2px;color:#9B7DD4;margin-bottom:0.35rem">🀄 卦象推演 · 全情景分析</div>
             <div style="font-size:0.68rem;color:rgba(210,195,235,0.5);line-height:1.65;font-style:italic;margin-bottom:0.35rem">「${hx.quote.replace(/《.*?》：/,'')}」</div>
             <div style="font-size:0.7rem;color:rgba(210,195,235,0.78);line-height:1.6">${hx.general}</div>
+            ${hx.hexagram_analysis ? `<div style="font-size:0.68rem;color:rgba(210,195,235,0.62);line-height:1.65;margin-top:0.5rem;padding:0.5rem 0.65rem;background:${P}0.06);border-radius:4px;border-left:2px solid ${P}0.35)">${hx.hexagram_analysis}</div>` : ''}
           </div>
         </div>
 
@@ -1075,8 +1166,17 @@ function renderGroupSnapshots(snapshots) {
 
 // ── Init ───────────────────────────────────────────────────
 function initMatchesPage() {
-  renderTicker(MATCH_DATA.breakingNews);
-  startLiveTimer();
+  if (typeof MATCH_DATA === 'undefined') {
+    const cont = document.getElementById('matches-container');
+    if (cont) cont.innerHTML = '<p style="color:var(--red);padding:2rem">数据加载失败，请刷新页面。</p>';
+    return;
+  }
+  try {
+    renderTicker(MATCH_DATA.breakingNews);
+    startLiveTimer();
+  } catch (e) {
+    console.error(e);
+  }
 
   const syncEl = document.getElementById('sync-status');
   if (syncEl) {
@@ -1098,14 +1198,19 @@ function initMatchesPage() {
 
   const cont = document.getElementById('matches-container');
   if (!cont) return;
-  MATCH_DATA.todayMatches.forEach(raw => {
-    const m = mergeLiveIntoMatch(raw);
-    cont.innerHTML += renderMatch(m);
-    cont.innerHTML += '<div style="height:2rem"></div>';
-  });
+  if (!MATCH_DATA.todayMatches?.length) {
+    cont.innerHTML = '<p style="color:var(--txt2);padding:2rem;text-align:center">今日暂无待赛场次 · 请查看下方「明日预告」</p>';
+  } else {
+    MATCH_DATA.todayMatches.forEach(raw => {
+      const m = mergeLiveIntoMatch(raw);
+      cont.innerHTML += renderMatch(m);
+      cont.innerHTML += '<div style="height:2rem"></div>';
+    });
+  }
 
   renderNextMatch();
 
+  document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
   }, { threshold: 0.05 });
