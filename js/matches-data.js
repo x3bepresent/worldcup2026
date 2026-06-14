@@ -36,7 +36,7 @@ const MATCH_DATA = {
     },
     {
       "tag": "REFEREE",
-      "text": "德国/荷兰/科特迪瓦场次裁判已确认 · 瑞典-突尼斯待公布",
+      "text": "FIFA 官方确认 Matches 9-12：Jayed · Elfath · Letexier · Falcon",
       "time": "裁判"
     }
   ],
@@ -191,10 +191,31 @@ const MATCH_DATA = {
       "referee": {
         "confirmed": true,
         "pending": false,
+        "source": "FIFA · Match officials · 2026-06-14",
         "name": "Jalal Jayed",
-        "nation": "Jordan",
-        "iso": "jo",
-        "source": "FotMob · FIFA 2026-06-14"
+        "nation": "Morocco",
+        "iso": "ma",
+        "age": 38,
+        "wc_experience": "2026 世界杯首秀主裁 · FIFA 名单自 2019",
+        "avg_yellow": 3.9,
+        "avg_red": 0.12,
+        "avg_penalty": 0.28,
+        "home_win_rate": 54,
+        "bias_index": 52,
+        "bias_note": "摩洛哥籍主裁，国际赛场出牌适中偏稳。对身体对抗容忍度中等，对战术犯规与拖延较敏感；大赛首秀预计按 FIFA 标准严格执法。",
+        "tendencies": [
+          "FIFA 2026 首秀主裁，赛前压力低、德国控球局黄牌或偏少",
+          "VAR：Hamza El-Fariq（摩洛哥）",
+          "助理裁判：Zakaria Brinsi、Mostafa Akarkad（摩洛哥）"
+        ],
+        "officials": {
+          "ar1": "Zakaria Brinsi (MAR)",
+          "ar2": "Mostafa Akarkad (MAR)",
+          "fourth": "Abongile Tom (RSA)",
+          "var": "Hamza El-Fariq (MAR)",
+          "avar": "Nicolas Gallo (COL)",
+          "svar": "Shaun Evans (AUS)"
+        }
       },
       "prediction": {
         "home_win": 94,
@@ -690,10 +711,31 @@ const MATCH_DATA = {
       "referee": {
         "confirmed": true,
         "pending": false,
+        "source": "FIFA · Match officials · 2026-06-14",
         "name": "Ismail Elfath",
         "nation": "USA",
         "iso": "us",
-        "source": "FotMob · 2026-06-14"
+        "age": 42,
+        "wc_experience": "2022 卡塔尔世界杯执法 · MLS 顶级裁判",
+        "avg_yellow": 4,
+        "avg_red": 0.1,
+        "avg_penalty": 0.32,
+        "home_win_rate": 51,
+        "bias_index": 50,
+        "bias_note": "美国籍 FIFA 精英裁判，2022 世界杯已有执法经验。出牌率中等偏上，对高位压迫后的战术犯规判罚果断；技术流对决中允许比赛流畅进行，但中场绞杀仍会出牌。",
+        "tendencies": [
+          "2022 世界杯执法经验，大赛节奏把控成熟",
+          "VAR：Armando Villarreal（美国）",
+          "荷日中场 de Jong vs Kamada 绞杀，预计 4-5 张黄牌"
+        ],
+        "officials": {
+          "ar1": "Corey Parker (USA)",
+          "ar2": "Kyle Atkins (USA)",
+          "fourth": "Katia Garcia (MEX)",
+          "var": "Armando Villarreal (USA)",
+          "avar": "Rodolpho Toski (BRA)",
+          "svar": "Tomasz Kwiatkowski (POL)"
+        }
       },
       "prediction": {
         "home_win": 56,
@@ -1183,10 +1225,32 @@ const MATCH_DATA = {
       "referee": {
         "confirmed": true,
         "pending": false,
-        "name": "Michael Oliver",
-        "nation": "England",
-        "iso": "gb-eng",
-        "source": "FotMob · 2026-06-14"
+        "source": "FIFA · Match officials · 2026-06-14",
+        "name": "François Letexier",
+        "nation": "France",
+        "iso": "fr",
+        "age": 36,
+        "wc_experience": "2024 欧洲杯决赛主裁 · 2026 世界杯执法",
+        "wc_final": "2024 欧洲杯决赛主裁",
+        "avg_yellow": 4,
+        "avg_red": 0.22,
+        "avg_penalty": 0.35,
+        "home_win_rate": 48,
+        "bias_index": 47,
+        "bias_note": "法国顶级裁判，2024 欧洲杯决赛主裁。执法风格严谨，对战术犯规与抗议出牌果断；Caicedo/Kessié 类型中场绞杀局黄牌风险偏高，点球判罚尺度相对明确。",
+        "tendencies": [
+          "欧洲杯决赛级主裁，大赛压力承受力强",
+          "VAR：Jarred Gillett（英格兰）",
+          "预计 5-6 张黄牌，Oliver 非本场主裁——本场为 Letexier"
+        ],
+        "officials": {
+          "ar1": "Cyril Mugnier (FRA)",
+          "ar2": "Mehdi Rahmouni (FRA)",
+          "fourth": "Khalid Al-Turais (KSA)",
+          "var": "Jarred Gillett (ENG)",
+          "avar": "Willy Delajod (FRA)",
+          "svar": "Bram Van Driessche (BEL)"
+        }
       },
       "prediction": {
         "home_win": 40,
@@ -1451,11 +1515,11 @@ const MATCH_DATA = {
           "general": "地山谦，以退为进。谦卦象征防守反击、不骄不躁的一方占优——利于纪律严明、中场硬度更高、能忍受 0-0 的一方。",
           "advantage_team": "Ecuador",
           "disadvantage_team": "Côte d'Ivoire",
-          "hexagram_analysis": "谦卦主守中——Caicedo 如艮山不动，Kessié 对位绞杀决定中场归属；科特迪瓦火德（Diallo/Guessand）需耐心方能破山。xG 1.5-1.4 几乎均势，泊松最可能 1-1；Oliver 执法下 Caicedo/Kessié 对抗黄牌风险高。",
+          "hexagram_analysis": "谦卦主守中——Caicedo 如艮山不动，Kessié 对位绞杀决定中场归属；科特迪瓦火德（Diallo/Guessand）需耐心方能破山。xG 1.5-1.4 几乎均势，泊松最可能 1-1；Letexier 执法下 Caicedo/Kessié 对抗黄牌风险高。",
           "match_nature": "均势胶着局",
           "match_nature_prob": 38,
           "yellow_card_risk": "中高",
-          "yellow_card_reason": "谦卦主守但绞杀激烈，预计 5-6 张黄牌——Caicedo vs Kessié 中场对抗、Singo/Konan 对位 Plata/Estupiñán；Oliver 对战术犯规尺度偏严。",
+          "yellow_card_reason": "谦卦主守但绞杀激烈，预计 5-6 张黄牌——Caicedo vs Kessié 中场对抗、Singo/Konan 对位 Plata/Estupiñán；Letexier 对战术犯规尺度偏严。",
           "scenarios": [
             {
               "icon": "⚽",
@@ -1665,15 +1729,33 @@ const MATCH_DATA = {
         "note": "瑞典历史略优"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "F组蒙特雷场次裁判待 FIFA 最终确认。",
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA · Match officials · 2026-06-14",
+        "name": "Yael Falcon",
+        "nation": "Argentina",
+        "iso": "ar",
+        "age": 44,
+        "wc_experience": "2025 世俱杯执法 · 阿根廷联赛顶级裁判",
+        "avg_yellow": 5.6,
+        "avg_red": 0.15,
+        "avg_penalty": 0.38,
+        "home_win_rate": 53,
+        "bias_index": 54,
+        "bias_note": "阿根廷籍主裁，出牌率偏高（南美联赛风格）。对犯规与抗议容忍度较低，34°C 高温下战术犯规可能增多；2025 世俱杯已有大赛执法经验。",
         "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
-        ]
+          "出牌率南美偏高，高温消耗局黄牌或达 4-5 张",
+          "VAR：Juan Lara（智利）",
+          "助理裁判：Maximiliano Del Yesso、Facundo Rodriguez（阿根廷）"
+        ],
+        "officials": {
+          "ar1": "Maximiliano Del Yesso (ARG)",
+          "ar2": "Facundo Rodriguez (ARG)",
+          "fourth": "Juan Calderon (CRC)",
+          "var": "Juan Lara (CHI)",
+          "avar": "Antonio Garcia (URU)",
+          "svar": "Hernan Mastrangelo (ARG)"
+        }
       },
       "prediction": {
         "home_win": 49,

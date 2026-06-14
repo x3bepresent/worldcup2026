@@ -270,12 +270,12 @@ const MYSTIC = {
       advantage_team: 'Ecuador',
       disadvantage_team: "Côte d'Ivoire",
       hexagram_analysis:
-        '谦卦主守中——Caicedo 如艮山不动，Kessié 对位绞杀决定中场归属；科特迪瓦火德（Diallo/Guessand）需耐心方能破山。xG 1.5-1.4 几乎均势，泊松最可能 1-1；Oliver 执法下 Caicedo/Kessié 对抗黄牌风险高。',
+        '谦卦主守中——Caicedo 如艮山不动，Kessié 对位绞杀决定中场归属；科特迪瓦火德（Diallo/Guessand）需耐心方能破山。xG 1.5-1.4 几乎均势，泊松最可能 1-1；Letexier 执法下 Caicedo/Kessié 对抗黄牌风险高。',
       match_nature: '均势胶着局',
       match_nature_prob: 38,
       yellow_card_risk: '中高',
       yellow_card_reason:
-        '谦卦主守但绞杀激烈，预计 5-6 张黄牌——Caicedo vs Kessié 中场对抗、Singo/Konan 对位 Plata/Estupiñán；Oliver 对战术犯规尺度偏严。',
+        '谦卦主守但绞杀激烈，预计 5-6 张黄牌——Caicedo vs Kessié 中场对抗、Singo/Konan 对位 Plata/Estupiñán；Letexier 对战术犯规尺度偏严。',
       scenarios: [
         { icon: '⚽', label: '比赛性质', text: '平局 35%，科特迪瓦主胜 38%，厄瓜多尔客胜 27%（xG 1.5-1.4 均势）' },
         { icon: '⏱', label: '进球高峰段', text: '第 35-50 分钟（双方体能峰值）及第 75-90 分钟（定位球 / 反击）' },

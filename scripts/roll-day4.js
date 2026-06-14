@@ -4,11 +4,11 @@
  */
 const fs = require('fs');
 const path = require('path');
-const { pendingReferee, confirmedReferee } = require('./pending-templates');
 const { computeScoreDistribution, computeOutcomeFromXg } = require('./score-model');
 const { buildCoachAnalysis } = require('./coach-data-day4');
 const { venueWeather } = require('./venue-weather-day4');
 const { getMystic } = require('./mystic-data-day4');
+const { getReferee } = require('./referee-data-day4');
 
 const ROOT = path.join(__dirname, '..');
 const MATCH_PATH = path.join(ROOT, 'js', 'matches-data.js');
@@ -76,7 +76,7 @@ function buildM09() {
       [],
       ['人口最少世界杯参赛国 · Advocaat 3-5-2 低位', '目标：前30分钟不丢球，定位球偷分']),
     h2h: { home_wins: 0, draws: 0, away_wins: 0, recent: [], note: '无正式交锋 · 库拉索世界杯首秀' },
-    referee: confirmedReferee({ name: 'Jalal Jayed', nation: 'Jordan', iso: 'jo', source: 'FotMob · FIFA 2026-06-14' }),
+    referee: getReferee('m09'),
     prediction: pred(xgH, xgA,
       '实力悬殊局：德国 xG 3.8 对 0.3，Musiala/Wirtz 对位 Advocaat 五后卫低位。Neuer 复出五届世界杯；库拉索人口最少参赛国，目标零封前 30 分钟。泊松最可能 3-0/4-0。',
       88),
@@ -136,7 +136,7 @@ function buildM10() {
       [{ player: 'Wataru Endo', status: 'OUT', note: '因伤退出世界杯大名单', confirmed: true }],
       ['Moriyasu 三中卫+双前腰体系，Kubo-Doan 肋部配合是核心', '2022 日本曾 2-1 胜德国，不可轻敌']),
     h2h: { home_wins: 1, draws: 2, away_wins: 1, recent: [{ year: 2018, comp: '友谊赛', score: '2-1', winner: 'Netherlands' }], note: '历史互有胜负，日本 2022 大赛经验更丰富' },
-    referee: confirmedReferee({ name: 'Ismail Elfath', nation: 'USA', iso: 'us', source: 'FotMob · 2026-06-14' }),
+    referee: getReferee('m10'),
     prediction: pred(xgH, xgA,
       'F组技术流对决：荷兰边路宽度（Gakpo/Dumfries）对位日本三中卫；Kubo 肋部是日本唯一稳定破局点。de Jong 控球 vs Kamada 逼抢决定节奏。xG 1.85-1.05 泊松最可能 2-1。',
       76),
@@ -195,7 +195,7 @@ function buildM11() {
     ], { name: 'Moisés Caicedo', pos: 'CDM', desc: '厄瓜多尔 19 场不败的基石', rating: 8.5 },
       [], ['19 场不败，Caicedo 领衔中场硬度', 'Beccacece 低位防守+快速转换', '2022 世界杯小组出线经验']),
     h2h: { home_wins: 1, draws: 1, away_wins: 0, recent: [{ year: 2024, comp: '友谊赛', score: '2-1', winner: "Côte d'Ivoire" }], note: '样本少，参考价值有限' },
-    referee: confirmedReferee({ name: 'Michael Oliver', nation: 'England', iso: 'gb-eng', source: 'FotMob · 2026-06-14' }),
+    referee: getReferee('m11'),
     prediction: pred(xgH, xgA,
       'E组硬碰硬：科特迪瓦身体对抗 vs 厄瓜多尔 19 场不败纪律。Caicedo-Kessié 对位决定中场；xG 1.5-1.4 几乎均势，泊松最可能 1-1，次选 2-1 主队。',
       70),
@@ -253,7 +253,7 @@ function buildM12() {
     ], { name: 'Youssef Msakni', pos: 'AM', desc: '突尼斯创造力来源', rating: 7.6 },
       [], ['Zaouali 4-4-2 低位防守，Msakni 反击', '瑞典身高与定位球优势明显', '蒙特雷高温对欧洲球队略有消耗']),
     h2h: { home_wins: 2, draws: 0, away_wins: 1, recent: [{ year: 2022, comp: '友谊赛', score: '3-0', winner: 'Sweden' }], note: '瑞典历史略优' },
-    referee: pendingReferee('F组蒙特雷场次裁判待 FIFA 最终确认。'),
+    referee: getReferee('m12'),
     prediction: pred(xgH, xgA,
       'F组次席之争：瑞典 Isak/Kulusevski 对位突尼斯低位 4-4-2。瑞典定位球与身高占优；突尼斯 Msakni 反击是唯一变数。xG 1.55-1.05 泊松最可能 2-1 或 1-1。',
       72),
@@ -290,7 +290,7 @@ const MATCH_DATA = {
     { tag: 'LINEUP', text: 'Neuer 五届世界杯预计首发 · Musiala/Wirtz 双核 · 库拉索 3-5-2 低位', time: '德国战' },
     { tag: 'LINEUP', text: '日本远藤航退出 · Verbruggen 门将存疑 · Kubo 肋部是破局点', time: '荷日战' },
     { tag: 'OFFICIAL', text: '🏁 昨日：海地0-1苏格兰 · 澳大利亚2-0土耳其 · 详见赛果页', time: '回顾' },
-    { tag: 'REFEREE', text: '德国/荷兰/科特迪瓦场次裁判已确认 · 瑞典-突尼斯待公布', time: '裁判' },
+    { tag: 'REFEREE', text: 'FIFA 官方确认 Matches 9-12：Jayed · Elfath · Letexier · Falcon', time: '裁判' },
   ],
   todayMatches,
   nextMatch: {
