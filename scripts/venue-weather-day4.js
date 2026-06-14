@@ -100,9 +100,9 @@ const VENUE_WEATHER = {
     home_adapt: 75,
     away_adapt: 82,
     home_note: '瑞典来自北欧温带，34°C 干热非其舒适区；Isak 等球员需 55\' 前建立优势，否则 70\' 后体能下滑明显',
-    away_note: '突尼斯/北非球员更习惯地中海-撒哈拉干热气候；Zaouali 低位防守减少跑动，高温适应性评分更高',
+    away_note: '突尼斯/北非球员更习惯地中海-撒哈拉干热气候；Lamouchi 低位防守减少跑动，高温适应性评分更高',
     weather_factors: [
-      { label: '34°C 干热', impact: '突尼斯略优', detail: '干热下 70\' 后瑞典高位压迫效率下降，Tomasson 需 55\' 起轮换' },
+      { label: '34°C 干热', impact: '突尼斯略优', detail: '干热下 70\' 后瑞典高位压迫效率下降，Potter 需 55\' 起轮换' },
       { label: '540m 海拔', impact: '轻微缺氧', detail: '较海平面传球略快、体能消耗略增，瑞典球员需额外适应 2–3 天' },
       { label: '湿度 45% 干燥', impact: '有利反击', detail: '球速快、弹跳低，Msakni 直塞与 Isak 身后跑均受益，各取所需' },
       { label: '开放式球场', impact: '风扰轻微', detail: '西风 2级影响角球与远射，瑞典定位球优势需考虑风向' },

@@ -1,9 +1,19 @@
-// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
-// Last API sync: 2026-06-14T15:41:36.689Z
+// 今日赛事 — Day 4 preview
+// Last updated: 2026-06-15T22:00:00+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-14T15:41:36.689Z",
-  "syncSource": "API-Football",
+  "lastUpdated": "2026-06-15T22:00:00+08:00",
+  "syncSource": "FIFA + Yahoo/Sportskeeda + Sports Mole · Day 4 lineups",
   "breakingNews": [
+    {
+      "tag": "LINEUP",
+      "text": "✅ 官方确认：德国 3-4-2-1 vs 库拉索 4-2-3-1 · 荷兰 4-3-3 vs 日本 3-4-2-1",
+      "time": "已确认"
+    },
+    {
+      "tag": "LINEUP",
+      "text": "⏳ 待确认：科特迪瓦-厄瓜多尔 · 瑞典-突尼斯（Sports Mole / FWC 预测已更新）",
+      "time": "预测"
+    },
     {
       "tag": "PREVIEW",
       "text": "📅 今日4场 · 德国-库拉索(01:00) · 荷兰-日本(04:00) · 科特-厄瓜(07:00) · 瑞典-突尼斯(10:00)",
@@ -11,23 +21,8 @@ const MATCH_DATA = {
     },
     {
       "tag": "INJURY",
-      "text": "Neuer 确认首发 · Karl 退出 · N'Dicka 缺阵 · Mitoma/Endo 整届退出 · Kulusevski 未入选",
+      "text": "Neuer 首发 · N'Dicka 缺阵 · Mitoma/Endo 退出 · Kulusevski 未入选",
       "time": "伤病"
-    },
-    {
-      "tag": "PREVIEW",
-      "text": "E组：德国 xG 3.8 碾压库拉索 · 科特迪瓦 vs 厄瓜多尔 19场不败",
-      "time": "E组"
-    },
-    {
-      "tag": "PREVIEW",
-      "text": "F组：荷兰 Simons ACL 缺阵 · 日本 Mitoma 退出 · 瑞典 Isak 体能存疑",
-      "time": "F组"
-    },
-    {
-      "tag": "LINEUP",
-      "text": "Nagelsmann 最强 XI · Koeman 伤病潮 · Valencia 小腿存疑",
-      "time": "阵容"
     },
     {
       "tag": "REFEREE",
@@ -51,18 +46,23 @@ const MATCH_DATA = {
       "city": "Houston, USA",
       "note": "E组揭幕 · 德国 vs 库拉索 · 休斯顿",
       "lineup": {
-        "confirmed": false,
-        "formation": null,
-        "home": "等待官方确认",
-        "away": "等待官方确认",
-        "note": "Nagelsmann 赛前确认 Neuer 首发；Lennart Karl 已退出大名单。",
+        "confirmed": true,
+        "formation": "3-4-2-1",
+        "home": "Neuer; Kimmich (C), Tah, Schlotterbeck; Pavlović, Nmecha; Brown; Sané, Musiala, Wirtz; Havertz",
+        "away": "Room; Floranus, Obispo, Bazoer, Fonville; L. Bacuna (C), Chong; Comenencia, J. Bacuna, Hansen; Locadia",
+        "note": "FIFA 官方首发 · 2026-06-14 休斯顿。Nagelsmann 确认 Neuer 首发第 125 场；德国 3-4-2-1，库拉索改打 4-2-3-1（非预测 3-5-2）。",
         "predicted": {
           "formation": "4-2-3-1 / 3-5-2",
           "home": "Neuer; Kimmich, Tah, Schlotterbeck, Brown; Pavlović, Nmecha; Sané, Musiala, Wirtz; Havertz",
           "away": "Room; Gaari, Obispo, Bazoer; Floranus, Comenencia, L. Bacuna, J. Bacuna, Fonville; Chong, Locadia",
-          "source": "FotMob Predicted · 2026-06-15 · 非官方"
+          "source": "FotMob Predicted · 赛前 · 非官方"
         },
-        "updated": "2026-06-15T18:00:00+08:00"
+        "diff": {
+          "home": "✅ 与 Nagelsmann 赛前预测基本一致；Kimmich 中卫、Brown 左翼卫为官方布局。",
+          "away": "⚠️ 与预测 3-5-2 不同：官方 4-2-3-1，Hansen 首发右翼，Chong 回撤中场。"
+        },
+        "source": "FIFA.com · Tactical Line-up · Group E · 2026-06-14",
+        "updated": "2026-06-15T22:00:00+08:00"
       },
       "home": {
         "name": "Germany",
@@ -568,18 +568,23 @@ const MATCH_DATA = {
       "city": "Arlington, USA",
       "note": "F组焦点 · 荷兰 vs 日本 · 达拉斯",
       "lineup": {
-        "confirmed": false,
-        "formation": null,
-        "home": "等待官方确认",
-        "away": "等待官方确认",
-        "note": "Simons/Schouten 整届缺阵 · Mitoma/Endo 退出 · Verbruggen 碰撞存疑。",
+        "confirmed": true,
+        "formation": "4-3-3 / 3-4-2-1",
+        "home": "Verbruggen; Dumfries, van Hecke, van Dijk (C), van de Ven; Gravenberch, de Jong, Reijnders; Summerville, Malen, Gakpo",
+        "away": "Suzuki; Taniguchi, Watanabe, Ito; Doan, Kamada, Sano, Nakamura; Kubo, Maeda; Ueda (C)",
+        "note": "官方首发 · Yahoo Sports / Sportskeeda · 2026-06-14 达拉斯。Malen 中锋、Weghorst 替补；日本三中卫 Taniguchi-Watanabe-Ito，Maeda+Kubo 双 10。",
         "predicted": {
           "formation": "4-3-3 / 3-4-2-1",
           "home": "Verbruggen; Dumfries, van de Ven, van Dijk (C), Aké; Gravenberch, de Jong, Reijnders; Malen, Gakpo, Weghorst",
           "away": "Suzuki; Itakura, Ito, Tomiyasu; Doan, Kamada, Sano, Nakamura; Kubo, Ito; Ueda",
-          "source": "FotMob Predicted · 2026-06-15 · 非官方"
+          "source": "FotMob / ESPN 赛前预测 · 非官方"
         },
-        "updated": "2026-06-15T18:00:00+08:00"
+        "diff": {
+          "home": "⚠️ van Hecke 顶替 Aké 中卫；Malen 中锋（非 Weghorst）；Summerville 左边锋，Gakpo 右路。",
+          "away": "⚠️ Taniguchi+Watanabe 中卫搭档（非 Itakura）；Maeda 首发前腰，Tomiyasu/Nagatomo 替补。"
+        },
+        "source": "Yahoo Sports · Sportskeeda · FIFA Match 10 · 2026-06-14",
+        "updated": "2026-06-15T22:00:00+08:00"
       },
       "home": {
         "name": "Netherlands",
@@ -1156,14 +1161,20 @@ const MATCH_DATA = {
         "formation": null,
         "home": "等待官方确认",
         "away": "等待官方确认",
-        "note": "N'Dicka 确认缺阵 · Haller 未入选大名单 · Valencia 小腿存疑。",
+        "note": "N'Dicka 确认缺阵 · Valencia 小腿存疑 · 官方首发预计开赛前 1 小时公布。",
         "predicted": {
-          "formation": "4-3-3 / 4-4-2",
+          "formation": "4-3-3 / 4-2-3-1",
           "home": "Fofana; Doué, Agbadou, Kossounou, Konan; Kessié, Sangaré, S. Fofana; Diallo, Guessand, Diomande",
-          "away": "Galindez; Ordóñez, Hincapié, Pacho, Estupiñán; Plata, Vite, Caicedo, Minda; Yeboah, Valencia",
-          "source": "FotMob Predicted · 2026-06-15 · 非官方"
+          "away": "Galindez; Ordóñez, Pacho, Hincapié, Estupiñán; Caicedo, Franco; Yeboah, Plata, Páez; Valencia",
+          "source": "Sports Mole / FWC Times · 2026-06-15 · 非官方",
+          "alt": {
+            "formation": "4-3-3 / 4-2-3-1",
+            "home": "Fofana; Singo, Diomande, Agbadou, Konan; Sangaré, Kessié, Seri; Amad, Wahi, Adingra",
+            "away": "Galindez; Preciado, Pacho, Hincapié, Estupiñán; Caicedo, Franco; Plata, Páez, Sarmiento; Valencia",
+            "source": "FWC Times / FotMob 备选预测"
+          }
         },
-        "updated": "2026-06-15T18:00:00+08:00"
+        "updated": "2026-06-15T22:00:00+08:00"
       },
       "home": {
         "name": "Côte d'Ivoire",
@@ -1688,14 +1699,20 @@ const MATCH_DATA = {
         "formation": null,
         "home": "等待官方确认",
         "away": "等待官方确认",
-        "note": "Kulusevski 未入选大名单 · Isak 体能存疑 · 突尼斯无报告伤病。",
+        "note": "Kulusevski 未入选 · Isak 体能存疑 · Potter 预计 4-4-2；突尼斯 Lamouchi 4-3-3。",
         "predicted": {
-          "formation": "4-3-3 / 4-4-2",
-          "home": "Olsen; Krafth, Lindelöf, Gudmundsson, Svanberg; Olsson, Edman, Elanga; Isak, Gyökeres, Bergman",
-          "away": "Dahmen; Haddadi, Meriah, Talbi, Laabidi; Skhiri, Laïdouni, Romdhane; Msakni, Jebali, Khazri",
-          "source": "FotMob Predicted · 2026-06-15 · 非官方"
+          "formation": "4-4-2 / 4-3-3",
+          "home": "Johansson; Svensson, Lindelöf, Hien, Gudmundsson; Elanga, Ayari, Bergvall, Sema; Gyökeres, Isak",
+          "away": "Dahmen; Valery, Bronn, Talbi, Abdi; Skhiri, Khedira, Mejbri; Achouri, Ben Slimane, Saad",
+          "source": "FWC Times / BBC 大名单 · 2026-06-15 · 非官方",
+          "alt": {
+            "formation": "4-3-3 / 4-4-2",
+            "home": "Olsen; Krafth, Lindelöf, Hien, Gudmundsson; Olsson, Bergvall, Edman; Elanga, Isak, Gyökeres",
+            "away": "Dahmen; Haddadi, Meriah, Talbi, Laabidi; Skhiri, Laïdouni, Romdhane; Msakni, Jebali, Khazri",
+            "source": "FotMob 早期预测（Lamouchi 4-3-3 版本）"
+          }
         },
-        "updated": "2026-06-15T18:00:00+08:00"
+        "updated": "2026-06-15T22:00:00+08:00"
       },
       "home": {
         "name": "Sweden",
@@ -1710,7 +1727,7 @@ const MATCH_DATA = {
           "W",
           "W"
         ],
-        "coach": "Jon Dahl Tomasson",
+        "coach": "Graham Potter",
         "stars": [
           {
             "name": "Alexander Isak",
@@ -1747,13 +1764,13 @@ const MATCH_DATA = {
           {
             "player": "Alexander Isak",
             "status": "DOUBT",
-            "note": "利物浦转会后伤病频繁，赛季仅 8 次英超首发；Tomasson 盼其找回最佳状态",
+            "note": "利物浦转会后伤病频繁，赛季仅 8 次英超首发；Potter 盼其找回最佳状态",
             "confirmed": false
           }
         ],
         "rumors": [
-          "Tomasson 征召 Gyökeres（阿森纳）+ Isak 双中锋配置，但 Kulusevski 缺阵削弱右路宽度",
-          "Potter/Tomasson：「若 Isak 状态在线，他是世界级」——赛前重点恢复其比赛节奏",
+          "Potter 征召 Gyökeres（阿森纳）+ Isak 双中锋配置，但 Kulusevski 缺阵削弱右路宽度",
+          "Potter：「若 Isak 状态在线，他是世界级」——赛前重点恢复其比赛节奏",
           "11 名英超球员入选；Elanga（纽卡）速度或顶替 Kulusevski 右路角色",
           "2018/2022 小组赛均提前出局，大赛稳定性仍是瑞典更衣室老话题"
         ],
@@ -1777,7 +1794,7 @@ const MATCH_DATA = {
           "D",
           "W"
         ],
-        "coach": "Samuel Zaouali",
+        "coach": "Sabri Lamouchi",
         "stars": [
           {
             "name": "Wahbi Khazri",
@@ -1806,7 +1823,7 @@ const MATCH_DATA = {
         ],
         "injuries": [],
         "rumors": [
-          "Zaouali 4-4-2 低位：Laïdouni 绞杀 Isak 接球，Msakni 10 号位组织反击",
+          "Lamouchi 4-3-3 低位：Skhiri/Hannibal 绞杀 Isak 接球，Achouri 速度反击",
           "2018 世界杯曾 2-1 胜德国，大赛爆冷 DNA；Khazri 定位球与远射是次要威胁",
           "蒙特雷 34°C 干热——北非球员适应性略优于北欧，0-0 进入 70 分钟后对瑞典更不利",
           "FotMob：突尼斯暂无报告伤病，Meriah 防空经验对位瑞典身高优势"
@@ -1910,7 +1927,7 @@ const MATCH_DATA = {
         "level_cn": "中等",
         "cold_result_pct": 40,
         "verdict": "瑞典纸面占优但非顶级强队；突尼斯 4-4-2 低位+蒙特雷 34°C 干热消耗，Msakni/Khazri 反击逼平均有空间。",
-        "tactical": "Zaouali 4-4-2 双闸限制 Isak 接球，Laïdouni 绞杀中场；瑞典定位球与身高是主要破局手段，久攻不下易被 Msakni 直塞打身后。",
+        "tactical": "Lamouchi 4-3-3 双闸限制 Isak 接球，Skhiri/Hannibal 绞杀中场；瑞典定位球与身高是主要破局手段，久攻不下易被 Achouri 直塞打身后。",
         "psychology": "突尼斯 2018 曾胜德国，大赛爆冷有 DNA；瑞典若早破门可控场，0-0 进入 70 分钟后高温对北欧球员更不利。",
         "historical": "2022 友谊赛瑞典 3-0 突尼斯；2018 世界杯突尼斯 2-1 胜德国；瑞典大赛稳定性一般，2018/2022 小组赛均提前出局。",
         "factors": [
@@ -1938,94 +1955,94 @@ const MATCH_DATA = {
       },
       "coach_analysis": {
         "home": {
-          "name": "Jon Dahl Tomasson",
-          "age": 48,
-          "nation": "丹麦/瑞典",
-          "tenure": "2024—",
-          "wc_exp": "2026 带队 · 球员时代 AC 米兰前锋",
+          "name": "Graham Potter",
+          "age": 51,
+          "nation": "英格兰",
+          "tenure": "2025年10月—",
+          "wc_exp": "2026 带队 · 球员时代 Östersunds 传奇教练",
           "style_tags": [
-            "4-3-3",
-            "Isak 轴心",
-            "定位球",
-            "直接足球"
+            "3-4-3",
+            "务实反击",
+            "Gyökeres/Isak 双锋",
+            "结构稳定"
           ],
-          "formation_pref": "4-3-3 · Isak 单箭头",
-          "style_summary": "前米兰前锋，瑞典进攻围绕 Isak 展开，Kulusevski 右路持球；定位球与身高是北欧传统武器。Tomasson 2024 上任，大赛教练经验有限。",
+          "formation_pref": "3-4-3 / 4-4-2 · 附加赛改务实低位",
+          "style_summary": "2025 年10 月接替 Tomasson，附加赛用 3-4-3 务实反击（对乌克兰/波兰控球率 <33% 仍晋级）。大赛围绕 Gyökeres/Isak 双锋与 wing-back 宽度，瑞典 Östersunds 时期传奇回归。",
           "subs": {
-            "timing": "首换 58–65 分钟；落后 55' 换 Gyökeres 双前锋",
-            "pattern": "常换 Elanga/Gyökeres 前锋互替；70' 换 Edman 加强中场",
-            "avg_first_sub": "60'",
-            "note": "瑞典预选赛期间首换偏早；高温蒙特雷可能 55' 就开始轮换体能"
+            "timing": "首换 55–65 分钟；高温蒙特雷可能更早轮换",
+            "pattern": "常换 Elanga/Bergvall 边翼；Isak/Gyökeres 互替或双锋共存",
+            "avg_first_sub": "58'",
+            "note": "附加赛证明换人果断；34°C 下需比 Tomasson 时代更早轮换"
           },
           "when_leading": {
-            "label": "继续进攻 · 定位球压制",
-            "detail": "1 球领先：维持 4-3-3，Isak 继续支点，利用定位球扩大优势；2 球+：65' 换 Gyökeres 双前锋或换 Isak 保体能。对突尼斯不会早退。"
+            "label": "务实控节奏 · 不早退",
+            "detail": "1 球领先：维持 3-4-3 结构，利用 Gyökeres 反击宽度；2 球+：65' 可换 Isak 保体能，但不会像 Tomasson 时代过度开放。"
           },
           "when_trailing": {
-            "label": "堆前锋 · 高空轰炸",
-            "detail": "先丢球：55' 换 Gyökeres 与 Isak 双前锋，加强传中与定位球。0–0 僵局 60' 换 Elanga 速度。"
+            "label": "堆前锋 · 定位球",
+            "detail": "先丢球：55' 换 Gyökeres/Isak 双锋或 Elanga 速度；附加赛证明低位反击有效，对突尼斯可能复制模板。"
           },
           "vs_strong": {
-            "label": "对强队：低位 + Isak 反击",
-            "detail": "对法国/英格兰级会 5-4-1 低位，Isak 单点；对突尼斯（弱于瑞典）会主导控球。"
+            "label": "对强队：低位 + 反击",
+            "detail": "对荷兰/日本会 5-3-2/3-4-3 低位，Gyökeres 反击轴心；对突尼斯（弱于瑞典）预计主导控球。"
           },
           "vs_weak": {
-            "label": "对弱队：不留余地",
-            "detail": "对弱旅会 3–0+ 仍主攻；对突尼斯预计全场压制，Isak 目标至少 1 球。3 球领先 70' 后可能换替补边锋。"
+            "label": "对弱队：控制但不冒进",
+            "detail": "对突尼斯预计全场压制但不轻敌；Isak 体能存疑时 Gyökeres 可能单箭头开场。"
           },
-          "tournament": "大赛新手；瑞典 2018/2022 均小组出局，Tomasson 需打破「大赛软脚」标签。蒙特雷 34°C 对换人时机要求更高。",
+          "tournament": "附加赛奇迹晋级（Gyökeres 对乌克兰帽子戏法）；大赛经验来自 Chelsea/Brighton 但国家队首秀——瑞典 1994 季军后再次求稳。",
           "traits": [
-            "Isak 依赖",
-            "定位球强",
-            "大赛经验偏少",
-            "高温下需早轮换"
+            "3-4-3 务实",
+            "Gyökeres 依赖",
+            "Isak 体能变量",
+            "高温需早轮换"
           ],
-          "match_note": "对突尼斯预计全场压制，Isak 核心；蒙特雷 34°C 下 55' 可能开始轮换，定位球是破局关键。"
+          "match_note": "Potter 3-4-3 务实体系——附加赛低位反击成功，对突尼斯预计压制但 Isak 体能是变量；34°C 下 55' 轮换。"
         },
         "away": {
-          "name": "Samuel Zaouali",
-          "age": 44,
-          "nation": "突尼斯",
-          "tenure": "2023—",
-          "wc_exp": "2026 带队 · 非洲联赛经验",
+          "name": "Sabri Lamouchi",
+          "age": 54,
+          "nation": "法国",
+          "tenure": "2026年1月—",
+          "wc_exp": "2014 世界杯执教科特迪瓦 · 2026 二度带队大赛",
           "style_tags": [
-            "4-4-2",
+            "4-3-3",
             "低位防守",
-            "Msakni 10号",
+            "Skhiri/Hannibal 中场",
             "反击"
           ],
-          "formation_pref": "4-4-2 · 领先时 4-5-1",
-          "style_summary": "突尼斯传统 4-4-2 低位，Msakni 前场自由人，Skhiri/Laïdouni 中场绞杀。Zaouali 强调防守纪律，2018 突尼斯曾 2-1 胜德国（友谊赛/大赛基因）。",
+          "formation_pref": "4-3-3 / 4-2-3-1 · 领先时收缩",
+          "style_summary": "2026 年1 月接任突尼斯，大赛经验丰富（2014 科特迪瓦）。强调防守纪律与转换，Skhiri/Hannibal/Mejbri 中场三角，Achouri 速度反击。",
           "subs": {
-            "timing": "首换 65–75 分钟；落后 60' 前换 Khazri",
-            "pattern": "常单换前锋或 Msakni 回撤换防守中场；很少早换——体能分配优先",
-            "avg_first_sub": "70'",
-            "note": "北非球队普遍换人偏晚；高温下 60' 可能需要提前换边翼卫"
+            "timing": "首换 60–70 分钟；落后 55' 前换进攻手",
+            "pattern": "常换 Achouri/Saad 锋线；Skhiri 极少被换下",
+            "avg_first_sub": "65'",
+            "note": "北非球队换人偏晚；高温下 Lamouchi 可能 55' 换边翼卫保体能"
           },
           "when_leading": {
-            "label": "5-4-1 铁桶",
-            "detail": "若意外领先：立即退守 5-4-1，Msakni 留前场，目标耗到终场。2018 对英格兰 0–0 直到 90+ 的模板。"
+            "label": "4-5-1 收缩",
+            "detail": "若意外领先：退守五后卫，Skhiri 锚定，Achouri/Msakni 留前场；2014 科特迪瓦大赛经验指导保守收尾。"
           },
           "when_trailing": {
-            "label": "换 Khazri · 定位球",
-            "detail": "先丢球：60' 换 Khazri 加强定位球与远射，但 4-4-2 防守底线不变。0–2 后 70' 才改三前锋。"
+            "label": "换 Khazri/Achouri · 定位球",
+            "detail": "先丢球：60' 换 Khazri 或加强宽度；0–2 后 70' 才改三前锋。"
           },
           "vs_strong": {
             "label": "对强队：龟缩 + 偷反击",
-            "detail": "对瑞典：4-4-2 低位，Msakni 反击，Laïdouni 绞杀 Isak。34°C 高温下更可能守 0–0 求 1 分。不会高位压迫。"
+            "detail": "对瑞典：4-3-3 低位，Skhiri 绞杀，Achouri 速度；34°C 高温下守 0–0 求 1 分是合理目标。"
           },
           "vs_weak": {
             "label": "对弱队：相对开放",
-            "detail": "对非洲弱旅会 4-3-3 压上；对瑞典不适用。小组赛末轮若已出局可能对日本轮换。"
+            "detail": "对非洲弱旅会压上；对瑞典不适用。小组赛末轮若已出线可能对日本轮换。"
           },
-          "tournament": "2018 对英格兰逼平是信心来源；突尼斯大赛常「Opening game 抢分」，对瑞典目标 1 分可接受。",
+          "tournament": "2014 世界杯科特迪瓦主帅；突尼斯预选赛 10 场 10 零封（非洲顶级防守）；大赛「Opening game 抢分」心态。",
           "traits": [
             "防守铁桶",
-            "换人极晚",
-            "Msakni 依赖",
+            "大赛经验",
+            "Skhiri 依赖",
             "高温适应性略优"
           ],
-          "match_note": "4-4-2 铁桶求 1 分——Msakni 反击 + 高温消耗瑞典；若 0–0 进入 70' 对突尼斯即是胜利。"
+          "match_note": "Lamouchi 2014 大赛经验 + 预选赛 10 零封——4-3-3 低位求 1 分，Skhiri/Hannibal 绞杀，Achouri 速度反击。"
         }
       },
       "weather": {
@@ -2044,12 +2061,12 @@ const MATCH_DATA = {
         "home_adapt": 75,
         "away_adapt": 82,
         "home_note": "瑞典来自北欧温带，34°C 干热非其舒适区；Isak 等球员需 55' 前建立优势，否则 70' 后体能下滑明显",
-        "away_note": "突尼斯/北非球员更习惯地中海-撒哈拉干热气候；Zaouali 低位防守减少跑动，高温适应性评分更高",
+        "away_note": "突尼斯/北非球员更习惯地中海-撒哈拉干热气候；Lamouchi 低位防守减少跑动，高温适应性评分更高",
         "weather_factors": [
           {
             "label": "34°C 干热",
             "impact": "突尼斯略优",
-            "detail": "干热下 70' 后瑞典高位压迫效率下降，Tomasson 需 55' 起轮换"
+            "detail": "干热下 70' 后瑞典高位压迫效率下降，Potter 需 55' 起轮换"
           },
           {
             "label": "540m 海拔",
@@ -2098,7 +2115,7 @@ const MATCH_DATA = {
             "verdict_color": "#C8A96E",
             "compat": 58,
             "reason": "瑞典黄蓝属土水，巳时火旺土燥——Isak 如风行地上需快攻破局；定位球身高优势（Gyökeres/Isak）是土德变现手段。高温对北欧球员消耗大于突尼斯北非球员。",
-            "advantage": "Isak/Kulusevski 锋线 xG 1.55 占优；定位球与角球是主要破局手段，Tomasson 4-3-3 宽度压制"
+            "advantage": "Isak/Gyökeres 锋线 xG 1.55 占优；定位球与角球是主要破局手段，Potter 3-4-3 宽度压制"
           },
           "away": {
             "team": "Tunisia",
@@ -2108,7 +2125,7 @@ const MATCH_DATA = {
             "verdict": "中性",
             "verdict_color": "#C8A96E",
             "compat": 52,
-            "reason": "突尼斯白红属金火，巳时火旺可借势——Msakni 如暗雷，Zaouali 4-4-2 低位如山地待时。2018 胜德国之爆冷 DNA 仍在；Laïdouni 绞杀 Isak 接球是防守关键。",
+            "reason": "突尼斯白红属金火，巳时火旺可借势——Achouri 如暗雷，Lamouchi 4-3-3 低位如山地待时。2018 胜德国之爆冷 DNA 仍在；Skhiri 绞杀 Isak 接球是防守关键。",
             "advantage": "34°C 干热适应性略优；Msakni/Khazri 反击 + 定位球远射，0-0 进入 70 分钟后对瑞典更不利"
           },
           "summary": "五行裁定：巳时火旺，攻守转换快，先破门者得利；高温放大体能差"
@@ -2157,12 +2174,12 @@ const MATCH_DATA = {
           ],
           "early_goal": {
             "scenario": "若前 25 分钟瑞典率先进球（Isak 支点 / 定位球 Gyökeres）",
-            "prediction": "益卦「利有攸往」——突尼斯被迫压出，Isak 反击空间增大；瑞典控场下追加进球概率 40%，Tomasson 可轮换 Elanga 提速。",
+            "prediction": "益卦「利有攸往」——突尼斯被迫压出，Isak 反击空间增大；瑞典控场下追加进球概率 40%，Potter 可轮换 Elanga 提速。",
             "favors": "Sweden",
             "favors_prob": 65
           },
           "no_early_goal": {
-            "scenario": "若前 30 分钟 0-0（Zaouali 低位奏效）",
+            "scenario": "若前 30 分钟 0-0（Lamouchi 低位奏效）",
             "prediction": "高温消耗战——下半场 65 分钟后进球概率升；Msakni 直塞 Khazri 反击 vs 瑞典定位球轰炸，平局概率 40%，瑞典小胜 35%。",
             "favors": "Draw",
             "favors_prob": 40
@@ -2175,7 +2192,7 @@ const MATCH_DATA = {
           },
           "halftime": {
             "scenario": "若半场 0-0 进入中场",
-            "prediction": "Tomasson 变阵（可能 Gyökeres 双前锋），瑞典 60 分钟后略优；突尼斯 Meriah 防空 + Laïdouni 绞杀 Isak 仍是关键。",
+            "prediction": "Potter 变阵（可能 Gyökeres 双前锋），瑞典 60 分钟后略优；突尼斯 Meriah 防空 + Skhiri 绞杀 Isak 仍是关键。",
             "favors": "Sweden",
             "favors_prob": 52
           },

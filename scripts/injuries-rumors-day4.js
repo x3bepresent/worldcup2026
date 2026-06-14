@@ -186,13 +186,13 @@ const TEAM_NEWS = {
         {
           player: 'Alexander Isak',
           status: 'DOUBT',
-          note: '利物浦转会后伤病频繁，赛季仅 8 次英超首发；Tomasson 盼其找回最佳状态',
+          note: '利物浦转会后伤病频繁，赛季仅 8 次英超首发；Potter 盼其找回最佳状态',
           confirmed: false,
         },
       ],
       rumors: [
-        'Tomasson 征召 Gyökeres（阿森纳）+ Isak 双中锋配置，但 Kulusevski 缺阵削弱右路宽度',
-        'Potter/Tomasson：「若 Isak 状态在线，他是世界级」——赛前重点恢复其比赛节奏',
+        'Potter 征召 Gyökeres（阿森纳）+ Isak 双中锋配置，但 Kulusevski 缺阵削弱右路宽度',
+        'Potter：「若 Isak 状态在线，他是世界级」——赛前重点恢复其比赛节奏',
         '11 名英超球员入选；Elanga（纽卡）速度或顶替 Kulusevski 右路角色',
         '2018/2022 小组赛均提前出局，大赛稳定性仍是瑞典更衣室老话题',
       ],
@@ -200,7 +200,7 @@ const TEAM_NEWS = {
     away: {
       injuries: [],
       rumors: [
-        'Zaouali 4-4-2 低位：Laïdouni 绞杀 Isak 接球，Msakni 10 号位组织反击',
+        'Lamouchi 4-3-3 低位：Skhiri/Hannibal 绞杀 Isak 接球，Achouri 速度反击',
         '2018 世界杯曾 2-1 胜德国，大赛爆冷 DNA；Khazri 定位球与远射是次要威胁',
         '蒙特雷 34°C 干热——北非球员适应性略优于北欧，0-0 进入 70 分钟后对瑞典更不利',
         'FotMob：突尼斯暂无报告伤病，Meriah 防空经验对位瑞典身高优势',

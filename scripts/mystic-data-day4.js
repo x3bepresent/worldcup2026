@@ -346,7 +346,7 @@ const MYSTIC = {
         compat: 58,
         reason:
           '瑞典黄蓝属土水，巳时火旺土燥——Isak 如风行地上需快攻破局；定位球身高优势（Gyökeres/Isak）是土德变现手段。高温对北欧球员消耗大于突尼斯北非球员。',
-        advantage: 'Isak/Kulusevski 锋线 xG 1.55 占优；定位球与角球是主要破局手段，Tomasson 4-3-3 宽度压制',
+        advantage: 'Isak/Gyökeres 锋线 xG 1.55 占优；定位球与角球是主要破局手段，Potter 3-4-3 宽度压制',
       },
       away: {
         team: 'Tunisia',
@@ -357,7 +357,7 @@ const MYSTIC = {
         verdict_color: '#C8A96E',
         compat: 52,
         reason:
-          '突尼斯白红属金火，巳时火旺可借势——Msakni 如暗雷，Zaouali 4-4-2 低位如山地待时。2018 胜德国之爆冷 DNA 仍在；Laïdouni 绞杀 Isak 接球是防守关键。',
+          '突尼斯白红属金火，巳时火旺可借势——Achouri 如暗雷，Lamouchi 4-3-3 低位如山地待时。2018 胜德国之爆冷 DNA 仍在；Skhiri 绞杀 Isak 接球是防守关键。',
         advantage: '34°C 干热适应性略优；Msakni/Khazri 反击 + 定位球远射，0-0 进入 70 分钟后对瑞典更不利',
       },
       summary: '五行裁定：巳时火旺，攻守转换快，先破门者得利；高温放大体能差',
@@ -390,12 +390,12 @@ const MYSTIC = {
       early_goal: {
         scenario: '若前 25 分钟瑞典率先进球（Isak 支点 / 定位球 Gyökeres）',
         prediction:
-          '益卦「利有攸往」——突尼斯被迫压出，Isak 反击空间增大；瑞典控场下追加进球概率 40%，Tomasson 可轮换 Elanga 提速。',
+          '益卦「利有攸往」——突尼斯被迫压出，Isak 反击空间增大；瑞典控场下追加进球概率 40%，Potter 可轮换 Elanga 提速。',
         favors: 'Sweden',
         favors_prob: 65,
       },
       no_early_goal: {
-        scenario: '若前 30 分钟 0-0（Zaouali 低位奏效）',
+        scenario: '若前 30 分钟 0-0（Lamouchi 低位奏效）',
         prediction:
           '高温消耗战——下半场 65 分钟后进球概率升；Msakni 直塞 Khazri 反击 vs 瑞典定位球轰炸，平局概率 40%，瑞典小胜 35%。',
         favors: 'Draw',
@@ -411,7 +411,7 @@ const MYSTIC = {
       halftime: {
         scenario: '若半场 0-0 进入中场',
         prediction:
-          'Tomasson 变阵（可能 Gyökeres 双前锋），瑞典 60 分钟后略优；突尼斯 Meriah 防空 + Laïdouni 绞杀 Isak 仍是关键。',
+          'Potter 变阵（可能 Gyökeres 双前锋），瑞典 60 分钟后略优；突尼斯 Meriah 防空 + Skhiri 绞杀 Isak 仍是关键。',
         favors: 'Sweden',
         favors_prob: 52,
       },

@@ -10,10 +10,11 @@ const { venueWeather } = require('./venue-weather-day4');
 const { getMystic } = require('./mystic-data-day4');
 const { getReferee } = require('./referee-data-day4');
 const { getTeamNews } = require('./injuries-rumors-day4');
+const { getLineup } = require('./lineup-data-day4');
 
 const ROOT = path.join(__dirname, '..');
 const MATCH_PATH = path.join(ROOT, 'js', 'matches-data.js');
-const TS = '2026-06-15T18:00:00+08:00';
+const TS = '2026-06-15T22:00:00+08:00';
 
 function team(name, iso, rank, rating, form, coach, stars, star, injuries = [], rumors = []) {
   const t = { name, iso, flag: '', fifa_rank: rank, rating, form, coach, stars, injuries, rumors };
@@ -49,19 +50,7 @@ function buildM09() {
     time_beijing_full: '北京时间 6月15日 01:00',
     venue: 'NRG Stadium', city: 'Houston, USA',
     note: 'E组揭幕 · 德国 vs 库拉索 · 休斯顿',
-    lineup: {
-      confirmed: false,
-      formation: null,
-      home: '等待官方确认', away: '等待官方确认',
-      note: 'Nagelsmann 赛前确认 Neuer 首发；Lennart Karl 已退出大名单。',
-      predicted: {
-        formation: '4-2-3-1 / 3-5-2',
-        home: 'Neuer; Kimmich, Tah, Schlotterbeck, Brown; Pavlović, Nmecha; Sané, Musiala, Wirtz; Havertz',
-        away: 'Room; Gaari, Obispo, Bazoer; Floranus, Comenencia, L. Bacuna, J. Bacuna, Fonville; Chong, Locadia',
-        source: 'FotMob Predicted · 2026-06-15 · 非官方',
-      },
-      updated: TS,
-    },
+    lineup: getLineup('m09'),
     home: team('Germany', 'de', 8, 84, ['W', 'W', 'D', 'W', 'W'], 'Julian Nagelsmann', [
       { name: 'Jamal Musiala', pos: 'CAM', club: 'Bayern Munich', stats: '国家队 38+ 场 12 球', rating: 9.0, desc: 'Nagelsmann 战术核心，中路突破与肋部渗透是德国破局关键' },
       { name: 'Florian Wirtz', pos: 'LW', club: 'Liverpool', stats: '勒沃库森赛季 MVP 级别', rating: 8.8, desc: '左路内切+远射，与 Musiala 形成双 10 号位轮换' },
@@ -109,17 +98,7 @@ function buildM10() {
     time_beijing_full: '北京时间 6月15日 04:00',
     venue: 'AT&T Stadium', city: 'Arlington, USA',
     note: 'F组焦点 · 荷兰 vs 日本 · 达拉斯',
-    lineup: {
-      confirmed: false, formation: null, home: '等待官方确认', away: '等待官方确认',
-      note: 'Simons/Schouten 整届缺阵 · Mitoma/Endo 退出 · Verbruggen 碰撞存疑。',
-      predicted: {
-        formation: '4-3-3 / 3-4-2-1',
-        home: 'Verbruggen; Dumfries, van de Ven, van Dijk (C), Aké; Gravenberch, de Jong, Reijnders; Malen, Gakpo, Weghorst',
-        away: 'Suzuki; Itakura, Ito, Tomiyasu; Doan, Kamada, Sano, Nakamura; Kubo, Ito; Ueda',
-        source: 'FotMob Predicted · 2026-06-15 · 非官方',
-      },
-      updated: TS,
-    },
+    lineup: getLineup('m10'),
     home: team('Netherlands', 'nl', 7, 85, ['W', 'W', 'D', 'W', 'W'], 'Ronald Koeman', [
       { name: 'Virgil van Dijk', pos: 'CB', club: 'Liverpool', stats: '队长 · 世界级中卫', rating: 8.8, desc: '防线领袖，日本 Ueda 制空对位关键' },
       { name: 'Cody Gakpo', pos: 'LW', club: 'Liverpool', stats: '左路内切+远射', rating: 8.3, desc: 'F组进攻核心，对位日本三中卫肋部' },
@@ -167,17 +146,7 @@ function buildM11() {
     time_beijing_full: '北京时间 6月15日 07:00',
     venue: 'Lincoln Financial Field', city: 'Philadelphia, USA',
     note: 'E组第2场 · 科特迪瓦 vs 厄瓜多尔 · 费城',
-    lineup: {
-      confirmed: false, formation: null, home: '等待官方确认', away: '等待官方确认',
-      note: "N'Dicka 确认缺阵 · Haller 未入选大名单 · Valencia 小腿存疑。",
-      predicted: {
-        formation: '4-3-3 / 4-4-2',
-        home: 'Fofana; Doué, Agbadou, Kossounou, Konan; Kessié, Sangaré, S. Fofana; Diallo, Guessand, Diomande',
-        away: 'Galindez; Ordóñez, Hincapié, Pacho, Estupiñán; Plata, Vite, Caicedo, Minda; Yeboah, Valencia',
-        source: 'FotMob Predicted · 2026-06-15 · 非官方',
-      },
-      updated: TS,
-    },
+    lineup: getLineup('m11'),
     home: team("Côte d'Ivoire", 'ci', 36, 74, ['W', 'D', 'W', 'W', 'L'], 'Emerse Faé', [
       { name: 'Franck Kessié', pos: 'CM', club: 'Al-Ahli', stats: 'B2B 中场屏障', rating: 7.8, desc: '对抗 Caicedo 是中场胜负手' },
       { name: 'Simon Adingra', pos: 'LW', club: 'Brighton', stats: '速度型边锋', rating: 7.9, desc: '对位 Estupiñán 边路速度对决' },
@@ -226,24 +195,14 @@ function buildM12() {
     time_beijing_full: '北京时间 6月15日 10:00',
     venue: 'Estadio BBVA', city: 'Monterrey, Mexico',
     note: 'F组第2场 · 瑞典 vs 突尼斯 · 蒙特雷（墨西哥）',
-    lineup: {
-      confirmed: false, formation: null, home: '等待官方确认', away: '等待官方确认',
-      note: 'Kulusevski 未入选大名单 · Isak 体能存疑 · 突尼斯无报告伤病。',
-      predicted: {
-        formation: '4-3-3 / 4-4-2',
-        home: 'Olsen; Krafth, Lindelöf, Gudmundsson, Svanberg; Olsson, Edman, Elanga; Isak, Gyökeres, Bergman',
-        away: 'Dahmen; Haddadi, Meriah, Talbi, Laabidi; Skhiri, Laïdouni, Romdhane; Msakni, Jebali, Khazri',
-        source: 'FotMob Predicted · 2026-06-15 · 非官方',
-      },
-      updated: TS,
-    },
-    home: team('Sweden', 'se', 25, 73, ['W', 'D', 'D', 'W', 'W'], 'Jon Dahl Tomasson', [
+    lineup: getLineup('m12'),
+    home: team('Sweden', 'se', 25, 73, ['W', 'D', 'D', 'W', 'W'], 'Graham Potter', [
       { name: 'Alexander Isak', pos: 'ST', club: 'Liverpool', stats: '英超赛季伤病后归队', rating: 8.6, desc: '瑞典进攻绝对核心，体能状态是本场最大变量' },
       { name: 'Viktor Gyökeres', pos: 'ST', club: 'Arsenal', stats: '阿森纳新援', rating: 8.4, desc: '可能与 Isak 双前锋或轮换' },
       { name: 'Anthony Elanga', pos: 'RW', club: 'Newcastle', stats: '速度型边锋', rating: 8.0, desc: 'Kulusevski 缺阵后右路首选' },
     ], { name: 'Alexander Isak', pos: 'ST', desc: '瑞典头号射手，面对突尼斯低位防守', rating: 8.6 },
       getTeamNews('m12', 'home').injuries, getTeamNews('m12', 'home').rumors),
-    away: team('Tunisia', 'tn', 62, 64, ['D', 'W', 'L', 'D', 'W'], 'Samuel Zaouali', [
+    away: team('Tunisia', 'tn', 62, 64, ['D', 'W', 'L', 'D', 'W'], 'Sabri Lamouchi', [
       { name: 'Wahbi Khazri', pos: 'ST', club: 'Montpellier', stats: '队史关键先生', rating: 7.5, desc: '经验前锋，定位球与远射' },
       { name: 'Youssef Msakni', pos: 'AM', club: 'Al-Arabi', stats: '100+ caps', rating: 7.6, desc: '突尼斯进攻灵魂，10号位' },
       { name: 'Aïssa Laïdouni', pos: 'CM', club: 'Union Berlin', stats: '德甲中场硬度', rating: 7.3, desc: '绞杀 Isak 接球，限制瑞典中路' },
@@ -259,7 +218,7 @@ function buildM12() {
       index: 34, level: 'MEDIUM', level_cn: '中等',
       cold_result_pct: 40,
       verdict: '瑞典纸面占优但非顶级强队；突尼斯 4-4-2 低位+蒙特雷 34°C 干热消耗，Msakni/Khazri 反击逼平均有空间。',
-      tactical: 'Zaouali 4-4-2 双闸限制 Isak 接球，Laïdouni 绞杀中场；瑞典定位球与身高是主要破局手段，久攻不下易被 Msakni 直塞打身后。',
+      tactical: 'Lamouchi 4-3-3 双闸限制 Isak 接球，Skhiri/Hannibal 绞杀中场；瑞典定位球与身高是主要破局手段，久攻不下易被 Achouri 直塞打身后。',
       psychology: '突尼斯 2018 曾胜德国，大赛爆冷有 DNA；瑞典若早破门可控场，0-0 进入 70 分钟后高温对北欧球员更不利。',
       historical: '2022 友谊赛瑞典 3-0 突尼斯；2018 世界杯突尼斯 2-1 胜德国；瑞典大赛稳定性一般，2018/2022 小组赛均提前出局。',
       factors: [
@@ -269,7 +228,7 @@ function buildM12() {
         { tag: '心理', impact: '弱', detail: '瑞典 Isak 英超状态正佳，先破门则指数骤降' },
       ],
     }),
-    coach_analysis: buildCoachAnalysis('tomasson', 'zaouali'),
+    coach_analysis: buildCoachAnalysis('potter', 'lamouchi'),
     weather: venueWeather('m12'),
     mystic: getMystic('m12'),
   };
@@ -279,13 +238,12 @@ const todayMatches = [buildM09(), buildM10(), buildM11(), buildM12()];
 
 const MATCH_DATA = {
   lastUpdated: TS,
-  syncSource: 'FotMob + Sports Mole + 赛前发布会 · Day 4 team news',
+  syncSource: 'FIFA + Yahoo/Sportskeeda + Sports Mole · Day 4 lineups',
   breakingNews: [
+    { tag: 'LINEUP', text: '✅ 官方确认：德国 3-4-2-1 vs 库拉索 4-2-3-1 · 荷兰 4-3-3 vs 日本 3-4-2-1', time: '已确认' },
+    { tag: 'LINEUP', text: '⏳ 待确认：科特迪瓦-厄瓜多尔 · 瑞典-突尼斯（Sports Mole / FWC 预测已更新）', time: '预测' },
     { tag: 'PREVIEW', text: '📅 今日4场 · 德国-库拉索(01:00) · 荷兰-日本(04:00) · 科特-厄瓜(07:00) · 瑞典-突尼斯(10:00)', time: '6月15日' },
-    { tag: 'INJURY', text: 'Neuer 确认首发 · Karl 退出 · N\'Dicka 缺阵 · Mitoma/Endo 整届退出 · Kulusevski 未入选', time: '伤病' },
-    { tag: 'PREVIEW', text: 'E组：德国 xG 3.8 碾压库拉索 · 科特迪瓦 vs 厄瓜多尔 19场不败', time: 'E组' },
-    { tag: 'PREVIEW', text: 'F组：荷兰 Simons ACL 缺阵 · 日本 Mitoma 退出 · 瑞典 Isak 体能存疑', time: 'F组' },
-    { tag: 'LINEUP', text: 'Nagelsmann 最强 XI · Koeman 伤病潮 · Valencia 小腿存疑', time: '阵容' },
+    { tag: 'INJURY', text: 'Neuer 首发 · N\'Dicka 缺阵 · Mitoma/Endo 退出 · Kulusevski 未入选', time: '伤病' },
     { tag: 'REFEREE', text: 'FIFA 官方确认 Matches 9-12：Jayed · Elfath · Letexier · Falcon', time: '裁判' },
   ],
   todayMatches,

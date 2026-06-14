@@ -242,82 +242,82 @@ const PROFILES = {
     traits: ['Caicedo 依赖度高', '领先极度保守', '19场不败心理', '换人偏晚'],
   }),
 
-  tomasson: coach('Jon Dahl Tomasson', {
-    age: 48,
-    nation: '丹麦/瑞典',
-    tenure: '2024—',
-    wc_exp: '2026 带队 · 球员时代 AC 米兰前锋',
-    style_tags: ['4-3-3', 'Isak 轴心', '定位球', '直接足球'],
-    formation_pref: '4-3-3 · Isak 单箭头',
+  potter: coach('Graham Potter', {
+    age: 51,
+    nation: '英格兰',
+    tenure: '2025年10月—',
+    wc_exp: '2026 带队 · 球员时代 Östersunds 传奇教练',
+    style_tags: ['3-4-3', '务实反击', 'Gyökeres/Isak 双锋', '结构稳定'],
+    formation_pref: '3-4-3 / 4-4-2 · 附加赛改务实低位',
     style_summary:
-      '前米兰前锋，瑞典进攻围绕 Isak 展开，Kulusevski 右路持球；定位球与身高是北欧传统武器。Tomasson 2024 上任，大赛教练经验有限。',
+      '2025 年10 月接替 Tomasson，附加赛用 3-4-3 务实反击（对乌克兰/波兰控球率 <33% 仍晋级）。大赛围绕 Gyökeres/Isak 双锋与 wing-back 宽度，瑞典 Östersunds 时期传奇回归。',
     subs: {
-      timing: '首换 58–65 分钟；落后 55\' 换 Gyökeres 双前锋',
-      pattern: '常换 Elanga/Gyökeres 前锋互替；70\' 换 Edman 加强中场',
-      avg_first_sub: '60\'',
-      note: '瑞典预选赛期间首换偏早；高温蒙特雷可能 55\' 就开始轮换体能',
+      timing: '首换 55–65 分钟；高温蒙特雷可能更早轮换',
+      pattern: '常换 Elanga/Bergvall 边翼；Isak/Gyökeres 互替或双锋共存',
+      avg_first_sub: '58\'',
+      note: '附加赛证明换人果断；34°C 下需比 Tomasson 时代更早轮换',
     },
     when_leading: {
-      label: '继续进攻 · 定位球压制',
+      label: '务实控节奏 · 不早退',
       detail:
-        '1 球领先：维持 4-3-3，Isak 继续支点，利用定位球扩大优势；2 球+：65\' 换 Gyökeres 双前锋或换 Isak 保体能。对突尼斯不会早退。',
+        '1 球领先：维持 3-4-3 结构，利用 Gyökeres 反击宽度；2 球+：65\' 可换 Isak 保体能，但不会像 Tomasson 时代过度开放。',
     },
     when_trailing: {
-      label: '堆前锋 · 高空轰炸',
+      label: '堆前锋 · 定位球',
       detail:
-        '先丢球：55\' 换 Gyökeres 与 Isak 双前锋，加强传中与定位球。0–0 僵局 60\' 换 Elanga 速度。',
+        '先丢球：55\' 换 Gyökeres/Isak 双锋或 Elanga 速度；附加赛证明低位反击有效，对突尼斯可能复制模板。',
     },
     vs_strong: {
-      label: '对强队：低位 + Isak 反击',
+      label: '对强队：低位 + 反击',
       detail:
-        '对法国/英格兰级会 5-4-1 低位，Isak 单点；对突尼斯（弱于瑞典）会主导控球。',
+        '对荷兰/日本会 5-3-2/3-4-3 低位，Gyökeres 反击轴心；对突尼斯（弱于瑞典）预计主导控球。',
     },
     vs_weak: {
-      label: '对弱队：不留余地',
+      label: '对弱队：控制但不冒进',
       detail:
-        '对弱旅会 3–0+ 仍主攻；对突尼斯预计全场压制，Isak 目标至少 1 球。3 球领先 70\' 后可能换替补边锋。',
+        '对突尼斯预计全场压制但不轻敌；Isak 体能存疑时 Gyökeres 可能单箭头开场。',
     },
-    tournament: '大赛新手；瑞典 2018/2022 均小组出局，Tomasson 需打破「大赛软脚」标签。蒙特雷 34°C 对换人时机要求更高。',
-    traits: ['Isak 依赖', '定位球强', '大赛经验偏少', '高温下需早轮换'],
+    tournament: '附加赛奇迹晋级（Gyökeres 对乌克兰帽子戏法）；大赛经验来自 Chelsea/Brighton 但国家队首秀——瑞典 1994 季军后再次求稳。',
+    traits: ['3-4-3 务实', 'Gyökeres 依赖', 'Isak 体能变量', '高温需早轮换'],
   }),
 
-  zaouali: coach('Samuel Zaouali', {
-    age: 44,
-    nation: '突尼斯',
-    tenure: '2023—',
-    wc_exp: '2026 带队 · 非洲联赛经验',
-    style_tags: ['4-4-2', '低位防守', 'Msakni 10号', '反击'],
-    formation_pref: '4-4-2 · 领先时 4-5-1',
+  lamouchi: coach('Sabri Lamouchi', {
+    age: 54,
+    nation: '法国',
+    tenure: '2026年1月—',
+    wc_exp: '2014 世界杯执教科特迪瓦 · 2026 二度带队大赛',
+    style_tags: ['4-3-3', '低位防守', 'Skhiri/Hannibal 中场', '反击'],
+    formation_pref: '4-3-3 / 4-2-3-1 · 领先时收缩',
     style_summary:
-      '突尼斯传统 4-4-2 低位，Msakni 前场自由人，Skhiri/Laïdouni 中场绞杀。Zaouali 强调防守纪律，2018 突尼斯曾 2-1 胜德国（友谊赛/大赛基因）。',
+      '2026 年1 月接任突尼斯，大赛经验丰富（2014 科特迪瓦）。强调防守纪律与转换，Skhiri/Hannibal/Mejbri 中场三角，Achouri 速度反击。',
     subs: {
-      timing: '首换 65–75 分钟；落后 60\' 前换 Khazri',
-      pattern: '常单换前锋或 Msakni 回撤换防守中场；很少早换——体能分配优先',
-      avg_first_sub: '70\'',
-      note: '北非球队普遍换人偏晚；高温下 60\' 可能需要提前换边翼卫',
+      timing: '首换 60–70 分钟；落后 55\' 前换进攻手',
+      pattern: '常换 Achouri/Saad 锋线；Skhiri 极少被换下',
+      avg_first_sub: '65\'',
+      note: '北非球队换人偏晚；高温下 Lamouchi 可能 55\' 换边翼卫保体能',
     },
     when_leading: {
-      label: '5-4-1 铁桶',
+      label: '4-5-1 收缩',
       detail:
-        '若意外领先：立即退守 5-4-1，Msakni 留前场，目标耗到终场。2018 对英格兰 0–0 直到 90+ 的模板。',
+        '若意外领先：退守五后卫，Skhiri 锚定，Achouri/Msakni 留前场；2014 科特迪瓦大赛经验指导保守收尾。',
     },
     when_trailing: {
-      label: '换 Khazri · 定位球',
+      label: '换 Khazri/Achouri · 定位球',
       detail:
-        '先丢球：60\' 换 Khazri 加强定位球与远射，但 4-4-2 防守底线不变。0–2 后 70\' 才改三前锋。',
+        '先丢球：60\' 换 Khazri 或加强宽度；0–2 后 70\' 才改三前锋。',
     },
     vs_strong: {
       label: '对强队：龟缩 + 偷反击',
       detail:
-        '对瑞典：4-4-2 低位，Msakni 反击，Laïdouni 绞杀 Isak。34°C 高温下更可能守 0–0 求 1 分。不会高位压迫。',
+        '对瑞典：4-3-3 低位，Skhiri 绞杀，Achouri 速度；34°C 高温下守 0–0 求 1 分是合理目标。',
     },
     vs_weak: {
       label: '对弱队：相对开放',
       detail:
-        '对非洲弱旅会 4-3-3 压上；对瑞典不适用。小组赛末轮若已出局可能对日本轮换。',
+        '对非洲弱旅会压上；对瑞典不适用。小组赛末轮若已出线可能对日本轮换。',
     },
-    tournament: '2018 对英格兰逼平是信心来源；突尼斯大赛常「Opening game 抢分」，对瑞典目标 1 分可接受。',
-    traits: ['防守铁桶', '换人极晚', 'Msakni 依赖', '高温适应性略优'],
+    tournament: '2014 世界杯科特迪瓦主帅；突尼斯预选赛 10 场 10 零封（非洲顶级防守）；大赛「Opening game 抢分」心态。',
+    traits: ['防守铁桶', '大赛经验', 'Skhiri 依赖', '高温适应性略优'],
   }),
 };
 
@@ -335,9 +335,9 @@ function matchNote(homeKey, awayKey) {
       home: '非洲杯冠军对 19 场不败——中场 Kessié vs Caicedo 决定节奏；领先易保守是 Faé 需克服的历史弱点。',
       away: '19 场不败心态下「不输优先」——领先会 4-5-1 深度低位；先丢球 60\' 换 Plata 但不撤 Caicedo。',
     },
-    'tomasson-zaouali': {
-      home: '对突尼斯预计全场压制，Isak 核心；蒙特雷 34°C 下 55\' 可能开始轮换，定位球是破局关键。',
-      away: '4-4-2 铁桶求 1 分——Msakni 反击 + 高温消耗瑞典；若 0–0 进入 70\' 对突尼斯即是胜利。',
+    'potter-lamouchi': {
+      home: 'Potter 3-4-3 务实体系——附加赛低位反击成功，对突尼斯预计压制但 Isak 体能是变量；34°C 下 55\' 轮换。',
+      away: 'Lamouchi 2014 大赛经验 + 预选赛 10 零封——4-3-3 低位求 1 分，Skhiri/Hannibal 绞杀，Achouri 速度反击。',
     },
   };
   return notes[`${homeKey}-${awayKey}`] || { home: '', away: '' };
