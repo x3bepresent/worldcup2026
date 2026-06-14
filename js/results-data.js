@@ -1,10 +1,20 @@
 // 过往赛果 — 手动/自动同步
 // score_dist 已废弃 — 页面按 xG 泊松实时计算
-// Last updated: 2026-06-14T22:30:00+08:00
+// Last updated: 2026-06-15T00:00:00+08:00
 const RESULTS_DATA = {
-  "lastUpdated": "2026-06-14T22:30:00+08:00",
+  "lastUpdated": "2026-06-15T00:00:00+08:00",
   "syncSource": "manual + RotoWire 赛果",
   "breakingNews": [
+    {
+      "tag": "OFFICIAL",
+      "text": "🏁 巴西 1-1 摩洛哥 · Saibari/Vinícius 各入一球 · C组摩洛哥、巴西各1分",
+      "time": "6月14日"
+    },
+    {
+      "tag": "UPDATE",
+      "text": "巴西实际 4-4-2 非 4-2-3-1 · 半场 Danilo/Fabinho 换入 · xG 1.27-1.52",
+      "time": "赛后"
+    },
     {
       "tag": "OFFICIAL",
       "text": "🏁 卡塔尔 1-1 瑞士 · Embolo 点球 · Khoukhi 90+4' 绝平 · B组四队各1分",
@@ -2175,6 +2185,476 @@ const RESULTS_DATA = {
         "scorers": "Embolo 17' (pen); Khoukhi 90+4'",
         "highlights": "瑞士控球 68%、xG 3.24 vs 0.76 仍被逼平；Khoukhi 头球绝平 · 出席 67,966"
       }
+    },
+    {
+      "id": "m06",
+      "group": "C",
+      "matchday": 1,
+      "date": "2026-06-13",
+      "time": "18:00",
+      "time_local": "18:00 ET",
+      "timezone": "EDT (UTC-4)",
+      "time_beijing": "06:00",
+      "date_beijing": "6月14日",
+      "time_beijing_full": "北京时间 6月14日 06:00",
+      "venue": "MetLife Stadium",
+      "city": "East Rutherford, USA",
+      "note": "C组焦点战 · 巴西 vs 摩洛哥 · 已结束 1-1",
+      "lineup": {
+        "confirmed": true,
+        "formation": "4-4-2 / 4-2-3-1",
+        "home": "Alisson; Ibañez, Marquinhos (C), Gabriel, Douglas Santos; Paquetá, Guimarães, Casemiro, Raphinha; Igor Thiago, Vinícius Jr",
+        "away": "Bounou; Hakimi (C), Diop, Riad, Mazraoui; El Aynaoui, Bouaddi; Díaz, Ounahi, El Khannouss; Saibari",
+        "note": "FotMob · 全场 1-1。Saibari 21' 首开 · Vinícius 32' 扳平。巴西实际 4-4-2（非赛前 4-2-3-1）；HT 换 Danilo/Fabinho，62' Luiz Henrique 替 Igor Thiago。",
+        "predicted": {
+          "formation": "4-2-3-1",
+          "home": "Alisson; Danilo, Marquinhos, Gabriel, Alex Sandro; Casemiro, Guimarães; Raphinha, Paquetá, Vinícius Jr; Cunha",
+          "away": "Bounou; Hakimi, Diop, Riad, Mazraoui; Bouaddi, El Aynaoui; Díaz, Ounahi, El Khannouss; Saibari",
+          "source": "FotMob · 2026-06-14 Predicted · 非官方",
+          "alt": {
+            "formation": "4-2-3-1",
+            "home": "Alisson; Danilo, Marquinhos, Gabriel, Alex Sandro; Casemiro, Guimarães; Raphinha, Paquetá, Vinícius Jr; Cunha",
+            "away": "Bounou; Hakimi, Diop, Riad, Mazraoui; Amrabat, El Aynaoui; Díaz, Ounahi, El Khannouss; Saibari",
+            "source": "Sports Mole · 2026-06-13 预测 · 非官方"
+          }
+        },
+        "diff": {
+          "home": "⚠️ 开球 4-4-2 非预测 4-2-3-1；半场 Danilo+Fabinho 换 Ibañez+Casemiro；Douglas Santos 7.8 全场最佳",
+          "away": "✅ 与预测一致；Saibari 破门 · El Khannouss 7.5"
+        },
+        "source": "FotMob · FIFA 官方 team sheet · 2026-06-14",
+        "updated": "2026-06-15T00:00:00+08:00"
+      },
+      "home": {
+        "name": "Brazil",
+        "iso": "br",
+        "flag": "",
+        "fifa_rank": 5,
+        "rating": 88,
+        "form": [
+          "W",
+          "W",
+          "W",
+          "D",
+          "W"
+        ],
+        "coach": "Carlo Ancelotti",
+        "stars": [
+          {
+            "name": "Vinícius Jr.",
+            "pos": "LW",
+            "club": "Real Madrid",
+            "stats": "皇马赛季核心 · 左路爆点",
+            "rating": 9,
+            "desc": "32' 扳平进球 · 7.3 评分；对位 Hakimi 仍是关键",
+            "number": 7,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
+          },
+          {
+            "name": "Lucas Paquetá",
+            "pos": "AM",
+            "club": "West Ham",
+            "stats": "10号位竞争者",
+            "rating": 8.2,
+            "desc": "SI/Sports Mole 预测前腰；The Standard 称 Raphinha 可能居中，右路存疑",
+            "number": 20,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
+          },
+          {
+            "name": "Matheus Cunha",
+            "pos": "ST",
+            "club": "Manchester United",
+            "stats": "对巴拿马热身首发",
+            "rating": 8,
+            "desc": "FotMob 官方 XI 先发中锋（替预测 Cunha）；Ancelotti 世界杯首战变阵",
+            "number": 9,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
+          }
+        ],
+        "star": {
+          "name": "Vinícius Jr.",
+          "pos": "LW",
+          "club": "Real Madrid",
+          "desc": "The Standard/SI 几乎锁定左路首发；对位摩洛哥 Hakimi 是本场关键对位",
+          "rating": 9,
+          "stats": "皇马赛季核心",
+          "number": 7,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
+        },
+        "injuries": [
+          {
+            "player": "Neymar",
+            "status": "OUT",
+            "note": "Ancelotti/BBC 6/13 官宣缺阵揭幕战；二级小腿伤，预计下周归队合练，对海地战亦存疑",
+            "confirmed": true
+          },
+          {
+            "player": "Wesley",
+            "status": "OUT",
+            "note": "SI：因伤缺席整届世界杯；右路 Danilo 顶替，CBS 曾预测 Wesley 右后卫",
+            "confirmed": true
+          },
+          {
+            "player": "Gabriel Magalhães",
+            "status": "FIT",
+            "note": "Champions League 决赛后归队较晚，未踢热身但 SI/Sports Mole 预测与 Marquinhos 搭档中卫",
+            "confirmed": false
+          },
+          {
+            "player": "Alisson",
+            "status": "FIT",
+            "note": "The Standard：赛前发布会发言，暗示首发；3月以来仅第二次正式首发",
+            "confirmed": false
+          }
+        ],
+        "rumors": [
+          "Ancelotti（SI）：Neymar 缺阵改变进攻结构，Paquetá/Raphinha 角色更关键",
+          "The Standard：Raphinha 可能踢中路，右路 Endrick/Rayan/Martinelli 竞争",
+          "CBS Sports：巴西右卫 Alex Sandro 存疑，Hakimi-Díaz 右路将考验巴西边路",
+          "Sports Mole 预测 3-1；SI 预测 2-1——均认为摩洛哥防线经验不足",
+          "SI 报道主裁 Slavko Vinčić（斯洛文尼亚）· FotMob 已确认"
+        ]
+      },
+      "away": {
+        "name": "Morocco",
+        "iso": "ma",
+        "flag": "",
+        "fifa_rank": 14,
+        "rating": 79,
+        "form": [
+          "W",
+          "W",
+          "D",
+          "W",
+          "W"
+        ],
+        "coach": "Walid Regragui",
+        "stars": [
+          {
+            "name": "Achraf Hakimi",
+            "pos": "RB",
+            "club": "PSG",
+            "stats": "2022 四强主力 · 边路往返",
+            "rating": 8.5,
+            "desc": "SI/Sports Mole 均锁定右后卫；与 Brahim Díaz 组成右路威胁",
+            "number": 2,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
+          },
+          {
+            "name": "Brahim Díaz",
+            "pos": "RW/AM",
+            "club": "Real Madrid",
+            "stats": "26场14球 · 对挪威破门",
+            "rating": 8.3,
+            "desc": "Sports Mole 预计首发；SI 与 El Khannouss、Ounahi 组成攻击线",
+            "number": 10,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
+          },
+          {
+            "name": "Sofyan Amrabat",
+            "pos": "DM",
+            "club": "Fenerbahçe",
+            "stats": "2022 世界杯主力后腰",
+            "rating": 7.8,
+            "desc": "Sports Mole 预测首发屏障；SI 备选 Bouaddi/El Aynaoui 双后腰",
+            "number": 4,
+            "number_confirmed": true,
+            "number_source": "FIFA 2026 世界杯最终名单"
+          }
+        ],
+        "star": {
+          "name": "Achraf Hakimi",
+          "pos": "RB",
+          "club": "PSG",
+          "desc": "SI/Sports Mole 均锁定右后卫；与 Brahim Díaz 组成右路威胁",
+          "rating": 8.5,
+          "stats": "2022 四强主力",
+          "number": 2,
+          "number_confirmed": true,
+          "number_source": "FIFA 2026 世界杯最终名单"
+        },
+        "injuries": [
+          {
+            "player": "Nayef Aguerd",
+            "status": "OUT",
+            "note": "Sports Mole / SI / RotoWire：腹股沟伤退出世界杯，由 Diop+Riad 顶替中卫",
+            "confirmed": true
+          },
+          {
+            "player": "Abde Ezzalzouli",
+            "status": "OUT",
+            "note": "Sports Mole：膝伤退出世界杯；替补征召 Marwane Saadane、Amine Sbai",
+            "confirmed": true
+          },
+          {
+            "player": "Noussair Mazraoui",
+            "status": "FIT",
+            "note": "SI 6/13：对挪威肩部伤后已恢复训练，预计首发左后卫（Hakimi 右、Mazraoui 左）",
+            "confirmed": false
+          }
+        ],
+        "rumors": [
+          "BBC/SI 6/13：Ancelotti 确认 Neymar 缺席揭幕战，Vinícius 领衔进攻",
+          "Regragui：Aguerd/Abde 缺阵削弱防线与定位球，Diop（Fulham）+ Riad（Crystal Palace）新中卫组合",
+          "SI：Saibari 灵活中锋，El Khannouss 10号位——无 Abde 后定位球选项减少",
+          "Sports Mole：Amrabat 仍在预测 XI，与 SI 的 Bouaddi 方案存在分歧",
+          "2022 四强士气仍在，但 RotoWire 称防线「inexperienced backline」",
+          "CBS：摩洛哥中场技术可匹敌巴西，个人闪光或决定走势"
+        ]
+      },
+      "h2h": {
+        "home_wins": 2,
+        "draws": 0,
+        "away_wins": 0,
+        "recent": [
+          {
+            "year": 2022,
+            "comp": "友谊赛",
+            "score": "2-1",
+            "winner": "Brazil"
+          }
+        ],
+        "note": "巴西历史占优"
+      },
+      "referee": {
+        "confirmed": true,
+        "pending": false,
+        "name": "Slavko Vinčić",
+        "nation": "Slovenia",
+        "iso": "si",
+        "age": 45,
+        "source": "FotMob · FIFA match sheet · 2026-06-13",
+        "wc_experience": "Qatar 2022（2场：阿根廷-沙特6黄、威尔士-英格兰2黄）· 2024 欧冠决赛 · 欧洲杯执法",
+        "avg_yellow": 4,
+        "avg_red": 0,
+        "avg_penalty": 0.5,
+        "home_win_rate": 50,
+        "bias_index": 48,
+        "bias_note": "2022世界杯2场共8黄0红，场均4黄；阿根廷-沙特一战出牌较多但允许比赛流畅进行。2024欧冠决赛主裁，大场面经验丰富。本场巴西-摩洛哥边路对位激烈（Vinícius vs Hakimi），战术犯规与抗议吃牌风险偏高，但世界杯阶段红牌极少。",
+        "tendencies": [
+          "世界杯场均4黄，高于 Ghorbal/Valenzuela",
+          "允许一定身体对抗，关键阶段才收紧",
+          "2022 零红牌记录",
+          "大赛决赛级经验（欧冠2024）",
+          "对非洲/南美球队无显著判罚偏向"
+        ]
+      },
+      "prediction": {
+        "home_win": 58,
+        "draw": 25,
+        "away_win": 17,
+        "score": "2-1",
+        "confidence": 80,
+        "xg_home": 2.05,
+        "xg_away": 1.05,
+        "key_factor": "1-1 平局——摩洛哥 Saibari 21' 偷袭，Vinícius 32' 扳平；巴西控球 51% 但 xG 略逊，Ancelotti 半场变阵未能破局。"
+      },
+      "upset_alert": {
+        "favorite": "巴西",
+        "underdog": "摩洛哥",
+        "favorite_iso": "BR",
+        "index": 44,
+        "level": "ELEVATED",
+        "level_cn": "偏高",
+        "cold_result_pct": 42,
+        "verdict": "四场中爆冷风险最高的一场——摩洛哥并非弱旅，边路速度+2022 防反 DNA 对巴西压上型打法有明确克制面；需重点防范。",
+        "tactical": "Hakimi/Díaz 反击速度 vs 巴西边卫压上（媒体多次点出 Sandro 一侧回追隐患）；Aguerd 缺阵削弱摩洛哥防空，但巴西无 Neymar 后中路渗透效率下降，僵局时易被偷反击。",
+        "psychology": "巴西东道主+五冠压力，Ancelotti 首战容错低；摩洛哥 2022 已证明大赛心理硬度，先破门后更可能收缩执行防反而非慌乱。",
+        "historical": "摩洛哥 2022 爆冷比利时、西班牙进四强；巴西近三届世界杯首战 2 平 1 胜（2014 克罗地亚、2018 瑞士、2022 塞尔维亚），慢热+被克制平局有前例。",
+        "factors": [
+          {
+            "tag": "克制",
+            "impact": "强",
+            "detail": "摩洛哥低位+快速转换，专打巴西控球压上后的身后空档"
+          },
+          {
+            "tag": "速度错配",
+            "impact": "强",
+            "detail": "Hakimi 对位巴西左卫，Díaz 可惩罚中卫转身"
+          },
+          {
+            "tag": "伤病",
+            "impact": "中",
+            "detail": "Neymar 缺阵削弱巴西破局；Aguerd 缺阵削弱摩洛哥防空——双向"
+          },
+          {
+            "tag": "心理",
+            "impact": "中",
+            "detail": "巴西大赛期望值过高，先丢球时年轻球员易急躁"
+          }
+        ]
+      },
+      "weather": {
+        "city": "东卢瑟福",
+        "country": "美国",
+        "temp": 26,
+        "humidity": 58,
+        "altitude_m": 3,
+        "rain_chance": 15,
+        "wind": "东南风 3级",
+        "condition_cn": "多云，新泽西晚场温热",
+        "impact_level": "LOW",
+        "impact": "MetLife Stadium 海平面3m，6月晚场26°C、湿度58%，对大强度对攻消耗有限",
+        "impact_summary": "新泽西晚场26°C温热，湿度中等；利于双方速度型球员，下半场体能仍充足",
+        "home_adapt": 85,
+        "away_adapt": 80,
+        "home_note": "巴西球员习惯南美/欧洲夏季作战，26°C 完全适应；Vinícius 等速度型球员在温热夜场发挥最佳",
+        "away_note": "摩洛哥来自地中海-撒哈拉过渡带，高温适应性优于多数欧洲队；Hakimi 边路往返能力不受气候制约",
+        "weather_factors": [
+          {
+            "label": "26°C 晚场",
+            "impact": "有利对攻",
+            "detail": "未达午后酷热峰值，90分钟高强度可维持；xG 合计3.1，气候不会显著压低进球预期"
+          },
+          {
+            "label": "湿度 58%",
+            "impact": "中性",
+            "detail": "略增体能消耗但不至明显，传球仍顺畅；比墨西哥城/瓜达拉哈拉低海拔场次影响小得多"
+          },
+          {
+            "label": "东南风 3级",
+            "impact": "轻微影响长传",
+            "detail": "对 Alisson 开球方向与定位球落点有细微影响，职业球员可快速调整"
+          },
+          {
+            "label": "15% 降雨可能",
+            "impact": "中性",
+            "detail": "概率低，场地预计干燥；若临场微雨则略利摩洛哥防反（球速稍慢、失误增多）"
+          }
+        ],
+        "historical_note": "MetLife Stadium 承办世界杯C组关键战；纽约都会区6月晚场气候稳定，极少极端天气"
+      },
+      "mystic": {
+        "date_bazi": {
+          "year": "丙午年",
+          "year_element": "火",
+          "year_animal": "马",
+          "month": "庚午月",
+          "month_element": "金+火",
+          "day": "甲申日",
+          "day_element": "木+金",
+          "hour_home": "卯时（05:00-07:00）",
+          "hour_home_element": "木",
+          "day_dominant": "金",
+          "day_summary": "甲申日金木相战，卯时木气当令——一日之中木气最旺之刻。《周易·说卦》：「震为雷、为龙、为玄黄。」卯木生发，黄绿之队得时；然日柱申金克木，午后金气复归。"
+        },
+        "wuxing": {
+          "home": {
+            "team": "Brazil",
+            "colors": "黄+绿",
+            "elements": "土、木",
+            "wuxing_short": "木土相生，卯时得令",
+            "verdict": "有利",
+            "verdict_color": "#5BBF8A",
+            "compat": 85,
+            "reason": "黄属土、绿属木。卯时木旺，木克土而土得木气之润——「木土相生」如大地逢春。丙午火年，火生土，主队气场如「厚德载物」。《道德经》：「道生之，德畜之」——巴西木土顺卯时，阳气生发。",
+            "advantage": "卯时木气助生发，火年生土，顺时之局"
+          },
+          "away": {
+            "team": "Morocco",
+            "colors": "红+绿",
+            "elements": "火、木",
+            "wuxing_short": "火木相济而金日制木",
+            "verdict": "不利",
+            "verdict_color": "#D95F6A",
+            "compat": 45,
+            "reason": "红属火、绿属木。卯时木旺本可助绿，然甲申日申金当令，金克木——「木遇金则折」。火木虽相济，如风中残烛，防反如「潜龙勿用」，宜守不宜妄动。",
+            "disadvantage": "金日制木，火木之气难以伸张"
+          },
+          "summary": "五行裁定：卯时木旺利主队木土；摩洛哥火木受申金所制，宜潜藏守中"
+        },
+        "hexagram": {
+          "name": "大壮卦",
+          "symbol": "☳",
+          "number": 34,
+          "upper": "震雷",
+          "lower": "乾天",
+          "quote": "《周易·大壮卦》：「大壮，利贞。」",
+          "general": "雷天大壮——震雷动于乾天之上，阳气盛大而不可妄进。「利贞」：正固者昌，躁进者凶。",
+          "advantage_team": "Brazil",
+          "disadvantage_team": "Morocco",
+          "hexagram_analysis": "大壮非纯攻——「利贞」为戒。震雷在乾天，如龙行天上，利于木土得时、阳气正固之一方。摩洛哥火木受制，若学「羝羊触藩」则羸不能退，触藩而困。巴西木土顺卯时，当行「贞」道，不妄动而自强。",
+          "match_nature": "主队小胜多球局",
+          "match_nature_prob": 58,
+          "yellow_card_risk": "中高",
+          "yellow_card_reason": "Vinčić 世界杯场均4黄；Hakimi-Vinícius 边路缠斗+中场绞杀，预计5-7张",
+          "scenarios": [
+            {
+              "icon": "⚽",
+              "label": "比赛性质",
+              "text": "巴西主胜58%，平局25%，摩洛哥爆冷17%"
+            },
+            {
+              "icon": "⏱",
+              "label": "进球高峰",
+              "text": "第15-30分钟及第60-75分钟——双方对攻最激烈时段"
+            },
+            {
+              "icon": "🟨",
+              "label": "黄牌风险",
+              "text": "中等偏高——边路对位+中场绞杀"
+            },
+            {
+              "icon": "🔄",
+              "label": "0-0平局可能",
+              "text": "低（约8% 泊松）——双方 xG 合计超3"
+            },
+            {
+              "icon": "⏰",
+              "label": "加时赛概率",
+              "text": "极低（6%）——C组焦点战倾向90分钟见分晓"
+            }
+          ],
+          "early_goal": {
+            "scenario": "若巴西先进球",
+            "prediction": "大壮「利贞」——摩洛哥被迫压上，Hakimi 反击空间增大，但巴西控局再下一城概率60%",
+            "favors": "Brazil",
+            "favors_prob": 65
+          },
+          "no_early_goal": {
+            "scenario": "若前30分钟无进球",
+            "prediction": "双方试探后下半场提速；Vinícius 左路突破仍是破局点，巴西下半场破门概率58%",
+            "favors": "Brazil",
+            "favors_prob": 58
+          },
+          "away_goal": {
+            "scenario": "若摩洛哥先进球",
+            "prediction": "巴西整体实力与板凳深度占优，Ancelotti 换边后加强边路，扳平并反超概率55%",
+            "favors": "Brazil",
+            "favors_prob": 55
+          },
+          "halftime": {
+            "scenario": "半场0-0",
+            "prediction": "下半场巴西体能与人才储备占优，MetLife 夜场声浪助主队，破局概率62%",
+            "favors": "Brazil",
+            "favors_prob": 62
+          },
+          "extra_time": {
+            "scenario": "加时",
+            "prediction": "极低概率（6%）",
+            "favors": "Brazil",
+            "favors_prob": 58
+          }
+        },
+        "home_score": 85,
+        "away_score": 45,
+        "mystic_verdict": "☳ 大壮雷天大壮——卯时木旺，巴西木土相生而顺时；摩洛哥火木遇申金则折。非力之强弱，乃「利贞」与「触藩」之分：正固者昌，妄动者困。",
+        "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
+      },
+      "actualResult": {
+        "home_score": 1,
+        "away_score": 1,
+        "status": "FT",
+        "label": "全场结束",
+        "scorers": "Saibari 21' (Díaz); Vinícius Jr 32' (Guimarães)",
+        "highlights": "xG 1.27-1.52 · 巴西 20 届世界杯 opener 不败延续 · 出席 80,663 · Casemiro/Ibañez 各1黄"
+      }
     }
   ],
   "groupSnapshots": [
@@ -2313,6 +2793,52 @@ const RESULTS_DATA = {
           "l": 1,
           "gf": 1,
           "ga": 4
+        }
+      ]
+    },
+    {
+      "group": "C",
+      "label": "C组 · 巴西-摩洛哥已赛",
+      "table": [
+        {
+          "team": "Morocco",
+          "pts": 1,
+          "p": 1,
+          "w": 0,
+          "d": 1,
+          "l": 0,
+          "gf": 1,
+          "ga": 1
+        },
+        {
+          "team": "Brazil",
+          "pts": 1,
+          "p": 1,
+          "w": 0,
+          "d": 1,
+          "l": 0,
+          "gf": 1,
+          "ga": 1
+        },
+        {
+          "team": "Haiti",
+          "pts": 0,
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
+        },
+        {
+          "team": "Scotland",
+          "pts": 0,
+          "p": 0,
+          "w": 0,
+          "d": 0,
+          "l": 0,
+          "gf": 0,
+          "ga": 0
         }
       ]
     }
