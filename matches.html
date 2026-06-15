@@ -27,42 +27,6 @@
     #refresh-btn { font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; padding: 0.35rem 0.9rem; border: 1px solid var(--border); border-radius: 3px; background: transparent; color: var(--txt2); cursor: pointer; transition: all 0.2s; font-family: inherit; }
     #refresh-btn:hover { border-color: var(--cyan); color: var(--cyan); }
 
-    /* ── MATCH FULL CARD ── */
-    .match-full-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 2rem; }
-    .mf-header { padding: 0.75rem 1.25rem; background: rgba(255,255,255,0.025); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
-    .mf-meta { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
-    .mf-kickoff { font-size: 1.1rem; font-weight: 800; color: var(--gold); font-variant-numeric: tabular-nums; }
-
-    .mf-teams-hero { padding: 2rem 1.5rem; display: flex; align-items: center; gap: 1.5rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
-    .mf-team-side { flex: 1; min-width: 120px; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; text-align: center; }
-    .mf-team-right { }
-    .mf-flag { width: 72px; height: 50px; object-fit: cover; border-radius: 6px; }
-    .mf-team-name { font-size: 1.2rem; font-weight: 800; }
-    .mf-team-rating { font-size: 0.72rem; color: var(--txt2); }
-    .mf-team-form { display: flex; gap: 4px; justify-content: center; }
-    .mf-vs-col { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
-    .mf-vs-text { font-size: 1rem; font-weight: 800; color: var(--txt2); letter-spacing: 4px; }
-    .mf-prob-trio { display: flex; gap: 1.5rem; text-align: center; }
-
-    .mf-detail-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0; }
-    .mf-panel { padding: 1.25rem; border-top: 1px solid var(--border); border-right: 1px solid var(--border); }
-    .mf-panel:nth-child(even) { border-right: none; }
-    @media (min-width: 1200px) {
-      .mf-detail-grid { grid-template-columns: 1fr 1fr 1fr 1fr; }
-      .mf-panel:nth-child(4n) { border-right: none; }
-      .mf-panel:nth-child(-n+4) { border-top: 1px solid var(--border); }
-      /* 关键因素 + 比分分布：固定在第2行最右列，比分在关键因素正下方 */
-      .mf-panel-right-stack {
-        grid-column: 4;
-        grid-row: 2;
-        align-self: start;
-        border-right: none;
-      }
-    }
-    .mf-panel-label { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--txt2); margin-bottom: 0.75rem; font-weight: 600; }
-    .star-row { display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border); }
-    .star-row:last-child { border-bottom: none; }
-
     /* ── NEXT MATCH ── */
     .next-match-section { background: rgba(255,215,0,0.02); border-top: 1px solid rgba(255,215,0,0.1); border-bottom: 1px solid rgba(255,215,0,0.1); }
     #next-match-card { background: var(--card); border: 1px solid rgba(255,215,0,0.2); border-radius: 8px; padding: 1.5rem; max-width: 900px; margin: 0 auto; }

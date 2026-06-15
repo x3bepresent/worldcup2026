@@ -445,42 +445,50 @@ function predictionVerdictPanel(m) {
   const integrityColor = v.dataIntegrity === 'ok' ? '#5BBF8A' : v.dataIntegrity === 'suspect' ? '#D95F6A' : '#C8A96E';
   const integrityIcon = v.dataIntegrity === 'ok' ? '✓' : v.dataIntegrity === 'suspect' ? '⚠' : 'ℹ';
   return `
-    <div style="padding:1rem 1.25rem;background:linear-gradient(180deg,rgba(200,169,110,0.1) 0%,rgba(255,255,255,0.02) 100%);border-bottom:2px solid rgba(200,169,110,0.35)">
-      <div style="font-size:0.62rem;font-weight:800;letter-spacing:2.5px;color:var(--gold);margin-bottom:0.75rem;text-transform:uppercase">📋 赛果 vs 预测核验</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.65rem;margin-bottom:0.75rem">
-        <div style="padding:0.65rem 0.75rem;background:rgba(91,191,138,0.08);border:1px solid rgba(91,191,138,0.25);border-radius:4px">
-          <div style="font-size:0.58rem;letter-spacing:1px;color:#5BBF8A;margin-bottom:0.3rem;font-weight:700">官方赛果</div>
-          <div style="font-size:1.25rem;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums">${m.home.name} ${m.actualResult.home_score} — ${m.actualResult.away_score} ${m.away.name}</div>
-          <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.2rem">实际结果 · ${OUTCOME_CN[v.officialOutcome]}</div>
-        </div>
-        <div style="padding:0.65rem 0.75rem;background:rgba(200,169,110,0.08);border:1px solid rgba(200,169,110,0.25);border-radius:4px">
-          <div style="font-size:0.58rem;letter-spacing:1px;color:var(--gold);margin-bottom:0.3rem;font-weight:700">赛前预测比分</div>
-          <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">
-            <span style="font-size:1.25rem;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums">${v.predScore}</span>
-            ${verdictBadge(v.scoreHit, '比分命中', '比分未中')}
+    <div class="pred-verdict-panel">
+      <div class="pred-verdict-title">📋 赛果 vs 预测核验</div>
+      <div class="pred-verdict-grid">
+        <div class="pred-verdict-card" style="background:rgba(91,191,138,0.08);border:1px solid rgba(91,191,138,0.25)">
+          <div class="pred-verdict-card-label" style="color:#5BBF8A">官方赛果</div>
+          <div class="pred-verdict-card-body">
+            <div class="pred-verdict-official">${m.home.name} ${m.actualResult.home_score} — ${m.actualResult.away_score} ${m.away.name}</div>
+            <div class="pred-verdict-sub">实际结果 · ${OUTCOME_CN[v.officialOutcome]}</div>
           </div>
-          <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.2rem">泊松最可能 ${v.poissonTop || '—'} · 仅赛前冻结</div>
         </div>
-        <div style="padding:0.65rem 0.75rem;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:4px">
-          <div style="font-size:0.58rem;letter-spacing:1px;color:var(--txt2);margin-bottom:0.3rem;font-weight:700">胜平负预测</div>
-          <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">
-            <span style="font-size:1rem;font-weight:700;color:var(--txt)">${OUTCOME_CN[v.predOutcome]} ${v.predOutcomePct}%</span>
-            ${verdictBadge(v.outcomeHit, '方向命中', '方向未中')}
+        <div class="pred-verdict-card" style="background:rgba(200,169,110,0.08);border:1px solid rgba(200,169,110,0.25)">
+          <div class="pred-verdict-card-label" style="color:var(--gold)">赛前预测比分</div>
+          <div class="pred-verdict-card-body">
+            <div class="pred-verdict-score-row">
+              <span class="pred-verdict-pred-score">${v.predScore}</span>
+              ${verdictBadge(v.scoreHit, '比分命中', '比分未中')}
+            </div>
+            <div class="pred-verdict-sub">泊松最可能 ${v.poissonTop || '—'} · 仅赛前冻结</div>
           </div>
-          <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.2rem">实际 ${OUTCOME_CN[v.officialOutcome]}</div>
         </div>
-        <div style="padding:0.65rem 0.75rem;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:4px">
-          <div style="font-size:0.58rem;letter-spacing:1px;color:var(--txt2);margin-bottom:0.3rem;font-weight:700">概率前三比分</div>
-          <div style="display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:0.25rem">
-            ${v.top3.length ? v.top3.map((d, i) => `
-              <span style="font-size:0.72rem;font-weight:700;padding:0.15rem 0.45rem;border-radius:3px;
-                background:${d.hit ? 'rgba(91,191,138,0.15)' : 'rgba(255,255,255,0.04)'};
-                color:${d.hit ? '#5BBF8A' : 'var(--txt2)'};
-                border:1px solid ${d.hit ? 'rgba(91,191,138,0.4)' : 'rgba(255,255,255,0.08)'}">
-                #${i + 1} ${d.score} ${d.prob}% ${d.hit ? '✓' : ''}
-              </span>`).join('') : '<span style="font-size:0.72rem;color:var(--txt2)">暂无 xG 分布</span>'}
+        <div class="pred-verdict-card" style="background:rgba(255,255,255,0.03);border:1px solid var(--border)">
+          <div class="pred-verdict-card-label" style="color:var(--txt2)">胜平负预测</div>
+          <div class="pred-verdict-card-body">
+            <div class="pred-verdict-score-row">
+              <span style="font-size:1rem;font-weight:700;color:var(--txt)">${OUTCOME_CN[v.predOutcome]} ${v.predOutcomePct}%</span>
+              ${verdictBadge(v.outcomeHit, '方向命中', '方向未中')}
+            </div>
+            <div class="pred-verdict-sub">实际 ${OUTCOME_CN[v.officialOutcome]}</div>
           </div>
-          ${verdictBadge(v.anyTop3Hit, 'Top3 有命中', 'Top3 均未中')}
+        </div>
+        <div class="pred-verdict-card" style="background:rgba(255,255,255,0.03);border:1px solid var(--border)">
+          <div class="pred-verdict-card-label" style="color:var(--txt2)">概率前三比分</div>
+          <div class="pred-verdict-card-body">
+            <div style="display:flex;flex-wrap:wrap;gap:0.35rem">
+              ${v.top3.length ? v.top3.map((d, i) => `
+                <span style="font-size:0.72rem;font-weight:700;padding:0.15rem 0.45rem;border-radius:3px;
+                  background:${d.hit ? 'rgba(91,191,138,0.15)' : 'rgba(255,255,255,0.04)'};
+                  color:${d.hit ? '#5BBF8A' : 'var(--txt2)'};
+                  border:1px solid ${d.hit ? 'rgba(91,191,138,0.4)' : 'rgba(255,255,255,0.08)'}">
+                  #${i + 1} ${d.score} ${d.prob}% ${d.hit ? '✓' : ''}
+                </span>`).join('') : '<span class="pred-verdict-sub">暂无 xG 分布</span>'}
+            </div>
+            <div style="margin-top:0.15rem">${verdictBadge(v.anyTop3Hit, 'Top3 有命中', 'Top3 均未中')}</div>
+          </div>
         </div>
       </div>
       <div style="font-size:0.68rem;line-height:1.55;padding:0.5rem 0.65rem;border-radius:3px;background:rgba(255,255,255,0.025);border-left:3px solid ${integrityColor};color:var(--txt2)">
@@ -860,20 +868,20 @@ function renderMatch(m) {
           <div><span style="color:var(--txt2);font-size:1.1rem;font-weight:700">${p.draw}%</span><br><span style="font-size:0.6rem;color:var(--txt2)">平局</span></div>
           <div><span style="color:var(--red);font-size:1.2rem;font-weight:800">${p.away_win}%</span><br><span style="font-size:0.6rem;color:var(--txt2)">${m.away.name} 胜</span></div>
         </div>
-        <div style="display:flex;height:5px;border-radius:3px;overflow:hidden;margin-top:0.5rem;width:180px">
+        <div class="mf-prob-bar">
           <div style="width:${p.home_win}%;background:var(--cyan)"></div>
           <div style="width:${p.draw}%;background:rgba(255,255,255,0.15)"></div>
           <div style="width:${p.away_win}%;background:var(--red)"></div>
         </div>
         <div class="play-note" style="margin-top:0.35rem">${MODEL_TAGLINE}</div>
         <div class="play-note">模型推演胜率 · ${PLAY_NOTE_STD}</div>
-        <div style="margin-top:0.75rem;text-align:center">
-          <div style="font-size:0.6rem;letter-spacing:2px;color:var(--txt2);text-transform:uppercase;margin-bottom:0.25rem">${finished ? '赛前预测比分' : '娱乐推演比分'}</div>
-          <div style="font-size:2rem;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums">${p.score}</div>
-          <div class="play-note">${MODEL_TAGLINE}</div>
-          <div class="play-note">${finished ? '官方赛果见上方绿条 · 此处为赛前模型预测，不会被赛果覆盖' : PLAY_NOTE_STD}</div>
-          <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.35rem" title="xG（期望进球数）= 根据射门位置、角度、质量统计出的理论进球数，反映攻击质量而非实际比分">期望进球 xG：<strong style="color:var(--cyan)">${p.xg_home}</strong> — <strong style="color:var(--red)">${p.xg_away}</strong> <span style="opacity:.45;font-size:0.55rem">ⓘ</span></div>
-          <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.2rem">推演置信度（娱乐参考）：<strong style="color:${p.confidence>=80?'#5BBF8A':p.confidence>=60?'#C8A96E':'#ff8855'}">${p.confidence}%</strong></div>
+        <div class="mf-predict-block">
+          <div class="mf-predict-label">${finished ? '赛前预测比分' : '娱乐推演比分'}</div>
+          <div class="mf-predict-score">${p.score}</div>
+          ${finished ? '' : `<div class="play-note">${MODEL_TAGLINE}</div>`}
+          <div class="mf-predict-note">${finished ? '官方赛果见上方核验区 · 此处为赛前模型预测' : PLAY_NOTE_STD}</div>
+          <div class="mf-predict-meta" title="xG（期望进球数）= 根据射门位置、角度、质量统计出的理论进球数，反映攻击质量而非实际比分">期望进球 xG：<strong style="color:var(--cyan)">${p.xg_home}</strong> — <strong style="color:var(--red)">${p.xg_away}</strong></div>
+          <div class="mf-predict-meta">推演置信度（娱乐参考）：<strong style="color:${p.confidence>=80?'#5BBF8A':p.confidence>=60?'#C8A96E':'#ff8855'}">${p.confidence}%</strong></div>
           ${m.upset_alert ? (() => {
             const ua = m.upset_alert;
             const s = upsetLevelStyle(ua.level);
