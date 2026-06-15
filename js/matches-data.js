@@ -1,8 +1,8 @@
-// 今日赛事 — Day 5 preview (enriched)
-// Last updated: 2026-06-16T18:00:00+08:00
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-15T11:39:26.027Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-16T18:00:00+08:00",
-  "syncSource": "FIFA 裁判 + Day 5 完整推演 · coach/mystic/referee/weather",
+  "lastUpdated": "2026-06-15T11:39:26.027Z",
+  "syncSource": "API-Football",
   "breakingNews": [
     {
       "tag": "INJURY",
