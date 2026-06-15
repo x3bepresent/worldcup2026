@@ -1,43 +1,43 @@
-// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
-// Last API sync: 2026-06-15T18:20:29.858Z
+// 今日赛事 — Day 5 (lineup sync)
+// Last updated: 2026-06-16T06:30:00+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-15T18:20:29.857Z",
-  "syncSource": "API-Football",
+  "lastUpdated": "2026-06-16T06:30:00+08:00",
+  "syncSource": "FIFA / FotMob 官方或最新预测阵容 · 2026-06-16",
   "breakingNews": [
     {
+      "tag": "OFFICIAL",
+      "text": "🏁 西班牙 0-0 佛得角 · Vozinha 9.0 零封爆冷 · xG 2.29-0.29 · Yamal 71' 替补",
+      "time": "赛果"
+    },
+    {
       "tag": "LINEUP",
-      "text": "✅ 官方首发 · 西班牙 v 佛得角：Yamal/Williams 替补，Rodri 队长，Gavi+Oyarzabal+Torres 首发",
+      "text": "✅ 官方首发 · 比利时 v 埃及：De Bruyne 队长 · De Ketelaere 伪9 · Salah 生日战",
       "time": "官方确认"
     },
     {
       "tag": "LINEUP",
-      "text": "⏳ 比利时-埃及 / 沙特-乌拉圭 / 伊朗-新西兰：FIFA 名单开赛前约1小时公布",
-      "time": "待确认"
+      "text": "📋 最新预测 · 沙特-乌拉圭：Muslera · Cáceres/Olivera 中卫 · Al-Owais 一门",
+      "time": "FotMob"
+    },
+    {
+      "tag": "LINEUP",
+      "text": "📋 最新预测 · 伊朗-新西兰：Taremi+Ghayedi · Wood 队长 · Crocombe 一门",
+      "time": "FotMob"
     },
     {
       "tag": "INJURY",
-      "text": "乌拉圭：Giménez + R. Araújo + De Arrascaeta 确认缺席揭幕战 · Cáceres/Viña 待定",
-      "time": "伤情"
-    },
-    {
-      "tag": "INJURY",
-      "text": "比利时：Debast 缺阵 · Lukaku 替补 · De Ketelaere 伪9 · Doku/De Bruyne 预计首发",
+      "text": "乌拉圭：Araújo + De Arrascaeta OUT · Giménez OUT · 比利时 Debast OUT",
       "time": "伤情"
     },
     {
       "tag": "REFEREE",
-      "text": "✅ FIFA 确认：Makhadmeh(西-佛) · Abatti(比-埃) · Mariani(沙-乌) · Ramos(伊-新)",
+      "text": "✅ Makhadmeh · Abatti · Mariani · Ramos",
       "time": "裁判"
     },
     {
       "tag": "PREVIEW",
-      "text": "📅 今日4场 · 西班牙-佛得角(00:00) · 比利时-埃及(03:00) · 沙特-乌拉圭(06:00) · 伊朗-新西兰(09:00)",
+      "text": "📅 比-埃(03:00) · 沙-乌(06:00) · 伊-新(09:00) 待赛",
       "time": "6月16日"
-    },
-    {
-      "tag": "OFFICIAL",
-      "text": "🏁 昨日：德国7-1 · 荷兰2-2日本 · 科特1-0 · 瑞典5-1 · 详见「过往赛果」",
-      "time": "赛果回顾"
     }
   ],
   "todayMatches": [
@@ -54,13 +54,13 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月16日 00:00",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta, USA",
-      "note": "H组揭幕 · 西班牙 vs 佛得角 · 官方首发已确认",
+      "note": "H组揭幕 · 西班牙 0-0 佛得角 · 已结束",
       "lineup": {
         "confirmed": true,
-        "formation": "4-3-3 / 4-2-3-1",
-        "home": "Simón; Llorente, Laporte, Cubarsi, Cucurella; Fabian Ruiz, Rodri (C), Pedri, Gavi; Ferran Torres, Oyarzabal",
-        "away": "Vozinha; Moreira, Borges, Pico Lopes, Cabral; Pina, Duarte; Mendes (C), Monteiro, Jovane Cabral; Livramento",
-        "note": "✅ FIFA 官方 team sheet 已确认（2026-06-15 · BBC Sport / Foot Africa / worldcupstats FIFA）",
+        "formation": "4-3-3 / 4-1-4-1",
+        "home": "Simón; Llorente, Cubarsí, Laporte, Cucurella; Fabian Ruiz, Rodri (C), Pedri; Ferran Torres, Oyarzabal, Gavi",
+        "away": "Vozinha; Moreira, Roberto Lopes, Borges, Cabral; Pina; Mendes (C), Duarte, Monteiro, J. Cabral; Livramento",
+        "note": "✅ FIFA 官方首发已确认 · 全场 0-0（FotMob / BBC）",
         "predicted": {
           "formation": "4-3-3 / 4-4-2",
           "home": "Simón; García, Cubarsi, Laporte, Cucurella; Ruiz, Rodri, Pedri; Baena, Oyarzabal, Ferran Torres",
@@ -68,10 +68,10 @@ const MATCH_DATA = {
           "source": "ESPN / FotMob 赛前预测 · 非官方"
         },
         "diff": {
-          "home": "⚠️ Yamal、Nico Williams、Muñoz 替补 · Llorente 替 García 右闸 · Gavi 首发 · Baena 替补 · Cucurella 当日确认转会皇马",
-          "away": "⚠️ Moreira/Borges/Lopes/Cabral 防线 vs 预测 Stopira/Semedo · Livramento 单箭头 · Roberto Lopes（都柏林出生）首发"
+          "home": "⚠️ 实际为 4-3-3：Gavi 首发（非 Yamal）· Yamal 71'、Nico Williams 87' 替补 · Fabian Ruiz 71' 被 Merino 换下",
+          "away": "⚠️ Roberto Lopes 首发中卫（非 Stopira）· 4-1-4-1 低位 · Vozinha 9.0 评分零封"
         },
-        "updated": "2026-06-16T01:00:00+08:00"
+        "updated": "2026-06-16T06:30:00+08:00"
       },
       "home": {
         "name": "Spain",
@@ -89,28 +89,28 @@ const MATCH_DATA = {
         "coach": "Luis de la Fuente",
         "stars": [
           {
+            "name": "Pedri",
+            "pos": "CM",
+            "club": "Barcelona",
+            "stats": "8.6 全场最佳",
+            "rating": 8.6,
+            "desc": "0-0 僵局中最佳球员"
+          },
+          {
             "name": "Rodri",
             "pos": "DM",
             "club": "Man City",
-            "stats": "队长 · 官方首发",
-            "rating": 9,
-            "desc": "FIFA 官方确认佩戴队长袖标，中场屏障"
-          },
-          {
-            "name": "Mikel Oyarzabal",
-            "pos": "ST",
-            "club": "Real Sociedad",
-            "stats": "官方首发中锋",
-            "rating": 8.5,
-            "desc": "de la Fuente 首选箭头，与 Torres 搭档锋线"
+            "stats": "队长 · 7.9",
+            "rating": 7.9,
+            "desc": "87' 被 Nico Williams 换下"
           },
           {
             "name": "Lamine Yamal",
             "pos": "RW",
             "club": "Barcelona",
-            "stats": "官方替补",
+            "stats": "71' 替补 · 6.4",
             "rating": 9,
-            "desc": "状态「完美」但本场替补 · 世界杯首秀待命"
+            "desc": "世界杯首秀替补登场"
           }
         ],
         "injuries": [
@@ -270,7 +270,7 @@ const MATCH_DATA = {
         "confidence": 85,
         "xg_home": 2.45,
         "xg_away": 0.55,
-        "key_factor": "西班牙传控碾压局：Yamal/Pedri 对位 Bubista 低位 4-4-2。佛得角目标少丢当赢；xG 2.45-0.55 泊松最可能 3-0/2-0。",
+        "key_factor": "【赛后复盘】赛前主胜78%/最可能2-0；实际0-0。xG 2.29 未能转化，Vozinho/Vozinha 零封爆冷；Yamal 71' 替补未能破局。方向：平局命中（15%）；比分未中。",
         "score_dist": [
           {
             "score": "2-0",
@@ -576,6 +576,14 @@ const MATCH_DATA = {
         "away_score": 22,
         "mystic_verdict": "☲ 大有卦——西班牙火土当令，Yamal 如天火下照；佛得角厚土能守一时，难挡全程。xG 2.45 与五行同频，H 组揭幕最顺之局。",
         "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
+      },
+      "actualResult": {
+        "home_score": 0,
+        "away_score": 0,
+        "status": "FT",
+        "label": "全场结束",
+        "scorers": "无进球 · Vozinha 多次扑救零封",
+        "highlights": "xG 2.29-0.29 · 控球 74%-26% · Yamal/Nico Williams 替补登场 · Pedri 8.6 全场最佳"
       }
     },
     {
@@ -591,19 +599,24 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月16日 03:00",
       "venue": "Lumen Field",
       "city": "Seattle, USA",
-      "note": "G组揭幕 · 比利时 vs 埃及 · 官方名单开赛前约1小时公布",
+      "note": "G组揭幕 · 比利时 vs 埃及 · 官方首发已确认",
       "lineup": {
-        "confirmed": false,
-        "formation": null,
-        "home": "等待官方确认",
-        "away": "等待官方确认",
-        "note": "⏳ FIFA 官方 team sheet 尚未公布（通常开赛前1小时）· 下方为 The Standard / Sporting News 最新预测",
+        "confirmed": true,
+        "formation": "4-2-3-1 / 4-2-3-1",
+        "home": "Courtois; Meunier, Ngoy, Mechele, Castagne; Onana, Tielemans; Trossard, De Bruyne (C), Doku; De Ketelaere",
+        "away": "Shobeir; Hany, Ibrahim, Fathi, El Fotouh; Lasheen, Ateya; Salah (C), Ashour, Ziko; Marmoush",
+        "note": "✅ FIFA 官方 team sheet（FotMob 2026-06-15 赛前确认）",
         "predicted": {
           "formation": "4-2-3-1 / 4-3-3",
           "home": "Courtois; Meunier, Mechele, Ngoy, Castagne; Onana, Tielemans; Trossard, De Bruyne, Doku; De Ketelaere",
           "away": "Shobeir; Hany, Ibrahim, Fathy, Fatouh; Lasheen, Attia, Ashour; Trezeguet, Salah, Marmoush",
           "source": "The Standard / Yahoo Sports 最新预测 · 非官方"
-        }
+        },
+        "diff": {
+          "home": "✅ Meunier+Castagne 边卫 · Onana 首发（非 Witsel）· Lukaku 替补 · De Cuyper 未首发",
+          "away": "⚠️ Shobeir 一门 · Fathi 中卫（非 Abdelmonem）· Ziko 第三前锋（非 Trezeguet 首发）· Salah 34 岁生日"
+        },
+        "updated": "2026-06-16T06:30:00+08:00"
       },
       "home": {
         "name": "Belgium",
@@ -1123,19 +1136,24 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月16日 06:00",
       "venue": "Hard Rock Stadium",
       "city": "Miami, USA",
-      "note": "H组第2场 · 沙特 vs 乌拉圭 · 官方名单开赛前约1小时公布",
+      "note": "H组第2场 · 沙特 vs 乌拉圭 · 最新预测阵容（开赛前确认）",
       "lineup": {
         "confirmed": false,
-        "formation": null,
-        "home": "等待官方确认",
-        "away": "等待官方确认",
-        "note": "⏳ FIFA 官方 team sheet 尚未公布 · Bielsa 确认 Giménez/Araújo/De Arrascaeta 缺席揭幕战",
+        "formation": "4-2-3-1 / 4-2-3-1",
+        "home": "Al-Owais; Abdulhamid, Tambakti, Amri, Al-Harbi; N. Al-Dawsari, Al-Khaibari; Mandash, Al-Juwayr, Salem Al-Dawsari; Al-Buraikan",
+        "away": "Muslera; Varela, Cáceres, Olivera, Viña; Bentancur, Ugarte; Valverde; Viñas, Maxi Araújo; Núñez",
+        "note": "📋 FotMob 最新预测阵容（官方名单开赛前约1小时公布 · 非最终确认）",
         "predicted": {
           "formation": "4-2-3-1 / 4-3-3",
           "home": "Al-Owais; Abdulhamid, Al-Amri, Al-Boleahi, Al-Shahrani; Kanno, Al-Faraj; Al-Dawsari, Al-Shehri, Al-Hassouni; Al-Buraikan",
           "away": "Rochet; Varela, Bueno, Cáceres, Olivera; Ugarte, Valverde, Bentancur; Pellistri, De la Cruz, Núñez",
           "source": "Goal.com / worldcuppass 最新预测 · 非官方"
-        }
+        },
+        "diff": {
+          "home": "✅ Al-Owais 一门 · Abdulhamid 右闸 · Al-Harbi 替 Al-Shahrani 左闸",
+          "away": "⚠️ Muslera 替 Rochet · Cáceres+Olivera 中卫（Giménez/Araújo OUT）· De Arrascaeta OUT · Viña 复出"
+        },
+        "updated": "2026-06-16T06:30:00+08:00"
       },
       "home": {
         "name": "Saudi Arabia",
@@ -1667,19 +1685,24 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月16日 09:00",
       "venue": "SoFi Stadium",
       "city": "Inglewood, USA",
-      "note": "G组第2场 · 伊朗 vs 新西兰 · 官方名单开赛前约1小时公布",
+      "note": "G组第2场 · 伊朗 vs 新西兰 · 最新预测阵容",
       "lineup": {
         "confirmed": false,
-        "formation": null,
-        "home": "等待官方确认",
-        "away": "等待官方确认",
-        "note": "⏳ FIFA 官方 team sheet 尚未公布 · 伊朗已从图森基地迁至蒂华纳",
+        "formation": "4-4-2 / 4-2-3-1",
+        "home": "Beiranvand; Hardani, Khalilzadeh, Nemati, Mohammadi; Yousefi, Ezatolahi, Ghoddos, Ghayedi; Alipour, Taremi",
+        "away": "Crocombe; Payne, Surman, Boxall, Cacace; Bell, Stamenic; Garbett, Singh, Just; Wood (C)",
+        "note": "📋 FotMob 最新预测阵容（官方名单开赛前约1小时公布 · 非最终确认）",
         "predicted": {
           "formation": "4-3-3 / 4-4-2",
           "home": "Beiranvand; Moharrami, Hosseini, Kanani, Ghafouri; Nourollahi, Ezatolahi, Ghoddos; Jahanbakhsh, Taremi, Ghoddos",
           "away": "Woodman; Boxall, Kelly, Mitchell; Singh, Howison, van der Ven; Just, Garbett, Singh; Wood",
           "source": "Opta / NZ Football 预测 · 非官方"
-        }
+        },
+        "diff": {
+          "home": "⚠️ 4-4-2：Alipour 搭档 Taremi · Yousefi 中场 · 无 Azmoun/Jahanbakhsh",
+          "away": "✅ Wood 队长 · Surman 中卫 · Garbett 右翼 · Crocombe 一门"
+        },
+        "updated": "2026-06-16T06:30:00+08:00"
       },
       "home": {
         "name": "Iran",
