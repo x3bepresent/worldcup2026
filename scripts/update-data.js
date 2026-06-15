@@ -242,8 +242,13 @@ function mapInjuries(apiList) {
   }));
 }
 
+function isMatchFinished(match) {
+  const st = match.actualResult?.status;
+  return st && ['FT', 'AET', 'PEN'].includes(st);
+}
+
 function applyPrediction(match, pred) {
-  if (!pred?.predictions) return;
+  if (!pred?.predictions || isMatchFinished(match)) return;
   const p = pred.predictions;
   const pct = p.percent || {};
   const hw = parsePercent(pct.home);
@@ -300,7 +305,6 @@ function applyResult(match, lite) {
   };
 
   if (finished) {
-    match.prediction.score = `${lite.home_score}-${lite.away_score}`;
     match.note = (match.note || '').replace(/· 待赛.*/, '') +
       ` · 已结束 ${lite.home_score}-${lite.away_score}`;
   }

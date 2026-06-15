@@ -57,12 +57,12 @@ function buildM14() {
     note: 'H组揭幕 · 西班牙 vs 佛得角 · 亚特兰大',
     lineup: lineupFromPrediction({
       formation: '4-3-3 / 4-4-2',
-      home: 'Simón; Carvajal, Le Normand, Laporte, Cucurella; Zubimendi, Pedri, Olmo; Yamal, Oyarzabal, Williams',
+      home: 'Simón; García, Cubarsi, Laporte, Cucurella; Ruiz, Rodri, Pedri; Baena, Oyarzabal, Ferran Torres',
       away: 'Vozinha; Stopira, Monteiro, Cabral; Duarte, Semedo, Tavares; Lopes, Borges, Cabral; Platini',
       source: 'ESPN / FotMob 赛前预测 · 非官方',
     }),
     home: team('Spain', 'es', 3, 88, ['W', 'W', 'D', 'W', 'W'], 'Luis de la Fuente', [
-      { name: 'Lamine Yamal', pos: 'RW', club: 'Barcelona', stats: '欧洲杯后世界杯首秀', rating: 9.0, desc: '右路爆点，H组揭幕核心' },
+      { name: 'Lamine Yamal', pos: 'RW', club: 'Barcelona', stats: '大腿伤愈 · 本场替补', rating: 9.0, desc: 'de la Fuente 确认不首发，60\' 后或成破局后手' },
       { name: 'Pedri', pos: 'CM', club: 'Barcelona', stats: '中场节拍器', rating: 8.8, desc: '控球枢纽，肋部渗透发起点' },
       { name: 'Nico Williams', pos: 'LW', club: 'Athletic', stats: '欧洲杯冠军成员', rating: 8.6, desc: '左路速度，与 Yamal 双翼宽度' },
     ], { name: 'Lamine Yamal', pos: 'RW', club: 'Barcelona', desc: '世界杯首秀，右路破局关键', rating: 9.0 },
@@ -108,13 +108,13 @@ function buildM16() {
     note: 'G组揭幕 · 比利时 vs 埃及 · 西雅图',
     lineup: lineupFromPrediction({
       formation: '4-2-3-1 / 4-3-3',
-      home: 'Casteels; De Cuyper, De Bast, Theate, Castagne; Rits, Tielemans; Doku, De Bruyne, Trossard; Lukaku',
+      home: 'Courtois; Meunier, Mechele, Ngoy, De Cuyper; Onana, Tielemans; Doku, De Bruyne, Trossard; De Ketelaere',
       away: 'El Shenawy; Hany, Rabia, Hegazi; El Shahat, Hamdi, Emam; Salah, Trezeguet, Marmoush',
       source: 'Sports Mole / FotMob 预测 · 非官方',
     }),
     home: team('Belgium', 'be', 4, 86, ['W', 'W', 'D', 'W', 'W'], 'Rudy Garcia', [
       { name: 'Kevin De Bruyne', pos: 'CAM', club: 'Man City', stats: '黄金一代核心', rating: 9.0, desc: 'G组破局关键，前腰节拍器' },
-      { name: 'Romelu Lukaku', pos: 'ST', club: 'Roma', stats: '支点中锋', rating: 8.5, desc: '背身牵制 + 定位球威胁' },
+      { name: 'Charles De Ketelaere', pos: 'ST', club: 'Atalanta', stats: '伪 9 首发', rating: 8.3, desc: 'Garcia 确认 Lukaku 不首发，De Ketelaere 领衔锋线' },
       { name: 'Jérémy Doku', pos: 'LW', club: 'Man City', stats: '边路爆点', rating: 8.4, desc: '左路内切+速度，对位埃及边卫' },
     ], { name: 'Kevin De Bruyne', pos: 'CAM', desc: 'De Bruyne vs 埃及双闸是本场核心对位', rating: 9.0 },
       getTeamNews('m16', 'home').injuries, getTeamNews('m16', 'home').rumors),
@@ -163,7 +163,7 @@ function buildM13() {
       away: 'Roche; Núñez, Araujo, Cáceres; Olivera, Ugarte, Valverde; Pellistri, De la Cruz, Bentancur; Núñez',
       source: 'ESPN / Arab News 预测 · 非官方',
     }),
-    home: team('Saudi Arabia', 'sa', 58, 68, ['W', 'L', 'D', 'W', 'L'], 'Roberto Mancini', [
+    home: team('Saudi Arabia', 'sa', 58, 68, ['W', 'L', 'D', 'W', 'L'], 'Georgios Donis', [
       { name: 'Salem Al-Dawsari', pos: 'LW', club: 'Al-Hilal', stats: '2022 对阿根廷进球', rating: 7.8, desc: '左路核心，反击发起点' },
       { name: 'Salem Al-Faraj', pos: 'CM', club: 'Al-Hilal', stats: '队长 · 中场屏障', rating: 7.5, desc: '绞杀与出球枢纽' },
       { name: 'Firas Al-Buraikan', pos: 'ST', club: 'Al-Ahli', stats: '锋线支点', rating: 7.3, desc: '定位球与背身' },
@@ -178,14 +178,14 @@ function buildM13() {
     h2h: { home_wins: 0, draws: 1, away_wins: 2, recent: [{ year: 2022, comp: '友谊赛', score: '0-2', winner: 'Uruguay' }], note: '乌拉圭历史占优' },
     referee: getReferee('m13'),
     prediction: pred(xgH, xgA,
-      'Bielsa 高位压迫 vs Mancini 低位：乌拉圭 xG 1.85 明显占优，Valverde/Núñez 对位沙特防线。沙特 2022 爆冷有 DNA 但硬实力差距大；泊松最可能 0-2/1-2。',
+      'Bielsa 高位压迫 vs Donis 三中卫低位：乌拉圭 xG 1.85 占优但 Giménez/R. Araújo/De Arrascaeta 缺阵削弱防线。沙特 2022 爆冷 DNA 仍在；泊松最可能 0-2/1-2。',
       80),
     upset_alert: upsetAlert({
       favorite: 'Uruguay', underdog: 'Saudi Arabia', favorite_iso: 'UY',
       index: 28, level: 'LOW', level_cn: '低',
       cold_result_pct: 22,
-      verdict: '乌拉圭纸面碾压，但沙特 2022 对阿根廷 2-1 是心理资产——Mancini 低位+Al-Dawsari 偷分仍有 15% 空间。',
-      tactical: 'Bielsa 4-4-2 高压 vs Mancini 4-5-1；Valverde 覆盖切断 Al-Faraj 出球是胜负手。',
+      verdict: '乌拉圭纸面碾压，但防线伤病危机（Giménez/R. Araújo 缺阵）+ 沙特 2022 DNA，Donis 低位偷分仍有 18% 空间。',
+      tactical: 'Bielsa 4-4-2 高压 vs Donis 3-5-2；Bueno/Cáceres 临时中卫 vs Núñez 是胜负手。',
       psychology: '2022 爆冷 DNA 仍在，但 Bielsa 压迫强度完全不同；沙特先丢球易崩盘。',
       historical: '2022 友谊赛乌拉圭 2-0；沙特 2022 世界杯胜阿根廷是最大冷门参考。',
       factors: [
@@ -210,14 +210,14 @@ function buildM15() {
     note: 'G组第2场 · 伊朗 vs 新西兰 · 洛杉矶',
     lineup: lineupFromPrediction({
       formation: '4-3-3 / 4-4-2',
-      home: 'Beiranvand; Moharrami, Hosseini, Kanani, Ghafouri; Nourollahi, Ezatolahi, Ghoddos; Jahanbakhsh, Taremi, Azmoun',
+      home: 'Beiranvand; Moharrami, Hosseini, Kanani, Ghafouri; Nourollahi, Ezatolahi, Ghoddos; Jahanbakhsh, Taremi, Ghoddos',
       away: 'Woodman; Boxall, Kelly, Mitchell; Singh, Howison, van der Ven; Just, Garbett, Singh; Wood',
       source: 'Opta / NZ Football 预测 · 非官方',
     }),
     home: team('Iran', 'ir', 22, 76, ['W', 'W', 'D', 'W', 'W'], 'Amir Ghalenoei', [
       { name: 'Mehdi Taremi', pos: 'ST', club: 'Inter Milan', stats: '锋线支点', rating: 8.2, desc: '背身+定位球破局关键' },
-      { name: 'Sardar Azmoun', pos: 'ST', club: 'Shabab Al-Ahli', stats: '与 Taremi 双锋', rating: 8.0, desc: '跑位+远射，锋线互补' },
-      { name: 'Alireza Jahanbakhsh', pos: 'RW', club: 'Feyenoord', stats: '边路速度', rating: 7.8, desc: '宽度与肋部渗透' },
+      { name: 'Sardar Azmoun', pos: 'ST', club: '—', stats: '未入选大名单', rating: 0, desc: '因社媒争议被除名，本场不可用' },
+      { name: 'Alireza Jahanbakhsh', pos: 'RW', club: 'Feyenoord', stats: '边路速度', rating: 7.8, desc: 'Azmoun 缺阵后锋线分担进球' },
     ], { name: 'Mehdi Taremi', pos: 'ST', desc: '伊朗进攻绝对核心，对位 NZ 英冠防线', rating: 8.2 },
       getTeamNews('m15', 'home').injuries, getTeamNews('m15', 'home').rumors),
     away: team('New Zealand', 'nz', 103, 58, ['L', 'D', 'W', 'L', 'D'], 'Darren Bazeley', [
@@ -229,7 +229,7 @@ function buildM15() {
     h2h: { home_wins: 0, draws: 0, away_wins: 0, recent: [{ year: 2003, comp: 'AFC-OFC Challenge', score: '3-0', winner: 'Iran' }], note: '2003 伊朗 3-0 胜（非正式大赛）' },
     referee: getReferee('m15'),
     prediction: pred(xgH, xgA,
-      '伊朗整体实力占优，Taremi/Azmoun 对位新西兰英冠班底防线。Wood 定位球是冷门点；xG 1.55-0.85 泊松最可能 2-0/1-0。',
+      '伊朗整体实力占优，Taremi 领衔（Azmoun 未入选）。Wood 定位球是冷门点；xG 1.55-0.85 泊松最可能 2-0/1-0。',
       74),
     upset_alert: upsetAlert({
       favorite: 'Iran', underdog: 'New Zealand', favorite_iso: 'IR',
@@ -256,6 +256,7 @@ const MATCH_DATA = loadData(MATCH_PATH, 'MATCH_DATA');
 MATCH_DATA.lastUpdated = TS;
 MATCH_DATA.syncSource = 'FIFA 裁判 + Day 5 完整推演 · coach/mystic/referee/weather';
 MATCH_DATA.breakingNews = [
+  { tag: 'INJURY', text: 'Yamal/Williams 西-佛不首发 · Giménez/R.Araújo/De Arrascaeta 乌缺阵 · Azmoun 未入选 · Lukaku 比替补', time: '伤病' },
   { tag: 'REFEREE', text: '✅ FIFA 确认：Makhadmeh(西-佛) · Abatti(比-埃) · Mariani(沙-乌) · Ramos(伊-新)', time: '裁判' },
   { tag: 'PREVIEW', text: '📅 今日4场 · 西班牙-佛得角(00:00) · 比利时-埃及(03:00) · 沙特-乌拉圭(06:00) · 伊朗-新西兰(09:00)', time: '6月16日' },
   { tag: 'PREVIEW', text: 'G/H组揭幕：Salah vs De Bruyne · Yamal 世界杯首秀 · Bielsa 高位压迫', time: '焦点' },

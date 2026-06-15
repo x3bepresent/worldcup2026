@@ -5,6 +5,11 @@ const MATCH_DATA = {
   "syncSource": "FIFA 裁判 + Day 5 完整推演 · coach/mystic/referee/weather",
   "breakingNews": [
     {
+      "tag": "INJURY",
+      "text": "Yamal/Williams 西-佛不首发 · Giménez/R.Araújo/De Arrascaeta 乌缺阵 · Azmoun 未入选 · Lukaku 比替补",
+      "time": "伤病"
+    },
+    {
       "tag": "REFEREE",
       "text": "✅ FIFA 确认：Makhadmeh(西-佛) · Abatti(比-埃) · Mariani(沙-乌) · Ramos(伊-新)",
       "time": "裁判"
@@ -53,7 +58,7 @@ const MATCH_DATA = {
         "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
         "predicted": {
           "formation": "4-3-3 / 4-4-2",
-          "home": "Simón; Carvajal, Le Normand, Laporte, Cucurella; Zubimendi, Pedri, Olmo; Yamal, Oyarzabal, Williams",
+          "home": "Simón; García, Cubarsi, Laporte, Cucurella; Ruiz, Rodri, Pedri; Baena, Oyarzabal, Ferran Torres",
           "away": "Vozinha; Stopira, Monteiro, Cabral; Duarte, Semedo, Tavares; Lopes, Borges, Cabral; Platini",
           "source": "ESPN / FotMob 赛前预测 · 非官方"
         }
@@ -77,9 +82,9 @@ const MATCH_DATA = {
             "name": "Lamine Yamal",
             "pos": "RW",
             "club": "Barcelona",
-            "stats": "欧洲杯后世界杯首秀",
+            "stats": "大腿伤愈 · 本场替补",
             "rating": 9,
-            "desc": "右路爆点，H组揭幕核心"
+            "desc": "de la Fuente 确认不首发，60' 后或成破局后手"
           },
           {
             "name": "Pedri",
@@ -100,22 +105,47 @@ const MATCH_DATA = {
         ],
         "injuries": [
           {
-            "player": "Pedri",
-            "status": "FIT",
-            "note": "欧洲杯后负荷管理，预计首发中场核心",
+            "player": "Fermín López",
+            "status": "OUT",
+            "note": "5 月对贝蒂斯右脚骨折，已手术，缺席整届世界杯（约 3 个月）",
             "confirmed": true
           },
           {
-            "player": "Gavi",
-            "status": "OUT",
-            "note": "ACL 长期缺阵，未入选大名单",
+            "player": "Lamine Yamal",
+            "status": "DOUBT",
+            "note": "大腿二级撕裂已愈，de la Fuente 确认可出场但**本场不首发**——替补待命，世界杯首秀从替补席开始",
+            "confirmed": true
+          },
+          {
+            "player": "Nico Williams",
+            "status": "DOUBT",
+            "note": "5 月 10 日后未出场（轻微腿筋），已恢复训练但 de la Fuente 确认**本场不首发**",
+            "confirmed": true
+          },
+          {
+            "player": "Víctor Muñoz",
+            "status": "DOUBT",
+            "note": "小腿伤愈，仅适合替补出场（de la Fuente 赛前确认）",
+            "confirmed": true
+          },
+          {
+            "player": "Fabián Ruiz",
+            "status": "DOUBT",
+            "note": "赛季末伤停较多，状态/ sharpness 仍非 100%，但预计进入轮换",
+            "confirmed": false
+          },
+          {
+            "player": "Pedri",
+            "status": "FIT",
+            "note": "预计与 Rodri/Zubimendi 搭档中场，欧洲杯后负荷管理完毕",
             "confirmed": true
           }
         ],
         "rumors": [
-          "de la Fuente：Yamal 世界杯首秀「无额外压力」，预计右路首发",
-          "西班牙欧洲杯冠军班底，传控+宽度是 H 组主旋律",
-          "Opta：西班牙胜概率 78%+ · 最可能 2-0/3-0"
+          "de la Fuente 赛前：Yamal 状态「完美」但本场不首发——Ferran Torres + Baena + Oyarzabal 预计领衔锋线（对秘鲁热身赛模板）",
+          "Morata、Carvajal、Le Normand 等欧洲杯主力未入选；Cubarsi/Laporte/Cucurella 防线成新核心",
+          "Yamal/Williams 替补待命——若 60' 后仍僵持，双翼或成破局后手",
+          "Opta：西班牙胜 78%+ · 最可能 2-0/3-0；无 Fermín 后中路创造力略降但深度仍足"
         ],
         "star": {
           "name": "Lamine Yamal",
@@ -165,11 +195,19 @@ const MATCH_DATA = {
             "desc": "低位防守组织核心"
           }
         ],
-        "injuries": [],
+        "injuries": [
+          {
+            "player": "Logan Costa",
+            "status": "FIT",
+            "note": "比利亚雷亚尔中卫，ACL 赛季几乎报销后已恢复，预计**首发**——H 组防线最大牌",
+            "confirmed": true
+          }
+        ],
         "rumors": [
-          "Bubista 4-4-2 低位是世界杯新军唯一选择，控球率或低于 35%",
+          "Bubista 4-4-2/4-2-3-1 低位是世界杯新军唯一选择，控球率或低于 35%",
+          "历史首次晋级世界杯（附加赛击败喀麦隆），Logan Costa + Stopira 防空是关键",
           "Ryan Mendes 经验边锋是反击发起点，定位球偷分是现实目标",
-          "佛得角 2023 非洲杯八强，但面对西班牙 xG 2.45 预计全场被动"
+          "H 组另两对手乌拉圭/西班牙均强于佛得角，本场目标少丢当赢"
         ],
         "star": {
           "name": "Ryan Mendes",
@@ -552,7 +590,7 @@ const MATCH_DATA = {
         "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
         "predicted": {
           "formation": "4-2-3-1 / 4-3-3",
-          "home": "Casteels; De Cuyper, De Bast, Theate, Castagne; Rits, Tielemans; Doku, De Bruyne, Trossard; Lukaku",
+          "home": "Courtois; Meunier, Mechele, Ngoy, De Cuyper; Onana, Tielemans; Doku, De Bruyne, Trossard; De Ketelaere",
           "away": "El Shenawy; Hany, Rabia, Hegazi; El Shahat, Hamdi, Emam; Salah, Trezeguet, Marmoush",
           "source": "Sports Mole / FotMob 预测 · 非官方"
         }
@@ -581,12 +619,12 @@ const MATCH_DATA = {
             "desc": "G组破局关键，前腰节拍器"
           },
           {
-            "name": "Romelu Lukaku",
+            "name": "Charles De Ketelaere",
             "pos": "ST",
-            "club": "Roma",
-            "stats": "支点中锋",
-            "rating": 8.5,
-            "desc": "背身牵制 + 定位球威胁"
+            "club": "Atalanta",
+            "stats": "伪 9 首发",
+            "rating": 8.3,
+            "desc": "Garcia 确认 Lukaku 不首发，De Ketelaere 领衔锋线"
           },
           {
             "name": "Jérémy Doku",
@@ -599,22 +637,35 @@ const MATCH_DATA = {
         ],
         "injuries": [
           {
-            "player": "Kevin De Bruyne",
-            "status": "FIT",
-            "note": "曼城赛季末有轻伤史，赛前训练完整",
-            "confirmed": false
+            "player": "Zeno Debast",
+            "status": "OUT",
+            "note": "大腿伤，预计世界杯前期无法出场——中卫深度受损",
+            "confirmed": true
           },
           {
-            "player": "Thibaut Courtois",
-            "status": "OUT",
-            "note": "未入选 · Casteels 一门",
+            "player": "Romelu Lukaku",
+            "status": "DOUBT",
+            "note": "Garcia 明确：**不会首发对埃及**——赛季仅 5 次意甲出场，De Ketelaere 任伪 9；Lukaku 或替补 25 分钟",
+            "confirmed": true
+          },
+          {
+            "player": "Kevin De Bruyne",
+            "status": "FIT",
+            "note": "Garcia 确认状态良好，预计首发前腰——与 Salah 直接对话",
+            "confirmed": true
+          },
+          {
+            "player": "Jeremy Doku",
+            "status": "FIT",
+            "note": "周中训练曾出现呼吸不适，已恢复无后遗症，预计首发左边锋",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Rudy Garcia 黄金一代末班车——De Bruyne + Lukaku + Doku 预计首发",
-          "西雅图人工草皮利于比利时快速传导",
-          "大赛慢热有前例，G 组揭幕需取 3 分"
+          "Garcia 4-2-3-1：De Bruyne 串联 Doku/Trossard，De Ketelaere 伪 9 而非 Lukaku",
+          "后防 Meunier/Mechele/Ngoy/De Cuyper 非黄金一代级别——防守是本场隐患",
+          "Onana + Tielemans 双后腰（维拉组合）提供屏障",
+          "大赛慢热有前例（2022 小组赛出局），G 组揭幕必须取 3 分"
         ],
         "star": {
           "name": "Kevin De Bruyne",
@@ -667,14 +718,21 @@ const MATCH_DATA = {
           {
             "player": "Mohamed Salah",
             "status": "FIT",
-            "note": "利物浦赛季核心，埃及绝对进攻发起点",
+            "note": "利物浦赛季末腿筋伤愈，预计队长首发——G 组最大个人威胁",
+            "confirmed": true
+          },
+          {
+            "player": "Omar Marmoush",
+            "status": "FIT",
+            "note": "曼城前锋状态正佳，与 Salah 组成反击双核",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Hossam Hassan 双主帅之一，Salah 一人球队属性明显",
-          "Marmoush 德甲状态正佳，与 Salah 组成反击双核",
-          "埃及 7 次世界杯经验，但面对比利时需低位+转换"
+          "Hossam Hassan 执教，埃及第四次世界杯仍求小组首次出线",
+          "6 月 6 日 1-2 负巴西（热身）——Salah 领衔但后防对 De Bruyne/Doku 宽度存疑",
+          "Lasheen/Ashour 双闸任务：限制 De Bruyne 肋部接球",
+          "若意外领先会 4-5-1 收缩，Salah 留前场反击"
         ],
         "star": {
           "name": "Mohamed Salah",
@@ -1082,7 +1140,7 @@ const MATCH_DATA = {
           "W",
           "L"
         ],
-        "coach": "Roberto Mancini",
+        "coach": "Georgios Donis",
         "stars": [
           {
             "name": "Salem Al-Dawsari",
@@ -1109,11 +1167,25 @@ const MATCH_DATA = {
             "desc": "定位球与背身"
           }
         ],
-        "injuries": [],
+        "injuries": [
+          {
+            "player": "Nawaf Al-Aqidi",
+            "status": "DOUBT",
+            "note": "肌肉伤，一门存疑——Al-Owais（2022 世界杯 4 场经验）预计首发",
+            "confirmed": false
+          },
+          {
+            "player": "Abdullah Al-Hamdan",
+            "status": "DOUBT",
+            "note": "对塞内加尔热身脚踝伤退，出战乌拉圭成疑",
+            "confirmed": false
+          }
+        ],
         "rumors": [
-          "Mancini 2023 上任，强调低位+转换，2022 对阿根廷模板仍在",
-          "Al-Dawsari 左路核心，Al-Faraj 中场屏障",
-          "迈阿密湿热下 60' 后体能是最大考验"
+          "Donis 预计 3-5-2/3-5-1-1 低位，Salem Al-Dawsari + Al-Buraikan 前场双核",
+          "2022 对阿根廷 2-1 爆冷 DNA 仍在，但 Donis 体系与 Mancini 时代不同",
+          "全队仅 Abdulhamid 一名海外球员（朗斯），硬实力仍处下风",
+          "对厄瓜多尔热身 1-2 负，大赛前状态一般；迈阿密湿热 60' 后体能是考验"
         ],
         "star": {
           "name": "Salem Al-Dawsari",
@@ -1164,16 +1236,47 @@ const MATCH_DATA = {
         ],
         "injuries": [
           {
+            "player": "Ronald Araújo",
+            "status": "OUT",
+            "note": "小腿/肌肉伤，**确认缺席**揭幕战——巴萨中卫赛季末反复",
+            "confirmed": true
+          },
+          {
+            "player": "José María Giménez",
+            "status": "OUT",
+            "note": "高等级脚踝扭伤，Bielsa 不会在揭幕战冒险——TyC/RotoWire 确认",
+            "confirmed": true
+          },
+          {
+            "player": "Giorgian De Arrascaeta",
+            "status": "OUT",
+            "note": "小腿伤，预计缺席揭幕战（De la Cruz 顶替前腰）",
+            "confirmed": true
+          },
+          {
+            "player": "Sebastián Cáceres",
+            "status": "DOUBT",
+            "note": "脑震荡/头部问题，能否首发待定",
+            "confirmed": false
+          },
+          {
+            "player": "Matías Viña",
+            "status": "DOUBT",
+            "note": "肌肉伤，左后卫位置存疑",
+            "confirmed": false
+          },
+          {
             "player": "Federico Valverde",
             "status": "FIT",
-            "note": "皇马全能中场，Bielsa 体系覆盖核心",
+            "note": "Bielsa 压迫体系发动机，预计首发 CM",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Bielsa 高位压迫强度世界杯顶级，首发或 4-4-2 高压",
-          "Núñez 支点 + Valverde 远射是破局双核",
-          "乌拉圭历史占优，xG 1.85 明显碾压沙特"
+          "Bielsa 防线危机：Giménez + R. Araújo 双双缺阵，Bueno/Cáceres/Sanabria 重组中卫",
+          "De Arrascaeta 缺阵 → De la Cruz 前腰，进攻创造力略降但 Valverde 覆盖补偿",
+          "Núñez 支点 + Pellistri 速度，高位压迫强度不变",
+          "媒体：乌拉圭医疗组与 R. Araújo 阵营关系紧张；Bielsa 仍坚持揭幕战高压"
         ],
         "star": {
           "name": "Federico Valverde",
@@ -1233,7 +1336,7 @@ const MATCH_DATA = {
         "confidence": 80,
         "xg_home": 0.75,
         "xg_away": 1.85,
-        "key_factor": "Bielsa 高位压迫 vs Mancini 低位：乌拉圭 xG 1.85 明显占优，Valverde/Núñez 对位沙特防线。沙特 2022 爆冷有 DNA 但硬实力差距大；泊松最可能 0-2/1-2。",
+        "key_factor": "Bielsa 高位压迫 vs Donis 三中卫低位：乌拉圭 xG 1.85 占优但 Giménez/R. Araújo/De Arrascaeta 缺阵削弱防线。沙特 2022 爆冷 DNA 仍在；泊松最可能 0-2/1-2。",
         "score_dist": [
           {
             "score": "0-1",
@@ -1273,8 +1376,8 @@ const MATCH_DATA = {
         "level": "LOW",
         "level_cn": "低",
         "cold_result_pct": 22,
-        "verdict": "乌拉圭纸面碾压，但沙特 2022 对阿根廷 2-1 是心理资产——Mancini 低位+Al-Dawsari 偷分仍有 15% 空间。",
-        "tactical": "Bielsa 4-4-2 高压 vs Mancini 4-5-1；Valverde 覆盖切断 Al-Faraj 出球是胜负手。",
+        "verdict": "乌拉圭纸面碾压，但防线伤病危机（Giménez/R. Araújo 缺阵）+ 沙特 2022 DNA，Donis 低位偷分仍有 18% 空间。",
+        "tactical": "Bielsa 4-4-2 高压 vs Donis 3-5-2；Bueno/Cáceres 临时中卫 vs Núñez 是胜负手。",
         "psychology": "2022 爆冷 DNA 仍在，但 Bielsa 压迫强度完全不同；沙特先丢球易崩盘。",
         "historical": "2022 友谊赛乌拉圭 2-0；沙特 2022 世界杯胜阿根廷是最大冷门参考。",
         "factors": [
@@ -1297,24 +1400,24 @@ const MATCH_DATA = {
       },
       "coach_analysis": {
         "home": {
-          "name": "Roberto Mancini",
-          "age": 60,
-          "nation": "意大利",
-          "tenure": "2023年—",
-          "wc_exp": "2020 欧洲杯冠军（意大利）· 2026 执教沙特",
+          "name": "Georgios Donis",
+          "age": 54,
+          "nation": "希腊",
+          "tenure": "2025年—",
+          "wc_exp": "2026 带队 · 沙特/希腊联赛经验",
           "style_tags": [
-            "4-2-3-1",
+            "3-5-2",
             "低位防守",
             "转换",
             "2022 爆冷 DNA"
           ],
-          "formation_pref": "4-2-3-1 · 极端时 5-4-1",
-          "style_summary": "2020 欧洲杯冠军主帅转投沙特，强调低位+快速转换。Al-Dawsari 左路核心，2022 对阿根廷 2–1 模板仍是信心来源。",
+          "formation_pref": "3-5-2 / 3-5-1-1 · 极端时 5-4-1",
+          "style_summary": "希腊籍主帅，三中卫低位体系。Al-Dawsari/Al-Buraikan 前场双核，2022 对阿根廷 2–1 仍是心理资产，但对 Bielsa 压迫强度完全不同。",
           "subs": {
             "timing": "首换 60–68 分钟；落后 55' 换前锋",
-            "pattern": "常换 Al-Shehri/Al-Buraikan 前锋；Al-Faraj 极少换下",
+            "pattern": "常换 Al-Shehri/Al-Buraikan；Al-Faraj 极少换下",
             "avg_first_sub": "63'",
-            "note": "2022 世界杯沙特换人果断"
+            "note": "对厄瓜多尔热身 1-2 负，大赛前状态一般"
           },
           "when_leading": {
             "label": "4-5-1 收缩",
@@ -1326,16 +1429,16 @@ const MATCH_DATA = {
           },
           "vs_strong": {
             "label": "对强队：低位 + 偷分",
-            "detail": "对乌拉圭：4-5-1 低位，Al-Dawsari 速度；Bielsa 压迫下体能 60' 后是考验。"
+            "detail": "对乌拉圭：3-5-2 低位，Al-Owais 替 Al-Aqidi 一门；Bielsa 压迫下 60' 后体能是考验。"
           },
           "vs_weak": {
             "label": "不适用",
             "detail": "H 组乌拉圭/西班牙均强于沙特。"
           },
-          "tournament": "2020 欧洲杯冠军经验；2022 沙特爆冷阿根廷是最大心理资产。",
+          "tournament": "2022 沙特爆冷阿根廷是最大心理资产；全队仅 Abdulhamid 一名海外球员。",
           "traits": [
             "低位防守",
-            "转换速度",
+            "三中卫",
             "2022 爆冷 DNA",
             "Al-Dawsari 依赖"
           ],
@@ -1563,7 +1666,7 @@ const MATCH_DATA = {
         "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
         "predicted": {
           "formation": "4-3-3 / 4-4-2",
-          "home": "Beiranvand; Moharrami, Hosseini, Kanani, Ghafouri; Nourollahi, Ezatolahi, Ghoddos; Jahanbakhsh, Taremi, Azmoun",
+          "home": "Beiranvand; Moharrami, Hosseini, Kanani, Ghafouri; Nourollahi, Ezatolahi, Ghoddos; Jahanbakhsh, Taremi, Ghoddos",
           "away": "Woodman; Boxall, Kelly, Mitchell; Singh, Howison, van der Ven; Just, Garbett, Singh; Wood",
           "source": "Opta / NZ Football 预测 · 非官方"
         }
@@ -1594,10 +1697,10 @@ const MATCH_DATA = {
           {
             "name": "Sardar Azmoun",
             "pos": "ST",
-            "club": "Shabab Al-Ahli",
-            "stats": "与 Taremi 双锋",
-            "rating": 8,
-            "desc": "跑位+远射，锋线互补"
+            "club": "—",
+            "stats": "未入选大名单",
+            "rating": 0,
+            "desc": "因社媒争议被除名，本场不可用"
           },
           {
             "name": "Alireza Jahanbakhsh",
@@ -1605,27 +1708,28 @@ const MATCH_DATA = {
             "club": "Feyenoord",
             "stats": "边路速度",
             "rating": 7.8,
-            "desc": "宽度与肋部渗透"
+            "desc": "Azmoun 缺阵后锋线分担进球"
           }
         ],
         "injuries": [
           {
-            "player": "Mehdi Taremi",
-            "status": "FIT",
-            "note": "国米前锋，伊朗进攻支点",
+            "player": "Sardar Azmoun",
+            "status": "OUT",
+            "note": "未入选 26 人大名单（3 月因社媒争议被 Ghalenoei 除名，非伤病）——伊朗「梅西」缺席",
             "confirmed": true
           },
           {
-            "player": "Sardar Azmoun",
+            "player": "Mehdi Taremi",
             "status": "FIT",
-            "note": "与 Taremi 双前锋或轮换",
+            "note": "奥林匹亚科斯前锋，进攻唯一世界级支点，预计首发",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Ghalenoei 预选赛 10 场 10 零封，防守纪律亚洲顶级",
-          "Taremi/Azmoun 对位新西兰英冠班底防线",
-          "SoFi 人工草皮，伊朗传控略占优"
+          "伊朗基地由图森迁至蒂华纳（签证/安全），赛前跨境赴洛杉矶 SoFi",
+          "26 人名单含 17 名国内联赛球员——中东局势下国内赛事 2 月起停摆，体能/状态是隐忧",
+          "Ghalenoei 预选赛 10 场 10 零封，防守纪律仍是核心竞争力",
+          "无 Azmoun 后 Taremi + Jahanbakhsh/Ghoddos 分担进球任务"
         ],
         "star": {
           "name": "Mehdi Taremi",
@@ -1674,11 +1778,19 @@ const MATCH_DATA = {
             "desc": "面对 Taremi/Azmoun 考验极大"
           }
         ],
-        "injuries": [],
+        "injuries": [
+          {
+            "player": "Chris Wood",
+            "status": "FIT",
+            "note": "诺丁汉森林前锋，赛季末伤病疑虑已消除，队长预计首发",
+            "confirmed": true
+          }
+        ],
         "rumors": [
-          "Wood 英超支点，定位球是唯一稳定威胁",
-          "Bazeley 低位 4-4-2，大赛经验有限",
-          "大洋洲附加赛晋级，面对伊朗预计全场被动"
+          "Bazeley 4-4-2 低位，Wood 定位球 + 长传是唯一稳定威胁",
+          "大洋洲附加赛晋级，大赛经验有限，FIFA 排名 103",
+          "2003 AFC-OFC 0-3 负伊朗（非大赛），本场预计全场被动",
+          "若 0-0 进入 70' 对新西兰即是胜利；Wood 头球是最大冷门点"
         ],
         "star": {
           "name": "Chris Wood",
@@ -1738,7 +1850,7 @@ const MATCH_DATA = {
         "confidence": 74,
         "xg_home": 1.55,
         "xg_away": 0.85,
-        "key_factor": "伊朗整体实力占优，Taremi/Azmoun 对位新西兰英冠班底防线。Wood 定位球是冷门点；xG 1.55-0.85 泊松最可能 2-0/1-0。",
+        "key_factor": "伊朗整体实力占优，Taremi 领衔（Azmoun 未入选）。Wood 定位球是冷门点；xG 1.55-0.85 泊松最可能 2-0/1-0。",
         "score_dist": [
           {
             "score": "1-0",

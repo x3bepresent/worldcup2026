@@ -78,22 +78,22 @@ const PROFILES = {
     traits: ['Salah 依赖', '低位防守', '大赛经验（球员）', '定位球'],
   }),
 
-  mancini: coach('Roberto Mancini', {
-    age: 60,
-    nation: '意大利',
-    tenure: '2023年—',
-    wc_exp: '2020 欧洲杯冠军（意大利）· 2026 执教沙特',
-    style_tags: ['4-2-3-1', '低位防守', '转换', '2022 爆冷 DNA'],
-    formation_pref: '4-2-3-1 · 极端时 5-4-1',
+  mancini: coach('Georgios Donis', {
+    age: 54,
+    nation: '希腊',
+    tenure: '2025年—',
+    wc_exp: '2026 带队 · 沙特/希腊联赛经验',
+    style_tags: ['3-5-2', '低位防守', '转换', '2022 爆冷 DNA'],
+    formation_pref: '3-5-2 / 3-5-1-1 · 极端时 5-4-1',
     style_summary:
-      '2020 欧洲杯冠军主帅转投沙特，强调低位+快速转换。Al-Dawsari 左路核心，2022 对阿根廷 2–1 模板仍是信心来源。',
-    subs: { timing: '首换 60–68 分钟；落后 55\' 换前锋', pattern: '常换 Al-Shehri/Al-Buraikan 前锋；Al-Faraj 极少换下', avg_first_sub: '63\'', note: '2022 世界杯沙特换人果断' },
+      '希腊籍主帅，三中卫低位体系。Al-Dawsari/Al-Buraikan 前场双核，2022 对阿根廷 2–1 仍是心理资产，但对 Bielsa 压迫强度完全不同。',
+    subs: { timing: '首换 60–68 分钟；落后 55\' 换前锋', pattern: '常换 Al-Shehri/Al-Buraikan；Al-Faraj 极少换下', avg_first_sub: '63\'', note: '对厄瓜多尔热身 1-2 负，大赛前状态一般' },
     when_leading: { label: '4-5-1 收缩', detail: '若意外领先（对乌拉圭极低）：退守 + Al-Dawsari 反击。' },
     when_trailing: { label: '换前锋 · 定位球', detail: '先丢球：60\' 换 Al-Buraikan 加强冲击，但低位底线不变。' },
-    vs_strong: { label: '对强队：低位 + 偷分', detail: '对乌拉圭：4-5-1 低位，Al-Dawsari 速度；Bielsa 压迫下体能 60\' 后是考验。' },
+    vs_strong: { label: '对强队：低位 + 偷分', detail: '对乌拉圭：3-5-2 低位，Al-Owais 替 Al-Aqidi 一门；Bielsa 压迫下 60\' 后体能是考验。' },
     vs_weak: { label: '不适用', detail: 'H 组乌拉圭/西班牙均强于沙特。' },
-    tournament: '2020 欧洲杯冠军经验；2022 沙特爆冷阿根廷是最大心理资产。',
-    traits: ['低位防守', '转换速度', '2022 爆冷 DNA', 'Al-Dawsari 依赖'],
+    tournament: '2022 沙特爆冷阿根廷是最大心理资产；全队仅 Abdulhamid 一名海外球员。',
+    traits: ['低位防守', '三中卫', '2022 爆冷 DNA', 'Al-Dawsari 依赖'],
   }),
 
   bielsa: coach('Marcelo Bielsa', {

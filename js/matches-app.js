@@ -156,7 +156,6 @@ function mergeLiveIntoMatch(m) {
       label: finished ? '全场结束' : live.status === 'HT' ? '中场' : live.status,
       elapsed: live.elapsed,
     };
-    if (finished) copy.prediction.score = `${live.home_score}-${live.away_score}`;
   }
   copy._liveStatus = live.status;
   return copy;
@@ -362,23 +361,160 @@ function getMatchScoreDistribution(p) {
   return null;
 }
 
+function formatScoreStr(h, a) {
+  return `${h}-${a}`;
+}
+
+function getOfficialScoreStr(m) {
+  const r = m.actualResult;
+  if (!r || r.home_score == null || r.away_score == null) return null;
+  return formatScoreStr(r.home_score, r.away_score);
+}
+
+function getScoreOutcome(h, a) {
+  if (h > a) return 'home';
+  if (h < a) return 'away';
+  return 'draw';
+}
+
+function getPredictedOutcome(p) {
+  const hw = p.home_win, d = p.draw, aw = p.away_win;
+  const max = Math.max(hw, d, aw);
+  if (hw === max) return 'home';
+  if (aw === max) return 'away';
+  return 'draw';
+}
+
+const OUTCOME_CN = { home: '主胜', draw: '平局', away: '客胜' };
+
+function getPoissonTopScore(p) {
+  if (typeof computeOutcomeFromXg === 'function' && hasPoissonInputs(p)) {
+    return computeOutcomeFromXg(p.xg_home, p.xg_away).score;
+  }
+  return null;
+}
+
+function computePredictionVerdict(m) {
+  const p = m.prediction;
+  const r = m.actualResult;
+  if (!r || r.home_score == null || !['FT', 'AET', 'PEN'].includes(r.status)) return null;
+
+  const official = formatScoreStr(r.home_score, r.away_score);
+  const predScore = p?.score || '—';
+  const poissonTop = getPoissonTopScore(p);
+  const dist = getMatchScoreDistribution(p);
+  const top3 = dist ? dist.slice(0, 3) : [];
+  const officialOutcome = getScoreOutcome(r.home_score, r.away_score);
+  const predOutcome = getPredictedOutcome(p);
+
+  let dataIntegrity = 'ok';
+  let dataIntegrityNote = '预测记录完整（赛前数据未与官方赛果混写）';
+  if (poissonTop && predScore === official && predScore !== poissonTop) {
+    dataIntegrity = 'suspect';
+    dataIntegrityNote = '⚠ 预测比分与官方赛果相同，但与泊松最可能比分不一致——数据疑似被赛果覆盖，请核对';
+  } else if (poissonTop && predScore !== poissonTop && predScore !== official) {
+    dataIntegrity = 'manual';
+    dataIntegrityNote = '预测比分与泊松最可能值不同（人工设定或历史版本）';
+  }
+
+  return {
+    official,
+    predScore,
+    poissonTop,
+    scoreHit: predScore === official,
+    outcomeHit: officialOutcome === predOutcome,
+    officialOutcome,
+    predOutcome,
+    predOutcomePct: p[`${predOutcome === 'home' ? 'home_win' : predOutcome === 'away' ? 'away_win' : 'draw'}`],
+    top3: top3.map(d => ({ ...d, hit: d.score === official })),
+    anyTop3Hit: top3.some(d => d.score === official),
+    dataIntegrity,
+    dataIntegrityNote,
+  };
+}
+
+function verdictBadge(hit, hitLabel, missLabel) {
+  return hit
+    ? `<span style="font-size:0.62rem;font-weight:700;padding:0.1rem 0.45rem;border-radius:2px;background:rgba(91,191,138,0.15);color:#5BBF8A;border:1px solid rgba(91,191,138,0.35)">✓ ${hitLabel || '命中'}</span>`
+    : `<span style="font-size:0.62rem;font-weight:700;padding:0.1rem 0.45rem;border-radius:2px;background:rgba(217,95,106,0.1);color:#D95F6A;border:1px solid rgba(217,95,106,0.28)">✗ ${missLabel || '未中'}</span>`;
+}
+
+function predictionVerdictPanel(m) {
+  const v = computePredictionVerdict(m);
+  if (!v) return '';
+  const integrityColor = v.dataIntegrity === 'ok' ? '#5BBF8A' : v.dataIntegrity === 'suspect' ? '#D95F6A' : '#C8A96E';
+  const integrityIcon = v.dataIntegrity === 'ok' ? '✓' : v.dataIntegrity === 'suspect' ? '⚠' : 'ℹ';
+  return `
+    <div style="padding:1rem 1.25rem;background:linear-gradient(180deg,rgba(200,169,110,0.1) 0%,rgba(255,255,255,0.02) 100%);border-bottom:2px solid rgba(200,169,110,0.35)">
+      <div style="font-size:0.62rem;font-weight:800;letter-spacing:2.5px;color:var(--gold);margin-bottom:0.75rem;text-transform:uppercase">📋 赛果 vs 预测核验</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.65rem;margin-bottom:0.75rem">
+        <div style="padding:0.65rem 0.75rem;background:rgba(91,191,138,0.08);border:1px solid rgba(91,191,138,0.25);border-radius:4px">
+          <div style="font-size:0.58rem;letter-spacing:1px;color:#5BBF8A;margin-bottom:0.3rem;font-weight:700">官方赛果</div>
+          <div style="font-size:1.25rem;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums">${m.home.name} ${m.actualResult.home_score} — ${m.actualResult.away_score} ${m.away.name}</div>
+          <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.2rem">实际结果 · ${OUTCOME_CN[v.officialOutcome]}</div>
+        </div>
+        <div style="padding:0.65rem 0.75rem;background:rgba(200,169,110,0.08);border:1px solid rgba(200,169,110,0.25);border-radius:4px">
+          <div style="font-size:0.58rem;letter-spacing:1px;color:var(--gold);margin-bottom:0.3rem;font-weight:700">赛前预测比分</div>
+          <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">
+            <span style="font-size:1.25rem;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums">${v.predScore}</span>
+            ${verdictBadge(v.scoreHit, '比分命中', '比分未中')}
+          </div>
+          <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.2rem">泊松最可能 ${v.poissonTop || '—'} · 仅赛前冻结</div>
+        </div>
+        <div style="padding:0.65rem 0.75rem;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:4px">
+          <div style="font-size:0.58rem;letter-spacing:1px;color:var(--txt2);margin-bottom:0.3rem;font-weight:700">胜平负预测</div>
+          <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">
+            <span style="font-size:1rem;font-weight:700;color:var(--txt)">${OUTCOME_CN[v.predOutcome]} ${v.predOutcomePct}%</span>
+            ${verdictBadge(v.outcomeHit, '方向命中', '方向未中')}
+          </div>
+          <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.2rem">实际 ${OUTCOME_CN[v.officialOutcome]}</div>
+        </div>
+        <div style="padding:0.65rem 0.75rem;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:4px">
+          <div style="font-size:0.58rem;letter-spacing:1px;color:var(--txt2);margin-bottom:0.3rem;font-weight:700">概率前三比分</div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:0.25rem">
+            ${v.top3.length ? v.top3.map((d, i) => `
+              <span style="font-size:0.72rem;font-weight:700;padding:0.15rem 0.45rem;border-radius:3px;
+                background:${d.hit ? 'rgba(91,191,138,0.15)' : 'rgba(255,255,255,0.04)'};
+                color:${d.hit ? '#5BBF8A' : 'var(--txt2)'};
+                border:1px solid ${d.hit ? 'rgba(91,191,138,0.4)' : 'rgba(255,255,255,0.08)'}">
+                #${i + 1} ${d.score} ${d.prob}% ${d.hit ? '✓' : ''}
+              </span>`).join('') : '<span style="font-size:0.72rem;color:var(--txt2)">暂无 xG 分布</span>'}
+          </div>
+          ${verdictBadge(v.anyTop3Hit, 'Top3 有命中', 'Top3 均未中')}
+        </div>
+      </div>
+      <div style="font-size:0.68rem;line-height:1.55;padding:0.5rem 0.65rem;border-radius:3px;background:rgba(255,255,255,0.025);border-left:3px solid ${integrityColor};color:var(--txt2)">
+        <span style="color:${integrityColor};font-weight:700">${integrityIcon} 数据完整性</span> · ${v.dataIntegrityNote}
+      </div>
+    </div>`;
+}
+
 // ── Score Distribution ─────────────────────────────────────
-function scoreDistribution(dist) {
+function scoreDistribution(dist, opts = {}) {
   if (!dist?.length) {
     return `<div style="padding:0.65rem;background:rgba(200,169,110,0.08);border:1px solid rgba(200,169,110,0.22);border-radius:4px;font-size:0.72rem;color:var(--gold);line-height:1.55">
       暂无 xG 数据，无法推算比分概率分布。
     </div>`;
   }
   const max = Math.max(...dist.map(d => d.prob));
+  const official = opts.officialScore;
+  const showHits = !!official;
   return `<div style="display:flex;flex-wrap:wrap;gap:0.4rem">
-    ${dist.map(d => `
-      <div style="text-align:center;min-width:52px">
-        <div style="font-size:0.7rem;font-weight:700;color:${d.prob===max?'var(--gold)':'var(--txt2)'}">
-          ${d.score}
+    ${dist.map((d, i) => {
+      const hit = showHits && d.score === official;
+      const isTop3 = i < 3;
+      return `
+      <div style="text-align:center;min-width:52px;padding:0.25rem 0.15rem;border-radius:4px;
+        border:1px solid ${hit ? 'rgba(91,191,138,0.5)' : isTop3 && showHits ? 'rgba(200,169,110,0.25)' : 'transparent'};
+        background:${hit ? 'rgba(91,191,138,0.1)' : 'transparent'}">
+        <div style="font-size:0.58rem;color:var(--txt2);margin-bottom:1px">${isTop3 ? `#${i + 1}` : ''}</div>
+        <div style="font-size:0.7rem;font-weight:700;color:${hit ? '#5BBF8A' : d.prob===max?'var(--gold)':'var(--txt2)'}">
+          ${d.score}${hit ? ' ✓' : ''}
         </div>
-        <div style="height:${Math.round(d.prob/max*50)+8}px;background:${d.prob===max?'var(--gold)':'rgba(255,255,255,0.1)'};border-radius:2px 2px 0 0;margin-top:2px;transition:height 0.5s"></div>
+        <div style="height:${Math.round(d.prob/max*50)+8}px;background:${hit ? '#5BBF8A' : d.prob===max?'var(--gold)':'rgba(255,255,255,0.1)'};border-radius:2px 2px 0 0;margin-top:2px;transition:height 0.5s"></div>
         <div style="font-size:0.65rem;color:var(--txt2)">${d.prob}%</div>
-      </div>`).join('')}
+      </div>`;
+    }).join('')}
   </div>`;
 }
 
@@ -558,10 +694,13 @@ function upsetAlertPanel(ua) {
 
 /** 右侧第2行：综合推演关键因素 + 其下方的比分概率分布（同一格内堆叠） */
 function renderRightAnalysisPanel(p, m) {
+  const finished = m.actualResult && ['FT', 'AET', 'PEN'].includes(m.actualResult.status);
+  const officialScore = finished ? getOfficialScoreStr(m) : null;
+  const verdict = finished ? computePredictionVerdict(m) : null;
   return `
       <div class="mf-panel mf-panel-right-stack">
         <div class="mf-panel-label">🔑 综合推演关键因素</div>
-        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">模型判断本场走势的重要变量 — 已纳入上方胜率娱乐推演</div>
+        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">模型判断本场走势的重要变量 — 已纳入上方胜率娱乐推演${finished ? ' · 下方为<strong style="color:var(--gold)">赛前</strong>泊松分布，与官方赛果对照' : ''}</div>
         <div style="display:flex;gap:0.5rem;font-size:0.75rem;line-height:1.6;padding:0.4rem;
           background:rgba(255,255,255,0.03);border-radius:3px;border-left:2px solid var(--gold);margin-bottom:1.25rem">
           <span style="color:var(--gold);font-weight:700;flex-shrink:0">→</span>
@@ -571,8 +710,9 @@ function renderRightAnalysisPanel(p, m) {
         <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">
           由本场 xG（<strong style="color:var(--cyan)">${p.xg_home ?? '—'}</strong> — <strong style="color:var(--red)">${p.xg_away ?? '—'}</strong>）对 <strong style="color:var(--txt)">0-0 至 5-5</strong> 共 36 种比分做独立泊松推演，实时计算、不存手写概率；展示 Top <strong style="color:var(--txt)">5</strong>。<br>
           上方胜平负为综合模型（含主场、伤病等），与此处 xG 泊松比分分布为不同口径。
+          ${finished && verdict ? `<br><strong style="color:${verdict.anyTop3Hit ? '#5BBF8A' : '#D95F6A'}">官方 ${officialScore} · Top3 ${verdict.anyTop3Hit ? '有命中' : '均未中'}</strong>` : ''}
         </div>
-        ${scoreDistribution(getMatchScoreDistribution(p))}
+        ${scoreDistribution(getMatchScoreDistribution(p), { officialScore })}
         ${poissonScoreFootnote(p)}
         <div style="margin-top:1.25rem">
           <div style="font-size:0.62rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt2);margin-bottom:0.5rem">📋 ${m.home.name} 近5场战绩</div>
@@ -687,6 +827,7 @@ function renderMatch(m) {
   return `
   <div class="match-full-card fade-in">
     ${resultBanner(m)}
+    ${predictionVerdictPanel(m)}
     ${pendingBanner(m)}
     <!-- MATCH HEADER -->
     <div class="mf-header">
@@ -727,10 +868,10 @@ function renderMatch(m) {
         <div class="play-note" style="margin-top:0.35rem">${MODEL_TAGLINE}</div>
         <div class="play-note">模型推演胜率 · ${PLAY_NOTE_STD}</div>
         <div style="margin-top:0.75rem;text-align:center">
-          <div style="font-size:0.6rem;letter-spacing:2px;color:var(--txt2);text-transform:uppercase;margin-bottom:0.25rem">${finished ? '最终比分' : '娱乐推演比分'}</div>
+          <div style="font-size:0.6rem;letter-spacing:2px;color:var(--txt2);text-transform:uppercase;margin-bottom:0.25rem">${finished ? '赛前预测比分' : '娱乐推演比分'}</div>
           <div style="font-size:2rem;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums">${p.score}</div>
           <div class="play-note">${MODEL_TAGLINE}</div>
-          <div class="play-note">${finished ? '比赛已结束 · 上方为官方赛果' : PLAY_NOTE_STD}</div>
+          <div class="play-note">${finished ? '官方赛果见上方绿条 · 此处为赛前模型预测，不会被赛果覆盖' : PLAY_NOTE_STD}</div>
           <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.35rem" title="xG（期望进球数）= 根据射门位置、角度、质量统计出的理论进球数，反映攻击质量而非实际比分">期望进球 xG：<strong style="color:var(--cyan)">${p.xg_home}</strong> — <strong style="color:var(--red)">${p.xg_away}</strong> <span style="opacity:.45;font-size:0.55rem">ⓘ</span></div>
           <div style="font-size:0.62rem;color:var(--txt2);margin-top:0.2rem">推演置信度（娱乐参考）：<strong style="color:${p.confidence>=80?'#5BBF8A':p.confidence>=60?'#C8A96E':'#ff8855'}">${p.confidence}%</strong></div>
           ${m.upset_alert ? (() => {
