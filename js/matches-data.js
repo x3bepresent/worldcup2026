@@ -1,8 +1,8 @@
-// 今日赛事 — Day 4 preview
-// Last updated: 2026-06-15T22:00:00+08:00
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-15T04:14:27.494Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-15T22:00:00+08:00",
-  "syncSource": "FIFA + Yahoo/Sportskeeda + Sports Mole · Day 4 lineups",
+  "lastUpdated": "2026-06-15T04:14:27.493Z",
+  "syncSource": "API-Football",
   "breakingNews": [
     {
       "tag": "LINEUP",
