@@ -1,8 +1,8 @@
-// 今日赛事 — Day 5 (official sync)
-// Last updated: 2026-06-16T01:00:00+08:00
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-15T18:20:29.858Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-16T01:00:00+08:00",
-  "syncSource": "FIFA 官方首发 + 赛前 team sheet · BBC / FotMob / The Standard",
+  "lastUpdated": "2026-06-15T18:20:29.857Z",
+  "syncSource": "API-Football",
   "breakingNews": [
     {
       "tag": "LINEUP",
