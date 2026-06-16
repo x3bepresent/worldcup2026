@@ -1,8 +1,8 @@
-// 今日赛事 — Day 5 (lineup sync)
-// Last updated: 2026-06-16T06:30:00+08:00
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-16T04:04:05.351Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-16T06:30:00+08:00",
-  "syncSource": "FIFA / FotMob 官方或最新预测阵容 · 2026-06-16",
+  "lastUpdated": "2026-06-16T04:04:05.351Z",
+  "syncSource": "API-Football",
   "breakingNews": [
     {
       "tag": "OFFICIAL",
