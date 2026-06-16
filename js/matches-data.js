@@ -1,503 +1,503 @@
-// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
-// Last API sync: 2026-06-16T10:49:10.587Z
+// 今日赛事 — Day 6 (signals enriched)
+// Last updated: 2026-06-17T22:00:00+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-16T10:49:10.587Z",
-  "syncSource": "API-Football",
+  "lastUpdated": "2026-06-17T22:00:00+08:00",
+  "syncSource": "FIFA 赛程 · Day 6 完整推演 · coach/mystic/referee/weather · 推演概要+小组形势",
   "breakingNews": [
     {
+      "tag": "UPDATE",
+      "text": "📊 推演升级：模型概要 + 小组形势/晋级路径已纳入今日赛事",
+      "time": "模型"
+    },
+    {
+      "tag": "PREVIEW",
+      "text": "📅 今日4场 · 法国-塞内加尔(03:00) · 伊拉克-挪威(06:00) · 阿根廷-阿尔及利亚(09:00) · 奥地利-约旦(12:00)",
+      "time": "6月17日"
+    },
+    {
+      "tag": "PREVIEW",
+      "text": "I/J组揭幕：Mbappé vs Mané · Haaland · Messi 最后一届 · Rangnick 压迫",
+      "time": "焦点"
+    },
+    {
       "tag": "OFFICIAL",
-      "text": "🏁 西班牙 0-0 佛得角 · Vozinha 9.0 零封爆冷 · xG 2.29-0.29 · Yamal 71' 替补",
-      "time": "赛果"
-    },
-    {
-      "tag": "LINEUP",
-      "text": "✅ 官方首发 · 比利时 v 埃及：De Bruyne 队长 · De Ketelaere 伪9 · Salah 生日战",
-      "time": "官方确认"
-    },
-    {
-      "tag": "LINEUP",
-      "text": "📋 最新预测 · 沙特-乌拉圭：Muslera · Cáceres/Olivera 中卫 · Al-Owais 一门",
-      "time": "FotMob"
-    },
-    {
-      "tag": "LINEUP",
-      "text": "📋 最新预测 · 伊朗-新西兰：Taremi+Ghayedi · Wood 队长 · Crocombe 一门",
-      "time": "FotMob"
+      "text": "🏁 昨日四场全平 · G/H组均1分 · 详见「过往赛果」",
+      "time": "赛果回顾"
     },
     {
       "tag": "INJURY",
-      "text": "乌拉圭：Araújo + De Arrascaeta OUT · Giménez OUT · 比利时 Debast OUT",
+      "text": "Messi 负荷管理 · Haaland 肩伤疑云 · Alaba 复出 · Mané 状态正佳",
       "time": "伤情"
     },
     {
       "tag": "REFEREE",
-      "text": "✅ Makhadmeh · Abatti · Mariani · Ramos",
+      "text": "✅ FIFA 确认：Faghani(法-塞) · Atcho(伊-挪) · Marciniak(阿-阿) · Beida(奥-约)",
       "time": "裁判"
     },
     {
-      "tag": "PREVIEW",
-      "text": "📅 比-埃(03:00) · 沙-乌(06:00) · 伊-新(09:00) 待赛",
-      "time": "6月16日"
+      "tag": "UPDATE",
+      "text": "灵力/五行/主教练/气候板块已更新至 Day 6 完整版",
+      "time": "站点"
     }
   ],
   "todayMatches": [
     {
-      "id": "m14",
-      "group": "H",
+      "id": "m17",
+      "group": "I",
       "matchday": 1,
-      "date": "2026-06-15",
-      "time": "12:00",
-      "time_local": "12:00 ET",
+      "date": "2026-06-16",
+      "time": "15:00",
+      "time_local": "15:00 ET",
       "timezone": "EDT (UTC-4)",
-      "time_beijing": "00:00",
-      "date_beijing": "6月16日",
-      "time_beijing_full": "北京时间 6月16日 00:00",
-      "venue": "Mercedes-Benz Stadium",
-      "city": "Atlanta, USA",
-      "note": "H组揭幕 · 西班牙 0-0 佛得角 · 已结束",
+      "time_beijing": "03:00",
+      "date_beijing": "6月17日",
+      "time_beijing_full": "北京时间 6月17日 03:00",
+      "venue": "MetLife Stadium",
+      "city": "East Rutherford, USA",
+      "note": "I组揭幕 · 法国 vs 塞内加尔 · 纽约/新泽西",
       "lineup": {
-        "confirmed": true,
-        "formation": "4-3-3 / 4-1-4-1",
-        "home": "Simón; Llorente, Cubarsí, Laporte, Cucurella; Fabian Ruiz, Rodri (C), Pedri; Ferran Torres, Oyarzabal, Gavi",
-        "away": "Vozinha; Moreira, Roberto Lopes, Borges, Cabral; Pina; Mendes (C), Duarte, Monteiro, J. Cabral; Livramento",
-        "note": "✅ FIFA 官方首发已确认 · 全场 0-0（FotMob / BBC）",
+        "confirmed": false,
+        "formation": null,
+        "home": "等待官方确认",
+        "away": "等待官方确认",
+        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
         "predicted": {
-          "formation": "4-3-3 / 4-4-2",
-          "home": "Simón; García, Cubarsi, Laporte, Cucurella; Ruiz, Rodri, Pedri; Baena, Oyarzabal, Ferran Torres",
-          "away": "Vozinha; Stopira, Monteiro, Cabral; Duarte, Semedo, Tavares; Lopes, Borges, Cabral; Platini",
-          "source": "ESPN / FotMob 赛前预测 · 非官方"
-        },
-        "diff": {
-          "home": "⚠️ 实际为 4-3-3：Gavi 首发（非 Yamal）· Yamal 71'、Nico Williams 87' 替补 · Fabian Ruiz 71' 被 Merino 换下",
-          "away": "⚠️ Roberto Lopes 首发中卫（非 Stopira）· 4-1-4-1 低位 · Vozinha 9.0 评分零封"
-        },
-        "updated": "2026-06-16T06:30:00+08:00"
+          "formation": "4-3-3 / 4-3-3",
+          "home": "Maignan; Koundé, Saliba, Upamecano, Hernandez; Tchouaméni, Kanté, Camavinga; Dembélé, Mbappé, Thuram",
+          "away": "Diouf; Sabaly, Koulibaly, Diallo, Mendy; Gueye, Ndiaye; Mané, Jackson, Sarr",
+          "source": "ESPN / L'Équipe 预测 · 非官方"
+        }
       },
       "home": {
-        "name": "Spain",
-        "iso": "es",
+        "name": "France",
+        "iso": "fr",
         "flag": "",
         "fifa_rank": 3,
-        "rating": 88,
+        "rating": 91,
         "form": [
           "W",
           "W",
-          "D",
           "W",
+          "D",
           "W"
         ],
-        "coach": "Luis de la Fuente",
+        "coach": "Didier Deschamps",
         "stars": [
           {
-            "name": "Pedri",
-            "pos": "CM",
-            "club": "Barcelona",
-            "stats": "8.6 全场最佳",
-            "rating": 8.6,
-            "desc": "0-0 僵局中最佳球员"
+            "name": "Kylian Mbappé",
+            "pos": "ST",
+            "club": "Real Madrid",
+            "stats": "国家队 80+ 球",
+            "rating": 9.2,
+            "desc": "I组揭幕核心，速度与终结"
           },
           {
-            "name": "Rodri",
-            "pos": "DM",
-            "club": "Man City",
-            "stats": "队长 · 7.9",
-            "rating": 7.9,
-            "desc": "87' 被 Nico Williams 换下"
+            "name": "William Saliba",
+            "pos": "CB",
+            "club": "Arsenal",
+            "stats": "英超最佳中卫之一",
+            "rating": 8.8,
+            "desc": "防空+出球，Deschamps 防线新核"
           },
           {
-            "name": "Lamine Yamal",
+            "name": "Ousmane Dembélé",
             "pos": "RW",
-            "club": "Barcelona",
-            "stats": "71' 替补 · 6.4",
-            "rating": 9,
-            "desc": "世界杯首秀替补登场"
+            "club": "PSG",
+            "stats": "欧洲杯后状态正佳",
+            "rating": 8.6,
+            "desc": "右路内切+助攻，肋部渗透关键"
           }
         ],
         "injuries": [
           {
-            "player": "Fermín López",
-            "status": "OUT",
-            "note": "5 月对贝蒂斯右脚骨折，已手术，缺席整届世界杯（约 3 个月）",
-            "confirmed": true
-          },
-          {
-            "player": "Lamine Yamal",
-            "status": "DOUBT",
-            "note": "大腿二级撕裂已愈，de la Fuente 确认可出场但**本场不首发**——替补待命，世界杯首秀从替补席开始",
-            "confirmed": true
-          },
-          {
-            "player": "Nico Williams",
-            "status": "DOUBT",
-            "note": "5 月 10 日后未出场（轻微腿筋），已恢复训练但 de la Fuente 确认**本场不首发**",
-            "confirmed": true
-          },
-          {
-            "player": "Víctor Muñoz",
-            "status": "DOUBT",
-            "note": "小腿伤愈，仅适合替补出场（de la Fuente 赛前确认）",
-            "confirmed": true
-          },
-          {
-            "player": "Fabián Ruiz",
+            "player": "N'Golo Kanté",
             "status": "FIT",
-            "note": "FIFA 官方首发确认 · 与 Rodri/Pedri/Gavi 搭档中场",
+            "note": "沙特联赛后状态回升，预计与 Tchouaméni 双闸",
             "confirmed": true
           },
           {
-            "player": "Pedri",
+            "player": "Kylian Mbappé",
             "status": "FIT",
-            "note": "预计与 Rodri/Zubimendi 搭档中场，欧洲杯后负荷管理完毕",
+            "note": "皇马赛季末负荷管理完毕，I 组揭幕预计首发",
+            "confirmed": true
+          },
+          {
+            "player": "Antoine Griezmann",
+            "status": "DOUBT",
+            "note": "训练负荷管理，Thuram 更可能首发中锋",
+            "confirmed": false
+          },
+          {
+            "player": "William Saliba",
+            "status": "FIT",
+            "note": "阿森纳赛季末无新增伤情，中卫核心",
             "confirmed": true
           }
         ],
         "rumors": [
-          "✅ 官方：Yamal/Williams 替补 · Rodri 队长 · Gavi+Torres+Oyarzabal 领衔",
-          "Cucurella 赛前确认 £51.8m 加盟皇马 · Marc Cucurella 仍首发本场",
-          "Morata、Carvajal、Le Normand 等欧洲杯主力未入选；Cubarsi/Laporte 防线成核心",
-          "Yamal/Williams 60' 后或成破局后手 · 替补席含 Baena、Yamal、Williams、Olmo"
+          "【更衣室】Deschamps 强调「I 组必须开门红」，Mbappé 队长袖标无争议，更衣室团结度极高",
+          "【战术】4-3-3：Mbappé 中锋 + Dembélé 右路，Saliba/Upamecano 中卫组合",
+          "对塞内加尔尊重 Mané 转换速度，Koundé 对位是关键",
+          "Griezmann 若替补，65' 后可能换上图拉姆加强肋部"
         ],
         "star": {
-          "name": "Lamine Yamal",
-          "pos": "RW",
-          "club": "Barcelona",
-          "desc": "世界杯首秀，右路破局关键",
-          "rating": 9
+          "name": "Kylian Mbappé",
+          "pos": "ST",
+          "desc": "对位 Koulibaly 速度是破局点",
+          "rating": 9.2
         }
       },
       "away": {
-        "name": "Cape Verde",
-        "iso": "cv",
+        "name": "Senegal",
+        "iso": "sn",
         "flag": "",
-        "fifa_rank": 65,
-        "rating": 62,
+        "fifa_rank": 20,
+        "rating": 77,
         "form": [
+          "W",
           "D",
           "W",
-          "L",
           "W",
           "D"
         ],
-        "coach": "Bubista",
+        "coach": "Aliou Cissé",
         "stars": [
           {
-            "name": "Ryan Mendes",
+            "name": "Sadio Mané",
             "pos": "LW",
-            "club": "Al-Taawoun",
-            "stats": "100+ caps",
-            "rating": 7.2,
-            "desc": "经验边锋，反击速度点"
+            "club": "Al-Nassr",
+            "stats": "非洲杯冠军队长",
+            "rating": 8.5,
+            "desc": "反击发起点，对位 Koundé 是冷门关键"
           },
           {
-            "name": "Júlio Tavares",
-            "pos": "ST",
-            "club": "Al-Fayha",
-            "stats": "锋线支点",
-            "rating": 7,
-            "desc": "定位球与背身是少数威胁"
-          },
-          {
-            "name": "Stopira",
+            "name": "Kalidou Koulibaly",
             "pos": "CB",
-            "club": "Basaksehir",
-            "stats": "防线领袖",
-            "rating": 6.9,
-            "desc": "低位防守组织核心"
+            "club": "Al-Hilal",
+            "stats": "100+ caps",
+            "rating": 8,
+            "desc": "低位防守领袖，防空 Mbappé"
+          },
+          {
+            "name": "Nicolas Jackson",
+            "pos": "ST",
+            "club": "Chelsea",
+            "stats": "英超速度型中锋",
+            "rating": 7.8,
+            "desc": "转换支点，利用法国压上身后"
           }
         ],
         "injuries": [
           {
-            "player": "Logan Costa",
+            "player": "Sadio Mané",
             "status": "FIT",
-            "note": "比利亚雷亚尔中卫，ACL 赛季几乎报销后已恢复，预计**首发**——H 组防线最大牌",
+            "note": "沙特联赛状态正佳，队长预计首发",
+            "confirmed": true
+          },
+          {
+            "player": "Kalidou Koulibaly",
+            "status": "FIT",
+            "note": "防线领袖，防空 Mbappé 是关键",
+            "confirmed": true
+          },
+          {
+            "player": "Nicolas Jackson",
+            "status": "FIT",
+            "note": "切尔西赛季末无新增伤情",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Bubista 4-4-2/4-2-3-1 低位是世界杯新军唯一选择，控球率或低于 35%",
-          "历史首次晋级世界杯（附加赛击败喀麦隆），Logan Costa + Stopira 防空是关键",
-          "Ryan Mendes 经验边锋是反击发起点，定位球偷分是现实目标",
-          "H 组另两对手乌拉圭/西班牙均强于佛得角，本场目标少丢当赢"
+          "【更衣室】2021 非洲杯冠军班底仍在，Cissé 赛前称「无心理阴影，2022 友谊赛已是过去」",
+          "【战术】4-5-1 低位 + Mané/Jackson 转换，2021 非洲杯冠军 DNA",
+          "Mané/Jackson 速度对位法国压上身后是冷门唯一路径",
+          "若意外领先，60' 后可能五后卫收缩"
         ],
         "star": {
-          "name": "Ryan Mendes",
+          "name": "Sadio Mané",
           "pos": "LW",
-          "desc": "反击发起点，对位 Carvajal 难度极大",
-          "rating": 7.2
+          "desc": "一人球队核心，反击是唯一变数",
+          "rating": 8.5
         }
       },
       "h2h": {
-        "home_wins": 0,
+        "home_wins": 2,
         "draws": 0,
         "away_wins": 0,
-        "recent": [],
-        "note": "无正式交锋 · 佛得角世界杯首秀"
+        "recent": [
+          {
+            "year": 2022,
+            "comp": "友谊赛",
+            "score": "5-1",
+            "winner": "France"
+          }
+        ],
+        "note": "法国历史占优"
       },
       "referee": {
         "confirmed": true,
         "pending": false,
-        "source": "FIFA · Match officials · 2026-06-15/16",
-        "name": "Adham Makhadmeh",
-        "nation": "Jordan",
-        "iso": "jo",
-        "age": 39,
-        "wc_experience": "2026 世界杯首秀主裁 · AFC 精英裁判",
-        "avg_yellow": 4.2,
-        "avg_red": 0.1,
-        "avg_penalty": 0.3,
-        "home_win_rate": 52,
-        "bias_index": 51,
-        "bias_note": "约旦籍 FIFA 精英裁判，2026 世界杯首秀。出牌适中，对身体对抗容忍度中等；西班牙控球局黄牌或偏少，但对拖延战术仍会警告。",
+        "source": "FIFA · Match officials · 2026-06-16/17",
+        "name": "Alireza Faghani",
+        "nation": "Australia",
+        "iso": "au",
+        "age": 42,
+        "wc_experience": "2014 · 2018 · 2022 · 2026 — 四届世界杯执法（历史首例）",
+        "avg_yellow": 4.1,
+        "avg_red": 0.14,
+        "avg_penalty": 0.28,
+        "home_win_rate": 49,
+        "bias_index": 50,
+        "bias_note": "澳籍顶级裁判，四届世界杯经验。对身体对抗容忍度中等，对拖延战术判罚果断；Mbappé/Mané 禁区内对抗与 Koulibaly 防空犯规是焦点。",
         "tendencies": [
-          "AFC 55+ 亚冠执法经验，大赛首秀预计按 FIFA 标准执法",
-          "西班牙传控 vs 低位防守，预计 3-4 张黄牌（佛得角战术犯规为主）",
-          "VAR 组赛前随 FIFA 官方名单公布"
+          "澳籍助理裁判组：George Lakrindis、James Lindsay",
+          "第四官员 Sandro Schärer（瑞士）",
+          "VAR Abdullah Al-Shehri（沙特）· AVAR Armando Villarreal · SVAR Tatiana Guzman",
+          "I 组揭幕战预计 4–5 张黄牌，点球尺度相对明确"
         ],
         "officials": {
-          "ar1": "Ahmad Al-Rawashdeh (JOR)",
-          "ar2": "Mohammad Al-Abdullah (JOR)",
-          "fourth": "TBD (FIFA)",
-          "var": "TBD (FIFA)",
-          "avar": "TBD (FIFA)",
-          "svar": "TBD (FIFA)"
+          "ar1": "George Lakrindis (AUS)",
+          "ar2": "James Lindsay (AUS)",
+          "fourth": "Sandro Schärer (SUI)",
+          "var": "Abdullah Al-Shehri (KSA)",
+          "avar": "Armando Villarreal (USA)",
+          "svar": "Tatiana Guzman (NCA)"
         }
       },
       "prediction": {
-        "home_win": 78,
-        "draw": 15,
-        "away_win": 7,
+        "home_win": 63,
+        "draw": 20,
+        "away_win": 17,
         "score": "2-0",
-        "confidence": 85,
-        "xg_home": 2.45,
-        "xg_away": 0.55,
-        "key_factor": "【赛后复盘】赛前主胜78%/最可能2-0；实际0-0。xG 2.29 未能转化，Vozinho/Vozinha 零封爆冷；Yamal 71' 替补未能破局。方向：平局命中（15%）；比分未中。",
+        "confidence": 68,
+        "xg_home": 2.3,
+        "xg_away": 0.9,
+        "key_factor": "I组焦点：Mbappé vs Mané，法国深度碾压但塞内加尔 2021 非洲杯冠军身体+转换是冷门点；xG 2.3-0.9 泊松最可能 2-0",
         "score_dist": [
           {
             "score": "2-0",
-            "prob": 14.9
-          },
-          {
-            "score": "3-0",
-            "prob": 12.2
-          },
-          {
-            "score": "1-0",
-            "prob": 12.2
+            "prob": 10.8
           },
           {
             "score": "2-1",
-            "prob": 8.2
+            "prob": 9.7
           },
           {
-            "score": "4-0",
-            "prob": 7.5
-          },
-          {
-            "score": "3-1",
-            "prob": 6.7
+            "score": "1-0",
+            "prob": 9.4
           },
           {
             "score": "1-1",
-            "prob": 6.7
+            "prob": 8.4
+          },
+          {
+            "score": "3-0",
+            "prob": 8.3
+          },
+          {
+            "score": "3-1",
+            "prob": 7.4
+          },
+          {
+            "score": "4-0",
+            "prob": 4.8
           }
-        ]
+        ],
+        "base_home_win": 68,
+        "base_draw": 19,
+        "base_away_win": 14,
+        "depth_calibrated": true
       },
       "upset_alert": {
-        "favorite": "Spain",
-        "underdog": "Cape Verde",
-        "favorite_iso": "ES",
-        "index": 12,
-        "level": "LOW",
-        "level_cn": "极低",
-        "cold_result_pct": 10,
-        "verdict": "四场中爆冷风险最低——欧洲杯冠军 vs 世界杯新军，xG 2.45-0.55 碾压。",
-        "tactical": "Bubista 4-4-2 五后卫压缩肋部；Mendes 速度对位 Carvajal 是唯一反击点。",
-        "psychology": "西班牙大赛心理已验证；佛得角首秀易紧张，先丢球后难维持 90 分钟纪律。",
-        "historical": "无正式交锋；非洲杯黑马基因不足以对西班牙构成实质威胁。",
+        "favorite": "France",
+        "underdog": "Senegal",
+        "favorite_iso": "FR",
+        "index": 32,
+        "level": "MEDIUM",
+        "level_cn": "中等",
+        "cold_result_pct": 38,
+        "verdict": "塞内加尔 2021 非洲杯冠军有爆冷 DNA——Mané/Jackson 速度对位法国压上身后，平局有 24% 空间。",
+        "tactical": "Cissé 4-3-3 低位 + 转换；Deschamps 4-3-3 控球，Mbappé 肋部 vs Koulibaly 是核心对位。",
+        "psychology": "法国大赛底蕴深厚；塞内加尔 2022 世界杯出局后重建，Mané 大赛经验是资产。",
+        "historical": "2022 友谊赛法国 5-1；但 2002 塞内加尔曾爆冷法国（非本届阵容）。",
         "factors": [
           {
-            "tag": "实力差",
+            "tag": "核心球员",
             "impact": "强",
-            "detail": "xG 差 1.9+，西班牙替补深度仍可扩大比分"
+            "detail": "Mbappé vs Mané 决定上限"
           },
           {
-            "tag": "克制",
-            "impact": "弱",
-            "detail": "佛得角低位可延缓失球，缺乏持续反击体系"
+            "tag": "转换",
+            "impact": "中",
+            "detail": "塞内加尔 Jackson 速度是法国压上后的威胁"
           },
           {
-            "tag": "心理",
-            "impact": "弱",
-            "detail": "西班牙容错高，佛得角易犯规送定位球"
+            "tag": "深度",
+            "impact": "强",
+            "detail": "法国替补深度碾压，60' 后差距扩大"
           }
         ]
       },
       "coach_analysis": {
         "home": {
-          "name": "Luis de la Fuente",
-          "age": 63,
-          "nation": "西班牙",
-          "tenure": "2022年—",
-          "wc_exp": "2024 欧洲杯冠军 · 2026 带队",
+          "name": "Didier Deschamps",
+          "age": 56,
+          "nation": "法国",
+          "tenure": "2012年—",
+          "wc_exp": "2018 世界杯冠军 · 2022 决赛",
           "style_tags": [
             "4-3-3",
-            "传控",
-            "肋部渗透",
-            "Yamal 宽度"
+            "Mbappé 核心",
+            "控球",
+            "深度轮换"
           ],
-          "formation_pref": "4-3-3 · 必要时 4-2-3-1",
-          "style_summary": "欧洲杯冠军班底，Pedri 节拍 + Yamal/Williams 双翼宽度。de la Fuente 强调控球主导与高位线协同，对弱队不留余地但会 3–0 后轮换。",
+          "formation_pref": "4-3-3 · Tchouaméni/Kanté 双闸",
+          "style_summary": "2018 冠军班底延续，Mbappé 速度+Saliba 防线新核。I 组揭幕必须开门红，对塞内加尔预计全场压制。",
           "subs": {
-            "timing": "首换 60–65 分钟；3 球领先 55' 起轮换",
-            "pattern": "常换 Olmo/Oyarzabal 互替；70' 换 Zubimendi 控场",
+            "timing": "首换 60–65 分钟",
+            "pattern": "常换 Thuram/Griezmann；领先 2 球+ 轮换",
             "avg_first_sub": "62'",
-            "note": "欧洲杯期间轮换合理，大赛经验足"
+            "note": "大赛经验顶级"
           },
           "when_leading": {
             "label": "控节奏 · 适度轮换",
-            "detail": "2 球+：60' 换 Yamal 保体能，仍维持 4-3-3 宽度，不会彻底收手。"
+            "detail": "2 球+：65' 轮换但维持宽度。"
           },
           "when_trailing": {
-            "label": "加边锋 · 堆前场",
-            "detail": "先丢球：55' 换 Morata/额外边锋，肋部渗透加码。"
+            "label": "堆边锋 · 肋部渗透",
+            "detail": "先丢球：55' 换进攻手，Mbappé 肋部加码。"
           },
           "vs_strong": {
-            "label": "对强队：传控对攻",
-            "detail": "对德国/法国级仍坚持控球，但肋部保护加强。"
+            "label": "对强队：对攻",
+            "detail": "对巴西/阿根廷级高位对攻。"
           },
           "vs_weak": {
-            "label": "对弱队：全场压制",
-            "detail": "对佛得角预计 70%+ 控球，Yamal 右路是破局核心，3–0 后仍主攻但 65' 轮换。"
+            "label": "对弱队：不留余地",
+            "detail": "对塞内加尔仍尊重，但 xG 2.3+ 预计压制。"
           },
-          "tournament": "2024 欧洲杯冠军，大赛心理硬度已验证；H 组揭幕战必须开门红。",
+          "tournament": "三届大赛主帅，心理硬度已验证。",
           "traits": [
-            "传控主导",
-            "轮换合理",
-            "对弱队不留余地",
-            "Yamal 依赖"
+            "Mbappé 依赖",
+            "深度碾压",
+            "大赛经验",
+            "轮换合理"
           ],
-          "match_note": "H 组揭幕必须开门红——预计最强 XI，Yamal 右路；3–0 后 65' 轮换但维持宽度。"
+          "match_note": "I 组揭幕必须开门红——Mbappé 肋部+Dembele 宽度；2–0 后 65' 轮换。"
         },
         "away": {
-          "name": "Bubista",
-          "age": 48,
-          "nation": "佛得角",
-          "tenure": "2020年—",
-          "wc_exp": "2026 带队 · 2023 非洲杯八强",
+          "name": "Aliou Cissé",
+          "age": 49,
+          "nation": "塞内加尔",
+          "tenure": "2015年—",
+          "wc_exp": "2022 八强 · 2021 非洲杯冠军",
           "style_tags": [
-            "4-4-2",
-            "低位防守",
-            "反击",
-            "定位球"
+            "4-3-3",
+            "Mané 核心",
+            "转换",
+            "身体对抗"
           ],
-          "formation_pref": "4-4-2 · 领先时 5-4-1",
-          "style_summary": "2023 非洲杯八强黑马主帅，世界杯首秀必然低位。五后卫/四中场压缩，Mendes 反击 + 定位球是唯一威胁。",
+          "formation_pref": "4-3-3 · Koulibaly 防线",
+          "style_summary": "2021 非洲杯冠军主帅，Mané/Jackson 转换是冷门唯一路径。对法国预计 4-5-1 低位。",
           "subs": {
-            "timing": "首换 65–75 分钟；落后 60' 换前锋",
-            "pattern": "单换边锋或前锋；很少早换",
-            "avg_first_sub": "70'",
-            "note": "弱队体能分配优先，换人偏晚"
+            "timing": "首换 65–70 分钟",
+            "pattern": "Mané 极少被换下",
+            "avg_first_sub": "68'",
+            "note": "大赛经验足"
           },
           "when_leading": {
-            "label": "5-4-1 铁桶",
-            "detail": "若意外领先：立即退守，耗到终场。"
+            "label": "4-5-1 收缩",
+            "detail": "若意外领先：退守+Mané 反击。"
           },
           "when_trailing": {
-            "label": "维持低位",
-            "detail": "先丢球 unlikely 大举压上——更可能换一名前锋加强定位球。"
+            "label": "Mané 单核",
+            "detail": "先丢球：60' 换 Jackson 加强冲击。"
           },
           "vs_strong": {
-            "label": "对强队：龟缩",
-            "detail": "本场对西班牙是教科书弱队踢法：前 30 分钟零封是胜利。"
+            "label": "对强队：龟缩+转换",
+            "detail": "对法国：低位+Mané 速度。"
           },
           "vs_weak": {
-            "label": "不适用",
-            "detail": "世界杯 H 组无弱于佛得角的对手。"
+            "label": "对弱队：相对开放",
+            "detail": "对伊拉克会压上。"
           },
-          "tournament": "非洲杯黑马经验，大赛首秀球员心理是最大变量。",
+          "tournament": "2022 八强经验，Mané 大赛大场面不可低估。",
           "traits": [
-            "防守纪律",
-            "换人极晚",
-            "定位球",
-            "反击速度"
+            "Mané 依赖",
+            "转换速度",
+            "低位防守",
+            "非洲杯 DNA"
           ],
-          "match_note": "4-4-2 低位守前 30 分钟，Mendes 反击 + 定位球偷分；0–2 后 70' 才可能改三前锋。"
+          "match_note": "4-5-1 低位+Mané/Jackson 转换；守 0–1 负可接受，0–0 进入 70' 即是胜利。"
         }
       },
       "weather": {
-        "city": "亚特兰大",
+        "city": "纽约/新泽西",
         "country": "美国",
-        "venue": "Mercedes-Benz Stadium",
-        "temp": 28,
-        "humidity": 62,
-        "altitude_m": 320,
-        "rain_chance": 20,
+        "venue": "MetLife Stadium",
+        "temp": 26,
+        "humidity": 58,
+        "altitude_m": 10,
+        "rain_chance": 25,
         "wind": "东南风 2级",
-        "condition_cn": "午夜前段，可闭合屋顶",
+        "condition_cn": "午后偏热，开放式",
         "impact_level": "LOW",
-        "impact": "Mercedes-Benz 闭合屋顶，320m 低海拔，28°C 对西班牙传控友好",
-        "impact_summary": "闭合屋顶消除降雨变量；西班牙替补深度可抵消传控消耗",
-        "home_adapt": 90,
-        "away_adapt": 74,
-        "home_note": "西班牙欧洲杯冠军班底习惯夏季作战；Yamal/Pedri 技术流不受 28°C 明显制约",
-        "away_note": "佛得角球员多效力葡超/非洲联赛，湿热并不陌生，但 90 分钟低位防守对世界杯新军是最大考验",
+        "impact": "MetLife 开放式，26°C 对法国传控友好",
+        "impact_summary": "气候变量低——Mbappé vs Mané 战术对位为主",
+        "home_adapt": 88,
+        "away_adapt": 80,
+        "home_note": "法国球员习惯欧洲/北美夏季作战",
+        "away_note": "塞内加尔适应湿热，Mané 反击不受明显制约",
         "weather_factors": [
           {
-            "label": "闭合屋顶",
-            "impact": "消除变量",
-            "detail": "无雨无强风，传控落点稳定，利于西班牙肋部渗透"
-          },
-          {
-            "label": "28°C 午夜",
+            "label": "26°C 午后",
             "impact": "中性",
-            "detail": "北京时间 00:00 对应当地 12:00 ET 前段，气温尚未达峰值"
+            "detail": "北京时间 03:00 对应当地 15:00 ET 前段"
           },
           {
-            "label": "湿度 62%",
-            "impact": "中等",
-            "detail": "东南湿热，70' 后传球精度略降，领先方或降 tempo"
+            "label": "开放式",
+            "impact": "低",
+            "detail": "降雨 25% 可能略滑"
           }
         ],
-        "historical_note": "Mercedes-Benz Stadium 容量 71,000 · H 组揭幕战"
+        "historical_note": "MetLife Stadium 容量 82,500 · I 组揭幕战"
       },
       "mystic": {
         "date_bazi": {
           "year": "丙午年",
           "year_element": "火",
-          "year_animal": "马",
           "month": "甲午月",
-          "month_element": "木+火",
-          "day": "丙戌日",
-          "day_element": "火+土",
-          "hour_home": "子时（23:00-01:00）",
-          "hour_home_element": "水",
-          "day_dominant": "火土",
-          "day_summary": "丙午年甲午月丙戌日子时——火土当令，子水潜藏。《周易·大有卦》曰：「元亨。」强队如日中天，弱旅宜守中待变；忌轻敌，宜速战速决。"
+          "month_element": "金+火",
+          "day": "丁亥日",
+          "day_element": "火+水",
+          "day_dominant": "水",
+          "day_summary": "丁亥日——丁火坐亥，火水既济而未济。《道德经》曰：「上善若水。」亥水当令，宜顺流守正；忌火性躁进。非力之大小，乃气之顺逆。",
+          "hour_home": "寅时（03:00-05:00）",
+          "hour_home_element": "木"
         },
         "wuxing": {
           "home": {
-            "team": "Spain",
-            "colors": "红+黄",
-            "elements": "火（红）、土（黄）",
-            "wuxing_short": "火土同频，如日中天",
+            "team": "France",
+            "colors": "蓝+白",
+            "elements": "水、金",
+            "wuxing_short": "金水相涵，亥水得时",
             "verdict": "有利",
             "verdict_color": "#5BBF8A",
-            "compat": 90,
-            "reason": "西班牙红黄属火土，丙戌日火土当令——Yamal/Pedri 如烈日当空，传控宽度与天时同频。子水不克火土，反润木生火，Olmo 肋部如暗流助焰。",
-            "advantage": "开场即压制，xG 2.45 与五行共振；定位球 Laporte/Le Normand 土德防空占优"
+            "compat": 66,
+            "reason": "蓝属水、白属金。丁亥日亥水当令，金生水、水得地气，如「上善若水」。《说卦》：「坎为水」——主队服色与当令水气同频，非关纸面强弱，乃气运顺时。",
+            "advantage": "亥水助金生水，顺流而聚"
           },
           "away": {
-            "team": "Cape Verde",
-            "colors": "蓝+白+红",
-            "elements": "水（蓝）、金（白）、火（红）",
-            "wuxing_short": "水土受火克，筑堤难久",
-            "verdict": "不利",
-            "verdict_color": "#D95F6A",
-            "compat": 28,
-            "reason": "佛得角蓝水遇火土日——Bubista 4-4-2 低位如筑堤挡洪，前 30 分钟或可守，但 90 分钟内火土决口难挡。Mendes 反击如细流，难成决口。",
-            "disadvantage": "密集防守消耗大，60' 后体能下滑；定位球是唯一偷分窗口"
+            "team": "Senegal",
+            "colors": "白+绿+黄",
+            "elements": "金、木、土",
+            "wuxing_short": "木得寅时，土金相杂",
+            "verdict": "中性偏利",
+            "verdict_color": "#C8A96E",
+            "compat": 58,
+            "reason": "绿属木、黄属土、白属金。寅时木气初升，木气可泄水而克土，位势杂而不纯——如「雷在地中」，宜守中待变，非力不足，乃五行未齐。",
+            "advantage": "寅木助绿衣，守势可延一时"
           },
-          "summary": "五行裁定：西班牙火土顺局，佛得角水土受制，H 组揭幕最无悬念之局"
+          "summary": "五行裁定：亥水当令利金水之队；塞内加尔木得寅时而有守中之气——气运近而不齐，非一边倒"
         },
         "hexagram": {
           "name": "大有卦",
@@ -506,262 +506,1497 @@ const MATCH_DATA = {
           "upper": "离火",
           "lower": "乾天",
           "quote": "《周易·大有卦》：「元亨。」",
-          "general": "火在天上，普照万物。大有卦象征强者如日中天——利于实力碾压、控球主导的一方。",
-          "advantage_team": "Spain",
-          "disadvantage_team": "Cape Verde",
-          "hexagram_analysis": "大有卦主「盛」——西班牙 Yamal 如天火下照，Pedri 为薪火相传；佛得角四中场如厚土承火，前 30 分钟不溃则土德可显，但 90 分钟内必破。de la Fuente 传控与天时同频。",
-          "match_nature": "强队控场大胜局",
-          "match_nature_prob": 85,
-          "yellow_card_risk": "低",
-          "yellow_card_reason": "大有卦主顺遂非缠斗，预计 3-4 张黄牌——佛得角战术犯规阻截 Yamal 为主。",
+          "general": "火在天上，普照万物——大有主「明照四方」，利守正聚光、顺天应时者，非论孰强孰弱。",
+          "advantage_team": "France",
+          "disadvantage_team": "Senegal",
+          "hexagram_analysis": "大有「柔得尊位」：离火在上，如天光下照。蓝白如水映日，近「自天佑之」之象；客队木气在暗，宜「遏恶扬善」守中。元亨在顺，不在力。",
+          "match_nature": "顺气者明照",
+          "yellow_card_risk": "中",
+          "yellow_card_reason": "大有主顺遂非缠斗；离火性急，领先后犯规多来自战术阻截，预计 3–4 张黄牌。",
           "scenarios": [
             {
-              "icon": "⚽",
-              "label": "比赛性质",
-              "text": "西班牙大胜 78%，净胜 2 球以上约 55%；平局 15%，佛得角胜 <8%（xG 2.45-0.55）"
+              "icon": "☯",
+              "label": "气运性质",
+              "text": "水火既济之日，先顺天时者得利——非实力预判"
             },
             {
-              "icon": "⏱",
-              "label": "进球高峰段",
-              "text": "第 20-35 分钟（Yamal 肋部）及第 65-80 分钟（Bubista 变阵后空档）"
+              "icon": "🌅",
+              "label": "寅时",
+              "text": "木气初升，利于守中带发；忌寅木过旺而火性躁进"
             },
             {
               "icon": "🟨",
-              "label": "黄牌风险",
-              "text": "低——约 3-4 张，佛得角阻截为主"
-            },
-            {
-              "icon": "🔄",
-              "label": "0-0 平局可能",
-              "text": "极低（15%）——大有卦不容强者空手而归"
-            },
-            {
-              "icon": "⏰",
-              "label": "加时赛概率",
-              "text": "极低（<2%）"
+              "label": "纪律",
+              "text": "离火主明，判罚尺度偏严，黄牌来自战术犯规"
             }
           ],
           "early_goal": {
-            "scenario": "若前 20 分钟西班牙率先进球（Yamal/Pedri 破局）",
-            "prediction": "「元亨」启动——佛得角 4-4-2 或改五后卫，肋部空档暴露；追加 2-3 球概率 70%。",
-            "favors": "Spain",
-            "favors_prob": 88
+            "scenario": "若主队先进球",
+            "prediction": "大有「自天佑之」——领先方气运更聚，但离火性急，需防「亢龙有悔」式冒进",
+            "favors": "France",
+            "favors_prob": 58
           },
           "no_early_goal": {
-            "scenario": "若前 30 分钟 0-0（Bubista 低位奏效）",
-            "prediction": "大有卦主「终必盛」——西班牙半场调整，Olmo 宽度 + Yamal 内切，第 35-45 分钟失球概率 65%。",
-            "favors": "Spain",
-            "favors_prob": 82
+            "scenario": "若前30分钟无进球",
+            "prediction": "亥水主静，双方气运胶着；下半场水气渐移，先破局者占「明照」之势",
+            "favors": "France",
+            "favors_prob": 52
           },
           "away_goal": {
-            "scenario": "若佛得角偷袭破门（Mendes 反击 / 定位球）",
-            "prediction": "极低概率（<8%）——若成真，西班牙反扑如天火重燃，15 分钟内扳平概率 85%。",
-            "favors": "Spain",
-            "favors_prob": 86
-          },
-          "halftime": {
-            "scenario": "若半场 2-0 或更大比分",
-            "prediction": "de la Fuente 轮换替补，西班牙控场不追屠杀但可能再进 1-2 球。",
-            "favors": "Spain",
-            "favors_prob": 84
-          },
-          "extra_time": {
-            "scenario": "若 90 分钟平局（极低概率）",
-            "prediction": "西班牙替补深度碾压，加时 10 分钟内进球概率 90%。",
-            "favors": "Spain",
-            "favors_prob": 92
+            "scenario": "若客队先进球",
+            "prediction": "大有遭逆——木气得寅时而暗雷可鸣；主队需以金水相生耐心反扑，非力不足，乃位势暂逆",
+            "favors": "Senegal",
+            "favors_prob": 48
           }
         },
-        "home_score": 88,
-        "away_score": 22,
-        "mystic_verdict": "☲ 大有卦——西班牙火土当令，Yamal 如天火下照；佛得角厚土能守一时，难挡全程。xG 2.45 与五行同频，H 组揭幕最顺之局。",
+        "home_score": 76,
+        "away_score": 54,
+        "mystic_verdict": "☲ 大有卦——亥水当令，法国金水顺流；塞内加尔木得寅时守中。非竞技强弱，乃「元亨」在顺：先顺天时者明照。",
+        "model_bridge": "竞技走势（xG/泊松）见上方「模型推演概要」；此处仅论气运，二者可对照不可混为一谈。",
         "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
       },
-      "actualResult": {
-        "home_score": 0,
-        "away_score": 0,
-        "status": "FT",
-        "label": "全场结束",
-        "scorers": "无进球 · Vozinha 多次扑救零封",
-        "highlights": "xG 2.29-0.29 · 控球 74%-26% · Yamal/Nico Williams 替补登场 · Pedri 8.6 全场最佳"
+      "depth_calibration": {
+        "tier_home": 1.25,
+        "tier_label": "France 被看好 · 净胜约 1–2 球",
+        "implied_tier": 0.75,
+        "tier_gap": 0.5,
+        "signal": "blocker_inflate",
+        "signal_cn": "预期偏高",
+        "signal_color": "#D95F6A",
+        "signal_desc": "外界预期显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+        "blocker_spread_note": "说明：阻断型高开指热门让档偏贵，意在平衡两侧预期；不等于热门必穿档，赢球与穿档须分开判断。",
+        "public_lean_cn": "公众预期倾向 France（约 76%）",
+        "analysis": "外界普遍看好法国且预期净胜幅度上调；模型仍认为一球小胜与两球小胜并存，总进球集中在 2–3 个较合理。 档位高于 xG 隐含（+0.5），且净胜 1 球占 23.8%——热门穿档偏紧，受让侧相对更理性。 说明：阻断型高开指热门让档偏贵，意在平衡两侧预期；不等于热门必穿档，赢球与穿档须分开判断。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "2-0",
+              "prob": 11.1
+            },
+            {
+              "score": "2-1",
+              "prob": 10
+            },
+            {
+              "score": "1-0",
+              "prob": 9.7
+            }
+          ],
+          "one_goal_win_pct": 23.8,
+          "two_plus_win_pct": 44.1,
+          "full_cover_pct": 44.1,
+          "half_lose_pct": 23.8,
+          "fav_cover_ev": 0.001,
+          "dog_cover_ev": -0.001,
+          "rational_spread_cn": "穿盘期望接近打平，不宜重仓热门档",
+          "total_xg": 3.2,
+          "over_2_5_pct": 60.8,
+          "over_3_pct": 37.9,
+          "totals_lean_cn": "2.5 球偏大球（约 60.8%）；3 球线偏小",
+          "margin_risk_note": "净胜 1 球概率 23.8%：分档下常见「赢球穿档不足/半输」",
+          "push_pct": null
+        },
+        "spread_odds": {
+          "fav": 1.04,
+          "dog": 0.85,
+          "note": "主盘 France 1.04 · Senegal 0.85"
+        },
+        "spread_alt": {
+          "tier": 1,
+          "tier_label": "France 被看好 · 净胜约 1 球",
+          "cover": {
+            "top3_scores": [
+              {
+                "score": "2-0",
+                "prob": 11.1
+              },
+              {
+                "score": "2-1",
+                "prob": 10
+              },
+              {
+                "score": "1-0",
+                "prob": 9.7
+              }
+            ],
+            "one_goal_win_pct": 23.8,
+            "two_plus_win_pct": 44.1,
+            "full_cover_pct": 44.1,
+            "half_lose_pct": 23.8,
+            "fav_cover_ev": 0.12,
+            "dog_cover_ev": -0.12,
+            "rational_spread_cn": "主队 让球方略优",
+            "total_xg": 3.2,
+            "over_2_5_pct": 60.8,
+            "over_3_pct": 37.9,
+            "totals_lean_cn": "2.5 球偏大球（约 60.8%）；3 球线偏小",
+            "margin_risk_note": "净胜 1 球概率 23.8%：-1 档下走盘（赢 1 球不退赢不穿）",
+            "push_pct": 23.8
+          },
+          "odds": {
+            "fav": 0.75,
+            "dog": 1.16,
+            "note": "France 0.75 · Senegal 1.16"
+          }
+        },
+        "totals_analysis": {
+          "market_line": 2.75,
+          "line_label": "总进球约 2.5–3 个",
+          "implied_xg_total": 3.2,
+          "fair_line": 2.75,
+          "line_gap": 0,
+          "over_pct": 49.3,
+          "under_pct": 50.7,
+          "signal": "aligned",
+          "signal_cn": "进球线贴合",
+          "signal_color": "#5BBF8A",
+          "signal_desc": "市场进球线与 xG 总进球预期基本一致。",
+          "public_over_pct": 58,
+          "public_lean_cn": "公众略倾向多球（约 58%）",
+          "index_note": "大 1 / 小 0.88（返还口径） · 少球侧更热",
+          "totals_odds": {
+            "over": 1,
+            "under": 0.88,
+            "note": "大 1 · 小 0.88（返还口径）"
+          },
+          "rational_cn": "模型在 总进球约 2.5–3 个 附近均衡",
+          "score_link_cn": "小比分（1-0/1-1）偏少球 · 2-0/2-1 居中 · 3 球+ 偏多球"
+        },
+        "totals_line": 2.75,
+        "applied_delta": {
+          "home_win": -4,
+          "draw": 1,
+          "away_win": 3
+        },
+        "adjustment_note": "模型微调：主胜 -4% · 平 +1% · 客 +3%",
+        "adjusted_probs": {
+          "home_win": 63,
+          "draw": 20,
+          "away_win": 17
+        },
+        "display_summary": {
+          "fav_name": "France",
+          "expected_total_goals": 3.01,
+          "small_lead_pct": 24.1,
+          "small_example_score": "1-0",
+          "small_example_pct": 10.1,
+          "big_cover_pct": 42.4,
+          "big_example_score": "2-0",
+          "big_example_pct": 11.2,
+          "excitement": {
+            "label_cn": "接近均衡 · 略偏热闹",
+            "label_key": "high",
+            "label_color": "#5BBF8A",
+            "sub_cn": "预期约 3.0 个总进球 · 4 球+ 36.3% · 2–3 球 45%（差距 <8%）",
+            "dull_pct": 18.7,
+            "moderate_pct": 45,
+            "high_pct": 36.3,
+            "tiers": [
+              {
+                "key": "dull",
+                "label": "0–1 球 · 节奏偏慢",
+                "pct": 18.7
+              },
+              {
+                "key": "moderate",
+                "label": "2–3 球 · 常规节奏",
+                "pct": 45
+              },
+              {
+                "key": "high",
+                "label": "4 球+ · 非常精彩",
+                "pct": 36.3
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "France：Antoine Griezmann 存疑 · Senegal 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "控节奏 · 适度轮换 / 4-5-1 收缩（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "气候变量低——Mbappé vs Mané 战术对位为主"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 2.3,
+            "baseline_away": 0.9,
+            "adjusted_home": 2.22,
+            "adjusted_away": 0.9,
+            "note": "基准 xG 2.3–0.9 → 调整后 2.22–0.9"
+          },
+          "calibration": {
+            "signal_cn": "预期偏高",
+            "signal_color": "#D95F6A",
+            "signal_desc": "外界预期显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+            "tier_gap": 0.5,
+            "implied_tier_label": "France 被看好 · 净胜约 0.5–1 球",
+            "market_tier_label": "France 被看好 · 净胜约 1–2 球",
+            "summary_cn": "与模型 xG 对照：预期偏高 · 外界净胜预期高于 xG 隐含约 0.5 · 热门赢球但领先不足一档 24.1%"
+          },
+          "score_patterns": [
+            {
+              "score": "2-0",
+              "pct": 11.2
+            },
+            {
+              "score": "1-0",
+              "pct": 10.1
+            },
+            {
+              "score": "2-1",
+              "pct": 10.1
+            }
+          ],
+          "totals_view": {
+            "expected_total": 3,
+            "fair_line": 2.75,
+            "line_gap": 0,
+            "over_pct": 47.8,
+            "summary_cn": "预期约 3.0 个总进球 · 外界进球线贴合 · 模型在常见进球预期附近均衡"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "France",
+              "first_goal_pct": 71.2,
+              "start_score": "1-0",
+              "fav_name": "France",
+              "scorer_is_fav": true,
+              "small_lead_pct": 27.8,
+              "big_lead_pct": 56.3,
+              "fav_win_pct": 84.1,
+              "fav_draw_pct": 12.1,
+              "fav_lose_pct": 3.8,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "France 保持胜果（净胜≥1）",
+                  "pct": 84.1
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 12.1
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 3.8
+                }
+              ],
+              "excitement": {
+                "label_cn": "比较精彩",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期约 3.0 个总进球 · 2–3 球 54.6% 明显领先",
+                "dull_pct": 13.9,
+                "moderate_pct": 54.6,
+                "high_pct": 31.5,
+                "tiers": [
+                  {
+                    "key": "dull",
+                    "label": "0–1 球 · 节奏偏慢",
+                    "pct": 13.9
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "2–3 球 · 常规节奏",
+                    "pct": 54.6
+                  },
+                  {
+                    "key": "high",
+                    "label": "4 球+ · 非常精彩",
+                    "pct": 31.5
+                  }
+                ]
+              },
+              "big_delta": 13.9,
+              "small_delta": 3.7,
+              "narrative": "France 先破门（已 1-0） → 「控节奏 · 适度轮换」；Senegal 「Mané 单核」。领先后双方可能转入守势，比分差距不易再拉大，节奏偏慢概率上升。"
+            },
+            {
+              "side": "away",
+              "team": "Senegal",
+              "first_goal_pct": 28.8,
+              "start_score": "0-1",
+              "fav_name": "France",
+              "scorer_is_fav": false,
+              "small_lead_pct": 22,
+              "big_lead_pct": 21.7,
+              "fav_win_pct": 43.7,
+              "fav_draw_pct": 26,
+              "fav_lose_pct": 30.3,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "France 追平（平局）",
+                  "pct": 26
+                },
+                {
+                  "key": "win1",
+                  "label": "France 净胜1球翻盘",
+                  "pct": 22
+                },
+                {
+                  "key": "win2",
+                  "label": "France 净胜≥2球翻盘",
+                  "pct": 21.7
+                }
+              ],
+              "excitement": {
+                "label_cn": "接近均衡 · 略偏热闹",
+                "label_key": "high",
+                "label_color": "#5BBF8A",
+                "sub_cn": "预期约 3.6 个总进球 · 4 球+ 48.3% · 2–3 球 44.5%（差距 <8%）",
+                "dull_pct": 7.3,
+                "moderate_pct": 44.5,
+                "high_pct": 48.3,
+                "tiers": [
+                  {
+                    "key": "dull",
+                    "label": "0–1 球 · 节奏偏慢",
+                    "pct": 7.3
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "2–3 球 · 常规节奏",
+                    "pct": 44.5
+                  },
+                  {
+                    "key": "high",
+                    "label": "4 球+ · 非常精彩",
+                    "pct": 48.3
+                  }
+                ]
+              },
+              "big_delta": -20.7,
+              "small_delta": -2.1,
+              "narrative": "Senegal 先破门（已 0-1） → 「4-5-1 收缩」；France 「堆边锋 · 肋部渗透」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门，对攻张力上升，总进球预期增加。"
+            }
+          ]
+        },
+        "public_summary_note": "【推演概要】France 净胜1球 24.1% · 净胜≥2 42.4% · 接近均衡 · 略偏热闹 · 与模型 xG 对照：预期偏高 · 外界净胜预期高于 xG 隐含约 0.5 · 热门赢球但领先不足一档 24.1%（模型微调：主胜 -4% · 平 +1% · 客 +3%）"
+      },
+      "group_context": {
+        "group": "I",
+        "label": "I组 · 第 1 轮",
+        "matchday": 1,
+        "standings": [
+          {
+            "team": "France",
+            "pts": 0,
+            "p": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+            "gf": 0,
+            "ga": 0
+          },
+          {
+            "team": "Senegal",
+            "pts": 0,
+            "p": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+            "gf": 0,
+            "ga": 0
+          },
+          {
+            "team": "Norway",
+            "pts": 0,
+            "p": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+            "gf": 0,
+            "ga": 0
+          },
+          {
+            "team": "Iraq",
+            "pts": 0,
+            "p": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+            "gf": 0,
+            "ga": 0
+          }
+        ],
+        "home": {
+          "team": "France",
+          "rank": 1,
+          "pts": 0,
+          "played": 0,
+          "if_1st": "32强 · 可能对阵 J/K 组第 2 或第 3",
+          "if_2nd": "32强 · 可能对阵 J/K 组第 1",
+          "if_3rd": "若列小组第 3，需与 J/K/L/G/H 等组第 3 比净胜球/进球"
+        },
+        "away": {
+          "team": "Senegal",
+          "rank": 2,
+          "pts": 0,
+          "played": 0,
+          "if_1st": "32强 · 可能对阵 J/K 组第 2 或第 3",
+          "if_2nd": "32强 · 可能对阵 J/K 组第 1",
+          "if_3rd": "若列小组第 3，需与 J/K/L/G/H 等组第 3 比净胜球/进球"
+        },
+        "cross_group_notes": [
+          "G 组四队同积 1 分，形势极度开放",
+          "H 组四队同积 1 分，形势极度开放",
+          "E 组 Germany 3 分领跑",
+          "F 组 Sweden 3 分领跑"
+        ],
+        "manipulation_risk": {
+          "level": "LOW",
+          "level_cn": "低",
+          "focus_team": null,
+          "reason": "小组赛第 1 轮，各队普遍抢分意愿强，故意控分动机低；以下路径预判供后续轮次参考。"
+        },
+        "knockout_note": "48 队制：12 组前 2 + 8 个最佳第 3 进入 32 强；末轮可能出现算分/控分战术。",
+        "scenarios": [
+          "France 若取胜：积分 3，I 组排名有望上升；过早预测 32 强对手仍不可靠。",
+          "Senegal 若取胜：积分 3，客场抢分将改变 I 组格局。",
+          "平局：双方各 +1 分；在 G 组四队同积 1 分，形势极度开放；H 组四队同积 1 分，形势极度开放；E 组 Germany 3 分领跑；F 组 Sweden 3 分领跑 背景下，第 2 轮直接对话权重上升。"
+        ]
       }
     },
     {
-      "id": "m16",
-      "group": "G",
+      "id": "m18",
+      "group": "I",
       "matchday": 1,
-      "date": "2026-06-15",
-      "time": "12:00",
-      "time_local": "12:00 PT",
-      "timezone": "PDT (UTC-7)",
-      "time_beijing": "03:00",
-      "date_beijing": "6月16日",
-      "time_beijing_full": "北京时间 6月16日 03:00",
-      "venue": "Lumen Field",
-      "city": "Seattle, USA",
-      "note": "G组揭幕 · 比利时 vs 埃及 · 官方首发已确认",
+      "date": "2026-06-16",
+      "time": "18:00",
+      "time_local": "18:00 ET",
+      "timezone": "EDT (UTC-4)",
+      "time_beijing": "06:00",
+      "date_beijing": "6月17日",
+      "time_beijing_full": "北京时间 6月17日 06:00",
+      "venue": "Gillette Stadium",
+      "city": "Foxborough, USA",
+      "note": "I组第2场 · 伊拉克 vs 挪威 · 波士顿",
       "lineup": {
-        "confirmed": true,
-        "formation": "4-2-3-1 / 4-2-3-1",
-        "home": "Courtois; Meunier, Ngoy, Mechele, Castagne; Onana, Tielemans; Trossard, De Bruyne (C), Doku; De Ketelaere",
-        "away": "Shobeir; Hany, Ibrahim, Fathi, El Fotouh; Lasheen, Ateya; Salah (C), Ashour, Ziko; Marmoush",
-        "note": "✅ FIFA 官方 team sheet（FotMob 2026-06-15 赛前确认）",
+        "confirmed": false,
+        "formation": null,
+        "home": "等待官方确认",
+        "away": "等待官方确认",
+        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
         "predicted": {
           "formation": "4-2-3-1 / 4-3-3",
-          "home": "Courtois; Meunier, Mechele, Ngoy, Castagne; Onana, Tielemans; Trossard, De Bruyne, Doku; De Ketelaere",
-          "away": "Shobeir; Hany, Ibrahim, Fathy, Fatouh; Lasheen, Attia, Ashour; Trezeguet, Salah, Marmoush",
-          "source": "The Standard / Yahoo Sports 最新预测 · 非官方"
-        },
-        "diff": {
-          "home": "✅ Meunier+Castagne 边卫 · Onana 首发（非 Witsel）· Lukaku 替补 · De Cuyper 未首发",
-          "away": "⚠️ Shobeir 一门 · Fathi 中卫（非 Abdelmonem）· Ziko 第三前锋（非 Trezeguet 首发）· Salah 34 岁生日"
-        },
-        "updated": "2026-06-16T06:30:00+08:00"
+          "home": "Hassan; Adnan, Tareq, Natiq, Ali; Alaa, Bashar; Aymen, Zidane, Mohanad; Hussein",
+          "away": "Nyland; Ryerson, Høibråten, Nørgaard, Wolfe; Berg, Ødegaard; Dønnum, Haaland, Sørloth",
+          "source": "FotMob 预测 · 非官方"
+        }
       },
       "home": {
-        "name": "Belgium",
-        "iso": "be",
+        "name": "Iraq",
+        "iso": "iq",
         "flag": "",
-        "fifa_rank": 4,
-        "rating": 86,
+        "fifa_rank": 78,
+        "rating": 56,
         "form": [
-          "W",
-          "W",
+          "L",
           "D",
           "W",
-          "W"
+          "L",
+          "L"
         ],
-        "coach": "Rudy Garcia",
+        "coach": "Jesús Casas",
         "stars": [
           {
-            "name": "Kevin De Bruyne",
-            "pos": "CAM",
-            "club": "Man City",
-            "stats": "黄金一代核心",
-            "rating": 9,
-            "desc": "G组破局关键，前腰节拍器"
-          },
-          {
-            "name": "Charles De Ketelaere",
+            "name": "Aymen Hussein",
             "pos": "ST",
-            "club": "Atalanta",
-            "stats": "伪 9 首发",
-            "rating": 8.3,
-            "desc": "Garcia 确认 Lukaku 不首发，De Ketelaere 领衔锋线"
+            "club": "Al-Quwa Al-Jawiya",
+            "stats": "亚洲杯最佳射手候选",
+            "rating": 7,
+            "desc": "锋线支点，定位球威胁"
           },
           {
-            "name": "Jérémy Doku",
-            "pos": "LW",
-            "club": "Man City",
-            "stats": "边路爆点",
-            "rating": 8.4,
-            "desc": "左路内切+速度，对位埃及边卫"
+            "name": "Mohanad Ali",
+            "pos": "CAM",
+            "club": "Al-Shorta",
+            "stats": "10 号核心",
+            "rating": 6.9,
+            "desc": "反击发起点"
+          },
+          {
+            "name": "Hassan Raed",
+            "pos": "GK",
+            "club": "Al-Shorta",
+            "stats": "一门",
+            "rating": 6.8,
+            "desc": "面对 Haaland 考验极大"
           }
         ],
         "injuries": [
           {
-            "player": "Zeno Debast",
-            "status": "OUT",
-            "note": "大腿伤，预计世界杯前期无法出场——中卫深度受损",
-            "confirmed": true
-          },
-          {
-            "player": "Romelu Lukaku",
+            "player": "Hassan Raed",
             "status": "DOUBT",
-            "note": "Garcia 明确：**不会首发对埃及**——赛季仅 5 次意甲出场，De Ketelaere 任伪 9；Lukaku 或替补 25 分钟",
-            "confirmed": true
-          },
-          {
-            "player": "Kevin De Bruyne",
-            "status": "FIT",
-            "note": "Garcia 确认状态良好，预计首发前腰——与 Salah 直接对话",
-            "confirmed": true
-          },
-          {
-            "player": "Jeremy Doku",
-            "status": "FIT",
-            "note": "周中训练曾出现呼吸不适，已恢复无后遗症，预计首发左边锋",
-            "confirmed": true
+            "note": "一门手指轻伤，赛前队检待定",
+            "confirmed": false
           }
         ],
         "rumors": [
-          "Garcia 4-2-3-1：De Ketelaere 伪9 · Lukaku 替补（仅5次意甲出场后复出）",
-          "中卫 Mechele+Ngoy 预计搭档（对突尼斯热身5-0模板）· Debast 确认缺阵",
-          "Salah 34岁生日当天出战 · Marmoush 状态正佳",
-          "Opta 25,000次模拟：比利时37.2% · 埃及35.5% · 平局27.3% — 本场最接近之一"
+          "【更衣室】Casas 赛前动员强调「90 分钟纪律」，伊拉克本土联赛球员无大牌内讧",
+          "【战术】4-5-1 低位，Aymen Hussein 定位球是唯一威胁",
+          "对 Haaland 守 0-0 求 1 分是现实目标",
+          "硬实力与挪威差距大，但亚洲杯防守纪律是资产"
         ],
         "star": {
-          "name": "Kevin De Bruyne",
-          "pos": "CAM",
-          "desc": "De Bruyne vs 埃及双闸是本场核心对位",
-          "rating": 9
+          "name": "Aymen Hussein",
+          "pos": "ST",
+          "desc": "定位球是唯一稳定威胁",
+          "rating": 7
         }
       },
       "away": {
-        "name": "Egypt",
-        "iso": "eg",
+        "name": "Norway",
+        "iso": "no",
         "flag": "",
-        "fifa_rank": 36,
-        "rating": 72,
+        "fifa_rank": 26,
+        "rating": 76,
         "form": [
+          "W",
           "W",
           "D",
           "W",
-          "W",
-          "L"
+          "D"
         ],
-        "coach": "Hossam Hassan",
+        "coach": "Ståle Solbakken",
         "stars": [
           {
-            "name": "Mohamed Salah",
-            "pos": "RW",
-            "club": "Liverpool",
-            "stats": "埃及队长",
-            "rating": 8.8,
-            "desc": "唯一世界级爆点，反击发起点"
-          },
-          {
-            "name": "Omar Marmoush",
+            "name": "Erling Haaland",
             "pos": "ST",
             "club": "Man City",
-            "stats": "德甲状态正佳",
-            "rating": 8.2,
-            "desc": "二前锋/中锋，与 Salah 配合"
+            "stats": "英超金靴",
+            "rating": 9,
+            "desc": "I组最大个人威胁"
           },
           {
-            "name": "Mohamed El Shenawy",
-            "pos": "GK",
-            "club": "Ahly",
-            "stats": "非洲杯冠军门将",
-            "rating": 7.8,
-            "desc": "低位防守最后一道屏障"
+            "name": "Martin Ødegaard",
+            "pos": "CAM",
+            "club": "Arsenal",
+            "stats": "队长 · 节拍器",
+            "rating": 8.6,
+            "desc": "直塞+远射，破局关键"
+          },
+          {
+            "name": "Alexander Sørloth",
+            "pos": "ST",
+            "club": "Atlético",
+            "stats": "支点中锋",
+            "rating": 8,
+            "desc": "与 Haaland 双锋或轮换"
           }
         ],
         "injuries": [
           {
-            "player": "Mohamed Salah",
+            "player": "Erling Haaland",
             "status": "FIT",
-            "note": "利物浦赛季末腿筋伤愈，预计队长首发——G 组最大个人威胁",
+            "note": "FIFA 赛前健康声明无限制，预计首发",
             "confirmed": true
           },
           {
-            "player": "Omar Marmoush",
+            "player": "Martin Ødegaard",
             "status": "FIT",
-            "note": "曼城前锋状态正佳，与 Salah 组成反击双核",
+            "note": "阿森纳队长，节拍器预计首发",
+            "confirmed": true
+          },
+          {
+            "player": "Alexander Sørloth",
+            "status": "FIT",
+            "note": "与 Haaland 双锋或轮换",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Hossam Hassan 第四次世界杯 · 仍求小组首次出线",
-          "Salah 腿筋伤愈确认首发 · Shobeir 可能替 El Shenawy 一门",
-          "Hamdy Fathy 可能中卫/后腰双用 · Trezeguet 竞争第三前锋",
-          "6月6日 1-2 负巴西热身 · 后防对 De Bruyne/Doku 宽度存疑"
+          "【更衣室】28 年后再进世界杯，Solbakken 称「首战必须取 3 分，无退路」",
+          "【战术】4-3-3：Haaland 单锋 + Ødegaard 前腰，宽度拉开",
+          "Haaland 对位伊拉克英冠级防线是最大变量",
+          "预选赛火力延续，但大赛慢热需防冷"
         ],
         "star": {
-          "name": "Mohamed Salah",
+          "name": "Erling Haaland",
+          "pos": "ST",
+          "desc": "对位伊拉克英冠级防线是碾压局",
+          "rating": 9
+        }
+      },
+      "h2h": {
+        "home_wins": 0,
+        "draws": 0,
+        "away_wins": 0,
+        "recent": [],
+        "note": "无正式大赛交锋"
+      },
+      "referee": {
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA · Match officials · 2026-06-16/17",
+        "name": "Pierre Atcho",
+        "nation": "Gabon",
+        "iso": "ga",
+        "age": 38,
+        "wc_experience": "2026 世界杯首秀主裁 · CAF 精英裁判",
+        "avg_yellow": 4.6,
+        "avg_red": 0.12,
+        "avg_penalty": 0.26,
+        "home_win_rate": 47,
+        "bias_index": 48,
+        "bias_note": "加蓬籍主裁，非洲足联精英裁判。伊拉克低位防守战术犯规可能偏多；对 Haaland 禁区内拉扯判罚尺度是变量。",
+        "tendencies": [
+          "加蓬助理裁判组：Boris Ditsoga、Amos Abeigne",
+          "第四官员 Amin Omar（埃及）",
+          "VAR Guillermo Pacheco（墨西哥）· AVAR Hamza El-Fariq · SVAR Jarred Gillett",
+          "弱队密集防守局黄牌或略多，预计 4–6 张"
+        ],
+        "officials": {
+          "ar1": "Boris Ditsoga (GAB)",
+          "ar2": "Amos Abeigne (GAB)",
+          "fourth": "Amin Omar (EGY)",
+          "var": "Guillermo Pacheco (MEX)",
+          "avar": "Hamza El-Fariq (MAR)",
+          "svar": "Jarred Gillett (ENG)"
+        }
+      },
+      "prediction": {
+        "home_win": 18,
+        "draw": 23,
+        "away_win": 59,
+        "score": "0-1",
+        "confidence": 76,
+        "xg_home": 0.82,
+        "xg_away": 1.72,
+        "key_factor": "Haaland+Ødegaard 对位伊拉克低位：挪威 xG 1.72 明显占优；伊拉克守 0-0 求 1 分；泊松最可能 0-2/1-2",
+        "score_dist": [
+          {
+            "score": "0-1",
+            "prob": 13.6
+          },
+          {
+            "score": "0-2",
+            "prob": 11.7
+          },
+          {
+            "score": "1-1",
+            "prob": 11.1
+          },
+          {
+            "score": "1-2",
+            "prob": 9.6
+          },
+          {
+            "score": "0-0",
+            "prob": 7.9
+          },
+          {
+            "score": "0-3",
+            "prob": 6.7
+          },
+          {
+            "score": "1-0",
+            "prob": 6.5
+          }
+        ],
+        "base_home_win": 18,
+        "base_draw": 24,
+        "base_away_win": 58,
+        "depth_calibrated": true
+      },
+      "upset_alert": {
+        "favorite": "Norway",
+        "underdog": "Iraq",
+        "favorite_iso": "NO",
+        "index": 18,
+        "level": "LOW",
+        "level_cn": "低",
+        "cold_result_pct": 20,
+        "verdict": "挪威纸面碾压，但大赛慢热有前例——伊拉克 4-5-1 低位+定位球偷分仍有 15% 空间。",
+        "tactical": "Casas 低位 vs Solbakken 4-3-3 宽度；Haaland 对位 Tareq/Natiq 中卫是胜负手。",
+        "psychology": "挪威 28 年后再进世界杯，首战需取 3 分；伊拉克无包袱但硬实力差距大。",
+        "historical": "无正式交锋；挪威预选赛 Haaland 火力是参考。",
+        "factors": [
+          {
+            "tag": "实力差",
+            "impact": "强",
+            "detail": "xG 差 0.9+，Haaland 终结效率决定比分"
+          },
+          {
+            "tag": "定位球",
+            "impact": "中",
+            "detail": "伊拉克 Hussein 头球 vs 挪威防空"
+          },
+          {
+            "tag": "心理",
+            "impact": "弱",
+            "detail": "挪威首战容错高"
+          }
+        ]
+      },
+      "coach_analysis": {
+        "home": {
+          "name": "Jesús Casas",
+          "age": 47,
+          "nation": "西班牙/墨西哥",
+          "tenure": "2022年—",
+          "wc_exp": "2026 带队",
+          "style_tags": [
+            "4-2-3-1",
+            "低位",
+            "定位球",
+            "纪律"
+          ],
+          "formation_pref": "4-5-1 · 领先时五后卫",
+          "style_summary": "西班牙籍主帅，伊拉克低位+定位球偷分。对挪威 xG 0.82 明显劣势，守 0-0 求 1 分合理。",
+          "subs": {
+            "timing": "首换 70 分钟+",
+            "pattern": "换人偏晚",
+            "avg_first_sub": "72'",
+            "note": "弱队体能分配优先"
+          },
+          "when_leading": {
+            "label": "5-4-1 铁桶",
+            "detail": "若意外领先：立即退守。"
+          },
+          "when_trailing": {
+            "label": "维持低位",
+            "detail": "unlikely 大举压上。"
+          },
+          "vs_strong": {
+            "label": "对强队：龟缩",
+            "detail": "对挪威/Haaland 是教科书弱队踢法。"
+          },
+          "vs_weak": {
+            "label": "不适用",
+            "detail": "I 组挪威/法国均强。"
+          },
+          "tournament": "亚洲杯经验，大赛防守纪律是资产。",
+          "traits": [
+            "低位防守",
+            "定位球",
+            "换人极晚",
+            "纪律"
+          ],
+          "match_note": "4-5-1 低位守 0–0，Hussein 定位球偷分；60' 后体能是最大考验。"
+        },
+        "away": {
+          "name": "Ståle Solbakken",
+          "age": 56,
+          "nation": "挪威",
+          "tenure": "2020年—",
+          "wc_exp": "2026 带队 · 28 年后再进世界杯",
+          "style_tags": [
+            "4-3-3",
+            "Haaland 核心",
+            "Ødegaard 节拍",
+            "宽度"
+          ],
+          "formation_pref": "4-3-3 · Haaland 单锋或双锋",
+          "style_summary": "Haaland+Ødegaard 双核，对伊拉克预计全场压制。28 年后再进世界杯，首战必须取 3 分。",
+          "subs": {
+            "timing": "首换 58–65 分钟",
+            "pattern": "常换 Sørloth/边锋",
+            "avg_first_sub": "60'",
+            "note": "换人果断"
+          },
+          "when_leading": {
+            "label": "继续进攻",
+            "detail": "1 球领先：维持 4-3-3 宽度。"
+          },
+          "when_trailing": {
+            "label": "堆前锋",
+            "detail": "先丢球：55' 换 Sørloth 双锋。"
+          },
+          "vs_strong": {
+            "label": "对强队：对攻",
+            "detail": "对法国会相对保守。"
+          },
+          "vs_weak": {
+            "label": "对弱队：不留余地",
+            "detail": "对伊拉克 Haaland 目标至少 2 球。"
+          },
+          "tournament": "28 年后再进世界杯，Haaland 是最大资产。",
+          "traits": [
+            "Haaland 依赖",
+            "Ødegaard 节拍",
+            "宽度",
+            "首战压力"
+          ],
+          "match_note": "Haaland 必须主导——首战 3 分不容有失，对低位需耐心。"
+        }
+      },
+      "weather": {
+        "city": "波士顿",
+        "country": "美国",
+        "venue": "Gillette Stadium",
+        "temp": 22,
+        "humidity": 55,
+        "altitude_m": 60,
+        "rain_chance": 20,
+        "wind": "东北风 2级",
+        "condition_cn": "傍晚舒适",
+        "impact_level": "LOW",
+        "impact": "新英格兰 22°C 傍晚，挪威完全适应",
+        "impact_summary": "气候均衡——Haaland 对位伊拉克低位是推演核心",
+        "home_adapt": 72,
+        "away_adapt": 86,
+        "home_note": "伊拉克适应中东气候，22°C 舒适",
+        "away_note": "挪威北欧球员完全适应",
+        "weather_factors": [
+          {
+            "label": "22°C 傍晚",
+            "impact": "有利高强度",
+            "detail": "90 分钟压迫均可维持"
+          }
+        ],
+        "historical_note": "Gillette Stadium 容量 65,878 · I 组第 2 场"
+      },
+      "mystic": {
+        "date_bazi": {
+          "year": "丙午年",
+          "year_element": "火",
+          "month": "甲午月",
+          "month_element": "金+火",
+          "day": "丁亥日",
+          "day_element": "火+水",
+          "day_dominant": "水",
+          "day_summary": "丁亥日——丁火坐亥，火水既济而未济。《道德经》曰：「上善若水。」亥水当令，宜顺流守正；忌火性躁进。非力之大小，乃气之顺逆。",
+          "hour_home": "卯时（05:00-07:00）",
+          "hour_home_element": "木"
+        },
+        "wuxing": {
+          "home": {
+            "team": "Iraq",
+            "colors": "白+绿",
+            "elements": "金、木",
+            "wuxing_short": "木得卯时，金木相涵",
+            "verdict": "有利",
+            "verdict_color": "#5BBF8A",
+            "compat": 68,
+            "reason": "白属金、绿属木。卯时木气当令，木气最旺——主队绿衣得时，如「雷在地中」蓄势。丁亥日水旺生木，气运在守中待发，与纸面排名无关。",
+            "advantage": "卯木当令，绿衣得时"
+          },
+          "away": {
+            "team": "Norway",
+            "colors": "红+白+蓝",
+            "elements": "火、金、水",
+            "wuxing_short": "火金交争，卯木泄火",
+            "verdict": "中性偏逆",
+            "verdict_color": "#C8A96E",
+            "compat": 56,
+            "reason": "红属火、白属金、蓝属水。卯木当令，木生火亦耗金；亥日水旺克火——客队火性受亥水所制，如「金声遇雨」，决断之气难伸。",
+            "disadvantage": "火性受制，金气被木泄"
+          },
+          "summary": "五行裁定：卯时木旺大利绿衣主队；挪威火金交争而气运受制——此判据气，不据FIFA排名"
+        },
+        "hexagram": {
+          "name": "夬卦",
+          "symbol": "☱",
+          "number": 43,
+          "upper": "兑泽",
+          "lower": "乾天",
+          "quote": "《周易·夬卦》：「扬于王庭，孚号有厉。」",
+          "general": "泽上于天，决而能和——夬主「当决则决」，利于金气行止有常、不妄动者；非实力碾压之卦。",
+          "advantage_team": "Iraq",
+          "disadvantage_team": "Norway",
+          "hexagram_analysis": "夬卦「刚决柔」：兑泽在上，然卯时木旺，主队木气得令可制金。客队若急攻则触「孚号有厉」；守正待机者，气运可转。",
+          "match_nature": "木旺决金",
+          "yellow_card_risk": "中",
+          "yellow_card_reason": "夬主决断，战术犯规来自阻截；预计 4 张左右，红牌概率低。",
+          "scenarios": [
+            {
+              "icon": "☯",
+              "label": "气运性质",
+              "text": "卯木当令，利于守中蓄势一方——与谁更强无关"
+            },
+            {
+              "icon": "☱",
+              "label": "兑泽",
+              "text": "金气在上，忌急躁冒进；「有厉」示慎决"
+            },
+            {
+              "icon": "🟨",
+              "label": "纪律",
+              "text": "夬非缠斗之卦，黄牌来自战术需要"
+            }
+          ],
+          "early_goal": {
+            "scenario": "若伊拉克先进球",
+            "prediction": "夬「扬于王庭」——木气得时，守势更固；客队火性受制，反扑需防「有厉」",
+            "favors": "Iraq",
+            "favors_prob": 55
+          },
+          "no_early_goal": {
+            "scenario": "若前30分钟无进球",
+            "prediction": "卯木主静，气运胶着；下半场木气仍旺，主队守中之气渐显",
+            "favors": "Iraq",
+            "favors_prob": 52
+          },
+          "away_goal": {
+            "scenario": "若挪威先进球",
+            "prediction": "夬遭逆——客队暂占兑金之位，但卯木克金，主队气运可渐回；忌客队轻敌",
+            "favors": "Norway",
+            "favors_prob": 46
+          }
+        },
+        "home_score": 78,
+        "away_score": 48,
+        "mystic_verdict": "☱ 夬卦——卯时木旺，伊拉克绿衣得令；挪威火金受制。非力之强弱，乃「当决则决」：顺木气者吉，躁进者有厉。",
+        "model_bridge": "竞技面挪威为热门，但灵力指数因卯时木气偏向主队；走势概率见「模型推演概要」。",
+        "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
+      },
+      "depth_calibration": {
+        "tier_home": -1.5,
+        "tier_label": "Norway 被看好 · 净胜约 1.5 球",
+        "implied_tier": -0.25,
+        "tier_gap": -1.25,
+        "signal": "genuine_favorite",
+        "signal_cn": "实力吻合",
+        "signal_color": "#5BBF8A",
+        "signal_desc": "外界预期与 xG 实力差基本一致，模型信任该方向。",
+        "blocker_spread_note": "",
+        "public_lean_cn": "公众预期倾向 Norway（约 71%）",
+        "analysis": "外界看好挪威且预期净胜约 1.5 球；总 xG 略偏少，模型倾向 2 球左右的赛果。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "0-1",
+              "prob": 13.7
+            },
+            {
+              "score": "0-2",
+              "prob": 11.8
+            },
+            {
+              "score": "1-1",
+              "prob": 11.2
+            }
+          ],
+          "one_goal_win_pct": 12.3,
+          "two_plus_win_pct": 5.4,
+          "full_cover_pct": 32.5,
+          "half_lose_pct": 25.9,
+          "fav_cover_ev": 0,
+          "dog_cover_ev": 0,
+          "rational_spread_cn": "穿盘期望接近打平，不宜重仓热门档",
+          "total_xg": 2.54,
+          "over_2_5_pct": 46.2,
+          "over_3_pct": 24.4,
+          "totals_lean_cn": "2.5 球接近均衡；3 球线偏小",
+          "margin_risk_note": "净胜 1 球概率 25.9%：分档下常见「赢球穿档不足/半输」",
+          "push_pct": null
+        },
+        "spread_odds": null,
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 2.5,
+          "line_label": "总进球约 2.5 个",
+          "implied_xg_total": 2.54,
+          "fair_line": 2,
+          "line_gap": 0.5,
+          "over_pct": 46.2,
+          "under_pct": 53.8,
+          "signal": "high_line",
+          "signal_cn": "进球线偏高",
+          "signal_color": "#C8A96E",
+          "signal_desc": "进球线高于 xG 隐含，存在阻追多球/诱导少球侧的可能。",
+          "public_over_pct": 44,
+          "public_lean_cn": "公众大小预期较分散",
+          "index_note": "大小两侧指数接近均衡",
+          "totals_odds": null,
+          "rational_cn": "模型在 总进球约 2.5 个 附近均衡",
+          "score_link_cn": "小比分（1-0/1-1）偏少球 · 2-0/2-1 居中 · 3 球+ 偏多球"
+        },
+        "totals_line": 2.5,
+        "applied_delta": {
+          "home_win": 0,
+          "draw": -1,
+          "away_win": 1
+        },
+        "adjustment_note": "模型微调：主胜 +0% · 平 -1% · 客 +1%",
+        "adjusted_probs": {
+          "home_win": 18,
+          "draw": 23,
+          "away_win": 59
+        },
+        "display_summary": {
+          "fav_name": "Norway",
+          "expected_total_goals": 2.47,
+          "small_lead_pct": 26.1,
+          "small_example_score": "0-1",
+          "small_example_pct": 14.1,
+          "big_cover_pct": 33.1,
+          "big_example_score": "0-2",
+          "big_example_pct": 12.1,
+          "excitement": {
+            "label_cn": "接近均衡 · 略偏慢",
+            "label_key": "dull",
+            "label_color": "#7BB8D4",
+            "sub_cn": "预期约 2.5 个总进球 · 0–1 球 28.8% · 2–3 球 47.4%（差距 <8%）",
+            "dull_pct": 28.8,
+            "moderate_pct": 47.4,
+            "high_pct": 23.8,
+            "tiers": [
+              {
+                "key": "dull",
+                "label": "0–1 球 · 节奏偏慢",
+                "pct": 28.8
+              },
+              {
+                "key": "moderate",
+                "label": "2–3 球 · 常规节奏",
+                "pct": 47.4
+              },
+              {
+                "key": "high",
+                "label": "4 球+ · 非常精彩",
+                "pct": 23.8
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "Iraq：Hassan Raed 存疑 · Norway 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "5-4-1 铁桶 / 继续进攻（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "气候均衡——Haaland 对位伊拉克低位是推演核心"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 0.82,
+            "baseline_away": 1.72,
+            "adjusted_home": 0.79,
+            "adjusted_away": 1.72,
+            "note": "基准 xG 0.82–1.72 → 调整后 0.79–1.72"
+          },
+          "calibration": {
+            "signal_cn": "实力吻合",
+            "signal_color": "#5BBF8A",
+            "signal_desc": "外界预期与 xG 实力差基本一致，模型信任该方向。",
+            "tier_gap": -1.25,
+            "implied_tier_label": "Norway 被看好 · 净胜约 0.25 球",
+            "market_tier_label": "Norway 被看好 · 净胜约 1.5 球",
+            "summary_cn": "与模型 xG 对照：实力吻合 · 外界净胜预期低于 xG 隐含约 1.25 · 热门赢球但领先不足一档 26.1%"
+          },
+          "score_patterns": [
+            {
+              "score": "0-1",
+              "pct": 14.1
+            },
+            {
+              "score": "0-2",
+              "pct": 12.1
+            },
+            {
+              "score": "1-1",
+              "pct": 11.1
+            }
+          ],
+          "totals_view": {
+            "expected_total": 2.5,
+            "fair_line": 2,
+            "line_gap": 0.5,
+            "over_pct": 45.4,
+            "summary_cn": "预期约 2.5 个总进球 · 外界进球线偏高 · 模型在常见进球预期附近均衡"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "Iraq",
+              "first_goal_pct": 31.5,
+              "start_score": "1-0",
+              "fav_name": "Norway",
+              "scorer_is_fav": false,
+              "small_lead_pct": 19.6,
+              "big_lead_pct": 14,
+              "fav_win_pct": 33.6,
+              "fav_draw_pct": 28.5,
+              "fav_lose_pct": 37.8,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "Norway 追平（平局）",
+                  "pct": 28.5
+                },
+                {
+                  "key": "win1",
+                  "label": "Norway 净胜1球翻盘",
+                  "pct": 19.6
+                },
+                {
+                  "key": "win2",
+                  "label": "Norway 净胜≥2球翻盘",
+                  "pct": 14
+                }
+              ],
+              "excitement": {
+                "label_cn": "接近均衡 · 略偏热闹",
+                "label_key": "high",
+                "label_color": "#5BBF8A",
+                "sub_cn": "预期约 3.1 个总进球 · 4 球+ 34.7% · 2–3 球 53%（差距 <8%）",
+                "dull_pct": 12.3,
+                "moderate_pct": 53,
+                "high_pct": 34.7,
+                "tiers": [
+                  {
+                    "key": "dull",
+                    "label": "0–1 球 · 节奏偏慢",
+                    "pct": 12.3
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "2–3 球 · 常规节奏",
+                    "pct": 53
+                  },
+                  {
+                    "key": "high",
+                    "label": "4 球+ · 非常精彩",
+                    "pct": 34.7
+                  }
+                ]
+              },
+              "big_delta": -19.1,
+              "small_delta": -6.5,
+              "narrative": "Iraq 先破门（已 1-0） → 「5-4-1 铁桶」；Norway 「堆前锋」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门，进球节奏转向「接近均衡 · 略偏热闹」。"
+            },
+            {
+              "side": "away",
+              "team": "Norway",
+              "first_goal_pct": 68.5,
+              "start_score": "0-1",
+              "fav_name": "Norway",
+              "scorer_is_fav": true,
+              "small_lead_pct": 26.8,
+              "big_lead_pct": 57.8,
+              "fav_win_pct": 84.7,
+              "fav_draw_pct": 11.6,
+              "fav_lose_pct": 3.7,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "Norway 保持胜果（净胜≥1）",
+                  "pct": 84.7
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 11.6
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 3.7
+                }
+              ],
+              "excitement": {
+                "label_cn": "比较精彩",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期约 3.0 个总进球 · 2–3 球 53.6% 明显领先",
+                "dull_pct": 12.9,
+                "moderate_pct": 53.6,
+                "high_pct": 33.4,
+                "tiers": [
+                  {
+                    "key": "dull",
+                    "label": "0–1 球 · 节奏偏慢",
+                    "pct": 12.9
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "2–3 球 · 常规节奏",
+                    "pct": 53.6
+                  },
+                  {
+                    "key": "high",
+                    "label": "4 球+ · 非常精彩",
+                    "pct": 33.4
+                  }
+                ]
+              },
+              "big_delta": 24.7,
+              "small_delta": 0.7,
+              "narrative": "Norway 先破门（已 0-1） → 「继续进攻」；Iraq 「维持低位」。领先方继续进攻，仍有较大空间扩大比分，进球节奏转向「比较精彩」。"
+            }
+          ]
+        },
+        "public_summary_note": "【推演概要】Norway 净胜1球 26.1% · 净胜≥2 33.1% · 接近均衡 · 略偏慢 · 与模型 xG 对照：实力吻合 · 外界净胜预期低于 xG 隐含约 1.25 · 热门赢球但领先不足一档 26.1%（模型微调：主胜 +0% · 平 -1% · 客 +1%）"
+      },
+      "group_context": {
+        "group": "I",
+        "label": "I组 · 第 1 轮",
+        "matchday": 1,
+        "standings": [
+          {
+            "team": "France",
+            "pts": 0,
+            "p": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+            "gf": 0,
+            "ga": 0
+          },
+          {
+            "team": "Senegal",
+            "pts": 0,
+            "p": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+            "gf": 0,
+            "ga": 0
+          },
+          {
+            "team": "Norway",
+            "pts": 0,
+            "p": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+            "gf": 0,
+            "ga": 0
+          },
+          {
+            "team": "Iraq",
+            "pts": 0,
+            "p": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+            "gf": 0,
+            "ga": 0
+          }
+        ],
+        "home": {
+          "team": "Iraq",
+          "rank": 4,
+          "pts": 0,
+          "played": 0,
+          "if_1st": "32强 · 可能对阵 J/K 组第 2 或第 3",
+          "if_2nd": "32强 · 可能对阵 J/K 组第 1",
+          "if_3rd": "若列小组第 3，需与 J/K/L/G/H 等组第 3 比净胜球/进球"
+        },
+        "away": {
+          "team": "Norway",
+          "rank": 3,
+          "pts": 0,
+          "played": 0,
+          "if_1st": "32强 · 可能对阵 J/K 组第 2 或第 3",
+          "if_2nd": "32强 · 可能对阵 J/K 组第 1",
+          "if_3rd": "若列小组第 3，需与 J/K/L/G/H 等组第 3 比净胜球/进球"
+        },
+        "cross_group_notes": [
+          "G 组四队同积 1 分，形势极度开放",
+          "H 组四队同积 1 分，形势极度开放",
+          "E 组 Germany 3 分领跑",
+          "F 组 Sweden 3 分领跑"
+        ],
+        "manipulation_risk": {
+          "level": "LOW",
+          "level_cn": "低",
+          "focus_team": null,
+          "reason": "小组赛第 1 轮，各队普遍抢分意愿强，故意控分动机低；以下路径预判供后续轮次参考。"
+        },
+        "knockout_note": "48 队制：12 组前 2 + 8 个最佳第 3 进入 32 强；末轮可能出现算分/控分战术。",
+        "scenarios": [
+          "Iraq 若取胜：积分 3，I 组排名有望上升；过早预测 32 强对手仍不可靠。",
+          "Norway 若取胜：积分 3，客场抢分将改变 I 组格局。",
+          "平局：双方各 +1 分；在 G 组四队同积 1 分，形势极度开放；H 组四队同积 1 分，形势极度开放；E 组 Germany 3 分领跑；F 组 Sweden 3 分领跑 背景下，第 2 轮直接对话权重上升。"
+        ]
+      }
+    },
+    {
+      "id": "m19",
+      "group": "J",
+      "matchday": 1,
+      "date": "2026-06-16",
+      "time": "20:00",
+      "time_local": "20:00 CT",
+      "timezone": "CDT (UTC-5)",
+      "time_beijing": "09:00",
+      "date_beijing": "6月17日",
+      "time_beijing_full": "北京时间 6月17日 09:00",
+      "venue": "Arrowhead Stadium",
+      "city": "Kansas City, USA",
+      "note": "J组揭幕 · 阿根廷 vs 阿尔及利亚 · 堪萨斯城",
+      "lineup": {
+        "confirmed": false,
+        "formation": null,
+        "home": "等待官方确认",
+        "away": "等待官方确认",
+        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
+        "predicted": {
+          "formation": "4-3-3 / 4-2-3-1",
+          "home": "Martínez; Molina, Romero, Otamendi, Tagliafico; De Paul, Enzo, Mac Allister; Messi, Lautaro, Garnacho",
+          "away": "Mandrea; Atal, Mandi, Belkacemi; Benrahma, Aouar, Bentaleb; Mahrez, Bounedjah, Boussoufa",
+          "source": "ESPN / TyC 预测 · 非官方"
+        }
+      },
+      "home": {
+        "name": "Argentina",
+        "iso": "ar",
+        "flag": "",
+        "fifa_rank": 1,
+        "rating": 94,
+        "form": [
+          "W",
+          "W",
+          "W",
+          "W",
+          "D"
+        ],
+        "coach": "Lionel Scaloni",
+        "stars": [
+          {
+            "name": "Lionel Messi",
+            "pos": "RW",
+            "club": "Inter Miami",
+            "stats": "最后一届世界杯",
+            "rating": 9.3,
+            "desc": "J组核心，定位球+肋部"
+          },
+          {
+            "name": "Lautaro Martínez",
+            "pos": "ST",
+            "club": "Inter Milan",
+            "stats": "意甲金靴",
+            "rating": 8.8,
+            "desc": "支点+跑位，破局关键"
+          },
+          {
+            "name": "Enzo Fernández",
+            "pos": "CM",
+            "club": "Chelsea",
+            "stats": "世界杯最佳年轻球员",
+            "rating": 8.6,
+            "desc": "节拍器+远射"
+          }
+        ],
+        "injuries": [
+          {
+            "player": "Lionel Messi",
+            "status": "FIT",
+            "note": "最后一届世界杯，负荷管理但 J 组揭幕预计首发",
+            "confirmed": true
+          },
+          {
+            "player": "Paulo Dybala",
+            "status": "OUT",
+            "note": "未入选 26 人大名单",
+            "confirmed": true
+          },
+          {
+            "player": "Lautaro Martínez",
+            "status": "FIT",
+            "note": "国米赛季末无新增伤情",
+            "confirmed": true
+          }
+        ],
+        "rumors": [
+          "【更衣室】Scaloni 称「卫冕从第一场开始」，Messi 最后一届无额外压力传言",
+          "【战术】4-3-3：Messi 自由人 + Lautaro 支点 + Enzo 节拍",
+          "Messi 70' 可能换下保体能，Garnacho 待命",
+          "对阿尔及利亚预计控球压制，但尊重 2014 逼德国加时"
+        ],
+        "star": {
+          "name": "Lionel Messi",
           "pos": "RW",
-          "desc": "一人球队核心，反击是唯一变数",
-          "rating": 8.8
+          "desc": "最后一届，J组必须开门红",
+          "rating": 9.3
+        }
+      },
+      "away": {
+        "name": "Algeria",
+        "iso": "dz",
+        "flag": "",
+        "fifa_rank": 46,
+        "rating": 67,
+        "form": [
+          "W",
+          "W",
+          "D",
+          "L",
+          "W"
+        ],
+        "coach": "Djamel Belmadi",
+        "stars": [
+          {
+            "name": "Riyad Mahrez",
+            "pos": "RW",
+            "club": "Al-Ahli",
+            "stats": "2019 非洲杯冠军核心",
+            "rating": 8,
+            "desc": "左路唯一世界级爆点"
+          },
+          {
+            "name": "Ismaël Bennacer",
+            "pos": "CM",
+            "club": "AC Milan",
+            "stats": "绞杀+出球",
+            "rating": 7.8,
+            "desc": "中场屏障，限制 Enzo"
+          },
+          {
+            "name": "Youcef Atal",
+            "pos": "RB",
+            "club": "Al-Sadd",
+            "stats": "边路速度",
+            "rating": 7.5,
+            "desc": "反击宽度"
+          }
+        ],
+        "injuries": [
+          {
+            "player": "Riyad Mahrez",
+            "status": "FIT",
+            "note": "沙特联赛状态，右路核心预计首发",
+            "confirmed": true
+          },
+          {
+            "player": "Ismaël Bennacer",
+            "status": "FIT",
+            "note": "中场绞杀，限制 Enzo 是关键",
+            "confirmed": true
+          },
+          {
+            "player": "Youcef Atal",
+            "status": "DOUBT",
+            "note": "大腿轻微不适，赛前队检",
+            "confirmed": false
+          }
+        ],
+        "rumors": [
+          "【更衣室】Belmadi 2019 非洲杯冠军班底，赛前称「对阿根廷无恐惧，有大赛 DNA」",
+          "【战术】4-2-3-1 低位 + Mahrez 反击",
+          "2014 世界杯逼德国加时是心理资产",
+          "若先破门，5-4-1 收缩执行概率高"
+        ],
+        "star": {
+          "name": "Riyad Mahrez",
+          "pos": "RW",
+          "desc": "反击发起点，对位 Tagliafico 是冷门关键",
+          "rating": 8
         }
       },
       "h2h": {
@@ -770,1132 +2005,926 @@ const MATCH_DATA = {
         "away_wins": 0,
         "recent": [
           {
-            "year": 2019,
+            "year": 2014,
             "comp": "友谊赛",
-            "score": "2-0",
-            "winner": "Belgium"
+            "score": "4-2",
+            "winner": "Argentina"
           }
         ],
-        "note": "比利时历史占优"
+        "note": "阿根廷历史占优"
       },
       "referee": {
         "confirmed": true,
         "pending": false,
-        "source": "FIFA · Match officials · 2026-06-15/16",
-        "name": "Ramon Abatti",
-        "nation": "Brazil",
-        "iso": "br",
-        "age": 36,
-        "wc_experience": "2026 世界杯执法 · 巴甲顶级裁判",
-        "avg_yellow": 4.8,
-        "avg_red": 0.18,
-        "avg_penalty": 0.35,
-        "home_win_rate": 50,
-        "bias_index": 49,
-        "bias_note": "巴西籍主裁，南美联赛出牌率略高。De Bruyne vs Salah 对决中对身体对抗判罚果断；G组揭幕战预计 4-5 张黄牌，点球尺度相对明确。",
+        "source": "FIFA · Match officials · 2026-06-16/17",
+        "name": "Szymon Marciniak",
+        "nation": "Poland",
+        "iso": "pl",
+        "age": 44,
+        "wc_experience": "2022 世界杯决赛主裁 · 2026 继续执法",
+        "avg_yellow": 4.4,
+        "avg_red": 0.15,
+        "avg_penalty": 0.31,
+        "home_win_rate": 51,
+        "bias_index": 52,
+        "bias_note": "2022 决赛主裁，大赛尺度成熟。阿根廷控球局黄牌或偏少，但对 Belmadi 低位铲抢与 Mahrez 反击拉倒判罚果断。",
         "tendencies": [
-          "巴西助理裁判组：Danilo Manis、Rafael Alves",
-          "第四官员 Kevin Ortega（秘鲁）",
-          "Salah 反击被拉倒、比利时高位犯规是黄牌高发点"
+          "波兰助理裁判组：Tomasz Listkiewicz、Adam Kupsik",
+          "第四官员 Campbell-Kirk Kawana-Waugh（新西兰）",
+          "VAR Tomasz Kwiatkowski（波兰）· AVAR Dennis Higler · SVAR Mohammed Obaid",
+          "Messi/Mahrez 对位犯规是黄牌高发点，预计 4–5 张"
         ],
         "officials": {
-          "ar1": "Danilo Manis (BRA)",
-          "ar2": "Rafael Alves (BRA)",
-          "fourth": "Kevin Ortega (PER)",
-          "var": "TBD (FIFA)",
-          "avar": "TBD (FIFA)",
-          "svar": "TBD (FIFA)"
+          "ar1": "Tomasz Listkiewicz (POL)",
+          "ar2": "Adam Kupsik (POL)",
+          "fourth": "Campbell-Kirk Kawana-Waugh (NZL)",
+          "var": "Tomasz Kwiatkowski (POL)",
+          "avar": "Dennis Higler (NED)",
+          "svar": "Mohammed Obaid (UAE)"
         }
       },
       "prediction": {
-        "home_win": 60,
-        "draw": 22,
-        "away_win": 18,
-        "score": "1-0",
-        "confidence": 78,
-        "xg_home": 1.95,
-        "xg_away": 0.95,
-        "key_factor": "G组焦点：De Bruyne 对位埃及双闸，Salah 反击是唯一变数。比利时纸面占优但大赛慢热有前例；xG 1.95-0.95 泊松最可能 2-1。",
+        "home_win": 77,
+        "draw": 14,
+        "away_win": 9,
+        "score": "2-0",
+        "confidence": 82,
+        "xg_home": 2.8,
+        "xg_away": 0.6,
+        "key_factor": "卫冕冠军 vs 非洲劲旅：Messi/Lautaro 对位 Belmadi 低位，Mahrez 反击是唯一变数；xG 2.8-0.6 泊松最可能 3-0/2-0",
         "score_dist": [
           {
-            "score": "1-0",
-            "prob": 10.7
-          },
-          {
             "score": "2-0",
-            "prob": 10.5
-          },
-          {
-            "score": "1-1",
-            "prob": 10.2
-          },
-          {
-            "score": "2-1",
-            "prob": 9.9
+            "prob": 13.1
           },
           {
             "score": "3-0",
-            "prob": 6.8
+            "prob": 12.2
           },
           {
-            "score": "3-1",
-            "prob": 6.5
+            "score": "1-0",
+            "prob": 9.3
           },
           {
-            "score": "0-0",
-            "prob": 5.5
-          }
-        ]
-      },
-      "upset_alert": {
-        "favorite": "Belgium",
-        "underdog": "Egypt",
-        "favorite_iso": "BE",
-        "index": 38,
-        "level": "MEDIUM",
-        "level_cn": "中等",
-        "cold_result_pct": 42,
-        "verdict": "Salah 一人球队可制造冷门——埃及 7 次世界杯经验，低位+Salah 反击逼平均有空间。",
-        "tactical": "Hassan 4-5-1 低位限制 De Bruyne 接球；Salah 速度惩罚比利时压上身后空档。",
-        "psychology": "比利时大赛慢热是历史弱点；Salah 先破门则 Garcia 变阵压力倍增。",
-        "historical": "2019 友谊赛比利时 2-0；但 Salah 大赛大场面经验不可低估。",
-        "factors": [
-          {
-            "tag": "核心球员",
-            "impact": "强",
-            "detail": "Salah 状态决定埃及上限，De Bruyne 对比利时同理"
+            "score": "4-0",
+            "prob": 8.5
           },
           {
-            "tag": "克制",
-            "impact": "中",
-            "detail": "埃及低位+Salah 模板对欧洲强队有效"
-          },
-          {
-            "tag": "心理",
-            "impact": "中",
-            "detail": "G 组揭幕，比利时需取 3 分但易急躁"
-          }
-        ]
-      },
-      "coach_analysis": {
-        "home": {
-          "name": "Rudy Garcia",
-          "age": 60,
-          "nation": "比利时/法国",
-          "tenure": "2025年—",
-          "wc_exp": "2012 欧洲杯冠军（助理）· 2026 带队",
-          "style_tags": [
-            "4-2-3-1",
-            "De Bruyne 核心",
-            "边路速度",
-            "定位球"
-          ],
-          "formation_pref": "4-2-3-1 · Doku 宽度",
-          "style_summary": "黄金一代末班车，De Bruyne 前腰 + Lukaku 支点 + Doku 爆点。Garcia 大赛慢热有前例，但 G 组揭幕必须取 3 分。",
-          "subs": {
-            "timing": "首换 58–65 分钟；落后 55' 变阵",
-            "pattern": "常换 Trossard/Doku 边锋；70' 换 Tielemans 控场",
-            "avg_first_sub": "60'",
-            "note": "2012 欧洲杯助理经验，临场调整稳健"
-          },
-          "when_leading": {
-            "label": "继续进攻 · 不早退",
-            "detail": "1 球领先：维持 4-2-3-1，De Bruyne 仍前插；2 球+：65' 轮换但保持宽度。"
-          },
-          "when_trailing": {
-            "label": "堆前锋 · 加时压迫",
-            "detail": "先丢球：55' 换 Trossard 或改 3-4-3 堆边锋。"
-          },
-          "vs_strong": {
-            "label": "对强队：对攻",
-            "detail": "对法国级会高位对攻；对埃及预计全场压制。"
-          },
-          "vs_weak": {
-            "label": "对弱队：不留余地",
-            "detail": "对新西兰/埃及弱于比利时时全场压制，Lukaku 目标至少 1 球。"
-          },
-          "tournament": "接替 Domenico Tedesco，大赛经验来自 2012 助理角色；G 组慢热是历史弱点。",
-          "traits": [
-            "De Bruyne 依赖",
-            "大赛慢热",
-            "边路速度",
-            "定位球"
-          ],
-          "match_note": "G 组揭幕 De Bruyne 必须主导——大赛慢热是隐患，领先也不早退；Salah 反击是最大威胁。"
-        },
-        "away": {
-          "name": "Hossam Hassan",
-          "age": 58,
-          "nation": "埃及",
-          "tenure": "2024年—",
-          "wc_exp": "球员时代 1990 世界杯 · 2026 执教",
-          "style_tags": [
-            "4-3-3",
-            "Salah 核心",
-            "低位转换",
-            "定位球"
-          ],
-          "formation_pref": "4-3-3 · 领先时 4-5-1",
-          "style_summary": "埃及传奇前锋转型主帅，进攻完全围绕 Salah。面对比利时预计 4-5-1 低位，Marmoush 反击 + Salah 速度是唯一变数。",
-          "subs": {
-            "timing": "首换 60–70 分钟；落后 55' 换进攻手",
-            "pattern": "常换 Trezeguet/Marmoush；Salah 极少被换下",
-            "avg_first_sub": "65'",
-            "note": "Salah 打满 90 分钟是常态"
-          },
-          "when_leading": {
-            "label": "4-5-1 收缩",
-            "detail": "若意外领先：退守五后卫，Salah 留前场反击。"
-          },
-          "when_trailing": {
-            "label": "Salah 单核 · 定位球",
-            "detail": "先丢球：60' 换 Trezeguet 加强宽度，Salah 仍核心。"
-          },
-          "vs_strong": {
-            "label": "对强队：龟缩 + Salah",
-            "detail": "对比利时：低位 + Salah 反击，守 0–0 求 1 分合理。"
-          },
-          "vs_weak": {
-            "label": "对弱队：相对开放",
-            "detail": "对新西兰会压上；对比利时不适用。"
-          },
-          "tournament": "7 次世界杯球员经验，但执教大赛首秀；Salah 一人球队属性明显。",
-          "traits": [
-            "Salah 依赖",
-            "低位防守",
-            "大赛经验（球员）",
-            "定位球"
-          ],
-          "match_note": "4-5-1 低位求 1 分，Salah 留前场；若 0–0 进入 70' 对埃及即是胜利。"
-        }
-      },
-      "weather": {
-        "city": "西雅图",
-        "country": "美国",
-        "venue": "Lumen Field",
-        "temp": 19,
-        "humidity": 58,
-        "altitude_m": 50,
-        "rain_chance": 35,
-        "wind": "西风 2级",
-        "condition_cn": "夜场凉爽，开放式球场",
-        "impact_level": "LOW",
-        "impact": "太平洋西北 19°C 凉爽夜场，双方体能消耗低于迈阿密/休斯顿",
-        "impact_summary": "气候变量低——推演以 De Bruyne vs Salah 战术对位为主",
-        "home_adapt": 82,
-        "away_adapt": 80,
-        "home_note": "比利时球员多效力欧洲联赛，凉爽夜场完全适应；人工草皮传球速度略快",
-        "away_note": "埃及球员习惯北非-地中海气候，19°C 舒适；Salah 反击不受高温拖累",
-        "weather_factors": [
-          {
-            "label": "19°C 凉爽",
-            "impact": "有利高强度",
-            "detail": "90 分钟压迫/反击均可维持，Bielsa 式强度在此场不适用但比利时高位可全场执行"
-          },
-          {
-            "label": "人工草皮",
-            "impact": "略快",
-            "detail": "传球速度略快，De Bruyne 直塞与 Salah 启动略利"
-          },
-          {
-            "label": "降雨 35%",
-            "impact": "低",
-            "detail": "开放式球场若小雨可能滑，但赛前预报以多云为主"
-          }
-        ],
-        "historical_note": "Lumen Field 容量 69,000 · G 组揭幕战"
-      },
-      "mystic": {
-        "date_bazi": {
-          "year": "丙午年",
-          "year_element": "火",
-          "year_animal": "马",
-          "month": "甲午月",
-          "month_element": "木+火",
-          "day": "丙戌日",
-          "day_element": "火+土",
-          "hour_home": "丑时（01:00-03:00）",
-          "hour_home_element": "土",
-          "day_dominant": "火土",
-          "day_summary": "丙戌日丑时——丑土当令，火土相生。《周易·睽卦》曰：「小事吉。」两强相争宜以战术纪律决胜，Salah 如离火独明，忌比利时轻敌。"
-        },
-        "wuxing": {
-          "home": {
-            "team": "Belgium",
-            "colors": "红+黑",
-            "elements": "火（红）、水（黑）",
-            "wuxing_short": "火土相生，De Bruyne 为枢",
-            "verdict": "有利",
-            "verdict_color": "#5BBF8A",
-            "compat": 72,
-            "reason": "比利时红属火，丑时土旺火生——De Bruyne 如土中藏火，Doku 边路如木火蔓延。Lukaku 支点土德稳固，G 组揭幕天时略利主队。",
-            "advantage": "De Bruyne 前腰位置与丑时土旺同频；西雅图凉爽利于 90 分钟高位"
-          },
-          "away": {
-            "team": "Egypt",
-            "colors": "白+红+黑",
-            "elements": "金（白）、火（红）、水（黑）",
-            "wuxing_short": "Salah 离火独明，余者受制",
-            "verdict": "中性",
-            "verdict_color": "#C8A96E",
-            "compat": 58,
-            "reason": "埃及白红属金火，Salah 如离火独明——全队进攻系于一人。丑时土旺克水，Marmoush 反击如暗流，但 De Bruyne 绞杀后难持续。",
-            "disadvantage": "Salah 一人球队，先丢球后缺乏 B 计划；低位 4-5-1 久守难支"
-          },
-          "summary": "五行裁定：比利时火土略占上风，埃及 Salah 离火可成暗雷"
-        },
-        "hexagram": {
-          "name": "睽卦",
-          "symbol": "☱",
-          "number": 38,
-          "upper": "离火",
-          "lower": "兑泽",
-          "quote": "《周易·睽卦》：「小事吉。」",
-          "general": "火泽睽，两强相背而争。睽卦象征势均力敌但各有倚仗——利于战术纪律更好、核心球员状态更佳的一方。",
-          "advantage_team": "Belgium",
-          "disadvantage_team": "Egypt",
-          "hexagram_analysis": "睽卦主「乖异而动」——比利时 De Bruyne 如泽中藏火，Salah 如离火独明。Garcia 大赛慢热是睽卦之「异」，但替补深度（Doku/Trossard）可解。Salah 先破门则指数骤降。",
-          "match_nature": "主队小胜局",
-          "match_nature_prob": 58,
-          "yellow_card_risk": "中",
-          "yellow_card_reason": "睽卦主相争，预计 4-5 张——Salah 反击被拉倒、比利时高位犯规。",
-          "scenarios": [
-            {
-              "icon": "⚽",
-              "label": "比赛性质",
-              "text": "比利时小胜 60%，平局 22%，埃及爆冷 18%（xG 1.95-0.95，最可能 2-1）"
-            },
-            {
-              "icon": "⏱",
-              "label": "进球高峰段",
-              "text": "第 25-40 分钟及第 70-85 分钟（换人后）"
-            },
-            {
-              "icon": "🟨",
-              "label": "黄牌风险",
-              "text": "中等——4-5 张，Salah 反击 + De Bruyne 绞杀"
-            },
-            {
-              "icon": "🔄",
-              "label": "0-0 平局可能",
-              "text": "中（22%）——埃及低位 + Salah 偷分"
-            },
-            {
-              "icon": "⏰",
-              "label": "加时赛概率",
-              "text": "低（5%）"
-            }
-          ],
-          "early_goal": {
-            "scenario": "若比利时率先进球（De Bruyne/Lukaku）",
-            "prediction": "埃及被迫压出——Salah 反击空间增大，但比利时控场追加进球概率 45%。",
-            "favors": "Belgium",
-            "favors_prob": 65
-          },
-          "no_early_goal": {
-            "scenario": "若前 30 分钟 0-0（Hassan 低位奏效）",
-            "prediction": "消耗战——De Bruyne 70' 后体能优势显现，Salah 孤立无援概率增。",
-            "favors": "Belgium",
-            "favors_prob": 58
-          },
-          "away_goal": {
-            "scenario": "若 Salah 先破门（反击 / 定位球）",
-            "prediction": "睽卦逆——比利时反扑，Trossard 扳平概率 55%；90 分钟至少平局概率 70%。",
-            "favors": "Belgium",
-            "favors_prob": 52
-          },
-          "halftime": {
-            "scenario": "若半场 1-1",
-            "prediction": "Garcia 变阵加强宽度，比利时 70' 后略优。",
-            "favors": "Belgium",
-            "favors_prob": 58
-          },
-          "extra_time": {
-            "scenario": "若 90 分钟平局",
-            "prediction": "比利时替补深度 + 身高优势，加时进球概率 55%。",
-            "favors": "Belgium",
-            "favors_prob": 62
-          }
-        },
-        "home_score": 68,
-        "away_score": 38,
-        "mystic_verdict": "☱ 睽卦——De Bruyne 土中藏火，Salah 离火独明；比利时纸面占优但大赛慢热，Salah 是最大变数。",
-        "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
-      }
-    },
-    {
-      "id": "m13",
-      "group": "H",
-      "matchday": 1,
-      "date": "2026-06-15",
-      "time": "18:00",
-      "time_local": "18:00 ET",
-      "timezone": "EDT (UTC-4)",
-      "time_beijing": "06:00",
-      "date_beijing": "6月16日",
-      "time_beijing_full": "北京时间 6月16日 06:00",
-      "venue": "Hard Rock Stadium",
-      "city": "Miami, USA",
-      "note": "H组第2场 · 沙特 vs 乌拉圭 · 最新预测阵容（开赛前确认）",
-      "lineup": {
-        "confirmed": false,
-        "formation": "4-2-3-1 / 4-2-3-1",
-        "home": "Al-Owais; Abdulhamid, Tambakti, Amri, Al-Harbi; N. Al-Dawsari, Al-Khaibari; Mandash, Al-Juwayr, Salem Al-Dawsari; Al-Buraikan",
-        "away": "Muslera; Varela, Cáceres, Olivera, Viña; Bentancur, Ugarte; Valverde; Viñas, Maxi Araújo; Núñez",
-        "note": "📋 FotMob 最新预测阵容（官方名单开赛前约1小时公布 · 非最终确认）",
-        "predicted": {
-          "formation": "4-2-3-1 / 4-3-3",
-          "home": "Al-Owais; Abdulhamid, Al-Amri, Al-Boleahi, Al-Shahrani; Kanno, Al-Faraj; Al-Dawsari, Al-Shehri, Al-Hassouni; Al-Buraikan",
-          "away": "Rochet; Varela, Bueno, Cáceres, Olivera; Ugarte, Valverde, Bentancur; Pellistri, De la Cruz, Núñez",
-          "source": "Goal.com / worldcuppass 最新预测 · 非官方"
-        },
-        "diff": {
-          "home": "✅ Al-Owais 一门 · Abdulhamid 右闸 · Al-Harbi 替 Al-Shahrani 左闸",
-          "away": "⚠️ Muslera 替 Rochet · Cáceres+Olivera 中卫（Giménez/Araújo OUT）· De Arrascaeta OUT · Viña 复出"
-        },
-        "updated": "2026-06-16T06:30:00+08:00"
-      },
-      "home": {
-        "name": "Saudi Arabia",
-        "iso": "sa",
-        "flag": "",
-        "fifa_rank": 58,
-        "rating": 68,
-        "form": [
-          "W",
-          "L",
-          "D",
-          "W",
-          "L"
-        ],
-        "coach": "Georgios Donis",
-        "stars": [
-          {
-            "name": "Salem Al-Dawsari",
-            "pos": "LW",
-            "club": "Al-Hilal",
-            "stats": "2022 对阿根廷进球",
-            "rating": 7.8,
-            "desc": "左路核心，反击发起点"
-          },
-          {
-            "name": "Salem Al-Faraj",
-            "pos": "CM",
-            "club": "Al-Hilal",
-            "stats": "队长 · 中场屏障",
-            "rating": 7.5,
-            "desc": "绞杀与出球枢纽"
-          },
-          {
-            "name": "Firas Al-Buraikan",
-            "pos": "ST",
-            "club": "Al-Ahli",
-            "stats": "锋线支点",
-            "rating": 7.3,
-            "desc": "定位球与背身"
-          }
-        ],
-        "injuries": [
-          {
-            "player": "Nawaf Al-Aqidi",
-            "status": "DOUBT",
-            "note": "肌肉伤，一门存疑——Al-Owais（2022 世界杯 4 场经验）预计首发",
-            "confirmed": false
-          },
-          {
-            "player": "Abdullah Al-Hamdan",
-            "status": "DOUBT",
-            "note": "对塞内加尔热身脚踝伤退，出战乌拉圭成疑",
-            "confirmed": false
-          }
-        ],
-        "rumors": [
-          "Donis 预计 3-5-2/3-5-1-1 低位，Salem Al-Dawsari + Al-Buraikan 前场双核",
-          "2022 对阿根廷 2-1 爆冷 DNA 仍在，但 Donis 体系与 Mancini 时代不同",
-          "全队仅 Abdulhamid 一名海外球员（朗斯），硬实力仍处下风",
-          "对厄瓜多尔热身 1-2 负，大赛前状态一般；迈阿密湿热 60' 后体能是考验"
-        ],
-        "star": {
-          "name": "Salem Al-Dawsari",
-          "pos": "LW",
-          "desc": "2022 爆冷 DNA 象征，左路唯一稳定威胁",
-          "rating": 7.8
-        }
-      },
-      "away": {
-        "name": "Uruguay",
-        "iso": "uy",
-        "flag": "",
-        "fifa_rank": 11,
-        "rating": 82,
-        "form": [
-          "W",
-          "W",
-          "D",
-          "W",
-          "W"
-        ],
-        "coach": "Marcelo Bielsa",
-        "stars": [
-          {
-            "name": "Darwin Núñez",
-            "pos": "ST",
-            "club": "Liverpool",
-            "stats": "高位压迫支点",
-            "rating": 8.5,
-            "desc": "Bielsa 体系核心，破局关键"
-          },
-          {
-            "name": "Federico Valverde",
-            "pos": "CM",
-            "club": "Real Madrid",
-            "stats": "全能中场",
-            "rating": 8.8,
-            "desc": "覆盖+远射，Bielsa 压迫发动机"
-          },
-          {
-            "name": "Facundo Pellistri",
-            "pos": "RW",
-            "club": "Man United",
-            "stats": "右路速度",
-            "rating": 8,
-            "desc": "反击宽度与肋部渗透"
-          }
-        ],
-        "injuries": [
-          {
-            "player": "Ronald Araújo",
-            "status": "OUT",
-            "note": "小腿/肌肉伤，**确认缺席**揭幕战——巴萨中卫赛季末反复",
-            "confirmed": true
-          },
-          {
-            "player": "José María Giménez",
-            "status": "OUT",
-            "note": "高等级脚踝扭伤，TyC/DSports 确认**缺席揭幕战**——Cáceres/Bueno 重组中卫",
-            "confirmed": true
-          },
-          {
-            "player": "Giorgian De Arrascaeta",
-            "status": "OUT",
-            "note": "小腿伤，预计缺席揭幕战（De la Cruz 顶替前腰）",
-            "confirmed": true
-          },
-          {
-            "player": "Sebastián Cáceres",
-            "status": "DOUBT",
-            "note": "脑震荡/头部问题，能否首发待定",
-            "confirmed": false
-          },
-          {
-            "player": "Matías Viña",
-            "status": "DOUBT",
-            "note": "肌肉伤，左后卫位置存疑",
-            "confirmed": false
-          },
-          {
-            "player": "Federico Valverde",
-            "status": "FIT",
-            "note": "Bielsa 压迫体系发动机，预计首发 CM",
-            "confirmed": true
-          }
-        ],
-        "rumors": [
-          "✅ TyC/DSports：Giménez 不冒险出战揭幕战 · Araújo/De Arrascaeta 同样 OUT",
-          "Bueno+Cáceres 预计中卫 · De la Cruz 替 De Arrascaeta 前腰",
-          "Núñez 支点 + Pellistri 速度 · Valverde 压迫体系发动机",
-          "Donis 3-5-2 低位 · Al-Dawsari + Al-Buraikan 前场双核"
-        ],
-        "star": {
-          "name": "Federico Valverde",
-          "pos": "CM",
-          "desc": "Bielsa 压迫体系覆盖核心",
-          "rating": 8.8
-        }
-      },
-      "h2h": {
-        "home_wins": 0,
-        "draws": 1,
-        "away_wins": 2,
-        "recent": [
-          {
-            "year": 2022,
-            "comp": "友谊赛",
-            "score": "0-2",
-            "winner": "Uruguay"
-          }
-        ],
-        "note": "乌拉圭历史占优"
-      },
-      "referee": {
-        "confirmed": true,
-        "pending": false,
-        "source": "FIFA · Match officials · 2026-06-15/16",
-        "name": "Maurizio Mariani",
-        "nation": "Italy",
-        "iso": "it",
-        "age": 44,
-        "wc_experience": "2026 世界杯首秀 · 意甲/欧联执法",
-        "avg_yellow": 4.5,
-        "avg_red": 0.12,
-        "avg_penalty": 0.32,
-        "home_win_rate": 48,
-        "bias_index": 47,
-        "bias_note": "意大利籍主裁，2026 世界杯首秀。迈阿密湿热夜场，Bielsa 高位压迫局战术犯规多；预计 5-6 张黄牌，对抗议出牌果断。",
-        "tendencies": [
-          "2026 世界杯首秀 · 迈阿密「火烈鸟粉」裁判服",
-          "Bielsa 压迫 vs Mancini 低位，沙特犯规打断节奏概率高",
-          "乌拉圭 Valverde/Núñez 反击被拉倒是点球/黄牌关键"
-        ],
-        "officials": {
-          "ar1": "TBD (ITA)",
-          "ar2": "TBD (ITA)",
-          "fourth": "TBD (FIFA)",
-          "var": "TBD (FIFA)",
-          "avar": "TBD (FIFA)",
-          "svar": "TBD (FIFA)"
-        }
-      },
-      "prediction": {
-        "home_win": 15,
-        "draw": 22,
-        "away_win": 63,
-        "score": "0-1",
-        "confidence": 80,
-        "xg_home": 0.75,
-        "xg_away": 1.85,
-        "key_factor": "Bielsa 高位压迫 vs Donis 三中卫低位：乌拉圭 xG 1.85 占优但 Giménez/R. Araújo/De Arrascaeta 缺阵削弱防线。沙特 2022 爆冷 DNA 仍在；泊松最可能 0-2/1-2。",
-        "score_dist": [
-          {
-            "score": "0-1",
-            "prob": 13.7
-          },
-          {
-            "score": "0-2",
-            "prob": 12.7
-          },
-          {
-            "score": "1-1",
-            "prob": 10.3
-          },
-          {
-            "score": "1-2",
-            "prob": 9.5
-          },
-          {
-            "score": "0-3",
+            "score": "2-1",
             "prob": 7.8
           },
           {
-            "score": "0-0",
-            "prob": 7.4
+            "score": "3-1",
+            "prob": 7.3
           },
           {
-            "score": "1-3",
-            "prob": 5.9
+            "score": "1-1",
+            "prob": 5.6
           }
-        ]
+        ],
+        "base_home_win": 82,
+        "base_draw": 13,
+        "base_away_win": 6,
+        "depth_calibrated": true
       },
       "upset_alert": {
-        "favorite": "Uruguay",
-        "underdog": "Saudi Arabia",
-        "favorite_iso": "UY",
-        "index": 28,
+        "favorite": "Argentina",
+        "underdog": "Algeria",
+        "favorite_iso": "AR",
+        "index": 22,
         "level": "LOW",
         "level_cn": "低",
-        "cold_result_pct": 22,
-        "verdict": "乌拉圭纸面碾压，但防线伤病危机（Giménez/R. Araújo 缺阵）+ 沙特 2022 DNA，Donis 低位偷分仍有 18% 空间。",
-        "tactical": "Bielsa 4-4-2 高压 vs Donis 3-5-2；Bueno/Cáceres 临时中卫 vs Núñez 是胜负手。",
-        "psychology": "2022 爆冷 DNA 仍在，但 Bielsa 压迫强度完全不同；沙特先丢球易崩盘。",
-        "historical": "2022 友谊赛乌拉圭 2-0；沙特 2022 世界杯胜阿根廷是最大冷门参考。",
+        "cold_result_pct": 18,
+        "verdict": "阿根廷四场中爆冷风险较低——但 2014 阿尔及利亚曾逼德国加时，Mahrez 反击有 14% 平局空间。",
+        "tactical": "Belmadi 4-2-3-1 低位 + Mahrez 反击；Scaloni 4-3-3 控球，Lautaro 对位 Mandi 是核心对位。",
+        "psychology": "阿根廷卫冕冠军心理硬度已验证；阿尔及利亚 2019 非洲杯冠军有大赛经验。",
+        "historical": "2014 友谊赛阿根廷 4-2；2014 世界杯阿尔及利亚 1-1 德国（参考）。",
         "factors": [
           {
-            "tag": "压迫",
+            "tag": "实力差",
             "impact": "强",
-            "detail": "Bielsa 高位压迫世界杯顶级，沙特出球困难"
+            "detail": "xG 2.8-0.6 碾压，Messi/Lautaro 决定比分"
           },
           {
-            "tag": "DNA",
+            "tag": "反击",
             "impact": "中",
-            "detail": "2022 爆冷模板对阿根廷有效，对乌拉圭难度更大"
+            "detail": "Mahrez 速度是阿尔及利亚唯一威胁"
           },
           {
-            "tag": "气候",
-            "impact": "中",
-            "detail": "迈阿密 31°C 湿热，60' 后沙特体能是考验"
+            "tag": "深度",
+            "impact": "强",
+            "detail": "阿根廷替补深度仍足"
           }
         ]
       },
       "coach_analysis": {
         "home": {
-          "name": "Georgios Donis",
-          "age": 54,
-          "nation": "希腊",
-          "tenure": "2025年—",
-          "wc_exp": "2026 带队 · 沙特/希腊联赛经验",
-          "style_tags": [
-            "3-5-2",
-            "低位防守",
-            "转换",
-            "2022 爆冷 DNA"
-          ],
-          "formation_pref": "3-5-2 / 3-5-1-1 · 极端时 5-4-1",
-          "style_summary": "希腊籍主帅，三中卫低位体系。Al-Dawsari/Al-Buraikan 前场双核，2022 对阿根廷 2–1 仍是心理资产，但对 Bielsa 压迫强度完全不同。",
-          "subs": {
-            "timing": "首换 60–68 分钟；落后 55' 换前锋",
-            "pattern": "常换 Al-Shehri/Al-Buraikan；Al-Faraj 极少换下",
-            "avg_first_sub": "63'",
-            "note": "对厄瓜多尔热身 1-2 负，大赛前状态一般"
-          },
-          "when_leading": {
-            "label": "4-5-1 收缩",
-            "detail": "若意外领先（对乌拉圭极低）：退守 + Al-Dawsari 反击。"
-          },
-          "when_trailing": {
-            "label": "换前锋 · 定位球",
-            "detail": "先丢球：60' 换 Al-Buraikan 加强冲击，但低位底线不变。"
-          },
-          "vs_strong": {
-            "label": "对强队：低位 + 偷分",
-            "detail": "对乌拉圭：3-5-2 低位，Al-Owais 替 Al-Aqidi 一门；Bielsa 压迫下 60' 后体能是考验。"
-          },
-          "vs_weak": {
-            "label": "不适用",
-            "detail": "H 组乌拉圭/西班牙均强于沙特。"
-          },
-          "tournament": "2022 沙特爆冷阿根廷是最大心理资产；全队仅 Abdulhamid 一名海外球员。",
-          "traits": [
-            "低位防守",
-            "三中卫",
-            "2022 爆冷 DNA",
-            "Al-Dawsari 依赖"
-          ],
-          "match_note": "2022 爆冷 DNA 仍在，但 Bielsa 压迫强度完全不同——4-5-1 低位，60' 后体能是考验。"
-        },
-        "away": {
-          "name": "Marcelo Bielsa",
-          "age": 70,
+          "name": "Lionel Scaloni",
+          "age": 46,
           "nation": "阿根廷",
-          "tenure": "2023年—",
-          "wc_exp": "2010 世界杯（智利）· 2026 二度带队大赛",
+          "tenure": "2018年—",
+          "wc_exp": "2022 世界杯冠军",
           "style_tags": [
-            "4-4-2 高位",
-            "疯狂压迫",
-            "Valverde 覆盖",
-            "Núñez 支点"
+            "4-3-3",
+            "Messi 核心",
+            "De Paul 绞杀",
+            "深度"
           ],
-          "formation_pref": "4-4-2 · 全场 man-marking 变体",
-          "style_summary": "Bielsa 高位压迫世界杯顶级强度，Valverde 覆盖 + Núñez 支点 + Pellistri 速度。对沙特预计全场压制，先破门则指数骤降。",
+          "formation_pref": "4-3-3 · Messi 自由人",
+          "style_summary": "卫冕冠军，Messi 最后一届+ Lautaro/Enzo 新核。对阿尔及利亚预计 xG 2.8+ 全场压制。",
           "subs": {
-            "timing": "首换 55–62 分钟；Bielsa 换人果断",
-            "pattern": "常换 Pellistri/中场；70' 第三波调整",
-            "avg_first_sub": "58'",
-            "note": "Bielsa 风格换人偏早且批量"
+            "timing": "首换 60–65 分钟",
+            "pattern": "Messi 常 70' 换下",
+            "avg_first_sub": "62'",
+            "note": "2022 冠军经验"
           },
           "when_leading": {
-            "label": "继续压迫 · 不松懈",
-            "detail": "1 球领先：维持高位，Bielsa 极少早退；2 球+：65' 轮换但压迫强度不减。"
+            "label": "控节奏 · 保护 Messi",
+            "detail": "2 球+：65' 换 Messi 保体能。"
           },
           "when_trailing": {
-            "label": "更疯压迫 · 堆前锋",
-            "detail": "先丢球：55' 换进攻手，压迫强度反而加码。"
+            "label": "堆前锋",
+            "detail": "先丢球：55' 换 Julian Alvarez。"
           },
           "vs_strong": {
             "label": "对强队：对攻",
-            "detail": "对西班牙会高位对攻；对沙特全场压制。"
+            "detail": "对法国/巴西级对攻。"
           },
           "vs_weak": {
             "label": "对弱队：不留余地",
-            "detail": "对沙特预计 xG 1.85+ 全场压制，Núñez 目标至少 1 球。"
+            "detail": "对阿尔及利亚预计 3 球+。"
           },
-          "tournament": "2010 智利世界杯八强经验；乌拉圭 2026 预选赛强势，Bielsa 体系已磨合 2 年+。",
+          "tournament": "2022 冠军心理硬度已验证；Messi 最后一届动力足。",
           "traits": [
-            "高位压迫",
-            "换人果断",
-            "体能消耗大",
-            "Valverde 覆盖"
+            "Messi 依赖",
+            "冠军 DNA",
+            "深度",
+            "De Paul 绞杀"
           ],
-          "match_note": "全场高位压迫，先破门则沙特崩盘概率 75%+；Valverde 覆盖是破局关键。"
+          "match_note": "卫冕冠军 J 组揭幕——Messi 负荷管理，70' 可能换下；Lautaro 对位 Mandi 是核心。"
+        },
+        "away": {
+          "name": "Djamel Belmadi",
+          "age": 48,
+          "nation": "阿尔及利亚",
+          "tenure": "2018年—",
+          "wc_exp": "2019 非洲杯冠军",
+          "style_tags": [
+            "4-2-3-1",
+            "Mahrez 核心",
+            "低位",
+            "转换"
+          ],
+          "formation_pref": "4-2-3-1 · Mahrez 右路",
+          "style_summary": "2019 非洲杯冠军，Mahrez 反击是唯一变数。对阿根廷预计 4-5-1 低位，2014 逼德国加时是心理资产。",
+          "subs": {
+            "timing": "首换 60–70 分钟",
+            "pattern": "Mahrez 极少被换下",
+            "avg_first_sub": "65'",
+            "note": "大赛经验足"
+          },
+          "when_leading": {
+            "label": "4-5-1 收缩",
+            "detail": "若意外领先：退守。"
+          },
+          "when_trailing": {
+            "label": "Mahrez 单核",
+            "detail": "先丢球：60' 换 Benrahma。"
+          },
+          "vs_strong": {
+            "label": "对强队：龟缩+Mahrez",
+            "detail": "对阿根廷：低位+Mahrez 反击。"
+          },
+          "vs_weak": {
+            "label": "对弱队：相对开放",
+            "detail": "对约旦会压上。"
+          },
+          "tournament": "2019 非洲杯冠军+2014 世界杯逼德国加时经验。",
+          "traits": [
+            "Mahrez 依赖",
+            "低位防守",
+            "大赛经验",
+            "转换"
+          ],
+          "match_note": "4-5-1 低位+Mahrez 反击；2014 逼德国加时是心理资产，守 0–1 可接受。"
         }
       },
       "weather": {
-        "city": "迈阿密",
+        "city": "堪萨斯城",
         "country": "美国",
-        "venue": "Hard Rock Stadium",
-        "temp": 31,
-        "humidity": 72,
-        "altitude_m": 3,
-        "rain_chance": 25,
-        "wind": "东南风 3级",
-        "condition_cn": "湿热夜场，开放式",
-        "impact_level": "MEDIUM",
-        "impact": "31°C+72% 湿度，Bielsa 高位压迫体能消耗极大，但乌拉圭深度更优",
-        "impact_summary": "湿热夜场——60' 后沙特低位防守体能是最大变量",
-        "home_adapt": 72,
-        "away_adapt": 84,
-        "home_note": "沙特球员习惯海湾湿热，但面对 Bielsa 90 分钟压迫，Mancini 低位消耗仍大",
-        "away_note": "乌拉圭南美球员适应湿热；Valverde 覆盖能力在 70' 后仍是破局关键",
+        "venue": "Arrowhead Stadium",
+        "temp": 29,
+        "humidity": 62,
+        "altitude_m": 270,
+        "rain_chance": 30,
+        "wind": "南风 3级",
+        "condition_cn": "中西部午后偏热",
+        "impact_level": "LOW",
+        "impact": "29°C 对阿根廷略有消耗但深度碾压",
+        "impact_summary": "气候变量低——Messi/Lautaro 对位 Mahrez 是核心",
+        "home_adapt": 86,
+        "away_adapt": 74,
+        "home_note": "阿根廷南美球员适应夏季",
+        "away_note": "阿尔及利亚北非气候类似",
         "weather_factors": [
           {
-            "label": "31°C 湿热",
-            "impact": "体能消耗",
-            "detail": "72% 湿度下 60' 后传球精度下降，沙特换人窗口 55–65' 关键"
-          },
-          {
-            "label": "海平面 3m",
-            "impact": "无海拔",
-            "detail": "双方无高原适应差异"
-          },
-          {
-            "label": "开放式球场",
-            "impact": "中性",
-            "detail": "若有阵雨，场地略滑，长传转移需调整"
+            "label": "29°C",
+            "impact": "中等",
+            "detail": "70' 后传球精度略降"
           }
         ],
-        "historical_note": "Hard Rock Stadium 容量 65,000 · H 组第 2 场"
+        "historical_note": "Arrowhead Stadium 容量 76,416 · J 组揭幕战"
       },
       "mystic": {
         "date_bazi": {
           "year": "丙午年",
           "year_element": "火",
-          "year_animal": "马",
           "month": "甲午月",
-          "month_element": "木+火",
-          "day": "丙戌日",
-          "day_element": "火+土",
-          "hour_home": "卯时（05:00-07:00）",
-          "hour_home_element": "木",
-          "day_dominant": "火土",
-          "day_summary": "丙戌日卯时——卯木当令，木生火。《周易·巽卦》曰：「小亨。」风入木中，Bielsa 压迫如巽风拂林；沙特宜守，忌与风竞速。"
+          "month_element": "金+火",
+          "day": "丁亥日",
+          "day_element": "火+水",
+          "day_dominant": "水",
+          "day_summary": "丁亥日——丁火坐亥，火水既济而未济。《道德经》曰：「上善若水。」亥水当令，宜顺流守正；忌火性躁进。非力之大小，乃气之顺逆。",
+          "hour_home": "巳时（09:00-11:00）",
+          "hour_home_element": "火"
         },
         "wuxing": {
           "home": {
-            "team": "Saudi Arabia",
-            "colors": "绿+白",
-            "elements": "木（绿）、金（白）",
-            "wuxing_short": "木遇巽风，宜守不宜攻",
-            "verdict": "不利",
-            "verdict_color": "#D95F6A",
-            "compat": 32,
-            "reason": "沙特绿属木，卯时木旺但 Bielsa 巽风（木）更盛——Mancini 低位如林待风，风过林摧。Al-Dawsari 反击如落叶，难成气候。",
-            "disadvantage": "Bielsa 压迫下出球困难，60' 后体能崩盘风险高"
+            "team": "Argentina",
+            "colors": "蓝+白",
+            "elements": "水、金",
+            "wuxing_short": "金水遇巳火，气蒸为云",
+            "verdict": "中性偏逆",
+            "verdict_color": "#C8A96E",
+            "compat": 54,
+            "reason": "蓝属水、白属金。巳时火旺，火克金、火蒸水——主队服色受当日火气所制，如「云上于天」而未雨，气运未齐。",
+            "disadvantage": "巳火当令，金水受制"
           },
           "away": {
-            "team": "Uruguay",
-            "colors": "天蓝+白+黑",
-            "elements": "水（蓝）、金（白）、水（黑）",
-            "wuxing_short": "金水相涵，巽风助势",
+            "team": "Algeria",
+            "colors": "白+绿+红",
+            "elements": "金、木、火",
+            "wuxing_short": "木火相生，巳时得令",
             "verdict": "有利",
             "verdict_color": "#5BBF8A",
-            "compat": 78,
-            "reason": "乌拉圭天蓝属水，卯木生水——Valverde 覆盖如巽风入林，Núñez 支点金德稳固。Bielsa 高位与卯时木气同频，压迫强度天时助力。",
-            "advantage": "全场压制，xG 1.85 与巽风共振；迈阿密湿热对沙特低位更不利"
+            "compat": 70,
+            "reason": "绿属木、红属火、白属金。巳时火旺，木生火、火得时——客队绿红与当日火气同频，如「风火家人」，气运顺遂，不论卫冕冠军名号。",
+            "advantage": "巳火当令，木火相生"
           },
-          "summary": "五行裁定：乌拉圭巽风当令，沙特木气受制，Bielsa 压迫局"
+          "summary": "五行裁定：巳火当令大利木火之队；阿根廷金水受火所制——气运偏逆，非纸面冷门与否"
         },
         "hexagram": {
-          "name": "巽卦",
-          "symbol": "☴",
-          "number": 57,
-          "upper": "巽风",
-          "lower": "巽风",
-          "quote": "《周易·巽卦》：「小亨，利有攸往，利见大人。」",
-          "general": "随风巽，柔顺而入。巽卦象征持续渗透、高压逼迫——利于高位压迫、体能深度更优的一方。",
-          "advantage_team": "Uruguay",
-          "disadvantage_team": "Saudi Arabia",
-          "hexagram_analysis": "巽卦主「入」——Bielsa 压迫如双巽叠风，Valverde 覆盖无孔不入；Mancini 2022 爆冷 DNA 在巽风面前难复现。Núñez 先破门则沙特崩盘概率 75%。",
-          "match_nature": "客队控场胜局",
-          "match_nature_prob": 72,
-          "yellow_card_risk": "高",
-          "yellow_card_reason": "巽卦主入，压迫局战术犯规多；Mariani 预计 5-6 张黄牌。",
+          "name": "乾卦",
+          "symbol": "☰",
+          "number": 1,
+          "upper": "乾天",
+          "lower": "乾天",
+          "quote": "《周易·乾卦》：「元亨利贞。」",
+          "general": "天行健，君子以自强不息——乾主刚健不息，利于气运纯阳、行止有常者；非「强者必胜」之卦。",
+          "advantage_team": "Algeria",
+          "disadvantage_team": "Argentina",
+          "hexagram_analysis": "乾卦纯阳，然巳时火旺，木火一方得时更合「利贞」。主队金水受火制，如「龙困于泽」——非实力不足，乃位势与气运暂逆。",
+          "match_nature": "火盛则变",
+          "yellow_card_risk": "中",
+          "yellow_card_reason": "乾主刚健，双方意志强；巳火性急，预计 4–5 张黄牌。",
           "scenarios": [
             {
-              "icon": "⚽",
-              "label": "比赛性质",
-              "text": "乌拉圭胜 63%，平局 22%，沙特爆冷 15%（xG 0.75-1.85，最可能 0-2/1-2）"
+              "icon": "☯",
+              "label": "气运性质",
+              "text": "巳火当令，木火顺时者占「元亨」——与排名无关"
             },
             {
-              "icon": "⏱",
-              "label": "进球高峰段",
-              "text": "第 15-30 分钟（Bielsa 压迫奏效）及第 60-75 分钟（沙特体能下滑）"
+              "icon": "☰",
+              "label": "乾天",
+              "text": "刚健不息，忌骄；「利贞」示守正者吉"
             },
             {
-              "icon": "🟨",
-              "label": "黄牌风险",
-              "text": "高——5-6 张，沙特战术犯规打断节奏"
-            },
-            {
-              "icon": "🔄",
-              "label": "0-0 平局可能",
-              "text": "低（22%）——巽风不容久滞"
-            },
-            {
-              "icon": "⏰",
-              "label": "加时赛概率",
-              "text": "极低（3%）"
+              "icon": "🔥",
+              "label": "巳时",
+              "text": "火气最旺，利于火木属性服色"
             }
           ],
           "early_goal": {
-            "scenario": "若乌拉圭前 20 分钟进球（Núñez/Valverde）",
-            "prediction": "巽风入林——沙特被迫压出，追加失球概率 65%；Mancini 低位崩溃模板。",
-            "favors": "Uruguay",
-            "favors_prob": 82
+            "scenario": "若阿尔及利亚先进球",
+            "prediction": "乾「亢龙有悔」警示领先方——巳火助木火，气运大顺；主队需以金水耐心，忌躁",
+            "favors": "Algeria",
+            "favors_prob": 56
           },
           "no_early_goal": {
-            "scenario": "若前 30 分钟 0-0（Mancini 低位奏效）",
-            "prediction": "巽风持续——60' 后沙特体能下滑，Valverde 远射/Núñez 破局概率 70%。",
-            "favors": "Uruguay",
-            "favors_prob": 75
+            "scenario": "若前30分钟无进球",
+            "prediction": "巳火主动，气运渐移；木火一方占「天行健」之势渐显",
+            "favors": "Algeria",
+            "favors_prob": 53
           },
           "away_goal": {
-            "scenario": "若沙特偷袭（Al-Dawsari）",
-            "prediction": "极低（<15%）——乌拉圭反扑 15 分钟内扳平概率 80%。",
-            "favors": "Uruguay",
-            "favors_prob": 78
-          },
-          "halftime": {
-            "scenario": "若半场 0-0",
-            "prediction": "Bielsa 下半场加码压迫，沙特 60' 后崩盘风险倍增。",
-            "favors": "Uruguay",
-            "favors_prob": 72
-          },
-          "extra_time": {
-            "scenario": "若 90 分钟平局",
-            "prediction": "乌拉圭替补深度碾压，加时进球概率 70%。",
-            "favors": "Uruguay",
-            "favors_prob": 85
+            "scenario": "若阿根廷先进球",
+            "prediction": "乾遭逆——客队暂占纯阳，但巳火仍制金水；气运可胶着至下半场",
+            "favors": "Argentina",
+            "favors_prob": 47
           }
         },
-        "home_score": 32,
-        "away_score": 72,
-        "mystic_verdict": "☴ 巽卦——Bielsa 双巽叠风，Valverde 无孔不入；沙特 2022 DNA 难挡今日天时。乌拉圭 xG 1.85 与五行同频。",
+        "home_score": 46,
+        "away_score": 80,
+        "mystic_verdict": "☰ 乾卦——巳火当令，阿尔及利亚木火顺天；阿根廷金水受火所制。非卫冕冠军强弱，乃「利贞」与气运顺逆之分。",
+        "model_bridge": "竞技模型仍偏阿根廷，灵力指数因巳火当令偏客队；二者对照见「模型推演概要」。",
         "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
+      },
+      "depth_calibration": {
+        "tier_home": 2,
+        "tier_label": "Argentina 被看好 · 净胜约 2 球",
+        "implied_tier": 1.25,
+        "tier_gap": 0.75,
+        "signal": "blocker_inflate",
+        "signal_cn": "预期偏高",
+        "signal_color": "#D95F6A",
+        "signal_desc": "外界预期显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+        "blocker_spread_note": "说明：阻断型高开指热门让档偏贵，意在平衡两侧预期；不等于热门必穿档，赢球与穿档须分开判断。",
+        "public_lean_cn": "公众预期倾向 Argentina（约 84%）",
+        "analysis": "外界高度看好阿根廷；模型认为净胜 2 球有难度，小比分取胜与平局均需保留权重。 档位高于 xG 隐含（+0.75），且净胜 1 球占 21.1%——热门穿档偏紧，受让侧相对更理性。 说明：阻断型高开指热门让档偏贵，意在平衡两侧预期；不等于热门必穿档，赢球与穿档须分开判断。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "2-0",
+              "prob": 14
+            },
+            {
+              "score": "3-0",
+              "prob": 13.1
+            },
+            {
+              "score": "1-0",
+              "prob": 10
+            }
+          ],
+          "one_goal_win_pct": 21.1,
+          "two_plus_win_pct": 60.5,
+          "full_cover_pct": 60.5,
+          "half_lose_pct": 21.1,
+          "fav_cover_ev": 0.421,
+          "dog_cover_ev": -0.421,
+          "rational_spread_cn": "主队 让球方略优",
+          "total_xg": 3.4,
+          "over_2_5_pct": 63.7,
+          "over_3_pct": 40.3,
+          "totals_lean_cn": "2.5 球偏大球（约 63.7%）",
+          "margin_risk_note": "净胜 1 球概率 21.1%：分档下常见「赢球穿档不足/半输」",
+          "push_pct": null
+        },
+        "spread_odds": null,
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 3,
+          "line_label": "总进球约 3 个",
+          "implied_xg_total": 3.4,
+          "fair_line": 2.75,
+          "line_gap": 0.25,
+          "over_pct": 40.3,
+          "under_pct": 59.7,
+          "signal": "high_line",
+          "signal_cn": "进球线偏高",
+          "signal_color": "#C8A96E",
+          "signal_desc": "进球线高于 xG 隐含，存在阻追多球/诱导少球侧的可能。",
+          "public_over_pct": 66,
+          "public_lean_cn": "公众略倾向多球（约 66%）",
+          "index_note": "大小两侧指数接近均衡",
+          "totals_odds": null,
+          "rational_cn": "模型略倾向少球方向（总进球约 3 个 约 59.7%）；进球线偏高且公众追多球——与「阻追型」类似，≠ 必然打出大比分",
+          "score_link_cn": "小比分（1-0/1-1）偏少球 · 2-0/2-1 居中 · 3 球+ 偏多球"
+        },
+        "totals_line": 3,
+        "applied_delta": {
+          "home_win": -4,
+          "draw": 1,
+          "away_win": 3
+        },
+        "adjustment_note": "模型微调：主胜 -4% · 平 +1% · 客 +3%",
+        "adjusted_probs": {
+          "home_win": 77,
+          "draw": 14,
+          "away_win": 9
+        },
+        "display_summary": {
+          "fav_name": "Argentina",
+          "expected_total_goals": 2.94,
+          "small_lead_pct": 22.7,
+          "small_example_score": "1-0",
+          "small_example_pct": 11.7,
+          "big_cover_pct": 56.3,
+          "big_example_score": "2-0",
+          "big_example_pct": 14.9,
+          "excitement": {
+            "label_cn": "接近均衡 · 略偏热闹",
+            "label_key": "high",
+            "label_color": "#5BBF8A",
+            "sub_cn": "预期约 2.9 个总进球 · 4 球+ 35.2% · 2–3 球 45.8%（差距 <8%）",
+            "dull_pct": 18.9,
+            "moderate_pct": 45.8,
+            "high_pct": 35.2,
+            "tiers": [
+              {
+                "key": "dull",
+                "label": "0–1 球 · 节奏偏慢",
+                "pct": 18.9
+              },
+              {
+                "key": "moderate",
+                "label": "2–3 球 · 常规节奏",
+                "pct": 45.8
+              },
+              {
+                "key": "high",
+                "label": "4 球+ · 非常精彩",
+                "pct": 35.2
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "Argentina：Paulo Dybala 缺阵 · Algeria：Youcef Atal 存疑"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "控节奏 · 保护 Messi / 4-5-1 收缩（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "气候变量低——Messi/Lautaro 对位 Mahrez 是核心"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 2.8,
+            "baseline_away": 0.6,
+            "adjusted_home": 2.55,
+            "adjusted_away": 0.58,
+            "note": "基准 xG 2.8–0.6 → 调整后 2.55–0.58"
+          },
+          "calibration": {
+            "signal_cn": "预期偏高",
+            "signal_color": "#D95F6A",
+            "signal_desc": "外界预期显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+            "tier_gap": 0.75,
+            "implied_tier_label": "Argentina 被看好 · 净胜约 1–2 球",
+            "market_tier_label": "Argentina 被看好 · 净胜约 2 球",
+            "summary_cn": "与模型 xG 对照：预期偏高 · 外界净胜预期高于 xG 隐含约 0.75 · 热门赢球但领先不足一档 22.7%"
+          },
+          "score_patterns": [
+            {
+              "score": "2-0",
+              "pct": 14.9
+            },
+            {
+              "score": "3-0",
+              "pct": 12.7
+            },
+            {
+              "score": "1-0",
+              "pct": 11.7
+            }
+          ],
+          "totals_view": {
+            "expected_total": 2.9,
+            "fair_line": 2.75,
+            "line_gap": 0.25,
+            "over_pct": 35.2,
+            "summary_cn": "预期约 2.9 个总进球 · 外界进球线偏高 · 模型略偏少球方向（约 64.8%）"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "Argentina",
+              "first_goal_pct": 81.5,
+              "start_score": "1-0",
+              "fav_name": "Argentina",
+              "scorer_is_fav": true,
+              "small_lead_pct": 23.9,
+              "big_lead_pct": 67.5,
+              "fav_win_pct": 91.4,
+              "fav_draw_pct": 7.2,
+              "fav_lose_pct": 1.4,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "Argentina 保持胜果（净胜≥1）",
+                  "pct": 91.4
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 7.2
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 1.4
+                }
+              ],
+              "excitement": {
+                "label_cn": "比较精彩",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期约 3.0 个总进球 · 2–3 球 54.8% 明显领先",
+                "dull_pct": 13.9,
+                "moderate_pct": 54.8,
+                "high_pct": 31.3,
+                "tiers": [
+                  {
+                    "key": "dull",
+                    "label": "0–1 球 · 节奏偏慢",
+                    "pct": 13.9
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "2–3 球 · 常规节奏",
+                    "pct": 54.8
+                  },
+                  {
+                    "key": "high",
+                    "label": "4 球+ · 非常精彩",
+                    "pct": 31.3
+                  }
+                ]
+              },
+              "big_delta": 11.2,
+              "small_delta": 1.2,
+              "narrative": "Argentina 先破门（已 1-0） → 「控节奏 · 保护 Messi」；Algeria 「Mahrez 单核」。领先后双方可能转入守势，比分差距不易再拉大，节奏偏慢概率上升。"
+            },
+            {
+              "side": "away",
+              "team": "Algeria",
+              "first_goal_pct": 18.5,
+              "start_score": "0-1",
+              "fav_name": "Argentina",
+              "scorer_is_fav": false,
+              "small_lead_pct": 24.6,
+              "big_lead_pct": 31.1,
+              "fav_win_pct": 55.7,
+              "fav_draw_pct": 24.4,
+              "fav_lose_pct": 19.9,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "Argentina 追平（平局）",
+                  "pct": 24.4
+                },
+                {
+                  "key": "win1",
+                  "label": "Argentina 净胜1球翻盘",
+                  "pct": 24.6
+                },
+                {
+                  "key": "win2",
+                  "label": "Argentina 净胜≥2球翻盘",
+                  "pct": 31.1
+                }
+              ],
+              "excitement": {
+                "label_cn": "接近均衡 · 略偏热闹",
+                "label_key": "high",
+                "label_color": "#5BBF8A",
+                "sub_cn": "预期约 3.6 个总进球 · 4 球+ 49.4% · 2–3 球 43.7%（差距 <8%）",
+                "dull_pct": 6.8,
+                "moderate_pct": 43.7,
+                "high_pct": 49.4,
+                "tiers": [
+                  {
+                    "key": "dull",
+                    "label": "0–1 球 · 节奏偏慢",
+                    "pct": 6.8
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "2–3 球 · 常规节奏",
+                    "pct": 43.7
+                  },
+                  {
+                    "key": "high",
+                    "label": "4 球+ · 非常精彩",
+                    "pct": 49.4
+                  }
+                ]
+              },
+              "big_delta": -25.2,
+              "small_delta": 1.9,
+              "narrative": "Algeria 先破门（已 0-1） → 「4-5-1 收缩」；Argentina 「堆前锋」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门，对攻张力上升，总进球预期增加。"
+            }
+          ]
+        },
+        "public_summary_note": "【推演概要】Argentina 净胜1球 22.7% · 净胜≥2 56.3% · 接近均衡 · 略偏热闹 · 与模型 xG 对照：预期偏高 · 外界净胜预期高于 xG 隐含约 0.75 · 热门赢球但领先不足一档 22.7%（模型微调：主胜 -4% · 平 +1% · 客 +3%）"
+      },
+      "group_context": {
+        "group": "J",
+        "label": "J组 · 第 1 轮",
+        "matchday": 1,
+        "standings": [
+          {
+            "team": "Argentina",
+            "pts": 0,
+            "p": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+            "gf": 0,
+            "ga": 0
+          },
+          {
+            "team": "Austria",
+            "pts": 0,
+            "p": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+            "gf": 0,
+            "ga": 0
+          },
+          {
+            "team": "Algeria",
+            "pts": 0,
+            "p": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+            "gf": 0,
+            "ga": 0
+          },
+          {
+            "team": "Jordan",
+            "pts": 0,
+            "p": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+            "gf": 0,
+            "ga": 0
+          }
+        ],
+        "home": {
+          "team": "Argentina",
+          "rank": 1,
+          "pts": 0,
+          "played": 0,
+          "if_1st": "32强 · 可能对阵 I/K 组第 2 或第 3",
+          "if_2nd": "32强 · 可能对阵 I/K 组第 1",
+          "if_3rd": "若列小组第 3，需与 I/K/L/G/H 等组第 3 比净胜球/进球"
+        },
+        "away": {
+          "team": "Algeria",
+          "rank": 3,
+          "pts": 0,
+          "played": 0,
+          "if_1st": "32强 · 可能对阵 I/K 组第 2 或第 3",
+          "if_2nd": "32强 · 可能对阵 I/K 组第 1",
+          "if_3rd": "若列小组第 3，需与 I/K/L/G/H 等组第 3 比净胜球/进球"
+        },
+        "cross_group_notes": [
+          "G 组四队同积 1 分，形势极度开放",
+          "H 组四队同积 1 分，形势极度开放",
+          "E 组 Germany 3 分领跑",
+          "F 组 Sweden 3 分领跑"
+        ],
+        "manipulation_risk": {
+          "level": "LOW",
+          "level_cn": "低",
+          "focus_team": null,
+          "reason": "小组赛第 1 轮，各队普遍抢分意愿强，故意控分动机低；以下路径预判供后续轮次参考。"
+        },
+        "knockout_note": "48 队制：12 组前 2 + 8 个最佳第 3 进入 32 强；末轮可能出现算分/控分战术。",
+        "scenarios": [
+          "Argentina 若取胜：积分 3，J 组排名有望上升；过早预测 32 强对手仍不可靠。",
+          "Algeria 若取胜：积分 3，客场抢分将改变 J 组格局。",
+          "平局：双方各 +1 分；在 G 组四队同积 1 分，形势极度开放；H 组四队同积 1 分，形势极度开放；E 组 Germany 3 分领跑；F 组 Sweden 3 分领跑 背景下，第 2 轮直接对话权重上升。"
+        ]
       }
     },
     {
-      "id": "m15",
-      "group": "G",
+      "id": "m20",
+      "group": "J",
       "matchday": 1,
-      "date": "2026-06-15",
+      "date": "2026-06-16",
       "time": "21:00",
       "time_local": "21:00 PT",
       "timezone": "PDT (UTC-7)",
-      "time_beijing": "09:00",
-      "date_beijing": "6月16日",
-      "time_beijing_full": "北京时间 6月16日 09:00",
-      "venue": "SoFi Stadium",
-      "city": "Inglewood, USA",
-      "note": "G组第2场 · 伊朗 vs 新西兰 · 最新预测阵容",
+      "time_beijing": "12:00",
+      "date_beijing": "6月17日",
+      "time_beijing_full": "北京时间 6月17日 12:00",
+      "venue": "Levi's Stadium",
+      "city": "Santa Clara, USA",
+      "note": "J组第2场 · 奥地利 vs 约旦 · 旧金山湾区",
       "lineup": {
         "confirmed": false,
-        "formation": "4-4-2 / 4-2-3-1",
-        "home": "Beiranvand; Hardani, Khalilzadeh, Nemati, Mohammadi; Yousefi, Ezatolahi, Ghoddos, Ghayedi; Alipour, Taremi",
-        "away": "Crocombe; Payne, Surman, Boxall, Cacace; Bell, Stamenic; Garbett, Singh, Just; Wood (C)",
-        "note": "📋 FotMob 最新预测阵容（官方名单开赛前约1小时公布 · 非最终确认）",
+        "formation": null,
+        "home": "等待官方确认",
+        "away": "等待官方确认",
+        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
         "predicted": {
-          "formation": "4-3-3 / 4-4-2",
-          "home": "Beiranvand; Moharrami, Hosseini, Kanani, Ghafouri; Nourollahi, Ezatolahi, Ghoddos; Jahanbakhsh, Taremi, Ghoddos",
-          "away": "Woodman; Boxall, Kelly, Mitchell; Singh, Howison, van der Ven; Just, Garbett, Singh; Wood",
-          "source": "Opta / NZ Football 预测 · 非官方"
-        },
-        "diff": {
-          "home": "⚠️ 4-4-2：Alipour 搭档 Taremi · Yousefi 中场 · 无 Azmoun/Jahanbakhsh",
-          "away": "✅ Wood 队长 · Surman 中卫 · Garbett 右翼 · Crocombe 一门"
-        },
-        "updated": "2026-06-16T06:30:00+08:00"
+          "formation": "4-2-3-1 / 4-4-2",
+          "home": "Pentz; Posch, Alaba, Lienhart, Mwene; Seiwald, Schlager; Baumgartner, Sabitzer, Grüll; Arnautović",
+          "away": "Abu Laila; Al-Rosan, Al-Ajalin, Al-Damour; Al-Naimat, Al-Rawashdeh, Al-Tamari; Al-Malki, Al-Rashdan; Al-Dardour",
+          "source": "Opta / FotMob 预测 · 非官方"
+        }
       },
       "home": {
-        "name": "Iran",
-        "iso": "ir",
+        "name": "Austria",
+        "iso": "at",
         "flag": "",
-        "fifa_rank": 22,
-        "rating": 76,
+        "fifa_rank": 28,
+        "rating": 74,
         "form": [
-          "W",
           "W",
           "D",
           "W",
-          "W"
+          "W",
+          "D"
         ],
-        "coach": "Amir Ghalenoei",
+        "coach": "Ralf Rangnick",
         "stars": [
           {
-            "name": "Mehdi Taremi",
-            "pos": "ST",
-            "club": "Inter Milan",
-            "stats": "锋线支点",
-            "rating": 8.2,
-            "desc": "背身+定位球破局关键"
+            "name": "David Alaba",
+            "pos": "CB",
+            "club": "Real Madrid",
+            "stats": "队长 · 防线领袖",
+            "rating": 8.5,
+            "desc": "出球+防空核心"
           },
           {
-            "name": "Sardar Azmoun",
-            "pos": "ST",
-            "club": "—",
-            "stats": "未入选大名单",
-            "rating": 0,
-            "desc": "因社媒争议被除名，本场不可用"
+            "name": "Marcel Sabitzer",
+            "pos": "CM",
+            "club": "Dortmund",
+            "stats": "中场引擎",
+            "rating": 8,
+            "desc": "覆盖+远射，Rangnick 体系关键"
           },
           {
-            "name": "Alireza Jahanbakhsh",
-            "pos": "RW",
-            "club": "Feyenoord",
-            "stats": "边路速度",
+            "name": "Marko Arnautović",
+            "pos": "ST",
+            "club": "Red Star",
+            "stats": "经验支点",
             "rating": 7.8,
-            "desc": "Azmoun 缺阵后锋线分担进球"
+            "desc": "背身+定位球破局"
           }
         ],
         "injuries": [
           {
-            "player": "Sardar Azmoun",
-            "status": "OUT",
-            "note": "未入选 26 人大名单（3 月因社媒争议被 Ghalenoei 除名，非伤病）——伊朗「梅西」缺席",
+            "player": "David Alaba",
+            "status": "FIT",
+            "note": "十字韧带伤愈复出，防线+出球核心",
             "confirmed": true
           },
           {
-            "player": "Mehdi Taremi",
+            "player": "Marko Arnautović",
             "status": "FIT",
-            "note": "奥林匹亚科斯前锋，进攻唯一世界级支点，预计首发",
+            "note": "经验支点预计首发",
+            "confirmed": true
+          },
+          {
+            "player": "Marcel Sabitzer",
+            "status": "FIT",
+            "note": "Rangnick 体系中场引擎",
             "confirmed": true
           }
         ],
         "rumors": [
-          "伊朗基地由图森迁至蒂华纳（签证/安全），赛前跨境赴洛杉矶 SoFi",
-          "Ghalenoei 预选赛 10 场 10 零封 · Taremi 领衔无 Azmoun 锋线",
-          "26 人含 17 名国内联赛球员 · 国内赛事2月起停摆，体能是隐忧",
-          "Opta 强烈看好伊朗 · 新西兰 4-4-2 低位靠 Wood 定位球"
+          "【更衣室】Rangnick 高位体系磨合完成，Alaba 队长回归提振防线沟通",
+          "【战术】4-2-3-1 高位压迫，Alaba 出球发起点",
+          "对约旦预计全场压制，先破门则 Jordan 崩盘概率高",
+          "Sabitzer/Seiwald 双闸覆盖 Al-Tamari 反击"
         ],
         "star": {
-          "name": "Mehdi Taremi",
-          "pos": "ST",
-          "desc": "伊朗进攻绝对核心，对位 NZ 英冠防线",
-          "rating": 8.2
+          "name": "David Alaba",
+          "pos": "CB",
+          "desc": "Rangnick 高位线出球发起点",
+          "rating": 8.5
         }
       },
       "away": {
-        "name": "New Zealand",
-        "iso": "nz",
+        "name": "Jordan",
+        "iso": "jo",
         "flag": "",
-        "fifa_rank": 103,
-        "rating": 58,
+        "fifa_rank": 72,
+        "rating": 57,
         "form": [
-          "L",
           "D",
           "W",
+          "D",
           "L",
           "D"
         ],
-        "coach": "Darren Bazeley",
+        "coach": "Hussein Ammouta",
         "stars": [
           {
-            "name": "Chris Wood",
+            "name": "Musa Al-Tamari",
+            "pos": "RW",
+            "club": "Montpellier",
+            "stats": "亚洲杯最佳球员",
+            "rating": 7.8,
+            "desc": "反击速度点，对位 Posch"
+          },
+          {
+            "name": "Yazan Al-Naimat",
             "pos": "ST",
-            "club": "Nottm Forest",
-            "stats": "英超支点",
-            "rating": 7.5,
-            "desc": "定位球唯一稳定威胁"
+            "club": "Al-Arabi",
+            "stats": "亚洲杯决赛进球",
+            "rating": 7.2,
+            "desc": "支点+定位球"
           },
           {
-            "name": "Marko Stamenic",
-            "pos": "CM",
-            "club": "Oxford",
-            "stats": "中场屏障",
-            "rating": 6.8,
-            "desc": "绞杀 Taremi 接球"
-          },
-          {
-            "name": "Alex Paulsen",
+            "name": "Hussein Abu Laila",
             "pos": "GK",
-            "club": "Bournemouth",
-            "stats": "年轻门将",
-            "rating": 6.7,
-            "desc": "面对 Taremi/Azmoun 考验极大"
+            "club": "Al-Wehdat",
+            "stats": "一门",
+            "rating": 6.9,
+            "desc": "面对 Rangnick 压迫考验大"
           }
         ],
         "injuries": [
           {
-            "player": "Chris Wood",
+            "player": "Musa Al-Tamari",
             "status": "FIT",
-            "note": "诺丁汉森林前锋，赛季末伤病疑虑已消除，队长预计首发",
+            "note": "亚洲杯最佳球员，反击核心",
+            "confirmed": true
+          },
+          {
+            "player": "Yazan Al-Naimat",
+            "status": "FIT",
+            "note": "锋线支点，定位球威胁",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Bazeley 4-4-2 低位，Wood 定位球 + 长传是唯一稳定威胁",
-          "大洋洲附加赛晋级，大赛经验有限，FIFA 排名 103",
-          "2003 AFC-OFC 0-3 负伊朗（非大赛），本场预计全场被动",
-          "若 0-0 进入 70' 对新西兰即是胜利；Wood 头球是最大冷门点"
+          "【更衣室】2024 亚洲杯亚军信心仍在，Ammouta 强调「定位球+纪律」",
+          "【战术】4-4-2 低位 + Al-Tamari 右路速度",
+          "对 Rangnick 压迫出球困难，60' 后体能是考验",
+          "若意外领先，低位+5 后卫收缩是首选"
         ],
         "star": {
-          "name": "Chris Wood",
-          "pos": "ST",
-          "desc": "一人球队核心，定位球是冷门唯一希望",
-          "rating": 7.5
+          "name": "Musa Al-Tamari",
+          "pos": "RW",
+          "desc": "一人球队核心，反击是唯一希望",
+          "rating": 7.8
         }
       },
       "h2h": {
         "home_wins": 0,
         "draws": 0,
         "away_wins": 0,
-        "recent": [
-          {
-            "year": 2003,
-            "comp": "AFC-OFC Challenge",
-            "score": "3-0",
-            "winner": "Iran"
-          }
-        ],
-        "note": "2003 伊朗 3-0 胜（非正式大赛）"
+        "recent": [],
+        "note": "无正式交锋"
       },
       "referee": {
         "confirmed": true,
         "pending": false,
-        "source": "FIFA · Match officials · 2026-06-15/16",
-        "name": "César Arturo Ramos",
-        "nation": "Mexico",
-        "iso": "mx",
-        "age": 42,
-        "wc_experience": "2018/2022 世界杯执法 · 2026 三度执法",
+        "source": "FIFA · Match officials · 2026-06-16/17",
+        "name": "Dahane Beida",
+        "nation": "Mauritania",
+        "iso": "mr",
+        "age": 40,
+        "wc_experience": "2026 世界杯首秀 · CAF 裁判",
         "avg_yellow": 4.3,
-        "avg_red": 0.15,
-        "avg_penalty": 0.38,
-        "home_win_rate": 54,
-        "bias_index": 52,
-        "bias_note": "墨西哥籍 FIFA 精英裁判，2018/2022 世界杯已有经验。伊朗传控 vs 新西兰低位，Taremi/Wood 禁区内对抗是点球判罚焦点；预计 4 张黄牌左右。",
+        "avg_red": 0.1,
+        "avg_penalty": 0.24,
+        "home_win_rate": 50,
+        "bias_index": 49,
+        "bias_note": "毛里塔尼亚籍主裁。Rangnick 高位压迫战术犯规尺度是核心变量——对 Al-Tamari 反击被拉倒预计判罚较严。",
         "tendencies": [
-          "大赛经验丰富，SoFi 人工草皮局节奏流畅",
-          "伊朗 Ezatolahi 绞杀 + Wood 背身对抗，中场黄牌风险中等",
-          "2022 世界杯执法经验，关键判罚压力承受力强"
+          "安哥拉/喀麦隆助理裁判组：Jerson Dos Santos、Elvis Noupue",
+          "第四官员 Oshane Nation（牙买加）",
+          "VAR Mahmoud Ashour（埃及）· AVAR Nicolas Gallo · SVAR Rodolpho Toski",
+          "压迫局预计 5–6 张黄牌，Jordan 低位犯规为主"
         ],
         "officials": {
-          "ar1": "TBD (MEX)",
-          "ar2": "TBD (MEX)",
-          "fourth": "TBD (FIFA)",
-          "var": "TBD (FIFA)",
-          "avar": "TBD (FIFA)",
-          "svar": "TBD (FIFA)"
+          "ar1": "Jerson Dos Santos (ANG)",
+          "ar2": "Elvis Noupue (CMR)",
+          "fourth": "Oshane Nation (JAM)",
+          "var": "Mahmoud Ashour (EGY)",
+          "avar": "Nicolas Gallo (COL)",
+          "svar": "Rodolpho Toski (BRA)"
         }
       },
       "prediction": {
-        "home_win": 54,
+        "home_win": 55,
         "draw": 26,
-        "away_win": 21,
+        "away_win": 19,
         "score": "1-0",
         "confidence": 74,
-        "xg_home": 1.55,
-        "xg_away": 0.85,
-        "key_factor": "伊朗整体实力占优，Taremi 领衔（Azmoun 未入选）。Wood 定位球是冷门点；xG 1.55-0.85 泊松最可能 2-0/1-0。",
+        "xg_home": 1.65,
+        "xg_away": 0.75,
+        "key_factor": "Rangnick 高位压迫 vs Ammouta 低位：Alaba/Arnautović 对位 Jordan 防线；xG 1.65-0.75 泊松最可能 2-0/1-0",
         "score_dist": [
           {
             "score": "1-0",
-            "prob": 14.1
-          },
-          {
-            "score": "1-1",
-            "prob": 12
+            "prob": 15
           },
           {
             "score": "2-0",
-            "prob": 10.9
+            "prob": 12.3
+          },
+          {
+            "score": "1-1",
+            "prob": 11.2
           },
           {
             "score": "2-1",
@@ -1907,353 +2936,709 @@ const MATCH_DATA = {
           },
           {
             "score": "0-1",
-            "prob": 7.7
+            "prob": 6.8
           },
           {
             "score": "3-0",
-            "prob": 5.6
+            "prob": 6.8
           }
-        ]
+        ],
+        "base_home_win": 59,
+        "base_draw": 25,
+        "base_away_win": 17,
+        "depth_calibrated": true
       },
       "upset_alert": {
-        "favorite": "Iran",
-        "underdog": "New Zealand",
-        "favorite_iso": "IR",
-        "index": 32,
-        "level": "MEDIUM",
-        "level_cn": "中等",
-        "cold_result_pct": 35,
-        "verdict": "伊朗纸面占优但大赛进攻创造力历史偏弱——Wood 定位球 + 伊朗领先易保守，平局有 26% 空间。",
-        "tactical": "Bazeley 4-4-2 低位 + Wood 支点；Ghalenoei 10 零封防守 vs Wood 头球是核心对位。",
-        "psychology": "新西兰大赛经验有限但无包袱；伊朗预选赛压力释放后或慢热。",
-        "historical": "2003 伊朗 3-0；Wood 英超经验是 NZ 唯一世界级资产。",
+        "favorite": "Austria",
+        "underdog": "Jordan",
+        "favorite_iso": "AT",
+        "index": 28,
+        "level": "LOW",
+        "level_cn": "低",
+        "cold_result_pct": 24,
+        "verdict": "奥地利纸面占优但 Rangnick 压迫易留身后——Al-Tamari 速度+定位球有 22% 平局空间。",
+        "tactical": "Rangnick 4-2-3-1 高位 vs Ammouta 4-4-2 低位；Alaba 出球 vs Al-Tamari 反击是核心对位。",
+        "psychology": "约旦亚洲杯亚军有大赛信心；奥地利需 J 组开门红。",
+        "historical": "无正式交锋；约旦亚洲杯表现是参考。",
         "factors": [
+          {
+            "tag": "压迫",
+            "impact": "强",
+            "detail": "Rangnick 高位强度大，Jordan 出球困难"
+          },
+          {
+            "tag": "反击",
+            "impact": "中",
+            "detail": "Al-Tamari 速度是约旦唯一威胁"
+          },
           {
             "tag": "定位球",
             "impact": "中",
-            "detail": "Wood 头球 vs 伊朗防空，伊朗历史弱点"
-          },
-          {
-            "tag": "防守",
-            "impact": "强",
-            "detail": "伊朗预选赛 10 零封，纪律顶级"
-          },
-          {
-            "tag": "心理",
-            "impact": "弱",
-            "detail": "伊朗领先易保守，给 Wood 定位球机会"
+            "detail": "Arnautović 头球 vs 约旦防空"
           }
         ]
       },
       "coach_analysis": {
         "home": {
-          "name": "Amir Ghalenoei",
-          "age": 61,
-          "nation": "伊朗",
-          "tenure": "2023年—",
-          "wc_exp": "2026 带队 · 亚冠/伊朗联赛经验",
+          "name": "Ralf Rangnick",
+          "age": 66,
+          "nation": "德国",
+          "tenure": "2024年—",
+          "wc_exp": "2026 带队 · 高位压迫教父",
           "style_tags": [
-            "4-3-3",
-            "防守纪律",
-            "Taremi 支点",
-            "定位球"
+            "4-2-3-1",
+            "高位压迫",
+            "Alaba 出球",
+            "gegenpressing"
           ],
-          "formation_pref": "4-3-3 · 领先时 4-5-1",
-          "style_summary": "预选赛 10 场 10 零封，防守纪律亚洲顶级。Taremi/Azmoun 双锋，Ezatolahi 后腰屏障，对新西兰预计全场压制。",
+          "formation_pref": "4-2-3-1 · 全场 man-marking 变体",
+          "style_summary": "高位压迫体系，Alaba 出球+Sabitzer 覆盖。对约旦预计全场压制，先破门则指数骤降。",
           "subs": {
-            "timing": "首换 60–70 分钟；领先 65' 换防守",
-            "pattern": "常换 Jahanbakhsh/Ghoddos 边路；Taremi 极少换下",
-            "avg_first_sub": "65'",
-            "note": "伊朗换人偏保守，领先易收缩"
+            "timing": "首换 55–62 分钟",
+            "pattern": "批量换人",
+            "avg_first_sub": "58'",
+            "note": "压迫体系换人果断"
           },
           "when_leading": {
-            "label": "4-5-1 控节奏",
-            "detail": "1 球领先：退守五后卫，Taremi 留前场；2 球+：70' 换防守中场。"
+            "label": "继续压迫",
+            "detail": "1 球领先：维持高位，不早退。"
           },
           "when_trailing": {
-            "label": "堆前锋 · 定位球",
-            "detail": "先丢球：60' 换 Azmoun 双锋，加强定位球。"
+            "label": "更疯压迫",
+            "detail": "先丢球：压迫强度加码。"
           },
           "vs_strong": {
-            "label": "对强队：低位",
-            "detail": "对比利时/埃及级会 4-5-1 低位；对新西兰全场压制。"
+            "label": "对强队：对攻",
+            "detail": "对阿根廷会相对保守。"
           },
           "vs_weak": {
-            "label": "对弱队：控制",
-            "detail": "对新西兰预计 60%+ 控球，Taremi 背身是破局关键。"
+            "label": "对弱队：不留余地",
+            "detail": "对约旦预计 xG 1.65+。"
           },
-          "tournament": "预选赛防守顶级；大赛进攻创造力仍是伊朗历史弱点。",
+          "tournament": "高位压迫教父，奥地利体系已磨合。",
           "traits": [
-            "防守铁桶",
-            "Taremi 依赖",
-            "领先易保守",
-            "定位球"
+            "高位压迫",
+            "Alaba 出球",
+            "换人果断",
+            "体能消耗大"
           ],
-          "match_note": "预选赛 10 零封防守纪律——对新西兰预计压制，Taremi 背身 + 定位球破局；领先易保守。"
+          "match_note": "高位压迫全场——Alaba 出球+Arnautović 支点；先破门则 Jordan 崩盘概率 70%+。"
         },
         "away": {
-          "name": "Darren Bazeley",
-          "age": 53,
-          "nation": "新西兰",
+          "name": "Hussein Ammouta",
+          "age": 59,
+          "nation": "约旦",
           "tenure": "2023年—",
-          "wc_exp": "2026 带队 · 大洋洲联赛经验",
+          "wc_exp": "2026 带队 · 2024 亚洲杯亚军",
           "style_tags": [
             "4-4-2",
-            "Wood 支点",
+            "Al-Tamari 核心",
             "低位",
             "定位球"
           ],
-          "formation_pref": "4-4-2 · 领先时 5-4-1",
-          "style_summary": "大洋洲附加赛晋级，Wood 英超支点 + 低位 4-4-2 是现实选择。面对伊朗预计全场被动，定位球是唯一威胁。",
+          "formation_pref": "4-4-2 · Al-Tamari 右路",
+          "style_summary": "2024 亚洲杯亚军，Al-Tamari 反击+定位球是唯一威胁。对奥地利预计 4-4-2 低位。",
           "subs": {
             "timing": "首换 65–75 分钟",
-            "pattern": "常单换前锋或边卫；Wood 打满概率高",
+            "pattern": "Al-Tamari 打满概率高",
             "avg_first_sub": "70'",
             "note": "弱队换人偏晚"
           },
           "when_leading": {
             "label": "5-4-1 铁桶",
-            "detail": "若意外领先：立即退守，Wood 留前场。"
+            "detail": "若意外领先：立即退守。"
           },
           "when_trailing": {
             "label": "维持低位",
-            "detail": "先丢球 unlikely 压上——Wood 定位球是唯一希望。"
+            "detail": "Al-Tamari 反击是唯一希望。"
           },
           "vs_strong": {
             "label": "对强队：龟缩",
-            "detail": "对伊朗：4-4-2 低位，Wood 定位球 + 长传。"
+            "detail": "对奥地利：低位+Al-Tamari 速度。"
           },
           "vs_weak": {
             "label": "不适用",
-            "detail": "G 组无弱于新西兰的对手。"
+            "detail": "J 组无弱于约旦的对手。"
           },
-          "tournament": "大赛经验有限，Wood 一人球队属性明显。",
+          "tournament": "亚洲杯亚军信心，大赛经验有限但无包袱。",
           "traits": [
-            "Wood 依赖",
+            "Al-Tamari 依赖",
             "低位防守",
             "定位球",
-            "大赛经验少"
+            "亚洲杯 DNA"
           ],
-          "match_note": "Wood 定位球 + 长传是唯一威胁，4-4-2 低位守 0–0 求 1 分是现实目标。"
+          "match_note": "4-4-2 低位+Al-Tamari 反击；定位球偷分是现实目标。"
         }
       },
       "weather": {
-        "city": "洛杉矶",
+        "city": "旧金山湾区",
         "country": "美国",
-        "venue": "SoFi Stadium",
-        "temp": 22,
-        "humidity": 55,
-        "altitude_m": 30,
+        "venue": "Levi's Stadium",
+        "temp": 21,
+        "humidity": 52,
+        "altitude_m": 15,
         "rain_chance": 5,
         "wind": "西风 1级",
-        "condition_cn": "夜场舒适，人工草皮",
+        "condition_cn": "湾区夜场凉爽，人工草皮",
         "impact_level": "LOW",
-        "impact": "南加州 22°C 夜场，SoFi 人工草皮，伊朗传控略占优",
-        "impact_summary": "气候均衡——Wood 定位球与 Taremi 背身是推演核心",
-        "home_adapt": 85,
-        "away_adapt": 78,
-        "home_note": "伊朗预选赛 10 场 10 零封，防守纪律顶级；22°C 利于 90 分钟压迫",
-        "away_note": "新西兰 Wood 英超经验，定位球不受气候影响；整体低位防守体能 70' 后下滑",
+        "impact": "21°C 夜场，Rangnick 压迫体能消耗可控",
+        "impact_summary": "气候均衡——Al-Tamari 反击 vs Alaba 出球是核心",
+        "home_adapt": 84,
+        "away_adapt": 76,
+        "home_note": "奥地利适应凉爽夜场",
+        "away_note": "约旦适应中东-地中海气候",
         "weather_factors": [
           {
-            "label": "22°C 夜场",
-            "impact": "中性",
-            "detail": "北京时间 09:00 对应当地 18:00 PT，气温舒适"
-          },
-          {
             "label": "人工草皮",
-            "impact": "略利传控",
-            "detail": "伊朗地面配合更流畅，Jahanbakhsh 边路速度受益"
-          },
-          {
-            "label": "降雨 5%",
-            "impact": "无",
-            "detail": "SoFi 可闭合，几乎无天气干扰"
+            "impact": "略快",
+            "detail": "传球速度略快，Rangnick 压迫受益"
           }
         ],
-        "historical_note": "SoFi Stadium 容量 70,000 · G 组第 2 场"
+        "historical_note": "Levi's Stadium 容量 68,500 · J 组第 2 场"
       },
       "mystic": {
         "date_bazi": {
           "year": "丙午年",
           "year_element": "火",
-          "year_animal": "马",
           "month": "甲午月",
-          "month_element": "木+火",
-          "day": "丙戌日",
-          "day_element": "火+土",
-          "hour_home": "巳时（09:00-11:00）",
-          "hour_home_element": "火",
-          "day_dominant": "火土",
-          "day_summary": "丙戌日巳时——巳火当令，火土极盛。《周易·渐卦》曰：「女归吉。」循序渐进，伊朗水土相济，Wood 独木难支。"
+          "month_element": "金+火",
+          "day": "丁亥日",
+          "day_element": "火+水",
+          "day_dominant": "水",
+          "day_summary": "丁亥日——丁火坐亥，火水既济而未济。《道德经》曰：「上善若水。」亥水当令，宜顺流守正；忌火性躁进。非力之大小，乃气之顺逆。",
+          "hour_home": "午时（11:00-13:00）",
+          "hour_home_element": "火"
         },
         "wuxing": {
           "home": {
-            "team": "Iran",
-            "colors": "白+绿+红",
-            "elements": "金（白）、木（绿）、火（红）",
-            "wuxing_short": "水火木金相济，循序渐进而吉",
+            "team": "Austria",
+            "colors": "白+红",
+            "elements": "金、火",
+            "wuxing_short": "火金相映，午时同气",
             "verdict": "有利",
             "verdict_color": "#5BBF8A",
-            "compat": 70,
-            "reason": "伊朗白绿红属金木火，巳火当令——Taremi 支点土德（丙戌日），Jahanbakhsh 边路如木火蔓延。预选赛 10 零封防守纪律与渐卦「渐进」同频。",
-            "advantage": "传控压制新西兰，Taremi 背身 + 定位球破局；SoFi 人工草皮利传控"
+            "compat": 67,
+            "reason": "白属金、红属火。午时火旺，火金同气——主队红白与午火共振，如「火在天上」而不过亢，气运顺时。",
+            "advantage": "午火助红，金火相涵"
           },
           "away": {
-            "team": "New Zealand",
-            "colors": "白+黑",
-            "elements": "金（白）、水（黑）",
-            "wuxing_short": "金气孤悬，Wood 如独木",
+            "team": "Jordan",
+            "colors": "白+黑+红",
+            "elements": "金、水、火",
+            "wuxing_short": "水火相战，午火克水",
             "verdict": "不利",
             "verdict_color": "#D95F6A",
-            "compat": 38,
-            "reason": "新西兰白黑属金水，巳火克金——Wood 英超支点如独木难支大厦。Bazeley 4-4-2 低位可守一时，但 90 分钟内渐卦「渐进」利于伊朗。",
-            "disadvantage": "Wood 定位球是唯一威胁；整体实力差距大，反击点单一"
+            "compat": 48,
+            "reason": "黑属水、红属火、白属金。午时火极盛，水被火蒸——客队水气受制，如「未济」之象，气运难伸，与排名无关。",
+            "disadvantage": "午火克水，水火未济"
           },
-          "summary": "五行裁定：伊朗火土渐进而吉，新西兰金水受制，Wood 独木难支"
+          "summary": "五行裁定：午时火旺利火金主队；约旦水火相战而水熄——气运偏逆"
         },
         "hexagram": {
           "name": "渐卦",
-          "symbol": "☶",
+          "symbol": "☴",
           "number": 53,
           "upper": "巽风",
           "lower": "艮山",
           "quote": "《周易·渐卦》：「女归吉，利贞。」",
-          "general": "山上有木，渐进之象。渐卦象征循序渐进、步步为营——利于整体实力占优、防守纪律更好的一方。",
-          "advantage_team": "Iran",
-          "disadvantage_team": "New Zealand",
-          "hexagram_analysis": "渐卦主「进」——伊朗 Taremi 如艮山稳固，Jahanbakhsh 如巽风渐侵；Wood 如孤木于山，定位球偶可惊雷，但 90 分钟内渐卦利主队。Ghalenoei 10 零封防守与渐卦同频。",
-          "match_nature": "主队控场小胜局",
-          "match_nature_prob": 62,
-          "yellow_card_risk": "低",
-          "yellow_card_reason": "渐卦主循序非缠斗，预计 3-4 张黄牌。",
+          "general": "风在山，渐进之道——渐主循序渐进、以柔克刚，利于守正积累、不躁进者；非压迫方必胜。",
+          "advantage_team": "Austria",
+          "disadvantage_team": "Jordan",
+          "hexagram_analysis": "渐卦「鸿渐于陆」：巽风在上，午火生土（间接助金火）。主队气运如风行山上，循序而进；客队水气受制，宜「利贞」守中。",
+          "match_nature": "循序而进",
+          "yellow_card_risk": "低至中",
+          "yellow_card_reason": "渐主循序非缠斗；预计 3–4 张黄牌，来自战术犯规。",
           "scenarios": [
             {
-              "icon": "⚽",
-              "label": "比赛性质",
-              "text": "伊朗胜 54%，平局 26%，新西兰爆冷 20%（xG 1.55-0.85，最可能 2-0/1-0）"
+              "icon": "☯",
+              "label": "气运性质",
+              "text": "午时火盛，火金顺气者渐进有利"
             },
             {
-              "icon": "⏱",
-              "label": "进球高峰段",
-              "text": "第 30-45 分钟及第 70-85 分钟（Taremi 破局）"
+              "icon": "☴",
+              "label": "巽风",
+              "text": "风渐于山，忌躁进；守正积累者吉"
             },
             {
-              "icon": "🟨",
-              "label": "黄牌风险",
-              "text": "低——3-4 张"
-            },
-            {
-              "icon": "🔄",
-              "label": "0-0 平局可能",
-              "text": "中（26%）——Wood 定位球 + 伊朗进攻创造力历史弱点"
-            },
-            {
-              "icon": "⏰",
-              "label": "加时赛概率",
-              "text": "极低（2%）"
+              "icon": "🔥",
+              "label": "午时",
+              "text": "火气极盛，水气受制"
             }
           ],
           "early_goal": {
-            "scenario": "若伊朗率先进球（Taremi/Azmoun）",
-            "prediction": "渐卦「进」——新西兰被迫压出，Wood 孤立，追加失球概率 40%。",
-            "favors": "Iran",
-            "favors_prob": 72
+            "scenario": "若奥地利先进球",
+            "prediction": "渐「女归吉」——领先方宜循序控局，忌「鸿渐于陵」式冒进",
+            "favors": "Austria",
+            "favors_prob": 57
           },
           "no_early_goal": {
-            "scenario": "若前 30 分钟 0-0（Bazeley 低位奏效）",
-            "prediction": "渐卦允许僵持——伊朗 70' 后 Taremi 背身破局概率 65%；Wood 定位球是唯一冷门点。",
-            "favors": "Iran",
-            "favors_prob": 58
+            "scenario": "若前30分钟无进球",
+            "prediction": "渐卦主静，气运胶着；午火助主队，下半场风渐而进",
+            "favors": "Austria",
+            "favors_prob": 54
           },
           "away_goal": {
-            "scenario": "若 Wood 定位球破门",
-            "prediction": "渐卦暂逆——伊朗反扑，Azmoun 扳平概率 60%；90 分钟伊朗胜概率仍 55%。",
-            "favors": "Iran",
-            "favors_prob": 55
-          },
-          "halftime": {
-            "scenario": "若半场 1-0 伊朗",
-            "prediction": "Ghalenoei 4-5-1 收缩，控场至终场概率 70%。",
-            "favors": "Iran",
-            "favors_prob": 68
-          },
-          "extra_time": {
-            "scenario": "若 90 分钟平局",
-            "prediction": "伊朗替补深度略优，加时进球概率 55%。",
-            "favors": "Iran",
-            "favors_prob": 60
+            "scenario": "若约旦先进球",
+            "prediction": "渐遭逆——客队暂占「鸿渐于磐」守势；主队火金可循序反扑，气运未终",
+            "favors": "Jordan",
+            "favors_prob": 44
           }
         },
-        "home_score": 65,
-        "away_score": 42,
-        "mystic_verdict": "☶ 渐卦——伊朗循序渐进而吉，Taremi 艮山稳固；Wood 如孤木，定位球偶可惊雷但难改大局。",
+        "home_score": 77,
+        "away_score": 36,
+        "mystic_verdict": "☴ 渐卦——午时火盛，奥地利火金同气循序；约旦水火未济。非力之强弱，乃「利贞」与渐进之道：顺火者吉。",
+        "model_bridge": "竞技走势与净胜概率见「模型推演概要」；灵力仅论当日气运。",
         "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
+      },
+      "depth_calibration": {
+        "tier_home": 1,
+        "tier_label": "Austria 被看好 · 净胜约 1 球",
+        "implied_tier": 0.25,
+        "tier_gap": 0.75,
+        "signal": "heat_deflection",
+        "signal_cn": "预期偏热",
+        "signal_color": "#C8A96E",
+        "signal_desc": "外界一边倒但实力差未同步放大，模型略下调热门方权重。",
+        "blocker_spread_note": "",
+        "public_lean_cn": "公众预期倾向 Austria（约 68%）",
+        "analysis": "外界看好奥地利主场；总进球预期不高，模型倾向 1–2 球的控制型比赛。 档位高于 xG 隐含（+0.75），且净胜 1 球占 26.5%——热门穿档偏紧，受让侧相对更理性。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "1-0",
+              "prob": 15.1
+            },
+            {
+              "score": "2-0",
+              "prob": 12.4
+            },
+            {
+              "score": "1-1",
+              "prob": 11.3
+            }
+          ],
+          "one_goal_win_pct": 26.5,
+          "two_plus_win_pct": 32.1,
+          "full_cover_pct": 32.1,
+          "half_lose_pct": 26.5,
+          "fav_cover_ev": -0.093,
+          "dog_cover_ev": 0.093,
+          "rational_spread_cn": "客队受让 略优",
+          "total_xg": 2.4,
+          "over_2_5_pct": 42.6,
+          "over_3_pct": 21.6,
+          "totals_lean_cn": "2.5 球接近均衡；3 球线偏小",
+          "margin_risk_note": "净胜 1 球概率 26.5%：-1 档下走盘（赢 1 球不退赢不穿）",
+          "push_pct": 26.5
+        },
+        "spread_odds": null,
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 2.5,
+          "line_label": "总进球约 2.5 个",
+          "implied_xg_total": 2.4,
+          "fair_line": 2.25,
+          "line_gap": 0.25,
+          "over_pct": 42.6,
+          "under_pct": 57.4,
+          "signal": "high_line",
+          "signal_cn": "进球线偏高",
+          "signal_color": "#C8A96E",
+          "signal_desc": "进球线高于 xG 隐含，存在阻追多球/诱导少球侧的可能。",
+          "public_over_pct": 41,
+          "public_lean_cn": "公众略倾向少球（约 59%）",
+          "index_note": "小侧指数相对更贵（少球侧定价偏热）",
+          "totals_odds": null,
+          "rational_cn": "模型在 总进球约 2.5 个 附近均衡",
+          "score_link_cn": "小比分（1-0/1-1）偏少球 · 2-0/2-1 居中 · 3 球+ 偏多球"
+        },
+        "totals_line": 2.5,
+        "applied_delta": {
+          "home_win": -3,
+          "draw": 1,
+          "away_win": 2
+        },
+        "adjustment_note": "模型微调：主胜 -3% · 平 +1% · 客 +2%",
+        "adjusted_probs": {
+          "home_win": 55,
+          "draw": 26,
+          "away_win": 19
+        },
+        "display_summary": {
+          "fav_name": "Austria",
+          "expected_total_goals": 2.37,
+          "small_lead_pct": 26.5,
+          "small_example_score": "1-0",
+          "small_example_pct": 15.1,
+          "big_cover_pct": 32.1,
+          "big_example_score": "2-0",
+          "big_example_pct": 12.4,
+          "excitement": {
+            "label_cn": "接近均衡 · 略偏慢",
+            "label_key": "dull",
+            "label_color": "#7BB8D4",
+            "sub_cn": "预期约 2.4 个总进球 · 0–1 球 31.1% · 2–3 球 47.4%（差距 <8%）",
+            "dull_pct": 31.1,
+            "moderate_pct": 47.4,
+            "high_pct": 21.6,
+            "tiers": [
+              {
+                "key": "dull",
+                "label": "0–1 球 · 节奏偏慢",
+                "pct": 31.1
+              },
+              {
+                "key": "moderate",
+                "label": "2–3 球 · 常规节奏",
+                "pct": 47.4
+              },
+              {
+                "key": "high",
+                "label": "4 球+ · 非常精彩",
+                "pct": 21.6
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "Austria 暂无重要伤停 · Jordan 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "继续压迫 / 5-4-1 铁桶（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "气候均衡——Al-Tamari 反击 vs Alaba 出球是核心"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 1.65,
+            "baseline_away": 0.75,
+            "adjusted_home": 1.65,
+            "adjusted_away": 0.75,
+            "note": "基准 xG 1.65–0.75（未因伤病/气候下调）"
+          },
+          "calibration": {
+            "signal_cn": "预期偏热",
+            "signal_color": "#C8A96E",
+            "signal_desc": "外界一边倒但实力差未同步放大，模型略下调热门方权重。",
+            "tier_gap": 0.75,
+            "implied_tier_label": "Austria 被看好 · 净胜约 0.25 球",
+            "market_tier_label": "Austria 被看好 · 净胜约 1 球",
+            "summary_cn": "与模型 xG 对照：预期偏热 · 外界净胜预期高于 xG 隐含约 0.75 · 热门赢球但领先不足一档 26.5%"
+          },
+          "score_patterns": [
+            {
+              "score": "1-0",
+              "pct": 15.1
+            },
+            {
+              "score": "2-0",
+              "pct": 12.4
+            },
+            {
+              "score": "1-1",
+              "pct": 11.3
+            }
+          ],
+          "totals_view": {
+            "expected_total": 2.4,
+            "fair_line": 2.25,
+            "line_gap": 0.25,
+            "over_pct": 42.6,
+            "summary_cn": "预期约 2.4 个总进球 · 外界进球线偏高 · 模型在常见进球预期附近均衡"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "Austria",
+              "first_goal_pct": 68.8,
+              "start_score": "1-0",
+              "fav_name": "Austria",
+              "scorer_is_fav": true,
+              "small_lead_pct": 27.7,
+              "big_lead_pct": 57,
+              "fav_win_pct": 84.7,
+              "fav_draw_pct": 11.7,
+              "fav_lose_pct": 3.6,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "Austria 保持胜果（净胜≥1）",
+                  "pct": 84.7
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 11.7
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 3.6
+                }
+              ],
+              "excitement": {
+                "label_cn": "比较精彩",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期约 3.0 个总进球 · 2–3 球 54.7% 明显领先",
+                "dull_pct": 14,
+                "moderate_pct": 54.7,
+                "high_pct": 31.2,
+                "tiers": [
+                  {
+                    "key": "dull",
+                    "label": "0–1 球 · 节奏偏慢",
+                    "pct": 14
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "2–3 球 · 常规节奏",
+                    "pct": 54.7
+                  },
+                  {
+                    "key": "high",
+                    "label": "4 球+ · 非常精彩",
+                    "pct": 31.2
+                  }
+                ]
+              },
+              "big_delta": 24.9,
+              "small_delta": 1.2,
+              "narrative": "Austria 先破门（已 1-0） → 「继续压迫」；Jordan 「维持低位」。领先方继续进攻，仍有较大空间扩大比分，进球节奏转向「比较精彩」。"
+            },
+            {
+              "side": "away",
+              "team": "Jordan",
+              "first_goal_pct": 31.2,
+              "start_score": "0-1",
+              "fav_name": "Austria",
+              "scorer_is_fav": false,
+              "small_lead_pct": 19.3,
+              "big_lead_pct": 13.2,
+              "fav_win_pct": 32.5,
+              "fav_draw_pct": 28.9,
+              "fav_lose_pct": 38.6,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "Austria 追平（平局）",
+                  "pct": 28.9
+                },
+                {
+                  "key": "win1",
+                  "label": "Austria 净胜1球翻盘",
+                  "pct": 19.3
+                },
+                {
+                  "key": "win2",
+                  "label": "Austria 净胜≥2球翻盘",
+                  "pct": 13.2
+                }
+              ],
+              "excitement": {
+                "label_cn": "比较精彩",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期约 3.0 个总进球 · 2–3 球 54.1% 明显领先",
+                "dull_pct": 13.4,
+                "moderate_pct": 54.1,
+                "high_pct": 32.5,
+                "tiers": [
+                  {
+                    "key": "dull",
+                    "label": "0–1 球 · 节奏偏慢",
+                    "pct": 13.4
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "2–3 球 · 常规节奏",
+                    "pct": 54.1
+                  },
+                  {
+                    "key": "high",
+                    "label": "4 球+ · 非常精彩",
+                    "pct": 32.5
+                  }
+                ]
+              },
+              "big_delta": -18.9,
+              "small_delta": -7.2,
+              "narrative": "Jordan 先破门（已 0-1） → 「5-4-1 铁桶」；Austria 「更疯压迫」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门，进球节奏转向「比较精彩」。"
+            }
+          ]
+        },
+        "public_summary_note": "【推演概要】Austria 净胜1球 26.5% · 净胜≥2 32.1% · 接近均衡 · 略偏慢 · 与模型 xG 对照：预期偏热 · 外界净胜预期高于 xG 隐含约 0.75 · 热门赢球但领先不足一档 26.5%（模型微调：主胜 -3% · 平 +1% · 客 +2%）"
+      },
+      "group_context": {
+        "group": "J",
+        "label": "J组 · 第 1 轮",
+        "matchday": 1,
+        "standings": [
+          {
+            "team": "Argentina",
+            "pts": 0,
+            "p": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+            "gf": 0,
+            "ga": 0
+          },
+          {
+            "team": "Austria",
+            "pts": 0,
+            "p": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+            "gf": 0,
+            "ga": 0
+          },
+          {
+            "team": "Algeria",
+            "pts": 0,
+            "p": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+            "gf": 0,
+            "ga": 0
+          },
+          {
+            "team": "Jordan",
+            "pts": 0,
+            "p": 0,
+            "w": 0,
+            "d": 0,
+            "l": 0,
+            "gf": 0,
+            "ga": 0
+          }
+        ],
+        "home": {
+          "team": "Austria",
+          "rank": 2,
+          "pts": 0,
+          "played": 0,
+          "if_1st": "32强 · 可能对阵 I/K 组第 2 或第 3",
+          "if_2nd": "32强 · 可能对阵 I/K 组第 1",
+          "if_3rd": "若列小组第 3，需与 I/K/L/G/H 等组第 3 比净胜球/进球"
+        },
+        "away": {
+          "team": "Jordan",
+          "rank": 4,
+          "pts": 0,
+          "played": 0,
+          "if_1st": "32强 · 可能对阵 I/K 组第 2 或第 3",
+          "if_2nd": "32强 · 可能对阵 I/K 组第 1",
+          "if_3rd": "若列小组第 3，需与 I/K/L/G/H 等组第 3 比净胜球/进球"
+        },
+        "cross_group_notes": [
+          "G 组四队同积 1 分，形势极度开放",
+          "H 组四队同积 1 分，形势极度开放",
+          "E 组 Germany 3 分领跑",
+          "F 组 Sweden 3 分领跑"
+        ],
+        "manipulation_risk": {
+          "level": "LOW",
+          "level_cn": "低",
+          "focus_team": null,
+          "reason": "小组赛第 1 轮，各队普遍抢分意愿强，故意控分动机低；以下路径预判供后续轮次参考。"
+        },
+        "knockout_note": "48 队制：12 组前 2 + 8 个最佳第 3 进入 32 强；末轮可能出现算分/控分战术。",
+        "scenarios": [
+          "Austria 若取胜：积分 3，J 组排名有望上升；过早预测 32 强对手仍不可靠。",
+          "Jordan 若取胜：积分 3，客场抢分将改变 J 组格局。",
+          "平局：双方各 +1 分；在 G 组四队同积 1 分，形势极度开放；H 组四队同积 1 分，形势极度开放；E 组 Germany 3 分领跑；F 组 Sweden 3 分领跑 背景下，第 2 轮直接对话权重上升。"
+        ]
       }
     }
   ],
   "nextMatch": {
-    "group": "H",
+    "group": "I",
     "matchday": 1,
-    "date": "2026-06-15",
-    "time": "12:00",
-    "time_local": "12:00 ET",
+    "date": "2026-06-16",
+    "time": "15:00",
+    "time_local": "15:00 ET",
     "timezone": "EDT (UTC-4)",
-    "time_beijing": "00:00",
-    "date_beijing": "6月16日",
-    "time_beijing_full": "北京时间 6月16日 00:00",
-    "venue": "Mercedes-Benz Stadium",
-    "city": "Atlanta, USA",
+    "time_beijing": "03:00",
+    "date_beijing": "6月17日",
+    "time_beijing_full": "北京时间 6月17日 03:00",
+    "venue": "MetLife Stadium",
+    "city": "East Rutherford, USA",
     "home": {
-      "name": "Spain",
-      "iso": "es",
+      "name": "France",
+      "iso": "fr",
       "fifaRank": 3,
-      "rating": 88
+      "rating": 91
     },
     "away": {
-      "name": "Cape Verde",
-      "iso": "cv",
-      "fifaRank": 65,
-      "rating": 62
+      "name": "Senegal",
+      "iso": "sn",
+      "fifaRank": 20,
+      "rating": 77
     },
-    "teaser": "H组揭幕：欧洲杯冠军西班牙 vs 世界杯新军佛得角。",
-    "home_win": 78,
-    "draw": 14,
-    "away_win": 8,
-    "predicted_score": "3-0",
-    "key_player_home": "Lamine Yamal",
-    "key_player_away": "Ryan Mendes"
+    "teaser": "I组揭幕：法国 vs 非洲杯冠军塞内加尔，Mbappé vs Mané。",
+    "home_win": 63,
+    "draw": 20,
+    "away_win": 17,
+    "predicted_score": "2-0",
+    "key_player_home": "Kylian Mbappé",
+    "key_player_away": "Sadio Mané"
   },
   "upcomingMatches": [
     {
-      "group": "G",
-      "time_beijing_full": "北京时间 6月16日 03:00",
-      "venue": "Lumen Field",
-      "city": "Seattle, USA",
+      "group": "I",
+      "time_beijing_full": "北京时间 6月17日 06:00",
+      "venue": "Gillette Stadium",
+      "city": "Foxborough, USA",
       "home": {
-        "name": "Belgium",
-        "iso": "be"
+        "name": "Iraq",
+        "iso": "iq"
       },
       "away": {
-        "name": "Egypt",
-        "iso": "eg"
+        "name": "Norway",
+        "iso": "no"
       },
-      "teaser": "G组：De Bruyne vs Salah"
+      "teaser": "I组第2场"
     },
     {
-      "group": "I",
-      "time_beijing_full": "北京时间 6月17日 03:00",
-      "venue": "MetLife Stadium",
-      "city": "East Rutherford, USA",
+      "group": "J",
+      "time_beijing_full": "北京时间 6月17日 09:00",
+      "venue": "Arrowhead Stadium",
+      "city": "Kansas City, USA",
       "home": {
-        "name": "France",
-        "iso": "fr"
+        "name": "Argentina",
+        "iso": "ar"
       },
       "away": {
-        "name": "Senegal",
-        "iso": "sn"
+        "name": "Algeria",
+        "iso": "dz"
       },
-      "teaser": "I组揭幕：法国 vs 塞内加尔"
+      "teaser": "J组揭幕"
+    },
+    {
+      "group": "J",
+      "time_beijing_full": "北京时间 6月17日 12:00",
+      "venue": "Levi's Stadium",
+      "city": "Santa Clara, USA",
+      "home": {
+        "name": "Austria",
+        "iso": "at"
+      },
+      "away": {
+        "name": "Jordan",
+        "iso": "jo"
+      },
+      "teaser": "J组第2场"
     }
   ]
 };

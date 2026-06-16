@@ -9,6 +9,12 @@ const MODEL_TAGLINE = '100,000 次蒙特卡洛模拟 — 综合 Elo 评级、xG 
 const MODEL_SUBLINE = '基于 Elo 评级、xG 期望进球、100,000 次蒙特卡洛模拟及多维度大数据模型';
 const PLAY_NOTE_STD = '本站所有胜率、比分均为模型娱乐推演结果，不代表真实赛果，仅供交流娱乐。';
 
+/**
+ * 模型推演概要板块 — 页面显示开关
+ * false：暂不渲染（数据与脚本仍照常生成，改 true 即恢复显示）
+ */
+const SHOW_DEPTH_CALIBRATION_PANEL = false;
+
 function isPending(obj) {
   return typeof DATA_INTEGRITY !== 'undefined' && DATA_INTEGRITY.isPending(obj);
 }
@@ -439,6 +445,158 @@ function verdictBadge(hit, hitLabel, missLabel) {
     : `<span style="font-size:0.62rem;font-weight:700;padding:0.1rem 0.45rem;border-radius:2px;background:rgba(217,95,106,0.1);color:#D95F6A;border:1px solid rgba(217,95,106,0.28)">✗ ${missLabel || '未中'}</span>`;
 }
 
+/** 模型推演概要 — 综合 xG · 教练 · 伤病 · 气候 · 先进球情景 */
+function renderDepthCalibrationBlock(dc) {
+  if (!SHOW_DEPTH_CALIBRATION_PANEL) return '';
+  if (!dc) return '';
+  const s = dc.display_summary;
+  if (!s) return '';
+
+  const exc = s.excitement || {};
+  const tiers = exc.tiers || [];
+  const factors = s.context_factors || [];
+  const scenarios = s.first_goal_scenarios || [];
+  const cal = s.calibration || {};
+  const xgCtx = s.xg_context || {};
+  const scorePatterns = s.score_patterns || [];
+  const totalsView = s.totals_view || {};
+
+  const tierBar = tiers.map(t => `
+    <div class="dc-exc-row${t.key === exc.label_key ? ' dc-exc-row--active' : ''}">
+      <span class="dc-exc-label">${t.label}</span>
+      <span class="dc-exc-bar-wrap"><span class="dc-exc-bar" style="width:${t.pct}%;background:${t.key === 'dull' ? '#7BB8D4' : t.key === 'high' ? '#5BBF8A' : '#C8A96E'}"></span></span>
+      <span class="dc-exc-pct">${t.pct}%</span>
+    </div>`).join('');
+
+  const factorRow = factors.length ? `
+    <div class="dc-context-row">
+      ${factors.map(f => `
+        <div class="dc-context-pill">
+          <span class="dc-context-icon">${f.icon}</span>
+          <span class="dc-context-label">${f.label}</span>
+          <span class="dc-context-note">${f.note}</span>
+        </div>`).join('')}
+    </div>` : '';
+
+  const calibrationRow = cal.summary_cn ? `
+    <div class="dc-calibration-strip" style="border-left-color:${cal.signal_color || '#7BB8D4'}">
+      <span class="dc-calibration-tag" style="color:${cal.signal_color || '#7BB8D4'}">${cal.signal_cn || '—'}</span>
+      <span class="dc-calibration-text">${cal.summary_cn}</span>
+    </div>` : '';
+
+  const xgRow = xgCtx.note ? `
+    <div class="dc-meta-row dc-meta-row--xg">${xgCtx.note}</div>` : '';
+
+  const scorePatternRow = scorePatterns.length ? `
+    <div class="dc-meta-row">
+      <span class="dc-meta-label">赛果形态</span>
+      <span class="dc-meta-value">${scorePatterns.map(p => p.score + ' ' + p.pct + '%').join(' · ')}</span>
+    </div>` : '';
+
+  const totalsRow = totalsView.summary_cn ? `
+    <div class="dc-meta-row">
+      <span class="dc-meta-label">总进球</span>
+      <span class="dc-meta-value">${totalsView.summary_cn}</span>
+    </div>` : '';
+
+  const scenarioCards = scenarios.map(sc => {
+    const excSc = sc.excitement || {};
+    const outcomes = sc.outcomes || [];
+    const outcomeHtml = outcomes.map(o => `
+      <div class="dc-scenario-outcome${o.key === 'hold_win' || o.key === 'win2' ? ' dc-scenario-outcome--key' : ''}">
+        <span class="dc-scenario-outcome-label">${o.label}</span>
+        <span class="dc-scenario-outcome-pct">${o.pct}<span>%</span></span>
+      </div>`).join('');
+    return `
+      <div class="dc-scenario-card">
+        <div class="dc-scenario-head">
+          <span class="dc-scenario-title">若 ${sc.team} 先进球${sc.start_score ? ' · 已 ' + sc.start_score : ''}</span>
+          <span class="dc-scenario-pct">首开约 ${sc.first_goal_pct}%</span>
+        </div>
+        <div class="dc-scenario-outcomes">${outcomeHtml}</div>
+        <div class="dc-scenario-rhythm">进球节奏 <strong style="color:${excSc.label_color || '#C8A96E'}">${excSc.label_cn || '—'}</strong></div>
+        <p class="dc-scenario-narrative">${sc.narrative}</p>
+      </div>`;
+  }).join('');
+
+  return `
+    <div class="depth-calib-strip depth-calib-strip--simple">
+      <div class="depth-calib-head depth-calib-head--simple">
+        <span class="depth-calib-title">📊 模型推演概要</span>
+        <span class="depth-calib-tier">${s.baseline_label || '综合 xG · 教练 · 伤病 · 气候'}</span>
+      </div>
+      ${calibrationRow}
+      ${xgRow}
+      ${factorRow}
+      <div class="depth-calib-simple-row">
+        <div class="dc-simple-card">
+          <div class="dc-simple-label">${s.fav_name} 净胜 1 球</div>
+          <div class="dc-simple-pct">${s.small_lead_pct}<span>%</span></div>
+          <div class="dc-simple-sub">赢球且仅领先 1 个</div>
+        </div>
+        <div class="dc-simple-card dc-simple-card--cover">
+          <div class="dc-simple-label">${s.fav_name} 净胜 ≥2 球</div>
+          <div class="dc-simple-pct">${s.big_cover_pct}<span>%</span></div>
+          <div class="dc-simple-sub">明显拉开比分差距</div>
+        </div>
+        <div class="dc-simple-card dc-simple-card--excitement">
+          <div class="dc-simple-label">进球节奏</div>
+          <div class="dc-simple-verdict" style="color:${exc.label_color || '#C8A96E'}">${exc.label_cn || '—'}</div>
+          <div class="dc-simple-sub dc-simple-sub--exc">${exc.sub_cn || (s.expected_total_goals != null ? '预期约 ' + s.expected_total_goals + ' 个总进球' : '')}</div>
+          <div class="dc-exc-bars">${tierBar}</div>
+        </div>
+      </div>
+      ${scorePatternRow}${totalsRow}
+      ${scenarios.length ? `
+      <div class="dc-scenario-section">
+        <div class="dc-scenario-section-title">先进球情景推演</div>
+        <div class="dc-scenario-row">${scenarioCards}</div>
+      </div>` : ''}
+    </div>`;
+}
+
+/** 小组形势 & 晋级路径预判 */
+function renderGroupContextPanel(gc) {
+  if (!gc) return '';
+  const risk = gc.manipulation_risk || {};
+  const riskColor = risk.level === 'HIGH' ? '#D95F6A' : risk.level === 'MEDIUM' ? '#C8A96E' : '#5BBF8A';
+  const teamCard = t => `
+    <div class="group-context-card">
+      <div class="group-context-team">${t.team}</div>
+      <div>当前 ${gc.label} · 暂列第 <strong>${t.rank}</strong> · ${t.pts} 分（${t.played} 场）</div>
+      <div class="group-context-path"><span class="gc-r1">若第 1</span>：${t.if_1st}</div>
+      <div class="group-context-path"><span class="gc-r2">若第 2</span>：${t.if_2nd}</div>
+      <div class="group-context-path"><span class="gc-r3">若第 3</span>：${t.if_3rd}</div>
+    </div>`;
+  const standingsRows = (gc.standings || []).map((r, i) => `
+    <div class="group-standings-row${i < 2 ? ' top' : ''}">
+      <span>${i + 1}. ${r.team}</span>
+      <span>${r.p}</span>
+      <span>${r.gf}-${r.ga}</span>
+      <span>${r.w}/${r.d}/${r.l}</span>
+      <span class="pts">${r.pts}</span>
+    </div>`).join('');
+  return `
+    <div class="group-context-panel">
+      <div class="group-context-title">🗺️ 小组形势 & 晋级路径预判</div>
+      <p class="group-context-intro">结合已赛积分榜与 48 队制 32 强规则，评估出线后可能对手及末轮控分动机。</p>
+      <div class="group-standings-mini hdr">
+        <span>球队</span><span>赛</span><span>进失</span><span>胜/平/负</span><span>分</span>
+      </div>
+      ${standingsRows}
+      <div class="group-context-grid">
+        ${teamCard(gc.home)}
+        ${teamCard(gc.away)}
+      </div>
+      ${(gc.cross_group_notes || []).length ? `<p class="group-context-cross"><strong>关联组</strong>：${gc.cross_group_notes.join(' · ')}</p>` : ''}
+      <div class="manip-risk" style="border-left-color:${riskColor}">
+        <strong style="color:${riskColor}">控分动机 · ${risk.level_cn || '低'}</strong>
+        ${risk.focus_team ? '（关注：' + risk.focus_team + '）' : ''}
+        <div>${risk.reason || ''}</div>
+      </div>
+    </div>`;
+}
+
 function predictionVerdictPanel(m) {
   const v = computePredictionVerdict(m);
   if (!v) return '';
@@ -708,7 +866,7 @@ function renderRightAnalysisPanel(p, m) {
   return `
       <div class="mf-panel mf-panel-right-stack">
         <div class="mf-panel-label">🔑 综合推演关键因素</div>
-        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">模型判断本场走势的重要变量 — 已纳入上方胜率娱乐推演${finished ? ' · 下方为<strong style="color:var(--gold)">赛前</strong>泊松分布，与官方赛果对照' : ''}</div>
+        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:0.75rem;line-height:1.5">模型判断本场走势的重要变量 — 已纳入上方胜率娱乐推演${m.prediction?.depth_calibrated ? '（含<strong style="color:var(--gold)">外界预期</strong>微调）' : ''}${finished ? ' · 下方为<strong style="color:var(--gold)">赛前</strong>泊松分布' : ''}</div>
         <div style="display:flex;gap:0.5rem;font-size:0.75rem;line-height:1.6;padding:0.4rem;
           background:rgba(255,255,255,0.03);border-radius:3px;border-left:2px solid var(--gold);margin-bottom:1.25rem">
           <span style="color:var(--gold);font-weight:700;flex-shrink:0">→</span>
@@ -901,6 +1059,8 @@ function renderMatch(m) {
       </div>
     </div>
 
+    ${renderDepthCalibrationBlock(m.depth_calibration)}
+
     <!-- 4-COLUMN DETAIL GRID -->
     <div class="mf-detail-grid">
 
@@ -981,6 +1141,8 @@ function renderMatch(m) {
       ${weatherPanel(m.weather, m.home.name, m.away.name)}
 
     </div><!-- end detail grid -->
+
+    ${renderGroupContextPanel(m.group_context)}
 
     <!-- MYSTIC PANEL (outside grid, full width) -->
     ${mysticPanel(m.mystic, m.home.name, m.away.name)}
@@ -1228,25 +1390,24 @@ function mysticPanel(mx, homeName, awayName) {
             </div>
           </div>
 
-          <!-- 竞技推演（xG / 泊松 / 球员） -->
+          <!-- 卦气走势 · 分情景（纯卦象/气运，非竞技数据） -->
+          ${hx.scenarios.length ? `
           <div style="font-size:0.62rem;letter-spacing:2px;color:${P}0.55);padding:0.35rem 0;border-bottom:1px solid ${P}0.12)">
-            📊 竞技推演 · xG / 泊松 / 球员对位
-            <span style="font-weight:400;letter-spacing:0.5px;color:${P}0.4);margin-left:0.35rem">（进球高峰、胜率分布、分情景走势）</span>
+            ☯ 卦气走势 · 分情景
+            <span style="font-weight:400;letter-spacing:0.5px;color:${P}0.4);margin-left:0.35rem">（气运流转，与 xG/实力无关）</span>
           </div>
-
-          <!-- 基本预测5项 -->
           <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.45rem">
             ${hx.scenarios.map(s=>`
               <div style="padding:0.5rem 0.65rem;background:${P}0.04);border:1px solid ${P}0.1);border-radius:4px">
                 <div style="font-size:0.72rem;font-weight:700;margin-bottom:0.2rem">${s.icon} ${s.label}</div>
                 <div style="font-size:0.66rem;color:rgba(210,195,235,0.62);line-height:1.5">${s.text}</div>
               </div>`).join('')}
-          </div>
+          </div>` : ''}
 
-          <!-- 分情景推演 标题 -->
+          ${(hx.early_goal || hx.no_early_goal || hx.away_goal || hx.halftime || hx.extra_time) ? `
           <div style="font-size:0.62rem;letter-spacing:2px;color:${P}0.6);padding-bottom:0.35rem;border-bottom:1px solid ${P}0.12)">
-            📌 分情景推演 · 各种比赛走向完整解析
-          </div>
+            📌 卦象分情景 · 走势解析
+          </div>` : ''}
 
           <!-- 情景1：强队先进球 -->
           ${hx.early_goal ? renderScenario('🟢', hx.early_goal.scenario, hx.early_goal.prediction, hx.early_goal.favors, hx.early_goal.favors_prob, 'rgba(91,191,138,0.07)', 'rgba(91,191,138,0.22)', '#5BBF8A') : ''}
@@ -1283,6 +1444,7 @@ function mysticPanel(mx, homeName, awayName) {
           padding:0.85rem 1rem;background:${P}0.08);border-radius:4px;border-left:3px solid #9B7DD4;margin-bottom:0.6rem">
           ${mx.mystic_verdict}
         </div>
+        ${mx.model_bridge ? `<div style="font-size:0.68rem;color:rgba(210,195,235,0.55);line-height:1.6;margin-bottom:0.6rem;padding:0.5rem 0.65rem;background:rgba(123,184,212,0.06);border-radius:4px;border:1px solid rgba(123,184,212,0.15)">↔ ${mx.model_bridge}</div>` : ''}
         <div style="font-size:0.6rem;color:${P}0.3);line-height:1.5">${mx.disclaimer}</div>
       </div>
 
@@ -1382,7 +1544,7 @@ function initResultsPage() {
 
   const dateEl = document.getElementById('results-date');
   if (dateEl) {
-    dateEl.textContent = `📅 已归档 ${RESULTS_DATA.finishedMatches.length} 场 · 含加拿大/美国揭幕战`;
+    dateEl.textContent = `📅 已归档 ${RESULTS_DATA.finishedMatches.length} 场 · Day 1–5 完整复盘`;
   }
 
   const cont = document.getElementById('results-container');
