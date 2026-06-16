@@ -441,25 +441,41 @@ const MATCH_DATA = {
         "wind": "东南风 2级",
         "condition_cn": "午后偏热，开放式",
         "impact_level": "LOW",
-        "impact": "MetLife 开放式，26°C 对法国传控友好",
-        "impact_summary": "气候变量低——Mbappé vs Mané 战术对位为主",
+        "impact": "MetLife 开放式，26°C 午后前段；气候对推演权重低，Mbappé/Mané 战术对位仍是主轴",
+        "impact_summary": "气候变量低——法国传控深度略受益，塞内加尔转换不受明显制约",
         "home_adapt": 88,
         "away_adapt": 80,
-        "home_note": "法国球员习惯欧洲/北美夏季作战",
-        "away_note": "塞内加尔适应湿热，Mané 反击不受明显制约",
+        "home_note": "法国球员习惯欧洲/北美夏季作战；Deschamps 控球轮换体系在 26°C 可全场执行",
+        "away_note": "塞内加尔适应湿热非洲联赛节奏；Mané/Jackson 冲刺型打法对气温不敏感",
+        "prediction_note": "模型未因气候下调总 xG；若临场小雨，长传精度略降约 2–3%",
         "weather_factors": [
           {
-            "label": "26°C 午后",
-            "impact": "中性",
-            "detail": "北京时间 03:00 对应当地 15:00 ET 前段"
+            "label": "26°C · 15:00 ET 开球",
+            "impact": "中性偏利控球",
+            "detail": "北京时间 03:00 对应当地午后前段，尚未达 30°C 峰值；法国 90 分钟控球消耗可控，领先 2 球后 65' 轮换仍可按计划执行"
           },
           {
-            "label": "开放式",
-            "impact": "低",
-            "detail": "降雨 25% 可能略滑"
+            "label": "开放式球场",
+            "impact": "低变量",
+            "detail": "无屋顶，但降雨概率 25% 偏低；对两队影响相当，不会系统性压低总进球预期"
+          },
+          {
+            "label": "湿度 58%",
+            "impact": "中性",
+            "detail": "中等湿度，传球与冲刺均可维持；对塞内加尔低位防守的体能考验小于海湾 70%+ 湿热场次"
+          },
+          {
+            "label": "海平面 10m",
+            "impact": "无海拔差",
+            "detail": "双方无高原适应差异；Koulibaly 防空与 Thuram 冲刺均不受氧气因素干扰"
+          },
+          {
+            "label": "东南风 2级",
+            "impact": "定位球微调",
+            "detail": "微风对角球/任意球落点影响有限；法国定位球（Tchouaméni/Kanté 后插上）略利"
           }
         ],
-        "historical_note": "MetLife Stadium 容量 82,500 · I 组揭幕战"
+        "historical_note": "MetLife Stadium 容量 82,500 · I 组揭幕战 · 纽约都会区 6 月午后气候稳定"
       },
       "mystic": {
         "date_bazi": {
@@ -724,7 +740,7 @@ const MATCH_DATA = {
             {
               "icon": "🌤️",
               "label": "气候",
-              "note": "气候变量低——Mbappé vs Mané 战术对位为主"
+              "note": "气候变量低——法国传控深度略受益，塞内加尔转换不受明显制约"
             }
           ],
           "xg_context": {
@@ -1344,22 +1360,43 @@ const MATCH_DATA = {
         "altitude_m": 60,
         "rain_chance": 20,
         "wind": "东北风 2级",
-        "condition_cn": "傍晚舒适",
+        "condition_cn": "傍晚舒适，天然草皮",
         "impact_level": "LOW",
-        "impact": "新英格兰 22°C 傍晚，挪威完全适应",
-        "impact_summary": "气候均衡——Haaland 对位伊拉克低位是推演核心",
+        "impact": "新英格兰 22°C 傍晚，天然草传控落点稳定；气候几乎不干扰 Haaland 破局推演",
+        "impact_summary": "气候均衡——Haaland 对位伊拉克低位是推演核心，天气不构成冷门变量",
         "home_adapt": 72,
         "away_adapt": 86,
-        "home_note": "伊拉克适应中东气候，22°C 舒适",
-        "away_note": "挪威北欧球员完全适应",
+        "home_note": "伊拉克球员习惯中东 30°C+ 作战，22°C 反而更利于 90 分钟低位防守专注度",
+        "away_note": "挪威北欧球员完全适应；Solbakken 宽度拉开+Haaland 冲刺在凉爽傍晚可全场执行",
+        "prediction_note": "模型未因气候下调总 xG；天然草有利于挪威地面配合与直塞",
         "weather_factors": [
           {
-            "label": "22°C 傍晚",
+            "label": "22°C · 18:00 ET 傍晚",
             "impact": "有利高强度",
-            "detail": "90 分钟压迫均可维持"
+            "detail": "北京时间 06:00 对应波士顿入夜前最舒适时段；挪威高位压迫与 Haaland 反复冲刺均可维持 90 分钟"
+          },
+          {
+            "label": "天然草皮",
+            "impact": "略利传控方",
+            "detail": "传球落点稳定，Ødegaard 直塞与边路宽度配合更流畅；伊拉克解围后二次落点处理难度上升"
+          },
+          {
+            "label": "湿度 55% · 降雨 20%",
+            "impact": "低",
+            "detail": "干燥舒适，场地不易积水；对 0-0 守平策略与挪威破密集防守均中性"
+          },
+          {
+            "label": "低海拔 60m",
+            "impact": "无",
+            "detail": "无高原因素；伊拉克定位球是唯一稳定威胁，与气候无关"
+          },
+          {
+            "label": "东北风 2级",
+            "impact": "中性",
+            "detail": "对 Hussein 头球与挪威传中影响相当，不构成方向性倾斜"
           }
         ],
-        "historical_note": "Gillette Stadium 容量 65,878 · I 组第 2 场"
+        "historical_note": "Gillette Stadium 容量 65,878 · I 组第 2 场 · 新英格兰 6 月傍晚历来少极端天气"
       },
       "mystic": {
         "date_bazi": {
@@ -1579,7 +1616,7 @@ const MATCH_DATA = {
             {
               "icon": "🌤️",
               "label": "气候",
-              "note": "气候均衡——Haaland 对位伊拉克低位是推演核心"
+              "note": "气候均衡——Haaland 对位伊拉克低位是推演核心，天气不构成冷门变量"
             }
           ],
           "xg_context": {
@@ -2218,22 +2255,43 @@ const MATCH_DATA = {
         "altitude_m": 270,
         "rain_chance": 30,
         "wind": "南风 3级",
-        "condition_cn": "中西部午后偏热",
-        "impact_level": "LOW",
-        "impact": "29°C 对阿根廷略有消耗但深度碾压",
-        "impact_summary": "气候变量低——Messi/Lautaro 对位 Mahrez 是核心",
+        "condition_cn": "中西部午后偏热，开放式",
+        "impact_level": "MEDIUM",
+        "impact": "29°C+62% 湿度，开放式；阿根廷深度碾压但 70' 后阿尔及利亚低位体能是变量",
+        "impact_summary": "午后偏热——60' 后传球精度略降，领先方降 tempo 概率上升；总 xG 模型微调约 -6%",
         "home_adapt": 86,
         "away_adapt": 74,
-        "home_note": "阿根廷南美球员适应夏季",
-        "away_note": "阿尔及利亚北非气候类似",
+        "home_note": "阿根廷南美球员习惯夏季作战；Scaloni 替补深度（Garnacho/Almada）可应对 70' 后体能下滑",
+        "away_note": "阿尔及利亚北非球员熟悉干热，但 90 分钟 Belmadi 低位+Mahrez 反击对体能要求更高",
+        "prediction_note": "模型已将总 xG 微调约 -6%（MEDIUM 湿热）；Messi 70' 换下策略与气候高度吻合",
         "weather_factors": [
           {
-            "label": "29°C",
+            "label": "29°C 午后偏热",
+            "impact": "体能消耗",
+            "detail": "62% 湿度下 60' 后传球精度下降；阿尔及利亚若先守 0-0，70' 后防线松动概率上升"
+          },
+          {
+            "label": "270m 低海拔",
+            "impact": "轻微",
+            "detail": "较海平面氧气略稀，但对欧洲/南美球员影响有限；不构成高原冷门变量"
+          },
+          {
+            "label": "开放式 · 降雨 30%",
             "impact": "中等",
-            "detail": "70' 后传球精度略降"
+            "detail": "若有阵雨场地略滑，Mahrez 启动与阿根廷肋部渗透需调整；总进球预期不因雨单独下调"
+          },
+          {
+            "label": "南风 3级",
+            "impact": "边路微调",
+            "detail": "对 Attal 插上与 Tagliafico 对位有轻微影响；定位球落点略偏，角球破局权重略升"
+          },
+          {
+            "label": "替补深度差",
+            "impact": "利阿根廷",
+            "detail": "湿热消耗下替补质量差距放大——Scaloni 60' 后换 Garnacho 提速 vs Belmadi 换人类型有限"
           }
         ],
-        "historical_note": "Arrowhead Stadium 容量 76,416 · J 组揭幕战"
+        "historical_note": "Arrowhead Stadium 容量 76,416 · J 组揭幕战 · 中西部 6 月午后常有 28–32°C"
       },
       "mystic": {
         "date_bazi": {
@@ -2405,36 +2463,36 @@ const MATCH_DATA = {
         },
         "display_summary": {
           "fav_name": "Argentina",
-          "expected_total_goals": 2.94,
-          "small_lead_pct": 22.7,
+          "expected_total_goals": 2.79,
+          "small_lead_pct": 23.7,
           "small_example_score": "1-0",
-          "small_example_pct": 11.7,
-          "big_cover_pct": 56.3,
+          "small_example_pct": 13.2,
+          "big_cover_pct": 54.2,
           "big_example_score": "2-0",
-          "big_example_pct": 14.9,
+          "big_example_pct": 15.8,
           "excitement": {
-            "label_cn": "接近均衡 · 略偏热闹",
-            "label_key": "high",
-            "label_color": "#5BBF8A",
-            "sub_cn": "预期约 2.9 个总进球 · 4 球+ 35.2% · 2–3 球 45.8%（差距 <8%）",
-            "dull_pct": 18.9,
-            "moderate_pct": 45.8,
-            "high_pct": 35.2,
+            "label_cn": "比较精彩",
+            "label_key": "moderate",
+            "label_color": "#C8A96E",
+            "sub_cn": "预期约 2.8 个总进球 · 2–3 球 46.9% 明显领先",
+            "dull_pct": 21.6,
+            "moderate_pct": 46.9,
+            "high_pct": 31.5,
             "tiers": [
               {
                 "key": "dull",
                 "label": "0–1 球 · 节奏偏慢",
-                "pct": 18.9
+                "pct": 21.6
               },
               {
                 "key": "moderate",
                 "label": "2–3 球 · 常规节奏",
-                "pct": 45.8
+                "pct": 46.9
               },
               {
                 "key": "high",
                 "label": "4 球+ · 非常精彩",
-                "pct": 35.2
+                "pct": 31.5
               }
             ]
           },
@@ -2453,15 +2511,15 @@ const MATCH_DATA = {
             {
               "icon": "🌤️",
               "label": "气候",
-              "note": "气候变量低——Messi/Lautaro 对位 Mahrez 是核心"
+              "note": "午后偏热——60' 后传球精度略降，领先方降 tempo 概率上升；总 xG 模型微调约 -6%"
             }
           ],
           "xg_context": {
             "baseline_home": 2.8,
             "baseline_away": 0.6,
-            "adjusted_home": 2.55,
-            "adjusted_away": 0.58,
-            "note": "基准 xG 2.8–0.6 → 调整后 2.55–0.58"
+            "adjusted_home": 2.4,
+            "adjusted_away": 0.54,
+            "note": "基准 xG 2.8–0.6 → 调整后 2.4–0.54"
           },
           "calibration": {
             "signal_cn": "预期偏高",
@@ -2470,47 +2528,47 @@ const MATCH_DATA = {
             "tier_gap": 0.75,
             "implied_tier_label": "Argentina 被看好 · 净胜约 1–2 球",
             "market_tier_label": "Argentina 被看好 · 净胜约 2 球",
-            "summary_cn": "与模型 xG 对照：预期偏高 · 外界净胜预期高于 xG 隐含约 0.75 · 热门赢球但领先不足一档 22.7%"
+            "summary_cn": "与模型 xG 对照：预期偏高 · 外界净胜预期高于 xG 隐含约 0.75 · 热门赢球但领先不足一档 23.7%"
           },
           "score_patterns": [
             {
               "score": "2-0",
-              "pct": 14.9
-            },
-            {
-              "score": "3-0",
-              "pct": 12.7
+              "pct": 15.8
             },
             {
               "score": "1-0",
-              "pct": 11.7
+              "pct": 13.2
+            },
+            {
+              "score": "3-0",
+              "pct": 12.6
             }
           ],
           "totals_view": {
-            "expected_total": 2.9,
-            "fair_line": 2.75,
-            "line_gap": 0.25,
-            "over_pct": 35.2,
-            "summary_cn": "预期约 2.9 个总进球 · 外界进球线偏高 · 模型略偏少球方向（约 64.8%）"
+            "expected_total": 2.8,
+            "fair_line": 2,
+            "line_gap": 1,
+            "over_pct": 31.5,
+            "summary_cn": "预期约 2.8 个总进球 · 外界进球线偏高 · 模型略偏少球方向（约 68.5%）"
           },
           "first_goal_scenarios": [
             {
               "side": "home",
               "team": "Argentina",
-              "first_goal_pct": 81.5,
+              "first_goal_pct": 81.6,
               "start_score": "1-0",
               "fav_name": "Argentina",
               "scorer_is_fav": true,
-              "small_lead_pct": 23.9,
-              "big_lead_pct": 67.5,
-              "fav_win_pct": 91.4,
+              "small_lead_pct": 25.4,
+              "big_lead_pct": 66.1,
+              "fav_win_pct": 91.5,
               "fav_draw_pct": 7.2,
-              "fav_lose_pct": 1.4,
+              "fav_lose_pct": 1.3,
               "outcomes": [
                 {
                   "key": "hold_win",
                   "label": "Argentina 保持胜果（净胜≥1）",
-                  "pct": 91.4
+                  "pct": 91.5
                 },
                 {
                   "key": "drawn",
@@ -2520,101 +2578,101 @@ const MATCH_DATA = {
                 {
                   "key": "lost",
                   "label": "被逆转落败",
-                  "pct": 1.4
+                  "pct": 1.3
                 }
               ],
               "excitement": {
                 "label_cn": "比较精彩",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期约 3.0 个总进球 · 2–3 球 54.8% 明显领先",
-                "dull_pct": 13.9,
-                "moderate_pct": 54.8,
-                "high_pct": 31.3,
+                "sub_cn": "预期约 2.8 个总进球 · 2–3 球 56.3% 明显领先",
+                "dull_pct": 15.9,
+                "moderate_pct": 56.3,
+                "high_pct": 27.8,
                 "tiers": [
                   {
                     "key": "dull",
                     "label": "0–1 球 · 节奏偏慢",
-                    "pct": 13.9
+                    "pct": 15.9
                   },
                   {
                     "key": "moderate",
                     "label": "2–3 球 · 常规节奏",
-                    "pct": 54.8
+                    "pct": 56.3
                   },
                   {
                     "key": "high",
                     "label": "4 球+ · 非常精彩",
-                    "pct": 31.3
+                    "pct": 27.8
                   }
                 ]
               },
-              "big_delta": 11.2,
-              "small_delta": 1.2,
+              "big_delta": 11.9,
+              "small_delta": 1.7,
               "narrative": "Argentina 先破门（已 1-0） → 「控节奏 · 保护 Messi」；Algeria 「Mahrez 单核」。领先后双方可能转入守势，比分差距不易再拉大，节奏偏慢概率上升。"
             },
             {
               "side": "away",
               "team": "Algeria",
-              "first_goal_pct": 18.5,
+              "first_goal_pct": 18.4,
               "start_score": "0-1",
               "fav_name": "Argentina",
               "scorer_is_fav": false,
-              "small_lead_pct": 24.6,
-              "big_lead_pct": 31.1,
-              "fav_win_pct": 55.7,
-              "fav_draw_pct": 24.4,
-              "fav_lose_pct": 19.9,
+              "small_lead_pct": 24.7,
+              "big_lead_pct": 28.9,
+              "fav_win_pct": 53.6,
+              "fav_draw_pct": 25.5,
+              "fav_lose_pct": 21,
               "outcomes": [
                 {
                   "key": "draw",
                   "label": "Argentina 追平（平局）",
-                  "pct": 24.4
+                  "pct": 25.5
                 },
                 {
                   "key": "win1",
                   "label": "Argentina 净胜1球翻盘",
-                  "pct": 24.6
+                  "pct": 24.7
                 },
                 {
                   "key": "win2",
                   "label": "Argentina 净胜≥2球翻盘",
-                  "pct": 31.1
+                  "pct": 28.9
                 }
               ],
               "excitement": {
                 "label_cn": "接近均衡 · 略偏热闹",
                 "label_key": "high",
                 "label_color": "#5BBF8A",
-                "sub_cn": "预期约 3.6 个总进球 · 4 球+ 49.4% · 2–3 球 43.7%（差距 <8%）",
-                "dull_pct": 6.8,
-                "moderate_pct": 43.7,
-                "high_pct": 49.4,
+                "sub_cn": "预期约 3.5 个总进球 · 4 球+ 45.6% · 2–3 球 46.4%（差距 <8%）",
+                "dull_pct": 8,
+                "moderate_pct": 46.4,
+                "high_pct": 45.6,
                 "tiers": [
                   {
                     "key": "dull",
                     "label": "0–1 球 · 节奏偏慢",
-                    "pct": 6.8
+                    "pct": 8
                   },
                   {
                     "key": "moderate",
                     "label": "2–3 球 · 常规节奏",
-                    "pct": 43.7
+                    "pct": 46.4
                   },
                   {
                     "key": "high",
                     "label": "4 球+ · 非常精彩",
-                    "pct": 49.4
+                    "pct": 45.6
                   }
                 ]
               },
-              "big_delta": -25.2,
-              "small_delta": 1.9,
-              "narrative": "Algeria 先破门（已 0-1） → 「4-5-1 收缩」；Argentina 「堆前锋」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门，对攻张力上升，总进球预期增加。"
+              "big_delta": -25.3,
+              "small_delta": 1,
+              "narrative": "Algeria 先破门（已 0-1） → 「4-5-1 收缩」；Argentina 「堆前锋」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门，进球节奏转向「接近均衡 · 略偏热闹」。"
             }
           ]
         },
-        "public_summary_note": "【推演概要】Argentina 净胜1球 22.7% · 净胜≥2 56.3% · 接近均衡 · 略偏热闹 · 与模型 xG 对照：预期偏高 · 外界净胜预期高于 xG 隐含约 0.75 · 热门赢球但领先不足一档 22.7%（模型微调：主胜 -4% · 平 +1% · 客 +3%）"
+        "public_summary_note": "【推演概要】Argentina 净胜1球 23.7% · 净胜≥2 54.2% · 比较精彩 · 与模型 xG 对照：预期偏高 · 外界净胜预期高于 xG 隐含约 0.75 · 热门赢球但领先不足一档 23.7%（模型微调：主胜 -4% · 平 +1% · 客 +3%）"
       },
       "group_context": {
         "group": "J",
@@ -3081,20 +3139,41 @@ const MATCH_DATA = {
         "wind": "西风 1级",
         "condition_cn": "湾区夜场凉爽，人工草皮",
         "impact_level": "LOW",
-        "impact": "21°C 夜场，Rangnick 压迫体能消耗可控",
-        "impact_summary": "气候均衡——Al-Tamari 反击 vs Alaba 出球是核心",
+        "impact": "21°C 夜场 + 人工草皮；Rangnick 压迫节奏可控，气候不是本场推演主轴",
+        "impact_summary": "气候均衡——Al-Tamari 反击 vs Alaba 出球是核心；人工草略加快传球",
         "home_adapt": 84,
         "away_adapt": 76,
-        "home_note": "奥地利适应凉爽夜场",
-        "away_note": "约旦适应中东-地中海气候",
+        "home_note": "奥地利球员习惯欧洲联赛；凉爽夜场利于 Rangnick 90 分钟高位线保持",
+        "away_note": "约旦适应中东-地中海气候；低位防守在 21°C 可维持，但人工草传球速度加快或不利出球",
+        "prediction_note": "模型未因气候下调总 xG；人工草略利压迫方（传球更快，Jordan 出球失误率上升）",
         "weather_factors": [
           {
+            "label": "21°C · 21:00 PT 夜场",
+            "impact": "有利压迫",
+            "detail": "北京时间 12:00 对应湾区上午但当地为前一日 21:00 PT 夜场凉爽；Rangnick 高位强度可全场维持"
+          },
+          {
             "label": "人工草皮",
-            "impact": "略快",
-            "detail": "传球速度略快，Rangnick 压迫受益"
+            "impact": "略快 · 利主队",
+            "detail": "传球速度比天然草快 5–8%，Alaba 出球与 Sabitzer 前插更顺；Jordan 后场出球失误概率上升"
+          },
+          {
+            "label": "湿度 52% · 降雨 5%",
+            "impact": "无",
+            "detail": "湾区夏季夜场干燥，几乎无天气干扰；总进球预期不因降雨调整"
+          },
+          {
+            "label": "海平面 15m",
+            "impact": "无海拔",
+            "detail": "双方无高原差异；Arnautović 头球与 Jordan 低位防空均正常发挥"
+          },
+          {
+            "label": "西风 1级",
+            "impact": "中性",
+            "detail": "微风对 Al-Tamari 反击长传与奥地利边路传中影响可忽略"
           }
         ],
-        "historical_note": "Levi's Stadium 容量 68,500 · J 组第 2 场"
+        "historical_note": "Levi's Stadium 容量 68,500 · J 组第 2 场 · 湾区 6 月夜场气候稳定，人工草为最大场地变量"
       },
       "mystic": {
         "date_bazi": {
@@ -3314,7 +3393,7 @@ const MATCH_DATA = {
             {
               "icon": "🌤️",
               "label": "气候",
-              "note": "气候均衡——Al-Tamari 反击 vs Alaba 出球是核心"
+              "note": "气候均衡——Al-Tamari 反击 vs Alaba 出球是核心；人工草略加快传球"
             }
           ],
           "xg_context": {

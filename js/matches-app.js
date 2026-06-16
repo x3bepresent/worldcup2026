@@ -350,6 +350,10 @@ function weatherPanel(w, homeName, awayName) {
           </div>`).join('') : `
           <div style="font-size:0.72rem;color:var(--txt2);padding:0.5rem;line-height:1.55">暂无分项推演影响数据 · 请参考上方综合影响评级</div>`}
       </div>
+      ${w.prediction_note ? `
+      <div style="margin-bottom:0.75rem;padding:0.55rem 0.65rem;background:rgba(123,184,212,0.08);border:1px solid rgba(123,184,212,0.22);border-radius:4px;font-size:0.72rem;line-height:1.55;color:var(--txt2)">
+        <strong style="color:#7BB8D4">模型纳入</strong> · ${w.prediction_note}
+      </div>` : ''}
       <div style="font-size:0.65rem;color:rgba(122,143,181,0.5);line-height:1.5">📌 ${w.historical_note || ''}</div>
     </div>`;
 }
