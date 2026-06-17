@@ -6,8 +6,8 @@ function coach(name, data) {
 const PROFILES = {
   deschamps: coach('Didier Deschamps', {
     age: 56, nation: '法国', tenure: '2012年—', wc_exp: '2018 世界杯冠军 · 2022 决赛',
-    style_tags: ['4-3-3', 'Mbappé 核心', '控球', '深度轮换'],
-    formation_pref: '4-3-3 · Tchouaméni/Kanté 双闸',
+    style_tags: ['4-2-3-1', 'Mbappé 核心', 'Olise/Doué', '深度轮换'],
+    formation_pref: '4-2-3-1 · Rabiot/Tchouaméni 双闸',
     style_summary: '2018 冠军班底延续，Mbappé 速度+Saliba 防线新核。I 组揭幕必须开门红，对塞内加尔预计全场压制。',
     subs: { timing: '首换 60–65 分钟', pattern: '常换 Thuram/Griezmann；领先 2 球+ 轮换', avg_first_sub: '62\'', note: '大赛经验顶级' },
     when_leading: { label: '控节奏 · 适度轮换', detail: '2 球+：65\' 轮换但维持宽度。' },

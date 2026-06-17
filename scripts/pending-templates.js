@@ -36,14 +36,28 @@ function pendingLineup(note) {
   };
 }
 
-function lineupFromPrediction({ formation, home, away, source }) {
+function lineupFromPrediction({ formation, home, away, source, alt }) {
   return {
     confirmed: false,
     formation: null,
     home: PENDING_LABEL,
     away: PENDING_LABEL,
     note: '官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。',
-    predicted: { formation, home, away, source: source || '媒体预测' },
+    predicted: { formation, home, away, source: source || '媒体预测', alt: alt || null },
+  };
+}
+
+function lineupConfirmed({ formation, home, away, note, diff, source, predictedFallback, updated }) {
+  return {
+    confirmed: true,
+    formation,
+    home,
+    away,
+    note,
+    diff: diff || null,
+    source: source || 'FIFA 官方',
+    predicted: predictedFallback || null,
+    updated: updated || null,
   };
 }
 
@@ -53,4 +67,5 @@ module.exports = {
   confirmedReferee,
   pendingLineup,
   lineupFromPrediction,
+  lineupConfirmed,
 };

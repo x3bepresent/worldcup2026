@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "2026 FIFA World Cup Pre-Tournament Prediction Dashboard",
   "scripts": {
-    "update": "node scripts/fetch-matches.js"
+    "update": "node scripts/fetch-matches.js",
+    "stamp": "node scripts/stamp-asset-version.js"
   },
   "engines": {
     "node": ">=18"

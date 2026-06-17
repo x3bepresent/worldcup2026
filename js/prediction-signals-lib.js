@@ -181,20 +181,20 @@ function classifyExcitementLabel(dullPct, modPct, highPct, expectedTotal) {
     };
   }
 
-  if (dullHigh && modLeadDull < 20) {
+  if (dullHigh && modLeadDull < EXCITEMENT_MARGIN) {
     return {
       label_cn: '接近均衡 · 略偏慢',
       label_key: 'dull',
       label_color: '#7BB8D4',
-      sub_cn: subBase + ' · 0–1 球 ' + dullPct + '% · 2–3 球 ' + modPct + '%（差距 <' + EXCITEMENT_MARGIN + '%）',
+      sub_cn: subBase + ' · 0–1 球 ' + dullPct + '% · 2–3 球 ' + modPct + '%（2–3 领先不足 ' + EXCITEMENT_MARGIN + '%）',
     };
   }
-  if (highHot && modLeadHigh < 20) {
+  if (highHot && modLeadHigh < EXCITEMENT_MARGIN) {
     return {
       label_cn: '接近均衡 · 略偏热闹',
       label_key: 'high',
       label_color: '#5BBF8A',
-      sub_cn: subBase + ' · 4 球+ ' + highPct + '% · 2–3 球 ' + modPct + '%（差距 <' + EXCITEMENT_MARGIN + '%）',
+      sub_cn: subBase + ' · 4 球+ ' + highPct + '% · 2–3 球 ' + modPct + '%（2–3 领先不足 ' + EXCITEMENT_MARGIN + '%）',
     };
   }
   if (modPct >= dullPct + EXCITEMENT_MARGIN && modPct >= highPct + EXCITEMENT_MARGIN) {
@@ -561,7 +561,7 @@ function buildScenarioNarrative(scorerName, chaserName, scorerCoach, chaserCoach
 }
 
 /** 先进球情景 — 终场结局概率（按热门先/后破门分开展示） */
-function buildScenarioOutcomes(summary, scorerIsFav) {
+function buildScenarioOutcomes(summary, scorerIsFav, scorerName) {
   const fav = summary.fav_name;
   if (scorerIsFav) {
     return [
@@ -570,11 +570,26 @@ function buildScenarioOutcomes(summary, scorerIsFav) {
       { key: 'lost', label: '被逆转落败', pct: summary.fav_lose_pct },
     ];
   }
+  const scorer = scorerName || '先进球队';
   return [
     { key: 'draw', label: fav + ' 追平（平局）', pct: summary.fav_draw_pct },
-    { key: 'win1', label: fav + ' 净胜1球翻盘', pct: summary.small_lead_pct },
-    { key: 'win2', label: fav + ' 净胜≥2球翻盘', pct: summary.big_cover_pct },
+    { key: 'win1', label: fav + ' 净胜1球翻盘（如 2-1）', pct: summary.small_lead_pct },
+    { key: 'win2', label: fav + ' 净胜≥2球翻盘（如 3-1）', pct: summary.big_cover_pct },
+    { key: 'upset_hold', label: scorer + ' 保持胜果至终场', pct: summary.fav_lose_pct },
   ];
+}
+
+/** 高亮项：热门先进球 → 赛前热门仍胜；冷门先进球 → 热门追分合计更高则高亮合计，否则高亮最高单条终局 */
+function pickScenarioExpectedKey(outcomes, scorerIsFav, summary) {
+  if (!outcomes?.length) return null;
+  if (scorerIsFav) {
+    const hold = outcomes.find(o => o.key === 'hold_win');
+    if (hold) return hold.key;
+  }
+  const recoverPct = (summary?.fav_win_pct || 0) + (summary?.fav_draw_pct || 0);
+  const upsetPct = summary?.fav_lose_pct || 0;
+  if (recoverPct >= upsetPct) return 'fav_recover';
+  return outcomes.reduce((best, o) => (o.pct > best.pct ? o : best), outcomes[0]).key;
 }
 
 function computeFirstGoalScenarios(match, xgH, xgA, marketTier, baseline) {
@@ -601,7 +616,9 @@ function computeFirstGoalScenarios(match, xgH, xgA, marketTier, baseline) {
     const scorerCoach = scorerSide === 'home' ? coachH : coachA;
     const chaserCoach = scorerSide === 'home' ? coachA : coachH;
     const scorerIsFav = scorerSide === favSide;
-    const outcomes = buildScenarioOutcomes(summary, scorerIsFav);
+    const outcomes = buildScenarioOutcomes(summary, scorerIsFav, teamName);
+    const fav_recover_pct = Math.round((summary.fav_win_pct + summary.fav_draw_pct) * 10) / 10;
+    const expected_key = pickScenarioExpectedKey(outcomes, scorerIsFav, summary);
     return {
       side: scorerSide,
       team: teamName,
@@ -609,6 +626,8 @@ function computeFirstGoalScenarios(match, xgH, xgA, marketTier, baseline) {
       start_score: summary.start_score,
       fav_name: summary.fav_name,
       scorer_is_fav: scorerIsFav,
+      expected_key,
+      fav_recover_pct,
       small_lead_pct: summary.small_lead_pct,
       big_lead_pct: summary.big_cover_pct,
       fav_win_pct: summary.fav_win_pct,
@@ -1233,6 +1252,7 @@ const exportsObj = {
   computeDisplaySummary,
   buildMatchContextAdjustments,
   buildScenarioOutcomes,
+  pickScenarioExpectedKey,
   computeConditionalDisplaySummary,
   computeFirstGoalScenarios,
   buildDepthCalibration,

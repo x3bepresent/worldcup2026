@@ -10,12 +10,15 @@ const {
   applyDepthToPrediction,
   buildGroupContext,
 } = require('../js/prediction-signals-lib');
-const HANDICAP_DAY6 = require('./handicap-data-day6');
+const HANDICAP = {
+  ...require('./handicap-data-day6'),
+  ...require('./handicap-data-day7'),
+};
 
 const ROOT = path.join(__dirname, '..');
 const MATCH_PATH = path.join(ROOT, 'js', 'matches-data.js');
 const RESULTS_PATH = path.join(ROOT, 'js', 'results-data.js');
-const TS = '2026-06-17T22:00:00+08:00';
+const TS = '2026-06-18T10:00:00+08:00';
 
 /** 与 matches-app.js SHOW_DEPTH_CALIBRATION_PANEL 对齐：交稿时可设为 false */
 const APPEND_SUMMARY_TO_KEY_FACTOR = false;
@@ -51,40 +54,40 @@ function loadData(filePath, varName) {
 
 /** 同步首页 nextMatch / 去重 breakingNews / syncSource */
 function syncSiteMeta(data) {
-  const m17 = data.todayMatches?.find(m => m.id === 'm17');
-  if (m17) {
-    const p = m17.prediction || {};
+  const first = data.todayMatches?.[0];
+  if (first) {
+    const p = first.prediction || {};
     data.nextMatch = {
-      group: m17.group,
-      matchday: m17.matchday,
-      date: m17.date,
-      time: m17.time,
-      time_local: m17.time_local,
-      timezone: m17.timezone,
-      time_beijing: m17.time_beijing,
-      date_beijing: m17.date_beijing,
-      time_beijing_full: m17.time_beijing_full,
-      venue: m17.venue,
-      city: m17.city,
+      group: first.group,
+      matchday: first.matchday,
+      date: first.date,
+      time: first.time,
+      time_local: first.time_local,
+      timezone: first.timezone,
+      time_beijing: first.time_beijing,
+      date_beijing: first.date_beijing,
+      time_beijing_full: first.time_beijing_full,
+      venue: first.venue,
+      city: first.city,
       home: {
-        name: m17.home.name,
-        iso: m17.home.iso,
-        fifaRank: m17.home.fifa_rank,
-        rating: m17.home.rating,
+        name: first.home.name,
+        iso: first.home.iso,
+        fifaRank: first.home.fifa_rank,
+        rating: first.home.rating,
       },
       away: {
-        name: m17.away.name,
-        iso: m17.away.iso,
-        fifaRank: m17.away.fifa_rank,
-        rating: m17.away.rating,
+        name: first.away.name,
+        iso: first.away.iso,
+        fifaRank: first.away.fifa_rank,
+        rating: first.away.rating,
       },
-      teaser: 'I组揭幕：法国 vs 非洲杯冠军塞内加尔，Mbappé vs Mané。',
+      teaser: first.note?.split(' · ').slice(0, 2).join(' · ') || `${first.home.name} vs ${first.away.name}`,
       home_win: p.home_win,
       draw: p.draw,
       away_win: p.away_win,
       predicted_score: p.score,
-      key_player_home: m17.home.star?.name || 'Kylian Mbappé',
-      key_player_away: m17.away.star?.name || 'Sadio Mané',
+      key_player_home: first.home.star?.name || first.home.name,
+      key_player_away: first.away.star?.name || first.away.name,
     };
   }
 
@@ -127,7 +130,7 @@ try {
   groupSnapshots = [];
 }
 
-const allHandicap = { ...HANDICAP_DAY6 };
+const allHandicap = { ...HANDICAP };
 
 MATCH_DATA.todayMatches = MATCH_DATA.todayMatches.map(m => {
   const copy = JSON.parse(JSON.stringify(m));

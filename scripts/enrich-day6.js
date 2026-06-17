@@ -5,7 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 const { computeScoreDistribution, computeOutcomeFromXg } = require('./score-model');
-const { lineupFromPrediction } = require('./pending-templates');
+const { lineupFromPrediction, lineupConfirmed } = require('./pending-templates');
 const { buildCoachAnalysis } = require('./coach-data-day6');
 const { venueWeather } = require('./venue-weather-day6');
 const { getMystic } = require('./mystic-data-day6');
@@ -92,22 +92,33 @@ function buildM17() {
     'I组揭幕 · 法国 vs 塞内加尔 · 纽约/新泽西', 2.3, 0.9,
     'I组焦点：Mbappé vs Mané，法国深度碾压但塞内加尔 2021 非洲杯冠军身体+转换是冷门点；xG 2.3-0.9 泊松最可能 2-0。',
     68, 'deschamps', 'cisse', () => ({
-      lineup: lineupFromPrediction({
-        formation: '4-3-3 / 4-3-3',
-        home: 'Maignan; Koundé, Saliba, Upamecano, Hernandez; Tchouaméni, Kanté, Camavinga; Dembélé, Mbappé, Thuram',
-        away: 'Diouf; Sabaly, Koulibaly, Diallo, Mendy; Gueye, Ndiaye; Mané, Jackson, Sarr',
-        source: 'ESPN / L\'Équipe 预测 · 非官方',
+      lineup: lineupConfirmed({
+        formation: '4-2-3-1 / 4-3-3',
+        home: 'Maignan; Koundé, Saliba, Upamecano, Hernandez; Tchouaméni, Rabiot; Olise, Dembélé, Doué; Mbappé',
+        away: 'Mendy; Diatta, Niakhate, Koulibaly, Diouf; Pape Gueye, Gana Gueye, Camara; Mané, Jackson, Sarr',
+        note: '✅ 官方首发已确认（The Standard / BBC · 2026-06-16 赛前）',
+        source: 'FIFA team sheet · The Standard',
+        diff: {
+          home: '4-2-3-1：Rabiot+Tchouaméni · Olise/Dembélé/Doué 支援 Mbappé · Kanté/Thuram 替补',
+          away: 'Mendy 一门 · Niakhate 中卫 · Gana Gueye 腰 · Ismaila Sarr 右翼',
+        },
+        predictedFallback: {
+          formation: '4-3-3 / 4-3-3',
+          home: 'Maignan; Koundé, Saliba, Upamecano, Hernandez; Tchouaméni, Kanté, Camavinga; Dembélé, Mbappé, Thuram',
+          away: 'Diouf; Sabaly, Koulibaly, Diallo, Mendy; Gueye, Ndiaye; Mané, Jackson, Sarr',
+          source: 'ESPN / L\'Équipe 旧预测',
+        },
       }),
       home: team('France', 'fr', 3, 91, ['W', 'W', 'W', 'D', 'W'], 'Didier Deschamps', [
-        { name: 'Kylian Mbappé', pos: 'ST', club: 'Real Madrid', stats: '国家队 80+ 球', rating: 9.2, desc: 'I组揭幕核心，速度与终结' },
-        { name: 'William Saliba', pos: 'CB', club: 'Arsenal', stats: '英超最佳中卫之一', rating: 8.8, desc: '防空+出球，Deschamps 防线新核' },
-        { name: 'Ousmane Dembélé', pos: 'RW', club: 'PSG', stats: '欧洲杯后状态正佳', rating: 8.6, desc: '右路内切+助攻，肋部渗透关键' },
+        { name: 'Kylian Mbappé', pos: 'ST', club: 'Real Madrid', stats: '队长 · 单锋', rating: 9.2, desc: 'I组揭幕核心，对位 Koulibaly/Niakhate' },
+        { name: 'Michael Olise', pos: 'RW', club: 'Bayern Munich', stats: '热身赛戴帽', rating: 8.7, desc: '右翼首发，内切+传中破局点' },
+        { name: 'William Saliba', pos: 'CB', club: 'Arsenal', stats: '背部伤愈复出', rating: 8.8, desc: '与 Upamecano 中卫搭档已确认' },
       ], { name: 'Kylian Mbappé', pos: 'ST', desc: '对位 Koulibaly 速度是破局点', rating: 9.2 },
         getTeamNews('m17', 'home').injuries, getTeamNews('m17', 'home').rumors),
       away: team('Senegal', 'sn', 20, 77, ['W', 'D', 'W', 'W', 'D'], 'Aliou Cissé', [
-        { name: 'Sadio Mané', pos: 'LW', club: 'Al-Nassr', stats: '非洲杯冠军队长', rating: 8.5, desc: '反击发起点，对位 Koundé 是冷门关键' },
-        { name: 'Kalidou Koulibaly', pos: 'CB', club: 'Al-Hilal', stats: '100+ caps', rating: 8.0, desc: '低位防守领袖，防空 Mbappé' },
-        { name: 'Nicolas Jackson', pos: 'ST', club: 'Chelsea', stats: '英超速度型中锋', rating: 7.8, desc: '转换支点，利用法国压上身后' },
+        { name: 'Sadio Mané', pos: 'LW', club: 'Al-Nassr', stats: '队长 · 左翼', rating: 8.5, desc: '反击发起点，对位 Koundé 是冷门关键' },
+        { name: 'Kalidou Koulibaly', pos: 'CB', club: 'Al-Hilal', stats: '队长 · 100+ caps', rating: 8.0, desc: '低位防守领袖，防空 Mbappé' },
+        { name: 'Ismaila Sarr', pos: 'RW', club: 'Crystal Palace', stats: '官方首发右翼', rating: 7.9, desc: '对位 Hernandez，转换速度点' },
       ], { name: 'Sadio Mané', pos: 'LW', desc: '一人球队核心，反击是唯一变数', rating: 8.5 },
         getTeamNews('m17', 'away').injuries, getTeamNews('m17', 'away').rumors),
       h2h: { home_wins: 2, draws: 0, away_wins: 0, recent: [{ year: 2022, comp: '友谊赛', score: '5-1', winner: 'France' }], note: '法国历史占优' },
@@ -255,6 +266,7 @@ const MATCH_DATA = loadData(MATCH_PATH, 'MATCH_DATA');
 MATCH_DATA.lastUpdated = TS;
 MATCH_DATA.syncSource = 'FIFA 赛程 · Day 6 完整推演 · coach/mystic/referee/weather';
 MATCH_DATA.breakingNews = [
+  { tag: 'LINEUP', text: '✅ 官方首发 · 法国 v 塞内加尔：Mbappé + Olise/Dembélé/Doué · Rabiot/Tchouaméni · Mendy; Gana Gueye; Ismaila Sarr', time: '官方确认' },
   { tag: 'PREVIEW', text: '📅 今日4场 · 法国-塞内加尔(03:00) · 伊拉克-挪威(06:00) · 阿根廷-阿尔及利亚(09:00) · 奥地利-约旦(12:00)', time: '6月17日' },
   { tag: 'PREVIEW', text: 'I/J组揭幕：Mbappé vs Mané · Haaland · Messi 最后一届 · Rangnick 压迫', time: '焦点' },
   { tag: 'OFFICIAL', text: '🏁 昨日四场全平 · G/H组均1分 · 详见「过往赛果」', time: '赛果回顾' },
@@ -281,4 +293,13 @@ try {
   });
 } catch (e) {
   console.warn('⚠ apply-prediction-signals skipped:', e.message);
+}
+
+try {
+  require('child_process').execSync('node scripts/stamp-asset-version.js', {
+    cwd: ROOT,
+    stdio: 'inherit',
+  });
+} catch (e) {
+  console.warn('⚠ stamp-asset-version skipped:', e.message);
 }
