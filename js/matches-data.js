@@ -1,8 +1,8 @@
-// 今日赛事 — Day 6 (signals enriched)
-// Last updated: 2026-06-18T10:00:00+08:00
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-17T16:50:38.235Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-18T10:00:00+08:00",
-  "syncSource": "FIFA 赛程 · Day 7 完整推演 · coach/mystic/referee/weather · 推演概要+小组形势",
+  "lastUpdated": "2026-06-17T16:50:38.235Z",
+  "syncSource": "API-Football",
   "breakingNews": [
     {
       "tag": "UPDATE",
