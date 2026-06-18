@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 FIFA World Cup — 高奢风格预览</title>
+  <link rel="stylesheet" href="css/style.css?v=0b278c1">
+  <link rel="stylesheet" href="css/theme-luxury.css?v=preview">
+</head>
+<body class="theme-luxury has-preview-ribbon">
+
+<div class="lux-preview-ribbon">
+  <strong>风格预览</strong>
+  <span>Apple × Chanel 高奢科技风 · 原版页面未改动</span>
+  <a href="index.html">返回原版首页</a>
+  <a href="preview-luxury.html">预览说明</a>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-logo">WC 2026</div>
+  <ul class="nav-links">
+    <li><a href="#overview">赛事概览</a></li>
+    <li><a href="#champion">夺冠概率</a></li>
+    <li><a href="#groups">小组赛</a></li>
+    <li><a href="#bracket">淘汰赛</a></li>
+    <li><a href="#final">决赛推演</a></li>
+    <li><a href="#teams">球队战力</a></li>
+    <li><a href="#matches">娱乐推演</a></li>
+    <li><a href="#methodology">数据来源</a></li>
+    <li><a href="matches-luxury.html" style="color:var(--gold);font-weight:700">今日赛事 · 预览</a></li>
+    <li><a href="matches.html">今日赛事 · 原版</a></li>
+    <li><a href="results.html">过往赛果</a></li>
+    <li><a href="schedule.html">赛程总表</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════ -->
+<section class="hero">
+  <span class="hero-badge">FIFA World Cup 2026 · Pre-Tournament Analysis</span>
+  <h1>
+    <span class="gold">2026</span> 世界杯<br>
+    <span class="cyan">赛前深度分析 · 娱乐推演</span>
+  </h1>
+  <p class="hero-sub">
+    基于 Elo 评级、xG 期望进球、100,000 次蒙特卡洛模拟及多维度大数据模型，
+    对 48 支球队、12 个小组、104 场比赛进行量化数据分析与娱乐推演。
+  </p>
+  <p class="play-note-block">本站所有胜率、比分均为模型娱乐推演结果，不代表真实赛果，仅供交流娱乐。</p>
+
+  <div class="hero-stats">
+    <div class="hstat"><div class="hstat-num">48</div><div class="hstat-lbl">参赛球队</div></div>
+    <div class="hstat"><div class="hstat-num">104</div><div class="hstat-lbl">赛事场次</div></div>
+    <div class="hstat"><div class="hstat-num">3</div><div class="hstat-lbl">东道主国家</div></div>
+    <div class="hstat"><div class="hstat-num">16</div><div class="hstat-lbl">比赛场馆</div></div>
+    <div class="hstat"><div class="hstat-num">39</div><div class="hstat-lbl">比赛天数</div></div>
+  </div>
+
+  <div class="countdown">
+    <div class="cd-block"><span class="cd-num" id="cd-days">--</span><span class="cd-lbl">Days</span></div>
+    <div class="cd-block"><span class="cd-num" id="cd-hrs">--</span><span class="cd-lbl">Hours</span></div>
+    <div class="cd-block"><span class="cd-num" id="cd-min">--</span><span class="cd-lbl">Mins</span></div>
+    <div class="cd-block"><span class="cd-num" id="cd-sec">--</span><span class="cd-lbl">Secs</span></div>
+  </div>
+
+  <div class="hero-hosts">
+    开幕式：<span>2026年6月11日</span> &nbsp;·&nbsp;
+    决赛：<span>2026年7月19日</span> &nbsp;·&nbsp;
+    主办国：<span>美国 · 加拿大 · 墨西哥</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     CHAMPION PROBABILITY
+══════════════════════════════════════════════ -->
+<section id="champion">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag">模型推演 · Model Output</span>
+      <h2>夺冠概率排行</h2>
+      <p>100,000 次蒙特卡洛模拟结果 — 综合 Elo 评级、xG 数据、阵容深度与历史战绩加权计算</p>
+      <p class="play-note">※ 以下为模型娱乐推演概率，不代表真实赛果</p>
+    </div>
+    <div class="champ-grid container">
+      <div id="champ-bars" class="champ-bars"></div>
+      <div class="chart-wrap fade-in"><canvas id="champChart"></canvas></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     GROUP STAGE
+══════════════════════════════════════════════ -->
+<section id="groups">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag">小组赛 · Group Stage</span>
+      <h2>48 队 · 12 组推演排名</h2>
+      <p>每组前 2 名直接晋级，8 支最佳第 3 名亦可进入 32 强淘汰赛</p>
+    </div>
+    <div id="group-tabs" class="group-tabs"></div>
+    <div id="groups-content"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     KNOCKOUT BRACKET
+══════════════════════════════════════════════ -->
+<section id="bracket">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag">淘汰赛 · Knockout Stage</span>
+      <h2>推演赛程对阵图</h2>
+      <p>从 16 强到决赛，模型娱乐推演的完整淘汰赛路线图</p>
+      <p class="play-note">※ 对阵路径为模型推演，实际淘汰赛以赛事结果为准</p>
+    </div>
+    <div class="bracket-wrap fade-in">
+      <div class="bracket" id="bracket-inner"></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     FINAL PREDICTION
+══════════════════════════════════════════════ -->
+<section id="final" id="final-section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag">决赛推演 · The Final</span>
+      <h2>2022 年决赛再续 — 法国 vs 阿根廷</h2>
+      <p>MetLife Stadium · 东鲁瑟福德 · 2026年7月19日</p>
+      <p class="play-note">※ 决赛比分为模型娱乐推演，不代表真实赛果</p>
+    </div>
+    <div id="final-card" class="final-card fade-in"></div>
+    <div style="margin-top:2rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;max-width:1000px;margin-left:auto;margin-right:auto" class="fade-in">
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:6px;padding:1rem;text-align:center">
+        <div style="font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:0.5rem">法国夺冠概率</div>
+        <div style="font-size:2rem;font-weight:800;color:var(--gold)">18.5%</div>
+        <div style="font-size:0.7rem;color:var(--txt2)">全场最高</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:6px;padding:1rem;text-align:center">
+        <div style="font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:0.5rem">推演最佳射手</div>
+        <div style="font-size:1.2rem;font-weight:800;color:var(--gold)">Kylian Mbappé</div>
+        <div style="font-size:0.7rem;color:var(--txt2)">预计 7 粒进球</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:6px;padding:1rem;text-align:center">
+        <div style="font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:0.5rem">最大冷门风险</div>
+        <div style="font-size:1.2rem;font-weight:800;color:var(--gold)">Morocco</div>
+        <div style="font-size:0.7rem;color:var(--txt2)">8强概率 61%</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:6px;padding:1rem;text-align:center">
+        <div style="font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:0.5rem">决赛 xG 推演</div>
+        <div style="font-size:2rem;font-weight:800;color:var(--gold)">1.8 — 1.5</div>
+        <div style="font-size:0.7rem;color:var(--txt2)">法国 vs 阿根廷</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     TEAM RADAR
+══════════════════════════════════════════════ -->
+<section id="teams">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag">球队战力 · Team Strength</span>
+      <h2>八强球队六维战力分析</h2>
+      <p>进攻 · 防守 · 中场 · 速度 · 定位球 · 大赛经验 — 综合评分体系</p>
+    </div>
+    <div id="radar-grid" class="radar-grid"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     MATCH PREDICTIONS
+══════════════════════════════════════════════ -->
+<section id="matches">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag">娱乐推演 · Score Scenarios</span>
+      <h2>关键场次娱乐推演</h2>
+      <p>含 xG 期望进球率、三方胜率及量化分析依据 — 均为模型娱乐推演，不代表真实赛果</p>
+    </div>
+    <div id="matches-grid" class="matches-grid"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     METHODOLOGY
+══════════════════════════════════════════════ -->
+<section id="methodology">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag">数据来源 · Methodology</span>
+      <h2>分析模型与数据来源</h2>
+      <p>六维量化模型综合加权 — 支撑娱乐推演的数据基础</p>
+    </div>
+    <div id="method-grid" class="method-grid"></div>
+    <div style="margin-top:2.5rem;background:var(--card);border:1px solid var(--border);border-radius:6px;padding:1.5rem;max-width:800px;margin-left:auto;margin-right:auto" class="fade-in">
+      <div style="font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:0.75rem">数据引用来源</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.5rem;font-size:0.75rem;color:var(--txt2)">
+        <span>· FIFA Official Rankings (Apr 2026)</span>
+        <span>· Opta Sports Analytics</span>
+        <span>· StatsBomb Open Data</span>
+        <span>· FBref.com Player Stats</span>
+        <span>· Transfermarkt Squad Values</span>
+        <span>· clubelo.com Elo Database</span>
+        <span>· ESPN FC Prediction Model</span>
+        <span>· FiveThirtyEight Historical Data</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer>
+  <div class="legal-box">
+    <div class="legal-title">重要声明 · Legal Notice</div>
+    <ol>
+      <li>本站为 <span class="legal-em">2026 世界杯体育数据分析与娱乐交流网站</span>，展示公开赛事信息与统计模型推算结果，仅供体育爱好者个人学习与交流娱乐之用。</li>
+      <li>本网站<span class="legal-em">仅作信息展示</span>，不涉及任何金钱交易、场外竞猜、有奖竞猜或类似活动，不引导、不鼓励用户参与任何违法或不当行为，与任何博彩或赌博平台无任何关联。</li>
+      <li>页面中的胜率、比分等内容均为模型娱乐推演结果，不代表真实赛果；足球比赛存在高度不确定性，<span class="legal-em">本站不对推演准确性作任何保证，不对因浏览或参考本站内容而产生的任何直接或间接损失承担责任</span>。</li>
+      <li>本站内容不得用于任何商业用途或违法活动。用户应自觉遵守中华人民共和国相关法律法规，<span class="legal-em">请理性看球、健康娱乐</span>。未满 18 周岁的用户请在监护人指导下浏览。</li>
+      <li>「灵力分析」等趣味板块纯属传统文化娱乐解读，与竞技数据分析无关，请勿作为任何行动依据。</li>
+    </ol>
+  </div>
+  <div class="footer-disclaimer">
+    本页所有内容为基于统计模型的数据分析，仅供体育爱好者交流娱乐。足球比赛存在高度不确定性，
+    实际结果可能与模型推算存在显著差异。数据截止至 2026 年 6 月 1 日。
+    &nbsp;·&nbsp; <a href="terms.html" style="color:var(--cyan);text-decoration:none">用户服务协议</a>
+  </div>
+  <div class="footer-copy">2026 FIFA World Cup Pre-Tournament Prediction Dashboard · Built with statistical modeling & love for the beautiful game</div>
+</footer>
+
+<!-- ══════════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════════ -->
+<script src="js/chart.umd.min.js?v=0b278c1"></script>
+<script src="js/live-data.js?v=0b278c1"></script>
+<script src="js/data.js?v=0b278c1"></script>
+<script src="js/app.js?v=0b278c1"></script>
+</body>
+</html>
