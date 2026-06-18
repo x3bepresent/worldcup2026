@@ -20,6 +20,11 @@ const MATCH_DATA = {
       "time": "焦点"
     },
     {
+      "tag": "LINEUP",
+      "text": "📋 预测首发 · 捷 3-4-2-1 Schick 领衔 · 南非 Sithole/Zwane 停赛 Mbatha/Mofokeng 顶替",
+      "time": "预测"
+    },
+    {
       "tag": "OFFICIAL",
       "text": "🏁 昨日：葡1-1刚果(金) · 英4-2克 · 加纳1-0巴 · 乌1-3哥伦 · 详见「过往赛果」",
       "time": "赛果回顾"
@@ -65,13 +70,18 @@ const MATCH_DATA = {
         "formation": null,
         "home": "等待官方确认",
         "away": "等待官方确认",
-        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
+        "note": "官方首发尚未确认；下方为媒体预测（已剔除 Sithole、Zwane 揭幕战红牌停赛）。不计入已确认推演权重。",
         "predicted": {
-          "formation": "3-4-3 / 4-2-3-1",
-          "home": "Staněk; Holes, Brabec, Zmrhal; Coufal, Souček, Sadílek, Jurásek; Schick, Chytil, Provod",
-          "away": "Williams; Mphahlele, Xaba, Mokoena; Modiba, Mthethwa; Tau, Zwane, Baccus; Foster, Lorch",
-          "source": "Opta / ESPN 预测 · 非官方",
-          "alt": null
+          "formation": "3-4-2-1 / 4-3-3",
+          "home": "Kovář; Chaloupek, Hranáč, Krejčí; Coufal, Souček, Sojka, Zelený; Provod, Šulc; Schick",
+          "away": "Williams; Mudau, Okon, Mbokazi, Modiba; Mokoena, Mbatha, Adams; Appollis, Foster, Mofokeng",
+          "source": "SI / Al Jazeera / Opta 预测 · 非官方",
+          "alt": {
+            "formation": "3-4-2-1 / 5-3-2",
+            "home": "Kovář; Chaloupek, Hranáč, Krejčí; Coufal, Souček, Sojka, Zelený; Provod, Hložek; Schick",
+            "away": "Williams; Mudau, Okon, Mbokazi, Modiba, Sibisi; Mokoena, Mbatha, Adams; Moremi, Mofokeng, Appollis; Foster",
+            "source": "beIN / Livescore 备选预测"
+          }
         }
       },
       "home": {
@@ -155,12 +165,12 @@ const MATCH_DATA = {
         "coach": "Hugo Broos",
         "stars": [
           {
-            "name": "Percy Tau",
-            "pos": "LW",
-            "club": "Brighton",
-            "stats": "唯一爆点",
-            "rating": 7.4,
-            "desc": "速度+内切"
+            "name": "Lyle Foster",
+            "pos": "ST",
+            "club": "Burnley",
+            "stats": "锋线支点",
+            "rating": 7.2,
+            "desc": "次轮生死战预计首发"
           },
           {
             "name": "Teboho Mokoena",
@@ -171,31 +181,44 @@ const MATCH_DATA = {
             "desc": "中场绞杀"
           },
           {
-            "name": "Zakhele Lepasa",
-            "pos": "ST",
+            "name": "Relebohile Mofokeng",
+            "pos": "RW",
             "club": "Orlando Pirates",
-            "stats": "支点",
-            "rating": 6.8,
-            "desc": "定位球威胁"
+            "stats": "顶替 Zwane",
+            "rating": 6.9,
+            "desc": "边路速度"
           }
         ],
         "injuries": [
           {
-            "player": "Percy Tau",
+            "player": "Sphephelo Sithole",
+            "status": "OUT",
+            "note": "揭幕战对墨西哥直红停赛，缺席对捷克",
+            "confirmed": true
+          },
+          {
+            "player": "Themba Zwane",
+            "status": "OUT",
+            "note": "揭幕战对墨西哥直红停赛，缺席对捷克",
+            "confirmed": true
+          },
+          {
+            "player": "Lyle Foster",
             "status": "FIT",
-            "note": "布莱顿边路，南非唯一爆点",
+            "note": "锋线支点，次轮生死战预计首发",
             "confirmed": true
           }
         ],
         "rumors": [
           "首轮 0-2 墨西哥后 Broos 称「出线形势严峻」",
-          "60' 后体能崩盘是前车之鉴"
+          "SI/Al Jazeera：Mbatha 顶 Sithole、Mofokeng 顶 Zwane，预计 4-3-3",
+          "揭幕战 3 张红牌后中场创造力大减，Foster 成唯一稳定得分点"
         ],
         "star": {
-          "name": "Percy Tau",
-          "pos": "LW",
-          "desc": "出线压力大，必须抢分",
-          "rating": 7.4
+          "name": "Lyle Foster",
+          "pos": "ST",
+          "desc": "Sithole/Zwane 停赛下锋线担当",
+          "rating": 7.2
         }
       },
       "h2h": {
@@ -236,26 +259,26 @@ const MATCH_DATA = {
         }
       },
       "prediction": {
-        "home_win": 52,
+        "home_win": 54,
         "draw": 25,
-        "away_win": 23,
+        "away_win": 21,
         "score": "1-0",
-        "confidence": 70,
-        "xg_home": 1.48,
-        "xg_away": 0.95,
-        "key_factor": "捷克首轮惜败韩国需抢分：Schick 支点+Souček 屏障；南非 0-2 墨西哥后出线压力大；泊松最可能 2-0/1-1",
+        "confidence": 72,
+        "xg_home": 1.52,
+        "xg_away": 0.88,
+        "key_factor": "捷克 3-4-2-1 抢分：Schick+Provod/Šulc 双前腰；南非 Sithole/Zwane 红牌停赛，Mbatha/Mofokeng 顶替；泊松最可能 1-0/2-0",
         "score_dist": [
           {
             "score": "1-0",
-            "prob": 13
+            "prob": 13.8
           },
           {
             "score": "1-1",
-            "prob": 12.4
+            "prob": 12.1
           },
           {
             "score": "2-0",
-            "prob": 9.6
+            "prob": 10.5
           },
           {
             "score": "2-1",
@@ -263,20 +286,20 @@ const MATCH_DATA = {
           },
           {
             "score": "0-0",
-            "prob": 8.8
+            "prob": 9.1
           },
           {
             "score": "0-1",
-            "prob": 8.4
+            "prob": 8
           },
           {
             "score": "1-2",
-            "prob": 5.9
+            "prob": 5.3
           }
         ],
-        "base_home_win": 49,
+        "base_home_win": 52,
         "base_draw": 26,
-        "base_away_win": 24,
+        "base_away_win": 22,
         "depth_calibrated": true
       },
       "upset_alert": {
@@ -287,25 +310,25 @@ const MATCH_DATA = {
         "level": "LOW",
         "level_cn": "低",
         "cold_result_pct": 24,
-        "verdict": "捷克纸面占优但首轮惜败——Tau 速度+南非 desperation 仍有 20% 平局空间。",
-        "tactical": "Hašek 3-4-3 压上 vs Broos 4-2-3-1 转换；Schick 对位南非中卫是核心。",
-        "psychology": "南非再负基本出局，会相对开放；捷克必须抢分。",
-        "historical": "无大赛交锋；Tau 英超状态是参考。",
+        "verdict": "捷克纸面占优且南非中场双核停赛——Foster/Mofokeng 难完全替代 Zwane 创造力，平局空间收窄至约 26%。",
+        "tactical": "Hašek 3-4-2-1 压上 vs Broos 4-3-3 转换；Schick 对位南非中卫，Mbatha 顶 Sithole 屏障位是关键。",
+        "psychology": "南非再负基本出局但缺两名揭幕战主力；捷克必须抢分。",
+        "historical": "无大赛交锋；揭幕战 3 红后 Broos 变阵压力极大。",
         "factors": [
+          {
+            "tag": "停赛",
+            "impact": "强",
+            "detail": "Sithole、Zwane 红牌缺席，南非中场创造力下滑"
+          },
           {
             "tag": "出线压力",
             "impact": "强",
             "detail": "双方均需 3 分"
           },
           {
-            "tag": "体能",
-            "impact": "中",
-            "detail": "南非首轮 60' 后崩盘是前车之鉴"
-          },
-          {
             "tag": "实力差",
             "impact": "中",
-            "detail": "xG 差约 0.5，Schick 决定上限"
+            "detail": "xG 差约 0.6，Schick 决定上限"
           }
         ]
       },
@@ -547,34 +570,34 @@ const MATCH_DATA = {
         "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
         "blocker_spread_note": "",
         "public_lean_cn": "舆论倾向 Czechia（约 62%）",
-        "analysis": "捷克首轮惜败韩国需抢分；南非 0-2 墨西哥后出线压力大。模型略看好捷克但平局权重不低。 赛前净胜参考高于 xG 隐含（+0.5），且净胜 1 球占 24.7%——热门净胜拉开偏难。",
+        "analysis": "捷克首轮惜败韩国需抢分；南非 0-2 墨西哥且 Sithole/Zwane 红牌停赛，中场削弱。模型略看好捷克，平局权重下调。 赛前净胜参考高于 xG 隐含（+0.5），且净胜 1 球占 25.4%——热门净胜拉开偏难。",
         "spread_cover": {
           "top3_scores": [
             {
               "score": "1-0",
-              "prob": 13.1
+              "prob": 13.9
             },
             {
               "score": "1-1",
-              "prob": 12.4
+              "prob": 12.2
             },
             {
               "score": "2-0",
-              "prob": 9.7
+              "prob": 10.5
             }
           ],
-          "one_goal_win_pct": 24.7,
-          "two_plus_win_pct": 24.6,
-          "full_cover_pct": 24.6,
-          "half_lose_pct": 24.7,
-          "fav_cover_ev": -0.384,
-          "dog_cover_ev": 0.385,
+          "one_goal_win_pct": 25.4,
+          "two_plus_win_pct": 26.6,
+          "full_cover_pct": 26.6,
+          "half_lose_pct": 25.4,
+          "fav_cover_ev": -0.34,
+          "dog_cover_ev": 0.34,
           "rational_spread_cn": "客队 守住差距概率略高",
-          "total_xg": 2.43,
-          "over_2_5_pct": 43.5,
-          "over_3_pct": 22.4,
+          "total_xg": 2.4,
+          "over_2_5_pct": 42.7,
+          "over_3_pct": 21.7,
           "totals_lean_cn": "2.5 球参考接近均衡；3 球参考偏少",
-          "margin_risk_note": "净胜 1 球概率 24.7%：常见「赢球但净胜仅 1 球」",
+          "margin_risk_note": "净胜 1 球概率 25.4%：常见「赢球但净胜仅 1 球」",
           "push_pct": null
         },
         "spread_odds": null,
@@ -582,15 +605,15 @@ const MATCH_DATA = {
         "totals_analysis": {
           "market_line": 2.25,
           "line_label": "总进球约 2–2.5 个",
-          "implied_xg_total": 2.43,
-          "fair_line": 2,
-          "line_gap": 0.25,
-          "over_pct": 56.6,
-          "under_pct": 43.4,
-          "signal": "high_line",
-          "signal_cn": "进球参考偏高",
-          "signal_color": "#C8A96E",
-          "signal_desc": "赛前进球参考高于 xG 隐含，模型倾向偏少进球方向。",
+          "implied_xg_total": 2.4,
+          "fair_line": 2.25,
+          "line_gap": 0,
+          "over_pct": 55.9,
+          "under_pct": 44.1,
+          "signal": "aligned",
+          "signal_cn": "进球参考贴合",
+          "signal_color": "#5BBF8A",
+          "signal_desc": "赛前进球参考与 xG 总进球预期基本一致。",
           "public_over_pct": 46,
           "public_lean_cn": "舆论对总进球看法较分散",
           "index_note": "少进球侧参考权重相对更高",
@@ -606,52 +629,52 @@ const MATCH_DATA = {
         },
         "adjustment_note": "模型微调：主胜 +2% · 平 -1% · 客 -1%",
         "adjusted_probs": {
-          "home_win": 52,
+          "home_win": 54,
           "draw": 25,
-          "away_win": 23
+          "away_win": 21
         },
         "display_summary": {
           "fav_name": "Czechia",
-          "expected_total_goals": 2.19,
-          "poisson_fav_win_pct": 47.8,
-          "small_lead_pct": 25.3,
+          "expected_total_goals": 2.01,
+          "poisson_fav_win_pct": 54.2,
+          "small_lead_pct": 27.6,
           "small_example_score": "1-0",
-          "small_example_pct": 14.9,
-          "big_cover_pct": 22.5,
+          "small_example_pct": 18.2,
+          "big_cover_pct": 26.5,
           "big_example_score": "2-0",
-          "big_example_pct": 10,
+          "big_example_pct": 12.5,
           "win_shape": {
             "fav_name": "Czechia",
             "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以险胜·控局为主（险胜 · 控局 31.2%）",
+            "lead_cn": "取胜时以险胜·控局为主（险胜 · 控局 33.6%）",
             "shapes": [
               {
                 "key": "narrow_low",
                 "label": "险胜 · 控局",
                 "example": "如 1-0",
-                "field_pct": 14.9,
-                "pct": 31.2
+                "field_pct": 18.2,
+                "pct": 33.6
               },
               {
                 "key": "narrow_open",
                 "label": "险胜 · 开放",
                 "example": "如 2-1",
-                "field_pct": 10.4,
-                "pct": 21.7
+                "field_pct": 9.4,
+                "pct": 17.4
               },
               {
                 "key": "comfort_low",
                 "label": "拉开 · 控局",
                 "example": "如 2-0",
-                "field_pct": 14.4,
-                "pct": 30.2
+                "field_pct": 18.2,
+                "pct": 33.6
               },
               {
                 "key": "comfort_open",
                 "label": "拉开 · 开放",
                 "example": "如 3-1+",
-                "field_pct": 8.1,
-                "pct": 16.9
+                "field_pct": 8.4,
+                "pct": 15.4
               }
             ],
             "paths": [
@@ -659,47 +682,47 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 52.9
+                "pct": 51
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 30.2
+                "pct": 33.6
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 16.9
+                "pct": 15.4
               }
             ],
-            "fav_win_pct": 52
+            "fav_win_pct": 54
           },
           "excitement": {
-            "label_cn": "中速开局",
-            "label_key": "moderate",
-            "label_color": "#C8A96E",
-            "sub_cn": "预期首球等待约 40.9 分",
-            "first_goal_wait": 40.9,
-            "fast_pct": 52,
-            "moderate_pct": 14.7,
-            "slow_pct": 33.3,
+            "label_cn": "偏晚",
+            "label_key": "slow",
+            "label_color": "#7BB8D4",
+            "sub_cn": "预期首球等待约 44.6 分",
+            "first_goal_wait": 44.6,
+            "fast_pct": 49,
+            "moderate_pct": 14.6,
+            "slow_pct": 36.4,
             "tiers": [
               {
                 "key": "fast",
                 "label": "前 30 分内首球",
-                "pct": 52
+                "pct": 49
               },
               {
                 "key": "moderate",
                 "label": "30–45 分首球",
-                "pct": 14.7
+                "pct": 14.6
               },
               {
                 "key": "slow",
                 "label": "45 分后首球",
-                "pct": 33.3
+                "pct": 36.4
               }
             ]
           },
@@ -708,7 +731,7 @@ const MATCH_DATA = {
             {
               "icon": "🏥",
               "label": "伤病",
-              "note": "Czechia 暂无重要伤停 · South Africa 暂无重要伤停"
+              "note": "Czechia 暂无重要伤停 · South Africa：Sphephelo Sithole、Themba Zwane 缺阵"
             },
             {
               "icon": "👔",
@@ -722,11 +745,11 @@ const MATCH_DATA = {
             }
           ],
           "xg_context": {
-            "baseline_home": 1.48,
-            "baseline_away": 0.95,
-            "adjusted_home": 1.34,
-            "adjusted_away": 0.86,
-            "note": "基准 xG 1.48–0.95 → 调整后 1.34–0.86"
+            "baseline_home": 1.52,
+            "baseline_away": 0.88,
+            "adjusted_home": 1.37,
+            "adjusted_away": 0.65,
+            "note": "基准 xG 1.52–0.88 → 调整后 1.37–0.65"
           },
           "calibration": {
             "signal_cn": "实力吻合",
@@ -735,7 +758,7 @@ const MATCH_DATA = {
             "tier_gap": 0.5,
             "implied_tier_label": "Czechia 被看好 · 净胜约 0.25 球",
             "market_tier_label": "Czechia 被看好 · 净胜约 0.5–1 球",
-            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 热门仅净胜 1 球概率 25.3%"
+            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 热门仅净胜 1 球概率 27.6%"
           },
           "win_outlook": {
             "fav_name": "Czechia",
@@ -745,87 +768,191 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 52.9
+                "pct": 51
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 30.2
+                "pct": 33.6
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 16.9
+                "pct": 15.4
               }
             ],
             "margin_line_cn": "Czechia · 赛前净胜参考 ≥1–2 球",
-            "margin_meet_pct": 22.5,
-            "margin_fail_pct": 25.3,
+            "margin_meet_pct": 26.5,
+            "margin_fail_pct": 27.6,
             "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
             "totals_line": 2.25,
             "totals_line_cn": "总进球约 2–2.5 个",
-            "totals_high_pct": 51,
-            "totals_low_pct": 49,
+            "totals_high_pct": 46.2,
+            "totals_low_pct": 53.8,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 24.9,
-            "win_margin2_low_total_pct": 10,
-            "win_margin2_high_total_pct": 22.5,
-            "readout_cn": "取胜约 52%；若取胜，以「险胜收工」为主（52.9%）。 对着赛前净胜参考，差距达标约 22.5%；对着 总进球约 2–2.5 个，总进球偏高一侧约 51%。"
+            "win_low_total_pct": 30.7,
+            "win_margin2_low_total_pct": 12.5,
+            "win_margin2_high_total_pct": 26.5,
+            "readout_cn": "取胜约 54%；若取胜，以「险胜收工」为主（51%）。 对着赛前净胜参考，差距达标约 26.5%；对着 总进球约 2–2.5 个，总进球偏高一侧约 46.2%。 注意 2-0 类：净胜达标但总进球仍可能偏低。"
           },
           "totals_line": 2.25,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 14.9
-            },
-            {
-              "score": "1-1",
-              "pct": 12.8
+              "pct": 18.2
             },
             {
               "score": "0-0",
-              "pct": 11.1
+              "pct": 13.3
+            },
+            {
+              "score": "2-0",
+              "pct": 12.5
             }
           ],
           "totals_view": {
-            "expected_total": 2.2,
+            "expected_total": 2,
             "fair_line": 2.25,
             "line_gap": 0,
-            "over_pct": 51,
-            "summary_cn": "预期约 2.2 个总进球 · 赛前参考进球参考贴合 · 模型在常见进球预期附近均衡"
+            "over_pct": 46.2,
+            "summary_cn": "预期约 2.0 个总进球 · 赛前参考进球参考贴合 · 模型在常见进球预期附近均衡"
           },
           "first_goal_scenarios": [
             {
               "side": "home",
               "team": "Czechia",
-              "first_goal_pct": 60.9,
+              "first_goal_pct": 67.8,
               "start_score": "1-0",
               "fav_name": "Czechia",
               "scorer_is_fav": true,
               "expected_key": "hold_win",
-              "fav_recover_pct": 90.9,
-              "small_lead_pct": 34,
-              "big_lead_pct": 36.9,
-              "fav_win_pct": 70.9,
-              "fav_draw_pct": 20,
-              "fav_lose_pct": 9.1,
+              "fav_recover_pct": 94.5,
+              "small_lead_pct": 35.4,
+              "big_lead_pct": 42.5,
+              "fav_win_pct": 77.9,
+              "fav_draw_pct": 16.6,
+              "fav_lose_pct": 5.5,
               "outcomes": [
                 {
                   "key": "hold_win",
                   "label": "Czechia 保持胜果（净胜≥1）",
-                  "pct": 70.9
+                  "pct": 77.9
                 },
                 {
                   "key": "drawn",
                   "label": "被扳平",
-                  "pct": 20
+                  "pct": 16.6
                 },
                 {
                   "key": "lost",
                   "label": "被逆转落败",
-                  "pct": 9.1
+                  "pct": 5.5
+                }
+              ],
+              "excitement": {
+                "label_cn": "偏晚",
+                "label_key": "slow",
+                "label_color": "#7BB8D4",
+                "sub_cn": "预期首球等待约 48.1 分",
+                "first_goal_wait": 48.1,
+                "fast_pct": 40,
+                "moderate_pct": 13.5,
+                "slow_pct": 46.5,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 40
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 13.5
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 46.5
+                  }
+                ]
+              },
+              "big_delta": 16,
+              "small_delta": 7.8,
+              "narrative": "Czechia 先破门（已 1-0） → 「控节奏」；South Africa 「堆边锋」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门。",
+              "live_outlook": {
+                "fav_name": "Czechia",
+                "state_label": "Czechia 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 51
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 33.6
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 15.4
+                  }
+                ],
+                "margin_line_cn": "Czechia · 赛前净胜参考 ≥1–2 球",
+                "margin_meet_pct": 42.5,
+                "margin_fail_pct": 35.4,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.25,
+                "totals_line_cn": "总进球约 2–2.5 个",
+                "totals_high_pct": 61.9,
+                "totals_low_pct": 38.1,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 41.9,
+                "win_margin2_low_total_pct": 20.4,
+                "win_margin2_high_total_pct": 42.5,
+                "readout_cn": "Czechia 已 1-0 领先：仍取胜约 77.9%；对着赛前 总进球约 2–2.5 个，总进球偏高一侧约 61.9%。 常见收尾如 2-0（净胜达标、总进球仍偏低）。"
+              }
+            },
+            {
+              "side": "away",
+              "team": "South Africa",
+              "first_goal_pct": 32.2,
+              "start_score": "0-1",
+              "fav_name": "Czechia",
+              "scorer_is_fav": false,
+              "expected_key": "fav_recover",
+              "fav_recover_pct": 56.3,
+              "small_lead_pct": 17.1,
+              "big_lead_pct": 9.3,
+              "fav_win_pct": 26.4,
+              "fav_draw_pct": 29.9,
+              "fav_lose_pct": 43.6,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "Czechia 追平（平局）",
+                  "pct": 29.9
+                },
+                {
+                  "key": "win1",
+                  "label": "Czechia 净胜1球翻盘（如 2-1）",
+                  "pct": 17.1
+                },
+                {
+                  "key": "win2",
+                  "label": "Czechia 净胜≥2球翻盘（如 3-1）",
+                  "pct": 9.3
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "South Africa 保持胜果至终场",
+                  "pct": 43.6
                 }
               ],
               "excitement": {
@@ -855,121 +982,17 @@ const MATCH_DATA = {
                   }
                 ]
               },
-              "big_delta": 14.4,
-              "small_delta": 8.7,
-              "narrative": "Czechia 先破门（已 1-0） → 「控节奏」；South Africa 「堆边锋」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门。",
-              "live_outlook": {
-                "fav_name": "Czechia",
-                "state_label": "Czechia 已 1-0 领先",
-                "paths": [
-                  {
-                    "key": "narrow",
-                    "label": "险胜收工",
-                    "example": "如 1-0、2-1",
-                    "pct": 52.9
-                  },
-                  {
-                    "key": "clean",
-                    "label": "零封拉开",
-                    "example": "如 2-0、3-0",
-                    "pct": 30.2
-                  },
-                  {
-                    "key": "open",
-                    "label": "开放拉开",
-                    "example": "如 3-1+",
-                    "pct": 16.9
-                  }
-                ],
-                "margin_line_cn": "Czechia · 赛前净胜参考 ≥1–2 球",
-                "margin_meet_pct": 36.9,
-                "margin_fail_pct": 34,
-                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-                "totals_line": 2.25,
-                "totals_line_cn": "总进球约 2–2.5 个",
-                "totals_high_pct": 66.1,
-                "totals_low_pct": 33.9,
-                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-                "win_low_total_pct": 35.2,
-                "win_margin2_low_total_pct": 16.8,
-                "win_margin2_high_total_pct": 36.9,
-                "readout_cn": "Czechia 已 1-0 领先：仍取胜约 70.9%；对着赛前 总进球约 2–2.5 个，总进球偏高一侧约 66.1%。 常见收尾如 2-0（净胜达标、总进球仍偏低）。"
-              }
-            },
-            {
-              "side": "away",
-              "team": "South Africa",
-              "first_goal_pct": 39.1,
-              "start_score": "0-1",
-              "fav_name": "Czechia",
-              "scorer_is_fav": false,
-              "expected_key": "fav_recover",
-              "fav_recover_pct": 51.3,
-              "small_lead_pct": 15.3,
-              "big_lead_pct": 7.9,
-              "fav_win_pct": 23.2,
-              "fav_draw_pct": 28.1,
-              "fav_lose_pct": 48.7,
-              "outcomes": [
-                {
-                  "key": "draw",
-                  "label": "Czechia 追平（平局）",
-                  "pct": 28.1
-                },
-                {
-                  "key": "win1",
-                  "label": "Czechia 净胜1球翻盘（如 2-1）",
-                  "pct": 15.3
-                },
-                {
-                  "key": "win2",
-                  "label": "Czechia 净胜≥2球翻盘（如 3-1）",
-                  "pct": 7.9
-                },
-                {
-                  "key": "upset_hold",
-                  "label": "South Africa 保持胜果至终场",
-                  "pct": 48.7
-                }
-              ],
-              "excitement": {
-                "label_cn": "中速开局",
-                "label_key": "moderate",
-                "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 40.9 分",
-                "first_goal_wait": 40.9,
-                "fast_pct": 45.2,
-                "moderate_pct": 14.2,
-                "slow_pct": 40.6,
-                "tiers": [
-                  {
-                    "key": "fast",
-                    "label": "前 30 分内首球",
-                    "pct": 45.2
-                  },
-                  {
-                    "key": "moderate",
-                    "label": "30–45 分首球",
-                    "pct": 14.2
-                  },
-                  {
-                    "key": "slow",
-                    "label": "45 分后首球",
-                    "pct": 40.6
-                  }
-                ]
-              },
-              "big_delta": -14.6,
-              "small_delta": -10,
+              "big_delta": -17.2,
+              "small_delta": -10.5,
               "narrative": "South Africa 先破门（已 0-1） → 「5-4-1 收缩」；Czechia 「堆前锋」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门。",
               "live_outlook": null
             }
           ],
           "match_preview": {
             "morphology": {
-              "totals_summary": "预期约 2.2 个总进球 · 赛前参考进球参考贴合 · 模型在常见进球预期附近均衡",
+              "totals_summary": "预期约 2.0 个总进球 · 赛前参考进球参考贴合 · 模型在常见进球预期附近均衡",
               "totals_line_cn": "总进球约 2–2.5 个",
-              "totals_high_pct": 51,
+              "totals_high_pct": 46.2,
               "type_tags": [
                 {
                   "key": "low_block",
@@ -1003,7 +1026,7 @@ const MATCH_DATA = {
             }
           }
         },
-        "public_summary_note": "【推演概要】Czechia · 低位反击 · 进球偏少。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 热门仅净胜 1 球概率 25.3%（模型微调：主胜 +2% · 平 -1% · 客 -1%）"
+        "public_summary_note": "【推演概要】Czechia · 低位反击 · 进球偏少。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 热门仅净胜 1 球概率 27.6%（模型微调：主胜 +2% · 平 -1% · 客 -1%）"
       },
       "group_context": {
         "group": "A",
@@ -4251,12 +4274,12 @@ const MATCH_DATA = {
       "rating": 65
     },
     "teaser": "A组第2轮 · 捷克 vs 南非",
-    "home_win": 52,
+    "home_win": 54,
     "draw": 25,
-    "away_win": 23,
+    "away_win": 21,
     "predicted_score": "1-0",
     "key_player_home": "Patrik Schick",
-    "key_player_away": "Percy Tau"
+    "key_player_away": "Lyle Foster"
   },
   "upcomingMatches": [
     {

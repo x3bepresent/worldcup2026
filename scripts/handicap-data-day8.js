@@ -11,7 +11,7 @@ module.exports = {
     public_lean: 'home',
     public_pct: 62,
     _source: 'manual_estimate_2026-06-19_cze_rsa',
-    analysis: '捷克首轮惜败韩国需抢分；南非 0-2 墨西哥后出线压力大。模型略看好捷克但平局权重不低。',
+    analysis: '捷克首轮惜败韩国需抢分；南非 0-2 墨西哥且 Sithole/Zwane 红牌停赛，中场削弱。模型略看好捷克，平局权重下调。',
   },
   m26: {
     market_tier: 0.5,

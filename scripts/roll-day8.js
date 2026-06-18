@@ -57,7 +57,7 @@ function upsertGroup(snaps, group, label, table) {
 }
 
 function buildM25() {
-  const xgH = 1.48, xgA = 0.95;
+  const xgH = 1.52, xgA = 0.88;
   return {
     id: 'm25',
     group: 'A',
@@ -84,7 +84,7 @@ function buildM25() {
       { name: 'Percy Tau', pos: 'LW', club: 'Brighton', desc: '南非唯一爆点', rating: 7.4 }),
     h2h: { home_wins: 1, draws: 1, away_wins: 0, recent: [], note: '友谊赛交锋有限' },
     referee: pendingReferee('FIFA Match 25 裁判名单赛前公布。'),
-    prediction: pred(xgH, xgA, '捷克首轮惜败韩国需抢分：Schick 支点+Souček 屏障；南非 0-2 墨西哥后出线压力大；泊松最可能 2-0/1-1。', 70),
+    prediction: pred(xgH, xgA, '捷克 3-4-2-1 抢分：Schick+Provod/Šulc；南非 Sithole/Zwane 停赛；泊松最可能 1-0/2-0。', 72),
     weather: { temp: 30, humidity: 62, condition_cn: '亚特兰大闷热', impact_summary: '闷热对双方后段体能均有考验', home_adapt: 80, away_adapt: 78 },
     mystic: { hexagram: { name: '待卦' }, mystic_verdict: '赛前更新' },
   };

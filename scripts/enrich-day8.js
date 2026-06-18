@@ -84,16 +84,26 @@ function baseMatch(id, group, matchday, beijing, venue, city, note, xgH, xgA, ke
 }
 
 function buildM25() {
+  const lineup = lineupFromPrediction({
+    formation: '3-4-2-1 / 4-3-3',
+    home: 'Kovář; Chaloupek, Hranáč, Krejčí; Coufal, Souček, Sojka, Zelený; Provod, Šulc; Schick',
+    away: 'Williams; Mudau, Okon, Mbokazi, Modiba; Mokoena, Mbatha, Adams; Appollis, Foster, Mofokeng',
+    source: 'SI / Al Jazeera / Opta 预测 · 非官方',
+    alt: {
+      formation: '3-4-2-1 / 5-3-2',
+      home: 'Kovář; Chaloupek, Hranáč, Krejčí; Coufal, Souček, Sojka, Zelený; Provod, Hložek; Schick',
+      away: 'Williams; Mudau, Okon, Mbokazi, Modiba, Sibisi; Mokoena, Mbatha, Adams; Moremi, Mofokeng, Appollis; Foster',
+      source: 'beIN / Livescore 备选预测',
+    },
+  });
+  lineup.note =
+    '官方首发尚未确认；下方为媒体预测（已剔除 Sithole、Zwane 揭幕战红牌停赛）。不计入已确认推演权重。';
+
   return baseMatch('m25', 'A', 2, '6月19日 00:00', 'Mercedes-Benz Stadium', 'Atlanta, USA',
-    'A组第2轮 · 捷克 vs 南非 · 亚特兰大', 1.48, 0.95,
-    '捷克首轮惜败韩国需抢分：Schick 支点+Souček 屏障；南非 0-2 墨西哥后出线压力大；泊松最可能 2-0/1-1。',
-    70, 'hasek', 'broos', () => ({
-      lineup: lineupFromPrediction({
-        formation: '3-4-3 / 4-2-3-1',
-        home: 'Staněk; Holes, Brabec, Zmrhal; Coufal, Souček, Sadílek, Jurásek; Schick, Chytil, Provod',
-        away: 'Williams; Mphahlele, Xaba, Mokoena; Modiba, Mthethwa; Tau, Zwane, Baccus; Foster, Lorch',
-        source: 'Opta / ESPN 预测 · 非官方',
-      }),
+    'A组第2轮 · 捷克 vs 南非 · 亚特兰大', 1.52, 0.88,
+    '捷克 3-4-2-1 抢分：Schick+Provod/Šulc 双前腰；南非 Sithole/Zwane 红牌停赛，Mbatha/Mofokeng 顶替；泊松最可能 1-0/2-0。',
+    72, 'hasek', 'broos', () => ({
+      lineup,
       home: team('Czechia', 'cz', 40, 72, ['L', 'W', 'D', 'W', 'L'], 'Ivan Hašek', [
         { name: 'Patrik Schick', pos: 'ST', club: 'Bayer Leverkusen', stats: '84\' 挽回颜面', rating: 8.0, desc: '必须抢分之战核心' },
         { name: 'Tomáš Souček', pos: 'DM', club: 'West Ham', stats: '屏障', rating: 7.8, desc: '三中卫前保护' },
@@ -101,24 +111,24 @@ function buildM25() {
       ], { name: 'Patrik Schick', pos: 'ST', desc: '对南非不容再失分', rating: 8.0 },
         getTeamNews('m25', 'home').injuries, getTeamNews('m25', 'home').rumors),
       away: team('South Africa', 'za', 58, 65, ['L', 'W', 'D', 'L', 'W'], 'Hugo Broos', [
-        { name: 'Percy Tau', pos: 'LW', club: 'Brighton', stats: '唯一爆点', rating: 7.4, desc: '速度+内切' },
+        { name: 'Lyle Foster', pos: 'ST', club: 'Burnley', stats: '锋线支点', rating: 7.2, desc: '次轮生死战预计首发' },
         { name: 'Teboho Mokoena', pos: 'DM', club: 'Mamelodi Sundowns', stats: '屏障', rating: 7.0, desc: '中场绞杀' },
-        { name: 'Zakhele Lepasa', pos: 'ST', club: 'Orlando Pirates', stats: '支点', rating: 6.8, desc: '定位球威胁' },
-      ], { name: 'Percy Tau', pos: 'LW', desc: '出线压力大，必须抢分', rating: 7.4 },
+        { name: 'Relebohile Mofokeng', pos: 'RW', club: 'Orlando Pirates', stats: '顶替 Zwane', rating: 6.9, desc: '边路速度' },
+      ], { name: 'Lyle Foster', pos: 'ST', desc: 'Sithole/Zwane 停赛下锋线担当', rating: 7.2 },
         getTeamNews('m25', 'away').injuries, getTeamNews('m25', 'away').rumors),
       h2h: { home_wins: 1, draws: 1, away_wins: 0, recent: [], note: '友谊赛交锋有限' },
       upset: {
         favorite: 'Czechia', underdog: 'South Africa', favorite_iso: 'CZE',
         index: 28, level: 'LOW', level_cn: '低',
         cold_result_pct: 24,
-        verdict: '捷克纸面占优但首轮惜败——Tau 速度+南非 desperation 仍有 20% 平局空间。',
-        tactical: 'Hašek 3-4-3 压上 vs Broos 4-2-3-1 转换；Schick 对位南非中卫是核心。',
-        psychology: '南非再负基本出局，会相对开放；捷克必须抢分。',
-        historical: '无大赛交锋；Tau 英超状态是参考。',
+        verdict: '捷克纸面占优且南非中场双核停赛——Foster/Mofokeng 难完全替代 Zwane 创造力，平局空间收窄至约 26%。',
+        tactical: 'Hašek 3-4-2-1 压上 vs Broos 4-3-3 转换；Schick 对位南非中卫，Mbatha 顶 Sithole 屏障位是关键。',
+        psychology: '南非再负基本出局但缺两名揭幕战主力；捷克必须抢分。',
+        historical: '无大赛交锋；揭幕战 3 红后 Broos 变阵压力极大。',
         factors: [
+          { tag: '停赛', impact: '强', detail: 'Sithole、Zwane 红牌缺席，南非中场创造力下滑' },
           { tag: '出线压力', impact: '强', detail: '双方均需 3 分' },
-          { tag: '体能', impact: '中', detail: '南非首轮 60\' 后崩盘是前车之鉴' },
-          { tag: '实力差', impact: '中', detail: 'xG 差约 0.5，Schick 决定上限' },
+          { tag: '实力差', impact: '中', detail: 'xG 差约 0.6，Schick 决定上限' },
         ],
       },
     }));
@@ -253,6 +263,7 @@ MATCH_DATA.syncSource = 'FIFA 赛程 · Day 8 完整推演 · coach/mystic/refer
 MATCH_DATA.breakingNews = [
   { tag: 'PREVIEW', text: '📅 今日4场 · 捷克-南非(00:00) · 瑞士-波黑(03:00) · 加拿大-卡塔尔(06:00) · 墨西哥-韩国(09:00)', time: '6月19日' },
   { tag: 'PREVIEW', text: 'A/B组第2轮：Schick 抢分战 · 东道主温哥华 · 墨西哥 vs 孙兴慜 榜首对话', time: '焦点' },
+  { tag: 'LINEUP', text: '📋 预测首发 · 捷 3-4-2-1 Schick 领衔 · 南非 Sithole/Zwane 停赛 Mbatha/Mofokeng 顶替', time: '预测' },
   { tag: 'OFFICIAL', text: '🏁 昨日：葡1-1刚果(金) · 英4-2克 · 加纳1-0巴 · 乌1-3哥伦 · 详见「过往赛果」', time: '赛果回顾' },
   { tag: 'INJURY', text: 'Jiménez/孙兴慜/Davies 均 FIT · Chávez 队检 · Džeko 打满', time: '伤情' },
   { tag: 'REFEREE', text: '✅ FIFA 确认：Penso(捷-南非) · Pinheiro(瑞-波) · Garay(加-卡) · Tejera(墨-韩)', time: '裁判' },

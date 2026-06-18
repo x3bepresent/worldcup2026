@@ -11,9 +11,15 @@ const TEAM_NEWS = {
     },
     away: {
       injuries: [
-        { player: 'Percy Tau', status: 'FIT', note: '布莱顿边路，南非唯一爆点', confirmed: true },
+        { player: 'Sphephelo Sithole', status: 'OUT', note: '揭幕战对墨西哥直红停赛，缺席对捷克', confirmed: true },
+        { player: 'Themba Zwane', status: 'OUT', note: '揭幕战对墨西哥直红停赛，缺席对捷克', confirmed: true },
+        { player: 'Lyle Foster', status: 'FIT', note: '锋线支点，次轮生死战预计首发', confirmed: true },
       ],
-      rumors: ['首轮 0-2 墨西哥后 Broos 称「出线形势严峻」', '60\' 后体能崩盘是前车之鉴'],
+      rumors: [
+        '首轮 0-2 墨西哥后 Broos 称「出线形势严峻」',
+        'SI/Al Jazeera：Mbatha 顶 Sithole、Mofokeng 顶 Zwane，预计 4-3-3',
+        '揭幕战 3 张红牌后中场创造力大减，Foster 成唯一稳定得分点',
+      ],
     },
   },
   m26: {
