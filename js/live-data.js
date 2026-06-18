@@ -1,93 +1,175 @@
-// Auto-synced by scripts/roll-day7.js
-// Updated: 2026-06-18T08:00:00+08:00
+// Auto-synced by scripts/roll-day8.js
+// Updated: 2026-06-19T08:00:00+08:00
 const LIVE_DATA = {
-  "lastUpdated": "2026-06-17T12:13:49.395Z",
-  "todayDate": "2026-06-18",
+  "lastUpdated": "2026-06-18T14:20:28.784Z",
+  "todayDate": "2026-06-19",
   "fixtures": [
+    {
+      "id": "m25",
+      "home": "Czechia",
+      "away": "South Africa",
+      "status": "NS",
+      "home_score": null,
+      "away_score": null,
+      "group": "A"
+    },
+    {
+      "id": "m26",
+      "home": "Switzerland",
+      "away": "Bosnia and Herzegovina",
+      "status": "NS",
+      "home_score": null,
+      "away_score": null,
+      "group": "B"
+    },
+    {
+      "id": "m27",
+      "home": "Canada",
+      "away": "Qatar",
+      "status": "NS",
+      "home_score": null,
+      "away_score": null,
+      "group": "B"
+    },
+    {
+      "id": "m28",
+      "home": "Mexico",
+      "away": "South Korea",
+      "status": "NS",
+      "home_score": null,
+      "away_score": null,
+      "group": "A"
+    }
+  ],
+  "allResults": [
     {
       "id": "m23",
       "home": "Portugal",
       "away": "Congo DR",
-      "status": "NS",
-      "home_score": null,
-      "away_score": null,
+      "score": "1-1",
       "group": "K"
     },
     {
       "id": "m22",
       "home": "England",
       "away": "Croatia",
-      "status": "NS",
-      "home_score": null,
-      "away_score": null,
+      "score": "4-2",
       "group": "L"
     },
     {
       "id": "m21",
       "home": "Ghana",
       "away": "Panama",
-      "status": "NS",
-      "home_score": null,
-      "away_score": null,
+      "score": "1-0",
       "group": "L"
     },
     {
       "id": "m24",
       "home": "Uzbekistan",
       "away": "Colombia",
-      "status": "NS",
-      "home_score": null,
-      "away_score": null,
+      "score": "1-3",
       "group": "K"
-    }
-  ],
-  "allResults": [
-    {
-      "id": "m17",
-      "home": "France",
-      "away": "Senegal",
-      "score": "3-1",
-      "group": "I"
-    },
-    {
-      "id": "m18",
-      "home": "Iraq",
-      "away": "Norway",
-      "score": "1-4",
-      "group": "I"
-    },
-    {
-      "id": "m19",
-      "home": "Argentina",
-      "away": "Algeria",
-      "score": "3-0",
-      "group": "J"
-    },
-    {
-      "id": "m20",
-      "home": "Austria",
-      "away": "Jordan",
-      "score": "3-1",
-      "group": "J"
     }
   ],
   "standings": [
     {
-      "group": "I",
-      "label": "I组 · 第1轮（4场已赛）",
+      "group": "A",
+      "label": "A组 · 第1轮后",
       "table": [
         {
-          "team": "Norway",
+          "team": "Mexico",
           "pts": 3,
           "p": 1,
           "w": 1,
           "d": 0,
           "l": 0,
-          "gf": 4,
+          "gf": 2,
+          "ga": 0
+        },
+        {
+          "team": "South Korea",
+          "pts": 3,
+          "p": 1,
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 2,
           "ga": 1
         },
         {
-          "team": "France",
+          "team": "Czechia",
+          "pts": 0,
+          "p": 1,
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 1,
+          "ga": 2
+        },
+        {
+          "team": "South Africa",
+          "pts": 0,
+          "p": 1,
+          "w": 0,
+          "d": 0,
+          "l": 1,
+          "gf": 0,
+          "ga": 2
+        }
+      ]
+    },
+    {
+      "group": "B",
+      "label": "B组 · 第1轮（卡塔尔-瑞士已赛）",
+      "table": [
+        {
+          "team": "Switzerland",
+          "pts": 1,
+          "p": 1,
+          "w": 0,
+          "d": 1,
+          "l": 0,
+          "gf": 1,
+          "ga": 1
+        },
+        {
+          "team": "Qatar",
+          "pts": 1,
+          "p": 1,
+          "w": 0,
+          "d": 1,
+          "l": 0,
+          "gf": 1,
+          "ga": 1
+        },
+        {
+          "team": "Canada",
+          "pts": 1,
+          "p": 1,
+          "w": 0,
+          "d": 1,
+          "l": 0,
+          "gf": 1,
+          "ga": 1
+        },
+        {
+          "team": "Bosnia and Herzegovina",
+          "pts": 1,
+          "p": 1,
+          "w": 0,
+          "d": 1,
+          "l": 0,
+          "gf": 1,
+          "ga": 1
+        }
+      ]
+    },
+    {
+      "group": "K",
+      "label": "K组 · 第1轮（4场已赛）",
+      "table": [
+        {
+          "team": "Colombia",
           "pts": 3,
           "p": 1,
           "w": 1,
@@ -97,17 +179,27 @@ const LIVE_DATA = {
           "ga": 1
         },
         {
-          "team": "Iraq",
-          "pts": 0,
+          "team": "Portugal",
+          "pts": 1,
           "p": 1,
           "w": 0,
-          "d": 0,
-          "l": 1,
+          "d": 1,
+          "l": 0,
           "gf": 1,
-          "ga": 4
+          "ga": 1
         },
         {
-          "team": "Senegal",
+          "team": "Congo DR",
+          "pts": 1,
+          "p": 1,
+          "w": 0,
+          "d": 1,
+          "l": 0,
+          "gf": 1,
+          "ga": 1
+        },
+        {
+          "team": "Uzbekistan",
           "pts": 0,
           "p": 1,
           "w": 0,
@@ -119,48 +211,48 @@ const LIVE_DATA = {
       ]
     },
     {
-      "group": "J",
-      "label": "J组 · 第1轮（4场已赛）",
+      "group": "L",
+      "label": "L组 · 第1轮（4场已赛）",
       "table": [
         {
-          "team": "Argentina",
+          "team": "England",
           "pts": 3,
           "p": 1,
           "w": 1,
           "d": 0,
           "l": 0,
-          "gf": 3,
+          "gf": 4,
+          "ga": 2
+        },
+        {
+          "team": "Ghana",
+          "pts": 3,
+          "p": 1,
+          "w": 1,
+          "d": 0,
+          "l": 0,
+          "gf": 1,
           "ga": 0
         },
         {
-          "team": "Austria",
-          "pts": 3,
-          "p": 1,
-          "w": 1,
-          "d": 0,
-          "l": 0,
-          "gf": 3,
-          "ga": 1
-        },
-        {
-          "team": "Jordan",
+          "team": "Croatia",
           "pts": 0,
           "p": 1,
           "w": 0,
           "d": 0,
           "l": 1,
-          "gf": 1,
-          "ga": 3
+          "gf": 2,
+          "ga": 4
         },
         {
-          "team": "Algeria",
+          "team": "Panama",
           "pts": 0,
           "p": 1,
           "w": 0,
           "d": 0,
           "l": 1,
           "gf": 0,
-          "ga": 3
+          "ga": 1
         }
       ]
     }
@@ -168,20 +260,20 @@ const LIVE_DATA = {
   "injuries": {},
   "yesterdayResults": [
     {
-      "id": "m17",
-      "score": "3-1"
+      "id": "m23",
+      "score": "1-1"
     },
     {
-      "id": "m18",
-      "score": "1-4"
+      "id": "m22",
+      "score": "4-2"
     },
     {
-      "id": "m19",
-      "score": "3-0"
+      "id": "m21",
+      "score": "1-0"
     },
     {
-      "id": "m20",
-      "score": "3-1"
+      "id": "m24",
+      "score": "1-3"
     }
   ]
 };

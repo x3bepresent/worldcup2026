@@ -1,0 +1,50 @@
+/**
+ * 内部参考数据录入 — Day 8（m25–m28）
+ */
+module.exports = {
+  m25: {
+    market_tier: 0.75,
+    totals_line: 2.25,
+    totals_over_index: 0.92,
+    totals_under_index: 1.02,
+    totals_public_over_pct: 46,
+    public_lean: 'home',
+    public_pct: 62,
+    _source: 'manual_estimate_2026-06-19_cze_rsa',
+    analysis: '捷克首轮惜败韩国需抢分；南非 0-2 墨西哥后出线压力大。模型略看好捷克但平局权重不低。',
+  },
+  m26: {
+    market_tier: 0.5,
+    totals_line: 2.5,
+    totals_over_index: 0.94,
+    totals_under_index: 0.96,
+    totals_public_over_pct: 50,
+    public_lean: 'home',
+    public_pct: 58,
+    signal_override: 'genuine_favorite',
+    _source: 'manual_estimate_2026-06-19_sui_bih',
+    analysis: '瑞士首轮平卡塔尔；波黑首轮平加拿大。双方均需 3 分，模型略看好瑞士组织优势。',
+  },
+  m27: {
+    market_tier: 1.0,
+    totals_line: 2.5,
+    totals_over_index: 0.96,
+    totals_under_index: 0.94,
+    totals_public_over_pct: 54,
+    public_lean: 'home',
+    public_pct: 68,
+    _source: 'manual_estimate_2026-06-19_can_qat',
+    analysis: '东道主加拿大温哥华主场；卡塔尔首轮平瑞士有韧性。模型看好加拿大但需防闷战。',
+  },
+  m28: {
+    market_tier: 0.25,
+    totals_line: 2.5,
+    totals_over_index: 0.98,
+    totals_under_index: 0.92,
+    totals_public_over_pct: 58,
+    public_lean: 'home',
+    public_pct: 52,
+    _source: 'manual_estimate_2026-06-19_mex_kor',
+    analysis: 'A组榜首对话：墨西哥 Jiménez 状态 vs 孙兴慜。瓜达拉哈拉夜场，模型略看好墨西哥主场。',
+  },
+};

@@ -219,15 +219,6 @@ function intelFootnote(text) {
   return `<div class="intel-footnote">${text}</div>`;
 }
 
-// ── Form Dots ──────────────────────────────────────────────
-function formCells(form) {
-  if (!form?.length) return '';
-  return form.map(r => {
-    const k = String(r || 'D').toLowerCase();
-    return `<span class="mf-terminal-form-cell mf-terminal-form-cell--${k}" title="${{ W: '胜', D: '平', L: '负' }[r] || r}">${r}</span>`;
-  }).join('');
-}
-
 function formatDisplayScore(score) {
   if (score == null || score === '') return '—';
   return String(score).replace(/\s*[-–—]\s*/g, ' – ');
@@ -261,7 +252,7 @@ function renderMatchHero(m, p, finished) {
     const ua = m.upset_alert;
     const s = upsetLevelStyle(ua.level);
     return `<div class="mf-terminal-upset" style="background:${s.bg};border:1px solid ${s.border};color:${s.color}">
-      爆冷指数 ${ua.index} · ${ua.favorite} 需防 ${ua.underdog}
+      爆冷 ${ua.level_cn || ua.level} · ${ua.favorite} 需防 ${ua.underdog}
     </div>`;
   })() : '';
 
@@ -311,29 +302,8 @@ function renderMatchHero(m, p, finished) {
         </div>
       </div>
 
-      <div class="mf-terminal-form-row">
-        <div class="mf-terminal-form-side mf-terminal-form-side--home">
-          <span class="mf-terminal-form-lbl">近 5 场</span>
-          <div class="mf-terminal-form-cells">${formCells(m.home.form)}</div>
-        </div>
-        <div class="mf-terminal-form-side mf-terminal-form-side--away">
-          <div class="mf-terminal-form-cells">${formCells(m.away.form)}</div>
-          <span class="mf-terminal-form-lbl">近 5 场</span>
-        </div>
-      </div>
-
       <div class="mf-terminal-footnote" title="${MODEL_TAGLINE}">※ ${footnote}</div>
     </div>`;
-}
-
-/** @deprecated use formCells in hero */
-function formDots(form) {
-  const label = {'W':'胜','D':'平','L':'负'};
-  const color = {'W':'#5BBF8A','D':'rgba(255,255,255,0.28)','L':'#D95F6A'};
-  const dots = form.map((r,i) =>
-    `<span title="${label[r]||r}" style="width:10px;height:10px;border-radius:50%;background:${color[r]||'#888'};display:inline-block;cursor:default" aria-label="${label[r]}"></span>`
-  ).join('');
-  return `<div style="display:flex;align-items:center;gap:3px">${dots}</div>`;
 }
 
 // ── Head to Head Bar ───────────────────────────────────────
@@ -572,22 +542,11 @@ function verdictBadge(hit, hitLabel, missLabel) {
     : `<span style="font-size:0.74rem;font-weight:700;padding:0.1rem 0.45rem;border-radius:2px;background:rgba(217,95,106,0.1);color:#D95F6A;border:1px solid rgba(217,95,106,0.28)">✗ ${missLabel || '未中'}</span>`;
 }
 
-/** 参考倍数（100 ÷ 概率%）— 模型概率换算，非博彩赔率 */
-function scenarioRefMultiplier(pct) {
-  const p = Number(pct);
-  if (!p || p <= 0) return null;
-  return Math.round((100 / p) * 100) / 100;
-}
-
-const SCENARIO_REF_MULT_TITLE = '参考倍数 = 100 ÷ 模型概率（%），仅供娱乐推演直观对照，非博彩赔率，不构成任何投注建议';
-
 function renderScenarioOutcomeRow(o, expectedKey) {
-  const refMult = scenarioRefMultiplier(o.pct);
   return `
       <div class="dc-scenario-outcome${o.key === expectedKey ? ' dc-scenario-outcome--key' : ''}">
         <span class="dc-scenario-outcome-label">${o.label}</span>
         <span class="dc-scenario-outcome-pct">${o.pct}<span>%</span></span>
-        <span class="dc-scenario-outcome-odds" title="${SCENARIO_REF_MULT_TITLE}">${refMult != null ? refMult : '—'}</span>
       </div>`;
 }
 
@@ -599,7 +558,6 @@ function renderScenarioOutcomesBlock(sc, expectedKey) {
   const favRecoverPct = sc.fav_recover_pct != null
     ? sc.fav_recover_pct
     : Math.round(recoveryRows.reduce((s, o) => s + (o.pct || 0), 0) * 10) / 10;
-  const totalRefMult = scenarioRefMultiplier(favRecoverPct);
   const totalKey = expectedKey === 'fav_recover';
 
   if (!sc.scorer_is_fav && recoveryRows.length === 3) {
@@ -608,7 +566,6 @@ function renderScenarioOutcomesBlock(sc, expectedKey) {
           <div class="dc-scenario-recover-head">
             <span>分项终局</span>
             <span class="dc-scenario-col-hdr">概率</span>
-            <span class="dc-scenario-col-hdr">参考倍数</span>
           </div>
           <div class="dc-scenario-recover-body">
             <div class="dc-scenario-recover-rows">
@@ -617,7 +574,6 @@ function renderScenarioOutcomesBlock(sc, expectedKey) {
             <div class="dc-scenario-outcomes-total${totalKey ? ' dc-scenario-outcomes-total--key' : ''}">
               <span class="dc-scenario-total-label">${sc.fav_name}<br>追分合计</span>
               <span class="dc-scenario-total-pct">${favRecoverPct}<span>%</span></span>
-              <span class="dc-scenario-total-odds" title="${SCENARIO_REF_MULT_TITLE}">总参考倍数 ${totalRefMult != null ? totalRefMult : '—'}</span>
               <span class="dc-scenario-total-sub${totalKey ? ' dc-scenario-total-sub--key' : ''}">含追平 + 翻盘</span>
             </div>
           </div>
@@ -633,36 +589,196 @@ function renderScenarioOutcomesBlock(sc, expectedKey) {
 
 const BIG_COVER_HIGHLIGHT_MIN_PCT = 35;
 
-/** 净胜≥2 金色强调：须同时满足 ≥35% 且高于「净胜1球」 */
+/** @deprecated UI 已改用 win_shape；保留供内部情景推演 */
 function shouldHighlightBigCover(summary) {
   const big = Number(summary?.big_cover_pct) || 0;
   const small = Number(summary?.small_lead_pct) || 0;
   return big >= BIG_COVER_HIGHLIGHT_MIN_PCT && big > small;
 }
 
+const WIN_SHAPE_COLORS = {
+  narrow_low: '#7BB8D4',
+  narrow_open: '#6A9EC4',
+  comfort_low: '#C8A96E',
+  comfort_open: '#5BBF8A',
+};
+
+const WIN_PATH_COLORS = {
+  narrow: '#7BB8D4',
+  clean: '#C8A96E',
+  open: '#5BBF8A',
+};
+
+function renderTotalsRefRow(totalsView, prediction) {
+  const expTotal = totalsView?.expected_total;
+  const xgH = prediction?.xg_home;
+  const xgA = prediction?.xg_away;
+  const xgSum = xgH != null && xgA != null ? Math.round((xgH + xgA) * 100) / 100 : null;
+
+  if (expTotal == null) return '';
+
+  const predScore = prediction?.score;
+  const scoreNorm = predScore ? String(predScore).replace(/\s/g, '') : '';
+  const predGoals = /^\d+-\d+$/.test(scoreNorm)
+    ? scoreNorm.split('-').map(n => parseInt(n, 10)).reduce((a, b) => a + b, 0)
+    : null;
+
+  let primary = `模型预期约 <strong>${expTotal}</strong> 个总进球`;
+  if (xgSum != null) primary += ` <span class="dc-rhythm-totals-xg">（xG ${xgH} + ${xgA}）</span>`;
+
+  let hint = '与终端娱乐推演比分是<strong>不同口径</strong>：';
+  if (predScore && predGoals != null) {
+    hint += `首推 <strong>${formatDisplayScore(predScore)}</strong> 是最可能单场赛果（${predGoals} 球）；`;
+  } else {
+    hint += '首推比分是最可能单场赛果；';
+  }
+  hint += '此处为泊松网格加权的<strong>全场期望总进球</strong>，统计各类可能比分，故可与首推比分不同。';
+
+  return `
+    <div class="dc-rhythm-totals-ref">
+      <span class="dc-rhythm-dim-label">总进球参考</span>
+      <span class="dc-rhythm-totals-text dc-rhythm-totals-text--model">${primary}</span>
+      <p class="dc-rhythm-totals-hint">${hint}</p>
+    </div>`;
+}
+
+function renderWinOutlookBlock(wo, ws) {
+  if (!wo && !ws?.paths?.length) return renderWinShapeBlock(ws);
+  const o = wo || {};
+  const paths = o.paths || ws?.paths || [];
+  const favName = o.fav_name || ws?.fav_name || '—';
+  const favWin = ws?.fav_win_pct;
+
+  const pathStack = paths.map(p => `
+    <span class="dc-win-shape-seg" style="width:${p.pct}%;background:${WIN_PATH_COLORS[p.key] || '#888'}" title="${p.label} ${p.pct}%"></span>`).join('');
+  const pathRows = paths.map(p => `
+    <div class="dc-win-shape-row">
+      <span class="dc-win-shape-dot" style="background:${WIN_PATH_COLORS[p.key] || '#888'}"></span>
+      <span class="dc-win-shape-name">${p.label}</span>
+      <span class="dc-win-shape-ex">${p.example}</span>
+      <span class="dc-win-shape-pct">${p.pct}<span>%</span></span>
+    </div>`).join('');
+
+  const lineRows = o.totals_line_cn ? `
+    <div class="dc-outlook-lines">
+      <div class="dc-outlook-line">
+        <span class="dc-outlook-line-label">${o.margin_line_cn || '净胜差距'}</span>
+        <span class="dc-outlook-line-pct">达标约 <strong>${o.margin_meet_pct ?? '—'}%</strong></span>
+        <span class="dc-outlook-line-note">${o.margin_fail_note || ''}（约 ${o.margin_fail_pct ?? '—'}%）</span>
+      </div>
+      <div class="dc-outlook-line">
+        <span class="dc-outlook-line-label">对着赛前 ${o.totals_line_cn}</span>
+        <span class="dc-outlook-line-pct">总进球偏高约 <strong>${o.totals_high_pct ?? '—'}%</strong></span>
+        <span class="dc-outlook-line-note">${o.totals_fail_note || ''}（赢球且 ≤2 球约 ${o.win_low_total_pct ?? '—'}%）</span>
+      </div>
+      ${o.win_margin2_low_total_pct >= 10 ? `
+      <div class="dc-outlook-line dc-outlook-line--warn">
+        <span class="dc-outlook-line-label">重叠风险</span>
+        <span class="dc-outlook-line-note">约 ${o.win_margin2_low_total_pct}% 为 2-0 类：净胜拉开、总进球仍可能仅 2 个</span>
+      </div>` : ''}
+    </div>` : '';
+
+  return `
+    <div class="dc-win-shape-card">
+      <div class="dc-win-shape-head">
+        <div class="dc-win-shape-title">${favName} · 若取胜怎么走</div>
+        ${favWin != null ? `<div class="dc-win-shape-win">全场取胜约 ${favWin}%</div>` : ''}
+      </div>
+      <div class="dc-win-shape-note">以下为「该队取胜」条件下的路径分布（泊松推演 · 非赛果承诺）</div>
+      ${paths.length ? `<div class="dc-win-shape-stack" aria-hidden="true">${pathStack}</div>
+      <div class="dc-win-shape-rows">${pathRows}</div>` : ''}
+      ${lineRows}
+      ${o.readout_cn ? `<div class="dc-win-shape-lead">${o.readout_cn}</div>` : (ws?.lead_cn ? `<div class="dc-win-shape-lead">${ws.lead_cn}</div>` : '')}
+    </div>`;
+}
+
+function renderMatchPreviewBlock(mp, totalsRefRow) {
+  if (!mp) return '';
+  const morph = mp.morphology || {};
+  const typeTags = (morph.type_tags || []).map(t =>
+    `<span class="dc-mp-tag">${t.label}</span>`).join('');
+
+  return `
+    <div class="dc-mp-block">
+      <div class="dc-mp-morph">
+        <div class="dc-mp-head">比赛形态</div>
+        <div class="dc-mp-tags">${typeTags}${morph.depth_label ? `<span class="dc-mp-tag dc-mp-tag--depth">${morph.depth_label}</span>` : ''}</div>
+        ${totalsRefRow || ''}
+        ${morph.readout_cn ? `<p class="dc-mp-readout">${morph.readout_cn}</p>` : ''}
+      </div>
+    </div>`;
+}
+
+function renderWinShapeBlock(ws) {
+  if (!ws?.shapes?.length) return '';
+  const stack = ws.shapes.map(sh => `
+    <span class="dc-win-shape-seg" style="width:${sh.pct}%;background:${WIN_SHAPE_COLORS[sh.key] || '#888'}" title="${sh.label} ${sh.pct}%"></span>`).join('');
+  const rows = ws.shapes.map(sh => `
+    <div class="dc-win-shape-row">
+      <span class="dc-win-shape-dot" style="background:${WIN_SHAPE_COLORS[sh.key] || '#888'}"></span>
+      <span class="dc-win-shape-name">${sh.label}</span>
+      <span class="dc-win-shape-ex">${sh.example}</span>
+      <span class="dc-win-shape-pct">${sh.pct}<span>%</span></span>
+    </div>`).join('');
+  return `
+    <div class="dc-win-shape-card">
+      <div class="dc-win-shape-head">
+        <div class="dc-win-shape-title">若 ${ws.fav_name} 取胜 · 赛果形态</div>
+        ${ws.fav_win_pct != null ? `<div class="dc-win-shape-win">全场取胜约 ${ws.fav_win_pct}%</div>` : ''}
+      </div>
+      <div class="dc-win-shape-note">${ws.note || ''}</div>
+      <div class="dc-win-shape-stack" aria-hidden="true">${stack}</div>
+      <div class="dc-win-shape-rows">${rows}</div>
+      ${ws.lead_cn ? `<div class="dc-win-shape-lead">${ws.lead_cn}</div>` : ''}
+    </div>`;
+}
+
+/** 冷门防范 + 平局陷阱 — 合并为模型推演概要内简短说明 */
+function renderUpsetDrawRiskNote(ua, drawTrapNote) {
+  if (!ua && !drawTrapNote) return '';
+  const s = ua ? upsetLevelStyle(ua.level) : {
+    color: '#7BB8D4',
+    bg: 'rgba(123,184,212,0.08)',
+    border: 'rgba(123,184,212,0.25)',
+  };
+  const lines = [];
+  if (ua) {
+    const head = `${ua.favorite} 需防 ${ua.underdog} · ${ua.level_cn || ua.level || '—'}`
+      + (ua.cold_result_pct != null ? ` · 冷门空间约 ${ua.cold_result_pct}%` : '');
+    lines.push(`<div class="dc-upset-draw-line dc-upset-draw-line--head"><strong style="color:${s.color}">冷门与平局风险</strong> · ${head}</div>`);
+    if (ua.verdict) lines.push(`<div class="dc-upset-draw-line">${ua.verdict}</div>`);
+  }
+  if (drawTrapNote) {
+    lines.push(`<div class="dc-upset-draw-line dc-upset-draw-line--trap">${drawTrapNote}</div>`);
+  }
+  return `
+    <div class="dc-upset-draw-risk" style="background:${s.bg};border:1px solid ${s.border};border-left:3px solid ${s.color}">
+      ${lines.join('')}
+    </div>`;
+}
+
 /** 模型推演概要 — 综合 xG · 教练 · 伤病 · 气候 · 先进球情景 */
-function renderDepthCalibrationBlock(dc) {
+function renderDepthCalibrationBlock(dc, upsetAlert, prediction) {
   if (!SHOW_DEPTH_CALIBRATION_PANEL) return '';
   if (!dc) return '';
   const s = dc.display_summary;
   if (!s) return '';
 
-  const exc = s.excitement || {};
-  const tiers = exc.tiers || [];
   const factors = s.context_factors || [];
   const scenarios = s.first_goal_scenarios || [];
   const cal = s.calibration || {};
+  const replay = dc.preview_replay;
+  const replayRow = replay?.summary_cn ? `
+    <div class="dc-preview-replay">
+      <div class="dc-preview-replay-head">赛前预读复盘</div>
+      <p>${replay.summary_cn}</p>
+      ${replay.ht_score ? `<span class="dc-preview-replay-meta">实际 ${replay.actual_score}${replay.ht_score ? ' · 半场 ' + replay.ht_score : ''}</span>` : ''}
+    </div>` : '';
   const xgCtx = s.xg_context || {};
   const scorePatterns = s.score_patterns || [];
   const totalsView = s.totals_view || {};
-  const bigCoverHighlight = shouldHighlightBigCover(s);
 
-  const tierBar = tiers.map(t => `
-    <div class="dc-exc-row${t.key === exc.label_key ? ' dc-exc-row--active' : ''}">
-      <span class="dc-exc-label">${t.label}</span>
-      <span class="dc-exc-bar-wrap"><span class="dc-exc-bar" style="width:${t.pct}%;background:${t.key === 'dull' ? '#7BB8D4' : t.key === 'high' ? '#5BBF8A' : '#C8A96E'}"></span></span>
-      <span class="dc-exc-pct">${t.pct}%</span>
-    </div>`).join('');
+  const totalsRefRow = renderTotalsRefRow(totalsView, prediction);
 
   const factorRow = factors.length ? `
     <div class="dc-context-row">
@@ -689,14 +805,11 @@ function renderDepthCalibrationBlock(dc) {
       <span class="dc-meta-value">${scorePatterns.map(p => p.score + ' ' + p.pct + '%').join(' · ')}</span>
     </div>` : '';
 
-  const totalsRow = totalsView.summary_cn ? `
-    <div class="dc-meta-row">
-      <span class="dc-meta-label">总进球</span>
-      <span class="dc-meta-value">${totalsView.summary_cn}</span>
-    </div>` : '';
-
+  const mp = s.match_preview;
+  const previewHtml = renderMatchPreviewBlock(mp, totalsRefRow);
+  const upsetDrawNote = renderUpsetDrawRiskNote(upsetAlert, mp?.draw_trap_note);
+  const winShapeHtml = renderWinOutlookBlock(s.win_outlook, s.win_shape);
   const scenarioCards = scenarios.map(sc => {
-    const excSc = sc.excitement || {};
     const outcomes = sc.outcomes || [];
     const favRecoverPct = sc.fav_recover_pct != null
       ? sc.fav_recover_pct
@@ -723,7 +836,12 @@ function renderDepthCalibrationBlock(dc) {
         </div>
         ${favRefStrip}
         ${outcomeHtml}
-        <div class="dc-scenario-rhythm">进球节奏 <strong style="color:${excSc.label_color || '#C8A96E'}">${excSc.label_cn || '—'}</strong></div>
+        ${sc.live_outlook?.readout_cn ? `
+        <div class="dc-scenario-live-outlook">
+          <span class="dc-scenario-live-label">若已 1-0 领先 · 赛前参考</span>
+          <p>${sc.live_outlook.readout_cn}</p>
+          <span class="dc-scenario-live-meta">净胜再拉开约 ${sc.live_outlook.margin_meet_pct}% · 总进球偏高约 ${sc.live_outlook.totals_high_pct}%（${sc.live_outlook.totals_line_cn}）</span>
+        </div>` : ''}
         <p class="dc-scenario-narrative">${sc.narrative}</p>
       </div>`;
   }).join('');
@@ -735,31 +853,22 @@ function renderDepthCalibrationBlock(dc) {
         <span class="depth-calib-tier">${s.baseline_label || '综合 xG · 教练 · 伤病 · 气候'}</span>
       </div>
       ${calibrationRow}
+      ${replayRow}
       ${xgRow}
       ${factorRow}
-      <div class="depth-calib-simple-row">
-        <div class="dc-simple-card">
-          <div class="dc-simple-label">${s.fav_name} 净胜 1 球</div>
-          <div class="dc-simple-pct">${s.small_lead_pct}<span>%</span></div>
-          <div class="dc-simple-sub">赢球且仅领先 1 个</div>
-        </div>
-        <div class="dc-simple-card${bigCoverHighlight ? ' dc-simple-card--cover' : ''}">
-          <div class="dc-simple-label">${s.fav_name} 净胜 ≥2 球</div>
-          <div class="dc-simple-pct">${s.big_cover_pct}<span>%</span></div>
-          <div class="dc-simple-sub">明显拉开比分差距</div>
-        </div>
-        <div class="dc-simple-card dc-simple-card--excitement">
-          <div class="dc-simple-label">进球节奏</div>
-          <div class="dc-simple-verdict" style="color:${exc.label_color || '#C8A96E'}">${exc.label_cn || '—'}</div>
-          <div class="dc-simple-sub dc-simple-sub--exc">${exc.sub_cn || (s.expected_total_goals != null ? '预期约 ' + s.expected_total_goals + ' 个总进球' : '')}</div>
-          <div class="dc-exc-bars">${tierBar}</div>
-        </div>
-      </div>
-      ${scorePatternRow}${totalsRow}
+      ${previewHtml || ''}
+      ${upsetDrawNote}
+      ${winShapeHtml ? `
+      <details class="dc-details-fold">
+        <summary>${s.fav_name} · 若取胜怎么走 · 对着赛前参考线</summary>
+        ${winShapeHtml}
+      </details>` : ''}
+      ${scorePatternRow}
       ${scenarios.length ? `
       <div class="dc-scenario-section">
-        <div class="dc-scenario-section-title">先进球情景推演</div>
-        <div class="dc-scenario-legend">金色高亮：热门先进球 →「热门仍胜」；冷门先进球 → 追分合计列高亮。<strong>参考倍数</strong>与<strong>总参考倍数</strong>由模型概率换算（100÷概率%），<strong>仅供娱乐推演直观对照，非博彩赔率，不构成任何投注建议</strong>。</div>
+        <div class="dc-scenario-section-title">情景预读</div>
+        <div class="dc-scenario-legend">赛前假设情景，供读场参考（无 LIVE 数据时不自动切换）。</div>
+        <div class="dc-scenario-subtitle">先进球情景</div>
         <div class="dc-scenario-row">${scenarioCards}</div>
       </div>` : ''}
     </div>`;
@@ -873,20 +982,24 @@ function scoreDistribution(dist, opts = {}) {
   const max = Math.max(...dist.map(d => d.prob));
   const official = opts.officialScore;
   const showHits = !!official;
-  return `<div style="display:flex;flex-wrap:wrap;gap:0.4rem">
+  return `<div class="score-dist-grid" role="list" aria-label="比分概率 Top 5">
     ${dist.map((d, i) => {
+      const rank = i + 1;
       const hit = showHits && d.score === official;
-      const isTop3 = i < 3;
+      const tierClass = rank <= 3 ? `score-dist-card--r${rank}` : 'score-dist-card--plain';
+      const hitClass = hit ? ' score-dist-card--hit' : '';
+      const barH = Math.max(8, Math.round((d.prob / max) * 100));
+      const rankHtml = rank <= 3
+        ? `<span class="score-dist-rank">#${rank}</span>`
+        : `<span class="score-dist-rank score-dist-rank--plain">${rank}</span>`;
       return `
-      <div style="text-align:center;min-width:52px;padding:0.25rem 0.15rem;border-radius:4px;
-        border:1px solid ${hit ? 'rgba(91,191,138,0.5)' : isTop3 && showHits ? 'rgba(200,169,110,0.25)' : 'transparent'};
-        background:${hit ? 'rgba(91,191,138,0.1)' : 'transparent'}">
-        <div style="font-size:0.68rem;color:var(--txt2);margin-bottom:1px">${isTop3 ? `#${i + 1}` : ''}</div>
-        <div style="font-size:0.82rem;font-weight:700;color:${hit ? '#5BBF8A' : d.prob===max?'var(--gold)':'var(--txt2)'}">
-          ${d.score}${hit ? ' ✓' : ''}
+      <div class="score-dist-card ${tierClass}${hitClass}" role="listitem">
+        ${rankHtml}
+        <span class="score-dist-score">${d.score}${hit ? '<span class="score-dist-hit" title="官方赛果">✓</span>' : ''}</span>
+        <div class="score-dist-bar-track" aria-hidden="true">
+          <div class="score-dist-bar" style="--bar-h:${barH}%"></div>
         </div>
-        <div style="height:${Math.round(d.prob/max*50)+8}px;background:${hit ? '#5BBF8A' : d.prob===max?'var(--gold)':'rgba(255,255,255,0.1)'};border-radius:2px 2px 0 0;margin-top:2px;transition:height 0.5s"></div>
-        <div style="font-size:0.76rem;color:var(--txt2)">${d.prob}%</div>
+        <span class="score-dist-pct"><span class="score-dist-pct-val">${d.prob}</span><span class="score-dist-pct-unit">%</span></span>
       </div>`;
     }).join('')}
   </div>`;
@@ -895,11 +1008,12 @@ function scoreDistribution(dist, opts = {}) {
 function poissonScoreFootnote(p) {
   if (!hasPoissonInputs(p) || typeof computeOutcomeFromXg !== 'function') return '';
   const o = computeOutcomeFromXg(p.xg_home, p.xg_away);
-  return `<div class="intel-footnote" style="margin-top:0.5rem">
-    泊松最可能比分 <strong style="color:var(--txt)">${o.score}</strong>（${o.score_prob}%）·
-    网格内胜平负 ${o.home_win}% / ${o.draw}% / ${o.away_win}%
-    ${o.tail_mass_pct > 0 ? ` · 未列入表内的高比分约 ${o.tail_mass_pct}%` : ''}
-  </div>`;
+  const parts = [
+    `泊松最可能比分 <strong>${o.score}</strong>（${o.score_prob}%）`,
+    `网格内胜平负 ${o.home_win}% / ${o.draw}% / ${o.away_win}%`,
+  ];
+  if (o.tail_mass_pct > 0) parts.push(`未列入表内的高比分约 ${o.tail_mass_pct}%`);
+  return `<div class="intel-footnote mf-pred-poisson-foot">${parts.join(' · ')}</div>`;
 }
 
 function upsetLevelStyle(level) {
@@ -910,12 +1024,6 @@ function upsetLevelStyle(level) {
     HIGH: { color: '#D95F6A', bg: 'rgba(217,95,106,0.1)', border: 'rgba(217,95,106,0.32)' },
   };
   return map[level] || map.MEDIUM;
-}
-
-function upsetImpactColor(impact) {
-  if (impact === '强') return '#ff8855';
-  if (impact === '中') return '#C8A96E';
-  return '#7a8fb5';
 }
 
 /** 主教练深度分析 — 战术风格 / 换人 / 领先落后 / 强弱队策略 */
@@ -1000,92 +1108,37 @@ function coachAnalysisPanel(ca, homeName, awayName) {
     </div>`;
 }
 
-/** 强队爆冷防范 · 爆冷指数（打法克制 / 心理 / 历史冷门） */
-function upsetAlertPanel(ua) {
-  if (!ua) return '';
-  const s = upsetLevelStyle(ua.level);
-  const idx = Math.min(100, Math.max(0, Number(ua.index) || 0));
-  const factors = (ua.factors || []).map(f => `
-    <div style="font-size:0.84rem;line-height:1.55;padding:0.45rem 0.55rem;background:rgba(255,255,255,0.03);border-radius:3px;border-left:2px solid ${upsetImpactColor(f.impact)}">
-      <span style="font-weight:700;color:${upsetImpactColor(f.impact)}">${f.tag || '因素'} · ${f.impact || '—'}</span>
-      <span style="color:var(--txt2)"> — ${f.detail || ''}</span>
-    </div>`).join('');
-
-  return `
-    <div class="mf-panel mf-panel--wide" style="background:${s.bg};border:1px solid ${s.border}">
-      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:0.65rem">
-        <div style="flex:1;min-width:200px">
-          <div class="mf-panel-label" style="color:${s.color}">强队爆冷防范 · 预演分析</div>
-          ${panelLegend(`针对模型热门 <strong>${ua.favorite}</strong> — 评估 <strong>${ua.underdog}</strong> 以克制打法、心理弱点或历史冷门制造 upset 的可能。`)}
-        </div>
-        <div class="intel-card intel-card--neutral" style="text-align:center;min-width:120px;padding:0.55rem 0.75rem">
-          ${intelSubhead('爆冷指数', { caps: true })}
-          <div style="font-size:2rem;font-weight:800;color:${s.color};line-height:1.1;font-variant-numeric:tabular-nums">${idx}</div>
-          <div style="font-size:0.76rem;font-weight:700;color:${s.color}">${ua.level_cn || ua.level}</div>
-          ${ua.cold_result_pct != null ? `<div class="intel-body" style="margin-top:0.25rem">冷门赛果区间 ${ua.cold_result_pct}%<br><span style="opacity:0.75">（${ua.underdog} 胜或逼平）</span></div>` : ''}
-        </div>
-      </div>
-
-      <div style="height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;margin-bottom:0.85rem">
-        <div style="width:${idx}%;height:100%;background:linear-gradient(90deg,${s.color}88,${s.color});border-radius:3px"></div>
-      </div>
-      <div style="display:flex;justify-content:space-between;font-size:0.66rem;color:var(--txt2);margin-top:-0.65rem;margin-bottom:0.85rem">
-        <span>0 稳</span><span>25</span><span>40 警戒</span><span>55+ 高危</span>
-      </div>
-
-      <div style="font-size:0.9rem;line-height:1.65;padding:0.55rem 0.65rem;background:rgba(255,255,255,0.04);border-radius:4px;border-left:3px solid ${s.color};margin-bottom:0.85rem">
-        <strong style="color:${s.color}">结论 · </strong>${ua.verdict || ''}
-      </div>
-
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.65rem;margin-bottom:0.75rem">
-        <div class="intel-card intel-card--neutral">
-          ${intelSubhead('打法克制', { cyan: true })}
-          <div class="intel-body">${ua.tactical || '—'}</div>
-        </div>
-        <div class="intel-card intel-card--neutral">
-          ${intelSubhead('心理防线', { gold: true })}
-          <div class="intel-body">${ua.psychology || '—'}</div>
-        </div>
-        <div class="intel-card intel-card--neutral">
-          ${intelSubhead('历史冷门')}
-          <div class="intel-body">${ua.historical || '—'}</div>
-        </div>
-      </div>
-
-      ${intelSubhead('风险因子矩阵', { caps: true })}
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0.4rem">
-        ${factors}
-      </div>
-      ${ua.reverse_note ? `<div class="intel-body" style="margin-top:0.65rem;opacity:0.85">📌 ${ua.reverse_note}</div>` : ''}
-      ${intelFootnote('指数口径：打法错配 + 心理韧性 + 伤病扰动 + 历史被爆冷频率；仅供娱乐推演，非投注建议。')}
-    </div>`;
-}
-
-/** 右侧第2行：综合推演关键因素 + 其下方的比分概率分布（同一格内堆叠） */
-function renderRightAnalysisPanel(p, m) {
-  const finished = m.actualResult && ['FT', 'AET', 'PEN'].includes(m.actualResult.status);
+/** 终端区下方 · 综合推演关键因素 + 比分概率分布（置于模型推演概要之上） */
+function renderPredictionInsightStrip(p, m, finished) {
   const officialScore = finished ? getOfficialScoreStr(m) : null;
   const verdict = finished ? computePredictionVerdict(m) : null;
+  const calNote = m.prediction?.depth_calibrated ? '（含<strong>舆论校准</strong>微调）' : '';
+  const verdictHtml = finished && verdict
+    ? ` <strong class="mf-pred-insight-verdict mf-pred-insight-verdict--${verdict.anyTop3Hit ? 'hit' : 'miss'}">官方 ${officialScore} · Top3 ${verdict.anyTop3Hit ? '有命中' : '均未中'}</strong>`
+    : '';
   return `
-      <div class="mf-panel mf-panel-right-stack">
-        ${panelLabel('综合推演关键因素')}
-        ${panelLegend(`模型判断本场走势的重要变量 — 已纳入上方胜率娱乐推演${m.prediction?.depth_calibrated ? '（含<strong>外界预期</strong>微调）' : ''}${finished ? ' · 下方为<strong>赛前</strong>泊松分布' : ''}。`)}
-        <div class="intel-highlight">
+    <div class="mf-pred-insight-strip">
+      <div class="mf-pred-insight-section">
+        <div class="mf-pred-insight-head">
+          <span class="mf-pred-insight-title">综合推演关键因素</span>
+        </div>
+        <p class="mf-pred-insight-legend">模型判断本场走势的重要变量 — 已纳入终端胜平负娱乐推演${calNote}${finished ? ' · 下方为<strong>赛前</strong>泊松分布' : ''}。</p>
+        <div class="intel-highlight mf-pred-insight-highlight">
           <span class="intel-highlight-arrow">→</span>
           <span>${p.key_factor || '综合因素分析'}</span>
         </div>
-        ${panelLabel('本场比分概率分布', 'spaced')}
-        ${panelLegend(`由本场 xG（<strong>${p.xg_home ?? '—'}</strong> — <strong>${p.xg_away ?? '—'}</strong>）对 <strong>0-0 至 5-5</strong> 共 36 种比分做独立泊松推演；展示 Top <strong>5</strong>。上方胜平负为综合模型，与此处 xG 泊松分布为不同口径。${finished && verdict ? ` <strong style="color:${verdict.anyTop3Hit ? '#5BBF8A' : '#D95F6A'}">官方 ${officialScore} · Top3 ${verdict.anyTop3Hit ? '有命中' : '均未中'}</strong>` : ''}`)}
-        ${scoreDistribution(getMatchScoreDistribution(p), { officialScore })}
-        ${poissonScoreFootnote(p)}
-        <div style="margin-top:1.25rem">
-          ${intelSubhead(`${m.home.name} 近 5 场战绩`, { caps: true })}
-          ${m.home.form.map(r => `<span style="display:inline-block;width:22px;height:22px;line-height:22px;
-            text-align:center;border-radius:50%;font-size:0.82rem;font-weight:700;margin-right:3px;
-            background:${r === 'W' ? 'rgba(91,191,138,0.25)' : r === 'D' ? 'rgba(150,150,150,0.15)' : 'rgba(217,95,106,0.2)'};
-            color:${r === 'W' ? '#5BBF8A' : r === 'D' ? '#aaa' : '#D95F6A'}">${r}</span>`).join('')}
+      </div>
+      <div class="mf-pred-insight-divider" aria-hidden="true"></div>
+      <div class="mf-pred-insight-section">
+        <div class="mf-pred-insight-head">
+          <span class="mf-pred-insight-title">本场比分概率分布</span>
+          <span class="mf-pred-insight-meta">xG <span class="xg-home">${p.xg_home ?? '—'}</span> – <span class="xg-away">${p.xg_away ?? '—'}</span></span>
         </div>
-      </div>`;
+        <p class="mf-pred-insight-legend">由本场 xG 对 <strong>0-0 至 5-5</strong> 共 36 种比分做独立泊松推演；展示 Top <strong>5</strong>。与终端区胜平负为不同口径。${verdictHtml}</p>
+        <div class="mf-pred-score-dist">${scoreDistribution(getMatchScoreDistribution(p), { officialScore })}</div>
+        ${poissonScoreFootnote(p)}
+      </div>
+    </div>`;
 }
 
 // ── Render Single Match ────────────────────────────────────
@@ -1235,7 +1288,8 @@ function renderMatch(m) {
     <!-- TEAMS HERO · Match Terminal -->
     ${renderMatchHero(m, p, finished)}
 
-    ${renderDepthCalibrationBlock(m.depth_calibration)}
+    ${renderPredictionInsightStrip(p, m, finished)}
+    ${renderDepthCalibrationBlock(m.depth_calibration, m.upset_alert, p)}
 
     <!-- 4-COLUMN DETAIL GRID -->
     <div class="mf-detail-grid">
@@ -1284,10 +1338,6 @@ function renderMatch(m) {
         ${renderInjuryRows(m.away.injuries)}
         ${renderRumorBlock(m.away.rumors)}
       </div>
-
-      ${renderRightAnalysisPanel(p, m)}
-
-      ${upsetAlertPanel(m.upset_alert)}
 
       ${coachAnalysisPanel(m.coach_analysis, m.home.name, m.away.name)}
 

@@ -1,0 +1,286 @@
+/**
+ * Enrich Day 8 todayMatches (m25–m28) — coach, mystic, weather, injuries, upset_alert
+ * Run: node scripts/roll-day8.js && node scripts/enrich-day8.js
+ */
+const fs = require('fs');
+const path = require('path');
+const { computeScoreDistribution, computeOutcomeFromXg } = require('./score-model');
+const { lineupFromPrediction } = require('./pending-templates');
+const { buildCoachAnalysis } = require('./coach-data-day8');
+const { venueWeather } = require('./venue-weather-day8');
+const { getMystic } = require('./mystic-data-day8');
+const { getReferee } = require('./referee-data-day8');
+const { getTeamNews } = require('./injuries-rumors-day8');
+
+const ROOT = path.join(__dirname, '..');
+const MATCH_PATH = path.join(ROOT, 'js', 'matches-data.js');
+const TS = '2026-06-19T10:00:00+08:00';
+
+function loadData(filePath, varName) {
+  const raw = fs.readFileSync(filePath, 'utf8');
+  return new Function(raw + `\nreturn ${varName};`)();
+}
+
+function team(name, iso, rank, rating, form, coachName, stars, star, injuries, rumors) {
+  const t = { name, iso, flag: '', fifa_rank: rank, rating, form, coach: coachName, stars, injuries, rumors };
+  t.star = star || (stars[0] ? { ...stars[0] } : {});
+  return t;
+}
+
+function pred(xgH, xgA, keyFactor, confidence = 72) {
+  const o = computeOutcomeFromXg(xgH, xgA);
+  return {
+    home_win: Math.round(o.home_win),
+    draw: Math.round(o.draw),
+    away_win: Math.round(o.away_win),
+    score: o.score,
+    confidence,
+    xg_home: xgH,
+    xg_away: xgA,
+    key_factor: keyFactor,
+    score_dist: computeScoreDistribution(xgH, xgA, { topN: 7 }),
+  };
+}
+
+function localKickoffFromBeijing(tl) {
+  const map = {
+    '00:00': { time: '12:00', time_local: '12:00 ET', timezone: 'EDT (UTC-4)' },
+    '03:00': { time: '15:00', time_local: '15:00 PT', timezone: 'PDT (UTC-7)' },
+    '06:00': { time: '18:00', time_local: '18:00 PT', timezone: 'PDT (UTC-7)' },
+    '09:00': { time: '21:00', time_local: '21:00 CT', timezone: 'CDT (UTC-5)' },
+  };
+  return map[tl] || { time: '12:00', time_local: '12:00 ET', timezone: 'EDT (UTC-4)' };
+}
+
+function baseMatch(id, group, matchday, beijing, venue, city, note, xgH, xgA, keyFactor, conf, homeKey, awayKey, buildTeams) {
+  const [tb, tl] = beijing.split(' ');
+  const local = localKickoffFromBeijing(tl);
+  const teams = buildTeams();
+  return {
+    id,
+    group,
+    matchday,
+    date: '2026-06-18',
+    time: local.time,
+    time_local: local.time_local,
+    timezone: local.timezone,
+    time_beijing: tl,
+    date_beijing: tb,
+    time_beijing_full: `北京时间 ${tb} ${tl}`,
+    venue,
+    city,
+    note,
+    lineup: teams.lineup,
+    home: teams.home,
+    away: teams.away,
+    h2h: teams.h2h,
+    referee: getReferee(id),
+    prediction: pred(xgH, xgA, keyFactor, conf),
+    upset_alert: teams.upset,
+    coach_analysis: buildCoachAnalysis(homeKey, awayKey),
+    weather: venueWeather(id),
+    mystic: getMystic(id),
+  };
+}
+
+function buildM25() {
+  return baseMatch('m25', 'A', 2, '6月19日 00:00', 'Mercedes-Benz Stadium', 'Atlanta, USA',
+    'A组第2轮 · 捷克 vs 南非 · 亚特兰大', 1.48, 0.95,
+    '捷克首轮惜败韩国需抢分：Schick 支点+Souček 屏障；南非 0-2 墨西哥后出线压力大；泊松最可能 2-0/1-1。',
+    70, 'hasek', 'broos', () => ({
+      lineup: lineupFromPrediction({
+        formation: '3-4-3 / 4-2-3-1',
+        home: 'Staněk; Holes, Brabec, Zmrhal; Coufal, Souček, Sadílek, Jurásek; Schick, Chytil, Provod',
+        away: 'Williams; Mphahlele, Xaba, Mokoena; Modiba, Mthethwa; Tau, Zwane, Baccus; Foster, Lorch',
+        source: 'Opta / ESPN 预测 · 非官方',
+      }),
+      home: team('Czechia', 'cz', 40, 72, ['L', 'W', 'D', 'W', 'L'], 'Ivan Hašek', [
+        { name: 'Patrik Schick', pos: 'ST', club: 'Bayer Leverkusen', stats: '84\' 挽回颜面', rating: 8.0, desc: '必须抢分之战核心' },
+        { name: 'Tomáš Souček', pos: 'DM', club: 'West Ham', stats: '屏障', rating: 7.8, desc: '三中卫前保护' },
+        { name: 'Lukáš Provod', pos: 'CAM', club: 'Slavia', stats: '10 号', rating: 7.4, desc: '肋部渗透' },
+      ], { name: 'Patrik Schick', pos: 'ST', desc: '对南非不容再失分', rating: 8.0 },
+        getTeamNews('m25', 'home').injuries, getTeamNews('m25', 'home').rumors),
+      away: team('South Africa', 'za', 58, 65, ['L', 'W', 'D', 'L', 'W'], 'Hugo Broos', [
+        { name: 'Percy Tau', pos: 'LW', club: 'Brighton', stats: '唯一爆点', rating: 7.4, desc: '速度+内切' },
+        { name: 'Teboho Mokoena', pos: 'DM', club: 'Mamelodi Sundowns', stats: '屏障', rating: 7.0, desc: '中场绞杀' },
+        { name: 'Zakhele Lepasa', pos: 'ST', club: 'Orlando Pirates', stats: '支点', rating: 6.8, desc: '定位球威胁' },
+      ], { name: 'Percy Tau', pos: 'LW', desc: '出线压力大，必须抢分', rating: 7.4 },
+        getTeamNews('m25', 'away').injuries, getTeamNews('m25', 'away').rumors),
+      h2h: { home_wins: 1, draws: 1, away_wins: 0, recent: [], note: '友谊赛交锋有限' },
+      upset: {
+        favorite: 'Czechia', underdog: 'South Africa', favorite_iso: 'CZE',
+        index: 28, level: 'LOW', level_cn: '低',
+        cold_result_pct: 24,
+        verdict: '捷克纸面占优但首轮惜败——Tau 速度+南非 desperation 仍有 20% 平局空间。',
+        tactical: 'Hašek 3-4-3 压上 vs Broos 4-2-3-1 转换；Schick 对位南非中卫是核心。',
+        psychology: '南非再负基本出局，会相对开放；捷克必须抢分。',
+        historical: '无大赛交锋；Tau 英超状态是参考。',
+        factors: [
+          { tag: '出线压力', impact: '强', detail: '双方均需 3 分' },
+          { tag: '体能', impact: '中', detail: '南非首轮 60\' 后崩盘是前车之鉴' },
+          { tag: '实力差', impact: '中', detail: 'xG 差约 0.5，Schick 决定上限' },
+        ],
+      },
+    }));
+}
+
+function buildM26() {
+  return baseMatch('m26', 'B', 2, '6月19日 03:00', 'SoFi Stadium', 'Los Angeles, USA',
+    'B组第2轮 · 瑞士 vs 波黑 · 洛杉矶', 1.55, 1.05,
+    '瑞士首轮平卡塔尔需取胜：Xhaka/Akanji 组织优势；波黑 Džeko 定位球偷分；泊松最可能 2-0/1-1。',
+    68, 'yakin', 'savic', () => ({
+      lineup: lineupFromPrediction({
+        formation: '4-2-3-1 / 4-3-3',
+        home: 'Kobel; Rieder, Akanji, Rodríguez; Xhaka, Freuler; Vargas, Rieder, Embolo; Duah',
+        away: 'Bešić; Džeko, Bajraktarević, Tahić; Hadžiahmetović, Kršić; Mlakar, Bajić, Demirović; Burić',
+        source: 'BBC / FotMob 预测 · 非官方',
+      }),
+      home: team('Switzerland', 'ch', 19, 78, ['D', 'W', 'W', 'D', 'W'], 'Murat Yakin', [
+        { name: 'Granit Xhaka', pos: 'CM', club: 'Bayer Leverkusen', stats: '节拍器', rating: 8.2, desc: '组织+远射' },
+        { name: 'Manuel Akanji', pos: 'CB', club: 'Man City', stats: '防线领袖', rating: 8.0, desc: '出球+防空' },
+        { name: 'Breel Embolo', pos: 'ST', club: 'Monaco', stats: '支点', rating: 7.8, desc: '身体对抗' },
+      ], { name: 'Granit Xhaka', pos: 'CM', desc: '对波黑必须取胜', rating: 8.2 },
+        getTeamNews('m26', 'home').injuries, getTeamNews('m26', 'home').rumors),
+      away: team('Bosnia and Herzegovina', 'ba', 72, 68, ['D', 'L', 'W', 'D', 'L'], 'Sergej Stojković', [
+        { name: 'Edin Džeko', pos: 'ST', club: 'Fenerbahçe', stats: '39 岁支点', rating: 7.8, desc: '定位球+经验' },
+        { name: 'Miroslav Stevanović', pos: 'RW', club: 'Servette', stats: '边路', rating: 7.0, desc: '传中威胁' },
+        { name: 'Amar Hadžiahmetović', pos: 'CM', club: 'Konyaspor', stats: '屏障', rating: 6.9, desc: '中场绞杀' },
+      ], { name: 'Edin Džeko', pos: 'ST', desc: '低位+定位球偷分', rating: 7.8 },
+        getTeamNews('m26', 'away').injuries, getTeamNews('m26', 'away').rumors),
+      h2h: { home_wins: 2, draws: 1, away_wins: 0, recent: [], note: '瑞士近年占优' },
+      upset: {
+        favorite: 'Switzerland', underdog: 'Bosnia and Herzegovina', favorite_iso: 'SUI',
+        index: 32, level: 'MEDIUM', level_cn: '中等',
+        cold_result_pct: 28,
+        verdict: '瑞士组织占优但 Džeko 定位球是经典冷门路径——平局约 28%。',
+        tactical: 'Yakin 4-2-3-1 控球 vs Stojković 4-5-1 低位+Džeko 支点。',
+        psychology: '波黑首轮平加拿大有信心；瑞士必须取胜。',
+        historical: '瑞士近年 H2H 占优。',
+        factors: [
+          { tag: '定位球', impact: '强', detail: 'Džeko 193cm 支点' },
+          { tag: '组织', impact: '强', detail: 'Xhaka/Akanji 瑞士优势' },
+          { tag: '平局', impact: '中', detail: '波黑守 0-1 可接受' },
+        ],
+      },
+    }));
+}
+
+function buildM27() {
+  return baseMatch('m27', 'B', 2, '6月19日 06:00', 'BC Place', 'Vancouver, Canada',
+    'B组第2轮 · 加拿大 vs 卡塔尔 · 温哥华（东道主）', 1.62, 0.88,
+    '东道主温哥华主场：Davies/David 高位压迫；卡塔尔首轮平瑞士低位韧性；泊松最可能 2-0/1-0。',
+    74, 'marsch', 'sanchez', () => ({
+      lineup: lineupFromPrediction({
+        formation: '4-3-3 / 4-2-3-1',
+        home: 'St. Clair; Johnston, Miller, Cornelius; Davies, Buchanan, Eustáquio, Laryea; David, Larin, Hoilett',
+        away: 'Barsham; Pedro Miguel, Salama, Tarek; Ahmed, Boudiaf; Ali, Afif, Muntari; Almoez Ali',
+        source: 'TSN / ESPN 预测 · 非官方',
+      }),
+      home: team('Canada', 'ca', 48, 72, ['D', 'W', 'L', 'W', 'D'], 'Jesse Marsch', [
+        { name: 'Alphonso Davies', pos: 'LB', club: 'Bayern Munich', stats: '温哥华爆点', rating: 8.5, desc: '左路速度+助攻' },
+        { name: 'Jonathan David', pos: 'ST', club: 'Lille', stats: '终结', rating: 8.2, desc: '跑位+射门' },
+        { name: 'Stephen Eustáquio', pos: 'CM', club: 'Porto', stats: '节拍器', rating: 7.8, desc: '出球+远射' },
+      ], { name: 'Alphonso Davies', pos: 'LB', desc: '东道主主场必须取胜', rating: 8.5 },
+        getTeamNews('m27', 'home').injuries, getTeamNews('m27', 'home').rumors),
+      away: team('Qatar', 'qa', 35, 70, ['D', 'W', 'D', 'L', 'W'], 'Félix Sánchez', [
+        { name: 'Almoez Ali', pos: 'ST', club: 'Al-Duhail', stats: '亚洲杯金靴', rating: 7.6, desc: '锋线核心' },
+        { name: 'Akram Afif', pos: 'LW', club: 'Al-Sadd', stats: '亚洲杯MVP', rating: 7.5, desc: '肋部+定位球' },
+        { name: 'Hassan Al-Haydos', pos: 'CM', club: 'Al-Sadd', stats: '队长', rating: 7.2, desc: '远射威胁' },
+      ], { name: 'Almoez Ali', pos: 'ST', desc: '低位反击发起点', rating: 7.6 },
+        getTeamNews('m27', 'away').injuries, getTeamNews('m27', 'away').rumors),
+      h2h: { home_wins: 0, draws: 0, away_wins: 0, recent: [], note: '无正式大赛交锋' },
+      upset: {
+        favorite: 'Canada', underdog: 'Qatar', favorite_iso: 'CAN',
+        index: 22, level: 'LOW', level_cn: '低',
+        cold_result_pct: 18,
+        verdict: '东道主温哥华主场优势明显——卡塔尔 5-4-1 低位仍有 16% 平局空间。',
+        tactical: 'Marsch 高位+Davies 左路 vs Sánchez 5-4-1 低位。',
+        psychology: '加拿大东道主压力+必须取胜；卡塔尔首轮平瑞士有信心。',
+        historical: '无大赛交锋。',
+        factors: [
+          { tag: '主场', impact: '强', detail: '温哥华 BC Place 东道主' },
+          { tag: '高位', impact: '强', detail: 'Marsch 压迫对卡塔尔出球是考验' },
+          { tag: '低位', impact: '中', detail: '卡塔尔首轮平瑞士已验证' },
+        ],
+      },
+    }));
+}
+
+function buildM28() {
+  return baseMatch('m28', 'A', 2, '6月19日 09:00', 'Estadio Akron', 'Guadalajara, Mexico',
+    'A组榜首战 · 墨西哥 vs 韩国 · 瓜达拉哈拉', 1.52, 1.32,
+    'A组榜首对话：Jiménez 状态 vs 孙兴慜；瓜达拉哈拉夜场主场气势；泊松最可能 2-1/1-1。',
+    68, 'aguirre', 'hong', () => ({
+      lineup: lineupFromPrediction({
+        formation: '4-2-3-1 / 4-2-3-1',
+        home: 'Ochoa; Arteaga, Montes, Vasquez; Álvarez, Chávez; Lozano, Jiménez, Vega; Mora, Antuna',
+        away: 'Jo Hyeon-woo; Kim Min-jae, Kim Young-gwon, Kim Tae-hwan; Hwang In-beom, Lee Kang-in; Son, Hwang Hee-chan, Paik; Cho Gue-sung',
+        source: 'ESPN / BBC 预测 · 非官方',
+      }),
+      home: team('Mexico', 'mx', 12, 80, ['W', 'W', 'W', 'D', 'W'], 'Javier Aguirre', [
+        { name: 'Raúl Jiménez', pos: 'ST', club: 'Fulham', stats: '首轮双响', rating: 8.4, desc: '支点+终结' },
+        { name: 'Guillermo Ochoa', pos: 'GK', club: 'Salernitana', stats: '40 岁一门', rating: 7.8, desc: '第六届世界杯' },
+        { name: 'Hirving Lozano', pos: 'RW', club: 'PSV', stats: '边路速度', rating: 8.0, desc: '宽度+内切' },
+      ], { name: 'Raúl Jiménez', pos: 'ST', desc: 'A组榜首战核心', rating: 8.4 },
+        getTeamNews('m28', 'home').injuries, getTeamNews('m28', 'home').rumors),
+      away: team('South Korea', 'kr', 23, 76, ['W', 'W', 'W', 'D', 'W'], 'Hong Myung-bo', [
+        { name: '孙兴慜 Son Heung-min', pos: 'LW', club: 'LAFC', stats: '56\' 远射', rating: 8.8, desc: 'A组最大威胁' },
+        { name: '李康仁 Lee Kang-in', pos: 'CAM', club: 'PSG', stats: '71\' 远射', rating: 8.4, desc: '肋部+远射' },
+        { name: 'Kim Min-jae', pos: 'CB', club: 'Bayern Munich', stats: '防线领袖', rating: 8.2, desc: '防空+出球' },
+      ], { name: '孙兴慜 Son Heung-min', pos: 'LW', desc: '对墨西哥稳守反击', rating: 8.8 },
+        getTeamNews('m28', 'away').injuries, getTeamNews('m28', 'away').rumors),
+      h2h: { home_wins: 1, draws: 1, away_wins: 1, recent: [{ year: 2018, comp: '友谊赛', score: '0-2', winner: 'South Korea' }], note: '2018 友谊赛韩国 2-0 胜' },
+      upset: {
+        favorite: 'Mexico', underdog: 'South Korea', favorite_iso: 'MEX',
+        index: 35, level: 'MEDIUM', level_cn: '中等',
+        cold_result_pct: 30,
+        verdict: 'A组榜首对话势均力敌——孙兴慜+李康仁远射是韩国最大变数，平局约 28%。',
+        tactical: 'Aguirre 4-2-3-1 主场宽度 vs 洪明甫 4-2-3-1 稳守反击+孙兴慜 内切。',
+        psychology: '墨西哥主场夜场气势；韩国 2018 友谊赛 2-0 胜是心理参考。',
+        historical: '2018 友谊赛韩国 2-0 胜墨西哥。',
+        factors: [
+          { tag: '球星', impact: '强', detail: 'Jiménez vs 孙兴慜' },
+          { tag: '主场', impact: '强', detail: '瓜达拉哈拉夜场' },
+          { tag: '远射', impact: '中', detail: '李康仁 B 计划' },
+        ],
+      },
+    }));
+}
+
+const MATCH_DATA = loadData(MATCH_PATH, 'MATCH_DATA');
+MATCH_DATA.lastUpdated = TS;
+MATCH_DATA.syncSource = 'FIFA 赛程 · Day 8 完整推演 · coach/mystic/referee/weather';
+MATCH_DATA.breakingNews = [
+  { tag: 'PREVIEW', text: '📅 今日4场 · 捷克-南非(00:00) · 瑞士-波黑(03:00) · 加拿大-卡塔尔(06:00) · 墨西哥-韩国(09:00)', time: '6月19日' },
+  { tag: 'PREVIEW', text: 'A/B组第2轮：Schick 抢分战 · 东道主温哥华 · 墨西哥 vs 孙兴慜 榜首对话', time: '焦点' },
+  { tag: 'OFFICIAL', text: '🏁 昨日：葡1-1刚果(金) · 英4-2克 · 加纳1-0巴 · 乌1-3哥伦 · 详见「过往赛果」', time: '赛果回顾' },
+  { tag: 'INJURY', text: 'Jiménez/孙兴慜/Davies 均 FIT · Chávez 队检 · Džeko 打满', time: '伤情' },
+  { tag: 'REFEREE', text: '✅ FIFA 确认：Penso(捷-南非) · Pinheiro(瑞-波) · Garay(加-卡) · Tejera(墨-韩)', time: '裁判' },
+  { tag: 'OFFICIAL', text: 'K/L组首轮完结 · 哥伦比亚&英格兰领跑 · 今日 A/B 组第2轮', time: '积分榜' },
+  { tag: 'UPDATE', text: '灵力/五行/主教练/气候板块已更新至 Day 8 完整版', time: '站点' },
+];
+MATCH_DATA.todayMatches = [buildM25(), buildM26(), buildM27(), buildM28()];
+
+fs.writeFileSync(
+  MATCH_PATH,
+  `// 今日赛事 — Day 8 preview (enriched)\n// Last updated: ${TS}\nconst MATCH_DATA = ${JSON.stringify(MATCH_DATA, null, 2)};\n`,
+);
+
+console.log('✅ Enriched:', MATCH_DATA.todayMatches.map(m => m.id).join(', '));
+console.log('✅ coach_analysis:', MATCH_DATA.todayMatches.every(m => m.coach_analysis?.home?.name));
+console.log('✅ mystic:', MATCH_DATA.todayMatches.map(m => m.mystic?.hexagram?.name).join(', '));
+
+try {
+  require('child_process').execSync('node scripts/apply-prediction-signals.js', {
+    cwd: ROOT,
+    stdio: 'inherit',
+  });
+} catch (e) {
+  console.warn('⚠ apply-prediction-signals skipped:', e.message);
+}
+
+try {
+  require('child_process').execSync('node scripts/stamp-asset-version.js', { cwd: ROOT, stdio: 'inherit' });
+} catch (e) {
+  console.warn('⚠ stamp skipped:', e.message);
+}
