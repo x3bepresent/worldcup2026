@@ -609,6 +609,255 @@ const WIN_PATH_COLORS = {
   open: '#5BBF8A',
 };
 
+const GOAL_TIMING_INTERVALS = ['1–15', '16–30', '31–45', '46–60', '61–75', '76–90', '90+'];
+
+function renderGoalTimingAxis(intervals, crossSet) {
+  const cols = intervals.map((iv, idx) => `
+    <span class="dc-gt-tl-col${crossSet.has(iv) ? ' dc-gt-tl-col--cross' : ''}${idx >= 4 ? ' dc-gt-tl-col--2h' : ''}">${iv}</span>`).join('');
+  return `
+    <div class="dc-gt-axis">
+      <div class="dc-gt-axis-flow">
+        <span>开球</span>
+        <span class="dc-gt-axis-arrow" aria-hidden="true">→</span>
+        <span>终场</span>
+      </div>
+      <div class="dc-gt-tl-row dc-gt-tl-row--hdr">
+        <div class="dc-gt-tl-row-label dc-gt-tl-row-label--axis">比赛时间</div>
+        <div class="dc-gt-tl-cols">${cols}</div>
+        <div class="dc-gt-tl-peak-read dc-gt-tl-peak-read--hdr">高峰段</div>
+      </div>
+      <div class="dc-gt-half-band" aria-hidden="true">
+        <span class="dc-gt-half dc-gt-half--1">上半场</span>
+        <span class="dc-gt-half dc-gt-half--2">下半场</span>
+      </div>
+    </div>`;
+}
+
+function renderGoalTimingTimelineRow(label, icon, peak, intervals, side, tone, crossSet) {
+  const peakIv = peak?.interval;
+  const cells = intervals.map((iv, idx) => {
+    const isOn = iv === peakIv;
+    const isCross = isOn && crossSet.has(iv);
+    return `
+      <span class="dc-gt-tl-cell-wrap${idx === 2 ? ' dc-gt-tl-cell-wrap--ht' : ''}">
+        <span class="dc-gt-tl-cell dc-gt-tl-cell--${side} dc-gt-tl-cell--${tone}${isOn ? ' dc-gt-tl-cell--on' : ''}${isCross ? ' dc-gt-tl-cell--cross' : ''}"></span>
+      </span>`;
+  }).join('');
+  return `
+    <div class="dc-gt-tl-row">
+      <div class="dc-gt-tl-row-label dc-gt-tl-row-label--${tone}">
+        <span class="dc-gt-tl-row-icon" aria-hidden="true">${icon}</span>
+        <span class="dc-gt-tl-row-text">${label}</span>
+      </div>
+      <div class="dc-gt-tl-cells">${cells}</div>
+      <div class="dc-gt-tl-peak-read${crossSet.has(peakIv) ? ' dc-gt-tl-peak-read--cross' : ''}">
+        <strong>${peakIv}</strong> 分
+        <span>${peak.pct}%</span>
+      </div>
+    </div>`;
+}
+
+function renderGoalTimingTeamBlock(teamName, side, scoredPeak, concededPeak, intervals, crossSet) {
+  return `
+    <div class="dc-gt-team-block dc-gt-tl-team--${side}">
+      <div class="dc-gt-team-block-name">${teamName}</div>
+      ${renderGoalTimingTimelineRow('进球高峰', '⚽', scoredPeak, intervals, side, 'score', crossSet)}
+      ${renderGoalTimingTimelineRow('失球高峰', '⚠️', concededPeak, intervals, side, 'leak', crossSet)}
+    </div>`;
+}
+
+function renderGoalTimingTimeline(home, away, peaks, intervals, crossIntervals) {
+  const crossSet = new Set(crossIntervals || []);
+  return `
+    <div class="dc-gt-timeline">
+      ${renderGoalTimingAxis(intervals, crossSet)}
+      ${renderGoalTimingTeamBlock(home, 'home', peaks.home_scored, peaks.home_conceded, intervals, crossSet)}
+      ${renderGoalTimingTeamBlock(away, 'away', peaks.away_scored, peaks.away_conceded, intervals, crossSet)}
+    </div>`;
+}
+
+function renderGoalTimingKey(home, away) {
+  return `
+    <div class="dc-gt-key">
+      <span class="dc-gt-key-team">${home}</span>
+      <span class="dc-gt-key-item">
+        <span class="dc-gt-tl-cell dc-gt-tl-cell--home dc-gt-tl-cell--score dc-gt-tl-cell--on dc-gt-key-dot"></span>进球
+      </span>
+      <span class="dc-gt-key-item">
+        <span class="dc-gt-tl-cell dc-gt-tl-cell--home dc-gt-tl-cell--leak dc-gt-tl-cell--on dc-gt-key-dot"></span>失球
+      </span>
+      <span class="dc-gt-key-sep">|</span>
+      <span class="dc-gt-key-team">${away}</span>
+      <span class="dc-gt-key-item">
+        <span class="dc-gt-tl-cell dc-gt-tl-cell--away dc-gt-tl-cell--score dc-gt-tl-cell--on dc-gt-key-dot"></span>进球
+      </span>
+      <span class="dc-gt-key-item">
+        <span class="dc-gt-tl-cell dc-gt-tl-cell--away dc-gt-tl-cell--leak dc-gt-tl-cell--on dc-gt-key-dot"></span>失球
+      </span>
+      <span class="dc-gt-key-item dc-gt-key-item--muted">从左到右为比赛进行顺序</span>
+    </div>`;
+}
+
+function renderGoalTimingCrossBox(cross) {
+  if (!cross) return '';
+  if (!cross.has_cross) {
+    return `
+      <div class="dc-gt-cross dc-gt-cross--muted">
+        <span class="dc-gt-cross-tag">节奏读法</span>
+        <p class="dc-gt-cross-text">${cross.summary_cn}</p>
+      </div>`;
+  }
+  const items = (cross.hits || []).map(h => `
+    <div class="dc-gt-cross-hit" style="border-left-color:${h.color || '#E8A54B'}">
+      <div class="dc-gt-cross-hit-title">${h.title} · ${h.interval} 分</div>
+      <p class="dc-gt-cross-hit-text">${h.text}</p>
+    </div>`).join('');
+  return `
+    <div class="dc-gt-cross dc-gt-cross--active">
+      <span class="dc-gt-cross-tag">重合窗口</span>
+      ${items}
+    </div>`;
+}
+
+function renderGoalTimingBlock(gt, homeName, awayName) {
+  const home = gt?.home_name || homeName || '主队';
+  const away = gt?.away_name || awayName || '客队';
+  const peaks = gt?.peaks;
+  const hasData = peaks?.home_scored?.interval && peaks?.home_conceded?.interval
+    && peaks?.away_scored?.interval && peaks?.away_conceded?.interval;
+  const crossIv = gt?.cross_insight?.cross_intervals || [];
+  const intervals = gt?.intervals?.length ? gt.intervals : GOAL_TIMING_INTERVALS;
+
+  const sampleLabel = gt?.sample_label || '近30场';
+
+  const body = hasData ? `
+      ${renderGoalTimingCrossBox(gt.cross_insight)}
+      ${renderGoalTimingTimeline(home, away, peaks, intervals, crossIv)}
+      ${renderGoalTimingKey(home, away)}`
+    : `<p class="dc-gt-pending">尚未收到数据</p>`;
+
+  return `
+    <div class="dc-goal-timing${hasData ? '' : ' dc-goal-timing--pending'}">
+      <div class="dc-gt-head">
+        <span class="dc-gt-title">${sampleLabel} · 进球时间段节奏</span>
+        ${hasData ? '<span class="dc-gt-sample">历史统计</span>' : ''}
+      </div>
+      ${body}
+      <p class="dc-gt-disclaimer">${hasData ? (gt.disclaimer_cn || '') : '近30场进失球高峰时段；发截图后可更新。与灵力分析娱乐板块无关。'}</p>
+    </div>`;
+}
+
+function renderGoalAtmosphereMeter(outlook) {
+  if (!outlook) return '';
+  const pos = outlook.meter_pos ?? 50;
+  const side = outlook.lean_side || 'neutral';
+  const strength = outlook.lean_strength || 'none';
+  const tag = outlook.meter_label_cn || outlook.label_cn || '几乎五五开';
+  const tagColor = outlook.color || '#8A96A8';
+  const marketCn = outlook.market_goals_cn || '全场至少 — 球';
+
+  return `
+    <div class="dc-read-meter dc-ga-meter dc-ga-meter--${side} dc-ga-meter--${strength}">
+      ${outlook.section_intro_cn ? `<p class="dc-ga-meter-intro">${outlook.section_intro_cn}</p>` : ''}
+      <div class="dc-spread-meter-kv dc-ga-meter-kv">
+        <span class="dc-spread-meter-k">赛前外界预期</span>
+        <span class="dc-spread-meter-v dc-ga-meter-v">${marketCn}</span>
+      </div>
+      <div class="dc-ga-meter-ends">
+        <span class="dc-ga-meter-end dc-ga-meter-end--dull">沉闷</span>
+        <span class="dc-ga-meter-end dc-ga-meter-end--exciting">精彩</span>
+      </div>
+      <div class="dc-ga-meter-track" role="img" aria-label="进球氛围：${tag}">
+        <div class="dc-ga-meter-fill dc-ga-meter-fill--dull"></div>
+        <div class="dc-ga-meter-fill dc-ga-meter-fill--exciting"></div>
+        <div class="dc-ga-meter-center"></div>
+        <div class="dc-ga-meter-thumb" style="left:${pos}%">
+          <span class="dc-ga-meter-thumb-dot"></span>
+        </div>
+      </div>
+      <div class="dc-read-meter-tag" style="color:${tagColor}">${tag}</div>
+      ${outlook.detail_cn ? `<p class="dc-read-meter-foot dc-read-meter-foot--detail">${outlook.detail_cn}</p>` : ''}
+    </div>`;
+}
+
+function renderSpreadOutlookMeter(sp) {
+  if (!sp) return '';
+  if (!sp.show_cover) {
+    return `<p class="dc-read-meter-foot">${sp.detail_cn || sp.pill_cn || ''}</p>`;
+  }
+  const pct = sp.meet_pct ?? 0;
+  const barW = Math.max(4, Math.min(100, pct));
+  return `
+    <div class="dc-read-meter dc-spread-meter dc-spread-meter--${sp.level || 'uncertain'}">
+      <div class="dc-spread-meter-kv">
+        <span class="dc-spread-meter-k">赛前外界预期</span>
+        <span class="dc-spread-meter-v">${sp.market_expect_cn || '—'}</span>
+      </div>
+      <div class="dc-spread-meter-bar-wrap">
+        <div class="dc-spread-meter-bar-head">
+          <span class="dc-spread-meter-bar-label">${sp.meet_pct_label || '模型推演达标概率'}</span>
+          <span class="dc-spread-meter-pct" style="color:${sp.color || '#7BB8D4'}">${pct}%</span>
+        </div>
+        <div class="dc-spread-meter-bar" role="img" aria-label="达标概率 ${pct}%">
+          <div class="dc-spread-meter-bar-fill" style="width:${barW}%;background:${sp.color || '#7BB8D4'}"></div>
+        </div>
+      </div>
+      <div class="dc-read-meter-tag dc-spread-meter-verdict" style="color:${sp.color || '#8A96A8'}">${sp.verdict_cn || ''}</div>
+      ${sp.extra_stats_cn ? `<p class="dc-read-meter-foot dc-read-meter-foot--sub">${sp.extra_stats_cn}</p>` : ''}
+    </div>`;
+}
+
+function renderReadingPillHead(p) {
+  const team = p.key === 'spread' && p.outlook?.fav_name
+    ? `<span class="dc-reading-pill-team">${p.outlook.fav_name}</span>` : '';
+  return `
+      <div class="dc-reading-pill-head">
+        <span class="dc-reading-pill-icon">${p.icon}</span>
+        <span class="dc-reading-pill-label" style="color:${p.color || '#7BB8D4'}">${p.label}</span>
+        ${team}
+      </div>`;
+}
+
+function renderCustomerReadingCard(reading) {
+  if (!reading?.pills?.length) return '';
+  const pills = reading.pills.map(p => {
+    if (p.key === 'totals' && p.outlook) {
+      return `
+    <div class="dc-reading-pill dc-reading-pill--meter${p.muted ? ' dc-reading-pill--muted' : ''}">
+      ${renderReadingPillHead(p)}
+      ${renderGoalAtmosphereMeter(p.outlook)}
+    </div>`;
+    }
+    if (p.key === 'spread' && p.outlook) {
+      return `
+    <div class="dc-reading-pill dc-reading-pill--meter dc-reading-pill--primary">
+      ${renderReadingPillHead(p)}
+      ${renderSpreadOutlookMeter(p.outlook)}
+    </div>`;
+    }
+    return `
+    <div class="dc-reading-pill${p.primary ? ' dc-reading-pill--primary' : ''}${p.muted ? ' dc-reading-pill--muted' : ''}">
+      ${renderReadingPillHead(p)}
+      <p class="dc-reading-pill-text">${p.text}</p>
+    </div>`;
+  }).join('');
+  const drawRow = reading.draw_risk ? `
+    <div class="dc-reading-draw" style="border-left-color:${reading.draw_risk.color}">
+      <span class="dc-reading-draw-label">平局空间</span>
+      <span class="dc-reading-draw-text">${reading.draw_risk.note}</span>
+    </div>` : '';
+  return `
+    <div class="dc-reading-card">
+      <div class="dc-reading-head">
+        <span class="dc-reading-title">赛前读场要点</span>
+        <span class="dc-reading-badge">娱乐推演 · 非投注建议</span>
+      </div>
+      <div class="dc-reading-pills">${pills}</div>
+      ${drawRow}
+      <p class="dc-reading-footnote">${reading.methodology_note || ''}</p>
+    </div>`;
+}
+
 function renderTotalsRefRow(totalsView, prediction) {
   const expTotal = totalsView?.expected_total;
   const xgH = prediction?.xg_home;
@@ -625,6 +874,22 @@ function renderTotalsRefRow(totalsView, prediction) {
 
   let primary = `模型预期约 <strong>${expTotal}</strong> 个总进球`;
   if (xgSum != null) primary += ` <span class="dc-rhythm-totals-xg">（xG ${xgH} + ${xgA}）</span>`;
+  if (totalsView?.market_line != null && totalsView?.fair_line != null) {
+    const marketInt = totalsView.totals_outlook?.market_goals_int
+      ?? totalsView.market_goals_int
+      ?? Math.ceil(Number(totalsView.market_line));
+    primary += ` · 外界预期 <strong>全场至少 ${marketInt} 球</strong>`;
+    primary += ` · 模型自身约 <strong>${totalsView.fair_line}</strong> 球`;
+    if (totalsView.line_gap >= 1) {
+      primary += ` <span class="dc-rhythm-totals-warn">（外界高出约 ${totalsView.line_gap} 球）</span>`;
+    } else if (totalsView.line_gap > 0.01) {
+      primary += `（外界 +${totalsView.line_gap}）`;
+    }
+  }
+
+  const gapWarn = totalsView?.gap_warning?.cn;
+  const outlook = totalsView?.totals_outlook;
+  const outlookRow = outlook ? renderGoalAtmosphereMeter(outlook) : '';
 
   let hint = '与终端娱乐推演比分是<strong>不同口径</strong>：';
   if (predScore && predGoals != null) {
@@ -638,6 +903,8 @@ function renderTotalsRefRow(totalsView, prediction) {
     <div class="dc-rhythm-totals-ref">
       <span class="dc-rhythm-dim-label">总进球参考</span>
       <span class="dc-rhythm-totals-text dc-rhythm-totals-text--model">${primary}</span>
+      ${outlook ? '<div class="dc-rhythm-totals-atmosphere"><span class="dc-rhythm-dim-label dc-rhythm-dim-label--sub">进球氛围</span>' + outlookRow + '</div>' : ''}
+      ${gapWarn ? `<p class="dc-rhythm-totals-warn-line">${gapWarn}</p>` : ''}
       <p class="dc-rhythm-totals-hint">${hint}</p>
     </div>`;
 }
@@ -663,18 +930,24 @@ function renderWinOutlookBlock(wo, ws) {
     <div class="dc-outlook-lines">
       <div class="dc-outlook-line">
         <span class="dc-outlook-line-label">${o.margin_line_cn || '净胜差距'}</span>
-        <span class="dc-outlook-line-pct">达标约 <strong>${o.margin_meet_pct ?? '—'}%</strong></span>
+        <span class="dc-outlook-line-pct">${o.margin_full_label || '全达标'}约 <strong>${o.margin_meet_pct ?? '—'}%</strong></span>
         <span class="dc-outlook-line-note">${o.margin_fail_note || ''}（约 ${o.margin_fail_pct ?? '—'}%）</span>
       </div>
+      ${o.margin_half_label && (o.margin_half_pct ?? 0) > 0 ? `
       <div class="dc-outlook-line">
-        <span class="dc-outlook-line-label">对着赛前 ${o.totals_line_cn}</span>
-        <span class="dc-outlook-line-pct">总进球偏高约 <strong>${o.totals_high_pct ?? '—'}%</strong></span>
-        <span class="dc-outlook-line-note">${o.totals_fail_note || ''}（赢球且 ≤2 球约 ${o.win_low_total_pct ?? '—'}%）</span>
+        <span class="dc-outlook-line-label">${o.margin_half_label}</span>
+        <span class="dc-outlook-line-pct">约 <strong>${o.margin_half_pct}%</strong></span>
+        <span class="dc-outlook-line-note">如 2-0：部分达标，非全达标</span>
+      </div>` : ''}
+      <div class="dc-outlook-line">
+        <span class="dc-outlook-line-label">外界总进球参考 ${o.totals_line ?? '—'} 球</span>
+        <span class="dc-outlook-line-pct">终场多于该参考约 <strong>${o.totals_high_pct ?? '—'}%</strong></span>
+        <span class="dc-outlook-line-note">模型公允约 ${o.fair_totals_line ?? '—'} 球${o.totals_line_gap > 0 ? ' · 外界高出 ' + o.totals_line_gap + ' 球' : ''}</span>
       </div>
       ${o.win_margin2_low_total_pct >= 10 ? `
       <div class="dc-outlook-line dc-outlook-line--warn">
         <span class="dc-outlook-line-label">重叠风险</span>
-        <span class="dc-outlook-line-note">约 ${o.win_margin2_low_total_pct}% 为 2-0 类：净胜拉开、总进球仍可能仅 2 个</span>
+        <span class="dc-outlook-line-note">约 ${o.win_margin2_low_total_pct}% 为 2-0 类：净胜扩大但总进球仍可能仅 2 个</span>
       </div>` : ''}
     </div>` : '';
 
@@ -758,7 +1031,7 @@ function renderUpsetDrawRiskNote(ua, drawTrapNote) {
 }
 
 /** 模型推演概要 — 综合 xG · 教练 · 伤病 · 气候 · 先进球情景 */
-function renderDepthCalibrationBlock(dc, upsetAlert, prediction) {
+function renderDepthCalibrationBlock(dc, upsetAlert, prediction, homeName, awayName) {
   if (!SHOW_DEPTH_CALIBRATION_PANEL) return '';
   if (!dc) return '';
   const s = dc.display_summary;
@@ -768,11 +1041,14 @@ function renderDepthCalibrationBlock(dc, upsetAlert, prediction) {
   const scenarios = s.first_goal_scenarios || [];
   const cal = s.calibration || {};
   const replay = dc.preview_replay;
+  const reading = s.customer_reading;
+  const readingCard = renderCustomerReadingCard(reading);
+  const goalTimingHtml = renderGoalTimingBlock(s.goal_timing, homeName, awayName);
   const replayRow = replay?.summary_cn ? `
     <div class="dc-preview-replay">
-      <div class="dc-preview-replay-head">赛前预读复盘</div>
+      <div class="dc-preview-replay-head">赛后复盘</div>
       <p>${replay.summary_cn}</p>
-      ${replay.ht_score ? `<span class="dc-preview-replay-meta">实际 ${replay.actual_score}${replay.ht_score ? ' · 半场 ' + replay.ht_score : ''}</span>` : ''}
+      ${replay.actual_score ? `<span class="dc-preview-replay-meta">实际 ${replay.actual_score}${replay.ht_score ? ' · 半场 ' + replay.ht_score : ''}${replay.totals_actual != null ? ' · 总进球 ' + replay.totals_actual : ''}</span>` : ''}
     </div>` : '';
   const xgCtx = s.xg_context || {};
   const scorePatterns = s.score_patterns || [];
@@ -840,7 +1116,7 @@ function renderDepthCalibrationBlock(dc, upsetAlert, prediction) {
         <div class="dc-scenario-live-outlook">
           <span class="dc-scenario-live-label">若已 1-0 领先 · 赛前参考</span>
           <p>${sc.live_outlook.readout_cn}</p>
-          <span class="dc-scenario-live-meta">净胜再拉开约 ${sc.live_outlook.margin_meet_pct}% · 总进球偏高约 ${sc.live_outlook.totals_high_pct}%（${sc.live_outlook.totals_line_cn}）</span>
+          <span class="dc-scenario-live-meta">${sc.live_outlook.margin_full_label || '净胜全达标'}约 ${sc.live_outlook.margin_meet_pct}%${sc.live_outlook.margin_half_label && sc.live_outlook.margin_half_pct ? ' · ' + sc.live_outlook.margin_half_label + ' 约 ' + sc.live_outlook.margin_half_pct + '%' : ''}${sc.live_outlook.final_2_0_pct != null ? ' · 2-0 约 ' + sc.live_outlook.final_2_0_pct + '%' : ''}${sc.live_outlook.final_3_0_plus_pct != null ? ' · 3-0+ 约 ' + sc.live_outlook.final_3_0_plus_pct + '%' : ''} · 终场多于外界 ${sc.live_outlook.totals_line} 球参考约 ${sc.live_outlook.totals_high_pct}%</span>
         </div>` : ''}
         <p class="dc-scenario-narrative">${sc.narrative}</p>
       </div>`;
@@ -852,6 +1128,8 @@ function renderDepthCalibrationBlock(dc, upsetAlert, prediction) {
         <span class="depth-calib-title">📊 模型推演概要</span>
         <span class="depth-calib-tier">${s.baseline_label || '综合 xG · 教练 · 伤病 · 气候'}</span>
       </div>
+      ${readingCard}
+      ${goalTimingHtml}
       ${calibrationRow}
       ${replayRow}
       ${xgRow}
@@ -874,44 +1152,185 @@ function renderDepthCalibrationBlock(dc, upsetAlert, prediction) {
     </div>`;
 }
 
+/** 小组形势 & 晋级路径预判 — UI helpers */
+function gcPathBody(text) {
+  if (!text) return '—';
+  return String(text)
+    .replace(/^32强\s*/i, '')
+    .replace(/^16强\s*/i, '')
+    .replace(/→\s*当前\s+/g, '→ ')
+    .trim();
+}
+
+function gcRankZone(rank) {
+  if (rank <= 2) return { cls: 'gc-zone--direct', label: '直接出线区', icon: '✓' };
+  if (rank === 3) return { cls: 'gc-zone--third', label: '第3争8', icon: '③' };
+  return { cls: 'gc-zone--out', label: '出局区', icon: '—' };
+}
+
+function gcPathTrack(rankKey, label, icon, r32, r16, corridor) {
+  const r32Text = gcPathBody(r32);
+  const r16Text = r16 ? gcPathBody(r16) : '';
+  return `
+    <div class="gc-path-track gc-path-track--${rankKey}">
+      <div class="gc-path-track-head">
+        <span class="gc-path-badge gc-path-badge--${rankKey}">${icon} ${label}</span>
+      </div>
+      <div class="gc-path-flow">
+        <div class="gc-path-node">
+          <span class="gc-path-node-tag">32强</span>
+          <span class="gc-path-node-text">${r32Text}</span>
+        </div>
+        ${r16Text ? `
+        <span class="gc-path-arrow" aria-hidden="true">→</span>
+        <div class="gc-path-node gc-path-node--r16">
+          <span class="gc-path-node-tag">16强</span>
+          <span class="gc-path-node-text">${r16Text}</span>
+        </div>` : ''}
+      </div>
+      ${corridor ? `<div class="gc-path-corridor">${corridor}</div>` : ''}
+    </div>`;
+}
+
+function gcTeamPathCard(t, gc, side) {
+  const zone = gcRankZone(Number(t.rank) || 99);
+  const isFocus = side === 'home' || side === 'away';
+  return `
+    <article class="gc-team-card${isFocus ? ' gc-team-card--focus' : ''}">
+      <header class="gc-team-card-head">
+        <div class="gc-team-card-name">${t.team}</div>
+        <div class="gc-team-card-meta">
+          <span class="gc-rank-pill ${zone.cls}">第 ${t.rank} 名</span>
+          <span class="gc-pts-pill">${t.pts} 分 · ${t.played} 场</span>
+        </div>
+      </header>
+      <div class="gc-path-tracks">
+        ${gcPathTrack('r1', '若夺第 1', '🥇', t.if_1st, t.if_1st_r16, t.if_1st_corridor)}
+        ${gcPathTrack('r2', '若列第 2', '🥈', t.if_2nd, t.if_2nd_r16, t.if_2nd_corridor)}
+        ${gcPathTrack('r3', '若列第 3', '🥉', t.if_3rd, t.if_3rd_r16, null)}
+      </div>
+    </article>`;
+}
+
+function gcStandingsTable(gc) {
+  const homeName = gc.home?.team;
+  const awayName = gc.away?.team;
+  const rows = (gc.standings || []).map((r, i) => {
+    const rank = i + 1;
+    const zone = gcRankZone(rank);
+    const gd = (r.gf || 0) - (r.ga || 0);
+    const gdStr = gd > 0 ? `+${gd}` : String(gd);
+    const isMatchTeam = r.team === homeName || r.team === awayName;
+    return `
+      <tr class="gc-standings-tr ${zone.cls}${isMatchTeam ? ' gc-standings-tr--match' : ''}">
+        <td class="gc-standings-rank">
+          <span class="gc-standings-rank-num">${rank}</span>
+          <span class="gc-standings-zone-icon" title="${zone.label}">${zone.icon}</span>
+        </td>
+        <td class="gc-standings-team">${r.team}${isMatchTeam ? ' <span class="gc-standings-dot">●</span>' : ''}</td>
+        <td>${r.p}</td>
+        <td>${r.gf}-${r.ga}</td>
+        <td class="gc-standings-gd">${gdStr}</td>
+        <td class="gc-standings-pts">${r.pts}</td>
+      </tr>`;
+  }).join('');
+  return `
+    <div class="gc-standings-wrap">
+      <div class="gc-section-label">积分榜 · ${gc.label || gc.group + '组'}</div>
+      <div class="gc-zone-legend">
+        <span class="gc-zone-legend-item gc-zone--direct">①② 直接出线</span>
+        <span class="gc-zone-legend-item gc-zone--third">③ 争最佳第3（12取8）</span>
+      </div>
+      <table class="gc-standings-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>球队</th>
+            <th>赛</th>
+            <th>进失</th>
+            <th>净胜</th>
+            <th>分</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+}
+
 /** 小组形势 & 晋级路径预判 */
 function renderGroupContextPanel(gc) {
   if (!gc) return '';
   const risk = gc.manipulation_risk || {};
-  const riskColor = risk.level === 'HIGH' ? '#D95F6A' : risk.level === 'MEDIUM' ? '#C8A96E' : '#5BBF8A';
-  const teamCard = t => `
-    <div class="group-context-card">
-      <div class="group-context-team">${t.team}</div>
-      <div>当前 ${gc.label} · 暂列第 <strong>${t.rank}</strong> · ${t.pts} 分（${t.played} 场）</div>
-      <div class="group-context-path"><span class="gc-r1">若第 1</span>：${t.if_1st}</div>
-      <div class="group-context-path"><span class="gc-r2">若第 2</span>：${t.if_2nd}</div>
-      <div class="group-context-path"><span class="gc-r3">若第 3</span>：${t.if_3rd}</div>
-    </div>`;
-  const standingsRows = (gc.standings || []).map((r, i) => `
-    <div class="group-standings-row${i < 2 ? ' top' : ''}">
-      <span>${i + 1}. ${r.team}</span>
-      <span>${r.p}</span>
-      <span>${r.gf}-${r.ga}</span>
-      <span>${r.w}/${r.d}/${r.l}</span>
-      <span class="pts">${r.pts}</span>
-    </div>`).join('');
+  const riskLevel = risk.level || 'LOW';
+  const riskColor = riskLevel === 'HIGH' ? '#D95F6A' : riskLevel === 'MEDIUM' ? '#C8A96E' : '#5BBF8A';
+  const crossChips = (gc.cross_group_notes || []).map(n => {
+    const isOpen = /四队同分|极度开放/.test(n);
+    const isLinked = /绑定组/.test(n);
+    return `<span class="gc-chip${isOpen ? ' gc-chip--alert' : ''}${isLinked ? ' gc-chip--linked' : ''}">${n}</span>`;
+  }).join('');
+  const scenarios = (gc.scenarios || []).slice(0, 4).map((s, i) => {
+    const icon = i === 0 ? '⚽' : /巴西|路径/.test(s) ? '🇧🇷' : /平局|若/.test(s) ? '⚖' : '💡';
+    return `<div class="gc-scenario-card"><span class="gc-scenario-icon">${icon}</span><span>${s}</span></div>`;
+  }).join('');
+
   return `
-    <div class="group-context-panel">
-      <div class="group-context-title">小组形势 & 晋级路径预判</div>
-      ${panelLegend('结合已赛积分榜与 48 队制 32 强规则，评估出线后可能对手及末轮控分动机。')}
-      <div class="group-standings-mini hdr">
-        <span>球队</span><span>赛</span><span>进失</span><span>胜/平/负</span><span>分</span>
-      </div>
-      ${standingsRows}
-      <div class="group-context-grid">
-        ${teamCard(gc.home)}
-        ${teamCard(gc.away)}
-      </div>
-      ${(gc.cross_group_notes || []).length ? `<p class="group-context-cross"><strong>关联组</strong>：${gc.cross_group_notes.join(' · ')}</p>` : ''}
-      <div class="manip-risk" style="border-left-color:${riskColor}">
-        <strong style="color:${riskColor}">控分动机 · ${risk.level_cn || '低'}</strong>
-        ${risk.focus_team ? '（关注：' + risk.focus_team + '）' : ''}
-        <div>${risk.reason || ''}</div>
+    <div class="group-context-panel gc-panel-v2">
+      <header class="gc-panel-header">
+        <div class="gc-panel-header-left">
+          <span class="gc-panel-icon">📊</span>
+          <div>
+            <div class="group-context-title">小组形势 & 晋级路径预判</div>
+            <div class="gc-panel-sub">${gc.group} 组 · 第 ${gc.matchday || '—'} 轮</div>
+          </div>
+        </div>
+        <div class="gc-format-pills">
+          <span class="gc-format-pill">48 队</span>
+          <span class="gc-format-pill">32 强起</span>
+          <span class="gc-format-pill gc-format-pill--gold">8×第3</span>
+        </div>
+      </header>
+      ${panelLegend('FIFA 2026 官方槽位 · 绑定组（C↔F 等）· 末轮或存在选半区博弈')}
+
+      <div class="gc-panel-body">
+        ${gcStandingsTable(gc)}
+
+        <div class="gc-section-label">本场两队 · 出线名次对应路径</div>
+        <div class="gc-team-grid">
+          ${gcTeamPathCard(gc.home, gc, 'home')}
+          ${gcTeamPathCard(gc.away, gc, 'away')}
+        </div>
+
+        ${crossChips ? `
+        <div class="gc-linked-block">
+          <div class="gc-section-label">绑定组 / 关联形势</div>
+          <div class="gc-chip-row">${crossChips}</div>
+        </div>` : ''}
+
+        ${gc.path_tradeoff ? `
+        <div class="gc-tradeoff-card">
+          <div class="gc-tradeoff-head">⚔ 头名 vs 次席 · 半区博弈</div>
+          <p class="gc-tradeoff-body">${gc.path_tradeoff}</p>
+        </div>` : ''}
+
+        ${scenarios ? `
+        <div class="gc-scenario-grid">${scenarios}</div>` : ''}
+
+        ${gc.knockout_note ? `<div class="gc-format-note">${gc.knockout_note}</div>` : ''}
+
+        <div class="gc-risk-card gc-risk-card--${riskLevel.toLowerCase()}" style="--gc-risk-color:${riskColor}">
+          <div class="gc-risk-head">
+            <span class="gc-risk-meter" aria-hidden="true"></span>
+            <span class="gc-risk-title">控分动机</span>
+            <span class="gc-risk-badge">${risk.level_cn || '低'}</span>
+            ${risk.focus_team ? `<span class="gc-risk-focus">关注 ${risk.focus_team}</span>` : ''}
+          </div>
+          <p class="gc-risk-text">${risk.reason || ''}</p>
+          ${risk.optimal_summary ? `
+          <div class="gc-risk-optimal">
+            <span class="gc-risk-optimal-icon" aria-hidden="true">💡</span>
+            <span class="gc-risk-optimal-text">${risk.optimal_summary}</span>
+          </div>` : ''}
+        </div>
       </div>
     </div>`;
 }
@@ -1298,7 +1717,7 @@ function renderMatch(m) {
     ${renderMatchHero(m, p, finished)}
 
     ${renderPredictionInsightStrip(p, m, finished)}
-    ${renderDepthCalibrationBlock(m.depth_calibration, m.upset_alert, p)}
+    ${renderDepthCalibrationBlock(m.depth_calibration, m.upset_alert, p, m.home?.name, m.away?.name)}
 
     <!-- 4-COLUMN DETAIL GRID -->
     <div class="mf-detail-grid">

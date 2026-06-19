@@ -1,8 +1,8 @@
-// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
-// Last API sync: 2026-06-19T16:27:34.561Z
+// 今日赛事 — Day 9 (signals enriched)
+// Last updated: 2026-06-20T14:00:00+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-19T16:27:34.561Z",
-  "syncSource": "API-Football",
+  "lastUpdated": "2026-06-20T14:00:00+08:00",
+  "syncSource": "FIFA 赛程 · Day 9 · weather/mystic/injuries/coach enriched · 推演概要+小组形势",
   "breakingNews": [
     {
       "tag": "UPDATE",
@@ -10,281 +10,250 @@ const MATCH_DATA = {
       "time": "模型"
     },
     {
-      "tag": "LINEUP",
-      "text": "✅ FIFA 官方首发 · 墨 4-1-2-3 Sánchez/Romo · 韩 3-4-3 Moon-hwan 变阵 孙兴慜+李在城+李康仁",
-      "time": "官方确认"
-    },
-    {
       "tag": "UPDATE",
-      "text": "📊 推演升级：模型概要 + 小组形势/晋级路径已纳入今日赛事",
-      "time": "模型"
-    },
-    {
-      "tag": "PREVIEW",
-      "text": "📅 今日4场 · 捷克-南非(00:00) · 瑞士-波黑(03:00) · 加拿大-卡塔尔(06:00) · 墨西哥-韩国(09:00)",
-      "time": "6月19日"
-    },
-    {
-      "tag": "PREVIEW",
-      "text": "A/B组第2轮：Schick 抢分战 · 东道主温哥华 · 墨西哥 vs 孙兴慜 榜首对话",
-      "time": "焦点"
-    },
-    {
-      "tag": "LINEUP",
-      "text": "📋 预测首发 · 捷 3-4-2-1 Schick · 韩 3-4-2-1 金承奎/李在城/李康仁/孙兴慜 · 墨 Rangel+Álvarez 顶 Montes",
-      "time": "预测"
-    },
-    {
-      "tag": "OFFICIAL",
-      "text": "🏁 昨日：葡1-1刚果(金) · 英4-2克 · 加纳1-0巴 · 乌1-3哥伦 · 详见「过往赛果」",
-      "time": "赛果回顾"
+      "text": "✅ Day 9 教练分析&冷门预警已纳入（m29–m32）",
+      "time": "6月20日"
     },
     {
       "tag": "INJURY",
-      "text": "Montes 停赛 · Quiñones 队检 · Bae/Kim Tae-hyeon 韩替补 · 孙兴慜 FIT",
-      "time": "伤情"
-    },
-    {
-      "tag": "REFEREE",
-      "text": "✅ FIFA 确认：Penso(捷-南非) · Pinheiro(瑞-波) · Garay(加-卡) · Tejera(墨-韩)",
-      "time": "裁判"
-    },
-    {
-      "tag": "OFFICIAL",
-      "text": "K/L组首轮完结 · 哥伦比亚&英格兰领跑 · 今日 A/B 组第2轮",
-      "time": "积分榜"
+      "text": "✅ Day 9 伤病&更衣室动态已更新（m29–m32）；裁判/首发仍待 FIFA 官方",
+      "time": "6月20日"
     },
     {
       "tag": "UPDATE",
-      "text": "灵力/五行/主教练/气候板块已更新至 Day 8 完整版",
+      "text": "✅ Day 9 气候预报 + 灵力分析已更新（m29–m32）；裁判/首发仍待 FIFA 官方",
       "time": "站点"
+    },
+    {
+      "tag": "OFFICIAL",
+      "text": "🏁 昨日：捷1-1南非 · 瑞4-1波 · 加6-0卡 · 墨1-0韩 · 墨西哥锁定32强",
+      "time": "赛果回顾"
+    },
+    {
+      "tag": "PREVIEW",
+      "text": "📅 今日4场 · 美国-澳(03:00) · 苏-摩(06:00) · 巴-海(09:00) · 土-巴(11:00)",
+      "time": "6月20日"
+    },
+    {
+      "tag": "PREVIEW",
+      "text": "C/D组第2轮：东道主美国西雅图 · 巴西 vs 海地 · Yıldız/Güler",
+      "time": "焦点"
+    },
+    {
+      "tag": "OFFICIAL",
+      "text": "A/B组第2轮完结 · 墨西哥&加拿大领跑",
+      "time": "积分榜"
+    },
+    {
+      "tag": "REFEREE",
+      "text": "今日各场裁判待 FIFA 官方确认",
+      "time": "裁判"
     }
   ],
   "todayMatches": [
     {
-      "id": "m25",
-      "group": "A",
+      "id": "m32",
+      "group": "D",
       "matchday": 2,
-      "date": "2026-06-18",
+      "date": "2026-06-19",
       "time": "12:00",
-      "time_local": "12:00 ET",
-      "timezone": "EDT (UTC-4)",
-      "time_beijing": "00:00",
-      "date_beijing": "6月19日",
-      "time_beijing_full": "北京时间 6月19日 00:00",
-      "venue": "Mercedes-Benz Stadium",
-      "city": "Atlanta, USA",
-      "note": "A组第2轮 · 捷克 vs 南非 · 亚特兰大",
+      "time_local": "12:00 PT",
+      "timezone": "PDT (UTC-7)",
+      "time_beijing": "03:00",
+      "date_beijing": "6月20日",
+      "time_beijing_full": "北京时间 6月20日 03:00",
+      "venue": "Lumen Field",
+      "city": "Seattle, USA",
+      "note": "D组第2轮 · 美国 vs 澳大利亚 · 西雅图",
       "lineup": {
         "confirmed": false,
         "formation": null,
         "home": "等待官方确认",
         "away": "等待官方确认",
-        "note": "官方首发尚未确认；下方为媒体预测（已剔除 Sithole、Zwane 揭幕战红牌停赛）。不计入已确认推演权重。",
+        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
         "predicted": {
-          "formation": "3-4-2-1 / 4-3-3",
-          "home": "Kovář; Chaloupek, Hranáč, Krejčí; Coufal, Souček, Sojka, Zelený; Provod, Šulc; Schick",
-          "away": "Williams; Mudau, Okon, Mbokazi, Modiba; Mokoena, Mbatha, Adams; Appollis, Foster, Mofokeng",
-          "source": "SI / Al Jazeera / Opta 预测 · 非官方",
-          "alt": {
-            "formation": "3-4-2-1 / 5-3-2",
-            "home": "Kovář; Chaloupek, Hranáč, Krejčí; Coufal, Souček, Sojka, Zelený; Provod, Hložek; Schick",
-            "away": "Williams; Mudau, Okon, Mbokazi, Modiba, Sibisi; Mokoena, Mbatha, Adams; Moremi, Mofokeng, Appollis; Foster",
-            "source": "beIN / Livescore 备选预测"
-          }
+          "formation": "4-3-3 / 4-2-3-1",
+          "home": "Turner; Dest, Ream, Robinson; Adams, Musah; Pulisic, McKennie, Reyna; Balogun, Weah",
+          "away": "Ryan; Atkinson, Souttar, Bos; Irvine, Irvine; Goodwin, Irvine, Boyle; Maclaren, Leckie",
+          "source": "ESPN / Fox 预测 · 非官方",
+          "alt": null
         }
       },
       "home": {
-        "name": "Czechia",
-        "iso": "cz",
+        "name": "USA",
+        "iso": "us",
         "flag": "",
-        "fifa_rank": 40,
-        "rating": 72,
+        "fifa_rank": 11,
+        "rating": 82,
         "form": [
-          "L",
+          "W",
           "W",
           "D",
           "W",
-          "L"
-        ],
-        "coach": "Ivan Hašek",
-        "stars": [
-          {
-            "name": "Patrik Schick",
-            "pos": "ST",
-            "club": "Bayer Leverkusen",
-            "stats": "84' 挽回颜面",
-            "rating": 8,
-            "desc": "必须抢分之战核心"
-          },
-          {
-            "name": "Tomáš Souček",
-            "pos": "DM",
-            "club": "West Ham",
-            "stats": "屏障",
-            "rating": 7.8,
-            "desc": "三中卫前保护"
-          },
-          {
-            "name": "Lukáš Provod",
-            "pos": "CAM",
-            "club": "Slavia",
-            "stats": "10 号",
-            "rating": 7.4,
-            "desc": "肋部渗透"
-          }
-        ],
-        "injuries": [
-          {
-            "player": "Patrik Schick",
-            "status": "FIT",
-            "note": "勒沃库森射手，必须抢分之战核心",
-            "confirmed": true
-          },
-          {
-            "player": "Tomáš Souček",
-            "status": "FIT",
-            "note": "西汉姆屏障，三中卫前保护",
-            "confirmed": true
-          }
-        ],
-        "rumors": [
-          "首轮 1-2 韩国后 Hašek 强调「对南非不容再失分」",
-          "Schick 84' 头球挽回颜面，次轮预计首发"
-        ],
-        "star": {
-          "name": "Patrik Schick",
-          "pos": "ST",
-          "desc": "对南非不容再失分",
-          "rating": 8
-        }
-      },
-      "away": {
-        "name": "South Africa",
-        "iso": "za",
-        "flag": "",
-        "fifa_rank": 58,
-        "rating": 65,
-        "form": [
-          "L",
-          "W",
-          "D",
-          "L",
           "W"
         ],
-        "coach": "Hugo Broos",
+        "coach": "Mauricio Pochettino",
         "stars": [
           {
-            "name": "Lyle Foster",
-            "pos": "ST",
-            "club": "Burnley",
-            "stats": "锋线支点",
-            "rating": 7.2,
-            "desc": "次轮生死战预计首发"
-          },
-          {
-            "name": "Teboho Mokoena",
-            "pos": "DM",
-            "club": "Mamelodi Sundowns",
-            "stats": "屏障",
-            "rating": 7,
-            "desc": "中场绞杀"
-          },
-          {
-            "name": "Relebohile Mofokeng",
+            "name": "Christian Pulisic",
             "pos": "RW",
-            "club": "Orlando Pirates",
-            "stats": "顶替 Zwane",
-            "rating": 6.9,
-            "desc": "边路速度"
+            "club": "AC Milan",
+            "desc": "东道主核心",
+            "rating": 8.6
           }
         ],
+        "star": {
+          "name": "Christian Pulisic",
+          "pos": "RW",
+          "club": "AC Milan",
+          "desc": "东道主核心",
+          "rating": 8.6
+        },
         "injuries": [
           {
-            "player": "Sphephelo Sithole",
-            "status": "OUT",
-            "note": "揭幕战对墨西哥直红停赛，缺席对捷克",
-            "confirmed": true
-          },
-          {
-            "player": "Themba Zwane",
-            "status": "OUT",
-            "note": "揭幕战对墨西哥直红停赛，缺席对捷克",
-            "confirmed": true
-          },
-          {
-            "player": "Lyle Foster",
+            "player": "Christian Pulisic",
             "status": "FIT",
-            "note": "锋线支点，次轮生死战预计首发",
+            "note": "揭幕战 4-1 巴拉圭参与进攻组织，状态回升；西雅图主场预计继续担任核心",
+            "confirmed": true
+          },
+          {
+            "player": "Folarin Balogun",
+            "status": "FIT",
+            "note": "揭幕战双响（31'、45+5'），锁定首发中锋",
+            "confirmed": true
+          },
+          {
+            "player": "Tyler Adams",
+            "status": "FIT",
+            "note": "与 McKennie 双后腰运转正常，Pochettino 6/11 仍称 26 人全员可用",
+            "confirmed": true
+          },
+          {
+            "player": "Giovanni Reyna",
+            "status": "FIT",
+            "note": "90+8' 替补破门，更衣室士气加分",
+            "confirmed": true
+          },
+          {
+            "player": "Chris Richards",
+            "status": "FIT",
+            "note": "踝伤已愈，中卫轮换人选；首发待官方确认",
             "confirmed": true
           }
         ],
         "rumors": [
-          "首轮 0-2 墨西哥后 Broos 称「出线形势严峻」",
-          "SI/Al Jazeera：Mbatha 顶 Sithole、Mofokeng 顶 Zwane，预计 4-3-3",
-          "揭幕战 3 张红牌后中场创造力大减，Foster 成唯一稳定得分点"
+          "Pochettino（赛后）：「4-1 是回应批评的方式，但 D 组才刚开始；对澳大利亚必须当成决赛踢」",
+          "揭幕战 Balogun 双响 + Reyna 绝杀后，东道主西雅图 7 万观众预期再掀声浪",
+          "D 组美国、澳大利亚同积 3 分——本场胜者大概率握出线主动权",
+          "媒体预测 Pulisic-Reyna 宽度 + Adams 屏障，但官方首发仍待开球前确认",
+          "4 场热身 3 负的阴影被揭幕战大胜部分冲淡，Pochettino 仍警告「不可轻敌」"
+        ]
+      },
+      "away": {
+        "name": "Australia",
+        "iso": "au",
+        "flag": "",
+        "fifa_rank": 24,
+        "rating": 74,
+        "form": [
+          "D",
+          "W",
+          "L",
+          "W",
+          "D"
+        ],
+        "coach": "Graham Arnold",
+        "stars": [
+          {
+            "name": "Mathew Ryan",
+            "pos": "GK",
+            "club": "Roma",
+            "desc": "经验一门",
+            "rating": 7.6
+          }
         ],
         "star": {
-          "name": "Lyle Foster",
-          "pos": "ST",
-          "desc": "Sithole/Zwane 停赛下锋线担当",
-          "rating": 7.2
-        }
+          "name": "Mathew Ryan",
+          "pos": "GK",
+          "club": "Roma",
+          "desc": "经验一门",
+          "rating": 7.6
+        },
+        "injuries": [
+          {
+            "player": "Patrick Beach",
+            "status": "FIT",
+            "note": "FotMob 官方 XI 一门替 Ryan；对土耳其 2-0 零封 + MOTM 级表现",
+            "confirmed": true
+          },
+          {
+            "player": "Mathew Ryan",
+            "status": "FIT",
+            "note": "经验一门仍在替补席，Popovic 尚未改回 Ryan 先发",
+            "confirmed": true
+          },
+          {
+            "player": "Harry Souttar",
+            "status": "FIT",
+            "note": "5-4-1 队长中卫，对土耳其全场稳定",
+            "confirmed": true
+          },
+          {
+            "player": "Nestory Irankunda",
+            "status": "FIT",
+            "note": "27' 首开纪录，19 岁 Brighton 球员上位成功",
+            "confirmed": true
+          },
+          {
+            "player": "Jackson Irvine",
+            "status": "FIT",
+            "note": "首轮替补，Okon-Engstler 顶替其中场位置；仍可用",
+            "confirmed": true
+          }
+        ],
+        "rumors": [
+          "Popovic（赛后）：「我们很难被击败…每次大赛都被低估」——5-4-1 低位反击奏效",
+          "对土耳其 2-0：控球不占优但 Irankunda+Metcalfe 反击高效，Beach 一门变阵成亮点",
+          "Popovic 赛前续约至 2027 亚洲杯，更衣室稳定",
+          "Leckie/Ryan/Irvine 等 veteran 首轮替补，年轻化与经验并存",
+          "客场西雅图对东道主美国是本届最难客场之一，预计继续低位+反击"
+        ]
       },
       "h2h": {
-        "home_wins": 1,
+        "home_wins": 2,
         "draws": 1,
         "away_wins": 0,
         "recent": [],
-        "note": "友谊赛交锋有限"
+        "note": "美国近年占优"
       },
       "referee": {
-        "confirmed": true,
-        "pending": false,
-        "source": "FIFA · Match officials · 2026-06-18",
-        "name": "Tori Penso",
-        "nation": "United States",
-        "iso": "us",
-        "age": 39,
-        "wc_experience": "2023 女足世界杯决赛主裁 · 2026 史上首位执法男足世界杯的美国女裁判",
-        "avg_yellow": 3.8,
-        "avg_red": 0.08,
-        "avg_penalty": 0.22,
-        "home_win_rate": 49,
-        "bias_index": 49,
-        "bias_note": "CONCACAF 顶尖女裁判执法 A 组次轮。Schick/Tau 身体对抗与定位球犯规尺度是焦点；与 Mayo/Nesbitt 全美执法组默契度高。",
+        "confirmed": false,
+        "pending": true,
+        "name": "等待官方确认",
+        "nation": "待公布",
+        "iso": null,
+        "bias_note": "FIFA Match 32 裁判名单赛前公布。",
         "tendencies": [
-          "美国助理裁判组：Brooke Mayo、Kathryn Nesbitt",
-          "第四官员 Campbell-Kirk Kawana-Waugh（新西兰）· 候补边裁 Isaac Trevis",
-          "VAR Tatiana Guzmán（尼加拉瓜）· AVAR Joe Dickerson · SVAR Mohammed Obaid Khadim",
-          "亚特兰大次轮抢分战预计 4–5 张黄牌，点球尺度相对明确"
-        ],
-        "officials": {
-          "ar1": "Brooke Mayo (USA)",
-          "ar2": "Kathryn Nesbitt (USA)",
-          "fourth": "Campbell-Kirk Kawana-Waugh (NZL)",
-          "var": "Tatiana Guzmán (NCA)",
-          "avar": "Joe Dickerson (USA)",
-          "svar": "Mohammed Obaid Khadim (UAE)"
-        }
+          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+        ]
       },
       "prediction": {
-        "home_win": 54,
+        "home_win": 51,
         "draw": 25,
-        "away_win": 21,
+        "away_win": 24,
         "score": "1-0",
-        "confidence": 72,
-        "xg_home": 1.52,
-        "xg_away": 0.88,
-        "key_factor": "捷克 3-4-2-1 抢分：Schick+Provod/Šulc 双前腰；南非 Sithole/Zwane 红牌停赛，Mbatha/Mofokeng 顶替；泊松最可能 1-0/2-0",
+        "confidence": 74,
+        "xg_home": 1.68,
+        "xg_away": 0.92,
+        "key_factor": "东道主西雅图：Pulisic/Reyna 宽度 vs 澳大利亚低位；美国取胜可大幅推进出线",
         "score_dist": [
           {
             "score": "1-0",
-            "prob": 13.8
+            "prob": 12.5
           },
           {
             "score": "1-1",
-            "prob": 12.1
+            "prob": 11.5
           },
           {
             "score": "2-0",
@@ -292,202 +261,80 @@ const MATCH_DATA = {
           },
           {
             "score": "2-1",
-            "prob": 9.2
+            "prob": 9.6
           },
           {
             "score": "0-0",
-            "prob": 9.1
+            "prob": 7.4
           },
           {
             "score": "0-1",
-            "prob": 8
+            "prob": 6.8
           },
           {
-            "score": "1-2",
-            "prob": 5.3
+            "score": "3-0",
+            "prob": 5.9
           }
         ],
-        "base_home_win": 52,
-        "base_draw": 26,
-        "base_away_win": 22,
-        "depth_calibrated": true,
         "insight_factors": [
           {
             "icon": "📊",
             "label": "小组积分",
-            "text": "Czechia 暂列 A 组第 3（0 分 · 已赛 1 场） vs South Africa 第 4（0 分 · 已赛 1 场）；双方首轮皆负、同积 0 分垫底；墨西哥与韩国各 3 分领跑，本场胜者仍须末轮抢分"
+            "text": "USA 暂列 D 组第 1（3 分 · 已赛 1 场） vs Australia 第 2（3 分 · 已赛 1 场）"
           },
           {
             "icon": "🌤️",
             "label": "赛场气候",
-            "text": "亚特兰大闷热潮湿，午后雷暴风险 · 31°C · 湿度 68% · 降雨概率 45% · 东南风 3级 · 阵风；闷热+雷暴风险中等——双方后 30 分钟体能与换人节奏将显著影响 xG（31°C · 12:00 ET 开球 · 雷暴概率 45%）"
+            "text": "西雅图凉爽多云，海风微凉 · 18°C · 湿度 62% · 降雨概率 25% · 太平洋海风 3级；凉爽海风——利于东道主维持 90 分钟强度，对推演影响低（18°C · 12:00 PT 开球 · 降雨概率 25%）"
           },
           {
             "icon": "⚽",
             "label": "战术与阵容",
-            "text": "捷克 3-4-2-1 抢分：Schick+Provod/Šulc 双前腰；南非 Sithole/Zwane 红牌停赛，Mbatha/Mofokeng 顶替；泊松最可能 1-0/2-0"
-          }
-        ]
-      },
-      "upset_alert": {
-        "favorite": "Czechia",
-        "underdog": "South Africa",
-        "favorite_iso": "CZE",
-        "index": 28,
-        "level": "LOW",
-        "level_cn": "低",
-        "cold_result_pct": 24,
-        "verdict": "捷克纸面占优且南非中场双核停赛——Foster/Mofokeng 难完全替代 Zwane 创造力，平局空间收窄至约 26%。",
-        "tactical": "Hašek 3-4-2-1 压上 vs Broos 4-3-3 转换；Schick 对位南非中卫，Mbatha 顶 Sithole 屏障位是关键。",
-        "psychology": "南非再负基本出局但缺两名揭幕战主力；捷克必须抢分。",
-        "historical": "无大赛交锋；揭幕战 3 红后 Broos 变阵压力极大。",
-        "factors": [
-          {
-            "tag": "停赛",
-            "impact": "强",
-            "detail": "Sithole、Zwane 红牌缺席，南非中场创造力下滑"
-          },
-          {
-            "tag": "出线压力",
-            "impact": "强",
-            "detail": "双方均需 3 分"
-          },
-          {
-            "tag": "实力差",
-            "impact": "中",
-            "detail": "xG 差约 0.6，Schick 决定上限"
-          }
-        ]
-      },
-      "coach_analysis": {
-        "home": {
-          "name": "Ivan Hašek",
-          "age": 60,
-          "nation": "捷克",
-          "tenure": "2023年—",
-          "wc_exp": "2026 带队",
-          "style_tags": [
-            "3-4-3",
-            "Schick 核心",
-            "低位",
-            "定位球"
-          ],
-          "formation_pref": "3-4-3 · Schick 单锋",
-          "style_summary": "首轮 1-2 惜败韩国，Schick 84' 挽回颜面。对南非必须抢 3 分，预计压上但防线仍留三中卫。",
-          "subs": {
-            "timing": "首换 60–65 分钟",
-            "pattern": "Souček 屏障+边翼卫插上",
-            "avg_first_sub": "62'",
-            "note": "必须取胜心态"
-          },
-          "when_leading": {
-            "label": "控节奏",
-            "detail": "1 球领先：维持宽度，不早退。"
-          },
-          "when_trailing": {
-            "label": "堆前锋",
-            "detail": "先丢球：55' 换进攻手加码。"
-          },
-          "vs_strong": {
-            "label": "对强队：低位+反击",
-            "detail": "对韩国已验证低位。"
-          },
-          "vs_weak": {
-            "label": "对弱队：压制",
-            "detail": "对南非预计控球占优。"
-          },
-          "tournament": "大赛经验有限，Schick 状态决定上限。",
-          "traits": [
-            "Schick 依赖",
-            "三中卫",
-            "定位球",
-            "必须抢分"
-          ],
-          "match_note": "必须抢 3 分——Schick 支点+边翼卫插上；南非体能是后段机会。"
-        },
-        "away": {
-          "name": "Hugo Broos",
-          "age": 72,
-          "nation": "比利时/南非",
-          "tenure": "2021年—",
-          "wc_exp": "2016 非洲杯冠军（喀麦隆）",
-          "style_tags": [
-            "4-2-3-1",
-            "Tau 核心",
-            "转换",
-            "体能"
-          ],
-          "formation_pref": "4-2-3-1 · Tau 左翼",
-          "style_summary": "首轮 0-2 墨西哥，60' 后体能崩盘。对捷克若再负基本出局，预计相对开放对攻。",
-          "subs": {
-            "timing": "首换 65–70 分钟",
-            "pattern": "Tau 打满概率高",
-            "avg_first_sub": "68'",
-            "note": "弱队换人偏晚"
-          },
-          "when_leading": {
-            "label": "5-4-1 收缩",
-            "detail": "若意外领先：立即退守。"
-          },
-          "when_trailing": {
-            "label": "堆边锋",
-            "detail": "先丢球：60' 加码冲击。"
-          },
-          "vs_strong": {
-            "label": "对强队：转换",
-            "detail": "对墨西哥已暴露体能问题。"
-          },
-          "vs_weak": {
-            "label": "对弱队：压上",
-            "detail": "对捷克会求 3 分。"
-          },
-          "tournament": "非洲杯冠军经验，但世界杯舞台经验有限。",
-          "traits": [
-            "Tau 速度",
-            "体能隐患",
-            "转换",
-            "出线压力"
-          ],
-          "match_note": "出线压力大——Tau 速度+转换；若先丢球 60' 后体能堪忧。"
-        }
-      },
-      "weather": {
-        "city": "亚特兰大",
-        "country": "美国",
-        "venue": "Mercedes-Benz Stadium",
-        "temp": 31,
-        "humidity": 68,
-        "altitude_m": 320,
-        "rain_chance": 45,
-        "wind": "东南风 3级 · 阵风",
-        "condition_cn": "亚特兰大闷热潮湿，午后雷暴风险",
-        "impact_level": "MEDIUM",
-        "impact": "Mercedes-Benz 封闭式 31°C 体感约 35°C；捷克 vs 南非均需抢分，湿热下后段体能是隐性变量",
-        "impact_summary": "闷热+雷暴风险中等——双方后 30 分钟体能与换人节奏将显著影响 xG",
-        "home_adapt": 79,
-        "away_adapt": 76,
-        "home_note": "捷克习惯中欧夏季，但亚特兰大湿度高于布拉格；三中卫体系略减跑动消耗",
-        "away_note": "南非首轮 60' 后体能崩盘是前车之鉴；湿热环境下替补深度更关键",
-        "prediction_note": "模型因湿热下调下半场 xG 约 3%；若临场降雨场地湿滑，长传精度略降",
-        "weather_factors": [
-          {
-            "label": "31°C · 12:00 ET 开球",
-            "impact": "体感偏高",
-            "detail": "北京时间 6月19日 00:00；开球时气温已攀升"
-          },
-          {
-            "label": "雷暴概率 45%",
-            "impact": "中",
-            "detail": "午后对流天气，封闭屋顶可挡雨但湿度难降"
-          },
-          {
-            "label": "封闭式球场",
-            "impact": "略降直射",
-            "detail": "无暴晒但通风有限，体感仍闷热"
+            "text": "东道主西雅图：Pulisic/Reyna 宽度 vs 澳大利亚低位；美国取胜可大幅推进出线"
           }
         ],
-        "historical_note": "Mercedes-Benz Stadium · A组第2轮 · 预报更新 2026-06-18 22:00 本地",
-        "forecast_updated": "2026-06-18 22:00 本地"
+        "base_home_win": 55,
+        "base_draw": 24,
+        "base_away_win": 21,
+        "depth_calibrated": true
+      },
+      "weather": {
+        "city": "西雅图",
+        "country": "美国",
+        "venue": "Lumen Field",
+        "temp": 18,
+        "humidity": 62,
+        "altitude_m": 50,
+        "rain_chance": 25,
+        "wind": "太平洋海风 3级",
+        "condition_cn": "西雅图凉爽多云，海风微凉",
+        "impact_level": "LOW",
+        "impact": "Lumen Field 18°C 午间开球，体感舒适；美国高位压迫与澳大利亚低位均不受气候明显制约",
+        "impact_summary": "凉爽海风——利于东道主维持 90 分钟强度，对推演影响低",
+        "home_adapt": 88,
+        "away_adapt": 79,
+        "home_note": "西雅图主场，Pochettino 球队习惯太平洋西北凉爽气候；压迫节奏不易因热衰减",
+        "away_note": "澳大利亚跨时区作战，18°C 对其体能型打法友好；Ryan 一门经验是稳定因素",
+        "prediction_note": "气候对模型影响可忽略；若临场小雨，Lumen Field 天然草排水良好，球速略快",
+        "weather_factors": [
+          {
+            "label": "18°C · 12:00 PT 开球",
+            "impact": "低",
+            "detail": "北京时间 6月20日 03:00；西雅图午间气温温和"
+          },
+          {
+            "label": "降雨概率 25%",
+            "impact": "低",
+            "detail": "间歇性 drizzle 可能，对传球影响有限"
+          },
+          {
+            "label": "海风 3级",
+            "impact": "略利主队",
+            "detail": "长传与传中精度略受影响，东道主更熟悉场地风向"
+          }
+        ],
+        "historical_note": "Lumen Field · D组第2轮 · 东道主美国 · 预报更新 2026-06-19 22:00 本地",
+        "forecast_updated": "2026-06-19 22:00 本地"
       },
       "mystic": {
         "date_bazi": {
@@ -498,83 +345,83 @@ const MATCH_DATA = {
           "day": "己丑日",
           "day_element": "土",
           "day_dominant": "土",
-          "day_summary": "己丑日——己土坐丑，土气厚重。《道德经》曰：「上善若水。」丑土当令，宜守中蓄势、厚积薄发；忌土性固执、躁进冒失。非力之大小，乃气之顺逆。",
-          "hour_home": "子时（00:00-02:00）",
-          "hour_home_element": "水"
+          "day_summary": "己丑日——己土坐丑，土气厚重。《道德经》曰：「知常曰明。」丑土当令，宜循序渐进、忌半场冒进；非力之大小，乃气之顺逆。",
+          "hour_home": "寅时（03:00-05:00）",
+          "hour_home_element": "木"
         },
         "wuxing": {
           "home": {
-            "team": "Czechia",
-            "colors": "红+白",
-            "elements": "火、金",
-            "wuxing_short": "金火相涵",
-            "verdict": "中性偏利",
-            "verdict_color": "#C8A96E",
-            "compat": 56,
-            "reason": "红属火、白属金。己丑土日厚重，子时水旺——金生水、水泄金，如「云上于天」有待而发。火金相涵宜守中破局，非关纸面强弱，乃气运蓄势。",
-            "advantage": "子时水气泄金生火，稳后渐明"
+            "team": "USA",
+            "colors": "红+白+蓝",
+            "elements": "火、金、水",
+            "wuxing_short": "火金水杂",
+            "verdict": "有利",
+            "verdict_color": "#5BBF8A",
+            "compat": 62,
+            "reason": "红属火、白属金、蓝属水。寅时木气初升，木生火——西雅图水气相涵，如「泽中有火」。《道德经》「上善若水」，东道主顺寅木而进。",
+            "advantage": "寅木生火，主场水气相涵"
           },
           "away": {
-            "team": "South Africa",
-            "colors": "绿+黄",
-            "elements": "木、土",
-            "wuxing_short": "木土相杂",
+            "team": "Australia",
+            "colors": "金+绿",
+            "elements": "金、木",
+            "wuxing_short": "金木相杂",
             "verdict": "中性偏逆",
             "verdict_color": "#C8A96E",
             "compat": 44,
-            "reason": "绿属木、黄属土。丑土当令下木气受制——如「木入土中」，宜守不宜攻；子时水气虽旺，木土未齐。",
-            "disadvantage": "气运未齐，转换需待丑土后段"
+            "reason": "金绿相杂。丑土日厚重，寅木泄金——如「木入金中」，宜低位守中、忌早段失球。",
+            "disadvantage": "金气受寅木所泄，守势需稳"
           },
-          "summary": "五行裁定：子时水旺利金火蓄势之队；南非木土相杂——气运偏守，先破局者占先机"
+          "summary": "五行裁定：寅木生火利东道主；澳大利亚金木守中——气运偏逆，早段破局者占先机"
         },
         "hexagram": {
-          "name": "水天需",
-          "symbol": "☵☰",
-          "number": 5,
-          "upper": "坎水",
-          "lower": "乾天",
-          "quote": "《周易·需卦》：「有孚，光亨，贞吉。」",
-          "general": "需卦——云上于天，有险在前宜待时而动；先顺天时破局者得利，忌躁进。",
-          "advantage_team": "Czechia",
-          "disadvantage_team": "South Africa",
-          "hexagram_analysis": "需卦「利涉大川」：坎水在上，乾天在下，气运宜「待」后而动。子时水旺，卦未明示下半场第二高峰。",
-          "match_nature": "有险在前 · 宜慎行",
+          "name": "泽火革",
+          "symbol": "☱☲",
+          "number": 49,
+          "upper": "兑泽",
+          "lower": "离火",
+          "quote": "《周易·革卦》：「己日乃革，元亨利贞。」",
+          "general": "革卦——泽中有火，除旧布新；宜早段主动变革，忌守旧拖延。",
+          "advantage_team": "USA",
+          "disadvantage_team": "Australia",
+          "hexagram_analysis": "革卦「水火相息」：寅时木助火，兑泽在上——气运宜上半场主动破局一段，卦未明示后段第二高峰。",
+          "match_nature": "除旧布新 · 宜早动",
           "yellow_card_risk": "中",
-          "yellow_card_reason": "需卦主等待非缠斗；坎水险象下战术犯规略多，预计中等纪律风险。",
+          "yellow_card_reason": "革卦主变革非粗野；高位压迫致战术犯规，预计 3-4 张黄牌。",
           "scenarios": [
             {
               "icon": "☯",
               "label": "气运性质",
-              "text": "土水相激，子时水旺——先破局者占「光亨」之势"
+              "text": "寅木生火，革故鼎新——先动者占「元亨」"
             },
             {
               "icon": "⏱",
               "label": "进球高峰段",
-              "text": "第 22-38 分钟（需卦「云上于天」、子时水转明——卦只示此一段）"
+              "text": "第 25-42 分钟（革卦「己日乃革」、寅木助火——卦只示此一段）"
             },
             {
               "icon": "🟨",
               "label": "纪律",
-              "text": "坎水主险，领先后阻截犯规略多"
+              "text": "革主主动，黄牌来自压迫阻截"
             }
           ],
           "early_goal": {
-            "scenario": "若捷克先进球",
-            "prediction": "需象渐通——金火相涵，追加窗口在 28-42 分钟；忌「需」而未济时躁进。",
-            "favors": "Czechia",
-            "favors_prob": 58
+            "scenario": "若美国先进球",
+            "prediction": "革象全现——寅木助火，追加窗口在 30-45 分钟；忌领先后守旧不革。",
+            "favors": "USA",
+            "favors_prob": 62
           },
           "no_early_goal": {
             "scenario": "若前 30 分钟无进球",
-            "prediction": "需卦主「待」——丑土蓄势；35-50 分钟水气渐移，先破局者得利。",
-            "favors": "Czechia",
-            "favors_prob": 52
+            "prediction": "革卦宜「待己日」——0-0 仍可期；35-50 分钟水气渐移，先破局者得利。",
+            "favors": "USA",
+            "favors_prob": 55
           },
           "away_goal": {
-            "scenario": "若南非偷袭破门",
-            "prediction": "需遭逆——木土险地偶可惊雷；主队需以金火耐心反扑，60' 后土气助火。",
-            "favors": "Czechia",
-            "favors_prob": 50
+            "scenario": "若澳大利亚偷袭破门",
+            "prediction": "革遭逆——金木守中偶可惊雷；主队需水火相息耐心反扑，60' 后寅木仍助火。",
+            "favors": "USA",
+            "favors_prob": 52
           }
         },
         "goal_peak": {
@@ -584,499 +431,40 @@ const MATCH_DATA = {
             {
               "label": "上半场",
               "half": "first",
-              "start_min": 22,
-              "end_min": 38,
-              "hex_reason": "需卦「云上于天」，坎水渐通",
-              "time_reason": "子时水旺，气由待转亨"
+              "start_min": 25,
+              "end_min": 42,
+              "hex_reason": "革卦「己日乃革」，寅木助火",
+              "time_reason": "寅时木气生火，宜上半场破局"
             }
           ],
-          "periods": "第 22-38 分钟",
-          "rationale": "己丑土日厚重，子时水气当令；需卦主「有孚光亨」——气运集中于待而后发一段，卦象未明示下半场第二高峰。宁缺毋滥，只示上半场一窗。",
+          "periods": "第 25-42 分钟",
+          "rationale": "寅时木气初升，革卦主「除旧布新」——气运集中于上半场主动一段，卦象未明示下半场第二高峰。宁缺毋滥，只示一窗。",
           "note": "娱乐解读 · 纯玄学参考 · 非赛程或竞技推演",
           "logic_hint": "依赛日八字、开球时辰、卦象与五行生克推断；卦象只示一段气运则只给一段，不凑数。"
         },
-        "home_score": 64,
+        "home_score": 72,
         "away_score": 36,
-        "mystic_verdict": "捷克金火相涵，南非木土相杂——子时水旺，先顺天时破局者占「光亨」。",
-        "model_bridge": "xG 1.48-0.95 略优捷克，Tau 速度反击是唯一变数。",
+        "mystic_verdict": "美国寅木生火，澳大利亚金木守中——革故鼎新，东道主宜早段破局。",
+        "model_bridge": "xG 1.68-0.92 支持东道主，Pulisic 宽度 vs 澳大利亚低位是核心。",
         "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
       },
-      "depth_calibration": {
-        "tier_home": 0.75,
-        "tier_label": "Czechia 被看好 · 净胜约 0.5–1 球",
-        "implied_tier": 0.25,
-        "tier_gap": 0.5,
-        "signal": "genuine_favorite",
-        "signal_cn": "实力吻合",
-        "signal_color": "#5BBF8A",
-        "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
-        "blocker_spread_note": "",
-        "public_lean_cn": "舆论倾向 Czechia（约 62%）",
-        "analysis": "捷克首轮惜败韩国需抢分；南非 0-2 墨西哥且 Sithole/Zwane 红牌停赛，中场削弱。模型略看好捷克，平局权重下调。 赛前净胜参考高于 xG 隐含（+0.5），且净胜 1 球占 25.4%——热门净胜拉开偏难。",
-        "spread_cover": {
-          "top3_scores": [
-            {
-              "score": "1-0",
-              "prob": 13.9
-            },
-            {
-              "score": "1-1",
-              "prob": 12.2
-            },
-            {
-              "score": "2-0",
-              "prob": 10.5
-            }
-          ],
-          "one_goal_win_pct": 25.4,
-          "two_plus_win_pct": 26.6,
-          "full_cover_pct": 26.6,
-          "half_lose_pct": 25.4,
-          "fav_cover_ev": -0.34,
-          "dog_cover_ev": 0.34,
-          "rational_spread_cn": "客队 守住差距概率略高",
-          "total_xg": 2.4,
-          "over_2_5_pct": 42.7,
-          "over_3_pct": 21.7,
-          "totals_lean_cn": "2.5 球参考接近均衡；3 球参考偏少",
-          "margin_risk_note": "净胜 1 球概率 25.4%：常见「赢球但净胜仅 1 球」",
-          "push_pct": null
-        },
-        "spread_odds": null,
-        "spread_alt": null,
-        "totals_analysis": {
-          "market_line": 2.25,
-          "line_label": "总进球约 2–2.5 个",
-          "implied_xg_total": 2.4,
-          "fair_line": 2.25,
-          "line_gap": 0,
-          "over_pct": 55.9,
-          "under_pct": 44.1,
-          "signal": "aligned",
-          "signal_cn": "进球参考贴合",
-          "signal_color": "#5BBF8A",
-          "signal_desc": "赛前进球参考与 xG 总进球预期基本一致。",
-          "public_over_pct": 46,
-          "public_lean_cn": "舆论对总进球看法较分散",
-          "index_note": "少进球侧参考权重相对更高",
-          "totals_odds": null,
-          "rational_cn": "模型在 总进球约 2–2.5 个 附近均衡",
-          "score_link_cn": "小比分（1-0/1-1）偏少进球 · 2-0/2-1 居中 · 3 球+ 偏多进球"
-        },
-        "totals_line": 2.25,
-        "applied_delta": {
-          "home_win": 2,
-          "draw": -1,
-          "away_win": -1
-        },
-        "adjustment_note": "模型微调：主胜 +2% · 平 -1% · 客 -1%",
-        "adjusted_probs": {
-          "home_win": 54,
-          "draw": 25,
-          "away_win": 21
-        },
-        "display_summary": {
-          "fav_name": "Czechia",
-          "expected_total_goals": 2.01,
-          "poisson_fav_win_pct": 54.2,
-          "small_lead_pct": 27.6,
-          "small_example_score": "1-0",
-          "small_example_pct": 18.2,
-          "big_cover_pct": 26.5,
-          "big_example_score": "2-0",
-          "big_example_pct": 12.5,
-          "win_shape": {
-            "fav_name": "Czechia",
-            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以险胜·控局为主（险胜 · 控局 33.6%）",
-            "shapes": [
-              {
-                "key": "narrow_low",
-                "label": "险胜 · 控局",
-                "example": "如 1-0",
-                "field_pct": 18.2,
-                "pct": 33.6
-              },
-              {
-                "key": "narrow_open",
-                "label": "险胜 · 开放",
-                "example": "如 2-1",
-                "field_pct": 9.4,
-                "pct": 17.4
-              },
-              {
-                "key": "comfort_low",
-                "label": "拉开 · 控局",
-                "example": "如 2-0",
-                "field_pct": 18.2,
-                "pct": 33.6
-              },
-              {
-                "key": "comfort_open",
-                "label": "拉开 · 开放",
-                "example": "如 3-1+",
-                "field_pct": 8.4,
-                "pct": 15.4
-              }
-            ],
-            "paths": [
-              {
-                "key": "narrow",
-                "label": "险胜收工",
-                "example": "如 1-0、2-1",
-                "pct": 51
-              },
-              {
-                "key": "clean",
-                "label": "零封拉开",
-                "example": "如 2-0、3-0",
-                "pct": 33.6
-              },
-              {
-                "key": "open",
-                "label": "开放拉开",
-                "example": "如 3-1+",
-                "pct": 15.4
-              }
-            ],
-            "fav_win_pct": 54
-          },
-          "excitement": {
-            "label_cn": "偏晚",
-            "label_key": "slow",
-            "label_color": "#7BB8D4",
-            "sub_cn": "预期首球等待约 44.6 分",
-            "first_goal_wait": 44.6,
-            "fast_pct": 49,
-            "moderate_pct": 14.6,
-            "slow_pct": 36.4,
-            "tiers": [
-              {
-                "key": "fast",
-                "label": "前 30 分内首球",
-                "pct": 49
-              },
-              {
-                "key": "moderate",
-                "label": "30–45 分首球",
-                "pct": 14.6
-              },
-              {
-                "key": "slow",
-                "label": "45 分后首球",
-                "pct": 36.4
-              }
-            ]
-          },
-          "baseline_label": "全场预期（含伤病·气候）",
-          "context_factors": [
-            {
-              "icon": "🏥",
-              "label": "伤病",
-              "note": "Czechia 暂无重要伤停 · South Africa：Sphephelo Sithole、Themba Zwane 缺阵"
-            },
-            {
-              "icon": "👔",
-              "label": "教练风格",
-              "note": "控节奏 / 5-4-1 收缩（领先时）"
-            },
-            {
-              "icon": "🌤️",
-              "label": "气候",
-              "note": "闷热+雷暴风险中等——双方后 30 分钟体能与换人节奏将显著影响 xG"
-            }
-          ],
-          "xg_context": {
-            "baseline_home": 1.52,
-            "baseline_away": 0.88,
-            "adjusted_home": 1.37,
-            "adjusted_away": 0.65,
-            "note": "基准 xG 1.52–0.88 → 调整后 1.37–0.65"
-          },
-          "calibration": {
-            "signal_cn": "实力吻合",
-            "signal_color": "#5BBF8A",
-            "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
-            "tier_gap": 0.5,
-            "implied_tier_label": "Czechia 被看好 · 净胜约 0.25 球",
-            "market_tier_label": "Czechia 被看好 · 净胜约 0.5–1 球",
-            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 热门仅净胜 1 球概率 27.6%"
-          },
-          "win_outlook": {
-            "fav_name": "Czechia",
-            "state_label": null,
-            "paths": [
-              {
-                "key": "narrow",
-                "label": "险胜收工",
-                "example": "如 1-0、2-1",
-                "pct": 51
-              },
-              {
-                "key": "clean",
-                "label": "零封拉开",
-                "example": "如 2-0、3-0",
-                "pct": 33.6
-              },
-              {
-                "key": "open",
-                "label": "开放拉开",
-                "example": "如 3-1+",
-                "pct": 15.4
-              }
-            ],
-            "margin_line_cn": "Czechia · 赛前净胜参考 ≥1–2 球",
-            "margin_meet_pct": 26.5,
-            "margin_fail_pct": 27.6,
-            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-            "totals_line": 2.25,
-            "totals_line_cn": "总进球约 2–2.5 个",
-            "totals_high_pct": 46.2,
-            "totals_low_pct": 53.8,
-            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 30.7,
-            "win_margin2_low_total_pct": 12.5,
-            "win_margin2_high_total_pct": 26.5,
-            "readout_cn": "取胜约 54%；若取胜，以「险胜收工」为主（51%）。 对着赛前净胜参考，差距达标约 26.5%；对着 总进球约 2–2.5 个，总进球偏高一侧约 46.2%。 注意 2-0 类：净胜达标但总进球仍可能偏低。"
-          },
-          "totals_line": 2.25,
-          "score_patterns": [
-            {
-              "score": "1-0",
-              "pct": 18.2
-            },
-            {
-              "score": "0-0",
-              "pct": 13.3
-            },
-            {
-              "score": "2-0",
-              "pct": 12.5
-            }
-          ],
-          "totals_view": {
-            "expected_total": 2,
-            "fair_line": 2.25,
-            "line_gap": 0,
-            "over_pct": 46.2,
-            "summary_cn": "预期约 2.0 个总进球 · 赛前参考进球参考贴合 · 模型在常见进球预期附近均衡"
-          },
-          "first_goal_scenarios": [
-            {
-              "side": "home",
-              "team": "Czechia",
-              "first_goal_pct": 67.8,
-              "start_score": "1-0",
-              "fav_name": "Czechia",
-              "scorer_is_fav": true,
-              "expected_key": "hold_win",
-              "fav_recover_pct": 94.5,
-              "small_lead_pct": 35.4,
-              "big_lead_pct": 42.5,
-              "fav_win_pct": 77.9,
-              "fav_draw_pct": 16.6,
-              "fav_lose_pct": 5.5,
-              "outcomes": [
-                {
-                  "key": "hold_win",
-                  "label": "Czechia 保持胜果（净胜≥1）",
-                  "pct": 77.9
-                },
-                {
-                  "key": "drawn",
-                  "label": "被扳平",
-                  "pct": 16.6
-                },
-                {
-                  "key": "lost",
-                  "label": "被逆转落败",
-                  "pct": 5.5
-                }
-              ],
-              "excitement": {
-                "label_cn": "偏晚",
-                "label_key": "slow",
-                "label_color": "#7BB8D4",
-                "sub_cn": "预期首球等待约 48.1 分",
-                "first_goal_wait": 48.1,
-                "fast_pct": 40,
-                "moderate_pct": 13.5,
-                "slow_pct": 46.5,
-                "tiers": [
-                  {
-                    "key": "fast",
-                    "label": "前 30 分内首球",
-                    "pct": 40
-                  },
-                  {
-                    "key": "moderate",
-                    "label": "30–45 分首球",
-                    "pct": 13.5
-                  },
-                  {
-                    "key": "slow",
-                    "label": "45 分后首球",
-                    "pct": 46.5
-                  }
-                ]
-              },
-              "big_delta": 16,
-              "small_delta": 7.8,
-              "narrative": "Czechia 先破门（已 1-0） → 「控节奏」；South Africa 「堆边锋」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门。",
-              "live_outlook": {
-                "fav_name": "Czechia",
-                "state_label": "Czechia 已 1-0 领先",
-                "paths": [
-                  {
-                    "key": "narrow",
-                    "label": "险胜收工",
-                    "example": "如 1-0、2-1",
-                    "pct": 51
-                  },
-                  {
-                    "key": "clean",
-                    "label": "零封拉开",
-                    "example": "如 2-0、3-0",
-                    "pct": 33.6
-                  },
-                  {
-                    "key": "open",
-                    "label": "开放拉开",
-                    "example": "如 3-1+",
-                    "pct": 15.4
-                  }
-                ],
-                "margin_line_cn": "Czechia · 赛前净胜参考 ≥1–2 球",
-                "margin_meet_pct": 42.5,
-                "margin_fail_pct": 35.4,
-                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-                "totals_line": 2.25,
-                "totals_line_cn": "总进球约 2–2.5 个",
-                "totals_high_pct": 61.9,
-                "totals_low_pct": 38.1,
-                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-                "win_low_total_pct": 41.9,
-                "win_margin2_low_total_pct": 20.4,
-                "win_margin2_high_total_pct": 42.5,
-                "readout_cn": "Czechia 已 1-0 领先：仍取胜约 77.9%；对着赛前 总进球约 2–2.5 个，总进球偏高一侧约 61.9%。 常见收尾如 2-0（净胜达标、总进球仍偏低）。"
-              }
-            },
-            {
-              "side": "away",
-              "team": "South Africa",
-              "first_goal_pct": 32.2,
-              "start_score": "0-1",
-              "fav_name": "Czechia",
-              "scorer_is_fav": false,
-              "expected_key": "fav_recover",
-              "fav_recover_pct": 56.3,
-              "small_lead_pct": 17.1,
-              "big_lead_pct": 9.3,
-              "fav_win_pct": 26.4,
-              "fav_draw_pct": 29.9,
-              "fav_lose_pct": 43.6,
-              "outcomes": [
-                {
-                  "key": "draw",
-                  "label": "Czechia 追平（平局）",
-                  "pct": 29.9
-                },
-                {
-                  "key": "win1",
-                  "label": "Czechia 净胜1球翻盘（如 2-1）",
-                  "pct": 17.1
-                },
-                {
-                  "key": "win2",
-                  "label": "Czechia 净胜≥2球翻盘（如 3-1）",
-                  "pct": 9.3
-                },
-                {
-                  "key": "upset_hold",
-                  "label": "South Africa 保持胜果至终场",
-                  "pct": 43.6
-                }
-              ],
-              "excitement": {
-                "label_cn": "偏晚",
-                "label_key": "slow",
-                "label_color": "#7BB8D4",
-                "sub_cn": "预期首球等待约 43.5 分",
-                "first_goal_wait": 43.5,
-                "fast_pct": 43.2,
-                "moderate_pct": 14,
-                "slow_pct": 42.8,
-                "tiers": [
-                  {
-                    "key": "fast",
-                    "label": "前 30 分内首球",
-                    "pct": 43.2
-                  },
-                  {
-                    "key": "moderate",
-                    "label": "30–45 分首球",
-                    "pct": 14
-                  },
-                  {
-                    "key": "slow",
-                    "label": "45 分后首球",
-                    "pct": 42.8
-                  }
-                ]
-              },
-              "big_delta": -17.2,
-              "small_delta": -10.5,
-              "narrative": "South Africa 先破门（已 0-1） → 「5-4-1 收缩」；Czechia 「堆前锋」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门。",
-              "live_outlook": null
-            }
-          ],
-          "match_preview": {
-            "morphology": {
-              "totals_summary": "预期约 2.0 个总进球 · 赛前参考进球参考贴合 · 模型在常见进球预期附近均衡",
-              "totals_line_cn": "总进球约 2–2.5 个",
-              "totals_high_pct": 46.2,
-              "type_tags": [
-                {
-                  "key": "low_block",
-                  "label": "低位反击"
-                },
-                {
-                  "key": "low_scoring",
-                  "label": "进球偏少"
-                }
-              ],
-              "depth_label": "深度一般",
-              "draw_trap_pct": 24,
-              "readout_cn": "Czechia · 低位反击 · 进球偏少。进球预期不高，小比分与平局权重上升。"
-            },
-            "draw_trap_note": "平局风险：低位反击队若先进球或被追平，1-1 / 0-0 比客胜更现实（约 24% 冷门空间含平局）。",
-            "archetype": {
-              "tags": [
-                {
-                  "key": "low_block",
-                  "label": "低位反击"
-                },
-                {
-                  "key": "low_scoring",
-                  "label": "进球偏少"
-                }
-              ],
-              "depth_score": 0,
-              "depth_label": "深度一般",
-              "draw_trap_pct": 24,
-              "fav_lead_style": "defensive"
-            }
-          }
-        },
-        "public_summary_note": "【推演概要】Czechia · 低位反击 · 进球偏少。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 热门仅净胜 1 球概率 27.6%（模型微调：主胜 +2% · 平 -1% · 客 -1%）"
-      },
       "group_context": {
-        "group": "A",
-        "label": "A组 · 第1轮后",
+        "group": "D",
+        "label": "D组 · 第1轮（2场已赛）",
         "matchday": 2,
         "standings": [
           {
-            "team": "Mexico",
+            "team": "USA",
+            "pts": 3,
+            "p": 1,
+            "w": 1,
+            "d": 0,
+            "l": 0,
+            "gf": 4,
+            "ga": 1
+          },
+          {
+            "team": "Australia",
             "pts": 3,
             "p": 1,
             "w": 1,
@@ -1086,27 +474,7 @@ const MATCH_DATA = {
             "ga": 0
           },
           {
-            "team": "South Korea",
-            "pts": 3,
-            "p": 1,
-            "w": 1,
-            "d": 0,
-            "l": 0,
-            "gf": 2,
-            "ga": 1
-          },
-          {
-            "team": "Czechia",
-            "pts": 0,
-            "p": 1,
-            "w": 0,
-            "d": 0,
-            "l": 1,
-            "gf": 1,
-            "ga": 2
-          },
-          {
-            "team": "South Africa",
+            "team": "Türkiye",
             "pts": 0,
             "p": 1,
             "w": 0,
@@ -1114,675 +482,199 @@ const MATCH_DATA = {
             "l": 1,
             "gf": 0,
             "ga": 2
+          },
+          {
+            "team": "Paraguay",
+            "pts": 0,
+            "p": 1,
+            "w": 0,
+            "d": 0,
+            "l": 1,
+            "gf": 1,
+            "ga": 4
           }
         ],
         "home": {
-          "team": "Czechia",
-          "rank": 3,
-          "pts": 0,
+          "team": "USA",
+          "rank": 1,
+          "pts": 3,
           "played": 1,
-          "if_1st": "32强 · 对阵 B 组第 2",
-          "if_2nd": "32强 · 对阵 B 组第 1",
-          "if_3rd": "若列小组第 3，需与 B/E/F/H/I/J/K/L 等组第 3 比净胜球/进球"
+          "if_1st": "32强 M81 · D 组第 1 vs 最佳第 3（B/E/F/I/J 池） → 当前 G 组第 2倾向 New Zealand",
+          "if_1st_r16": "16强 M94 · 对阵 G 组第 1 vs 最佳第 3（A/E/H/I/J 池）之胜者",
+          "if_1st_corridor": "比利时/埃及 等 G 组头名走廊",
+          "if_2nd": "32强 M88 · D 组第 2 vs G 组第 2 → 当前 G 组第 1倾向 Iran",
+          "if_2nd_r16": "16强 M95 · 对阵 J 组第 1 vs H 组第 2 之胜者",
+          "if_2nd_corridor": "阿根廷/西班牙 半区",
+          "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 C/E/F/G/H/I/J/K 等组第 3 横向比较",
+          "if_3rd_r16": "32 强对手取决于 Annex C 第 3 名组合（495 种可能）"
         },
         "away": {
-          "team": "South Africa",
-          "rank": 4,
-          "pts": 0,
+          "team": "Australia",
+          "rank": 2,
+          "pts": 3,
           "played": 1,
-          "if_1st": "32强 · 对阵 B 组第 2",
-          "if_2nd": "32强 · 对阵 B 组第 1",
-          "if_3rd": "若列小组第 3，需与 B/E/F/H/I/J/K/L 等组第 3 比净胜球/进球"
+          "if_1st": "32强 M81 · D 组第 1 vs 最佳第 3（B/E/F/I/J 池） → 当前 G 组第 2倾向 New Zealand",
+          "if_1st_r16": "16强 M94 · 对阵 G 组第 1 vs 最佳第 3（A/E/H/I/J 池）之胜者",
+          "if_1st_corridor": "比利时/埃及 等 G 组头名走廊",
+          "if_2nd": "32强 M88 · D 组第 2 vs G 组第 2 → 当前 G 组第 1倾向 Iran",
+          "if_2nd_r16": "16强 M95 · 对阵 J 组第 1 vs H 组第 2 之胜者",
+          "if_2nd_corridor": "阿根廷/西班牙 半区",
+          "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 C/E/F/G/H/I/J/K 等组第 3 横向比较",
+          "if_3rd_r16": "32 强对手取决于 Annex C 第 3 名组合（495 种可能）"
         },
         "cross_group_notes": [
-          "G 组四队同积 1 分，形势极度开放",
+          "C 组：头名 Scotland 3 分 · 次席 Morocco 1 分（32强绑定组）",
+          "G 组：头名 Iran 1 分 · 次席 New Zealand 同分（32强绑定组）",
           "H 组四队同积 1 分，形势极度开放",
           "E 组 Germany 3 分领跑",
-          "F 组 Sweden 3 分领跑"
+          "F 组 Sweden 3 分领跑",
+          "I 组 Norway 3 分领跑"
         ],
+        "path_tradeoff": "D 组次席走 D2–G2 槽，与 C/F 头名次席路径不同；美国/土耳其若争头名需关注第 3 名落位。",
         "manipulation_risk": {
-          "level": "LOW",
-          "level_cn": "低",
+          "level": "MEDIUM",
+          "level_cn": "中",
           "focus_team": null,
-          "reason": "暂无明确控分动机；出线路径仍取决于后续直接对话。"
+          "reason": "本组或关联组积分胶着，第 2、3 轮可能出现算分踢法；本轮仍应以抢分为主。",
+          "optimal_summary": "策略最优解（推演）：本组及关联组积分纠缠，本场以抢 3 分（至少 1 分）为先；锻炼新兵与战术演练宜留到末轮、出线形势明朗后再考虑，届时非胜结果方有可接受空间。"
         },
-        "knockout_note": "48 队制：12 组前 2 + 8 个最佳第 3 进入 32 强；末轮可能出现算分/控分战术。",
+        "knockout_note": "48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。",
         "scenarios": [
-          "Czechia 若取胜：积分 3，A 组排名有望上升；过早预测 32 强对手仍不可靠。",
-          "South Africa 若取胜：积分 3，客场抢分将改变 A 组格局。",
-          "平局：双方各 +1 分；在 G 组四队同积 1 分，形势极度开放；H 组四队同积 1 分，形势极度开放；E 组 Germany 3 分领跑；F 组 Sweden 3 分领跑 背景下，第 2 轮直接对话权重上升。"
+          "USA 若取胜：积分 6，D 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
+          "Australia 若取胜：积分 6，客场抢分将改变 D 组格局与淘汰赛半区。",
+          "平局：双方各 +1 分；在 C 组：头名 Scotland 3 分 · 次席 Morocco 1 分（32强绑定组） · G 组：头名 Iran 1 分 · 次席 New Zealand 同分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
+          "头名/次席博弈：D 组次席走 D2–G2 槽，与 C/F 头名次席路径不同；美国/土耳其若争头名需关注第 3 名落位。"
         ]
-      }
-    },
-    {
-      "id": "m26",
-      "group": "B",
-      "matchday": 2,
-      "date": "2026-06-18",
-      "time": "15:00",
-      "time_local": "15:00 PT",
-      "timezone": "PDT (UTC-7)",
-      "time_beijing": "03:00",
-      "date_beijing": "6月19日",
-      "time_beijing_full": "北京时间 6月19日 03:00",
-      "venue": "SoFi Stadium",
-      "city": "Los Angeles, USA",
-      "note": "B组第2轮 · 瑞士 vs 波黑 · 洛杉矶",
-      "lineup": {
-        "confirmed": false,
-        "formation": null,
-        "home": "等待官方确认",
-        "away": "等待官方确认",
-        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
-        "predicted": {
-          "formation": "4-2-3-1 / 4-3-3",
-          "home": "Kobel; Rieder, Akanji, Rodríguez; Xhaka, Freuler; Vargas, Rieder, Embolo; Duah",
-          "away": "Bešić; Džeko, Bajraktarević, Tahić; Hadžiahmetović, Kršić; Mlakar, Bajić, Demirović; Burić",
-          "source": "BBC / FotMob 预测 · 非官方",
-          "alt": null
-        }
-      },
-      "home": {
-        "name": "Switzerland",
-        "iso": "ch",
-        "flag": "",
-        "fifa_rank": 19,
-        "rating": 78,
-        "form": [
-          "D",
-          "W",
-          "W",
-          "D",
-          "W"
-        ],
-        "coach": "Murat Yakin",
-        "stars": [
-          {
-            "name": "Granit Xhaka",
-            "pos": "CM",
-            "club": "Bayer Leverkusen",
-            "stats": "节拍器",
-            "rating": 8.2,
-            "desc": "组织+远射"
-          },
-          {
-            "name": "Manuel Akanji",
-            "pos": "CB",
-            "club": "Man City",
-            "stats": "防线领袖",
-            "rating": 8,
-            "desc": "出球+防空"
-          },
-          {
-            "name": "Breel Embolo",
-            "pos": "ST",
-            "club": "Monaco",
-            "stats": "支点",
-            "rating": 7.8,
-            "desc": "身体对抗"
-          }
-        ],
-        "injuries": [
-          {
-            "player": "Manuel Akanji",
-            "status": "FIT",
-            "note": "曼城中卫，出球+防空",
-            "confirmed": true
-          },
-          {
-            "player": "Granit Xhaka",
-            "status": "FIT",
-            "note": "勒沃库森节拍器",
-            "confirmed": true
-          }
-        ],
-        "rumors": [
-          "首轮 1-1 卡塔尔后 Yakin 强调「对波黑必须取胜」"
-        ],
-        "star": {
-          "name": "Granit Xhaka",
-          "pos": "CM",
-          "desc": "对波黑必须取胜",
-          "rating": 8.2
-        }
-      },
-      "away": {
-        "name": "Bosnia and Herzegovina",
-        "iso": "ba",
-        "flag": "",
-        "fifa_rank": 72,
-        "rating": 68,
-        "form": [
-          "D",
-          "L",
-          "W",
-          "D",
-          "L"
-        ],
-        "coach": "Sergej Stojković",
-        "stars": [
-          {
-            "name": "Edin Džeko",
-            "pos": "ST",
-            "club": "Fenerbahçe",
-            "stats": "39 岁支点",
-            "rating": 7.8,
-            "desc": "定位球+经验"
-          },
-          {
-            "name": "Miroslav Stevanović",
-            "pos": "RW",
-            "club": "Servette",
-            "stats": "边路",
-            "rating": 7,
-            "desc": "传中威胁"
-          },
-          {
-            "name": "Amar Hadžiahmetović",
-            "pos": "CM",
-            "club": "Konyaspor",
-            "stats": "屏障",
-            "rating": 6.9,
-            "desc": "中场绞杀"
-          }
-        ],
-        "injuries": [
-          {
-            "player": "Edin Džeko",
-            "status": "FIT",
-            "note": "39 岁支点，定位球威胁",
-            "confirmed": true
-          }
-        ],
-        "rumors": [
-          "首轮 1-1 加拿大，Džeko 经验是最大资产",
-          "对瑞士预计 4-5-1 低位"
-        ],
-        "star": {
-          "name": "Edin Džeko",
-          "pos": "ST",
-          "desc": "低位+定位球偷分",
-          "rating": 7.8
-        }
-      },
-      "h2h": {
-        "home_wins": 2,
-        "draws": 1,
-        "away_wins": 0,
-        "recent": [],
-        "note": "瑞士近年占优"
-      },
-      "referee": {
-        "confirmed": true,
-        "pending": false,
-        "source": "FIFA · Match officials · 2026-06-18",
-        "name": "João Pinheiro",
-        "nation": "Portugal",
-        "iso": "pt",
-        "age": 38,
-        "wc_experience": "2026 世界杯首秀主裁 · 2025 世预赛波黑 1-1 奥地利",
-        "avg_yellow": 4.9,
-        "avg_red": 0.11,
-        "avg_penalty": 0.26,
-        "home_win_rate": 48,
-        "bias_index": 50,
-        "bias_note": "葡萄牙籍主裁。Džeko 支点与瑞士肋部渗透犯规判罚是焦点；Katić/Lukić/Demirović 均有第二张黄牌停赛风险。",
-        "tendencies": [
-          "葡萄牙助理裁判组：Bruno Jesus、Luciano Maia",
-          "第四官员 Yusuke Araki（日本）· 候补边裁 Jun Mihara",
-          "B 组四队均 1 分，洛杉矶抢分战预计 5–6 张黄牌",
-          "Pinheiro 联赛场均近 5 黄，对拖延时间与战术犯规尺度偏严"
-        ],
-        "officials": {
-          "ar1": "Bruno Jesus (POR)",
-          "ar2": "Luciano Maia (POR)",
-          "fourth": "Yusuke Araki (JPN)"
-        }
-      },
-      "prediction": {
-        "home_win": 50,
-        "draw": 25,
-        "away_win": 25,
-        "score": "1-1",
-        "confidence": 68,
-        "xg_home": 1.55,
-        "xg_away": 1.05,
-        "key_factor": "瑞士首轮平卡塔尔需取胜：Xhaka/Akanji 组织优势；波黑 Džeko 定位球偷分；泊松最可能 2-0/1-1",
-        "score_dist": [
-          {
-            "score": "1-1",
-            "prob": 12.1
-          },
-          {
-            "score": "1-0",
-            "prob": 11.5
-          },
-          {
-            "score": "2-1",
-            "prob": 9.4
-          },
-          {
-            "score": "2-0",
-            "prob": 8.9
-          },
-          {
-            "score": "0-1",
-            "prob": 7.8
-          },
-          {
-            "score": "0-0",
-            "prob": 7.4
-          },
-          {
-            "score": "1-2",
-            "prob": 6.3
-          }
-        ],
-        "base_home_win": 49,
-        "base_draw": 26,
-        "base_away_win": 26,
-        "depth_calibrated": true,
-        "insight_factors": [
-          {
-            "icon": "📊",
-            "label": "小组积分",
-            "text": "Switzerland 暂列 B 组第 1（1 分 · 已赛 1 场） vs Bosnia and Herzegovina 第 4（1 分 · 已赛 1 场）；B 组四队同积 1 分，本轮赛果将显著重排积分榜"
-          },
-          {
-            "icon": "🌤️",
-            "label": "赛场气候",
-            "text": "洛杉矶晴朗干燥，封闭式 · 27°C · 湿度 48% · 降雨概率 5% · 西南海风 2级；气候变量低——瑞士组织 vs 波黑低位，场地条件不构成扰动（27°C · 15:00 PT 开球 · 干燥晴朗）"
-          },
-          {
-            "icon": "⚽",
-            "label": "战术与阵容",
-            "text": "瑞士首轮平卡塔尔需取胜：Xhaka/Akanji 组织优势；波黑 Džeko 定位球偷分；泊松最可能 2-0/1-1"
-          }
-        ]
-      },
-      "upset_alert": {
-        "favorite": "Switzerland",
-        "underdog": "Bosnia and Herzegovina",
-        "favorite_iso": "SUI",
-        "index": 32,
-        "level": "MEDIUM",
-        "level_cn": "中等",
-        "cold_result_pct": 28,
-        "verdict": "瑞士组织占优但 Džeko 定位球是经典冷门路径——平局约 28%。",
-        "tactical": "Yakin 4-2-3-1 控球 vs Stojković 4-5-1 低位+Džeko 支点。",
-        "psychology": "波黑首轮平加拿大有信心；瑞士必须取胜。",
-        "historical": "瑞士近年 H2H 占优。",
-        "factors": [
-          {
-            "tag": "定位球",
-            "impact": "强",
-            "detail": "Džeko 193cm 支点"
-          },
-          {
-            "tag": "组织",
-            "impact": "强",
-            "detail": "Xhaka/Akanji 瑞士优势"
-          },
-          {
-            "tag": "平局",
-            "impact": "中",
-            "detail": "波黑守 0-1 可接受"
-          }
-        ]
-      },
-      "coach_analysis": {
-        "home": {
-          "name": "Murat Yakin",
-          "age": 50,
-          "nation": "瑞士",
-          "tenure": "2021年—",
-          "wc_exp": "2022 带队 · 2024 欧洲杯八强",
-          "style_tags": [
-            "4-2-3-1",
-            "Akanji 防线",
-            "组织",
-            "纪律"
-          ],
-          "formation_pref": "4-2-3-1 · 双后腰",
-          "style_summary": "首轮 1-1 卡塔尔，组织优势未完全兑现。对波黑必须取胜，预计控球压制+边路宽度。",
-          "subs": {
-            "timing": "首换 58–65 分钟",
-            "pattern": "常换边锋",
-            "avg_first_sub": "60'",
-            "note": "换人果断"
-          },
-          "when_leading": {
-            "label": "控节奏",
-            "detail": "1 球领先：维持控球。"
-          },
-          "when_trailing": {
-            "label": "堆中场",
-            "detail": "先丢球：加强肋部渗透。"
-          },
-          "vs_strong": {
-            "label": "对强队：稳守",
-            "detail": "对加拿大会压上。"
-          },
-          "vs_weak": {
-            "label": "对弱队：不留余地",
-            "detail": "对波黑 xG 占优。"
-          },
-          "tournament": "2022/2024 大赛经验，纪律是资产。",
-          "traits": [
-            "组织",
-            "Akanji 防线",
-            "纪律",
-            "必须抢分"
-          ],
-          "match_note": "瑞士组织压制——Akanji 出球+边路宽度；波黑 Džeko 定位球需防。"
-        },
-        "away": {
-          "name": "Sergej Stojković",
-          "age": 58,
-          "nation": "塞尔维亚",
-          "tenure": "2024年—",
-          "wc_exp": "2026 带队",
-          "style_tags": [
-            "4-3-3",
-            "Džeko 支点",
-            "身体对抗",
-            "定位球"
-          ],
-          "formation_pref": "4-3-3 · Džeko 单锋",
-          "style_summary": "首轮 1-1 加拿大，Džeko 经验是最大资产。对瑞士求 1 分可接受，预计 4-5-1 低位+定位球。",
-          "subs": {
-            "timing": "首换 70 分钟+",
-            "pattern": "Džeko 打满",
-            "avg_first_sub": "72'",
-            "note": "弱队体能分配"
-          },
-          "when_leading": {
-            "label": "5-4-1 铁桶",
-            "detail": "若意外领先：立即退守。"
-          },
-          "when_trailing": {
-            "label": "维持低位",
-            "detail": "unlikely 大举压上。"
-          },
-          "vs_strong": {
-            "label": "对强队：龟缩",
-            "detail": "对瑞士低位+定位球。"
-          },
-          "vs_weak": {
-            "label": "对弱队：相对开放",
-            "detail": "对卡塔尔会压上。"
-          },
-          "tournament": "大赛经验有限，Džeko 是精神领袖。",
-          "traits": [
-            "Džeko 支点",
-            "定位球",
-            "低位",
-            "身体对抗"
-          ],
-          "match_note": "4-5-1 低位+Džeko 支点偷分；守 0-1 求 1 分是现实目标。"
-        }
-      },
-      "weather": {
-        "city": "洛杉矶",
-        "country": "美国",
-        "venue": "SoFi Stadium",
-        "temp": 27,
-        "humidity": 48,
-        "altitude_m": 30,
-        "rain_chance": 5,
-        "wind": "西南海风 2级",
-        "condition_cn": "洛杉矶晴朗干燥，封闭式",
-        "impact_level": "LOW",
-        "impact": "SoFi 27°C 晴朗，气候对双方影响极小；战术对位决定比赛走向",
-        "impact_summary": "气候变量低——瑞士组织 vs 波黑低位，场地条件不构成扰动",
-        "home_adapt": 83,
-        "away_adapt": 81,
-        "home_note": "瑞士组织足球不受南加州温和气候影响",
-        "away_note": "波黑低位防守对气温不敏感；Džeko 定位球是唯一变数",
-        "prediction_note": "气候对模型影响可忽略",
-        "weather_factors": [
-          {
-            "label": "27°C · 15:00 PT 开球",
-            "impact": "低",
-            "detail": "北京时间 6月19日 03:00；英格伍德海风微凉"
-          },
-          {
-            "label": "干燥晴朗",
-            "impact": "中性",
-            "detail": "传球与跑动不受天气制约"
-          }
-        ],
-        "historical_note": "SoFi Stadium · B组第2轮 · 预报更新 2026-06-18 22:00 本地",
-        "forecast_updated": "2026-06-18 22:00 本地"
-      },
-      "mystic": {
-        "date_bazi": {
-          "year": "丙午年",
-          "year_element": "火",
-          "month": "甲午月",
-          "month_element": "金+火",
-          "day": "己丑日",
-          "day_element": "土",
-          "day_dominant": "土",
-          "day_summary": "己丑日——己土坐丑，土气厚重。《道德经》曰：「上善若水。」丑土当令，宜守中蓄势、厚积薄发；忌土性固执、躁进冒失。非力之大小，乃气之顺逆。",
-          "hour_home": "丑时（02:00-04:00）",
-          "hour_home_element": "土"
-        },
-        "wuxing": {
-          "home": {
-            "team": "Switzerland",
-            "colors": "红+白",
-            "elements": "火、金",
-            "wuxing_short": "金火相涵",
-            "verdict": "有利",
-            "verdict_color": "#5BBF8A",
-            "compat": 62,
-            "reason": "红属火、白属金。丑时土旺与己丑日同气——土能生金，金火相涵如「地中有山」，谦而能进。《说卦》坤为地，主队服色得丑土之承。",
-            "advantage": "丑土稳金，组织之气渐聚"
-          },
-          "away": {
-            "team": "Bosnia and Herzegovina",
-            "colors": "蓝+白",
-            "elements": "水、金",
-            "wuxing_short": "金水相生",
-            "verdict": "中性偏利",
-            "verdict_color": "#C8A96E",
-            "compat": 52,
-            "reason": "蓝属水、白属金。金水相生本吉，然丑土当令克水——如「金沉土中」，宜低位守中、暗流待发。",
-            "advantage": "金水守势，定位球为暗流"
-          },
-          "summary": "五行裁定：丑土当令利金火相涵之瑞士；波黑金水相生但受土克——气运近而不齐"
-        },
-        "hexagram": {
-          "name": "地山谦",
-          "symbol": "☷☶",
-          "number": 15,
-          "upper": "坤地",
-          "lower": "艮山",
-          "quote": "《周易·谦卦》：「谦，亨，君子有终。」",
-          "general": "谦卦——地中有山，卑以自牧；宜守中出奇，忌矜夸躁进。",
-          "advantage_team": "Switzerland",
-          "disadvantage_team": "Bosnia and Herzegovina",
-          "hexagram_analysis": "谦卦「裒多益寡」：坤地承山，丑土当令气运后段渐动；艮山主止，卦示稳后破局一段。",
-          "match_nature": "谦受益 · 主队渐优",
-          "yellow_card_risk": "低至中",
-          "yellow_card_reason": "谦卦主守正，低位阻截略多；预计 3-4 张黄牌。",
-          "scenarios": [
-            {
-              "icon": "☯",
-              "label": "气运性质",
-              "text": "丑土当令，金火相涵者渐占「亨」"
-            },
-            {
-              "icon": "⏱",
-              "label": "进球高峰段",
-              "text": "第 58-75 分钟（谦卦「君子有终」、丑土后段土旺助金——卦只示此一段）"
-            },
-            {
-              "icon": "🟨",
-              "label": "纪律",
-              "text": "谦卦重守正，黄牌来自低位阻截"
-            }
-          ],
-          "early_goal": {
-            "scenario": "若瑞士先进球",
-            "prediction": "谦象全现——丑土助金，追加窗口在 65-78 分钟；忌轻敌触「满招损」。",
-            "favors": "Switzerland",
-            "favors_prob": 60
-          },
-          "no_early_goal": {
-            "scenario": "若前 35 分钟无进球",
-            "prediction": "谦卦宜「卑以自牧」——0-0 符合卦象；下半场 50-65 分钟为破局段。",
-            "favors": "Draw",
-            "favors_prob": 46
-          },
-          "away_goal": {
-            "scenario": "若波黑定位球破门",
-            "prediction": "谦遭逆——金水暗流；瑞士需以金火相涵耐心反扑，70' 后土气助金。",
-            "favors": "Switzerland",
-            "favors_prob": 54
-          }
-        },
-        "goal_peak": {
-          "scope": "second_half",
-          "title": "下半场进球高峰 · 娱乐预测",
-          "windows": [
-            {
-              "label": "下半场",
-              "half": "second",
-              "start_min": 58,
-              "end_min": 75,
-              "hex_reason": "谦卦「君子有终」，坤地承山后段气动",
-              "time_reason": "丑时土旺后段，土能生金"
-            }
-          ],
-          "periods": "第 58-75 分钟",
-          "rationale": "丑时与己丑日土气叠旺，谦卦主「卑以自牧」——气运集中于稳阵后破局一段，卦象未明示上半场高峰。宁缺毋滥，只示下半场一窗。",
-          "note": "娱乐解读 · 纯玄学参考 · 非赛程或竞技推演",
-          "logic_hint": "依赛日八字、开球时辰、卦象与五行生克推断；卦象只示一段气运则只给一段，不凑数。"
-        },
-        "home_score": 72,
-        "away_score": 48,
-        "mystic_verdict": "瑞士金火相涵，波黑金水守中——丑土当令，谦而能进者占「亨」。",
-        "model_bridge": "xG 1.55-1.05 组织占优，Džeko 定位球是经典冷门路径。",
-        "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
       },
       "depth_calibration": {
-        "tier_home": 0.5,
-        "tier_label": "Switzerland 被看好 · 净胜约 0.5 球",
+        "tier_home": 1,
+        "tier_label": "USA 被看好 · 净胜约 1 球",
         "implied_tier": 0.25,
-        "tier_gap": 0.25,
-        "signal": "genuine_favorite",
-        "signal_cn": "实力吻合",
-        "signal_color": "#5BBF8A",
-        "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
-        "blocker_spread_note": "",
-        "public_lean_cn": "舆论倾向 Switzerland（约 58%）",
-        "analysis": "瑞士首轮平卡塔尔；波黑首轮平加拿大。双方均需 3 分，模型略看好瑞士组织优势。",
+        "tier_gap": 0.75,
+        "signal": "blocker_inflate",
+        "signal_cn": "大众心理预期偏高",
+        "signal_color": "#D95F6A",
+        "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+        "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "public_lean_cn": "舆论倾向 USA（约 62%）",
+        "analysis": "魔方：美国 -1 / 大小 2.5；东道主首轮 4-1 后略被看好，模型 xG 1.68 支持小胜但穿 -1 需效率。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "spread_cover": {
           "top3_scores": [
             {
-              "score": "1-1",
-              "prob": 12.2
+              "score": "1-0",
+              "prob": 12.6
             },
             {
-              "score": "1-0",
+              "score": "1-1",
               "prob": 11.6
             },
             {
-              "score": "2-1",
-              "prob": 9.4
+              "score": "2-0",
+              "prob": 10.6
             }
           ],
-          "one_goal_win_pct": 23.9,
-          "two_plus_win_pct": 24.7,
-          "full_cover_pct": 24.7,
-          "half_lose_pct": 23.9,
-          "fav_cover_ev": 0.213,
-          "dog_cover_ev": -0.213,
-          "rational_spread_cn": "主队 净胜达标概率略高",
+          "one_goal_win_pct": 25.1,
+          "two_plus_win_pct": 29.8,
+          "full_cover_pct": 29.8,
+          "half_cover_pct": 0,
+          "half_lose_pct": 0,
+          "push_pct": 25.1,
+          "margin_full_label": "净胜≥2",
+          "margin_half_label": "走水净胜=1",
+          "fav_cover_ev": -0.152,
+          "dog_cover_ev": 0.152,
+          "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.6,
-          "over_2_5_pct": 47.8,
-          "over_3_pct": 26,
+          "fair_totals_line": 2,
+          "over_2_5_pct": 47.7,
+          "over_3_pct": 25.8,
           "totals_lean_cn": "2.5 球参考接近均衡；3 球参考偏少",
-          "margin_risk_note": "净胜 1 球概率 23.9%：常见「赢球但净胜仅 1 球」",
-          "push_pct": null
+          "margin_risk_note": "净胜 1 球概率 25.1%：参考净胜 1 球时，仅赢一球与拉开差距须分开看"
         },
-        "spread_odds": null,
+        "spread_odds": {
+          "fav": 1.02,
+          "dog": 0.82,
+          "note": "USA 1.02 · Australia 0.82"
+        },
         "spread_alt": null,
         "totals_analysis": {
           "market_line": 2.5,
+          "market_goals_int": 3,
           "line_label": "总进球约 2.5 个",
           "implied_xg_total": 2.6,
           "fair_line": 2,
           "line_gap": 0.5,
-          "over_pct": 47.8,
-          "under_pct": 52.2,
+          "over_pct": 47.7,
+          "under_pct": 52.3,
           "signal": "high_line",
           "signal_cn": "进球参考偏高",
           "signal_color": "#C8A96E",
           "signal_desc": "赛前进球参考高于 xG 隐含，模型倾向偏少进球方向。",
-          "public_over_pct": 50,
+          "public_over_pct": 52,
           "public_lean_cn": "舆论对总进球看法较分散",
-          "index_note": "多/少进球两侧参考接近均衡",
-          "totals_odds": null,
-          "rational_cn": "模型在 总进球约 2.5 个 附近均衡",
+          "index_note": "多进球侧 1 / 少进球侧 0.8 · 少进球侧关注度更高",
+          "totals_odds": {
+            "over": 1,
+            "under": 0.8,
+            "note": "多进球 1 · 少进球 0.8"
+          },
+          "rational_cn": "模型在 总进球约 2.5 个 附近均衡；进球参考偏高但模型仍偏少进球",
           "score_link_cn": "小比分（1-0/1-1）偏少进球 · 2-0/2-1 居中 · 3 球+ 偏多进球"
         },
         "totals_line": 2.5,
         "applied_delta": {
-          "home_win": 2,
-          "draw": -1,
-          "away_win": -1
+          "home_win": -4,
+          "draw": 1,
+          "away_win": 3
         },
-        "adjustment_note": "模型微调：主胜 +2% · 平 -1% · 客 -1%",
+        "adjustment_note": "模型微调：主胜 -4% · 平 +1% · 客 +3%",
         "adjusted_probs": {
-          "home_win": 50,
+          "home_win": 51,
           "draw": 25,
-          "away_win": 25
+          "away_win": 24
         },
         "display_summary": {
-          "fav_name": "Switzerland",
-          "expected_total_goals": 2.57,
-          "poisson_fav_win_pct": 48.7,
-          "small_lead_pct": 23.9,
+          "fav_name": "USA",
+          "expected_total_goals": 2.56,
+          "poisson_fav_win_pct": 55,
+          "small_lead_pct": 25.1,
           "small_example_score": "1-0",
-          "small_example_pct": 11.6,
-          "big_cover_pct": 24.7,
+          "small_example_pct": 12.6,
+          "big_cover_pct": 29.8,
           "big_example_score": "2-0",
-          "big_example_pct": 9,
+          "big_example_pct": 10.6,
           "win_shape": {
-            "fav_name": "Switzerland",
+            "fav_name": "USA",
             "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 28%）",
+            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 29.9%）",
             "shapes": [
               {
                 "key": "narrow_low",
                 "label": "险胜 · 控局",
                 "example": "如 1-0",
-                "field_pct": 11.6,
-                "pct": 23.8
+                "field_pct": 12.6,
+                "pct": 22.9
               },
               {
                 "key": "narrow_open",
                 "label": "险胜 · 开放",
                 "example": "如 2-1",
-                "field_pct": 12.4,
-                "pct": 25.4
+                "field_pct": 12.6,
+                "pct": 22.9
               },
               {
                 "key": "comfort_low",
                 "label": "拉开 · 控局",
                 "example": "如 2-0",
-                "field_pct": 13.6,
-                "pct": 28
+                "field_pct": 16.5,
+                "pct": 29.9
               },
               {
                 "key": "comfort_open",
                 "label": "拉开 · 开放",
                 "example": "如 3-1+",
-                "field_pct": 11.1,
-                "pct": 22.8
+                "field_pct": 13.3,
+                "pct": 24.3
               }
             ],
             "paths": [
@@ -1790,22 +682,22 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 49.2
+                "pct": 45.8
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 28
+                "pct": 29.9
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 22.8
+                "pct": 24.3
               }
             ],
-            "fav_win_pct": 50
+            "fav_win_pct": 51
           },
           "excitement": {
             "label_cn": "中速开局",
@@ -1839,124 +731,260 @@ const MATCH_DATA = {
             {
               "icon": "🏥",
               "label": "伤病",
-              "note": "Switzerland 暂无重要伤停 · Bosnia and Herzegovina 暂无重要伤停"
+              "note": "USA 暂无重要伤停 · Australia 暂无重要伤停"
             },
             {
               "icon": "👔",
               "label": "教练风格",
-              "note": "控节奏 / 5-4-1 铁桶（领先时）"
+              "note": "继续压迫 / 5-4-1 铁桶（领先时）"
             },
             {
               "icon": "🌤️",
               "label": "气候",
-              "note": "气候变量低——瑞士组织 vs 波黑低位，场地条件不构成扰动"
+              "note": "凉爽海风——利于东道主维持 90 分钟强度，对推演影响低"
             }
           ],
           "xg_context": {
-            "baseline_home": 1.55,
-            "baseline_away": 1.05,
-            "adjusted_home": 1.55,
-            "adjusted_away": 1.05,
-            "note": "基准 xG 1.55–1.05（未因伤病/气候下调）"
+            "baseline_home": 1.68,
+            "baseline_away": 0.92,
+            "adjusted_home": 1.68,
+            "adjusted_away": 0.92,
+            "note": "基准 xG 1.68–0.92（未因伤病/气候下调）"
           },
           "calibration": {
-            "signal_cn": "实力吻合",
-            "signal_color": "#5BBF8A",
-            "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
-            "tier_gap": 0.25,
-            "implied_tier_label": "Switzerland 被看好 · 净胜约 0.25 球",
-            "market_tier_label": "Switzerland 被看好 · 净胜约 0.5 球",
-            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法略高（约 +0.25） · 热门仅净胜 1 球概率 23.9%"
+            "signal_cn": "大众心理预期偏高",
+            "signal_color": "#D95F6A",
+            "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+            "tier_gap": 0.75,
+            "implied_tier_label": "USA 被看好 · 净胜约 0.25 球",
+            "market_tier_label": "USA 被看好 · 净胜约 1 球",
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75"
           },
           "win_outlook": {
-            "fav_name": "Switzerland",
+            "fav_name": "USA",
             "state_label": null,
             "paths": [
               {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 49.2
+                "pct": 45.8
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 28
+                "pct": 29.9
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 22.8
+                "pct": 24.3
               }
             ],
-            "margin_line_cn": "Switzerland · 赛前净胜参考 ≥1 球",
-            "margin_meet_pct": 24.7,
-            "margin_fail_pct": 23.9,
+            "margin_line_cn": "USA · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
+            "margin_meet_pct": 29.8,
+            "margin_half_pct": 0,
+            "margin_fail_pct": 0,
+            "margin_full_label": "净胜≥2",
+            "margin_half_label": "走水净胜=1",
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
             "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
             "totals_line": 2.5,
             "totals_line_cn": "总进球约 2.5 个",
-            "totals_high_pct": 47.8,
-            "totals_low_pct": 52.2,
+            "fair_totals_line": 2,
+            "model_total_xg": 2.6,
+            "totals_line_gap": 0.5,
+            "totals_high_pct": 47.7,
+            "totals_low_pct": 52.3,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 20.6,
-            "win_margin2_low_total_pct": 9,
-            "win_margin2_high_total_pct": 15.7,
-            "readout_cn": "取胜约 50%；若取胜，以「险胜收工」为主（49.2%）。 对着赛前净胜参考，差距达标约 24.7%；对着 总进球约 2.5 个，总进球偏高一侧约 47.8%。"
+            "win_low_total_pct": 23.1,
+            "win_margin2_low_total_pct": 10.6,
+            "win_margin2_high_total_pct": 19.2,
+            "readout_cn": "取胜约 51%；若取胜，以「险胜收工」为主（45.8%）。 对着赛前净胜参考，净胜≥2（全达标）约 29.8%；对着外界总进球参考 总进球约 2.5 个，模型终场多于该参考的概率约 47.7%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
-              "score": "1-1",
-              "pct": 12.2
+              "score": "1-0",
+              "pct": 12.6
             },
             {
-              "score": "1-0",
+              "score": "1-1",
               "pct": 11.6
             },
             {
-              "score": "2-1",
-              "pct": 9.4
+              "score": "2-0",
+              "pct": 10.6
             }
           ],
           "totals_view": {
             "expected_total": 2.6,
             "fair_line": 2,
+            "market_line": 2.5,
             "line_gap": 0.5,
-            "over_pct": 47.8,
-            "summary_cn": "预期约 2.6 个总进球 · 赛前参考进球参考偏高 · 模型在常见进球预期附近均衡"
+            "over_pct": 47.7,
+            "gap_warning": null,
+            "totals_outlook": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照外界「全场至少 3 球」的赛前进球节奏，看模型更偏沉闷还是精彩",
+              "pill_cn": "沉闷与精彩几乎五五开，无明显倾向。",
+              "detail_cn": "模型推演：达到这一进球节奏与达不到的机率几乎各半，暂无明确倾向；精彩程度仍看临场发挥。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 47.7,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "全场至少 3 球",
+              "caution_public_high": false
+            },
+            "summary_cn": "模型 xG 合计约 2.6 球（公允参考约 2） · 外界总进球参考 2.5，高出模型约 0.5 球 · 外界参考略高于模型公允线（+0.5 球） · 模型在常见进球预期附近均衡，不作强倾向"
+          },
+          "customer_reading": {
+            "headline_cn": "USA · 净胜走向：达到预期难度偏大",
+            "sub_cn": "达标概率约 29.8% · 达到预期难度偏大 进球氛围：几乎五五开",
+            "spread": {
+              "level": "skeptical",
+              "label_cn": "外界预期偏高",
+              "color": "#D95F6A",
+              "fav_name": "USA",
+              "market_expect_cn": "净胜≥2",
+              "meet_pct": 29.8,
+              "meet_pct_label": "模型推演达标概率",
+              "verdict_cn": "达到预期难度偏大",
+              "headline_cn": "USA · 净胜走向：达到预期难度偏大",
+              "pill_cn": "达标概率约 29.8% · 达到预期难度偏大",
+              "detail_cn": "USA · 赛前外界预期 净胜≥2。模型推演达标概率约 29.8%；外界看法高于 xG 隐含约 0.75 球，达到预期难度偏大。",
+              "extra_stats_cn": "",
+              "full_cover_pct": 29.8,
+              "half_cover_pct": 0,
+              "lose1_pct": 0,
+              "margin_full_label": "净胜≥2",
+              "margin_half_label": "走水净胜=1",
+              "tier_gap": 0.75,
+              "show_cover": true
+            },
+            "totals": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照外界「全场至少 3 球」的赛前进球节奏，看模型更偏沉闷还是精彩",
+              "pill_cn": "沉闷与精彩几乎五五开，无明显倾向。",
+              "detail_cn": "模型推演：达到这一进球节奏与达不到的机率几乎各半，暂无明确倾向；精彩程度仍看临场发挥。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 47.7,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "全场至少 3 球",
+              "caution_public_high": false
+            },
+            "draw_risk": null,
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "净胜走向",
+                "outlook": {
+                  "level": "skeptical",
+                  "label_cn": "外界预期偏高",
+                  "color": "#D95F6A",
+                  "fav_name": "USA",
+                  "market_expect_cn": "净胜≥2",
+                  "meet_pct": 29.8,
+                  "meet_pct_label": "模型推演达标概率",
+                  "verdict_cn": "达到预期难度偏大",
+                  "headline_cn": "USA · 净胜走向：达到预期难度偏大",
+                  "pill_cn": "达标概率约 29.8% · 达到预期难度偏大",
+                  "detail_cn": "USA · 赛前外界预期 净胜≥2。模型推演达标概率约 29.8%；外界看法高于 xG 隐含约 0.75 球，达到预期难度偏大。",
+                  "extra_stats_cn": "",
+                  "full_cover_pct": 29.8,
+                  "half_cover_pct": 0,
+                  "lose1_pct": 0,
+                  "margin_full_label": "净胜≥2",
+                  "margin_half_label": "走水净胜=1",
+                  "tier_gap": 0.75,
+                  "show_cover": true
+                },
+                "text": "达标概率约 29.8% · 达到预期难度偏大",
+                "color": "#D95F6A",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "◎",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "neutral",
+                  "label_cn": "暂无明显倾向",
+                  "color": "#8A96A8",
+                  "meter_label_cn": "几乎五五开",
+                  "meter_pos": 50,
+                  "lean_side": "neutral",
+                  "lean_strength": "none",
+                  "section_intro_cn": "对照外界「全场至少 3 球」的赛前进球节奏，看模型更偏沉闷还是精彩",
+                  "pill_cn": "沉闷与精彩几乎五五开，无明显倾向。",
+                  "detail_cn": "模型推演：达到这一进球节奏与达不到的机率几乎各半，暂无明确倾向；精彩程度仍看临场发挥。",
+                  "headline_cn": "进球氛围：几乎五五开",
+                  "show_lean": false,
+                  "over_pct": 47.7,
+                  "line_gap": 0.5,
+                  "market_line": 2.5,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "全场至少 3 球",
+                  "caution_public_high": false
+                },
+                "text": "沉闷与精彩几乎五五开，无明显倾向。",
+                "color": "#8A96A8",
+                "muted": true
+              }
+            ],
+            "methodology_note": "读场优先级：净胜走向 ＞ 进球氛围（对照外界「至少 N 球」预期，中性档几乎五五开；强信号才标沉闷/精彩）。仅供娱乐推演，非投注建议。"
           },
           "first_goal_scenarios": [
             {
               "side": "home",
-              "team": "Switzerland",
-              "first_goal_pct": 59.6,
+              "team": "USA",
+              "first_goal_pct": 64.6,
               "start_score": "1-0",
-              "fav_name": "Switzerland",
+              "fav_name": "USA",
               "scorer_is_fav": true,
               "expected_key": "hold_win",
-              "fav_recover_pct": 92.9,
-              "small_lead_pct": 34.1,
-              "big_lead_pct": 40.8,
-              "fav_win_pct": 74.9,
-              "fav_draw_pct": 18,
-              "fav_lose_pct": 7.1,
+              "fav_recover_pct": 94.7,
+              "small_lead_pct": 33.3,
+              "big_lead_pct": 45.7,
+              "fav_win_pct": 79,
+              "fav_draw_pct": 15.7,
+              "fav_lose_pct": 5.3,
               "outcomes": [
                 {
                   "key": "hold_win",
-                  "label": "Switzerland 保持胜果（净胜≥1）",
-                  "pct": 74.9
+                  "label": "USA 保持胜果（净胜≥1）",
+                  "pct": 79
                 },
                 {
                   "key": "drawn",
                   "label": "被扳平",
-                  "pct": 18
+                  "pct": 15.7
                 },
                 {
                   "key": "lost",
                   "label": "被逆转落败",
-                  "pct": 7.1
+                  "pct": 5.3
                 }
               ],
               "excitement": {
@@ -1986,97 +1014,105 @@ const MATCH_DATA = {
                   }
                 ]
               },
-              "big_delta": 16.1,
-              "small_delta": 10.2,
-              "narrative": "Switzerland 先破门（已 1-0） → 「控节奏」；Bosnia and Herzegovina 「维持低位」。领先后双方可能转入守势，比分差距不易再拉大。",
+              "big_delta": 15.9,
+              "small_delta": 8.2,
+              "narrative": "USA 先破门（已 1-0） → 「继续压迫」；Australia 「维持低位」。领先后双方可能转入守势，比分差距不易再拉大。",
               "live_outlook": {
-                "fav_name": "Switzerland",
-                "state_label": "Switzerland 已 1-0 领先",
+                "fav_name": "USA",
+                "state_label": "USA 已 1-0 领先",
                 "paths": [
                   {
                     "key": "narrow",
                     "label": "险胜收工",
                     "example": "如 1-0、2-1",
-                    "pct": 49.2
+                    "pct": 45.8
                   },
                   {
                     "key": "clean",
                     "label": "零封拉开",
                     "example": "如 2-0、3-0",
-                    "pct": 28
+                    "pct": 29.9
                   },
                   {
                     "key": "open",
                     "label": "开放拉开",
                     "example": "如 3-1+",
-                    "pct": 22.8
+                    "pct": 24.3
                   }
                 ],
-                "margin_line_cn": "Switzerland · 赛前净胜参考 ≥1 球",
-                "margin_meet_pct": 40.8,
-                "margin_fail_pct": 34.1,
+                "margin_line_cn": "USA · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
+                "margin_meet_pct": 45.7,
+                "margin_half_pct": 0,
+                "margin_fail_pct": 33.3,
+                "margin_full_label": "净胜≥2",
+                "margin_half_label": "走水净胜=1",
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
                 "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
                 "totals_line": 2.5,
                 "totals_line_cn": "总进球约 2.5 个",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 1.66,
+                "totals_line_gap": 0.25,
                 "totals_high_pct": 49.3,
                 "totals_low_pct": 50.7,
                 "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-                "win_low_total_pct": 37.6,
-                "win_margin2_low_total_pct": 18.5,
-                "win_margin2_high_total_pct": 22.3,
-                "readout_cn": "Switzerland 已 1-0 领先：仍取胜约 74.9%；对着赛前 总进球约 2.5 个，总进球偏高一侧约 49.3%。 常见收尾如 2-0（净胜达标、总进球仍偏低）。"
+                "win_low_total_pct": 39.1,
+                "win_margin2_low_total_pct": 20,
+                "win_margin2_high_total_pct": 25.6,
+                "readout_cn": "USA 已 1-0 领先：仍取胜约 79%。 对着外界总进球参考 总进球约 2.5 个，模型终场多于该参考的概率约 49.3%。 常见收尾如 2-0（部分扩大；相对外界总进球参考仍偏少）。"
               }
             },
             {
               "side": "away",
-              "team": "Bosnia and Herzegovina",
-              "first_goal_pct": 40.4,
+              "team": "Australia",
+              "first_goal_pct": 35.4,
               "start_score": "0-1",
-              "fav_name": "Switzerland",
+              "fav_name": "USA",
               "scorer_is_fav": false,
               "expected_key": "fav_recover",
-              "fav_recover_pct": 53.3,
-              "small_lead_pct": 16.4,
-              "big_lead_pct": 10,
-              "fav_win_pct": 26.4,
-              "fav_draw_pct": 26.9,
-              "fav_lose_pct": 46.7,
+              "fav_recover_pct": 58.8,
+              "small_lead_pct": 18.4,
+              "big_lead_pct": 12.6,
+              "fav_win_pct": 31,
+              "fav_draw_pct": 27.8,
+              "fav_lose_pct": 41.2,
               "outcomes": [
                 {
                   "key": "draw",
-                  "label": "Switzerland 追平（平局）",
-                  "pct": 26.9
+                  "label": "USA 追平（平局）",
+                  "pct": 27.8
                 },
                 {
                   "key": "win1",
-                  "label": "Switzerland 净胜1球翻盘（如 2-1）",
-                  "pct": 16.4
+                  "label": "USA 净胜1球翻盘（如 2-1）",
+                  "pct": 18.4
                 },
                 {
                   "key": "win2",
-                  "label": "Switzerland 净胜≥2球翻盘（如 3-1）",
-                  "pct": 10
+                  "label": "USA 净胜≥2球翻盘（如 3-1）",
+                  "pct": 12.6
                 },
                 {
                   "key": "upset_hold",
-                  "label": "Bosnia and Herzegovina 保持胜果至终场",
-                  "pct": 46.7
+                  "label": "Australia 保持胜果至终场",
+                  "pct": 41.2
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 34.6 分",
-                "first_goal_wait": 34.6,
-                "fast_pct": 50.9,
+                "sub_cn": "预期首球等待约 34.2 分",
+                "first_goal_wait": 34.2,
+                "fast_pct": 51.3,
                 "moderate_pct": 14.7,
-                "slow_pct": 34.4,
+                "slow_pct": 34,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 50.9
+                    "pct": 51.3
                   },
                   {
                     "key": "moderate",
@@ -2086,21 +1122,21 @@ const MATCH_DATA = {
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 34.4
+                    "pct": 34
                   }
                 ]
               },
-              "big_delta": -14.7,
-              "small_delta": -7.5,
-              "narrative": "Bosnia and Herzegovina 先破门（已 0-1） → 「5-4-1 铁桶」；Switzerland 「堆中场」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门。",
+              "big_delta": -17.2,
+              "small_delta": -6.7,
+              "narrative": "Australia 先破门（已 0-1） → 「5-4-1 铁桶」；USA 「堆边锋」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门。",
               "live_outlook": null
             }
           ],
           "match_preview": {
             "morphology": {
-              "totals_summary": "预期约 2.6 个总进球 · 赛前参考进球参考偏高 · 模型在常见进球预期附近均衡",
+              "totals_summary": "模型 xG 合计约 2.6 球（公允参考约 2） · 外界总进球参考 2.5，高出模型约 0.5 球 · 外界参考略高于模型公允线（+0.5 球） · 模型在常见进球预期附近均衡，不作强倾向",
               "totals_line_cn": "总进球约 2.5 个",
-              "totals_high_pct": 47.8,
+              "totals_high_pct": 47.7,
               "type_tags": [
                 {
                   "key": "low_block",
@@ -2108,10 +1144,10 @@ const MATCH_DATA = {
                 }
               ],
               "depth_label": "深度一般",
-              "draw_trap_pct": 28,
-              "readout_cn": "Switzerland · 低位反击。总进球约 2.6 个；按常规模型读即可。"
+              "draw_trap_pct": 22,
+              "readout_cn": "USA · 低位反击。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
             },
-            "draw_trap_note": "平局风险：低位反击队若先进球或被追平，1-1 / 0-0 比客胜更现实（约 28% 冷门空间含平局）。",
+            "draw_trap_note": "平局风险：低位反击队若先进球或被追平，1-1 / 0-0 比客胜更现实（约 22% 冷门空间含平局）。",
             "archetype": {
               "tags": [
                 {
@@ -2121,111 +1157,190 @@ const MATCH_DATA = {
               ],
               "depth_score": 0,
               "depth_label": "深度一般",
-              "draw_trap_pct": 28,
+              "draw_trap_pct": 22,
               "fav_lead_style": "defensive"
             }
+          },
+          "goal_timing": {
+            "sample_label": "近30场",
+            "source_note": "user_screenshot_2026-06-20_usa_aus",
+            "home_name": "USA",
+            "away_name": "Australia",
+            "intervals": [
+              "1–15",
+              "16–30",
+              "31–45",
+              "46–60",
+              "61–75",
+              "76–90",
+              "90+"
+            ],
+            "peaks": {
+              "home_scored": {
+                "interval": "31–45",
+                "pct": 28
+              },
+              "home_conceded": {
+                "interval": "16–30",
+                "pct": 25
+              },
+              "away_scored": {
+                "interval": "46–60",
+                "pct": 20
+              },
+              "away_conceded": {
+                "interval": "76–90",
+                "pct": 35
+              }
+            },
+            "cross_insight": {
+              "has_cross": false,
+              "hits": [],
+              "cross_intervals": [],
+              "summary_cn": "两队高峰时段错开，暂无强重合进攻窗口。"
+            },
+            "disclaimer_cn": "以上为两队近30场历史进球/失球时间段统计，供读场参考；非本场赛果预测，与灵力分析娱乐板块无关。"
           }
         },
-        "public_summary_note": "【推演概要】Switzerland · 低位反击。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法略高（约 +0.25） · 热门仅净胜 1 球概率 23.9%（模型微调：主胜 +2% · 平 -1% · 客 -1%）"
+        "public_summary_note": "【推演概要】USA · 低位反击。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75（模型微调：主胜 -4% · 平 +1% · 客 +3%）"
       },
-      "group_context": {
-        "group": "B",
-        "label": "B组 · 第1轮（卡塔尔-瑞士已赛）",
-        "matchday": 2,
-        "standings": [
-          {
-            "team": "Switzerland",
-            "pts": 1,
-            "p": 1,
-            "w": 0,
-            "d": 1,
-            "l": 0,
-            "gf": 1,
-            "ga": 1
-          },
-          {
-            "team": "Qatar",
-            "pts": 1,
-            "p": 1,
-            "w": 0,
-            "d": 1,
-            "l": 0,
-            "gf": 1,
-            "ga": 1
-          },
-          {
-            "team": "Canada",
-            "pts": 1,
-            "p": 1,
-            "w": 0,
-            "d": 1,
-            "l": 0,
-            "gf": 1,
-            "ga": 1
-          },
-          {
-            "team": "Bosnia and Herzegovina",
-            "pts": 1,
-            "p": 1,
-            "w": 0,
-            "d": 1,
-            "l": 0,
-            "gf": 1,
-            "ga": 1
-          }
-        ],
+      "coach_analysis": {
         "home": {
-          "team": "Switzerland",
-          "rank": 1,
-          "pts": 1,
-          "played": 1,
-          "if_1st": "32强 · 对阵 A 组第 2",
-          "if_2nd": "32强 · 对阵 A 组第 1",
-          "if_3rd": "若列小组第 3，需与 A/E/F/H/I/J/K/L 等组第 3 比净胜球/进球"
+          "name": "Mauricio Pochettino",
+          "age": 53,
+          "nation": "阿根廷",
+          "tenure": "2024年—",
+          "wc_exp": "2014/2018 带队 · 2026 美国主帅",
+          "style_tags": [
+            "4-3-3",
+            "高位",
+            "Pulisic 宽度",
+            "主场气势"
+          ],
+          "formation_pref": "4-3-3 · Pulisic-Reyna 双翼",
+          "style_summary": "揭幕战 4-1 巴拉圭回应批评，Balogun 双响+Reyna 绝杀。西雅图主场对澳大利亚必须当成决赛踢，预计持续宽度+Adams 屏障。",
+          "subs": {
+            "timing": "首换 60–65 分钟",
+            "pattern": "Reyna 后段奇兵",
+            "avg_first_sub": "62'",
+            "note": "26 人全员可用"
+          },
+          "when_leading": {
+            "label": "继续压迫",
+            "detail": "1 球领先：维持 Seattle 主场强度，忌过早退守。"
+          },
+          "when_trailing": {
+            "label": "堆边锋",
+            "detail": "先丢球：55' Pulisic/Reyna 加码宽度。"
+          },
+          "vs_strong": {
+            "label": "对强队：对攻",
+            "detail": "对澳大利亚预计控球+肋部渗透。"
+          },
+          "vs_weak": {
+            "label": "对弱队：不留余地",
+            "detail": "揭幕战已验证高位效率。"
+          },
+          "tournament": "大赛经验+东道主压力；Pochettino 强调「不可轻敌」。",
+          "traits": [
+            "主场",
+            "Pulisic 核心",
+            "宽度",
+            "必须抢分"
+          ],
+          "match_note": "西雅图主场——Pulisic/Reyna 宽度+Adams 屏障；D 组同积 3 分，胜者握出线主动。"
         },
         "away": {
-          "team": "Bosnia and Herzegovina",
-          "rank": 4,
-          "pts": 1,
-          "played": 1,
-          "if_1st": "32强 · 对阵 A 组第 2",
-          "if_2nd": "32强 · 对阵 A 组第 1",
-          "if_3rd": "若列小组第 3，需与 A/E/F/H/I/J/K/L 等组第 3 比净胜球/进球"
-        },
-        "cross_group_notes": [
-          "G 组四队同积 1 分，形势极度开放",
-          "H 组四队同积 1 分，形势极度开放",
-          "E 组 Germany 3 分领跑",
-          "F 组 Sweden 3 分领跑"
-        ],
-        "manipulation_risk": {
-          "level": "LOW",
-          "level_cn": "低",
-          "focus_team": null,
-          "reason": "暂无明确控分动机；出线路径仍取决于后续直接对话。"
-        },
-        "knockout_note": "48 队制：12 组前 2 + 8 个最佳第 3 进入 32 强；末轮可能出现算分/控分战术。",
-        "scenarios": [
-          "Switzerland 若取胜：积分 4，B 组排名有望上升；过早预测 32 强对手仍不可靠。",
-          "Bosnia and Herzegovina 若取胜：积分 4，客场抢分将改变 B 组格局。",
-          "平局：双方各 +1 分；在 G 组四队同积 1 分，形势极度开放；H 组四队同积 1 分，形势极度开放；E 组 Germany 3 分领跑；F 组 Sweden 3 分领跑 背景下，第 2 轮直接对话权重上升。"
+          "name": "Graham Arnold",
+          "age": 61,
+          "nation": "澳大利亚",
+          "tenure": "2018年—",
+          "wc_exp": "2022 带队 · 2026 续任",
+          "style_tags": [
+            "5-4-1",
+            "低位",
+            "反击",
+            "纪律"
+          ],
+          "formation_pref": "5-4-1 · Irankunda 速度",
+          "style_summary": "对土耳其 2-0 验证低位+反击；Beach 一门变阵成亮点。客场西雅图对东道主是美国本届最难客场之一，预计继续低位偷分。",
+          "subs": {
+            "timing": "首换 65–70 分钟",
+            "pattern": "Irvine/Leckie 经验替补",
+            "avg_first_sub": "68'",
+            "note": "弱队体能分配"
+          },
+          "when_leading": {
+            "label": "5-4-1 铁桶",
+            "detail": "若意外领先：立即深度退守+反击。"
+          },
+          "when_trailing": {
+            "label": "维持低位",
+            "detail": "unlikely 大举压上。"
+          },
+          "vs_strong": {
+            "label": "对强队：龟缩+反击",
+            "detail": "对土耳其 2-0 是模板。"
+          },
+          "vs_weak": {
+            "label": "对弱队：相对开放",
+            "detail": "对美国预计教科书弱队踢法。"
+          },
+          "tournament": "「每次大赛都被低估」——Popovic 续约至 2027 亚洲杯，更衣室稳定。",
+          "traits": [
+            "5-4-1",
+            "反击",
+            "Beach 一门",
+            "客场弱势"
+          ],
+          "match_note": "5-4-1 低位+Beach 一门；对土耳其 2-0 模板，Irankunda 反击是唯一威胁路径。"
+        }
+      },
+      "upset_alert": {
+        "favorite": "USA",
+        "underdog": "Australia",
+        "favorite_iso": "USA",
+        "index": 26,
+        "level": "LOW",
+        "level_cn": "低",
+        "cold_result_pct": 22,
+        "verdict": "东道主西雅图+揭幕战 4-1 气势——澳大利亚 5-4-1 低位仍有约 22% 平局/偷分空间（对土耳其 2-0 已验证）。",
+        "tactical": "Pochettino 4-3-3 宽度 vs Arnold 5-4-1 低位；Pulisic 对位 Souttar，Beach 一门稳定性是变量。",
+        "psychology": "美国「当成决赛踢」；澳大利亚「每次大赛被低估」。",
+        "historical": "美国近年 H2H 占优；澳大利亚对土耳其反击高效。",
+        "factors": [
+          {
+            "tag": "主场",
+            "impact": "强",
+            "detail": "Lumen Field 7 万观众+凉爽气候"
+          },
+          {
+            "tag": "低位",
+            "impact": "中",
+            "detail": "澳大利亚 5-4-1 对土耳其已验证"
+          },
+          {
+            "tag": "D组形势",
+            "impact": "强",
+            "detail": "双方同积 3 分，胜者握主动"
+          }
         ]
       }
     },
     {
-      "id": "m27",
-      "group": "B",
+      "id": "m30",
+      "group": "C",
       "matchday": 2,
-      "date": "2026-06-18",
+      "date": "2026-06-19",
       "time": "18:00",
-      "time_local": "18:00 PT",
-      "timezone": "PDT (UTC-7)",
+      "time_local": "18:00 ET",
+      "timezone": "EDT (UTC-4)",
       "time_beijing": "06:00",
-      "date_beijing": "6月19日",
-      "time_beijing_full": "北京时间 6月19日 06:00",
-      "venue": "BC Place",
-      "city": "Vancouver, Canada",
-      "note": "B组第2轮 · 加拿大 vs 卡塔尔 · 温哥华（东道主）",
+      "date_beijing": "6月20日",
+      "time_beijing_full": "北京时间 6月20日 06:00",
+      "venue": "Gillette Stadium",
+      "city": "Boston, USA",
+      "note": "C组第2轮 · 苏格兰 vs 摩洛哥 · 波士顿",
       "lineup": {
         "confirmed": false,
         "formation": null,
@@ -2233,394 +1348,269 @@ const MATCH_DATA = {
         "away": "等待官方确认",
         "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
         "predicted": {
-          "formation": "4-3-3 / 4-2-3-1",
-          "home": "St. Clair; Johnston, Miller, Cornelius; Davies, Buchanan, Eustáquio, Laryea; David, Larin, Hoilett",
-          "away": "Barsham; Pedro Miguel, Salama, Tarek; Ahmed, Boudiaf; Ali, Afif, Muntari; Almoez Ali",
-          "source": "TSN / ESPN 预测 · 非官方",
+          "formation": "4-2-3-1 / 4-3-3",
+          "home": "Gordon; Hickey, Hanley, Souttar, Robertson; McTominay, McGregor; Gannon-Doak, McGinn, Christie; Adams",
+          "away": "Bounou; Hakimi, Saïss, Aguerd; Mazraoui, Amrabat; Ziyech, Ounahi, Sabiri; En-Nesyri, Boufal",
+          "source": "BBC / Sky 预测 · 非官方",
           "alt": null
         }
       },
       "home": {
-        "name": "Canada",
-        "iso": "ca",
+        "name": "Scotland",
+        "iso": "sc",
         "flag": "",
-        "fifa_rank": 48,
-        "rating": 72,
-        "form": [
-          "D",
-          "W",
-          "L",
-          "W",
-          "D"
-        ],
-        "coach": "Jesse Marsch",
-        "stars": [
-          {
-            "name": "Alphonso Davies",
-            "pos": "LB",
-            "club": "Bayern Munich",
-            "stats": "温哥华爆点",
-            "rating": 8.5,
-            "desc": "左路速度+助攻"
-          },
-          {
-            "name": "Jonathan David",
-            "pos": "ST",
-            "club": "Lille",
-            "stats": "终结",
-            "rating": 8.2,
-            "desc": "跑位+射门"
-          },
-          {
-            "name": "Stephen Eustáquio",
-            "pos": "CM",
-            "club": "Porto",
-            "stats": "节拍器",
-            "rating": 7.8,
-            "desc": "出球+远射"
-          }
-        ],
-        "injuries": [
-          {
-            "player": "Alphonso Davies",
-            "status": "FIT",
-            "note": "拜仁左路，温哥华主场爆点",
-            "confirmed": true
-          },
-          {
-            "player": "Jonathan David",
-            "status": "FIT",
-            "note": "里尔射手，终结关键",
-            "confirmed": true
-          }
-        ],
-        "rumors": [
-          "东道主温哥华主场，Marsch 高位压迫是战术核心",
-          "对卡塔尔必须取胜"
-        ],
-        "star": {
-          "name": "Alphonso Davies",
-          "pos": "LB",
-          "desc": "东道主主场必须取胜",
-          "rating": 8.5
-        }
-      },
-      "away": {
-        "name": "Qatar",
-        "iso": "qa",
-        "flag": "",
-        "fifa_rank": 35,
+        "fifa_rank": 36,
         "rating": 70,
         "form": [
           "D",
+          "L",
           "W",
           "D",
-          "L",
-          "W"
+          "L"
         ],
-        "coach": "Félix Sánchez",
+        "coach": "Steve Clarke",
         "stars": [
           {
-            "name": "Almoez Ali",
-            "pos": "ST",
-            "club": "Al-Duhail",
-            "stats": "亚洲杯金靴",
-            "rating": 7.6,
-            "desc": "锋线核心"
-          },
-          {
-            "name": "Akram Afif",
-            "pos": "LW",
-            "club": "Al-Sadd",
-            "stats": "亚洲杯MVP",
-            "rating": 7.5,
-            "desc": "肋部+定位球"
-          },
-          {
-            "name": "Hassan Al-Haydos",
+            "name": "Scott McTominay",
             "pos": "CM",
-            "club": "Al-Sadd",
-            "stats": "队长",
-            "rating": 7.2,
-            "desc": "远射威胁"
+            "club": "Napoli",
+            "desc": "中场核心+远射",
+            "rating": 8
           }
         ],
+        "star": {
+          "name": "Scott McTominay",
+          "pos": "CM",
+          "club": "Napoli",
+          "desc": "中场核心+远射",
+          "rating": 8
+        },
         "injuries": [
           {
-            "player": "Almoez Ali",
+            "player": "Billy Gilmour",
+            "status": "OUT",
+            "note": "膝伤退出整届世界杯，McTominay 独撑中场创造力",
+            "confirmed": true
+          },
+          {
+            "player": "Scott McTominay",
             "status": "FIT",
-            "note": "卡塔尔锋线核心",
+            "note": "Clarke 6/14 确认「perfect and ready」；对海地全场核心",
+            "confirmed": true
+          },
+          {
+            "player": "John McGinn",
+            "status": "FIT",
+            "note": "29' 制胜球 + 7.8 MOTM；刚随维拉夺欧联杯，状态正佳",
+            "confirmed": true
+          },
+          {
+            "player": "Scott McKenna",
+            "status": "FIT",
+            "note": "首轮 Hendry 先发中卫，McKenna 替补待命",
+            "confirmed": true
+          },
+          {
+            "player": "Nathan Patterson",
+            "status": "DOUBT",
+            "note": "6/14 轻微撞击伤被观察；次轮队检仍待官方更新",
+            "confirmed": false
+          }
+        ],
+        "rumors": [
+          "Clarke（Standard）：「McTominay 可战，Gilmour 缺阵后中场责任更重」",
+          "McGinn 制胜后苏格兰 C 组领跑 3 分，更衣室士气为近年大赛最高之一",
+          "对摩洛哥：Clarke 预计延续 4-4-2/4-2-3-1，Robertson 宽度 + McGinn 插上",
+          "首轮 xG 1.05-1.05 险胜海地，Clarke 称「大赛三分比场面更重要」",
+          "C 组巴西、摩洛哥各 1 分，苏格兰若再胜有望握出线主动"
+        ]
+      },
+      "away": {
+        "name": "Morocco",
+        "iso": "ma",
+        "flag": "",
+        "fifa_rank": 13,
+        "rating": 78,
+        "form": [
+          "D",
+          "W",
+          "W",
+          "D",
+          "W"
+        ],
+        "coach": "Walid Regragui",
+        "stars": [
+          {
+            "name": "Achraf Hakimi",
+            "pos": "RB",
+            "club": "PSG",
+            "desc": "边路爆点",
+            "rating": 8.4
+          }
+        ],
+        "star": {
+          "name": "Achraf Hakimi",
+          "pos": "RB",
+          "club": "PSG",
+          "desc": "边路爆点",
+          "rating": 8.4
+        },
+        "injuries": [
+          {
+            "player": "Nayef Aguerd",
+            "status": "OUT",
+            "note": "腹股沟伤退出世界杯，Diop+Riad 中卫组合经巴西战检验",
+            "confirmed": true
+          },
+          {
+            "player": "Abde Ezzalzouli",
+            "status": "OUT",
+            "note": "膝伤退出世界杯，定位球选项减少",
+            "confirmed": true
+          },
+          {
+            "player": "Achraf Hakimi",
+            "status": "FIT",
+            "note": "对巴西全场活跃，边路往返无虞",
+            "confirmed": true
+          },
+          {
+            "player": "Noussair Mazraoui",
+            "status": "FIT",
+            "note": "对巴西首发左后卫，肩部伤后已完全恢复",
+            "confirmed": true
+          },
+          {
+            "player": "Abdessamad Saibari",
+            "status": "FIT",
+            "note": "21' 偷袭破门逼平巴西，次轮预计继续先发",
             "confirmed": true
           }
         ],
         "rumors": [
-          "首轮 1-1 瑞士，防守纪律尚可",
-          "客场对加拿大预计 5-4-1 低位"
-        ],
-        "star": {
-          "name": "Almoez Ali",
-          "pos": "ST",
-          "desc": "低位反击发起点",
-          "rating": 7.6
-        }
+          "Regragui（赛后）：「对巴西 1 分证明我们可以与任何人抗衡；对苏格兰要抢 3 分」",
+          "Saibari 冷射 + Vinícius 扳平后，摩洛哥 2022 四强信心延续",
+          "Diop（Fulham）+ Riad（Crystal Palace）新中卫链经巴西战磨合，防空仍是隐患",
+          "Hakimi-Díaz 右路对 Robertson 左路是本场关键对位",
+          "客场波士顿抢分将改变 C 组格局——摩洛哥需打破苏格兰主场气势"
+        ]
       },
       "h2h": {
         "home_wins": 0,
-        "draws": 0,
-        "away_wins": 0,
+        "draws": 1,
+        "away_wins": 1,
         "recent": [],
-        "note": "无正式大赛交锋"
+        "note": "摩洛哥近年更强"
       },
       "referee": {
-        "confirmed": true,
-        "pending": false,
-        "source": "FIFA · Match officials · 2026-06-18",
-        "name": "Cristián Garay",
-        "nation": "Chile",
-        "iso": "cl",
-        "age": 36,
-        "wc_experience": "2026 男足世界杯首秀 · 智利 12 年来首位世界杯主裁",
-        "avg_yellow": 4.2,
-        "avg_red": 0.09,
-        "avg_penalty": 0.24,
-        "home_win_rate": 54,
-        "bias_index": 52,
-        "bias_note": "智利全组执法温哥华主场战。Davies 高位压迫与卡塔尔低位犯规、东道主节奏控制是判罚焦点。",
+        "confirmed": false,
+        "pending": true,
+        "name": "等待官方确认",
+        "nation": "待公布",
+        "iso": null,
+        "bias_note": "FIFA Match 30 裁判名单赛前公布。",
         "tendencies": [
-          "智利助理裁判组：José Retamal、Miguel Rocha",
-          "第四官员 Kevin Ortega（秘鲁）· 候补边裁 Michael Orué",
-          "VAR Juan Lara（智利）· AVAR Rodolpho Toski · SVAR Nicolás Gallo",
-          "东道主 BC Place 次轮预计 4–5 张黄牌，对拖延时间判罚果断"
-        ],
-        "officials": {
-          "ar1": "José Retamal (CHI)",
-          "ar2": "Miguel Rocha (CHI)",
-          "fourth": "Kevin Ortega (PER)",
-          "var": "Juan Lara (CHI)",
-          "avar": "Rodolpho Toski (BRA)",
-          "svar": "Nicolás Gallo (COL)"
-        }
+          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+        ]
       },
       "prediction": {
-        "home_win": 50,
-        "draw": 26,
-        "away_win": 24,
-        "score": "1-0",
-        "confidence": 74,
-        "xg_home": 1.62,
-        "xg_away": 0.88,
-        "key_factor": "东道主温哥华主场：Davies/David 高位压迫；卡塔尔首轮平瑞士低位韧性；泊松最可能 2-0/1-0",
+        "home_win": 37,
+        "draw": 25,
+        "away_win": 37,
+        "score": "1-1",
+        "confidence": 65,
+        "xg_home": 1.35,
+        "xg_away": 1.28,
+        "key_factor": "C组均分乱局：McTominay vs Hakimi · 摩洛哥首轮平巴西 · 泊松倾向 1-1/1-2",
         "score_dist": [
           {
-            "score": "1-0",
-            "prob": 13.3
-          },
-          {
             "score": "1-1",
-            "prob": 11.7
+            "prob": 12.5
           },
           {
-            "score": "2-0",
-            "prob": 10.8
-          },
-          {
-            "score": "2-1",
-            "prob": 9.5
-          },
-          {
-            "score": "0-0",
-            "prob": 8.2
+            "score": "1-0",
+            "prob": 9.7
           },
           {
             "score": "0-1",
+            "prob": 9.2
+          },
+          {
+            "score": "2-1",
+            "prob": 8.4
+          },
+          {
+            "score": "1-2",
+            "prob": 8
+          },
+          {
+            "score": "0-0",
             "prob": 7.2
           },
           {
-            "score": "3-0",
-            "prob": 5.8
+            "score": "2-0",
+            "prob": 6.6
           }
         ],
-        "base_home_win": 55,
-        "base_draw": 25,
-        "base_away_win": 21,
-        "depth_calibrated": true,
         "insight_factors": [
           {
             "icon": "📊",
             "label": "小组积分",
-            "text": "Canada 暂列 B 组第 3（1 分 · 已赛 1 场） vs Qatar 第 2（1 分 · 已赛 1 场）；B 组四队同积 1 分，本轮赛果将显著重排积分榜"
+            "text": "Scotland 暂列 C 组第 1（3 分 · 已赛 1 场） vs Morocco 第 2（1 分 · 已赛 1 场）"
           },
           {
             "icon": "🌤️",
             "label": "赛场气候",
-            "text": "温哥华阴冷多雨，体感偏凉 · 16°C · 湿度 78% · 降雨概率 55% · 太平洋海风 4级；凉爽+中高降雨概率——卡塔尔低位防守专注度与加拿大高位压迫体能是考验（16°C · 18:00 PT 开球 · 降雨概率 55%）"
+            "text": "波士顿温和晴朗，夜场舒适 · 21°C · 湿度 55% · 降雨概率 18% · 东北风 2级；气候变量低——均分乱局下，McTominay vs Hakimi 对位不受天气扰动（21°C · 18:00 ET 开球 · 低降雨 18%）"
           },
           {
             "icon": "⚽",
             "label": "战术与阵容",
-            "text": "东道主温哥华主场：Davies/David 高位压迫；卡塔尔首轮平瑞士低位韧性；泊松最可能 2-0/1-0"
-          }
-        ]
-      },
-      "upset_alert": {
-        "favorite": "Canada",
-        "underdog": "Qatar",
-        "favorite_iso": "CAN",
-        "index": 22,
-        "level": "LOW",
-        "level_cn": "低",
-        "cold_result_pct": 18,
-        "verdict": "东道主温哥华主场优势明显——卡塔尔 5-4-1 低位仍有 16% 平局空间。",
-        "tactical": "Marsch 高位+Davies 左路 vs Sánchez 5-4-1 低位。",
-        "psychology": "加拿大东道主压力+必须取胜；卡塔尔首轮平瑞士有信心。",
-        "historical": "无大赛交锋。",
-        "factors": [
-          {
-            "tag": "主场",
-            "impact": "强",
-            "detail": "温哥华 BC Place 东道主"
-          },
-          {
-            "tag": "高位",
-            "impact": "强",
-            "detail": "Marsch 压迫对卡塔尔出球是考验"
-          },
-          {
-            "tag": "低位",
-            "impact": "中",
-            "detail": "卡塔尔首轮平瑞士已验证"
-          }
-        ]
-      },
-      "coach_analysis": {
-        "home": {
-          "name": "Jesse Marsch",
-          "age": 51,
-          "nation": "美国",
-          "tenure": "2024年—",
-          "wc_exp": "2026 带队 · 欧冠执教经验",
-          "style_tags": [
-            "4-3-3",
-            "高位",
-            "Davies 宽度",
-            "体能"
-          ],
-          "formation_pref": "4-3-3 · 高位压迫",
-          "style_summary": "东道主温哥华主场，首轮 1-1 波黑。对卡塔尔必须取胜，预计全场压制+Davies 左路宽度。",
-          "subs": {
-            "timing": "首换 60–65 分钟",
-            "pattern": "高位体能轮换",
-            "avg_first_sub": "62'",
-            "note": "主场气势"
-          },
-          "when_leading": {
-            "label": "继续压迫",
-            "detail": "1 球领先：维持高位。"
-          },
-          "when_trailing": {
-            "label": "堆边锋",
-            "detail": "先丢球：55' 加码。"
-          },
-          "vs_strong": {
-            "label": "对强队：对攻",
-            "detail": "对瑞士会开放。"
-          },
-          "vs_weak": {
-            "label": "对弱队：不留余地",
-            "detail": "对卡塔尔预计压制。"
-          },
-          "tournament": "东道主压力+欧冠经验，Davies 是爆点。",
-          "traits": [
-            "高位",
-            "Davies 宽度",
-            "主场",
-            "必须抢分"
-          ],
-          "match_note": "温哥华主场高位——Davies 左路+压迫；卡塔尔低位需耐心破局。"
-        },
-        "away": {
-          "name": "Félix Sánchez",
-          "age": 49,
-          "nation": "西班牙",
-          "tenure": "2023年—",
-          "wc_exp": "2022 带队亚洲杯冠军",
-          "style_tags": [
-            "4-2-3-1",
-            "低位",
-            "转换",
-            "纪律"
-          ],
-          "formation_pref": "4-2-3-1 · 低位",
-          "style_summary": "首轮 1-1 瑞士，防守纪律尚可。对加拿大客场（温哥华）预计 5-4-1 低位+反击偷分。",
-          "subs": {
-            "timing": "首换 70 分钟+",
-            "pattern": "换人偏晚",
-            "avg_first_sub": "72'",
-            "note": "弱队体能优先"
-          },
-          "when_leading": {
-            "label": "5-4-1 铁桶",
-            "detail": "若意外领先：立即退守。"
-          },
-          "when_trailing": {
-            "label": "维持低位",
-            "detail": "unlikely 大举压上。"
-          },
-          "vs_strong": {
-            "label": "对强队：龟缩",
-            "detail": "对加拿大教科书弱队踢法。"
-          },
-          "vs_weak": {
-            "label": "对弱队：压上",
-            "detail": "对波黑会相对开放。"
-          },
-          "tournament": "亚洲杯冠军经验，世界杯舞台仍偏保守。",
-          "traits": [
-            "低位",
-            "纪律",
-            "转换",
-            "客场弱势"
-          ],
-          "match_note": "5-4-1 低位+反击；守 0-1 可接受，定位球是唯一威胁。"
-        }
-      },
-      "weather": {
-        "city": "温哥华",
-        "country": "加拿大",
-        "venue": "BC Place",
-        "temp": 16,
-        "humidity": 78,
-        "altitude_m": 5,
-        "rain_chance": 55,
-        "wind": "太平洋海风 4级",
-        "condition_cn": "温哥华阴冷多雨，体感偏凉",
-        "impact_level": "MEDIUM",
-        "impact": "BC Place 人工草+16°C 小雨可能；东道主加拿大更适应凉爽湿润气候",
-        "impact_summary": "凉爽+中高降雨概率——卡塔尔低位防守专注度与加拿大高位压迫体能是考验",
-        "home_adapt": 88,
-        "away_adapt": 72,
-        "home_note": "加拿大球员习惯温哥华主场；Marsch 高位压迫在凉爽天气更易维持 90 分钟强度",
-        "away_note": "卡塔尔习惯炎热干燥气候，16°C 阴雨对转换速度与触球手感略不利",
-        "prediction_note": "若临场小雨，长传与远射精度略降，利好控球方加拿大；模型 xG 微调约 2%",
-        "weather_factors": [
-          {
-            "label": "16°C · 18:00 PT 开球",
-            "impact": "略利主队",
-            "detail": "北京时间 6月19日 06:00；傍晚气温继续走低"
-          },
-          {
-            "label": "降雨概率 55%",
-            "impact": "中",
-            "detail": "间歇性小雨，人工草排水尚可但球速略快"
-          },
-          {
-            "label": "人工草",
-            "impact": "中性",
-            "detail": "双方均需适应，东道主日常训练于此"
+            "text": "C组均分乱局：McTominay vs Hakimi · 摩洛哥首轮平巴西 · 泊松倾向 1-1/1-2"
           }
         ],
-        "historical_note": "BC Place · 东道主加拿大主场 · B组第2轮 · 预报更新 2026-06-18 22:00 本地",
-        "forecast_updated": "2026-06-18 22:00 本地"
+        "base_home_win": 38,
+        "base_draw": 26,
+        "base_away_win": 35,
+        "depth_calibrated": true
+      },
+      "weather": {
+        "city": "波士顿",
+        "country": "美国",
+        "venue": "Gillette Stadium",
+        "temp": 21,
+        "humidity": 55,
+        "altitude_m": 85,
+        "rain_chance": 18,
+        "wind": "东北风 2级",
+        "condition_cn": "波士顿温和晴朗，夜场舒适",
+        "impact_level": "LOW",
+        "impact": "Gillette 21°C 傍晚开球，苏格兰与摩洛哥均适应温带气候；战术对位主导比赛",
+        "impact_summary": "气候变量低——均分乱局下，McTominay vs Hakimi 对位不受天气扰动",
+        "home_adapt": 82,
+        "away_adapt": 84,
+        "home_note": "苏格兰球员习惯英伦温带夜场；Robertson 左路往返不受气温制约",
+        "away_note": "摩洛哥地中海-撒哈拉过渡带球队，22°C 级夜场是其舒适区；Hakimi 边路不受影响",
+        "prediction_note": "模型不因气候微调 xG；若微雨则场地略滑，反击速度微升",
+        "weather_factors": [
+          {
+            "label": "21°C · 18:00 ET 开球",
+            "impact": "低",
+            "detail": "北京时间 6月20日 06:00；Foxborough 傍晚降温"
+          },
+          {
+            "label": "低降雨 18%",
+            "impact": "低",
+            "detail": "晴朗为主，天然草状态良好"
+          },
+          {
+            "label": "湿度 55%",
+            "impact": "中性",
+            "detail": "双方体能消耗正常，无湿热负担"
+          }
+        ],
+        "historical_note": "Gillette Stadium · C组第2轮 · 预报更新 2026-06-19 22:00 本地",
+        "forecast_updated": "2026-06-19 22:00 本地"
       },
       "mystic": {
         "date_bazi": {
@@ -2631,233 +1621,336 @@ const MATCH_DATA = {
           "day": "己丑日",
           "day_element": "土",
           "day_dominant": "土",
-          "day_summary": "己丑日——己土坐丑，土气厚重。《道德经》曰：「上善若水。」丑土当令，宜守中蓄势、厚积薄发；忌土性固执、躁进冒失。非力之大小，乃气之顺逆。",
+          "day_summary": "己丑日——己土坐丑，土气厚重。《道德经》曰：「知常曰明。」丑土当令，宜循序渐进、忌半场冒进；非力之大小，乃气之顺逆。",
           "hour_home": "卯时（06:00-08:00）",
           "hour_home_element": "木"
         },
         "wuxing": {
           "home": {
-            "team": "Canada",
-            "colors": "红+白",
-            "elements": "火、金",
-            "wuxing_short": "金火相涵",
-            "verdict": "有利",
-            "verdict_color": "#5BBF8A",
-            "compat": 64,
-            "reason": "红属火、白属金。卯时木气初升，木生火——如「天地交泰」。《道德经》「小国寡民」而东道主气运聚于主场，金火得木助而明。",
-            "advantage": "卯木生火，东道主气运渐盛"
+            "team": "Scotland",
+            "colors": "深蓝+白",
+            "elements": "水、金",
+            "wuxing_short": "金水相生",
+            "verdict": "中性偏利",
+            "verdict_color": "#C8A96E",
+            "compat": 54,
+            "reason": "深蓝属水、白属金。卯时木气当令，金生水——如「风行水上」。《道德经》「柔弱胜刚强」，苏格兰水金顺卯木而流。",
+            "advantage": "卯木泄水气，金水相济宜稳守反击"
           },
           "away": {
-            "team": "Qatar",
-            "colors": "枣红+白",
-            "elements": "火、金",
-            "wuxing_short": "火金内敛",
-            "verdict": "中性偏逆",
+            "team": "Morocco",
+            "colors": "红+绿",
+            "elements": "火、木",
+            "wuxing_short": "火木相济",
+            "verdict": "中性偏利",
             "verdict_color": "#C8A96E",
-            "compat": 46,
-            "reason": "枣红属火、白属金。火金相涵但己丑土日厚重，卯木泄火气——如「火在木上」，宜守不宜攻。",
-            "disadvantage": "气运偏守，低位可延一时"
+            "compat": 56,
+            "reason": "红属火、绿属木。卯时木旺，火木相生——如「木火通明」，然丑土日厚重，宜守中待变。",
+            "advantage": "卯木助火木，反击为暗流"
           },
-          "summary": "五行裁定：卯木生火利东道主；卡塔尔火金内敛——气运偏逆，宜守"
+          "summary": "五行裁定：卯木当令双方皆沾木气；苏格兰金水相济、摩洛哥火木相生——气运近而不齐，均分乱局宜稳"
         },
         "hexagram": {
-          "name": "地天泰",
-          "symbol": "☷☰",
-          "number": 11,
-          "upper": "坤地",
-          "lower": "乾天",
-          "quote": "《周易·泰卦》：「小往大来，吉亨。」",
-          "general": "泰卦——天地交泰，小往大来；顺时者亨通，忌骄泰致否。",
-          "advantage_team": "Canada",
-          "disadvantage_team": "Qatar",
-          "hexagram_analysis": "泰卦「天地交而万物通」：卯时木气助火，上下气运各有一段——坤地承天，前半程交泰，后段气泄再动。",
-          "match_nature": "小往大来 · 东道主顺时",
+          "name": "风水涣",
+          "symbol": "☴☵",
+          "number": 59,
+          "upper": "巽风",
+          "lower": "坎水",
+          "quote": "《周易·涣卦》：「涣，亨。王假有庙，利涉大川。」",
+          "general": "涣卦——风行水上，离散中藏通亨；均势局宜后段破局，忌早段冒进。",
+          "advantage_team": null,
+          "disadvantage_team": null,
+          "hexagram_analysis": "涣卦「利涉大川」：卯时木气助风，坎水在下——气运后段渐动，卦示稳阵后一段破局。",
+          "match_nature": "风行水上 · 均势待变",
           "yellow_card_risk": "中",
-          "yellow_card_reason": "泰卦主通泰非粗野；高位压迫致战术犯规，预计中等黄牌。",
+          "yellow_card_reason": "涣卦主流通非缠斗；McTominay/Hakimi 对位下战术犯规，预计中等黄牌。",
           "scenarios": [
             {
               "icon": "☯",
               "label": "气运性质",
-              "text": "卯木生火，天地交泰——顺时者「吉亨」"
+              "text": "卯木当令，双方气运相近——后段「涉大川」者得利"
             },
             {
               "icon": "⏱",
               "label": "进球高峰段",
-              "text": "第 18-32 分钟（泰卦「小往大来」）及第 62-78 分钟（坤地承天、后段气再动）"
+              "text": "第 72-88 分钟（涣卦「利涉大川」、坎水后段水气再动——卦只示此一段）"
             },
             {
               "icon": "🟨",
               "label": "纪律",
-              "text": "泰主通泰，黄牌来自压迫阻截"
+              "text": "均势局，黄牌来自中场绞杀"
             }
           ],
           "early_goal": {
-            "scenario": "若加拿大先进球",
-            "prediction": "泰象全现——卯木助火，追加窗口在 22-38 分钟；忌「泰」极生否。",
-            "favors": "Canada",
-            "favors_prob": 64
-          },
-          "no_early_goal": {
-            "scenario": "若前 25 分钟无进球",
-            "prediction": "卯木主静，气运蓄势；30-45 分钟为第一次破局窗口。",
-            "favors": "Canada",
+            "scenario": "若苏格兰先进球",
+            "prediction": "涣象渐通——金水守中，追加窗口在 76-90 分钟；忌领先后「涣」散。",
+            "favors": "Scotland",
             "favors_prob": 58
           },
+          "no_early_goal": {
+            "scenario": "若前 35 分钟无进球",
+            "prediction": "涣卦宜「王假有庙」——0-0 符合均势；下半场 55-70 分钟为第一次破局窗口。",
+            "favors": "Draw",
+            "favors_prob": 48
+          },
           "away_goal": {
-            "scenario": "若卡塔尔偷袭破门",
-            "prediction": "泰遭逆——火金守中偶可惊雷；主队需木火相生耐心反扑，55' 后气运回。",
-            "favors": "Canada",
-            "favors_prob": 56
+            "scenario": "若摩洛哥先进球",
+            "prediction": "涣遭逆——火木反击；苏格兰需金水相济耐心，70' 后坎水助反扑。",
+            "favors": "Morocco",
+            "favors_prob": 54
           }
         },
         "goal_peak": {
-          "scope": "both_halves",
-          "title": "上下半场进球高峰 · 娱乐预测",
+          "scope": "second_half",
+          "title": "下半场进球高峰 · 娱乐预测",
           "windows": [
-            {
-              "label": "上半场",
-              "half": "first",
-              "start_min": 18,
-              "end_min": 32,
-              "hex_reason": "泰卦「小往大来」，天地初交",
-              "time_reason": "卯时木气生火，气由静转亨"
-            },
             {
               "label": "下半场",
               "half": "second",
-              "start_min": 62,
-              "end_min": 78,
-              "hex_reason": "坤地承天，后段气泄再动",
-              "time_reason": "卯木后段仍助火"
+              "start_min": 72,
+              "end_min": 88,
+              "hex_reason": "涣卦「利涉大川」，坎水后段再动",
+              "time_reason": "卯时后段木泄水气，后段破局"
             }
           ],
-          "periods": "第 18-32 分钟 · 第 62-78 分钟",
-          "rationale": "卯时木气初升，己丑土日宜守中；泰卦「小往大来」明示上下两段气运——初交段破局，后段坤地承天再动。卦象双段清晰，故示双窗。",
+          "periods": "第 72-88 分钟",
+          "rationale": "卯时木气当令，涣卦主「风行水上」——均势局气运集中于后段一段，卦象未明示上半场高峰。宁缺毋滥，只示下半场一窗。",
           "note": "娱乐解读 · 纯玄学参考 · 非赛程或竞技推演",
           "logic_hint": "依赛日八字、开球时辰、卦象与五行生克推断；卦象只示一段气运则只给一段，不凑数。"
         },
-        "home_score": 74,
-        "away_score": 38,
-        "mystic_verdict": "加拿大卯木生火，卡塔尔火金守中——天地交泰，东道主顺时者「吉亨」。",
-        "model_bridge": "xG 1.62-0.88 碾压，温哥华主场+Davies 左路是核心。",
+        "home_score": 56,
+        "away_score": 58,
+        "mystic_verdict": "苏格兰金水相济，摩洛哥火木相生——卯木当令，均分乱局宜稳守反击。",
+        "model_bridge": "xG 1.35-1.28 几乎均势，Morocco -0.5 浅盘，平局与 1 球差均需保留。",
         "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
       },
+      "group_context": {
+        "group": "C",
+        "label": "C组 · 第1轮（4场已赛）",
+        "matchday": 2,
+        "standings": [
+          {
+            "team": "Scotland",
+            "pts": 3,
+            "p": 1,
+            "w": 1,
+            "d": 0,
+            "l": 0,
+            "gf": 1,
+            "ga": 0
+          },
+          {
+            "team": "Morocco",
+            "pts": 1,
+            "p": 1,
+            "w": 0,
+            "d": 1,
+            "l": 0,
+            "gf": 1,
+            "ga": 1
+          },
+          {
+            "team": "Brazil",
+            "pts": 1,
+            "p": 1,
+            "w": 0,
+            "d": 1,
+            "l": 0,
+            "gf": 1,
+            "ga": 1
+          },
+          {
+            "team": "Haiti",
+            "pts": 0,
+            "p": 1,
+            "w": 0,
+            "d": 0,
+            "l": 1,
+            "gf": 0,
+            "ga": 1
+          }
+        ],
+        "home": {
+          "team": "Scotland",
+          "rank": 1,
+          "pts": 3,
+          "played": 1,
+          "if_1st": "32强 M76 · C 组第 1 vs F 组第 2 → 当前 F 组第 2倾向 Japan",
+          "if_1st_r16": "16强 M91 · 对阵 E 组第 2 vs I 组第 2 之胜者",
+          "if_1st_corridor": "法国/挪威/塞内加尔/德国（E/I 次席走廊）— 16 强硬仗区",
+          "if_2nd": "32强 M75 · F 组第 1 vs C 组第 2 → 当前 F 组第 1倾向 Sweden",
+          "if_2nd_r16": "16强 M90 · 对阵 A 组第 2 vs B 组第 2 之胜者",
+          "if_2nd_corridor": "墨西哥/韩国/加拿大/瑞士（A/B 次席走廊）— 16 强相对温和",
+          "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 D/E/F/G/H/I/J/K 等组第 3 横向比较",
+          "if_3rd_r16": "32 强对手取决于 Annex C 第 3 名组合（495 种可能）"
+        },
+        "away": {
+          "team": "Morocco",
+          "rank": 2,
+          "pts": 1,
+          "played": 1,
+          "if_1st": "32强 M76 · C 组第 1 vs F 组第 2 → 当前 F 组第 2倾向 Japan",
+          "if_1st_r16": "16强 M91 · 对阵 E 组第 2 vs I 组第 2 之胜者",
+          "if_1st_corridor": "法国/挪威/塞内加尔/德国（E/I 次席走廊）— 16 强硬仗区",
+          "if_2nd": "32强 M75 · F 组第 1 vs C 组第 2 → 当前 F 组第 1倾向 Sweden",
+          "if_2nd_r16": "16强 M90 · 对阵 A 组第 2 vs B 组第 2 之胜者",
+          "if_2nd_corridor": "墨西哥/韩国/加拿大/瑞士（A/B 次席走廊）— 16 强相对温和",
+          "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 D/E/F/G/H/I/J/K 等组第 3 横向比较",
+          "if_3rd_r16": "32 强对手取决于 Annex C 第 3 名组合（495 种可能）"
+        },
+        "cross_group_notes": [
+          "F 组：头名 Sweden 3 分 · 次席 Japan 1 分（32强绑定组）",
+          "E 组：头名 Germany 3 分 · 次席 Côte d'Ivoire 同分（32强绑定组）",
+          "I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组）",
+          "G 组四队同积 1 分，形势极度开放",
+          "H 组四队同积 1 分，形势极度开放",
+          "D 组 USA 3 分领跑"
+        ],
+        "path_tradeoff": "C 组头名 32 强打 F 组第 2（荷兰若夺 F 组头名则 32 强避荷兰），但 16 强进入 E2/I2 胜者通道；次席 32 强极可能直碰 F 组头名（荷兰），16 强路径反而更顺。强队末轮或存在「保次席避 16 强豪强」博弈。",
+        "manipulation_risk": {
+          "level": "MEDIUM",
+          "level_cn": "中",
+          "focus_team": null,
+          "reason": "本组或关联组积分胶着，第 2、3 轮可能出现算分踢法；本轮仍应以抢分为主。",
+          "optimal_summary": "策略最优解（推演）：关联组形势胶着，本场 Scotland 取胜最能巩固主动，Morocco 则需积极抢 3 分；若握手各取 1 分，对领先方尚可接受，对追赶方则略偏保守——此阶段仍以全力争胜、抢 3 分为上策；尚未到以演练或轮换为名调整名次、接受非胜结果的窗口。"
+        },
+        "knockout_note": "48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。",
+        "scenarios": [
+          "Scotland 若取胜：积分 6，C 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
+          "Morocco 若取胜：积分 4，客场抢分将改变 C 组格局与淘汰赛半区。",
+          "平局：双方各 +1 分；在 F 组：头名 Sweden 3 分 · 次席 Japan 1 分（32强绑定组） · E 组：头名 Germany 3 分 · 次席 Côte d'Ivoire 同分（32强绑定组） · I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
+          "头名/次席博弈：C 组头名 32 强打 F 组第 2（荷兰若夺 F 组头名则 32 强避荷兰），但 16 强进入 E2/I2 胜者通道；次席 32 强极可能直碰 F 组头名（荷兰），16 强路径反而更顺。强队末轮或存在「保次席避 16 强豪强」博弈。"
+        ]
+      },
       "depth_calibration": {
-        "tier_home": 1,
-        "tier_label": "Canada 被看好 · 净胜约 1 球",
-        "implied_tier": 0.25,
-        "tier_gap": 0.75,
-        "signal": "blocker_inflate",
-        "signal_cn": "预期偏高",
-        "signal_color": "#D95F6A",
-        "signal_desc": "赛前舆论显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
-        "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
-        "public_lean_cn": "舆论倾向 Canada（约 68%）",
-        "analysis": "东道主加拿大温哥华主场；卡塔尔首轮平瑞士有韧性。模型看好加拿大但需防闷战。 赛前净胜参考高于 xG 隐含（+0.75），且净胜 1 球占 25.5%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "tier_home": -0.5,
+        "tier_label": "Morocco 被看好 · 净胜约 0.5 球",
+        "implied_tier": 0,
+        "tier_gap": -0.5,
+        "signal": "genuine_favorite",
+        "signal_cn": "实力吻合",
+        "signal_color": "#5BBF8A",
+        "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
+        "blocker_spread_note": "",
+        "public_lean_cn": "舆论倾向 Morocco（约 55%）",
+        "analysis": "魔方：摩洛哥 -0.5 / 大小 2.25 偏小；盘口浅于名气，模型 xG 接近均势，平局与 1 球差均需保留。",
         "spread_cover": {
           "top3_scores": [
             {
-              "score": "1-0",
-              "prob": 13.4
-            },
-            {
               "score": "1-1",
-              "prob": 11.8
+              "prob": 12.5
             },
             {
-              "score": "2-0",
-              "prob": 10.8
+              "score": "1-0",
+              "prob": 9.8
+            },
+            {
+              "score": "0-1",
+              "prob": 9.3
             }
           ],
-          "one_goal_win_pct": 25.5,
-          "two_plus_win_pct": 29.1,
-          "full_cover_pct": 29.1,
-          "half_lose_pct": 25.5,
-          "fav_cover_ev": -0.164,
-          "dog_cover_ev": 0.164,
-          "rational_spread_cn": "客队 守住差距概率略高",
-          "total_xg": 2.5,
-          "over_2_5_pct": 45.3,
-          "over_3_pct": 23.7,
+          "one_goal_win_pct": 21,
+          "two_plus_win_pct": 17.4,
+          "full_cover_pct": 35.2,
+          "half_cover_pct": 0,
+          "half_lose_pct": 0,
+          "push_pct": null,
+          "margin_full_label": "净胜≥1",
+          "margin_half_label": null,
+          "fav_cover_ev": -0.296,
+          "dog_cover_ev": 0.296,
+          "rational_spread_cn": "主队 守住差距概率略高",
+          "total_xg": 2.63,
+          "fair_totals_line": 2,
+          "over_2_5_pct": 48.7,
+          "over_3_pct": 26.7,
           "totals_lean_cn": "2.5 球参考接近均衡；3 球参考偏少",
-          "margin_risk_note": "净胜 1 球概率 25.5%：参考净胜 1 球时，仅赢一球与拉开差距须分开看",
-          "push_pct": 25.5
+          "margin_risk_note": "净胜≥1 约 35.2%；仅赢 1 球约 0%"
         },
-        "spread_odds": null,
+        "spread_odds": {
+          "fav": 0.7,
+          "dog": 1.1,
+          "note": "Scotland 0.7 · Morocco 1.1"
+        },
         "spread_alt": null,
         "totals_analysis": {
-          "market_line": 2.5,
-          "line_label": "总进球约 2.5 个",
-          "implied_xg_total": 2.5,
+          "market_line": 2.25,
+          "market_goals_int": 3,
+          "line_label": "总进球约 2–2.5 个",
+          "implied_xg_total": 2.63,
           "fair_line": 2,
-          "line_gap": 0.5,
-          "over_pct": 45.3,
-          "under_pct": 54.7,
+          "line_gap": 0.25,
+          "over_pct": 48.7,
+          "under_pct": 51.3,
           "signal": "high_line",
           "signal_cn": "进球参考偏高",
           "signal_color": "#C8A96E",
           "signal_desc": "赛前进球参考高于 xG 隐含，模型倾向偏少进球方向。",
-          "public_over_pct": 54,
+          "public_over_pct": 46,
           "public_lean_cn": "舆论对总进球看法较分散",
-          "index_note": "多/少进球两侧参考接近均衡",
-          "totals_odds": null,
-          "rational_cn": "模型在 总进球约 2.5 个 附近均衡",
+          "index_note": "多进球侧 0.94 / 少进球侧 0.81 · 少进球侧关注度更高",
+          "totals_odds": {
+            "over": 0.94,
+            "under": 0.81,
+            "note": "多进球 0.94 · 少进球 0.81"
+          },
+          "rational_cn": "模型在 总进球约 2–2.5 个 附近均衡；进球参考偏高但模型仍偏少进球",
           "score_link_cn": "小比分（1-0/1-1）偏少进球 · 2-0/2-1 居中 · 3 球+ 偏多进球"
         },
-        "totals_line": 2.5,
+        "totals_line": 2.25,
         "applied_delta": {
-          "home_win": -4,
-          "draw": 1,
-          "away_win": 3
+          "home_win": -1,
+          "draw": -1,
+          "away_win": 2
         },
-        "adjustment_note": "模型微调：主胜 -4% · 平 +1% · 客 +3%",
+        "adjustment_note": "模型微调：主胜 -1% · 平 -1% · 客 +2%",
         "adjusted_probs": {
-          "home_win": 50,
-          "draw": 26,
-          "away_win": 24
+          "home_win": 37,
+          "draw": 25,
+          "away_win": 37
         },
         "display_summary": {
-          "fav_name": "Canada",
-          "expected_total_goals": 2.14,
-          "poisson_fav_win_pct": 52,
-          "small_lead_pct": 26.5,
-          "small_example_score": "1-0",
-          "small_example_pct": 16.2,
-          "big_cover_pct": 25.5,
-          "big_example_score": "2-0",
-          "big_example_pct": 11.3,
+          "fav_name": "Morocco",
+          "expected_total_goals": 2.22,
+          "poisson_fav_win_pct": 32.3,
+          "small_lead_pct": 19.9,
+          "small_example_score": "0-1",
+          "small_example_pct": 11.3,
+          "big_cover_pct": 12.4,
+          "big_example_score": "0-2",
+          "big_example_pct": 5.9,
           "win_shape": {
-            "fav_name": "Canada",
+            "fav_name": "Morocco",
             "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 32%）",
+            "lead_cn": "取胜时以险胜·控局为主（险胜 · 控局 35%）",
             "shapes": [
               {
                 "key": "narrow_low",
                 "label": "险胜 · 控局",
                 "example": "如 1-0",
-                "field_pct": 16.2,
-                "pct": 31.1
+                "field_pct": 11.3,
+                "pct": 35
               },
               {
                 "key": "narrow_open",
                 "label": "险胜 · 开放",
                 "example": "如 2-1",
-                "field_pct": 10.3,
-                "pct": 19.8
+                "field_pct": 8.6,
+                "pct": 26.6
               },
               {
                 "key": "comfort_low",
                 "label": "拉开 · 控局",
                 "example": "如 2-0",
-                "field_pct": 16.6,
-                "pct": 32
+                "field_pct": 8,
+                "pct": 24.8
               },
               {
                 "key": "comfort_open",
                 "label": "拉开 · 开放",
                 "example": "如 3-1+",
-                "field_pct": 8.9,
-                "pct": 17.1
+                "field_pct": 4.4,
+                "pct": 13.6
               }
             ],
             "paths": [
@@ -2865,47 +1958,47 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 50.9
+                "pct": 61.6
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 32
+                "pct": 24.8
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 17.1
+                "pct": 13.6
               }
             ],
-            "fav_win_pct": 50
+            "fav_win_pct": 37
           },
           "excitement": {
             "label_cn": "中速开局",
             "label_key": "moderate",
             "label_color": "#C8A96E",
-            "sub_cn": "预期首球等待约 41.7 分",
-            "first_goal_wait": 41.7,
-            "fast_pct": 51.3,
-            "moderate_pct": 14.7,
-            "slow_pct": 34,
+            "sub_cn": "预期首球等待约 40.4 分",
+            "first_goal_wait": 40.4,
+            "fast_pct": 52.4,
+            "moderate_pct": 14.8,
+            "slow_pct": 32.8,
             "tiers": [
               {
                 "key": "fast",
                 "label": "前 30 分内首球",
-                "pct": 51.3
+                "pct": 52.4
               },
               {
                 "key": "moderate",
                 "label": "30–45 分首球",
-                "pct": 14.7
+                "pct": 14.8
               },
               {
                 "key": "slow",
                 "label": "45 分后首球",
-                "pct": 34
+                "pct": 32.8
               }
             ]
           },
@@ -2914,124 +2007,265 @@ const MATCH_DATA = {
             {
               "icon": "🏥",
               "label": "伤病",
-              "note": "Canada 暂无重要伤停 · Qatar 暂无重要伤停"
+              "note": "Scotland：Billy Gilmour 缺阵；Nathan Patterson 存疑 · Morocco：Nayef Aguerd、Abde Ezzalzouli 缺阵"
             },
             {
               "icon": "👔",
               "label": "教练风格",
-              "note": "继续压迫 / 5-4-1 铁桶（领先时）"
+              "note": "4-5-1 收缩 / 控节奏（领先时）"
             },
             {
               "icon": "🌤️",
               "label": "气候",
-              "note": "凉爽+中高降雨概率——卡塔尔低位防守专注度与加拿大高位压迫体能是考验"
+              "note": "气候变量低——均分乱局下，McTominay vs Hakimi 对位不受天气扰动"
             }
           ],
           "xg_context": {
-            "baseline_home": 1.62,
-            "baseline_away": 0.88,
-            "adjusted_home": 1.4,
-            "adjusted_away": 0.76,
-            "note": "基准 xG 1.62–0.88 → 调整后 1.4–0.76"
+            "baseline_home": 1.35,
+            "baseline_away": 1.28,
+            "adjusted_home": 1.18,
+            "adjusted_away": 1.05,
+            "note": "基准 xG 1.35–1.28 → 调整后 1.18–1.05"
           },
           "calibration": {
-            "signal_cn": "预期偏高",
-            "signal_color": "#D95F6A",
-            "signal_desc": "赛前舆论显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
-            "tier_gap": 0.75,
-            "implied_tier_label": "Canada 被看好 · 净胜约 0.25 球",
-            "market_tier_label": "Canada 被看好 · 净胜约 1 球",
-            "summary_cn": "与模型 xG 对照：预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 热门仅净胜 1 球概率 26.5%"
+            "signal_cn": "实力吻合",
+            "signal_color": "#5BBF8A",
+            "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
+            "tier_gap": -0.5,
+            "implied_tier_label": "势均力敌",
+            "market_tier_label": "Morocco 被看好 · 净胜约 0.5 球",
+            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法低于 xG 隐含约 0.5"
           },
           "win_outlook": {
-            "fav_name": "Canada",
+            "fav_name": "Morocco",
             "state_label": null,
             "paths": [
               {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 50.9
+                "pct": 61.6
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 32
+                "pct": 24.8
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 17.1
+                "pct": 13.6
               }
             ],
-            "margin_line_cn": "Canada · 赛前净胜参考 ≥1–2 球",
-            "margin_meet_pct": 25.5,
-            "margin_fail_pct": 26.5,
+            "margin_line_cn": "Morocco · 赛前净胜参考 净胜≥1（全达标）",
+            "margin_meet_pct": 32.3,
+            "margin_half_pct": 0,
+            "margin_fail_pct": 0,
+            "margin_full_label": "净胜≥1",
+            "margin_half_label": null,
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
             "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-            "totals_line": 2.5,
-            "totals_line_cn": "总进球约 2.5 个",
-            "totals_high_pct": 36.4,
-            "totals_low_pct": 63.6,
+            "totals_line": 2.25,
+            "totals_line_cn": "总进球约 2–2.5 个",
+            "fair_totals_line": 2.25,
+            "model_total_xg": 2.23,
+            "totals_line_gap": 0,
+            "totals_high_pct": 51.8,
+            "totals_low_pct": 48.2,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 27.5,
-            "win_margin2_low_total_pct": 11.3,
-            "win_margin2_high_total_pct": 14.2,
-            "readout_cn": "取胜约 50%；若取胜，以「险胜收工」为主（50.9%）。 对着赛前净胜参考，差距达标约 25.5%；对着 总进球约 2.5 个，总进球偏高一侧约 36.4%。"
+            "win_low_total_pct": 17.3,
+            "win_margin2_low_total_pct": 5.9,
+            "win_margin2_high_total_pct": 12.4,
+            "readout_cn": "取胜约 37%；若取胜，以「险胜收工」为主（61.6%）。 对着赛前净胜参考，净胜≥1（全达标）约 32.3%；对着外界总进球参考 总进球约 2–2.5 个，模型终场多于该参考的概率约 51.8%。"
           },
-          "totals_line": 2.5,
+          "totals_line": 2.25,
           "score_patterns": [
             {
-              "score": "1-0",
-              "pct": 16.2
-            },
-            {
               "score": "1-1",
-              "pct": 12.3
+              "pct": 13.4
             },
             {
-              "score": "0-0",
-              "pct": 11.6
+              "score": "1-0",
+              "pct": 12.7
+            },
+            {
+              "score": "0-1",
+              "pct": 11.3
             }
           ],
           "totals_view": {
-            "expected_total": 2.1,
+            "expected_total": 2.2,
             "fair_line": 2.25,
-            "line_gap": 0.25,
-            "over_pct": 36.4,
-            "summary_cn": "预期约 2.1 个总进球 · 赛前参考进球参考偏高 · 模型略偏少进球（约 63.6%）"
+            "market_line": 2.25,
+            "line_gap": 0,
+            "over_pct": 38.4,
+            "gap_warning": null,
+            "totals_outlook": {
+              "level": "mild_low",
+              "label_cn": "略倾向沉闷",
+              "color": "#7BB8D4",
+              "meter_label_cn": "略倾向沉闷",
+              "meter_pos": 38,
+              "lean_side": "dull",
+              "lean_strength": "mild",
+              "section_intro_cn": "对照外界「全场至少 3 球」的赛前进球节奏，看模型更偏沉闷还是精彩",
+              "pill_cn": "略倾向沉闷（弱信号）。",
+              "detail_cn": "模型略偏沉闷——全场进球节奏可能偏慢、难及这一预期；信号偏弱，仅供参考。",
+              "headline_cn": "进球氛围：略倾向沉闷（弱信号）",
+              "show_lean": false,
+              "over_pct": 38.4,
+              "line_gap": 0,
+              "market_line": 2.25,
+              "market_goals_int": 3,
+              "market_goals_cn": "全场至少 3 球",
+              "caution_public_high": false
+            },
+            "summary_cn": "模型 xG 合计约 2.2 球（公允参考约 2.25） · 外界总进球参考 2.25 · 模型在常见进球预期附近均衡，不作强倾向"
+          },
+          "customer_reading": {
+            "headline_cn": "Morocco · 净胜走向：达标与否难下定论",
+            "sub_cn": "达标概率约 32.3% · 达标与否难下定论 进球氛围：略倾向沉闷（弱信号）",
+            "spread": {
+              "level": "uncertain",
+              "label_cn": "净胜幅度难下定论",
+              "color": "#8A96A8",
+              "fav_name": "Morocco",
+              "market_expect_cn": "净胜≥1",
+              "meet_pct": 32.3,
+              "meet_pct_label": "模型推演达标概率",
+              "verdict_cn": "达标与否难下定论",
+              "headline_cn": "Morocco · 净胜走向：达标与否难下定论",
+              "pill_cn": "达标概率约 32.3% · 达标与否难下定论",
+              "detail_cn": "Morocco · 赛前外界预期 净胜≥1。模型推演达标概率约 32.3%。",
+              "extra_stats_cn": "",
+              "full_cover_pct": 32.3,
+              "half_cover_pct": 0,
+              "lose1_pct": 0,
+              "margin_full_label": "净胜≥1",
+              "margin_half_label": null,
+              "tier_gap": -0.5,
+              "show_cover": true
+            },
+            "totals": {
+              "level": "mild_low",
+              "label_cn": "略倾向沉闷",
+              "color": "#7BB8D4",
+              "meter_label_cn": "略倾向沉闷",
+              "meter_pos": 38,
+              "lean_side": "dull",
+              "lean_strength": "mild",
+              "section_intro_cn": "对照外界「全场至少 3 球」的赛前进球节奏，看模型更偏沉闷还是精彩",
+              "pill_cn": "略倾向沉闷（弱信号）。",
+              "detail_cn": "模型略偏沉闷——全场进球节奏可能偏慢、难及这一预期；信号偏弱，仅供参考。",
+              "headline_cn": "进球氛围：略倾向沉闷（弱信号）",
+              "show_lean": false,
+              "over_pct": 38.4,
+              "line_gap": 0,
+              "market_line": 2.25,
+              "market_goals_int": 3,
+              "market_goals_cn": "全场至少 3 球",
+              "caution_public_high": false
+            },
+            "draw_risk": null,
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "净胜走向",
+                "outlook": {
+                  "level": "uncertain",
+                  "label_cn": "净胜幅度难下定论",
+                  "color": "#8A96A8",
+                  "fav_name": "Morocco",
+                  "market_expect_cn": "净胜≥1",
+                  "meet_pct": 32.3,
+                  "meet_pct_label": "模型推演达标概率",
+                  "verdict_cn": "达标与否难下定论",
+                  "headline_cn": "Morocco · 净胜走向：达标与否难下定论",
+                  "pill_cn": "达标概率约 32.3% · 达标与否难下定论",
+                  "detail_cn": "Morocco · 赛前外界预期 净胜≥1。模型推演达标概率约 32.3%。",
+                  "extra_stats_cn": "",
+                  "full_cover_pct": 32.3,
+                  "half_cover_pct": 0,
+                  "lose1_pct": 0,
+                  "margin_full_label": "净胜≥1",
+                  "margin_half_label": null,
+                  "tier_gap": -0.5,
+                  "show_cover": true
+                },
+                "text": "达标概率约 32.3% · 达标与否难下定论",
+                "color": "#8A96A8",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "◎",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "mild_low",
+                  "label_cn": "略倾向沉闷",
+                  "color": "#7BB8D4",
+                  "meter_label_cn": "略倾向沉闷",
+                  "meter_pos": 38,
+                  "lean_side": "dull",
+                  "lean_strength": "mild",
+                  "section_intro_cn": "对照外界「全场至少 3 球」的赛前进球节奏，看模型更偏沉闷还是精彩",
+                  "pill_cn": "略倾向沉闷（弱信号）。",
+                  "detail_cn": "模型略偏沉闷——全场进球节奏可能偏慢、难及这一预期；信号偏弱，仅供参考。",
+                  "headline_cn": "进球氛围：略倾向沉闷（弱信号）",
+                  "show_lean": false,
+                  "over_pct": 38.4,
+                  "line_gap": 0,
+                  "market_line": 2.25,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "全场至少 3 球",
+                  "caution_public_high": false
+                },
+                "text": "略倾向沉闷（弱信号）。",
+                "color": "#7BB8D4",
+                "muted": true
+              }
+            ],
+            "methodology_note": "读场优先级：净胜走向 ＞ 进球氛围（对照外界「至少 N 球」预期，中性档几乎五五开；强信号才标沉闷/精彩）。仅供娱乐推演，非投注建议。"
           },
           "first_goal_scenarios": [
             {
               "side": "home",
-              "team": "Canada",
-              "first_goal_pct": 64.8,
+              "team": "Scotland",
+              "first_goal_pct": 52.9,
               "start_score": "1-0",
-              "fav_name": "Canada",
-              "scorer_is_fav": true,
-              "expected_key": "hold_win",
-              "fav_recover_pct": 95.6,
-              "small_lead_pct": 31.2,
-              "big_lead_pct": 50.6,
-              "fav_win_pct": 81.7,
-              "fav_draw_pct": 13.9,
-              "fav_lose_pct": 4.4,
+              "fav_name": "Morocco",
+              "scorer_is_fav": false,
+              "expected_key": "upset_hold",
+              "fav_recover_pct": 37.2,
+              "small_lead_pct": 10,
+              "big_lead_pct": 3.8,
+              "fav_win_pct": 13.7,
+              "fav_draw_pct": 23.5,
+              "fav_lose_pct": 62.8,
               "outcomes": [
                 {
-                  "key": "hold_win",
-                  "label": "Canada 保持胜果（净胜≥1）",
-                  "pct": 81.7
+                  "key": "draw",
+                  "label": "Morocco 追平（平局）",
+                  "pct": 23.5
                 },
                 {
-                  "key": "drawn",
-                  "label": "被扳平",
-                  "pct": 13.9
+                  "key": "win1",
+                  "label": "Morocco 净胜1球翻盘（如 2-1）",
+                  "pct": 10
                 },
                 {
-                  "key": "lost",
-                  "label": "被逆转落败",
-                  "pct": 4.4
+                  "key": "win2",
+                  "label": "Morocco 净胜≥2球翻盘（如 3-1）",
+                  "pct": 3.8
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "Scotland 保持胜果至终场",
+                  "pct": 62.8
                 }
               ],
               "excitement": {
@@ -3061,81 +2295,40 @@ const MATCH_DATA = {
                   }
                 ]
               },
-              "big_delta": 25.1,
-              "small_delta": 4.7,
-              "narrative": "Canada 先破门（已 1-0） → 「继续压迫」；Qatar 「维持低位」。领先方继续进攻，仍有较大空间扩大比分。",
-              "live_outlook": {
-                "fav_name": "Canada",
-                "state_label": "Canada 已 1-0 领先",
-                "paths": [
-                  {
-                    "key": "narrow",
-                    "label": "险胜收工",
-                    "example": "如 1-0、2-1",
-                    "pct": 50.9
-                  },
-                  {
-                    "key": "clean",
-                    "label": "零封拉开",
-                    "example": "如 2-0、3-0",
-                    "pct": 32
-                  },
-                  {
-                    "key": "open",
-                    "label": "开放拉开",
-                    "example": "如 3-1+",
-                    "pct": 17.1
-                  }
-                ],
-                "margin_line_cn": "Canada · 赛前净胜参考 ≥1–2 球",
-                "margin_meet_pct": 50.6,
-                "margin_fail_pct": 31.2,
-                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-                "totals_line": 2.5,
-                "totals_line_cn": "总进球约 2.5 个",
-                "totals_high_pct": 52.5,
-                "totals_low_pct": 47.5,
-                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-                "win_low_total_pct": 37.5,
-                "win_margin2_low_total_pct": 20.3,
-                "win_margin2_high_total_pct": 30.3,
-                "readout_cn": "Canada 已 1-0 领先：仍取胜约 81.7%；对着赛前 总进球约 2.5 个，总进球偏高一侧约 52.5%。 常见收尾如 2-0（净胜达标、总进球仍偏低）。"
-              }
+              "big_delta": -8.6,
+              "small_delta": -9.9,
+              "narrative": "Scotland 先破门（已 1-0） → 「4-5-1 收缩」；Morocco 「堆边锋」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门。",
+              "live_outlook": null
             },
             {
               "side": "away",
-              "team": "Qatar",
-              "first_goal_pct": 35.2,
+              "team": "Morocco",
+              "first_goal_pct": 47.1,
               "start_score": "0-1",
-              "fav_name": "Canada",
-              "scorer_is_fav": false,
-              "expected_key": "fav_recover",
-              "fav_recover_pct": 54.9,
-              "small_lead_pct": 16.7,
-              "big_lead_pct": 9.2,
-              "fav_win_pct": 25.9,
-              "fav_draw_pct": 29,
-              "fav_lose_pct": 45.1,
+              "fav_name": "Morocco",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 82.3,
+              "small_lead_pct": 32.2,
+              "big_lead_pct": 24.3,
+              "fav_win_pct": 56.6,
+              "fav_draw_pct": 25.7,
+              "fav_lose_pct": 17.7,
               "outcomes": [
                 {
-                  "key": "draw",
-                  "label": "Canada 追平（平局）",
-                  "pct": 29
+                  "key": "hold_win",
+                  "label": "Morocco 保持胜果（净胜≥1）",
+                  "pct": 56.6
                 },
                 {
-                  "key": "win1",
-                  "label": "Canada 净胜1球翻盘（如 2-1）",
-                  "pct": 16.7
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 25.7
                 },
                 {
-                  "key": "win2",
-                  "label": "Canada 净胜≥2球翻盘（如 3-1）",
-                  "pct": 9.2
-                },
-                {
-                  "key": "upset_hold",
-                  "label": "Qatar 保持胜果至终场",
-                  "pct": 45.1
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 17.7
                 }
               ],
               "excitement": {
@@ -3165,17 +2358,61 @@ const MATCH_DATA = {
                   }
                 ]
               },
-              "big_delta": -16.3,
-              "small_delta": -9.8,
-              "narrative": "Qatar 先破门（已 0-1） → 「5-4-1 铁桶」；Canada 「堆边锋」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门。",
-              "live_outlook": null
+              "big_delta": 11.9,
+              "small_delta": 12.3,
+              "narrative": "Morocco 先破门（已 0-1） → 「控节奏」；Scotland 「堆中场」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门。",
+              "live_outlook": {
+                "fav_name": "Morocco",
+                "state_label": "Morocco 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 61.6
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 24.8
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 13.6
+                  }
+                ],
+                "margin_line_cn": "Morocco · 赛前净胜参考 净胜≥1（全达标）",
+                "margin_meet_pct": 56.6,
+                "margin_half_pct": 0,
+                "margin_fail_pct": 32.2,
+                "margin_full_label": "净胜≥1",
+                "margin_half_label": null,
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.25,
+                "totals_line_cn": "总进球约 2–2.5 个",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 1.8,
+                "totals_line_gap": 0,
+                "totals_high_pct": 68.5,
+                "totals_low_pct": 31.5,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 28.6,
+                "win_margin2_low_total_pct": 12,
+                "win_margin2_high_total_pct": 24.3,
+                "readout_cn": "Morocco 已 1-0 领先：仍取胜约 56.6%。 对着外界总进球参考 总进球约 2–2.5 个，模型终场多于该参考的概率约 68.5%。 常见收尾如 2-0（部分扩大；相对外界总进球参考仍偏少）。"
+              }
             }
           ],
           "match_preview": {
             "morphology": {
-              "totals_summary": "预期约 2.1 个总进球 · 赛前参考进球参考偏高 · 模型略偏少进球（约 63.6%）",
-              "totals_line_cn": "总进球约 2.5 个",
-              "totals_high_pct": 36.4,
+              "totals_summary": "模型 xG 合计约 2.2 球（公允参考约 2.25） · 外界总进球参考 2.25 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球约 2–2.5 个",
+              "totals_high_pct": 51.8,
               "type_tags": [
                 {
                   "key": "low_block",
@@ -3186,11 +2423,11 @@ const MATCH_DATA = {
                   "label": "进球偏少"
                 }
               ],
-              "depth_label": "板凳深度偏高",
-              "draw_trap_pct": 18,
-              "readout_cn": "Canada · 低位反击 · 进球偏少。进球预期不高，小比分与平局权重上升。"
+              "depth_label": "深度一般",
+              "draw_trap_pct": 32,
+              "readout_cn": "Morocco · 低位反击 · 进球偏少。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
             },
-            "draw_trap_note": "平局风险：低位反击队若先进球或被追平，1-1 / 0-0 比客胜更现实（约 18% 冷门空间含平局）。",
+            "draw_trap_note": "平局风险：低位反击队若先进球或被追平，1-1 / 0-0 比客胜更现实（约 32% 冷门空间含平局）。",
             "archetype": {
               "tags": [
                 {
@@ -3202,566 +2439,460 @@ const MATCH_DATA = {
                   "label": "进球偏少"
                 }
               ],
-              "depth_score": 2,
-              "depth_label": "板凳深度偏高",
-              "draw_trap_pct": 18,
-              "fav_lead_style": "aggressive"
+              "depth_score": 0,
+              "depth_label": "深度一般",
+              "draw_trap_pct": 32,
+              "fav_lead_style": "defensive"
             }
+          },
+          "goal_timing": {
+            "sample_label": "近30场",
+            "source_note": "user_screenshot_2026-06-20_sco_mar",
+            "home_name": "Scotland",
+            "away_name": "Morocco",
+            "intervals": [
+              "1–15",
+              "16–30",
+              "31–45",
+              "46–60",
+              "61–75",
+              "76–90",
+              "90+"
+            ],
+            "peaks": {
+              "home_scored": {
+                "interval": "1–15",
+                "pct": 19
+              },
+              "home_conceded": {
+                "interval": "76–90",
+                "pct": 18
+              },
+              "away_scored": {
+                "interval": "76–90",
+                "pct": 22
+              },
+              "away_conceded": {
+                "interval": "61–75",
+                "pct": 33
+              }
+            },
+            "cross_insight": {
+              "has_cross": true,
+              "hits": [
+                {
+                  "type": "away_attack",
+                  "interval": "76–90",
+                  "color": "#5BBF8A",
+                  "title": "客队进攻有利窗口",
+                  "text": "76–90 分：Morocco惯常进球高峰（22%）与Scotland惯常失球高峰（18%）重合——该时段客队破门相对更容易发生。"
+                }
+              ],
+              "cross_intervals": [
+                "76–90"
+              ],
+              "summary_cn": "客队进攻有利窗口 · 76–90 分"
+            },
+            "disclaimer_cn": "以上为两队近30场历史进球/失球时间段统计，供读场参考；非本场赛果预测，与灵力分析娱乐板块无关。"
           }
         },
-        "public_summary_note": "【推演概要】Canada · 低位反击 · 进球偏少。 · 与模型 xG 对照：预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 热门仅净胜 1 球概率 26.5%（模型微调：主胜 -4% · 平 +1% · 客 +3%）"
+        "public_summary_note": "【推演概要】Morocco · 低位反击 · 进球偏少。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法低于 xG 隐含约 0.5（模型微调：主胜 -1% · 平 -1% · 客 +2%）"
       },
-      "group_context": {
-        "group": "B",
-        "label": "B组 · 第1轮（卡塔尔-瑞士已赛）",
-        "matchday": 2,
-        "standings": [
-          {
-            "team": "Switzerland",
-            "pts": 1,
-            "p": 1,
-            "w": 0,
-            "d": 1,
-            "l": 0,
-            "gf": 1,
-            "ga": 1
-          },
-          {
-            "team": "Qatar",
-            "pts": 1,
-            "p": 1,
-            "w": 0,
-            "d": 1,
-            "l": 0,
-            "gf": 1,
-            "ga": 1
-          },
-          {
-            "team": "Canada",
-            "pts": 1,
-            "p": 1,
-            "w": 0,
-            "d": 1,
-            "l": 0,
-            "gf": 1,
-            "ga": 1
-          },
-          {
-            "team": "Bosnia and Herzegovina",
-            "pts": 1,
-            "p": 1,
-            "w": 0,
-            "d": 1,
-            "l": 0,
-            "gf": 1,
-            "ga": 1
-          }
-        ],
+      "coach_analysis": {
         "home": {
-          "team": "Canada",
-          "rank": 3,
-          "pts": 1,
-          "played": 1,
-          "if_1st": "32强 · 对阵 A 组第 2",
-          "if_2nd": "32强 · 对阵 A 组第 1",
-          "if_3rd": "若列小组第 3，需与 A/E/F/H/I/J/K/L 等组第 3 比净胜球/进球"
+          "name": "Steve Clarke",
+          "age": 62,
+          "nation": "苏格兰",
+          "tenure": "2019年—",
+          "wc_exp": "2020 欧洲杯 · 2026 带队",
+          "style_tags": [
+            "4-2-3-1",
+            "McTominay 核心",
+            "Robertson 宽度",
+            "定位球"
+          ],
+          "formation_pref": "4-2-3-1 · McGinn 插上",
+          "style_summary": "首轮 1-0 海地 McGinn 制胜，C 组领跑 3 分。Gilmour 整届报销后 McTominay 独撑创造力；对摩洛哥均分乱局需再抢 3 分。",
+          "subs": {
+            "timing": "首换 65–70 分钟",
+            "pattern": "McGinn 打满概率高",
+            "avg_first_sub": "67'",
+            "note": "大赛三分比场面重要"
+          },
+          "when_leading": {
+            "label": "4-5-1 收缩",
+            "detail": "1 球领先：Robertson 宽度+McTominay 屏障。"
+          },
+          "when_trailing": {
+            "label": "堆中场",
+            "detail": "先丢球：60' 换进攻手加码。"
+          },
+          "vs_strong": {
+            "label": "对强队：稳守反击",
+            "detail": "对巴西会低位；对摩洛哥相对开放。"
+          },
+          "vs_weak": {
+            "label": "对弱队：压制",
+            "detail": "对海地 xG 1.05 险胜已验证。"
+          },
+          "tournament": "大赛士气为近年最高之一；Patterson 队检仍待官方。",
+          "traits": [
+            "McTominay 依赖",
+            "Robertson 宽度",
+            "出线主动",
+            "Gilmour 缺阵"
+          ],
+          "match_note": "C 组均分乱局——McTominay/McGinn vs Hakimi；Gilmour 报销后中场创造力是隐患。"
         },
         "away": {
-          "team": "Qatar",
-          "rank": 2,
-          "pts": 1,
-          "played": 1,
-          "if_1st": "32强 · 对阵 A 组第 2",
-          "if_2nd": "32强 · 对阵 A 组第 1",
-          "if_3rd": "若列小组第 3，需与 A/E/F/H/I/J/K/L 等组第 3 比净胜球/进球"
-        },
-        "cross_group_notes": [
-          "G 组四队同积 1 分，形势极度开放",
-          "H 组四队同积 1 分，形势极度开放",
-          "E 组 Germany 3 分领跑",
-          "F 组 Sweden 3 分领跑"
-        ],
-        "manipulation_risk": {
-          "level": "LOW",
-          "level_cn": "低",
-          "focus_team": null,
-          "reason": "暂无明确控分动机；出线路径仍取决于后续直接对话。"
-        },
-        "knockout_note": "48 队制：12 组前 2 + 8 个最佳第 3 进入 32 强；末轮可能出现算分/控分战术。",
-        "scenarios": [
-          "Canada 若取胜：积分 4，B 组排名有望上升；过早预测 32 强对手仍不可靠。",
-          "Qatar 若取胜：积分 4，客场抢分将改变 B 组格局。",
-          "平局：双方各 +1 分；在 G 组四队同积 1 分，形势极度开放；H 组四队同积 1 分，形势极度开放；E 组 Germany 3 分领跑；F 组 Sweden 3 分领跑 背景下，第 2 轮直接对话权重上升。"
+          "name": "Walid Regragui",
+          "age": 49,
+          "nation": "摩洛哥",
+          "tenure": "2022年—",
+          "wc_exp": "2022 四强 · 2026 带队",
+          "style_tags": [
+            "4-3-3",
+            "Hakimi 宽度",
+            "Saibari 偷袭",
+            "转换"
+          ],
+          "formation_pref": "4-3-3 · Hakimi 爆点",
+          "style_summary": "首轮 1-1 逼平巴西，Saibari 冷射+Vinícius 扳平。Aguerd/Abde 报销后 Diop+Riad 中卫链经检验；对苏格兰客场抢 3 分改变 C 组格局。",
+          "subs": {
+            "timing": "首换 58–65 分钟",
+            "pattern": "Hakimi 打满",
+            "avg_first_sub": "61'",
+            "note": "2022 四强信心"
+          },
+          "when_leading": {
+            "label": "控节奏",
+            "detail": "1 球领先：Hakimi 宽度+转换。"
+          },
+          "when_trailing": {
+            "label": "堆边锋",
+            "detail": "先丢球：Saibari/Ounahi 肋部加码。"
+          },
+          "vs_strong": {
+            "label": "对强队：稳守+反击",
+            "detail": "对巴西 1-1 已验证。"
+          },
+          "vs_weak": {
+            "label": "对弱队：压上",
+            "detail": "对苏格兰预计相对开放。"
+          },
+          "tournament": "2022 四强 DNA；Regragui 称「可与任何人抗衡」。",
+          "traits": [
+            "Hakimi 爆点",
+            "Saibari 冷射",
+            "转换",
+            "防空隐患"
+          ],
+          "match_note": "2022 四强信心+Saibari 偷袭；客场波士顿抢 3 分改变格局，Robertson-Hakimi 对位关键。"
+        }
+      },
+      "upset_alert": {
+        "favorite": "Morocco",
+        "underdog": "Scotland",
+        "favorite_iso": "MAR",
+        "index": 38,
+        "level": "MEDIUM",
+        "level_cn": "中等",
+        "cold_result_pct": 32,
+        "verdict": "C 组均分乱局——摩洛哥 1-1 巴西后盘口略被看好，但 McGinn/McTominay 主场气势使苏格兰冷平空间约 30%。",
+        "tactical": "Clarke 4-2-3-1 Robertson 宽度 vs Regragui 4-3-3 Hakimi 爆点；Gilmour 缺阵是苏格兰中场变量。",
+        "psychology": "苏格兰 C 组领跑 3 分士气高；摩洛哥 2022 四强信心延续。",
+        "historical": "摩洛哥近年 H2H 更强；苏格兰首轮 xG 1.05 险胜海地。",
+        "factors": [
+          {
+            "tag": "均势",
+            "impact": "强",
+            "detail": "xG 1.35–1.28 接近均势"
+          },
+          {
+            "tag": "停赛/伤病",
+            "impact": "中",
+            "detail": "Gilmour 报销；Aguerd/Abde 报销"
+          },
+          {
+            "tag": "Hakimi",
+            "impact": "强",
+            "detail": "边路对 Robertson 是关键对位"
+          }
         ]
       }
     },
     {
-      "id": "m28",
-      "group": "A",
+      "id": "m29",
+      "group": "C",
       "matchday": 2,
-      "date": "2026-06-18",
+      "date": "2026-06-19",
       "time": "21:00",
-      "time_local": "21:00 CT",
-      "timezone": "CDT (UTC-5)",
+      "time_local": "21:00 ET",
+      "timezone": "EDT (UTC-4)",
       "time_beijing": "09:00",
-      "date_beijing": "6月19日",
-      "time_beijing_full": "北京时间 6月19日 09:00",
-      "venue": "Estadio Akron",
-      "city": "Guadalajara, Mexico",
-      "note": "A组榜首战 · 墨西哥 vs 韩国 · FIFA 官方首发已确认",
+      "date_beijing": "6月20日",
+      "time_beijing_full": "北京时间 6月20日 09:00",
+      "venue": "Lincoln Financial Field",
+      "city": "Philadelphia, USA",
+      "note": "C组第2轮 · 巴西 vs 海地 · 费城",
       "lineup": {
-        "confirmed": true,
-        "formation": "4-1-2-3 / 3-4-3",
-        "home": "Rangel; Sánchez, Álvarez, Vásquez, Gallardo; Lira; Romo, Gutiérrez; Jiménez, Quiñones, Alvarado",
-        "away": "Kim Seung-gyu; Lee Han-beom, Kim Min-jae, Kim Moon-hwan; Seol Young-woo, Hwang In-beom, Paik Seung-ho, Lee Gi-hyuk; Lee Jae-sung, Son Heung-min, Lee Kang-in",
-        "note": "✅ FIFA 官方 team sheet（Match 28 · 400021442 · 2026-06-19T00:21:10+08:00）",
-        "source": "FIFA Match Centre · api.fifa.com",
-        "updated": "2026-06-19T00:21:10+08:00",
-        "fifa_match_id": "400021442",
-        "diff": {
-          "home": "⚠️ 4-1-2-3（非预测 4-3-3）：Sánchez 替 Reyes · Romo 替 Fidalgo · Lira 单后腰 · Mora/Fidalgo 替补",
-          "away": "⚠️ 3-4-3（非预测 3-4-2-1）：Kim Moon-hwan 进首发 · Lee Gi-hyuk 推前 · Lee Tae-seok 替补 · 孙兴慜+李在城+李康仁 三叉戟"
-        },
+        "confirmed": false,
+        "formation": null,
+        "home": "等待官方确认",
+        "away": "等待官方确认",
+        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
         "predicted": {
-          "formation": "4-3-3 / 3-4-2-1",
-          "home": "Rangel; Reyes, Álvarez, Vásquez, Gallardo; Fidalgo, Lira, Gutierrez; Alvarado, Jiménez, Quiñones",
-          "away": "Kim Seung-gyu; Lee Han-beom, Kim Min-jae, Lee Gi-hyuk; Seol Young-woo, Hwang In-beom, Paik Seung-ho, Lee Tae-seok; Lee Jae-sung, Lee Kang-in; Son Heung-min",
-          "source": "Sporting News / Yahoo / RotoWire 预测 · 非官方",
-          "alt": {
-            "formation": "4-3-3 / 3-4-2-1",
-            "home": "Rangel; Reyes, Álvarez, Vásquez, Gallardo; Fidalgo, Lira, Mora; Alvarado, Jiménez, Vega",
-            "away": "Kim Seung-gyu; Lee Han-beom, Kim Min-jae, Lee Gi-hyuk; Seol Young-woo, Hwang In-beom, Paik Seung-ho, Lee Tae-seok; Lee Jae-sung, Lee Kang-in; Son Heung-min",
-            "source": "Quiñones 若缺阵 · Vega 顶替左翼 · 韩国沿用赢捷克 XI"
-          }
+          "formation": "4-2-3-1 / 4-4-2",
+          "home": "Alisson; Danilo, Marquinhos, Militão; Wendell, Casemiro; Vinícius, Paquetá, Rodrygo; Richarlison, Raphinha",
+          "away": "Duverger; Jean, Surpris, Gérard; Pierre, Dumond; Jean-Baptiste, Nazon, Duverger; Arcus, Moreira",
+          "source": "Globo / ESPN 预测 · 非官方",
+          "alt": null
         }
       },
       "home": {
-        "name": "Mexico",
-        "iso": "mx",
+        "name": "Brazil",
+        "iso": "br",
         "flag": "",
-        "fifa_rank": 12,
-        "rating": 80,
+        "fifa_rank": 5,
+        "rating": 88,
         "form": [
-          "W",
-          "W",
-          "W",
           "D",
-          "W"
+          "W",
+          "W",
+          "W",
+          "D"
         ],
-        "coach": "Javier Aguirre",
+        "coach": "Carlo Ancelotti",
         "stars": [
           {
-            "name": "Raúl Jiménez",
-            "pos": "ST",
-            "club": "Fulham",
-            "stats": "官方 9 号",
-            "rating": 8.4,
-            "desc": "4-1-2-3 单箭头"
-          },
-          {
-            "name": "Edson Álvarez",
-            "pos": "CB",
-            "club": "Fenerbahçe",
-            "stats": "队长",
-            "rating": 8,
-            "desc": "Montes 停赛搭档 Vásquez"
-          },
-          {
-            "name": "Julián Quiñones",
+            "name": "Vinícius Jr",
             "pos": "LW",
-            "club": "Al Qadisah",
-            "stats": "官方 16 号",
-            "rating": 8.2,
-            "desc": "左翼对位 Seol"
+            "club": "Real Madrid",
+            "desc": "首轮平摩洛哥",
+            "rating": 9
           }
         ],
+        "star": {
+          "name": "Vinícius Jr",
+          "pos": "LW",
+          "club": "Real Madrid",
+          "desc": "首轮平摩洛哥",
+          "rating": 9
+        },
         "injuries": [
           {
-            "player": "Raúl Jiménez",
-            "status": "FIT",
-            "note": "官方首发中锋",
-            "confirmed": true
+            "player": "Neymar",
+            "status": "DOUBT",
+            "note": "小腿伤缺席揭幕战；6/18 合练片段流出，对海地能否复出仍待 Ancelotti 赛前决定",
+            "confirmed": false
           },
           {
-            "player": "César Montes",
+            "player": "Wesley",
             "status": "OUT",
-            "note": "停赛 · Álvarez 队长顶中卫",
+            "note": "整届报销，右路 Danilo/替补轮换",
             "confirmed": true
           },
           {
-            "player": "Julián Quiñones",
+            "player": "Vinícius Jr.",
             "status": "FIT",
-            "note": "官方首发左翼",
+            "note": "32' 扳平摩洛哥，左路核心；The Standard 几乎锁定首发",
             "confirmed": true
           },
           {
-            "player": "Israel Reyes",
-            "status": "BENCH",
-            "note": "Sánchez 顶替首发右闸",
+            "player": "Lucas Paquetá",
+            "status": "FIT",
+            "note": "首战实际 4-4-2 中场核心，组织压力因 Neymar 缺阵上升",
             "confirmed": true
           },
           {
-            "player": "Gilberto Mora",
-            "status": "BENCH",
-            "note": "未进首发，Romo 中场",
+            "player": "Gabriel Magalhães",
+            "status": "FIT",
+            "note": "与 Marquinhos 中卫搭档经巴西战检验",
             "confirmed": true
           }
         ],
         "rumors": [
-          "【官方】FIFA 4-1-2-3：Lira 单后腰 · Romo+Gutiérrez 双 8 · Jiménez 居中 Quiñones/Alvarado 两翼",
-          "Álvarez 佩戴队长袖标 · Montes 停赛后 Sánchez 右闸"
-        ],
-        "star": {
-          "name": "Raúl Jiménez",
-          "pos": "ST",
-          "desc": "A组榜首战核心",
-          "rating": 8.4
-        }
+          "Ancelotti（SI）：「1-1 摩洛哥令人失望，对海地必须取胜；Neymar 情况每日观察」",
+          "首战实际变阵 4-4-2（非赛前 4-2-3-1），Igor Thiago 先发、62' Luiz Henrique 换入",
+          "1-1 后巴西 C 组仅 1 分，东道主+五冠压力陡增；媒体称「最不容再失分的一场」",
+          "Vinícius+Paquetá 破局能力是关键，海地预计 5 后卫深度低位",
+          "FotMob：Alisson 一门稳定，Ancelotti 半场变阵（Danilo/Fabinho）成首战标志"
+        ]
       },
       "away": {
-        "name": "South Korea",
-        "iso": "kr",
+        "name": "Haiti",
+        "iso": "ht",
         "flag": "",
-        "fifa_rank": 23,
-        "rating": 76,
+        "fifa_rank": 87,
+        "rating": 62,
         "form": [
-          "W",
-          "W",
-          "W",
+          "L",
           "D",
-          "W"
+          "L",
+          "W",
+          "L"
         ],
-        "coach": "Hong Myung-bo",
+        "coach": "Sébastien Migné",
         "stars": [
           {
-            "name": "孙兴慜 Son Heung-min",
+            "name": "Duckens Nazon",
             "pos": "ST",
-            "club": "LAFC",
-            "stats": "队长 · 7 号",
-            "rating": 8.8,
-            "desc": "3-4-3 中锋"
-          },
-          {
-            "name": "李康仁 Lee Kang-in",
-            "pos": "RW",
-            "club": "PSG",
-            "stats": "官方 19 号",
-            "rating": 8.4,
-            "desc": "三叉戟右翼"
-          },
-          {
-            "name": "Kim Min-jae",
-            "pos": "CB",
-            "club": "Bayern Munich",
-            "stats": "官方 4 号",
-            "rating": 8.2,
-            "desc": "三中卫核心"
+            "club": "Pau",
+            "desc": "锋线支点",
+            "rating": 7
           }
         ],
+        "star": {
+          "name": "Duckens Nazon",
+          "pos": "ST",
+          "club": "Pau",
+          "desc": "锋线支点",
+          "rating": 7
+        },
         "injuries": [
           {
-            "player": "孙兴慜 Son Heung-min",
+            "player": "全队（26人）",
             "status": "FIT",
-            "note": "队长 · 3-4-3 中锋",
+            "note": "Sports Mole 6/13：Migné 全员健康，对苏格兰亦无新增伤停",
             "confirmed": true
           },
           {
-            "player": "李康仁 Lee Kang-in",
+            "player": "Duckens Nazon",
             "status": "FIT",
-            "note": "官方首发 · 右翼",
+            "note": "队史射手王，首轮替补；对巴西或升首发",
             "confirmed": true
           },
           {
-            "player": "李在城 Lee Jae-sung",
+            "player": "Johny Placide",
             "status": "FIT",
-            "note": "官方首发 · 左翼",
-            "confirmed": true
-          },
-          {
-            "player": "Lee Tae-seok",
-            "status": "BENCH",
-            "note": "对捷克首发 · 本场替补",
-            "confirmed": true
-          },
-          {
-            "player": "Kim Moon-hwan",
-            "status": "FIT",
-            "note": "顶替 Lee Tae-seok 进三中卫",
+            "note": "38 岁队长门将，首轮稳定",
             "confirmed": true
           }
         ],
         "rumors": [
-          "【官方】FIFA 3-4-3：Moon-hwan 变阵 · Gi-hyuk 推前 · 孙兴慜+李在城+李康仁 三叉戟（非赢捷克 3-4-2-1）",
-          "Seol Young-woo 左翼卫 · Hwang In-beom 屏障"
-        ],
-        "star": {
-          "name": "孙兴慜 Son Heung-min",
-          "pos": "ST",
-          "desc": "沿用赢捷克首发",
-          "rating": 8.8
-        }
+          "Migné（赛后）：「0-1 苏格兰可以接受防守表现，对巴西仍是学习机会」",
+          "首轮 15 射 2 正未能转化，Pierrot+Isidor 双前锋试验效果一般",
+          "对巴西预计 5-4-1/5-5 深度低位，Bellegarde 中场枢纽 + Nazon 反击支点",
+          "首次世界杯正赛，海地无历史包袱；湿热费城夜场或进一步拖慢节奏",
+          "Camp：Migné 强调定位球与纪律，「不要给 Vinícius 身后空间」"
+        ]
       },
       "h2h": {
-        "home_wins": 1,
-        "draws": 1,
-        "away_wins": 1,
-        "recent": [
-          {
-            "year": 2018,
-            "comp": "友谊赛",
-            "score": "0-2",
-            "winner": "South Korea"
-          }
-        ],
-        "note": "2018 友谊赛韩国 2-0 胜"
+        "home_wins": 0,
+        "draws": 0,
+        "away_wins": 0,
+        "recent": [],
+        "note": "无大赛交锋"
       },
       "referee": {
-        "confirmed": true,
-        "pending": false,
-        "source": "FIFA · Match officials · 2026-06-18",
-        "name": "Gustavo Tejera",
-        "nation": "Uruguay",
-        "iso": "uy",
-        "age": 37,
-        "wc_experience": "2018 FIFA 国际裁判 · U-17/U-20 世界杯 · 2026 成年世界杯首秀",
-        "avg_yellow": 5.1,
-        "avg_red": 0.13,
-        "avg_penalty": 0.27,
-        "home_win_rate": 52,
-        "bias_index": 53,
-        "bias_note": "乌拉圭名哨，执法风格偏严（生涯场均约 5 黄）。孙兴慜/Jiménez 对位与墨西哥主场 A 组榜首战纪律是核心变量。",
+        "confirmed": false,
+        "pending": true,
+        "name": "等待官方确认",
+        "nation": "待公布",
+        "iso": null,
+        "bias_note": "FIFA Match 29 裁判名单赛前公布。",
         "tendencies": [
-          "乌拉圭助理裁判组：Carlos Barreiro、Nicolás Tarán",
-          "第四官员 Andrés Rojas（哥伦比亚）· 候补边裁 Alexander Guzmán",
-          "开幕战墨西哥战已有 3 红，本场预计 5–7 张黄牌，重复犯规容忍度低",
-          "Tejera 世界杯首秀即执法榜首对话，点球与禁区内拉扯尺度受关注"
-        ],
-        "officials": {
-          "ar1": "Carlos Barreiro (URU)",
-          "ar2": "Nicolás Tarán (URU)",
-          "fourth": "Andrés Rojas (COL)"
-        }
+          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+        ]
       },
       "prediction": {
-        "home_win": 42,
-        "draw": 25,
-        "away_win": 33,
-        "score": "1-1",
-        "confidence": 68,
-        "xg_home": 1.52,
-        "xg_away": 1.32,
-        "key_factor": "FIFA 官方：墨 4-1-2-3（Álvarez 队长/Sánchez/Romo）vs 韩 3-4-3（Moon-hwan 变阵 · 孙兴慜+李在城+李康仁）；A组榜首战 · 泊松基准 2-1/1-1",
+        "home_win": 58,
+        "draw": 23,
+        "away_win": 19,
+        "score": "1-0",
+        "confidence": 78,
+        "xg_home": 1.85,
+        "xg_away": 0.75,
+        "key_factor": "巴西首轮平摩洛哥需取胜：Vinícius+Paquetá vs 海地低位；泊松最可能 2-0/3-0",
         "score_dist": [
           {
-            "score": "1-1",
-            "prob": 11.7
-          },
-          {
-            "score": "2-1",
-            "prob": 8.9
-          },
-          {
             "score": "1-0",
-            "prob": 8.9
-          },
-          {
-            "score": "1-2",
-            "prob": 7.7
-          },
-          {
-            "score": "0-1",
-            "prob": 7.7
+            "prob": 13.7
           },
           {
             "score": "2-0",
-            "prob": 6.7
+            "prob": 12.7
           },
           {
-            "score": "2-2",
+            "score": "1-1",
+            "prob": 10.3
+          },
+          {
+            "score": "2-1",
+            "prob": 9.5
+          },
+          {
+            "score": "3-0",
+            "prob": 7.8
+          },
+          {
+            "score": "0-0",
+            "prob": 7.4
+          },
+          {
+            "score": "3-1",
             "prob": 5.9
           }
         ],
-        "base_home_win": 42,
-        "base_draw": 25,
-        "base_away_win": 33,
-        "depth_calibrated": true,
         "insight_factors": [
           {
             "icon": "📊",
             "label": "小组积分",
-            "text": "Mexico 暂列 A 组第 1（3 分 · 已赛 1 场） vs South Korea 第 2（3 分 · 已赛 1 场）；A 组榜首直接对话（净胜球 Mexico +2 vs South Korea +1）；胜者掌握出线主动权"
+            "text": "Brazil 暂列 C 组第 3（1 分 · 已赛 1 场） vs Haiti 第 4（0 分 · 已赛 1 场）；巴西仅积 1 分须先抢分；C↔F 绑定：头名 32强避 F 组头名（荷兰若领跑 F 组）、次席 32强或直碰荷兰，16 强半区相反"
           },
           {
             "icon": "🌤️",
             "label": "赛场气候",
-            "text": "瓜达拉哈拉夜场凉爽，海拔1566m · 21°C · 湿度 52% · 降雨概率 15% · 西北微风 2级；海拔变量中等——夜场降温利好体能，但稀氧对高强度压迫仍有消耗（21°C · 21:00 本地开球 · 海拔 1566m）"
+            "text": "费城夏夜闷热，体感约 30°C · 27°C · 湿度 68% · 降雨概率 30% · 西南风 2级 · 湿热；湿热中等——领先方后段守势体能是隐性变量，利好早段破局的一方（27°C · 21:00 ET 开球 · 湿度 68%）"
           },
           {
             "icon": "⚽",
             "label": "战术与阵容",
-            "text": "FIFA 官方：墨 4-1-2-3（Álvarez 队长/Sánchez/Romo）vs 韩 3-4-3（Moon-hwan 变阵 · 孙兴慜+李在城+李康仁）；A组榜首战 · 泊松基准 2-1/1-1"
-          }
-        ]
-      },
-      "upset_alert": {
-        "favorite": "Mexico",
-        "underdog": "South Korea",
-        "favorite_iso": "MEX",
-        "index": 35,
-        "level": "MEDIUM",
-        "level_cn": "中等",
-        "cold_result_pct": 30,
-        "verdict": "A组榜首战——韩国变 3-4-3 强攻，孙兴慜+李在城+李康仁 对位墨西哥五后卫体系，平局仍约 28%。",
-        "tactical": "FIFA 官方：Aguirre 4-1-2-3 vs 洪明甫 3-4-3（Moon-hwan 变阵 · 三叉戟）",
-        "psychology": "墨西哥主场夜场气势；韩国 2018 友谊赛 2-0 胜是心理参考。",
-        "historical": "2018 友谊赛韩国 2-0 胜墨西哥。",
-        "factors": [
-          {
-            "tag": "球星",
-            "impact": "强",
-            "detail": "Jiménez vs 孙兴慜"
-          },
-          {
-            "tag": "阵型",
-            "impact": "强",
-            "detail": "韩沿用赢捷克 3-4-2-1"
-          },
-          {
-            "tag": "主场",
-            "impact": "强",
-            "detail": "瓜达拉哈拉夜场"
-          }
-        ]
-      },
-      "coach_analysis": {
-        "home": {
-          "name": "Javier Aguirre",
-          "age": 66,
-          "nation": "墨西哥",
-          "tenure": "2024年—",
-          "wc_exp": "三届世界杯带队",
-          "style_tags": [
-            "4-2-3-1",
-            "Jiménez 核心",
-            "主场",
-            "宽度"
-          ],
-          "formation_pref": "4-2-3-1 · Jiménez 支点",
-          "style_summary": "首轮 2-0 南非，Jiménez 梅开二度。对韩国 A 组榜首对话，瓜达拉哈拉夜场必须抢 3 分。",
-          "subs": {
-            "timing": "首换 60–65 分钟",
-            "pattern": "Jiménez 70' 可能换下",
-            "avg_first_sub": "62'",
-            "note": "大赛轮换"
-          },
-          "when_leading": {
-            "label": "控节奏",
-            "detail": "1 球领先：维持宽度。"
-          },
-          "when_trailing": {
-            "label": "堆前锋",
-            "detail": "先丢球：55' 加码。"
-          },
-          "vs_strong": {
-            "label": "对强队：对攻",
-            "detail": "对韩国孙兴慜是最大威胁。"
-          },
-          "vs_weak": {
-            "label": "对弱队：不留余地",
-            "detail": "对南非已验证。"
-          },
-          "tournament": "三届世界杯经验，主场气势是资产。",
-          "traits": [
-            "Jiménez 状态",
-            "主场",
-            "Ochoa 防线",
-            "大赛经验"
-          ],
-          "match_note": "瓜达拉哈拉夜场——Jiménez 支点+宽度；孙兴慜 内切是最大威胁。"
-        },
-        "away": {
-          "name": "Hong Myung-bo",
-          "age": 55,
-          "nation": "韩国",
-          "tenure": "2024年—",
-          "wc_exp": "2002 队长 · 2026 带队",
-          "style_tags": [
-            "4-2-3-1",
-            "孙兴慜 核心",
-            "转换",
-            "远射"
-          ],
-          "formation_pref": "4-2-3-1 · 孙兴慜 左翼",
-          "style_summary": "首轮 2-1 捷克，孙兴慜+李康仁远射破局。对墨西哥 A 组榜首对话，预计稳守反击+孙兴慜 内切。",
-          "subs": {
-            "timing": "首换 65–70 分钟",
-            "pattern": "孙兴慜 打满",
-            "avg_first_sub": "68'",
-            "note": "核心保护"
-          },
-          "when_leading": {
-            "label": "4-5-1 收缩",
-            "detail": "若意外领先：退守+孙兴慜 反击。"
-          },
-          "when_trailing": {
-            "label": "堆中场",
-            "detail": "先丢球：60' 换进攻手。"
-          },
-          "vs_strong": {
-            "label": "对强队：稳守反击",
-            "detail": "对墨西哥低位+孙兴慜 速度。"
-          },
-          "vs_weak": {
-            "label": "对弱队：控球压制",
-            "detail": "对南非会压上。"
-          },
-          "tournament": "2002 四强队长，大赛心理是资产。",
-          "traits": [
-            "孙兴慜 依赖",
-            "远射",
-            "转换",
-            "大赛 DNA"
-          ],
-          "match_note": "稳守反击+孙兴慜 速度；2018 友谊赛 2-0 胜墨西哥是心理参考。"
-        }
-      },
-      "weather": {
-        "city": "瓜达拉哈拉",
-        "country": "墨西哥",
-        "venue": "Estadio Akron",
-        "temp": 21,
-        "humidity": 52,
-        "altitude_m": 1566,
-        "rain_chance": 15,
-        "wind": "西北微风 2级",
-        "condition_cn": "瓜达拉哈拉夜场凉爽，海拔1566m",
-        "impact_level": "MEDIUM",
-        "impact": "Akron 21°C 夜场+1566m 海拔；韩国首轮同场地已适应，墨西哥主场气势仍是加成",
-        "impact_summary": "海拔变量中等——夜场降温利好体能，但稀氧对高强度压迫仍有消耗",
-        "home_adapt": 89,
-        "away_adapt": 84,
-        "home_note": "墨西哥主场夜场，Aguirre 球队习惯高原节奏；球迷氛围是额外变量",
-        "away_note": "韩国首轮即在瓜达拉哈拉 2-1 胜捷克，海拔与夜场适应已完成；孙兴慜状态是关键",
-        "prediction_note": "模型对海拔不做大幅调整（双方均有首轮同场地经验）；夜场略利好技术型对抗",
-        "weather_factors": [
-          {
-            "label": "21°C · 21:00 本地开球",
-            "impact": "夜场利好",
-            "detail": "北京时间 6月19日 09:00；日落后气温舒适"
-          },
-          {
-            "label": "海拔 1566m",
-            "impact": "双方已适应",
-            "detail": "韩国首轮同场地作战，墨西哥常年高原主场"
-          },
-          {
-            "label": "低降雨 15%",
-            "impact": "低",
-            "detail": "干燥夜场，场地条件理想"
+            "text": "巴西首轮平摩洛哥需取胜：Vinícius+Paquetá vs 海地低位；泊松最可能 2-0/3-0"
           }
         ],
-        "historical_note": "Estadio Akron · A组榜首战 · 墨西哥 vs 韩国 · 预报更新 2026-06-18 22:00 本地",
-        "forecast_updated": "2026-06-18 22:00 本地"
+        "base_home_win": 63,
+        "base_draw": 22,
+        "base_away_win": 15,
+        "depth_calibrated": true
+      },
+      "weather": {
+        "city": "费城",
+        "country": "美国",
+        "venue": "Lincoln Financial Field",
+        "temp": 27,
+        "humidity": 68,
+        "altitude_m": 12,
+        "rain_chance": 30,
+        "wind": "西南风 2级 · 湿热",
+        "condition_cn": "费城夏夜闷热，体感约 30°C",
+        "impact_level": "MEDIUM",
+        "impact": "Lincoln Financial 27°C+68% 湿度，巴西需早段破局避免后段体能下滑；海地低位消耗大",
+        "impact_summary": "湿热中等——领先方后段守势体能是隐性变量，利好早段破局的一方",
+        "home_adapt": 86,
+        "away_adapt": 74,
+        "home_note": "巴西南美球员适应湿热，Vinícius 边路爆发需在前 60 分钟兑现",
+        "away_note": "海地五后卫低位在湿热下后段专注度易降；Nazon 反击窗口多在 60' 前",
+        "prediction_note": "模型因湿热略抬早段 xG 权重；若巴西 2-0 领先，下半场总球面可能回落",
+        "weather_factors": [
+          {
+            "label": "27°C · 21:00 ET 开球",
+            "impact": "体感偏高",
+            "detail": "北京时间 6月20日 09:00；夏夜仍有余热"
+          },
+          {
+            "label": "湿度 68%",
+            "impact": "中",
+            "detail": "湿热叠加，替补深度与换人节奏关键"
+          },
+          {
+            "label": "降雨概率 30%",
+            "impact": "低-中",
+            "detail": "对流雨可能，开放式球场无顶棚"
+          }
+        ],
+        "historical_note": "Lincoln Financial Field · C组 · 巴西 vs 海地 · 预报更新 2026-06-19 22:00 本地",
+        "forecast_updated": "2026-06-19 22:00 本地"
       },
       "mystic": {
         "date_bazi": {
@@ -3772,83 +2903,83 @@ const MATCH_DATA = {
           "day": "己丑日",
           "day_element": "土",
           "day_dominant": "土",
-          "day_summary": "己丑日——己土坐丑，土气厚重。《道德经》曰：「上善若水。」丑土当令，宜守中蓄势、厚积薄发；忌土性固执、躁进冒失。非力之大小，乃气之顺逆。",
+          "day_summary": "己丑日——己土坐丑，土气厚重。《道德经》曰：「知常曰明。」丑土当令，宜循序渐进、忌半场冒进；非力之大小，乃气之顺逆。",
           "hour_home": "巳时（09:00-11:00）",
           "hour_home_element": "火"
         },
         "wuxing": {
           "home": {
-            "team": "Mexico",
-            "colors": "绿+白+红",
-            "elements": "木、金、火",
-            "wuxing_short": "火土相杂",
-            "verdict": "中性偏利",
-            "verdict_color": "#C8A96E",
-            "compat": 54,
-            "reason": "绿属木、白属金、红属火。巳时火气当令，木生火、火土相杂——如「天与火同」，主场夜场气运聚于火。",
-            "advantage": "巳火助红绿，主场气势可延"
+            "team": "Brazil",
+            "colors": "黄+绿+蓝",
+            "elements": "土、木、水",
+            "wuxing_short": "土木水杂",
+            "verdict": "有利",
+            "verdict_color": "#5BBF8A",
+            "compat": 68,
+            "reason": "黄属土、绿属木、蓝属水。巳时火气当令，木生火、火生土——如「火在天上」。《道德经》「以其不自生」，巴西火土旺盛顺天时。",
+            "advantage": "巳火助木火，热门宜早段破局"
           },
           "away": {
-            "team": "South Korea",
-            "colors": "红+蓝+白",
-            "elements": "火、水、金",
-            "wuxing_short": "金水相济",
-            "verdict": "中性偏利",
-            "verdict_color": "#C8A96E",
-            "compat": 56,
-            "reason": "红属火、蓝属水、白属金。巳时火旺，金水相济如「火在水上」——气运相近，远射为暗流。",
-            "advantage": "巳火不专主一方，金水可济"
+            "team": "Haiti",
+            "colors": "蓝+红",
+            "elements": "水、火",
+            "wuxing_short": "水火既济而未济",
+            "verdict": "不利",
+            "verdict_color": "#D95F6A",
+            "compat": 38,
+            "reason": "蓝属水、红属火。巳时火旺克水——如「火在水上」，宜低位守中、忌与火争锋。",
+            "disadvantage": "水火相激而火占上风，气运偏逆"
           },
-          "summary": "五行裁定：巳火当令双方皆沾火气；墨西哥主场略占「同人」之势，韩国金水相济——气运近而不齐"
+          "summary": "五行裁定：巳火当令大利火土之巴西；海地水火相杂——气运偏逆，宜守不宜攻"
         },
         "hexagram": {
-          "name": "天火同人",
-          "symbol": "☰☲",
-          "number": 13,
-          "upper": "乾天",
-          "lower": "离火",
-          "quote": "《周易·同人卦》：「同人于野，亨。」",
-          "general": "同人卦——天与火同，二人同心；利对攻开放之局，忌各怀心思。",
-          "advantage_team": "Mexico",
-          "disadvantage_team": "South Korea",
-          "hexagram_analysis": "同人「柔得位得中」：巳火当令，离火在下、乾天在上，上下气运分明——前半程同心破局，后段火金相克气转。",
-          "match_nature": "同人于野 · 胶着对攻",
-          "yellow_card_risk": "中",
-          "yellow_card_reason": "同人主开放非粗野；对攻节奏下战术犯规，预计中等黄牌。",
+          "name": "火天大有",
+          "symbol": "☲☰",
+          "number": 14,
+          "upper": "离火",
+          "lower": "乾天",
+          "quote": "《周易·大有卦》：「自天佑之，吉无不利。」",
+          "general": "大有卦——火在天上，顺天者昌；热门宜早段破局，忌骄泰失势。",
+          "advantage_team": "Brazil",
+          "disadvantage_team": "Haiti",
+          "hexagram_analysis": "大有「柔得位乎外而上应乎五」：巳火当令，上下气运各有一段——前半程火盛破局，后段乾天再动。",
+          "match_nature": "自天佑之 · 热门顺时",
+          "yellow_card_risk": "低",
+          "yellow_card_reason": "大有主通泰非粗野；海地低位消耗大，预计 2-3 张黄牌。",
           "scenarios": [
             {
               "icon": "☯",
               "label": "气运性质",
-              "text": "巳火当令，双方火气相近——气运近而不齐"
+              "text": "巳火当令，火在天上——顺时者「吉无不利」"
             },
             {
               "icon": "⏱",
               "label": "进球高峰段",
-              "text": "第 20-36 分钟（同人「于野」、火气初盛）及第 68-84 分钟（离火后段、乾天再动）"
+              "text": "第 28-44 分钟（大有「火在天上」）及第 70-85 分钟（乾天再动、后段气泄）"
             },
             {
               "icon": "🟨",
               "label": "纪律",
-              "text": "对攻局，黄牌来自 tactical 阻截"
+              "text": "压制局，黄牌来自低位阻截"
             }
           ],
           "early_goal": {
-            "scenario": "若墨西哥先进球",
-            "prediction": "同人「于野亨」——巳火助势，追加窗口在 25-40 分钟；忌领先后「同人」散。",
-            "favors": "Mexico",
-            "favors_prob": 54
+            "scenario": "若巴西先进球",
+            "prediction": "大有全现——巳火助势，追加窗口在 32-48 分钟；忌「大有」极生骄泰。",
+            "favors": "Brazil",
+            "favors_prob": 68
           },
           "no_early_goal": {
-            "scenario": "若前 30 分钟无进球",
-            "prediction": "巳火主旺，0-0 仍可期；下半场 40-55 分钟第一次破局窗口升。",
-            "favors": "Draw",
-            "favors_prob": 50
+            "scenario": "若前 25 分钟无进球",
+            "prediction": "巳火主旺，0-0 仍可期；30-45 分钟为第一次破局窗口。",
+            "favors": "Brazil",
+            "favors_prob": 62
           },
           "away_goal": {
-            "scenario": "若韩国先进球",
-            "prediction": "同人逆象——金水相济反扑；墨西哥需火土相杂耐心，65' 后主场气运回。",
-            "favors": "South Korea",
-            "favors_prob": 52
+            "scenario": "若海地偷袭破门",
+            "prediction": "大有逆象——水火偶可惊雷；巴西需火土旺盛耐心反扑，55' 后气运回。",
+            "favors": "Brazil",
+            "favors_prob": 58
           }
         },
         "goal_peak": {
@@ -3858,147 +2989,258 @@ const MATCH_DATA = {
             {
               "label": "上半场",
               "half": "first",
-              "start_min": 20,
-              "end_min": 36,
-              "hex_reason": "同人「于野」，离火初盛",
-              "time_reason": "巳时火气当令，气运易涌"
+              "start_min": 28,
+              "end_min": 44,
+              "hex_reason": "大有「火在天上」，巳火初盛",
+              "time_reason": "巳时火气当令，宜上半场破局"
             },
             {
               "label": "下半场",
               "half": "second",
-              "start_min": 68,
-              "end_min": 84,
-              "hex_reason": "乾天再动，后段火金相克",
-              "time_reason": "巳火后段仍旺，气由同转变"
+              "start_min": 70,
+              "end_min": 85,
+              "hex_reason": "乾天再动，后段气泄再开",
+              "time_reason": "领先方继续进攻，后段仍有空间"
             }
           ],
-          "periods": "第 20-36 分钟 · 第 68-84 分钟",
-          "rationale": "巳时火气当令，同人卦「于野亨」明示对攻两段气运——初段同心破局，后段乾天再动。卦象双段清晰，故示上下双窗。",
+          "periods": "第 28-44 分钟 · 第 70-85 分钟",
+          "rationale": "巳时火气当令，大有卦「自天佑之」明示上下两段气运——初段火盛破局，后段乾天再动。卦象双段清晰，故示双窗。",
           "note": "娱乐解读 · 纯玄学参考 · 非赛程或竞技推演",
           "logic_hint": "依赛日八字、开球时辰、卦象与五行生克推断；卦象只示一段气运则只给一段，不凑数。"
         },
-        "home_score": 62,
-        "away_score": 52,
-        "mystic_verdict": "墨西哥火土相杂，韩国金水相济——巳火当令，气运相近，平局空间不可低估。",
-        "model_bridge": "xG 1.52-1.32 势均力敌，孙兴慜+李康仁远射是韩国最大变数。",
+        "home_score": 78,
+        "away_score": 28,
+        "mystic_verdict": "巴西火土旺盛，海地水火偏弱——巳火当令，热门宜早段破局。",
+        "model_bridge": "xG 1.85-0.75 深盘 -2.5，大胜需早段破门；海地低位或拖慢节奏。",
         "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
       },
+      "group_context": {
+        "group": "C",
+        "label": "C组 · 第1轮（4场已赛）",
+        "matchday": 2,
+        "standings": [
+          {
+            "team": "Scotland",
+            "pts": 3,
+            "p": 1,
+            "w": 1,
+            "d": 0,
+            "l": 0,
+            "gf": 1,
+            "ga": 0
+          },
+          {
+            "team": "Morocco",
+            "pts": 1,
+            "p": 1,
+            "w": 0,
+            "d": 1,
+            "l": 0,
+            "gf": 1,
+            "ga": 1
+          },
+          {
+            "team": "Brazil",
+            "pts": 1,
+            "p": 1,
+            "w": 0,
+            "d": 1,
+            "l": 0,
+            "gf": 1,
+            "ga": 1
+          },
+          {
+            "team": "Haiti",
+            "pts": 0,
+            "p": 1,
+            "w": 0,
+            "d": 0,
+            "l": 1,
+            "gf": 0,
+            "ga": 1
+          }
+        ],
+        "home": {
+          "team": "Brazil",
+          "rank": 3,
+          "pts": 1,
+          "played": 1,
+          "if_1st": "32强 M76 · C 组第 1 vs F 组第 2 → 当前 F 组第 2倾向 Japan",
+          "if_1st_r16": "16强 M91 · 对阵 E 组第 2 vs I 组第 2 之胜者",
+          "if_1st_corridor": "法国/挪威/塞内加尔/德国（E/I 次席走廊）— 16 强硬仗区",
+          "if_2nd": "32强 M75 · F 组第 1 vs C 组第 2 → 当前 F 组第 1倾向 Sweden",
+          "if_2nd_r16": "16强 M90 · 对阵 A 组第 2 vs B 组第 2 之胜者",
+          "if_2nd_corridor": "墨西哥/韩国/加拿大/瑞士（A/B 次席走廊）— 16 强相对温和",
+          "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 D/E/F/G/H/I/J/K 等组第 3 横向比较",
+          "if_3rd_r16": "32 强对手取决于 Annex C 第 3 名组合（495 种可能）"
+        },
+        "away": {
+          "team": "Haiti",
+          "rank": 4,
+          "pts": 0,
+          "played": 1,
+          "if_1st": "32强 M76 · C 组第 1 vs F 组第 2 → 当前 F 组第 2倾向 Japan",
+          "if_1st_r16": "16强 M91 · 对阵 E 组第 2 vs I 组第 2 之胜者",
+          "if_1st_corridor": "法国/挪威/塞内加尔/德国（E/I 次席走廊）— 16 强硬仗区",
+          "if_2nd": "32强 M75 · F 组第 1 vs C 组第 2 → 当前 F 组第 1倾向 Sweden",
+          "if_2nd_r16": "16强 M90 · 对阵 A 组第 2 vs B 组第 2 之胜者",
+          "if_2nd_corridor": "墨西哥/韩国/加拿大/瑞士（A/B 次席走廊）— 16 强相对温和",
+          "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 D/E/F/G/H/I/J/K 等组第 3 横向比较",
+          "if_3rd_r16": "32 强对手取决于 Annex C 第 3 名组合（495 种可能）"
+        },
+        "cross_group_notes": [
+          "F 组：头名 Sweden 3 分 · 次席 Japan 1 分（32强绑定组）",
+          "E 组：头名 Germany 3 分 · 次席 Côte d'Ivoire 同分（32强绑定组）",
+          "I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组）",
+          "G 组四队同积 1 分，形势极度开放",
+          "H 组四队同积 1 分，形势极度开放",
+          "D 组 USA 3 分领跑"
+        ],
+        "path_tradeoff": "C 组头名 32 强打 F 组第 2（荷兰若夺 F 组头名则 32 强避荷兰），但 16 强进入 E2/I2 胜者通道；次席 32 强极可能直碰 F 组头名（荷兰），16 强路径反而更顺。强队末轮或存在「保次席避 16 强豪强」博弈。",
+        "manipulation_risk": {
+          "level": "LOW",
+          "level_cn": "低",
+          "focus_team": "Brazil",
+          "reason": "巴西仅积 1 分、暂列第 3，本轮对海地须全力抢 3 分，无控分空间。末轮才可能出现「C 组头名 vs 次席」路径博弈（32强避荷兰 vs 16强避法国/德国走廊）。"
+        },
+        "knockout_note": "48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。",
+        "scenarios": [
+          "Brazil 若取胜：积分 4，C 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
+          "Haiti 若取胜：积分 3，客场抢分将改变 C 组格局与淘汰赛半区。",
+          "平局：双方各 +1 分；在 F 组：头名 Sweden 3 分 · 次席 Japan 1 分（32强绑定组） · E 组：头名 Germany 3 分 · 次席 Côte d'Ivoire 同分（32强绑定组） · I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
+          "巴西路径提示：C 组第 1 → 32强 M76 打 F 组第 2（荷兰若 F 组头名则 32 强避荷兰）→ 16强 M91 进 E/I 次席走廊；C 组第 2 → 32强 M75 极可能碰 F 组第 1（荷兰）→ 16强 M90 进 A/B 次席走廊。末轮才存在「选半区」博弈，本轮须先抢分。",
+          "头名/次席博弈：C 组头名 32 强打 F 组第 2（荷兰若夺 F 组头名则 32 强避荷兰），但 16 强进入 E2/I2 胜者通道；次席 32 强极可能直碰 F 组头名（荷兰），16 强路径反而更顺。强队末轮或存在「保次席避 16 强豪强」博弈。"
+        ]
+      },
       "depth_calibration": {
-        "tier_home": 0.25,
-        "tier_label": "Mexico 被看好 · 净胜约 0.25 球",
-        "implied_tier": 0,
-        "tier_gap": 0.25,
-        "signal": "neutral",
-        "signal_cn": "均衡",
-        "signal_color": "#7BB8D4",
-        "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
-        "blocker_spread_note": "",
-        "public_lean_cn": "舆论倾向 Mexico（约 52%）",
-        "analysis": "A组榜首对话：墨西哥 Jiménez 状态 vs 孙兴慜。瓜达拉哈拉夜场，模型略看好墨西哥主场。",
+        "tier_home": 2.5,
+        "tier_label": "Brazil 被看好 · 净胜约 2.5 球",
+        "implied_tier": 0.75,
+        "tier_gap": 1.75,
+        "signal": "blocker_inflate",
+        "signal_cn": "大众心理预期偏高",
+        "signal_color": "#D95F6A",
+        "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+        "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "public_lean_cn": "舆论倾向 Brazil（约 72%）",
+        "analysis": "魔方：巴西 -2.5 / 大小 3.5；深盘高于 xG 隐含，大胜需早段破门；海地低位或拖慢节奏。 赛前净胜参考高于 xG 隐含（+1.75），且净胜 1 球占 26.1%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "spread_cover": {
           "top3_scores": [
             {
-              "score": "1-1",
-              "prob": 11.8
-            },
-            {
-              "score": "2-1",
-              "prob": 9
-            },
-            {
               "score": "1-0",
-              "prob": 8.9
+              "prob": 13.9
+            },
+            {
+              "score": "2-0",
+              "prob": 12.9
+            },
+            {
+              "score": "1-1",
+              "prob": 10.4
             }
           ],
-          "one_goal_win_pct": 21.5,
-          "two_plus_win_pct": 20.4,
-          "full_cover_pct": 20.4,
-          "half_lose_pct": 21.5,
-          "fav_cover_ev": -0.484,
-          "dog_cover_ev": 0.485,
-          "rational_spread_cn": "客队 守住差距概率略高",
-          "total_xg": 2.84,
-          "over_2_5_pct": 53.7,
-          "over_3_pct": 31.2,
+          "one_goal_win_pct": 26.1,
+          "two_plus_win_pct": 37,
+          "full_cover_pct": 17.1,
+          "half_cover_pct": 19.9,
+          "half_lose_pct": 26.1,
+          "push_pct": null,
+          "margin_full_label": "净胜≥3",
+          "margin_half_label": "部分达标净胜=2",
+          "fav_cover_ev": 0,
+          "dog_cover_ev": 0,
+          "rational_spread_cn": "两边净胜达标概率接近",
+          "total_xg": 2.6,
+          "fair_totals_line": 2,
+          "over_2_5_pct": 47.5,
+          "over_3_pct": 25.5,
           "totals_lean_cn": "2.5 球参考接近均衡；3 球参考偏少",
-          "margin_risk_note": "净胜 1 球概率 21.5%：常见「赢球但净胜仅 1 球」",
-          "push_pct": null
+          "margin_risk_note": "净胜≥3 约 17.1%；部分达标净胜=2 约 19.9%；仅赢 1 球约 26.1%"
         },
-        "spread_odds": null,
+        "spread_odds": {
+          "fav": 0.85,
+          "dog": 1,
+          "note": "Brazil 0.85 · Haiti 1"
+        },
         "spread_alt": null,
         "totals_analysis": {
-          "market_line": 2.5,
-          "line_label": "总进球约 2.5 个",
-          "implied_xg_total": 2.84,
+          "market_line": 3.5,
+          "market_goals_int": 4,
+          "line_label": "总进球约 3.5 个",
+          "implied_xg_total": 2.6,
           "fair_line": 2,
-          "line_gap": 0.5,
-          "over_pct": 53.7,
-          "under_pct": 46.3,
+          "line_gap": 1.5,
+          "over_pct": 25.5,
+          "under_pct": 74.5,
           "signal": "high_line",
           "signal_cn": "进球参考偏高",
           "signal_color": "#C8A96E",
           "signal_desc": "赛前进球参考高于 xG 隐含，模型倾向偏少进球方向。",
           "public_over_pct": 58,
           "public_lean_cn": "舆论略看好多进球（约 58%）",
-          "index_note": "多进球侧参考权重相对更高",
-          "totals_odds": null,
-          "rational_cn": "模型在 总进球约 2.5 个 附近均衡；进球参考偏高且舆论更看好多进球场面",
+          "index_note": "多进球侧 0.8 / 少进球侧 1",
+          "totals_odds": {
+            "over": 0.8,
+            "under": 1,
+            "note": "多进球 0.8 · 少进球 1"
+          },
+          "rational_cn": "模型略倾向少进球（总进球约 3.5 个 约 74.5%）；进球参考偏高且舆论更看好多进球场面",
           "score_link_cn": "小比分（1-0/1-1）偏少进球 · 2-0/2-1 居中 · 3 球+ 偏多进球"
         },
-        "totals_line": 2.5,
+        "totals_line": 3.5,
         "applied_delta": {
-          "home_win": 0,
-          "draw": 0,
-          "away_win": 0
+          "home_win": -5,
+          "draw": 1,
+          "away_win": 4
         },
-        "adjustment_note": "模型微调：主胜 +0% · 平 +0% · 客 +0%",
+        "adjustment_note": "模型微调：主胜 -5% · 平 +1% · 客 +4%",
         "adjusted_probs": {
-          "home_win": 42,
-          "draw": 25,
-          "away_win": 33
+          "home_win": 58,
+          "draw": 23,
+          "away_win": 19
         },
         "display_summary": {
-          "fav_name": "Mexico",
-          "expected_total_goals": 2.52,
-          "poisson_fav_win_pct": 38,
-          "small_lead_pct": 21.1,
+          "fav_name": "Brazil",
+          "expected_total_goals": 2.21,
+          "poisson_fav_win_pct": 56.5,
+          "small_lead_pct": 27,
           "small_example_score": "1-0",
-          "small_example_pct": 10.3,
-          "big_cover_pct": 16.8,
+          "small_example_pct": 16.4,
+          "big_cover_pct": 29.5,
           "big_example_score": "2-0",
-          "big_example_pct": 6.7,
+          "big_example_pct": 12.5,
           "win_shape": {
-            "fav_name": "Mexico",
+            "fav_name": "Brazil",
             "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以险胜·开放为主（险胜 · 开放 28.5%）",
+            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 33.2%）",
             "shapes": [
               {
                 "key": "narrow_low",
                 "label": "险胜 · 控局",
                 "example": "如 1-0",
-                "field_pct": 10.3,
-                "pct": 27.1
+                "field_pct": 16.4,
+                "pct": 29.1
               },
               {
                 "key": "narrow_open",
                 "label": "险胜 · 开放",
                 "example": "如 2-1",
-                "field_pct": 10.8,
-                "pct": 28.5
+                "field_pct": 10.6,
+                "pct": 18.8
               },
               {
                 "key": "comfort_low",
                 "label": "拉开 · 控局",
                 "example": "如 2-0",
-                "field_pct": 9.6,
-                "pct": 25.3
+                "field_pct": 18.8,
+                "pct": 33.2
               },
               {
                 "key": "comfort_open",
                 "label": "拉开 · 开放",
                 "example": "如 3-1+",
-                "field_pct": 7.2,
-                "pct": 19.1
+                "field_pct": 10.7,
+                "pct": 18.9
               }
             ],
             "paths": [
@@ -4006,37 +3248,37 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 55.6
+                "pct": 47.9
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 25.3
+                "pct": 33.2
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 19.1
+                "pct": 18.9
               }
             ],
-            "fav_win_pct": 42
+            "fav_win_pct": 58
           },
           "excitement": {
             "label_cn": "中速开局",
             "label_key": "moderate",
             "label_color": "#C8A96E",
-            "sub_cn": "预期首球等待约 35.4 分",
-            "first_goal_wait": 35.4,
-            "fast_pct": 57.1,
+            "sub_cn": "预期首球等待约 40.4 分",
+            "first_goal_wait": 40.4,
+            "fast_pct": 52.4,
             "moderate_pct": 14.8,
-            "slow_pct": 28.1,
+            "slow_pct": 32.8,
             "tiers": [
               {
                 "key": "fast",
                 "label": "前 30 分内首球",
-                "pct": 57.1
+                "pct": 52.4
               },
               {
                 "key": "moderate",
@@ -4046,7 +3288,7 @@ const MATCH_DATA = {
               {
                 "key": "slow",
                 "label": "45 分后首球",
-                "pct": 28.1
+                "pct": 32.8
               }
             ]
           },
@@ -4055,302 +3297,1021 @@ const MATCH_DATA = {
             {
               "icon": "🏥",
               "label": "伤病",
-              "note": "Mexico：César Montes 缺阵 · South Korea 暂无重要伤停"
+              "note": "Brazil：Wesley 缺阵；Neymar 存疑 · Haiti 暂无重要伤停"
             },
             {
               "icon": "👔",
               "label": "教练风格",
-              "note": "控节奏 / 4-5-1 收缩（领先时）"
+              "note": "控节奏 / 5-5 铁桶（领先时）"
             },
             {
               "icon": "🌤️",
               "label": "气候",
-              "note": "海拔变量中等——夜场降温利好体能，但稀氧对高强度压迫仍有消耗"
+              "note": "湿热中等——领先方后段守势体能是隐性变量，利好早段破局的一方"
             }
           ],
           "xg_context": {
-            "baseline_home": 1.52,
-            "baseline_away": 1.32,
-            "adjusted_home": 1.3,
-            "adjusted_away": 1.24,
-            "note": "基准 xG 1.52–1.32 → 调整后 1.3–1.24"
+            "baseline_home": 1.85,
+            "baseline_away": 0.75,
+            "adjusted_home": 1.52,
+            "adjusted_away": 0.71,
+            "note": "基准 xG 1.85–0.75 → 调整后 1.52–0.71"
           },
           "calibration": {
-            "signal_cn": "均衡",
-            "signal_color": "#7BB8D4",
-            "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
-            "tier_gap": 0.25,
-            "implied_tier_label": "势均力敌",
-            "market_tier_label": "Mexico 被看好 · 净胜约 0.25 球",
-            "summary_cn": "与模型 xG 对照：均衡 · 赛前净胜看法略高（约 +0.25） · 热门仅净胜 1 球概率 21.1%"
+            "signal_cn": "大众心理预期偏高",
+            "signal_color": "#D95F6A",
+            "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+            "tier_gap": 1.75,
+            "implied_tier_label": "Brazil 被看好 · 净胜约 0.5–1 球",
+            "market_tier_label": "Brazil 被看好 · 净胜约 2.5 球",
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.75 · 模型认为仅小胜 1 球仍约 27% · 部分达标净胜=2 约 17.6% · 净胜≥3（全达标）约 11.9%"
           },
           "win_outlook": {
-            "fav_name": "Mexico",
+            "fav_name": "Brazil",
             "state_label": null,
             "paths": [
               {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 55.6
+                "pct": 47.9
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 25.3
+                "pct": 33.2
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 19.1
+                "pct": 18.9
               }
             ],
-            "margin_line_cn": "Mexico · 赛前净胜参考 ≥1 球",
-            "margin_meet_pct": 16.8,
-            "margin_fail_pct": 21.1,
+            "margin_line_cn": "Brazil · 赛前净胜参考 净胜≥3（全达标） · 部分达标净胜=2",
+            "margin_meet_pct": 11.9,
+            "margin_half_pct": 17.6,
+            "margin_fail_pct": 27,
+            "margin_full_label": "净胜≥3",
+            "margin_half_label": "部分达标净胜=2",
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
             "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-            "totals_line": 2.5,
-            "totals_line_cn": "总进球约 2.5 个",
-            "totals_high_pct": 46.4,
-            "totals_low_pct": 53.6,
+            "totals_line": 3.5,
+            "totals_line_cn": "总进球约 3.5 个",
+            "fair_totals_line": 2.25,
+            "model_total_xg": 2.23,
+            "totals_line_gap": 1.25,
+            "totals_high_pct": 18.3,
+            "totals_low_pct": 81.7,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 17,
-            "win_margin2_low_total_pct": 6.7,
-            "win_margin2_high_total_pct": 10.1,
-            "readout_cn": "取胜约 42%；若取胜，以「险胜收工」为主（55.6%）。 对着赛前净胜参考，差距达标约 16.8%；对着 总进球约 2.5 个，总进球偏高一侧约 46.4%。"
+            "win_low_total_pct": 28.9,
+            "win_margin2_low_total_pct": 12.5,
+            "win_margin2_high_total_pct": 10.7,
+            "readout_cn": "取胜约 58%；若取胜，以「险胜收工」为主（47.9%）。 对着赛前净胜参考，净胜≥3（全达标）约 11.9%；部分达标净胜=2 约 17.6%；对着外界总进球参考 总进球约 3.5 个，模型终场多于该参考的概率约 18.3%。 注意 2-0 类：净胜扩大但总进球仍可能低于外界参考。"
           },
-          "totals_line": 2.5,
+          "totals_line": 3.5,
           "score_patterns": [
             {
-              "score": "1-1",
-              "pct": 12.8
-            },
-            {
               "score": "1-0",
-              "pct": 10.3
+              "pct": 16.4
             },
             {
-              "score": "0-1",
-              "pct": 9.8
+              "score": "2-0",
+              "pct": 12.5
+            },
+            {
+              "score": "1-1",
+              "pct": 11.7
             }
           ],
           "totals_view": {
-            "expected_total": 2.5,
-            "fair_line": 2,
-            "line_gap": 0.5,
-            "over_pct": 46.4,
-            "summary_cn": "预期约 2.5 个总进球 · 赛前参考进球参考偏高 · 模型在常见进球预期附近均衡"
+            "expected_total": 2.2,
+            "fair_line": 2.25,
+            "market_line": 3.5,
+            "line_gap": 1.25,
+            "over_pct": 18.3,
+            "gap_warning": {
+              "level": "high",
+              "cn": "外界总进球参考 3.5，比模型公允线 2.25 高约 1.25 球——大众心理明显偏多进球；模型对总进球仍宜谨慎表态"
+            },
+            "totals_outlook": {
+              "level": "clear_low",
+              "label_cn": "倾向沉闷",
+              "color": "#7BB8D4",
+              "meter_label_cn": "倾向沉闷",
+              "meter_pos": 18,
+              "lean_side": "dull",
+              "lean_strength": "clear",
+              "section_intro_cn": "对照外界「全场至少 4 球」的赛前进球节奏，看模型更偏沉闷还是精彩",
+              "pill_cn": "倾向沉闷，精彩度可能一般。",
+              "detail_cn": "模型明显偏沉闷——低比分拉锯概率较高，难撑起这一进球节奏（模型自身预期约 2.25 球）。 须警惕「外界预期很精彩、实际偏闷」的落差。",
+              "headline_cn": "进球氛围：倾向沉闷",
+              "show_lean": true,
+              "over_pct": 18.3,
+              "line_gap": 1.25,
+              "market_line": 3.5,
+              "market_goals_int": 4,
+              "market_goals_cn": "全场至少 4 球",
+              "caution_public_high": true
+            },
+            "summary_cn": "模型 xG 合计约 2.2 球（公允参考约 2.25） · 外界总进球参考 3.5，高出模型约 1.25 球 · ⚠ 外界总进球参考比模型公允线高约 1.25 球，大众心理明显偏多进球 · 进球氛围：倾向沉闷"
+          },
+          "customer_reading": {
+            "headline_cn": "Brazil · 净胜走向：达到预期难度偏大",
+            "sub_cn": "达标概率约 11.9% · 达到预期难度偏大 进球氛围：倾向沉闷",
+            "spread": {
+              "level": "skeptical",
+              "label_cn": "外界预期偏高",
+              "color": "#D95F6A",
+              "fav_name": "Brazil",
+              "market_expect_cn": "净胜≥3",
+              "meet_pct": 11.9,
+              "meet_pct_label": "模型推演达标概率",
+              "verdict_cn": "达到预期难度偏大",
+              "headline_cn": "Brazil · 净胜走向：达到预期难度偏大",
+              "pill_cn": "达标概率约 11.9% · 达到预期难度偏大",
+              "detail_cn": "Brazil · 赛前外界预期 净胜≥3。模型推演达标概率约 11.9%；外界看法高于 xG 隐含约 1.75 球，达到预期难度偏大（部分达标净胜=2 约 17.6% · 仅胜 1 球约 27%）。",
+              "extra_stats_cn": "部分达标净胜=2 约 17.6% · 仅胜 1 球约 27%",
+              "full_cover_pct": 11.9,
+              "half_cover_pct": 17.6,
+              "lose1_pct": 27,
+              "margin_full_label": "净胜≥3",
+              "margin_half_label": "部分达标净胜=2",
+              "tier_gap": 1.75,
+              "show_cover": true
+            },
+            "totals": {
+              "level": "clear_low",
+              "label_cn": "倾向沉闷",
+              "color": "#7BB8D4",
+              "meter_label_cn": "倾向沉闷",
+              "meter_pos": 18,
+              "lean_side": "dull",
+              "lean_strength": "clear",
+              "section_intro_cn": "对照外界「全场至少 4 球」的赛前进球节奏，看模型更偏沉闷还是精彩",
+              "pill_cn": "倾向沉闷，精彩度可能一般。",
+              "detail_cn": "模型明显偏沉闷——低比分拉锯概率较高，难撑起这一进球节奏（模型自身预期约 2.25 球）。 须警惕「外界预期很精彩、实际偏闷」的落差。",
+              "headline_cn": "进球氛围：倾向沉闷",
+              "show_lean": true,
+              "over_pct": 18.3,
+              "line_gap": 1.25,
+              "market_line": 3.5,
+              "market_goals_int": 4,
+              "market_goals_cn": "全场至少 4 球",
+              "caution_public_high": true
+            },
+            "draw_risk": null,
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "净胜走向",
+                "outlook": {
+                  "level": "skeptical",
+                  "label_cn": "外界预期偏高",
+                  "color": "#D95F6A",
+                  "fav_name": "Brazil",
+                  "market_expect_cn": "净胜≥3",
+                  "meet_pct": 11.9,
+                  "meet_pct_label": "模型推演达标概率",
+                  "verdict_cn": "达到预期难度偏大",
+                  "headline_cn": "Brazil · 净胜走向：达到预期难度偏大",
+                  "pill_cn": "达标概率约 11.9% · 达到预期难度偏大",
+                  "detail_cn": "Brazil · 赛前外界预期 净胜≥3。模型推演达标概率约 11.9%；外界看法高于 xG 隐含约 1.75 球，达到预期难度偏大（部分达标净胜=2 约 17.6% · 仅胜 1 球约 27%）。",
+                  "extra_stats_cn": "部分达标净胜=2 约 17.6% · 仅胜 1 球约 27%",
+                  "full_cover_pct": 11.9,
+                  "half_cover_pct": 17.6,
+                  "lose1_pct": 27,
+                  "margin_full_label": "净胜≥3",
+                  "margin_half_label": "部分达标净胜=2",
+                  "tier_gap": 1.75,
+                  "show_cover": true
+                },
+                "text": "达标概率约 11.9% · 达到预期难度偏大",
+                "color": "#D95F6A",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "🌙",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "clear_low",
+                  "label_cn": "倾向沉闷",
+                  "color": "#7BB8D4",
+                  "meter_label_cn": "倾向沉闷",
+                  "meter_pos": 18,
+                  "lean_side": "dull",
+                  "lean_strength": "clear",
+                  "section_intro_cn": "对照外界「全场至少 4 球」的赛前进球节奏，看模型更偏沉闷还是精彩",
+                  "pill_cn": "倾向沉闷，精彩度可能一般。",
+                  "detail_cn": "模型明显偏沉闷——低比分拉锯概率较高，难撑起这一进球节奏（模型自身预期约 2.25 球）。 须警惕「外界预期很精彩、实际偏闷」的落差。",
+                  "headline_cn": "进球氛围：倾向沉闷",
+                  "show_lean": true,
+                  "over_pct": 18.3,
+                  "line_gap": 1.25,
+                  "market_line": 3.5,
+                  "market_goals_int": 4,
+                  "market_goals_cn": "全场至少 4 球",
+                  "caution_public_high": true
+                },
+                "text": "倾向沉闷，精彩度可能一般。",
+                "color": "#7BB8D4",
+                "muted": false
+              }
+            ],
+            "methodology_note": "读场优先级：净胜走向 ＞ 进球氛围（对照外界「至少 N 球」预期，中性档几乎五五开；强信号才标沉闷/精彩）。仅供娱乐推演，非投注建议。"
           },
           "first_goal_scenarios": [
             {
               "side": "home",
-              "team": "Mexico",
-              "first_goal_pct": 51.2,
+              "team": "Brazil",
+              "first_goal_pct": 68.2,
               "start_score": "1-0",
-              "fav_name": "Mexico",
+              "fav_name": "Brazil",
               "scorer_is_fav": true,
               "expected_key": "hold_win",
-              "fav_recover_pct": 89.2,
-              "small_lead_pct": 34.9,
-              "big_lead_pct": 32.3,
-              "fav_win_pct": 67.2,
-              "fav_draw_pct": 22,
-              "fav_lose_pct": 10.8,
+              "fav_recover_pct": 96.4,
+              "small_lead_pct": 36.2,
+              "big_lead_pct": 46.2,
+              "fav_win_pct": 82.4,
+              "fav_draw_pct": 14,
+              "fav_lose_pct": 3.6,
               "outcomes": [
                 {
                   "key": "hold_win",
-                  "label": "Mexico 保持胜果（净胜≥1）",
-                  "pct": 67.2
+                  "label": "Brazil 保持胜果（净胜≥1）",
+                  "pct": 82.4
                 },
                 {
                   "key": "drawn",
                   "label": "被扳平",
-                  "pct": 22
+                  "pct": 14
                 },
                 {
                   "key": "lost",
                   "label": "被逆转落败",
-                  "pct": 10.8
+                  "pct": 3.6
                 }
               ],
               "excitement": {
                 "label_cn": "偏晚",
                 "label_key": "slow",
                 "label_color": "#7BB8D4",
-                "sub_cn": "预期首球等待约 45.2 分",
-                "first_goal_wait": 45.2,
-                "fast_pct": 42,
-                "moderate_pct": 13.8,
-                "slow_pct": 44.2,
+                "sub_cn": "预期首球等待约 52 分",
+                "first_goal_wait": 52,
+                "fast_pct": 37.7,
+                "moderate_pct": 13.1,
+                "slow_pct": 49.2,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 42
+                    "pct": 37.7
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 13.8
+                    "pct": 13.1
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 44.2
+                    "pct": 49.2
                   }
                 ]
               },
-              "big_delta": 15.5,
-              "small_delta": 13.8,
-              "narrative": "Mexico 先破门（已 1-0） → 「控节奏」；South Korea 「堆中场」。领先后双方可能转入守势，比分差距不易再拉大。",
+              "big_delta": 16.7,
+              "small_delta": 9.2,
+              "narrative": "Brazil 先破门（已 1-0） → 「控节奏」；Haiti 「维持低位」。领先后双方可能转入守势，比分差距不易再拉大。",
               "live_outlook": {
-                "fav_name": "Mexico",
-                "state_label": "Mexico 已 1-0 领先",
+                "fav_name": "Brazil",
+                "state_label": "Brazil 已 1-0 领先",
                 "paths": [
                   {
                     "key": "narrow",
                     "label": "险胜收工",
                     "example": "如 1-0、2-1",
-                    "pct": 55.6
+                    "pct": 47.9
                   },
                   {
                     "key": "clean",
                     "label": "零封拉开",
                     "example": "如 2-0、3-0",
-                    "pct": 25.3
+                    "pct": 33.2
                   },
                   {
                     "key": "open",
                     "label": "开放拉开",
                     "example": "如 3-1+",
-                    "pct": 19.1
+                    "pct": 18.9
                   }
                 ],
-                "margin_line_cn": "Mexico · 赛前净胜参考 ≥1 球",
-                "margin_meet_pct": 32.3,
-                "margin_fail_pct": 34.9,
+                "margin_line_cn": "Brazil · 赛前净胜参考 净胜≥3（全达标） · 部分达标净胜=2",
+                "margin_meet_pct": 17.6,
+                "margin_half_pct": 28.5,
+                "margin_fail_pct": 36.2,
+                "margin_full_label": "净胜≥3",
+                "margin_half_label": "部分达标净胜=2",
+                "final_2_0_pct": 23,
+                "final_3_0_plus_pct": 15.4,
                 "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-                "totals_line": 2.5,
-                "totals_line_cn": "总进球约 2.5 个",
-                "totals_high_pct": 48.5,
-                "totals_low_pct": 51.5,
+                "totals_line": 3.5,
+                "totals_line_cn": "总进球约 3.5 个",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 1.42,
+                "totals_line_gap": 1.25,
+                "totals_high_pct": 17.1,
+                "totals_low_pct": 82.9,
                 "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-                "win_low_total_pct": 35.4,
-                "win_margin2_low_total_pct": 15.9,
-                "win_margin2_high_total_pct": 16.4,
-                "readout_cn": "Mexico 已 1-0 领先：仍取胜约 67.2%；对着赛前 总进球约 2.5 个，总进球偏高一侧约 48.5%。 常见收尾如 2-0（净胜达标、总进球仍偏低）。"
+                "win_low_total_pct": 47.3,
+                "win_margin2_low_total_pct": 23,
+                "win_margin2_high_total_pct": 12.2,
+                "readout_cn": "Brazil 已 1-0 领先：仍取胜约 82.4%。 对着外界总进球参考 总进球约 3.5 个，模型终场多于该参考的概率约 17.1%。 常见收尾：2-0 约 23%（部分达标，非全达标）； 3-0+ 约 15.4%（对着 净胜≥3 全达标）。"
               }
             },
             {
               "side": "away",
-              "team": "South Korea",
-              "first_goal_pct": 48.8,
+              "team": "Haiti",
+              "first_goal_pct": 31.8,
               "start_score": "0-1",
-              "fav_name": "Mexico",
+              "fav_name": "Brazil",
               "scorer_is_fav": false,
-              "expected_key": "upset_hold",
-              "fav_recover_pct": 43.4,
-              "small_lead_pct": 12.6,
-              "big_lead_pct": 6.1,
-              "fav_win_pct": 18.7,
-              "fav_draw_pct": 24.7,
-              "fav_lose_pct": 56.6,
+              "expected_key": "fav_recover",
+              "fav_recover_pct": 58.9,
+              "small_lead_pct": 18.3,
+              "big_lead_pct": 11.2,
+              "fav_win_pct": 29.5,
+              "fav_draw_pct": 29.4,
+              "fav_lose_pct": 41.1,
               "outcomes": [
                 {
                   "key": "draw",
-                  "label": "Mexico 追平（平局）",
-                  "pct": 24.7
+                  "label": "Brazil 追平（平局）",
+                  "pct": 29.4
                 },
                 {
                   "key": "win1",
-                  "label": "Mexico 净胜1球翻盘（如 2-1）",
-                  "pct": 12.6
+                  "label": "Brazil 净胜1球翻盘（如 2-1）",
+                  "pct": 18.3
                 },
                 {
                   "key": "win2",
-                  "label": "Mexico 净胜≥2球翻盘（如 3-1）",
-                  "pct": 6.1
+                  "label": "Brazil 净胜≥2球翻盘（如 3-1）",
+                  "pct": 11.2
                 },
                 {
                   "key": "upset_hold",
-                  "label": "South Korea 保持胜果至终场",
-                  "pct": 56.6
+                  "label": "Haiti 保持胜果至终场",
+                  "pct": 41.1
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 36.3 分",
-                "first_goal_wait": 36.3,
-                "fast_pct": 49.2,
-                "moderate_pct": 14.6,
-                "slow_pct": 36.2,
+                "sub_cn": "预期首球等待约 39.5 分",
+                "first_goal_wait": 39.5,
+                "fast_pct": 46.4,
+                "moderate_pct": 14.4,
+                "slow_pct": 39.3,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 49.2
+                    "pct": 46.4
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 14.6
+                    "pct": 14.4
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 36.2
+                    "pct": 39.3
                   }
                 ]
               },
-              "big_delta": -10.7,
-              "small_delta": -8.5,
-              "narrative": "South Korea 先破门（已 0-1） → 「4-5-1 收缩」；Mexico 「堆前锋」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门。",
+              "big_delta": -18.3,
+              "small_delta": -8.7,
+              "narrative": "Haiti 先破门（已 0-1） → 「5-5 铁桶」；Brazil 「堆前锋」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门。",
               "live_outlook": null
             }
           ],
           "match_preview": {
             "morphology": {
-              "totals_summary": "预期约 2.5 个总进球 · 赛前参考进球参考偏高 · 模型在常见进球预期附近均衡",
-              "totals_line_cn": "总进球约 2.5 个",
-              "totals_high_pct": 46.4,
+              "totals_summary": "模型 xG 合计约 2.2 球（公允参考约 2.25） · 外界总进球参考 3.5，高出模型约 1.25 球 · ⚠ 外界总进球参考比模型公允线高约 1.25 球，大众心理明显偏多进球 · 进球氛围：倾向沉闷",
+              "totals_line_cn": "总进球约 3.5 个",
+              "totals_high_pct": 18.3,
               "type_tags": [
                 {
                   "key": "low_block",
                   "label": "低位反击"
+                },
+                {
+                  "key": "low_scoring",
+                  "label": "进球偏少"
                 }
               ],
-              "depth_label": "板凳深度偏高",
-              "draw_trap_pct": 30,
-              "readout_cn": "Mexico · 低位反击。总进球约 2.5 个；按常规模型读即可。"
+              "depth_label": "有一定轮换空间",
+              "draw_trap_pct": 12,
+              "readout_cn": "Brazil · 低位反击 · 进球偏少。进球氛围倾向沉闷（模型推演）；时间段分布见下方历史节奏参考。"
             },
-            "draw_trap_note": "平局风险：低位反击队若先进球或被追平，1-1 / 0-0 比客胜更现实（约 30% 冷门空间含平局）。",
+            "draw_trap_note": "平局风险：低位反击队若先进球或被追平，1-1 / 0-0 比客胜更现实（约 12% 冷门空间含平局）。",
             "archetype": {
               "tags": [
                 {
                   "key": "low_block",
                   "label": "低位反击"
+                },
+                {
+                  "key": "low_scoring",
+                  "label": "进球偏少"
                 }
               ],
-              "depth_score": 2,
-              "depth_label": "板凳深度偏高",
-              "draw_trap_pct": 30,
+              "depth_score": 1,
+              "depth_label": "有一定轮换空间",
+              "draw_trap_pct": 12,
               "fav_lead_style": "defensive"
             }
+          },
+          "goal_timing": {
+            "sample_label": "近30场",
+            "source_note": "user_screenshot_2026-06-20_bra_hai",
+            "home_name": "Brazil",
+            "away_name": "Haiti",
+            "intervals": [
+              "1–15",
+              "16–30",
+              "31–45",
+              "46–60",
+              "61–75",
+              "76–90",
+              "90+"
+            ],
+            "peaks": {
+              "home_scored": {
+                "interval": "31–45",
+                "pct": 29
+              },
+              "home_conceded": {
+                "interval": "31–45",
+                "pct": 20
+              },
+              "away_scored": {
+                "interval": "76–90",
+                "pct": 23
+              },
+              "away_conceded": {
+                "interval": "16–30",
+                "pct": 23
+              }
+            },
+            "cross_insight": {
+              "has_cross": false,
+              "hits": [],
+              "cross_intervals": [],
+              "summary_cn": "两队高峰时段错开，暂无强重合进攻窗口。"
+            },
+            "disclaimer_cn": "以上为两队近30场历史进球/失球时间段统计，供读场参考；非本场赛果预测，与灵力分析娱乐板块无关。"
           }
         },
-        "public_summary_note": "【推演概要】Mexico · 低位反击。 · 与模型 xG 对照：均衡 · 赛前净胜看法略高（约 +0.25） · 热门仅净胜 1 球概率 21.1%（模型微调：主胜 +0% · 平 +0% · 客 +0%）"
+        "public_summary_note": "【推演概要】Brazil · 低位反击 · 进球偏少。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.75 · 模型认为仅小胜 1 球仍约 27% · 部分达标净胜=2 约 17.6% · 净胜≥3（全达标）约 11.9%（模型微调：主胜 -5% · 平 +1% · 客 +4%）"
+      },
+      "coach_analysis": {
+        "home": {
+          "name": "Carlo Ancelotti",
+          "age": 66,
+          "nation": "意大利",
+          "tenure": "2025年—",
+          "wc_exp": "四届世界杯 · 皇马欧冠经验",
+          "style_tags": [
+            "4-4-2",
+            "Vinícius 宽度",
+            "Paquetá 组织",
+            "变阵"
+          ],
+          "formation_pref": "4-4-2 / 4-2-3-1 · Vinícius 核心",
+          "style_summary": "首轮 1-1 摩洛哥令人失望，实际变阵 4-4-2 非赛前预期。Neymar 每日观察；对海地必须取胜，预计早段破局+持续宽度。",
+          "subs": {
+            "timing": "首换 55–62 分钟",
+            "pattern": "半场变阵传统",
+            "avg_first_sub": "58'",
+            "note": "Danilo/Fabinho 首战标志"
+          },
+          "when_leading": {
+            "label": "控节奏",
+            "detail": "2 球领先：轮换保护 Vinícius。"
+          },
+          "when_trailing": {
+            "label": "堆前锋",
+            "detail": "先丢球：立即加码进攻宽度。"
+          },
+          "vs_strong": {
+            "label": "对强队：对攻",
+            "detail": "对摩洛哥已验证。"
+          },
+          "vs_weak": {
+            "label": "对弱队：不留余地",
+            "detail": "对海地 xG 1.85 必须兑现。"
+          },
+          "tournament": "五冠压力+仅 1 分；媒体称「最不容再失分的一场」。",
+          "traits": [
+            "Vinícius 核心",
+            "变阵",
+            "Neymar 存疑",
+            "必须抢分"
+          ],
+          "match_note": "仅 1 分不容再失——Vinícius+Paquetá 早段破局；Neymar 每日观察，4-4-2 变阵或延续。"
+        },
+        "away": {
+          "name": "Sébastien Migné",
+          "age": 51,
+          "nation": "法国",
+          "tenure": "2023年—",
+          "wc_exp": "2026 带队 · 非洲杯经验",
+          "style_tags": [
+            "5-4-1",
+            "深度低位",
+            "Nazon 支点",
+            "定位球"
+          ],
+          "formation_pref": "5-4-1 / 5-5 · Bellegarde 枢纽",
+          "style_summary": "首轮 0-1 苏格兰可接受防守表现；对巴西预计 5 后卫深度低位。首次世界杯正赛无历史包袱，湿热费城或拖慢节奏。",
+          "subs": {
+            "timing": "首换 70 分钟+",
+            "pattern": "换人偏晚",
+            "avg_first_sub": "72'",
+            "note": "弱队体能优先"
+          },
+          "when_leading": {
+            "label": "5-5 铁桶",
+            "detail": "若意外领先：全员退守。"
+          },
+          "when_trailing": {
+            "label": "维持低位",
+            "detail": "unlikely 大举压上。"
+          },
+          "vs_strong": {
+            "label": "对强队：龟缩",
+            "detail": "对巴西教科书深度低位。"
+          },
+          "vs_weak": {
+            "label": "对弱队：反击",
+            "detail": "对苏格兰已验证低位。"
+          },
+          "tournament": "Migné 强调定位球与纪律——「不要给 Vinícius 身后空间」。",
+          "traits": [
+            "5 后卫",
+            "低位",
+            "Nazon 支点",
+            "首次正赛"
+          ],
+          "match_note": "5 后卫深度低位+Bellegarde 枢纽；费城湿热拖慢节奏，定位球是唯一偷分路径。"
+        }
+      },
+      "upset_alert": {
+        "favorite": "Brazil",
+        "underdog": "Haiti",
+        "favorite_iso": "BRA",
+        "index": 18,
+        "level": "LOW",
+        "level_cn": "低",
+        "cold_result_pct": 12,
+        "verdict": "巴西 xG 1.85 深盘但仅 1 分压力——海地 5 后卫低位或拖慢节奏，冷门空间约 12%（平局/0-0 偷分）。",
+        "tactical": "Ancelotti 4-4-2 Vinícius 宽度 vs Migné 5-4-1 深度低位；费城湿热利好领先方后段守势。",
+        "psychology": "巴西「最不容再失分」；海地首次正赛无包袱。",
+        "historical": "无大赛交锋；海地对苏格兰 0-1 防守尚可。",
+        "factors": [
+          {
+            "tag": "深盘",
+            "impact": "中",
+            "detail": "市场 -2.5 高于 xG 隐含"
+          },
+          {
+            "tag": "低位",
+            "impact": "强",
+            "detail": "海地 5 后卫+定位球"
+          },
+          {
+            "tag": "Neymar",
+            "impact": "中",
+            "detail": "复出与否影响破局效率"
+          }
+        ]
+      }
+    },
+    {
+      "id": "m31",
+      "group": "D",
+      "matchday": 2,
+      "date": "2026-06-19",
+      "time": "20:00",
+      "time_local": "20:00 PT",
+      "timezone": "PDT (UTC-7)",
+      "time_beijing": "11:00",
+      "date_beijing": "6月20日",
+      "time_beijing_full": "北京时间 6月20日 11:00",
+      "venue": "Levi's Stadium",
+      "city": "Santa Clara, USA",
+      "note": "D组第2轮 · 土耳其 vs 巴拉圭 · 旧金山湾区",
+      "lineup": {
+        "confirmed": false,
+        "formation": null,
+        "home": "等待官方确认",
+        "away": "等待官方确认",
+        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
+        "predicted": {
+          "formation": "4-2-3-1 / 4-4-2",
+          "home": "Günok; Çelik, Demiral, Bardakcı; Kökçü, Özcan; Yıldız, Güler, Aydın; Aktürkoğlu, Yılmaz",
+          "away": "Martínez; Velázquez, Gómez, Alonso; Sanabria, Rojas; Romero, Sosa, Almirón; González, Sánchez",
+          "source": "FotMob / ESPN 预测 · 非官方",
+          "alt": null
+        }
+      },
+      "home": {
+        "name": "Türkiye",
+        "iso": "tr",
+        "flag": "",
+        "fifa_rank": 26,
+        "rating": 76,
+        "form": [
+          "W",
+          "D",
+          "W",
+          "L",
+          "W"
+        ],
+        "coach": "Vincenzo Montella",
+        "stars": [
+          {
+            "name": "Arda Güler",
+            "pos": "CAM",
+            "club": "Real Madrid",
+            "desc": "组织核心",
+            "rating": 8.2
+          }
+        ],
+        "star": {
+          "name": "Arda Güler",
+          "pos": "CAM",
+          "club": "Real Madrid",
+          "desc": "组织核心",
+          "rating": 8.2
+        },
+        "injuries": [
+          {
+            "player": "Arda Güler",
+            "status": "FIT",
+            "note": "FIFA 官方 XI 攻击中场 #8，对澳大利亚全场活跃但未能转化",
+            "confirmed": true
+          },
+          {
+            "player": "Hakan Çalhanoğlu",
+            "status": "FIT",
+            "note": "队长 #10，组织核心；0-2 后更衣室需其稳住军心",
+            "confirmed": true
+          },
+          {
+            "player": "Kenan Yildiz",
+            "status": "FIT",
+            "note": "首轮替补未进 XI；对巴拉圭媒体普遍预测回归首发",
+            "confirmed": true
+          },
+          {
+            "player": "Kerem Aktürkoglu",
+            "status": "FIT",
+            "note": "首轮意外出任中锋 #7，30 射 8 正 0 球——位置可能调整",
+            "confirmed": true
+          },
+          {
+            "player": "Merih Demiral",
+            "status": "FIT",
+            "note": "中卫主力，对澳大利亚防线未被击穿但前场效率成问题",
+            "confirmed": true
+          }
+        ],
+        "rumors": [
+          "Montella（赛后）：「72% 控球却 0 球不可接受；对巴拉圭必须拿出不同态度」",
+          "0-2 澳大利亚后土耳其 D 组形势严峻——美国、澳大利亚同积 3 分",
+          "首轮 Yildiz 替补、Aktürkoglu 突任中锋的变阵遭质疑，次轮 Yildiz+Güler 双核呼声高",
+          "Sports Mole 6/13 曾预测土耳其 2-0 胜澳——与实际反差成更衣室压力来源",
+          "Montella 强调 Çalhanoğlu 肋部渗透，Yıldız/Güler 对 Paraguay 低位是破局关键"
+        ]
+      },
+      "away": {
+        "name": "Paraguay",
+        "iso": "py",
+        "flag": "",
+        "fifa_rank": 52,
+        "rating": 70,
+        "form": [
+          "L",
+          "W",
+          "D",
+          "L",
+          "W"
+        ],
+        "coach": "Gustavo Alfaro",
+        "stars": [
+          {
+            "name": "Miguel Almirón",
+            "pos": "RW",
+            "club": "Atlanta United",
+            "desc": "反击速度",
+            "rating": 7.8
+          }
+        ],
+        "star": {
+          "name": "Miguel Almirón",
+          "pos": "RW",
+          "club": "Atlanta United",
+          "desc": "反击速度",
+          "rating": 7.8
+        },
+        "injuries": [
+          {
+            "player": "Julio Enciso",
+            "status": "FIT",
+            "note": "揭幕战替补 73' 登场送助攻（Mauricio 进球），肌肉伤后已恢复出场",
+            "confirmed": true
+          },
+          {
+            "player": "Miguel Almirón",
+            "status": "FIT",
+            "note": "进攻核心；0-4 美国仍是最威胁一点",
+            "confirmed": true
+          },
+          {
+            "player": "Gustavo Gómez",
+            "status": "FIT",
+            "note": "队长中卫，对 Balogun 双响防守失败但本人无伤病",
+            "confirmed": true
+          },
+          {
+            "player": "Antonio Sanabria",
+            "status": "FIT",
+            "note": "支点中锋，Enciso 复出后前场组合选择增多",
+            "confirmed": true
+          }
+        ],
+        "rumors": [
+          "Alfaro（赛后）：「4-1 是痛苦一课，但对土耳其我们必须进攻——已无路可退」",
+          "0-4 美国：Balogun 双响 + Bobadilla 乌龙，Enciso 替补助攻成少数亮点",
+          "Enciso 复出缓解前腰创造力危机，Almirón+Enciso 组合或对阵土耳其",
+          "Alfaro 传统低位+身体对抗，预选赛 12 场仅 1 负的防守体系仍在",
+          "D 组若再负基本出局；Alfaro 称「防守是我们的语言，但本场需要进球」"
+        ]
+      },
+      "h2h": {
+        "home_wins": 1,
+        "draws": 0,
+        "away_wins": 0,
+        "recent": [],
+        "note": "友谊赛土耳其占优"
+      },
+      "referee": {
+        "confirmed": false,
+        "pending": true,
+        "name": "等待官方确认",
+        "nation": "待公布",
+        "iso": null,
+        "bias_note": "FIFA Match 31 裁判名单赛前公布。",
+        "tendencies": [
+          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+        ]
+      },
+      "prediction": {
+        "home_win": 47,
+        "draw": 25,
+        "away_win": 28,
+        "score": "1-1",
+        "confidence": 68,
+        "xg_home": 1.48,
+        "xg_away": 1.12,
+        "key_factor": "Yıldız/Güler 肋部 vs 巴拉圭低位；美国同日早场取胜则 D 组形势更复杂",
+        "score_dist": [
+          {
+            "score": "1-1",
+            "prob": 12.3
+          },
+          {
+            "score": "1-0",
+            "prob": 11
+          },
+          {
+            "score": "2-1",
+            "prob": 9.1
+          },
+          {
+            "score": "0-1",
+            "prob": 8.3
+          },
+          {
+            "score": "2-0",
+            "prob": 8.1
+          },
+          {
+            "score": "0-0",
+            "prob": 7.4
+          },
+          {
+            "score": "1-2",
+            "prob": 6.9
+          }
+        ],
+        "insight_factors": [
+          {
+            "icon": "📊",
+            "label": "小组积分",
+            "text": "Türkiye 暂列 D 组第 3（0 分 · 已赛 1 场） vs Paraguay 第 4（0 分 · 已赛 1 场）；组内 USA 3分、Australia 3分 领先；直接对话权重极高"
+          },
+          {
+            "icon": "🌤️",
+            "label": "赛场气候",
+            "text": "圣克拉拉晴朗干燥，封闭式 · 23°C · 湿度 48% · 降雨概率 8% · 湾区西风 2级；气候变量低——D 组生死战节奏由战术谨慎度决定，非天气（23°C · 20:00 PT 开球 · 干燥晴朗）"
+          },
+          {
+            "icon": "⚽",
+            "label": "战术与阵容",
+            "text": "Yıldız/Güler 肋部 vs 巴拉圭低位；美国同日早场取胜则 D 组形势更复杂"
+          }
+        ],
+        "base_home_win": 45,
+        "base_draw": 26,
+        "base_away_win": 29,
+        "depth_calibrated": true
+      },
+      "weather": {
+        "city": "旧金山湾区",
+        "country": "美国",
+        "venue": "Levi's Stadium",
+        "temp": 23,
+        "humidity": 48,
+        "altitude_m": 15,
+        "rain_chance": 8,
+        "wind": "湾区西风 2级",
+        "condition_cn": "圣克拉拉晴朗干燥，封闭式",
+        "impact_level": "LOW",
+        "impact": "Levi's Stadium 23°C 干燥晴朗，Yıldız/Güler 肋部渗透与巴拉圭低位均不受气候干扰",
+        "impact_summary": "气候变量低——D 组生死战节奏由战术谨慎度决定，非天气",
+        "home_adapt": 84,
+        "away_adapt": 81,
+        "home_note": "土耳其技术型球员在干燥场地触球更顺；Montella 肋部配合不受制约",
+        "away_note": "巴拉圭 Alfaro 低位防守对气温不敏感；Almirón 反击速度是核心",
+        "prediction_note": "气候对模型影响可忽略；封闭式球场无暴晒，夜场体感舒适",
+        "weather_factors": [
+          {
+            "label": "23°C · 20:00 PT 开球",
+            "impact": "低",
+            "detail": "北京时间 6月20日 11:00；Santa Clara 夜场微凉"
+          },
+          {
+            "label": "干燥晴朗",
+            "impact": "中性",
+            "detail": "传球精度与远射条件理想"
+          },
+          {
+            "label": "封闭式球场",
+            "impact": "低",
+            "detail": "无风扰动，战术执行稳定"
+          }
+        ],
+        "historical_note": "Levi's Stadium · D组第2轮 · 预报更新 2026-06-19 22:00 本地",
+        "forecast_updated": "2026-06-19 22:00 本地"
+      },
+      "mystic": {
+        "date_bazi": {
+          "year": "丙午年",
+          "year_element": "火",
+          "month": "甲午月",
+          "month_element": "金+火",
+          "day": "己丑日",
+          "day_element": "土",
+          "day_dominant": "土",
+          "day_summary": "己丑日——己土坐丑，土气厚重。《道德经》曰：「知常曰明。」丑土当令，宜循序渐进、忌半场冒进；非力之大小，乃气之顺逆。",
+          "hour_home": "午时（11:00-13:00）",
+          "hour_home_element": "火"
+        },
+        "wuxing": {
+          "home": {
+            "team": "Türkiye",
+            "colors": "红+白",
+            "elements": "火、金",
+            "wuxing_short": "火金相涵",
+            "verdict": "中性偏利",
+            "verdict_color": "#C8A96E",
+            "compat": 54,
+            "reason": "红属火、白属金。午时火气正旺，火炼金成器——如「水火既济」。《道德经》「知止不殆」，土耳其火金宜肋部渗透。",
+            "advantage": "午火炼金，组织之气渐明"
+          },
+          "away": {
+            "team": "Paraguay",
+            "colors": "红+白+蓝",
+            "elements": "火、金、水",
+            "wuxing_short": "火金水杂",
+            "verdict": "中性偏利",
+            "verdict_color": "#C8A96E",
+            "compat": 52,
+            "reason": "红白金蓝相杂。午时火旺，金水相涵——如「火在水上」，宜低位守中、反击为暗流。",
+            "advantage": "火金水杂，守势可延一时"
+          },
+          "summary": "五行裁定：午时火旺双方皆沾火气；土耳其火金相涵略占「既济」初吉，巴拉圭守中待变"
+        },
+        "hexagram": {
+          "name": "水火既济",
+          "symbol": "☵☲",
+          "number": 63,
+          "upper": "坎水",
+          "lower": "离火",
+          "quote": "《周易·既济卦》：「初吉，终乱。」",
+          "general": "既济卦——水火相济，初吉终乱；生死战宜上半场破局，忌后段松懈。",
+          "advantage_team": "Türkiye",
+          "disadvantage_team": "Paraguay",
+          "hexagram_analysis": "既济「小者亨也」：午时火旺，坎水在上——气运宜上半场相济破局一段，卦示「初吉」后需防「终乱」。",
+          "match_nature": "初吉终乱 · 宜早破局",
+          "yellow_card_risk": "中",
+          "yellow_card_reason": "生死战谨慎开局，后段犯规升；预计 4-5 张黄牌。",
+          "scenarios": [
+            {
+              "icon": "☯",
+              "label": "气运性质",
+              "text": "午时火旺，水火相济——初段破局者占「初吉」"
+            },
+            {
+              "icon": "⏱",
+              "label": "进球高峰段",
+              "text": "第 38-52 分钟（既济「水火相济」、午时火盛——卦只示此一段）"
+            },
+            {
+              "icon": "🟨",
+              "label": "纪律",
+              "text": "生死战，后段「终乱」致黄牌升"
+            }
+          ],
+          "early_goal": {
+            "scenario": "若土耳其先进球",
+            "prediction": "既济初吉——午火炼金，追加窗口在 42-55 分钟；忌领先后「终乱」。",
+            "favors": "Türkiye",
+            "favors_prob": 56
+          },
+          "no_early_goal": {
+            "scenario": "若前 40 分钟无进球",
+            "prediction": "既济宜「水火相济」——0-0 符合谨慎局；45-60 分钟为破局段。",
+            "favors": "Draw",
+            "favors_prob": 50
+          },
+          "away_goal": {
+            "scenario": "若巴拉圭偷袭破门",
+            "prediction": "既济逆象——火金水杂守中；土耳其需火金相涵耐心，65' 后气运回。",
+            "favors": "Türkiye",
+            "favors_prob": 52
+          }
+        },
+        "goal_peak": {
+          "scope": "first_half",
+          "title": "上半场进球高峰 · 娱乐预测",
+          "windows": [
+            {
+              "label": "上半场",
+              "half": "first",
+              "start_min": 38,
+              "end_min": 52,
+              "hex_reason": "既济「水火相济」，午时火盛",
+              "time_reason": "生死战宜上半场破局，防后段终乱"
+            }
+          ],
+          "periods": "第 38-52 分钟",
+          "rationale": "午时火气正旺，既济卦「初吉终乱」——气运集中于上半场相济一段，卦象未明示下半场第二高峰。宁缺毋滥，只示一窗。",
+          "note": "娱乐解读 · 纯玄学参考 · 非赛程或竞技推演",
+          "logic_hint": "依赛日八字、开球时辰、卦象与五行生克推断；卦象只示一段气运则只给一段，不凑数。"
+        },
+        "home_score": 62,
+        "away_score": 48,
+        "mystic_verdict": "土耳其火金交争，巴拉圭火金守势——午时火旺，胜负取决于肋部渗透。",
+        "model_bridge": "xG 1.48-1.12 略看好主队，大小 2.5 偏小，低比分权重上升。",
+        "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
       },
       "group_context": {
-        "group": "A",
-        "label": "A组 · 第1轮后",
+        "group": "D",
+        "label": "D组 · 第1轮（2场已赛）",
         "matchday": 2,
         "standings": [
           {
-            "team": "Mexico",
+            "team": "USA",
+            "pts": 3,
+            "p": 1,
+            "w": 1,
+            "d": 0,
+            "l": 0,
+            "gf": 4,
+            "ga": 1
+          },
+          {
+            "team": "Australia",
             "pts": 3,
             "p": 1,
             "w": 1,
@@ -4360,27 +4321,7 @@ const MATCH_DATA = {
             "ga": 0
           },
           {
-            "team": "South Korea",
-            "pts": 3,
-            "p": 1,
-            "w": 1,
-            "d": 0,
-            "l": 0,
-            "gf": 2,
-            "ga": 1
-          },
-          {
-            "team": "Czechia",
-            "pts": 0,
-            "p": 1,
-            "w": 0,
-            "d": 0,
-            "l": 1,
-            "gf": 1,
-            "ga": 2
-          },
-          {
-            "team": "South Africa",
+            "team": "Türkiye",
             "pts": 0,
             "p": 1,
             "w": 0,
@@ -4388,124 +4329,939 @@ const MATCH_DATA = {
             "l": 1,
             "gf": 0,
             "ga": 2
+          },
+          {
+            "team": "Paraguay",
+            "pts": 0,
+            "p": 1,
+            "w": 0,
+            "d": 0,
+            "l": 1,
+            "gf": 1,
+            "ga": 4
           }
         ],
         "home": {
-          "team": "Mexico",
-          "rank": 1,
-          "pts": 3,
+          "team": "Türkiye",
+          "rank": 3,
+          "pts": 0,
           "played": 1,
-          "if_1st": "32强 · 对阵 B 组第 2",
-          "if_2nd": "32强 · 对阵 B 组第 1",
-          "if_3rd": "若列小组第 3，需与 B/E/F/H/I/J/K/L 等组第 3 比净胜球/进球"
+          "if_1st": "32强 M81 · D 组第 1 vs 最佳第 3（B/E/F/I/J 池） → 当前 G 组第 2倾向 New Zealand",
+          "if_1st_r16": "16强 M94 · 对阵 G 组第 1 vs 最佳第 3（A/E/H/I/J 池）之胜者",
+          "if_1st_corridor": "比利时/埃及 等 G 组头名走廊",
+          "if_2nd": "32强 M88 · D 组第 2 vs G 组第 2 → 当前 G 组第 1倾向 Iran",
+          "if_2nd_r16": "16强 M95 · 对阵 J 组第 1 vs H 组第 2 之胜者",
+          "if_2nd_corridor": "阿根廷/西班牙 半区",
+          "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 C/E/F/G/H/I/J/K 等组第 3 横向比较",
+          "if_3rd_r16": "32 强对手取决于 Annex C 第 3 名组合（495 种可能）"
         },
         "away": {
-          "team": "South Korea",
-          "rank": 2,
-          "pts": 3,
+          "team": "Paraguay",
+          "rank": 4,
+          "pts": 0,
           "played": 1,
-          "if_1st": "32强 · 对阵 B 组第 2",
-          "if_2nd": "32强 · 对阵 B 组第 1",
-          "if_3rd": "若列小组第 3，需与 B/E/F/H/I/J/K/L 等组第 3 比净胜球/进球"
+          "if_1st": "32强 M81 · D 组第 1 vs 最佳第 3（B/E/F/I/J 池） → 当前 G 组第 2倾向 New Zealand",
+          "if_1st_r16": "16强 M94 · 对阵 G 组第 1 vs 最佳第 3（A/E/H/I/J 池）之胜者",
+          "if_1st_corridor": "比利时/埃及 等 G 组头名走廊",
+          "if_2nd": "32强 M88 · D 组第 2 vs G 组第 2 → 当前 G 组第 1倾向 Iran",
+          "if_2nd_r16": "16强 M95 · 对阵 J 组第 1 vs H 组第 2 之胜者",
+          "if_2nd_corridor": "阿根廷/西班牙 半区",
+          "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 C/E/F/G/H/I/J/K 等组第 3 横向比较",
+          "if_3rd_r16": "32 强对手取决于 Annex C 第 3 名组合（495 种可能）"
         },
         "cross_group_notes": [
-          "G 组四队同积 1 分，形势极度开放",
+          "C 组：头名 Scotland 3 分 · 次席 Morocco 1 分（32强绑定组）",
+          "G 组：头名 Iran 1 分 · 次席 New Zealand 同分（32强绑定组）",
           "H 组四队同积 1 分，形势极度开放",
           "E 组 Germany 3 分领跑",
-          "F 组 Sweden 3 分领跑"
+          "F 组 Sweden 3 分领跑",
+          "I 组 Norway 3 分领跑"
         ],
+        "path_tradeoff": "D 组次席走 D2–G2 槽，与 C/F 头名次席路径不同；美国/土耳其若争头名需关注第 3 名落位。",
         "manipulation_risk": {
-          "level": "LOW",
-          "level_cn": "低",
+          "level": "MEDIUM",
+          "level_cn": "中",
           "focus_team": null,
-          "reason": "暂无明确控分动机；出线路径仍取决于后续直接对话。"
+          "reason": "本组或关联组积分胶着，第 2、3 轮可能出现算分踢法；本轮仍应以抢分为主。",
+          "optimal_summary": "策略最优解（推演）：本组及关联组积分纠缠，本场以抢 3 分（至少 1 分）为先；锻炼新兵与战术演练宜留到末轮、出线形势明朗后再考虑，届时非胜结果方有可接受空间。"
         },
-        "knockout_note": "48 队制：12 组前 2 + 8 个最佳第 3 进入 32 强；末轮可能出现算分/控分战术。",
+        "knockout_note": "48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。",
         "scenarios": [
-          "Mexico 若取胜：积分 6，A 组排名有望上升；过早预测 32 强对手仍不可靠。",
-          "South Korea 若取胜：积分 6，客场抢分将改变 A 组格局。",
-          "平局：双方各 +1 分；在 G 组四队同积 1 分，形势极度开放；H 组四队同积 1 分，形势极度开放；E 组 Germany 3 分领跑；F 组 Sweden 3 分领跑 背景下，第 2 轮直接对话权重上升。"
+          "Türkiye 若取胜：积分 3，D 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
+          "Paraguay 若取胜：积分 3，客场抢分将改变 D 组格局与淘汰赛半区。",
+          "平局：双方各 +1 分；在 C 组：头名 Scotland 3 分 · 次席 Morocco 1 分（32强绑定组） · G 组：头名 Iran 1 分 · 次席 New Zealand 同分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
+          "头名/次席博弈：D 组次席走 D2–G2 槽，与 C/F 头名次席路径不同；美国/土耳其若争头名需关注第 3 名落位。"
+        ]
+      },
+      "depth_calibration": {
+        "tier_home": 0.5,
+        "tier_label": "Türkiye 被看好 · 净胜约 0.5 球",
+        "implied_tier": 0,
+        "tier_gap": 0.5,
+        "signal": "genuine_favorite",
+        "signal_cn": "实力吻合",
+        "signal_color": "#5BBF8A",
+        "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
+        "blocker_spread_note": "",
+        "public_lean_cn": "舆论倾向 Türkiye（约 52%）",
+        "analysis": "魔方：土耳其 -0.5 / 大小 2.5 偏小；生死战双方谨慎，模型略看好主队但低比分权重上升。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "1-1",
+              "prob": 12.4
+            },
+            {
+              "score": "1-0",
+              "prob": 11.1
+            },
+            {
+              "score": "2-1",
+              "prob": 9.2
+            }
+          ],
+          "one_goal_win_pct": 23.1,
+          "two_plus_win_pct": 22.1,
+          "full_cover_pct": 45.3,
+          "half_cover_pct": 0,
+          "half_lose_pct": 0,
+          "push_pct": null,
+          "margin_full_label": "净胜≥1",
+          "margin_half_label": null,
+          "fav_cover_ev": -0.094,
+          "dog_cover_ev": 0.094,
+          "rational_spread_cn": "客队 守住差距概率略高",
+          "total_xg": 2.6,
+          "fair_totals_line": 2,
+          "over_2_5_pct": 47.9,
+          "over_3_pct": 26,
+          "totals_lean_cn": "2.5 球参考接近均衡；3 球参考偏少",
+          "margin_risk_note": "净胜≥1 约 45.3%；仅赢 1 球约 0%"
+        },
+        "spread_odds": {
+          "fav": 1,
+          "dog": 0.85,
+          "note": "Türkiye 1 · Paraguay 0.85"
+        },
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 2.5,
+          "market_goals_int": 3,
+          "line_label": "总进球约 2.5 个",
+          "implied_xg_total": 2.6,
+          "fair_line": 2,
+          "line_gap": 0.5,
+          "over_pct": 47.9,
+          "under_pct": 52.1,
+          "signal": "high_line",
+          "signal_cn": "进球参考偏高",
+          "signal_color": "#C8A96E",
+          "signal_desc": "赛前进球参考高于 xG 隐含，模型倾向偏少进球方向。",
+          "public_over_pct": 38,
+          "public_lean_cn": "舆论略看好少进球（约 62%）",
+          "index_note": "多进球侧 1.1 / 少进球侧 0.73 · 少进球侧关注度更高",
+          "totals_odds": {
+            "over": 1.1,
+            "under": 0.73,
+            "note": "多进球 1.1 · 少进球 0.73"
+          },
+          "rational_cn": "模型在 总进球约 2.5 个 附近均衡；进球参考偏高但模型仍偏少进球",
+          "score_link_cn": "小比分（1-0/1-1）偏少进球 · 2-0/2-1 居中 · 3 球+ 偏多进球"
+        },
+        "totals_line": 2.5,
+        "applied_delta": {
+          "home_win": 2,
+          "draw": -1,
+          "away_win": -1
+        },
+        "adjustment_note": "模型微调：主胜 +2% · 平 -1% · 客 -1%",
+        "adjusted_probs": {
+          "home_win": 47,
+          "draw": 25,
+          "away_win": 28
+        },
+        "display_summary": {
+          "fav_name": "Türkiye",
+          "expected_total_goals": 2.57,
+          "poisson_fav_win_pct": 45.3,
+          "small_lead_pct": 23.1,
+          "small_example_score": "1-0",
+          "small_example_pct": 11.1,
+          "big_cover_pct": 22.1,
+          "big_example_score": "2-0",
+          "big_example_pct": 8.2,
+          "win_shape": {
+            "fav_name": "Türkiye",
+            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
+            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 26.9%）",
+            "shapes": [
+              {
+                "key": "narrow_low",
+                "label": "险胜 · 控局",
+                "example": "如 1-0",
+                "field_pct": 11.1,
+                "pct": 24.4
+              },
+              {
+                "key": "narrow_open",
+                "label": "险胜 · 开放",
+                "example": "如 2-1",
+                "field_pct": 12.1,
+                "pct": 26.7
+              },
+              {
+                "key": "comfort_low",
+                "label": "拉开 · 控局",
+                "example": "如 2-0",
+                "field_pct": 12.2,
+                "pct": 26.9
+              },
+              {
+                "key": "comfort_open",
+                "label": "拉开 · 开放",
+                "example": "如 3-1+",
+                "field_pct": 9.9,
+                "pct": 22
+              }
+            ],
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 51.1
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 26.9
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 22
+              }
+            ],
+            "fav_win_pct": 47
+          },
+          "excitement": {
+            "label_cn": "中速开局",
+            "label_key": "moderate",
+            "label_color": "#C8A96E",
+            "sub_cn": "预期首球等待约 34.6 分",
+            "first_goal_wait": 34.6,
+            "fast_pct": 58,
+            "moderate_pct": 14.8,
+            "slow_pct": 27.3,
+            "tiers": [
+              {
+                "key": "fast",
+                "label": "前 30 分内首球",
+                "pct": 58
+              },
+              {
+                "key": "moderate",
+                "label": "30–45 分首球",
+                "pct": 14.8
+              },
+              {
+                "key": "slow",
+                "label": "45 分后首球",
+                "pct": 27.3
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "Türkiye 暂无重要伤停 · Paraguay 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "控节奏 / 4-5-1 收缩（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "气候变量低——D 组生死战节奏由战术谨慎度决定，非天气"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 1.48,
+            "baseline_away": 1.12,
+            "adjusted_home": 1.48,
+            "adjusted_away": 1.12,
+            "note": "基准 xG 1.48–1.12（未因伤病/气候下调）"
+          },
+          "calibration": {
+            "signal_cn": "实力吻合",
+            "signal_color": "#5BBF8A",
+            "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
+            "tier_gap": 0.5,
+            "implied_tier_label": "势均力敌",
+            "market_tier_label": "Türkiye 被看好 · 净胜约 0.5 球",
+            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5"
+          },
+          "win_outlook": {
+            "fav_name": "Türkiye",
+            "state_label": null,
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 51.1
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 26.9
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 22
+              }
+            ],
+            "margin_line_cn": "Türkiye · 赛前净胜参考 净胜≥1（全达标）",
+            "margin_meet_pct": 45.3,
+            "margin_half_pct": 0,
+            "margin_fail_pct": 0,
+            "margin_full_label": "净胜≥1",
+            "margin_half_label": null,
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
+            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+            "totals_line": 2.5,
+            "totals_line_cn": "总进球约 2.5 个",
+            "fair_totals_line": 2,
+            "model_total_xg": 2.6,
+            "totals_line_gap": 0.5,
+            "totals_high_pct": 47.9,
+            "totals_low_pct": 52.1,
+            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+            "win_low_total_pct": 19.2,
+            "win_margin2_low_total_pct": 8.2,
+            "win_margin2_high_total_pct": 14,
+            "readout_cn": "取胜约 47%；若取胜，以「险胜收工」为主（51.1%）。 对着赛前净胜参考，净胜≥1（全达标）约 45.3%；对着外界总进球参考 总进球约 2.5 个，模型终场多于该参考的概率约 47.9%。"
+          },
+          "totals_line": 2.5,
+          "score_patterns": [
+            {
+              "score": "1-1",
+              "pct": 12.4
+            },
+            {
+              "score": "1-0",
+              "pct": 11.1
+            },
+            {
+              "score": "2-1",
+              "pct": 9.2
+            }
+          ],
+          "totals_view": {
+            "expected_total": 2.6,
+            "fair_line": 2,
+            "market_line": 2.5,
+            "line_gap": 0.5,
+            "over_pct": 47.9,
+            "gap_warning": null,
+            "totals_outlook": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照外界「全场至少 3 球」的赛前进球节奏，看模型更偏沉闷还是精彩",
+              "pill_cn": "沉闷与精彩几乎五五开，无明显倾向。",
+              "detail_cn": "模型推演：达到这一进球节奏与达不到的机率几乎各半，暂无明确倾向；精彩程度仍看临场发挥。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 47.9,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "全场至少 3 球",
+              "caution_public_high": false
+            },
+            "summary_cn": "模型 xG 合计约 2.6 球（公允参考约 2） · 外界总进球参考 2.5，高出模型约 0.5 球 · 外界参考略高于模型公允线（+0.5 球） · 模型在常见进球预期附近均衡，不作强倾向"
+          },
+          "customer_reading": {
+            "headline_cn": "Türkiye · 净胜走向：有达标可能",
+            "sub_cn": "达标概率约 45.3% · 有达标可能 进球氛围：几乎五五开",
+            "spread": {
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
+              "fav_name": "Türkiye",
+              "market_expect_cn": "净胜≥1",
+              "meet_pct": 45.3,
+              "meet_pct_label": "模型推演达标概率",
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Türkiye · 净胜走向：有达标可能",
+              "pill_cn": "达标概率约 45.3% · 有达标可能",
+              "detail_cn": "Türkiye · 赛前外界预期 净胜≥1。模型推演达标概率约 45.3%；有一定达标空间，但非高把握。",
+              "extra_stats_cn": "",
+              "full_cover_pct": 45.3,
+              "half_cover_pct": 0,
+              "lose1_pct": 0,
+              "margin_full_label": "净胜≥1",
+              "margin_half_label": null,
+              "tier_gap": 0.5,
+              "show_cover": true
+            },
+            "totals": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照外界「全场至少 3 球」的赛前进球节奏，看模型更偏沉闷还是精彩",
+              "pill_cn": "沉闷与精彩几乎五五开，无明显倾向。",
+              "detail_cn": "模型推演：达到这一进球节奏与达不到的机率几乎各半，暂无明确倾向；精彩程度仍看临场发挥。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 47.9,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "全场至少 3 球",
+              "caution_public_high": false
+            },
+            "draw_risk": null,
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "净胜走向",
+                "outlook": {
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
+                  "fav_name": "Türkiye",
+                  "market_expect_cn": "净胜≥1",
+                  "meet_pct": 45.3,
+                  "meet_pct_label": "模型推演达标概率",
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Türkiye · 净胜走向：有达标可能",
+                  "pill_cn": "达标概率约 45.3% · 有达标可能",
+                  "detail_cn": "Türkiye · 赛前外界预期 净胜≥1。模型推演达标概率约 45.3%；有一定达标空间，但非高把握。",
+                  "extra_stats_cn": "",
+                  "full_cover_pct": 45.3,
+                  "half_cover_pct": 0,
+                  "lose1_pct": 0,
+                  "margin_full_label": "净胜≥1",
+                  "margin_half_label": null,
+                  "tier_gap": 0.5,
+                  "show_cover": true
+                },
+                "text": "达标概率约 45.3% · 有达标可能",
+                "color": "#C8A96E",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "◎",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "neutral",
+                  "label_cn": "暂无明显倾向",
+                  "color": "#8A96A8",
+                  "meter_label_cn": "几乎五五开",
+                  "meter_pos": 50,
+                  "lean_side": "neutral",
+                  "lean_strength": "none",
+                  "section_intro_cn": "对照外界「全场至少 3 球」的赛前进球节奏，看模型更偏沉闷还是精彩",
+                  "pill_cn": "沉闷与精彩几乎五五开，无明显倾向。",
+                  "detail_cn": "模型推演：达到这一进球节奏与达不到的机率几乎各半，暂无明确倾向；精彩程度仍看临场发挥。",
+                  "headline_cn": "进球氛围：几乎五五开",
+                  "show_lean": false,
+                  "over_pct": 47.9,
+                  "line_gap": 0.5,
+                  "market_line": 2.5,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "全场至少 3 球",
+                  "caution_public_high": false
+                },
+                "text": "沉闷与精彩几乎五五开，无明显倾向。",
+                "color": "#8A96A8",
+                "muted": true
+              }
+            ],
+            "methodology_note": "读场优先级：净胜走向 ＞ 进球氛围（对照外界「至少 N 球」预期，中性档几乎五五开；强信号才标沉闷/精彩）。仅供娱乐推演，非投注建议。"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "Türkiye",
+              "first_goal_pct": 56.9,
+              "start_score": "1-0",
+              "fav_name": "Türkiye",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 91.7,
+              "small_lead_pct": 34.3,
+              "big_lead_pct": 38.2,
+              "fav_win_pct": 72.4,
+              "fav_draw_pct": 19.3,
+              "fav_lose_pct": 8.2,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "Türkiye 保持胜果（净胜≥1）",
+                  "pct": 72.4
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 19.3
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 8.2
+                }
+              ],
+              "excitement": {
+                "label_cn": "偏晚",
+                "label_key": "slow",
+                "label_color": "#7BB8D4",
+                "sub_cn": "预期首球等待约 44.3 分",
+                "first_goal_wait": 44.3,
+                "fast_pct": 42.6,
+                "moderate_pct": 13.9,
+                "slow_pct": 43.5,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 42.6
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 13.9
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 43.5
+                  }
+                ]
+              },
+              "big_delta": 16.1,
+              "small_delta": 11.2,
+              "narrative": "Türkiye 先破门（已 1-0） → 「控节奏」；Paraguay 「堆边锋」。领先后双方可能转入守势，比分差距不易再拉大。",
+              "live_outlook": {
+                "fav_name": "Türkiye",
+                "state_label": "Türkiye 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 51.1
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 26.9
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 22
+                  }
+                ],
+                "margin_line_cn": "Türkiye · 赛前净胜参考 净胜≥1（全达标）",
+                "margin_meet_pct": 72.4,
+                "margin_half_pct": 0,
+                "margin_fail_pct": 34.3,
+                "margin_full_label": "净胜≥1",
+                "margin_half_label": null,
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.5,
+                "totals_line_cn": "总进球约 2.5 个",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 1.66,
+                "totals_line_gap": 0.25,
+                "totals_high_pct": 49.5,
+                "totals_low_pct": 50.5,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 36.5,
+                "win_margin2_low_total_pct": 17.5,
+                "win_margin2_high_total_pct": 20.6,
+                "readout_cn": "Türkiye 已 1-0 领先：仍取胜约 72.4%。 对着外界总进球参考 总进球约 2.5 个，模型终场多于该参考的概率约 49.5%。 常见收尾如 2-0（部分扩大；相对外界总进球参考仍偏少）。"
+              }
+            },
+            {
+              "side": "away",
+              "team": "Paraguay",
+              "first_goal_pct": 43.1,
+              "start_score": "0-1",
+              "fav_name": "Türkiye",
+              "scorer_is_fav": false,
+              "expected_key": "fav_recover",
+              "fav_recover_pct": 50.3,
+              "small_lead_pct": 15.2,
+              "big_lead_pct": 8.7,
+              "fav_win_pct": 24,
+              "fav_draw_pct": 26.3,
+              "fav_lose_pct": 49.8,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "Türkiye 追平（平局）",
+                  "pct": 26.3
+                },
+                {
+                  "key": "win1",
+                  "label": "Türkiye 净胜1球翻盘（如 2-1）",
+                  "pct": 15.2
+                },
+                {
+                  "key": "win2",
+                  "label": "Türkiye 净胜≥2球翻盘（如 3-1）",
+                  "pct": 8.7
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "Paraguay 保持胜果至终场",
+                  "pct": 49.8
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 34.9 分",
+                "first_goal_wait": 34.9,
+                "fast_pct": 50.6,
+                "moderate_pct": 14.7,
+                "slow_pct": 34.7,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 50.6
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.7
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 34.7
+                  }
+                ]
+              },
+              "big_delta": -13.4,
+              "small_delta": -7.9,
+              "narrative": "Paraguay 先破门（已 0-1） → 「4-5-1 收缩」；Türkiye 「堆前锋」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门。",
+              "live_outlook": null
+            }
+          ],
+          "match_preview": {
+            "morphology": {
+              "totals_summary": "模型 xG 合计约 2.6 球（公允参考约 2） · 外界总进球参考 2.5，高出模型约 0.5 球 · 外界参考略高于模型公允线（+0.5 球） · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球约 2.5 个",
+              "totals_high_pct": 47.9,
+              "type_tags": [
+                {
+                  "key": "low_block",
+                  "label": "低位反击"
+                }
+              ],
+              "depth_label": "深度一般",
+              "draw_trap_pct": 28,
+              "readout_cn": "Türkiye · 低位反击。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+            },
+            "draw_trap_note": "平局风险：低位反击队若先进球或被追平，1-1 / 0-0 比客胜更现实（约 28% 冷门空间含平局）。",
+            "archetype": {
+              "tags": [
+                {
+                  "key": "low_block",
+                  "label": "低位反击"
+                }
+              ],
+              "depth_score": 0,
+              "depth_label": "深度一般",
+              "draw_trap_pct": 28,
+              "fav_lead_style": "defensive"
+            }
+          },
+          "goal_timing": {
+            "sample_label": "近30场",
+            "source_note": "user_screenshot_2026-06-20_tur_pry",
+            "home_name": "Türkiye",
+            "away_name": "Paraguay",
+            "intervals": [
+              "1–15",
+              "16–30",
+              "31–45",
+              "46–60",
+              "61–75",
+              "76–90",
+              "90+"
+            ],
+            "peaks": {
+              "home_scored": {
+                "interval": "46–60",
+                "pct": 22
+              },
+              "home_conceded": {
+                "interval": "1–15",
+                "pct": 22
+              },
+              "away_scored": {
+                "interval": "61–75",
+                "pct": 28
+              },
+              "away_conceded": {
+                "interval": "1–15",
+                "pct": 27
+              }
+            },
+            "cross_insight": {
+              "has_cross": true,
+              "hits": [
+                {
+                  "type": "both_leak",
+                  "interval": "1–15",
+                  "color": "#C8A96E",
+                  "title": "双方易失球时段",
+                  "text": "1–15 分：双方惯常失球高峰重合，该时段防守相对更松、总进球面可能抬升。"
+                }
+              ],
+              "cross_intervals": [
+                "1–15"
+              ],
+              "summary_cn": "双方易失球时段 · 1–15 分"
+            },
+            "disclaimer_cn": "以上为两队近30场历史进球/失球时间段统计，供读场参考；非本场赛果预测，与灵力分析娱乐板块无关。"
+          }
+        },
+        "public_summary_note": "【推演概要】Türkiye · 低位反击。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5（模型微调：主胜 +2% · 平 -1% · 客 -1%）"
+      },
+      "coach_analysis": {
+        "home": {
+          "name": "Vincenzo Montella",
+          "age": 50,
+          "nation": "意大利",
+          "tenure": "2023年—",
+          "wc_exp": "2024 欧洲杯 · 2026 带队",
+          "style_tags": [
+            "4-2-3-1",
+            "Güler 肋部",
+            "Yıldız 爆点",
+            "控球"
+          ],
+          "formation_pref": "4-2-3-1 · Çalhanoğlu 组织",
+          "style_summary": "0-2 澳大利亚后 D 组形势严峻——72% 控球 0 球遭质疑。对巴拉圭生死战 Yildiz+Güler 双核呼声高，必须拿出不同态度。",
+          "subs": {
+            "timing": "首换 55–60 分钟",
+            "pattern": "Yıldız 次轮回归首发",
+            "avg_first_sub": "58'",
+            "note": "更衣室压力极大"
+          },
+          "when_leading": {
+            "label": "控节奏",
+            "detail": "1 球领先：Çalhanoğlu 节拍器。"
+          },
+          "when_trailing": {
+            "label": "堆前锋",
+            "detail": "先丢球：立即 Yıldız 加码。"
+          },
+          "vs_strong": {
+            "label": "对强队：对攻",
+            "detail": "对澳大利亚已暴露效率问题。"
+          },
+          "vs_weak": {
+            "label": "对弱队：压上",
+            "detail": "对巴拉圭必须取胜。"
+          },
+          "tournament": "Montella 强调肋部渗透；Aktürkoglu 突任中锋遭质疑。",
+          "traits": [
+            "Güler 核心",
+            "控球",
+            "效率危机",
+            "生死战"
+          ],
+          "match_note": "0-2 后生死战——Yıldız+Güler 肋部 vs 巴拉圭低位；72% 控球 0 球不可再犯。"
+        },
+        "away": {
+          "name": "Gustavo Alfaro",
+          "age": 62,
+          "nation": "阿根廷",
+          "tenure": "2023年—",
+          "wc_exp": "2021 美洲杯季军（厄瓜多尔）· 2026 带队",
+          "style_tags": [
+            "4-4-2",
+            "Almirón 速度",
+            "低位",
+            "身体对抗"
+          ],
+          "formation_pref": "4-4-2 · Enciso 前腰",
+          "style_summary": "0-4 美国是痛苦一课，Enciso 复出缓解创造力危机。对土耳其已无路可退——Alfaro 称「防守是我们的语言，但本场需要进球」。",
+          "subs": {
+            "timing": "首换 65–70 分钟",
+            "pattern": "Enciso+Almirón 组合",
+            "avg_first_sub": "68'",
+            "note": "弱队体能分配"
+          },
+          "when_leading": {
+            "label": "4-5-1 收缩",
+            "detail": "若意外领先：立即退守。"
+          },
+          "when_trailing": {
+            "label": "堆边锋",
+            "detail": "先丢球：Almirón 反击加码。"
+          },
+          "vs_strong": {
+            "label": "对强队：低位+反击",
+            "detail": "对美国已验证低位。"
+          },
+          "vs_weak": {
+            "label": "对弱队：相对开放",
+            "detail": "对土耳其必须进攻。"
+          },
+          "tournament": "预选赛 12 场仅 1 负的防守体系；Enciso 助攻成少数亮点。",
+          "traits": [
+            "Almirón 速度",
+            "Enciso 复出",
+            "低位",
+            "已无路可退"
+          ],
+          "match_note": "Enciso+Almirón 反击组合；Alfaro 必须进球但传统低位+身体对抗仍是底色。"
+        }
+      },
+      "upset_alert": {
+        "favorite": "Türkiye",
+        "underdog": "Paraguay",
+        "favorite_iso": "TUR",
+        "index": 34,
+        "level": "MEDIUM",
+        "level_cn": "中等",
+        "cold_result_pct": 28,
+        "verdict": "D 组生死战——土耳其 0-2 后必须取胜但效率成疑；巴拉圭 Enciso+Almirón 反击使平局约 28%。",
+        "tactical": "Montella 4-2-3-1 Yıldız/Güler 肋部 vs Alfaro 4-4-2 低位+Almirón 速度。",
+        "psychology": "土耳其 72% 控球 0 球遭质疑；巴拉圭「已无路可退」。",
+        "historical": "友谊赛土耳其占优；巴拉圭预选赛防守稳固。",
+        "factors": [
+          {
+            "tag": "效率",
+            "impact": "强",
+            "detail": "土耳其首轮 30 射 8 正 0 球"
+          },
+          {
+            "tag": "反击",
+            "impact": "中",
+            "detail": "Almirón+Enciso 组合"
+          },
+          {
+            "tag": "低比分",
+            "impact": "强",
+            "detail": "大小 2.5 偏小，谨慎对攻"
+          }
         ]
       }
     }
   ],
   "nextMatch": {
-    "group": "A",
+    "group": "D",
     "matchday": 2,
-    "date": "2026-06-18",
+    "date": "2026-06-19",
     "time": "12:00",
-    "time_local": "12:00 ET",
-    "timezone": "EDT (UTC-4)",
-    "time_beijing": "00:00",
-    "date_beijing": "6月19日",
-    "time_beijing_full": "北京时间 6月19日 00:00",
-    "venue": "Mercedes-Benz Stadium",
-    "city": "Atlanta, USA",
+    "time_local": "12:00 PT",
+    "timezone": "PDT (UTC-7)",
+    "time_beijing": "03:00",
+    "date_beijing": "6月20日",
+    "time_beijing_full": "北京时间 6月20日 03:00",
+    "venue": "Lumen Field",
+    "city": "Seattle, USA",
     "home": {
-      "name": "Czechia",
-      "iso": "cz",
-      "fifaRank": 40,
-      "rating": 72
+      "name": "USA",
+      "iso": "us",
+      "fifaRank": 11,
+      "rating": 82
     },
     "away": {
-      "name": "South Africa",
-      "iso": "za",
-      "fifaRank": 58,
-      "rating": 65
+      "name": "Australia",
+      "iso": "au",
+      "fifaRank": 24,
+      "rating": 74
     },
-    "teaser": "A组第2轮 · 捷克 vs 南非",
-    "home_win": 54,
+    "teaser": "D组第2轮 · 美国 vs 澳大利亚",
+    "home_win": 51,
     "draw": 25,
-    "away_win": 21,
+    "away_win": 24,
     "predicted_score": "1-0",
-    "key_player_home": "Patrik Schick",
-    "key_player_away": "Lyle Foster"
+    "key_player_home": "Christian Pulisic",
+    "key_player_away": "Mathew Ryan"
   },
   "upcomingMatches": [
     {
-      "group": "B",
-      "time_beijing_full": "北京时间 6月19日 03:00",
-      "venue": "SoFi Stadium",
-      "city": "Los Angeles, USA",
+      "group": "C",
+      "time_beijing_full": "北京时间 6月20日 06:00",
+      "venue": "Gillette Stadium",
+      "city": "Boston, USA",
       "home": {
-        "name": "Switzerland",
-        "iso": "ch"
+        "name": "Scotland",
+        "iso": "sc"
       },
       "away": {
-        "name": "Bosnia and Herzegovina",
-        "iso": "ba"
+        "name": "Morocco",
+        "iso": "ma"
       },
-      "teaser": "B组第2轮"
+      "teaser": "C组第2轮"
     },
     {
-      "group": "B",
-      "time_beijing_full": "北京时间 6月19日 06:00",
-      "venue": "BC Place",
-      "city": "Vancouver, Canada",
+      "group": "C",
+      "time_beijing_full": "北京时间 6月20日 09:00",
+      "venue": "Lincoln Financial Field",
+      "city": "Philadelphia, USA",
       "home": {
-        "name": "Canada",
-        "iso": "ca"
+        "name": "Brazil",
+        "iso": "br"
       },
       "away": {
-        "name": "Qatar",
-        "iso": "qa"
+        "name": "Haiti",
+        "iso": "ht"
       },
-      "teaser": "B组第2轮"
+      "teaser": "C组第2轮"
     },
     {
-      "group": "A",
-      "time_beijing_full": "北京时间 6月19日 09:00",
-      "venue": "Estadio Akron",
-      "city": "Guadalajara, Mexico",
+      "group": "D",
+      "time_beijing_full": "北京时间 6月20日 11:00",
+      "venue": "Levi's Stadium",
+      "city": "Santa Clara, USA",
       "home": {
-        "name": "Mexico",
-        "iso": "mx"
+        "name": "Türkiye",
+        "iso": "tr"
       },
       "away": {
-        "name": "South Korea",
-        "iso": "kr"
+        "name": "Paraguay",
+        "iso": "py"
       },
-      "teaser": "A组榜首战"
+      "teaser": "D组第2轮"
     }
   ]
 };

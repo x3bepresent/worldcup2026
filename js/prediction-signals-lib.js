@@ -15,9 +15,9 @@ const SIGNAL_META = {
     desc: '舆论一边倒但实力差未同步放大，模型略下调热门方权重。',
   },
   blocker_inflate: {
-    cn: '预期偏高',
+    cn: '大众心理预期偏高',
     color: '#D95F6A',
-    desc: '赛前舆论显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。',
+    desc: '外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。',
   },
   neutral: {
     cn: '均衡',
@@ -468,13 +468,60 @@ function buildSimplifiedWinPaths(shapes) {
   return rows;
 }
 
+/**
+ * 赛前净胜参考档位 → 全达标 / 部分达标 净胜球门槛（娱乐推演口径，对齐亚洲 x.5 档）
+ * 例：-2.5 → 全达标净胜≥3，部分达标净胜=2；-1 → 全达标净胜≥2，走水净胜=1
+ */
+function getTierCoverThresholds(tier) {
+  const abs = Math.abs(Number(tier) || 0);
+  if (abs < 0.01) {
+    return { fullMin: 1, halfExact: null, pushExact: null, fullLabel: '净胜≥1', halfLabel: null };
+  }
+  const frac = Math.round((abs % 1) * 100) / 100;
+  if (frac < 0.01) {
+    const n = Math.round(abs);
+    return {
+      fullMin: n + 1,
+      halfExact: null,
+      pushExact: n,
+      fullLabel: '净胜≥' + (n + 1),
+      halfLabel: n > 0 ? '走水净胜=' + n : null,
+    };
+  }
+  if (Math.abs(frac - 0.5) < 0.01) {
+    const fullMin = Math.ceil(abs);
+    const halfExact = Math.floor(abs);
+    return {
+      fullMin,
+      halfExact: halfExact >= 1 ? halfExact : null,
+      pushExact: null,
+      fullLabel: '净胜≥' + fullMin,
+      halfLabel: halfExact >= 1 ? '部分达标净胜=' + halfExact : null,
+    };
+  }
+  if (Math.abs(frac - 0.75) < 0.01) {
+    const fullMin = Math.ceil(abs);
+    const halfExact = Math.floor(abs);
+    return {
+      fullMin,
+      halfExact: halfExact >= 1 ? halfExact : null,
+      pushExact: null,
+      fullLabel: '净胜≥' + fullMin,
+      halfLabel: halfExact >= 1 ? '部分达标净胜=' + halfExact : null,
+    };
+  }
+  const fullMin = Math.max(1, Math.ceil(abs));
+  return { fullMin, halfExact: null, pushExact: null, fullLabel: '净胜≥' + fullMin, halfLabel: null };
+}
+
 /** 净胜差距参考文案（中性，无盘口用语） */
 function formatMarginOutlookLabel(marketTier, favName) {
   const t = Number(marketTier) || 0;
   if (t === 0) return '净胜差距参考 · 势均力敌';
-  const abs = Math.abs(t);
-  const need = abs >= 1.5 ? '≥2 球' : abs >= 0.75 ? '≥1–2 球' : '≥1 球';
-  return favName + ' · 赛前净胜参考 ' + need;
+  const th = getTierCoverThresholds(t);
+  let s = favName + ' · 赛前净胜参考 ' + th.fullLabel + '（全达标）';
+  if (th.halfLabel) s += ' · ' + th.halfLabel;
+  return s;
 }
 
 /**
@@ -508,7 +555,12 @@ function computeWinOutlook(xgHome, xgAway, marketTier, totalsLine, favName, winS
   let favMargin2TotalHigh = 0;
   let favMargin1 = 0;
   let favMargin2 = 0;
+  let favMarginFull = 0;
+  let favMarginHalf = 0;
+  let favFinal20 = 0;
+  let favFinal30Plus = 0;
   let totalsHigh = 0;
+  const th = getTierCoverThresholds(tier);
 
   for (let h = 0; h <= maxGoals; h++) {
     for (let a = 0; a <= maxGoals; a++) {
@@ -531,6 +583,15 @@ function computeWinOutlook(xgHome, xgAway, marketTier, totalsLine, favName, winS
           if (highW >= 0.5) favMargin2TotalHigh += p;
         }
       }
+      if (favMargin >= th.fullMin) favMarginFull += p;
+      else if (th.halfExact != null && favMargin === th.halfExact) favMarginHalf += p;
+      if (favSide === 'home') {
+        if (fh === 2 && fa === 0) favFinal20 += p;
+        if (fh >= 3 && fa === 0) favFinal30Plus += p;
+      } else {
+        if (fa === 2 && fh === 0) favFinal20 += p;
+        if (fa >= 3 && fh === 0) favFinal30Plus += p;
+      }
     }
   }
   if (mass <= 0) mass = 1;
@@ -550,27 +611,46 @@ function computeWinOutlook(xgHome, xgAway, marketTier, totalsLine, favName, winS
     : buildSimplifiedWinPaths(winShape?.shapes || []);
 
   const topPath = paths.length ? paths.reduce((a, b) => (b.pct > a.pct ? b : a)) : null;
-  const marginMeet = stateLabel ? pct(favMargin2) : cover.full_cover_pct;
+  const marginMeet = stateLabel ? pct(favMarginFull) : cover.full_cover_pct;
+  const marginHalf = stateLabel ? pct(favMarginHalf) : cover.half_cover_pct;
   const marginFail = stateLabel ? pct(favMargin1) : cover.half_lose_pct;
+
+  const fairLineNote = cover.total_xg != null
+    ? '模型公允总进球约 ' + (cover.fair_totals_line ?? estimateFairTotalsLine(xgHome, xgAway).fair_line)
+    : null;
 
   let readout = '';
   if (stateLabel) {
-    readout = stateLabel + '：仍取胜约 ' + pct(favWin) + '%；对着赛前 '
-      + formatTotalsLineLabel(line) + '，总进球偏高一侧约 ' + totalsHighPct + '%。';
-    if (pct(favMargin2TotalLe2) >= 10) {
-      readout += ' 常见收尾如 2-0（净胜达标、总进球仍偏低）。';
+    readout = stateLabel + '：仍取胜约 ' + pct(favWin) + '%。';
+    readout += ' 对着外界总进球参考 ' + formatTotalsLineLabel(line).replace(' 球线', '')
+      + '，模型终场多于该参考的概率约 ' + totalsHighPct + '%。';
+    if (th.fullMin >= 3 && stateLabel) {
+      readout += ' 常见收尾：2-0 约 ' + pct(favFinal20) + '%（部分达标，非全达标）；'
+        + ' 3-0+ 约 ' + pct(favFinal30Plus) + '%（对着 ' + th.fullLabel + ' 全达标）。';
+    } else if (pct(favMargin2TotalLe2) >= 10) {
+      readout += ' 常见收尾如 2-0（部分扩大；相对外界总进球参考仍偏少）。';
     } else if (topPath) {
       readout += ' 若再扩大，偏「' + topPath.label + '」。';
     }
   } else {
     readout = '取胜约 ' + (winShape?.fav_win_pct ?? pct(favWin)) + '%；若取胜，';
     if (topPath) readout += '以「' + topPath.label + '」为主（' + topPath.pct + '%）。';
-    readout += ' 对着赛前净胜参考，差距达标约 ' + marginMeet + '%；';
-    readout += '对着 ' + formatTotalsLineLabel(line) + '，总进球偏高一侧约 ' + totalsHighPct + '%。';
+    readout += ' 对着赛前净胜参考，' + th.fullLabel + '（全达标）约 ' + marginMeet + '%；';
+    if (th.halfLabel && marginHalf > 0) {
+      readout += th.halfLabel + ' 约 ' + marginHalf + '%；';
+    }
+    readout += '对着外界总进球参考 ' + formatTotalsLineLabel(line).replace(' 球线', '')
+      + '，模型终场多于该参考的概率约 ' + totalsHighPct + '%。';
     if (pct(favMargin2TotalLe2) >= 12) {
-      readout += ' 注意 2-0 类：净胜达标但总进球仍可能偏低。';
+      readout += ' 注意 2-0 类：净胜扩大但总进球仍可能低于外界参考。';
     }
   }
+
+  const fairTotals = estimateFairTotalsLine(
+    (Number(xgHome) || 0) * remRatio,
+    (Number(xgAway) || 0) * remRatio
+  );
+  const totalsLineGap = Math.round((line - fairTotals.fair_line) * 100) / 100;
 
   return {
     fav_name: favName,
@@ -578,10 +658,18 @@ function computeWinOutlook(xgHome, xgAway, marketTier, totalsLine, favName, winS
     paths,
     margin_line_cn: formatMarginOutlookLabel(tier, favName),
     margin_meet_pct: marginMeet,
+    margin_half_pct: marginHalf,
     margin_fail_pct: marginFail,
+    margin_full_label: th.fullLabel,
+    margin_half_label: th.halfLabel,
+    final_2_0_pct: stateLabel && th.halfExact === 2 ? pct(favFinal20) : null,
+    final_3_0_plus_pct: stateLabel && th.fullMin >= 3 ? pct(favFinal30Plus) : null,
     margin_fail_note: '常见：仅赢 1 球（如 1-0、2-1）',
     totals_line: line,
     totals_line_cn: formatTotalsLineLabel(line),
+    fair_totals_line: fairTotals.fair_line,
+    model_total_xg: fairTotals.total_xg,
+    totals_line_gap: totalsLineGap,
     totals_high_pct: totalsHighPct,
     totals_low_pct: totalsLowPct,
     totals_fail_note: '常见：总进球 ≤2（如 1-0、2-0）',
@@ -799,23 +887,20 @@ function poissonHtScorePct(xgH, xgA, htH, htA, maxGoals) {
   return Math.round(pois(htH, fh) * pois(htA, fa) * 1000) / 10;
 }
 
-function buildMorphologyReadout(archetype, excitement, totalsView, favName) {
+function buildMorphologyReadout(archetype, totalsView, favName) {
   const typeLabels = archetype.tags.map(t => t.label).join(' · ');
-  const wait = excitement?.first_goal_wait;
-  const totalHint = totalsView?.expected_total != null
-    ? '总进球约 ' + totalsView.expected_total + ' 个'
-    : '';
+  const outlook = totalsView?.totals_outlook;
   let tail = '';
-  if (archetype.tags.some(t => t.key === 'dominance') && archetype.tags.some(t => t.key === 'low_block')) {
-    tail = wait != null && wait <= 30
-      ? '热门可能早早破局，也可能被拖进下半场；低位队守平时需防平局。'
-      : '若半场仍 0-0，' + (archetype.depth_score >= 2 ? '热门板凳有破局权。' : '比赛易趋闷。');
+  if (outlook && !outlook.show_lean) {
+    tail = '总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。';
+  } else if (outlook?.show_lean) {
+    tail = '进球氛围' + outlook.label_cn + '（模型推演）；时间段分布见下方历史节奏参考。';
   } else if (archetype.tags.some(t => t.key === 'low_scoring')) {
     tail = '进球预期不高，小比分与平局权重上升。';
   } else if (archetype.tags.some(t => t.key === 'even_open')) {
-    tail = '双方势均，总进球与互有进球概率都不低。';
+    tail = '双方势均，比赛可能较开放，但具体总进球仍难强判。';
   } else {
-    tail = totalHint ? totalHint + '；按常规模型读即可。' : '按 xG 与教练风格综合读场。';
+    tail = '按 xG 与教练风格综合读场；进球时间段见「灵力分析」。';
   }
   return favName + ' · ' + typeLabels + '。' + tail;
 }
@@ -838,7 +923,7 @@ function buildMatchPreview(match, displaySummary, adjusted, tier, ctx) {
     type_tags: archetype.tags,
     depth_label: archetype.depth_label,
     draw_trap_pct: archetype.draw_trap_pct,
-    readout_cn: buildMorphologyReadout(archetype, excitement, totalsView, favName),
+    readout_cn: buildMorphologyReadout(archetype, totalsView, favName),
   };
 
   let drawTrapNote = null;
@@ -870,27 +955,84 @@ function enrichActualResultForReview(match) {
   return out;
 }
 
-/** 赛后复盘：对照赛前预读（仅赛果归档时写入 depth_calibration.preview_replay） */
-function buildPreviewPostMatchReview(preview, actualResult, homeName, awayName) {
-  if (!preview || !actualResult) return null;
+/** 赛后复盘：对照赛前读场要点（赛果归档时写入 depth_calibration.preview_replay） */
+function buildPreviewPostMatchReview(displaySummary, actualResult, homeName, awayName, depthMeta) {
+  if (!displaySummary || !actualResult) return null;
   const hs = actualResult.home_score;
   const as = actualResult.away_score;
   const total = hs + as;
   const ht = actualResult.ht_score || actualResult.half_time;
   const hits = [];
   const misses = [];
+  const reading = displaySummary.customer_reading;
+  const totalsLine = displaySummary.totals_line ?? depthMeta?.totals_line ?? 2.5;
+  const tier = depthMeta?.tier_home ?? 0;
+  const actualScore = hs + '-' + as;
+  const actualOver = total > totalsLine;
+  const actualPush = Math.abs(total - totalsLine) < 0.01;
 
-  const expTotal = preview.morphology?.totals_summary;
-  if (total <= 2 && /偏少|≤2|2\.[0-2]/.test(expTotal || '')) hits.push('总进球偏少方向一致');
-  if (total >= 4 && preview.morphology?.totals_high_pct >= 45) hits.push('总进球偏多方向一致');
+  if (reading?.spread?.show_cover) {
+    const th = getTierCoverThresholds(tier);
+    const margin = hs - as;
+    const favSide = tier > 0 ? 'home' : 'away';
+    const favMargin = favSide === 'home' ? margin : -margin;
+    let spreadResult = 'other';
+    if (favMargin >= th.fullMin) spreadResult = 'full';
+    else if (th.halfExact != null && favMargin === th.halfExact) spreadResult = 'half';
+    else if (favMargin === 1) spreadResult = 'narrow';
+
+    const fullPred = reading.spread.full_cover_pct ?? 0;
+    if (spreadResult === 'full' && fullPred >= 35) hits.push('净胜全达标方向一致');
+    else if (spreadResult === 'full' && fullPred < 30) misses.push('净胜全达标超预期（模型曾偏谨慎）');
+    else if ((spreadResult === 'narrow' || spreadResult === 'half') && reading.spread.level === 'narrow') {
+      hits.push('小胜/部分达标与模型一致');
+    } else if (spreadResult === 'full' && reading.spread.level === 'skeptical') {
+      misses.push('净胜全达标但模型曾提示外界偏高');
+    } else if (spreadResult !== 'full' && reading.spread.level === 'likely') {
+      misses.push('净胜全达标未兑现');
+    }
+  }
+
+  const totalsOutlook = reading?.totals || displaySummary.totals_view?.totals_outlook;
+  if (totalsOutlook) {
+    if (totalsOutlook.show_lean && totalsOutlook.level.includes('high') && actualOver) {
+      hits.push('进球氛围偏精彩一致');
+    } else if (totalsOutlook.show_lean && totalsOutlook.level.includes('low') && !actualOver && !actualPush) {
+      hits.push('进球氛围偏沉闷一致');
+    } else if (totalsOutlook.show_lean && totalsOutlook.level.includes('high') && !actualOver) {
+      misses.push('模型偏精彩但实际偏闷');
+    } else if (totalsOutlook.show_lean && totalsOutlook.level.includes('low') && actualOver) {
+      misses.push('模型偏沉闷但实际偏精彩');
+    } else if (!totalsOutlook.show_lean && Math.abs(total - (displaySummary.expected_total_goals || total)) >= 2) {
+      misses.push('总进球尾部偏差大（赛前已标注无明显倾向）');
+    } else if (!totalsOutlook.show_lean) {
+      hits.push('赛前进球氛围未强判（符合模型五五开读法）');
+    }
+  }
+
+  const pick = displaySummary.poisson_fav_win_pct != null
+    ? (displaySummary.fav_name === homeName ? 'home' : 'away')
+    : null;
+  const actualOut = margin => (margin > 0 ? 'home' : margin < 0 ? 'away' : 'draw');
+  const out = actualOut(hs - as);
+
+  let summary_cn = '';
+  if (hits.length) summary_cn += '命中：' + hits.join(' · ') + '。';
+  if (misses.length) summary_cn += (summary_cn ? ' ' : '') + '偏差：' + misses.join(' · ') + '。';
+  if (!summary_cn) {
+    summary_cn = '本场赛前读场以净胜档为主；实际 ' + actualScore + '，可对照上方要点复盘。';
+  }
 
   return {
-    actual_score: hs + '-' + as,
+    actual_score: actualScore,
     ht_score: ht || null,
     hits,
     misses,
-    summary_cn: (hits.length ? '命中：' + hits.join(' · ') + '。' : '')
-      + (misses.length ? ' 偏差：' + misses.join(' · ') + '。' : ''),
+    summary_cn,
+    totals_actual: total,
+    totals_line: totalsLine,
+    spread_level: reading?.spread?.level || null,
+    totals_level: totalsOutlook?.level || null,
   };
 }
 
@@ -1188,15 +1330,30 @@ function computeSpreadCover(xgHome, xgAway, marketTierHome, maxGoals) {
   const favSide = tier > 0 ? 'home' : tier < 0 ? 'away' : 'balanced';
   const absTier = Math.abs(tier);
   const isIntegerOne = absTier === 1 && Math.abs(tier % 1) === 0;
+  const th = getTierCoverThresholds(tier);
 
-  // 亚洲分段档：-1.25 = 一半 -1 一半 -1.5（主队让球视角）
   let favFullCover = 0;
+  let favHalfCover = 0;
   let favHalfLose = 0;
   let favFullLose = 0;
+  let favPush = 0;
   let dogFullWin = 0;
   let dogHalfWin = 0;
 
-  if (tier > 0) {
+  if (favSide !== 'balanced') {
+    for (const c of top) {
+      const m = c.home - c.away;
+      const favMargin = favSide === 'home' ? m : -m;
+      const p = c.prob;
+      if (favMargin >= th.fullMin) favFullCover += p;
+      else if (th.halfExact != null && favMargin === th.halfExact) favHalfCover += p;
+      else if (th.pushExact != null && favMargin === th.pushExact) favPush += p;
+      else if (favMargin === 1) favHalfLose += p;
+      else if (favMargin <= 0) favFullLose += p;
+    }
+    dogFullWin = favFullLose;
+    dogHalfWin = favHalfLose;
+  } else if (tier > 0) {
     favFullCover = win2p;
     favHalfLose = win1;
     favFullLose = draw + awayWin;
@@ -1254,21 +1411,28 @@ function computeSpreadCover(xgHome, xgAway, marketTierHome, maxGoals) {
     one_goal_win_pct: pct(win1),
     two_plus_win_pct: pct(win2p),
     full_cover_pct: pct(favFullCover),
+    half_cover_pct: pct(favHalfCover),
     half_lose_pct: pct(favHalfLose),
+    push_pct: th.pushExact != null ? pct(favPush) : (isIntegerOne ? pct(win1) : null),
+    margin_full_label: th.fullLabel,
+    margin_half_label: th.halfLabel,
     fav_cover_ev: Math.round(favEv * 1000) / 1000,
     dog_cover_ev: Math.round(dogEv * 1000) / 1000,
     rational_spread_cn: rationalSpreadCn,
     total_xg: Math.round((xgH + xgA) * 100) / 100,
+    fair_totals_line: estimateFairTotalsLine(xgH, xgA).fair_line,
     over_2_5_pct: over25Pct,
     over_3_pct: over3Pct,
     totals_lean_cn: totalsLeanCn,
     margin_risk_note:
-      isIntegerOne
-        ? '净胜 1 球概率 ' + pct(win1) + '%：参考净胜 1 球时，仅赢一球与拉开差距须分开看'
-        : pct(favHalfLose) >= 20
-          ? '净胜 1 球概率 ' + pct(favHalfLose) + '%：常见「赢球但净胜仅 1 球」'
-          : '净胜 1 球概率较低，净胜拉开 2 球+ 约 ' + pct(favFullCover) + '%',
-    push_pct: isIntegerOne ? pct(win1) : null,
+      th.halfLabel && pct(favHalfCover) >= 8
+        ? th.fullLabel + ' 约 ' + pct(favFullCover) + '%；' + th.halfLabel + ' 约 ' + pct(favHalfCover)
+          + '%；仅赢 1 球约 ' + pct(favHalfLose) + '%'
+        : isIntegerOne
+          ? '净胜 1 球概率 ' + pct(win1) + '%：参考净胜 1 球时，仅赢一球与拉开差距须分开看'
+          : pct(favHalfLose) >= 20
+            ? '净胜 1 球概率 ' + pct(favHalfLose) + '%：常见「赢球但净胜仅 1 球」'
+            : th.fullLabel + ' 约 ' + pct(favFullCover) + '%；仅赢 1 球约 ' + pct(favHalfLose) + '%',
   };
 }
 
@@ -1277,6 +1441,31 @@ const TOTALS_SIGNAL = {
   high_line: { cn: '进球参考偏高', color: '#C8A96E', desc: '赛前进球参考高于 xG 隐含，模型倾向偏少进球方向。' },
   low_line: { cn: '进球参考偏低', color: '#7BB8D4', desc: '赛前进球参考低于 xG 隐含，模型倾向偏多进球方向。' },
 };
+
+/** 泊松 — 全场总进球 ≥ minGoals（整数门槛，用于进球氛围） */
+function probTotalsAtLeast(xgHome, xgAway, minGoals, maxGoals) {
+  maxGoals = maxGoals || 5;
+  const min = Math.max(0, Math.round(Number(minGoals) || 0));
+  const xgH = Math.max(0, Number(xgHome) || 0);
+  const xgA = Math.max(0, Number(xgAway) || 0);
+  const fact = [1, 1, 2, 6, 24, 120];
+  function pois(k, lam) {
+    if (k < 0 || k > maxGoals) return 0;
+    if (lam <= 0) return k === 0 ? 1 : 0;
+    return Math.exp(-lam) * Math.pow(lam, k) / fact[k];
+  }
+  let hit = 0;
+  let mass = 0;
+  for (let h = 0; h <= maxGoals; h++) {
+    for (let a = 0; a <= maxGoals; a++) {
+      const p = pois(h, xgH) * pois(a, xgA);
+      mass += p;
+      if (h + a >= min) hit += p;
+    }
+  }
+  if (mass <= 0) return 50;
+  return Math.round((hit / mass) * 1000) / 10;
+}
 
 /** 泊松 — 指定进球线的大/小概率 */
 function probTotalsOver(xgHome, xgAway, line, maxGoals) {
@@ -1324,12 +1513,13 @@ function estimateFairTotalsLine(xgHome, xgAway) {
  */
 function computeTotalsAnalysis(xgHome, xgAway, raw) {
   const line = Number(raw.totals_line) || 2.5;
+  const marketGoalsInt = formatMarketGoalsInteger(line);
   const overOdds = raw.totals_over_odds;
   const underOdds = raw.totals_under_odds;
   const overIdx = Number(raw.totals_over_index ?? overOdds ?? 1);
   const underIdx = Number(raw.totals_under_index ?? underOdds ?? 1);
   const publicOver = raw.totals_public_over_pct ?? 50;
-  const overPct = probTotalsOver(xgHome, xgAway, line);
+  const overPct = probTotalsAtLeast(xgHome, xgAway, marketGoalsInt);
   const underPct = Math.round((100 - overPct) * 10) / 10;
   const fair = estimateFairTotalsLine(xgHome, xgAway);
   const lineGap = Math.round((line - fair.fair_line) * 100) / 100;
@@ -1369,6 +1559,7 @@ function computeTotalsAnalysis(xgHome, xgAway, raw) {
 
   return {
     market_line: line,
+    market_goals_int: marketGoalsInt,
     line_label: lineLabel,
     implied_xg_total: fair.total_xg,
     fair_line: fair.fair_line,
@@ -1414,9 +1605,392 @@ function buildPublicSummaryNote(displaySummary, adjustmentNote) {
   return `【推演概要】${s.fav_name} 净胜1球 ${s.small_lead_pct}% · 净胜≥2 ${s.big_cover_pct}% · ${tail}`;
 }
 
+/**
+ * 大小球盘口 → 整数进球门槛（展示与进球氛围计算共用）
+ * 1.25 / 1.5 / 1.75 → 2；2.25 / 2.5 / 2.75 → 3；整盘如 2.0 → 2
+ */
+function formatMarketGoalsInteger(marketLine) {
+  const n = Number(marketLine);
+  if (!Number.isFinite(n)) return 3;
+  if (Number.isInteger(n)) return n;
+  return Math.ceil(n);
+}
+
+/**
+ * 总进球读场分级（回测校准：40–60% 不作倾向表态）
+ * 对照外界「全场至少 N 球」预期，读沉闷 ↔ 精彩；不说百分比、不写大小球。
+ */
+function classifyTotalsOutlook(overPct, lineGap, marketLine, fairLine) {
+  const over = Number(overPct) || 50;
+  const gap = Number(lineGap) || 0;
+  const market = marketLine ?? 2.5;
+  const fair = fairLine ?? 2.5;
+  const marketGoalsInt = formatMarketGoalsInteger(market);
+  const marketGoalsCn = '全场至少 ' + marketGoalsInt + ' 球';
+  const section_intro_cn = '对照外界「' + marketGoalsCn + '」的赛前进球节奏，看模型更偏沉闷还是精彩';
+  const dist = Math.abs(over - 50);
+
+  let level = 'neutral';
+  if (dist <= 10) level = 'neutral';
+  else if (dist <= 20) level = over > 50 ? 'mild_high' : 'mild_low';
+  else level = over > 50 ? 'clear_high' : 'clear_low';
+
+  const leanSide = level === 'neutral'
+    ? 'neutral'
+    : (level.includes('high') ? 'exciting' : 'dull');
+  const leanStrength = level === 'neutral'
+    ? 'none'
+    : (level.startsWith('mild') ? 'mild' : 'clear');
+
+  const meta = {
+    neutral: { label_cn: '暂无明显倾向', color: '#8A96A8', meter_label_cn: '几乎五五开' },
+    mild_low: { label_cn: '略倾向沉闷', color: '#7BB8D4', meter_label_cn: '略倾向沉闷' },
+    mild_high: { label_cn: '略倾向精彩', color: '#E8A54B', meter_label_cn: '略倾向精彩' },
+    clear_low: { label_cn: '倾向沉闷', color: '#7BB8D4', meter_label_cn: '倾向沉闷' },
+    clear_high: { label_cn: '倾向精彩', color: '#E8A54B', meter_label_cn: '倾向精彩' },
+  }[level];
+
+  const showLean = level === 'clear_high' || level === 'clear_low';
+  const meterPos = level === 'neutral'
+    ? 50
+    : Math.max(14, Math.min(86, Math.round(over)));
+
+  let detail_cn = '';
+  let headline_cn = '';
+  let pill_cn = '';
+
+  if (level === 'neutral') {
+    detail_cn = '模型推演：达到这一进球节奏与达不到的机率几乎各半，暂无明确倾向；精彩程度仍看临场发挥。';
+    headline_cn = '进球氛围：几乎五五开';
+    pill_cn = '沉闷与精彩几乎五五开，无明显倾向。';
+  } else if (level === 'mild_low') {
+    detail_cn = '模型略偏沉闷——全场进球节奏可能偏慢、难及这一预期；信号偏弱，仅供参考。';
+    headline_cn = '进球氛围：略倾向沉闷（弱信号）';
+    pill_cn = '略倾向沉闷（弱信号）。';
+  } else if (level === 'mild_high') {
+    detail_cn = '模型略偏精彩——进球节奏有望接近或达到这一预期；信号偏弱，仅供参考。';
+    headline_cn = '进球氛围：略倾向精彩（弱信号）';
+    pill_cn = '略倾向精彩（弱信号）。';
+  } else if (level === 'clear_low') {
+    detail_cn = '模型明显偏沉闷——低比分拉锯概率较高，难撑起这一进球节奏（模型自身预期约 ' + fair + ' 球）。';
+    headline_cn = '进球氛围：倾向沉闷';
+    pill_cn = '倾向沉闷，精彩度可能一般。';
+  } else {
+    detail_cn = '模型明显偏精彩——对攻与破门节奏相对可期，较易达到这一进球预期（模型自身预期约 ' + fair + ' 球）。';
+    headline_cn = '进球氛围：倾向精彩';
+    pill_cn = '倾向精彩，观赛更有看头。';
+  }
+
+  if (gap >= 1.0 && level === 'neutral') {
+    detail_cn += ' 注：外界这一进球预期高于模型自身判断，大众心理偏多进球，但模型仍接近五五开。';
+    headline_cn = '进球氛围：几乎五五开 · 外界预期偏高';
+  } else if (gap >= 1.25) {
+    detail_cn += ' 须警惕「外界预期很精彩、实际偏闷」的落差。';
+  }
+
+  return {
+    level,
+    label_cn: meta.label_cn,
+    color: meta.color,
+    meter_label_cn: meta.meter_label_cn,
+    meter_pos: meterPos,
+    lean_side: leanSide,
+    lean_strength: leanStrength,
+    section_intro_cn,
+    pill_cn,
+    detail_cn,
+    headline_cn,
+    show_lean: showLean,
+    over_pct: over,
+    line_gap: gap,
+    market_line: market,
+    market_goals_int: marketGoalsInt,
+    market_goals_cn: marketGoalsCn,
+    caution_public_high: gap >= 1.0,
+  };
+}
+
+/**
+ * 净胜档读场（核心：热门能否达到赛前外界净胜预期）
+ */
+function classifySpreadOutlook(cover, tier, tierGap, favName, winOutlook) {
+  const t = Number(tier) || 0;
+  const gap = Number(tierGap) || 0;
+  const th = getTierCoverThresholds(t);
+  const pct = n => Math.round((Number(n) || 0) * 10) / 10;
+  const full = pct(cover?.full_cover_pct ?? winOutlook?.margin_meet_pct ?? 0);
+  const half = pct(cover?.half_cover_pct ?? winOutlook?.margin_half_pct ?? 0);
+  const lose1 = pct(cover?.half_lose_pct ?? winOutlook?.margin_fail_pct ?? 0);
+
+  if (Math.abs(t) < 0.01) {
+    return {
+      level: 'even',
+      label_cn: '势均力敌',
+      color: '#8A96A8',
+      fav_name: null,
+      market_expect_cn: '势均力敌',
+      meet_pct: null,
+      verdict_cn: '无明确净胜拉开预期',
+      headline_cn: '净胜走向：双方实力接近',
+      pill_cn: '双方实力接近，暂无单侧净胜预期。',
+      detail_cn: '赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。',
+      full_cover_pct: full,
+      half_cover_pct: half,
+      show_cover: false,
+    };
+  }
+
+  let level = 'uncertain';
+  let label_cn = '净胜幅度难下定论';
+  let color = '#8A96A8';
+  let verdict_cn = '达标与否难下定论';
+
+  if (full >= 50) {
+    level = 'likely';
+    label_cn = '达到预期较有希望';
+    color = '#5BBF8A';
+    verdict_cn = '达到预期较有希望';
+  } else if (full >= 35) {
+    level = 'possible';
+    label_cn = '有达标可能';
+    color = '#C8A96E';
+    verdict_cn = '有达标可能';
+  } else if (gap >= 0.5 && full < 30) {
+    level = 'skeptical';
+    label_cn = '外界预期偏高';
+    color = '#D95F6A';
+    verdict_cn = '达到预期难度偏大';
+  } else if (lose1 >= 28) {
+    level = 'narrow';
+    label_cn = '更可能小胜';
+    color = '#C8A96E';
+    verdict_cn = '更可能小胜，难拉开净胜';
+  } else if (half >= 20 && th.halfLabel) {
+    level = 'partial';
+    label_cn = '部分达标更现实';
+    color = '#C8A96E';
+    verdict_cn = '部分达标更现实';
+  }
+
+  const extras = [];
+  if (th.halfLabel && half >= 12) extras.push(th.halfLabel + ' 约 ' + half + '%');
+  if (lose1 >= 18) extras.push('仅胜 1 球约 ' + lose1 + '%');
+
+  let detail_cn = favName + ' · 赛前外界预期 ' + th.fullLabel
+    + '。模型推演达标概率约 ' + full + '%';
+  if (level === 'skeptical') {
+    detail_cn += '；外界看法高于 xG 隐含约 ' + gap + ' 球，达到预期难度偏大';
+  } else if (level === 'narrow') {
+    detail_cn += '；赢球可期，但净胜难拉到预期档';
+  } else if (level === 'likely') {
+    detail_cn += '；模型认为达到外界预期档的概率相对较高';
+  } else if (level === 'possible') {
+    detail_cn += '；有一定达标空间，但非高把握';
+  } else if (level === 'partial') {
+    detail_cn += '；全档达标偏难，部分达标更现实';
+  }
+  if (extras.length) detail_cn += '（' + extras.join(' · ') + '）';
+  detail_cn += '。';
+
+  const headline_cn = favName + ' · 净胜走向：' + verdict_cn;
+  const pill_cn = '达标概率约 ' + full + '% · ' + verdict_cn;
+
+  return {
+    level,
+    label_cn,
+    color,
+    fav_name: favName,
+    market_expect_cn: th.fullLabel,
+    meet_pct: full,
+    meet_pct_label: '模型推演达标概率',
+    verdict_cn,
+    headline_cn,
+    pill_cn,
+    detail_cn,
+    extra_stats_cn: extras.join(' · '),
+    full_cover_pct: full,
+    half_cover_pct: half,
+    lose1_pct: lose1,
+    margin_full_label: th.fullLabel,
+    margin_half_label: th.halfLabel,
+    tier_gap: gap,
+    show_cover: true,
+  };
+}
+
+/** 两队高峰是否落在同一 15 分钟段 — 供读场「重合窗口」提示 */
+function buildGoalTimingCrossInsight(peaks, homeName, awayName) {
+  if (!peaks?.home_scored?.interval) return null;
+  const same = (a, b) => a?.interval && b?.interval && a.interval === b.interval;
+
+  const hits = [];
+  if (same(peaks.away_scored, peaks.home_conceded)) {
+    hits.push({
+      type: 'away_attack',
+      interval: peaks.away_scored.interval,
+      color: '#5BBF8A',
+      title: '客队进攻有利窗口',
+      text: peaks.away_scored.interval + ' 分：' + awayName + '惯常进球高峰（' + peaks.away_scored.pct
+        + '%）与' + homeName + '惯常失球高峰（' + peaks.home_conceded.pct
+        + '%）重合——该时段客队破门相对更容易发生。',
+    });
+  }
+  if (same(peaks.home_scored, peaks.away_conceded)) {
+    hits.push({
+      type: 'home_attack',
+      interval: peaks.home_scored.interval,
+      color: '#7BB8D4',
+      title: '主队进攻有利窗口',
+      text: peaks.home_scored.interval + ' 分：' + homeName + '惯常进球高峰（' + peaks.home_scored.pct
+        + '%）与' + awayName + '惯常失球高峰（' + peaks.away_conceded.pct
+        + '%）重合——该时段主队破门相对更容易发生。',
+    });
+  }
+  if (same(peaks.home_scored, peaks.away_scored) && !same(peaks.home_scored, peaks.away_conceded)) {
+    hits.push({
+      type: 'open_play',
+      interval: peaks.home_scored.interval,
+      color: '#E8A54B',
+      title: '对攻高发时段',
+      text: peaks.home_scored.interval + ' 分：双方惯常进球高峰重合，该时段比赛更开放、进球面相对更大。',
+    });
+  }
+  if (same(peaks.home_conceded, peaks.away_conceded)) {
+    hits.push({
+      type: 'both_leak',
+      interval: peaks.home_conceded.interval,
+      color: '#C8A96E',
+      title: '双方易失球时段',
+      text: peaks.home_conceded.interval + ' 分：双方惯常失球高峰重合，该时段防守相对更松、总进球面可能抬升。',
+    });
+  }
+
+  const crossIntervals = [...new Set(hits.map(h => h.interval))];
+  return {
+    has_cross: hits.length > 0,
+    hits,
+    cross_intervals: crossIntervals,
+    summary_cn: hits.length
+      ? hits.length === 1
+        ? hits[0].title + ' · ' + hits[0].interval + ' 分'
+        : '发现 ' + hits.length + ' 处节奏重合窗口'
+      : '两队高峰时段错开，暂无强重合进攻窗口。',
+  };
+}
+
+/** 进失球时间段 — 每队高峰 + 两队节奏交叉读法 */
+function buildGoalTimingDisplay(raw, homeName, awayName) {
+  if (!raw?.home?.scored?.length) return null;
+  const intervals = raw.intervals || ['1–15', '16–30', '31–45', '46–60', '61–75', '76–90', '90+'];
+  function peakIdx(arr) {
+    let best = 0;
+    for (let i = 1; i < arr.length; i++) {
+      if ((arr[i] ?? 0) > (arr[best] ?? 0)) best = i;
+    }
+    return best;
+  }
+  const hs = peakIdx(raw.home.scored);
+  const hc = peakIdx(raw.home.conceded);
+  const as = peakIdx(raw.away.scored);
+  const ac = peakIdx(raw.away.conceded);
+  const sample = raw.sample_label || '近期样本';
+  const peaks = {
+    home_scored: { interval: intervals[hs], pct: raw.home.scored[hs] },
+    home_conceded: { interval: intervals[hc], pct: raw.home.conceded[hc] },
+    away_scored: { interval: intervals[as], pct: raw.away.scored[as] },
+    away_conceded: { interval: intervals[ac], pct: raw.away.conceded[ac] },
+  };
+  const cross = buildGoalTimingCrossInsight(peaks, homeName, awayName);
+  return {
+    sample_label: sample,
+    source_note: raw._source || 'manual',
+    home_name: homeName,
+    away_name: awayName,
+    intervals,
+    peaks,
+    cross_insight: cross,
+    disclaimer_cn: '以上为两队' + sample + '历史进球/失球时间段统计，供读场参考；非本场赛果预测，与灵力分析娱乐板块无关。',
+  };
+}
+
+/** 客户读场要点 — 净胜为主、进球氛围次之、胜平负弱化 */
+function buildCustomerReading(match, displaySummary, tier, tierGap, cover, adjusted) {
+  const totalsView = displaySummary.totals_view || {};
+  const totalsOutlook = totalsView.totals_outlook
+    || classifyTotalsOutlook(
+      totalsView.over_pct,
+      totalsView.line_gap,
+      totalsView.market_line,
+      totalsView.fair_line
+    );
+  const spreadOutlook = classifySpreadOutlook(
+    cover, tier, tierGap, displaySummary.fav_name, displaySummary.win_outlook
+  );
+
+  const drawPct = adjusted?.draw ?? 0;
+  const maxWin = Math.max(adjusted?.home_win ?? 0, adjusted?.away_win ?? 0);
+  let drawRisk = null;
+  if (drawPct >= 30) {
+    drawRisk = {
+      level: 'high',
+      color: '#C8A96E',
+      note: '平局权重约 ' + drawPct + '%，小组赛易出守平——勿只盯胜负一方。',
+    };
+  } else if (drawPct >= 26 && maxWin - drawPct < 14) {
+    drawRisk = {
+      level: 'medium',
+      color: '#C8A96E',
+      note: '平局约 ' + drawPct + '%，与热门取胜概率接近，存在「赢球变平局」空间。',
+    };
+  }
+
+  const headline_cn = spreadOutlook.headline_cn;
+
+  const sub_cn = [
+    spreadOutlook.pill_cn || spreadOutlook.detail_cn,
+    totalsOutlook.headline_cn,
+    drawRisk ? drawRisk.note : null,
+  ].filter(Boolean).join(' ');
+
+  const totalsLeanHigh = totalsOutlook.lean_side === 'exciting';
+  const pills = [
+    {
+      key: 'spread',
+      icon: '⚖️',
+      label: '净胜走向',
+      outlook: spreadOutlook,
+      text: spreadOutlook.pill_cn || spreadOutlook.detail_cn,
+      color: spreadOutlook.color,
+      primary: true,
+    },
+    {
+      key: 'totals',
+      icon: totalsOutlook.show_lean
+        ? (totalsLeanHigh ? '✨' : '🌙')
+        : '◎',
+      label: '进球氛围',
+      outlook: totalsOutlook,
+      text: totalsOutlook.pill_cn || totalsOutlook.detail_cn,
+      color: totalsOutlook.color,
+      muted: !totalsOutlook.show_lean,
+    },
+  ];
+
+  return {
+    headline_cn,
+    sub_cn,
+    spread: spreadOutlook,
+    totals: totalsOutlook,
+    draw_risk: drawRisk,
+    pills,
+    methodology_note: '读场优先级：净胜走向 ＞ 进球氛围（对照外界「至少 N 球」预期，中性档几乎五五开；强信号才标沉闷/精彩）。仅供娱乐推演，非投注建议。',
+  };
+}
+
 /** 页面展示 — 预期校准（中性表述，不出现盘口/赔率） */
 function buildCalibrationDisplay(meta, tierGap, cover, impliedTier, marketTier, homeName, awayName) {
   const gap = Math.round(tierGap * 100) / 100;
+  const th = getTierCoverThresholds(marketTier);
   let gapText = '与赛前净胜看法基本一致';
   if (gap >= 0.35) gapText = '赛前净胜看法高于 xG 隐含约 ' + gap;
   else if (gap <= -0.35) gapText = '赛前净胜看法低于 xG 隐含约 ' + Math.abs(gap);
@@ -1425,7 +1999,13 @@ function buildCalibrationDisplay(meta, tierGap, cover, impliedTier, marketTier, 
 
   let marginText = '';
   if (cover.half_lose_pct >= 12) {
-    marginText = ' · 热门仅净胜 1 球概率 ' + cover.half_lose_pct + '%';
+    marginText = ' · 模型认为仅小胜 1 球仍约 ' + cover.half_lose_pct + '%';
+  }
+  if (th.halfLabel && (cover.half_cover_pct ?? 0) >= 8) {
+    marginText += ' · ' + th.halfLabel + ' 约 ' + cover.half_cover_pct + '%';
+  }
+  if ((cover.full_cover_pct ?? 0) >= 5 && th.fullMin >= 3) {
+    marginText += ' · ' + th.fullLabel + '（全达标）约 ' + cover.full_cover_pct + '%';
   }
 
   return {
@@ -1444,19 +2024,51 @@ function buildTotalsDisplay(totals, expectedTotalGoals) {
   const et = typeof expectedTotalGoals === 'number'
     ? (Math.round(expectedTotalGoals * 100) / 100).toFixed(1)
     : String(expectedTotalGoals);
-  let modelLean = '模型在常见进球预期附近均衡';
-  if (totals.over_pct >= 58) {
-    modelLean = '模型略偏多进球（约 ' + totals.over_pct + '%）';
-  } else if (totals.over_pct <= 42) {
-    modelLean = '模型略偏少进球（约 ' + totals.under_pct + '%）';
+  const gap = totals.line_gap ?? 0;
+  const marketLine = totals.market_line ?? totals.fair_line;
+  const fairLine = totals.fair_line;
+  let gapNote = '';
+  if (gap >= 1.25) {
+    gapNote = ' · ⚠ 外界总进球参考比模型公允线高约 ' + gap + ' 球，大众心理明显偏多进球';
+  } else if (gap >= 1.0) {
+    gapNote = ' · ⚠ 外界参考比模型公允线高约 ' + gap + ' 球，偏高明显';
+  } else if (gap >= 0.5) {
+    gapNote = ' · 外界参考略高于模型公允线（+' + gap + ' 球）';
+  } else if (gap <= -0.5) {
+    gapNote = ' · 外界参考低于模型公允线（' + gap + ' 球）';
   }
-  const lineNote = totals.signal_cn || '贴合';
+  let gapWarning = null;
+  if (gap >= 1.25) {
+    gapWarning = {
+      level: 'high',
+      cn: '外界总进球参考 ' + marketLine + '，比模型公允线 ' + fairLine + ' 高约 ' + gap
+        + ' 球——大众心理明显偏多进球；模型对总进球仍宜谨慎表态',
+    };
+  } else if (gap >= 1.0) {
+    gapWarning = {
+      level: 'medium',
+      cn: '外界总进球参考 ' + marketLine + ' 比模型公允线 ' + fairLine + ' 高约 ' + gap + ' 球，偏高明显',
+    };
+  }
+
+  const totalsOutlook = classifyTotalsOutlook(totals.over_pct, gap, marketLine, fairLine);
+  let modelLean = totalsOutlook.headline_cn;
+  if (!totalsOutlook.show_lean) {
+    modelLean = '模型在常见进球预期附近均衡，不作强倾向';
+  }
+
   return {
     expected_total: Number(et),
-    fair_line: totals.fair_line,
-    line_gap: totals.line_gap,
+    fair_line: fairLine,
+    market_line: marketLine,
+    line_gap: gap,
     over_pct: totals.over_pct,
-    summary_cn: '预期约 ' + et + ' 个总进球 · 赛前参考' + lineNote + ' · ' + modelLean,
+    gap_warning: gapWarning,
+    totals_outlook: totalsOutlook,
+    summary_cn: '模型 xG 合计约 ' + et + ' 球（公允参考约 ' + fairLine + '）'
+      + ' · 外界总进球参考 ' + marketLine
+      + (gap > 0.01 ? '，高出模型约 ' + gap + ' 球' : gap < -0.01 ? '，低于模型约 ' + Math.abs(gap) + ' 球' : '')
+      + gapNote + ' · ' + modelLean,
   };
 }
 
@@ -1567,6 +2179,9 @@ function buildDepthCalibration(match, raw) {
     pct: s.prob,
   }));
   displaySummary.totals_view = buildTotalsDisplay(totalsAdj, displaySummary.expected_total_goals);
+  displaySummary.customer_reading = buildCustomerReading(
+    match, displaySummary, tier, tierGap, coverAdj, adjusted
+  );
   displaySummary.first_goal_scenarios = computeFirstGoalScenarios(
     match, ctx.xg_home, ctx.xg_away, tier, displaySummary, totalsLine
   );
@@ -1621,21 +2236,286 @@ function applyDepthToPrediction(prediction, depth) {
   return out;
 }
 
-/** 2026 48 队制 — 小组出线后 32 强对阵路径（简化版，用于形势预判） */
-const KNOCKOUT_PATHS = {
-  A: { r32_1st: '32强 · 对阵 B 组第 2', r32_2nd: '32强 · 对阵 B 组第 1', third_pool: 'B,E,F,H,I,J,K,L' },
-  B: { r32_1st: '32强 · 对阵 A 组第 2', r32_2nd: '32强 · 对阵 A 组第 1', third_pool: 'A,E,F,H,I,J,K,L' },
-  C: { r32_1st: '32强 · 对阵 D 组第 2', r32_2nd: '32强 · 对阵 D 组第 1', third_pool: 'D,E,F,G,H,I,J,K' },
-  D: { r32_1st: '32强 · 对阵 C 组第 2', r32_2nd: '32强 · 对阵 C 组第 1', third_pool: 'C,E,F,G,H,I,J,K' },
-  E: { r32_1st: '32强 · 对阵 F 组第 2', r32_2nd: '32强 · 对阵 F 组第 1', third_pool: 'F,G,H,I,J,K,L' },
-  F: { r32_1st: '32强 · 对阵 E 组第 2', r32_2nd: '32强 · 对阵 E 组第 1', third_pool: 'E,G,H,I,J,K,L' },
-  G: { r32_1st: '32强 · 可能对阵 E/F/H/I 组第 2 或第 3', r32_2nd: '32强 · 可能对阵 E/F/H/I 组第 1', third_pool: 'E,F,H,I,J,K' },
-  H: { r32_1st: '32强 · 可能对阵 G/E/F 组第 2 或第 3', r32_2nd: '32强 · 可能对阵 G/E/F 组第 1', third_pool: 'E,F,G,I,J,K' },
-  I: { r32_1st: '32强 · 可能对阵 J/K 组第 2 或第 3', r32_2nd: '32强 · 可能对阵 J/K 组第 1', third_pool: 'J,K,L,G,H' },
-  J: { r32_1st: '32强 · 可能对阵 I/K 组第 2 或第 3', r32_2nd: '32强 · 可能对阵 I/K 组第 1', third_pool: 'I,K,L,G,H' },
-  K: { r32_1st: '32强 · 可能对阵 L/J 组第 2 或第 3', r32_2nd: '32强 · 可能对阵 L/J 组第 1', third_pool: 'J,L,I,H' },
-  L: { r32_1st: '32强 · 可能对阵 K/J 组第 2 或第 3', r32_2nd: '32强 · 可能对阵 K/J 组第 1', third_pool: 'K,J,I,H' },
+/** 2026 48 队制 — FIFA 官方 32 强/16 强对阵槽位（Annex C 第3名组合暂用池化描述） */
+const KNOCKOUT_BRACKET = {
+  A: {
+    linked: ['B'],
+    first: {
+      r32: '32强 M79 · A 组第 1 vs 最佳第 3（C/E/F/H/I 池）',
+      r16: '16强 M92 · 对阵 L 组第 1 vs 最佳第 3（E/H/I/J/K 池）之胜者',
+      r16_corridor: '出线后半区对手强度取决于第 3 名组合',
+      r32_tier: 'MEDIUM',
+    },
+    second: {
+      r32: '32强 M73 · A 组第 2 vs B 组第 2',
+      r16: '16强 M90 · 对阵 F 组第 1 vs C 组第 2 之胜者',
+      r16_corridor: '若 F 组头名为荷兰、C 组次席为巴西，此半区将提前碰强队',
+      r32_tier: 'MEDIUM',
+    },
+    third_pool: 'C,E,F,H,I',
+    tradeoff: 'A 组次席走 M73→M90 通道，与 B 组次席同槽；头名则打第 3 名，路径更不确定。',
+  },
+  B: {
+    linked: ['A'],
+    first: {
+      r32: '32强 M85 · B 组第 1 vs 最佳第 3（E/F/G/I/J 池）',
+      r16: '16强 M96 · 对阵 K 组第 1 vs 最佳第 3（D/E/I/J/L 池）之胜者',
+      r16_corridor: '上半区深度取决于第 3 名落位',
+      r32_tier: 'MEDIUM',
+    },
+    second: {
+      r32: '32强 M73 · B 组第 2 vs A 组第 2',
+      r16: '16强 M90 · 对阵 F 组第 1 vs C 组第 2 之胜者',
+      r16_corridor: '墨/韩/加/瑞次席若出线，16 强或遇 F1/C2 胜者（荷兰/巴西走廊）',
+      r32_tier: 'MEDIUM',
+    },
+    third_pool: 'A,E,F,H,I,J,K,L',
+    tradeoff: 'B 组次席与 A 组次席同进 M73，16 强进入 M90 上半区。',
+  },
+  C: {
+    linked: ['F', 'E', 'I'],
+    first: {
+      r32: '32强 M76 · C 组第 1 vs F 组第 2',
+      r16: '16强 M91 · 对阵 E 组第 2 vs I 组第 2 之胜者',
+      r16_corridor: '法国/挪威/塞内加尔/德国（E/I 次席走廊）— 16 强硬仗区',
+      r32_tier: 'MEDIUM',
+    },
+    second: {
+      r32: '32强 M75 · F 组第 1 vs C 组第 2',
+      r16: '16强 M90 · 对阵 A 组第 2 vs B 组第 2 之胜者',
+      r16_corridor: '墨西哥/韩国/加拿大/瑞士（A/B 次席走廊）— 16 强相对温和',
+      r32_tier: 'HARD',
+    },
+    third_pool: 'D,E,F,G,H,I,J,K',
+    tradeoff: 'C 组头名 32 强打 F 组第 2（荷兰若夺 F 组头名则 32 强避荷兰），但 16 强进入 E2/I2 胜者通道；次席 32 强极可能直碰 F 组头名（荷兰），16 强路径反而更顺。强队末轮或存在「保次席避 16 强豪强」博弈。',
+  },
+  D: {
+    linked: ['C', 'G'],
+    first: {
+      r32: '32强 M81 · D 组第 1 vs 最佳第 3（B/E/F/I/J 池）',
+      r16: '16强 M94 · 对阵 G 组第 1 vs 最佳第 3（A/E/H/I/J 池）之胜者',
+      r16_corridor: '比利时/埃及 等 G 组头名走廊',
+      r32_tier: 'MEDIUM',
+    },
+    second: {
+      r32: '32强 M88 · D 组第 2 vs G 组第 2',
+      r16: '16强 M95 · 对阵 J 组第 1 vs H 组第 2 之胜者',
+      r16_corridor: '阿根廷/西班牙 半区',
+      r32_tier: 'MEDIUM',
+    },
+    third_pool: 'C,E,F,G,H,I,J,K',
+    tradeoff: 'D 组次席走 D2–G2 槽，与 C/F 头名次席路径不同；美国/土耳其若争头名需关注第 3 名落位。',
+  },
+  E: {
+    linked: ['I', 'F'],
+    first: {
+      r32: '32强 M74 · E 组第 1 vs 最佳第 3（A/B/C/D/F 池）',
+      r16: '16强 M89 · 对阵 E 组第 1/第 3 组合 vs I 组第 1/第 3 组合之胜者',
+      r16_corridor: '德国头名出线后 16 强对手取决于第 3 名组合',
+      r32_tier: 'MEDIUM',
+    },
+    second: {
+      r32: '32强 M78 · E 组第 2 vs I 组第 2',
+      r16: '16强 M91 · 对阵 C 组第 1 vs F 组第 2 之胜者',
+      r16_corridor: '德国/科特迪瓦次席若出线，16 强或遇 C1/F2 胜者（巴西/日本/瑞典走廊）',
+      r32_tier: 'MEDIUM',
+    },
+    third_pool: 'F,G,H,I,J,K,L',
+    tradeoff: 'E 组次席与 I 组次席同槽 M78，胜者进入 M91 与 C/F 半区交汇。',
+  },
+  F: {
+    linked: ['C', 'E'],
+    first: {
+      r32: '32强 M75 · F 组第 1 vs C 组第 2',
+      r16: '16强 M90 · 对阵 A 组第 2 vs B 组第 2 之胜者',
+      r16_corridor: '荷兰若夺 F 组头名，32 强直接对话 C 组次席（巴西若列次席则提前相遇）',
+      r32_tier: 'HARD',
+    },
+    second: {
+      r32: '32强 M76 · C 组第 1 vs F 组第 2',
+      r16: '16强 M91 · 对阵 E 组第 2 vs I 组第 2 之胜者',
+      r16_corridor: 'F 组次席 32 强碰 C 组头名，16 强进 E/I 次席走廊',
+      r32_tier: 'MEDIUM',
+    },
+    third_pool: 'E,G,H,I,J,K,L',
+    tradeoff: 'F 组与 C 组绑定：头名次席决定 32 强是否提前碰面，并切换 16 强进入 M90 或 M91 半区。',
+  },
+  G: {
+    linked: ['D', 'H'],
+    first: {
+      r32: '32强 M82 · G 组第 1 vs 最佳第 3（A/E/H/I/J 池）',
+      r16: '16强 M94 · 对阵 D 组第 1 vs 最佳第 3 之胜者',
+      r16_corridor: '比利时头名通道',
+      r32_tier: 'MEDIUM',
+    },
+    second: {
+      r32: '32强 M88 · D 组第 2 vs G 组第 2',
+      r16: '16强 M95 · 对阵 J 组第 1 vs H 组第 2 之胜者',
+      r16_corridor: '阿根廷/乌拉圭 半区',
+      r32_tier: 'MEDIUM',
+    },
+    third_pool: 'E,F,H,I,J,K',
+    tradeoff: 'G 组次席与 D 组次席同槽，16 强进入 J/H 半区。',
+  },
+  H: {
+    linked: ['J', 'G'],
+    first: {
+      r32: '32强 M84 · H 组第 1 vs J 组第 2',
+      r16: '16强 M93 · 对阵 K 组第 2 vs L 组第 2 之胜者',
+      r16_corridor: '西班牙头名 → 16 强或遇 K/L 次席',
+      r32_tier: 'MEDIUM',
+    },
+    second: {
+      r32: '32强 M86 · J 组第 1 vs H 组第 2',
+      r16: '16强 M95 · 对阵 D 组第 2 vs G 组第 2 之胜者',
+      r16_corridor: '沙特/佛得角次席通道',
+      r32_tier: 'MEDIUM',
+    },
+    third_pool: 'E,F,G,I,J,K',
+    tradeoff: 'H 组与 J 组绑定；头名次席决定 32 强对位。',
+  },
+  I: {
+    linked: ['E', 'J'],
+    first: {
+      r32: '32强 M77 · I 组第 1 vs 最佳第 3（C/D/F/G/H 池）',
+      r16: '16强 M89 · 半区取决于第 3 名组合',
+      r16_corridor: '法国头名出线后路径受 Annex C 第 3 名组合影响',
+      r32_tier: 'MEDIUM',
+    },
+    second: {
+      r32: '32强 M78 · E 组第 2 vs I 组第 2',
+      r16: '16强 M91 · 对阵 C 组第 1 vs F 组第 2 之胜者',
+      r16_corridor: '挪威/塞内加尔次席 → 16 强或遇巴西/瑞典/日本走廊',
+      r32_tier: 'MEDIUM',
+    },
+    third_pool: 'J,K,L,G,H',
+    tradeoff: 'I 组次席走 M78，与 E 组次席同槽，16 强汇入 C/F 半区。',
+  },
+  J: {
+    linked: ['H', 'I'],
+    first: {
+      r32: '32强 M86 · J 组第 1 vs H 组第 2',
+      r16: '16强 M95 · 对阵 D 组第 2 vs G 组第 2 之胜者',
+      r16_corridor: '阿根廷头名半区',
+      r32_tier: 'MEDIUM',
+    },
+    second: {
+      r32: '32强 M84 · H 组第 1 vs J 组第 2',
+      r16: '16强 M93 · 对阵 K 组第 2 vs L 组第 2 之胜者',
+      r16_corridor: '约旦/阿尔及利亚次席通道',
+      r32_tier: 'MEDIUM',
+    },
+    third_pool: 'I,K,L,G,H',
+    tradeoff: 'J 组与 H 组绑定；阿根廷若头名走 M86→M95。',
+  },
+  K: {
+    linked: ['L', 'J'],
+    first: {
+      r32: '32强 M87 · K 组第 1 vs 最佳第 3（D/E/I/J/L 池）',
+      r16: '16强 M96 · 对阵 B 组第 1 vs 最佳第 3 之胜者',
+      r16_corridor: '葡萄牙头名通道',
+      r32_tier: 'MEDIUM',
+    },
+    second: {
+      r32: '32强 M83 · K 组第 2 vs L 组第 2',
+      r16: '16强 M93 · 对阵 H 组第 1 vs J 组第 2 之胜者',
+      r16_corridor: '哥伦比亚/乌兹别克次席 → 16 强或遇西班牙/阿根廷半区',
+      r32_tier: 'MEDIUM',
+    },
+    third_pool: 'J,L,I,H',
+    tradeoff: 'K 组次席与 L 组次席同槽 M83。',
+  },
+  L: {
+    linked: ['K', 'A'],
+    first: {
+      r32: '32强 M80 · L 组第 1 vs 最佳第 3（E/H/I/J/K 池）',
+      r16: '16强 M92 · 对阵 A 组第 1 vs 最佳第 3 之胜者',
+      r16_corridor: '英格兰头名通道',
+      r32_tier: 'MEDIUM',
+    },
+    second: {
+      r32: '32强 M83 · K 组第 2 vs L 组第 2',
+      r16: '16强 M93 · 对阵 H 组第 1 vs J 组第 2 之胜者',
+      r16_corridor: '克罗地亚/加纳次席通道',
+      r32_tier: 'MEDIUM',
+    },
+    third_pool: 'K,J,I,H',
+    tradeoff: 'L 组次席走 M83，16 强进入 H/J 半区。',
+  },
 };
+
+/** @deprecated 保留兼容；新逻辑请用 KNOCKOUT_BRACKET */
+const KNOCKOUT_PATHS = Object.fromEntries(
+  Object.entries(KNOCKOUT_BRACKET).map(([g, b]) => [
+    g,
+    {
+      r32_1st: b.first.r32,
+      r32_2nd: b.second.r32,
+      third_pool: b.third_pool,
+    },
+  ]),
+);
+
+const STRONG_TEAMS = new Set([
+  'Brazil', 'France', 'Argentina', 'England', 'Germany', 'Spain', 'Portugal',
+  'Netherlands', 'Belgium', 'USA', 'Mexico', 'Morocco', 'Colombia', 'Uruguay',
+]);
+
+function linkedGroupNote(group, snapshots) {
+  const bracket = KNOCKOUT_BRACKET[group];
+  if (!bracket?.linked?.length) return [];
+  return bracket.linked.map(lg => {
+    const snap = (snapshots || []).find(s => s.group === lg);
+    const table = snap?.table?.length ? snap.table : buildDefaultTable(lg);
+    const sorted = sortTable(table);
+    const leader = sorted[0];
+    const runner = sorted[1];
+    if (!leader) return `${lg} 组形势待定`;
+    const tie = leader.pts === runner?.pts && leader.p < 3;
+    const rank2 = tie ? `${runner.team} 同分` : `${runner.team} ${runner.pts} 分`;
+    return `${lg} 组：头名 ${leader.team} ${leader.pts} 分 · 次席 ${rank2}（32强绑定组）`;
+  });
+}
+
+function enrichPathWithLiveOpponent(pathBase, group, rank, snapshots) {
+  const pairMap = { C: 'F', F: 'C', D: 'G', G: 'D', H: 'J', J: 'H', E: 'I', I: 'E', A: 'B', B: 'A', K: 'L', L: 'K' };
+  const linked = pairMap[group];
+  if (!linked) return pathBase;
+  const snap = (snapshots || []).find(s => s.group === linked);
+  const table = snap?.table?.length ? snap.table : buildDefaultTable(linked);
+  const sorted = sortTable(table);
+  const oppIdx = rank === 1 ? 1 : 0;
+  const opp = sorted[oppIdx];
+  if (!opp) return pathBase;
+  const slot = rank === 1 ? '第 2' : '第 1';
+  const likely = opp.team + (STRONG_TEAMS.has(opp.team) ? '（强队）' : '');
+  return `${pathBase} → 当前 ${linked} 组${slot}倾向 ${likely}`;
+}
+
+function buildTeamPathScenario(group, rank, snapshots) {
+  const b = KNOCKOUT_BRACKET[group];
+  if (!b) {
+    return {
+      if_r32: '32强路径待定',
+      if_r16: '—',
+      r16_corridor: '',
+    };
+  }
+  const block = rank === 1 ? b.first : rank === 2 ? b.second : null;
+  if (!block) {
+    return {
+      if_r32: `12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 ${(b.third_pool || '').replace(/,/g, '/')} 等组第 3 横向比较`,
+      if_r16: '32 强对手取决于 Annex C 第 3 名组合（495 种可能）',
+      r16_corridor: '第 3 名出线队 32 强多对阵某组头名，16 强路径末轮再定',
+    };
+  }
+  return {
+    if_r32: enrichPathWithLiveOpponent(block.r32, group, rank, snapshots),
+    if_r16: block.r16,
+    r16_corridor: block.r16_corridor,
+    r32_tier: block.r32_tier,
+  };
+}
 
 const GROUP_TEAMS = {
   A: ['Mexico', 'South Korea', 'South Africa', 'Czechia'],
@@ -1668,40 +2548,173 @@ function buildDefaultTable(group) {
   }));
 }
 
-function assessManipulationRisk(group, matchday, homeTeam, awayTeam, table, crossNotes) {
+function buildOptimalStrategySummary(ctx) {
+  const {
+    group, matchday, homeTeam, awayTeam, homeRow, awayRow, sorted,
+    focusTeam, fLeader, crossNotes,
+  } = ctx;
+  const hr = homeRow || { pts: 0, p: 0 };
+  const ar = awayRow || { pts: 0, p: 0 };
+  const focus = focusTeam || (STRONG_TEAMS.has(homeTeam) ? homeTeam : STRONG_TEAMS.has(awayTeam) ? awayTeam : homeTeam);
+  const fRow = sorted.find(r => r.team === focus) || hr;
+  const fRank = sorted.findIndex(r => r.team === focus) + 1;
+  const notes = crossNotes || [];
+  const tightGroup = notes.some(n => /四队同积|四队同分|均1分|同积/.test(n));
+  const f1 = fLeader || 'F 组头名球队';
+
+  /** 出线分已稳时的婉转表述：演练 + 非胜可接受（不说「故意输球」） */
+  const softNonWin =
+    '可借机锻炼新兵、尝试新战术演练——在出线分已足够的前提下，非胜结果亦可接受，'
+    + '以换取更顺的淘汰半区；但须守住净胜球边界，避免失手跌入第 3 争八区。';
+
+  const mustWinNow =
+    '此阶段仍以全力争胜、抢 3 分为上策；尚未到以演练或轮换为名调整名次、接受非胜结果的窗口。';
+
+  if (matchday >= 3 && group === 'C' && STRONG_TEAMS.has(focus)) {
+    return '策略最优解（推演）：若 ' + focus + ' 末轮前已确保出线，可在「保头名、32强避开 ' + f1 + '」'
+      + '与「落在次席、置换更温和 16 强半区」之间取舍。' + softNonWin
+      + '出线分未稳时，' + mustWinNow;
+  }
+
+  if (matchday >= 3 && fRow.pts >= 4 && fRank === 1) {
+    return '策略最优解（推演）：' + focus + ' 已握出线主动，末轮或适度收敛进攻、锻炼新兵并演练新战术，把核心体能留给淘汰赛；'
+      + '若次席仍紧追，仍宜控制场面——' + softNonWin;
+  }
+
+  if (matchday >= 3 && fRank === 2 && (group === 'C' || group === 'F')) {
+    return '策略最优解（推演）：' + focus + ' 维持次席有时是更顺的长路——32 强或可接受与绑定组头名对话，'
+      + '以换取 16 强进入相对温和半区。出线无忧时，可结合轮换与新战术演练，非胜结果亦在可接受区间，但须盯紧净胜球。';
+  }
+
+  if (matchday >= 3 && fRow.pts >= 3) {
+    return '策略最优解（推演）：' + focus + ' 末轮可在「保住现有名次」与「为淘汰赛选半区」之间微调；'
+      + '未完全锁定出线前，' + mustWinNow
+      + '已锁定后，' + softNonWin;
+  }
+
+  if (tightGroup) {
+    if (hr.pts !== ar.pts) {
+      const leaderSide = hr.pts > ar.pts ? homeTeam : awayTeam;
+      const chaser = hr.pts > ar.pts ? awayTeam : homeTeam;
+      return '策略最优解（推演）：关联组形势胶着，本场 ' + leaderSide + ' 取胜最能巩固主动，'
+        + chaser + ' 则需积极抢 3 分；若握手各取 1 分，对领先方尚可接受，对追赶方则略偏保守——'
+        + mustWinNow;
+    }
+    return '策略最优解（推演）：本组及关联组积分纠缠，本场以抢 3 分（至少 1 分）为先；'
+      + '锻炼新兵与战术演练宜留到末轮、出线形势明朗后再考虑，届时非胜结果方有可接受空间。';
+  }
+
+  if (matchday === 2 && hr.pts <= 1 && ar.pts <= 1) {
+    return '策略最优解（推演）：双方积分均不宽裕，' + mustWinNow;
+  }
+
+  if (matchday === 2 && Math.abs(hr.pts - ar.pts) <= 1) {
+    return '策略最优解（推演）：' + homeTeam + ' 与 ' + awayTeam + ' 积分接近，取胜的一方更能掌握直接对话主动；'
+      + '若只能取 1 分，亦需同步关注绑定组赛果与净胜球——' + mustWinNow;
+  }
+
+  return '策略最优解（推演）：结合绑定组同期赛果，本场以确保积分不吃亏为前提；'
+    + '出线形势逐渐清晰后，方可在末轮以锻炼新兵、演练新战术为契机，委婉取舍名次与半区——切忌在未安全出线时提前「铺路」。';
+}
+
+function finishManipulationRisk(base, ctx) {
+  const out = { ...base };
+  if (out.level === 'MEDIUM' || out.level === 'HIGH') {
+    out.optimal_summary = buildOptimalStrategySummary({
+      ...ctx,
+      focusTeam: out.focus_team,
+    });
+  }
+  return out;
+}
+
+function assessManipulationRisk(group, matchday, homeTeam, awayTeam, table, crossNotes, snapshots) {
+  const sorted = sortTable(table);
+  const homeRow = sorted.find(r => r.team === homeTeam);
+  const awayRow = sorted.find(r => r.team === awayTeam);
+  const leader = sorted[0];
+  const bracket = KNOCKOUT_BRACKET[group];
+  const fSnap = (snapshots || []).find(s => s.group === 'F');
+  const fLeader = fSnap?.table?.length ? sortTable(fSnap.table)[0]?.team : 'Netherlands';
+  const ctx = {
+    group, matchday, homeTeam, awayTeam, homeRow, awayRow, sorted,
+    fLeader, bracket, crossNotes, snapshots,
+  };
+
   if (matchday <= 1) {
-    return {
+    return finishManipulationRisk({
       level: 'LOW',
       level_cn: '低',
       focus_team: null,
       reason: '小组赛第 1 轮，各队普遍抢分意愿强，故意控分动机低；以下路径预判供后续轮次参考。',
-    };
+    }, ctx);
   }
-  const sorted = sortTable(table);
-  const leader = sorted[0];
-  const notes = crossNotes || [];
+
+  const strongInMatch = [homeTeam, awayTeam].filter(t => STRONG_TEAMS.has(t));
+
+  if (group === 'C' && matchday === 2) {
+    if (homeTeam === 'Brazil' || awayTeam === 'Brazil') {
+      const bRow = homeTeam === 'Brazil' ? homeRow : awayRow;
+      if (bRow && bRow.pts <= 1) {
+        return finishManipulationRisk({
+          level: 'LOW',
+          level_cn: '低',
+          focus_team: 'Brazil',
+          reason: '巴西仅积 ' + bRow.pts + ' 分、暂列第 ' + (sorted.findIndex(r => r.team === 'Brazil') + 1)
+            + '，本轮对海地须全力抢 3 分，无控分空间。末轮才可能出现「C 组头名 vs 次席」路径博弈（32强避荷兰 vs 16强避法国/德国走廊）。',
+        }, ctx);
+      }
+    }
+  }
+
+  if (matchday >= 3 && bracket?.tradeoff && strongInMatch.length) {
+    const focus = strongInMatch[0];
+    let reason = bracket.tradeoff;
+    if (group === 'C') {
+      reason = 'C 组末轮：若 ' + focus + ' 已确保出线，头名 32 强打 F 组第 2（' + fLeader + ' 若夺 F 组头名则 32 强避荷兰），'
+        + '但 16 强进入 E2/I2 通道（法国/德国/挪威/塞内加尔）；次席 32 强极可能直碰 F 组头名，16 强走 A2/B2 温和通道。'
+        + '历史上有强队「算分选半区」先例，但末轮仍须先确保出线。';
+    }
+    return finishManipulationRisk({
+      level: 'MEDIUM',
+      level_cn: '中',
+      focus_team: focus,
+      reason,
+    }, ctx);
+  }
+
   if (matchday >= 3 && leader && leader.pts >= 4) {
-    return {
+    return finishManipulationRisk({
       level: 'MEDIUM',
       level_cn: '中',
       focus_team: leader.team,
-      reason: leader.team + ' 末轮或存在「避开某 32 强对手 / 保小组第 2」的战术选择，需结合同期其他组赛果。',
-    };
+      reason: leader.team + ' 末轮或存在「避开某 32 强对手 / 保小组第 2 进更顺半区」的战术选择，需结合绑定组（如 C↔F）同期赛果。',
+    }, ctx);
   }
-  if (notes.some(n => n.includes('四队同分') || n.includes('均1分'))) {
-    return {
+  const notes = crossNotes || [];
+  if (notes.some(n => n.includes('四队同分') || n.includes('均1分') || n.includes('同积'))) {
+    return finishManipulationRisk({
       level: 'MEDIUM',
       level_cn: '中',
       focus_team: null,
       reason: '本组或关联组积分胶着，第 2、3 轮可能出现算分踢法；本轮仍应以抢分为主。',
-    };
+    }, ctx);
   }
-  return {
+  if (group === 'C' && matchday === 2 && bracket?.tradeoff) {
+    return finishManipulationRisk({
+      level: 'LOW',
+      level_cn: '低',
+      focus_team: 'Brazil',
+      reason: '本轮无控分空间；但 C↔F 绑定：F 组头名当前倾向 ' + fLeader
+        + '。若荷兰夺 F 组第 1，巴西若最终列 C 组第 2 将在 32 强直碰荷兰；若夺 C 组第 1 则 32 强打 F 组第 2，但 16 强进 E/I 次席走廊。',
+    }, ctx);
+  }
+  return finishManipulationRisk({
     level: 'LOW',
     level_cn: '低',
     focus_team: null,
-    reason: '暂无明确控分动机；出线路径仍取决于后续直接对话。',
-  };
+    reason: '暂无明确控分动机；出线后 32 强/16 强路径见下方绑定组预判。',
+  }, ctx);
 }
 
 /**
@@ -1713,39 +2726,71 @@ function buildGroupContext(match, groupSnapshots) {
   const snap = (groupSnapshots || []).find(s => s.group === g);
   const table = snap?.table?.length ? snap.table : buildDefaultTable(g);
   const sorted = sortTable(table);
-  const paths = KNOCKOUT_PATHS[g] || {};
   const homeRow = sorted.find(r => r.team === match.home.name) || { team: match.home.name, pts: 0, p: 0 };
   const awayRow = sorted.find(r => r.team === match.away.name) || { team: match.away.name, pts: 0, p: 0 };
-
-  const crossGroups = ['G', 'H', 'E', 'F'].filter(x => x !== g);
+  const bracket = KNOCKOUT_BRACKET[g] || {};
+  const linkedNotes = linkedGroupNote(g, groupSnapshots);
+  const crossGroups = ['G', 'H', 'E', 'F', 'I', 'D'].filter(x => x !== g && !(bracket.linked || []).includes(x));
   const crossSnapshots = crossGroups
     .map(cg => (groupSnapshots || []).find(s => s.group === cg))
     .filter(Boolean);
 
-  const crossNotes = crossSnapshots.map(cs => {
-    const pts = cs.table.map(t => t.pts);
-    const allSame = pts.length && pts.every(pt => pt === pts[0]);
-    const firstRow = cs.table[0];
-    if (allSame && firstRow && firstRow.p >= 1) {
-      return cs.group + ' 组四队同积 ' + pts[0] + ' 分，形势极度开放';
+  const crossNotes = [
+    ...linkedNotes,
+    ...crossSnapshots.map(cs => {
+      const pts = cs.table.map(t => t.pts);
+      const allSame = pts.length && pts.every(pt => pt === pts[0]);
+      const firstRow = cs.table[0];
+      if (allSame && firstRow && firstRow.p >= 1) {
+        return cs.group + ' 组四队同积 ' + pts[0] + ' 分，形势极度开放';
+      }
+      const leader = sortTable(cs.table)[0];
+      return cs.group + ' 组 ' + leader.team + ' ' + leader.pts + ' 分领跑';
+    }),
+  ];
+
+  const risk = assessManipulationRisk(
+    g, match.matchday || 1, match.home.name, match.away.name, table, crossNotes, groupSnapshots,
+  );
+
+  const teamScenario = (name, row) => {
+    const p1 = buildTeamPathScenario(g, 1, groupSnapshots);
+    const p2 = buildTeamPathScenario(g, 2, groupSnapshots);
+    const p3 = buildTeamPathScenario(g, 3, groupSnapshots);
+    return {
+      team: name,
+      rank: sorted.findIndex(r => r.team === name) + 1 || '—',
+      pts: row.pts,
+      played: row.p,
+      if_1st: p1.if_r32,
+      if_1st_r16: p1.if_r16,
+      if_1st_corridor: p1.r16_corridor,
+      if_2nd: p2.if_r32,
+      if_2nd_r16: p2.if_r16,
+      if_2nd_corridor: p2.r16_corridor,
+      if_3rd: p3.if_r32,
+      if_3rd_r16: p3.if_r16,
+    };
+  };
+
+  const buildScenarioLines = () => {
+    const md = match.matchday || 1;
+    const lines = [
+      `${match.home.name} 若取胜：积分 ${homeRow.pts + 3}，${g} 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。`,
+      `${match.away.name} 若取胜：积分 ${awayRow.pts + 3}，客场抢分将改变 ${g} 组格局与淘汰赛半区。`,
+      `平局：双方各 +1 分；在 ${linkedNotes.join(' · ') || '绑定组'} 背景下，名次差 1 位可能改变 32 强对手。`,
+    ];
+    if (g === 'C' && (match.home.name === 'Brazil' || match.away.name === 'Brazil')) {
+      lines.push(
+        '巴西路径提示：C 组第 1 → 32强 M76 打 F 组第 2（荷兰若 F 组头名则 32 强避荷兰）→ 16强 M91 进 E/I 次席走廊；'
+        + 'C 组第 2 → 32强 M75 极可能碰 F 组第 1（荷兰）→ 16强 M90 进 A/B 次席走廊。末轮才存在「选半区」博弈，本轮须先抢分。',
+      );
     }
-    const leader = sortTable(cs.table)[0];
-    return cs.group + ' 组 ' + leader.team + ' ' + leader.pts + ' 分领跑';
-  });
-
-  const risk = assessManipulationRisk(g, match.matchday || 1, match.home.name, match.away.name, table, crossNotes);
-
-  const teamScenario = (name, row) => ({
-    team: name,
-    rank: sorted.findIndex(r => r.team === name) + 1 || '—',
-    pts: row.pts,
-    played: row.p,
-    if_1st: paths.r32_1st || '32强路径待定',
-    if_2nd: paths.r32_2nd || '32强路径待定',
-    if_3rd: paths.third_pool
-      ? '若列小组第 3，需与 ' + paths.third_pool.replace(/,/g, '/') + ' 等组第 3 比净胜球/进球'
-      : '最佳第 3 出线待定',
-  });
+    if (md >= 2 && bracket.tradeoff) {
+      lines.push('头名/次席博弈：' + bracket.tradeoff);
+    }
+    return lines;
+  };
 
   return {
     group: g,
@@ -1755,13 +2800,10 @@ function buildGroupContext(match, groupSnapshots) {
     home: teamScenario(match.home.name, homeRow),
     away: teamScenario(match.away.name, awayRow),
     cross_group_notes: crossNotes,
+    path_tradeoff: bracket.tradeoff || null,
     manipulation_risk: risk,
-    knockout_note: '48 队制：12 组前 2 + 8 个最佳第 3 进入 32 强；末轮可能出现算分/控分战术。',
-    scenarios: [
-      `${match.home.name} 若取胜：积分 ${homeRow.pts + 3}，${g} 组排名有望上升；过早预测 32 强对手仍不可靠。`,
-      `${match.away.name} 若取胜：积分 ${awayRow.pts + 3}，客场抢分将改变 ${g} 组格局。`,
-      `平局：双方各 +1 分；在 ${crossNotes.join('；') || '其他组'} 背景下，第 2 轮直接对话权重上升。`,
-    ],
+    knockout_note: '48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。',
+    scenarios: buildScenarioLines(),
   };
 }
 
@@ -1785,6 +2827,9 @@ function buildGroupStandingsNote(match, gc) {
     stakes = `A 组榜首直接对话（净胜球 ${match.home.name} ${hGd >= 0 ? '+' : ''}${hGd} vs ${match.away.name} ${aGd >= 0 ? '+' : ''}${aGd}）；胜者掌握出线主动权`;
   } else if (g === 'B' && table.length && table.every(r => r.pts === table[0].pts)) {
     stakes = `B 组四队同积 ${table[0].pts} 分，本轮赛果将显著重排积分榜`;
+  } else if (g === 'C' && (match.home.name === 'Brazil' || match.away.name === 'Brazil')) {
+    stakes = '巴西仅积 ' + (match.home.name === 'Brazil' ? h.pts : a.pts)
+      + ' 分须先抢分；C↔F 绑定：头名 32强避 F 组头名（荷兰若领跑 F 组）、次席 32强或直碰荷兰，16 强半区相反';
   } else if (leaders.length) {
     stakes = `组内 ${leaders.map(r => r.team + ' ' + r.pts + '分').join('、')} 领先；直接对话权重极高`;
   }
@@ -1858,11 +2903,19 @@ const exportsObj = {
   buildPublicSummaryNote,
   buildCalibrationDisplay,
   buildTotalsDisplay,
+  classifyTotalsOutlook,
+  probTotalsOver,
+  probTotalsAtLeast,
+  formatMarketGoalsInteger,
+  classifySpreadOutlook,
+  buildCustomerReading,
+  buildGoalTimingDisplay,
   applyDepthToPrediction,
   buildGroupContext,
   buildGroupStandingsNote,
   buildInsightKeyFactors,
   KNOCKOUT_PATHS,
+  KNOCKOUT_BRACKET,
   GROUP_TEAMS,
 };
 

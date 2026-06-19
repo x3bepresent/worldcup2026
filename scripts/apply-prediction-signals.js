@@ -12,17 +12,22 @@ const {
   buildInsightKeyFactors,
   buildPreviewPostMatchReview,
   enrichActualResultForReview,
+  buildGoalTimingDisplay,
 } = require('../js/prediction-signals-lib');
 const HANDICAP = {
   ...require('./handicap-data-day6'),
   ...require('./handicap-data-day7'),
   ...require('./handicap-data-day8'),
+  ...require('./handicap-data-day9'),
+};
+const GOAL_TIMING = {
+  ...require('./goal-timing-data-day9'),
 };
 
 const ROOT = path.join(__dirname, '..');
 const MATCH_PATH = path.join(ROOT, 'js', 'matches-data.js');
 const RESULTS_PATH = path.join(ROOT, 'js', 'results-data.js');
-const TS = '2026-06-19T10:00:00+08:00';
+const TS = '2026-06-20T14:00:00+08:00';
 
 /** 与 matches-app.js SHOW_DEPTH_CALIBRATION_PANEL 对齐：交稿时可设为 false */
 const APPEND_SUMMARY_TO_KEY_FACTOR = false;
@@ -118,7 +123,7 @@ function syncSiteMeta(data) {
 
   const seen = new Set();
   data.breakingNews = (data.breakingNews || []).filter(n => {
-    const key = `${n.tag}|${n.text}`;
+    const key = `${n.tag}|${(n.text || '').trim()}`;
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
@@ -130,17 +135,28 @@ function enrichMatchSignals(m, handicapMap, snapshots) {
   const raw = handicapMap[copy.id];
   if (raw) {
     copy.depth_calibration = buildDepthCalibration(copy, raw);
-    if (copy.actualResult && copy.depth_calibration?.display_summary?.match_preview) {
+    if (copy.actualResult && copy.depth_calibration?.display_summary) {
       const ar = enrichActualResultForReview(copy);
       copy.depth_calibration.preview_replay = buildPreviewPostMatchReview(
-        copy.depth_calibration.display_summary.match_preview,
+        copy.depth_calibration.display_summary,
         ar,
         copy.home?.name,
-        copy.away?.name
+        copy.away?.name,
+        {
+          tier_home: copy.depth_calibration.tier_home,
+          tier_gap: copy.depth_calibration.tier_gap,
+          totals_line: copy.depth_calibration.totals_line,
+        }
       );
     }
     if (copy.prediction) {
       copy.prediction = applyDepthToPrediction(copy.prediction, copy.depth_calibration);
+      const gtRaw = GOAL_TIMING[copy.id];
+      if (gtRaw && copy.depth_calibration?.display_summary) {
+        copy.depth_calibration.display_summary.goal_timing = buildGoalTimingDisplay(
+          gtRaw, copy.home?.name, copy.away?.name
+        );
+      }
       const dc = copy.depth_calibration;
       const kf = copy.prediction.key_factor || '';
       const baseKf = stripDepthCalibrationFromKeyFactor(kf);
@@ -193,7 +209,7 @@ syncSiteMeta(MATCH_DATA);
 
 MATCH_DATA.lastUpdated = TS;
 
-if (!MATCH_DATA.breakingNews.some(n => n.text?.includes('推演概要'))) {
+if (!MATCH_DATA.breakingNews.some(n => /推演升级|推演概要/.test(n.text || ''))) {
   MATCH_DATA.breakingNews.unshift({
     tag: 'UPDATE',
     text: '📊 推演升级：模型概要 + 小组形势/晋级路径已纳入今日赛事',
@@ -201,9 +217,11 @@ if (!MATCH_DATA.breakingNews.some(n => n.text?.includes('推演概要'))) {
   });
 }
 
+syncSiteMeta(MATCH_DATA);
+
 fs.writeFileSync(
   MATCH_PATH,
-  `// 今日赛事 — Day 8 (signals enriched)\n// Last updated: ${TS}\nconst MATCH_DATA = ${JSON.stringify(MATCH_DATA, null, 2)};\n`
+  `// 今日赛事 — Day 9 (signals enriched)\n// Last updated: ${TS}\nconst MATCH_DATA = ${JSON.stringify(MATCH_DATA, null, 2)};\n`
 );
 
 console.log('✅ Applied signals to', MATCH_DATA.todayMatches.length, 'matches');

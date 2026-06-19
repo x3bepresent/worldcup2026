@@ -1,0 +1,118 @@
+/** Day 9 venue weather — m29–m32 · 更新于 2026-06-19 晚间（开球前一日预报） */
+
+const FORECAST_TS = '2026-06-19 22:00 本地';
+
+const VENUE_WEATHER = {
+  m32: {
+    city: '西雅图',
+    country: '美国',
+    venue: 'Lumen Field',
+    temp: 18,
+    humidity: 62,
+    altitude_m: 50,
+    rain_chance: 25,
+    wind: '太平洋海风 3级',
+    condition_cn: '西雅图凉爽多云，海风微凉',
+    impact_level: 'LOW',
+    impact: 'Lumen Field 18°C 午间开球，体感舒适；美国高位压迫与澳大利亚低位均不受气候明显制约',
+    impact_summary: '凉爽海风——利于东道主维持 90 分钟强度，对推演影响低',
+    home_adapt: 88,
+    away_adapt: 79,
+    home_note: '西雅图主场，Pochettino 球队习惯太平洋西北凉爽气候；压迫节奏不易因热衰减',
+    away_note: '澳大利亚跨时区作战，18°C 对其体能型打法友好；Ryan 一门经验是稳定因素',
+    prediction_note: '气候对模型影响可忽略；若临场小雨，Lumen Field 天然草排水良好，球速略快',
+    weather_factors: [
+      { label: '18°C · 12:00 PT 开球', impact: '低', detail: '北京时间 6月20日 03:00；西雅图午间气温温和' },
+      { label: '降雨概率 25%', impact: '低', detail: '间歇性 drizzle 可能，对传球影响有限' },
+      { label: '海风 3级', impact: '略利主队', detail: '长传与传中精度略受影响，东道主更熟悉场地风向' },
+    ],
+    historical_note: 'Lumen Field · D组第2轮 · 东道主美国 · 预报更新 ' + FORECAST_TS,
+    forecast_updated: FORECAST_TS,
+  },
+  m30: {
+    city: '波士顿',
+    country: '美国',
+    venue: 'Gillette Stadium',
+    temp: 21,
+    humidity: 55,
+    altitude_m: 85,
+    rain_chance: 18,
+    wind: '东北风 2级',
+    condition_cn: '波士顿温和晴朗，夜场舒适',
+    impact_level: 'LOW',
+    impact: 'Gillette 21°C 傍晚开球，苏格兰与摩洛哥均适应温带气候；战术对位主导比赛',
+    impact_summary: '气候变量低——均分乱局下，McTominay vs Hakimi 对位不受天气扰动',
+    home_adapt: 82,
+    away_adapt: 84,
+    home_note: '苏格兰球员习惯英伦温带夜场；Robertson 左路往返不受气温制约',
+    away_note: '摩洛哥地中海-撒哈拉过渡带球队，22°C 级夜场是其舒适区；Hakimi 边路不受影响',
+    prediction_note: '模型不因气候微调 xG；若微雨则场地略滑，反击速度微升',
+    weather_factors: [
+      { label: '21°C · 18:00 ET 开球', impact: '低', detail: '北京时间 6月20日 06:00；Foxborough 傍晚降温' },
+      { label: '低降雨 18%', impact: '低', detail: '晴朗为主，天然草状态良好' },
+      { label: '湿度 55%', impact: '中性', detail: '双方体能消耗正常，无湿热负担' },
+    ],
+    historical_note: 'Gillette Stadium · C组第2轮 · 预报更新 ' + FORECAST_TS,
+    forecast_updated: FORECAST_TS,
+  },
+  m29: {
+    city: '费城',
+    country: '美国',
+    venue: 'Lincoln Financial Field',
+    temp: 27,
+    humidity: 68,
+    altitude_m: 12,
+    rain_chance: 30,
+    wind: '西南风 2级 · 湿热',
+    condition_cn: '费城夏夜闷热，体感约 30°C',
+    impact_level: 'MEDIUM',
+    impact: 'Lincoln Financial 27°C+68% 湿度，巴西需早段破局避免后段体能下滑；海地低位消耗大',
+    impact_summary: '湿热中等——领先方后段守势体能是隐性变量，利好早段破局的一方',
+    home_adapt: 86,
+    away_adapt: 74,
+    home_note: '巴西南美球员适应湿热，Vinícius 边路爆发需在前 60 分钟兑现',
+    away_note: '海地五后卫低位在湿热下后段专注度易降；Nazon 反击窗口多在 60\' 前',
+    prediction_note: '模型因湿热略抬早段 xG 权重；若巴西 2-0 领先，下半场总球面可能回落',
+    weather_factors: [
+      { label: '27°C · 21:00 ET 开球', impact: '体感偏高', detail: '北京时间 6月20日 09:00；夏夜仍有余热' },
+      { label: '湿度 68%', impact: '中', detail: '湿热叠加，替补深度与换人节奏关键' },
+      { label: '降雨概率 30%', impact: '低-中', detail: '对流雨可能，开放式球场无顶棚' },
+    ],
+    historical_note: 'Lincoln Financial Field · C组 · 巴西 vs 海地 · 预报更新 ' + FORECAST_TS,
+    forecast_updated: FORECAST_TS,
+  },
+  m31: {
+    city: '旧金山湾区',
+    country: '美国',
+    venue: "Levi's Stadium",
+    temp: 23,
+    humidity: 48,
+    altitude_m: 15,
+    rain_chance: 8,
+    wind: '湾区西风 2级',
+    condition_cn: '圣克拉拉晴朗干燥，封闭式',
+    impact_level: 'LOW',
+    impact: 'Levi\'s Stadium 23°C 干燥晴朗，Yıldız/Güler 肋部渗透与巴拉圭低位均不受气候干扰',
+    impact_summary: '气候变量低——D 组生死战节奏由战术谨慎度决定，非天气',
+    home_adapt: 84,
+    away_adapt: 81,
+    home_note: '土耳其技术型球员在干燥场地触球更顺；Montella 肋部配合不受制约',
+    away_note: '巴拉圭 Alfaro 低位防守对气温不敏感；Almirón 反击速度是核心',
+    prediction_note: '气候对模型影响可忽略；封闭式球场无暴晒，夜场体感舒适',
+    weather_factors: [
+      { label: '23°C · 20:00 PT 开球', impact: '低', detail: '北京时间 6月20日 11:00；Santa Clara 夜场微凉' },
+      { label: '干燥晴朗', impact: '中性', detail: '传球精度与远射条件理想' },
+      { label: '封闭式球场', impact: '低', detail: '无风扰动，战术执行稳定' },
+    ],
+    historical_note: "Levi's Stadium · D组第2轮 · 预报更新 " + FORECAST_TS,
+    forecast_updated: FORECAST_TS,
+  },
+};
+
+function venueWeather(matchId) {
+  const w = VENUE_WEATHER[matchId];
+  if (!w) return null;
+  return { ...w };
+}
+
+module.exports = { VENUE_WEATHER, venueWeather };
