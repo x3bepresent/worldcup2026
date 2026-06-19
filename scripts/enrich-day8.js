@@ -217,41 +217,56 @@ function buildM27() {
 }
 
 function buildM28() {
+  const lineup = {
+    confirmed: true,
+    formation: '4-1-2-3 / 3-4-3',
+    home: 'Rangel; Sánchez, Álvarez, Vásquez, Gallardo; Lira; Romo, Gutiérrez; Jiménez, Quiñones, Alvarado',
+    away: 'Kim Seung-gyu; Lee Han-beom, Kim Min-jae, Kim Moon-hwan; Seol Young-woo, Hwang In-beom, Paik Seung-ho, Lee Gi-hyuk; Lee Jae-sung, Son Heung-min, Lee Kang-in',
+    note: '✅ FIFA 官方 team sheet（Match 28 · 400021442）',
+    source: 'FIFA Match Centre · api.fifa.com',
+    diff: {
+      home: '⚠️ 4-1-2-3：Sánchez 替 Reyes · Romo 替 Fidalgo · Lira 单后腰',
+      away: '⚠️ 3-4-3：Kim Moon-hwan 变阵 · Lee Tae-seok 替补 · 三叉戟',
+    },
+    predicted: {
+      formation: '4-3-3 / 3-4-2-1',
+      home: 'Rangel; Reyes, Álvarez, Vásquez, Gallardo; Fidalgo, Lira, Gutiérrez; Alvarado, Jiménez, Quiñones',
+      away: 'Kim Seung-gyu; Lee Han-beom, Kim Min-jae, Lee Gi-hyuk; Seol Young-woo, Hwang In-beom, Paik Seung-ho, Lee Tae-seok; Lee Jae-sung, Lee Kang-in; Son Heung-min',
+      source: 'Sporting News 预测 · 已 superseded',
+    },
+  };
+
   return baseMatch('m28', 'A', 2, '6月19日 09:00', 'Estadio Akron', 'Guadalajara, Mexico',
-    'A组榜首战 · 墨西哥 vs 韩国 · 瓜达拉哈拉', 1.52, 1.32,
-    'A组榜首对话：Jiménez 状态 vs 孙兴慜；瓜达拉哈拉夜场主场气势；泊松最可能 2-1/1-1。',
+    'A组榜首战 · 墨西哥 vs 韩国 · FIFA 官方首发已确认', 1.52, 1.32,
+    'FIFA 官方：墨 4-1-2-3（Álvarez 队长/Sánchez/Romo）vs 韩 3-4-3（Moon-hwan 变阵 · 孙兴慜+李在城+李康仁）；泊松最可能 2-1/1-1。',
     68, 'aguirre', 'hong', () => ({
-      lineup: lineupFromPrediction({
-        formation: '4-2-3-1 / 4-2-3-1',
-        home: 'Ochoa; Arteaga, Montes, Vasquez; Álvarez, Chávez; Lozano, Jiménez, Vega; Mora, Antuna',
-        away: 'Jo Hyeon-woo; Kim Min-jae, Kim Young-gwon, Kim Tae-hwan; Hwang In-beom, Lee Kang-in; Son, Hwang Hee-chan, Paik; Cho Gue-sung',
-        source: 'ESPN / BBC 预测 · 非官方',
-      }),
+      lineup,
       home: team('Mexico', 'mx', 12, 80, ['W', 'W', 'W', 'D', 'W'], 'Javier Aguirre', [
         { name: 'Raúl Jiménez', pos: 'ST', club: 'Fulham', stats: '首轮双响', rating: 8.4, desc: '支点+终结' },
-        { name: 'Guillermo Ochoa', pos: 'GK', club: 'Salernitana', stats: '40 岁一门', rating: 7.8, desc: '第六届世界杯' },
-        { name: 'Hirving Lozano', pos: 'RW', club: 'PSV', stats: '边路速度', rating: 8.0, desc: '宽度+内切' },
+        { name: 'Raúl Rangel', pos: 'GK', club: 'Guadalajara', stats: '主场一门', rating: 7.6, desc: '瓜达拉哈拉预计首发' },
+        { name: 'Edson Álvarez', pos: 'CB', club: 'Fenerbahçe', stats: '顶 Montes', rating: 8.0, desc: '停赛空缺中卫' },
       ], { name: 'Raúl Jiménez', pos: 'ST', desc: 'A组榜首战核心', rating: 8.4 },
         getTeamNews('m28', 'home').injuries, getTeamNews('m28', 'home').rumors),
       away: team('South Korea', 'kr', 23, 76, ['W', 'W', 'W', 'D', 'W'], 'Hong Myung-bo', [
-        { name: '孙兴慜 Son Heung-min', pos: 'LW', club: 'LAFC', stats: '56\' 远射', rating: 8.8, desc: 'A组最大威胁' },
-        { name: '李康仁 Lee Kang-in', pos: 'CAM', club: 'PSG', stats: '71\' 远射', rating: 8.4, desc: '肋部+远射' },
-        { name: 'Kim Min-jae', pos: 'CB', club: 'Bayern Munich', stats: '防线领袖', rating: 8.2, desc: '防空+出球' },
-      ], { name: '孙兴慜 Son Heung-min', pos: 'LW', desc: '对墨西哥稳守反击', rating: 8.8 },
+        { name: '孙兴慜 Son Heung-min', pos: 'ST', club: 'LAFC', stats: '队长 · 7 号', rating: 8.8, desc: '3-4-3 中锋' },
+        { name: '李康仁 Lee Kang-in', pos: 'RW', club: 'PSG', stats: '官方 19 号', rating: 8.4, desc: '三叉戟右翼' },
+        { name: '李在城 Lee Jae-sung', pos: 'LW', club: 'Mainz', stats: '官方 10 号', rating: 8.0, desc: '三叉戟左翼' },
+        { name: 'Kim Min-jae', pos: 'CB', club: 'Bayern Munich', stats: '官方 4 号', rating: 8.2, desc: '三中卫核心' },
+      ], { name: '孙兴慜 Son Heung-min', pos: 'ST', desc: 'FIFA 官方 3-4-3 中锋', rating: 8.8 },
         getTeamNews('m28', 'away').injuries, getTeamNews('m28', 'away').rumors),
       h2h: { home_wins: 1, draws: 1, away_wins: 1, recent: [{ year: 2018, comp: '友谊赛', score: '0-2', winner: 'South Korea' }], note: '2018 友谊赛韩国 2-0 胜' },
       upset: {
         favorite: 'Mexico', underdog: 'South Korea', favorite_iso: 'MEX',
         index: 35, level: 'MEDIUM', level_cn: '中等',
         cold_result_pct: 30,
-        verdict: 'A组榜首对话势均力敌——孙兴慜+李康仁远射是韩国最大变数，平局约 28%。',
-        tactical: 'Aguirre 4-2-3-1 主场宽度 vs 洪明甫 4-2-3-1 稳守反击+孙兴慜 内切。',
+        verdict: 'A组榜首对话势均力敌——韩国 3-4-2-1 李在城+李康仁喂孙兴慜，平局约 28%。',
+        tactical: 'Aguirre 4-3-3 主场宽度 vs 洪明甫 3-4-2-1 薛英佑/李太锡翼卫+黄仁范屏障。',
         psychology: '墨西哥主场夜场气势；韩国 2018 友谊赛 2-0 胜是心理参考。',
         historical: '2018 友谊赛韩国 2-0 胜墨西哥。',
         factors: [
           { tag: '球星', impact: '强', detail: 'Jiménez vs 孙兴慜' },
+          { tag: '阵型', impact: '强', detail: '韩沿用赢捷克 3-4-2-1' },
           { tag: '主场', impact: '强', detail: '瓜达拉哈拉夜场' },
-          { tag: '远射', impact: '中', detail: '李康仁 B 计划' },
         ],
       },
     }));
@@ -263,9 +278,9 @@ MATCH_DATA.syncSource = 'FIFA 赛程 · Day 8 完整推演 · coach/mystic/refer
 MATCH_DATA.breakingNews = [
   { tag: 'PREVIEW', text: '📅 今日4场 · 捷克-南非(00:00) · 瑞士-波黑(03:00) · 加拿大-卡塔尔(06:00) · 墨西哥-韩国(09:00)', time: '6月19日' },
   { tag: 'PREVIEW', text: 'A/B组第2轮：Schick 抢分战 · 东道主温哥华 · 墨西哥 vs 孙兴慜 榜首对话', time: '焦点' },
-  { tag: 'LINEUP', text: '📋 预测首发 · 捷 3-4-2-1 Schick 领衔 · 南非 Sithole/Zwane 停赛 Mbatha/Mofokeng 顶替', time: '预测' },
+  { tag: 'LINEUP', text: '✅ FIFA 官方首发 · 墨 4-1-2-3 Sánchez/Romo · 韩 3-4-3 Moon-hwan 变阵 孙兴慜+李在城+李康仁', time: '官方确认' },
   { tag: 'OFFICIAL', text: '🏁 昨日：葡1-1刚果(金) · 英4-2克 · 加纳1-0巴 · 乌1-3哥伦 · 详见「过往赛果」', time: '赛果回顾' },
-  { tag: 'INJURY', text: 'Jiménez/孙兴慜/Davies 均 FIT · Chávez 队检 · Džeko 打满', time: '伤情' },
+  { tag: 'INJURY', text: 'Montes 停赛 · Quiñones 队检 · Bae/Kim Tae-hyeon 韩替补 · 孙兴慜 FIT', time: '伤情' },
   { tag: 'REFEREE', text: '✅ FIFA 确认：Penso(捷-南非) · Pinheiro(瑞-波) · Garay(加-卡) · Tejera(墨-韩)', time: '裁判' },
   { tag: 'OFFICIAL', text: 'K/L组首轮完结 · 哥伦比亚&英格兰领跑 · 今日 A/B 组第2轮', time: '积分榜' },
   { tag: 'UPDATE', text: '灵力/五行/主教练/气候板块已更新至 Day 8 完整版', time: '站点' },

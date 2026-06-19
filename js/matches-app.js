@@ -1108,6 +1108,17 @@ function coachAnalysisPanel(ca, homeName, awayName) {
     </div>`;
 }
 
+/** 综合推演关键因素条目（积分榜 · 气候 · 战术） */
+function renderInsightFactorRows(factors, fallback) {
+  const list = factors?.length ? factors : (fallback ? [{ icon: '→', label: null, text: fallback }] : []);
+  if (!list.length) return '<div class="intel-body" style="opacity:0.75">暂无关键因素</div>';
+  return list.map(f => `
+        <div class="intel-highlight mf-pred-insight-highlight mf-pred-insight-factor">
+          <span class="intel-highlight-arrow">${f.icon || '→'}</span>
+          <span>${f.label ? `<strong class="mf-pred-insight-factor-label">${f.label}</strong> · ` : ''}${f.text}</span>
+        </div>`).join('');
+}
+
 /** 终端区下方 · 综合推演关键因素 + 比分概率分布（置于模型推演概要之上） */
 function renderPredictionInsightStrip(p, m, finished) {
   const officialScore = finished ? getOfficialScoreStr(m) : null;
@@ -1116,17 +1127,15 @@ function renderPredictionInsightStrip(p, m, finished) {
   const verdictHtml = finished && verdict
     ? ` <strong class="mf-pred-insight-verdict mf-pred-insight-verdict--${verdict.anyTop3Hit ? 'hit' : 'miss'}">官方 ${officialScore} · Top3 ${verdict.anyTop3Hit ? '有命中' : '均未中'}</strong>`
     : '';
+  const factorRows = renderInsightFactorRows(p.insight_factors, p.key_factor || '综合因素分析');
   return `
     <div class="mf-pred-insight-strip">
       <div class="mf-pred-insight-section">
         <div class="mf-pred-insight-head">
           <span class="mf-pred-insight-title">综合推演关键因素</span>
         </div>
-        <p class="mf-pred-insight-legend">模型判断本场走势的重要变量 — 已纳入终端胜平负娱乐推演${calNote}${finished ? ' · 下方为<strong>赛前</strong>泊松分布' : ''}。</p>
-        <div class="intel-highlight mf-pred-insight-highlight">
-          <span class="intel-highlight-arrow">→</span>
-          <span>${p.key_factor || '综合因素分析'}</span>
-        </div>
+        <p class="mf-pred-insight-legend">模型判断本场走势的重要变量 — 含<strong>小组积分</strong>、<strong>赛场气候</strong>与战术阵容；已纳入终端胜平负娱乐推演${calNote}${finished ? ' · 下方为<strong>赛前</strong>泊松分布' : ''}。</p>
+        <div class="mf-pred-insight-factors">${factorRows}</div>
       </div>
       <div class="mf-pred-insight-divider" aria-hidden="true"></div>
       <div class="mf-pred-insight-section">

@@ -55,18 +55,26 @@ const TEAM_NEWS = {
   m28: {
     home: {
       injuries: [
-        { player: 'Raúl Jiménez', status: 'FIT', note: '首轮梅开二度，状态火热', confirmed: true },
-        { player: 'Luis Chávez', status: 'DOUBT', note: '康复管理中，次轮出场存疑', confirmed: false },
-        { player: 'Guillermo Ochoa', status: 'FIT', note: '40 岁一门，第六届世界杯', confirmed: true },
+        { player: 'Raúl Jiménez', status: 'FIT', note: 'FIFA 官方首发中锋', confirmed: true },
+        { player: 'César Montes', status: 'OUT', note: '停赛 · Álvarez 队长顶中卫', confirmed: true },
+        { player: 'Julián Quiñones', status: 'FIT', note: 'FIFA 官方首发左翼', confirmed: true },
+        { player: 'Israel Reyes', status: 'BENCH', note: 'Sánchez 顶替首发右闸', confirmed: true },
+        { player: 'Gilberto Mora', status: 'BENCH', note: '未进首发，Romo 中场', confirmed: true },
       ],
-      rumors: ['Jiménez 梅开二度后 Aguirre 称「对韩国是真正考验」', '瓜达拉哈拉夜场主场气势'],
+      rumors: ['FIFA 官方 4-1-2-3：Lira 单后腰 · Romo+Gutiérrez · Álvarez 队长', 'Sánchez 替 Reyes 右闸'],
     },
     away: {
       injuries: [
-        { player: '孙兴慜 Son Heung-min', status: 'FIT', note: 'LAFC 前锋，A组最大威胁', confirmed: true },
-        { player: '李康仁', status: 'FIT', note: '巴黎中场，首轮远射破门', confirmed: true },
+        { player: '孙兴慜 Son Heung-min', status: 'FIT', note: '队长 · FIFA 官方 3-4-3 中锋', confirmed: true },
+        { player: '李康仁 Lee Kang-in', status: 'FIT', note: 'FIFA 官方首发 · 三叉戟右翼', confirmed: true },
+        { player: '李在城 Lee Jae-sung', status: 'FIT', note: 'FIFA 官方首发 · 三叉戟左翼', confirmed: true },
+        { player: 'Kim Moon-hwan', status: 'FIT', note: 'FIFA 官方三中卫（替 Lee Tae-seok）', confirmed: true },
+        { player: 'Lee Tae-seok', status: 'BENCH', note: '对捷克首发 · 本场替补', confirmed: true },
       ],
-      rumors: ['洪明甫：「孙兴慜被限制时李康仁远射是 B 计划」', '2018 友谊赛 2-0 胜墨西哥是心理参考'],
+      rumors: [
+        'FIFA 官方 3-4-3：Moon-hwan 变阵 · Gi-hyuk 推前 · 孙兴慜+李在城+李康仁 三叉戟',
+        '洪明甫未沿用赢捷克 3-4-2-1，改强攻阵型',
+      ],
     },
   },
 };

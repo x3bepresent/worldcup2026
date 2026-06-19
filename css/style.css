@@ -627,6 +627,9 @@ footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--bor
   color: var(--txt2);
 }
 .mf-pred-insight-highlight { margin-bottom: 0; }
+.mf-pred-insight-factors { display: flex; flex-direction: column; gap: 0.55rem; }
+.mf-pred-insight-factor { margin-bottom: 0; }
+.mf-pred-insight-factor-label { color: var(--gold); font-weight: 700; }
 .mf-pred-insight-divider {
   height: 1px;
   margin: 0.85rem 0;

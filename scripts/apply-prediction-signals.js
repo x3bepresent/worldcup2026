@@ -9,6 +9,7 @@ const {
   buildPublicSummaryNote,
   applyDepthToPrediction,
   buildGroupContext,
+  buildInsightKeyFactors,
   buildPreviewPostMatchReview,
   enrichActualResultForReview,
 } = require('../js/prediction-signals-lib');
@@ -150,6 +151,10 @@ function enrichMatchSignals(m, handicapMap, snapshots) {
   }
   if (snapshots?.length) {
     copy.group_context = buildGroupContext(copy, snapshots);
+  }
+  if (copy.prediction) {
+    const baseKf = stripDepthCalibrationFromKeyFactor(copy.prediction.key_factor || '');
+    copy.prediction.insight_factors = buildInsightKeyFactors(copy, copy.group_context, baseKf);
   }
   return copy;
 }

@@ -8228,7 +8228,24 @@ const RESULTS_DATA = {
         "base_home_win": 68,
         "base_draw": 19,
         "base_away_win": 14,
-        "depth_calibrated": true
+        "depth_calibrated": true,
+        "insight_factors": [
+          {
+            "icon": "📊",
+            "label": "小组积分",
+            "text": "France 暂列 I 组第 2（3 分 · 已赛 1 场） vs Senegal 第 3（0 分 · 已赛 1 场）"
+          },
+          {
+            "icon": "🌤️",
+            "label": "赛场气候",
+            "text": "午后偏热，开放式 · 26°C · 湿度 58% · 降雨概率 25% · 东南风 2级；气候变量低——法国传控深度略受益，塞内加尔转换不受明显制约（26°C · 15:00 ET 开球 · 开放式球场）"
+          },
+          {
+            "icon": "⚽",
+            "label": "战术与阵容",
+            "text": "【赛后复盘】赛前主胜63%/最可能2-0；实际3-1。Mbappé 66'+90+6' 双响成队史射手王，Barcola 82' 替补破门；Mbaye 90+5' 挽回颜面。方向：主胜命中；比分未中(2-0→3-1)；泊松 Top3 含 3-1"
+          }
+        ]
       },
       "upset_alert": {
         "favorite": "France",
@@ -9360,7 +9377,24 @@ const RESULTS_DATA = {
         "base_home_win": 18,
         "base_draw": 24,
         "base_away_win": 58,
-        "depth_calibrated": true
+        "depth_calibrated": true,
+        "insight_factors": [
+          {
+            "icon": "📊",
+            "label": "小组积分",
+            "text": "Iraq 暂列 I 组第 4（0 分 · 已赛 1 场） vs Norway 第 1（3 分 · 已赛 1 场）"
+          },
+          {
+            "icon": "🌤️",
+            "label": "赛场气候",
+            "text": "傍晚舒适，天然草皮 · 22°C · 湿度 55% · 降雨概率 20% · 东北风 2级；气候均衡——Haaland 对位伊拉克低位是推演核心，天气不构成冷门变量（22°C · 18:00 ET 傍晚 · 天然草皮）"
+          },
+          {
+            "icon": "⚽",
+            "label": "战术与阵容",
+            "text": "【赛后复盘】赛前客胜82%/最可能0-1或0-2；实际1-4。Hussein 39' 头球一度扳平，Haaland 29'+43' 世界杯首秀双响，Østigård 76' 头球，Hussein 90+7' 乌龙。方向：客胜命中；比分未中；Haaland 兑现核心预期"
+          }
+        ]
       },
       "upset_alert": {
         "favorite": "Norway",
@@ -10440,7 +10474,24 @@ const RESULTS_DATA = {
         "base_home_win": 82,
         "base_draw": 13,
         "base_away_win": 6,
-        "depth_calibrated": true
+        "depth_calibrated": true,
+        "insight_factors": [
+          {
+            "icon": "📊",
+            "label": "小组积分",
+            "text": "Argentina 暂列 J 组第 1（3 分 · 已赛 1 场） vs Algeria 第 4（0 分 · 已赛 1 场）"
+          },
+          {
+            "icon": "🌤️",
+            "label": "赛场气候",
+            "text": "中西部午后偏热，开放式 · 29°C · 湿度 62% · 降雨概率 30% · 南风 3级；午后偏热——60' 后传球精度略降，领先方降 tempo 概率上升；总 xG 模型微调约 -6%（29°C 午后偏热 · 270m 低海拔）"
+          },
+          {
+            "icon": "⚽",
+            "label": "战术与阵容",
+            "text": "【赛后复盘】赛前主胜88%/最可能3-0；实际3-0 完全命中。Messi 17'/60'/76' 帽子戏法，追平 Klose 世界杯总进球纪录。方向：主胜+比分双中；Mahrez 反击未能兑现"
+          }
+        ]
       },
       "upset_alert": {
         "favorite": "Argentina",
@@ -11519,7 +11570,24 @@ const RESULTS_DATA = {
         "base_home_win": 59,
         "base_draw": 25,
         "base_away_win": 17,
-        "depth_calibrated": true
+        "depth_calibrated": true,
+        "insight_factors": [
+          {
+            "icon": "📊",
+            "label": "小组积分",
+            "text": "Austria 暂列 J 组第 2（3 分 · 已赛 1 场） vs Jordan 第 3（0 分 · 已赛 1 场）"
+          },
+          {
+            "icon": "🌤️",
+            "label": "赛场气候",
+            "text": "湾区夜场凉爽，人工草皮 · 21°C · 湿度 52% · 降雨概率 5% · 西风 1级；气候均衡——Al-Tamari 反击 vs Alaba 出球是核心；人工草略加快传球（21°C · 21:00 PT 夜场 · 人工草皮）"
+          },
+          {
+            "icon": "⚽",
+            "label": "战术与阵容",
+            "text": "【赛后复盘】赛前主胜55%/最可能1-0或2-0；实际3-1。Schmid 20' 远射，Olwan 50' 扳平，Al-Arab 77' 乌龙，Arnautović 补时点球。方向：主胜命中；比分未中(2-0→3-1)；Jordan 冷门未兑现但展现竞争力"
+          }
+        ]
       },
       "upset_alert": {
         "favorite": "Austria",
@@ -12598,7 +12666,24 @@ const RESULTS_DATA = {
         "base_home_win": 70,
         "base_draw": 19,
         "base_away_win": 11,
-        "depth_calibrated": true
+        "depth_calibrated": true,
+        "insight_factors": [
+          {
+            "icon": "📊",
+            "label": "小组积分",
+            "text": "Portugal 暂列 K 组第 2（1 分 · 已赛 1 场） vs Congo DR 第 3（1 分 · 已赛 1 场）；组内 Colombia 3分 领先；直接对话权重极高"
+          },
+          {
+            "icon": "🌤️",
+            "label": "赛场气候",
+            "text": "休斯顿湿热，封闭式 · 32°C · 湿度 68% · 降雨概率 30% · 东南风 2级；湿热变量中等——C罗/B费 控球深度略受益，Wissa 冲刺型打法对气温不敏感（32°C · 12:00 CT 开球 · 封闭式球场）"
+          },
+          {
+            "icon": "⚽",
+            "label": "战术与阵容",
+            "text": "【赛后复盘】赛前主胜约 70%/最可能 2-0；实际 1-1 冷门。Neves 6' 头球领先，Wissa 45+5' 历史性扳平；C罗 0 射正。方向：主胜未中；平局命中；比分未中；爆冷指数有效"
+          }
+        ]
       },
       "upset_alert": {
         "favorite": "Portugal",
@@ -13718,7 +13803,24 @@ const RESULTS_DATA = {
         "base_home_win": 47,
         "base_draw": 25,
         "base_away_win": 28,
-        "depth_calibrated": true
+        "depth_calibrated": true,
+        "insight_factors": [
+          {
+            "icon": "📊",
+            "label": "小组积分",
+            "text": "England 暂列 L 组第 1（3 分 · 已赛 1 场） vs Croatia 第 4（0 分 · 已赛 1 场）"
+          },
+          {
+            "icon": "🌤️",
+            "label": "赛场气候",
+            "text": "达拉斯午后炎热，封闭式 · 34°C · 湿度 55% · 降雨概率 20% · 南风 2级；炎热变量中等——Bellingham 年轻体能略优，克罗地亚后段慢热需防（34°C · 16:00 CT 开球 · 封闭式球场）"
+          },
+          {
+            "icon": "⚽",
+            "label": "战术与阵容",
+            "text": "【赛后复盘】赛前英格兰略优/最可能 2-1；实际 4-2 对攻大戏。Kane 12'(点)+42' 双响，Baturina 36'、Musa 45+5' 扳平半场 2-2，Bellingham 47'、Rashford 85' 锁定。方向：主胜命中；比分未中；总进球偏多"
+          }
+        ]
       },
       "upset_alert": {
         "favorite": "England",
@@ -14804,7 +14906,24 @@ const RESULTS_DATA = {
         "base_home_win": 54,
         "base_draw": 26,
         "base_away_win": 20,
-        "depth_calibrated": true
+        "depth_calibrated": true,
+        "insight_factors": [
+          {
+            "icon": "📊",
+            "label": "小组积分",
+            "text": "Ghana 暂列 L 组第 2（3 分 · 已赛 1 场） vs Panama 第 3（0 分 · 已赛 1 场）"
+          },
+          {
+            "icon": "🌤️",
+            "label": "赛场气候",
+            "text": "多伦多傍晚凉爽，天然草 · 22°C · 湿度 62% · 降雨概率 25% · 东北风 2级；气候均衡——Kudus/Partey 对位巴拿马是推演核心，天气不构成冷门变量（22°C · 19:00 ET 傍晚 · 天然草皮）"
+          },
+          {
+            "icon": "⚽",
+            "label": "战术与阵容",
+            "text": "【赛后复盘】赛前加纳占优/最可能 2-0 或 1-0；实际 1-0 补时绝杀。Yirenkyi 90+4' 破门，全场沉闷。方向：主胜命中；比分方向命中(1-0)；模型慢热预期部分兑现"
+          }
+        ]
       },
       "upset_alert": {
         "favorite": "Ghana",
@@ -15882,7 +16001,24 @@ const RESULTS_DATA = {
         "base_home_win": 18,
         "base_draw": 23,
         "base_away_win": 58,
-        "depth_calibrated": true
+        "depth_calibrated": true,
+        "insight_factors": [
+          {
+            "icon": "📊",
+            "label": "小组积分",
+            "text": "Uzbekistan 暂列 K 组第 4（0 分 · 已赛 1 场） vs Colombia 第 1（3 分 · 已赛 1 场）"
+          },
+          {
+            "icon": "🌤️",
+            "label": "赛场气候",
+            "text": "墨西哥城高原2240m，晚场 · 24°C · 湿度 55% · 降雨概率 35% · 海拔 2240m · 西风 1级；高原变量高——Shomurodov 主队适应 vs Díaz 年轻体能，后段 xG 分布可能偏移（2240m 海拔 · 24°C · 21:00 CT 晚场）"
+          },
+          {
+            "icon": "⚽",
+            "label": "战术与阵容",
+            "text": "【赛后复盘】赛前客胜约 60%/最可能 0-2 或 1-2；实际 1-3。Muñoz 41'、Díaz 65'、Campaz 90+6'；乌兹别克 Fayzullaev 60' 队史世界杯首球。方向：客胜命中；比分接近(1-2→1-3)"
+          }
+        ]
       },
       "upset_alert": {
         "favorite": "Colombia",

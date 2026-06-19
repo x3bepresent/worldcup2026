@@ -1765,6 +1765,77 @@ function buildGroupContext(match, groupSnapshots) {
   };
 }
 
+/** 小组积分形势一句话（供综合推演关键因素） */
+function buildGroupStandingsNote(match, gc) {
+  if (!gc?.home || !gc?.away) return null;
+  const g = gc.group;
+  const h = gc.home;
+  const a = gc.away;
+  const table = gc.standings || [];
+  const leaders = table.filter(r => r.pts > Math.max(h.pts, a.pts));
+  let stakes = '';
+
+  if (g === 'A' && h.pts === 0 && a.pts === 0) {
+    stakes = '双方首轮皆负、同积 0 分垫底；墨西哥与韩国各 3 分领跑，本场胜者仍须末轮抢分';
+  } else if (g === 'A' && h.pts === 3 && a.pts === 3) {
+    const hGd = (table.find(r => r.team === match.home.name)?.gf || 0)
+      - (table.find(r => r.team === match.home.name)?.ga || 0);
+    const aGd = (table.find(r => r.team === match.away.name)?.gf || 0)
+      - (table.find(r => r.team === match.away.name)?.ga || 0);
+    stakes = `A 组榜首直接对话（净胜球 ${match.home.name} ${hGd >= 0 ? '+' : ''}${hGd} vs ${match.away.name} ${aGd >= 0 ? '+' : ''}${aGd}）；胜者掌握出线主动权`;
+  } else if (g === 'B' && table.length && table.every(r => r.pts === table[0].pts)) {
+    stakes = `B 组四队同积 ${table[0].pts} 分，本轮赛果将显著重排积分榜`;
+  } else if (leaders.length) {
+    stakes = `组内 ${leaders.map(r => r.team + ' ' + r.pts + '分').join('、')} 领先；直接对话权重极高`;
+  }
+
+  const base = `${match.home.name} 暂列 ${g} 组第 ${h.rank}（${h.pts} 分 · 已赛 ${h.played} 场）`
+    + ` vs ${match.away.name} 第 ${a.rank}（${a.pts} 分 · 已赛 ${a.played} 场）`;
+  return stakes ? base + '；' + stakes : base;
+}
+
+/**
+ * 综合推演关键因素 — 积分榜 + 气候 + 战术要点
+ * @param {object} match
+ * @param {object} [groupContext]
+ * @param {string} [baseKeyFactor] — 剥离校准追加后的原始 key_factor
+ */
+function buildInsightKeyFactors(match, groupContext, baseKeyFactor) {
+  const factors = [];
+  const standingsNote = buildGroupStandingsNote(match, groupContext);
+  if (standingsNote) {
+    factors.push({ icon: '📊', label: '小组积分', text: standingsNote });
+  }
+
+  const w = match.weather;
+  if (w) {
+    const wx = weatherXgModifier(w);
+    const bits = [
+      w.condition_cn,
+      w.temp != null ? w.temp + '°C' : null,
+      w.humidity != null ? '湿度 ' + w.humidity + '%' : null,
+      w.rain_chance != null ? '降雨概率 ' + w.rain_chance + '%' : null,
+      w.altitude_m > 1000 && !(w.condition_cn || '').includes('海拔')
+        ? '海拔 ' + w.altitude_m + 'm' : null,
+      w.wind || null,
+    ].filter(Boolean);
+    const factorBits = (w.weather_factors || []).map(f => f.label).slice(0, 2);
+    factors.push({
+      icon: '🌤️',
+      label: '赛场气候',
+      text: bits.join(' · ') + '；' + (w.impact_summary || wx.note)
+        + (factorBits.length ? '（' + factorBits.join(' · ') + '）' : ''),
+    });
+  }
+
+  const tactical = (baseKeyFactor || match.prediction?.key_factor || '').trim();
+  if (tactical) {
+    factors.push({ icon: '⚽', label: '战术与阵容', text: tactical });
+  }
+
+  return factors;
+}
+
 const exportsObj = {
   SIGNAL_META,
   impliedTierFromXg,
@@ -1789,6 +1860,8 @@ const exportsObj = {
   buildTotalsDisplay,
   applyDepthToPrediction,
   buildGroupContext,
+  buildGroupStandingsNote,
+  buildInsightKeyFactors,
   KNOCKOUT_PATHS,
   GROUP_TEAMS,
 };
