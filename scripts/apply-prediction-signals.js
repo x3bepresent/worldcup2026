@@ -11,6 +11,8 @@ const {
   buildGroupContext,
   buildInsightKeyFactors,
   buildPreviewPostMatchReview,
+  buildGoalEfficiencyReview,
+  buildGoalEfficiencyPreview,
   enrichActualResultForReview,
   buildGoalTimingDisplay,
 } = require('../js/prediction-signals-lib');
@@ -172,6 +174,19 @@ function enrichMatchSignals(m, handicapMap, snapshots) {
     const baseKf = stripDepthCalibrationFromKeyFactor(copy.prediction.key_factor || '');
     copy.prediction.insight_factors = buildInsightKeyFactors(copy, copy.group_context, baseKf);
   }
+  if (copy.actualResult?.home_score != null && copy.prediction?.xg_home != null) {
+    const ge = buildGoalEfficiencyReview(copy);
+    if (ge) {
+      if (!copy.depth_calibration) copy.depth_calibration = {};
+      copy.depth_calibration.goal_efficiency = ge;
+    }
+  } else if (copy.prediction?.xg_home != null) {
+    const gp = buildGoalEfficiencyPreview(copy);
+    if (gp) {
+      if (!copy.depth_calibration) copy.depth_calibration = {};
+      copy.depth_calibration.goal_efficiency_preview = gp;
+    }
+  }
   return copy;
 }
 
@@ -191,9 +206,21 @@ MATCH_DATA.todayMatches = MATCH_DATA.todayMatches.map(m => enrichMatchSignals(m,
 if (RESULTS_DATA?.finishedMatches?.length) {
   let resultsUpdated = 0;
   RESULTS_DATA.finishedMatches = RESULTS_DATA.finishedMatches.map(m => {
-    if (!allHandicap[m.id]) return m;
-    resultsUpdated += 1;
-    return enrichMatchSignals(m, allHandicap, groupSnapshots);
+    if (allHandicap[m.id]) {
+      resultsUpdated += 1;
+      return enrichMatchSignals(m, allHandicap, groupSnapshots);
+    }
+    if (m.actualResult?.home_score != null && m.prediction?.xg_home != null) {
+      const copy = JSON.parse(JSON.stringify(m));
+      const ge = buildGoalEfficiencyReview(copy);
+      if (ge) {
+        if (!copy.depth_calibration) copy.depth_calibration = {};
+        copy.depth_calibration.goal_efficiency = ge;
+        resultsUpdated += 1;
+        return copy;
+      }
+    }
+    return m;
   });
   RESULTS_DATA.lastUpdated = TS;
   if (resultsUpdated) {

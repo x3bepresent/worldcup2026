@@ -1030,17 +1030,96 @@ function renderUpsetDrawRiskNote(ua, drawTrapNote) {
     </div>`;
 }
 
+function renderGoalEfficiencyPreviewBlock(gp) {
+  if (!gp?.summary_cn) return '';
+  const tags = (gp.tags || []).map(t => `
+    <span class="dc-ge-tag" style="color:${t.color};background:${t.bg};border:1px solid ${t.color}33">${t.label}</span>`).join('');
+  const scenarioRows = (gp.scenarios || []).slice(0, 4).map(sc => `
+    <div class="dc-ge-scenario">
+      <div class="dc-ge-scenario-head">
+        <span class="dc-ge-scenario-label">${sc.label}</span>
+        <span class="dc-ge-scenario-pct">约 ${sc.prob_pct}%</span>
+      </div>
+      <div class="dc-ge-scenario-ex">${sc.example}</div>
+    </div>`).join('');
+  const watchRows = (gp.watch_notes || []).map(n => `<li>${n}</li>`).join('');
+  const probRow = gp.prob_over_line != null ? `
+    <div class="dc-ge-prob-row">
+      <span>≥${gp.totals_line} 球 ${gp.prob_over_line}%</span>
+      <span>≥4 球 ${gp.prob_4_plus}%</span>
+      <span>≤2 球 ${gp.prob_2_or_less}%</span>
+    </div>` : '';
+  return `
+    <div class="dc-goal-eff dc-goal-eff--preview">
+      <div class="dc-goal-eff-head">
+        <span>进球路径预估</span>
+        ${gp.lean_cn ? `<span class="dc-goal-eff-path dc-goal-eff-path--${gp.lean || 'neutral'}">${gp.lean_cn}</span>` : ''}
+      </div>
+      <div class="dc-goal-eff-tags">${tags}</div>
+      <div class="dc-goal-eff-bars dc-goal-eff-bars--preview">
+        <div class="dc-goal-eff-row">
+          <span class="dc-goal-eff-side">热门 ${gp.fav_name}</span>
+          <span class="dc-goal-eff-num">赛前 xG ${gp.fav_xg}</span>
+        </div>
+        <div class="dc-goal-eff-row">
+          <span class="dc-goal-eff-side">弱队 ${gp.dog_name}</span>
+          <span class="dc-goal-eff-num">赛前 xG ${gp.dog_xg} · 差 ${gp.xg_gap}</span>
+        </div>
+      </div>
+      ${probRow}
+      <div class="dc-ge-scenarios">${scenarioRows}</div>
+      <p class="dc-goal-eff-summary">${gp.summary_cn}</p>
+      ${watchRows ? `<ul class="dc-ge-watch">${watchRows}</ul>` : ''}
+      ${gp.in_mid_band ? `<div class="dc-goal-eff-hint">${gp.sample_note || '样本规则'} · 弱队效率≥1.2 易大球 · 弱队&lt;0.6 易小球 · 热门≥1.5 样本内大球率 100%</div>` : ''}
+    </div>`;
+}
+
+function renderGoalEfficiencyBlock(ge) {
+  if (!ge?.summary_cn) return '';
+  const tags = (ge.tags || []).map(t => `
+    <span class="dc-ge-tag" style="color:${t.color};background:${t.bg};border:1px solid ${t.color}33">${t.label}</span>`).join('');
+  return `
+    <div class="dc-goal-eff">
+      <div class="dc-goal-eff-head">
+        <span>进球效率复盘</span>
+        ${ge.path_label ? `<span class="dc-goal-eff-path">${ge.path_label}</span>` : ''}
+      </div>
+      <div class="dc-goal-eff-tags">${tags}</div>
+      <div class="dc-goal-eff-bars">
+        <div class="dc-goal-eff-row">
+          <span class="dc-goal-eff-side">热门 ${ge.fav_name}</span>
+          <span class="dc-goal-eff-num">xG ${ge.fav_xg} → ${ge.fav_goals} 球</span>
+          <span class="dc-goal-eff-pill" style="--eff:${Math.min(ge.fav_eff, 3) / 3}">效率 ${ge.fav_eff}</span>
+        </div>
+        <div class="dc-goal-eff-row">
+          <span class="dc-goal-eff-side">弱队 ${ge.dog_name}</span>
+          <span class="dc-goal-eff-num">xG ${ge.dog_xg} → ${ge.dog_goals} 球</span>
+          <span class="dc-goal-eff-pill dc-goal-eff-pill--dog" style="--eff:${Math.min(ge.dog_eff, 3) / 3}">效率 ${ge.dog_eff}</span>
+        </div>
+      </div>
+      <p class="dc-goal-eff-summary">${ge.summary_cn}</p>
+      ${ge.in_mid_band ? '<div class="dc-goal-eff-hint">样本提示：xG 总 2.0–3.0 区间 · 弱队效率≥1.2 易大球 · 弱队&lt;0.6 易小球 · 热门≥1.5 样本内大球率 100%</div>' : ''}
+    </div>`;
+}
+
 /** 模型推演概要 — 综合 xG · 教练 · 伤病 · 气候 · 先进球情景 */
 function renderDepthCalibrationBlock(dc, upsetAlert, prediction, homeName, awayName) {
   if (!SHOW_DEPTH_CALIBRATION_PANEL) return '';
   if (!dc) return '';
+  const goalEffOnly = renderGoalEfficiencyBlock(dc.goal_efficiency)
+    || renderGoalEfficiencyPreviewBlock(dc.goal_efficiency_preview);
   const s = dc.display_summary;
-  if (!s) return '';
+  if (!s) {
+    return goalEffOnly
+      ? `<div class="depth-calib-strip depth-calib-strip--simple depth-calib-strip--eff-only">${goalEffOnly}</div>`
+      : '';
+  }
 
   const factors = s.context_factors || [];
   const scenarios = s.first_goal_scenarios || [];
   const cal = s.calibration || {};
   const replay = dc.preview_replay;
+  const goalEff = dc.goal_efficiency;
   const reading = s.customer_reading;
   const readingCard = renderCustomerReadingCard(reading);
   const goalTimingHtml = renderGoalTimingBlock(s.goal_timing, homeName, awayName);
@@ -1050,6 +1129,8 @@ function renderDepthCalibrationBlock(dc, upsetAlert, prediction, homeName, awayN
       <p>${replay.summary_cn}</p>
       ${replay.actual_score ? `<span class="dc-preview-replay-meta">实际 ${replay.actual_score}${replay.ht_score ? ' · 半场 ' + replay.ht_score : ''}${replay.totals_actual != null ? ' · 总进球 ' + replay.totals_actual : ''}</span>` : ''}
     </div>` : '';
+  const goalEffRow = renderGoalEfficiencyBlock(goalEff)
+    || renderGoalEfficiencyPreviewBlock(dc.goal_efficiency_preview);
   const xgCtx = s.xg_context || {};
   const scorePatterns = s.score_patterns || [];
   const totalsView = s.totals_view || {};
@@ -1132,6 +1213,7 @@ function renderDepthCalibrationBlock(dc, upsetAlert, prediction, homeName, awayN
       ${goalTimingHtml}
       ${calibrationRow}
       ${replayRow}
+      ${goalEffRow}
       ${xgRow}
       ${factorRow}
       ${previewHtml || ''}

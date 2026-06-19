@@ -1243,7 +1243,83 @@ const MATCH_DATA = {
             "disclaimer_cn": "以上为两队近30场历史进球/失球时间段统计，供读场参考；非本场赛果预测，与灵力分析娱乐板块无关。"
           }
         },
-        "public_summary_note": "【推演概要】USA · 低位反击 · 进球偏少。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75（模型微调：主胜 -4% · 平 +1% · 客 +3%）"
+        "public_summary_note": "【推演概要】USA · 低位反击 · 进球偏少。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
+        "goal_efficiency_preview": {
+          "mode": "preview",
+          "xg_total": 2.21,
+          "xg_gap": 0.65,
+          "xg_home": 1.43,
+          "xg_away": 0.78,
+          "fav_name": "USA",
+          "dog_name": "Australia",
+          "fav_xg": 1.43,
+          "dog_xg": 0.78,
+          "path_type": "low",
+          "path_label": "铁局/小球",
+          "lean": "low",
+          "lean_cn": "小球倾向",
+          "prob_over_line": 37.8,
+          "prob_4_plus": 18,
+          "prob_2_or_less": 62.2,
+          "totals_line": 2.5,
+          "scenarios": [
+            {
+              "key": "low",
+              "label": "铁局/小球",
+              "example": "1-0 / 1-1 / 0-0",
+              "note": "样本：弱队效率<0.6 尚无大球；xG 差≥1.0 时大球率 0%。",
+              "prob_pct": 38
+            },
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "example": "2-2 / 1-3 / 3-1",
+              "note": "样本：弱队效率≥1.2 时 71% 大球；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
+              "prob_pct": 29
+            },
+            {
+              "key": "fav_burst",
+              "label": "热门爆发",
+              "example": "2-0 / 3-0 / 4-1",
+              "note": "样本：热门效率≥1.5 时大球率 100%；弱队 xG≈1.0 但只进 1 球时也常见此路径。",
+              "prob_pct": 26
+            },
+            {
+              "key": "open",
+              "label": "对攻/open",
+              "example": "2-2 / 4-2 / 3-2",
+              "note": "双方 xG 均有进球预期，任一方效率达标即可凑 4 球。",
+              "prob_pct": 6
+            }
+          ],
+          "tags": [
+            {
+              "key": "lean_low",
+              "label": "小球倾向",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "dog_threat",
+              "label": "弱队有球",
+              "color": "#E8B84B",
+              "bg": "rgba(232,184,75,0.1)"
+            },
+            {
+              "key": "low_scoring",
+              "label": "小球",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            }
+          ],
+          "watch_notes": [
+            "临场弱队若上半场效率≥1.0 → 上调大球/对攻权重"
+          ],
+          "pattern_note": "样本：弱队效率<0.6 尚无大球；xG 差≥1.0 时大球率 0%。 已纳入官方首发变阵对 xG 的修正。",
+          "summary_cn": "【赛前预估】xG 总 2.21（差 0.65）· 热门 USA 1.43 · 弱队 Australia 0.78 → 小球倾向（主路径「铁局/小球」约 38%）。泊松：≥2.5 球约 37.8% · ≥4 球约 18% · ≤2 球约 62.2%。样本：弱队效率<0.6 尚无大球；xG 差≥1.0 时大球率 0%。 已纳入官方首发变阵对 xG 的修正。",
+          "in_mid_band": true,
+          "sample_note": "规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27 红牌局）+ 本场泊松"
+        }
       },
       "coach_analysis": {
         "home": {
@@ -2537,7 +2613,77 @@ const MATCH_DATA = {
             "disclaimer_cn": "以上为两队近30场历史进球/失球时间段统计，供读场参考；非本场赛果预测，与灵力分析娱乐板块无关。"
           }
         },
-        "public_summary_note": "【推演概要】Morocco · 低位反击 · 进球偏少。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法低于 xG 隐含约 0.5（模型微调：主胜 -1% · 平 -1% · 客 +2%）"
+        "public_summary_note": "【推演概要】Morocco · 低位反击 · 进球偏少。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法低于 xG 隐含约 0.5（模型微调：主胜 -1% · 平 -1% · 客 +2%）",
+        "goal_efficiency_preview": {
+          "mode": "preview",
+          "xg_total": 2.63,
+          "xg_gap": 0.07,
+          "xg_home": 1.35,
+          "xg_away": 1.28,
+          "fav_name": "Scotland",
+          "dog_name": "Morocco",
+          "fav_xg": 1.35,
+          "dog_xg": 1.28,
+          "path_type": "low",
+          "path_label": "铁局/小球",
+          "lean": "split",
+          "lean_cn": "大/小分裂",
+          "prob_over_line": 61.2,
+          "prob_4_plus": 26.7,
+          "prob_2_or_less": 51.3,
+          "totals_line": 2.25,
+          "scenarios": [
+            {
+              "key": "low",
+              "label": "铁局/小球",
+              "example": "1-0 / 1-1 / 0-0",
+              "note": "样本：弱队效率<0.6 尚无大球；xG 差≥1.0 时大球率 0%。",
+              "prob_pct": 56
+            },
+            {
+              "key": "fav_burst",
+              "label": "热门爆发",
+              "example": "2-0 / 3-0 / 4-1",
+              "note": "样本：热门效率≥1.5 时大球率 100%；弱队 xG≈1.0 但只进 1 球时也常见此路径。",
+              "prob_pct": 16
+            },
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "example": "2-2 / 1-3 / 3-1",
+              "note": "样本：弱队效率≥1.2 时 71% 大球；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
+              "prob_pct": 16
+            },
+            {
+              "key": "open",
+              "label": "对攻/open",
+              "example": "2-2 / 4-2 / 3-2",
+              "note": "双方 xG 均有进球预期，任一方效率达标即可凑 4 球。",
+              "prob_pct": 13
+            }
+          ],
+          "tags": [
+            {
+              "key": "even_xg",
+              "label": "xG接近",
+              "color": "#5BBF8A",
+              "bg": "rgba(91,191,138,0.08)"
+            },
+            {
+              "key": "low_scoring",
+              "label": "小球",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            }
+          ],
+          "watch_notes": [
+            "临场弱队若上半场效率≥1.0 → 上调大球/对攻权重"
+          ],
+          "pattern_note": "样本：弱队效率<0.6 尚无大球；xG 差≥1.0 时大球率 0%。",
+          "summary_cn": "【赛前预估】xG 总 2.63（差 0.07）· 热门 Scotland 1.35 · 弱队 Morocco 1.28 → 大/小分裂（主路径「铁局/小球」约 56%）。泊松：≥2.25 球约 61.2% · ≥4 球约 26.7% · ≤2 球约 51.3%。样本：弱队效率<0.6 尚无大球；xG 差≥1.0 时大球率 0%。",
+          "in_mid_band": true,
+          "sample_note": "规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27 红牌局）+ 本场泊松"
+        }
       },
       "coach_analysis": {
         "home": {
@@ -3820,7 +3966,78 @@ const MATCH_DATA = {
             "disclaimer_cn": "以上为两队近30场历史进球/失球时间段统计，供读场参考；非本场赛果预测，与灵力分析娱乐板块无关。"
           }
         },
-        "public_summary_note": "【推演概要】Brazil · 低位反击 · 进球偏少。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.75 · 模型认为仅小胜 1 球仍约 27% · 部分达标净胜=2 约 17.6% · 净胜≥3（全达标）约 11.9%（模型微调：主胜 -5% · 平 +1% · 客 +4%）"
+        "public_summary_note": "【推演概要】Brazil · 低位反击 · 进球偏少。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.75 · 模型认为仅小胜 1 球仍约 27% · 部分达标净胜=2 约 17.6% · 净胜≥3（全达标）约 11.9%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
+        "goal_efficiency_preview": {
+          "mode": "preview",
+          "xg_total": 2.6,
+          "xg_gap": 1.1,
+          "xg_home": 1.85,
+          "xg_away": 0.75,
+          "fav_name": "Brazil",
+          "dog_name": "Haiti",
+          "fav_xg": 1.85,
+          "dog_xg": 0.75,
+          "path_type": "low",
+          "path_label": "铁局/小球",
+          "lean": "split",
+          "lean_cn": "大/小分裂",
+          "prob_over_line": 25.5,
+          "prob_4_plus": 25.5,
+          "prob_2_or_less": 52.5,
+          "totals_line": 3.5,
+          "scenarios": [
+            {
+              "key": "low",
+              "label": "铁局/小球",
+              "example": "1-0 / 1-1 / 0-0",
+              "note": "样本：弱队效率<0.6 尚无大球；xG 差≥1.0 时大球率 0%。",
+              "prob_pct": 69
+            },
+            {
+              "key": "fav_burst",
+              "label": "热门爆发",
+              "example": "2-0 / 3-0 / 4-1",
+              "note": "样本：热门效率≥1.5 时大球率 100%；弱队 xG≈1.0 但只进 1 球时也常见此路径。",
+              "prob_pct": 17
+            },
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "example": "2-2 / 1-3 / 3-1",
+              "note": "样本：弱队效率≥1.2 时 71% 大球；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
+              "prob_pct": 7
+            },
+            {
+              "key": "open",
+              "label": "对攻/open",
+              "example": "2-2 / 4-2 / 3-2",
+              "note": "双方 xG 均有进球预期，任一方效率达标即可凑 4 球。",
+              "prob_pct": 7
+            }
+          ],
+          "tags": [
+            {
+              "key": "fav_dominant",
+              "label": "xG碾压",
+              "color": "#FF6B35",
+              "bg": "rgba(255,107,53,0.08)"
+            },
+            {
+              "key": "low_scoring",
+              "label": "小球",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            }
+          ],
+          "watch_notes": [
+            "临场弱队若上半场效率≥1.0 → 上调大球/对攻权重",
+            "xG 差≥1.0——样本 4 场均为小球，勿因热门盲目追大球"
+          ],
+          "pattern_note": "样本：弱队效率<0.6 尚无大球；xG 差≥1.0 时大球率 0%。",
+          "summary_cn": "【赛前预估】xG 总 2.6（差 1.1）· 热门 Brazil 1.85 · 弱队 Haiti 0.75 → 大/小分裂（主路径「铁局/小球」约 69%）。泊松：≥3.5 球约 25.5% · ≥4 球约 25.5% · ≤2 球约 52.5%。样本：弱队效率<0.6 尚无大球；xG 差≥1.0 时大球率 0%。",
+          "in_mid_band": true,
+          "sample_note": "规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27 红牌局）+ 本场泊松"
+        }
       },
       "coach_analysis": {
         "home": {
@@ -5100,7 +5317,77 @@ const MATCH_DATA = {
             "disclaimer_cn": "以上为两队近30场历史进球/失球时间段统计，供读场参考；非本场赛果预测，与灵力分析娱乐板块无关。"
           }
         },
-        "public_summary_note": "【推演概要】Türkiye · 低位反击。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5（模型微调：主胜 +2% · 平 -1% · 客 -1%）"
+        "public_summary_note": "【推演概要】Türkiye · 低位反击。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
+        "goal_efficiency_preview": {
+          "mode": "preview",
+          "xg_total": 2.6,
+          "xg_gap": 0.36,
+          "xg_home": 1.48,
+          "xg_away": 1.12,
+          "fav_name": "Türkiye",
+          "dog_name": "Paraguay",
+          "fav_xg": 1.48,
+          "dog_xg": 1.12,
+          "path_type": "low",
+          "path_label": "铁局/小球",
+          "lean": "split",
+          "lean_cn": "大/小分裂",
+          "prob_over_line": 47.9,
+          "prob_4_plus": 26,
+          "prob_2_or_less": 52.1,
+          "totals_line": 2.5,
+          "scenarios": [
+            {
+              "key": "low",
+              "label": "铁局/小球",
+              "example": "1-0 / 1-1 / 0-0",
+              "note": "样本：弱队效率<0.6 尚无大球；xG 差≥1.0 时大球率 0%。",
+              "prob_pct": 56
+            },
+            {
+              "key": "fav_burst",
+              "label": "热门爆发",
+              "example": "2-0 / 3-0 / 4-1",
+              "note": "样本：热门效率≥1.5 时大球率 100%；弱队 xG≈1.0 但只进 1 球时也常见此路径。",
+              "prob_pct": 16
+            },
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "example": "2-2 / 1-3 / 3-1",
+              "note": "样本：弱队效率≥1.2 时 71% 大球；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
+              "prob_pct": 16
+            },
+            {
+              "key": "open",
+              "label": "对攻/open",
+              "example": "2-2 / 4-2 / 3-2",
+              "note": "双方 xG 均有进球预期，任一方效率达标即可凑 4 球。",
+              "prob_pct": 13
+            }
+          ],
+          "tags": [
+            {
+              "key": "even_xg",
+              "label": "xG接近",
+              "color": "#5BBF8A",
+              "bg": "rgba(91,191,138,0.08)"
+            },
+            {
+              "key": "low_scoring",
+              "label": "小球",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            }
+          ],
+          "watch_notes": [
+            "临场弱队若上半场效率≥1.0 → 上调大球/对攻权重"
+          ],
+          "pattern_note": "样本：弱队效率<0.6 尚无大球；xG 差≥1.0 时大球率 0%。",
+          "summary_cn": "【赛前预估】xG 总 2.6（差 0.36）· 热门 Türkiye 1.48 · 弱队 Paraguay 1.12 → 大/小分裂（主路径「铁局/小球」约 56%）。泊松：≥2.5 球约 47.9% · ≥4 球约 26% · ≤2 球约 52.1%。样本：弱队效率<0.6 尚无大球；xG 差≥1.0 时大球率 0%。",
+          "in_mid_band": true,
+          "sample_note": "规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27 红牌局）+ 本场泊松"
+        }
       },
       "coach_analysis": {
         "home": {

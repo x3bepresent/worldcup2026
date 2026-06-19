@@ -1044,6 +1044,148 @@ footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--bor
 }
 .dc-preview-replay p { margin: 0 0 0.25rem; color: rgba(210,195,235,0.9); }
 .dc-preview-replay-meta { font-size: 0.72rem; color: var(--txt2); }
+.dc-goal-eff {
+  margin: 0.65rem 0;
+  padding: 0.65rem 0.8rem;
+  background: rgba(200,169,110,0.06);
+  border: 1px solid rgba(200,169,110,0.22);
+  border-left: 3px solid var(--gold);
+  border-radius: 4px;
+  font-size: 0.78rem;
+  line-height: 1.58;
+}
+.dc-goal-eff-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 0.45rem;
+}
+.dc-goal-eff-path {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #E8B84B;
+  padding: 0.1rem 0.45rem;
+  border-radius: 3px;
+  background: rgba(232,184,75,0.12);
+  border: 1px solid rgba(232,184,75,0.25);
+}
+.dc-goal-eff-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+.dc-ge-tag {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 0.12rem 0.45rem;
+  border-radius: 3px;
+}
+.dc-goal-eff-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.45rem;
+}
+.dc-goal-eff-row {
+  display: grid;
+  grid-template-columns: minmax(5rem, 1fr) minmax(6rem, 1.2fr) auto;
+  gap: 0.4rem;
+  align-items: center;
+  font-size: 0.74rem;
+}
+.dc-goal-eff-side { color: var(--txt); font-weight: 600; }
+.dc-goal-eff-num { color: var(--txt2); font-size: 0.72rem; }
+.dc-goal-eff-pill {
+  font-size: 0.66rem;
+  font-weight: 800;
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+  color: #FF6B35;
+  background: linear-gradient(90deg, rgba(255,107,53,0.22) calc(var(--eff, 0.5) * 100%), rgba(255,255,255,0.04) 0);
+  border: 1px solid rgba(255,107,53,0.3);
+  white-space: nowrap;
+}
+.dc-goal-eff-pill--dog {
+  color: #E8B84B;
+  border-color: rgba(232,184,75,0.35);
+  background: linear-gradient(90deg, rgba(232,184,75,0.22) calc(var(--eff, 0.5) * 100%), rgba(255,255,255,0.04) 0);
+}
+.dc-goal-eff-summary {
+  margin: 0;
+  color: rgba(210,195,235,0.88);
+  font-size: 0.76rem;
+}
+.dc-goal-eff-hint {
+  margin-top: 0.45rem;
+  padding-top: 0.4rem;
+  border-top: 1px dashed rgba(200,169,110,0.2);
+  font-size: 0.68rem;
+  color: var(--txt2);
+  line-height: 1.5;
+}
+.depth-calib-strip--eff-only { padding: 0.75rem 1rem; }
+.dc-goal-eff--preview {
+  border-left-color: #7BB8D4;
+  background: rgba(123,184,212,0.05);
+  border-color: rgba(123,184,212,0.22);
+}
+.dc-goal-eff-path--high { color: #D95F6A; background: rgba(217,95,106,0.12); border-color: rgba(217,95,106,0.25); }
+.dc-goal-eff-path--low { color: #7BB8D4; background: rgba(123,184,212,0.12); border-color: rgba(123,184,212,0.25); }
+.dc-goal-eff-path--split { color: #C8A96E; background: rgba(200,169,110,0.12); border-color: rgba(200,169,110,0.25); }
+.dc-goal-eff-path--neutral { color: #9B7EDE; background: rgba(155,126,222,0.1); border-color: rgba(155,126,222,0.22); }
+.dc-goal-eff-bars--preview { margin-bottom: 0.35rem; }
+.dc-ge-prob-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  font-size: 0.7rem;
+  color: var(--txt2);
+  margin-bottom: 0.5rem;
+}
+.dc-ge-prob-row span {
+  padding: 0.12rem 0.4rem;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.dc-ge-scenarios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+.dc-ge-scenario {
+  padding: 0.4rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(0,0,0,0.12);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.dc-ge-scenario-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--txt);
+  margin-bottom: 0.15rem;
+}
+.dc-ge-scenario-pct { color: var(--gold); font-size: 0.66rem; white-space: nowrap; }
+.dc-ge-scenario-ex { font-size: 0.66rem; color: var(--txt2); }
+.dc-ge-watch {
+  margin: 0.35rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.68rem;
+  color: var(--txt2);
+  line-height: 1.5;
+}
+.dc-ge-watch li { margin-bottom: 0.2rem; }
 .dc-mp-block {
   display: flex;
   flex-direction: column;

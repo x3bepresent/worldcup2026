@@ -394,6 +394,49 @@ const RESULTS_DATA = {
         "away_score": 28,
         "mystic_verdict": "☰ 乾卦纯阳，天行健之象——墨西哥木火顺局，主场三午火旺，天时地利人和尽在其手。南非水德逢火，黑衣水性在烈日下蒸干。此乃开幕战最佳剧本：强者归位，弱者虽勇，终难逆天。",
         "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
+      },
+      "depth_calibration": {
+        "goal_efficiency": {
+          "xg_total": 2.6,
+          "xg_gap": 1.6,
+          "xg_home": 2.1,
+          "xg_away": 0.5,
+          "fav_name": "Mexico",
+          "dog_name": "South Africa",
+          "fav_xg": 2.1,
+          "dog_xg": 0.5,
+          "fav_goals": 2,
+          "dog_goals": 0,
+          "fav_eff": 0.95,
+          "dog_eff": 0,
+          "total_goals": 2,
+          "goal_diff_vs_xg": -0.6,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小球",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "dog_quiet",
+              "label": "弱队哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "双方效率均低——总进球难起，铁局/小球概率高。",
+          "summary_cn": "赛前 xG 总 2.6（差 1.6）· 热门 Mexico 2.1→2（效率 0.95）· 弱队 South Africa 0.5→0（效率 0）→ 混合路径。双方效率均低——总进球难起，铁局/小球概率高。",
+          "in_mid_band": true
+        }
       }
     },
     {
@@ -725,6 +768,37 @@ const RESULTS_DATA = {
         "away_score": 48,
         "mystic_verdict": "☵ 坎卦水险，夜场亥水应时——韩国火红略顺，孙兴慜是这场的「坎中之孚」，心有定数则胜；捷克水火相战，但坎卦给予弱势方以翻盘机会，切勿轻视。此乃本届世界杯最具悬念的开幕日夜场。",
         "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
+      },
+      "depth_calibration": {
+        "goal_efficiency": {
+          "xg_total": 3,
+          "xg_gap": 0.6,
+          "xg_home": 1.8,
+          "xg_away": 1.2,
+          "fav_name": "South Korea",
+          "dog_name": "Czechia",
+          "fav_xg": 1.8,
+          "dog_xg": 1.2,
+          "fav_goals": 2,
+          "dog_goals": 1,
+          "fav_eff": 1.11,
+          "dog_eff": 0.83,
+          "total_goals": 3,
+          "goal_diff_vs_xg": 0,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "three_goals",
+              "label": "3球",
+              "color": "#C8A96E",
+              "bg": "rgba(200,169,110,0.1)"
+            }
+          ],
+          "pattern_note": "总进球 3 个——介于大/小之间，对照 xG 总偏差 +0。",
+          "summary_cn": "赛前 xG 总 3（差 0.6）· 热门 South Korea 1.8→2（效率 1.11）· 弱队 Czechia 1.2→1（效率 0.83）→ 混合路径。总进球 3 个——介于大/小之间，对照 xG 总偏差 +0。",
+          "in_mid_band": true
+        }
       }
     },
     {
@@ -1220,6 +1294,43 @@ const RESULTS_DATA = {
         "label": "全场结束",
         "scorers": "Lukic 21' (Kolašinac); Larin 78' (Promise David)",
         "highlights": "波黑首开纪录；Kolašinac 助攻+门线解围；加拿大61%控球扳平，队史世界杯首分"
+      },
+      "depth_calibration": {
+        "goal_efficiency": {
+          "xg_total": 2.57,
+          "xg_gap": 0.73,
+          "xg_home": 1.65,
+          "xg_away": 0.92,
+          "fav_name": "Canada",
+          "dog_name": "Bosnia and Herzegovina",
+          "fav_xg": 1.65,
+          "dog_xg": 0.92,
+          "fav_goals": 1,
+          "dog_goals": 1,
+          "fav_eff": 0.61,
+          "dog_eff": 1.09,
+          "total_goals": 2,
+          "goal_diff_vs_xg": -0.6,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小球",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "热门未达 xG 预期——小比分收场常见。",
+          "summary_cn": "赛前 xG 总 2.57（差 0.73）· 热门 Canada 1.65→1（效率 0.61）· 弱队 Bosnia and Herzegovina 0.92→1（效率 1.09）→ 混合路径。热门未达 xG 预期——小比分收场常见。",
+          "in_mid_band": true
+        }
       }
     },
     {
@@ -1704,6 +1815,43 @@ const RESULTS_DATA = {
         "label": "全场结束",
         "scorers": "Bobadilla OG 7'; Balogun 31', 45+5 (Pulisic/Tillman); Mauricio 73' (Enciso); Reyna 90+8 (Freeman)",
         "highlights": "Balogun 双响；Enciso 替补送出助攻；美国主场4-1大胜领跑D组"
+      },
+      "depth_calibration": {
+        "goal_efficiency": {
+          "xg_total": 3.05,
+          "xg_gap": 1.35,
+          "xg_home": 2.2,
+          "xg_away": 0.85,
+          "fav_name": "USA",
+          "dog_name": "Paraguay",
+          "fav_xg": 2.2,
+          "dog_xg": 0.85,
+          "fav_goals": 4,
+          "dog_goals": 1,
+          "fav_eff": 1.82,
+          "dog_eff": 1.18,
+          "total_goals": 5,
+          "goal_diff_vs_xg": 2,
+          "path_type": "fav_burst",
+          "path_label": "热门爆发",
+          "tags": [
+            {
+              "key": "high_scoring",
+              "label": "大球",
+              "color": "#D95F6A",
+              "bg": "rgba(217,95,106,0.12)"
+            },
+            {
+              "key": "fav_burst",
+              "label": "热门爆发",
+              "color": "#FF6B35",
+              "bg": "rgba(255,107,53,0.1)"
+            }
+          ],
+          "pattern_note": "热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。",
+          "summary_cn": "赛前 xG 总 3.05（差 1.35）· 热门 USA 2.2→4（效率 1.82）· 弱队 Paraguay 0.85→1（效率 1.18）→ 热门爆发。热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。",
+          "in_mid_band": false
+        }
       }
     },
     {
@@ -2169,6 +2317,43 @@ const RESULTS_DATA = {
         "label": "全场结束",
         "scorers": "Embolo 17' (pen); Khoukhi 90+4'",
         "highlights": "瑞士控球 68%、xG 3.24 vs 0.76 仍被逼平；Khoukhi 头球绝平 · 出席 67,966"
+      },
+      "depth_calibration": {
+        "goal_efficiency": {
+          "xg_total": 2.7,
+          "xg_gap": 0.86,
+          "xg_home": 0.92,
+          "xg_away": 1.78,
+          "fav_name": "Switzerland",
+          "dog_name": "Qatar",
+          "fav_xg": 1.78,
+          "dog_xg": 0.92,
+          "fav_goals": 1,
+          "dog_goals": 1,
+          "fav_eff": 0.56,
+          "dog_eff": 1.09,
+          "total_goals": 2,
+          "goal_diff_vs_xg": -0.7,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小球",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "热门未达 xG 预期——小比分收场常见。",
+          "summary_cn": "赛前 xG 总 2.7（差 0.86）· 热门 Switzerland 1.78→1（效率 0.56）· 弱队 Qatar 0.92→1（效率 1.09）→ 混合路径。热门未达 xG 预期——小比分收场常见。",
+          "in_mid_band": true
+        }
       }
     },
     {
@@ -2639,6 +2824,43 @@ const RESULTS_DATA = {
         "label": "全场结束",
         "scorers": "Saibari 21' (Díaz); Vinícius Jr 32' (Guimarães)",
         "highlights": "xG 1.27-1.52 · 巴西 20 届世界杯 opener 不败延续 · 出席 80,663 · Casemiro/Ibañez 各1黄"
+      },
+      "depth_calibration": {
+        "goal_efficiency": {
+          "xg_total": 3.1,
+          "xg_gap": 1,
+          "xg_home": 2.05,
+          "xg_away": 1.05,
+          "fav_name": "Brazil",
+          "dog_name": "Morocco",
+          "fav_xg": 2.05,
+          "dog_xg": 1.05,
+          "fav_goals": 1,
+          "dog_goals": 1,
+          "fav_eff": 0.49,
+          "dog_eff": 0.95,
+          "total_goals": 2,
+          "goal_diff_vs_xg": -1.1,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小球",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "热门未达 xG 预期——小比分收场常见。",
+          "summary_cn": "赛前 xG 总 3.1（差 1）· 热门 Brazil 2.05→1（效率 0.49）· 弱队 Morocco 1.05→1（效率 0.95）→ 混合路径。热门未达 xG 预期——小比分收场常见。",
+          "in_mid_band": false
+        }
       }
     },
     {
@@ -3090,6 +3312,49 @@ const RESULTS_DATA = {
         "label": "全场结束",
         "scorers": "McGinn 29'",
         "highlights": "McGinn 7.8 全场最佳 · Gunn 7.7 零封 · xG 1.05-1.05 · 出席 64,146 · Bellegarde/Hickey 各1黄"
+      },
+      "depth_calibration": {
+        "goal_efficiency": {
+          "xg_total": 2.27,
+          "xg_gap": 0.57,
+          "xg_home": 0.85,
+          "xg_away": 1.42,
+          "fav_name": "Scotland",
+          "dog_name": "Haiti",
+          "fav_xg": 1.42,
+          "dog_xg": 0.85,
+          "fav_goals": 1,
+          "dog_goals": 0,
+          "fav_eff": 0.7,
+          "dog_eff": 0,
+          "total_goals": 1,
+          "goal_diff_vs_xg": -1.3,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小球",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "dog_quiet",
+              "label": "弱队哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "双方效率均低——总进球难起，铁局/小球概率高。",
+          "summary_cn": "赛前 xG 总 2.27（差 0.57）· 热门 Scotland 1.42→1（效率 0.7）· 弱队 Haiti 0.85→0（效率 0）→ 混合路径。双方效率均低——总进球难起，铁局/小球概率高。",
+          "in_mid_band": true
+        }
       }
     },
     {
@@ -3565,6 +3830,49 @@ const RESULTS_DATA = {
         "label": "全场结束",
         "scorers": "Irankunda 27' (Okon-Engstler); Metcalfe 75'",
         "highlights": "Beach 8.9 MOTM · 土耳其 72% 控球 30 射无果 · Yildiz 46' 替补 · 出席 52,497 · D组澳美同积3分"
+      },
+      "depth_calibration": {
+        "goal_efficiency": {
+          "xg_total": 2.63,
+          "xg_gap": 0.07,
+          "xg_home": 1.35,
+          "xg_away": 1.28,
+          "fav_name": "Australia",
+          "dog_name": "Türkiye",
+          "fav_xg": 1.35,
+          "dog_xg": 1.28,
+          "fav_goals": 2,
+          "dog_goals": 0,
+          "fav_eff": 1.48,
+          "dog_eff": 0,
+          "total_goals": 2,
+          "goal_diff_vs_xg": -0.6,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小球",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "even_xg",
+              "label": "xG接近",
+              "color": "#5BBF8A",
+              "bg": "rgba(91,191,138,0.08)"
+            },
+            {
+              "key": "dog_quiet",
+              "label": "弱队哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "弱队哑火（效率<0.6）——样本内尚无大球先例。",
+          "summary_cn": "赛前 xG 总 2.63（差 0.07）· 热门 Australia 1.35→2（效率 1.48）· 弱队 Türkiye 1.28→0（效率 0）→ 混合路径。弱队哑火（效率<0.6）——样本内尚无大球先例。",
+          "in_mid_band": true
+        }
       }
     },
     {
@@ -4095,6 +4403,49 @@ const RESULTS_DATA = {
         "label": "全场结束",
         "scorers": "Nmecha 6' (Wirtz); Comenencia 21'; Schlotterbeck 38'; Havertz 45+5 pen; Musiala 47' (Kimmich); Brown 68' (Undav); Undav 78'; Havertz 88' (Undav)",
         "highlights": "Comenencia 库拉索世界杯历史首球 · xG 4.22-0.41 · 出席 68,021 · Neuer 第125场 · Musiala/Undav 替补建功"
+      },
+      "depth_calibration": {
+        "goal_efficiency": {
+          "xg_total": 4.1,
+          "xg_gap": 3.5,
+          "xg_home": 3.8,
+          "xg_away": 0.3,
+          "fav_name": "Germany",
+          "dog_name": "Curaçao",
+          "fav_xg": 3.8,
+          "dog_xg": 0.3,
+          "fav_goals": 7,
+          "dog_goals": 1,
+          "fav_eff": 1.84,
+          "dog_eff": 3.33,
+          "total_goals": 8,
+          "goal_diff_vs_xg": 3.9,
+          "path_type": "open_game",
+          "path_label": "对攻兑现",
+          "tags": [
+            {
+              "key": "high_scoring",
+              "label": "大球",
+              "color": "#D95F6A",
+              "bg": "rgba(217,95,106,0.12)"
+            },
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "color": "#E8B84B",
+              "bg": "rgba(232,184,75,0.12)"
+            },
+            {
+              "key": "open_game",
+              "label": "对攻兑现",
+              "color": "#9B7EDE",
+              "bg": "rgba(155,126,222,0.1)"
+            }
+          ],
+          "pattern_note": "热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。",
+          "summary_cn": "赛前 xG 总 4.1（差 3.5）· 热门 Germany 3.8→7（效率 1.84）· 弱队 Curaçao 0.3→1（效率 3.33）→ 对攻兑现。热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。",
+          "in_mid_band": false
+        }
       }
     },
     {
@@ -4692,6 +5043,43 @@ const RESULTS_DATA = {
         "label": "全场结束",
         "scorers": "van Dijk 51' (Gravenberch); Nakamura 57'; Summerville 64'; Kamada 88' (Shiogai)",
         "highlights": "下半场4球对轰 · Kamada 89' 绝平 · xG 0.78-0.59 · 出席 69,285 · 荷兰16场小组赛不败延续"
+      },
+      "depth_calibration": {
+        "goal_efficiency": {
+          "xg_total": 2.9,
+          "xg_gap": 0.8,
+          "xg_home": 1.85,
+          "xg_away": 1.05,
+          "fav_name": "Netherlands",
+          "dog_name": "Japan",
+          "fav_xg": 1.85,
+          "dog_xg": 1.05,
+          "fav_goals": 2,
+          "dog_goals": 2,
+          "fav_eff": 1.08,
+          "dog_eff": 1.9,
+          "total_goals": 4,
+          "goal_diff_vs_xg": 1.1,
+          "path_type": "dog_bloom",
+          "path_label": "弱队开花",
+          "tags": [
+            {
+              "key": "high_scoring",
+              "label": "大球",
+              "color": "#D95F6A",
+              "bg": "rgba(217,95,106,0.12)"
+            },
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "color": "#E8B84B",
+              "bg": "rgba(232,184,75,0.12)"
+            }
+          ],
+          "pattern_note": "弱队超额兑现（效率≥1.2）——弱队进球超预期，易凑出大球。",
+          "summary_cn": "赛前 xG 总 2.9（差 0.8）· 热门 Netherlands 1.85→2（效率 1.08）· 弱队 Japan 1.05→2（效率 1.9）→ 弱队开花。弱队超额兑现（效率≥1.2）——弱队进球超预期，易凑出大球。",
+          "in_mid_band": true
+        }
       }
     },
     {
@@ -5238,6 +5626,55 @@ const RESULTS_DATA = {
         "label": "全场结束",
         "scorers": "Amad Diallo 90' (Singo)",
         "highlights": "Amad 替补90'绝杀 · 厄瓜多尔三门柱 · xG 1.52-1.01 · 出席 68,274 · 终结厄瓜多尔19场不败"
+      },
+      "depth_calibration": {
+        "goal_efficiency": {
+          "xg_total": 2.9,
+          "xg_gap": 0.1,
+          "xg_home": 1.5,
+          "xg_away": 1.4,
+          "fav_name": "Côte d'Ivoire",
+          "dog_name": "Ecuador",
+          "fav_xg": 1.5,
+          "dog_xg": 1.4,
+          "fav_goals": 1,
+          "dog_goals": 0,
+          "fav_eff": 0.67,
+          "dog_eff": 0,
+          "total_goals": 1,
+          "goal_diff_vs_xg": -1.9,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小球",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "even_xg",
+              "label": "xG接近",
+              "color": "#5BBF8A",
+              "bg": "rgba(91,191,138,0.08)"
+            },
+            {
+              "key": "dog_quiet",
+              "label": "弱队哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "双方效率均低——总进球难起，铁局/小球概率高。",
+          "summary_cn": "赛前 xG 总 2.9（差 0.1）· 热门 Côte d'Ivoire 1.5→1（效率 0.67）· 弱队 Ecuador 1.4→0（效率 0）→ 混合路径。双方效率均低——总进球难起，铁局/小球概率高。",
+          "in_mid_band": true
+        }
       }
     },
     {
@@ -5775,6 +6212,43 @@ const RESULTS_DATA = {
         "label": "全场结束",
         "scorers": "Ayari 7', 90+6' (Bergvall); Isak 30' (Gyökeres); Rekik 43' (Mejbri); Gyökeres 59' (Isak); Svanberg 84' (Isak)",
         "highlights": "Isak 世界杯首球+2助攻 · Svanberg 替补12秒进球 · xG 约3.2-1.0 · Potter 3-4-3 大胜 · 瑞典领跑F组"
+      },
+      "depth_calibration": {
+        "goal_efficiency": {
+          "xg_total": 2.6,
+          "xg_gap": 0.5,
+          "xg_home": 1.55,
+          "xg_away": 1.05,
+          "fav_name": "Sweden",
+          "dog_name": "Tunisia",
+          "fav_xg": 1.55,
+          "dog_xg": 1.05,
+          "fav_goals": 5,
+          "dog_goals": 1,
+          "fav_eff": 3.23,
+          "dog_eff": 0.95,
+          "total_goals": 6,
+          "goal_diff_vs_xg": 3.4,
+          "path_type": "fav_burst",
+          "path_label": "热门爆发",
+          "tags": [
+            {
+              "key": "high_scoring",
+              "label": "大球",
+              "color": "#D95F6A",
+              "bg": "rgba(217,95,106,0.12)"
+            },
+            {
+              "key": "fav_burst",
+              "label": "热门爆发",
+              "color": "#FF6B35",
+              "bg": "rgba(255,107,53,0.1)"
+            }
+          ],
+          "pattern_note": "热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。",
+          "summary_cn": "赛前 xG 总 2.6（差 0.5）· 热门 Sweden 1.55→5（效率 3.23）· 弱队 Tunisia 1.05→1（效率 0.95）→ 热门爆发。热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。",
+          "in_mid_band": true
+        }
       }
     },
     {
@@ -6320,6 +6794,55 @@ const RESULTS_DATA = {
         "label": "全场结束",
         "scorers": "无进球 · Vozinha 多次扑救零封",
         "highlights": "xG 2.29-0.29 · 控球 74%-26% · Yamal 71'/Nico Williams 87' 替补 · Pedri 8.6 MOTM · Vozinha 9.0"
+      },
+      "depth_calibration": {
+        "goal_efficiency": {
+          "xg_total": 3,
+          "xg_gap": 1.9,
+          "xg_home": 2.45,
+          "xg_away": 0.55,
+          "fav_name": "Spain",
+          "dog_name": "Cape Verde",
+          "fav_xg": 2.45,
+          "dog_xg": 0.55,
+          "fav_goals": 0,
+          "dog_goals": 0,
+          "fav_eff": 0,
+          "dog_eff": 0,
+          "total_goals": 0,
+          "goal_diff_vs_xg": -3,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小球",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "iron",
+              "label": "铁局",
+              "color": "#888899",
+              "bg": "rgba(136,136,153,0.1)"
+            },
+            {
+              "key": "dog_quiet",
+              "label": "弱队哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "双方效率均低——总进球难起，铁局/小球概率高。",
+          "summary_cn": "赛前 xG 总 3（差 1.9）· 热门 Spain 2.45→0（效率 0）· 弱队 Cape Verde 0.55→0（效率 0）→ 混合路径。双方效率均低——总进球难起，铁局/小球概率高。",
+          "in_mid_band": true
+        }
       }
     },
     {
@@ -6865,6 +7388,43 @@ const RESULTS_DATA = {
         "label": "全场结束",
         "scorers": "Ashour (hydration break); Hany OG 65' (Lukaku on, Meunier cross)",
         "highlights": "Salah 34 岁生日战 · De Bruyne 中柱 · Lukaku 65' 替补即奏效 · 埃及仍无世界杯胜绩 · xG 约1.4-1.1"
+      },
+      "depth_calibration": {
+        "goal_efficiency": {
+          "xg_total": 2.9,
+          "xg_gap": 1,
+          "xg_home": 1.95,
+          "xg_away": 0.95,
+          "fav_name": "Belgium",
+          "dog_name": "Egypt",
+          "fav_xg": 1.95,
+          "dog_xg": 0.95,
+          "fav_goals": 1,
+          "dog_goals": 1,
+          "fav_eff": 0.51,
+          "dog_eff": 1.05,
+          "total_goals": 2,
+          "goal_diff_vs_xg": -0.9,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小球",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "热门未达 xG 预期——小比分收场常见。",
+          "summary_cn": "赛前 xG 总 2.9（差 1）· 热门 Belgium 1.95→1（效率 0.51）· 弱队 Egypt 0.95→1（效率 1.05）→ 混合路径。热门未达 xG 预期——小比分收场常见。",
+          "in_mid_band": true
+        }
       }
     },
     {
@@ -7422,6 +7982,49 @@ const RESULTS_DATA = {
         "label": "全场结束",
         "scorers": "Al-Amri 41' (corner spill); Maxi Araújo 80' (rebound)",
         "highlights": "迈阿密 31°C 湿热 · Ugarte 中柱 · Bielsa 半场换 Núñez/Viña · 乌拉圭控球碾压但未取3分"
+      },
+      "depth_calibration": {
+        "goal_efficiency": {
+          "xg_total": 2.6,
+          "xg_gap": 1.1,
+          "xg_home": 0.75,
+          "xg_away": 1.85,
+          "fav_name": "Uruguay",
+          "dog_name": "Saudi Arabia",
+          "fav_xg": 1.85,
+          "dog_xg": 0.75,
+          "fav_goals": 1,
+          "dog_goals": 1,
+          "fav_eff": 0.54,
+          "dog_eff": 1.33,
+          "total_goals": 2,
+          "goal_diff_vs_xg": -0.6,
+          "path_type": "dog_bloom",
+          "path_label": "弱队开花",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小球",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "color": "#E8B84B",
+              "bg": "rgba(232,184,75,0.12)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "热门未达 xG 预期——小比分收场常见。",
+          "summary_cn": "赛前 xG 总 2.6（差 1.1）· 热门 Uruguay 1.85→1（效率 0.54）· 弱队 Saudi Arabia 0.75→1（效率 1.33）→ 弱队开花。热门未达 xG 预期——小比分收场常见。",
+          "in_mid_band": true
+        }
       }
     },
     {
@@ -7949,6 +8552,49 @@ const RESULTS_DATA = {
         "label": "全场结束",
         "scorers": "Just 7', 55' (Wood); Rezaeian 32'; Mohebi 64' (Rezaeian cross)",
         "highlights": "Just 双响 · Wood 两次助攻 · Taremi 中柱 · Crocombe 出击险酿祸 · 场外政治抗议 · xG 约1.8-1.6"
+      },
+      "depth_calibration": {
+        "goal_efficiency": {
+          "xg_total": 2.4,
+          "xg_gap": 0.7,
+          "xg_home": 1.55,
+          "xg_away": 0.85,
+          "fav_name": "Iran",
+          "dog_name": "New Zealand",
+          "fav_xg": 1.55,
+          "dog_xg": 0.85,
+          "fav_goals": 2,
+          "dog_goals": 2,
+          "fav_eff": 1.29,
+          "dog_eff": 2.35,
+          "total_goals": 4,
+          "goal_diff_vs_xg": 1.6,
+          "path_type": "open_game",
+          "path_label": "对攻兑现",
+          "tags": [
+            {
+              "key": "high_scoring",
+              "label": "大球",
+              "color": "#D95F6A",
+              "bg": "rgba(217,95,106,0.12)"
+            },
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "color": "#E8B84B",
+              "bg": "rgba(232,184,75,0.12)"
+            },
+            {
+              "key": "open_game",
+              "label": "对攻兑现",
+              "color": "#9B7EDE",
+              "bg": "rgba(155,126,222,0.1)"
+            }
+          ],
+          "pattern_note": "弱队超额兑现（效率≥1.2）——弱队进球超预期，易凑出大球。",
+          "summary_cn": "赛前 xG 总 2.4（差 0.7）· 热门 Iran 1.55→2（效率 1.29）· 弱队 New Zealand 0.85→2（效率 2.35）→ 对攻兑现。弱队超额兑现（效率≥1.2）——弱队进球超预期，易凑出大球。",
+          "in_mid_band": true
+        }
       }
     },
     {
@@ -9194,6 +9840,35 @@ const RESULTS_DATA = {
           "totals_line": 2.75,
           "spread_level": "possible",
           "totals_level": "mild_high"
+        },
+        "goal_efficiency": {
+          "xg_total": 3.2,
+          "xg_gap": 1.4,
+          "xg_home": 2.3,
+          "xg_away": 0.9,
+          "fav_name": "France",
+          "dog_name": "Senegal",
+          "fav_xg": 2.3,
+          "dog_xg": 0.9,
+          "fav_goals": 3,
+          "dog_goals": 1,
+          "fav_eff": 1.3,
+          "dog_eff": 1.11,
+          "total_goals": 4,
+          "goal_diff_vs_xg": 0.8,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "high_scoring",
+              "label": "大球",
+              "color": "#D95F6A",
+              "bg": "rgba(217,95,106,0.12)"
+            }
+          ],
+          "pattern_note": "对照赛前 xG 总 3.2，实际 4 球（+0.8）。",
+          "summary_cn": "赛前 xG 总 3.2（差 1.4）· 热门 France 2.3→3（效率 1.3）· 弱队 Senegal 0.9→1（效率 1.11）→ 混合路径。对照赛前 xG 总 3.2，实际 4 球（+0.8）。",
+          "in_mid_band": false
         }
       },
       "group_context": {
@@ -10461,6 +11136,47 @@ const RESULTS_DATA = {
           "totals_line": 2.5,
           "spread_level": "partial",
           "totals_level": "neutral"
+        },
+        "goal_efficiency": {
+          "xg_total": 2.54,
+          "xg_gap": 0.9,
+          "xg_home": 0.82,
+          "xg_away": 1.72,
+          "fav_name": "Norway",
+          "dog_name": "Iraq",
+          "fav_xg": 1.72,
+          "dog_xg": 0.82,
+          "fav_goals": 4,
+          "dog_goals": 1,
+          "fav_eff": 2.33,
+          "dog_eff": 1.22,
+          "total_goals": 5,
+          "goal_diff_vs_xg": 2.5,
+          "path_type": "open_game",
+          "path_label": "对攻兑现",
+          "tags": [
+            {
+              "key": "high_scoring",
+              "label": "大球",
+              "color": "#D95F6A",
+              "bg": "rgba(217,95,106,0.12)"
+            },
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "color": "#E8B84B",
+              "bg": "rgba(232,184,75,0.12)"
+            },
+            {
+              "key": "open_game",
+              "label": "对攻兑现",
+              "color": "#9B7EDE",
+              "bg": "rgba(155,126,222,0.1)"
+            }
+          ],
+          "pattern_note": "热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。",
+          "summary_cn": "赛前 xG 总 2.54（差 0.9）· 热门 Norway 1.72→4（效率 2.33）· 弱队 Iraq 0.82→1（效率 1.22）→ 对攻兑现。热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。",
+          "in_mid_band": true
         }
       },
       "group_context": {
@@ -11737,6 +12453,41 @@ const RESULTS_DATA = {
           "totals_line": 3,
           "spread_level": "uncertain",
           "totals_level": "neutral"
+        },
+        "goal_efficiency": {
+          "xg_total": 3.4,
+          "xg_gap": 2.2,
+          "xg_home": 2.8,
+          "xg_away": 0.6,
+          "fav_name": "Argentina",
+          "dog_name": "Algeria",
+          "fav_xg": 2.8,
+          "dog_xg": 0.6,
+          "fav_goals": 3,
+          "dog_goals": 0,
+          "fav_eff": 1.07,
+          "dog_eff": 0,
+          "total_goals": 3,
+          "goal_diff_vs_xg": -0.4,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "three_goals",
+              "label": "3球",
+              "color": "#C8A96E",
+              "bg": "rgba(200,169,110,0.1)"
+            },
+            {
+              "key": "dog_quiet",
+              "label": "弱队哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "弱队哑火（效率<0.6）——样本内尚无大球先例。",
+          "summary_cn": "赛前 xG 总 3.4（差 2.2）· 热门 Argentina 2.8→3（效率 1.07）· 弱队 Algeria 0.6→0（效率 0）→ 混合路径。弱队哑火（效率<0.6）——样本内尚无大球先例。",
+          "in_mid_band": false
         }
       },
       "group_context": {
@@ -12998,6 +13749,47 @@ const RESULTS_DATA = {
           "totals_line": 2.5,
           "spread_level": "uncertain",
           "totals_level": "neutral"
+        },
+        "goal_efficiency": {
+          "xg_total": 2.4,
+          "xg_gap": 0.9,
+          "xg_home": 1.65,
+          "xg_away": 0.75,
+          "fav_name": "Austria",
+          "dog_name": "Jordan",
+          "fav_xg": 1.65,
+          "dog_xg": 0.75,
+          "fav_goals": 3,
+          "dog_goals": 1,
+          "fav_eff": 1.82,
+          "dog_eff": 1.33,
+          "total_goals": 4,
+          "goal_diff_vs_xg": 1.6,
+          "path_type": "open_game",
+          "path_label": "对攻兑现",
+          "tags": [
+            {
+              "key": "high_scoring",
+              "label": "大球",
+              "color": "#D95F6A",
+              "bg": "rgba(217,95,106,0.12)"
+            },
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "color": "#E8B84B",
+              "bg": "rgba(232,184,75,0.12)"
+            },
+            {
+              "key": "open_game",
+              "label": "对攻兑现",
+              "color": "#9B7EDE",
+              "bg": "rgba(155,126,222,0.1)"
+            }
+          ],
+          "pattern_note": "热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。",
+          "summary_cn": "赛前 xG 总 2.4（差 0.9）· 热门 Austria 1.65→3（效率 1.82）· 弱队 Jordan 0.75→1（效率 1.33）→ 对攻兑现。热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。",
+          "in_mid_band": true
         }
       },
       "group_context": {
@@ -14286,6 +15078,47 @@ const RESULTS_DATA = {
           "totals_line": 2.75,
           "spread_level": "possible",
           "totals_level": "neutral"
+        },
+        "goal_efficiency": {
+          "xg_total": 2.87,
+          "xg_gap": 1.43,
+          "xg_home": 2.15,
+          "xg_away": 0.72,
+          "fav_name": "Portugal",
+          "dog_name": "Congo DR",
+          "fav_xg": 2.15,
+          "dog_xg": 0.72,
+          "fav_goals": 1,
+          "dog_goals": 1,
+          "fav_eff": 0.47,
+          "dog_eff": 1.39,
+          "total_goals": 2,
+          "goal_diff_vs_xg": -0.9,
+          "path_type": "dog_bloom",
+          "path_label": "弱队开花",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小球",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "color": "#E8B84B",
+              "bg": "rgba(232,184,75,0.12)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "热门未达 xG 预期——小比分收场常见。",
+          "summary_cn": "赛前 xG 总 2.87（差 1.43）· 热门 Portugal 2.15→1（效率 0.47）· 弱队 Congo DR 0.72→1（效率 1.39）→ 弱队开花。热门未达 xG 预期——小比分收场常见。",
+          "in_mid_band": true
         }
       },
       "group_context": {
@@ -15580,6 +16413,47 @@ const RESULTS_DATA = {
           "totals_line": 2.5,
           "spread_level": "possible",
           "totals_level": "neutral"
+        },
+        "goal_efficiency": {
+          "xg_total": 2.8,
+          "xg_gap": 0.44,
+          "xg_home": 1.62,
+          "xg_away": 1.18,
+          "fav_name": "England",
+          "dog_name": "Croatia",
+          "fav_xg": 1.62,
+          "dog_xg": 1.18,
+          "fav_goals": 4,
+          "dog_goals": 2,
+          "fav_eff": 2.47,
+          "dog_eff": 1.69,
+          "total_goals": 6,
+          "goal_diff_vs_xg": 3.2,
+          "path_type": "open_game",
+          "path_label": "对攻兑现",
+          "tags": [
+            {
+              "key": "high_scoring",
+              "label": "大球",
+              "color": "#D95F6A",
+              "bg": "rgba(217,95,106,0.12)"
+            },
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "color": "#E8B84B",
+              "bg": "rgba(232,184,75,0.12)"
+            },
+            {
+              "key": "open_game",
+              "label": "对攻兑现",
+              "color": "#9B7EDE",
+              "bg": "rgba(155,126,222,0.1)"
+            }
+          ],
+          "pattern_note": "热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。",
+          "summary_cn": "赛前 xG 总 2.8（差 0.44）· 热门 England 1.62→4（效率 2.47）· 弱队 Croatia 1.18→2（效率 1.69）→ 对攻兑现。热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。",
+          "in_mid_band": true
         }
       },
       "group_context": {
@@ -16845,6 +17719,47 @@ const RESULTS_DATA = {
           "totals_line": 2.25,
           "spread_level": "skeptical",
           "totals_level": "neutral"
+        },
+        "goal_efficiency": {
+          "xg_total": 2.37,
+          "xg_gap": 0.73,
+          "xg_home": 1.55,
+          "xg_away": 0.82,
+          "fav_name": "Ghana",
+          "dog_name": "Panama",
+          "fav_xg": 1.55,
+          "dog_xg": 0.82,
+          "fav_goals": 1,
+          "dog_goals": 0,
+          "fav_eff": 0.65,
+          "dog_eff": 0,
+          "total_goals": 1,
+          "goal_diff_vs_xg": -1.4,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小球",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "dog_quiet",
+              "label": "弱队哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "双方效率均低——总进球难起，铁局/小球概率高。",
+          "summary_cn": "赛前 xG 总 2.37（差 0.73）· 热门 Ghana 1.55→1（效率 0.65）· 弱队 Panama 0.82→0（效率 0）→ 混合路径。双方效率均低——总进球难起，铁局/小球概率高。",
+          "in_mid_band": true
         }
       },
       "group_context": {
@@ -18125,6 +19040,41 @@ const RESULTS_DATA = {
           "totals_line": 2.5,
           "spread_level": "uncertain",
           "totals_level": "mild_low"
+        },
+        "goal_efficiency": {
+          "xg_total": 2.66,
+          "xg_gap": 0.9,
+          "xg_home": 0.88,
+          "xg_away": 1.78,
+          "fav_name": "Colombia",
+          "dog_name": "Uzbekistan",
+          "fav_xg": 1.78,
+          "dog_xg": 0.88,
+          "fav_goals": 3,
+          "dog_goals": 1,
+          "fav_eff": 1.69,
+          "dog_eff": 1.14,
+          "total_goals": 4,
+          "goal_diff_vs_xg": 1.3,
+          "path_type": "fav_burst",
+          "path_label": "热门爆发",
+          "tags": [
+            {
+              "key": "high_scoring",
+              "label": "大球",
+              "color": "#D95F6A",
+              "bg": "rgba(217,95,106,0.12)"
+            },
+            {
+              "key": "fav_burst",
+              "label": "热门爆发",
+              "color": "#FF6B35",
+              "bg": "rgba(255,107,53,0.1)"
+            }
+          ],
+          "pattern_note": "热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。",
+          "summary_cn": "赛前 xG 总 2.66（差 0.9）· 热门 Colombia 1.78→3（效率 1.69）· 弱队 Uzbekistan 0.88→1（效率 1.14）→ 热门爆发。热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。",
+          "in_mid_band": true
         }
       },
       "group_context": {
@@ -19408,6 +20358,41 @@ const RESULTS_DATA = {
           "totals_line": 2.25,
           "spread_level": "likely",
           "totals_level": "mild_low"
+        },
+        "goal_efficiency": {
+          "xg_total": 2.4,
+          "xg_gap": 0.64,
+          "xg_home": 1.52,
+          "xg_away": 0.88,
+          "fav_name": "Czechia",
+          "dog_name": "South Africa",
+          "fav_xg": 1.52,
+          "dog_xg": 0.88,
+          "fav_goals": 1,
+          "dog_goals": 1,
+          "fav_eff": 0.66,
+          "dog_eff": 1.14,
+          "total_goals": 2,
+          "goal_diff_vs_xg": -0.4,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小球",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "热门未达 xG 预期——小比分收场常见。",
+          "summary_cn": "赛前 xG 总 2.4（差 0.64）· 热门 Czechia 1.52→1（效率 0.66）· 弱队 South Africa 0.88→1（效率 1.14）→ 混合路径。热门未达 xG 预期——小比分收场常见。",
+          "in_mid_band": true
         }
       },
       "group_context": {
@@ -20666,6 +21651,41 @@ const RESULTS_DATA = {
           "totals_line": 2.5,
           "spread_level": "possible",
           "totals_level": "neutral"
+        },
+        "goal_efficiency": {
+          "xg_total": 2.6,
+          "xg_gap": 0.5,
+          "xg_home": 1.55,
+          "xg_away": 1.05,
+          "fav_name": "Switzerland",
+          "dog_name": "Bosnia and Herzegovina",
+          "fav_xg": 1.55,
+          "dog_xg": 1.05,
+          "fav_goals": 4,
+          "dog_goals": 1,
+          "fav_eff": 2.58,
+          "dog_eff": 0.95,
+          "total_goals": 5,
+          "goal_diff_vs_xg": 2.4,
+          "path_type": "fav_burst",
+          "path_label": "热门爆发",
+          "tags": [
+            {
+              "key": "high_scoring",
+              "label": "大球",
+              "color": "#D95F6A",
+              "bg": "rgba(217,95,106,0.12)"
+            },
+            {
+              "key": "fav_burst",
+              "label": "热门爆发",
+              "color": "#FF6B35",
+              "bg": "rgba(255,107,53,0.1)"
+            }
+          ],
+          "pattern_note": "热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。",
+          "summary_cn": "赛前 xG 总 2.6（差 0.5）· 热门 Switzerland 1.55→4（效率 2.58）· 弱队 Bosnia and Herzegovina 1.05→1（效率 0.95）→ 热门爆发。热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。",
+          "in_mid_band": true
         }
       },
       "group_context": {
@@ -21940,6 +22960,47 @@ const RESULTS_DATA = {
           "totals_line": 2.5,
           "spread_level": "skeptical",
           "totals_level": "mild_low"
+        },
+        "goal_efficiency": {
+          "xg_total": 2.5,
+          "xg_gap": 0.74,
+          "xg_home": 1.62,
+          "xg_away": 0.88,
+          "fav_name": "Canada",
+          "dog_name": "Qatar",
+          "fav_xg": 1.62,
+          "dog_xg": 0.88,
+          "fav_goals": 6,
+          "dog_goals": 0,
+          "fav_eff": 3.7,
+          "dog_eff": 0,
+          "total_goals": 6,
+          "goal_diff_vs_xg": 3.5,
+          "path_type": "fav_burst",
+          "path_label": "热门爆发",
+          "tags": [
+            {
+              "key": "high_scoring",
+              "label": "大球",
+              "color": "#D95F6A",
+              "bg": "rgba(217,95,106,0.12)"
+            },
+            {
+              "key": "dog_quiet",
+              "label": "弱队哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            },
+            {
+              "key": "fav_burst",
+              "label": "热门爆发",
+              "color": "#FF6B35",
+              "bg": "rgba(255,107,53,0.1)"
+            }
+          ],
+          "pattern_note": "热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。",
+          "summary_cn": "赛前 xG 总 2.5（差 0.74）· 热门 Canada 1.62→6（效率 3.7）· 弱队 Qatar 0.88→0（效率 0）→ 热门爆发。热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。",
+          "in_mid_band": true
         }
       },
       "group_context": {
@@ -23268,6 +24329,53 @@ const RESULTS_DATA = {
           "totals_line": 2.5,
           "spread_level": "possible",
           "totals_level": "neutral"
+        },
+        "goal_efficiency": {
+          "xg_total": 2.84,
+          "xg_gap": 0.2,
+          "xg_home": 1.52,
+          "xg_away": 1.32,
+          "fav_name": "Mexico",
+          "dog_name": "South Korea",
+          "fav_xg": 1.52,
+          "dog_xg": 1.32,
+          "fav_goals": 1,
+          "dog_goals": 0,
+          "fav_eff": 0.66,
+          "dog_eff": 0,
+          "total_goals": 1,
+          "goal_diff_vs_xg": -1.8,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小球",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "even_xg",
+              "label": "xG接近",
+              "color": "#5BBF8A",
+              "bg": "rgba(91,191,138,0.08)"
+            },
+            {
+              "key": "dog_quiet",
+              "label": "弱队哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "双方效率均低——总进球难起，铁局/小球概率高。",
+          "summary_cn": "赛前 xG 总 2.84（差 0.2）· 热门 Mexico 1.52→1（效率 0.66）· 弱队 South Korea 1.32→0（效率 0）→ 混合路径。双方效率均低——总进球难起，铁局/小球概率高。",
+          "in_mid_band": true
         }
       },
       "group_context": {
