@@ -8747,6 +8747,11 @@ const RESULTS_DATA = {
               "icon": "🌤️",
               "label": "气候",
               "note": "气候变量低——法国传控深度略受益，塞内加尔转换不受明显制约"
+            },
+            {
+              "icon": "📋",
+              "label": "官方首发",
+              "note": "官方首发已确认 · 变阵见 lineup.diff"
             }
           ],
           "xg_context": {
@@ -10018,6 +10023,11 @@ const RESULTS_DATA = {
               "icon": "🌤️",
               "label": "气候",
               "note": "气候均衡——Haaland 对位伊拉克低位是推演核心，天气不构成冷门变量"
+            },
+            {
+              "icon": "📋",
+              "label": "官方首发",
+              "note": "官方首发已确认 · 变阵见 lineup.diff"
             }
           ],
           "xg_context": {
@@ -11281,6 +11291,11 @@ const RESULTS_DATA = {
               "icon": "🌤️",
               "label": "气候",
               "note": "午后偏热——60' 后传球精度略降，领先方降 tempo 概率上升；总 xG 模型微调约 -6%"
+            },
+            {
+              "icon": "📋",
+              "label": "官方首发",
+              "note": "官方首发已确认 · 变阵见 lineup.diff"
             }
           ],
           "xg_context": {
@@ -12545,6 +12560,11 @@ const RESULTS_DATA = {
               "icon": "🌤️",
               "label": "气候",
               "note": "气候均衡——Al-Tamari 反击 vs Alaba 出球是核心；人工草略加快传球"
+            },
+            {
+              "icon": "📋",
+              "label": "官方首发",
+              "note": "官方首发已确认 · 变阵见 lineup.diff"
             }
           ],
           "xg_context": {
@@ -22809,6 +22829,11 @@ const RESULTS_DATA = {
               "icon": "🌤️",
               "label": "气候",
               "note": "海拔变量中等——夜场降温利好体能，但稀氧对高强度压迫仍有消耗"
+            },
+            {
+              "icon": "📋",
+              "label": "官方首发",
+              "note": "官方首发已确认 · 变阵见 lineup.diff"
             }
           ],
           "xg_context": {

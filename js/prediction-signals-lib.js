@@ -1082,11 +1082,18 @@ function weatherXgModifier(weather) {
   return { mod, note };
 }
 
-/** 伤病 + 气候 → 调整后 xG（仅用于展示概要） */
+function lineupContextNote(match) {
+  const lu = match.lineup;
+  if (!lu?.confirmed) return null;
+  return lu.impact?.summary || (lu.diff?.home ? '官方首发已确认 · 变阵见 lineup.diff' : null);
+}
+
+/** 伤病 + 气候 → 调整后 xG（基准 xG 含 sync-lineups 预调；此处仅追加展示因子） */
 function buildMatchContextAdjustments(match, xgHome, xgAway) {
   const homeInj = summarizeInjuries(match.home?.name || '主队', match.home?.injuries);
   const awayInj = summarizeInjuries(match.away?.name || '客队', match.away?.injuries);
   const wx = weatherXgModifier(match.weather);
+  const lineupNote = lineupContextNote(match);
 
   let xgH = Math.max(0.15, xgHome * (1 - homeInj.mod) * wx.mod);
   let xgA = Math.max(0.15, xgAway * (1 - awayInj.mod) * wx.mod);
@@ -1105,6 +1112,9 @@ function buildMatchContextAdjustments(match, xgHome, xgAway) {
     },
     { icon: '🌤️', label: '气候', note: wx.note },
   ];
+  if (lineupNote) {
+    factors.push({ icon: '📋', label: '官方首发', note: lineupNote });
+  }
   return { xg_home: xgH, xg_away: xgA, factors, coach_home: coachH, coach_away: coachA };
 }
 

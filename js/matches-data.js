@@ -5,6 +5,11 @@ const MATCH_DATA = {
   "syncSource": "FIFA 赛程 · Day 9 · weather/mystic/injuries/coach enriched · 推演概要+小组形势",
   "breakingNews": [
     {
+      "tag": "LINEUP",
+      "text": "✅ FIFA 官方首发 m32 · 美 4-2-3-1 Freese/无Pulisic · 澳 5-4-1 Beach极守",
+      "time": "官方确认"
+    },
+    {
       "tag": "UPDATE",
       "text": "📊 推演升级：模型概要 + 小组形势/晋级路径已纳入今日赛事",
       "time": "模型"
@@ -16,7 +21,7 @@ const MATCH_DATA = {
     },
     {
       "tag": "INJURY",
-      "text": "✅ Day 9 伤病&更衣室动态已更新（m29–m32）；裁判/首发仍待 FIFA 官方",
+      "text": "✅ Day 9 伤病&更衣室动态已更新（m29–m32）；m32 首发已确认 · 其余场裁判/首发待 FIFA",
       "time": "6月20日"
     },
     {
@@ -64,13 +69,27 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月20日 03:00",
       "venue": "Lumen Field",
       "city": "Seattle, USA",
-      "note": "D组第2轮 · 美国 vs 澳大利亚 · 西雅图",
+      "note": "D组第2轮 · 美国 vs 澳大利亚 · 西雅图 · FIFA 官方首发已确认",
       "lineup": {
-        "confirmed": false,
-        "formation": null,
-        "home": "等待官方确认",
-        "away": "等待官方确认",
-        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
+        "confirmed": true,
+        "formation": "4-2-3-1 / 5-4-1",
+        "home": "Freese; Dest, Richards, Ream, Robinson; Adams, McKennie; Freeman, Tillman, Pepi; Balogun",
+        "away": "Beach; Circati, Italiano, Souttar, Burgess, Bos; O'Neill, Okon-Engstler, Leckie, Toure; Velupillay",
+        "note": "✅ FIFA 官方 team sheet（Match 32 · 400021462 · 2026-06-19T18:15:11+08:00）",
+        "source": "FIFA Match Centre · api.fifa.com",
+        "updated": "2026-06-19T18:15:11+08:00",
+        "fifa_match_id": "400021462",
+        "impact": {
+          "xg_home_delta": -0.25,
+          "xg_away_delta": -0.14,
+          "summary": "FIFA 官方：美国 4-2-3-1 无 Pulisic/Turner（Freese 一门 · Freeman/Tillman/Pepi 青春线）；澳大利亚 5-4-1 极守（Beach · Irvine 替补）——主队创造预期下调、平局权重上升。",
+          "xg_home_before": 1.68,
+          "xg_away_before": 0.92
+        },
+        "diff": {
+          "home": "⚠️ 4-2-3-1（非预测 4-3-3）：Freese 替 Turner 一门 · Pulisic/Reyna/Weah/Musah 替补 · Freeman+Tillman+Pepi 青春三叉 · Richards 中卫",
+          "away": "⚠️ 5-4-1（非预测 4-2-3-1）：Beach 一门 · Irvine/MacLaren 替补 · Circati/Italiano/Toure/Velupillay 年轻化 · Popovic 极守"
+        },
         "predicted": {
           "formation": "4-3-3 / 4-2-3-1",
           "home": "Turner; Dest, Ream, Robinson; Adams, Musah; Pulisic, McKennie, Reyna; Balogun, Weah",
@@ -95,58 +114,69 @@ const MATCH_DATA = {
         "coach": "Mauricio Pochettino",
         "stars": [
           {
-            "name": "Christian Pulisic",
-            "pos": "RW",
-            "club": "AC Milan",
-            "desc": "东道主核心",
-            "rating": 8.6
+            "name": "Folarin Balogun",
+            "pos": "ST",
+            "club": "Monaco",
+            "desc": "官方首发中锋 · 揭幕战双响",
+            "rating": 8.4
           }
         ],
         "star": {
-          "name": "Christian Pulisic",
-          "pos": "RW",
-          "club": "AC Milan",
-          "desc": "东道主核心",
-          "rating": 8.6
+          "name": "Folarin Balogun",
+          "pos": "ST",
+          "club": "Monaco",
+          "desc": "官方首发中锋 · 揭幕战双响",
+          "rating": 8.4
         },
         "injuries": [
           {
-            "player": "Christian Pulisic",
-            "status": "FIT",
-            "note": "揭幕战 4-1 巴拉圭参与进攻组织，状态回升；西雅图主场预计继续担任核心",
-            "confirmed": true
-          },
-          {
             "player": "Folarin Balogun",
             "status": "FIT",
-            "note": "揭幕战双响（31'、45+5'），锁定首发中锋",
-            "confirmed": true
-          },
-          {
-            "player": "Tyler Adams",
-            "status": "FIT",
-            "note": "与 McKennie 双后腰运转正常，Pochettino 6/11 仍称 26 人全员可用",
-            "confirmed": true
-          },
-          {
-            "player": "Giovanni Reyna",
-            "status": "FIT",
-            "note": "90+8' 替补破门，更衣室士气加分",
+            "note": "官方首发中锋 · 揭幕战双响",
             "confirmed": true
           },
           {
             "player": "Chris Richards",
             "status": "FIT",
-            "note": "踝伤已愈，中卫轮换人选；首发待官方确认",
+            "note": "官方首发中卫 · 替 Ream 搭档",
+            "confirmed": true
+          },
+          {
+            "player": "Matt Freese",
+            "status": "FIT",
+            "note": "FIFA 官方一门（Turner 替补）",
+            "confirmed": true
+          },
+          {
+            "player": "Tyler Adams",
+            "status": "FIT",
+            "note": "与 McKennie 双闸 · 官方首发",
+            "confirmed": true
+          },
+          {
+            "player": "Christian Pulisic",
+            "status": "BENCH",
+            "note": "FIFA 官方替补 · 未进 XI",
+            "confirmed": true
+          },
+          {
+            "player": "Matt Turner",
+            "status": "BENCH",
+            "note": "经验一门替补 Freese",
+            "confirmed": true
+          },
+          {
+            "player": "Giovanni Reyna",
+            "status": "BENCH",
+            "note": "后手变阵选项 · 揭幕战 90+8' 破门",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Pochettino（赛后）：「4-1 是回应批评的方式，但 D 组才刚开始；对澳大利亚必须当成决赛踢」",
-          "揭幕战 Balogun 双响 + Reyna 绝杀后，东道主西雅图 7 万观众预期再掀声浪",
-          "D 组美国、澳大利亚同积 3 分——本场胜者大概率握出线主动权",
-          "媒体预测 Pulisic-Reyna 宽度 + Adams 屏障，但官方首发仍待开球前确认",
-          "4 场热身 3 负的阴影被揭幕战大胜部分冲淡，Pochettino 仍警告「不可轻敌」"
+          "【官方】FIFA 4-2-3-1：Freese 一门 · Pulisic/Reyna/Weah 均未首发——Pochettino 大幅轮换还是战术保密待观察",
+          "Freeman+Tillman+Pepi 青春线搭档 Balogun，宽度与一对一突破预期弱于 Pulisic 版",
+          "替补席：Turner · Pulisic · Reyna · Weah · Aaronson — 60' 后若僵局可能集体上阵",
+          "D 组同积 3 分，西雅图主场仍须抢分；无 Pulisic 首发或略抬平局权重"
         ]
       },
       "away": {
@@ -165,58 +195,56 @@ const MATCH_DATA = {
         "coach": "Graham Arnold",
         "stars": [
           {
-            "name": "Mathew Ryan",
+            "name": "Patrick Beach",
             "pos": "GK",
-            "club": "Roma",
-            "desc": "经验一门",
-            "rating": 7.6
+            "club": "Melbourne Victory",
+            "desc": "官方一门 · 对土耳其零封",
+            "rating": 7.8
           }
         ],
         "star": {
-          "name": "Mathew Ryan",
+          "name": "Patrick Beach",
           "pos": "GK",
-          "club": "Roma",
-          "desc": "经验一门",
-          "rating": 7.6
+          "club": "Melbourne Victory",
+          "desc": "官方一门 · 对土耳其零封",
+          "rating": 7.8
         },
         "injuries": [
           {
             "player": "Patrick Beach",
             "status": "FIT",
-            "note": "FotMob 官方 XI 一门替 Ryan；对土耳其 2-0 零封 + MOTM 级表现",
-            "confirmed": true
-          },
-          {
-            "player": "Mathew Ryan",
-            "status": "FIT",
-            "note": "经验一门仍在替补席，Popovic 尚未改回 Ryan 先发",
+            "note": "FIFA 官方一门 · 对土耳其 2-0 零封",
             "confirmed": true
           },
           {
             "player": "Harry Souttar",
             "status": "FIT",
-            "note": "5-4-1 队长中卫，对土耳其全场稳定",
+            "note": "5-4-1 队长中卫 · 官方首发",
             "confirmed": true
           },
           {
-            "player": "Nestory Irankunda",
-            "status": "FIT",
-            "note": "27' 首开纪录，19 岁 Brighton 球员上位成功",
+            "player": "Mathew Ryan",
+            "status": "BENCH",
+            "note": "经验一门替补 Beach",
             "confirmed": true
           },
           {
             "player": "Jackson Irvine",
+            "status": "BENCH",
+            "note": "队长替补 · Okon-Engstler 首发中场",
+            "confirmed": true
+          },
+          {
+            "player": "Mathew Leckie",
             "status": "FIT",
-            "note": "首轮替补，Okon-Engstler 顶替其中场位置；仍可用",
+            "note": "5-4-1 边路 · 官方首发",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Popovic（赛后）：「我们很难被击败…每次大赛都被低估」——5-4-1 低位反击奏效",
-          "对土耳其 2-0：控球不占优但 Irankunda+Metcalfe 反击高效，Beach 一门变阵成亮点",
-          "Popovic 赛前续约至 2027 亚洲杯，更衣室稳定",
-          "Leckie/Ryan/Irvine 等 veteran 首轮替补，年轻化与经验并存",
-          "客场西雅图对东道主美国是本届最难客场之一，预计继续低位+反击"
+          "【官方】FIFA 5-4-1：Beach · Souttar 领衔五后卫 · Irvine 替补——Popovic 对东道主极守",
+          "Circati/Italiano/Toure/Velupillay 年轻化 XI，反击支点 Leckie+Toure",
+          "客场西雅图对 无 Pulisic 版美国仍难，但 5-4-1+Beach 零封模板已在对土耳其验证"
         ]
       },
       "h2h": {
@@ -238,42 +266,42 @@ const MATCH_DATA = {
         ]
       },
       "prediction": {
-        "home_win": 51,
-        "draw": 25,
+        "home_win": 48,
+        "draw": 28,
         "away_win": 24,
         "score": "1-0",
         "confidence": 74,
-        "xg_home": 1.68,
-        "xg_away": 0.92,
-        "key_factor": "东道主西雅图：Pulisic/Reyna 宽度 vs 澳大利亚低位；美国取胜可大幅推进出线",
+        "xg_home": 1.43,
+        "xg_away": 0.78,
+        "key_factor": "FIFA 官方：美国 4-2-3-1（Freese 一门 · 无 Pulisic 首发 · Freeman/Tillman/Pepi） vs 澳大利亚 5-4-1 极守；创造预期下调，平局与小胜 1-0 仍为主路径",
         "score_dist": [
           {
             "score": "1-0",
-            "prob": 12.5
+            "prob": 15.7
           },
           {
             "score": "1-1",
-            "prob": 11.5
+            "prob": 12.2
           },
           {
             "score": "2-0",
-            "prob": 10.5
-          },
-          {
-            "score": "2-1",
-            "prob": 9.6
+            "prob": 11.2
           },
           {
             "score": "0-0",
-            "prob": 7.4
+            "prob": 11
+          },
+          {
+            "score": "2-1",
+            "prob": 8.7
           },
           {
             "score": "0-1",
-            "prob": 6.8
+            "prob": 8.6
           },
           {
             "score": "3-0",
-            "prob": 5.9
+            "prob": 5.3
           }
         ],
         "insight_factors": [
@@ -290,12 +318,12 @@ const MATCH_DATA = {
           {
             "icon": "⚽",
             "label": "战术与阵容",
-            "text": "东道主西雅图：Pulisic/Reyna 宽度 vs 澳大利亚低位；美国取胜可大幅推进出线"
+            "text": "FIFA 官方：美国 4-2-3-1（Freese 一门 · 无 Pulisic 首发 · Freeman/Tillman/Pepi） vs 澳大利亚 5-4-1 极守；创造预期下调，平局与小胜 1-0 仍为主路径"
           }
         ],
-        "base_home_win": 55,
-        "base_draw": 24,
-        "base_away_win": 21,
+        "base_home_win": 52.3,
+        "base_draw": 27,
+        "base_away_win": 20.5,
         "depth_calibrated": true
       },
       "weather": {
@@ -562,34 +590,34 @@ const MATCH_DATA = {
           "top3_scores": [
             {
               "score": "1-0",
-              "prob": 12.6
+              "prob": 15.7
             },
             {
               "score": "1-1",
-              "prob": 11.6
+              "prob": 12.3
             },
             {
               "score": "2-0",
-              "prob": 10.6
+              "prob": 11.3
             }
           ],
-          "one_goal_win_pct": 25.1,
-          "two_plus_win_pct": 29.8,
-          "full_cover_pct": 29.8,
+          "one_goal_win_pct": 26.3,
+          "two_plus_win_pct": 26,
+          "full_cover_pct": 26,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
-          "push_pct": 25.1,
+          "push_pct": 26.3,
           "margin_full_label": "净胜≥2",
           "margin_half_label": "走水净胜=1",
-          "fav_cover_ev": -0.152,
-          "dog_cover_ev": 0.152,
+          "fav_cover_ev": -0.217,
+          "dog_cover_ev": 0.217,
           "rational_spread_cn": "客队 守住差距概率略高",
-          "total_xg": 2.6,
-          "fair_totals_line": 2,
-          "over_2_5_pct": 47.7,
-          "over_3_pct": 25.8,
-          "totals_lean_cn": "2.5 球参考接近均衡；3 球参考偏少",
-          "margin_risk_note": "净胜 1 球概率 25.1%：参考净胜 1 球时，仅赢一球与拉开差距须分开看"
+          "total_xg": 2.21,
+          "fair_totals_line": 2.25,
+          "over_2_5_pct": 37.8,
+          "over_3_pct": 18,
+          "totals_lean_cn": "2.5 球参考偏少进球（约 62.2%）；3 球参考偏少",
+          "margin_risk_note": "净胜 1 球概率 26.3%：参考净胜 1 球时，仅赢一球与拉开差距须分开看"
         },
         "spread_odds": {
           "fav": 1.02,
@@ -601,11 +629,11 @@ const MATCH_DATA = {
           "market_line": 2.5,
           "market_goals_int": 3,
           "line_label": "总进球约 2.5 个",
-          "implied_xg_total": 2.6,
-          "fair_line": 2,
-          "line_gap": 0.5,
-          "over_pct": 47.7,
-          "under_pct": 52.3,
+          "implied_xg_total": 2.21,
+          "fair_line": 2.25,
+          "line_gap": 0.25,
+          "over_pct": 37.8,
+          "under_pct": 62.2,
           "signal": "high_line",
           "signal_cn": "进球参考偏高",
           "signal_color": "#C8A96E",
@@ -618,7 +646,7 @@ const MATCH_DATA = {
             "under": 0.8,
             "note": "多进球 1 · 少进球 0.8"
           },
-          "rational_cn": "模型在 总进球约 2.5 个 附近均衡；进球参考偏高但模型仍偏少进球",
+          "rational_cn": "模型略倾向少进球（总进球约 2.5 个 约 62.2%）；进球参考偏高但模型仍偏少进球",
           "score_link_cn": "小比分（1-0/1-1）偏少进球 · 2-0/2-1 居中 · 3 球+ 偏多进球"
         },
         "totals_line": 2.5,
@@ -629,52 +657,52 @@ const MATCH_DATA = {
         },
         "adjustment_note": "模型微调：主胜 -4% · 平 +1% · 客 +3%",
         "adjusted_probs": {
-          "home_win": 51,
-          "draw": 25,
+          "home_win": 48,
+          "draw": 28,
           "away_win": 24
         },
         "display_summary": {
           "fav_name": "USA",
-          "expected_total_goals": 2.56,
-          "poisson_fav_win_pct": 55,
-          "small_lead_pct": 25.1,
+          "expected_total_goals": 2.19,
+          "poisson_fav_win_pct": 52.3,
+          "small_lead_pct": 26.3,
           "small_example_score": "1-0",
-          "small_example_pct": 12.6,
-          "big_cover_pct": 29.8,
+          "small_example_pct": 15.7,
+          "big_cover_pct": 26,
           "big_example_score": "2-0",
-          "big_example_pct": 10.6,
+          "big_example_pct": 11.3,
           "win_shape": {
             "fav_name": "USA",
             "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 29.9%）",
+            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 31.8%）",
             "shapes": [
               {
                 "key": "narrow_low",
                 "label": "险胜 · 控局",
                 "example": "如 1-0",
-                "field_pct": 12.6,
-                "pct": 22.9
+                "field_pct": 15.7,
+                "pct": 30.1
               },
               {
                 "key": "narrow_open",
                 "label": "险胜 · 开放",
                 "example": "如 2-1",
-                "field_pct": 12.6,
-                "pct": 22.9
+                "field_pct": 10.6,
+                "pct": 20.2
               },
               {
                 "key": "comfort_low",
                 "label": "拉开 · 控局",
                 "example": "如 2-0",
-                "field_pct": 16.5,
-                "pct": 29.9
+                "field_pct": 16.6,
+                "pct": 31.8
               },
               {
                 "key": "comfort_open",
                 "label": "拉开 · 开放",
                 "example": "如 3-1+",
-                "field_pct": 13.3,
-                "pct": 24.3
+                "field_pct": 9.4,
+                "pct": 17.9
               }
             ],
             "paths": [
@@ -682,47 +710,47 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 45.8
+                "pct": 50.3
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 29.9
+                "pct": 31.8
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 24.3
+                "pct": 17.9
               }
             ],
-            "fav_win_pct": 51
+            "fav_win_pct": 48
           },
           "excitement": {
             "label_cn": "中速开局",
             "label_key": "moderate",
             "label_color": "#C8A96E",
-            "sub_cn": "预期首球等待约 34.6 分",
-            "first_goal_wait": 34.6,
-            "fast_pct": 58,
-            "moderate_pct": 14.8,
-            "slow_pct": 27.3,
+            "sub_cn": "预期首球等待约 40.7 分",
+            "first_goal_wait": 40.7,
+            "fast_pct": 52.1,
+            "moderate_pct": 14.7,
+            "slow_pct": 33.1,
             "tiers": [
               {
                 "key": "fast",
                 "label": "前 30 分内首球",
-                "pct": 58
+                "pct": 52.1
               },
               {
                 "key": "moderate",
                 "label": "30–45 分首球",
-                "pct": 14.8
+                "pct": 14.7
               },
               {
                 "key": "slow",
                 "label": "45 分后首球",
-                "pct": 27.3
+                "pct": 33.1
               }
             ]
           },
@@ -742,14 +770,19 @@ const MATCH_DATA = {
               "icon": "🌤️",
               "label": "气候",
               "note": "凉爽海风——利于东道主维持 90 分钟强度，对推演影响低"
+            },
+            {
+              "icon": "📋",
+              "label": "官方首发",
+              "note": "FIFA 官方：美国 4-2-3-1 无 Pulisic/Turner（Freese 一门 · Freeman/Tillman/Pepi 青春线）；澳大利亚 5-4-1 极守（Beach · Irvine 替补）——主队创造预期下调、平局权重上升。"
             }
           ],
           "xg_context": {
-            "baseline_home": 1.68,
-            "baseline_away": 0.92,
-            "adjusted_home": 1.68,
-            "adjusted_away": 0.92,
-            "note": "基准 xG 1.68–0.92（未因伤病/气候下调）"
+            "baseline_home": 1.43,
+            "baseline_away": 0.78,
+            "adjusted_home": 1.43,
+            "adjusted_away": 0.78,
+            "note": "基准 xG 1.43–0.78（未因伤病/气候下调）"
           },
           "calibration": {
             "signal_cn": "大众心理预期偏高",
@@ -768,23 +801,23 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 45.8
+                "pct": 50.3
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 29.9
+                "pct": 31.8
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 24.3
+                "pct": 17.9
               }
             ],
             "margin_line_cn": "USA · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
-            "margin_meet_pct": 29.8,
+            "margin_meet_pct": 26,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -794,78 +827,78 @@ const MATCH_DATA = {
             "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
             "totals_line": 2.5,
             "totals_line_cn": "总进球约 2.5 个",
-            "fair_totals_line": 2,
-            "model_total_xg": 2.6,
-            "totals_line_gap": 0.5,
-            "totals_high_pct": 47.7,
-            "totals_low_pct": 52.3,
+            "fair_totals_line": 2.25,
+            "model_total_xg": 2.21,
+            "totals_line_gap": 0.25,
+            "totals_high_pct": 37.8,
+            "totals_low_pct": 62.2,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 23.1,
-            "win_margin2_low_total_pct": 10.6,
-            "win_margin2_high_total_pct": 19.2,
-            "readout_cn": "取胜约 51%；若取胜，以「险胜收工」为主（45.8%）。 对着赛前净胜参考，净胜≥2（全达标）约 29.8%；对着外界总进球参考 总进球约 2.5 个，模型终场多于该参考的概率约 47.7%。"
+            "win_low_total_pct": 27,
+            "win_margin2_low_total_pct": 11.3,
+            "win_margin2_high_total_pct": 14.7,
+            "readout_cn": "取胜约 48%；若取胜，以「险胜收工」为主（50.3%）。 对着赛前净胜参考，净胜≥2（全达标）约 26%；对着外界总进球参考 总进球约 2.5 个，模型终场多于该参考的概率约 37.8%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 12.6
+              "pct": 15.7
             },
             {
               "score": "1-1",
-              "pct": 11.6
+              "pct": 12.3
             },
             {
               "score": "2-0",
-              "pct": 10.6
+              "pct": 11.3
             }
           ],
           "totals_view": {
-            "expected_total": 2.6,
-            "fair_line": 2,
+            "expected_total": 2.2,
+            "fair_line": 2.25,
             "market_line": 2.5,
-            "line_gap": 0.5,
-            "over_pct": 47.7,
+            "line_gap": 0.25,
+            "over_pct": 37.8,
             "gap_warning": null,
             "totals_outlook": {
-              "level": "neutral",
-              "label_cn": "暂无明显倾向",
-              "color": "#8A96A8",
-              "meter_label_cn": "几乎五五开",
-              "meter_pos": 50,
-              "lean_side": "neutral",
-              "lean_strength": "none",
+              "level": "mild_low",
+              "label_cn": "略倾向沉闷",
+              "color": "#7BB8D4",
+              "meter_label_cn": "略倾向沉闷",
+              "meter_pos": 38,
+              "lean_side": "dull",
+              "lean_strength": "mild",
               "section_intro_cn": "对照外界「全场至少 3 球」的赛前进球节奏，看模型更偏沉闷还是精彩",
-              "pill_cn": "沉闷与精彩几乎五五开，无明显倾向。",
-              "detail_cn": "模型推演：达到这一进球节奏与达不到的机率几乎各半，暂无明确倾向；精彩程度仍看临场发挥。",
-              "headline_cn": "进球氛围：几乎五五开",
+              "pill_cn": "略倾向沉闷（弱信号）。",
+              "detail_cn": "模型略偏沉闷——全场进球节奏可能偏慢、难及这一预期；信号偏弱，仅供参考。",
+              "headline_cn": "进球氛围：略倾向沉闷（弱信号）",
               "show_lean": false,
-              "over_pct": 47.7,
-              "line_gap": 0.5,
+              "over_pct": 37.8,
+              "line_gap": 0.25,
               "market_line": 2.5,
               "market_goals_int": 3,
               "market_goals_cn": "全场至少 3 球",
               "caution_public_high": false
             },
-            "summary_cn": "模型 xG 合计约 2.6 球（公允参考约 2） · 外界总进球参考 2.5，高出模型约 0.5 球 · 外界参考略高于模型公允线（+0.5 球） · 模型在常见进球预期附近均衡，不作强倾向"
+            "summary_cn": "模型 xG 合计约 2.2 球（公允参考约 2.25） · 外界总进球参考 2.5，高出模型约 0.25 球 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
             "headline_cn": "USA · 净胜走向：达到预期难度偏大",
-            "sub_cn": "达标概率约 29.8% · 达到预期难度偏大 进球氛围：几乎五五开",
+            "sub_cn": "达标概率约 26% · 达到预期难度偏大 进球氛围：略倾向沉闷（弱信号）",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
               "color": "#D95F6A",
               "fav_name": "USA",
               "market_expect_cn": "净胜≥2",
-              "meet_pct": 29.8,
+              "meet_pct": 26,
               "meet_pct_label": "模型推演达标概率",
               "verdict_cn": "达到预期难度偏大",
               "headline_cn": "USA · 净胜走向：达到预期难度偏大",
-              "pill_cn": "达标概率约 29.8% · 达到预期难度偏大",
-              "detail_cn": "USA · 赛前外界预期 净胜≥2。模型推演达标概率约 29.8%；外界看法高于 xG 隐含约 0.75 球，达到预期难度偏大。",
+              "pill_cn": "达标概率约 26% · 达到预期难度偏大",
+              "detail_cn": "USA · 赛前外界预期 净胜≥2。模型推演达标概率约 26%；外界看法高于 xG 隐含约 0.75 球，达到预期难度偏大。",
               "extra_stats_cn": "",
-              "full_cover_pct": 29.8,
+              "full_cover_pct": 26,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
@@ -874,20 +907,20 @@ const MATCH_DATA = {
               "show_cover": true
             },
             "totals": {
-              "level": "neutral",
-              "label_cn": "暂无明显倾向",
-              "color": "#8A96A8",
-              "meter_label_cn": "几乎五五开",
-              "meter_pos": 50,
-              "lean_side": "neutral",
-              "lean_strength": "none",
+              "level": "mild_low",
+              "label_cn": "略倾向沉闷",
+              "color": "#7BB8D4",
+              "meter_label_cn": "略倾向沉闷",
+              "meter_pos": 38,
+              "lean_side": "dull",
+              "lean_strength": "mild",
               "section_intro_cn": "对照外界「全场至少 3 球」的赛前进球节奏，看模型更偏沉闷还是精彩",
-              "pill_cn": "沉闷与精彩几乎五五开，无明显倾向。",
-              "detail_cn": "模型推演：达到这一进球节奏与达不到的机率几乎各半，暂无明确倾向；精彩程度仍看临场发挥。",
-              "headline_cn": "进球氛围：几乎五五开",
+              "pill_cn": "略倾向沉闷（弱信号）。",
+              "detail_cn": "模型略偏沉闷——全场进球节奏可能偏慢、难及这一预期；信号偏弱，仅供参考。",
+              "headline_cn": "进球氛围：略倾向沉闷（弱信号）",
               "show_lean": false,
-              "over_pct": 47.7,
-              "line_gap": 0.5,
+              "over_pct": 37.8,
+              "line_gap": 0.25,
               "market_line": 2.5,
               "market_goals_int": 3,
               "market_goals_cn": "全场至少 3 球",
@@ -905,14 +938,14 @@ const MATCH_DATA = {
                   "color": "#D95F6A",
                   "fav_name": "USA",
                   "market_expect_cn": "净胜≥2",
-                  "meet_pct": 29.8,
+                  "meet_pct": 26,
                   "meet_pct_label": "模型推演达标概率",
                   "verdict_cn": "达到预期难度偏大",
                   "headline_cn": "USA · 净胜走向：达到预期难度偏大",
-                  "pill_cn": "达标概率约 29.8% · 达到预期难度偏大",
-                  "detail_cn": "USA · 赛前外界预期 净胜≥2。模型推演达标概率约 29.8%；外界看法高于 xG 隐含约 0.75 球，达到预期难度偏大。",
+                  "pill_cn": "达标概率约 26% · 达到预期难度偏大",
+                  "detail_cn": "USA · 赛前外界预期 净胜≥2。模型推演达标概率约 26%；外界看法高于 xG 隐含约 0.75 球，达到预期难度偏大。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 29.8,
+                  "full_cover_pct": 26,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
@@ -920,7 +953,7 @@ const MATCH_DATA = {
                   "tier_gap": 0.75,
                   "show_cover": true
                 },
-                "text": "达标概率约 29.8% · 达到预期难度偏大",
+                "text": "达标概率约 26% · 达到预期难度偏大",
                 "color": "#D95F6A",
                 "primary": true
               },
@@ -929,27 +962,27 @@ const MATCH_DATA = {
                 "icon": "◎",
                 "label": "进球氛围",
                 "outlook": {
-                  "level": "neutral",
-                  "label_cn": "暂无明显倾向",
-                  "color": "#8A96A8",
-                  "meter_label_cn": "几乎五五开",
-                  "meter_pos": 50,
-                  "lean_side": "neutral",
-                  "lean_strength": "none",
+                  "level": "mild_low",
+                  "label_cn": "略倾向沉闷",
+                  "color": "#7BB8D4",
+                  "meter_label_cn": "略倾向沉闷",
+                  "meter_pos": 38,
+                  "lean_side": "dull",
+                  "lean_strength": "mild",
                   "section_intro_cn": "对照外界「全场至少 3 球」的赛前进球节奏，看模型更偏沉闷还是精彩",
-                  "pill_cn": "沉闷与精彩几乎五五开，无明显倾向。",
-                  "detail_cn": "模型推演：达到这一进球节奏与达不到的机率几乎各半，暂无明确倾向；精彩程度仍看临场发挥。",
-                  "headline_cn": "进球氛围：几乎五五开",
+                  "pill_cn": "略倾向沉闷（弱信号）。",
+                  "detail_cn": "模型略偏沉闷——全场进球节奏可能偏慢、难及这一预期；信号偏弱，仅供参考。",
+                  "headline_cn": "进球氛围：略倾向沉闷（弱信号）",
                   "show_lean": false,
-                  "over_pct": 47.7,
-                  "line_gap": 0.5,
+                  "over_pct": 37.8,
+                  "line_gap": 0.25,
                   "market_line": 2.5,
                   "market_goals_int": 3,
                   "market_goals_cn": "全场至少 3 球",
                   "caution_public_high": false
                 },
-                "text": "沉闷与精彩几乎五五开，无明显倾向。",
-                "color": "#8A96A8",
+                "text": "略倾向沉闷（弱信号）。",
+                "color": "#7BB8D4",
                 "muted": true
               }
             ],
@@ -959,63 +992,63 @@ const MATCH_DATA = {
             {
               "side": "home",
               "team": "USA",
-              "first_goal_pct": 64.6,
+              "first_goal_pct": 64.7,
               "start_score": "1-0",
               "fav_name": "USA",
               "scorer_is_fav": true,
               "expected_key": "hold_win",
-              "fav_recover_pct": 94.7,
-              "small_lead_pct": 33.3,
-              "big_lead_pct": 45.7,
-              "fav_win_pct": 79,
-              "fav_draw_pct": 15.7,
-              "fav_lose_pct": 5.3,
+              "fav_recover_pct": 95.5,
+              "small_lead_pct": 37.1,
+              "big_lead_pct": 42.7,
+              "fav_win_pct": 79.7,
+              "fav_draw_pct": 15.8,
+              "fav_lose_pct": 4.5,
               "outcomes": [
                 {
                   "key": "hold_win",
                   "label": "USA 保持胜果（净胜≥1）",
-                  "pct": 79
+                  "pct": 79.7
                 },
                 {
                   "key": "drawn",
                   "label": "被扳平",
-                  "pct": 15.7
+                  "pct": 15.8
                 },
                 {
                   "key": "lost",
                   "label": "被逆转落败",
-                  "pct": 5.3
+                  "pct": 4.5
                 }
               ],
               "excitement": {
                 "label_cn": "偏晚",
                 "label_key": "slow",
                 "label_color": "#7BB8D4",
-                "sub_cn": "预期首球等待约 44.6 分",
-                "first_goal_wait": 44.6,
-                "fast_pct": 42.4,
-                "moderate_pct": 13.9,
-                "slow_pct": 43.7,
+                "sub_cn": "预期首球等待约 52.3 分",
+                "first_goal_wait": 52.3,
+                "fast_pct": 37.5,
+                "moderate_pct": 13.1,
+                "slow_pct": 49.4,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 42.4
+                    "pct": 37.5
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 13.9
+                    "pct": 13.1
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 43.7
+                    "pct": 49.4
                   }
                 ]
               },
-              "big_delta": 15.9,
-              "small_delta": 8.2,
+              "big_delta": 16.7,
+              "small_delta": 10.8,
               "narrative": "USA 先破门（已 1-0） → 「继续压迫」；Australia 「维持低位」。领先后双方可能转入守势，比分差距不易再拉大。",
               "live_outlook": {
                 "fav_name": "USA",
@@ -1025,25 +1058,25 @@ const MATCH_DATA = {
                     "key": "narrow",
                     "label": "险胜收工",
                     "example": "如 1-0、2-1",
-                    "pct": 45.8
+                    "pct": 50.3
                   },
                   {
                     "key": "clean",
                     "label": "零封拉开",
                     "example": "如 2-0、3-0",
-                    "pct": 29.9
+                    "pct": 31.8
                   },
                   {
                     "key": "open",
                     "label": "开放拉开",
                     "example": "如 3-1+",
-                    "pct": 24.3
+                    "pct": 17.9
                   }
                 ],
                 "margin_line_cn": "USA · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
-                "margin_meet_pct": 45.7,
+                "margin_meet_pct": 42.7,
                 "margin_half_pct": 0,
-                "margin_fail_pct": 33.3,
+                "margin_fail_pct": 37.1,
                 "margin_full_label": "净胜≥2",
                 "margin_half_label": "走水净胜=1",
                 "final_2_0_pct": null,
@@ -1052,112 +1085,120 @@ const MATCH_DATA = {
                 "totals_line": 2.5,
                 "totals_line_cn": "总进球约 2.5 个",
                 "fair_totals_line": 2.25,
-                "model_total_xg": 1.66,
+                "model_total_xg": 1.41,
                 "totals_line_gap": 0.25,
-                "totals_high_pct": 49.3,
-                "totals_low_pct": 50.7,
+                "totals_high_pct": 41.2,
+                "totals_low_pct": 58.8,
                 "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-                "win_low_total_pct": 39.1,
-                "win_margin2_low_total_pct": 20,
-                "win_margin2_high_total_pct": 25.6,
-                "readout_cn": "USA 已 1-0 领先：仍取胜约 79%。 对着外界总进球参考 总进球约 2.5 个，模型终场多于该参考的概率约 49.3%。 常见收尾如 2-0（部分扩大；相对外界总进球参考仍偏少）。"
+                "win_low_total_pct": 46.2,
+                "win_margin2_low_total_pct": 21.8,
+                "win_margin2_high_total_pct": 20.9,
+                "readout_cn": "USA 已 1-0 领先：仍取胜约 79.7%。 对着外界总进球参考 总进球约 2.5 个，模型终场多于该参考的概率约 41.2%。 常见收尾如 2-0（部分扩大；相对外界总进球参考仍偏少）。"
               }
             },
             {
               "side": "away",
               "team": "Australia",
-              "first_goal_pct": 35.4,
+              "first_goal_pct": 35.3,
               "start_score": "0-1",
               "fav_name": "USA",
               "scorer_is_fav": false,
               "expected_key": "fav_recover",
-              "fav_recover_pct": 58.8,
-              "small_lead_pct": 18.4,
-              "big_lead_pct": 12.6,
-              "fav_win_pct": 31,
-              "fav_draw_pct": 27.8,
-              "fav_lose_pct": 41.2,
+              "fav_recover_pct": 55.4,
+              "small_lead_pct": 16.9,
+              "big_lead_pct": 9.6,
+              "fav_win_pct": 26.5,
+              "fav_draw_pct": 28.9,
+              "fav_lose_pct": 44.6,
               "outcomes": [
                 {
                   "key": "draw",
                   "label": "USA 追平（平局）",
-                  "pct": 27.8
+                  "pct": 28.9
                 },
                 {
                   "key": "win1",
                   "label": "USA 净胜1球翻盘（如 2-1）",
-                  "pct": 18.4
+                  "pct": 16.9
                 },
                 {
                   "key": "win2",
                   "label": "USA 净胜≥2球翻盘（如 3-1）",
-                  "pct": 12.6
+                  "pct": 9.6
                 },
                 {
                   "key": "upset_hold",
                   "label": "Australia 保持胜果至终场",
-                  "pct": 41.2
+                  "pct": 44.6
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 34.2 分",
-                "first_goal_wait": 34.2,
-                "fast_pct": 51.3,
-                "moderate_pct": 14.7,
-                "slow_pct": 34,
+                "sub_cn": "预期首球等待约 40.4 分",
+                "first_goal_wait": 40.4,
+                "fast_pct": 45.6,
+                "moderate_pct": 14.3,
+                "slow_pct": 40.1,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 51.3
+                    "pct": 45.6
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 14.7
+                    "pct": 14.3
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 34
+                    "pct": 40.1
                   }
                 ]
               },
-              "big_delta": -17.2,
-              "small_delta": -6.7,
-              "narrative": "Australia 先破门（已 0-1） → 「5-4-1 铁桶」；USA 「堆边锋」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门。",
+              "big_delta": -16.4,
+              "small_delta": -9.4,
+              "narrative": "Australia 先破门（已 0-1） → 「5-4-1 铁桶」；USA 「后手加码」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门。",
               "live_outlook": null
             }
           ],
           "match_preview": {
             "morphology": {
-              "totals_summary": "模型 xG 合计约 2.6 球（公允参考约 2） · 外界总进球参考 2.5，高出模型约 0.5 球 · 外界参考略高于模型公允线（+0.5 球） · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_summary": "模型 xG 合计约 2.2 球（公允参考约 2.25） · 外界总进球参考 2.5，高出模型约 0.25 球 · 模型在常见进球预期附近均衡，不作强倾向",
               "totals_line_cn": "总进球约 2.5 个",
-              "totals_high_pct": 47.7,
+              "totals_high_pct": 37.8,
               "type_tags": [
                 {
                   "key": "low_block",
                   "label": "低位反击"
+                },
+                {
+                  "key": "low_scoring",
+                  "label": "进球偏少"
                 }
               ],
-              "depth_label": "深度一般",
-              "draw_trap_pct": 22,
-              "readout_cn": "USA · 低位反击。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+              "depth_label": "板凳深度偏高",
+              "draw_trap_pct": 28,
+              "readout_cn": "USA · 低位反击 · 进球偏少。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
             },
-            "draw_trap_note": "平局风险：低位反击队若先进球或被追平，1-1 / 0-0 比客胜更现实（约 22% 冷门空间含平局）。",
+            "draw_trap_note": "平局风险：低位反击队若先进球或被追平，1-1 / 0-0 比客胜更现实（约 28% 冷门空间含平局）。",
             "archetype": {
               "tags": [
                 {
                   "key": "low_block",
                   "label": "低位反击"
+                },
+                {
+                  "key": "low_scoring",
+                  "label": "进球偏少"
                 }
               ],
-              "depth_score": 0,
-              "depth_label": "深度一般",
-              "draw_trap_pct": 22,
+              "depth_score": 2,
+              "depth_label": "板凳深度偏高",
+              "draw_trap_pct": 28,
               "fav_lead_style": "defensive"
             }
           },
@@ -1202,7 +1243,7 @@ const MATCH_DATA = {
             "disclaimer_cn": "以上为两队近30场历史进球/失球时间段统计，供读场参考；非本场赛果预测，与灵力分析娱乐板块无关。"
           }
         },
-        "public_summary_note": "【推演概要】USA · 低位反击。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75（模型微调：主胜 -4% · 平 +1% · 客 +3%）"
+        "public_summary_note": "【推演概要】USA · 低位反击 · 进球偏少。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75（模型微调：主胜 -4% · 平 +1% · 客 +3%）"
       },
       "coach_analysis": {
         "home": {
@@ -1217,8 +1258,8 @@ const MATCH_DATA = {
             "Pulisic 宽度",
             "主场气势"
           ],
-          "formation_pref": "4-3-3 · Pulisic-Reyna 双翼",
-          "style_summary": "揭幕战 4-1 巴拉圭回应批评，Balogun 双响+Reyna 绝杀。西雅图主场对澳大利亚必须当成决赛踢，预计持续宽度+Adams 屏障。",
+          "formation_pref": "4-2-3-1 · Freeman/Tillman/Pepi（无 Pulisic 首发）",
+          "style_summary": "FIFA 官方大幅变阵：Freese 一门、Pulisic 替补，Freeman/Tillman/Pepi 青春线。宽度与后手（Reyna/Pulisic）仍是关键。",
           "subs": {
             "timing": "首换 60–65 分钟",
             "pattern": "Reyna 后段奇兵",
@@ -1230,8 +1271,8 @@ const MATCH_DATA = {
             "detail": "1 球领先：维持 Seattle 主场强度，忌过早退守。"
           },
           "when_trailing": {
-            "label": "堆边锋",
-            "detail": "先丢球：55' Pulisic/Reyna 加码宽度。"
+            "label": "后手加码",
+            "detail": "先丢球：55' Pulisic/Reyna/Weah 可能集体上阵。"
           },
           "vs_strong": {
             "label": "对强队：对攻",
@@ -1248,7 +1289,7 @@ const MATCH_DATA = {
             "宽度",
             "必须抢分"
           ],
-          "match_note": "西雅图主场——Pulisic/Reyna 宽度+Adams 屏障；D 组同积 3 分，胜者握出线主动。"
+          "match_note": "官方 4-2-3-1 无 Pulisic——创造预期下调；西雅图主场仍须抢分，后手深度是优势。"
         },
         "away": {
           "name": "Graham Arnold",
@@ -1300,12 +1341,12 @@ const MATCH_DATA = {
         "favorite": "USA",
         "underdog": "Australia",
         "favorite_iso": "USA",
-        "index": 26,
+        "index": 34,
         "level": "LOW",
         "level_cn": "低",
-        "cold_result_pct": 22,
-        "verdict": "东道主西雅图+揭幕战 4-1 气势——澳大利亚 5-4-1 低位仍有约 22% 平局/偷分空间（对土耳其 2-0 已验证）。",
-        "tactical": "Pochettino 4-3-3 宽度 vs Arnold 5-4-1 低位；Pulisic 对位 Souttar，Beach 一门稳定性是变量。",
+        "cold_result_pct": 28,
+        "verdict": "东道主西雅图仍占优，但 Pulisic 替补+澳 5-4-1 极守——平局/偷分空间由约 22% 升至约 28%。",
+        "tactical": "FIFA 官方：Pochettino 4-2-3-1（无 Pulisic · Freese 一门）vs Arnold 5-4-1；客队极守+主队轮换抬升平局空间。",
         "psychology": "美国「当成决赛踢」；澳大利亚「每次大赛被低估」。",
         "historical": "美国近年 H2H 占优；澳大利亚对土耳其反击高效。",
         "factors": [
@@ -5210,12 +5251,12 @@ const MATCH_DATA = {
       "rating": 74
     },
     "teaser": "D组第2轮 · 美国 vs 澳大利亚",
-    "home_win": 51,
-    "draw": 25,
+    "home_win": 48,
+    "draw": 28,
     "away_win": 24,
     "predicted_score": "1-0",
-    "key_player_home": "Christian Pulisic",
-    "key_player_away": "Mathew Ryan"
+    "key_player_home": "Folarin Balogun",
+    "key_player_away": "Patrick Beach"
   },
   "upcomingMatches": [
     {
