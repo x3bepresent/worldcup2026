@@ -1,9 +1,14 @@
-// 今日赛事 — Day 9 (signals enriched)
-// Last updated: 2026-06-20T14:00:00+08:00
+// 今日赛事 — Day 9 (FIFA official referee m31)
+// Last updated: 2026-06-20T02:21:54+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-20T14:00:00+08:00",
+  "lastUpdated": "2026-06-20T02:21:54+08:00",
   "syncSource": "FIFA 官方赛果 · Day 9 进行中 · 推演概要+小组形势",
   "breakingNews": [
+    {
+      "tag": "OFFICIAL",
+      "text": "✅ FIFA 官方裁判 m31 · Iván Barton（萨尔瓦多）· VAR Al Marri",
+      "time": "官方确认"
+    },
     {
       "tag": "LINEUP",
       "text": "✅ FIFA 官方首发 m31 · 土 4-2-3-1 Yıldız/Güler · 巴 4-2-3-1 Enciso/Pitta",
@@ -4198,7 +4203,7 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月20日 11:00",
       "venue": "Levi's Stadium",
       "city": "Santa Clara, USA",
-      "note": "D组第2轮 · 土耳其 vs 巴拉圭 · 旧金山湾区 · FIFA 官方首发已确认",
+      "note": "D组第2轮 · 土耳其 vs 巴拉圭 · 旧金山湾区 · FIFA 官方首发·裁判已确认",
       "lineup": {
         "confirmed": true,
         "formation": "4-2-3-1 / 4-2-3-1",
@@ -4415,15 +4420,39 @@ const MATCH_DATA = {
         "note": "友谊赛土耳其占优"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "FIFA Match 31 裁判名单赛前公布。",
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA · Match officials · 2026-06-19",
+        "name": "Iván Barton",
+        "nation": "El Salvador",
+        "iso": "sv",
+        "age": 35,
+        "wc_experience": "2022 世界杯 3 场（德1-2日 · 巴1-0瑞 · 英3-0塞）· 2025 世俱杯 · FIFA 国际裁判自 2018",
+        "avg_yellow": 5,
+        "avg_red": 0.11,
+        "avg_penalty": 0.26,
+        "home_win_rate": 50,
+        "bias_index": 52,
+        "bias_note": "萨尔瓦多名哨执法 D 组生死战。Çalhanoğlu 定位球与 Gómez/Cubas 防守犯规、Yıldız/Güler 肋部被侵犯尺度是焦点；Barton 生涯场均约 5 黄，对拖延时间与重复犯规容忍度低。",
         "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
-        ]
+          "萨尔瓦多助理裁判组：David Morán、Henri Antonio Pupiro",
+          "第四官员 Oshane Nation（牙买加）· 候补边裁 Caleb Wales（特立尼达）",
+          "VAR Khamis Mohammed Al Marri（卡塔尔）· AVAR Tatiana Guzmán · SVAR Abdullah Dhafer Al Shehri",
+          "D 组 0 分生死战预计 5–6 张黄牌，点球与禁区内拉扯尺度受关注",
+          "2022 世界杯曾执法德国负日本 — 对高位压迫下战术犯规判罚果断"
+        ],
+        "officials": {
+          "ar1": "David Morán (SLV)",
+          "ar2": "Henri Antonio Pupiro (SLV)",
+          "fourth": "Oshane Nation (JAM)",
+          "var": "Khamis Mohammed Al Marri (QAT)",
+          "avar": "Tatiana Guzmán (NCA)",
+          "svar": "Abdullah Dhafer Al Shehri (KSA)"
+        },
+        "fifa_match_id": "400021460",
+        "fifa_official_id": "408378",
+        "api_name": "Ivan Arcides Barton Cisneros",
+        "updated": "2026-06-20T02:21:54+08:00"
       },
       "prediction": {
         "home_win": 47,
