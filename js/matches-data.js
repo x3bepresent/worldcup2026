@@ -1,8 +1,8 @@
-// 今日赛事 — Day 9 (FIFA official referee m31)
-// Last updated: 2026-06-20T02:21:54+08:00
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-20T03:37:21.068Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-20T02:21:54+08:00",
-  "syncSource": "FIFA 官方赛果 · Day 9 进行中 · 推演概要+小组形势",
+  "lastUpdated": "2026-06-20T03:37:21.067Z",
+  "syncSource": "API-Football",
   "breakingNews": [
     {
       "tag": "OFFICIAL",
