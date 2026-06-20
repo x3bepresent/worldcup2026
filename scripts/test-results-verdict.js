@@ -33,6 +33,11 @@ rows.forEach(({ id, html, verdict, poisson, official, stored, suspect }) => {
     bad++;
     return;
   }
+  const extras = [
+    verdict.totals?.available ? `totals=${verdict.totals.hit}` : 'totals=n/a',
+    verdict.margin?.available ? `margin=${verdict.margin.hit}` : 'margin=n/a',
+    verdict.goalTiming?.available ? `timing=${verdict.goalTiming.hit}` : 'timing=n/a',
+  ].join(' ');
   console.log(
     id,
     `official=${official}`,
@@ -41,6 +46,7 @@ rows.forEach(({ id, html, verdict, poisson, official, stored, suspect }) => {
     `scoreHit=${verdict.scoreHit}`,
     `outcomeHit=${verdict.outcomeHit}`,
     `top3Hit=${verdict.anyTop3Hit}`,
+    extras,
     suspect ? 'SUSPECT' : 'OK'
   );
   if (suspect) bad++;

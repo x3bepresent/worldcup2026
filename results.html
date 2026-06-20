@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2026 WC — 过往赛果 · 娱乐推演复盘</title>
-  <link rel="stylesheet" href="css/style.css?v=ebf0806">
+  <link rel="stylesheet" href="css/style.css?v=slimcmp3">
   <style>
     .ticker-bar { position: sticky; top: 58px; z-index: 90; background: rgba(4,13,28,0.96); border-bottom: 1px solid rgba(255,68,85,0.25); padding: 0.5rem 0; overflow: hidden; display: flex; align-items: center; }
     .ticker-label { flex-shrink: 0; font-size: 0.6rem; font-weight: 800; letter-spacing: 2px; color: #D95F6A; background: rgba(217,95,106,0.12); padding: 0.25rem 0.75rem; margin-right: 1rem; border-right: 1px solid rgba(217,95,106,0.25); white-space: nowrap; }
@@ -45,7 +45,7 @@
   padding:0.45rem 2rem;display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-top:58px">
   <span style="font-size:0.8rem;color:var(--txt2)">本页收录</span>
   <span style="font-size:0.84rem;font-weight:700;color:var(--gold)">全场已结束</span>
-  <span style="font-size:0.8rem;color:var(--txt2)">的比赛 — 含官方赛果、赛后模型复盘与完整分析存档</span>
+  <span style="font-size:0.8rem;color:var(--txt2)">的比赛 — 官方赛果 + 推演核验（方向/大小/净胜/进球时段）+ 模型复盘概要</span>
   <a href="matches.html" style="margin-left:auto;font-size:0.8rem;color:var(--cyan);text-decoration:none">→ 查看今日待赛分析</a>
 </div>
 
@@ -61,10 +61,11 @@
     <div class="section-header fade-in" style="margin-bottom:2rem">
       <span class="section-tag">Past Results · 过往赛果</span>
       <h2>已结束比赛 · 赛果与复盘</h2>
-      <p>官方比分、进球信息、赛后伤病更新、模型推演验证 — 完整分析存档</p>
+      <p>官方比分、赛前推演冻结、方向/大小球/净胜档/进球时间段核验 — 精简复盘归档</p>
       <p>基于 Elo 评级、xG 期望进球、100,000 次蒙特卡洛模拟及多维度大数据模型，对赛前推演与赛后复盘采用同一套方法论。</p>
       <p class="play-note">※ 赛果为官方/手动同步数据；推演与复盘均为模型娱乐推演，不代表真实赛果，仅供交流娱乐。</p>
     </div>
+    <div id="results-summary-stats"></div>
     <div id="standings-snapshots"></div>
   </div>
 </section>
@@ -104,6 +105,6 @@
 <script src="js/data-integrity.js?v=ebf0806"></script>
 <script src="js/score-model.js?v=ebf0806"></script>
 <script src="js/results-data.js?v=ebf0806"></script>
-<script src="js/matches-app.js?v=ebf0806"></script>
+<script src="js/matches-app.js?v=slimcmp3"></script>
 </body>
 </html>

@@ -16,6 +16,7 @@ const {
   enrichActualResultForReview,
   buildGoalTimingDisplay,
 } = require('../js/prediction-signals-lib');
+const { pickMarketSnapshot } = require('./archive-match.js');
 const HANDICAP = {
   ...require('./handicap-data-day6'),
   ...require('./handicap-data-day7'),
@@ -190,6 +191,52 @@ function enrichMatchSignals(m, handicapMap, snapshots) {
   return copy;
 }
 
+/** 精简归档场次：只刷新赛后复盘块，不注入完整赛前情报 */
+function enrichArchivedMatch(m, handicapMap) {
+  const copy = JSON.parse(JSON.stringify(m));
+  const raw = handicapMap[copy.id];
+
+  if (raw && !copy.market_snapshot?.over_pct) {
+    const dc = buildDepthCalibration(copy, raw);
+    copy.market_snapshot = pickMarketSnapshot({ depth_calibration: dc });
+    if (!copy.depth_calibration) copy.depth_calibration = {};
+    if (!copy.depth_calibration.public_summary_note && dc.public_summary_note) {
+      copy.depth_calibration.public_summary_note = dc.public_summary_note;
+    }
+    if (dc.display_summary?.goal_timing && !copy.depth_calibration.display_summary?.goal_timing) {
+      if (!copy.depth_calibration.display_summary) copy.depth_calibration.display_summary = {};
+      copy.depth_calibration.display_summary.goal_timing = dc.display_summary.goal_timing;
+    }
+  }
+
+  if (copy.actualResult?.home_score != null && copy.prediction?.xg_home != null) {
+    const ge = buildGoalEfficiencyReview(copy);
+    if (ge) {
+      if (!copy.depth_calibration) copy.depth_calibration = {};
+      copy.depth_calibration.goal_efficiency = ge;
+    }
+    const dc = copy.depth_calibration;
+    if (dc && !dc.preview_replay && raw) {
+      const fullDc = buildDepthCalibration(copy, raw);
+      if (fullDc.display_summary) {
+        const ar = enrichActualResultForReview(copy);
+        dc.preview_replay = buildPreviewPostMatchReview(
+          fullDc.display_summary,
+          ar,
+          copy.home?.name,
+          copy.away?.name,
+          {
+            tier_home: fullDc.tier_home,
+            tier_gap: fullDc.tier_gap,
+            totals_line: fullDc.totals_line,
+          }
+        );
+      }
+    }
+  }
+  return copy;
+}
+
 const MATCH_DATA = loadData(MATCH_PATH, 'MATCH_DATA');
 let RESULTS_DATA = null;
 try {
@@ -206,6 +253,10 @@ MATCH_DATA.todayMatches = MATCH_DATA.todayMatches.map(m => enrichMatchSignals(m,
 if (RESULTS_DATA?.finishedMatches?.length) {
   let resultsUpdated = 0;
   RESULTS_DATA.finishedMatches = RESULTS_DATA.finishedMatches.map(m => {
+    if (m.archived) {
+      resultsUpdated += 1;
+      return enrichArchivedMatch(m, allHandicap);
+    }
     if (allHandicap[m.id]) {
       resultsUpdated += 1;
       return enrichMatchSignals(m, allHandicap, groupSnapshots);
@@ -226,7 +277,7 @@ if (RESULTS_DATA?.finishedMatches?.length) {
   if (resultsUpdated) {
     fs.writeFileSync(
       RESULTS_PATH,
-      `// 过往赛果 — 手动/自动同步\n// score_dist 已废弃 — 页面按 xG 泊松实时计算\n// Last updated: ${TS}\nconst RESULTS_DATA = ${JSON.stringify(RESULTS_DATA, null, 2)};\n`
+      `// 过往赛果 — 精简归档（推演 + 赛果核验 + 复盘概要）\n// Last updated: ${TS}\nconst RESULTS_DATA = ${JSON.stringify(RESULTS_DATA, null, 2)};\n`
     );
     console.log('✅ Applied signals to', resultsUpdated, 'finished matches in results-data.js');
   }

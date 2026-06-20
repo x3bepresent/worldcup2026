@@ -2606,7 +2606,7 @@ const KNOCKOUT_BRACKET = {
       r32_tier: 'MEDIUM',
     },
     third_pool: 'C,E,F,G,H,I,J,K',
-    tradeoff: 'D 组次席走 D2–G2 槽，与 C/F 头名次席路径不同；美国/土耳其若争头名需关注第 3 名落位。',
+    tradeoff: 'D 组次席走 M88（D2 vs G2）；头名 M81 打第 3 名池。美国已出线时，土/巴争次席并须关注相互战绩与净胜球。',
   },
   E: {
     linked: ['I', 'F'],
@@ -2864,6 +2864,17 @@ function buildOptimalStrategySummary(ctx) {
   const tightGroup = notes.some(n => /四队同积|四队同分|均1分|同积/.test(n));
   const f1 = fLeader || 'F 组头名球队';
 
+  if (group === 'D' && matchday === 2 && homeTeam === 'Türkiye' && awayTeam === 'Paraguay') {
+    const usaPts = (sorted.find(r => r.team === 'USA') || {}).pts || 0;
+    const ausPts = (sorted.find(r => r.team === 'Australia') || {}).pts || 0;
+    if (usaPts >= 6) {
+      return '策略最优解（推演）：美国 ' + usaPts + ' 分已出线，本场是土-巴「零分生死战」——'
+        + '非胜结果几乎等同于放弃小组前二；取胜亦仅至 3 分，仍落后于澳大利亚 '
+        + ausPts + ' 分且首轮 0-2 相互战绩处劣势。末轮土耳其对美国须再抢分，并需澳大利亚对巴拉圭失分；'
+        + '现阶段绝无演练或接受平局的空间。';
+    }
+  }
+
   /** 出线分已稳时的婉转表述：演练 + 非胜可接受（不说「故意输球」） */
   const softNonWin =
     '可借机锻炼新兵、尝试新战术演练——在出线分已足够的前提下，非胜结果亦可接受，'
@@ -2966,6 +2977,27 @@ function assessManipulationRisk(group, matchday, homeTeam, awayTeam, table, cros
             + '，本轮对海地须全力抢 3 分，无控分空间。末轮才可能出现「C 组头名 vs 次席」路径博弈（32强避荷兰 vs 16强避法国/德国走廊）。',
         }, ctx);
       }
+    }
+  }
+
+  if (group === 'D' && matchday === 2) {
+    const usa = sorted.find(r => r.team === 'USA');
+    const aus = sorted.find(r => r.team === 'Australia');
+    const isTurPar = (homeTeam === 'Türkiye' && awayTeam === 'Paraguay')
+      || (homeTeam === 'Paraguay' && awayTeam === 'Türkiye');
+    if (isTurPar && usa && usa.pts >= 6) {
+      const gSnap = (snapshots || []).find(s => s.group === 'G');
+      const gSecond = gSnap?.table?.length ? sortTable(gSnap.table)[1]?.team : 'New Zealand';
+      return finishManipulationRisk({
+        level: 'HIGH',
+        level_cn: '高',
+        focus_team: 'Türkiye',
+        reason: '美国 ' + usa.pts + ' 分已提前锁定 32 强（M81 头名槽），本场不影响东道主出线。'
+          + '土耳其/巴拉圭均为 0 分——胜者 3 分仍暂列第 3，落后澳大利亚 ' + (aus?.pts ?? 3)
+          + ' 分；末轮土耳其对美国、澳大利亚对巴拉圭须再抢分。'
+          + '土耳其首轮 0-2 负澳大利亚，同分情况下相互战绩处劣势，大比分取胜仍有净胜球/进球数价值。'
+          + '若夺小组第 2：32强 M88 打 G 组第 2（当前倾向 ' + gSecond + '）→ 16强 M95 进 J1/H2 走廊。',
+      }, ctx);
     }
   }
 
@@ -3088,11 +3120,46 @@ function buildGroupContext(match, groupSnapshots) {
         + 'C 组第 2 → 32强 M75 极可能碰 F 组第 1（荷兰）→ 16强 M90 进 A/B 次席走廊。末轮才存在「选半区」博弈，本轮须先抢分。',
       );
     }
+    if (g === 'D' && match.home.name === 'Türkiye' && match.away.name === 'Paraguay') {
+      const usa = sorted.find(r => r.team === 'USA');
+      const aus = sorted.find(r => r.team === 'Australia');
+      const gSnap = (groupSnapshots || []).find(s => s.group === 'G');
+      const g2 = gSnap?.table?.length ? sortTable(gSnap.table)[1]?.team : 'New Zealand';
+      lines.length = 0;
+      lines.push(
+        'Türkiye 若取胜：积分 3，暂列第 3；仍落后澳大利亚 ' + (aus?.pts ?? 3)
+        + ' 分且相互战绩处劣势——须末轮对美国再抢分，并盼澳大利亚对巴拉圭失分；若最终小组第 2 → 32强 M88 打 G 组第 2（倾向 '
+        + g2 + '）→ 16强 M95。',
+      );
+      lines.push(
+        'Paraguay 若取胜：同样 3 分，出线形势与土耳其镜像；末轮澳大利亚对巴拉圭为直接对话。',
+      );
+      lines.push(
+        '平局：双方各 1 分——在「美国 ' + (usa?.pts ?? 6) + ' 分已出线、澳大利亚 '
+        + (aus?.pts ?? 3) + ' 分占次席」背景下，1 分对土/巴均几乎无出线价值。',
+      );
+      lines.push(
+        '负者：继续 0 分垫底，小组前二希望渺茫；第 3 名争八需极端赛果组合，基本出局。',
+      );
+      lines.push(
+        '末轮赛程：土耳其 vs 美国（东道主或轮换但仍须防丢分）· 澳大利亚 vs 巴拉圭——'
+        + '土耳其须末轮两战全胜且澳大利亚末轮失分，方有机会逆转次席。',
+      );
+      return lines;
+    }
     if (md >= 2 && bracket.tradeoff) {
       lines.push('头名/次席博弈：' + bracket.tradeoff);
     }
     return lines;
   };
+
+  let pathTradeoff = bracket.tradeoff || null;
+  if (g === 'D' && sorted[0]?.team === 'USA' && sorted[0].pts >= 6) {
+    const gSnap = (groupSnapshots || []).find(s => s.group === 'G');
+    const g2 = gSnap?.table?.length ? sortTable(gSnap.table)[1]?.team : 'New Zealand';
+    pathTradeoff = '美国 ' + sorted[0].pts + ' 分已锁 M81 头名；土/巴争 M88 次席（D2 vs G2 · 倾向 '
+      + g2 + '）——土耳其同分须靠净胜球/进球数弥补对澳 0-2 的相互战绩劣势。';
+  }
 
   return {
     group: g,
@@ -3102,7 +3169,7 @@ function buildGroupContext(match, groupSnapshots) {
     home: teamScenario(match.home.name, homeRow),
     away: teamScenario(match.away.name, awayRow),
     cross_group_notes: crossNotes,
-    path_tradeoff: bracket.tradeoff || null,
+    path_tradeoff: pathTradeoff,
     manipulation_risk: risk,
     knockout_note: '48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。',
     scenarios: buildScenarioLines(),
@@ -3132,6 +3199,12 @@ function buildGroupStandingsNote(match, gc) {
   } else if (g === 'C' && (match.home.name === 'Brazil' || match.away.name === 'Brazil')) {
     stakes = '巴西仅积 ' + (match.home.name === 'Brazil' ? h.pts : a.pts)
       + ' 分须先抢分；C↔F 绑定：头名 32强避 F 组头名（荷兰若领跑 F 组）、次席 32强或直碰荷兰，16 强半区相反';
+  } else if (g === 'D' && match.home.name === 'Türkiye' && match.away.name === 'Paraguay') {
+    const usa = table.find(r => r.team === 'USA');
+    const aus = table.find(r => r.team === 'Australia');
+    stakes = '美国 ' + (usa?.pts ?? 6) + ' 分已出线 · 澳大利亚 ' + (aus?.pts ?? 3)
+      + ' 分暂列次席；土/巴均为 0 分——本场胜者 3 分仍须末轮再抢分'
+      + '（末轮土对美国 · 澳对巴拉圭），且土耳其首轮 0-2 负澳、相互战绩处劣势';
   } else if (leaders.length) {
     stakes = `组内 ${leaders.map(r => r.team + ' ' + r.pts + '分').join('、')} 领先；直接对话权重极高`;
   }

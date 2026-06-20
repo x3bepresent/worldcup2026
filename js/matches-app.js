@@ -241,7 +241,7 @@ function renderTerminalTeamSide(team, side) {
       </div>
       <div class="mf-terminal-identity">
         <div class="mf-terminal-name">${team.name}</div>
-        <div class="mf-terminal-meta ${metaClass}">${iso ? iso + ' · ' : ''}实力指数 <strong>${team.rating}</strong></div>
+        <div class="mf-terminal-meta ${metaClass}">${iso ? iso + ' · ' : ''}实力指数 <strong>${team.rating ?? '—'}</strong></div>
       </div>
     </div>`;
 }
@@ -497,6 +497,351 @@ function getPoissonTopScore(p) {
   return null;
 }
 
+function getTierCoverThresholds(tier) {
+  const abs = Math.abs(Number(tier) || 0);
+  if (abs < 0.01) {
+    return { fullMin: 1, halfExact: null, pushExact: null, fullLabel: '净胜≥1', halfLabel: null };
+  }
+  const frac = Math.round((abs % 1) * 100) / 100;
+  if (frac < 0.01) {
+    const n = Math.round(abs);
+    return {
+      fullMin: n + 1,
+      halfExact: null,
+      pushExact: n,
+      fullLabel: '净胜≥' + (n + 1),
+      halfLabel: n > 0 ? '走水净胜=' + n : null,
+    };
+  }
+  if (Math.abs(frac - 0.5) < 0.01 || Math.abs(frac - 0.75) < 0.01) {
+    const fullMin = Math.ceil(abs);
+    const halfExact = Math.floor(abs);
+    return {
+      fullMin,
+      halfExact: halfExact >= 1 ? halfExact : null,
+      pushExact: null,
+      fullLabel: '净胜≥' + fullMin,
+      halfLabel: halfExact >= 1 ? '部分达标净胜=' + halfExact : null,
+    };
+  }
+  const fullMin = Math.max(1, Math.ceil(abs));
+  return { fullMin, halfExact: null, pushExact: null, fullLabel: '净胜≥' + fullMin, halfLabel: null };
+}
+
+function actualSpreadResult(marginHome, tier) {
+  if (tier === 0) return 'n/a';
+  const favSide = tier > 0 ? 'home' : 'away';
+  const favMargin = favSide === 'home' ? marginHome : -marginHome;
+  const th = getTierCoverThresholds(tier);
+  if (favMargin >= th.fullMin) return 'full_cover';
+  if (th.halfExact != null && favMargin === th.halfExact) return 'half_cover';
+  if (th.pushExact != null && favMargin === th.pushExact) return 'push';
+  if (favMargin === 1) return 'half_lose';
+  if (favMargin <= 0) return 'full_lose';
+  if (favMargin >= 2 && favMargin < th.fullMin) return 'half_cover';
+  return 'partial';
+}
+
+const SPREAD_RESULT_CN = {
+  full_cover: '全达标',
+  half_cover: '部分达标',
+  half_lose: '赢1未达标',
+  full_lose: '热门未赢',
+  push: '走水',
+  partial: '部分',
+  'n/a': '—',
+};
+
+function getMarketSnapshot(m) {
+  const ms = m.market_snapshot || {};
+  const dc = m.depth_calibration || {};
+  const ds = dc.display_summary || {};
+  const tv = ds.totals_view || {};
+  const sp = ds.customer_reading?.spread || {};
+  const to = ds.customer_reading?.totals || {};
+  return {
+    market_tier: ms.market_tier ?? dc.tier_home ?? 0,
+    totals_line: ms.totals_line ?? ds.totals_line ?? tv.market_line ?? 2.5,
+    over_pct: ms.over_pct ?? tv.over_pct ?? null,
+    full_cover_pct: ms.full_cover_pct ?? sp.full_cover_pct ?? sp.meet_pct ?? null,
+    spread_level: ms.spread_level ?? sp.level ?? null,
+    spread_market_expect: ms.spread_market_expect ?? sp.market_expect_cn ?? null,
+    totals_level: ms.totals_level ?? to.level ?? null,
+    totals_show_lean: ms.totals_show_lean ?? to.show_lean ?? false,
+    totals_lean_side: ms.totals_lean_side ?? to.lean_side ?? null,
+    tier_label: ms.tier_label ?? dc.tier_label ?? null,
+  };
+}
+
+function minuteToGoalInterval(min) {
+  const m = Number(min);
+  if (Number.isNaN(m)) return null;
+  if (m <= 15) return '1–15';
+  if (m <= 30) return '16–30';
+  if (m <= 45) return '31–45';
+  if (m <= 60) return '46–60';
+  if (m <= 75) return '61–75';
+  if (m <= 90) return '76–90';
+  return '90+';
+}
+
+function computeTotalsVerdict(m, ms) {
+  const r = m.actualResult;
+  const overPct = ms.over_pct;
+  if (overPct == null || r?.home_score == null) return { available: false };
+  const line = ms.totals_line ?? 2.5;
+  const total = r.home_score + r.away_score;
+  const actualOver = total > line;
+  const push = Math.abs(total - line) < 0.01;
+  const modelOver = overPct >= 50;
+  let hit = push ? null : modelOver === actualOver;
+
+  const replay = m.depth_calibration?.preview_replay;
+  if (replay?.hits?.some(h => /进球氛围|精彩|沉闷/.test(h))) hit = true;
+  if (replay?.misses?.some(h => /进球氛围|精彩|沉闷/.test(h))) hit = false;
+
+  return {
+    available: true,
+    line,
+    total,
+    overPct,
+    modelSide: modelOver ? '大' : '小',
+    actualSide: push ? '走' : (actualOver ? '大' : '小'),
+    hit,
+    note: `模型 over ${overPct}% → 偏${modelOver ? '大' : '小'} · 实际 ${total} 球（线 ${line}）`,
+  };
+}
+
+function computeMarginVerdict(m, ms, margin) {
+  const tier = ms.market_tier;
+  if (!tier) return { available: false };
+  const spreadActual = actualSpreadResult(margin, tier);
+  const fullPred = ms.full_cover_pct;
+  const level = ms.spread_level;
+  let hit = null;
+
+  if (spreadActual === 'full_cover') {
+    hit = fullPred != null ? fullPred >= 35 : null;
+  } else if (spreadActual === 'half_cover') {
+    hit = level === 'narrow' || level === 'partial' || (fullPred != null && fullPred < 45);
+  } else if (spreadActual === 'half_lose' || spreadActual === 'full_lose') {
+    hit = level === 'skeptical' || (fullPred != null && fullPred < 35);
+  }
+
+  const replay = m.depth_calibration?.preview_replay;
+  if (replay?.hits?.some(h => /净胜|小胜|部分达标/.test(h))) hit = true;
+  if (replay?.misses?.some(h => /净胜/.test(h))) hit = false;
+
+  return {
+    available: true,
+    actual: SPREAD_RESULT_CN[spreadActual] || spreadActual,
+    marketExpect: ms.spread_market_expect || ms.tier_label || '—',
+    modelPct: fullPred,
+    hit,
+    note: `外界 ${ms.spread_market_expect || '净胜档'} · 实际 ${SPREAD_RESULT_CN[spreadActual] || spreadActual}`
+      + (fullPred != null ? ` · 模型全达标 ${fullPred}%` : ''),
+  };
+}
+
+function computeGoalTimingVerdict(m) {
+  const gt = m.depth_calibration?.display_summary?.goal_timing;
+  const firstMin = m.actualResult?.first_goal_min;
+  if (!gt?.peaks || firstMin == null) return { available: false };
+  const iv = minuteToGoalInterval(firstMin);
+  const crossIv = gt.cross_insight?.cross_intervals || [];
+  const hit = iv != null && crossIv.includes(iv);
+  return {
+    available: true,
+    firstMin,
+    interval: iv,
+    hit,
+    crossWindows: crossIv,
+    note: hit
+      ? `首球 ${firstMin}' · ${iv} 落在赛前重合窗口`
+      : `首球 ${firstMin}' · ${iv}${crossIv.length ? '（重合窗 ' + crossIv.join('、') + '）' : ''}`,
+  };
+}
+
+/** 赛前进球路径评分（与 prediction-signals-lib 口径一致） */
+function scoreGoalPathPreview(favXg, dogXg, gap, xgT) {
+  const s = { fav_burst: 10, dog_bloom: 10, open: 8, low: 10 };
+  if (dogXg < 0.65) s.low += 34;
+  if (dogXg >= 0.75 && dogXg <= 1.08 && gap >= 0.45 && gap <= 0.65) s.fav_burst += 30;
+  if (dogXg >= 0.72 && gap >= 0.55 && gap <= 0.95) s.dog_bloom += 28;
+  if (dogXg >= 0.82 && favXg >= 1.2 && gap >= 0.5 && gap <= 0.95) s.open += 26;
+  if (gap >= 1.0) {
+    s.low += 30;
+    s.dog_bloom -= 6;
+    s.open -= 4;
+  }
+  if (gap < 0.4) s.low += 26;
+  if (favXg >= 2.0 && gap >= 1.3) s.low += 24;
+  if (xgT >= 2.65) { s.open += 10; s.dog_bloom += 6; }
+  if (xgT <= 2.25 && dogXg < 0.82) s.low += 18;
+  if (xgT <= 2.25) s.low += 10;
+  if (favXg < 1.55 && gap >= 0.5 && gap <= 0.75) {
+    s.low += 12;
+    s.fav_burst -= 6;
+  }
+  for (const k of Object.keys(s)) s[k] = Math.max(1, s[k]);
+  return s;
+}
+
+function splitGoalEffSidesFromMatch(m) {
+  const p = m.prediction;
+  if (!p || p.xg_home == null || p.xg_away == null) return null;
+  const xgH = Number(p.xg_home);
+  const xgA = Number(p.xg_away);
+  const xgT = Math.round((xgH + xgA) * 100) / 100;
+  const gap = Math.round(Math.abs(xgH - xgA) * 100) / 100;
+  return {
+    xgH,
+    xgA,
+    xgT,
+    gap,
+    favXg: Math.max(xgH, xgA),
+    dogXg: Math.min(xgH, xgA),
+  };
+}
+
+function computeGoalEfficiencyPreviewPath(m) {
+  const sides = splitGoalEffSidesFromMatch(m);
+  if (!sides) return null;
+  const scores = scoreGoalPathPreview(sides.favXg, sides.dogXg, sides.gap, sides.xgT);
+  const ranked = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+  const primary = ranked[0][0];
+  const lowScore = scores.low;
+  const burstScore = scores.fav_burst + scores.dog_bloom + scores.open;
+  let lean = 'neutral';
+  if (burstScore > lowScore + 20) lean = 'high';
+  else if (lowScore > burstScore + 12) lean = 'low';
+  const overPct = m.market_snapshot?.over_pct;
+  if (overPct != null) {
+    if (overPct >= 55) lean = 'high';
+    else if (overPct <= 45) lean = 'low';
+  }
+  return { path: primary, lean, pathLabel: { fav_burst: '热门爆发', dog_bloom: '弱队开花', open: '对攻', low: '铁局/小球' }[primary] };
+}
+
+/** 赛前进球路径 vs 赛后实际路径是否一致 */
+function computeGoalEfficiencyHit(m) {
+  const ge = m.depth_calibration?.goal_efficiency;
+  const preview = computeGoalEfficiencyPreviewPath(m);
+  if (!ge || !preview) return null;
+
+  const predPath = preview.path;
+  const actualPath = ge.path_type;
+  const goals = ge.total_goals;
+  const line = m.market_snapshot?.totals_line ?? 2.5;
+
+  const pathMap = { open: 'open_game' };
+  if ((pathMap[predPath] || predPath) === actualPath) return true;
+
+  if (predPath === 'low') {
+    return goals <= 2 || (actualPath === 'mixed' && goals <= 3);
+  }
+  if (predPath === 'fav_burst') {
+    return actualPath === 'fav_burst' || (ge.fav_eff >= 1.5 && goals >= 3);
+  }
+  if (predPath === 'dog_bloom') {
+    return actualPath === 'dog_bloom' || ge.dog_eff >= 1.2;
+  }
+  if (predPath === 'open') {
+    return actualPath === 'open_game' || (ge.fav_eff >= 1.2 && ge.dog_eff >= 1.0 && goals >= 4);
+  }
+  if (preview.lean === 'high') return goals > line;
+  if (preview.lean === 'low') return goals < line || Math.abs(goals - line) < 0.01;
+  return false;
+}
+
+function statPct(hit, n) {
+  return n ? Math.round((hit / n) * 1000) / 10 : 0;
+}
+
+function statPctClass(pct) {
+  if (pct >= 55) return 'results-stat-pct--good';
+  if (pct >= 45) return 'results-stat-pct--mid';
+  return 'results-stat-pct--low';
+}
+
+function computeResultsAggregateStats(matches) {
+  let dirHit = 0;
+  let dirN = 0;
+  let top3Hit = 0;
+  let top3N = 0;
+  let effHit = 0;
+  let effN = 0;
+
+  for (const m of matches || []) {
+    const v = computePredictionVerdict(m);
+    if (!v) continue;
+    dirN += 1;
+    if (v.outcomeHit) dirHit += 1;
+    top3N += 1;
+    if (v.anyTop3Hit) top3Hit += 1;
+    const eff = computeGoalEfficiencyHit(m);
+    if (eff != null) {
+      effN += 1;
+      if (eff) effHit += 1;
+    }
+  }
+
+  return {
+    direction: { hit: dirHit, n: dirN, pct: statPct(dirHit, dirN) },
+    top3: { hit: top3Hit, n: top3N, pct: statPct(top3Hit, top3N) },
+    goalEff: { hit: effHit, n: effN, pct: statPct(effHit, effN) },
+  };
+}
+
+function renderResultsSummaryStats(stats) {
+  if (!stats?.direction?.n) return '';
+  const cards = [
+    {
+      key: 'direction',
+      icon: '🎯',
+      label: '方向正确率',
+      sub: '胜平负最高项',
+      data: stats.direction,
+    },
+    {
+      key: 'top3',
+      icon: '📊',
+      label: '比分前三正确率',
+      sub: '泊松 Top3 含实际',
+      data: stats.top3,
+    },
+    {
+      key: 'goalEff',
+      icon: '⚡',
+      label: '进球效率正确率',
+      sub: '赛前路径 vs 赛后兑现',
+      data: stats.goalEff,
+    },
+  ];
+
+  return `
+    <div class="results-stats-bar fade-in">
+      <div class="results-stats-head">
+        <span class="results-stats-title">累计推演核验</span>
+        <span class="results-stats-meta">${stats.direction.n} 场已归档 · 赛前冻结推演对照官方赛果</span>
+      </div>
+      <div class="results-stats-grid">
+        ${cards.map(c => `
+          <div class="results-stat-card results-stat-card--${c.key}">
+            <div class="results-stat-card-top">
+              <span class="results-stat-icon" aria-hidden="true">${c.icon}</span>
+              <span class="results-stat-label">${c.label}</span>
+            </div>
+            <div class="results-stat-pct ${statPctClass(c.data.pct)}">${c.data.pct}<span class="results-stat-unit">%</span></div>
+            <div class="results-stat-foot">
+              <span class="results-stat-hit">${c.data.hit} / ${c.data.n} 场命中</span>
+              <span class="results-stat-sub">${c.sub}</span>
+            </div>
+          </div>`).join('')}
+      </div>
+    </div>`;
+}
+
 function computePredictionVerdict(m) {
   const p = m.prediction;
   const r = m.actualResult;
@@ -509,6 +854,8 @@ function computePredictionVerdict(m) {
   const top3 = dist ? dist.slice(0, 3) : [];
   const officialOutcome = getScoreOutcome(r.home_score, r.away_score);
   const predOutcome = getPredictedOutcome(p);
+  const ms = getMarketSnapshot(m);
+  const margin = r.home_score - r.away_score;
 
   let dataIntegrity = 'ok';
   let dataIntegrityNote = '预测记录完整（赛前数据未与官方赛果混写）';
@@ -533,6 +880,10 @@ function computePredictionVerdict(m) {
     anyTop3Hit: top3.some(d => d.score === official),
     dataIntegrity,
     dataIntegrityNote,
+    totals: computeTotalsVerdict(m, ms),
+    margin: computeMarginVerdict(m, ms, margin),
+    goalTiming: computeGoalTimingVerdict(m),
+    goalEfficiencyHit: computeGoalEfficiencyHit(m),
   };
 }
 
@@ -1417,61 +1768,162 @@ function renderGroupContextPanel(gc) {
     </div>`;
 }
 
+function verdictBadgeOrNeutral(state, hitLabel, missLabel, neutralLabel) {
+  if (state == null) {
+    return `<span style="font-size:0.74rem;font-weight:600;padding:0.1rem 0.45rem;border-radius:2px;background:rgba(255,255,255,0.05);color:var(--txt2);border:1px solid rgba(255,255,255,0.1)">— ${neutralLabel || '无判定'}</span>`;
+  }
+  return verdictBadge(state, hitLabel, missLabel);
+}
+
+function parseScorePair(scoreStr) {
+  if (!scoreStr || scoreStr === '—') return [null, null];
+  const parts = String(scoreStr).replace(/\s/g, '').split('-');
+  return [parts[0] ?? null, parts[1] ?? null];
+}
+
+function verdictChip(label, hit, neutral) {
+  if (neutral) return `<span class="vchip vchip--na">${label}</span>`;
+  return `<span class="vchip ${hit ? 'vchip--hit' : 'vchip--miss'}">${label} ${hit ? '✓' : '✗'}</span>`;
+}
+
+function renderScoreCompareTeamRow(team, goals, role) {
+  const g = goals != null ? goals : '—';
+  const flag = team?.iso
+    ? `<img src="${FLAG(team.iso)}" class="score-compare-flag" alt="" onerror="this.style.display='none'">`
+    : '<span class="score-compare-flag score-compare-flag--ph"></span>';
+  const roleLabel = role === 'home' ? '主' : '客';
+  return `
+    <div class="score-compare-team">
+      <div class="score-compare-team-id">
+        <span class="score-compare-role" aria-hidden="true">${roleLabel}</span>
+        ${flag}
+        <span class="score-compare-name" title="${team?.name || ''}">${team?.name || '—'}</span>
+      </div>
+      <span class="score-compare-goals">${g}</span>
+    </div>`;
+}
+
+function renderScoreCompareBoard(m, homeGoals, awayGoals) {
+  return `
+    <div class="score-compare-board">
+      ${renderScoreCompareTeamRow(m.home, homeGoals, 'home')}
+      <div class="score-compare-sep" aria-hidden="true"></div>
+      ${renderScoreCompareTeamRow(m.away, awayGoals, 'away')}
+    </div>`;
+}
+
+/** 官方 vs 赛前 — 并排比分对照（赛果页主视觉） */
+function renderScoreCompareHero(m, v) {
+  const r = m.actualResult;
+  const p = m.prediction || {};
+  const [predH, predA] = parseScorePair(v.predScore);
+  const htNote = r.ht_score ? ` · 半场 ${r.ht_score}` : '';
+  const poissonNote = v.poissonTop && v.poissonTop !== v.predScore
+    ? ` · 泊松最可能 ${v.poissonTop}`
+    : '';
+
+  const t = v.totals;
+  const mg = v.margin;
+  const gt = v.goalTiming;
+
+  const chips = [
+    verdictChip('方向', v.outcomeHit),
+    verdictChip('比分', v.scoreHit),
+    verdictChip('Top3', v.anyTop3Hit),
+    t.available ? verdictChip('大小', t.hit, t.hit == null) : '',
+    mg.available ? verdictChip('净胜', mg.hit, mg.hit == null) : '',
+    gt.available ? verdictChip('时段', gt.hit, gt.hit == null) : '',
+  ].filter(Boolean).join('');
+
+  return `
+    <div class="score-compare-hero">
+      <div class="score-compare-col score-compare-col--official">
+        <div class="score-compare-col-head">
+          <span class="score-compare-col-icon" aria-hidden="true">🏁</span>
+          <span class="score-compare-col-title">官方赛果</span>
+        </div>
+        ${renderScoreCompareBoard(m, r.home_score, r.away_score)}
+        <div class="score-compare-foot score-compare-foot--official">
+          ${OUTCOME_CN[v.officialOutcome]}${htNote}
+        </div>
+      </div>
+      <div class="score-compare-mid" aria-hidden="true">
+        <span class="score-compare-vs">VS</span>
+        <span class="score-compare-mid-label">对照</span>
+      </div>
+      <div class="score-compare-col score-compare-col--pred">
+        <div class="score-compare-col-head">
+          <span class="score-compare-col-icon" aria-hidden="true">📊</span>
+          <span class="score-compare-col-title">赛前预测</span>
+        </div>
+        ${renderScoreCompareBoard(m, predH, predA)}
+        <div class="score-compare-foot score-compare-foot--pred">
+          ${OUTCOME_CN[v.predOutcome]} ${v.predOutcomePct}%${poissonNote}
+        </div>
+      </div>
+    </div>
+    <div class="score-compare-chips">${chips}</div>
+    <div class="score-compare-xg">
+      赛前 xG <strong>${p.xg_home ?? '—'}</strong> – <strong>${p.xg_away ?? '—'}</strong>
+      · 模型置信 <strong>${p.confidence ?? '—'}%</strong>
+    </div>`;
+}
+
+function renderMarketVerdictDetails(v) {
+  const t = v.totals;
+  const mg = v.margin;
+  const gt = v.goalTiming;
+  if (!t.available && !mg.available && !gt.available) return '';
+  return `
+    <div class="pred-verdict-details">
+      ${t.available ? `
+      <div class="pred-verdict-detail">
+        <span class="pred-verdict-detail-label">大小球</span>
+        <span class="pred-verdict-detail-val">预测偏${t.modelSide} · 实际${t.actualSide}（线 ${t.line}）</span>
+        ${verdictBadgeOrNeutral(t.hit, '命中', '未中', '走水')}
+      </div>` : ''}
+      ${mg.available ? `
+      <div class="pred-verdict-detail">
+        <span class="pred-verdict-detail-label">净胜档</span>
+        <span class="pred-verdict-detail-val">实际 ${mg.actual}${mg.modelPct != null ? ` · 模型全达标 ${mg.modelPct}%` : ''}</span>
+        ${verdictBadgeOrNeutral(mg.hit, '一致', '偏差', '难判')}
+      </div>` : ''}
+      ${gt.available ? `
+      <div class="pred-verdict-detail">
+        <span class="pred-verdict-detail-label">进球时段</span>
+        <span class="pred-verdict-detail-val">${gt.note}</span>
+        ${verdictBadgeOrNeutral(gt.hit, '命中', '未中', '无窗')}
+      </div>` : ''}
+    </div>`;
+}
+
 function predictionVerdictPanel(m) {
   const v = computePredictionVerdict(m);
   if (!v) return '';
   const integrityColor = v.dataIntegrity === 'ok' ? '#5BBF8A' : v.dataIntegrity === 'suspect' ? '#D95F6A' : '#C8A96E';
   const integrityIcon = v.dataIntegrity === 'ok' ? '✓' : v.dataIntegrity === 'suspect' ? '⚠' : 'ℹ';
+  const showIntegrity = v.dataIntegrity !== 'ok';
+  const top3Html = v.top3.length
+    ? `<div class="pred-verdict-top3">
+        <span class="pred-verdict-top3-label">概率前三比分</span>
+        <div class="pred-verdict-top3-chips">
+          ${v.top3.map((d, i) => `
+            <span class="pred-verdict-top3-chip${d.hit ? ' pred-verdict-top3-chip--hit' : ''}">
+              #${i + 1} ${d.score} <em>${d.prob}%</em>${d.hit ? ' ✓' : ''}
+            </span>`).join('')}
+        </div>
+      </div>`
+    : '';
+
   return `
     <div class="pred-verdict-panel">
-      <div class="pred-verdict-title">赛果 vs 预测核验</div>
-      <div class="pred-verdict-grid">
-        <div class="pred-verdict-card pred-verdict-card--hit">
-          <div class="pred-verdict-card-label pred-verdict-card-label--ok">官方赛果</div>
-          <div class="pred-verdict-card-body">
-            <div class="pred-verdict-official">${m.home.name} ${m.actualResult.home_score} — ${m.actualResult.away_score} ${m.away.name}</div>
-            <div class="pred-verdict-sub">实际结果 · ${OUTCOME_CN[v.officialOutcome]}</div>
-          </div>
-        </div>
-        <div class="pred-verdict-card pred-verdict-card--pred">
-          <div class="pred-verdict-card-label pred-verdict-card-label--gold">赛前预测比分</div>
-          <div class="pred-verdict-card-body">
-            <div class="pred-verdict-score-row">
-              <span class="pred-verdict-pred-score">${v.predScore}</span>
-              ${verdictBadge(v.scoreHit, '比分命中', '比分未中')}
-            </div>
-            <div class="pred-verdict-sub">泊松最可能 ${v.poissonTop || '—'} · 仅赛前冻结</div>
-          </div>
-        </div>
-        <div class="pred-verdict-card">
-          <div class="pred-verdict-card-label">胜平负预测</div>
-          <div class="pred-verdict-card-body">
-            <div class="pred-verdict-score-row">
-              <span style="font-size:1rem;font-weight:700;color:var(--txt)">${OUTCOME_CN[v.predOutcome]} ${v.predOutcomePct}%</span>
-              ${verdictBadge(v.outcomeHit, '方向命中', '方向未中')}
-            </div>
-            <div class="pred-verdict-sub">实际 ${OUTCOME_CN[v.officialOutcome]}</div>
-          </div>
-        </div>
-        <div class="pred-verdict-card">
-          <div class="pred-verdict-card-label">概率前三比分</div>
-          <div class="pred-verdict-card-body">
-            <div style="display:flex;flex-wrap:wrap;gap:0.35rem">
-              ${v.top3.length ? v.top3.map((d, i) => `
-                <span style="font-size:0.84rem;font-weight:700;padding:0.15rem 0.45rem;border-radius:3px;
-                  background:${d.hit ? 'rgba(91,191,138,0.15)' : 'rgba(255,255,255,0.04)'};
-                  color:${d.hit ? '#5BBF8A' : 'var(--txt2)'};
-                  border:1px solid ${d.hit ? 'rgba(91,191,138,0.4)' : 'rgba(255,255,255,0.08)'}">
-                  #${i + 1} ${d.score} ${d.prob}% ${d.hit ? '✓' : ''}
-                </span>`).join('') : '<span class="pred-verdict-sub">暂无 xG 分布</span>'}
-            </div>
-            <div style="margin-top:0.15rem">${verdictBadge(v.anyTop3Hit, 'Top3 有命中', 'Top3 均未中')}</div>
-          </div>
-        </div>
-      </div>
-      <div class="intel-strip" style="border-left-color:${integrityColor}">
+      ${renderScoreCompareHero(m, v)}
+      ${top3Html}
+      ${renderMarketVerdictDetails(v)}
+      ${showIntegrity ? `
+      <div class="intel-strip pred-verdict-integrity" style="border-left-color:${integrityColor}">
         <span style="color:${integrityColor};font-weight:700">${integrityIcon} 数据完整性</span> · ${v.dataIntegrityNote}
-      </div>
+      </div>` : ''}
     </div>`;
 }
 
@@ -1770,15 +2222,67 @@ function refereeQuantPanel(ref) {
         </div>`;
 }
 
+function isArchivedMatch(m) {
+  return m?.archived === true;
+}
+
+/** 归档复盘视图 — 核验 + 推演概要 + 比分分布（不含赛前情报墙） */
+function renderArchivedMatch(m) {
+  const p = m.prediction;
+  const tag = (label, color) => `<span style="font-size:0.68rem;letter-spacing:1.5px;text-transform:uppercase;padding:0.12rem 0.5rem;border-radius:2px;background:${color}22;color:${color};border:1px solid ${color}44;font-weight:700">${label}</span>`;
+  const finished = true;
+  const r = m.actualResult || {};
+  const highlightsHtml = r.highlights || r.scorers
+    ? `<div class="mf-archived-meta intel-strip" style="margin:0 1.25rem 1rem">
+        ${r.scorers ? `<div><strong>进球</strong> · ${r.scorers}</div>` : ''}
+        ${r.highlights ? `<div style="margin-top:0.35rem;color:var(--txt2)">${r.highlights}</div>` : ''}
+      </div>`
+    : '';
+  const summaryNote = m.depth_calibration?.public_summary_note;
+  const summaryHtml = summaryNote
+    ? `<div class="intel-strip intel-strip--model" style="margin:0 1.25rem 1rem">${summaryNote}</div>`
+    : '';
+  const lineupHtml = m.lineup?.confirmed
+    ? `<div class="mf-panel mf-panel--wide" style="margin:0 1.25rem 1rem">
+        ${panelLabel('官方首发 · 归档快照', 'gold')}
+        <div class="intel-body">${m.lineup.formation || '—'}${m.lineup.impact?.summary ? ' · ' + m.lineup.impact.summary : ''}</div>
+      </div>`
+    : '';
+
+  return `
+  <div class="match-full-card fade-in match-full-card--archived">
+    <div class="mf-header mf-header--archived">
+      <div class="mf-meta">
+        ${tag('GROUP ' + m.group, '#7BB8D4')}
+        ${m.matchday ? tag('MATCHDAY ' + m.matchday, '#888888') : ''}
+        ${tag('已归档复盘', '#5BBF8A')}
+        <span style="font-size:0.84rem;color:var(--txt2)">${m.venue || ''}${m.city ? ' · ' + m.city : ''}</span>
+      </div>
+      <div class="mf-kickoff" style="text-align:right">
+        <div style="font-size:0.72rem;letter-spacing:1.5px;color:var(--gold);font-weight:700;margin-bottom:2px">🇨🇳 北京时间</div>
+        <div style="font-size:1.1rem;font-weight:800;color:var(--gold);letter-spacing:1px;line-height:1.1">${m.date_beijing || ''} ${m.time_beijing || ''}</div>
+        ${m.archivedAt ? `<div style="font-size:0.68rem;color:var(--txt2);margin-top:2px">归档 ${String(m.archivedAt).slice(0, 10)}</div>` : ''}
+      </div>
+    </div>
+    ${predictionVerdictPanel(m)}
+    ${renderPredictionInsightStrip(p, m, finished)}
+    ${renderDepthCalibrationBlock(m.depth_calibration, null, p, m.home?.name, m.away?.name)}
+    ${summaryHtml}
+    ${highlightsHtml}
+    ${lineupHtml}
+    ${m.note ? `<div class="intel-footnote" style="margin:0 1.25rem 1.5rem">${m.note}</div>` : ''}
+  </div>`;
+}
+
 function renderMatch(m) {
+  if (isArchivedMatch(m)) return renderArchivedMatch(m);
   const p = m.prediction;
   const tag = (label, color) => `<span style="font-size:0.68rem;letter-spacing:1.5px;text-transform:uppercase;padding:0.12rem 0.5rem;border-radius:2px;background:${color}22;color:${color};border:1px solid ${color}44;font-weight:700">${label}</span>`;
   const finished = m.actualResult && ['FT', 'AET', 'PEN'].includes(m.actualResult.status);
 
   return `
   <div class="match-full-card fade-in">
-    ${resultBanner(m)}
-    ${predictionVerdictPanel(m)}
+    ${finished ? predictionVerdictPanel(m) : resultBanner(m)}
     ${pendingBanner(m)}
     <!-- MATCH HEADER -->
     <div class="mf-header">
@@ -2303,9 +2807,15 @@ function initResultsPage() {
   const snap = document.getElementById('standings-snapshots');
   if (snap) snap.innerHTML = renderGroupSnapshots(RESULTS_DATA.groupSnapshots);
 
+  const statsEl = document.getElementById('results-summary-stats');
+  if (statsEl) {
+    const stats = computeResultsAggregateStats(RESULTS_DATA.finishedMatches);
+    statsEl.innerHTML = renderResultsSummaryStats(stats);
+  }
+
   const dateEl = document.getElementById('results-date');
   if (dateEl) {
-    dateEl.textContent = `📅 已归档 ${RESULTS_DATA.finishedMatches.length} 场 · Day 1–5 完整复盘`;
+    dateEl.textContent = `📅 已归档 ${RESULTS_DATA.finishedMatches.length} 场 · 精简复盘模式（推演 vs 赛果核验）`;
   }
 
   const cont = document.getElementById('results-container');

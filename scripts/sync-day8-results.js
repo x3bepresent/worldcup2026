@@ -5,6 +5,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { archiveFinishedMatch } = require('./archive-match.js');
 
 const ROOT = path.join(__dirname, '..');
 const MATCH_PATH = path.join(ROOT, 'js', 'matches-data.js');
@@ -227,12 +228,13 @@ for (const id of ['m25', 'm26', 'm27', 'm28']) {
   }
   const patched = applyResult(m);
   Object.assign(m, patched);
+  const archivedMatch = archiveFinishedMatch(patched, { archivedAt: TS });
   const i = RESULTS_DATA.finishedMatches.findIndex(x => x.id === id);
   if (i < 0) {
-    RESULTS_DATA.finishedMatches.push(JSON.parse(JSON.stringify(m)));
+    RESULTS_DATA.finishedMatches.push(archivedMatch);
     archived.push(id);
   } else {
-    RESULTS_DATA.finishedMatches[i] = JSON.parse(JSON.stringify(m));
+    RESULTS_DATA.finishedMatches[i] = archivedMatch;
   }
 }
 

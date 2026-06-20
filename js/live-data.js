@@ -1,34 +1,34 @@
-// Auto-synced by scripts/enrich-day9.js
-// Updated: 2026-06-20T14:00:00+08:00
+// Auto-synced by scripts/sync-day9-results.js
+// Updated: 2026-06-20T01:27:04+08:00
 const LIVE_DATA = {
-  "lastUpdated": "2026-06-20T14:00:00+08:00",
+  "lastUpdated": "2026-06-20T01:27:04+08:00",
   "todayDate": "2026-06-20",
   "fixtures": [
     {
       "id": "m32",
       "home": "USA",
       "away": "Australia",
-      "status": "NS",
-      "home_score": null,
-      "away_score": null,
+      "status": "FT",
+      "home_score": 2,
+      "away_score": 0,
       "group": "D"
     },
     {
       "id": "m30",
       "home": "Scotland",
       "away": "Morocco",
-      "status": "NS",
-      "home_score": null,
-      "away_score": null,
+      "status": "FT",
+      "home_score": 0,
+      "away_score": 1,
       "group": "C"
     },
     {
       "id": "m29",
       "home": "Brazil",
       "away": "Haiti",
-      "status": "NS",
-      "home_score": null,
-      "away_score": null,
+      "status": "LIVE",
+      "home_score": 3,
+      "away_score": 0,
       "group": "C"
     },
     {
@@ -69,6 +69,20 @@ const LIVE_DATA = {
       "away": "South Korea",
       "score": "1-0",
       "group": "A"
+    },
+    {
+      "id": "m32",
+      "home": "USA",
+      "away": "Australia",
+      "score": "2-0",
+      "group": "D"
+    },
+    {
+      "id": "m30",
+      "home": "Scotland",
+      "away": "Morocco",
+      "score": "0-1",
+      "group": "C"
     }
   ],
   "standings": [
@@ -165,28 +179,74 @@ const LIVE_DATA = {
       ]
     },
     {
-      "group": "D",
-      "label": "D组 · 第1轮（2场已赛）",
+      "group": "C",
+      "label": "C组 · 第2轮后",
       "table": [
         {
-          "team": "USA",
-          "pts": 3,
-          "p": 1,
+          "team": "Morocco",
+          "pts": 4,
+          "p": 2,
           "w": 1,
-          "d": 0,
+          "d": 1,
+          "l": 0,
+          "gf": 2,
+          "ga": 1
+        },
+        {
+          "team": "Brazil",
+          "pts": 4,
+          "p": 2,
+          "w": 1,
+          "d": 1,
           "l": 0,
           "gf": 4,
           "ga": 1
         },
         {
-          "team": "Australia",
+          "team": "Scotland",
           "pts": 3,
-          "p": 1,
+          "p": 2,
           "w": 1,
           "d": 0,
+          "l": 1,
+          "gf": 1,
+          "ga": 1
+        },
+        {
+          "team": "Haiti",
+          "pts": 0,
+          "p": 2,
+          "w": 0,
+          "d": 0,
+          "l": 2,
+          "gf": 0,
+          "ga": 4
+        }
+      ]
+    },
+    {
+      "group": "D",
+      "label": "D组 · 第2轮（3场已赛）",
+      "table": [
+        {
+          "team": "USA",
+          "pts": 6,
+          "p": 2,
+          "w": 2,
+          "d": 0,
           "l": 0,
+          "gf": 6,
+          "ga": 1
+        },
+        {
+          "team": "Australia",
+          "pts": 3,
+          "p": 2,
+          "w": 1,
+          "d": 0,
+          "l": 1,
           "gf": 2,
-          "ga": 0
+          "ga": 2
         },
         {
           "team": "Türkiye",
@@ -209,56 +269,10 @@ const LIVE_DATA = {
           "ga": 4
         }
       ]
-    },
-    {
-      "group": "C",
-      "label": "C组 · 第1轮（4场已赛）",
-      "table": [
-        {
-          "team": "Scotland",
-          "pts": 3,
-          "p": 1,
-          "w": 1,
-          "d": 0,
-          "l": 0,
-          "gf": 1,
-          "ga": 0
-        },
-        {
-          "team": "Morocco",
-          "pts": 1,
-          "p": 1,
-          "w": 0,
-          "d": 1,
-          "l": 0,
-          "gf": 1,
-          "ga": 1
-        },
-        {
-          "team": "Brazil",
-          "pts": 1,
-          "p": 1,
-          "w": 0,
-          "d": 1,
-          "l": 0,
-          "gf": 1,
-          "ga": 1
-        },
-        {
-          "team": "Haiti",
-          "pts": 0,
-          "p": 1,
-          "w": 0,
-          "d": 0,
-          "l": 1,
-          "gf": 0,
-          "ga": 1
-        }
-      ]
     }
   ],
   "injuries": {
-    "note": "Gilmour/Aguerd/Abde/Wesley 整届 OUT · Neymar/Patterson 队检 · Enciso 已复出"
+    "note": "Gilmour/Aguerd/Abde/Wesley 整届 OUT · Neymar 替补 · Enciso 已复出"
   },
   "yesterdayResults": [
     {
