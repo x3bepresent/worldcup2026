@@ -110,8 +110,9 @@ const filtered = dedupeNews(MATCH_DATA.breakingNews || [])
   .filter(n => !/Day 10 伤病|教练分析|气候预报/.test(n.text || ''));
 
 filtered.unshift(
+  { tag: 'LINEUP', text: '✅ FIFA 官方首发 m33 · 德 3-4-3 Kimmich中卫 · 科特 4-3-3 Pépé/Wahi替补', time: '官方确认' },
   { tag: 'UPDATE', text: '✅ Day 10 教练分析&冷门预警已纳入（m33–m36）', time: '6月21日' },
-  { tag: 'INJURY', text: '✅ Day 10 伤病&更衣室已更新：Kubo 缺阵 m36 · Timber 兄弟 OUT m35 · Wahi 归队 m33', time: '6月20日' },
+  { tag: 'INJURY', text: '✅ m33 首发确认：Rüdiger/Goretzka 替补 · Pépé/Wahi/N\'Dicka 替补 · Karl OUT', time: '6月21日' },
   { tag: 'UPDATE', text: '✅ Day 10 气候预报+灵力分析已更新（m33–m36）', time: '6月21日' },
 );
 
@@ -130,7 +131,7 @@ try {
   const LIVE_DATA = loadData(LIVE_PATH, 'LIVE_DATA');
   LIVE_DATA.lastUpdated = TS;
   LIVE_DATA.injuries = {
-    note: 'Day 10 6/20 晚 · Kubo OUT(m36) · Q/J Timber OUT(m35) · Gudmundsson/Hincapié DOUBT · Wahi 归队(m33)',
+    note: 'Day 10 · m33 首发已确认 · Kubo OUT(m36) · Timber OUT(m35) · Pépé/Wahi 替补(m33)',
   };
   fs.writeFileSync(
     LIVE_PATH,

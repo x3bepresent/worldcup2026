@@ -2,7 +2,7 @@
 // Last updated: 2026-06-20T14:00:00+08:00
 const RESULTS_DATA = {
   "lastUpdated": "2026-06-20T14:00:00+08:00",
-  "syncSource": "FIFA 官方赛果 · Day 9 完结 · Day 10 预览",
+  "syncSource": "FIFA 官方赛果 · Day 10 部分 (m35)",
   "breakingNews": [
     {
       "tag": "OFFICIAL",
@@ -3882,7 +3882,7 @@ const RESULTS_DATA = {
           "G 组：头名 Iran 1 分 · 次席 New Zealand 同分（32强绑定组）",
           "H 组四队同积 1 分，形势极度开放",
           "E 组 Germany 3 分领跑",
-          "F 组 Sweden 3 分领跑",
+          "F 组 Netherlands 4 分领跑",
           "I 组 Norway 3 分领跑"
         ],
         "path_tradeoff": "美国 6 分已锁 M81 头名；土/巴争 M88 次席（D2 vs G2 · 倾向 New Zealand）——土耳其同分须靠净胜球/进球数弥补对澳 0-2 的相互战绩劣势。",
@@ -5205,10 +5205,10 @@ const RESULTS_DATA = {
           "rank": 3,
           "pts": 3,
           "played": 2,
-          "if_1st": "32强 M76 · C 组第 1 vs F 组第 2 → 当前 F 组第 2倾向 Japan",
+          "if_1st": "32强 M76 · C 组第 1 vs F 组第 2 → 当前 F 组第 2倾向 Sweden",
           "if_1st_r16": "16强 M91 · 对阵 E 组第 2 vs I 组第 2 之胜者",
           "if_1st_corridor": "法国/挪威/塞内加尔/德国（E/I 次席走廊）— 16 强硬仗区",
-          "if_2nd": "32强 M75 · F 组第 1 vs C 组第 2 → 当前 F 组第 1倾向 Sweden",
+          "if_2nd": "32强 M75 · F 组第 1 vs C 组第 2 → 当前 F 组第 1倾向 Netherlands（强队）",
           "if_2nd_r16": "16强 M90 · 对阵 A 组第 2 vs B 组第 2 之胜者",
           "if_2nd_corridor": "墨西哥/韩国/加拿大/瑞士（A/B 次席走廊）— 16 强相对温和",
           "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 D/E/F/G/H/I/J/K 等组第 3 横向比较",
@@ -5219,17 +5219,17 @@ const RESULTS_DATA = {
           "rank": 2,
           "pts": 4,
           "played": 2,
-          "if_1st": "32强 M76 · C 组第 1 vs F 组第 2 → 当前 F 组第 2倾向 Japan",
+          "if_1st": "32强 M76 · C 组第 1 vs F 组第 2 → 当前 F 组第 2倾向 Sweden",
           "if_1st_r16": "16强 M91 · 对阵 E 组第 2 vs I 组第 2 之胜者",
           "if_1st_corridor": "法国/挪威/塞内加尔/德国（E/I 次席走廊）— 16 强硬仗区",
-          "if_2nd": "32强 M75 · F 组第 1 vs C 组第 2 → 当前 F 组第 1倾向 Sweden",
+          "if_2nd": "32强 M75 · F 组第 1 vs C 组第 2 → 当前 F 组第 1倾向 Netherlands（强队）",
           "if_2nd_r16": "16强 M90 · 对阵 A 组第 2 vs B 组第 2 之胜者",
           "if_2nd_corridor": "墨西哥/韩国/加拿大/瑞士（A/B 次席走廊）— 16 强相对温和",
           "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 D/E/F/G/H/I/J/K 等组第 3 横向比较",
           "if_3rd_r16": "32 强对手取决于 Annex C 第 3 名组合（495 种可能）"
         },
         "cross_group_notes": [
-          "F 组：头名 Sweden 3 分 · 次席 Japan 1 分（32强绑定组）",
+          "F 组：头名 Netherlands 4 分 · 次席 Sweden 3 分（32强绑定组）",
           "E 组：头名 Germany 3 分 · 次席 Côte d'Ivoire 同分（32强绑定组）",
           "I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组）",
           "G 组四队同积 1 分，形势极度开放",
@@ -5248,7 +5248,7 @@ const RESULTS_DATA = {
         "scenarios": [
           "Scotland 若取胜：积分 6，C 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
           "Morocco 若取胜：积分 7，客场抢分将改变 C 组格局与淘汰赛半区。",
-          "平局：双方各 +1 分；在 F 组：头名 Sweden 3 分 · 次席 Japan 1 分（32强绑定组） · E 组：头名 Germany 3 分 · 次席 Côte d'Ivoire 同分（32强绑定组） · I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
+          "平局：双方各 +1 分；在 F 组：头名 Netherlands 4 分 · 次席 Sweden 3 分（32强绑定组） · E 组：头名 Germany 3 分 · 次席 Côte d'Ivoire 同分（32强绑定组） · I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
           "头名/次席博弈：C 组头名 32 强打 F 组第 2（荷兰若夺 F 组头名则 32 强避荷兰），但 16 强进入 E2/I2 胜者通道；次席 32 强极可能直碰 F 组头名（荷兰），16 强路径反而更顺。强队末轮或存在「保次席避 16 强豪强」博弈。"
         ]
       },
@@ -6607,10 +6607,10 @@ const RESULTS_DATA = {
           "rank": 1,
           "pts": 4,
           "played": 2,
-          "if_1st": "32强 M76 · C 组第 1 vs F 组第 2 → 当前 F 组第 2倾向 Japan",
+          "if_1st": "32强 M76 · C 组第 1 vs F 组第 2 → 当前 F 组第 2倾向 Sweden",
           "if_1st_r16": "16强 M91 · 对阵 E 组第 2 vs I 组第 2 之胜者",
           "if_1st_corridor": "法国/挪威/塞内加尔/德国（E/I 次席走廊）— 16 强硬仗区",
-          "if_2nd": "32强 M75 · F 组第 1 vs C 组第 2 → 当前 F 组第 1倾向 Sweden",
+          "if_2nd": "32强 M75 · F 组第 1 vs C 组第 2 → 当前 F 组第 1倾向 Netherlands（强队）",
           "if_2nd_r16": "16强 M90 · 对阵 A 组第 2 vs B 组第 2 之胜者",
           "if_2nd_corridor": "墨西哥/韩国/加拿大/瑞士（A/B 次席走廊）— 16 强相对温和",
           "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 D/E/F/G/H/I/J/K 等组第 3 横向比较",
@@ -6621,17 +6621,17 @@ const RESULTS_DATA = {
           "rank": 4,
           "pts": 0,
           "played": 2,
-          "if_1st": "32强 M76 · C 组第 1 vs F 组第 2 → 当前 F 组第 2倾向 Japan",
+          "if_1st": "32强 M76 · C 组第 1 vs F 组第 2 → 当前 F 组第 2倾向 Sweden",
           "if_1st_r16": "16强 M91 · 对阵 E 组第 2 vs I 组第 2 之胜者",
           "if_1st_corridor": "法国/挪威/塞内加尔/德国（E/I 次席走廊）— 16 强硬仗区",
-          "if_2nd": "32强 M75 · F 组第 1 vs C 组第 2 → 当前 F 组第 1倾向 Sweden",
+          "if_2nd": "32强 M75 · F 组第 1 vs C 组第 2 → 当前 F 组第 1倾向 Netherlands（强队）",
           "if_2nd_r16": "16强 M90 · 对阵 A 组第 2 vs B 组第 2 之胜者",
           "if_2nd_corridor": "墨西哥/韩国/加拿大/瑞士（A/B 次席走廊）— 16 强相对温和",
           "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 D/E/F/G/H/I/J/K 等组第 3 横向比较",
           "if_3rd_r16": "32 强对手取决于 Annex C 第 3 名组合（495 种可能）"
         },
         "cross_group_notes": [
-          "F 组：头名 Sweden 3 分 · 次席 Japan 1 分（32强绑定组）",
+          "F 组：头名 Netherlands 4 分 · 次席 Sweden 3 分（32强绑定组）",
           "E 组：头名 Germany 3 分 · 次席 Côte d'Ivoire 同分（32强绑定组）",
           "I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组）",
           "G 组四队同积 1 分，形势极度开放",
@@ -6650,7 +6650,7 @@ const RESULTS_DATA = {
         "scenarios": [
           "Brazil 若取胜：积分 7，C 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
           "Haiti 若取胜：积分 3，客场抢分将改变 C 组格局与淘汰赛半区。",
-          "平局：双方各 +1 分；在 F 组：头名 Sweden 3 分 · 次席 Japan 1 分（32强绑定组） · E 组：头名 Germany 3 分 · 次席 Côte d'Ivoire 同分（32强绑定组） · I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
+          "平局：双方各 +1 分；在 F 组：头名 Netherlands 4 分 · 次席 Sweden 3 分（32强绑定组） · E 组：头名 Germany 3 分 · 次席 Côte d'Ivoire 同分（32强绑定组） · I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
           "巴西路径提示：C 组第 1 → 32强 M76 打 F 组第 2（荷兰若 F 组头名则 32 强避荷兰）→ 16强 M91 进 E/I 次席走廊；C 组第 2 → 32强 M75 极可能碰 F 组第 1（荷兰）→ 16强 M90 进 A/B 次席走廊。末轮才存在「选半区」博弈，本轮须先抢分。",
           "头名/次席博弈：C 组头名 32 强打 F 组第 2（荷兰若夺 F 组头名则 32 强避荷兰），但 16 强进入 E2/I2 胜者通道；次席 32 强极可能直碰 F 组头名（荷兰），16 强路径反而更顺。强队末轮或存在「保次席避 16 强豪强」博弈。"
         ]
@@ -8072,7 +8072,7 @@ const RESULTS_DATA = {
           "G 组：头名 Iran 1 分 · 次席 New Zealand 同分（32强绑定组）",
           "H 组四队同积 1 分，形势极度开放",
           "E 组 Germany 3 分领跑",
-          "F 组 Sweden 3 分领跑",
+          "F 组 Netherlands 4 分领跑",
           "I 组 Norway 3 分领跑"
         ],
         "path_tradeoff": "美国 6 分已锁 M81 头名；土/巴争 M88 次席（D2 vs G2 · 倾向 New Zealand）——土耳其同分须靠净胜球/进球数弥补对澳 0-2 的相互战绩劣势。",
@@ -8974,6 +8974,204 @@ const RESULTS_DATA = {
           }
         ]
       }
+    },
+    {
+      "id": "m35",
+      "archived": true,
+      "archivedAt": "2026-06-20T19:04:05+08:00",
+      "group": "F",
+      "matchday": 2,
+      "date_beijing": "6月21日",
+      "time_beijing": "01:00",
+      "time_beijing_full": "北京时间 6月21日 01:00",
+      "venue": "NRG Stadium",
+      "city": "Houston, USA",
+      "note": "F组第2轮 · 荷兰 vs 瑞典 · 休斯顿 · 已结束 5-1",
+      "home": {
+        "name": "Netherlands",
+        "iso": "nl",
+        "rating": 84
+      },
+      "away": {
+        "name": "Sweden",
+        "iso": "se",
+        "rating": 74
+      },
+      "prediction": {
+        "xg_home": 1.72,
+        "xg_away": 1.05,
+        "home_win": 55,
+        "draw": 23,
+        "away_win": 22,
+        "score": "1-1",
+        "confidence": 70,
+        "key_factor": "【赛后复盘】赛前氛围偏闷（约 1.9 球）/ 最可能 1-1；路径模块「预防大比分」+ 弱队开花。实际 5-1：Brobbey 5'/17' + Gakpo 47'/54' 双梅开，Elanga 59' 弱队破门。方向：主胜命中（55%）；比分远超泊松分布；总球 6（大 2.75，穿 -0.75）。路径：弱队进球触发预防留意→热门爆发（荷兰效率爆表）；氛围模块显著低估。",
+        "base_home_win": 53,
+        "base_draw": 24,
+        "base_away_win": 23,
+        "depth_calibrated": true
+      },
+      "market_snapshot": {
+        "market_tier": 0.75,
+        "tier_label": "Netherlands 被看好 · 净胜约 0.5–1 球",
+        "totals_line": 2.75,
+        "over_pct": 21.4,
+        "fair_line": 2.25,
+        "line_gap": 0.5,
+        "full_cover_pct": 42.9,
+        "spread_level": "possible",
+        "spread_market_expect": "净胜≥1",
+        "totals_level": "clear_low",
+        "totals_show_lean": true,
+        "totals_lean_side": "dull"
+      },
+      "depth_calibration": {
+        "public_summary_note": "【推演概要】Netherlands · 低位反击 · 进球偏少。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
+        "preview_replay": {
+          "actual_score": "5-1",
+          "ht_score": "2-0",
+          "hits": [
+            "净胜全达标方向一致"
+          ],
+          "misses": [
+            "总进球尾部偏差大（赛前已标注无明显倾向）"
+          ],
+          "summary_cn": "命中：净胜全达标方向一致。 偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
+          "totals_actual": 6,
+          "totals_line": 2.75,
+          "spread_level": "likely",
+          "totals_level": "neutral"
+        },
+        "goal_efficiency": {
+          "xg_total": 2.77,
+          "xg_gap": 0.67,
+          "xg_home": 1.72,
+          "xg_away": 1.05,
+          "fav_name": "Netherlands",
+          "dog_name": "Sweden",
+          "fav_xg": 1.72,
+          "dog_xg": 1.05,
+          "fav_goals": 5,
+          "dog_goals": 1,
+          "fav_eff": 2.91,
+          "dog_eff": 0.95,
+          "total_goals": 6,
+          "goal_diff_vs_xg": 3.2,
+          "path_type": "fav_burst",
+          "path_label": "热门爆发",
+          "tags": [
+            {
+              "key": "high_scoring",
+              "label": "大比分",
+              "color": "#D95F6A",
+              "bg": "rgba(217,95,106,0.12)"
+            },
+            {
+              "key": "fav_burst",
+              "label": "热门爆发",
+              "color": "#FF6B35",
+              "bg": "rgba(255,107,53,0.1)"
+            }
+          ],
+          "pattern_note": "热门效率≥1.5 且总进球≥4——样本内高比分硬路径（热门打穿）。",
+          "summary_cn": "赛前 xG 总 2.77（差 0.67）· 热门 Netherlands 1.72→5（效率 2.91）· 弱队 Sweden 1.05→1（效率 0.95）→ 热门爆发。热门效率≥1.5 且总进球≥4——样本内高比分硬路径（热门打穿）。",
+          "in_mid_band": true
+        },
+        "display_summary": {
+          "baseline_label": "全场预期（含伤病·气候）",
+          "goal_timing": {
+            "sample_label": "近30场",
+            "source_note": "user_screenshot_2026-06-20_ned_swe",
+            "home_name": "Netherlands",
+            "away_name": "Sweden",
+            "intervals": [
+              "1–15",
+              "16–30",
+              "31–45",
+              "46–60",
+              "61–75",
+              "76–90",
+              "90+"
+            ],
+            "peaks": {
+              "home_scored": {
+                "interval": "46–60",
+                "pct": 19
+              },
+              "home_conceded": {
+                "interval": "31–45",
+                "pct": 22
+              },
+              "away_scored": {
+                "interval": "46–60",
+                "pct": 21
+              },
+              "away_conceded": {
+                "interval": "31–45",
+                "pct": 21
+              }
+            },
+            "cross_insight": {
+              "has_cross": true,
+              "hits": [
+                {
+                  "type": "open_play",
+                  "interval": "46–60",
+                  "color": "#E8A54B",
+                  "title": "对攻高发时段",
+                  "text": "46–60 分：双方惯常进球高峰重合，该时段比赛更开放、进球面相对更大。"
+                },
+                {
+                  "type": "both_leak",
+                  "interval": "31–45",
+                  "color": "#C8A96E",
+                  "title": "双方易失球时段",
+                  "text": "31–45 分：双方惯常失球高峰重合，该时段防守相对更松、总进球面可能抬升。"
+                }
+              ],
+              "cross_intervals": [
+                "46–60",
+                "31–45"
+              ],
+              "summary_cn": "发现 2 处节奏重合窗口"
+            },
+            "disclaimer_cn": "以上为两队近30场历史进球/失球时间段统计，供读场参考；非本场赛果预测，与灵力分析娱乐板块无关。"
+          },
+          "customer_reading": {
+            "spread": {
+              "show_cover": true,
+              "level": "possible",
+              "full_cover_pct": 42.9,
+              "market_expect_cn": "净胜≥1",
+              "pill_cn": "达标概率约 42.9% · 有达标可能"
+            },
+            "totals": {
+              "level": "clear_low",
+              "show_lean": true,
+              "lean_side": "dull",
+              "pill_cn": "倾向沉闷"
+            }
+          },
+          "totals_view": {
+            "over_pct": 21.4,
+            "market_line": 2.75,
+            "fair_line": 2.25,
+            "line_gap": 0.5
+          },
+          "totals_line": 2.75
+        }
+      },
+      "actualResult": {
+        "home_score": 5,
+        "away_score": 1,
+        "status": "FT",
+        "label": "全场结束",
+        "scorers": "Brian BROBBEY 5'; Brian BROBBEY 17'; Cody GAKPO 47'; Cody GAKPO 54'; Crysencio SUMMERVILLE 89'; Anthony ELANGA 59'",
+        "highlights": "NRG Stadium 休斯顿 · Brobbey/Gakpo 各梅开二度 · Elanga 59' 瑞典破门 · Oliver 主裁 · 荷兰 4 分领跑 F 组",
+        "ht_score": "2-0",
+        "first_goal_min": 5,
+        "fifa_match_id": "400021472"
+      }
     }
   ],
   "groupSnapshots": [
@@ -9209,30 +9407,30 @@ const RESULTS_DATA = {
     },
     {
       "group": "F",
-      "label": "F组 · 第1轮后",
+      "label": "F组 · 第2轮（部分）",
       "table": [
+        {
+          "team": "Netherlands",
+          "pts": 4,
+          "p": 2,
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 7,
+          "ga": 3
+        },
         {
           "team": "Sweden",
           "pts": 3,
-          "p": 1,
+          "p": 2,
           "w": 1,
           "d": 0,
-          "l": 0,
-          "gf": 5,
-          "ga": 1
+          "l": 1,
+          "gf": 6,
+          "ga": 6
         },
         {
           "team": "Japan",
-          "pts": 1,
-          "p": 1,
-          "w": 0,
-          "d": 1,
-          "l": 0,
-          "gf": 2,
-          "ga": 2
-        },
-        {
-          "team": "Netherlands",
           "pts": 1,
           "p": 1,
           "w": 0,

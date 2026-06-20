@@ -5,6 +5,11 @@ const MATCH_DATA = {
   "syncSource": "FIFA 赛程 · Day 10 · weather/mystic/injuries/coach/referee enriched · 推演概要+小组形势",
   "breakingNews": [
     {
+      "tag": "UPDATE",
+      "text": "📊 推演升级：模型概要 + 小组形势/晋级路径已纳入今日赛事",
+      "time": "模型"
+    },
+    {
       "tag": "OFFICIAL",
       "text": "✅ FIFA 官方裁判 m36 · Istvan Kovacs（罗马尼亚 · 第1000场）",
       "time": "官方确认"
@@ -25,14 +30,19 @@ const MATCH_DATA = {
       "time": "官方确认"
     },
     {
+      "tag": "LINEUP",
+      "text": "✅ FIFA 官方首发 m33 · 德 3-4-3 Kimmich中卫 · 科特 4-3-3 Pépé/Wahi替补",
+      "time": "官方确认"
+    },
+    {
       "tag": "UPDATE",
       "text": "✅ Day 10 教练分析&冷门预警已纳入（m33–m36）",
       "time": "6月21日"
     },
     {
       "tag": "INJURY",
-      "text": "✅ Day 10 伤病&更衣室已更新：Kubo 缺阵 m36 · Timber 兄弟 OUT m35 · Wahi 归队 m33",
-      "time": "6月20日"
+      "text": "✅ m33 首发确认：Rüdiger/Goretzka 替补 · Pépé/Wahi/N'Dicka 替补 · Karl OUT",
+      "time": "6月21日"
     },
     {
       "tag": "UPDATE",
@@ -40,9 +50,14 @@ const MATCH_DATA = {
       "time": "6月21日"
     },
     {
-      "tag": "UPDATE",
-      "text": "📊 推演升级：模型概要 + 小组形势/晋级路径已纳入今日赛事",
-      "time": "模型"
+      "tag": "OFFICIAL",
+      "text": "🏁 荷 5-1 瑞 · Brobbey/Gakpo 各双响 · Elanga 59' · 荷兰 4 分领跑 F 组",
+      "time": "F组"
+    },
+    {
+      "tag": "OFFICIAL",
+      "text": "F组：荷兰 4 · 瑞典 3 · 日本 1 · 突尼斯 0（突日待赛）",
+      "time": "积分榜"
     }
   ],
   "todayMatches": [
@@ -59,7 +74,7 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月21日 01:00",
       "venue": "NRG Stadium",
       "city": "Houston, USA",
-      "note": "F组第2轮 · 荷兰 vs 瑞典 · 休斯顿 · FIFA 官方裁判已确认（Michael Oliver）",
+      "note": "F组第2轮 · 荷兰 vs 瑞典 · 休斯顿 · 已结束 5-1 · FIFA 官方裁判已确认（Michael Oliver）",
       "lineup": {
         "confirmed": false,
         "formation": null,
@@ -81,28 +96,38 @@ const MATCH_DATA = {
         "fifa_rank": 7,
         "rating": 84,
         "form": [
-          "D",
           "W",
           "W",
           "D",
+          "W",
           "W"
         ],
         "coach": "Ronald Koeman",
         "stars": [
           {
-            "name": "Virgil van Dijk",
-            "pos": "CB",
+            "name": "Cody Gakpo",
+            "pos": "LW",
             "club": "Liverpool",
-            "desc": "队长 · 防线核心",
-            "rating": 8.5
+            "stats": "47'+54' 双响",
+            "rating": 9.2,
+            "desc": "下半场双梅开 · 荷兰 5-1 领跑 F 组"
+          },
+          {
+            "name": "Brian Brobbey",
+            "pos": "ST",
+            "club": "Ajax",
+            "stats": "5'+17' 双响",
+            "rating": 8.8,
+            "desc": "上半场双响破局 · 替 Depay 首发建功"
           }
         ],
         "star": {
-          "name": "Virgil van Dijk",
-          "pos": "CB",
+          "name": "Cody Gakpo",
+          "pos": "LW",
           "club": "Liverpool",
-          "desc": "队长 · 防线核心",
-          "rating": 8.5
+          "stats": "47'+54' 双响",
+          "rating": 9.2,
+          "desc": "下半场双梅开 · 荷兰 5-1 领跑 F 组"
         },
         "injuries": [
           {
@@ -163,20 +188,21 @@ const MATCH_DATA = {
         "fifa_rank": 25,
         "rating": 74,
         "form": [
-          "W",
           "L",
           "D",
           "W",
+          "L",
           "L"
         ],
         "coach": "Janne Andersson",
         "stars": [
           {
-            "name": "Alexander Isak",
-            "pos": "ST",
+            "name": "Anthony Elanga",
+            "pos": "RW",
             "club": "Newcastle",
-            "desc": "锋线支点",
-            "rating": 8.2
+            "stats": "59' 破门",
+            "rating": 7.2,
+            "desc": "弱队唯一进球 · 预防路径触发"
           }
         ],
         "star": {
@@ -269,7 +295,7 @@ const MATCH_DATA = {
         },
         "fifa_match_id": "400021472",
         "fifa_official_id": "347710",
-        "updated": "2026-06-20T12:46:45+08:00"
+        "updated": "2026-06-20T19:23:03+08:00"
       },
       "prediction": {
         "home_win": 55,
@@ -279,7 +305,7 @@ const MATCH_DATA = {
         "confidence": 70,
         "xg_home": 1.72,
         "xg_away": 1.05,
-        "key_factor": "F组榜首对话：瑞典首轮 5-1 后士气高 · 荷兰首轮平日本需取胜；Isak vs Van Dijk · 泊松倾向 2-1/1-1",
+        "key_factor": "【赛后复盘】赛前氛围偏闷（约 1.9 球）/ 最可能 1-1；路径模块「预防大比分」+ 弱队开花。实际 5-1：Brobbey 5'/17' + Gakpo 47'/54' 双梅开，Elanga 59' 弱队破门。方向：主胜命中（55%）；比分远超泊松分布；总球 6（大 2.75，穿 -0.75）。路径：弱队进球触发预防留意→热门爆发（荷兰效率爆表）；氛围模块显著低估",
         "score_dist": [
           {
             "score": "1-1",
@@ -318,7 +344,7 @@ const MATCH_DATA = {
           {
             "icon": "📊",
             "label": "小组积分",
-            "text": "Netherlands 暂列 F 组第 3（1 分 · 已赛 1 场） vs Sweden 第 1（3 分 · 已赛 1 场）"
+            "text": "Netherlands 暂列 F 组第 1（4 分 · 已赛 2 场） vs Sweden 第 2（3 分 · 已赛 2 场）"
           },
           {
             "icon": "🌤️",
@@ -328,7 +354,7 @@ const MATCH_DATA = {
           {
             "icon": "⚽",
             "label": "战术与阵容",
-            "text": "F组榜首对话：瑞典首轮 5-1 后士气高 · 荷兰首轮平日本需取胜；Isak vs Van Dijk · 泊松倾向 2-1/1-1"
+            "text": "【赛后复盘】赛前氛围偏闷（约 1.9 球）/ 最可能 1-1；路径模块「预防大比分」+ 弱队开花。实际 5-1：Brobbey 5'/17' + Gakpo 47'/54' 双梅开，Elanga 59' 弱队破门。方向：主胜命中（55%）；比分远超泊松分布；总球 6（大 2.75，穿 -0.75）。路径：弱队进球触发预防留意→热门爆发（荷兰效率爆表）；氛围模块显著低估"
           }
         ]
       },
@@ -1137,147 +1163,84 @@ const MATCH_DATA = {
           }
         },
         "public_summary_note": "【推演概要】Netherlands · 低位反击 · 进球偏少。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
-        "goal_efficiency_preview": {
-          "mode": "preview",
+        "preview_replay": {
+          "actual_score": "5-1",
+          "ht_score": "2-0",
+          "hits": [
+            "净胜全达标方向一致"
+          ],
+          "misses": [
+            "模型偏沉闷但实际偏精彩"
+          ],
+          "summary_cn": "命中：净胜全达标方向一致。 偏差：模型偏沉闷但实际偏精彩。",
+          "totals_actual": 6,
+          "totals_line": 2.75,
+          "spread_level": "possible",
+          "totals_level": "clear_low"
+        },
+        "goal_efficiency": {
           "xg_total": 2.77,
           "xg_gap": 0.67,
           "xg_home": 1.72,
           "xg_away": 1.05,
-          "xg_baseline_home": 1.72,
-          "xg_baseline_away": 1.05,
-          "xg_note": "结构推演用基准 xG 1.72–1.05（进球氛围用调整后 1.12–0.8）",
-          "lean_note": "进球氛围偏闷（预测约 1.9），但「弱队开花」结构需防弱队开花抬高总进球",
           "fav_name": "Netherlands",
           "dog_name": "Sweden",
           "fav_xg": 1.72,
           "dog_xg": 1.05,
-          "path_type": "dog_bloom",
-          "path_label": "弱队开花",
-          "lean": "prevention_high",
-          "lean_cn": "预防大比分",
-          "lean_mode": "prevention",
-          "lean_confidence": null,
-          "prevention_reason_cn": "进球氛围偏闷（预测约 1.9），但「弱队开花」结构需防弱队开花抬高总进球",
-          "atmosphere_link_cn": null,
-          "modules_aligned": false,
-          "live_watch": [
+          "fav_goals": 5,
+          "dog_goals": 1,
+          "fav_eff": 2.91,
+          "dog_eff": 0.95,
+          "total_goals": 6,
+          "goal_diff_vs_xg": 3.2,
+          "path_type": "fav_burst",
+          "path_label": "热门爆发",
+          "tags": [
             {
-              "key": "dog_goal",
-              "label": "Sweden进球",
-              "detail": "弱队破门 → 预防大比分抬升；对照弱队开花/对攻路径",
-              "severity": "high"
-            },
-            {
-              "key": "dog_eff",
-              "label": "弱队效率≥1.0",
-              "detail": "弱队射门兑现超预期 → 上调大比分留意（样本：效率≥1.2 易凑 3 球+）",
-              "severity": "high"
-            },
-            {
-              "key": "fav_only",
-              "label": "仅Netherlands进球",
-              "detail": "热门单榜领先、弱队仍无球 → 仍按进球氛围小比分，不必因路径升级",
-              "severity": "calm"
-            },
-            {
-              "key": "bloom_score",
-              "label": "弱队开花比分",
-              "detail": "留意 2-2、1-2 等弱队 contribution 抬高总进球",
-              "severity": "mid"
-            }
-          ],
-          "prob_over_line": 40.7,
-          "prob_meet_guess": 51.9,
-          "guess_n": 3,
-          "prob_4_plus": 29.5,
-          "prob_2_or_less": 48.1,
-          "totals_line": 2.75,
-          "scenarios": [
-            {
-              "key": "dog_bloom",
-              "label": "弱队开花",
-              "example": "2-2 / 1-3 / 3-1",
-              "note": "样本：弱队效率≥1.2 时 71% 总进球≥3；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
-              "prob_pct": 41
-            },
-            {
-              "key": "open",
-              "label": "对攻/open",
-              "example": "2-2 / 4-2 / 3-2",
-              "note": "双方 xG 均有进球预期，任一方效率达标即可凑出 4 球。",
-              "prob_pct": 41
+              "key": "high_scoring",
+              "label": "大比分",
+              "color": "#D95F6A",
+              "bg": "rgba(217,95,106,0.12)"
             },
             {
               "key": "fav_burst",
               "label": "热门爆发",
-              "example": "2-0 / 3-0 / 4-1",
-              "note": "样本：热门效率≥1.5 时高比分常见；弱队 xG≈1.0 但只进 1 球时也常见此路径。",
-              "prob_pct": 9
-            },
-            {
-              "key": "low",
-              "label": "铁局/小比分",
-              "example": "1-0 / 1-1 / 0-0",
-              "note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
-              "prob_pct": 9
+              "color": "#FF6B35",
+              "bg": "rgba(255,107,53,0.1)"
             }
           ],
-          "tags": [
-            {
-              "key": "prevention_high",
-              "label": "预防大比分",
-              "color": "#E8A54B",
-              "bg": "rgba(232,165,75,0.12)"
-            },
-            {
-              "key": "dog_threat",
-              "label": "弱队有球",
-              "color": "#E8B84B",
-              "bg": "rgba(232,184,75,0.1)"
-            },
-            {
-              "key": "dog_bloom",
-              "label": "弱队开花",
-              "color": "#E8B84B",
-              "bg": "rgba(232,184,75,0.12)"
-            }
-          ],
-          "watch_notes": [
-            "弱队上半场效率≥1.0 → 关注弱队开花路径"
-          ],
-          "pattern_note": "样本：弱队效率≥1.2 时 71% 总进球≥3；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
-          "summary_cn": "【路径·基准 xG】合计 2.77 · Netherlands 1.72 / Sweden 1.05 → 主路径「弱队开花」约 41% · 预防大比分。 至少 3 球约 51.9% · 超 2.75 约 40.7% · ≤2球 48.1%。样本：弱队效率≥1.2 时 71% 总进球≥3；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
-          "in_mid_band": true,
-          "sample_note": "结构规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27）· 大/小标签用基准 xG 泊松 ≥60%/≤40%"
+          "pattern_note": "热门效率≥1.5 且总进球≥4——样本内高比分硬路径（热门打穿）。",
+          "summary_cn": "赛前 xG 总 2.77（差 0.67）· 热门 Netherlands 1.72→5（效率 2.91）· 弱队 Sweden 1.05→1（效率 0.95）→ 热门爆发。热门效率≥1.5 且总进球≥4——样本内高比分硬路径（热门打穿）。",
+          "in_mid_band": true
         }
       },
       "group_context": {
         "group": "F",
-        "label": "F组 · 第1轮后",
+        "label": "F组 · 第2轮（部分）",
         "matchday": 2,
         "standings": [
           {
+            "team": "Netherlands",
+            "pts": 4,
+            "p": 2,
+            "w": 1,
+            "d": 1,
+            "l": 0,
+            "gf": 7,
+            "ga": 3
+          },
+          {
             "team": "Sweden",
             "pts": 3,
-            "p": 1,
+            "p": 2,
             "w": 1,
             "d": 0,
-            "l": 0,
-            "gf": 5,
-            "ga": 1
+            "l": 1,
+            "gf": 6,
+            "ga": 6
           },
           {
             "team": "Japan",
-            "pts": 1,
-            "p": 1,
-            "w": 0,
-            "d": 1,
-            "l": 0,
-            "gf": 2,
-            "ga": 2
-          },
-          {
-            "team": "Netherlands",
             "pts": 1,
             "p": 1,
             "w": 0,
@@ -1299,9 +1262,9 @@ const MATCH_DATA = {
         ],
         "home": {
           "team": "Netherlands",
-          "rank": 3,
-          "pts": 1,
-          "played": 1,
+          "rank": 1,
+          "pts": 4,
+          "played": 2,
           "if_1st": "32强 M75 · F 组第 1 vs C 组第 2 → 当前 C 组第 2倾向 Morocco（强队）",
           "if_1st_r16": "16强 M90 · 对阵 A 组第 2 vs B 组第 2 之胜者",
           "if_1st_corridor": "荷兰若夺 F 组头名，32 强直接对话 C 组次席（巴西若列次席则提前相遇）",
@@ -1313,9 +1276,9 @@ const MATCH_DATA = {
         },
         "away": {
           "team": "Sweden",
-          "rank": 1,
+          "rank": 2,
           "pts": 3,
-          "played": 1,
+          "played": 2,
           "if_1st": "32强 M75 · F 组第 1 vs C 组第 2 → 当前 C 组第 2倾向 Morocco（强队）",
           "if_1st_r16": "16强 M90 · 对阵 A 组第 2 vs B 组第 2 之胜者",
           "if_1st_corridor": "荷兰若夺 F 组头名，32 强直接对话 C 组次席（巴西若列次席则提前相遇）",
@@ -1339,11 +1302,11 @@ const MATCH_DATA = {
           "level_cn": "中",
           "focus_team": null,
           "reason": "本组或关联组积分胶着，第 2、3 轮可能出现算分踢法；本轮仍应以抢分为主。",
-          "optimal_summary": "策略最优解（推演）：关联组形势胶着，本场 Sweden 取胜最能巩固主动，Netherlands 则需积极抢 3 分；若握手各取 1 分，对领先方尚可接受，对追赶方则略偏保守——此阶段仍以全力争胜、抢 3 分为上策；尚未到以演练或轮换为名调整名次、接受非胜结果的窗口。"
+          "optimal_summary": "策略最优解（推演）：关联组形势胶着，本场 Netherlands 取胜最能巩固主动，Sweden 则需积极抢 3 分；若握手各取 1 分，对领先方尚可接受，对追赶方则略偏保守——此阶段仍以全力争胜、抢 3 分为上策；尚未到以演练或轮换为名调整名次、接受非胜结果的窗口。"
         },
         "knockout_note": "48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。",
         "scenarios": [
-          "Netherlands 若取胜：积分 4，F 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
+          "Netherlands 若取胜：积分 7，F 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
           "Sweden 若取胜：积分 6，客场抢分将改变 F 组格局与淘汰赛半区。",
           "平局：双方各 +1 分；在 C 组：头名 Brazil 4 分 · 次席 Morocco 同分（32强绑定组） · E 组：头名 Germany 3 分 · 次席 Côte d'Ivoire 同分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
           "头名/次席博弈：F 组与 C 组绑定：头名次席决定 32 强是否提前碰面，并切换 16 强进入 M90 或 M91 半区。"
@@ -1470,6 +1433,17 @@ const MATCH_DATA = {
             "detail": "荷兰再失分则被动"
           }
         ]
+      },
+      "actualResult": {
+        "home_score": 5,
+        "away_score": 1,
+        "status": "FT",
+        "label": "全场结束",
+        "scorers": "Brian BROBBEY 5'; Brian BROBBEY 17'; Cody GAKPO 47'; Cody GAKPO 54'; Crysencio SUMMERVILLE 89'; Anthony ELANGA 59'",
+        "highlights": "NRG Stadium 休斯顿 · Brobbey/Gakpo 各梅开二度 · Elanga 59' 瑞典破门 · Oliver 主裁 · 荷兰 4 分领跑 F 组",
+        "ht_score": "2-0",
+        "first_goal_min": 5,
+        "fifa_match_id": "400021472"
       }
     },
     {
@@ -1485,13 +1459,27 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月21日 04:00",
       "venue": "BMO Field",
       "city": "Toronto, Canada",
-      "note": "E组第2轮 · 德国 vs 科特迪瓦 · 多伦多 · FIFA 官方裁判已确认（Juan Gabriel Benítez）",
+      "note": "E组第2轮 · 德国 vs 科特迪瓦 · 多伦多 · FIFA 官方首发已确认 · FIFA 官方裁判已确认（Juan Gabriel Benítez）",
       "lineup": {
-        "confirmed": false,
-        "formation": null,
-        "home": "等待官方确认",
-        "away": "等待官方确认",
-        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
+        "confirmed": true,
+        "formation": "3-4-3 / 4-3-3",
+        "home": "Neuer; Tah, Kimmich, Schlotterbeck; Brown, Pavlovic, Nmecha, Sané; Musiala, Wirtz, Havertz",
+        "away": "Fofana; Konan, Kossounou, Agbadou, Singo; Kessié, Sangaré, Oulai; Amad, Bonny, Diomande",
+        "note": "✅ FIFA 官方 team sheet（Match 33 · 400021469 · 2026-06-20T19:23:02+08:00）",
+        "source": "FIFA Match Centre · api.fifa.com",
+        "updated": "2026-06-20T19:23:02+08:00",
+        "fifa_match_id": "400021469",
+        "impact": {
+          "xg_home_delta": 0.04,
+          "xg_away_delta": -0.06,
+          "summary": "FIFA 官方：德国 3-4-3（Kimmich 中卫 · Rüdiger/Goretzka 替补 · Nmecha 先发） vs 科特迪瓦 4-3-3（Pépé/Wahi/N'Dicka 替补 · Amad+Diomande 先发）——客队少了 Pépé 爆点、前场更年轻；主队变阵三中卫略抬肋部宽度。",
+          "xg_home_before": 2.05,
+          "xg_away_before": 0.95
+        },
+        "diff": {
+          "home": "⚠️ 3-4-3（非预测 4-2-3-1）：Kimmich 中卫+队长 · Rüdiger/Raum/Goretzka 替补 · Nmecha 先发替 Goretzka · Brown 翼卫",
+          "away": "⚠️ 4-3-3（非预测 4-4-2 低位）：Pépé/Wahi/N'Dicka 均未首发 · Amad+Diomande+Bonny 三叉 · Oulai 先发 · Kossounou/Agbadou 中卫"
+        },
         "predicted": {
           "formation": "4-2-3-1 / 4-3-3",
           "home": "Neuer; Kimmich, Rüdiger, Tah, Raum; Goretzka, Andrich; Musiala, Wirtz, Sané; Havertz",
@@ -1532,48 +1520,72 @@ const MATCH_DATA = {
         },
         "injuries": [
           {
-            "player": "Jamal Musiala",
-            "status": "FIT",
-            "note": "7-1 库拉索梅开二度+助攻，Nagelsmann 确认「完全可用」",
-            "confirmed": true
-          },
-          {
-            "player": "Florian Wirtz",
-            "status": "FIT",
-            "note": "组织核心状态正佳；对科特迪瓦肋部渗透是破局关键",
-            "confirmed": true
-          },
-          {
-            "player": "Kai Havertz",
-            "status": "FIT",
-            "note": "中锋支点，首轮戴帽后更衣室士气极高",
-            "confirmed": true
-          },
-          {
             "player": "Manuel Neuer",
             "status": "FIT",
-            "note": "小腿伤愈后对库拉索复出；Nagelsmann 称「经验与领导力不可替代」",
+            "note": "FIFA 官方一门 · 对库拉索复出后连续先发",
             "confirmed": true
           },
           {
             "player": "Joshua Kimmich",
             "status": "FIT",
-            "note": "右闸/后腰摇摆，7-1 后战术自由度提升",
+            "note": "FIFA 官方队长 · 3-4-3 中卫出球核心",
+            "confirmed": true
+          },
+          {
+            "player": "Jamal Musiala",
+            "status": "FIT",
+            "note": "FIFA 官方先发 · 7-1 库拉索双响+助攻",
+            "confirmed": true
+          },
+          {
+            "player": "Florian Wirtz",
+            "status": "FIT",
+            "note": "FIFA 官方先发 · 肋部组织轴心",
+            "confirmed": true
+          },
+          {
+            "player": "Kai Havertz",
+            "status": "FIT",
+            "note": "FIFA 官方中锋 · 首轮戴帽",
+            "confirmed": true
+          },
+          {
+            "player": "Felix Nmecha",
+            "status": "FIT",
+            "note": "FIFA 官方先发中场 · 替 Goretzka 增加对抗",
+            "confirmed": true
+          },
+          {
+            "player": "Antonio Rüdiger",
+            "status": "BENCH",
+            "note": "FIFA 官方替补 · 7-1 后轮换",
+            "confirmed": true
+          },
+          {
+            "player": "Leon Goretzka",
+            "status": "BENCH",
+            "note": "FIFA 官方替补 · Nmecha 先发",
+            "confirmed": true
+          },
+          {
+            "player": "David Raum",
+            "status": "BENCH",
+            "note": "FIFA 官方替补 · Brown 任翼卫",
             "confirmed": true
           },
           {
             "player": "Lennart Karl",
             "status": "OUT",
-            "note": "大腿伤赛前退出，Assan Ouédraogo 递补入队",
+            "note": "大腿伤整届缺阵 · Assan Ouédraogo 递补名单",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Nagelsmann（赛前）：「7-1 是态度回应，但对科特迪瓦是不同比赛——非洲杯冠军边路速度极快」",
-          "德媒：训练演练多种阵型以限制 Pépé/Amad  flank 速度，人员预计与首轮相近",
-          "德国 7-1 库拉索后 E 组净胜球 +6，科特迪瓦 1-0 厄瓜多尔同积 3 分——Toronto 榜首战",
-          "更衣室：Musiala+Wirtz 双核被称「新一代节拍器」；Neuer 40 岁回归一门成话题",
-          "Toronto 最后一次队检：除 Karl 外无新增伤疑"
+          "【官方】FIFA 3-4-3：Kimmich 中卫+队长 · Tah/Schlotterbeck 搭档 · Brown 翼卫 · Nmecha 先发",
+          "Rüdiger/Goretzka/Raum 均未首发——Nagelsmann 7-1 后适度轮换，肋部 Musiala+Wirtz+Sané 仍是破局点",
+          "替补席：Rüdiger · Goretzka · Raum · Undav · Beier — 60' 后若久攻不下可能变 4-2-3-1",
+          "Nagelsmann（赛前）：「对科特迪瓦不是 7-1 的重演，非洲杯冠军转换极快」",
+          "Toronto 开球前队检：除 Karl 外全员可用，无新增伤疑"
         ]
       },
       "away": {
@@ -1608,48 +1620,72 @@ const MATCH_DATA = {
         },
         "injuries": [
           {
-            "player": "Nicolas Pépé",
+            "player": "Yahia Fofana",
             "status": "FIT",
-            "note": "边路爆点；1-0 厄瓜多尔全场最威胁一点",
+            "note": "FIFA 官方一门 · 1-0 厄瓜多尔零封",
             "confirmed": true
           },
           {
             "player": "Franck Kessié",
             "status": "FIT",
-            "note": "中场屏障+前插，Faé 战术轴心",
-            "confirmed": true
-          },
-          {
-            "player": "Seko Fofana",
-            "status": "FIT",
-            "note": "串联中场，对德国高位需出球质量",
-            "confirmed": true
-          },
-          {
-            "player": "Evan N'Dicka",
-            "status": "FIT",
-            "note": "中卫主力，对 Havertz 空中球是考验",
+            "note": "FIFA 官方队长 · 中场屏障",
             "confirmed": true
           },
           {
             "player": "Ange-Yoan Bonny",
             "status": "FIT",
-            "note": "锋线支点，1-0 制胜球贡献者",
+            "note": "FIFA 官方先发中锋 · 1-0 制胜球",
+            "confirmed": true
+          },
+          {
+            "player": "Amad Diallo",
+            "status": "FIT",
+            "note": "FIFA 官方先发边路 · 对 Brown/Kimmich 侧是突破口",
+            "confirmed": true
+          },
+          {
+            "player": "Yan Diomande",
+            "status": "FIT",
+            "note": "FIFA 官方先发 · 年轻锋线速度点",
+            "confirmed": true
+          },
+          {
+            "player": "Wilfried Singo",
+            "status": "FIT",
+            "note": "FIFA 官方先发右闸 · 对 Sané 一对一",
+            "confirmed": true
+          },
+          {
+            "player": "Nicolas Pépé",
+            "status": "BENCH",
+            "note": "FIFA 官方替补 · 1-0 厄瓜多尔全场最威胁一点未首发",
             "confirmed": true
           },
           {
             "player": "Elye Wahi",
-            "status": "FIT",
-            "note": "签证风波后已抵 Toronto 合练；与 Bonny/Guessand 争首发",
+            "status": "BENCH",
+            "note": "FIFA 官方替补 · 签证风波后合练但未进 XI",
+            "confirmed": true
+          },
+          {
+            "player": "Evan N'Dicka",
+            "status": "BENCH",
+            "note": "FIFA 官方替补 · Kossounou+Agbadou 中卫搭档",
+            "confirmed": true
+          },
+          {
+            "player": "Seko Fofana",
+            "status": "BENCH",
+            "note": "FIFA 官方替补 · Sangaré+Oulai 先发双闸",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Faé（赛前）：「1-0 厄瓜多尔证明我们可以零封；对德国要纪律+速度，不是龟缩」",
-          "Wahi 入境加拿大一度受阻（场外调查传闻），FIF 确认授权后周五与队合练——更衣室称「欢迎归队」",
-          "Singo：「全队在加拿大受到欢迎，期待明天好结果」",
-          "预计 4-4-2 低位+双前锋（Wahi 或 Bonny）+ Pépé 边路，Kessié 保护防线",
-          "Faé 强调「不能给 Wirtz 和 Musiala 肋部空间」"
+          "【官方】FIFA 4-3-3：Amad+Bonny+Diomande 三叉 · Pépé/Wahi/N'Dicka 均未首发——Faé 选择更年轻锋线",
+          "Pépé 替补是最大变量：对厄瓜多尔全场最佳，60' 后若仍僵局几乎必上",
+          "Wahi 归队后仍坐替补席；更衣室消息「尊重教练决定，随时待命」",
+          "Faé 改 4-3-3 对攻而非赛前预测的 4-4-2 低位——Kessié+Sangaré 保护防线，Oulai 串联",
+          "Singo：「对德国要纪律，但我们也准备好了速度」"
         ]
       },
       "h2h": {
@@ -1691,25 +1727,25 @@ const MATCH_DATA = {
         },
         "fifa_match_id": "400021469",
         "fifa_official_id": "416159",
-        "updated": "2026-06-20T12:46:45+08:00"
+        "updated": "2026-06-20T19:23:03+08:00"
       },
       "prediction": {
-        "home_win": 62,
-        "draw": 21,
-        "away_win": 17,
+        "home_win": 67,
+        "draw": 19,
+        "away_win": 14,
         "score": "2-0",
         "confidence": 76,
-        "xg_home": 2.05,
-        "xg_away": 0.95,
-        "key_factor": "E组榜首战：德国 7-1 库拉索后 xG 高位 · 科特迪瓦 1-0 厄瓜多尔 · Wirtz+Musiala vs 非洲杯冠军反击",
+        "xg_home": 2.09,
+        "xg_away": 0.89,
+        "key_factor": "FIFA 官方：德国 3-4-3（Kimmich 中卫 · Nmecha 先发） vs 科特迪瓦 4-3-3（无 Pépé 首发 · Amad+Diomande 锋线）；榜首战变阵后肋部宽度上升，客队反击爆点改由替补提供",
         "score_dist": [
           {
             "score": "2-0",
-            "prob": 10.5
+            "prob": 11.1
           },
           {
             "score": "1-0",
-            "prob": 10.2
+            "prob": 10.6
           },
           {
             "score": "2-1",
@@ -1717,24 +1753,24 @@ const MATCH_DATA = {
           },
           {
             "score": "1-1",
-            "prob": 9.7
+            "prob": 9.4
           },
           {
             "score": "3-0",
-            "prob": 7.1
+            "prob": 7.7
           },
           {
             "score": "3-1",
-            "prob": 6.8
+            "prob": 6.9
           },
           {
             "score": "0-0",
-            "prob": 5
+            "prob": 5.1
           }
         ],
-        "base_home_win": 62,
-        "base_draw": 21,
-        "base_away_win": 17,
+        "base_home_win": 64.4,
+        "base_draw": 20,
+        "base_away_win": 15.3,
         "depth_calibrated": true,
         "insight_factors": [
           {
@@ -1750,7 +1786,7 @@ const MATCH_DATA = {
           {
             "icon": "⚽",
             "label": "战术与阵容",
-            "text": "E组榜首战：德国 7-1 库拉索后 xG 高位 · 科特迪瓦 1-0 厄瓜多尔 · Wirtz+Musiala vs 非洲杯冠军反击"
+            "text": "FIFA 官方：德国 3-4-3（Kimmich 中卫 · Nmecha 先发） vs 科特迪瓦 4-3-3（无 Pépé 首发 · Amad+Diomande 锋线）；榜首战变阵后肋部宽度上升，客队反击爆点改由替补提供"
           }
         ]
       },
@@ -1877,133 +1913,133 @@ const MATCH_DATA = {
         "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
       },
       "depth_calibration": {
-        "tier_home": 1,
-        "tier_label": "Germany 被看好 · 净胜约 1 球",
+        "tier_home": 1.25,
+        "tier_label": "Germany 被看好 · 净胜约 1–2 球",
         "implied_tier": 0.75,
-        "tier_gap": 0.25,
-        "signal": "neutral",
-        "signal_cn": "均衡",
-        "signal_color": "#7BB8D4",
-        "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
+        "tier_gap": 0.5,
+        "signal": "genuine_favorite",
+        "signal_cn": "实力吻合",
+        "signal_color": "#5BBF8A",
+        "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
         "blocker_spread_note": "",
         "public_lean_cn": "舆论倾向 Germany（约 68%）",
-        "analysis": "即时：德国 -1（初盘 0.75–1.5 不一，现多为一球）/ 大小 3.0（初 2.5 升，13 家升盘）；大 0.98 小 0.86。首轮 7-1 后大小球明显往 3 球靠，科特迪瓦反击仍须防。",
+        "analysis": "即时：德国 -1/1.5（-1.25）德 1.07 / 科特 0.82 / 大小 3.0 大 1.00 小 0.88（初 2.5 升）；深于此前一球盘，大小维持 3 球，大球水位略升。 赛前净胜参考高于 xG 隐含（+0.5），且净胜 1 球占 24.6%——热门净胜拉开偏难。",
         "spread_cover": {
           "top3_scores": [
             {
               "score": "2-0",
-              "prob": 10.7
+              "prob": 11.3
             },
             {
               "score": "1-0",
-              "prob": 10.4
+              "prob": 10.8
             },
             {
               "score": "2-1",
               "prob": 10.1
             }
           ],
-          "one_goal_win_pct": 24.4,
-          "two_plus_win_pct": 37.7,
-          "full_cover_pct": 37.7,
+          "one_goal_win_pct": 24.6,
+          "two_plus_win_pct": 39.8,
+          "full_cover_pct": 39.8,
           "half_cover_pct": 0,
-          "half_lose_pct": 0,
-          "push_pct": 24.4,
+          "half_lose_pct": 24.6,
+          "push_pct": null,
           "margin_full_label": "净胜≥2",
-          "margin_half_label": "走水净胜=1",
-          "fav_cover_ev": -0.002,
-          "dog_cover_ev": 0.002,
-          "rational_spread_cn": "两边净胜达标概率接近",
-          "total_xg": 3,
+          "margin_half_label": null,
+          "fav_cover_ev": -0.081,
+          "dog_cover_ev": 0.081,
+          "rational_spread_cn": "客队 守住差距概率略高",
+          "total_xg": 2.98,
           "fair_totals_line": 2.75,
-          "over_2_5_pct": 56.9,
-          "over_3_pct": 34,
+          "over_2_5_pct": 56.3,
+          "over_3_pct": 33.5,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 24.4%：参考净胜 1 球时，仅赢一球与拉开差距须分开看"
+          "margin_risk_note": "净胜 1 球概率 24.6%：常见「赢球但净胜仅 1 球」"
         },
         "spread_odds": {
-          "fav": 0.92,
-          "dog": 0.94,
-          "note": "Germany 0.92 · Côte d'Ivoire 0.94"
+          "fav": 1.07,
+          "dog": 0.82,
+          "note": "Germany 1.07 · Côte d'Ivoire 0.82"
         },
         "spread_alt": null,
         "totals_analysis": {
           "market_line": 3,
           "market_goals_int": 3,
           "line_label": "总进球约 3 个",
-          "implied_xg_total": 3,
+          "implied_xg_total": 2.98,
           "fair_line": 2.75,
           "line_gap": 0.25,
-          "over_pct": 34,
-          "under_pct": 66,
+          "over_pct": 33.5,
+          "under_pct": 66.5,
           "signal": "high_line",
           "signal_cn": "参考偏高",
           "signal_color": "#C8A96E",
           "signal_desc": "总进球参考高于合理值，模型偏小比分。",
           "public_over_pct": 68,
           "public_lean_cn": "舆论略看好多进球（约 68%）",
-          "index_note": "大比分侧 0.98 / 小比分侧 0.86 · 小比分侧更热 · 录入 2.5→3",
+          "index_note": "大比分侧 1 / 小比分侧 0.88 · 小比分侧更热 · 录入 2.5→3",
           "totals_odds": {
-            "over": 0.98,
-            "under": 0.86,
-            "note": "大比分 0.98 · 小比分 0.86"
+            "over": 1,
+            "under": 0.88,
+            "note": "大比分 1 · 小比分 0.88"
           },
-          "rational_cn": "模型略看小比分（超 3 约 66% 难达）；参考高于合理值",
+          "rational_cn": "模型略看小比分（超 3 约 66.5% 难达）；参考高于合理值",
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 3,
         "applied_delta": {
-          "home_win": 0,
-          "draw": 0,
-          "away_win": 0
+          "home_win": 2,
+          "draw": -1,
+          "away_win": -1
         },
-        "adjustment_note": "模型微调：主胜 +0% · 平 +0% · 客 +0%",
+        "adjustment_note": "模型微调：主胜 +2% · 平 -1% · 客 -1%",
         "adjusted_probs": {
-          "home_win": 62,
-          "draw": 21,
-          "away_win": 17
+          "home_win": 67,
+          "draw": 19,
+          "away_win": 14
         },
         "display_summary": {
           "fav_name": "Germany",
-          "expected_total_goals": 2.76,
-          "poisson_fav_win_pct": 58.5,
-          "small_lead_pct": 24.8,
+          "expected_total_goals": 2.73,
+          "poisson_fav_win_pct": 60.6,
+          "small_lead_pct": 25.1,
           "small_example_score": "1-0",
-          "small_example_pct": 11.3,
-          "big_cover_pct": 33.7,
+          "small_example_pct": 11.8,
+          "big_cover_pct": 35.5,
           "big_example_score": "2-0",
-          "big_example_pct": 10.6,
+          "big_example_pct": 11.2,
           "win_shape": {
             "fav_name": "Germany",
             "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 29.4%）",
+            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 30.3%）",
             "shapes": [
               {
                 "key": "narrow_low",
                 "label": "险胜 · 控局",
                 "example": "如 1-0",
-                "field_pct": 11.3,
-                "pct": 19.3
+                "field_pct": 11.8,
+                "pct": 19.5
               },
               {
                 "key": "narrow_open",
                 "label": "险胜 · 开放",
                 "example": "如 2-1",
-                "field_pct": 13.5,
-                "pct": 23
+                "field_pct": 13.3,
+                "pct": 21.9
               },
               {
                 "key": "comfort_low",
                 "label": "拉开 · 控局",
                 "example": "如 2-0",
-                "field_pct": 17.1,
-                "pct": 29.4
+                "field_pct": 18.4,
+                "pct": 30.3
               },
               {
                 "key": "comfort_open",
                 "label": "拉开 · 开放",
                 "example": "如 3-1+",
-                "field_pct": 16.6,
+                "field_pct": 17.2,
                 "pct": 28.3
               }
             ],
@@ -2012,13 +2048,13 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 42.3
+                "pct": 41.4
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 29.4
+                "pct": 30.3
               },
               {
                 "key": "open",
@@ -2027,32 +2063,32 @@ const MATCH_DATA = {
                 "pct": 28.3
               }
             ],
-            "fav_win_pct": 62
+            "fav_win_pct": 67
           },
           "excitement": {
             "label_cn": "中速开局",
             "label_key": "moderate",
             "label_color": "#C8A96E",
-            "sub_cn": "预期首球等待约 31.9 分",
-            "first_goal_wait": 31.9,
-            "fast_pct": 60.9,
-            "moderate_pct": 14.6,
-            "slow_pct": 24.4,
+            "sub_cn": "预期首球等待约 32.3 分",
+            "first_goal_wait": 32.3,
+            "fast_pct": 60.5,
+            "moderate_pct": 14.7,
+            "slow_pct": 24.8,
             "tiers": [
               {
                 "key": "fast",
                 "label": "前 30 分内首球",
-                "pct": 60.9
+                "pct": 60.5
               },
               {
                 "key": "moderate",
                 "label": "30–45 分首球",
-                "pct": 14.6
+                "pct": 14.7
               },
               {
                 "key": "slow",
                 "label": "45 分后首球",
-                "pct": 24.4
+                "pct": 24.8
               }
             ]
           },
@@ -2072,23 +2108,28 @@ const MATCH_DATA = {
               "icon": "🌤️",
               "label": "气候",
               "note": "气候变量低——Wirtz+Musiala 肋部 vs Pépé 反击不受天气明显扰动"
+            },
+            {
+              "icon": "📋",
+              "label": "官方首发",
+              "note": "FIFA 官方：德国 3-4-3（Kimmich 中卫 · Rüdiger/Goretzka 替补 · Nmecha 先发） vs 科特迪瓦 4-3-3（Pépé/Wahi/N'Dicka 替补 · Amad+Diomande 先发）——客队少了 Pépé 爆点、前场更年轻；主队变阵三中卫略抬肋部宽度。"
             }
           ],
           "xg_context": {
-            "baseline_home": 2.05,
-            "baseline_away": 0.95,
-            "adjusted_home": 1.87,
-            "adjusted_away": 0.95,
-            "note": "基准 xG 2.05–0.95 → 调整后 1.87–0.95"
+            "baseline_home": 2.09,
+            "baseline_away": 0.89,
+            "adjusted_home": 1.9,
+            "adjusted_away": 0.89,
+            "note": "基准 xG 2.09–0.89 → 调整后 1.9–0.89"
           },
           "calibration": {
-            "signal_cn": "均衡",
-            "signal_color": "#7BB8D4",
-            "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
-            "tier_gap": 0.25,
+            "signal_cn": "实力吻合",
+            "signal_color": "#5BBF8A",
+            "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
+            "tier_gap": 0.5,
             "implied_tier_label": "Germany 被看好 · 净胜约 0.5–1 球",
-            "market_tier_label": "Germany 被看好 · 净胜约 1 球",
-            "summary_cn": "与模型 xG 对照：均衡 · 赛前净胜看法略高（约 +0.25）"
+            "market_tier_label": "Germany 被看好 · 净胜约 1–2 球",
+            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 25.1%"
           },
           "win_outlook": {
             "fav_name": "Germany",
@@ -2098,13 +2139,13 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 42.3
+                "pct": 41.4
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 29.4
+                "pct": 30.3
               },
               {
                 "key": "open",
@@ -2113,113 +2154,113 @@ const MATCH_DATA = {
                 "pct": 28.3
               }
             ],
-            "margin_line_cn": "Germany · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
-            "margin_meet_pct": 33.7,
+            "margin_line_cn": "Germany · 赛前净胜参考 净胜≥2（全达标）",
+            "margin_meet_pct": 35.5,
             "margin_half_pct": 0,
-            "margin_fail_pct": 0,
+            "margin_fail_pct": 25.1,
             "margin_full_label": "净胜≥2",
-            "margin_half_label": "走水净胜=1",
+            "margin_half_label": null,
             "final_2_0_pct": null,
             "final_3_0_plus_pct": null,
             "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
             "totals_line": 3,
             "totals_line_cn": "总进球参考 3",
             "fair_totals_line": 2,
-            "model_total_xg": 2.82,
+            "model_total_xg": 2.79,
             "totals_line_gap": 1,
-            "totals_high_pct": 30.4,
-            "totals_low_pct": 69.6,
+            "totals_high_pct": 29.6,
+            "totals_low_pct": 70.4,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 21.8,
-            "win_margin2_low_total_pct": 10.6,
-            "win_margin2_high_total_pct": 16.6,
-            "readout_cn": "取胜约 62%；若取胜，以「险胜收工」为主（42.3%）。 对着赛前净胜参考，净胜≥2（全达标）约 33.7%；对着总进球参考 3，模型超线概率约 30.4%。"
+            "win_low_total_pct": 23.1,
+            "win_margin2_low_total_pct": 11.2,
+            "win_margin2_high_total_pct": 17.2,
+            "readout_cn": "取胜约 67%；若取胜，以「险胜收工」为主（41.4%）。 对着赛前净胜参考，净胜≥2（全达标）约 35.5%；对着总进球参考 3，模型超线概率约 29.6%。"
           },
           "totals_line": 3,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 11.3
-            },
-            {
-              "score": "1-1",
-              "pct": 10.7
+              "pct": 11.8
             },
             {
               "score": "2-0",
-              "pct": 10.6
+              "pct": 11.2
+            },
+            {
+              "score": "1-1",
+              "pct": 10.5
             }
           ],
           "totals_view": {
-            "expected_total": 2.8,
+            "expected_total": 2.7,
             "fair_line": 2,
             "market_line": 3,
             "line_gap": 1,
-            "over_pct": 30.4,
+            "over_pct": 29.6,
             "gap_warning": {
               "level": "medium",
               "cn": "总进球参考 3 vs 合理值 2，高于合理值 1"
             },
             "totals_outlook": {
-              "level": "mild_low",
-              "label_cn": "略倾向沉闷",
+              "level": "clear_low",
+              "label_cn": "倾向沉闷",
               "color": "#7BB8D4",
-              "meter_label_cn": "略倾向沉闷",
+              "meter_label_cn": "倾向沉闷",
               "meter_pos": 30,
               "lean_side": "dull",
-              "lean_strength": "mild",
+              "lean_strength": "clear",
               "section_intro_cn": "对照总进球参考 3，看偏闷还是偏精彩",
-              "pill_cn": "略偏闷（弱）",
-              "detail_cn": "略偏闷，模型更看小比分（难超线 3）；弱信号。",
-              "headline_cn": "进球氛围：略偏闷",
-              "show_lean": false,
-              "over_pct": 30.4,
+              "pill_cn": "倾向沉闷",
+              "detail_cn": "倾向沉闷——小比分概率高（合理值 2）。",
+              "headline_cn": "进球氛围：倾向沉闷",
+              "show_lean": true,
+              "over_pct": 29.6,
               "line_gap": 1,
               "market_line": 3,
               "market_goals_int": 3,
               "market_goals_cn": "总进球参考 3",
               "caution_public_high": true
             },
-            "summary_cn": "预测 2.8 · 合理值 2 · 总进球参考 3（高于合理值 1） · 高于合理值 1 · 模型在常见进球预期附近均衡，不作强倾向"
+            "summary_cn": "预测 2.7 · 合理值 2 · 总进球参考 3（高于合理值 1） · 高于合理值 1 · 进球氛围：倾向沉闷"
           },
           "customer_reading": {
-            "headline_cn": "Germany · 净胜走向：达标与否难下定论",
-            "sub_cn": "达标概率约 33.7% · 达标与否难下定论 进球氛围：略偏闷",
+            "headline_cn": "Germany · 净胜走向：有达标可能",
+            "sub_cn": "达标概率约 35.5% · 有达标可能 进球氛围：倾向沉闷",
             "spread": {
-              "level": "uncertain",
-              "label_cn": "净胜幅度难下定论",
-              "color": "#8A96A8",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Germany",
               "market_expect_cn": "净胜≥2",
-              "meet_pct": 33.7,
+              "meet_pct": 35.5,
               "meet_pct_label": "模型推演达标概率",
-              "verdict_cn": "达标与否难下定论",
-              "headline_cn": "Germany · 净胜走向：达标与否难下定论",
-              "pill_cn": "达标概率约 33.7% · 达标与否难下定论",
-              "detail_cn": "Germany · 赛前外界预期 净胜≥2。模型推演达标概率约 33.7%。",
-              "extra_stats_cn": "",
-              "full_cover_pct": 33.7,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Germany · 净胜走向：有达标可能",
+              "pill_cn": "达标概率约 35.5% · 有达标可能",
+              "detail_cn": "Germany · 赛前外界预期 净胜≥2。模型推演达标概率约 35.5%；有一定达标空间，但非高把握（仅胜 1 球约 25.1%）。",
+              "extra_stats_cn": "仅胜 1 球约 25.1%",
+              "full_cover_pct": 35.5,
               "half_cover_pct": 0,
-              "lose1_pct": 0,
+              "lose1_pct": 25.1,
               "margin_full_label": "净胜≥2",
-              "margin_half_label": "走水净胜=1",
-              "tier_gap": 0.25,
+              "margin_half_label": null,
+              "tier_gap": 0.5,
               "show_cover": true
             },
             "totals": {
-              "level": "mild_low",
-              "label_cn": "略倾向沉闷",
+              "level": "clear_low",
+              "label_cn": "倾向沉闷",
               "color": "#7BB8D4",
-              "meter_label_cn": "略倾向沉闷",
+              "meter_label_cn": "倾向沉闷",
               "meter_pos": 30,
               "lean_side": "dull",
-              "lean_strength": "mild",
+              "lean_strength": "clear",
               "section_intro_cn": "对照总进球参考 3，看偏闷还是偏精彩",
-              "pill_cn": "略偏闷（弱）",
-              "detail_cn": "略偏闷，模型更看小比分（难超线 3）；弱信号。",
-              "headline_cn": "进球氛围：略偏闷",
-              "show_lean": false,
-              "over_pct": 30.4,
+              "pill_cn": "倾向沉闷",
+              "detail_cn": "倾向沉闷——小比分概率高（合理值 2）。",
+              "headline_cn": "进球氛围：倾向沉闷",
+              "show_lean": true,
+              "over_pct": 29.6,
               "line_gap": 1,
               "market_line": 3,
               "market_goals_int": 3,
@@ -2233,57 +2274,57 @@ const MATCH_DATA = {
                 "icon": "⚖️",
                 "label": "净胜走向",
                 "outlook": {
-                  "level": "uncertain",
-                  "label_cn": "净胜幅度难下定论",
-                  "color": "#8A96A8",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Germany",
                   "market_expect_cn": "净胜≥2",
-                  "meet_pct": 33.7,
+                  "meet_pct": 35.5,
                   "meet_pct_label": "模型推演达标概率",
-                  "verdict_cn": "达标与否难下定论",
-                  "headline_cn": "Germany · 净胜走向：达标与否难下定论",
-                  "pill_cn": "达标概率约 33.7% · 达标与否难下定论",
-                  "detail_cn": "Germany · 赛前外界预期 净胜≥2。模型推演达标概率约 33.7%。",
-                  "extra_stats_cn": "",
-                  "full_cover_pct": 33.7,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Germany · 净胜走向：有达标可能",
+                  "pill_cn": "达标概率约 35.5% · 有达标可能",
+                  "detail_cn": "Germany · 赛前外界预期 净胜≥2。模型推演达标概率约 35.5%；有一定达标空间，但非高把握（仅胜 1 球约 25.1%）。",
+                  "extra_stats_cn": "仅胜 1 球约 25.1%",
+                  "full_cover_pct": 35.5,
                   "half_cover_pct": 0,
-                  "lose1_pct": 0,
+                  "lose1_pct": 25.1,
                   "margin_full_label": "净胜≥2",
-                  "margin_half_label": "走水净胜=1",
-                  "tier_gap": 0.25,
+                  "margin_half_label": null,
+                  "tier_gap": 0.5,
                   "show_cover": true
                 },
-                "text": "达标概率约 33.7% · 达标与否难下定论",
-                "color": "#8A96A8",
+                "text": "达标概率约 35.5% · 有达标可能",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
                 "key": "totals",
-                "icon": "◎",
+                "icon": "🌙",
                 "label": "进球氛围",
                 "outlook": {
-                  "level": "mild_low",
-                  "label_cn": "略倾向沉闷",
+                  "level": "clear_low",
+                  "label_cn": "倾向沉闷",
                   "color": "#7BB8D4",
-                  "meter_label_cn": "略倾向沉闷",
+                  "meter_label_cn": "倾向沉闷",
                   "meter_pos": 30,
                   "lean_side": "dull",
-                  "lean_strength": "mild",
+                  "lean_strength": "clear",
                   "section_intro_cn": "对照总进球参考 3，看偏闷还是偏精彩",
-                  "pill_cn": "略偏闷（弱）",
-                  "detail_cn": "略偏闷，模型更看小比分（难超线 3）；弱信号。",
-                  "headline_cn": "进球氛围：略偏闷",
-                  "show_lean": false,
-                  "over_pct": 30.4,
+                  "pill_cn": "倾向沉闷",
+                  "detail_cn": "倾向沉闷——小比分概率高（合理值 2）。",
+                  "headline_cn": "进球氛围：倾向沉闷",
+                  "show_lean": true,
+                  "over_pct": 29.6,
                   "line_gap": 1,
                   "market_line": 3,
                   "market_goals_int": 3,
                   "market_goals_cn": "总进球参考 3",
                   "caution_public_high": true
                 },
-                "text": "略偏闷（弱）",
+                "text": "倾向沉闷",
                 "color": "#7BB8D4",
-                "muted": true
+                "muted": false
               }
             ],
             "methodology_note": "读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。"
@@ -2292,48 +2333,48 @@ const MATCH_DATA = {
             {
               "side": "home",
               "team": "Germany",
-              "first_goal_pct": 66.3,
+              "first_goal_pct": 68.1,
               "start_score": "1-0",
               "fav_name": "Germany",
               "scorer_is_fav": true,
               "expected_key": "hold_win",
-              "fav_recover_pct": 94.9,
-              "small_lead_pct": 31.3,
-              "big_lead_pct": 48.9,
-              "fav_win_pct": 80.2,
-              "fav_draw_pct": 14.7,
-              "fav_lose_pct": 5.1,
+              "fav_recover_pct": 95.5,
+              "small_lead_pct": 31.2,
+              "big_lead_pct": 50.3,
+              "fav_win_pct": 81.5,
+              "fav_draw_pct": 14,
+              "fav_lose_pct": 4.5,
               "outcomes": [
                 {
                   "key": "hold_win",
                   "label": "Germany 保持胜果（净胜≥1）",
-                  "pct": 80.2
+                  "pct": 81.5
                 },
                 {
                   "key": "drawn",
                   "label": "被扳平",
-                  "pct": 14.7
+                  "pct": 14
                 },
                 {
                   "key": "lost",
                   "label": "被逆转落败",
-                  "pct": 5.1
+                  "pct": 4.5
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 41.3 分",
-                "first_goal_wait": 41.3,
-                "fast_pct": 44.9,
+                "sub_cn": "预期首球等待约 41.7 分",
+                "first_goal_wait": 41.7,
+                "fast_pct": 44.6,
                 "moderate_pct": 14.2,
-                "slow_pct": 40.9,
+                "slow_pct": 41.2,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 44.9
+                    "pct": 44.6
                   },
                   {
                     "key": "moderate",
@@ -2343,12 +2384,12 @@ const MATCH_DATA = {
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 40.9
+                    "pct": 41.2
                   }
                 ]
               },
-              "big_delta": 15.2,
-              "small_delta": 6.5,
+              "big_delta": 14.8,
+              "small_delta": 6.1,
               "narrative": "Germany 先破门（已 1-0） → 「控节奏」；Côte d'Ivoire 「堆边锋」。领先后双方可能转入守势，比分差距不易再拉大。",
               "live_outlook": {
                 "fav_name": "Germany",
@@ -2358,13 +2399,13 @@ const MATCH_DATA = {
                     "key": "narrow",
                     "label": "险胜收工",
                     "example": "如 1-0、2-1",
-                    "pct": 42.3
+                    "pct": 41.4
                   },
                   {
                     "key": "clean",
                     "label": "零封拉开",
                     "example": "如 2-0、3-0",
-                    "pct": 29.4
+                    "pct": 30.3
                   },
                   {
                     "key": "open",
@@ -2373,79 +2414,79 @@ const MATCH_DATA = {
                     "pct": 28.3
                   }
                 ],
-                "margin_line_cn": "Germany · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
-                "margin_meet_pct": 48.9,
+                "margin_line_cn": "Germany · 赛前净胜参考 净胜≥2（全达标）",
+                "margin_meet_pct": 50.3,
                 "margin_half_pct": 0,
-                "margin_fail_pct": 31.3,
+                "margin_fail_pct": 31.2,
                 "margin_full_label": "净胜≥2",
-                "margin_half_label": "走水净胜=1",
+                "margin_half_label": null,
                 "final_2_0_pct": null,
                 "final_3_0_plus_pct": null,
                 "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
                 "totals_line": 3,
                 "totals_line_cn": "总进球参考 3",
                 "fair_totals_line": 2.25,
-                "model_total_xg": 1.79,
+                "model_total_xg": 1.77,
                 "totals_line_gap": 0.75,
-                "totals_high_pct": 26.5,
-                "totals_low_pct": 73.5,
+                "totals_high_pct": 26.1,
+                "totals_low_pct": 73.9,
                 "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-                "win_low_total_pct": 36.3,
-                "win_margin2_low_total_pct": 19.5,
-                "win_margin2_high_total_pct": 18,
-                "readout_cn": "Germany 已 1-0 领先：仍取胜约 80.2%。 对着总进球参考 3，模型超线概率约 26.5%。 常见 2-0 收尾（相对总进球参考 3仍偏小比分）。"
+                "win_low_total_pct": 37.2,
+                "win_margin2_low_total_pct": 20.1,
+                "win_margin2_high_total_pct": 18.3,
+                "readout_cn": "Germany 已 1-0 领先：仍取胜约 81.5%。 对着总进球参考 3，模型超线概率约 26.1%。 常见 2-0 收尾（相对总进球参考 3仍偏小比分）。"
               }
             },
             {
               "side": "away",
               "team": "Côte d'Ivoire",
-              "first_goal_pct": 33.7,
+              "first_goal_pct": 31.9,
               "start_score": "0-1",
               "fav_name": "Germany",
               "scorer_is_fav": false,
               "expected_key": "fav_recover",
-              "fav_recover_pct": 57.6,
-              "small_lead_pct": 17.9,
-              "big_lead_pct": 11.6,
-              "fav_win_pct": 29.6,
-              "fav_draw_pct": 28,
-              "fav_lose_pct": 42.4,
+              "fav_recover_pct": 59.4,
+              "small_lead_pct": 18.6,
+              "big_lead_pct": 12.4,
+              "fav_win_pct": 31,
+              "fav_draw_pct": 28.4,
+              "fav_lose_pct": 40.6,
               "outcomes": [
                 {
                   "key": "draw",
                   "label": "Germany 追平（平局）",
-                  "pct": 28
+                  "pct": 28.4
                 },
                 {
                   "key": "win1",
                   "label": "Germany 净胜1球翻盘（如 2-1）",
-                  "pct": 17.9
+                  "pct": 18.6
                 },
                 {
                   "key": "win2",
                   "label": "Germany 净胜≥2球翻盘（如 3-1）",
-                  "pct": 11.6
+                  "pct": 12.4
                 },
                 {
                   "key": "upset_hold",
                   "label": "Côte d'Ivoire 保持胜果至终场",
-                  "pct": 42.4
+                  "pct": 40.6
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 35.6 分",
-                "first_goal_wait": 35.6,
-                "fast_pct": 49.9,
+                "sub_cn": "预期首球等待约 35.9 分",
+                "first_goal_wait": 35.9,
+                "fast_pct": 49.6,
                 "moderate_pct": 14.6,
-                "slow_pct": 35.4,
+                "slow_pct": 35.7,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 49.9
+                    "pct": 49.6
                   },
                   {
                     "key": "moderate",
@@ -2455,22 +2496,26 @@ const MATCH_DATA = {
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 35.4
+                    "pct": 35.7
                   }
                 ]
               },
-              "big_delta": -22.1,
-              "small_delta": -6.9,
+              "big_delta": -23.1,
+              "small_delta": -6.5,
               "narrative": "Côte d'Ivoire 先破门（已 0-1） → 「4-5-1 收缩」；Germany 「堆攻击手」。热门先丢球（已 0-1），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
               "live_outlook": null
             }
           ],
           "match_preview": {
             "morphology": {
-              "totals_summary": "预测 2.8 · 合理值 2 · 总进球参考 3（高于合理值 1） · 高于合理值 1 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_summary": "预测 2.7 · 合理值 2 · 总进球参考 3（高于合理值 1） · 高于合理值 1 · 进球氛围：倾向沉闷",
               "totals_line_cn": "总进球参考 3",
-              "totals_high_pct": 30.4,
+              "totals_high_pct": 29.6,
               "type_tags": [
+                {
+                  "key": "dominance",
+                  "label": "压制局"
+                },
                 {
                   "key": "low_block",
                   "label": "低位反击"
@@ -2478,11 +2523,15 @@ const MATCH_DATA = {
               ],
               "depth_label": "深度一般",
               "draw_trap_pct": 18,
-              "readout_cn": "Germany · 低位反击。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+              "readout_cn": "Germany · 压制局 · 低位反击。进球氛围倾向沉闷（模型推演）；时间段分布见下方历史节奏参考。"
             },
             "draw_trap_note": "平局风险：低位反击队若先进球或被追平，1-1 / 0-0 比客胜更现实（约 18% 冷门空间含平局）。",
             "archetype": {
               "tags": [
+                {
+                  "key": "dominance",
+                  "label": "压制局"
+                },
                 {
                   "key": "low_block",
                   "label": "低位反击"
@@ -2545,21 +2594,21 @@ const MATCH_DATA = {
             "disclaimer_cn": "以上为两队近30场历史进球/失球时间段统计，供读场参考；非本场赛果预测，与灵力分析娱乐板块无关。"
           }
         },
-        "public_summary_note": "【推演概要】Germany · 低位反击。 · 与模型 xG 对照：均衡 · 赛前净胜看法略高（约 +0.25）（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
+        "public_summary_note": "【推演概要】Germany · 压制局 · 低位反击。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 25.1%（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
         "goal_efficiency_preview": {
           "mode": "preview",
-          "xg_total": 3,
-          "xg_gap": 1.1,
-          "xg_home": 2.05,
-          "xg_away": 0.95,
-          "xg_baseline_home": 2.05,
-          "xg_baseline_away": 0.95,
-          "xg_note": "结构推演用基准 xG 2.05–0.95（进球氛围用调整后 1.87–0.95）",
+          "xg_total": 2.98,
+          "xg_gap": 1.2,
+          "xg_home": 2.09,
+          "xg_away": 0.89,
+          "xg_baseline_home": 2.09,
+          "xg_baseline_away": 0.89,
+          "xg_note": "结构推演用基准 xG 2.09–0.89（进球氛围用调整后 1.9–0.89）",
           "lean_note": "总进球大/小标签未达强信号（基准 xG · 需≥60% 或 ≤40%），以下以进球故事线为主。",
           "fav_name": "Germany",
           "dog_name": "Côte d'Ivoire",
-          "fav_xg": 2.05,
-          "dog_xg": 0.95,
+          "fav_xg": 2.09,
+          "dog_xg": 0.89,
           "path_type": "low",
           "path_label": "铁局/小比分",
           "lean": "neutral",
@@ -2570,11 +2619,11 @@ const MATCH_DATA = {
           "atmosphere_link_cn": null,
           "modules_aligned": false,
           "live_watch": [],
-          "prob_over_line": 34,
-          "prob_meet_guess": 56.9,
+          "prob_over_line": 33.5,
+          "prob_meet_guess": 56.3,
           "guess_n": 3,
-          "prob_4_plus": 34,
-          "prob_2_or_less": 43.1,
+          "prob_4_plus": 33.5,
+          "prob_2_or_less": 43.7,
           "totals_line": 3,
           "scenarios": [
             {
@@ -2624,8 +2673,8 @@ const MATCH_DATA = {
             "弱队上半场效率≥1.0 → 关注弱队开花路径",
             "xG 差≥1.0——样本多为小比分"
           ],
-          "pattern_note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
-          "summary_cn": "【路径·基准 xG】合计 3 · Germany 2.05 / Côte d'Ivoire 0.95 → 主路径「铁局/小比分」约 54%。 至少 3 球约 56.9% · 超 3 约 34% · ≤2球 43.1%。样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
+          "pattern_note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。 已纳入官方首发变阵对 xG 的修正。",
+          "summary_cn": "【路径·基准 xG】合计 2.98 · Germany 2.09 / Côte d'Ivoire 0.89 → 主路径「铁局/小比分」约 54%。 至少 3 球约 56.3% · 超 3 约 33.5% · ≤2球 43.7%。样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。 已纳入官方首发变阵对 xG 的修正。",
           "in_mid_band": true,
           "sample_note": "结构规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27）· 大/小标签用基准 xG 泊松 ≥60%/≤40%"
         }
@@ -2706,7 +2755,7 @@ const MATCH_DATA = {
         },
         "cross_group_notes": [
           "I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组）",
-          "F 组：头名 Sweden 3 分 · 次席 Japan 1 分（32强绑定组）",
+          "F 组：头名 Netherlands 4 分 · 次席 Sweden 3 分（32强绑定组）",
           "G 组四队同积 1 分，形势极度开放",
           "H 组四队同积 1 分，形势极度开放",
           "D 组 USA 6 分领跑"
@@ -2723,7 +2772,7 @@ const MATCH_DATA = {
         "scenarios": [
           "Germany 若取胜：积分 6，E 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
           "Côte d'Ivoire 若取胜：积分 6，客场抢分将改变 E 组格局与淘汰赛半区。",
-          "平局：双方各 +1 分；在 I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组） · F 组：头名 Sweden 3 分 · 次席 Japan 1 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
+          "平局：双方各 +1 分；在 I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组） · F 组：头名 Netherlands 4 分 · 次席 Sweden 3 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
           "头名/次席博弈：E 组次席与 I 组次席同槽 M78，胜者进入 M91 与 C/F 半区交汇。"
         ]
       },
@@ -3055,7 +3104,7 @@ const MATCH_DATA = {
         },
         "fifa_match_id": "400021465",
         "fifa_official_id": "328495",
-        "updated": "2026-06-20T12:46:45+08:00"
+        "updated": "2026-06-20T19:23:03+08:00"
       },
       "prediction": {
         "home_win": 55,
@@ -4097,7 +4146,7 @@ const MATCH_DATA = {
         },
         "cross_group_notes": [
           "I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组）",
-          "F 组：头名 Sweden 3 分 · 次席 Japan 1 分（32强绑定组）",
+          "F 组：头名 Netherlands 4 分 · 次席 Sweden 3 分（32强绑定组）",
           "G 组四队同积 1 分，形势极度开放",
           "H 组四队同积 1 分，形势极度开放",
           "D 组 USA 6 分领跑"
@@ -4114,7 +4163,7 @@ const MATCH_DATA = {
         "scenarios": [
           "Ecuador 若取胜：积分 3，E 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
           "Curaçao 若取胜：积分 3，客场抢分将改变 E 组格局与淘汰赛半区。",
-          "平局：双方各 +1 分；在 I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组） · F 组：头名 Sweden 3 分 · 次席 Japan 1 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
+          "平局：双方各 +1 分；在 I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组） · F 组：头名 Netherlands 4 分 · 次席 Sweden 3 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
           "头名/次席博弈：E 组次席与 I 组次席同槽 M78，胜者进入 M91 与 C/F 半区交汇。"
         ]
       },
@@ -4450,7 +4499,7 @@ const MATCH_DATA = {
         "fifa_match_id": "400021475",
         "fifa_official_id": "314605",
         "milestone_note": "FIFA World Cup 第 1000 场比赛 · 特制金色袖标",
-        "updated": "2026-06-20T12:46:45+08:00"
+        "updated": "2026-06-20T19:23:03+08:00"
       },
       "prediction": {
         "home_win": 32,
@@ -4499,7 +4548,7 @@ const MATCH_DATA = {
           {
             "icon": "📊",
             "label": "小组积分",
-            "text": "Tunisia 暂列 F 组第 4（0 分 · 已赛 1 场） vs Japan 第 2（1 分 · 已赛 1 场）；组内 Sweden 3分 领先；直接对话权重极高"
+            "text": "Tunisia 暂列 F 组第 4（0 分 · 已赛 1 场） vs Japan 第 3（1 分 · 已赛 1 场）；组内 Netherlands 4分、Sweden 3分 领先；直接对话权重极高"
           },
           {
             "icon": "🌤️",
@@ -5391,31 +5440,31 @@ const MATCH_DATA = {
       },
       "group_context": {
         "group": "F",
-        "label": "F组 · 第1轮后",
+        "label": "F组 · 第2轮（部分）",
         "matchday": 2,
         "standings": [
           {
+            "team": "Netherlands",
+            "pts": 4,
+            "p": 2,
+            "w": 1,
+            "d": 1,
+            "l": 0,
+            "gf": 7,
+            "ga": 3
+          },
+          {
             "team": "Sweden",
             "pts": 3,
-            "p": 1,
+            "p": 2,
             "w": 1,
             "d": 0,
-            "l": 0,
-            "gf": 5,
-            "ga": 1
+            "l": 1,
+            "gf": 6,
+            "ga": 6
           },
           {
             "team": "Japan",
-            "pts": 1,
-            "p": 1,
-            "w": 0,
-            "d": 1,
-            "l": 0,
-            "gf": 2,
-            "ga": 2
-          },
-          {
-            "team": "Netherlands",
             "pts": 1,
             "p": 1,
             "w": 0,
@@ -5451,7 +5500,7 @@ const MATCH_DATA = {
         },
         "away": {
           "team": "Japan",
-          "rank": 2,
+          "rank": 3,
           "pts": 1,
           "played": 1,
           "if_1st": "32强 M75 · F 组第 1 vs C 组第 2 → 当前 C 组第 2倾向 Morocco（强队）",
@@ -5640,7 +5689,7 @@ const MATCH_DATA = {
     "draw": 23,
     "away_win": 22,
     "predicted_score": "1-1",
-    "key_player_home": "Virgil van Dijk",
+    "key_player_home": "Cody Gakpo",
     "key_player_away": "Alexander Isak"
   },
   "upcomingMatches": [
