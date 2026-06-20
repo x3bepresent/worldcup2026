@@ -1,7 +1,7 @@
 // Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
-// Last API sync: 2026-06-20T08:37:07.712Z
+// Last API sync: 2026-06-20T15:28:07.082Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-20T08:37:07.712Z",
+  "lastUpdated": "2026-06-20T15:28:07.082Z",
   "syncSource": "API-Football",
   "breakingNews": [
     {
