@@ -6,6 +6,11 @@ const MATCH_DATA = {
   "breakingNews": [
     {
       "tag": "LINEUP",
+      "text": "✅ FIFA 官方首发 m29 · 巴 4-4-2 Matheus Cunha/Bruno G · 海地 5-4-1 Nazon 替补",
+      "time": "官方确认"
+    },
+    {
+      "tag": "LINEUP",
       "text": "✅ FIFA 官方首发 m32 · 美 4-2-3-1 Freese/无Pulisic · 澳 5-4-1 Beach极守",
       "time": "官方确认"
     },
@@ -21,7 +26,7 @@ const MATCH_DATA = {
     },
     {
       "tag": "INJURY",
-      "text": "✅ Day 9 伤病&更衣室动态已更新（m29–m32）；m32 首发已确认 · 其余场裁判/首发待 FIFA",
+      "text": "✅ Day 9 伤病动态已更新；m29/m32 首发已确认 · 其余场裁判/首发待 FIFA",
       "time": "6月20日"
     },
     {
@@ -2821,13 +2826,27 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月20日 09:00",
       "venue": "Lincoln Financial Field",
       "city": "Philadelphia, USA",
-      "note": "C组第2轮 · 巴西 vs 海地 · 费城",
+      "note": "C组第2轮 · 巴西 vs 海地 · 费城 · FIFA 官方首发已确认",
       "lineup": {
-        "confirmed": false,
-        "formation": null,
-        "home": "等待官方确认",
-        "away": "等待官方确认",
-        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
+        "confirmed": true,
+        "formation": "4-4-2 / 5-4-1",
+        "home": "Alisson; Danilo, Marquinhos, Gabriel, Douglas Santos; Raphinha, Casemiro, Bruno Guimarães, Vinícius Jr; Matheus Cunha, Paquetá",
+        "away": "Placide; Arcus, Ade, Delcroix, Duverne, Experience; Bellegarde, Jean Jacques, Providence, Casimir; Pierrot",
+        "note": "✅ FIFA 官方 team sheet（Match 29 · 400021457 · 2026-06-20T00:21:06+08:00）",
+        "source": "FIFA Match Centre · api.fifa.com",
+        "updated": "2026-06-20T00:21:06+08:00",
+        "fifa_match_id": "400021457",
+        "impact": {
+          "xg_home_delta": 0,
+          "xg_away_delta": -0.06,
+          "summary": "FIFA 官方：巴西 4-4-2（Gabriel/Bruno G · Matheus Cunha 先发）vs 海地 5-4-1（Nazon 替补 · Pierrot 单箭）；弱队 xG 略下调，巴西须取胜结构不变。",
+          "xg_home_before": 1.85,
+          "xg_away_before": 0.75
+        },
+        "diff": {
+          "home": "⚠️ 4-4-2（非预测 4-2-3-1）：Gabriel+Douglas Santos 中卫/左闸 · Bruno Guimarães 进首发 · Matheus Cunha 替 Richarlison/Rodrygo · Militão/Wendell 替补",
+          "away": "⚠️ 5-4-1（非 4-4-2 预测）：Nazon 替补 · Pierrot 单箭 · Duverne 三中卫 · Providence/Casimir 边路"
+        },
         "predicted": {
           "formation": "4-2-3-1 / 4-4-2",
           "home": "Alisson; Danilo, Marquinhos, Militão; Wendell, Casemiro; Vinícius, Paquetá, Rodrygo; Richarlison, Raphinha",
@@ -2852,58 +2871,87 @@ const MATCH_DATA = {
         "coach": "Carlo Ancelotti",
         "stars": [
           {
-            "name": "Vinícius Jr",
+            "name": "Vinícius Jr.",
             "pos": "LW",
             "club": "Real Madrid",
-            "desc": "首轮平摩洛哥",
-            "rating": 9
+            "stats": "官方 7 号",
+            "rating": 9,
+            "desc": "4-4-2 左路核心"
+          },
+          {
+            "name": "Lucas Paquetá",
+            "pos": "CAM",
+            "club": "West Ham",
+            "stats": "官方 20 号",
+            "rating": 8.4,
+            "desc": "4-4-2 组织核心"
+          },
+          {
+            "name": "Matheus Cunha",
+            "pos": "ST",
+            "club": "Man Utd",
+            "stats": "官方 9 号",
+            "rating": 8.2,
+            "desc": "先发中锋"
           }
         ],
         "star": {
-          "name": "Vinícius Jr",
+          "name": "Vinícius Jr.",
           "pos": "LW",
           "club": "Real Madrid",
-          "desc": "首轮平摩洛哥",
-          "rating": 9
+          "stats": "官方 7 号",
+          "rating": 9,
+          "desc": "4-4-2 左路核心"
         },
         "injuries": [
           {
-            "player": "Neymar",
-            "status": "DOUBT",
-            "note": "小腿伤缺席揭幕战；6/18 合练片段流出，对海地能否复出仍待 Ancelotti 赛前决定",
-            "confirmed": false
-          },
-          {
-            "player": "Wesley",
-            "status": "OUT",
-            "note": "整届报销，右路 Danilo/替补轮换",
-            "confirmed": true
-          },
-          {
             "player": "Vinícius Jr.",
             "status": "FIT",
-            "note": "32' 扳平摩洛哥，左路核心；The Standard 几乎锁定首发",
+            "note": "FIFA 官方首发 · 左路",
             "confirmed": true
           },
           {
             "player": "Lucas Paquetá",
             "status": "FIT",
-            "note": "首战实际 4-4-2 中场核心，组织压力因 Neymar 缺阵上升",
+            "note": "官方 4-4-2 双锋之一/前腰",
             "confirmed": true
           },
           {
             "player": "Gabriel Magalhães",
             "status": "FIT",
-            "note": "与 Marquinhos 中卫搭档经巴西战检验",
+            "note": "官方首发中卫",
+            "confirmed": true
+          },
+          {
+            "player": "Bruno Guimarães",
+            "status": "FIT",
+            "note": "FIFA 官方首发中场",
+            "confirmed": true
+          },
+          {
+            "player": "Matheus Cunha",
+            "status": "FIT",
+            "note": "官方先发中锋位",
+            "confirmed": true
+          },
+          {
+            "player": "Neymar",
+            "status": "BENCH",
+            "note": "仍未进 FIFA XI · 每日观察",
+            "confirmed": true
+          },
+          {
+            "player": "Rodrygo",
+            "status": "BENCH",
+            "note": "未进首发",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Ancelotti（SI）：「1-1 摩洛哥令人失望，对海地必须取胜；Neymar 情况每日观察」",
-          "首战实际变阵 4-4-2（非赛前 4-2-3-1），Igor Thiago 先发、62' Luiz Henrique 换入",
-          "1-1 后巴西 C 组仅 1 分，东道主+五冠压力陡增；媒体称「最不容再失分的一场」",
-          "Vinícius+Paquetá 破局能力是关键，海地预计 5 后卫深度低位",
-          "FotMob：Alisson 一门稳定，Ancelotti 半场变阵（Danilo/Fabinho）成首战标志"
+          "【官方】FIFA 4-4-2：延续对摩洛哥变阵 · Vinícius+Raphinha 宽度 · Matheus Cunha+Paquetá 锋线",
+          "Bruno Guimarães 与 Casemiro 双闸 · Gabriel/Marquinhos 中卫 · Douglas Santos 左闸",
+          "Neymar/Rodrygo/Endrick 替补 — 60' 后或成破局后手",
+          "C 组 1 分须 3 分，Ancelotti 赛前称「对海地必须取胜」"
         ]
       },
       "away": {
@@ -2922,46 +2970,50 @@ const MATCH_DATA = {
         "coach": "Sébastien Migné",
         "stars": [
           {
-            "name": "Duckens Nazon",
+            "name": "Frantzdy Pierrot",
             "pos": "ST",
-            "club": "Pau",
-            "desc": "锋线支点",
-            "rating": 7
+            "club": "Al Ahli",
+            "desc": "官方先发中锋",
+            "rating": 7.4
           }
         ],
         "star": {
-          "name": "Duckens Nazon",
+          "name": "Frantzdy Pierrot",
           "pos": "ST",
-          "club": "Pau",
-          "desc": "锋线支点",
-          "rating": 7
+          "club": "Al Ahli",
+          "desc": "官方先发中锋",
+          "rating": 7.4
         },
         "injuries": [
           {
-            "player": "全队（26人）",
+            "player": "Johny Placide",
             "status": "FIT",
-            "note": "Sports Mole 6/13：Migné 全员健康，对苏格兰亦无新增伤停",
+            "note": "FIFA 官方一门 · 队长",
+            "confirmed": true
+          },
+          {
+            "player": "Frantzdy Pierrot",
+            "status": "FIT",
+            "note": "官方 5-4-1 单箭",
             "confirmed": true
           },
           {
             "player": "Duckens Nazon",
-            "status": "FIT",
-            "note": "队史射手王，首轮替补；对巴西或升首发",
+            "status": "BENCH",
+            "note": "队史射手王替补 · 未进 XI",
             "confirmed": true
           },
           {
-            "player": "Johny Placide",
+            "player": "Jean-Kevin Duverne",
             "status": "FIT",
-            "note": "38 岁队长门将，首轮稳定",
+            "note": "官方三中卫",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Migné（赛后）：「0-1 苏格兰可以接受防守表现，对巴西仍是学习机会」",
-          "首轮 15 射 2 正未能转化，Pierrot+Isidor 双前锋试验效果一般",
-          "对巴西预计 5-4-1/5-5 深度低位，Bellegarde 中场枢纽 + Nazon 反击支点",
-          "首次世界杯正赛，海地无历史包袱；湿热费城夜场或进一步拖慢节奏",
-          "Camp：Migné 强调定位球与纪律，「不要给 Vinícius 身后空间」"
+          "【官方】FIFA 5-4-1 极守：Nazon 替补 · Pierrot 单箭 · Bellegarde 枢纽",
+          "Duverne/Experience/Ade 防线 · Providence/Casimir 边路反击",
+          "对巴西预计全程低位，定位球与纪律仍是唯一机会"
         ]
       },
       "h2h": {
@@ -2983,42 +3035,42 @@ const MATCH_DATA = {
         ]
       },
       "prediction": {
-        "home_win": 58,
+        "home_win": 60,
         "draw": 23,
-        "away_win": 19,
+        "away_win": 17,
         "score": "1-0",
         "confidence": 78,
         "xg_home": 1.85,
-        "xg_away": 0.75,
-        "key_factor": "巴西首轮平摩洛哥需取胜：Vinícius+Paquetá vs 海地低位；泊松最可能 2-0/3-0",
+        "xg_away": 0.69,
+        "key_factor": "FIFA 官方：巴西 4-4-2（Vinícius/Raphinha · Matheus Cunha · Bruno G/Casemiro） vs 海地 5-4-1（Nazon 替补 · Pierrot 支点）；须取胜，泊松仍倾向 2-0/3-0",
         "score_dist": [
           {
             "score": "1-0",
-            "prob": 13.7
+            "prob": 14.6
           },
           {
             "score": "2-0",
-            "prob": 12.7
+            "prob": 13.5
           },
           {
             "score": "1-1",
-            "prob": 10.3
+            "prob": 10.1
           },
           {
             "score": "2-1",
-            "prob": 9.5
+            "prob": 9.3
           },
           {
             "score": "3-0",
-            "prob": 7.8
+            "prob": 8.3
           },
           {
             "score": "0-0",
-            "prob": 7.4
+            "prob": 7.9
           },
           {
             "score": "3-1",
-            "prob": 5.9
+            "prob": 5.7
           }
         ],
         "insight_factors": [
@@ -3035,12 +3087,12 @@ const MATCH_DATA = {
           {
             "icon": "⚽",
             "label": "战术与阵容",
-            "text": "巴西首轮平摩洛哥需取胜：Vinícius+Paquetá vs 海地低位；泊松最可能 2-0/3-0"
+            "text": "FIFA 官方：巴西 4-4-2（Vinícius/Raphinha · Matheus Cunha · Bruno G/Casemiro） vs 海地 5-4-1（Nazon 替补 · Pierrot 支点）；须取胜，泊松仍倾向 2-0/3-0"
           }
         ],
-        "base_home_win": 63,
+        "base_home_win": 64.7,
         "base_draw": 22,
-        "base_away_win": 15,
+        "base_away_win": 13.4,
         "depth_calibrated": true
       },
       "weather": {
@@ -3310,39 +3362,39 @@ const MATCH_DATA = {
         "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
         "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "public_lean_cn": "舆论倾向 Brazil（约 72%）",
-        "analysis": "魔方：巴西 -2.5 / 大小 3.5；深盘高于 xG 隐含，大胜需早段破门；海地低位或拖慢节奏。 赛前净胜参考高于 xG 隐含（+1.75），且净胜 1 球占 26.1%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "analysis": "魔方：巴西 -2.5 / 大小 3.5；深盘高于 xG 隐含，大胜需早段破门；海地低位或拖慢节奏。 赛前净胜参考高于 xG 隐含（+1.75），且净胜 1 球占 26.4%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "spread_cover": {
           "top3_scores": [
             {
               "score": "1-0",
-              "prob": 13.9
+              "prob": 14.8
             },
             {
               "score": "2-0",
-              "prob": 12.9
+              "prob": 13.7
             },
             {
               "score": "1-1",
-              "prob": 10.4
+              "prob": 10.2
             }
           ],
-          "one_goal_win_pct": 26.1,
-          "two_plus_win_pct": 37,
-          "full_cover_pct": 17.1,
-          "half_cover_pct": 19.9,
-          "half_lose_pct": 26.1,
+          "one_goal_win_pct": 26.4,
+          "two_plus_win_pct": 38.3,
+          "full_cover_pct": 17.8,
+          "half_cover_pct": 20.5,
+          "half_lose_pct": 26.4,
           "push_pct": null,
           "margin_full_label": "净胜≥3",
           "margin_half_label": "部分达标净胜=2",
           "fav_cover_ev": 0,
           "dog_cover_ev": 0,
           "rational_spread_cn": "两边净胜达标概率接近",
-          "total_xg": 2.6,
+          "total_xg": 2.54,
           "fair_totals_line": 2,
-          "over_2_5_pct": 47.5,
-          "over_3_pct": 25.5,
+          "over_2_5_pct": 46,
+          "over_3_pct": 24.2,
           "totals_lean_cn": "2.5 球参考接近均衡；3 球参考偏少",
-          "margin_risk_note": "净胜≥3 约 17.1%；部分达标净胜=2 约 19.9%；仅赢 1 球约 26.1%"
+          "margin_risk_note": "净胜≥3 约 17.8%；部分达标净胜=2 约 20.5%；仅赢 1 球约 26.4%"
         },
         "spread_odds": {
           "fav": 0.85,
@@ -3354,11 +3406,11 @@ const MATCH_DATA = {
           "market_line": 3.5,
           "market_goals_int": 4,
           "line_label": "总进球约 3.5 个",
-          "implied_xg_total": 2.6,
+          "implied_xg_total": 2.54,
           "fair_line": 2,
           "line_gap": 1.5,
-          "over_pct": 25.5,
-          "under_pct": 74.5,
+          "over_pct": 24.2,
+          "under_pct": 75.8,
           "signal": "high_line",
           "signal_cn": "进球参考偏高",
           "signal_color": "#C8A96E",
@@ -3371,7 +3423,7 @@ const MATCH_DATA = {
             "under": 1,
             "note": "多进球 0.8 · 少进球 1"
           },
-          "rational_cn": "模型略倾向少进球（总进球约 3.5 个 约 74.5%）；进球参考偏高且舆论更看好多进球场面",
+          "rational_cn": "模型略倾向少进球（总进球约 3.5 个 约 75.8%）；进球参考偏高且舆论更看好多进球场面",
           "score_link_cn": "小比分（1-0/1-1）偏少进球 · 2-0/2-1 居中 · 3 球+ 偏多进球"
         },
         "totals_line": 3.5,
@@ -3382,52 +3434,52 @@ const MATCH_DATA = {
         },
         "adjustment_note": "模型微调：主胜 -5% · 平 +1% · 客 +4%",
         "adjusted_probs": {
-          "home_win": 58,
+          "home_win": 60,
           "draw": 23,
-          "away_win": 19
+          "away_win": 17
         },
         "display_summary": {
           "fav_name": "Brazil",
-          "expected_total_goals": 2.21,
-          "poisson_fav_win_pct": 56.5,
-          "small_lead_pct": 27,
+          "expected_total_goals": 2.35,
+          "poisson_fav_win_pct": 63.4,
+          "small_lead_pct": 27.1,
           "small_example_score": "1-0",
-          "small_example_pct": 16.4,
-          "big_cover_pct": 29.5,
+          "small_example_pct": 16.1,
+          "big_cover_pct": 36.3,
           "big_example_score": "2-0",
-          "big_example_pct": 12.5,
+          "big_example_pct": 14,
           "win_shape": {
             "fav_name": "Brazil",
             "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 33.2%）",
+            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 34.9%）",
             "shapes": [
               {
                 "key": "narrow_low",
                 "label": "险胜 · 控局",
                 "example": "如 1-0",
-                "field_pct": 16.4,
-                "pct": 29.1
+                "field_pct": 16.1,
+                "pct": 25.4
               },
               {
                 "key": "narrow_open",
                 "label": "险胜 · 开放",
                 "example": "如 2-1",
-                "field_pct": 10.6,
-                "pct": 18.8
+                "field_pct": 11,
+                "pct": 17.3
               },
               {
                 "key": "comfort_low",
                 "label": "拉开 · 控局",
                 "example": "如 2-0",
-                "field_pct": 18.8,
-                "pct": 33.2
+                "field_pct": 22.1,
+                "pct": 34.9
               },
               {
                 "key": "comfort_open",
                 "label": "拉开 · 开放",
                 "example": "如 3-1+",
-                "field_pct": 10.7,
-                "pct": 18.9
+                "field_pct": 14.2,
+                "pct": 22.4
               }
             ],
             "paths": [
@@ -3435,37 +3487,37 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 47.9
+                "pct": 42.7
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 33.2
+                "pct": 34.9
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 18.9
+                "pct": 22.4
               }
             ],
-            "fav_win_pct": 58
+            "fav_win_pct": 60
           },
           "excitement": {
             "label_cn": "中速开局",
             "label_key": "moderate",
             "label_color": "#C8A96E",
-            "sub_cn": "预期首球等待约 40.4 分",
-            "first_goal_wait": 40.4,
-            "fast_pct": 52.4,
+            "sub_cn": "预期首球等待约 37.7 分",
+            "first_goal_wait": 37.7,
+            "fast_pct": 54.9,
             "moderate_pct": 14.8,
-            "slow_pct": 32.8,
+            "slow_pct": 30.3,
             "tiers": [
               {
                 "key": "fast",
                 "label": "前 30 分内首球",
-                "pct": 52.4
+                "pct": 54.9
               },
               {
                 "key": "moderate",
@@ -3475,7 +3527,7 @@ const MATCH_DATA = {
               {
                 "key": "slow",
                 "label": "45 分后首球",
-                "pct": 32.8
+                "pct": 30.3
               }
             ]
           },
@@ -3484,7 +3536,7 @@ const MATCH_DATA = {
             {
               "icon": "🏥",
               "label": "伤病",
-              "note": "Brazil：Wesley 缺阵；Neymar 存疑 · Haiti 暂无重要伤停"
+              "note": "Brazil 暂无重要伤停 · Haiti 暂无重要伤停"
             },
             {
               "icon": "👔",
@@ -3495,14 +3547,19 @@ const MATCH_DATA = {
               "icon": "🌤️",
               "label": "气候",
               "note": "湿热中等——领先方后段守势体能是隐性变量，利好早段破局的一方"
+            },
+            {
+              "icon": "📋",
+              "label": "官方首发",
+              "note": "FIFA 官方：巴西 4-4-2（Gabriel/Bruno G · Matheus Cunha 先发）vs 海地 5-4-1（Nazon 替补 · Pierrot 单箭）；弱队 xG 略下调，巴西须取胜结构不变。"
             }
           ],
           "xg_context": {
             "baseline_home": 1.85,
-            "baseline_away": 0.75,
-            "adjusted_home": 1.52,
-            "adjusted_away": 0.71,
-            "note": "基准 xG 1.85–0.75 → 调整后 1.52–0.71"
+            "baseline_away": 0.69,
+            "adjusted_home": 1.74,
+            "adjusted_away": 0.65,
+            "note": "基准 xG 1.85–0.69 → 调整后 1.74–0.65"
           },
           "calibration": {
             "signal_cn": "大众心理预期偏高",
@@ -3511,7 +3568,7 @@ const MATCH_DATA = {
             "tier_gap": 1.75,
             "implied_tier_label": "Brazil 被看好 · 净胜约 0.5–1 球",
             "market_tier_label": "Brazil 被看好 · 净胜约 2.5 球",
-            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.75 · 模型认为仅小胜 1 球仍约 27% · 部分达标净胜=2 约 17.6% · 净胜≥3（全达标）约 11.9%"
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.75 · 模型认为仅小胜 1 球仍约 27.1% · 部分达标净胜=2 约 20.1% · 净胜≥3（全达标）约 16.2%"
           },
           "win_outlook": {
             "fav_name": "Brazil",
@@ -3521,25 +3578,25 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 47.9
+                "pct": 42.7
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 33.2
+                "pct": 34.9
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 18.9
+                "pct": 22.4
               }
             ],
             "margin_line_cn": "Brazil · 赛前净胜参考 净胜≥3（全达标） · 部分达标净胜=2",
-            "margin_meet_pct": 11.9,
-            "margin_half_pct": 17.6,
-            "margin_fail_pct": 27,
+            "margin_meet_pct": 16.2,
+            "margin_half_pct": 20.1,
+            "margin_fail_pct": 27.1,
             "margin_full_label": "净胜≥3",
             "margin_half_label": "部分达标净胜=2",
             "final_2_0_pct": null,
@@ -3548,37 +3605,37 @@ const MATCH_DATA = {
             "totals_line": 3.5,
             "totals_line_cn": "总进球约 3.5 个",
             "fair_totals_line": 2.25,
-            "model_total_xg": 2.23,
+            "model_total_xg": 2.39,
             "totals_line_gap": 1.25,
-            "totals_high_pct": 18.3,
-            "totals_low_pct": 81.7,
+            "totals_high_pct": 21.2,
+            "totals_low_pct": 78.8,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 28.9,
-            "win_margin2_low_total_pct": 12.5,
-            "win_margin2_high_total_pct": 10.7,
-            "readout_cn": "取胜约 58%；若取胜，以「险胜收工」为主（47.9%）。 对着赛前净胜参考，净胜≥3（全达标）约 11.9%；部分达标净胜=2 约 17.6%；对着外界总进球参考 总进球约 3.5 个，模型终场多于该参考的概率约 18.3%。 注意 2-0 类：净胜扩大但总进球仍可能低于外界参考。"
+            "win_low_total_pct": 30.1,
+            "win_margin2_low_total_pct": 14,
+            "win_margin2_high_total_pct": 14.2,
+            "readout_cn": "取胜约 60%；若取胜，以「险胜收工」为主（42.7%）。 对着赛前净胜参考，净胜≥3（全达标）约 16.2%；部分达标净胜=2 约 20.1%；对着外界总进球参考 总进球约 3.5 个，模型终场多于该参考的概率约 21.2%。 注意 2-0 类：净胜扩大但总进球仍可能低于外界参考。"
           },
           "totals_line": 3.5,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 16.4
+              "pct": 16.1
             },
             {
               "score": "2-0",
-              "pct": 12.5
+              "pct": 14
             },
             {
               "score": "1-1",
-              "pct": 11.7
+              "pct": 10.5
             }
           ],
           "totals_view": {
-            "expected_total": 2.2,
+            "expected_total": 2.4,
             "fair_line": 2.25,
             "market_line": 3.5,
             "line_gap": 1.25,
-            "over_pct": 18.3,
+            "over_pct": 21.2,
             "gap_warning": {
               "level": "high",
               "cn": "外界总进球参考 3.5，比模型公允线 2.25 高约 1.25 球——大众心理明显偏多进球；模型对总进球仍宜谨慎表态"
@@ -3588,7 +3645,7 @@ const MATCH_DATA = {
               "label_cn": "倾向沉闷",
               "color": "#7BB8D4",
               "meter_label_cn": "倾向沉闷",
-              "meter_pos": 18,
+              "meter_pos": 21,
               "lean_side": "dull",
               "lean_strength": "clear",
               "section_intro_cn": "对照外界「全场至少 4 球」的赛前进球节奏，看模型更偏沉闷还是精彩",
@@ -3596,34 +3653,34 @@ const MATCH_DATA = {
               "detail_cn": "模型明显偏沉闷——低比分拉锯概率较高，难撑起这一进球节奏（模型自身预期约 2.25 球）。 须警惕「外界预期很精彩、实际偏闷」的落差。",
               "headline_cn": "进球氛围：倾向沉闷",
               "show_lean": true,
-              "over_pct": 18.3,
+              "over_pct": 21.2,
               "line_gap": 1.25,
               "market_line": 3.5,
               "market_goals_int": 4,
               "market_goals_cn": "全场至少 4 球",
               "caution_public_high": true
             },
-            "summary_cn": "模型 xG 合计约 2.2 球（公允参考约 2.25） · 外界总进球参考 3.5，高出模型约 1.25 球 · ⚠ 外界总进球参考比模型公允线高约 1.25 球，大众心理明显偏多进球 · 进球氛围：倾向沉闷"
+            "summary_cn": "模型 xG 合计约 2.4 球（公允参考约 2.25） · 外界总进球参考 3.5，高出模型约 1.25 球 · ⚠ 外界总进球参考比模型公允线高约 1.25 球，大众心理明显偏多进球 · 进球氛围：倾向沉闷"
           },
           "customer_reading": {
             "headline_cn": "Brazil · 净胜走向：达到预期难度偏大",
-            "sub_cn": "达标概率约 11.9% · 达到预期难度偏大 进球氛围：倾向沉闷",
+            "sub_cn": "达标概率约 16.2% · 达到预期难度偏大 进球氛围：倾向沉闷",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
               "color": "#D95F6A",
               "fav_name": "Brazil",
               "market_expect_cn": "净胜≥3",
-              "meet_pct": 11.9,
+              "meet_pct": 16.2,
               "meet_pct_label": "模型推演达标概率",
               "verdict_cn": "达到预期难度偏大",
               "headline_cn": "Brazil · 净胜走向：达到预期难度偏大",
-              "pill_cn": "达标概率约 11.9% · 达到预期难度偏大",
-              "detail_cn": "Brazil · 赛前外界预期 净胜≥3。模型推演达标概率约 11.9%；外界看法高于 xG 隐含约 1.75 球，达到预期难度偏大（部分达标净胜=2 约 17.6% · 仅胜 1 球约 27%）。",
-              "extra_stats_cn": "部分达标净胜=2 约 17.6% · 仅胜 1 球约 27%",
-              "full_cover_pct": 11.9,
-              "half_cover_pct": 17.6,
-              "lose1_pct": 27,
+              "pill_cn": "达标概率约 16.2% · 达到预期难度偏大",
+              "detail_cn": "Brazil · 赛前外界预期 净胜≥3。模型推演达标概率约 16.2%；外界看法高于 xG 隐含约 1.75 球，达到预期难度偏大（部分达标净胜=2 约 20.1% · 仅胜 1 球约 27.1%）。",
+              "extra_stats_cn": "部分达标净胜=2 约 20.1% · 仅胜 1 球约 27.1%",
+              "full_cover_pct": 16.2,
+              "half_cover_pct": 20.1,
+              "lose1_pct": 27.1,
               "margin_full_label": "净胜≥3",
               "margin_half_label": "部分达标净胜=2",
               "tier_gap": 1.75,
@@ -3634,7 +3691,7 @@ const MATCH_DATA = {
               "label_cn": "倾向沉闷",
               "color": "#7BB8D4",
               "meter_label_cn": "倾向沉闷",
-              "meter_pos": 18,
+              "meter_pos": 21,
               "lean_side": "dull",
               "lean_strength": "clear",
               "section_intro_cn": "对照外界「全场至少 4 球」的赛前进球节奏，看模型更偏沉闷还是精彩",
@@ -3642,7 +3699,7 @@ const MATCH_DATA = {
               "detail_cn": "模型明显偏沉闷——低比分拉锯概率较高，难撑起这一进球节奏（模型自身预期约 2.25 球）。 须警惕「外界预期很精彩、实际偏闷」的落差。",
               "headline_cn": "进球氛围：倾向沉闷",
               "show_lean": true,
-              "over_pct": 18.3,
+              "over_pct": 21.2,
               "line_gap": 1.25,
               "market_line": 3.5,
               "market_goals_int": 4,
@@ -3661,22 +3718,22 @@ const MATCH_DATA = {
                   "color": "#D95F6A",
                   "fav_name": "Brazil",
                   "market_expect_cn": "净胜≥3",
-                  "meet_pct": 11.9,
+                  "meet_pct": 16.2,
                   "meet_pct_label": "模型推演达标概率",
                   "verdict_cn": "达到预期难度偏大",
                   "headline_cn": "Brazil · 净胜走向：达到预期难度偏大",
-                  "pill_cn": "达标概率约 11.9% · 达到预期难度偏大",
-                  "detail_cn": "Brazil · 赛前外界预期 净胜≥3。模型推演达标概率约 11.9%；外界看法高于 xG 隐含约 1.75 球，达到预期难度偏大（部分达标净胜=2 约 17.6% · 仅胜 1 球约 27%）。",
-                  "extra_stats_cn": "部分达标净胜=2 约 17.6% · 仅胜 1 球约 27%",
-                  "full_cover_pct": 11.9,
-                  "half_cover_pct": 17.6,
-                  "lose1_pct": 27,
+                  "pill_cn": "达标概率约 16.2% · 达到预期难度偏大",
+                  "detail_cn": "Brazil · 赛前外界预期 净胜≥3。模型推演达标概率约 16.2%；外界看法高于 xG 隐含约 1.75 球，达到预期难度偏大（部分达标净胜=2 约 20.1% · 仅胜 1 球约 27.1%）。",
+                  "extra_stats_cn": "部分达标净胜=2 约 20.1% · 仅胜 1 球约 27.1%",
+                  "full_cover_pct": 16.2,
+                  "half_cover_pct": 20.1,
+                  "lose1_pct": 27.1,
                   "margin_full_label": "净胜≥3",
                   "margin_half_label": "部分达标净胜=2",
                   "tier_gap": 1.75,
                   "show_cover": true
                 },
-                "text": "达标概率约 11.9% · 达到预期难度偏大",
+                "text": "达标概率约 16.2% · 达到预期难度偏大",
                 "color": "#D95F6A",
                 "primary": true
               },
@@ -3689,7 +3746,7 @@ const MATCH_DATA = {
                   "label_cn": "倾向沉闷",
                   "color": "#7BB8D4",
                   "meter_label_cn": "倾向沉闷",
-                  "meter_pos": 18,
+                  "meter_pos": 21,
                   "lean_side": "dull",
                   "lean_strength": "clear",
                   "section_intro_cn": "对照外界「全场至少 4 球」的赛前进球节奏，看模型更偏沉闷还是精彩",
@@ -3697,7 +3754,7 @@ const MATCH_DATA = {
                   "detail_cn": "模型明显偏沉闷——低比分拉锯概率较高，难撑起这一进球节奏（模型自身预期约 2.25 球）。 须警惕「外界预期很精彩、实际偏闷」的落差。",
                   "headline_cn": "进球氛围：倾向沉闷",
                   "show_lean": true,
-                  "over_pct": 18.3,
+                  "over_pct": 21.2,
                   "line_gap": 1.25,
                   "market_line": 3.5,
                   "market_goals_int": 4,
@@ -3715,63 +3772,63 @@ const MATCH_DATA = {
             {
               "side": "home",
               "team": "Brazil",
-              "first_goal_pct": 68.2,
+              "first_goal_pct": 72.8,
               "start_score": "1-0",
               "fav_name": "Brazil",
               "scorer_is_fav": true,
               "expected_key": "hold_win",
-              "fav_recover_pct": 96.4,
-              "small_lead_pct": 36.2,
-              "big_lead_pct": 46.2,
-              "fav_win_pct": 82.4,
-              "fav_draw_pct": 14,
-              "fav_lose_pct": 3.6,
+              "fav_recover_pct": 97.3,
+              "small_lead_pct": 33.6,
+              "big_lead_pct": 51.9,
+              "fav_win_pct": 85.5,
+              "fav_draw_pct": 11.8,
+              "fav_lose_pct": 2.7,
               "outcomes": [
                 {
                   "key": "hold_win",
                   "label": "Brazil 保持胜果（净胜≥1）",
-                  "pct": 82.4
+                  "pct": 85.5
                 },
                 {
                   "key": "drawn",
                   "label": "被扳平",
-                  "pct": 14
+                  "pct": 11.8
                 },
                 {
                   "key": "lost",
                   "label": "被逆转落败",
-                  "pct": 3.6
+                  "pct": 2.7
                 }
               ],
               "excitement": {
                 "label_cn": "偏晚",
                 "label_key": "slow",
                 "label_color": "#7BB8D4",
-                "sub_cn": "预期首球等待约 52 分",
-                "first_goal_wait": 52,
-                "fast_pct": 37.7,
-                "moderate_pct": 13.1,
-                "slow_pct": 49.2,
+                "sub_cn": "预期首球等待约 48.9 分",
+                "first_goal_wait": 48.9,
+                "fast_pct": 39.5,
+                "moderate_pct": 13.4,
+                "slow_pct": 47,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 37.7
+                    "pct": 39.5
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 13.1
+                    "pct": 13.4
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 49.2
+                    "pct": 47
                   }
                 ]
               },
-              "big_delta": 16.7,
-              "small_delta": 9.2,
+              "big_delta": 15.6,
+              "small_delta": 6.5,
               "narrative": "Brazil 先破门（已 1-0） → 「控节奏」；Haiti 「维持低位」。领先后双方可能转入守势，比分差距不易再拉大。",
               "live_outlook": {
                 "fav_name": "Brazil",
@@ -3781,131 +3838,127 @@ const MATCH_DATA = {
                     "key": "narrow",
                     "label": "险胜收工",
                     "example": "如 1-0、2-1",
-                    "pct": 47.9
+                    "pct": 42.7
                   },
                   {
                     "key": "clean",
                     "label": "零封拉开",
                     "example": "如 2-0、3-0",
-                    "pct": 33.2
+                    "pct": 34.9
                   },
                   {
                     "key": "open",
                     "label": "开放拉开",
                     "example": "如 3-1+",
-                    "pct": 18.9
+                    "pct": 22.4
                   }
                 ],
                 "margin_line_cn": "Brazil · 赛前净胜参考 净胜≥3（全达标） · 部分达标净胜=2",
-                "margin_meet_pct": 17.6,
-                "margin_half_pct": 28.5,
-                "margin_fail_pct": 36.2,
+                "margin_meet_pct": 22,
+                "margin_half_pct": 29.9,
+                "margin_fail_pct": 33.6,
                 "margin_full_label": "净胜≥3",
                 "margin_half_label": "部分达标净胜=2",
-                "final_2_0_pct": 23,
-                "final_3_0_plus_pct": 15.4,
+                "final_2_0_pct": 24,
+                "final_3_0_plus_pct": 19.2,
                 "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
                 "totals_line": 3.5,
                 "totals_line_cn": "总进球约 3.5 个",
                 "fair_totals_line": 2.25,
-                "model_total_xg": 1.42,
+                "model_total_xg": 1.51,
                 "totals_line_gap": 1.25,
-                "totals_high_pct": 17.1,
-                "totals_low_pct": 82.9,
+                "totals_high_pct": 19.3,
+                "totals_low_pct": 80.7,
                 "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-                "win_low_total_pct": 47.3,
-                "win_margin2_low_total_pct": 23,
-                "win_margin2_high_total_pct": 12.2,
-                "readout_cn": "Brazil 已 1-0 领先：仍取胜约 82.4%。 对着外界总进球参考 总进球约 3.5 个，模型终场多于该参考的概率约 17.1%。 常见收尾：2-0 约 23%（部分达标，非全达标）； 3-0+ 约 15.4%（对着 净胜≥3 全达标）。"
+                "win_low_total_pct": 46.1,
+                "win_margin2_low_total_pct": 24,
+                "win_margin2_high_total_pct": 15,
+                "readout_cn": "Brazil 已 1-0 领先：仍取胜约 85.5%。 对着外界总进球参考 总进球约 3.5 个，模型终场多于该参考的概率约 19.3%。 常见收尾：2-0 约 24%（部分达标，非全达标）； 3-0+ 约 19.2%（对着 净胜≥3 全达标）。"
               }
             },
             {
               "side": "away",
               "team": "Haiti",
-              "first_goal_pct": 31.8,
+              "first_goal_pct": 27.2,
               "start_score": "0-1",
               "fav_name": "Brazil",
               "scorer_is_fav": false,
               "expected_key": "fav_recover",
-              "fav_recover_pct": 58.9,
-              "small_lead_pct": 18.3,
-              "big_lead_pct": 11.2,
-              "fav_win_pct": 29.5,
-              "fav_draw_pct": 29.4,
-              "fav_lose_pct": 41.1,
+              "fav_recover_pct": 65.3,
+              "small_lead_pct": 20.8,
+              "big_lead_pct": 15.4,
+              "fav_win_pct": 36.1,
+              "fav_draw_pct": 29.2,
+              "fav_lose_pct": 34.6,
               "outcomes": [
                 {
                   "key": "draw",
                   "label": "Brazil 追平（平局）",
-                  "pct": 29.4
+                  "pct": 29.2
                 },
                 {
                   "key": "win1",
                   "label": "Brazil 净胜1球翻盘（如 2-1）",
-                  "pct": 18.3
+                  "pct": 20.8
                 },
                 {
                   "key": "win2",
                   "label": "Brazil 净胜≥2球翻盘（如 3-1）",
-                  "pct": 11.2
+                  "pct": 15.4
                 },
                 {
                   "key": "upset_hold",
                   "label": "Haiti 保持胜果至终场",
-                  "pct": 41.1
+                  "pct": 34.6
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 39.5 分",
-                "first_goal_wait": 39.5,
-                "fast_pct": 46.4,
-                "moderate_pct": 14.4,
-                "slow_pct": 39.3,
+                "sub_cn": "预期首球等待约 36.3 分",
+                "first_goal_wait": 36.3,
+                "fast_pct": 49.2,
+                "moderate_pct": 14.6,
+                "slow_pct": 36.2,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 46.4
+                    "pct": 49.2
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 14.4
+                    "pct": 14.6
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 39.3
+                    "pct": 36.2
                   }
                 ]
               },
-              "big_delta": -18.3,
-              "small_delta": -8.7,
+              "big_delta": -20.9,
+              "small_delta": -6.3,
               "narrative": "Haiti 先破门（已 0-1） → 「5-5 铁桶」；Brazil 「堆前锋」。领先方收缩、落后方压上，比赛更开放；净胜两球以上仍取决于热门能否连续破门。",
               "live_outlook": null
             }
           ],
           "match_preview": {
             "morphology": {
-              "totals_summary": "模型 xG 合计约 2.2 球（公允参考约 2.25） · 外界总进球参考 3.5，高出模型约 1.25 球 · ⚠ 外界总进球参考比模型公允线高约 1.25 球，大众心理明显偏多进球 · 进球氛围：倾向沉闷",
+              "totals_summary": "模型 xG 合计约 2.4 球（公允参考约 2.25） · 外界总进球参考 3.5，高出模型约 1.25 球 · ⚠ 外界总进球参考比模型公允线高约 1.25 球，大众心理明显偏多进球 · 进球氛围：倾向沉闷",
               "totals_line_cn": "总进球约 3.5 个",
-              "totals_high_pct": 18.3,
+              "totals_high_pct": 21.2,
               "type_tags": [
                 {
                   "key": "low_block",
                   "label": "低位反击"
-                },
-                {
-                  "key": "low_scoring",
-                  "label": "进球偏少"
                 }
               ],
-              "depth_label": "有一定轮换空间",
+              "depth_label": "板凳深度偏高",
               "draw_trap_pct": 12,
-              "readout_cn": "Brazil · 低位反击 · 进球偏少。进球氛围倾向沉闷（模型推演）；时间段分布见下方历史节奏参考。"
+              "readout_cn": "Brazil · 低位反击。进球氛围倾向沉闷（模型推演）；时间段分布见下方历史节奏参考。"
             },
             "draw_trap_note": "平局风险：低位反击队若先进球或被追平，1-1 / 0-0 比客胜更现实（约 12% 冷门空间含平局）。",
             "archetype": {
@@ -3913,14 +3966,10 @@ const MATCH_DATA = {
                 {
                   "key": "low_block",
                   "label": "低位反击"
-                },
-                {
-                  "key": "low_scoring",
-                  "label": "进球偏少"
                 }
               ],
-              "depth_score": 1,
-              "depth_label": "有一定轮换空间",
+              "depth_score": 3,
+              "depth_label": "板凳深度偏高",
               "draw_trap_pct": 12,
               "fav_lead_style": "defensive"
             }
@@ -3966,24 +4015,24 @@ const MATCH_DATA = {
             "disclaimer_cn": "以上为两队近30场历史进球/失球时间段统计，供读场参考；非本场赛果预测，与灵力分析娱乐板块无关。"
           }
         },
-        "public_summary_note": "【推演概要】Brazil · 低位反击 · 进球偏少。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.75 · 模型认为仅小胜 1 球仍约 27% · 部分达标净胜=2 约 17.6% · 净胜≥3（全达标）约 11.9%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
+        "public_summary_note": "【推演概要】Brazil · 低位反击。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.75 · 模型认为仅小胜 1 球仍约 27.1% · 部分达标净胜=2 约 20.1% · 净胜≥3（全达标）约 16.2%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
         "goal_efficiency_preview": {
           "mode": "preview",
-          "xg_total": 2.6,
-          "xg_gap": 1.1,
+          "xg_total": 2.54,
+          "xg_gap": 1.16,
           "xg_home": 1.85,
-          "xg_away": 0.75,
+          "xg_away": 0.69,
           "fav_name": "Brazil",
           "dog_name": "Haiti",
           "fav_xg": 1.85,
-          "dog_xg": 0.75,
+          "dog_xg": 0.69,
           "path_type": "low",
           "path_label": "铁局/小球",
           "lean": "split",
           "lean_cn": "大/小分裂",
-          "prob_over_line": 25.5,
-          "prob_4_plus": 25.5,
-          "prob_2_or_less": 52.5,
+          "prob_over_line": 24.2,
+          "prob_4_plus": 24.2,
+          "prob_2_or_less": 54,
           "totals_line": 3.5,
           "scenarios": [
             {
@@ -4030,11 +4079,10 @@ const MATCH_DATA = {
             }
           ],
           "watch_notes": [
-            "临场弱队若上半场效率≥1.0 → 上调大球/对攻权重",
             "xG 差≥1.0——样本 4 场均为小球，勿因热门盲目追大球"
           ],
-          "pattern_note": "样本：弱队效率<0.6 尚无大球；xG 差≥1.0 时大球率 0%。",
-          "summary_cn": "【赛前预估】xG 总 2.6（差 1.1）· 热门 Brazil 1.85 · 弱队 Haiti 0.75 → 大/小分裂（主路径「铁局/小球」约 69%）。泊松：≥3.5 球约 25.5% · ≥4 球约 25.5% · ≤2 球约 52.5%。样本：弱队效率<0.6 尚无大球；xG 差≥1.0 时大球率 0%。",
+          "pattern_note": "样本：弱队效率<0.6 尚无大球；xG 差≥1.0 时大球率 0%。 已纳入官方首发变阵对 xG 的修正。",
+          "summary_cn": "【赛前预估】xG 总 2.54（差 1.16）· 热门 Brazil 1.85 · 弱队 Haiti 0.69 → 大/小分裂（主路径「铁局/小球」约 69%）。泊松：≥3.5 球约 24.2% · ≥4 球约 24.2% · ≤2 球约 54%。样本：弱队效率<0.6 尚无大球；xG 差≥1.0 时大球率 0%。 已纳入官方首发变阵对 xG 的修正。",
           "in_mid_band": true,
           "sample_note": "规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27 红牌局）+ 本场泊松"
         }
@@ -4052,7 +4100,7 @@ const MATCH_DATA = {
             "Paquetá 组织",
             "变阵"
           ],
-          "formation_pref": "4-4-2 / 4-2-3-1 · Vinícius 核心",
+          "formation_pref": "4-4-2 · Vinícius/Raphinha · Matheus Cunha/Paquetá",
           "style_summary": "首轮 1-1 摩洛哥令人失望，实际变阵 4-4-2 非赛前预期。Neymar 每日观察；对海地必须取胜，预计早段破局+持续宽度。",
           "subs": {
             "timing": "首换 55–62 分钟",
@@ -4083,7 +4131,7 @@ const MATCH_DATA = {
             "Neymar 存疑",
             "必须抢分"
           ],
-          "match_note": "仅 1 分不容再失——Vinícius+Paquetá 早段破局；Neymar 每日观察，4-4-2 变阵或延续。"
+          "match_note": "FIFA 官方 4-4-2 须取胜版；Bruno G 进首发，Neymar 仍替补。"
         },
         "away": {
           "name": "Sébastien Migné",
@@ -4140,7 +4188,7 @@ const MATCH_DATA = {
         "level_cn": "低",
         "cold_result_pct": 12,
         "verdict": "巴西 xG 1.85 深盘但仅 1 分压力——海地 5 后卫低位或拖慢节奏，冷门空间约 12%（平局/0-0 偷分）。",
-        "tactical": "Ancelotti 4-4-2 Vinícius 宽度 vs Migné 5-4-1 深度低位；费城湿热利好领先方后段守势。",
+        "tactical": "FIFA 官方：Ancelotti 4-4-2 vs Migné 5-4-1（Nazon 替补 · Pierrot 支点）",
         "psychology": "巴西「最不容再失分」；海地首次正赛无包袱。",
         "historical": "无大赛交锋；海地对苏格兰 0-1 防守尚可。",
         "factors": [
