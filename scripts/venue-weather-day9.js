@@ -71,7 +71,7 @@ const VENUE_WEATHER = {
     home_adapt: 86,
     away_adapt: 74,
     home_note: '巴西南美球员适应湿热，Vinícius 边路爆发需在前 60 分钟兑现',
-    away_note: '海地五后卫低位在湿热下后段专注度易降；Nazon 反击窗口多在 60\' 前',
+    away_note: '海地五后卫低位在湿热下后段专注度易降；Pierrot 支点 + Nazon 替补后手（60\' 前）',
     prediction_note: '模型因湿热略抬早段 xG 权重；若巴西 2-0 领先，下半场总球面可能回落',
     weather_factors: [
       { label: '27°C · 21:00 ET 开球', impact: '体感偏高', detail: '北京时间 6月20日 09:00；夏夜仍有余热' },

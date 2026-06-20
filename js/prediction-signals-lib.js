@@ -1847,6 +1847,8 @@ function computeTotalsAnalysis(xgHome, xgAway, raw) {
   const idxNote = overOdds != null && underOdds != null
     ? '多进球侧 ' + overOdds + ' / 少进球侧 ' + underOdds
       + (underIdx < overIdx - 0.05 ? ' · 少进球侧关注度更高' : overIdx > underIdx + 0.05 ? ' · 多进球侧关注度更高' : '')
+      + (raw.totals_line_open != null && raw.totals_line_open !== line
+        ? ' · 盘口 ' + raw.totals_line_open + '→' + line : '')
     : overIdx > underIdx + 0.03
       ? '多进球侧参考权重相对更高'
       : underIdx > overIdx + 0.03

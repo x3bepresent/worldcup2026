@@ -31,7 +31,7 @@ const MATCH_DATA = {
     },
     {
       "tag": "UPDATE",
-      "text": "✅ Day 9 气候预报 + 灵力分析已更新（m29–m32）；裁判/首发仍待 FIFA 官方",
+      "text": "✅ Day 9 气候预报 + 灵力分析已更新（m29–m32）；m29/m32 首发已确认 · m30/m31 裁判/首发待 FIFA",
       "time": "站点"
     },
     {
@@ -2832,9 +2832,9 @@ const MATCH_DATA = {
         "formation": "4-4-2 / 5-4-1",
         "home": "Alisson; Danilo, Marquinhos, Gabriel, Douglas Santos; Raphinha, Casemiro, Bruno Guimarães, Vinícius Jr; Matheus Cunha, Paquetá",
         "away": "Placide; Arcus, Ade, Delcroix, Duverne, Experience; Bellegarde, Jean Jacques, Providence, Casimir; Pierrot",
-        "note": "✅ FIFA 官方 team sheet（Match 29 · 400021457 · 2026-06-20T00:21:06+08:00）",
+        "note": "✅ FIFA 官方 team sheet（Match 29 · 400021457 · 2026-06-20T00:25:18+08:00）",
         "source": "FIFA Match Centre · api.fifa.com",
-        "updated": "2026-06-20T00:21:06+08:00",
+        "updated": "2026-06-20T00:25:18+08:00",
         "fifa_match_id": "400021457",
         "impact": {
           "xg_home_delta": 0,
@@ -3111,7 +3111,7 @@ const MATCH_DATA = {
         "home_adapt": 86,
         "away_adapt": 74,
         "home_note": "巴西南美球员适应湿热，Vinícius 边路爆发需在前 60 分钟兑现",
-        "away_note": "海地五后卫低位在湿热下后段专注度易降；Nazon 反击窗口多在 60' 前",
+        "away_note": "海地五后卫低位在湿热下后段专注度易降；Pierrot 支点 + Nazon 替补后手（60' 前）",
         "prediction_note": "模型因湿热略抬早段 xG 权重；若巴西 2-0 领先，下半场总球面可能回落",
         "weather_factors": [
           {
@@ -3250,7 +3250,7 @@ const MATCH_DATA = {
         "home_score": 78,
         "away_score": 28,
         "mystic_verdict": "巴西火土旺盛，海地水火偏弱——巳火当令，热门宜早段破局。",
-        "model_bridge": "xG 1.85-0.75 深盘 -2.5，大胜需早段破门；海地低位或拖慢节奏。",
+        "model_bridge": "xG 1.85-0.69 深盘 -2.5，大胜需早段破门；海地 5-4-1 极守或拖慢节奏。",
         "disclaimer": "以上分析援引《道德经》《周易》五行学说，纯属道家文化解读，仅供文化参考，不构成竞技或决策依据"
       },
       "group_context": {
@@ -3362,7 +3362,7 @@ const MATCH_DATA = {
         "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
         "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "public_lean_cn": "舆论倾向 Brazil（约 72%）",
-        "analysis": "魔方：巴西 -2.5 / 大小 3.5；深盘高于 xG 隐含，大胜需早段破门；海地低位或拖慢节奏。 赛前净胜参考高于 xG 隐含（+1.75），且净胜 1 球占 26.4%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "analysis": "魔方：巴西 -2.5 / 大小 3.5（开盘 3.75 下调）大 0.98 小 0.89；深盘高于 xG 隐含，大胜需早段破门；海地 5-4-1 极守或拖慢节奏。 赛前净胜参考高于 xG 隐含（+1.75），且净胜 1 球占 26.4%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "spread_cover": {
           "top3_scores": [
             {
@@ -3417,11 +3417,11 @@ const MATCH_DATA = {
           "signal_desc": "赛前进球参考高于 xG 隐含，模型倾向偏少进球方向。",
           "public_over_pct": 58,
           "public_lean_cn": "舆论略看好多进球（约 58%）",
-          "index_note": "多进球侧 0.8 / 少进球侧 1",
+          "index_note": "多进球侧 0.98 / 少进球侧 0.89 · 少进球侧关注度更高 · 盘口 3.75→3.5",
           "totals_odds": {
-            "over": 0.8,
-            "under": 1,
-            "note": "多进球 0.8 · 少进球 1"
+            "over": 0.98,
+            "under": 0.89,
+            "note": "多进球 0.98 · 少进球 0.89"
           },
           "rational_cn": "模型略倾向少进球（总进球约 3.5 个 约 75.8%）；进球参考偏高且舆论更看好多进球场面",
           "score_link_cn": "小比分（1-0/1-1）偏少进球 · 2-0/2-1 居中 · 3 球+ 偏多进球"
@@ -4142,7 +4142,7 @@ const MATCH_DATA = {
           "style_tags": [
             "5-4-1",
             "深度低位",
-            "Nazon 支点",
+            "Pierrot 支点",
             "定位球"
           ],
           "formation_pref": "5-4-1 / 5-5 · Bellegarde 枢纽",
@@ -4173,10 +4173,10 @@ const MATCH_DATA = {
           "traits": [
             "5 后卫",
             "低位",
-            "Nazon 支点",
-            "首次正赛"
+            "Pierrot 支点",
+            "Nazon 替补后手"
           ],
-          "match_note": "5 后卫深度低位+Bellegarde 枢纽；费城湿热拖慢节奏，定位球是唯一偷分路径。"
+          "match_note": "FIFA 官方 5-4-1：Pierrot 单箭 · Nazon 替补；Bellegarde 枢纽，定位球是唯一偷分路径。"
         }
       },
       "upset_alert": {
@@ -4205,7 +4205,7 @@ const MATCH_DATA = {
           {
             "tag": "Neymar",
             "impact": "中",
-            "detail": "复出与否影响破局效率"
+            "detail": "FIFA 官方替补 · 60' 后破局后手"
           }
         ]
       }

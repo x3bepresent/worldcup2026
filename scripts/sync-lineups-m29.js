@@ -191,6 +191,30 @@ async function main() {
   if (m29.upset_alert) {
     m29.upset_alert.tactical =
       'FIFA 官方：Ancelotti 4-4-2 vs Migné 5-4-1（Nazon 替补 · Pierrot 支点）';
+    const neyIdx = m29.upset_alert.factors?.findIndex(f => f.tag === 'Neymar');
+    if (neyIdx >= 0) {
+      m29.upset_alert.factors[neyIdx] = {
+        ...m29.upset_alert.factors[neyIdx],
+        detail: 'FIFA 官方替补 · 60\' 后破局后手',
+      };
+    }
+  }
+
+  if (m29.coach_analysis?.away) {
+    m29.coach_analysis.away.style_tags = ['5-4-1', '深度低位', 'Pierrot 支点', '定位球'];
+    m29.coach_analysis.away.traits = ['5 后卫', '低位', 'Pierrot 支点', 'Nazon 替补后手'];
+    m29.coach_analysis.away.match_note =
+      'FIFA 官方 5-4-1：Pierrot 单箭 · Nazon 替补；Bellegarde 枢纽，定位球是唯一偷分路径。';
+  }
+
+  if (m29.mystic) {
+    m29.mystic.model_bridge =
+      `xG ${xgChange.newH}-${xgChange.newA} 深盘 -2.5，大胜需早段破门；海地 5-4-1 极守或拖慢节奏。`;
+  }
+
+  if (m29.weather) {
+    m29.weather.away_note =
+      '海地五后卫低位在湿热下后段专注度易降；Pierrot 支点 + Nazon 替补后手（60\' 前）';
   }
 
   const lineupNews = {
@@ -205,6 +229,13 @@ async function main() {
     data.breakingNews[injIdx] = {
       ...data.breakingNews[injIdx],
       text: '✅ Day 9 伤病动态已更新；m29/m32 首发已确认 · 其余场裁判/首发待 FIFA',
+    };
+  }
+  const wxIdx = data.breakingNews.findIndex(n => n.tag === 'UPDATE' && /气候预报.*裁判\/首发仍待/.test(n.text || ''));
+  if (wxIdx >= 0) {
+    data.breakingNews[wxIdx] = {
+      ...data.breakingNews[wxIdx],
+      text: '✅ Day 9 气候预报 + 灵力分析已更新（m29–m32）；m29/m32 首发已确认 · m30/m31 裁判/首发待 FIFA',
     };
   }
 

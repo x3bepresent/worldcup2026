@@ -71,7 +71,7 @@ const PROFILES = {
   }),
   migne: coach('Sébastien Migné', {
     age: 51, nation: '法国', tenure: '2023年—', wc_exp: '2026 带队 · 非洲杯经验',
-    style_tags: ['5-4-1', '深度低位', 'Nazon 支点', '定位球'],
+    style_tags: ['5-4-1', '深度低位', 'Pierrot 支点', '定位球'],
     formation_pref: '5-4-1 / 5-5 · Bellegarde 枢纽',
     style_summary: '首轮 0-1 苏格兰可接受防守表现；对巴西预计 5 后卫深度低位。首次世界杯正赛无历史包袱，湿热费城或拖慢节奏。',
     subs: { timing: '首换 70 分钟+', pattern: '换人偏晚', avg_first_sub: '72\'', note: '弱队体能优先' },
@@ -80,7 +80,7 @@ const PROFILES = {
     vs_strong: { label: '对强队：龟缩', detail: '对巴西教科书深度低位。' },
     vs_weak: { label: '对弱队：反击', detail: '对苏格兰已验证低位。' },
     tournament: 'Migné 强调定位球与纪律——「不要给 Vinícius 身后空间」。',
-    traits: ['5 后卫', '低位', 'Nazon 支点', '首次正赛'],
+    traits: ['5 后卫', '低位', 'Pierrot 支点', 'Nazon 替补后手'],
   }),
   montella: coach('Vincenzo Montella', {
     age: 50, nation: '意大利', tenure: '2023年—', wc_exp: '2024 欧洲杯 · 2026 带队',
@@ -163,13 +163,13 @@ const UPSET_ALERTS = {
     index: 18, level: 'LOW', level_cn: '低',
     cold_result_pct: 12,
     verdict: '巴西 xG 1.85 深盘但仅 1 分压力——海地 5 后卫低位或拖慢节奏，冷门空间约 12%（平局/0-0 偷分）。',
-    tactical: 'Ancelotti 4-4-2 Vinícius 宽度 vs Migné 5-4-1 深度低位；费城湿热利好领先方后段守势。',
+    tactical: 'FIFA 官方：Ancelotti 4-4-2 vs Migné 5-4-1（Nazon 替补 · Pierrot 支点）',
     psychology: '巴西「最不容再失分」；海地首次正赛无包袱。',
     historical: '无大赛交锋；海地对苏格兰 0-1 防守尚可。',
     factors: [
       { tag: '深盘', impact: '中', detail: '市场 -2.5 高于 xG 隐含' },
       { tag: '低位', impact: '强', detail: '海地 5 后卫+定位球' },
-      { tag: 'Neymar', impact: '中', detail: '复出与否影响破局效率' },
+      { tag: 'Neymar', impact: '中', detail: 'FIFA 官方替补 · 60\' 后破局后手' },
     ],
   },
   m31: {
