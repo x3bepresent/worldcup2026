@@ -107,6 +107,32 @@ const MANUAL = {
     xg_report: 'FIFA M29 · 官方 4-4-2 早段破局',
     fifa_id: '400021457',
   },
+  m31: {
+    home_score: 0,
+    away_score: 1,
+    status: 'FT',
+    label: '全场结束',
+    scorers: "Matías GALARZA 2'",
+    highlights:
+      "Levi's 圣克拉拉 · Galarza 2' 闪击 · Almirón(10) 45+3' 直红 · 巴拉圭 10 人守满下半场 · 土耳其围攻无果 · 终场 0-1",
+    ht_score: '0-1',
+    first_goal_min: 2,
+    xg_report: 'FIFA M31 · 半场 xG 0.53–0.08 · 72\' 大小 2.0 偏小 · 终场 1 球',
+    fifa_id: '400021460',
+    live_stats: {
+      ht_xg_home: 0.53,
+      ht_xg_away: 0.08,
+      cards: "Almirón #10 RC 45+3' (Paraguay)",
+    },
+    red_card_context: {
+      count: 1,
+      team: 'away',
+      team_role: 'leading',
+      minute: "45+3'",
+      player: 'Almirón',
+      scenario: 'leading_one_red_ht',
+    },
+  },
 };
 
 const REVIEW = {
@@ -115,23 +141,25 @@ const REVIEW = {
   m32:
     '【赛后复盘】赛前无 Pulisic 首发、模型偏小球；实际 2-0 美国零封。Burgess 11\' 乌龙 + Freeman 43\' 头球；Freese 一门稳。方向：主胜命中；穿 -1 达标；比分低于 xG 大球预期。',
   m29:
-    '【赛中】赛前铁局/小球主路径；实际半场 3-0 热门爆发。Cunha 23\'/36\' + Vinícius 45+3\'；海地 5-4-1 早段崩盘。待全场结束归档。',
+    '【赛后复盘】赛前巴西 -2.5/大小 3.5；实际 3-0 穿盘未打满。Cunha 23\'/36\' + Vinícius 45+3\'；海地 5-4-1 早段崩盘。方向：主胜命中；总球 3（小 3.5）；路径热门爆发。',
+  m31:
+    '【赛后复盘】赛前 xG 2.73/铁局主路径；实际 0-1 冷门。Galarza 2\' 闪击 + Almirón 45+3\' 红 · 10 人守成。方向：客胜命中（约 29%）；热门效率 0；总球 1（小 2.5）。红牌专题：领先方单红→小球铁局（对照 m27 双红崩盘）。',
 };
 
-/** C 组：m30 已赛 + m29 按 FIFA 比分（进行中亦计入 interim） */
+/** C 组：第 2 轮 4 场已赛 */
 const GROUP_C = [
   { team: 'Morocco', pts: 4, p: 2, w: 1, d: 1, l: 0, gf: 2, ga: 1 },
-  { team: 'Brazil', pts: 4, p: 2, w: 1, d: 1, l: 0, gf: 4, ga: 1 },
-  { team: 'Scotland', pts: 3, p: 2, w: 1, d: 0, l: 1, gf: 1, ga: 1 },
-  { team: 'Haiti', pts: 0, p: 2, w: 0, d: 0, l: 2, gf: 0, ga: 4 },
+  { team: 'Brazil', pts: 4, p: 2, w: 1, d: 1, l: 0, gf: 3, ga: 0 },
+  { team: 'Scotland', pts: 3, p: 2, w: 1, d: 0, l: 1, gf: 1, ga: 2 },
+  { team: 'Haiti', pts: 0, p: 2, w: 0, d: 0, l: 2, gf: 0, ga: 3 },
 ];
 
-/** D 组：m32 已赛 · 土-巴待赛 */
+/** D 组：第 2 轮 4 场已赛 */
 const GROUP_D = [
   { team: 'USA', pts: 6, p: 2, w: 2, d: 0, l: 0, gf: 6, ga: 1 },
-  { team: 'Australia', pts: 3, p: 2, w: 1, d: 0, l: 1, gf: 2, ga: 2 },
-  { team: 'Türkiye', pts: 0, p: 1, w: 0, d: 0, l: 1, gf: 0, ga: 2 },
-  { team: 'Paraguay', pts: 0, p: 1, w: 0, d: 0, l: 1, gf: 1, ga: 4 },
+  { team: 'Australia', pts: 3, p: 2, w: 1, d: 0, l: 1, gf: 2, ga: 4 },
+  { team: 'Paraguay', pts: 3, p: 2, w: 1, d: 0, l: 1, gf: 2, ga: 4 },
+  { team: 'Türkiye', pts: 0, p: 2, w: 0, d: 0, l: 2, gf: 0, ga: 3 },
 ];
 
 function rankInGroup(team, table) {
@@ -152,7 +180,7 @@ function patchGroupContext(gc, group, table, homeTeam, awayTeam, extraNotes) {
     gf: r.gf,
     ga: r.ga,
   }));
-  gc.label = `${group}组 · 第 2 轮（${group === 'D' ? '3 场已赛' : '3 场已赛/进行中'}）`;
+  gc.label = `${group}组 · 第 2 轮后`;
   if (gc.home) {
     gc.home.rank = hr;
     gc.home.pts = table[hr - 1]?.pts ?? 0;
@@ -179,6 +207,8 @@ function applyResult(m, r, reviewKey) {
     ht_score: r.ht_score,
     first_goal_min: r.first_goal_min,
     fifa_match_id: r.fifa_id,
+    ...(r.live_stats ? { live_stats: r.live_stats } : {}),
+    ...(r.red_card_context ? { red_card_context: r.red_card_context } : {}),
   };
   m.note = (m.note || '')
     .replace(/ · 待赛.*$/, '')
@@ -230,11 +260,28 @@ function applyResult(m, r, reviewKey) {
       desc: '官方先发中锋 · 半场梅开二度',
     };
   }
+  if (id === 'm31' && m.away?.stars?.[0]) {
+    m.away.stars[0] = {
+      name: 'Matías Galarza',
+      pos: 'CM',
+      club: 'Talleres',
+      stats: '2\' 制胜球',
+      rating: 8.6,
+      desc: '闪击破门 · 10 人守成 0-1',
+    };
+    if (m.away.stars[1]) {
+      m.away.stars[1].desc = '10 人低位 · 无 Almirón 后守满下半场';
+    }
+  }
+  if (id === 'm31' && m.coach_analysis?.away) {
+    m.coach_analysis.away.match_note =
+      '0-1 客胜 · Galarza 2\' + Almirón 45+3\' 红 · 10 人铁桶守成；末轮对澳大利亚直接对话';
+  }
 
   const table = m.group === 'C' ? GROUP_C : GROUP_D;
   const notes = m.group === 'C'
     ? ['摩洛哥 4 分 · 巴西 4 分（进行中/已赛）', '苏格兰 3 分 · 海地 0 分']
-    : ['美国 6 分已锁定 32 强', '澳大利亚 3 分 · 土耳其/巴拉圭 0 分 · 末轮土-巴直接对话'];
+    : ['美国 6 分已锁定 32 强', '澳大利亚/巴拉圭各 3 分 · 土耳其 0 分垫底 · 末轮土对美国 · 澳对巴拉圭'];
   m.group_context = patchGroupContext(m.group_context, m.group, table, m.home.name, m.away.name, notes);
 
   return JSON.parse(JSON.stringify(m));
@@ -249,17 +296,15 @@ async function main() {
       const as = j.AwayTeam?.Score ?? resolved[mid]?.away_score;
       const scorers = formatScorers(j) || resolved[mid]?.scorers;
       const ft = isFinished(j);
-      if (mid !== 'm31') {
-        resolved[mid] = {
-          ...resolved[mid],
-          home_score: hs,
-          away_score: as,
-          scorers,
-          status: ft ? 'FT' : (hs != null ? 'LIVE' : 'NS'),
-          label: ft ? '全场结束' : (hs != null ? '进行中' : '未开赛'),
-          fifa_id: fid,
-        };
-      }
+      resolved[mid] = {
+        ...resolved[mid],
+        home_score: hs ?? resolved[mid]?.home_score,
+        away_score: as ?? resolved[mid]?.away_score,
+        scorers: scorers || resolved[mid]?.scorers,
+        status: ft ? 'FT' : (hs != null ? 'LIVE' : resolved[mid]?.status || 'NS'),
+        label: ft ? '全场结束' : (hs != null ? '进行中' : resolved[mid]?.label || '未开赛'),
+        fifa_id: fid,
+      };
     } catch (e) {
       console.warn('⚠ FIFA fetch', mid, e.message);
     }
@@ -269,7 +314,7 @@ async function main() {
   const RESULTS_DATA = loadData(RESULTS_PATH, 'RESULTS_DATA');
 
   const archiveIds = [];
-  for (const id of ['m32', 'm30', 'm29']) {
+  for (const id of ['m32', 'm30', 'm29', 'm31']) {
     const m = MATCH_DATA.todayMatches.find(x => x.id === id);
     const r = resolved[id];
     if (!m || !r || r.status === 'NS') continue;
@@ -287,31 +332,6 @@ async function main() {
     }
   }
 
-  // m31 仅更新小组形势（美国已 6 分）
-  const m31 = MATCH_DATA.todayMatches.find(x => x.id === 'm31');
-  if (m31) {
-    m31.group_context = patchGroupContext(
-      m31.group_context,
-      'D',
-      GROUP_D,
-      m31.home.name,
-      m31.away.name,
-      [
-        '美国 6 分已锁定 32 强 · 澳大利亚 3 分',
-        '土耳其/巴拉圭均为 0 分 — 本场胜者 3 分仍落后澳大利亚，须末轮再抢分',
-        'C 组：摩洛哥&巴西 4 分领跑',
-      ],
-    );
-    if (m31.prediction?.insight_factors) {
-      const idx = m31.prediction.insight_factors.findIndex(f => f.label === '小组积分');
-      if (idx >= 0) {
-        m31.prediction.insight_factors[idx].text =
-          'Türkiye 暂列 D 组第 3（0 分 · 已赛 1 场） vs Paraguay 第 4（0 分 · 已赛 1 场）；'
-          + '美国 6 分已出线 · 澳大利亚 3 分；本场胜者 3 分仍排第 3，末轮须再抢分';
-      }
-    }
-  }
-
   function upsertGroup(snapshots, group, label, table) {
     const i = snapshots.findIndex(g => g.group === group);
     const snap = { group, label, table };
@@ -322,23 +342,21 @@ async function main() {
 
   let snaps = RESULTS_DATA.groupSnapshots || [];
   snaps = upsertGroup(snaps, 'C', 'C组 · 第2轮后', GROUP_C);
-  snaps = upsertGroup(snaps, 'D', 'D组 · 第2轮（3场已赛）', GROUP_D);
+  snaps = upsertGroup(snaps, 'D', 'D组 · 第2轮后', GROUP_D);
   RESULTS_DATA.groupSnapshots = snaps;
 
-  const finishedToday = ['m32', 'm30'].filter(id => resolved[id]?.status === 'FT');
-  const liveToday = ['m29'].filter(id => resolved[id]?.status === 'LIVE');
+  const finishedToday = ['m32', 'm30', 'm31'].filter(id => resolved[id]?.status === 'FT');
+  const liveToday = [];
 
   MATCH_DATA.lastUpdated = TS;
-  MATCH_DATA.syncSource = 'FIFA 官方赛果 · Day 9 进行中';
+  MATCH_DATA.syncSource = 'FIFA 官方赛果 · Day 9 完结';
   MATCH_DATA.breakingNews = [
-    { tag: 'OFFICIAL', text: `🏁 6月20日 · 美2-0澳 · 苏0-1摩${resolved.m29?.status === 'LIVE' ? ' · 巴' + resolved.m29.home_score + '-' + resolved.m29.away_score + '海(进行中)' : ''}`, time: '赛果汇总' },
+    { tag: 'OFFICIAL', text: '🏁 6月20日 · 土0-1巴 · 美2-0澳 · 苏0-1摩 · 巴3-0海', time: '赛果汇总' },
+    { tag: 'OFFICIAL', text: '巴拉圭 Galarza 2\' + Almirón 红 · 10 人守成 0-1 · 土耳其 0 分垫底', time: 'D组' },
     { tag: 'OFFICIAL', text: '美国 6 分提前锁定 32 强 · 无 Pulisic 首发仍 2-0 零封', time: 'D组' },
     { tag: 'OFFICIAL', text: '摩洛哥 Saibari 2\' 闪击 · 苏格兰 3 分仍有望出线', time: 'C组' },
-    ...(resolved.m29?.status === 'LIVE'
-      ? [{ tag: 'LIVE', text: `🔴 进行中 · 巴西 ${resolved.m29.home_score}-${resolved.m29.away_score} 海地 · Cunha 双响`, time: '直播' }]
-      : []),
-    { tag: 'PREVIEW', text: '⏳ 待赛 · 土耳其 vs 巴拉圭（11:00 北京）· D 组 0 分直接对话', time: '赛程' },
-    { tag: 'OFFICIAL', text: 'D组：美国 6 · 澳大利亚 3 · 土耳其/巴拉圭 0', time: '积分榜' },
+    { tag: 'OFFICIAL', text: 'C组：摩洛哥&巴西 4 分 · 苏格兰 3 · 海地 0', time: '积分榜' },
+    { tag: 'OFFICIAL', text: 'D组：美国 6 · 澳大利亚/巴拉圭 3 · 土耳其 0', time: '积分榜' },
     { tag: 'OFFICIAL', text: '🏁 昨日：捷1-1南非 · 瑞4-1波 · 加6-0卡 · 墨1-0韩', time: '赛果回顾' },
     ...(MATCH_DATA.breakingNews || []).filter(n => n.tag === 'LINEUP').slice(0, 2),
   ].slice(0, 10);
@@ -375,7 +393,7 @@ async function main() {
   }
 
   RESULTS_DATA.lastUpdated = TS;
-  RESULTS_DATA.syncSource = 'FIFA 官方赛果 · Day 9 (m30/m32 完结 · m29 进行中)';
+  RESULTS_DATA.syncSource = 'FIFA 官方赛果 · Day 9 完结 (m29–m32)';
 
   const day8Results = [
     { id: 'm25', home: 'Czechia', away: 'South Africa', score: '1-1', group: 'A' },
@@ -409,7 +427,7 @@ async function main() {
     standings: [
       ...(RESULTS_DATA.groupSnapshots || []).filter(g => ['A', 'B'].includes(g.group)),
       { group: 'C', label: 'C组 · 第2轮后', table: GROUP_C },
-      { group: 'D', label: 'D组 · 第2轮（3场已赛）', table: GROUP_D },
+      { group: 'D', label: 'D组 · 第2轮后', table: GROUP_D },
     ],
     injuries: { note: 'Gilmour/Aguerd/Abde/Wesley 整届 OUT · Neymar 替补 · Enciso 已复出' },
     yesterdayResults: day8Results.map(r => ({ id: r.id, score: r.score })),
@@ -433,14 +451,14 @@ async function main() {
     const r = resolved[id];
     const m = MATCH_DATA.todayMatches.find(x => x.id === id);
     if (r?.home_score != null) {
-      console.log(`   ${id} ${r.status} ${r.home_score}-${r.away_score}${id === 'm31' ? ' (未赛)' : ''}`);
+      console.log(`   ${id} ${r.status} ${r.home_score}-${r.away_score}`);
     } else if (m) {
       console.log(`   ${id} NS`);
     }
   }
   console.log('✅ Archived FT:', archiveIds.join(', ') || '(none new)');
   console.log('✅ D组积分榜:', GROUP_D.map(t => `${t.team} ${t.pts}分`).join(' · '));
-  console.log('   → 土耳其仍为 0 分第 3；美国 6 分已出线');
+  console.log('   → 巴拉圭 3 分 · 土耳其 0 分垫底；美国 6 分已出线');
 }
 
 main().catch(e => { console.error(e); process.exit(1); });

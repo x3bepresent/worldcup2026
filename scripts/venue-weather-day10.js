@@ -1,0 +1,118 @@
+/** Day 10 venue weather — m33–m36 · 更新于 2026-06-20 晚间（开球前一日预报） */
+
+const FORECAST_TS = '2026-06-20 22:00 本地';
+
+const VENUE_WEATHER = {
+  m35: {
+    city: '休斯顿',
+    country: '美国',
+    venue: 'NRG Stadium',
+    temp: 33,
+    humidity: 72,
+    altitude_m: 15,
+    rain_chance: 35,
+    wind: '东南风 2级 · 湿热',
+    condition_cn: '休斯顿 midday 闷热，体感约 38°C',
+    impact_level: 'HIGH',
+    impact: 'NRG Stadium 33°C+72% 湿度午间开球，荷兰与瑞典均须 15 分钟补水 breaks；高位压迫后段体能衰减是隐性变量',
+    impact_summary: '湿热偏高——领先方后段守势、替补深度与换人节奏关键；模型略抬上半场 xG 权重',
+    home_adapt: 78,
+    away_adapt: 76,
+    home_note: '荷兰首轮 2-2 日本已暴露后段专注度问题；休斯顿湿热对欧洲球队体能考验大',
+    away_note: '瑞典 5-1 突尼斯士气高但 Isak 支点消耗大；Andersson 轮换与补水管理是重点',
+    prediction_note: '湿热下总球面：上半场开放、70\' 后若领先或可能回落；忌领先后「终乱」',
+    weather_factors: [
+      { label: '33°C · 12:00 CT 开球', impact: '高', detail: '北京时间 6月21日 01:00；NRG 封闭式但空调难完全抵消湿热' },
+      { label: '湿度 72%', impact: '高', detail: '体感超 38°C，FIFA 强制补水暂停概率高' },
+      { label: '降雨概率 35%', impact: '低-中', detail: '对流雨可能，对传球影响有限' },
+    ],
+    historical_note: 'NRG Stadium · F组第2轮 · 荷兰 vs 瑞典 · 预报更新 ' + FORECAST_TS,
+    forecast_updated: FORECAST_TS,
+  },
+  m33: {
+    city: '多伦多',
+    country: '加拿大',
+    venue: 'BMO Field',
+    temp: 22,
+    humidity: 58,
+    altitude_m: 90,
+    rain_chance: 20,
+    wind: '安大略湖 breeze 3级',
+    condition_cn: '多伦多傍晚温和，微有湖风',
+    impact_level: 'LOW',
+    impact: 'BMO Field 22°C 傍晚开球，德国与科特迪瓦均适应温带气候；战术对位主导，气候非主变量',
+    impact_summary: '气候变量低——Wirtz+Musiala 肋部 vs Pépé 反击不受天气明显扰动',
+    home_adapt: 86,
+    away_adapt: 84,
+    home_note: '德国首轮 7-1 后节奏自信；多伦多傍晚对传控型球队友好',
+    away_note: '科特迪瓦 1-0 厄瓜多尔后低位+转换；非洲球队 22°C 级夜场是舒适区',
+    prediction_note: '模型不因气候微调 xG；若微雨场地略滑，反击速度微升',
+    weather_factors: [
+      { label: '22°C · 16:00 ET 开球', impact: '低', detail: '北京时间 6月21日 04:00；多伦多傍晚降温' },
+      { label: '湖风 3级', impact: '低', detail: '开放式球场，长传精度略受影响' },
+      { label: '降雨 20%', impact: '低', detail: '天然草状态良好' },
+    ],
+    historical_note: 'BMO Field · E组榜首战 · 预报更新 ' + FORECAST_TS,
+    forecast_updated: FORECAST_TS,
+  },
+  m34: {
+    city: '堪萨斯城',
+    country: '美国',
+    venue: 'Arrowhead Stadium',
+    temp: 29,
+    humidity: 65,
+    altitude_m: 280,
+    rain_chance: 28,
+    wind: '西风 2级 · 夏夜',
+    condition_cn: '堪萨斯城夏夜温热，开放式球场',
+    impact_level: 'MEDIUM',
+    impact: 'Arrowhead 29°C 夜场仍有余热；厄瓜多尔须强攻，库拉索铁桶后段体能是变量',
+    impact_summary: '温热中等——弱队低位在 75\' 后专注度或降；利好先破门一方',
+    home_adapt: 83,
+    away_adapt: 75,
+    home_note: '厄瓜多尔 Caicedo 屏障+Plata 宽度；0-1 科特迪瓦后必须抢 3 分',
+    away_note: '库拉索 1-7 德国后预计 5-4-1；Advocaat 铁桶在温热夜场守 90 分钟难度大',
+    prediction_note: '若厄瓜多尔 2-0 领先，下半场总球面可能回落；定位球是库拉索唯一机会',
+    weather_factors: [
+      { label: '29°C · 20:00 CT 开球', impact: '中', detail: '北京时间 6月21日 08:00；夏夜仍暖' },
+      { label: '湿度 65%', impact: '中', detail: '开放式球场无顶棚，替补深度关键' },
+      { label: '海拔 280m', impact: '低', detail: '对两队影响中性' },
+    ],
+    historical_note: 'Arrowhead Stadium · E组 · 厄瓜多尔 vs 库拉索 · 预报更新 ' + FORECAST_TS,
+    forecast_updated: FORECAST_TS,
+  },
+  m36: {
+    city: '蒙特雷',
+    country: '墨西哥',
+    venue: 'Estadio BBVA',
+    temp: 26,
+    humidity: 52,
+    altitude_m: 540,
+    rain_chance: 15,
+    wind: '北风 1级 · 夜场',
+    condition_cn: '蒙特雷夜场干燥，海拔适中',
+    impact_level: 'LOW',
+    impact: 'BBVA 26°C 夜场+540m 海拔，日本控球型打法受益；突尼斯 Khazri 定位球仍有效',
+    impact_summary: '气候变量低——世界杯第 1000 场节奏由 Moriyasu 控球 vs 突尼斯低位决定',
+    home_adapt: 80,
+    away_adapt: 85,
+    home_note: '突尼斯 1-5 瑞典后须抢分；北非球队对墨西哥高原需适应',
+    away_note: '日本 2-2 荷兰后 Mitoma+Kubo 肋部渗透；Moriyasu 习惯高原客场',
+    prediction_note: '海拔对传球略快；夜场干燥利于日本短传，模型影响可忽略',
+    weather_factors: [
+      { label: '26°C · 22:00 CT 开球', impact: '低', detail: '北京时间 6月21日 12:00；夜场微凉' },
+      { label: '海拔 540m', impact: '低-中', detail: '略利于传控，远射弧线微变' },
+      { label: '干燥夜场', impact: '中性', detail: '草皮快，日本传导受益' },
+    ],
+    historical_note: 'Estadio BBVA · F组 · 世界杯第 1000 场 · 预报更新 ' + FORECAST_TS,
+    forecast_updated: FORECAST_TS,
+  },
+};
+
+function venueWeather(matchId) {
+  const w = VENUE_WEATHER[matchId];
+  if (!w) return null;
+  return { ...w };
+}
+
+module.exports = { VENUE_WEATHER, venueWeather };

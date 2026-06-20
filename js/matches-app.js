@@ -585,6 +585,63 @@ function minuteToGoalInterval(min) {
   return '90+';
 }
 
+/** 从 scorers 字符串提取全部进球分钟（含补时） */
+function parseAllGoalMinutes(scorers) {
+  if (!scorers) return [];
+  return [...String(scorers).matchAll(/(\d+)(?:\+(\d+))?'/g)]
+    .map(m => parseInt(m[1], 10) + (m[2] ? parseInt(m[2], 10) : 0));
+}
+
+function parseGoalEntries(scorers) {
+  if (!scorers) return [];
+  return String(scorers).split(/[;·]/).map(s => s.trim()).filter(Boolean);
+}
+
+function parseMinuteFromEntry(entry) {
+  const m = entry.match(/(\d+)(?:\+(\d+))?'/);
+  if (!m) return null;
+  return parseInt(m[1], 10) + (m[2] ? parseInt(m[2], 10) : 0);
+}
+
+function isOwnGoalEntry(entry) {
+  return /\(\s*og\s*\)|\bOG\b|乌龙/i.test(entry);
+}
+
+/** 按 scorers 顺序推断主客队进球分钟（统计用；复杂乌龙局可能不完整） */
+function inferGoalMinutesBySide(scorers, homeScore, awayScore) {
+  const entries = parseGoalEntries(scorers);
+  const home = [];
+  const away = [];
+  let h = 0;
+  let a = 0;
+  for (const e of entries) {
+    const min = parseMinuteFromEntry(e);
+    if (min == null) continue;
+    if (isOwnGoalEntry(e)) {
+      if (h < homeScore) {
+        home.push(min);
+        h += 1;
+      } else {
+        away.push(min);
+        a += 1;
+      }
+      continue;
+    }
+    if (h < homeScore) {
+      home.push(min);
+      h += 1;
+    } else if (a < awayScore) {
+      away.push(min);
+      a += 1;
+    }
+  }
+  return {
+    home,
+    away,
+    complete: h === homeScore && a === awayScore,
+  };
+}
+
 function computeTotalsVerdict(m, ms) {
   const r = m.actualResult;
   const overPct = ms.over_pct;
@@ -594,11 +651,7 @@ function computeTotalsVerdict(m, ms) {
   const actualOver = total > line;
   const push = Math.abs(total - line) < 0.01;
   const modelOver = overPct >= 50;
-  let hit = push ? null : modelOver === actualOver;
-
-  const replay = m.depth_calibration?.preview_replay;
-  if (replay?.hits?.some(h => /进球氛围|精彩|沉闷/.test(h))) hit = true;
-  if (replay?.misses?.some(h => /进球氛围|精彩|沉闷/.test(h))) hit = false;
+  const hit = push ? null : modelOver === actualOver;
 
   return {
     available: true,
@@ -608,7 +661,8 @@ function computeTotalsVerdict(m, ms) {
     modelSide: modelOver ? '大' : '小',
     actualSide: push ? '走' : (actualOver ? '大' : '小'),
     hit,
-    note: `模型 over ${overPct}% → 偏${modelOver ? '大' : '小'} · 实际 ${total} 球（线 ${line}）`,
+    note: `模型超 ${line} 约 ${overPct}% → ${modelOver ? '大' : '小'}比分方向 · 实际 ${total} 球`
+      + (!ms.totals_show_lean ? ' · 氛围未强判' : ''),
   };
 }
 
@@ -643,22 +697,87 @@ function computeMarginVerdict(m, ms, margin) {
   };
 }
 
+function computeGoalTimingPeakStats(gt, sideMins, homeName, awayName) {
+  const peaks = gt?.peaks;
+  if (!peaks) return null;
+  const rows = [
+    {
+      key: 'home_scored',
+      label: `${homeName || gt.home_name || '主队'} 进球高峰 ${peaks.home_scored?.interval || '—'}`,
+      peakIv: peaks.home_scored?.interval,
+      mins: sideMins.home.filter(m => minuteToGoalInterval(m) === peaks.home_scored?.interval),
+    },
+    {
+      key: 'home_conceded',
+      label: `${homeName || gt.home_name || '主队'} 失球高峰 ${peaks.home_conceded?.interval || '—'}`,
+      peakIv: peaks.home_conceded?.interval,
+      mins: sideMins.away.filter(m => minuteToGoalInterval(m) === peaks.home_conceded?.interval),
+    },
+    {
+      key: 'away_scored',
+      label: `${awayName || gt.away_name || '客队'} 进球高峰 ${peaks.away_scored?.interval || '—'}`,
+      peakIv: peaks.away_scored?.interval,
+      mins: sideMins.away.filter(m => minuteToGoalInterval(m) === peaks.away_scored?.interval),
+    },
+    {
+      key: 'away_conceded',
+      label: `${awayName || gt.away_name || '客队'} 失球高峰 ${peaks.away_conceded?.interval || '—'}`,
+      peakIv: peaks.away_conceded?.interval,
+      mins: sideMins.home.filter(m => minuteToGoalInterval(m) === peaks.away_conceded?.interval),
+    },
+  ].filter(r => r.peakIv).map(r => ({
+    ...r,
+    hit: r.mins.length > 0,
+    note: r.mins.length
+      ? `${r.mins.map(m => m + "'").join('、')} 落在 ${r.peakIv} 分`
+      : `本场无进球落在 ${r.peakIv} 分`,
+  }));
+  const hitCount = rows.filter(r => r.hit).length;
+  return {
+    rows,
+    hitCount,
+    totalRows: rows.length,
+    summary_cn: rows.length
+      ? `历史高峰核验：${hitCount}/${rows.length} 项有进/失球落在对应时段`
+      : null,
+    sideParseComplete: sideMins.complete,
+  };
+}
+
+/** 双重合窗口：全场任一球落在重合时段即命中（不看首球） */
 function computeGoalTimingVerdict(m) {
   const gt = m.depth_calibration?.display_summary?.goal_timing;
-  const firstMin = m.actualResult?.first_goal_min;
-  if (!gt?.peaks || firstMin == null) return { available: false };
-  const iv = minuteToGoalInterval(firstMin);
-  const crossIv = gt.cross_insight?.cross_intervals || [];
-  const hit = iv != null && crossIv.includes(iv);
+  const r = m.actualResult;
+  const crossIv = gt?.cross_insight?.cross_intervals || [];
+  if (!crossIv.length) return { available: false, reason: 'no_cross' };
+
+  const allMins = parseAllGoalMinutes(r?.scorers);
+  const totalGoals = (r?.home_score ?? 0) + (r?.away_score ?? 0);
+  const minsInCross = allMins.filter(min => crossIv.includes(minuteToGoalInterval(min)));
+  const hitIntervals = [...new Set(minsInCross.map(minuteToGoalInterval))];
+  const hit = minsInCross.length > 0;
+
+  const sideMins = inferGoalMinutesBySide(r?.scorers, r?.home_score ?? 0, r?.away_score ?? 0);
+  const peakStats = computeGoalTimingPeakStats(gt, sideMins, m.home?.name, m.away?.name);
+
+  let note;
+  if (totalGoals === 0) {
+    note = `0 球 · 双重合窗 ${crossIv.join('、')} 无进球`;
+  } else if (hit) {
+    note = `双重合窗 ${hitIntervals.join('、')} 有进球（${minsInCross.map(m => m + "'").join('、')}）`;
+  } else {
+    note = `全场 ${totalGoals} 球（${allMins.map(m => m + "'").join('、') || '—'}）均未落在双重合窗 ${crossIv.join('、')}`;
+  }
+
   return {
     available: true,
-    firstMin,
-    interval: iv,
     hit,
     crossWindows: crossIv,
-    note: hit
-      ? `首球 ${firstMin}' · ${iv} 落在赛前重合窗口`
-      : `首球 ${firstMin}' · ${iv}${crossIv.length ? '（重合窗 ' + crossIv.join('、') + '）' : ''}`,
+    goalMinutes: allMins,
+    minsInCross,
+    hitIntervals,
+    peakStats,
+    note,
   };
 }
 
@@ -720,7 +839,7 @@ function computeGoalEfficiencyPreviewPath(m) {
     if (overPct >= 55) lean = 'high';
     else if (overPct <= 45) lean = 'low';
   }
-  return { path: primary, lean, pathLabel: { fav_burst: '热门爆发', dog_bloom: '弱队开花', open: '对攻', low: '铁局/小球' }[primary] };
+  return { path: primary, lean, pathLabel: { fav_burst: '热门爆发', dog_bloom: '弱队开花', open: '对攻', low: '铁局/小比分' }[primary] };
 }
 
 /** 赛前进球路径 vs 赛后实际路径是否一致 */
@@ -1049,6 +1168,28 @@ function renderGoalTimingKey(home, away) {
     </div>`;
 }
 
+function publicTotalsLineLabel(line) {
+  const lib = typeof window !== 'undefined' ? window.PREDICTION_SIGNALS : null;
+  if (line != null && lib?.formatPublicTotalsLine) return lib.formatPublicTotalsLine(line);
+  if (line != null && Number.isFinite(Number(line))) return '总进球参考 ' + line;
+  return '总进球参考 —';
+}
+
+function modelTotalsLineLabel(fair) {
+  const lib = typeof window !== 'undefined' ? window.PREDICTION_SIGNALS : null;
+  if (fair != null && lib?.formatModelTotalsLine) return lib.formatModelTotalsLine(fair);
+  if (fair != null && Number.isFinite(Number(fair))) return '合理值 ' + fair;
+  return '合理值 —';
+}
+
+function totalsGapLabel(gap) {
+  const lib = typeof window !== 'undefined' ? window.PREDICTION_SIGNALS : null;
+  if (lib?.formatTotalsLineGap) return lib.formatTotalsLineGap(gap);
+  const g = Number(gap);
+  if (!Number.isFinite(g) || Math.abs(g) < 0.01) return null;
+  return g > 0 ? '高于合理值 ' + g : '低于合理值 ' + Math.abs(g);
+}
+
 function renderGoalTimingCrossBox(cross) {
   if (!cross) return '';
   if (!cross.has_cross) {
@@ -1065,7 +1206,7 @@ function renderGoalTimingCrossBox(cross) {
     </div>`).join('');
   return `
     <div class="dc-gt-cross dc-gt-cross--active">
-      <span class="dc-gt-cross-tag">重合窗口</span>
+      <span class="dc-gt-cross-tag">双重合 · 重点参考</span>
       ${items}
     </div>`;
 }
@@ -1098,22 +1239,25 @@ function renderGoalTimingBlock(gt, homeName, awayName) {
     </div>`;
 }
 
-function renderGoalAtmosphereMeter(outlook) {
+function renderGoalAtmosphereMeter(outlook, opts) {
   if (!outlook) return '';
+  const hideIntro = opts?.hideIntro;
+  const hideKv = opts?.hideKv;
   const pos = outlook.meter_pos ?? 50;
   const side = outlook.lean_side || 'neutral';
   const strength = outlook.lean_strength || 'none';
   const tag = outlook.meter_label_cn || outlook.label_cn || '几乎五五开';
   const tagColor = outlook.color || '#8A96A8';
-  const marketCn = outlook.market_goals_cn || '全场至少 — 球';
+  const marketCn = outlook.market_goals_cn || publicTotalsLineLabel(outlook.market_line);
 
   return `
-    <div class="dc-read-meter dc-ga-meter dc-ga-meter--${side} dc-ga-meter--${strength}">
-      ${outlook.section_intro_cn ? `<p class="dc-ga-meter-intro">${outlook.section_intro_cn}</p>` : ''}
+    <div class="dc-read-meter dc-ga-meter dc-ga-meter--${side} dc-ga-meter--${strength}${hideKv ? ' dc-ga-meter--compact' : ''}">
+      ${!hideIntro && outlook.section_intro_cn ? `<p class="dc-ga-meter-intro">${outlook.section_intro_cn}</p>` : ''}
+      ${!hideKv ? `
       <div class="dc-spread-meter-kv dc-ga-meter-kv">
-        <span class="dc-spread-meter-k">赛前外界预期</span>
+        <span class="dc-spread-meter-k">总进球参考</span>
         <span class="dc-spread-meter-v dc-ga-meter-v">${marketCn}</span>
-      </div>
+      </div>` : ''}
       <div class="dc-ga-meter-ends">
         <span class="dc-ga-meter-end dc-ga-meter-end--dull">沉闷</span>
         <span class="dc-ga-meter-end dc-ga-meter-end--exciting">精彩</span>
@@ -1141,7 +1285,7 @@ function renderSpreadOutlookMeter(sp) {
   return `
     <div class="dc-read-meter dc-spread-meter dc-spread-meter--${sp.level || 'uncertain'}">
       <div class="dc-spread-meter-kv">
-        <span class="dc-spread-meter-k">赛前外界预期</span>
+        <span class="dc-spread-meter-k">外界净胜猜测</span>
         <span class="dc-spread-meter-v">${sp.market_expect_cn || '—'}</span>
       </div>
       <div class="dc-spread-meter-bar-wrap">
@@ -1161,23 +1305,70 @@ function renderSpreadOutlookMeter(sp) {
 function renderReadingPillHead(p) {
   const team = p.key === 'spread' && p.outlook?.fav_name
     ? `<span class="dc-reading-pill-team">${p.outlook.fav_name}</span>` : '';
+  const label = p.key === 'totals' ? '进球氛围' : p.label;
   return `
       <div class="dc-reading-pill-head">
         <span class="dc-reading-pill-icon">${p.icon}</span>
-        <span class="dc-reading-pill-label" style="color:${p.color || '#7BB8D4'}">${p.label}</span>
+        <span class="dc-reading-pill-label" style="color:${p.color || '#7BB8D4'}">${label}</span>
         ${team}
       </div>`;
 }
 
-function renderCustomerReadingCard(reading) {
+function renderTotalsStatStrip(totalsView, prediction) {
+  const expTotal = totalsView?.expected_total;
+  if (expTotal == null) return '';
+  const mLine = totalsView.market_line;
+  const fair = totalsView.fair_line;
+  const gap = totalsView.line_gap;
+  const chips = [];
+  if (mLine != null) {
+    chips.push(`<span class="dc-totals-stat"><span class="dc-totals-stat-k">参考</span><span class="dc-totals-stat-v">${mLine}</span></span>`);
+  }
+  if (fair != null) {
+    chips.push(`<span class="dc-totals-stat"><span class="dc-totals-stat-k">合理值</span><span class="dc-totals-stat-v">${fair}</span></span>`);
+  }
+  if (gap > 0.01) {
+    chips.push(`<span class="dc-totals-stat dc-totals-stat--warn"><span class="dc-totals-stat-k">高于合理值</span><span class="dc-totals-stat-v">${gap}</span></span>`);
+  } else if (gap < -0.01) {
+    chips.push(`<span class="dc-totals-stat dc-totals-stat--low"><span class="dc-totals-stat-k">低于合理值</span><span class="dc-totals-stat-v">${Math.abs(gap)}</span></span>`);
+  }
+  chips.push(`<span class="dc-totals-stat"><span class="dc-totals-stat-k">预测</span><span class="dc-totals-stat-v">${expTotal}</span></span>`);
+  return `<div class="dc-totals-stat-strip">${chips.join('')}</div>`;
+}
+
+function renderTotalsHintFootnote(totalsView, prediction) {
+  const expTotal = totalsView?.expected_total;
+  if (expTotal == null) return '';
+  const predScore = prediction?.score;
+  const scoreNorm = predScore ? String(predScore).replace(/\s/g, '') : '';
+  const predGoals = /^\d+-\d+$/.test(scoreNorm)
+    ? scoreNorm.split('-').map(n => parseInt(n, 10)).reduce((a, b) => a + b, 0)
+    : null;
+  let hint = '上方「预测」为推演总进球，与首推比分<strong>口径不同</strong>。';
+  if (predScore && predGoals != null) {
+    hint += `首推 ${formatDisplayScore(predScore)}（${predGoals} 球）。`;
+  }
+  return `<p class="dc-totals-hint-foot">${hint}</p>`;
+}
+
+function renderCombinedTotalsPill(p, totalsView, prediction) {
+  const outlook = p.outlook;
+  const gapWarn = totalsView?.gap_warning?.cn;
+  return `
+    <div class="dc-reading-pill dc-reading-pill--meter dc-reading-pill--totals-combined${p.muted ? ' dc-reading-pill--muted' : ''}">
+      ${renderReadingPillHead(p)}
+      ${renderTotalsStatStrip(totalsView, prediction)}
+      ${outlook ? renderGoalAtmosphereMeter(outlook, { hideIntro: true, hideKv: true }) : ''}
+      ${gapWarn ? `<p class="dc-totals-gap-warn">${gapWarn}</p>` : ''}
+      ${renderTotalsHintFootnote(totalsView, prediction)}
+    </div>`;
+}
+
+function renderCustomerReadingCard(reading, totalsView, prediction) {
   if (!reading?.pills?.length) return '';
   const pills = reading.pills.map(p => {
     if (p.key === 'totals' && p.outlook) {
-      return `
-    <div class="dc-reading-pill dc-reading-pill--meter${p.muted ? ' dc-reading-pill--muted' : ''}">
-      ${renderReadingPillHead(p)}
-      ${renderGoalAtmosphereMeter(p.outlook)}
-    </div>`;
+      return renderCombinedTotalsPill(p, totalsView, prediction);
     }
     if (p.key === 'spread' && p.outlook) {
       return `
@@ -1206,57 +1397,6 @@ function renderCustomerReadingCard(reading) {
       <div class="dc-reading-pills">${pills}</div>
       ${drawRow}
       <p class="dc-reading-footnote">${reading.methodology_note || ''}</p>
-    </div>`;
-}
-
-function renderTotalsRefRow(totalsView, prediction) {
-  const expTotal = totalsView?.expected_total;
-  const xgH = prediction?.xg_home;
-  const xgA = prediction?.xg_away;
-  const xgSum = xgH != null && xgA != null ? Math.round((xgH + xgA) * 100) / 100 : null;
-
-  if (expTotal == null) return '';
-
-  const predScore = prediction?.score;
-  const scoreNorm = predScore ? String(predScore).replace(/\s/g, '') : '';
-  const predGoals = /^\d+-\d+$/.test(scoreNorm)
-    ? scoreNorm.split('-').map(n => parseInt(n, 10)).reduce((a, b) => a + b, 0)
-    : null;
-
-  let primary = `模型预期约 <strong>${expTotal}</strong> 个总进球`;
-  if (xgSum != null) primary += ` <span class="dc-rhythm-totals-xg">（xG ${xgH} + ${xgA}）</span>`;
-  if (totalsView?.market_line != null && totalsView?.fair_line != null) {
-    const marketInt = totalsView.totals_outlook?.market_goals_int
-      ?? totalsView.market_goals_int
-      ?? Math.ceil(Number(totalsView.market_line));
-    primary += ` · 外界预期 <strong>全场至少 ${marketInt} 球</strong>`;
-    primary += ` · 模型自身约 <strong>${totalsView.fair_line}</strong> 球`;
-    if (totalsView.line_gap >= 1) {
-      primary += ` <span class="dc-rhythm-totals-warn">（外界高出约 ${totalsView.line_gap} 球）</span>`;
-    } else if (totalsView.line_gap > 0.01) {
-      primary += `（外界 +${totalsView.line_gap}）`;
-    }
-  }
-
-  const gapWarn = totalsView?.gap_warning?.cn;
-  const outlook = totalsView?.totals_outlook;
-  const outlookRow = outlook ? renderGoalAtmosphereMeter(outlook) : '';
-
-  let hint = '与终端娱乐推演比分是<strong>不同口径</strong>：';
-  if (predScore && predGoals != null) {
-    hint += `首推 <strong>${formatDisplayScore(predScore)}</strong> 是最可能单场赛果（${predGoals} 球）；`;
-  } else {
-    hint += '首推比分是最可能单场赛果；';
-  }
-  hint += '此处为泊松网格加权的<strong>全场期望总进球</strong>，统计各类可能比分，故可与首推比分不同。';
-
-  return `
-    <div class="dc-rhythm-totals-ref">
-      <span class="dc-rhythm-dim-label">总进球参考</span>
-      <span class="dc-rhythm-totals-text dc-rhythm-totals-text--model">${primary}</span>
-      ${outlook ? '<div class="dc-rhythm-totals-atmosphere"><span class="dc-rhythm-dim-label dc-rhythm-dim-label--sub">进球氛围</span>' + outlookRow + '</div>' : ''}
-      ${gapWarn ? `<p class="dc-rhythm-totals-warn-line">${gapWarn}</p>` : ''}
-      <p class="dc-rhythm-totals-hint">${hint}</p>
     </div>`;
 }
 
@@ -1291,9 +1431,9 @@ function renderWinOutlookBlock(wo, ws) {
         <span class="dc-outlook-line-note">如 2-0：部分达标，非全达标</span>
       </div>` : ''}
       <div class="dc-outlook-line">
-        <span class="dc-outlook-line-label">外界总进球参考 ${o.totals_line ?? '—'} 球</span>
-        <span class="dc-outlook-line-pct">终场多于该参考约 <strong>${o.totals_high_pct ?? '—'}%</strong></span>
-        <span class="dc-outlook-line-note">模型公允约 ${o.fair_totals_line ?? '—'} 球${o.totals_line_gap > 0 ? ' · 外界高出 ' + o.totals_line_gap + ' 球' : ''}</span>
+        <span class="dc-outlook-line-label">${o.totals_line_cn || publicTotalsLineLabel(o.totals_line)}</span>
+        <span class="dc-outlook-line-pct">超线约 <strong>${o.totals_high_pct ?? '—'}%</strong></span>
+        <span class="dc-outlook-line-note">${modelTotalsLineLabel(o.fair_totals_line)}${o.totals_line_gap > 0.01 ? ' · 高于合理值 ' + o.totals_line_gap : o.totals_line_gap < -0.01 ? ' · 低于合理值 ' + Math.abs(o.totals_line_gap) : ''}</span>
       </div>
       ${o.win_margin2_low_total_pct >= 10 ? `
       <div class="dc-outlook-line dc-outlook-line--warn">
@@ -1316,7 +1456,7 @@ function renderWinOutlookBlock(wo, ws) {
     </div>`;
 }
 
-function renderMatchPreviewBlock(mp, totalsRefRow) {
+function renderMatchPreviewBlock(mp) {
   if (!mp) return '';
   const morph = mp.morphology || {};
   const typeTags = (morph.type_tags || []).map(t =>
@@ -1327,7 +1467,6 @@ function renderMatchPreviewBlock(mp, totalsRefRow) {
       <div class="dc-mp-morph">
         <div class="dc-mp-head">比赛形态</div>
         <div class="dc-mp-tags">${typeTags}${morph.depth_label ? `<span class="dc-mp-tag dc-mp-tag--depth">${morph.depth_label}</span>` : ''}</div>
-        ${totalsRefRow || ''}
         ${morph.readout_cn ? `<p class="dc-mp-readout">${morph.readout_cn}</p>` : ''}
       </div>
     </div>`;
@@ -1381,47 +1520,113 @@ function renderUpsetDrawRiskNote(ua, drawTrapNote) {
     </div>`;
 }
 
+function renderLiveWatchList(items) {
+  if (!items?.length) return '';
+  const rows = items.map(it => `
+    <li class="dc-ge-live-watch dc-ge-live-watch--${it.severity || 'mid'}">
+      <span class="dc-ge-live-dot" aria-hidden="true"></span>
+      <div class="dc-ge-live-body">
+        <span class="dc-ge-live-watch-k">${it.label}</span>
+        <span class="dc-ge-live-watch-d">${it.detail}</span>
+      </div>
+    </li>`).join('');
+  return `
+    <div class="dc-ge-live-wrap">
+      <div class="dc-ge-live-head">
+        <span class="dc-ge-live-icon" aria-hidden="true"></span>
+        <span>赛中观察</span>
+        <span class="dc-ge-live-sub">预防用 · 非默认预测</span>
+      </div>
+      <ul class="dc-ge-live-list">${rows}</ul>
+    </div>`;
+}
+
 function renderGoalEfficiencyPreviewBlock(gp) {
   if (!gp?.summary_cn) return '';
   const tags = (gp.tags || []).map(t => `
-    <span class="dc-ge-tag" style="color:${t.color};background:${t.bg};border:1px solid ${t.color}33">${t.label}</span>`).join('');
-  const scenarioRows = (gp.scenarios || []).slice(0, 4).map(sc => `
-    <div class="dc-ge-scenario">
+    <span class="dc-ge-tag" style="color:${t.color};background:${t.bg};border:1px solid ${t.color}44">${t.label}</span>`).join('');
+  const scenarioRows = (gp.scenarios || []).slice(0, 4).map((sc, i) => `
+    <div class="dc-ge-scenario${i === 0 ? ' dc-ge-scenario--primary' : ''}">
       <div class="dc-ge-scenario-head">
         <span class="dc-ge-scenario-label">${sc.label}</span>
-        <span class="dc-ge-scenario-pct">约 ${sc.prob_pct}%</span>
+        <span class="dc-ge-scenario-pct">${sc.prob_pct}%</span>
       </div>
       <div class="dc-ge-scenario-ex">${sc.example}</div>
     </div>`).join('');
   const watchRows = (gp.watch_notes || []).map(n => `<li>${n}</li>`).join('');
-  const probRow = gp.prob_over_line != null ? `
-    <div class="dc-ge-prob-row">
-      <span>≥${gp.totals_line} 球 ${gp.prob_over_line}%</span>
-      <span>≥4 球 ${gp.prob_4_plus}%</span>
-      <span>≤2 球 ${gp.prob_2_or_less}%</span>
+  const guessN = gp.guess_n ?? 3;
+  const lineNum = Number(gp.totals_line);
+  const probMeet = gp.prob_meet_guess;
+  const probOver = gp.prob_over_line;
+  const probSameMetric = probMeet != null && probOver != null
+    && Math.abs(probMeet - probOver) < 0.05
+    && Number.isFinite(lineNum) && lineNum % 1 === 0.5;
+  const probItems = [];
+  if (probSameMetric) {
+    probItems.push({ k: '超 ' + gp.totals_line, v: probOver });
+  } else {
+    if (probMeet != null) probItems.push({ k: '至少 ' + guessN + ' 球', v: probMeet });
+    if (probOver != null) probItems.push({ k: '超 ' + gp.totals_line, v: probOver });
+  }
+  if (gp.prob_2_or_less != null) {
+    probItems.push({ k: '≤2 球', v: gp.prob_2_or_less });
+  }
+  const probRow = probItems.length ? `
+    <div class="dc-ge-stat-strip dc-ge-stat-strip--prob${probItems.length === 2 ? ' dc-ge-stat-strip--pair' : ''}">
+      ${probItems.map(it => `
+      <div class="dc-ge-stat">
+        <span class="dc-ge-stat-k">${it.k}</span>
+        <span class="dc-ge-stat-v">${it.v}<small>%</small></span>
+      </div>`).join('')}
     </div>` : '';
+  const pathLeanClass = gp.lean === 'prevention_high' ? 'prevention' : gp.lean;
+  const showPathBadge = gp.lean_cn && (
+    gp.lean_mode === 'prediction' || gp.lean_mode === 'prevention' || gp.lean === 'split'
+  );
+  const pathBadge = showPathBadge
+    ? `<span class="dc-goal-eff-path dc-goal-eff-path--${pathLeanClass}">${gp.lean_cn}</span>`
+    : '';
+  const xgNote = gp.xg_note
+    ? `<p class="dc-goal-eff-xg-note">${gp.xg_note}<span class="dc-goal-eff-xg-sep"> · </span>与「进球氛围」口径不同</p>`
+    : '';
+  const leanNote = gp.lean_note
+    ? `<div class="dc-goal-eff-callout${gp.lean_mode === 'prevention' ? ' dc-goal-eff-callout--prevention' : ''}${gp.modules_aligned ? ' dc-goal-eff-callout--aligned' : ''}">${gp.lean_note}</div>`
+    : '';
+  const atmosphereLink = gp.atmosphere_link_cn && gp.lean_mode !== 'prevention' && !gp.lean_note?.includes(gp.atmosphere_link_cn)
+    ? `<p class="dc-goal-eff-atm-link">${gp.atmosphere_link_cn}</p>`
+    : '';
+  const liveWatchHtml = renderLiveWatchList(gp.live_watch);
+  const summaryDetails = gp.summary_cn ? `
+    <details class="dc-ge-details">
+      <summary>展开结构说明</summary>
+      <p>${gp.summary_cn}</p>
+    </details>` : '';
   return `
     <div class="dc-goal-eff dc-goal-eff--preview">
       <div class="dc-goal-eff-head">
-        <span>进球路径预估</span>
-        ${gp.lean_cn ? `<span class="dc-goal-eff-path dc-goal-eff-path--${gp.lean || 'neutral'}">${gp.lean_cn}</span>` : ''}
+        <span class="dc-goal-eff-title">进球路径预估</span>
+        ${pathBadge}
       </div>
-      <div class="dc-goal-eff-tags">${tags}</div>
-      <div class="dc-goal-eff-bars dc-goal-eff-bars--preview">
-        <div class="dc-goal-eff-row">
-          <span class="dc-goal-eff-side">热门 ${gp.fav_name}</span>
-          <span class="dc-goal-eff-num">赛前 xG ${gp.fav_xg}</span>
+      ${xgNote}
+      ${leanNote}
+      ${atmosphereLink}
+      ${tags ? `<div class="dc-goal-eff-tags">${tags}</div>` : ''}
+      <div class="dc-ge-stat-strip dc-ge-stat-strip--xg">
+        <div class="dc-ge-stat">
+          <span class="dc-ge-stat-k">热门 ${gp.fav_name}</span>
+          <span class="dc-ge-stat-v"><strong>${gp.fav_xg}</strong><small>基准 xG</small></span>
         </div>
-        <div class="dc-goal-eff-row">
-          <span class="dc-goal-eff-side">弱队 ${gp.dog_name}</span>
-          <span class="dc-goal-eff-num">赛前 xG ${gp.dog_xg} · 差 ${gp.xg_gap}</span>
+        <div class="dc-ge-stat">
+          <span class="dc-ge-stat-k">弱队 ${gp.dog_name}</span>
+          <span class="dc-ge-stat-v"><strong>${gp.dog_xg}</strong><small>差 ${gp.xg_gap}</small></span>
         </div>
       </div>
       ${probRow}
       <div class="dc-ge-scenarios">${scenarioRows}</div>
-      <p class="dc-goal-eff-summary">${gp.summary_cn}</p>
+      ${liveWatchHtml}
       ${watchRows ? `<ul class="dc-ge-watch">${watchRows}</ul>` : ''}
-      ${gp.in_mid_band ? `<div class="dc-goal-eff-hint">${gp.sample_note || '样本规则'} · 弱队效率≥1.2 易大球 · 弱队&lt;0.6 易小球 · 热门≥1.5 样本内大球率 100%</div>` : ''}
+      ${summaryDetails}
+      ${gp.in_mid_band ? `<div class="dc-goal-eff-hint">${gp.sample_note || '样本规则'} · 弱队效率≥1.2 易大比分 · 弱队&lt;0.6 易小比分</div>` : ''}
     </div>`;
 }
 
@@ -1449,7 +1654,7 @@ function renderGoalEfficiencyBlock(ge) {
         </div>
       </div>
       <p class="dc-goal-eff-summary">${ge.summary_cn}</p>
-      ${ge.in_mid_band ? '<div class="dc-goal-eff-hint">样本提示：xG 总 2.0–3.0 区间 · 弱队效率≥1.2 易大球 · 弱队&lt;0.6 易小球 · 热门≥1.5 样本内大球率 100%</div>' : ''}
+      ${ge.in_mid_band ? '<div class="dc-goal-eff-hint">xG 2.0–3.0 · 弱队效率≥1.2 易大比分 · 弱队&lt;0.6 易小比分</div>' : ''}
     </div>`;
 }
 
@@ -1472,7 +1677,8 @@ function renderDepthCalibrationBlock(dc, upsetAlert, prediction, homeName, awayN
   const replay = dc.preview_replay;
   const goalEff = dc.goal_efficiency;
   const reading = s.customer_reading;
-  const readingCard = renderCustomerReadingCard(reading);
+  const totalsView = s.totals_view || {};
+  const readingCard = renderCustomerReadingCard(reading, totalsView, prediction);
   const goalTimingHtml = renderGoalTimingBlock(s.goal_timing, homeName, awayName);
   const replayRow = replay?.summary_cn ? `
     <div class="dc-preview-replay">
@@ -1483,10 +1689,7 @@ function renderDepthCalibrationBlock(dc, upsetAlert, prediction, homeName, awayN
   const goalEffRow = renderGoalEfficiencyBlock(goalEff)
     || renderGoalEfficiencyPreviewBlock(dc.goal_efficiency_preview);
   const xgCtx = s.xg_context || {};
-  const scorePatterns = s.score_patterns || [];
-  const totalsView = s.totals_view || {};
-
-  const totalsRefRow = renderTotalsRefRow(totalsView, prediction);
+  const scorePatterns = s.score_patterns || {};
 
   const factorRow = factors.length ? `
     <div class="dc-context-row">
@@ -1514,7 +1717,7 @@ function renderDepthCalibrationBlock(dc, upsetAlert, prediction, homeName, awayN
     </div>` : '';
 
   const mp = s.match_preview;
-  const previewHtml = renderMatchPreviewBlock(mp, totalsRefRow);
+  const previewHtml = renderMatchPreviewBlock(mp);
   const upsetDrawNote = renderUpsetDrawRiskNote(upsetAlert, mp?.draw_trap_note);
   const winShapeHtml = renderWinOutlookBlock(s.win_outlook, s.win_shape);
   const scenarioCards = scenarios.map(sc => {
@@ -1830,7 +2033,7 @@ function renderScoreCompareHero(m, v) {
     verdictChip('方向', v.outcomeHit),
     verdictChip('比分', v.scoreHit),
     verdictChip('Top3', v.anyTop3Hit),
-    t.available ? verdictChip('大小', t.hit, t.hit == null) : '',
+    t.available ? verdictChip('总进球', t.hit, t.hit == null) : '',
     mg.available ? verdictChip('净胜', mg.hit, mg.hit == null) : '',
     gt.available ? verdictChip('时段', gt.hit, gt.hit == null) : '',
   ].filter(Boolean).join('');
@@ -1878,7 +2081,7 @@ function renderMarketVerdictDetails(v) {
     <div class="pred-verdict-details">
       ${t.available ? `
       <div class="pred-verdict-detail">
-        <span class="pred-verdict-detail-label">大小球</span>
+        <span class="pred-verdict-detail-label">总进球</span>
         <span class="pred-verdict-detail-val">预测偏${t.modelSide} · 实际${t.actualSide}（线 ${t.line}）</span>
         ${verdictBadgeOrNeutral(t.hit, '命中', '未中', '走水')}
       </div>` : ''}
@@ -1889,10 +2092,24 @@ function renderMarketVerdictDetails(v) {
         ${verdictBadgeOrNeutral(mg.hit, '一致', '偏差', '难判')}
       </div>` : ''}
       ${gt.available ? `
-      <div class="pred-verdict-detail">
-        <span class="pred-verdict-detail-label">进球时段</span>
-        <span class="pred-verdict-detail-val">${gt.note}</span>
-        ${verdictBadgeOrNeutral(gt.hit, '命中', '未中', '无窗')}
+      <div class="pred-verdict-detail pred-verdict-detail--stack">
+        <div class="pred-verdict-detail-row">
+          <span class="pred-verdict-detail-label">双重合时段</span>
+          <span class="pred-verdict-detail-val">${gt.note}</span>
+          ${verdictBadgeOrNeutral(gt.hit, '命中', '未中', '无球')}
+        </div>
+        ${gt.peakStats?.rows?.length ? `
+        <div class="pred-verdict-gt-stats">
+          <span class="pred-verdict-gt-stats-label">历史高峰核验（统计）</span>
+          ${gt.peakStats.summary_cn ? `<span class="pred-verdict-gt-stats-sum">${gt.peakStats.summary_cn}</span>` : ''}
+          <ul class="pred-verdict-gt-stats-list">
+            ${gt.peakStats.rows.map(row => `
+              <li class="pred-verdict-gt-stats-item${row.hit ? ' pred-verdict-gt-stats-item--hit' : ''}">
+                ${row.label} · ${row.note} ${row.hit ? '✓' : '—'}
+              </li>`).join('')}
+          </ul>
+          ${gt.peakStats.sideParseComplete === false ? '<span class="pred-verdict-gt-stats-warn">主客进球分钟为推断值，复杂乌龙局请对照 scorers</span>' : ''}
+        </div>` : ''}
       </div>` : ''}
     </div>`;
 }

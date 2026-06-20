@@ -2,6 +2,8 @@
  * 内部参考数据录入 — Day 6（m17–m20）
  * ⚠ 手动录入后运行 node scripts/apply-prediction-signals.js
  * 页面仅展示模型概要；此处数据用于内部胜率微调，不在页面显示赔率/盘口字样。
+ *
+ * totals_line：亚盘总进球分隔线（大/小分界），每场独立；超线=大比分，不足=小比分
  */
 module.exports = {
   m17: {

@@ -1,6 +1,9 @@
 /**
  * 为 matches-data.js / results-data.js 注入深度校准 + 小组形势
  * Run: node scripts/apply-prediction-signals.js
+ *
+ * HANDICAP[m].totals_line — 内部：亚盘总进球分隔线（超=大比分 / 不足=小比分），
+ * 每场在 scripts/handicap-data-*.js 单独录入，勿写死 2.5。
  */
 const fs = require('fs');
 const path = require('path');
@@ -22,9 +25,11 @@ const HANDICAP = {
   ...require('./handicap-data-day7'),
   ...require('./handicap-data-day8'),
   ...require('./handicap-data-day9'),
+  ...require('./handicap-data-day10'),
 };
 const GOAL_TIMING = {
   ...require('./goal-timing-data-day9'),
+  ...require('./goal-timing-data-day10'),
 };
 
 const ROOT = path.join(__dirname, '..');

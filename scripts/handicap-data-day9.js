@@ -2,6 +2,8 @@
  * 内部参考数据录入 — Day 9（m29–m32）
  * 默认来源：足球魔方 cubegoal.com 即时盘（2026-06-20 抓取）
  * 若用户手动提交 Titan007 数据，覆盖对应场次后重跑 apply-prediction-signals.js
+ *
+ * totals_line：亚盘总进球分隔线（大/小分界），每场独立；超线=大比分，不足=小比分
  */
 module.exports = {
   m32: {

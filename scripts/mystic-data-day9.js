@@ -175,7 +175,7 @@ const MYSTIC = {
 
   // 大有卦「自天佑之」——巳时火旺，示上下双窗
   m29: buildMystic(
-    '巳时（09:00-11:00）', '火',
+    '辰时（07:00-09:00）', '土',
     {
       home: {
         team: 'Brazil', colors: '黄+绿+蓝', elements: '土、木、水', wuxing_short: '土木水杂',

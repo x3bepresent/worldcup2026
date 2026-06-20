@@ -292,7 +292,7 @@
 <script>
 // ═══════════════════════════════════════════════════════════
 //  COMPLETE 2026 WC SCHEDULE  —  All times in Beijing (UTC+8)
-//  Converted from local / ET.  formula: EDT (UTC-4) + 12h
+//  Source: FIFA calendar API · dates/times = 北京时间（含 :30 开球场次）
 // ═══════════════════════════════════════════════════════════
 const MATCHES = [
   // ── Group A ──────────────────────────────────────────────
@@ -313,7 +313,7 @@ const MATCHES = [
   { no:7,  m:6, d:14, t:'06:00', home:'Brazil',              away:'Morocco',               g:'C', venue:'MetLife Stadium',          city:'纽约/新泽西' },
   { no:5,  m:6, d:14, t:'09:00', home:'Haiti',               away:'Scotland',              g:'C', venue:'Gillette Stadium',         city:'波士顿' },
   { no:30, m:6, d:20, t:'06:00', home:'Scotland',            away:'Morocco',               g:'C', venue:'Gillette Stadium',         city:'波士顿' },
-  { no:29, m:6, d:20, t:'09:00', home:'Brazil',              away:'Haiti',                 g:'C', venue:'Lincoln Financial Field',  city:'费城' },
+  { no:29, m:6, d:20, t:'08:30', home:'Brazil',              away:'Haiti',                 g:'C', venue:'Lincoln Financial Field',  city:'费城' },
   { no:49, m:6, d:25, t:'06:00', home:'Scotland',            away:'Brazil',                g:'C', venue:'Hard Rock Stadium',        city:'迈阿密' },
   { no:50, m:6, d:25, t:'06:00', home:'Morocco',             away:'Haiti',                 g:'C', venue:'Mercedes-Benz Stadium',    city:'亚特兰大' },
   // ── Group D ──────────────────────────────────────────────
@@ -334,7 +334,7 @@ const MATCHES = [
   { no:11, m:6, d:15, t:'04:00', home:'Netherlands',         away:'Japan',                 g:'F', venue:'AT&T Stadium',             city:'达拉斯' },
   { no:12, m:6, d:15, t:'10:00', home:'Sweden',              away:'Tunisia',               g:'F', venue:'Estadio BBVA',             city:'蒙特雷' },
   { no:36, m:6, d:21, t:'12:00', home:'Tunisia',             away:'Japan',                 g:'F', venue:'Estadio BBVA',             city:'蒙特雷' },
-  { no:35, m:6, d:22, t:'01:00', home:'Netherlands',         away:'Sweden',                g:'F', venue:'NRG Stadium',              city:'休斯顿' },
+  { no:35, m:6, d:21, t:'01:00', home:'Netherlands',         away:'Sweden',                g:'F', venue:'NRG Stadium',              city:'休斯顿' },
   { no:57, m:6, d:26, t:'07:00', home:'Japan',               away:'Sweden',                g:'F', venue:'AT&T Stadium',             city:'达拉斯' },
   { no:58, m:6, d:26, t:'07:00', home:'Tunisia',             away:'Netherlands',           g:'F', venue:'Arrowhead Stadium',        city:'堪萨斯城' },
   // ── Group G ──────────────────────────────────────────────
@@ -383,7 +383,7 @@ const MATCHES = [
 
 const KO_ROUNDS = [
   { round:'⚔️ 32强赛', color:'#7BB8D4', matches:[
-    { no:73,  d:'6月29日', t:'00:00', desc:'A组亚军 vs B组亚军',             venue:'SoFi Stadium',          city:'洛杉矶' },
+    { no:73,  d:'6月29日', t:'03:00', desc:'A组亚军 vs B组亚军',             venue:'SoFi Stadium',          city:'洛杉矶' },
     { no:74,  d:'6月30日', t:'04:30', desc:'E组冠军 vs 最佳第三名（ABCDFH）',venue:'Gillette Stadium',       city:'波士顿' },
     { no:75,  d:'6月30日', t:'09:00', desc:'F组冠军 vs C组亚军',             venue:'Estadio BBVA',           city:'蒙特雷' },
     { no:76,  d:'6月30日', t:'01:00', desc:'C组冠军 vs F组亚军',             venue:'NRG Stadium',            city:'休斯顿' },

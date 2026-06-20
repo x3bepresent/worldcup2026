@@ -74,7 +74,7 @@ const VENUE_WEATHER = {
     away_note: '海地五后卫低位在湿热下后段专注度易降；Pierrot 支点 + Nazon 替补后手（60\' 前）',
     prediction_note: '模型因湿热略抬早段 xG 权重；若巴西 2-0 领先，下半场总球面可能回落',
     weather_factors: [
-      { label: '27°C · 21:00 ET 开球', impact: '体感偏高', detail: '北京时间 6月20日 09:00；夏夜仍有余热' },
+      { label: '27°C · 20:30 ET 开球', impact: '体感偏高', detail: '北京时间 6月20日 08:30；夏夜仍有余热' },
       { label: '湿度 68%', impact: '中', detail: '湿热叠加，替补深度与换人节奏关键' },
       { label: '降雨概率 30%', impact: '低-中', detail: '对流雨可能，开放式球场无顶棚' },
     ],

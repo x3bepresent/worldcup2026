@@ -11,7 +11,7 @@ const MATCH_DATA = new Function(raw + '\nreturn MATCH_DATA;')();
 const EXPECT = {
   m32: { venue: 'Lumen Field', beijing: '03:00', city: 'Seattle' },
   m30: { venue: 'Gillette Stadium', beijing: '06:00', city: 'Boston' },
-  m29: { venue: 'Lincoln Financial Field', beijing: '09:00', city: 'Philadelphia' },
+  m29: { venue: 'Lincoln Financial Field', beijing: '08:30', city: 'Philadelphia' },
   m31: { venue: "Levi's Stadium", beijing: '11:00', city: 'Santa Clara' },
 };
 

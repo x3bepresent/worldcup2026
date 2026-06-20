@@ -616,19 +616,19 @@ function computeWinOutlook(xgHome, xgAway, marketTier, totalsLine, favName, winS
   const marginFail = stateLabel ? pct(favMargin1) : cover.half_lose_pct;
 
   const fairLineNote = cover.total_xg != null
-    ? '模型公允总进球约 ' + (cover.fair_totals_line ?? estimateFairTotalsLine(xgHome, xgAway).fair_line)
+    ? '模型自估总进球约 ' + (cover.fair_totals_line ?? estimateFairTotalsLine(xgHome, xgAway).fair_line)
     : null;
 
   let readout = '';
   if (stateLabel) {
     readout = stateLabel + '：仍取胜约 ' + pct(favWin) + '%。';
-    readout += ' 对着外界总进球参考 ' + formatTotalsLineLabel(line).replace(' 球线', '')
-      + '，模型终场多于该参考的概率约 ' + totalsHighPct + '%。';
+    readout += ' 对着' + formatPublicTotalsLine(line)
+      + '，模型超线概率约 ' + totalsHighPct + '%。';
     if (th.fullMin >= 3 && stateLabel) {
       readout += ' 常见收尾：2-0 约 ' + pct(favFinal20) + '%（部分达标，非全达标）；'
         + ' 3-0+ 约 ' + pct(favFinal30Plus) + '%（对着 ' + th.fullLabel + ' 全达标）。';
     } else if (pct(favMargin2TotalLe2) >= 10) {
-      readout += ' 常见收尾如 2-0（部分扩大；相对外界总进球参考仍偏少）。';
+      readout += ' 常见 2-0 收尾（相对' + formatPublicTotalsLine(line) + '仍偏小比分）。';
     } else if (topPath) {
       readout += ' 若再扩大，偏「' + topPath.label + '」。';
     }
@@ -639,10 +639,10 @@ function computeWinOutlook(xgHome, xgAway, marketTier, totalsLine, favName, winS
     if (th.halfLabel && marginHalf > 0) {
       readout += th.halfLabel + ' 约 ' + marginHalf + '%；';
     }
-    readout += '对着外界总进球参考 ' + formatTotalsLineLabel(line).replace(' 球线', '')
-      + '，模型终场多于该参考的概率约 ' + totalsHighPct + '%。';
+    readout += '对着' + formatPublicTotalsLine(line)
+      + '，模型超线概率约 ' + totalsHighPct + '%。';
     if (pct(favMargin2TotalLe2) >= 12) {
-      readout += ' 注意 2-0 类：净胜扩大但总进球仍可能低于外界参考。';
+      readout += ' 2-0 类：净胜扩大但总进球仍可能低于' + formatPublicTotalsLine(line) + '。';
     }
   }
 
@@ -666,7 +666,7 @@ function computeWinOutlook(xgHome, xgAway, marketTier, totalsLine, favName, winS
     final_3_0_plus_pct: stateLabel && th.fullMin >= 3 ? pct(favFinal30Plus) : null,
     margin_fail_note: '常见：仅赢 1 球（如 1-0、2-1）',
     totals_line: line,
-    totals_line_cn: formatTotalsLineLabel(line),
+    totals_line_cn: formatPublicTotalsLine(line),
     fair_totals_line: fairTotals.fair_line,
     model_total_xg: fairTotals.total_xg,
     totals_line_gap: totalsLineGap,
@@ -956,8 +956,8 @@ function enrichActualResultForReview(match) {
 }
 
 const GOAL_EFF_TAGS = {
-  high: { key: 'high_scoring', label: '大球', color: '#D95F6A', bg: 'rgba(217,95,106,0.12)' },
-  low: { key: 'low_scoring', label: '小球', color: '#7BB8D4', bg: 'rgba(123,184,212,0.1)' },
+  high: { key: 'high_scoring', label: '大比分', color: '#D95F6A', bg: 'rgba(217,95,106,0.12)' },
+  low: { key: 'low_scoring', label: '小比分', color: '#7BB8D4', bg: 'rgba(123,184,212,0.1)' },
   three: { key: 'three_goals', label: '3球', color: '#C8A96E', bg: 'rgba(200,169,110,0.1)' },
   fav_burst: { key: 'fav_burst', label: '热门爆发', color: '#FF6B35', bg: 'rgba(255,107,53,0.1)' },
   dog_bloom: { key: 'dog_bloom', label: '弱队开花', color: '#E8B84B', bg: 'rgba(232,184,75,0.12)' },
@@ -966,8 +966,14 @@ const GOAL_EFF_TAGS = {
   fav_quiet: { key: 'fav_quiet', label: '热门哑火', color: '#6B8FA3', bg: 'rgba(107,143,163,0.12)' },
   iron: { key: 'iron', label: '铁局', color: '#888899', bg: 'rgba(136,136,153,0.1)' },
   even_xg: { key: 'even_xg', label: 'xG接近', color: '#5BBF8A', bg: 'rgba(91,191,138,0.08)' },
-  lean_high: { key: 'lean_high', label: '大球倾向', color: '#D95F6A', bg: 'rgba(217,95,106,0.1)' },
-  lean_low: { key: 'lean_low', label: '小球倾向', color: '#7BB8D4', bg: 'rgba(123,184,212,0.1)' },
+  lean_high: { key: 'lean_high', label: '大比分预测', color: '#D95F6A', bg: 'rgba(217,95,106,0.1)' },
+  lean_low: { key: 'lean_low', label: '小比分预测', color: '#7BB8D4', bg: 'rgba(123,184,212,0.1)' },
+  prevention_high: {
+    key: 'prevention_high',
+    label: '预防大比分',
+    color: '#E8A54B',
+    bg: 'rgba(232,165,75,0.12)',
+  },
   dog_threat: { key: 'dog_threat', label: '弱队有球', color: '#E8B84B', bg: 'rgba(232,184,75,0.1)' },
   dog_weak: { key: 'dog_weak', label: '弱队难进球', color: '#6B8FA3', bg: 'rgba(107,143,163,0.1)' },
   fav_dominant: { key: 'fav_dominant', label: 'xG碾压', color: '#FF6B35', bg: 'rgba(255,107,53,0.08)' },
@@ -976,8 +982,9 @@ const GOAL_EFF_TAGS = {
 function splitGoalEffSides(match) {
   const p = match?.prediction;
   if (!p || p.xg_home == null || p.xg_away == null) return null;
-  const xgH = p.xg_home;
-  const xgA = p.xg_away;
+  const xgPack = resolveGoalPathXg(match);
+  if (!xgPack) return null;
+  const { xgH, xgA, baselineH, baselineA, adjustedH, adjustedA, xg_note: xgNote } = xgPack;
   const xgT = Math.round((xgH + xgA) * 100) / 100;
   const gap = Math.round(Math.abs(xgH - xgA) * 100) / 100;
   const favSide = xgH >= xgA ? 'home' : 'away';
@@ -988,10 +995,215 @@ function splitGoalEffSides(match) {
     xgA,
     xgT,
     gap,
+    baselineH,
+    baselineA,
+    adjustedH,
+    adjustedA,
+    xgNote,
     favName: favSide === 'home' ? homeName : awayName,
     dogName: favSide === 'home' ? awayName : homeName,
     favXg: Math.max(xgH, xgA),
     dogXg: Math.min(xgH, xgA),
+  };
+}
+
+/**
+ * 进球路径 — 始终用 prediction 基准 xG（赛果反推规则的训练口径）
+ * 与进球氛围（调整后 xG）刻意分离；note 中并列展示调整后供对照。
+ */
+function resolveGoalPathXg(match) {
+  const p = match?.prediction;
+  if (!p || p.xg_home == null || p.xg_away == null) return null;
+  const baselineH = p.xg_home;
+  const baselineA = p.xg_away;
+  let adjustedH = baselineH;
+  let adjustedA = baselineA;
+  const dcCtx = match.depth_calibration?.display_summary?.xg_context
+    || match.display_summary?.xg_context;
+  if (dcCtx?.adjusted_home != null && dcCtx?.adjusted_away != null) {
+    adjustedH = dcCtx.adjusted_home;
+    adjustedA = dcCtx.adjusted_away;
+  } else {
+    const ctx = buildMatchContextAdjustments(match, baselineH, baselineA);
+    adjustedH = ctx.xg_home;
+    adjustedA = ctx.xg_away;
+  }
+  const sameAdj = adjustedH === baselineH && adjustedA === baselineA;
+  const xg_note = sameAdj
+    ? '结构推演用基准 xG ' + baselineH + '–' + baselineA
+    : '结构推演用基准 xG ' + baselineH + '–' + baselineA
+      + '（进球氛围用调整后 ' + adjustedH + '–' + adjustedA + '）';
+  return {
+    xgH: baselineH,
+    xgA: baselineA,
+    baselineH,
+    baselineA,
+    adjustedH,
+    adjustedA,
+    xg_note,
+  };
+}
+
+/** 路径大/小标签 — 回测校准：≥60% / ≤40% 才出具（32 场样本约 100% 命中） */
+const PATH_LEAN_HIGH_PCT = 60;
+const PATH_LEAN_LOW_PCT = 40;
+
+function classifyGoalPathLean(probMeetGuess, prob2Minus, prob4Plus, pathScores) {
+  const meet = Number(probMeetGuess) || 50;
+  const p2 = Number(prob2Minus) || 50;
+  const p4 = Number(prob4Plus) || 0;
+  const openW = (pathScores.fav_burst || 0) + (pathScores.dog_bloom || 0) + (pathScores.open || 0);
+  const lowW = pathScores.low || 0;
+
+  if (meet >= PATH_LEAN_HIGH_PCT) {
+    return { lean: 'high', lean_cn: '大比分猜测', lean_confidence: meet };
+  }
+  if (meet <= PATH_LEAN_LOW_PCT) {
+    return { lean: 'low', lean_cn: '小比分猜测', lean_confidence: Math.round((100 - meet) * 10) / 10 };
+  }
+  if (p2 >= 55 && p4 >= 22) {
+    return { lean: 'split', lean_cn: '大/小比分分裂', lean_confidence: null };
+  }
+  if (openW >= 35 && lowW >= 30) {
+    return { lean: 'split', lean_cn: '大/小比分分裂', lean_confidence: null };
+  }
+  return { lean: 'neutral', lean_cn: '中性', lean_confidence: null };
+}
+
+function getAtmosphereContextFromMatch(match) {
+  const tv = match.depth_calibration?.display_summary?.totals_view
+    || match.depth_calibration?.totals_view;
+  const outlook = tv?.totals_outlook;
+  const level = outlook?.level || 'neutral';
+  return {
+    outlook,
+    expected_total: tv?.expected_total,
+    dull: outlook?.lean_side === 'dull' || level.includes('low'),
+    exciting: outlook?.lean_side === 'exciting' || level.includes('high'),
+    neutral: level === 'neutral' || outlook?.lean_side === 'neutral',
+    headline: outlook?.pill_cn || outlook?.headline_cn || outlook?.label_cn,
+    over_pct: outlook?.over_pct,
+  };
+}
+
+function hasPreventionStructure(pathType, tagKeys, prob4Plus, pathScores) {
+  const openW = (pathScores.fav_burst || 0) + (pathScores.dog_bloom || 0) + (pathScores.open || 0);
+  const lowW = pathScores.low || 0;
+  if (pathType === 'dog_bloom' || pathType === 'open') return true;
+  if (tagKeys.includes('dog_threat') || tagKeys.includes('dog_bloom')) return true;
+  if (prob4Plus >= 22 && pathType !== 'low') return true;
+  if (openW >= lowW + 20 && pathType !== 'low') return true;
+  return false;
+}
+
+function buildLiveWatchItems(favName, dogName, pathType, tagKeys) {
+  const items = [
+    {
+      key: 'dog_goal',
+      label: dogName + '进球',
+      detail: '弱队破门 → 预防大比分抬升；对照弱队开花/对攻路径',
+      severity: 'high',
+    },
+    {
+      key: 'dog_eff',
+      label: '弱队效率≥1.0',
+      detail: '弱队射门兑现超预期 → 上调大比分留意（样本：效率≥1.2 易凑 3 球+）',
+      severity: 'high',
+    },
+    {
+      key: 'fav_only',
+      label: '仅' + favName + '进球',
+      detail: '热门单榜领先、弱队仍无球 → 仍按进球氛围小比分，不必因路径升级',
+      severity: 'calm',
+    },
+  ];
+  if (pathType === 'dog_bloom' || tagKeys.includes('dog_bloom')) {
+    items.push({
+      key: 'bloom_score',
+      label: '弱队开花比分',
+      detail: '留意 2-2、1-2 等弱队 contribution 抬高总进球',
+      severity: 'mid',
+    });
+  }
+  if (pathType === 'fav_burst') {
+    items.push({
+      key: 'fav_burst_live',
+      label: '热门连击',
+      detail: '2-0、3-0 且弱队无球 → 总球仍可偏小比分',
+      severity: 'calm',
+    });
+  }
+  return items;
+}
+
+/**
+ * 路径 lean 展示：prediction（与氛围同向预测）vs prevention（氛围偏闷时的岔路预警）
+ */
+function resolveGoalPathLeanPresentation(opts) {
+  const {
+    baseLean, atmosphere, pathType, pathLabel, prob4Plus, pathScores, tagKeys,
+    favName, dogName,
+  } = opts;
+  const atm = atmosphere || {};
+  const base = baseLean.lean;
+  let lean = base;
+  let lean_cn = baseLean.lean_cn;
+  let lean_mode = 'neutral';
+  let prevention_reason_cn = null;
+  let atmosphere_link_cn = null;
+  let modules_aligned = false;
+  let live_watch = [];
+
+  const structRisk = hasPreventionStructure(pathType, tagKeys, prob4Plus, pathScores);
+
+  if (base === 'high') {
+    if (atm.exciting) {
+      lean_mode = 'prediction';
+      lean_cn = '大比分预测';
+      modules_aligned = true;
+      atmosphere_link_cn = '与进球氛围同向——可参考权重提高';
+    } else {
+      lean = 'prevention_high';
+      lean_mode = 'prevention';
+      lean_cn = '预防大比分';
+      prevention_reason_cn = '基准 xG 结构偏多球，但进球氛围偏闷'
+        + (atm.expected_total != null ? '（预测约 ' + atm.expected_total + '）' : '')
+        + '——作岔路预警，非默认剧本';
+    }
+  } else if (base === 'low') {
+    lean_mode = 'prediction';
+    lean_cn = '小比分预测';
+    if (atm.dull) {
+      modules_aligned = true;
+      atmosphere_link_cn = '与进球氛围同向——可参考权重提高';
+    } else if (atm.exciting) {
+      atmosphere_link_cn = '路径偏小比分、氛围偏精彩——以氛围为主，结构作辅助';
+    }
+  } else if (base === 'split') {
+    lean_mode = 'neutral';
+    lean_cn = '大/小比分分裂';
+  } else if (atm.dull && structRisk) {
+    lean = 'prevention_high';
+    lean_mode = 'prevention';
+    lean_cn = '预防大比分';
+    prevention_reason_cn = '进球氛围偏闷'
+      + (atm.expected_total != null ? '（预测约 ' + atm.expected_total + '）' : '')
+      + '，但「' + pathLabel + '」结构需防弱队开花抬高总进球';
+  }
+
+  if (lean_mode === 'prevention' || (atm.dull && structRisk && base === 'neutral')) {
+    live_watch = buildLiveWatchItems(favName, dogName, pathType, tagKeys);
+  }
+
+  return {
+    lean,
+    lean_cn,
+    lean_mode,
+    lean_confidence: baseLean.lean_confidence,
+    prevention_reason_cn,
+    atmosphere_link_cn,
+    modules_aligned,
+    live_watch,
   };
 }
 
@@ -1024,36 +1236,39 @@ const GOAL_PATH_PREVIEW_META = {
   fav_burst: {
     label: '热门爆发',
     example: '2-0 / 3-0 / 4-1',
-    note: '样本：热门效率≥1.5 时大球率 100%；弱队 xG≈1.0 但只进 1 球时也常见此路径。',
+    note: '样本：热门效率≥1.5 时高比分常见；弱队 xG≈1.0 但只进 1 球时也常见此路径。',
   },
   dog_bloom: {
     label: '弱队开花',
     example: '2-2 / 1-3 / 3-1',
-    note: '样本：弱队效率≥1.2 时 71% 大球；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。',
+    note: '样本：弱队效率≥1.2 时 71% 总进球≥3；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。',
   },
   open: {
     label: '对攻/open',
     example: '2-2 / 4-2 / 3-2',
-    note: '双方 xG 均有进球预期，任一方效率达标即可凑 4 球。',
+    note: '双方 xG 均有进球预期，任一方效率达标即可凑出 4 球。',
   },
   low: {
-    label: '铁局/小球',
+    label: '铁局/小比分',
     example: '1-0 / 1-1 / 0-0',
-    note: '样本：弱队效率<0.6 尚无大球；xG 差≥1.0 时大球率 0%。',
+    note: '样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。',
   },
 };
 
-/** 赛前进球路径预估 — 对照已赛样本规则 + 泊松总进球概率 */
+/** 赛前进球路径预估 — 基准 xG + 已赛样本结构规则；大/小标签仅强信号 */
 function buildGoalEfficiencyPreview(match) {
   const sides = splitGoalEffSides(match);
   if (!sides) return null;
-  const { xgH, xgA, xgT, gap, favName, dogName, favXg, dogXg } = sides;
+  const {
+    xgH, xgA, xgT, gap, favName, dogName, favXg, dogXg, baselineH, baselineA, xgNote,
+  } = sides;
 
   const totalsLine = match.depth_calibration?.totals_line ?? 2.5;
+  const guessN = formatMarketGoalsInteger(totalsLine);
   const probOverLine = probTotalsOver(xgH, xgA, totalsLine);
+  const probMeetGuess = probTotalsAtLeast(xgH, xgA, guessN);
   const prob4Plus = probTotalsAtLeast(xgH, xgA, 4);
-  const prob3Plus = probTotalsAtLeast(xgH, xgA, 3);
-  const prob2Minus = Math.round((100 - prob3Plus) * 10) / 10;
+  const prob2Minus = Math.round((100 - probTotalsAtLeast(xgH, xgA, 3)) * 10) / 10;
 
   const pathScores = scoreGoalPathPreview(favXg, dogXg, gap, xgT);
   const pathTotal = Object.values(pathScores).reduce((a, b) => a + b, 0);
@@ -1069,36 +1284,43 @@ function buildGoalEfficiencyPreview(match) {
   const pathType = primary.key;
   const pathLabel = primary.label;
 
-  let lean = 'neutral';
-  let leanCn = '中性';
-  const bigSignal = prob4Plus >= 20
-    || (pathScores.fav_burst + pathScores.dog_bloom + pathScores.open) > pathScores.low + 35;
-  const smallSignal = prob2Minus >= 50 || pathScores.low >= 38;
-  if (bigSignal && !smallSignal) {
-    lean = 'high';
-    leanCn = '大球倾向';
-  } else if (smallSignal && !bigSignal) {
-    lean = 'low';
-    leanCn = '小球倾向';
-  } else if (smallSignal && bigSignal) {
-    lean = 'split';
-    leanCn = '大/小分裂';
-  }
+  const leanPack = classifyGoalPathLean(probMeetGuess, prob2Minus, prob4Plus, pathScores);
+  const atmosphere = getAtmosphereContextFromMatch(match);
 
   const tags = [];
-  if (lean === 'high') tags.push(GOAL_EFF_TAGS.lean_high);
-  else if (lean === 'low') tags.push(GOAL_EFF_TAGS.lean_low);
   if (dogXg >= 0.78 && gap >= 0.5 && gap < 1.0) tags.push(GOAL_EFF_TAGS.dog_threat);
   if (dogXg < 0.65) tags.push(GOAL_EFF_TAGS.dog_weak);
   if (gap >= 1.0) tags.push(GOAL_EFF_TAGS.fav_dominant);
   if (gap < 0.4) tags.push(GOAL_EFF_TAGS.even_xg);
   const primaryTag = GOAL_EFF_TAGS[primary.key === 'low' ? 'low' : primary.key];
   if (primaryTag && !tags.some(t => t.key === primaryTag.key)) tags.push(primaryTag);
+  const tagKeys = tags.map(t => t.key);
+
+  const pres = resolveGoalPathLeanPresentation({
+    baseLean: leanPack,
+    atmosphere,
+    pathType,
+    pathLabel,
+    prob4Plus,
+    pathScores,
+    tagKeys,
+    favName,
+    dogName,
+  });
+  const lean = pres.lean;
+  const leanCn = pres.lean_cn;
+
+  if (pres.lean_mode === 'prediction') {
+    if (lean === 'high') tags.unshift(GOAL_EFF_TAGS.lean_high);
+    else if (lean === 'low') tags.unshift(GOAL_EFF_TAGS.lean_low);
+  } else if (pres.lean_mode === 'prevention') {
+    tags.unshift(GOAL_EFF_TAGS.prevention_high);
+  }
 
   const watchNotes = [];
-  if (dogXg >= 0.75) watchNotes.push('临场弱队若上半场效率≥1.0 → 上调大球/对攻权重');
-  if (dogXg < 0.65) watchNotes.push('弱队 xG 偏低——样本内哑火则总进球难破 3');
-  if (gap >= 1.0) watchNotes.push('xG 差≥1.0——样本 4 场均为小球，勿因热门盲目追大球');
+  if (dogXg >= 0.75) watchNotes.push('弱队上半场效率≥1.0 → 关注弱队开花路径');
+  if (dogXg < 0.65) watchNotes.push('弱队 xG 偏低——哑火则难破 3 球');
+  if (gap >= 1.0) watchNotes.push('xG 差≥1.0——样本多为小比分');
   if (favXg >= 1.5 && dogXg >= 0.9 && gap <= 0.65) {
     watchNotes.push('结构类似 m12/m26——热门爆发路径需防 4+ 球');
   }
@@ -1106,11 +1328,34 @@ function buildGoalEfficiencyPreview(match) {
   let patternNote = primary.note;
   if (match.lineup?.confirmed) patternNote += ' 已纳入官方首发变阵对 xG 的修正。';
 
+  let leanNote = null;
+  if (pres.lean_mode === 'prevention') {
+    leanNote = pres.prevention_reason_cn;
+  } else if (lean === 'neutral' && pres.live_watch?.length) {
+    leanNote = '总进球大/小标签未达强信号（基准 xG · 需≥' + PATH_LEAN_HIGH_PCT + '% 或 ≤' + PATH_LEAN_LOW_PCT
+      + '%）；下方为预防性观察项，默认仍以进球氛围为准。';
+  } else if (lean === 'neutral') {
+    leanNote = '总进球大/小标签未达强信号（基准 xG · 需≥' + PATH_LEAN_HIGH_PCT + '% 或 ≤' + PATH_LEAN_LOW_PCT
+      + '%），以下以进球故事线为主。';
+  } else if (lean === 'split') {
+    leanNote = '大/小概率接近或路径互斥——不作单边大/小标签。';
+  } else if (pres.atmosphere_link_cn) {
+    leanNote = pres.atmosphere_link_cn;
+  }
+
+  const probLineSame = Math.abs(probMeetGuess - probOverLine) < 0.05
+    && Number(totalsLine) % 1 === 0.5;
+  const probSummaryCn = probLineSame
+    ? '超 ' + totalsLine + ' 约 ' + probOverLine + '% · ≤2球 ' + prob2Minus + '%'
+    : '至少 ' + guessN + ' 球约 ' + probMeetGuess + '% · 超 ' + totalsLine + ' 约 ' + probOverLine
+      + '% · ≤2球 ' + prob2Minus + '%';
+
   const summary_cn =
-    '【赛前预估】xG 总 ' + xgT + '（差 ' + gap + '）· 热门 ' + favName + ' ' + favXg
-    + ' · 弱队 ' + dogName + ' ' + dogXg + ' → ' + leanCn + '（主路径「' + pathLabel + '」约 '
-    + primary.prob_pct + '%）。泊松：≥' + totalsLine + ' 球约 ' + probOverLine + '% · ≥4 球约 '
-    + prob4Plus + '% · ≤2 球约 ' + prob2Minus + '%。' + patternNote;
+    '【路径·基准 xG】合计 ' + xgT + ' · ' + favName + ' ' + favXg + ' / ' + dogName + ' ' + dogXg
+    + ' → 主路径「' + pathLabel + '」约 ' + primary.prob_pct + '%'
+    + (pres.lean_mode !== 'neutral' ? ' · ' + leanCn : '')
+    + '。 ' + probSummaryCn + '。'
+    + patternNote;
 
   return {
     mode: 'preview',
@@ -1118,6 +1363,10 @@ function buildGoalEfficiencyPreview(match) {
     xg_gap: gap,
     xg_home: xgH,
     xg_away: xgA,
+    xg_baseline_home: baselineH,
+    xg_baseline_away: baselineA,
+    xg_note: xgNote,
+    lean_note: leanNote,
     fav_name: favName,
     dog_name: dogName,
     fav_xg: favXg,
@@ -1126,7 +1375,15 @@ function buildGoalEfficiencyPreview(match) {
     path_label: pathLabel,
     lean,
     lean_cn: leanCn,
+    lean_mode: pres.lean_mode,
+    lean_confidence: pres.lean_confidence,
+    prevention_reason_cn: pres.prevention_reason_cn,
+    atmosphere_link_cn: pres.atmosphere_link_cn,
+    modules_aligned: pres.modules_aligned,
+    live_watch: pres.live_watch,
     prob_over_line: probOverLine,
+    prob_meet_guess: probMeetGuess,
+    guess_n: guessN,
     prob_4_plus: prob4Plus,
     prob_2_or_less: prob2Minus,
     totals_line: totalsLine,
@@ -1136,7 +1393,8 @@ function buildGoalEfficiencyPreview(match) {
     pattern_note: patternNote,
     summary_cn,
     in_mid_band: xgT >= 2.0 && xgT <= 3.0,
-    sample_note: '规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27 红牌局）+ 本场泊松',
+    sample_note: '结构规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27）· 大/小标签用基准 xG 泊松 ≥'
+      + PATH_LEAN_HIGH_PCT + '%/≤' + PATH_LEAN_LOW_PCT + '%',
   };
 }
 
@@ -1201,13 +1459,13 @@ function buildGoalEfficiencyReview(match) {
 
   let patternNote = '';
   if (favEff >= 1.5 && goals >= 4) {
-    patternNote = '热门效率≥1.5 且总进球≥4——样本内大球硬路径（热门打穿）。';
+    patternNote = '热门效率≥1.5 且总进球≥4——样本内高比分硬路径（热门打穿）。';
   } else if (dogEff >= 1.2 && goals >= 4) {
-    patternNote = '弱队超额兑现（效率≥1.2）——弱队进球超预期，易凑出大球。';
+    patternNote = '弱队超额兑现（效率≥1.2）——弱队进球超预期，易凑出 3 球以上。';
   } else if (dogEff < 0.6 && favEff < 1.0) {
-    patternNote = '双方效率均低——总进球难起，铁局/小球概率高。';
+    patternNote = '双方效率均低——总进球难起，铁局/小比分概率高。';
   } else if (dogEff < 0.6) {
-    patternNote = '弱队哑火（效率<0.6）——样本内尚无大球先例。';
+    patternNote = '弱队哑火（效率<0.6）——样本内总进球难破 3。';
   } else if (favEff < 1.0 && goals <= 2) {
     patternNote = '热门未达 xG 预期——小比分收场常见。';
   } else if (goals === 3) {
@@ -1216,12 +1474,34 @@ function buildGoalEfficiencyReview(match) {
     patternNote = '对照赛前 xG 总 ' + xgT + '，实际 ' + goals + ' 球（' + (diff >= 0 ? '+' : '') + diff + '）。';
   }
 
+  const rc = ar.red_card_context;
+  let redCardNote = '';
+  if (rc) {
+    if (rc.count >= 2 && rc.team_role === 'trailing') {
+      redCardNote =
+        '【红牌】弱队双红且已大败——结构性偏离，不宜纳入中间带样本（参照 m27）。';
+      pathType = 'red_card_outlier';
+      pathLabel = '红牌极端局';
+    } else if (rc.count === 1 && rc.team_role === 'leading') {
+      redCardNote =
+        '【红牌】领先方单红、10 人守满下半场——总球≤2 常见，弱队效率可<1.2 仍小胜（参照 m31）。';
+      if (goals <= 2 && pathType === 'mixed') {
+        pathType = 'low';
+        pathLabel = '铁局/小比分';
+      }
+    } else if (rc.count === 1 && rc.team_role === 'trailing') {
+      redCardNote =
+        '【红牌】落后方单红——人数劣势叠比分压力，热门穿盘概率上升（样本待补）。';
+    }
+    if (redCardNote) patternNote = (patternNote + ' ' + redCardNote).trim();
+  }
+
   const summary_cn =
     '赛前 xG 总 ' + xgT + '（差 ' + gap + '）· 热门 ' + favName + ' ' + favXg + '→' + favGoals
     + '（效率 ' + favEff + '）· 弱队 ' + dogName + ' ' + dogXg + '→' + dogGoals
     + '（效率 ' + dogEff + '）→ ' + pathLabel + '。' + patternNote;
 
-  return {
+  const out = {
     xg_total: xgT,
     xg_gap: gap,
     xg_home: xgH,
@@ -1243,6 +1523,9 @@ function buildGoalEfficiencyReview(match) {
     summary_cn,
     in_mid_band: xgT >= 2.0 && xgT <= 3.0,
   };
+  if (rc) out.red_card_context = rc;
+  if (redCardNote) out.red_card_note = redCardNote;
+  return out;
 }
 
 /** 赛后复盘：对照赛前读场要点（赛果归档时写入 depth_calibration.preview_replay） */
@@ -1700,11 +1983,11 @@ function computeSpreadCover(xgHome, xgAway, marketTierHome, maxGoals) {
   const totalsLine3 = 3;
   const over25Pct = pct(over25);
   const over3Pct = pct(over3);
-  let totalsLeanCn = over25Pct >= 58 ? '2.5 球参考偏多进球（约 ' + over25Pct + '%）'
-    : over25Pct <= 42 ? '2.5 球参考偏少进球（约 ' + (100 - over25Pct) + '%）'
-      : '2.5 球参考接近均衡';
-  if (over3Pct >= 55) totalsLeanCn += '；3 球参考亦偏多';
-  else if (over3Pct <= 40) totalsLeanCn += '；3 球参考偏少';
+  let totalsLeanCn = over25Pct >= 58 ? '超 2.5 偏大比分（约 ' + over25Pct + '%）'
+    : over25Pct <= 42 ? '超 2.5 偏小比分（约 ' + (100 - over25Pct) + '%）'
+      : '超 2.5 接近均衡';
+  if (over3Pct >= 55) totalsLeanCn += '；4球+偏多';
+  else if (over3Pct <= 40) totalsLeanCn += '；4球+偏少';
 
   return {
     top3_scores: top3,
@@ -1736,10 +2019,11 @@ function computeSpreadCover(xgHome, xgAway, marketTierHome, maxGoals) {
   };
 }
 
+/** 内部：亚盘总进球分隔线 vs 模型 fair_line */
 const TOTALS_SIGNAL = {
-  aligned: { cn: '进球参考贴合', color: '#5BBF8A', desc: '赛前进球参考与 xG 总进球预期基本一致。' },
-  high_line: { cn: '进球参考偏高', color: '#C8A96E', desc: '赛前进球参考高于 xG 隐含，模型倾向偏少进球方向。' },
-  low_line: { cn: '进球参考偏低', color: '#7BB8D4', desc: '赛前进球参考低于 xG 隐含，模型倾向偏多进球方向。' },
+  aligned: { cn: '线与模型贴合', color: '#5BBF8A', desc: '总进球参考与合理值接近。' },
+  high_line: { cn: '参考偏高', color: '#C8A96E', desc: '总进球参考高于合理值，模型偏小比分。' },
+  low_line: { cn: '参考偏低', color: '#7BB8D4', desc: '总进球参考低于合理值，模型偏大比分。' },
 };
 
 /** 泊松 — 全场总进球 ≥ minGoals（整数门槛，用于进球氛围） */
@@ -1808,7 +2092,8 @@ function estimateFairTotalsLine(xgHome, xgAway) {
 }
 
 /**
- * 大小球盘面推演（内部录入 market line + 两侧指数）
+ * 大小球盘面推演
+ * @param raw.totals_line — 内部录入：亚盘总进球分隔线（超线=大比分 · 不足=小比分），每场在 scripts/handicap-data-*.js 单独指定
  * totals_over_index / totals_under_index：内部相对热度，>1 表示该侧更「贵」
  */
 function computeTotalsAnalysis(xgHome, xgAway, raw) {
@@ -1819,7 +2104,7 @@ function computeTotalsAnalysis(xgHome, xgAway, raw) {
   const overIdx = Number(raw.totals_over_index ?? overOdds ?? 1);
   const underIdx = Number(raw.totals_under_index ?? underOdds ?? 1);
   const publicOver = raw.totals_public_over_pct ?? 50;
-  const overPct = probTotalsAtLeast(xgHome, xgAway, marketGoalsInt);
+  const overPct = probTotalsOver(xgHome, xgAway, line);
   const underPct = Math.round((100 - overPct) * 10) / 10;
   const fair = estimateFairTotalsLine(xgHome, xgAway);
   const lineGap = Math.round((line - fair.fair_line) * 100) / 100;
@@ -1830,33 +2115,33 @@ function computeTotalsAnalysis(xgHome, xgAway, raw) {
 
   const meta = TOTALS_SIGNAL[signal] || TOTALS_SIGNAL.aligned;
   const lineLabel = formatTotalsLineLabel(line);
-  const lineDisplay = lineLabel.replace(' 球线', '');
+  const guessCn = formatPublicTotalsLine(line);
 
-  let rationalCn = overPct >= 58 ? '模型略倾向多进球（' + lineDisplay + ' 约 ' + overPct + '%）'
-    : overPct <= 42 ? '模型略倾向少进球（' + lineDisplay + ' 约 ' + underPct + '%）'
-      : '模型在 ' + lineDisplay + ' 附近均衡';
+  let rationalCn = overPct >= 58 ? '模型略看大比分（超 ' + line + ' 约 ' + overPct + '%）'
+    : overPct <= 42 ? '模型略看小比分（超 ' + line + ' 约 ' + underPct + '% 难达）'
+      : '超 ' + line + ' 球接近五五开（约 ' + overPct + '%）';
 
   if (signal === 'high_line' && publicOver >= 58) {
-    rationalCn += '；进球参考偏高且舆论更看好多进球场面';
+    rationalCn += '；参考高于合理值';
   } else if (signal === 'high_line' && underIdx < overIdx - 0.05) {
-    rationalCn += '；进球参考偏高但模型仍偏少进球';
+    rationalCn += '；参考高于合理值但模型仍偏小比分';
   } else if (signal === 'low_line' && publicOver <= 42) {
-    rationalCn += '；进球参考偏低且舆论更看好少进球场面';
+    rationalCn += '；参考低于合理值';
   }
 
   const idxNote = overOdds != null && underOdds != null
-    ? '多进球侧 ' + overOdds + ' / 少进球侧 ' + underOdds
-      + (underIdx < overIdx - 0.05 ? ' · 少进球侧关注度更高' : overIdx > underIdx + 0.05 ? ' · 多进球侧关注度更高' : '')
+    ? '大比分侧 ' + overOdds + ' / 小比分侧 ' + underOdds
+      + (underIdx < overIdx - 0.05 ? ' · 小比分侧更热' : overIdx > underIdx + 0.05 ? ' · 大比分侧更热' : '')
       + (raw.totals_line_open != null && raw.totals_line_open !== line
-        ? ' · 盘口 ' + raw.totals_line_open + '→' + line : '')
+        ? ' · 录入 ' + raw.totals_line_open + '→' + line : '')
     : overIdx > underIdx + 0.03
-      ? '多进球侧参考权重相对更高'
+      ? '大比分侧权重略高'
       : underIdx > overIdx + 0.03
-        ? '少进球侧参考权重相对更高'
-        : '多/少进球两侧参考接近均衡';
+        ? '小比分侧权重略高'
+        : '大/小比分两侧接近';
 
   const totalsOdds = overOdds != null && underOdds != null
-    ? { over: overOdds, under: underOdds, note: '多进球 ' + overOdds + ' · 少进球 ' + underOdds }
+    ? { over: overOdds, under: underOdds, note: '大比分 ' + overOdds + ' · 小比分 ' + underOdds }
     : null;
 
   return {
@@ -1879,7 +2164,7 @@ function computeTotalsAnalysis(xgHome, xgAway, raw) {
     index_note: idxNote,
     totals_odds: totalsOdds,
     rational_cn: rationalCn,
-    score_link_cn: '小比分（1-0/1-1）偏少进球 · 2-0/2-1 居中 · 3 球+ 偏多进球',
+    score_link_cn: '小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分',
   };
 }
 
@@ -1918,9 +2203,44 @@ function formatMarketGoalsInteger(marketLine) {
   return Math.ceil(n);
 }
 
+/** 对外展示：总进球参考线（内部来源为亚盘分隔线，不在页面写「亚盘」） */
+function formatPublicTotalsLine(marketLine) {
+  const l = Number(marketLine);
+  if (!Number.isFinite(l)) return '总进球参考 —';
+  return '总进球参考 ' + l;
+}
+
+function formatModelTotalsLine(fairLine) {
+  const f = Number(fairLine);
+  if (!Number.isFinite(f)) return '合理值 —';
+  return '合理值 ' + f;
+}
+
+function formatExpectedTotalsLine(expectedTotal) {
+  const e = Number(expectedTotal);
+  if (!Number.isFinite(e)) return '预测 —';
+  return '预测 ' + e;
+}
+
+function formatTotalsLineGap(gap) {
+  const g = Number(gap);
+  if (!Number.isFinite(g) || Math.abs(g) < 0.01) return null;
+  if (g > 0) return '高于合理值 ' + g;
+  return '低于合理值 ' + Math.abs(g);
+}
+
+/** @deprecated 别名，兼容旧调用 */
+function formatPublicGoalsGuess(marketLine) {
+  return formatPublicTotalsLine(marketLine);
+}
+
+function formatPublicGoalsGuessIntro(marketLine) {
+  return '对照' + formatPublicTotalsLine(marketLine) + '，看偏闷还是偏精彩';
+}
+
 /**
  * 总进球读场分级（回测校准：40–60% 不作倾向表态）
- * 对照外界「全场至少 N 球」预期，读沉闷 ↔ 精彩；不说百分比、不写大小球。
+ * 内部对照 raw.totals_line（亚盘总进球分隔线），读超线大比分 ↔ 不足小比分。
  */
 function classifyTotalsOutlook(overPct, lineGap, marketLine, fairLine) {
   const over = Number(overPct) || 50;
@@ -1928,8 +2248,8 @@ function classifyTotalsOutlook(overPct, lineGap, marketLine, fairLine) {
   const market = marketLine ?? 2.5;
   const fair = fairLine ?? 2.5;
   const marketGoalsInt = formatMarketGoalsInteger(market);
-  const marketGoalsCn = '全场至少 ' + marketGoalsInt + ' 球';
-  const section_intro_cn = '对照外界「' + marketGoalsCn + '」的赛前进球节奏，看模型更偏沉闷还是精彩';
+  const marketGoalsCn = formatPublicTotalsLine(market);
+  const section_intro_cn = formatPublicGoalsGuessIntro(market);
   const dist = Math.abs(over - 50);
 
   let level = 'neutral';
@@ -1962,32 +2282,32 @@ function classifyTotalsOutlook(overPct, lineGap, marketLine, fairLine) {
   let pill_cn = '';
 
   if (level === 'neutral') {
-    detail_cn = '模型推演：达到这一进球节奏与达不到的机率几乎各半，暂无明确倾向；精彩程度仍看临场发挥。';
+    detail_cn = '模型五五开，临场决定节奏。';
     headline_cn = '进球氛围：几乎五五开';
-    pill_cn = '沉闷与精彩几乎五五开，无明显倾向。';
+    pill_cn = '几乎五五开';
   } else if (level === 'mild_low') {
-    detail_cn = '模型略偏沉闷——全场进球节奏可能偏慢、难及这一预期；信号偏弱，仅供参考。';
-    headline_cn = '进球氛围：略倾向沉闷（弱信号）';
-    pill_cn = '略倾向沉闷（弱信号）。';
+    detail_cn = '略偏闷，模型更看小比分（难超线 ' + market + '）；弱信号。';
+    headline_cn = '进球氛围：略偏闷';
+    pill_cn = '略偏闷（弱）';
   } else if (level === 'mild_high') {
-    detail_cn = '模型略偏精彩——进球节奏有望接近或达到这一预期；信号偏弱，仅供参考。';
-    headline_cn = '进球氛围：略倾向精彩（弱信号）';
-    pill_cn = '略倾向精彩（弱信号）。';
+    detail_cn = '略偏精彩，较易超线走大比分；弱信号。';
+    headline_cn = '进球氛围：略偏精彩';
+    pill_cn = '略偏精彩（弱）';
   } else if (level === 'clear_low') {
-    detail_cn = '模型明显偏沉闷——低比分拉锯概率较高，难撑起这一进球节奏（模型自身预期约 ' + fair + ' 球）。';
+    detail_cn = '倾向沉闷——小比分概率高（' + formatModelTotalsLine(fair) + '）。';
     headline_cn = '进球氛围：倾向沉闷';
-    pill_cn = '倾向沉闷，精彩度可能一般。';
+    pill_cn = '倾向沉闷';
   } else {
-    detail_cn = '模型明显偏精彩——对攻与破门节奏相对可期，较易达到这一进球预期（模型自身预期约 ' + fair + ' 球）。';
+    detail_cn = '倾向精彩——较易打出大比分（' + formatModelTotalsLine(fair) + '）。';
     headline_cn = '进球氛围：倾向精彩';
     pill_cn = '倾向精彩，观赛更有看头。';
   }
 
   if (gap >= 1.0 && level === 'neutral') {
-    detail_cn += ' 注：外界这一进球预期高于模型自身判断，大众心理偏多进球，但模型仍接近五五开。';
-    headline_cn = '进球氛围：几乎五五开 · 外界预期偏高';
+    detail_cn += ' 参考高于合理值，但模型仍五五开。';
+    headline_cn = '进球氛围：五五开 · 参考偏高';
   } else if (gap >= 1.25) {
-    detail_cn += ' 须警惕「外界预期很精彩、实际偏闷」的落差。';
+    detail_cn += ' 警惕参考定得偏高、实际仍走小比分。';
   }
 
   return {
@@ -2285,7 +2605,7 @@ function buildCustomerReading(match, displaySummary, tier, tierGap, cover, adjus
     totals: totalsOutlook,
     draw_risk: drawRisk,
     pills,
-    methodology_note: '读场优先级：净胜走向 ＞ 进球氛围（对照外界「至少 N 球」预期，中性档几乎五五开；强信号才标沉闷/精彩）。仅供娱乐推演，非投注建议。',
+    methodology_note: '读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。',
   };
 }
 
@@ -2331,25 +2651,24 @@ function buildTotalsDisplay(totals, expectedTotalGoals) {
   const fairLine = totals.fair_line;
   let gapNote = '';
   if (gap >= 1.25) {
-    gapNote = ' · ⚠ 外界总进球参考比模型公允线高约 ' + gap + ' 球，大众心理明显偏多进球';
-  } else if (gap >= 1.0) {
-    gapNote = ' · ⚠ 外界参考比模型公允线高约 ' + gap + ' 球，偏高明显';
+    gapNote = ' · ⚠ ' + formatTotalsLineGap(gap);
   } else if (gap >= 0.5) {
-    gapNote = ' · 外界参考略高于模型公允线（+' + gap + ' 球）';
+    gapNote = ' · ' + formatTotalsLineGap(gap);
   } else if (gap <= -0.5) {
-    gapNote = ' · 外界参考低于模型公允线（' + gap + ' 球）';
+    gapNote = ' · ' + formatTotalsLineGap(gap);
   }
   let gapWarning = null;
   if (gap >= 1.25) {
     gapWarning = {
       level: 'high',
-      cn: '外界总进球参考 ' + marketLine + '，比模型公允线 ' + fairLine + ' 高约 ' + gap
-        + ' 球——大众心理明显偏多进球；模型对总进球仍宜谨慎表态',
+      cn: formatPublicTotalsLine(marketLine) + '，' + formatModelTotalsLine(fairLine)
+        + '——' + formatTotalsLineGap(gap) + '，模型宜谨慎',
     };
   } else if (gap >= 1.0) {
     gapWarning = {
       level: 'medium',
-      cn: '外界总进球参考 ' + marketLine + ' 比模型公允线 ' + fairLine + ' 高约 ' + gap + ' 球，偏高明显',
+      cn: formatPublicTotalsLine(marketLine) + ' vs ' + formatModelTotalsLine(fairLine)
+        + '，' + formatTotalsLineGap(gap),
     };
   }
 
@@ -2367,9 +2686,9 @@ function buildTotalsDisplay(totals, expectedTotalGoals) {
     over_pct: totals.over_pct,
     gap_warning: gapWarning,
     totals_outlook: totalsOutlook,
-    summary_cn: '模型 xG 合计约 ' + et + ' 球（公允参考约 ' + fairLine + '）'
-      + ' · 外界总进球参考 ' + marketLine
-      + (gap > 0.01 ? '，高出模型约 ' + gap + ' 球' : gap < -0.01 ? '，低于模型约 ' + Math.abs(gap) + ' 球' : '')
+    summary_cn: formatExpectedTotalsLine(et) + ' · ' + formatModelTotalsLine(fairLine)
+      + ' · ' + formatPublicTotalsLine(marketLine)
+      + (formatTotalsLineGap(gap) ? '（' + formatTotalsLineGap(gap) + '）' : '')
       + gapNote + ' · ' + modelLean,
   };
 }
@@ -3274,6 +3593,13 @@ const exportsObj = {
   buildPreviewPostMatchReview,
   buildGoalEfficiencyReview,
   buildGoalEfficiencyPreview,
+  classifyGoalPathLean,
+  resolveGoalPathLeanPresentation,
+  getAtmosphereContextFromMatch,
+  buildLiveWatchItems,
+  resolveGoalPathXg,
+  PATH_LEAN_HIGH_PCT,
+  PATH_LEAN_LOW_PCT,
   enrichActualResultForReview,
   inferMatchArchetype,
   buildDepthCalibration,
@@ -3284,6 +3610,12 @@ const exportsObj = {
   probTotalsOver,
   probTotalsAtLeast,
   formatMarketGoalsInteger,
+  formatPublicTotalsLine,
+  formatModelTotalsLine,
+  formatExpectedTotalsLine,
+  formatTotalsLineGap,
+  formatPublicGoalsGuess,
+  formatPublicGoalsGuessIntro,
   classifySpreadOutlook,
   buildCustomerReading,
   buildGoalTimingDisplay,
