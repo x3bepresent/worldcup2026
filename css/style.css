@@ -902,6 +902,10 @@ footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--bor
 .results-stat-card--direction { border-top: 3px solid #7BB8D4; }
 .results-stat-card--top3 { border-top: 3px solid var(--gold); }
 .results-stat-card--goalEff { border-top: 3px solid #5BBF8A; }
+.results-stat-card--goalPath { border-top: 3px solid #5BBF8A; }
+.results-stat-card--atmosphere { border-top: 3px solid #9B7EDE; }
+.results-stat-card--muted { opacity: 0.72; }
+.results-stat-card--muted .results-stat-pct { color: var(--txt2); font-size: 1.35rem; }
 .results-stat-card-top {
   display: flex;
   align-items: center;

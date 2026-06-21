@@ -1,0 +1,1097 @@
+{
+  "stats": {
+    "n": 35,
+    "atmosphere": {
+      "strongLean": {
+        "hit": 1,
+        "n": 3,
+        "push": 1
+      },
+      "modelOver50": {
+        "hit": 7,
+        "n": 17,
+        "push": 2
+      },
+      "replayTagged": {
+        "hit": 13,
+        "n": 14
+      }
+    },
+    "path": {
+      "hit": 21,
+      "n": 35
+    },
+    "xgTotal": {
+      "hit": 29,
+      "n": 29,
+      "near": 6
+    }
+  },
+  "rows": [
+    {
+      "id": "m01",
+      "label": "Mexico vs South Africa",
+      "score": "2-0",
+      "total": 2,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": null,
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "混合路径",
+      "replayHits": [],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.6,
+        "diff": -0.6
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m02",
+      "label": "South Korea vs Czechia",
+      "score": "2-1",
+      "total": 3,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": null,
+      "previewPrimary": "弱队开花",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": false,
+      "actualPath": "混合路径",
+      "replayHits": [],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": null,
+        "note": "接近xG"
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m03",
+      "label": "Canada vs Bosnia and Herzegovina",
+      "score": "1-1",
+      "total": 2,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": null,
+      "previewPrimary": "弱队开花",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": false,
+      "actualPath": "混合路径",
+      "replayHits": [],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.57,
+        "diff": -0.57
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m04",
+      "label": "USA vs Paraguay",
+      "score": "4-1",
+      "total": 5,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": null,
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": false,
+      "actualPath": "热门爆发",
+      "replayHits": [],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 3.0500000000000003,
+        "diff": 1.95
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m05",
+      "label": "Qatar vs Switzerland",
+      "score": "1-1",
+      "total": 2,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": null,
+      "previewPrimary": "弱队开花",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": false,
+      "actualPath": "混合路径",
+      "replayHits": [],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.7,
+        "diff": -0.7
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m06",
+      "label": "Brazil vs Morocco",
+      "score": "1-1",
+      "total": 2,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": null,
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "混合路径",
+      "replayHits": [],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 3.0999999999999996,
+        "diff": -1.1
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m07",
+      "label": "Haiti vs Scotland",
+      "score": "0-1",
+      "total": 1,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": null,
+      "previewPrimary": "弱队开花",
+      "previewLean": "小比分预测",
+      "previewMode": "prediction",
+      "pathHit": false,
+      "actualPath": "混合路径",
+      "replayHits": [],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.27,
+        "diff": -1.27
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m08",
+      "label": "Australia vs Türkiye",
+      "score": "2-0",
+      "total": 2,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": null,
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "混合路径",
+      "replayHits": [],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.63,
+        "diff": -0.63
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m09",
+      "label": "Germany vs Curaçao",
+      "score": "7-1",
+      "total": 8,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": null,
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "预防大比分",
+      "previewMode": "prevention",
+      "pathHit": false,
+      "actualPath": "对攻兑现",
+      "replayHits": [],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 4.1,
+        "diff": 3.9
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m10",
+      "label": "Netherlands vs Japan",
+      "score": "2-2",
+      "total": 4,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": null,
+      "previewPrimary": "弱队开花",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "弱队开花",
+      "replayHits": [],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.9000000000000004,
+        "diff": 1.1
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m11",
+      "label": "Côte d'Ivoire vs Ecuador",
+      "score": "1-0",
+      "total": 1,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": null,
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "大/小比分分裂",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "混合路径",
+      "replayHits": [],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.9,
+        "diff": -1.9
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m12",
+      "label": "Sweden vs Tunisia",
+      "score": "5-1",
+      "total": 6,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": null,
+      "previewPrimary": "热门爆发",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "热门爆发",
+      "replayHits": [],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.6,
+        "diff": 3.4
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m14",
+      "label": "Spain vs Cape Verde",
+      "score": "0-0",
+      "total": 0,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": null,
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "混合路径",
+      "replayHits": [],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 3,
+        "diff": -3
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m16",
+      "label": "Belgium vs Egypt",
+      "score": "1-1",
+      "total": 2,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": null,
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "混合路径",
+      "replayHits": [],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.9,
+        "diff": -0.9
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m13",
+      "label": "Saudi Arabia vs Uruguay",
+      "score": "1-1",
+      "total": 2,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": null,
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "弱队开花",
+      "replayHits": [],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.6,
+        "diff": -0.6
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m15",
+      "label": "Iran vs New Zealand",
+      "score": "2-2",
+      "total": 4,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": null,
+      "previewPrimary": "弱队开花",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "对攻兑现",
+      "replayHits": [],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.4,
+        "diff": 1.6
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m17",
+      "label": "France vs Senegal",
+      "score": "3-1",
+      "total": 4,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": {
+        "hit": true,
+        "modelOver": true,
+        "actualOver": true,
+        "line": 2.75,
+        "over_pct": 60.8
+      },
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "预防大比分",
+      "previewMode": "prevention",
+      "pathHit": false,
+      "actualPath": "混合路径",
+      "replayHits": [
+        "净胜全达标方向一致",
+        "赛前进球氛围未强判（符合模型五五开读法）"
+      ],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 3.1999999999999997,
+        "diff": 0.8
+      },
+      "hasLine": true
+    },
+    {
+      "id": "m18",
+      "label": "Iraq vs Norway",
+      "score": "1-4",
+      "total": 5,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": {
+        "hit": false,
+        "modelOver": false,
+        "actualOver": true,
+        "line": 2.5,
+        "over_pct": 46.2
+      },
+      "previewPrimary": "弱队开花",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "对攻兑现",
+      "replayHits": [],
+      "replayMisses": [
+        "总进球尾部偏差大（赛前已标注无明显倾向）"
+      ],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.54,
+        "diff": 2.46
+      },
+      "hasLine": true
+    },
+    {
+      "id": "m19",
+      "label": "Argentina vs Algeria",
+      "score": "3-0",
+      "total": 3,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": {
+        "hit": null,
+        "modelOver": true
+      },
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "预防大比分",
+      "previewMode": "prevention",
+      "pathHit": true,
+      "actualPath": "混合路径",
+      "replayHits": [
+        "赛前进球氛围未强判（符合模型五五开读法）"
+      ],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": null,
+        "note": "接近xG"
+      },
+      "hasLine": true
+    },
+    {
+      "id": "m20",
+      "label": "Austria vs Jordan",
+      "score": "3-1",
+      "total": 4,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": {
+        "hit": false,
+        "modelOver": false,
+        "actualOver": true,
+        "line": 2.5,
+        "over_pct": 42.6
+      },
+      "previewPrimary": "弱队开花",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "对攻兑现",
+      "replayHits": [
+        "赛前进球氛围未强判（符合模型五五开读法）"
+      ],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.4,
+        "diff": 1.6
+      },
+      "hasLine": true
+    },
+    {
+      "id": "m23",
+      "label": "Portugal vs Congo DR",
+      "score": "1-1",
+      "total": 2,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": {
+        "hit": true,
+        "modelOver": false,
+        "actualOver": false,
+        "line": 2.75,
+        "over_pct": 49.8
+      },
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "弱队开花",
+      "replayHits": [
+        "赛前进球氛围未强判（符合模型五五开读法）"
+      ],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.87,
+        "diff": -0.87
+      },
+      "hasLine": true
+    },
+    {
+      "id": "m22",
+      "label": "England vs Croatia",
+      "score": "4-2",
+      "total": 6,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": {
+        "hit": false,
+        "modelOver": false,
+        "actualOver": true,
+        "line": 2.5,
+        "over_pct": 41
+      },
+      "previewPrimary": "对攻",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "对攻兑现",
+      "replayHits": [
+        "净胜全达标方向一致"
+      ],
+      "replayMisses": [
+        "总进球尾部偏差大（赛前已标注无明显倾向）"
+      ],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.8,
+        "diff": 3.2
+      },
+      "hasLine": true
+    },
+    {
+      "id": "m21",
+      "label": "Ghana vs Panama",
+      "score": "1-0",
+      "total": 1,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": {
+        "hit": true,
+        "modelOver": false,
+        "actualOver": false,
+        "line": 2.25,
+        "over_pct": 41.1
+      },
+      "previewPrimary": "弱队开花",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": false,
+      "actualPath": "混合路径",
+      "replayHits": [
+        "赛前进球氛围未强判（符合模型五五开读法）"
+      ],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.37,
+        "diff": -1.37
+      },
+      "hasLine": true
+    },
+    {
+      "id": "m24",
+      "label": "Uzbekistan vs Colombia",
+      "score": "1-3",
+      "total": 4,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": {
+        "hit": false,
+        "modelOver": false,
+        "actualOver": true,
+        "line": 2.5,
+        "over_pct": 38.5
+      },
+      "previewPrimary": "弱队开花",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": false,
+      "actualPath": "热门爆发",
+      "replayHits": [
+        "赛前进球氛围未强判（符合模型五五开读法）"
+      ],
+      "replayMisses": [
+        "净胜全达标超预期（模型曾偏谨慎）"
+      ],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.66,
+        "diff": 1.34
+      },
+      "hasLine": true
+    },
+    {
+      "id": "m25",
+      "label": "Czechia vs South Africa",
+      "score": "1-1",
+      "total": 2,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": {
+        "hit": true,
+        "modelOver": false,
+        "actualOver": false,
+        "line": 2.25,
+        "over_pct": 32.7
+      },
+      "previewPrimary": "弱队开花",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": false,
+      "actualPath": "混合路径",
+      "replayHits": [
+        "赛前进球氛围未强判（符合模型五五开读法）"
+      ],
+      "replayMisses": [
+        "净胜全达标未兑现"
+      ],
+      "xgDir": {
+        "hit": null,
+        "note": "接近xG"
+      },
+      "hasLine": true
+    },
+    {
+      "id": "m26",
+      "label": "Switzerland vs Bosnia and Herzegovina",
+      "score": "4-1",
+      "total": 5,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": {
+        "hit": false,
+        "modelOver": false,
+        "actualOver": true,
+        "line": 2.5,
+        "over_pct": 47.8
+      },
+      "previewPrimary": "热门爆发",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "热门爆发",
+      "replayHits": [
+        "净胜全达标方向一致"
+      ],
+      "replayMisses": [
+        "总进球尾部偏差大（赛前已标注无明显倾向）"
+      ],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.6,
+        "diff": 2.4
+      },
+      "hasLine": true
+    },
+    {
+      "id": "m27",
+      "label": "Canada vs Qatar",
+      "score": "6-0",
+      "total": 6,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": {
+        "hit": false,
+        "modelOver": false,
+        "actualOver": true,
+        "line": 2.5,
+        "over_pct": 36.4
+      },
+      "previewPrimary": "弱队开花",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": false,
+      "actualPath": "热门爆发",
+      "replayHits": [],
+      "replayMisses": [
+        "净胜全达标超预期（模型曾偏谨慎）",
+        "总进球尾部偏差大（赛前已标注无明显倾向）"
+      ],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.5,
+        "diff": 3.5
+      },
+      "hasLine": true
+    },
+    {
+      "id": "m28",
+      "label": "Mexico vs South Korea",
+      "score": "1-0",
+      "total": 1,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": {
+        "hit": true,
+        "modelOver": false,
+        "actualOver": false,
+        "line": 2.5,
+        "over_pct": 46.4
+      },
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "大/小比分分裂",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "混合路径",
+      "replayHits": [
+        "净胜全达标方向一致",
+        "赛前进球氛围未强判（符合模型五五开读法）"
+      ],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.84,
+        "diff": -1.84
+      },
+      "hasLine": true
+    },
+    {
+      "id": "m32",
+      "label": "USA vs Australia",
+      "score": "2-0",
+      "total": 2,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": {
+        "hit": true,
+        "modelOver": false,
+        "actualOver": false,
+        "line": 2.5,
+        "over_pct": 37.8
+      },
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "小比分预测",
+      "previewMode": "prediction",
+      "pathHit": true,
+      "actualPath": "混合路径",
+      "replayHits": [
+        "赛前进球氛围未强判（符合模型五五开读法）"
+      ],
+      "replayMisses": [
+        "净胜全达标超预期（模型曾偏谨慎）"
+      ],
+      "xgDir": {
+        "hit": null,
+        "note": "接近xG"
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m30",
+      "label": "Scotland vs Morocco",
+      "score": "0-1",
+      "total": 1,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": {
+        "hit": false,
+        "modelOver": true,
+        "actualOver": false,
+        "line": 2.5,
+        "over_pct": 51.8
+      },
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "混合路径",
+      "replayHits": [
+        "赛前进球氛围未强判（符合模型五五开读法）"
+      ],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.63,
+        "diff": -1.63
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m29",
+      "label": "Brazil vs Haiti",
+      "score": "3-0",
+      "total": 3,
+      "atm": {
+        "gradeable": true,
+        "verdict": "dull",
+        "hit": false,
+        "note": "偏闷→实际3球"
+      },
+      "atmPct": {
+        "hit": false,
+        "modelOver": false,
+        "actualOver": true,
+        "line": 2.5,
+        "over_pct": 21.2
+      },
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": false,
+      "actualPath": "热门爆发",
+      "replayHits": [
+        "进球氛围偏沉闷一致"
+      ],
+      "replayMisses": [
+        "净胜全达标超预期（模型曾偏谨慎）"
+      ],
+      "xgDir": {
+        "hit": null,
+        "note": "接近xG"
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m31",
+      "label": "Türkiye vs Paraguay",
+      "score": "0-1",
+      "total": 1,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": {
+        "hit": false,
+        "modelOver": true,
+        "actualOver": false,
+        "line": 2.5,
+        "over_pct": 51.1
+      },
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "大/小比分分裂",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "铁局/小比分",
+      "replayHits": [
+        "赛前进球氛围未强判（符合模型五五开读法）"
+      ],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.73,
+        "diff": -1.73
+      },
+      "hasLine": false
+    },
+    {
+      "id": "m35",
+      "label": "Netherlands vs Sweden",
+      "score": "5-1",
+      "total": 6,
+      "atm": {
+        "gradeable": true,
+        "verdict": "dull",
+        "hit": false,
+        "note": "偏闷→实际6球"
+      },
+      "atmPct": {
+        "hit": false,
+        "modelOver": false,
+        "actualOver": true,
+        "line": 2.75,
+        "over_pct": 21.4
+      },
+      "previewPrimary": "弱队开花",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": false,
+      "actualPath": "热门爆发",
+      "replayHits": [
+        "净胜全达标方向一致"
+      ],
+      "replayMisses": [
+        "模型偏沉闷但实际偏精彩"
+      ],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.77,
+        "diff": 3.23
+      },
+      "hasLine": true
+    },
+    {
+      "id": "m33",
+      "label": "Germany vs Côte d'Ivoire",
+      "score": "2-1",
+      "total": 3,
+      "atm": {
+        "gradeable": true,
+        "verdict": "dull",
+        "hit": null,
+        "note": "走水"
+      },
+      "atmPct": {
+        "hit": null,
+        "modelOver": false
+      },
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": true,
+      "actualPath": "混合路径",
+      "replayHits": [],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": null,
+        "note": "接近xG"
+      },
+      "hasLine": true
+    },
+    {
+      "id": "m34",
+      "label": "Ecuador vs Curaçao",
+      "score": "0-0",
+      "total": 0,
+      "atm": {
+        "gradeable": true,
+        "verdict": "dull",
+        "hit": true,
+        "note": "偏闷→实际0球"
+      },
+      "atmPct": {
+        "hit": true,
+        "modelOver": false,
+        "actualOver": false,
+        "line": 3,
+        "over_pct": 17.3
+      },
+      "previewPrimary": "弱队开花",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": false,
+      "actualPath": "混合路径",
+      "replayHits": [
+        "进球氛围偏沉闷一致"
+      ],
+      "replayMisses": [],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.37,
+        "diff": -2.37
+      },
+      "hasLine": true
+    }
+  ]
+}

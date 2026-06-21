@@ -6,7 +6,6 @@
 const fs = require('fs');
 const path = require('path');
 const { venueWeather } = require('./venue-weather-day10');
-const { getMystic } = require('./mystic-data-day10');
 const { getTeamNews } = require('./injuries-rumors-day10');
 const { getReferee } = require('./referee-data-day10');
 const { buildCoachAnalysis, getUpsetAlert, MATCH_COACH_KEYS } = require('./coach-data-day10');
@@ -87,9 +86,7 @@ for (const m of MATCH_DATA.todayMatches || []) {
   if (!ids.includes(m.id)) continue;
   ensureInsightFactors(m);
   const w = venueWeather(m.id);
-  const my = getMystic(m.id);
   if (w) m.weather = w;
-  if (my) m.mystic = my;
   applyTeamNews(m);
   applyCoachAndUpset(m);
   applyReferee(m);
@@ -110,10 +107,12 @@ const filtered = dedupeNews(MATCH_DATA.breakingNews || [])
   .filter(n => !/Day 10 伤病|教练分析|气候预报/.test(n.text || ''));
 
 filtered.unshift(
+  { tag: 'LINEUP', text: '✅ FIFA 官方首发 m36 · 突 5-3-2 无Khazri · 日 3-4-3 无Mitoma/Endo', time: '官方确认' },
   { tag: 'LINEUP', text: '✅ FIFA 官方首发 m33 · 德 3-4-3 Kimmich中卫 · 科特 4-3-3 Pépé/Wahi替补', time: '官方确认' },
   { tag: 'UPDATE', text: '✅ Day 10 教练分析&冷门预警已纳入（m33–m36）', time: '6月21日' },
+  { tag: 'INJURY', text: '✅ m36 首发确认：Khazri/Msakni/Laidouni 未进名单 · Mitoma/Endo 未进名单 · Kubo OUT', time: '6月21日' },
   { tag: 'INJURY', text: '✅ m33 首发确认：Rüdiger/Goretzka 替补 · Pépé/Wahi/N\'Dicka 替补 · Karl OUT', time: '6月21日' },
-  { tag: 'UPDATE', text: '✅ Day 10 气候预报+灵力分析已更新（m33–m36）', time: '6月21日' },
+  { tag: 'UPDATE', text: '✅ Day 10 气候预报已更新（m33–m36）', time: '6月21日' },
 );
 
 for (const r of refLines) {
@@ -131,7 +130,7 @@ try {
   const LIVE_DATA = loadData(LIVE_PATH, 'LIVE_DATA');
   LIVE_DATA.lastUpdated = TS;
   LIVE_DATA.injuries = {
-    note: 'Day 10 · m33 首发已确认 · Kubo OUT(m36) · Timber OUT(m35) · Pépé/Wahi 替补(m33)',
+    note: 'Day 10 · m36 首发已确认 · Khazri/Mitoma/Endo 未进名单 · Kubo OUT · m33 Pépé/Wahi 替补 · Timber OUT(m35)',
   };
   fs.writeFileSync(
     LIVE_PATH,

@@ -54,6 +54,16 @@ function pickDepthCalibration(m) {
     public_summary_note: dc.public_summary_note || null,
     preview_replay: dc.preview_replay || null,
     goal_efficiency: dc.goal_efficiency || null,
+    goal_efficiency_preview: dc.goal_efficiency_preview
+      ? {
+          path_type: dc.goal_efficiency_preview.path_type,
+          path_label: dc.goal_efficiency_preview.path_label,
+          lean: dc.goal_efficiency_preview.lean,
+          lean_cn: dc.goal_efficiency_preview.lean_cn,
+          lean_mode: dc.goal_efficiency_preview.lean_mode,
+          summary_cn: dc.goal_efficiency_preview.summary_cn,
+        }
+      : null,
   };
   const dsSlim = {};
   if (ds.baseline_label) dsSlim.baseline_label = ds.baseline_label;

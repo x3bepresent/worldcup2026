@@ -1,7 +1,7 @@
 // Auto-synced by scripts/enrich-day10.js
-// Updated: 2026-06-20T19:23:03+08:00
+// Updated: 2026-06-21T03:22:07+08:00
 const LIVE_DATA = {
-  "lastUpdated": "2026-06-20T19:23:03+08:00",
+  "lastUpdated": "2026-06-21T03:22:07+08:00",
   "todayDate": "2026-06-21",
   "fixtures": [
     {
@@ -17,18 +17,18 @@ const LIVE_DATA = {
       "id": "m33",
       "home": "Germany",
       "away": "Côte d'Ivoire",
-      "status": "NS",
-      "home_score": null,
-      "away_score": null,
+      "status": "FT",
+      "home_score": 2,
+      "away_score": 1,
       "group": "E"
     },
     {
       "id": "m34",
       "home": "Ecuador",
       "away": "Curaçao",
-      "status": "NS",
-      "home_score": null,
-      "away_score": null,
+      "status": "FT",
+      "home_score": 0,
+      "away_score": 0,
       "group": "E"
     },
     {
@@ -76,6 +76,20 @@ const LIVE_DATA = {
       "away": "Sweden",
       "score": "5-1",
       "group": "F"
+    },
+    {
+      "id": "m33",
+      "home": "Germany",
+      "away": "Côte d'Ivoire",
+      "score": "2-1",
+      "group": "E"
+    },
+    {
+      "id": "m34",
+      "home": "Ecuador",
+      "away": "Curaçao",
+      "score": "0-0",
+      "group": "E"
     }
   ],
   "standings": [
@@ -172,6 +186,52 @@ const LIVE_DATA = {
       ]
     },
     {
+      "group": "E",
+      "label": "E组 · 第2轮后",
+      "table": [
+        {
+          "team": "Germany",
+          "pts": 6,
+          "p": 2,
+          "w": 2,
+          "d": 0,
+          "l": 0,
+          "gf": 9,
+          "ga": 2
+        },
+        {
+          "team": "Côte d'Ivoire",
+          "pts": 3,
+          "p": 2,
+          "w": 1,
+          "d": 0,
+          "l": 1,
+          "gf": 2,
+          "ga": 2
+        },
+        {
+          "team": "Ecuador",
+          "pts": 1,
+          "p": 2,
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 0,
+          "ga": 1
+        },
+        {
+          "team": "Curaçao",
+          "pts": 1,
+          "p": 2,
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 1,
+          "ga": 7
+        }
+      ]
+    },
+    {
       "group": "F",
       "label": "F组 · 第2轮（部分）",
       "table": [
@@ -219,7 +279,7 @@ const LIVE_DATA = {
     }
   ],
   "injuries": {
-    "note": "Day 10 · m33 首发已确认 · Kubo OUT(m36) · Timber OUT(m35) · Pépé/Wahi 替补(m33)"
+    "note": "Day 10 · m36 首发已确认 · Khazri/Mitoma/Endo 未进名单 · Kubo OUT · m33 Pépé/Wahi 替补 · Timber OUT(m35)"
   },
   "yesterdayResults": [
     {

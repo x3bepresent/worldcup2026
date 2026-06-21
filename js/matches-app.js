@@ -883,13 +883,31 @@ function statPctClass(pct) {
   return 'results-stat-pct--low';
 }
 
+function computeAtmosphereStrongHit(m) {
+  const ms = getMarketSnapshot(m);
+  const r = m.actualResult;
+  if (!ms.totals_show_lean || r?.home_score == null) return null;
+  const total = r.home_score + r.away_score;
+  const line = ms.totals_line ?? 2.5;
+  if (Math.abs(total - line) < 0.01) return null;
+  const dull = ms.totals_lean_side === 'dull' || (ms.totals_level || '').includes('low');
+  const bright = ms.totals_lean_side === 'bright' || ms.totals_lean_side === 'exciting'
+    || (ms.totals_level || '').includes('high');
+  if (dull) return total < line;
+  if (bright) return total > line;
+  return null;
+}
+
 function computeResultsAggregateStats(matches) {
   let dirHit = 0;
   let dirN = 0;
   let top3Hit = 0;
   let top3N = 0;
-  let effHit = 0;
-  let effN = 0;
+  let pathHit = 0;
+  let pathN = 0;
+  let atmHit = 0;
+  let atmN = 0;
+  let atmNeutral = 0;
 
   for (const m of matches || []) {
     const v = computePredictionVerdict(m);
@@ -900,15 +918,26 @@ function computeResultsAggregateStats(matches) {
     if (v.anyTop3Hit) top3Hit += 1;
     const eff = computeGoalEfficiencyHit(m);
     if (eff != null) {
-      effN += 1;
-      if (eff) effHit += 1;
+      pathN += 1;
+      if (eff) pathHit += 1;
+    }
+    const atm = computeAtmosphereStrongHit(m);
+    if (atm === null) {
+      const ms = getMarketSnapshot(m);
+      if (!ms.totals_show_lean) atmNeutral += 1;
+    } else {
+      atmN += 1;
+      if (atm) atmHit += 1;
     }
   }
 
   return {
     direction: { hit: dirHit, n: dirN, pct: statPct(dirHit, dirN) },
     top3: { hit: top3Hit, n: top3N, pct: statPct(top3Hit, top3N) },
-    goalEff: { hit: effHit, n: effN, pct: statPct(effHit, effN) },
+    goalPath: { hit: pathHit, n: pathN, pct: statPct(pathHit, pathN) },
+    atmosphere: { hit: atmHit, n: atmN, pct: statPct(atmHit, atmN), neutral: atmNeutral },
+    /** @deprecated 与 goalPath 同口径，保留兼容 */
+    goalEff: { hit: pathHit, n: pathN, pct: statPct(pathHit, pathN) },
   };
 }
 
@@ -930,11 +959,21 @@ function renderResultsSummaryStats(stats) {
       data: stats.top3,
     },
     {
-      key: 'goalEff',
-      icon: '⚡',
-      label: '进球效率正确率',
-      sub: '赛前路径 vs 赛后兑现',
-      data: stats.goalEff,
+      key: 'goalPath',
+      icon: '🛤️',
+      label: '进球路径正确率',
+      sub: '赛前主路径 vs 赛后兑现',
+      data: stats.goalPath,
+    },
+    {
+      key: 'atmosphere',
+      icon: '🌡️',
+      label: '进球氛围正确率',
+      sub: stats.atmosphere.n
+        ? `仅强倾向场次 · ${stats.atmosphere.neutral} 场未强判`
+        : `暂无强判样本 · ${stats.atmosphere.neutral} 场五五开`,
+      data: stats.atmosphere.n ? stats.atmosphere : { hit: 0, n: 0, pct: 0 },
+      muted: !stats.atmosphere.n,
     },
   ];
 
@@ -946,14 +985,14 @@ function renderResultsSummaryStats(stats) {
       </div>
       <div class="results-stats-grid">
         ${cards.map(c => `
-          <div class="results-stat-card results-stat-card--${c.key}">
+          <div class="results-stat-card results-stat-card--${c.key}${c.muted ? ' results-stat-card--muted' : ''}">
             <div class="results-stat-card-top">
               <span class="results-stat-icon" aria-hidden="true">${c.icon}</span>
               <span class="results-stat-label">${c.label}</span>
             </div>
-            <div class="results-stat-pct ${statPctClass(c.data.pct)}">${c.data.pct}<span class="results-stat-unit">%</span></div>
+            <div class="results-stat-pct ${c.muted ? '' : statPctClass(c.data.pct)}">${c.muted ? '—' : `${c.data.pct}<span class="results-stat-unit">%</span>`}</div>
             <div class="results-stat-foot">
-              <span class="results-stat-hit">${c.data.hit} / ${c.data.n} 场命中</span>
+              <span class="results-stat-hit">${c.muted ? '样本不足' : `${c.data.hit} / ${c.data.n} 场命中`}</span>
               <span class="results-stat-sub">${c.sub}</span>
             </div>
           </div>`).join('')}
@@ -1003,6 +1042,7 @@ function computePredictionVerdict(m) {
     margin: computeMarginVerdict(m, ms, margin),
     goalTiming: computeGoalTimingVerdict(m),
     goalEfficiencyHit: computeGoalEfficiencyHit(m),
+    atmosphereHit: computeAtmosphereStrongHit(m),
   };
 }
 
@@ -1235,7 +1275,7 @@ function renderGoalTimingBlock(gt, homeName, awayName) {
         ${hasData ? '<span class="dc-gt-sample">历史统计</span>' : ''}
       </div>
       ${body}
-      <p class="dc-gt-disclaimer">${hasData ? (gt.disclaimer_cn || '') : '近30场进失球高峰时段；发截图后可更新。与灵力分析娱乐板块无关。'}</p>
+      <p class="dc-gt-disclaimer">${hasData ? (gt.disclaimer_cn || '') : '近30场进失球高峰时段；发截图后可更新。'}</p>
     </div>`;
 }
 
@@ -2035,6 +2075,8 @@ function renderScoreCompareHero(m, v) {
     verdictChip('Top3', v.anyTop3Hit),
     t.available ? verdictChip('总进球', t.hit, t.hit == null) : '',
     mg.available ? verdictChip('净胜', mg.hit, mg.hit == null) : '',
+    v.goalEfficiencyHit != null ? verdictChip('进球路径', v.goalEfficiencyHit) : '',
+    v.atmosphereHit != null ? verdictChip('进球氛围', v.atmosphereHit) : '',
     gt.available ? verdictChip('时段', gt.hit, gt.hit == null) : '',
   ].filter(Boolean).join('');
 
@@ -2090,6 +2132,18 @@ function renderMarketVerdictDetails(v) {
         <span class="pred-verdict-detail-label">净胜档</span>
         <span class="pred-verdict-detail-val">实际 ${mg.actual}${mg.modelPct != null ? ` · 模型全达标 ${mg.modelPct}%` : ''}</span>
         ${verdictBadgeOrNeutral(mg.hit, '一致', '偏差', '难判')}
+      </div>` : ''}
+      ${v.goalEfficiencyHit != null ? `
+      <div class="pred-verdict-detail">
+        <span class="pred-verdict-detail-label">进球路径</span>
+        <span class="pred-verdict-detail-val">赛前主路径 vs 赛后效率标签</span>
+        ${verdictBadge(v.goalEfficiencyHit, '一致', '偏差')}
+      </div>` : ''}
+      ${v.atmosphereHit != null ? `
+      <div class="pred-verdict-detail">
+        <span class="pred-verdict-detail-label">进球氛围</span>
+        <span class="pred-verdict-detail-val">强倾向 vs 实际总进球</span>
+        ${verdictBadge(v.atmosphereHit, '一致', '偏差')}
       </div>` : ''}
       ${gt.available ? `
       <div class="pred-verdict-detail pred-verdict-detail--stack">
@@ -2579,7 +2633,7 @@ function renderMatch(m) {
 
     ${renderGroupContextPanel(m.group_context)}
 
-    <!-- MYSTIC PANEL (outside grid, full width) -->
+    <!-- 灵力分析已下线（无回测口径，与 xG 推演重复） -->
     ${mysticPanel(m.mystic, m.home.name, m.away.name)}
   </div>`;
 }
@@ -2645,293 +2699,7 @@ function renderScenario(icon, title, body, favors, prob, bg, border, color) {
 
 // ── Mystic / Taoist Panel ─────────────────────────────────
 function mysticPanel(mx, homeName, awayName) {
-  if (!mx) return '';
-
-  const P = 'rgba(120,85,185,'; // purple shorthand
-  const elColors = {'木':'#5C9E78','火':'#C06848','土':'#A8853A','金':'#B0A070','水':'#5080A0'};
-  const elTag = el => {
-    const k = Object.keys(elColors).find(k => el.includes(k))||'土';
-    return `<span style="font-size:0.74rem;padding:0.1rem 0.4rem;border-radius:2px;background:${elColors[k]}22;color:${elColors[k]};border:1px solid ${elColors[k]}44;margin-right:3px;white-space:nowrap">${el}</span>`;
-  };
-  const elTags = s => String(s || '土').split('、').filter(Boolean).map(elTag).join('') || elTag('土');
-
-  const scoreBar = (name, score, color, verdict) => `
-    <div style="background:rgba(255,255,255,0.03);border:1px solid ${P}0.15);border-radius:5px;padding:0.7rem">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.4rem">
-        <span style="font-size:0.92rem;font-weight:700">${name}</span>
-        <span style="font-size:0.84rem;font-weight:800;padding:0.1rem 0.5rem;border-radius:3px;
-          background:${color}22;color:${color};border:1px solid ${color}44">${verdict}</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:0.5rem">
-        <div style="flex:1;height:7px;background:rgba(255,255,255,0.07);border-radius:4px;overflow:hidden">
-          <div style="width:${score}%;height:100%;background:${color};border-radius:4px"></div>
-        </div>
-        <span style="font-size:0.9rem;font-weight:800;color:${color};width:38px;text-align:right">${score}/100</span>
-      </div>
-    </div>`;
-
-  const wx = mx.wuxing || {};
-  const homeWx = { colors: '—', elements: '土', advantage: '', disadvantage: '', ...wx.home, team: wx.home?.team || homeName };
-  const awayWx = { colors: '—', elements: '水', advantage: '', disadvantage: '', ...wx.away, team: wx.away?.team || awayName };
-  const hx = {
-    symbol: '☯',
-    name: '待卦',
-    number: 0,
-    upper: '—',
-    lower: '—',
-    quote: '赛前更新',
-    general: '开赛前结合阵容与时辰再行解读。',
-    advantage_team: homeName,
-    disadvantage_team: awayName,
-    match_nature: '待观察',
-    yellow_card_risk: '中',
-    yellow_card_reason: '赛前暂无执法数据',
-    scenarios: [],
-    ...(mx.hexagram || {}),
-  };
-  if (!Array.isArray(hx.scenarios)) hx.scenarios = [];
-  const scenarioItems = hx.scenarios.map(s =>
-    typeof s === 'string' ? { icon: '☯', label: '卦气', text: s } : s
-  );
-  const peakFromScenario = scenarioItems.find(s => /进球高峰/.test(s.label || ''));
-  const goalPeak = mx.goal_peak || (peakFromScenario ? {
-    title: '进球高峰 · 娱乐预测',
-    scope: 'single',
-    periods: peakFromScenario.text,
-    rationale: peakFromScenario.text,
-    note: '娱乐解读 · 纯玄学参考 · 非赛程或竞技推演',
-  } : null);
-  const goalPeakWindows = goalPeak?.windows?.length ? goalPeak.windows : null;
-  const scenarioGrid = goalPeak
-    ? scenarioItems.filter(s => !/进球高峰/.test(s.label || ''))
-    : scenarioItems;
-  const cardRiskColor = {'高':'#D95F6A','中':'#C8A96E','低':'#5BBF8A','低至中':'#7BAF8A'}[hx.yellow_card_risk]||'#888';
-  const verdictLabel = v => (v === '有利' ? '✅ 有利' : v === '不利' ? '❌ 不利' : '⏳ 待定');
-
-  return `
-  <div style="margin-top:0.5rem;border:1px solid ${P}0.3);border-radius:8px;overflow:hidden;
-    background:linear-gradient(160deg,rgba(28,18,52,0.45) 0%,rgba(14,10,28,0.55) 100%)">
-
-    <!-- 标题栏 -->
-    <div style="padding:0.85rem 1.25rem;border-bottom:1px solid ${P}0.2);
-      display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem">
-      <div style="display:flex;align-items:center;gap:0.75rem">
-        <span style="font-size:1.6rem">☯</span>
-        <div>
-          <div style="font-size:1rem;font-weight:800;color:#9B7DD4;letter-spacing:2px">灵力分析</div>
-          <div style="font-size:0.74rem;color:${P}0.55);letter-spacing:1px">道家五行 · 赛日八字 · 卦象推演 · 走势解读</div>
-        </div>
-      </div>
-      <span style="font-size:0.72rem;color:${P}0.35);letter-spacing:1px">文化解读 · 非竞技推演</span>
-    </div>
-
-    <div style="padding:1.25rem;display:flex;flex-direction:column;gap:1.25rem">
-
-      <!-- ① 赛日八字 -->
-      <div style="background:rgba(255,255,255,0.025);border:1px solid ${P}0.15);border-radius:6px;padding:1rem">
-        <div style="font-size:0.74rem;letter-spacing:2px;color:#9B7DD4;margin-bottom:0.4rem">
-          📅 赛日八字 · ${mx.date_bazi.day}（比赛当天，非打开页面的日期）
-        </div>
-        <div style="display:flex;gap:0.5rem;margin-bottom:0.75rem;flex-wrap:wrap">
-          ${['year','month','day'].map(k=>`
-            <div style="flex:1;min-width:72px;text-align:center;background:${P}0.08);border:1px solid ${P}0.2);border-radius:4px;padding:0.45rem">
-              <div style="font-size:1.05rem;font-weight:800;color:#9B7DD4">${mx.date_bazi[k].replace(/[年月日]/g,'')}</div>
-              <div style="font-size:0.66rem;color:${P}0.5);margin-top:2px">${{year:'年柱',month:'月柱',day:'日柱'}[k]}</div>
-            </div>`).join('')}
-          <div style="flex:1;min-width:72px;text-align:center;background:${elColors[mx.date_bazi.hour_home_element]||'#888'}18;
-            border:1px solid ${elColors[mx.date_bazi.hour_home_element]||'#888'}44;border-radius:4px;padding:0.45rem">
-            <div style="font-size:0.84rem;font-weight:700;color:${elColors[mx.date_bazi.hour_home_element]||'#9B7DD4'}">${mx.date_bazi.hour_home.split('（')[0]}</div>
-            <div style="font-size:0.66rem;color:${P}0.5);margin-top:2px">开球时辰 · ${mx.date_bazi.hour_home_element}属</div>
-          </div>
-        </div>
-        <div style="font-size:0.82rem;color:${P}0.65);line-height:1.7">${mx.date_bazi.day_summary}</div>
-      </div>
-
-      <!-- ② 五行优劣势 —— 核心对比 -->
-      <div>
-        <div style="font-size:0.76rem;letter-spacing:2px;color:#9B7DD4;margin-bottom:0.75rem">☯ 五行优劣势 · 队服配局分析</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem">
-          <!-- 主队 -->
-          <div style="border:2px solid ${wx.home.verdict_color}55;border-radius:6px;overflow:hidden">
-            <div style="padding:0.5rem 0.75rem;background:${wx.home.verdict_color}18;
-              display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid ${wx.home.verdict_color}33">
-              <span style="font-weight:800;font-size:0.98rem">${homeWx.team}</span>
-              <span style="font-size:0.9rem;font-weight:800;color:${homeWx.verdict_color||'#C8A96E'};
-                padding:0.1rem 0.5rem;border-radius:3px;background:${(homeWx.verdict_color||'#C8A96E')}20">
-                ${verdictLabel(homeWx.verdict)}
-              </span>
-            </div>
-            <div style="padding:0.65rem 0.75rem">
-              <div style="font-size:0.8rem;color:rgba(210,195,235,0.5);margin-bottom:0.3rem">队服：${homeWx.colors}</div>
-              <div style="margin-bottom:0.5rem">${elTags(homeWx.elements)}</div>
-              <div style="font-size:0.84rem;color:${homeWx.verdict_color||'#C8A96E'};font-weight:700;margin-bottom:0.4rem">${homeWx.wuxing_short||'—'}</div>
-              <div style="font-size:0.8rem;color:rgba(210,195,235,0.68);line-height:1.6;margin-bottom:0.5rem">${homeWx.reason||''}</div>
-              <div style="font-size:0.76rem;padding:0.35rem 0.5rem;background:${(homeWx.verdict_color||'#C8A96E')}15;
-                border-radius:3px;color:${homeWx.verdict_color||'#C8A96E'};line-height:1.62">
-                ${homeWx.verdict==='有利'?'↑ 加成：':homeWx.verdict==='不利'?'↓ 减分：':'◆ '}${homeWx.advantage||homeWx.disadvantage||'待更新'}
-              </div>
-            </div>
-          </div>
-          <!-- 客队 -->
-          <div style="border:2px solid ${(awayWx.verdict_color||'#C8A96E')}55;border-radius:6px;overflow:hidden">
-            <div style="padding:0.5rem 0.75rem;background:${(awayWx.verdict_color||'#C8A96E')}18;
-              display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid ${(awayWx.verdict_color||'#C8A96E')}33">
-              <span style="font-weight:800;font-size:0.98rem">${awayWx.team}</span>
-              <span style="font-size:0.9rem;font-weight:800;color:${awayWx.verdict_color||'#C8A96E'};
-                padding:0.1rem 0.5rem;border-radius:3px;background:${(awayWx.verdict_color||'#C8A96E')}20">
-                ${verdictLabel(awayWx.verdict)}
-              </span>
-            </div>
-            <div style="padding:0.65rem 0.75rem">
-              <div style="font-size:0.8rem;color:rgba(210,195,235,0.5);margin-bottom:0.3rem">队服：${awayWx.colors}</div>
-              <div style="margin-bottom:0.5rem">${elTags(awayWx.elements)}</div>
-              <div style="font-size:0.84rem;color:${awayWx.verdict_color||'#C8A96E'};font-weight:700;margin-bottom:0.4rem">${awayWx.wuxing_short||'—'}</div>
-              <div style="font-size:0.8rem;color:rgba(210,195,235,0.68);line-height:1.6;margin-bottom:0.5rem">${awayWx.reason||''}</div>
-              <div style="font-size:0.76rem;padding:0.35rem 0.5rem;background:${(awayWx.verdict_color||'#C8A96E')}15;
-                border-radius:3px;color:${awayWx.verdict_color||'#C8A96E'};line-height:1.62">
-                ${awayWx.verdict==='有利'?'↑ 加成：':awayWx.verdict==='不利'?'↓ 减分：':'◆ '}${awayWx.advantage||awayWx.disadvantage||'待更新'}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style="font-size:0.84rem;color:rgba(210,195,235,0.48);text-align:center;
-          padding:0.4rem;background:${P}0.06);border-radius:3px">
-          五行裁定：${wx.summary||'赛前更新'}
-        </div>
-      </div>
-
-      ${goalPeak ? `
-      <!-- ②½ 进球高峰 · 娱乐预测（纯玄学 · 宁缺毋滥） -->
-      <div style="background:linear-gradient(135deg,rgba(200,169,110,0.1) 0%,rgba(120,85,185,0.08) 100%);
-        border:1px solid rgba(200,169,110,0.35);border-radius:6px;padding:1rem;overflow:hidden">
-        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.65rem">
-          <div style="font-size:0.76rem;letter-spacing:2px;color:#C8A96E;font-weight:700">
-            ⏱ ${goalPeak.title || '进球高峰 · 娱乐预测'}
-          </div>
-          <span style="font-size:0.68rem;color:rgba(200,169,110,0.55);letter-spacing:0.5px">纯玄学 · 宁缺毋滥</span>
-        </div>
-        ${goalPeakWindows ? `
-        <div style="display:flex;flex-direction:column;gap:0.75rem;margin-bottom:0.75rem">
-          ${goalPeakWindows.map(w => `
-            <div style="padding:0.65rem 0.75rem;background:rgba(0,0,0,0.15);border-radius:4px;border-left:3px solid rgba(200,169,110,0.5)">
-              <div style="font-size:0.72rem;color:rgba(200,169,110,0.65);margin-bottom:0.25rem">${w.label || '时段'}</div>
-              <div style="font-size:1.1rem;font-weight:800;color:#E8D4A8;letter-spacing:0.5px">第 ${w.start_min}–${w.end_min} 分钟</div>
-              ${w.hex_reason ? `<div style="font-size:0.78rem;color:rgba(210,195,235,0.58);margin-top:0.35rem;line-height:1.55">卦：${w.hex_reason}</div>` : ''}
-              ${w.time_reason ? `<div style="font-size:0.78rem;color:rgba(210,195,235,0.58);line-height:1.55">时：${w.time_reason}</div>` : ''}
-            </div>`).join('')}
-        </div>` : `
-        <div style="font-size:1.15rem;font-weight:800;color:#E8D4A8;letter-spacing:0.5px;margin-bottom:0.65rem;line-height:1.45">
-          ${goalPeak.periods}
-        </div>`}
-        <div style="font-size:0.84rem;color:rgba(210,195,235,0.72);line-height:1.75;margin-bottom:0.5rem">
-          ${goalPeak.rationale}
-        </div>
-        ${goalPeak.logic_hint ? `<div style="font-size:0.74rem;color:rgba(200,169,110,0.42);line-height:1.6;margin-bottom:0.45rem">${goalPeak.logic_hint}</div>` : ''}
-        <div style="font-size:0.72rem;color:rgba(200,169,110,0.45);font-style:italic">
-          ${goalPeak.note || '娱乐解读 · 纯玄学参考 · 非赛程或竞技推演'}
-        </div>
-      </div>` : ''}
-
-      <!-- ③ 卦象推演 全情景分析 -->
-      <div style="background:rgba(255,255,255,0.025);border:1px solid ${P}0.15);border-radius:6px;overflow:hidden">
-
-        <!-- 卦象标题栏 -->
-        <div style="padding:0.85rem 1rem;border-bottom:1px solid ${P}0.12);display:flex;gap:1rem;align-items:center;flex-wrap:wrap">
-          <div style="text-align:center;min-width:64px">
-            <div style="font-size:2.2rem;line-height:1;color:#9B7DD4">${hx.symbol}</div>
-            <div style="font-size:0.9rem;font-weight:800;color:rgba(255,255,255,0.9);margin-top:2px">${hx.name}</div>
-            <div style="font-size:0.66rem;color:${P}0.45)">第${hx.number}卦 · ${hx.upper}/${hx.lower}</div>
-          </div>
-          <div style="flex:1;min-width:200px">
-            <div style="font-size:0.74rem;letter-spacing:2px;color:#9B7DD4;margin-bottom:0.35rem">🀄 卦象推演 · 全情景分析</div>
-            <div style="font-size:0.8rem;color:rgba(210,195,235,0.5);line-height:1.65;font-style:italic;margin-bottom:0.35rem">「${hx.quote.replace(/《.*?》：/,'')}」</div>
-            <div style="font-size:0.82rem;color:rgba(210,195,235,0.78);line-height:1.6">${hx.general}</div>
-            ${hx.hexagram_analysis ? `<div style="font-size:0.8rem;color:rgba(210,195,235,0.62);line-height:1.65;margin-top:0.5rem;padding:0.5rem 0.65rem;background:${P}0.06);border-radius:4px;border-left:2px solid ${P}0.35)">${hx.hexagram_analysis}</div>` : ''}
-          </div>
-        </div>
-
-        <div style="padding:1rem;display:flex;flex-direction:column;gap:0.85rem">
-
-          <!-- 有利/不利 + 比赛基本性质 -->
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0.5rem">
-            <div style="padding:0.5rem 0.6rem;background:rgba(91,191,138,0.07);border:1px solid rgba(91,191,138,0.22);border-radius:4px;text-align:center">
-              <div style="font-size:0.68rem;color:rgba(0,255,136,0.55);margin-bottom:0.2rem">卦象有利</div>
-              <div style="font-size:0.9rem;font-weight:800;color:#5BBF8A">✅ ${hx.advantage_team}</div>
-            </div>
-            <div style="padding:0.5rem 0.6rem;background:rgba(217,95,106,0.06);border:1px solid rgba(217,95,106,0.2);border-radius:4px;text-align:center">
-              <div style="font-size:0.68rem;color:rgba(255,68,85,0.55);margin-bottom:0.2rem">卦象不利</div>
-              <div style="font-size:0.9rem;font-weight:800;color:#D95F6A">❌ ${hx.disadvantage_team}</div>
-            </div>
-            <div style="padding:0.5rem 0.6rem;background:rgba(255,215,0,0.06);border:1px solid rgba(255,215,0,0.2);border-radius:4px;text-align:center">
-              <div style="font-size:0.68rem;color:rgba(255,215,0,0.55);margin-bottom:0.2rem">比赛性质</div>
-              <div style="font-size:0.86rem;font-weight:800;color:#C8A96E">${hx.match_nature}</div>
-            </div>
-            <div style="padding:0.5rem 0.6rem;background:${cardRiskColor}12;border:1px solid ${cardRiskColor}33;border-radius:4px;text-align:center">
-              <div style="font-size:0.68rem;color:${cardRiskColor}99;margin-bottom:0.2rem">🟨 纪律风险</div>
-              <div style="font-size:0.86rem;font-weight:800;color:${cardRiskColor}">${hx.yellow_card_risk}</div>
-            </div>
-          </div>
-
-          <!-- 卦气走势 · 分情景（纯卦象/气运，非竞技数据） -->
-          ${scenarioGrid.length ? `
-          <div style="font-size:0.74rem;letter-spacing:2px;color:${P}0.55);padding:0.35rem 0;border-bottom:1px solid ${P}0.12)">
-            ☯ 卦气走势 · 分情景
-            <span style="font-weight:400;letter-spacing:0.5px;color:${P}0.4);margin-left:0.35rem">（气运流转，与 xG/实力无关）</span>
-          </div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.45rem">
-            ${scenarioGrid.map(s=>`
-              <div style="padding:0.5rem 0.65rem;background:${P}0.04);border:1px solid ${P}0.1);border-radius:4px">
-                <div style="font-size:0.84rem;font-weight:700;margin-bottom:0.2rem">${s.icon} ${s.label}</div>
-                <div style="font-size:0.78rem;color:rgba(210,195,235,0.62);line-height:1.62">${s.text}</div>
-              </div>`).join('')}
-          </div>` : ''}
-
-          ${(hx.early_goal || hx.no_early_goal || hx.away_goal || hx.halftime || hx.extra_time) ? `
-          <div style="font-size:0.74rem;letter-spacing:2px;color:${P}0.6);padding-bottom:0.35rem;border-bottom:1px solid ${P}0.12)">
-            📌 卦象分情景 · 走势解析
-          </div>` : ''}
-
-          <!-- 情景1：强队先进球 -->
-          ${hx.early_goal ? renderScenario('🟢', hx.early_goal.scenario, hx.early_goal.prediction, hx.early_goal.favors, hx.early_goal.favors_prob, 'rgba(91,191,138,0.07)', 'rgba(91,191,138,0.22)', '#5BBF8A') : ''}
-
-          ${hx.no_early_goal ? renderScenario('🟡', hx.no_early_goal.scenario, hx.no_early_goal.prediction, hx.no_early_goal.favors, hx.no_early_goal.favors_prob, 'rgba(200,169,110,0.07)', 'rgba(200,169,110,0.22)', '#C8A96E') : ''}
-
-          ${hx.away_goal ? renderScenario('🔴', hx.away_goal.scenario, hx.away_goal.prediction, hx.away_goal.favors, hx.away_goal.favors_prob, 'rgba(217,95,106,0.07)', 'rgba(217,95,106,0.2)', '#ff8888') : ''}
-
-          ${hx.halftime ? renderScenario('⬜', hx.halftime.scenario, hx.halftime.prediction, hx.halftime.favors, hx.halftime.favors_prob, 'rgba(150,150,200,0.05)', 'rgba(150,150,200,0.15)', '#aaaadd') : ''}
-
-          ${hx.extra_time ? renderScenario('⏰', hx.extra_time.scenario, hx.extra_time.prediction, hx.extra_time.favors, hx.extra_time.favors_prob, 'rgba(100,150,255,0.05)', 'rgba(100,150,255,0.15)', '#88aaff') : ''}
-
-          <!-- 黄牌详细分析 -->
-          <div style="padding:0.6rem 0.75rem;background:${cardRiskColor}10;border:1px solid ${cardRiskColor}30;border-radius:4px;
-            display:flex;gap:0.6rem;align-items:flex-start">
-            <span style="font-size:1rem;flex-shrink:0">🟨</span>
-            <div>
-              <div style="font-size:0.8rem;font-weight:700;color:${cardRiskColor};margin-bottom:0.2rem">纪律详解 · 风险等级：${hx.yellow_card_risk}</div>
-              <div style="font-size:0.78rem;color:rgba(210,195,235,0.62);line-height:1.55">${hx.yellow_card_reason}</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ④ 灵力胜率总裁定 -->
-      <div style="background:${P}0.05);border:1px solid ${P}0.2);border-radius:6px;padding:1rem">
-        <div style="font-size:0.74rem;letter-spacing:2px;color:#9B7DD4;margin-bottom:0.75rem">⚖ 灵力胜率总裁定</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.85rem">
-          ${scoreBar(homeName, mx.home_score, '#9B7DD4', homeWx.verdict==='有利'?'天时有利':'逆势')}
-          ${scoreBar(awayName, mx.away_score, 'rgba(120,85,185,0.45)', awayWx.verdict==='有利'?'天时有利':'逆势')}
-        </div>
-        <div style="font-size:0.92rem;color:rgba(230,200,255,0.88);line-height:1.75;
-          padding:0.85rem 1rem;background:${P}0.08);border-radius:4px;border-left:3px solid #9B7DD4;margin-bottom:0.6rem">
-          ${mx.mystic_verdict}
-        </div>
-        ${mx.model_bridge ? `<div style="font-size:0.8rem;color:rgba(210,195,235,0.55);line-height:1.6;margin-bottom:0.6rem;padding:0.5rem 0.65rem;background:rgba(123,184,212,0.06);border-radius:4px;border:1px solid rgba(123,184,212,0.15)">↔ ${mx.model_bridge}</div>` : ''}
-        <div style="font-size:0.72rem;color:${P}0.3);line-height:1.62">${mx.disclaimer}</div>
-      </div>
-
-    </div>
-  </div>`;
+  return '';
 }
 
 // ── Group Standings (results page) ─────────────────────────

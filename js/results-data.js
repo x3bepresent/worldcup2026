@@ -2,7 +2,7 @@
 // Last updated: 2026-06-20T14:00:00+08:00
 const RESULTS_DATA = {
   "lastUpdated": "2026-06-20T14:00:00+08:00",
-  "syncSource": "FIFA 官方赛果 · Day 10 部分 (m35)",
+  "syncSource": "FIFA 官方赛果 · Day 10 部分 (m33–m35, m34)",
   "breakingNews": [
     {
       "tag": "OFFICIAL",
@@ -3881,7 +3881,7 @@ const RESULTS_DATA = {
           "C 组：头名 Brazil 4 分 · 次席 Morocco 同分（32强绑定组）",
           "G 组：头名 Iran 1 分 · 次席 New Zealand 同分（32强绑定组）",
           "H 组四队同积 1 分，形势极度开放",
-          "E 组 Germany 3 分领跑",
+          "E 组 Germany 6 分领跑",
           "F 组 Netherlands 4 分领跑",
           "I 组 Norway 3 分领跑"
         ],
@@ -5230,7 +5230,7 @@ const RESULTS_DATA = {
         },
         "cross_group_notes": [
           "F 组：头名 Netherlands 4 分 · 次席 Sweden 3 分（32强绑定组）",
-          "E 组：头名 Germany 3 分 · 次席 Côte d'Ivoire 同分（32强绑定组）",
+          "E 组：头名 Germany 6 分 · 次席 Côte d'Ivoire 3 分（32强绑定组）",
           "I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组）",
           "G 组四队同积 1 分，形势极度开放",
           "H 组四队同积 1 分，形势极度开放",
@@ -5248,7 +5248,7 @@ const RESULTS_DATA = {
         "scenarios": [
           "Scotland 若取胜：积分 6，C 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
           "Morocco 若取胜：积分 7，客场抢分将改变 C 组格局与淘汰赛半区。",
-          "平局：双方各 +1 分；在 F 组：头名 Netherlands 4 分 · 次席 Sweden 3 分（32强绑定组） · E 组：头名 Germany 3 分 · 次席 Côte d'Ivoire 同分（32强绑定组） · I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
+          "平局：双方各 +1 分；在 F 组：头名 Netherlands 4 分 · 次席 Sweden 3 分（32强绑定组） · E 组：头名 Germany 6 分 · 次席 Côte d'Ivoire 3 分（32强绑定组） · I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
           "头名/次席博弈：C 组头名 32 强打 F 组第 2（荷兰若夺 F 组头名则 32 强避荷兰），但 16 强进入 E2/I2 胜者通道；次席 32 强极可能直碰 F 组头名（荷兰），16 强路径反而更顺。强队末轮或存在「保次席避 16 强豪强」博弈。"
         ]
       },
@@ -6632,7 +6632,7 @@ const RESULTS_DATA = {
         },
         "cross_group_notes": [
           "F 组：头名 Netherlands 4 分 · 次席 Sweden 3 分（32强绑定组）",
-          "E 组：头名 Germany 3 分 · 次席 Côte d'Ivoire 同分（32强绑定组）",
+          "E 组：头名 Germany 6 分 · 次席 Côte d'Ivoire 3 分（32强绑定组）",
           "I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组）",
           "G 组四队同积 1 分，形势极度开放",
           "H 组四队同积 1 分，形势极度开放",
@@ -6650,7 +6650,7 @@ const RESULTS_DATA = {
         "scenarios": [
           "Brazil 若取胜：积分 7，C 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
           "Haiti 若取胜：积分 3，客场抢分将改变 C 组格局与淘汰赛半区。",
-          "平局：双方各 +1 分；在 F 组：头名 Netherlands 4 分 · 次席 Sweden 3 分（32强绑定组） · E 组：头名 Germany 3 分 · 次席 Côte d'Ivoire 同分（32强绑定组） · I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
+          "平局：双方各 +1 分；在 F 组：头名 Netherlands 4 分 · 次席 Sweden 3 分（32强绑定组） · E 组：头名 Germany 6 分 · 次席 Côte d'Ivoire 3 分（32强绑定组） · I 组：头名 Norway 3 分 · 次席 France 同分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
           "巴西路径提示：C 组第 1 → 32强 M76 打 F 组第 2（荷兰若 F 组头名则 32 强避荷兰）→ 16强 M91 进 E/I 次席走廊；C 组第 2 → 32强 M75 极可能碰 F 组第 1（荷兰）→ 16强 M90 进 A/B 次席走廊。末轮才存在「选半区」博弈，本轮须先抢分。",
           "头名/次席博弈：C 组头名 32 强打 F 组第 2（荷兰若夺 F 组头名则 32 强避荷兰），但 16 强进入 E2/I2 胜者通道；次席 32 强极可能直碰 F 组头名（荷兰），16 强路径反而更顺。强队末轮或存在「保次席避 16 强豪强」博弈。"
         ]
@@ -8071,7 +8071,7 @@ const RESULTS_DATA = {
           "C 组：头名 Brazil 4 分 · 次席 Morocco 同分（32强绑定组）",
           "G 组：头名 Iran 1 分 · 次席 New Zealand 同分（32强绑定组）",
           "H 组四队同积 1 分，形势极度开放",
-          "E 组 Germany 3 分领跑",
+          "E 组 Germany 6 分领跑",
           "F 组 Netherlands 4 分领跑",
           "I 组 Norway 3 分领跑"
         ],
@@ -8978,7 +8978,7 @@ const RESULTS_DATA = {
     {
       "id": "m35",
       "archived": true,
-      "archivedAt": "2026-06-20T19:04:05+08:00",
+      "archivedAt": "2026-06-21T01:58:56+08:00",
       "group": "F",
       "matchday": 2,
       "date_beijing": "6月21日",
@@ -9034,13 +9034,13 @@ const RESULTS_DATA = {
             "净胜全达标方向一致"
           ],
           "misses": [
-            "总进球尾部偏差大（赛前已标注无明显倾向）"
+            "模型偏沉闷但实际偏精彩"
           ],
-          "summary_cn": "命中：净胜全达标方向一致。 偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
+          "summary_cn": "命中：净胜全达标方向一致。 偏差：模型偏沉闷但实际偏精彩。",
           "totals_actual": 6,
           "totals_line": 2.75,
-          "spread_level": "likely",
-          "totals_level": "neutral"
+          "spread_level": "possible",
+          "totals_level": "clear_low"
         },
         "goal_efficiency": {
           "xg_total": 2.77,
@@ -9171,6 +9171,403 @@ const RESULTS_DATA = {
         "ht_score": "2-0",
         "first_goal_min": 5,
         "fifa_match_id": "400021472"
+      }
+    },
+    {
+      "id": "m33",
+      "archived": true,
+      "archivedAt": "2026-06-21T01:58:56+08:00",
+      "group": "E",
+      "matchday": 2,
+      "date_beijing": "6月21日",
+      "time_beijing": "04:00",
+      "time_beijing_full": "北京时间 6月21日 04:00",
+      "venue": "BMO Field",
+      "city": "Toronto, Canada",
+      "note": "E组第2轮 · 德国 vs 科特迪瓦 · 多伦多 · 已结束 2-1",
+      "home": {
+        "name": "Germany",
+        "iso": "de",
+        "rating": 86
+      },
+      "away": {
+        "name": "Côte d'Ivoire",
+        "iso": "ci",
+        "rating": 75
+      },
+      "prediction": {
+        "xg_home": 2.09,
+        "xg_away": 0.89,
+        "home_win": 67,
+        "draw": 19,
+        "away_win": 14,
+        "score": "2-0",
+        "confidence": 76,
+        "key_factor": "【赛后复盘】赛前主胜 67%/首推 2-0；实际 2-1。Kessié 30' 半场领先，Undav 68'+90+4' 替补双响逆转。方向：主胜命中；比分 2-1 在 Top3 内；总球 3（走 3 球线）。净胜：仅赢 1 球，-1/1.5 部分达标未全穿。路径：弱队先进球→热门险胜收工，非爆发路径。",
+        "base_home_win": 64.4,
+        "base_draw": 20,
+        "base_away_win": 15.3,
+        "depth_calibrated": true
+      },
+      "market_snapshot": {
+        "market_tier": 1.25,
+        "tier_label": "Germany 被看好 · 净胜约 1–2 球",
+        "totals_line": 3,
+        "over_pct": 29.6,
+        "fair_line": 2,
+        "line_gap": 1,
+        "full_cover_pct": 35.5,
+        "spread_level": "possible",
+        "spread_market_expect": "净胜≥2",
+        "totals_level": "clear_low",
+        "totals_show_lean": true,
+        "totals_lean_side": "dull"
+      },
+      "depth_calibration": {
+        "public_summary_note": "【推演概要】Germany · 压制局 · 低位反击。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 25.1%（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
+        "preview_replay": {
+          "actual_score": "2-1",
+          "ht_score": "0-1",
+          "hits": [],
+          "misses": [],
+          "summary_cn": "本场赛前读场以净胜档为主；实际 2-1，可对照上方要点复盘。",
+          "totals_actual": 3,
+          "totals_line": 3,
+          "spread_level": "possible",
+          "totals_level": "clear_low"
+        },
+        "goal_efficiency": {
+          "xg_total": 2.98,
+          "xg_gap": 1.2,
+          "xg_home": 2.09,
+          "xg_away": 0.89,
+          "fav_name": "Germany",
+          "dog_name": "Côte d'Ivoire",
+          "fav_xg": 2.09,
+          "dog_xg": 0.89,
+          "fav_goals": 2,
+          "dog_goals": 1,
+          "fav_eff": 0.96,
+          "dog_eff": 1.12,
+          "total_goals": 3,
+          "goal_diff_vs_xg": 0,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "three_goals",
+              "label": "3球",
+              "color": "#C8A96E",
+              "bg": "rgba(200,169,110,0.1)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "总进球 3 个——介于大/小之间，对照 xG 总偏差 +0。",
+          "summary_cn": "赛前 xG 总 2.98（差 1.2）· 热门 Germany 2.09→2（效率 0.96）· 弱队 Côte d'Ivoire 0.89→1（效率 1.12）→ 混合路径。总进球 3 个——介于大/小之间，对照 xG 总偏差 +0。",
+          "in_mid_band": true
+        },
+        "display_summary": {
+          "baseline_label": "全场预期（含伤病·气候）",
+          "goal_timing": {
+            "sample_label": "近30场",
+            "source_note": "user_screenshot_2026-06-20_ger_civ",
+            "home_name": "Germany",
+            "away_name": "Côte d'Ivoire",
+            "intervals": [
+              "1–15",
+              "16–30",
+              "31–45",
+              "46–60",
+              "61–75",
+              "76–90",
+              "90+"
+            ],
+            "peaks": {
+              "home_scored": {
+                "interval": "31–45",
+                "pct": 19
+              },
+              "home_conceded": {
+                "interval": "61–75",
+                "pct": 23
+              },
+              "away_scored": {
+                "interval": "31–45",
+                "pct": 22
+              },
+              "away_conceded": {
+                "interval": "31–45",
+                "pct": 27
+              }
+            },
+            "cross_insight": {
+              "has_cross": true,
+              "hits": [
+                {
+                  "type": "home_attack",
+                  "interval": "31–45",
+                  "color": "#7BB8D4",
+                  "title": "主队进攻有利窗口",
+                  "text": "31–45 分：Germany惯常进球高峰（19%）与Côte d'Ivoire惯常失球高峰（27%）重合——该时段主队破门相对更容易发生。"
+                }
+              ],
+              "cross_intervals": [
+                "31–45"
+              ],
+              "summary_cn": "主队进攻有利窗口 · 31–45 分"
+            },
+            "disclaimer_cn": "以上为两队近30场历史进球/失球时间段统计，供读场参考；非本场赛果预测，与灵力分析娱乐板块无关。"
+          },
+          "customer_reading": {
+            "spread": {
+              "show_cover": true,
+              "level": "possible",
+              "full_cover_pct": 35.5,
+              "market_expect_cn": "净胜≥2",
+              "pill_cn": "达标概率约 35.5% · 有达标可能"
+            },
+            "totals": {
+              "level": "clear_low",
+              "show_lean": true,
+              "lean_side": "dull",
+              "pill_cn": "倾向沉闷"
+            }
+          },
+          "totals_view": {
+            "over_pct": 29.6,
+            "market_line": 3,
+            "fair_line": 2,
+            "line_gap": 1
+          },
+          "totals_line": 3
+        }
+      },
+      "actualResult": {
+        "home_score": 2,
+        "away_score": 1,
+        "status": "FT",
+        "label": "全场结束",
+        "scorers": "Deniz UNDAV 68'; Deniz UNDAV 90'+4'; Franck KESSIE 30'",
+        "highlights": "BMO Field 多伦多 · Kessié 30' 首开 · Undav 替补双响（68'/90+4'）· Benítez 主裁 · 德国 6 分领跑 E 组",
+        "ht_score": "0-1",
+        "first_goal_min": 30,
+        "fifa_match_id": "400021469"
+      },
+      "lineup": {
+        "confirmed": true,
+        "formation": "3-4-3 / 4-3-3",
+        "impact": {
+          "xg_home_delta": 0.04,
+          "xg_away_delta": -0.06,
+          "summary": "FIFA 官方：德国 3-4-3（Kimmich 中卫 · Rüdiger/Goretzka 替补 · Nmecha 先发） vs 科特迪瓦 4-3-3（Pépé/Wahi/N'Dicka 替补 · Amad+Diomande 先发）——客队少了 Pépé 爆点、前场更年轻；主队变阵三中卫略抬肋部宽度。",
+          "xg_home_before": 2.05,
+          "xg_away_before": 0.95
+        }
+      }
+    },
+    {
+      "id": "m34",
+      "archived": true,
+      "archivedAt": "2026-06-21T01:58:56+08:00",
+      "group": "E",
+      "matchday": 2,
+      "date_beijing": "6月21日",
+      "time_beijing": "08:00",
+      "time_beijing_full": "北京时间 6月21日 08:00",
+      "venue": "Arrowhead Stadium",
+      "city": "Kansas City, USA",
+      "note": "E组第2轮 · 厄瓜多尔 vs 库拉索 · 堪萨斯城 · 已结束 0-0",
+      "home": {
+        "name": "Ecuador",
+        "iso": "ec",
+        "rating": 73
+      },
+      "away": {
+        "name": "Curaçao",
+        "iso": "cw",
+        "rating": 65
+      },
+      "prediction": {
+        "xg_home": 1.65,
+        "xg_away": 0.72,
+        "home_win": 55,
+        "draw": 25,
+        "away_win": 20,
+        "score": "1-0",
+        "confidence": 72,
+        "key_factor": "【赛后复盘】赛前主胜 55%/首推 1-0；实际 0-0 闷平。厄瓜多尔须抢分但未能破门；库拉索 5-4-1 铁桶+Room 零封复刻对德教训。方向：平局（25%）在分布内但非首推；总球 0（小 3 球线）。净胜：厄 -2.25 档全输；路径：铁局/小比分命中，热门哑火。",
+        "base_home_win": 59,
+        "base_draw": 24,
+        "base_away_win": 16,
+        "depth_calibrated": true
+      },
+      "market_snapshot": {
+        "market_tier": 2.25,
+        "tier_label": "Ecuador 被看好 · 净胜约 2.25 球",
+        "totals_line": 3,
+        "over_pct": 17.3,
+        "fair_line": 2.25,
+        "line_gap": 0.75,
+        "full_cover_pct": 11.8,
+        "spread_level": "skeptical",
+        "spread_market_expect": "净胜≥3",
+        "totals_level": "clear_low",
+        "totals_show_lean": true,
+        "totals_lean_side": "dull"
+      },
+      "depth_calibration": {
+        "public_summary_note": "【推演概要】Ecuador · 低位反击 · 进球偏少。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 2 · 模型认为仅小胜 1 球仍约 27.3% · 净胜≥3（全达标）约 11.8%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
+        "preview_replay": {
+          "actual_score": "0-0",
+          "ht_score": "0-0",
+          "hits": [
+            "进球氛围偏沉闷一致"
+          ],
+          "misses": [],
+          "summary_cn": "命中：进球氛围偏沉闷一致。",
+          "totals_actual": 0,
+          "totals_line": 3,
+          "spread_level": "skeptical",
+          "totals_level": "clear_low"
+        },
+        "goal_efficiency": {
+          "xg_total": 2.37,
+          "xg_gap": 0.93,
+          "xg_home": 1.65,
+          "xg_away": 0.72,
+          "fav_name": "Ecuador",
+          "dog_name": "Curaçao",
+          "fav_xg": 1.65,
+          "dog_xg": 0.72,
+          "fav_goals": 0,
+          "dog_goals": 0,
+          "fav_eff": 0,
+          "dog_eff": 0,
+          "total_goals": 0,
+          "goal_diff_vs_xg": -2.4,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小比分",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "iron",
+              "label": "铁局",
+              "color": "#888899",
+              "bg": "rgba(136,136,153,0.1)"
+            },
+            {
+              "key": "dog_quiet",
+              "label": "弱队哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "双方效率均低——总进球难起，铁局/小比分概率高。",
+          "summary_cn": "赛前 xG 总 2.37（差 0.93）· 热门 Ecuador 1.65→0（效率 0）· 弱队 Curaçao 0.72→0（效率 0）→ 混合路径。双方效率均低——总进球难起，铁局/小比分概率高。",
+          "in_mid_band": true
+        },
+        "display_summary": {
+          "baseline_label": "全场预期（含伤病·气候）",
+          "goal_timing": {
+            "sample_label": "近30场",
+            "source_note": "user_screenshot_2026-06-20_ecu_cur",
+            "home_name": "Ecuador",
+            "away_name": "Curaçao",
+            "intervals": [
+              "1–15",
+              "16–30",
+              "31–45",
+              "46–60",
+              "61–75",
+              "76–90",
+              "90+"
+            ],
+            "peaks": {
+              "home_scored": {
+                "interval": "16–30",
+                "pct": 25
+              },
+              "home_conceded": {
+                "interval": "76–90",
+                "pct": 26
+              },
+              "away_scored": {
+                "interval": "16–30",
+                "pct": 19
+              },
+              "away_conceded": {
+                "interval": "31–45",
+                "pct": 25
+              }
+            },
+            "cross_insight": {
+              "has_cross": true,
+              "hits": [
+                {
+                  "type": "open_play",
+                  "interval": "16–30",
+                  "color": "#E8A54B",
+                  "title": "对攻高发时段",
+                  "text": "16–30 分：双方惯常进球高峰重合，该时段比赛更开放、进球面相对更大。"
+                }
+              ],
+              "cross_intervals": [
+                "16–30"
+              ],
+              "summary_cn": "对攻高发时段 · 16–30 分"
+            },
+            "disclaimer_cn": "以上为两队近30场历史进球/失球时间段统计，供读场参考；非本场赛果预测，与灵力分析娱乐板块无关。"
+          },
+          "customer_reading": {
+            "spread": {
+              "show_cover": true,
+              "level": "skeptical",
+              "full_cover_pct": 11.8,
+              "market_expect_cn": "净胜≥3",
+              "pill_cn": "达标概率约 11.8% · 达到预期难度偏大"
+            },
+            "totals": {
+              "level": "clear_low",
+              "show_lean": true,
+              "lean_side": "dull",
+              "pill_cn": "倾向沉闷"
+            }
+          },
+          "totals_view": {
+            "over_pct": 17.3,
+            "market_line": 3,
+            "fair_line": 2.25,
+            "line_gap": 0.75
+          },
+          "totals_line": 3
+        }
+      },
+      "actualResult": {
+        "home_score": 0,
+        "away_score": 0,
+        "status": "FT",
+        "label": "全场结束",
+        "scorers": "—",
+        "highlights": "Arrowhead Stadium 堪萨斯城 · 互交白卷 · 马宁主裁 · 库拉索 5-4-1 铁桶奏效 · 厄瓜多尔 0 进球仍仅 1 分",
+        "ht_score": "0-0",
+        "first_goal_min": null,
+        "fifa_match_id": "400021465"
       }
     }
   ],
@@ -9361,44 +9758,44 @@ const RESULTS_DATA = {
     },
     {
       "group": "E",
-      "label": "E组 · 第1轮后",
+      "label": "E组 · 第2轮后",
       "table": [
         {
           "team": "Germany",
-          "pts": 3,
-          "p": 1,
-          "w": 1,
+          "pts": 6,
+          "p": 2,
+          "w": 2,
           "d": 0,
           "l": 0,
-          "gf": 7,
-          "ga": 1
+          "gf": 9,
+          "ga": 2
         },
         {
           "team": "Côte d'Ivoire",
           "pts": 3,
-          "p": 1,
+          "p": 2,
           "w": 1,
           "d": 0,
-          "l": 0,
-          "gf": 1,
-          "ga": 0
+          "l": 1,
+          "gf": 2,
+          "ga": 2
         },
         {
           "team": "Ecuador",
-          "pts": 0,
-          "p": 1,
+          "pts": 1,
+          "p": 2,
           "w": 0,
-          "d": 0,
+          "d": 1,
           "l": 1,
           "gf": 0,
           "ga": 1
         },
         {
           "team": "Curaçao",
-          "pts": 0,
-          "p": 1,
+          "pts": 1,
+          "p": 2,
           "w": 0,
-          "d": 0,
+          "d": 1,
           "l": 1,
           "gf": 1,
           "ga": 7

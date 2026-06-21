@@ -60,8 +60,8 @@ function isFinished(j) {
 
 const FIFA_IDS = {
   m35: '400021472',
-  // m33: '400021469',
-  // m34: '400021465',
+  m33: '400021469',
+  m34: '400021465',
   // m36: '400021475',
 };
 
@@ -80,11 +80,41 @@ const MANUAL = {
     xg_report: 'FIFA M35 · Brobbey 5\'/17\' 上半场双响 · Gakpo 47\'/54\' 下半场双响',
     fifa_id: '400021472',
   },
+  m33: {
+    home_score: 2,
+    away_score: 1,
+    status: 'FT',
+    label: '全场结束',
+    scorers: "Franck Kessié 30'; Deniz Undav 68', 90+4'",
+    highlights:
+      'BMO Field 多伦多 · Kessié 30\' 首开 · Undav 替补双响（68\'/90+4\'）· Benítez 主裁 · 德国 6 分领跑 E 组',
+    ht_score: '0-1',
+    first_goal_min: 30,
+    xg_report: 'FIFA M33 · 半场 0-1 Kessié · Undav 替补梅开二度救主',
+    fifa_id: '400021469',
+  },
+  m34: {
+    home_score: 0,
+    away_score: 0,
+    status: 'FT',
+    label: '全场结束',
+    scorers: '—',
+    highlights:
+      'Arrowhead Stadium 堪萨斯城 · 互交白卷 · 马宁主裁 · 库拉索 5-4-1 铁桶奏效 · 厄瓜多尔 0 进球仍仅 1 分',
+    ht_score: '0-0',
+    first_goal_min: null,
+    xg_report: 'FIFA M34 · 全场 0-0 · Advocaat 铁桶零封',
+    fifa_id: '400021465',
+  },
 };
 
 const REVIEW = {
   m35:
     '【赛后复盘】赛前氛围偏闷（约 1.9 球）/ 最可能 1-1；路径模块「预防大比分」+ 弱队开花。实际 5-1：Brobbey 5\'/17\' + Gakpo 47\'/54\' 双梅开，Elanga 59\' 弱队破门。方向：主胜命中（55%）；比分远超泊松分布；总球 6（大 2.75，穿 -0.75）。路径：弱队进球触发预防留意→热门爆发（荷兰效率爆表）；氛围模块显著低估。',
+  m33:
+    '【赛后复盘】赛前主胜 67%/首推 2-0；实际 2-1。Kessié 30\' 半场领先，Undav 68\'+90+4\' 替补双响逆转。方向：主胜命中；比分 2-1 在 Top3 内；总球 3（走 3 球线）。净胜：仅赢 1 球，-1/1.5 部分达标未全穿。路径：弱队先进球→热门险胜收工，非爆发路径。',
+  m34:
+    '【赛后复盘】赛前主胜 55%/首推 1-0；实际 0-0 闷平。厄瓜多尔须抢分但未能破门；库拉索 5-4-1 铁桶+Room 零封复刻对德教训。方向：平局（25%）在分布内但非首推；总球 0（小 3 球线）。净胜：厄 -2.25 档全输；路径：铁局/小比分命中，热门哑火。',
 };
 
 /** F 组：第 2 轮部分（荷瑞已赛 · 突日待赛） */
@@ -93,6 +123,14 @@ const GROUP_F = [
   { team: 'Sweden', pts: 3, p: 2, w: 1, d: 0, l: 1, gf: 6, ga: 6 },
   { team: 'Japan', pts: 1, p: 1, w: 0, d: 1, l: 0, gf: 2, ga: 2 },
   { team: 'Tunisia', pts: 0, p: 1, w: 0, d: 0, l: 1, gf: 1, ga: 5 },
+];
+
+/** E 组：第 2 轮 4 场已赛 */
+const GROUP_E = [
+  { team: 'Germany', pts: 6, p: 2, w: 2, d: 0, l: 0, gf: 9, ga: 2 },
+  { team: "Côte d'Ivoire", pts: 3, p: 2, w: 1, d: 0, l: 1, gf: 2, ga: 2 },
+  { team: 'Ecuador', pts: 1, p: 2, w: 0, d: 1, l: 1, gf: 0, ga: 1 },
+  { team: 'Curaçao', pts: 1, p: 2, w: 0, d: 1, l: 1, gf: 1, ga: 7 },
 ];
 
 function rankInGroup(team, table) {
@@ -201,12 +239,70 @@ function applyResult(m, r, reviewKey) {
     };
   }
 
+  if (id === 'm33' && m.home?.stars?.[0]) {
+    m.home.stars[0] = {
+      name: 'Deniz Undav',
+      pos: 'ST',
+      club: 'Stuttgart',
+      stats: '68\'+90+4\' 双响',
+      rating: 9.0,
+      desc: '替补逆转 · 德国 6 分领跑 E 组',
+    };
+    if (m.home.star) m.home.star = { ...m.home.stars[0] };
+  }
+  if (id === 'm33' && m.away?.stars?.[0]) {
+    m.away.stars[0] = {
+      name: 'Franck Kessié',
+      pos: 'CM',
+      club: 'Al-Ain',
+      stats: '30\' 首开',
+      rating: 7.8,
+      desc: '半场 0-1 领先 · 未能守住',
+    };
+  }
+
+  if (id === 'm34' && m.home?.stars?.[0]) {
+    m.home.stars[0] = {
+      name: 'Alexander Domínguez',
+      pos: 'GK',
+      club: 'LDU Quito',
+      stats: '零封',
+      rating: 7.5,
+      desc: '0-0 零封但球队仍仅 1 分 · 出线告急',
+    };
+    if (m.home.star) m.home.star = { ...m.home.stars[0] };
+  }
+  if (id === 'm34' && m.away?.stars?.[0]) {
+    m.away.stars[0] = {
+      name: 'Eloy Room',
+      pos: 'GK',
+      club: 'Fortuna Sittard',
+      stats: '零封',
+      rating: 8.2,
+      desc: '5-4-1 铁桶零封 · 加勒比 pride 拿 1 分',
+    };
+    if (m.away.star) m.away.star = { ...m.away.stars[0] };
+  }
+
   if (m.group === 'F') {
     const notes = [
       '荷兰 4 分领跑 · 瑞典 3 分 · 日本/突尼斯各赛 1 场',
       '末轮：突尼斯 vs 日本（m36）决定 F 组次席争夺',
     ];
     m.group_context = patchGroupContext(m.group_context, m.group, GROUP_F, m.home.name, m.away.name, notes);
+  }
+  if (m.group === 'E') {
+    const notes = id === 'm34'
+      ? [
+          '德国 6 分已锁定小组头名走势 · 科特迪瓦 3 分',
+          '厄瓜多尔/库拉索各 1 分 · 末轮须其他结果配合',
+        ]
+      : [
+          '德国 6 分领跑 · 科特迪瓦 3 分',
+          '厄瓜多尔/库拉索各赛 2 场',
+        ];
+    m.group_context = patchGroupContext(m.group_context, m.group, GROUP_E, m.home.name, m.away.name, notes);
+    if (id === 'm34') m.group_context.label = 'E组 · 第2轮后';
   }
 
   return JSON.parse(JSON.stringify(m));
@@ -238,7 +334,7 @@ async function main() {
   const MATCH_DATA = loadData(MATCH_PATH, 'MATCH_DATA');
   const RESULTS_DATA = loadData(RESULTS_PATH, 'RESULTS_DATA');
 
-  const SYNC_IDS = ['m35'];
+  const SYNC_IDS = ['m34', 'm33', 'm35'];
   const archiveIds = [];
   for (const id of SYNC_IDS) {
     const m = MATCH_DATA.todayMatches.find(x => x.id === id);
@@ -268,14 +364,18 @@ async function main() {
 
   let snaps = RESULTS_DATA.groupSnapshots || [];
   snaps = upsertGroup(snaps, 'F', 'F组 · 第2轮（部分）', GROUP_F);
+  snaps = upsertGroup(snaps, 'E', 'E组 · 第2轮后', GROUP_E);
   RESULTS_DATA.groupSnapshots = snaps;
 
   MATCH_DATA.lastUpdated = TS;
   MATCH_DATA.syncSource = 'FIFA 官方赛果 · Day 10 部分同步';
   MATCH_DATA.breakingNews = [
-    { tag: 'OFFICIAL', text: '🏁 荷 5-1 瑞 · Brobbey/Gakpo 各双响 · Elanga 59\' · 荷兰 4 分领跑 F 组', time: 'F组' },
-    { tag: 'OFFICIAL', text: 'F组：荷兰 4 · 瑞典 3 · 日本 1 · 突尼斯 0（突日待赛）', time: '积分榜' },
-    ...(MATCH_DATA.breakingNews || []).filter(n => !n.text?.includes('荷 5-1')).slice(0, 8),
+    { tag: 'OFFICIAL', text: '🏁 厄 0-0 库 · 马宁主裁 · 库拉索铁桶零封 · 各得 1 分', time: 'E组' },
+    { tag: 'OFFICIAL', text: 'E组：德国 6 · 科特 3 · 厄 1 · 库 1', time: '积分榜' },
+    { tag: 'OFFICIAL', text: '🏁 德 2-1 科特 · Undav 替补双响 · 德国 6 分', time: 'E组' },
+    { tag: 'OFFICIAL', text: '🏁 荷 5-1 瑞 · 荷兰 4 分领跑 F 组', time: 'F组' },
+    { tag: 'OFFICIAL', text: 'F组：荷兰 4 · 瑞典 3 · 日本 1 · 突 0（突日待赛）', time: '积分榜' },
+    ...(MATCH_DATA.breakingNews || []).filter(n => !/厄 0-0|德 2-1|荷 5-1/.test(n.text || '')).slice(0, 5),
   ].slice(0, 10);
 
   const nextNs = MATCH_DATA.todayMatches.find(m => !m.actualResult || m.actualResult.status === 'NS');
@@ -310,7 +410,7 @@ async function main() {
   }
 
   RESULTS_DATA.lastUpdated = TS;
-  RESULTS_DATA.syncSource = 'FIFA 官方赛果 · Day 10 部分 (m35)';
+  RESULTS_DATA.syncSource = 'FIFA 官方赛果 · Day 10 部分 (m33–m35, m34)';
 
   const day9Results = [
     { id: 'm32', home: 'USA', away: 'Australia', score: '2-0', group: 'D' },
@@ -343,9 +443,10 @@ async function main() {
     allResults: [...day9Results, ...todayFt],
     standings: [
       ...(RESULTS_DATA.groupSnapshots || []).filter(g => ['C', 'D'].includes(g.group)),
+      { group: 'E', label: 'E组 · 第2轮后', table: GROUP_E },
       { group: 'F', label: 'F组 · 第2轮（部分）', table: GROUP_F },
     ],
-    injuries: { note: 'Kubo OUT m36 · Timber 兄弟 OUT m35 · Wahi 归队 m33' },
+    injuries: { note: 'Kubo OUT m36 · m33 Undav 替补双响 · m35 已赛' },
     yesterdayResults: day9Results.map(r => ({ id: r.id, score: r.score })),
   };
 
@@ -371,6 +472,7 @@ async function main() {
   }
   console.log('✅ Archived FT:', archiveIds.join(', ') || '(none new)');
   console.log('✅ F组积分榜:', GROUP_F.map(t => `${t.team} ${t.pts}分`).join(' · '));
+  console.log('✅ E组积分榜:', GROUP_E.map(t => `${t.team} ${t.pts}分`).join(' · '));
 }
 
 main().catch(e => { console.error(e); process.exit(1); });
