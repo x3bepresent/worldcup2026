@@ -1,6 +1,6 @@
 /** Day 11 venue weather — m37–m40 */
 
-const FORECAST_TS = '2026-06-21 22:00 本地';
+const FORECAST_TS = '2026-06-22 06:00 本地';
 
 const VENUE_WEATHER = {
   m38: {
