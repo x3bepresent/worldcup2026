@@ -309,6 +309,57 @@ footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--bor
   color: var(--txt2);
   letter-spacing: 0.3px;
 }
+.mf-terminal-odds-cell--top2 {
+  position: relative;
+}
+.mf-terminal-odds-cell--top2::after {
+  content: 'Top2';
+  position: absolute;
+  top: -0.55rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #C8A96E;
+  opacity: 0.95;
+}
+.mf-terminal-top2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  margin: 0.35rem 0 0.5rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(200, 169, 110, 0.06);
+  border: 1px solid rgba(200, 169, 110, 0.18);
+}
+.mf-terminal-top2--draw {
+  border-color: rgba(200, 169, 110, 0.35);
+}
+.mf-terminal-top2-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #C8A96E;
+  letter-spacing: 0.5px;
+}
+.mf-terminal-top2-chip {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.08rem 0.4rem;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.06);
+}
+.mf-terminal-top2-chip--home { color: var(--cyan); }
+.mf-terminal-top2-chip--draw { color: #C8A96E; }
+.mf-terminal-top2-chip--away { color: var(--red); }
+.mf-terminal-top2-hint {
+  flex: 1 1 100%;
+  font-size: 0.65rem;
+  color: var(--txt2);
+  line-height: 1.35;
+}
 .mf-terminal-market-bar {
   display: flex;
   height: 7px;

@@ -4,18 +4,20 @@
  */
 const fs = require('fs');
 const path = require('path');
-const lib = require('../js/prediction-signals-lib.js');
 const { archiveFinishedMatch, isSlimArchive } = require('./archive-match.js');
+const { enrichArchivedFull } = require('./archived-enrich.js');
 
 const ROOT = path.join(__dirname, '..');
 const RESULTS_PATH = path.join(ROOT, 'js', 'results-data.js');
 const TS = new Date().toISOString().replace(/\.\d{3}Z$/, '+08:00');
 
 const handicapFiles = [
+  'handicap-data-day1-5.js',
   'handicap-data-day6.js',
   'handicap-data-day7.js',
   'handicap-data-day8.js',
   'handicap-data-day9.js',
+  'handicap-data-day10.js',
 ];
 const allHandicap = {};
 for (const f of handicapFiles) {
@@ -29,37 +31,7 @@ function loadResults() {
 }
 
 function enrichBeforeArchive(m) {
-  const copy = JSON.parse(JSON.stringify(m));
-  const raw = allHandicap[copy.id];
-  if (raw && !copy.depth_calibration?.display_summary) {
-    copy.depth_calibration = lib.buildDepthCalibration(copy, raw);
-    if (copy.prediction) {
-      copy.prediction = lib.applyDepthToPrediction(copy.prediction, copy.depth_calibration);
-    }
-  }
-  if (copy.actualResult?.home_score != null && copy.prediction?.xg_home != null) {
-    const ge = lib.buildGoalEfficiencyReview(copy);
-    if (ge) {
-      if (!copy.depth_calibration) copy.depth_calibration = {};
-      copy.depth_calibration.goal_efficiency = ge;
-    }
-    const dc = copy.depth_calibration;
-    if (dc?.display_summary && !dc.preview_replay) {
-      const ar = lib.enrichActualResultForReview(copy);
-      dc.preview_replay = lib.buildPreviewPostMatchReview(
-        dc.display_summary,
-        ar,
-        copy.home?.name,
-        copy.away?.name,
-        {
-          tier_home: dc.tier_home,
-          tier_gap: dc.tier_gap,
-          totals_line: dc.totals_line,
-        }
-      );
-    }
-  }
-  return copy;
+  return enrichArchivedFull(m, allHandicap);
 }
 
 const data = loadResults();

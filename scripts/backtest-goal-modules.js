@@ -17,23 +17,6 @@ function pct(n, d) {
   return d ? Math.round((n / d) * 1000) / 10 : 0;
 }
 
-function scoreGoalPathPreview(favXg, dogXg, gap, xgT) {
-  const s = { fav_burst: 10, dog_bloom: 10, open: 8, low: 10 };
-  if (dogXg < 0.65) s.low += 34;
-  if (dogXg >= 0.75 && dogXg <= 1.08 && gap >= 0.45 && gap <= 0.65) s.fav_burst += 30;
-  if (dogXg >= 0.72 && gap >= 0.55 && gap <= 0.95) s.dog_bloom += 28;
-  if (dogXg >= 0.82 && favXg >= 1.2 && gap >= 0.5 && gap <= 0.95) s.open += 26;
-  if (gap >= 1.0) { s.low += 30; s.dog_bloom -= 6; s.open -= 4; }
-  if (gap < 0.4) s.low += 26;
-  if (favXg >= 2.0 && gap >= 1.3) s.low += 24;
-  if (xgT >= 2.65) { s.open += 10; s.dog_bloom += 6; }
-  if (xgT <= 2.25 && dogXg < 0.82) s.low += 18;
-  if (xgT <= 2.25) s.low += 10;
-  if (favXg < 1.55 && gap >= 0.5 && gap <= 0.75) { s.low += 12; s.fav_burst -= 6; }
-  for (const k of Object.keys(s)) s[k] = Math.max(1, s[k]);
-  return s;
-}
-
 function computePreviewPath(m) {
   const p = m.prediction;
   if (!p || p.xg_home == null) return null;
@@ -43,7 +26,7 @@ function computePreviewPath(m) {
   const gap = Math.round(Math.abs(xgH - xgA) * 100) / 100;
   const favXg = Math.max(xgH, xgA);
   const dogXg = Math.min(xgH, xgA);
-  const scores = scoreGoalPathPreview(favXg, dogXg, gap, xgT);
+  const scores = lib.scoreGoalPathPreview(favXg, dogXg, gap, xgT);
   const ranked = Object.entries(scores).sort((a, b) => b[1] - a[1]);
   const primary = ranked[0][0];
   const ms = m.market_snapshot || {};

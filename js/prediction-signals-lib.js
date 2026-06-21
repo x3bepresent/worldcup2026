@@ -1189,6 +1189,12 @@ function resolveGoalPathLeanPresentation(opts) {
     prevention_reason_cn = '进球氛围偏闷'
       + (atm.expected_total != null ? '（预测约 ' + atm.expected_total + '）' : '')
       + '，但「' + pathLabel + '」结构需防弱队开花抬高总进球';
+  } else if (pathType === 'fav_burst') {
+    lean_mode = 'prediction';
+    lean_cn = '热门爆发路径';
+    atmosphere_link_cn = atm.dull
+      ? '结构偏多球，但进球氛围偏闷——热门效率仍可能爆表（尾部风险）'
+      : '热门效率路径与结构一致';
   }
 
   if (lean_mode === 'prevention' || (atm.dull && structRisk && base === 'neutral')) {
@@ -1209,21 +1215,27 @@ function resolveGoalPathLeanPresentation(opts) {
 
 function scoreGoalPathPreview(favXg, dogXg, gap, xgT) {
   const s = { fav_burst: 10, dog_bloom: 10, open: 8, low: 10 };
-  if (dogXg < 0.65) s.low += 34;
+  const favCrush = isFavCrushScenario(favXg, dogXg, gap);
+
+  if (dogXg < 0.65 && !favCrush) s.low += 34;
   if (dogXg >= 0.75 && dogXg <= 1.08 && gap >= 0.45 && gap <= 0.65) s.fav_burst += 30;
-  if (dogXg >= 0.72 && gap >= 0.55 && gap <= 0.95) s.dog_bloom += 28;
+  if (dogXg >= 0.72 && gap >= 0.55 && gap <= 0.95 && !favCrush) s.dog_bloom += 28;
   if (dogXg >= 0.82 && favXg >= 1.2 && gap >= 0.5 && gap <= 0.95) s.open += 26;
-  if (gap >= 1.0) {
+  if (favCrush) {
+    s.fav_burst += 28;
+    s.low -= 14;
+    s.dog_bloom -= 6;
+    s.open += 4;
+  } else if (gap >= 1.0) {
     s.low += 30;
     s.dog_bloom -= 6;
     s.open -= 4;
   }
   if (gap < 0.4) s.low += 26;
-  if (favXg >= 2.0 && gap >= 1.3) s.low += 24;
-  if (xgT >= 2.65) s.open += 10;
-  if (xgT >= 2.65) s.dog_bloom += 6;
-  if (xgT <= 2.25 && dogXg < 0.82) s.low += 18;
-  if (xgT <= 2.25) s.low += 10;
+  if (favXg >= 2.0 && gap >= 1.3 && !favCrush) s.low += 24;
+  if (xgT >= 2.65) { s.open += 10; s.dog_bloom += 6; }
+  if (xgT <= 2.25 && dogXg < 0.82 && !favCrush) s.low += 18;
+  if (xgT <= 2.25 && !favCrush) s.low += 10;
   if (favXg < 1.55 && gap >= 0.5 && gap <= 0.75) {
     s.low += 12;
     s.fav_burst -= 6;
@@ -1661,15 +1673,146 @@ function lineupContextNote(match) {
   return lu.impact?.summary || (lu.diff?.home ? '官方首发已确认 · 变阵见 lineup.diff' : null);
 }
 
+function collectTacticalText(match) {
+  let kf = match.prediction?.key_factor || '';
+  kf = kf.replace(/【赛后复盘】[\s\S]*/g, '').trim();
+  const ctx = match.pre_match_context;
+  const coachH = match.coach_analysis?.home || ctx?.coach_analysis?.home;
+  const coachA = match.coach_analysis?.away || ctx?.coach_analysis?.away;
+  return [
+    match.note?.replace(/ · 已结束.*$/, ''),
+    kf,
+    ctx?.key_factor_pre,
+    coachH?.style_summary,
+    coachH?.match_note,
+    coachA?.style_summary,
+    coachA?.match_note,
+    match.upset_alert?.tactical || ctx?.upset_alert?.tactical,
+    match.lineup?.diff?.home || ctx?.lineup_diff?.home,
+    match.lineup?.diff?.away || ctx?.lineup_diff?.away,
+    ...(match.home?.rumors || ctx?.home_rumors || []),
+    ...(match.away?.rumors || ctx?.away_rumors || []),
+  ].filter(Boolean).join(' ');
+}
+
+/** 热门碾压弱队（回测：gap≥1 时不应一律推「铁局」） */
+function isFavCrushScenario(favXg, dogXg, gap) {
+  return favXg >= 2.0 && dogXg <= 0.55 && gap >= 1.4;
+}
+
+/**
+ * 平局 / 铁桶 / 势均力敌 — 回测 v2 修正层
+ * @returns {{ drawBoost, ironBucket, closeXg, gap, notes }}
+ */
+function detectDrawContextFlags(match, xgHome, xgAway) {
+  const xgH = Number(xgHome) || 0;
+  const xgA = Number(xgAway) || 0;
+  const gap = Math.round(Math.abs(xgH - xgA) * 100) / 100;
+  const text = collectTacticalText(match);
+  const ironBucket = /5-4-1|5-3-2|铁桶|低位|deep block|low block|守平|可接受.*1分|闷平|密集防守|铁桶零封/i.test(text);
+  const mustFight = /须抢分|必须.*3分|出线.*被动|垫底|0分|抢分/i.test(text);
+  const closeXg = gap < 0.4;
+  const favXg = Math.max(xgH, xgA);
+  const dogXg = Math.min(xgH, xgA);
+
+  let drawBoost = 0;
+  const notes = [];
+  if (gap < 0.15) {
+    drawBoost += 4;
+    notes.push('xG 极接近');
+  } else if (gap < 0.38 && (ironBucket || mustFight)) {
+    drawBoost += 3;
+    notes.push('xG 接近且战术偏保守');
+  }
+  if (ironBucket && favXg < 1.9 && gap < 1.1) {
+    drawBoost += 7;
+    notes.push('热门难破密集');
+  } else if (!ironBucket && favXg < 1.9 && dogXg < 1.0 && gap >= 0.85 && gap < 1.15) {
+    drawBoost += 4;
+    notes.push('xG 暗示胶着');
+  }
+  if (mustFight && ironBucket) {
+    drawBoost += 3;
+    notes.push('抢分遇铁桶');
+  }
+  const deepTier = Math.abs(Number(match.market_snapshot?.market_tier) || 0);
+  if (deepTier >= 1.75 && gap < 1.05 && dogXg < 0.85) {
+    drawBoost += 5;
+    notes.push('深盘但 xG 难拉开');
+  }
+
+  return {
+    drawBoost: Math.min(10, drawBoost),
+    ironBucket,
+    closeXg,
+    gap,
+    notes,
+  };
+}
+
+/** 在泊松胜平负上叠加平局修正（从胜负两侧按比例扣回） */
+function applyDrawContextAdjust(probs, match, xgHome, xgAway) {
+  const ctx = detectDrawContextFlags(match, xgHome, xgAway);
+  const hw = Number(probs.home_win) || 0;
+  const d = Number(probs.draw) || 0;
+  const aw = Number(probs.away_win) || 0;
+  if (ctx.drawBoost <= 0) {
+    return { home_win: hw, draw: d, away_win: aw, draw_context: ctx };
+  }
+  const winTotal = hw + aw || 1;
+  const boost = ctx.drawBoost;
+  const adj = normalizeProb(
+    hw - boost * (hw / winTotal),
+    d + boost,
+    aw - boost * (aw / winTotal),
+  );
+  return { ...adj, draw_context: ctx };
+}
+
+/** 胜平负概率排序（高→低） */
+function rankOutcomes(probs) {
+  const p = probs || {};
+  return [
+    { key: 'home', pct: Number(p.home_win) || 0, label: '主胜' },
+    { key: 'draw', pct: Number(p.draw) || 0, label: '平局' },
+    { key: 'away', pct: Number(p.away_win) || 0, label: '客胜' },
+  ].sort((a, b) => b.pct - a.pct);
+}
+
+function getOutcomeTop2(probs) {
+  return rankOutcomes(probs).slice(0, 2).map(o => o.key);
+}
+
+function isDrawInTop2(probs) {
+  return getOutcomeTop2(probs).includes('draw');
+}
+
+/** 平局与最高项接近 — UI Top2 / draw_risk 共用阈值 */
+function isDrawCoFavorite(probs, marginPct = 8, minDraw = 27) {
+  const ranked = rankOutcomes(probs);
+  const draw = ranked.find(o => o.key === 'draw');
+  if (!draw || draw.pct < minDraw) return false;
+  return ranked[0].pct - draw.pct <= marginPct;
+}
+
+function outcomeTop2Hit(probs, actualKey) {
+  return getOutcomeTop2(probs).includes(actualKey);
+}
+
 /** 伤病 + 气候 → 调整后 xG（基准 xG 含 sync-lineups 预调；此处仅追加展示因子） */
 function buildMatchContextAdjustments(match, xgHome, xgAway) {
   const homeInj = summarizeInjuries(match.home?.name || '主队', match.home?.injuries);
   const awayInj = summarizeInjuries(match.away?.name || '客队', match.away?.injuries);
   const wx = weatherXgModifier(match.weather);
   const lineupNote = lineupContextNote(match);
+  const tac = detectDrawContextFlags(match, xgHome, xgAway);
 
   let xgH = Math.max(0.15, xgHome * (1 - homeInj.mod) * wx.mod);
   let xgA = Math.max(0.15, xgAway * (1 - awayInj.mod) * wx.mod);
+  if (tac.ironBucket && tac.gap < 1.05) {
+    xgH = Math.round(xgH * 0.94 * 100) / 100;
+    xgA = Math.round(xgA * 0.96 * 100) / 100;
+  }
   xgH = Math.round(xgH * 100) / 100;
   xgA = Math.round(xgA * 100) / 100;
 
@@ -1688,7 +1831,14 @@ function buildMatchContextAdjustments(match, xgHome, xgAway) {
   if (lineupNote) {
     factors.push({ icon: '📋', label: '官方首发', note: lineupNote });
   }
-  return { xg_home: xgH, xg_away: xgA, factors, coach_home: coachH, coach_away: coachA };
+  if (tac.drawBoost > 0) {
+    factors.push({
+      icon: '⚖️',
+      label: '平局修正',
+      note: '回测校准：' + tac.notes.join(' · ') + '（平 +' + tac.drawBoost + '%）',
+    });
+  }
+  return { xg_home: xgH, xg_away: xgA, factors, coach_home: coachH, coach_away: coachA, draw_context: tac };
 }
 
 function applyScenarioXg(xgH, xgA, coachHome, coachAway, scorerSide) {
@@ -2242,9 +2392,11 @@ function formatPublicGoalsGuessIntro(marketLine) {
  * 总进球读场分级（回测校准：40–60% 不作倾向表态）
  * 内部对照 raw.totals_line（亚盘总进球分隔线），读超线大比分 ↔ 不足小比分。
  */
-function classifyTotalsOutlook(overPct, lineGap, marketLine, fairLine) {
+function classifyTotalsOutlook(overPct, lineGap, marketLine, fairLine, opts) {
   const over = Number(overPct) || 50;
   const gap = Number(lineGap) || 0;
+  const pathPrimary = opts?.pathPrimary;
+  const favCrush = opts?.favCrush;
   const market = marketLine ?? 2.5;
   const fair = fairLine ?? 2.5;
   const marketGoalsInt = formatMarketGoalsInteger(market);
@@ -2272,7 +2424,9 @@ function classifyTotalsOutlook(overPct, lineGap, marketLine, fairLine) {
     clear_high: { label_cn: '倾向精彩', color: '#E8A54B', meter_label_cn: '倾向精彩' },
   }[level];
 
-  const showLean = level === 'clear_high' || level === 'clear_low';
+  let showLean = level === 'clear_high' || level === 'clear_low';
+  if (showLean && Math.abs(gap) >= 0.75) showLean = false;
+  if (showLean && (pathPrimary === 'fav_burst' || favCrush)) showLean = false;
   const meterPos = level === 'neutral'
     ? 50
     : Math.max(14, Math.min(86, Math.round(over)));
@@ -2558,11 +2712,11 @@ function buildCustomerReading(match, displaySummary, tier, tierGap, cover, adjus
       color: '#C8A96E',
       note: '平局权重约 ' + drawPct + '%，小组赛易出守平——勿只盯胜负一方。',
     };
-  } else if (drawPct >= 26 && maxWin - drawPct < 14) {
+  } else if (drawPct >= 27 && maxWin - drawPct <= 8) {
     drawRisk = {
       level: 'medium',
       color: '#C8A96E',
-      note: '平局约 ' + drawPct + '%，与热门取胜概率接近，存在「赢球变平局」空间。',
+      note: '平局约 ' + drawPct + '%，与热门取胜概率接近（Top2 区间），存在「赢球变平局」空间。',
     };
   }
 
@@ -2642,7 +2796,7 @@ function buildCalibrationDisplay(meta, tierGap, cover, impliedTier, marketTier, 
 }
 
 /** 页面展示 — 总进球对照（中性表述） */
-function buildTotalsDisplay(totals, expectedTotalGoals) {
+function buildTotalsDisplay(totals, expectedTotalGoals, xgPair) {
   const et = typeof expectedTotalGoals === 'number'
     ? (Math.round(expectedTotalGoals * 100) / 100).toFixed(1)
     : String(expectedTotalGoals);
@@ -2672,7 +2826,17 @@ function buildTotalsDisplay(totals, expectedTotalGoals) {
     };
   }
 
-  const totalsOutlook = classifyTotalsOutlook(totals.over_pct, gap, marketLine, fairLine);
+  const xgH = Number(xgPair?.xg_home) || 0;
+  const xgA = Number(xgPair?.xg_away) || 0;
+  const pathGap = Math.abs(xgH - xgA);
+  const favXg = Math.max(xgH, xgA);
+  const dogXg = Math.min(xgH, xgA);
+  const pathScores = scoreGoalPathPreview(favXg, dogXg, pathGap, xgH + xgA);
+  const pathPrimary = Object.entries(pathScores).sort((a, b) => b[1] - a[1])[0][0];
+  const totalsOutlook = classifyTotalsOutlook(totals.over_pct, gap, marketLine, fairLine, {
+    pathPrimary,
+    favCrush: isFavCrushScenario(favXg, dogXg, pathGap),
+  });
   let modelLean = totalsOutlook.headline_cn;
   if (!totalsOutlook.show_lean) {
     modelLean = '模型在常见进球预期附近均衡，不作强倾向';
@@ -2799,7 +2963,10 @@ function buildDepthCalibration(match, raw) {
     score: s.score,
     pct: s.prob,
   }));
-  displaySummary.totals_view = buildTotalsDisplay(totalsAdj, displaySummary.expected_total_goals);
+  displaySummary.totals_view = buildTotalsDisplay(totalsAdj, displaySummary.expected_total_goals, {
+    xg_home: ctx.xg_home,
+    xg_away: ctx.xg_away,
+  });
   displaySummary.customer_reading = buildCustomerReading(
     match, displaySummary, tier, tierGap, coverAdj, adjusted
   );
@@ -3584,6 +3751,15 @@ const exportsObj = {
   buildExcitementView,
   computeDisplaySummary,
   buildMatchContextAdjustments,
+  detectDrawContextFlags,
+  applyDrawContextAdjust,
+  rankOutcomes,
+  getOutcomeTop2,
+  isDrawInTop2,
+  isDrawCoFavorite,
+  outcomeTop2Hit,
+  isFavCrushScenario,
+  scoreGoalPathPreview,
   buildScenarioOutcomes,
   pickScenarioExpectedKey,
   computeConditionalDisplaySummary,

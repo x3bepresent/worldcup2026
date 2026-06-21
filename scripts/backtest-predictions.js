@@ -8,9 +8,12 @@ const lib = require('../js/prediction-signals-lib.js');
 const scoreModel = require('../js/score-model.js');
 
 const handicapFiles = [
+  'handicap-data-day1-5.js',
   'handicap-data-day6.js',
   'handicap-data-day7.js',
   'handicap-data-day8.js',
+  'handicap-data-day9.js',
+  'handicap-data-day10.js',
 ];
 const rawById = {};
 for (const f of handicapFiles) {
@@ -49,6 +52,19 @@ function pickOutcome(pred) {
   if (hw >= d && hw >= aw) return 'home';
   if (aw >= hw && aw >= d) return 'away';
   return 'draw';
+}
+
+function pickOutcomeTop2(pred) {
+  return lib.getOutcomeTop2
+    ? lib.getOutcomeTop2(pred)
+    : (() => {
+      const items = [
+        { key: 'home', pct: pred.home_win ?? 0 },
+        { key: 'draw', pct: pred.draw ?? 0 },
+        { key: 'away', pct: pred.away_win ?? 0 },
+      ].sort((a, b) => b.pct - a.pct);
+      return items.slice(0, 2).map(i => i.key);
+    })();
 }
 
 function totalsOverWeight(total, line) {
@@ -101,8 +117,10 @@ for (const m of matches) {
   const raw = rawById[m.id];
 
   const pick = pickOutcome(pred);
+  const top2 = pickOutcomeTop2(pred);
   const actualOut = outcomeKey(actual.margin);
   const directionHit = pick === actualOut;
+  const directionTop2Hit = top2.includes(actualOut);
 
   const predScore = pred.score ? String(pred.score).replace(/\s/g, '') : null;
   const actualScore = `${actual.h}-${actual.a}`;
@@ -158,8 +176,10 @@ for (const m of matches) {
     actualTotal: actual.total,
     actualMargin: actual.margin,
     pick,
+    top2,
     actualOut,
     directionHit,
+    directionTop2Hit,
     exactScoreHit,
     inTop1,
     inTop3,
@@ -188,6 +208,7 @@ console.log(`\n📊 回测样本：${rows.length} 场已结束（共 ${matches.l
 // ── 汇总 ──
 const stats = {
   direction: { hit: rows.filter(r => r.directionHit).length, n: rows.length },
+  directionTop2: { hit: rows.filter(r => r.directionTop2Hit).length, n: rows.length },
   exactScore: { hit: rows.filter(r => r.exactScoreHit).length, n: rows.length },
   top1: { hit: rows.filter(r => r.inTop1).length, n: rows.length },
   top3: { hit: rows.filter(r => r.inTop3).length, n: rows.length },
@@ -199,6 +220,7 @@ const totalsN = withHandicap.length;
 
 console.log('=== 1. 胜平负方向 ===');
 console.log(`  最高概率项命中: ${stats.direction.hit}/${stats.direction.n} = ${pct(stats.direction.hit, stats.direction.n)}%`);
+console.log(`  Top2 含实际赛果: ${stats.directionTop2.hit}/${stats.directionTop2.n} = ${pct(stats.directionTop2.hit, stats.directionTop2.n)}%`);
 
 const byOut = { home: [], draw: [], away: [] };
 for (const r of rows) byOut[r.actualOut].push(r);
@@ -301,6 +323,52 @@ tails.forEach(r => {
   console.log(`  ${r.id} ${r.label} 实际${r.actualScore} xG${r.xgSum} Δ${r.goalError > 0 ? '+' : ''}${r.goalError} 方向${r.directionHit ? '✓' : '✗'}`);
 });
 console.log(`  共 ${tails.length}/${rows.length} 场 = ${pct(tails.length, rows.length)}% — ${tails.length <= 2 ? '属小概率尾部，非系统性' : '尾部偏多，需关注'}`);
+
+console.log('\n=== 8. 回测 v2（平局修正 + 深度校准后）===');
+let v1Hit = 0;
+let v2BaseHit = 0;
+let v2CalHit = 0;
+let v2DrawPick = 0;
+const v2Fixed = [];
+for (const r of rows) {
+  const m = matches.find(x => x.id === r.id);
+  if (m?.prediction?.xg_home == null) continue;
+  const p = m.prediction;
+  const margin = r.actualMargin;
+  const actualOut = outcomeKey(margin);
+  if (r.directionHit) v1Hit += 1;
+
+  const raw = scoreModel.computeOutcomeFromXg(p.xg_home, p.xg_away);
+  const adj = lib.applyDrawContextAdjust(
+    { home_win: raw.home_win, draw: raw.draw, away_win: raw.away_win },
+    m,
+    p.xg_home,
+    p.xg_away,
+  );
+  const v2Pick = pickOutcome(adj);
+  if (v2Pick === actualOut) v2BaseHit += 1;
+  if (v2Pick === 'draw') v2DrawPick += 1;
+  if (v2Pick === actualOut && !r.directionHit) {
+    v2Fixed.push(`${r.id} ${r.label} v1→${r.pick} v2→${v2Pick} 实际${actualOut} ${r.actualScore}`);
+  }
+
+  if (rawById[m.id]) {
+    const slim = { ...m, prediction: { ...p, ...adj, base_home_win: adj.home_win, base_draw: adj.draw, base_away_win: adj.away_win } };
+    const dc = lib.buildDepthCalibration(slim, rawById[m.id]);
+    const cal = lib.applyDepthToPrediction({ ...slim.prediction }, dc);
+    const v2CalPick = pickOutcome(cal);
+    if (v2CalPick === actualOut) v2CalHit += 1;
+  }
+}
+const n = rows.length;
+console.log(`  v1 方向（归档预测）: ${v1Hit}/${n} = ${pct(v1Hit, n)}%`);
+console.log(`  v2 base（泊松+平局修正）: ${v2BaseHit}/${n} = ${pct(v2BaseHit, n)}%`);
+console.log(`  v2 首推平局场次: ${v2DrawPick}/${n}`);
+console.log(`  v2+深度校准（有盘 ${rows.filter(r => rawById[r.id]).length} 场）: ${v2CalHit}/${rows.filter(r => rawById[r.id]).length} = ${pct(v2CalHit, rows.filter(r => rawById[r.id]).length)}%`);
+if (v2Fixed.length) {
+  console.log('  v2 修正 v1 失手:');
+  v2Fixed.forEach(t => console.log('    ' + t));
+}
 
 console.log('\n=== 9. 平局低估（方向失误主因）===');
 const drawMiss = wrongDir.filter(r => r.actualOut === 'draw');

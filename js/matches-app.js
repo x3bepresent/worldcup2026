@@ -256,9 +256,25 @@ function renderMatchHero(m, p, finished) {
     </div>`;
   })() : '';
 
+  const top2 = getOutcomeTop2(p);
+  const drawCoFav = isDrawCoFavorite(p);
+  const top2Keys = new Set(top2.map(o => o.key));
+  const top2Html = top2.length >= 2 ? `
+        <div class="mf-terminal-top2${drawCoFav ? ' mf-terminal-top2--draw' : ''}">
+          <span class="mf-terminal-top2-label">Top2</span>
+          ${top2.map(o => `
+            <span class="mf-terminal-top2-chip mf-terminal-top2-chip--${o.key}">${o.label} ${o.pct}%</span>`).join('')}
+          ${drawCoFav ? '<span class="mf-terminal-top2-hint">平局与热门接近 · 勿只盯一方</span>' : ''}
+        </div>` : '';
+
   const footnote = finished
     ? '官方赛果见上方核验区 · 此处为赛前模型冻结预测 · 仅供娱乐推演'
     : `模型娱乐推演 · ${PLAY_NOTE_STD}`;
+
+  const oddsCellClass = (side) => {
+    const base = `mf-terminal-odds-cell${top2Keys.has(side) ? ' mf-terminal-odds-cell--top2' : ''}`;
+    return base;
+  };
 
   return `
     <div class="mf-teams-hero">
@@ -270,19 +286,20 @@ function renderMatchHero(m, p, finished) {
 
       <div class="mf-terminal-market">
         <div class="mf-terminal-market-row">
-          <div class="mf-terminal-odds-cell">
+          <div class="${oddsCellClass('home')}">
             <span class="mf-terminal-odds-val mf-terminal-odds-val--home">${p.home_win}%</span>
             <span class="mf-terminal-odds-lbl">主胜</span>
           </div>
-          <div class="mf-terminal-odds-cell">
+          <div class="${oddsCellClass('draw')}">
             <span class="mf-terminal-odds-val mf-terminal-odds-val--draw">${p.draw}%</span>
             <span class="mf-terminal-odds-lbl">平局</span>
           </div>
-          <div class="mf-terminal-odds-cell">
+          <div class="${oddsCellClass('away')}">
             <span class="mf-terminal-odds-val mf-terminal-odds-val--away">${p.away_win}%</span>
             <span class="mf-terminal-odds-lbl">客胜</span>
           </div>
         </div>
+        ${top2Html}
         <div class="mf-terminal-market-bar">
           <div style="width:${p.home_win}%;background:var(--cyan)"></div>
           <div style="width:${p.draw}%;background:rgba(255,255,255,0.15)"></div>
@@ -486,6 +503,29 @@ function getPredictedOutcome(p) {
   if (hw === max) return 'home';
   if (aw === max) return 'away';
   return 'draw';
+}
+
+function rankOutcomes(p) {
+  const lib = window.PREDICTION_SIGNALS;
+  if (lib?.rankOutcomes) return lib.rankOutcomes(p);
+  return [
+    { key: 'home', pct: p.home_win ?? 0, label: '主胜' },
+    { key: 'draw', pct: p.draw ?? 0, label: '平局' },
+    { key: 'away', pct: p.away_win ?? 0, label: '客胜' },
+  ].sort((a, b) => b.pct - a.pct);
+}
+
+function getOutcomeTop2(p) {
+  return rankOutcomes(p).slice(0, 2);
+}
+
+function isDrawCoFavorite(p) {
+  const lib = window.PREDICTION_SIGNALS;
+  if (lib?.isDrawCoFavorite) return lib.isDrawCoFavorite(p);
+  const ranked = rankOutcomes(p);
+  const draw = ranked.find(o => o.key === 'draw');
+  if (!draw || draw.pct < 27) return false;
+  return ranked[0].pct - draw.pct <= 8;
 }
 
 const OUTCOME_CN = { home: '主胜', draw: '平局', away: '客胜' };
@@ -784,20 +824,27 @@ function computeGoalTimingVerdict(m) {
 /** 赛前进球路径评分（与 prediction-signals-lib 口径一致） */
 function scoreGoalPathPreview(favXg, dogXg, gap, xgT) {
   const s = { fav_burst: 10, dog_bloom: 10, open: 8, low: 10 };
-  if (dogXg < 0.65) s.low += 34;
+  const favCrush = favXg >= 2.0 && dogXg <= 0.55 && gap >= 1.4;
+
+  if (dogXg < 0.65 && !favCrush) s.low += 34;
   if (dogXg >= 0.75 && dogXg <= 1.08 && gap >= 0.45 && gap <= 0.65) s.fav_burst += 30;
-  if (dogXg >= 0.72 && gap >= 0.55 && gap <= 0.95) s.dog_bloom += 28;
+  if (dogXg >= 0.72 && gap >= 0.55 && gap <= 0.95 && !favCrush) s.dog_bloom += 28;
   if (dogXg >= 0.82 && favXg >= 1.2 && gap >= 0.5 && gap <= 0.95) s.open += 26;
-  if (gap >= 1.0) {
+  if (favCrush) {
+    s.fav_burst += 28;
+    s.low -= 14;
+    s.dog_bloom -= 6;
+    s.open += 4;
+  } else if (gap >= 1.0) {
     s.low += 30;
     s.dog_bloom -= 6;
     s.open -= 4;
   }
   if (gap < 0.4) s.low += 26;
-  if (favXg >= 2.0 && gap >= 1.3) s.low += 24;
+  if (favXg >= 2.0 && gap >= 1.3 && !favCrush) s.low += 24;
   if (xgT >= 2.65) { s.open += 10; s.dog_bloom += 6; }
-  if (xgT <= 2.25 && dogXg < 0.82) s.low += 18;
-  if (xgT <= 2.25) s.low += 10;
+  if (xgT <= 2.25 && dogXg < 0.82 && !favCrush) s.low += 18;
+  if (xgT <= 2.25 && !favCrush) s.low += 10;
   if (favXg < 1.55 && gap >= 0.5 && gap <= 0.75) {
     s.low += 12;
     s.fav_burst -= 6;
@@ -900,6 +947,7 @@ function computeAtmosphereStrongHit(m) {
 
 function computeResultsAggregateStats(matches) {
   let dirHit = 0;
+  let dirTop2Hit = 0;
   let dirN = 0;
   let top3Hit = 0;
   let top3N = 0;
@@ -914,6 +962,7 @@ function computeResultsAggregateStats(matches) {
     if (!v) continue;
     dirN += 1;
     if (v.outcomeHit) dirHit += 1;
+    if (v.outcomeTop2Hit) dirTop2Hit += 1;
     top3N += 1;
     if (v.anyTop3Hit) top3Hit += 1;
     const eff = computeGoalEfficiencyHit(m);
@@ -933,6 +982,7 @@ function computeResultsAggregateStats(matches) {
 
   return {
     direction: { hit: dirHit, n: dirN, pct: statPct(dirHit, dirN) },
+    directionTop2: { hit: dirTop2Hit, n: dirN, pct: statPct(dirTop2Hit, dirN) },
     top3: { hit: top3Hit, n: top3N, pct: statPct(top3Hit, top3N) },
     goalPath: { hit: pathHit, n: pathN, pct: statPct(pathHit, pathN) },
     atmosphere: { hit: atmHit, n: atmN, pct: statPct(atmHit, atmN), neutral: atmNeutral },
@@ -950,6 +1000,13 @@ function renderResultsSummaryStats(stats) {
       label: '方向正确率',
       sub: '胜平负最高项',
       data: stats.direction,
+    },
+    {
+      key: 'directionTop2',
+      icon: '🎲',
+      label: 'Top2 方向',
+      sub: '实际赛果落在概率前二',
+      data: stats.directionTop2,
     },
     {
       key: 'top3',
@@ -1012,6 +1069,7 @@ function computePredictionVerdict(m) {
   const top3 = dist ? dist.slice(0, 3) : [];
   const officialOutcome = getScoreOutcome(r.home_score, r.away_score);
   const predOutcome = getPredictedOutcome(p);
+  const top2 = getOutcomeTop2(p);
   const ms = getMarketSnapshot(m);
   const margin = r.home_score - r.away_score;
 
@@ -1031,6 +1089,9 @@ function computePredictionVerdict(m) {
     poissonTop,
     scoreHit: predScore === official,
     outcomeHit: officialOutcome === predOutcome,
+    outcomeTop2Hit: top2.some(o => o.key === officialOutcome),
+    drawCoFavorite: isDrawCoFavorite(p),
+    outcomeTop2: top2,
     officialOutcome,
     predOutcome,
     predOutcomePct: p[`${predOutcome === 'home' ? 'home_win' : predOutcome === 'away' ? 'away_win' : 'draw'}`],
@@ -2071,6 +2132,7 @@ function renderScoreCompareHero(m, v) {
 
   const chips = [
     verdictChip('方向', v.outcomeHit),
+    verdictChip('Top2', v.outcomeTop2Hit),
     verdictChip('比分', v.scoreHit),
     verdictChip('Top3', v.anyTop3Hit),
     t.available ? verdictChip('总进球', t.hit, t.hit == null) : '',
@@ -2103,7 +2165,7 @@ function renderScoreCompareHero(m, v) {
         </div>
         ${renderScoreCompareBoard(m, predH, predA)}
         <div class="score-compare-foot score-compare-foot--pred">
-          ${OUTCOME_CN[v.predOutcome]} ${v.predOutcomePct}%${poissonNote}
+          ${OUTCOME_CN[v.predOutcome]} ${v.predOutcomePct}%${v.outcomeTop2?.length ? ` · Top2 ${v.outcomeTop2.map(o => OUTCOME_CN[o.key] + ' ' + o.pct + '%').join(' / ')}` : ''}${poissonNote}
         </div>
       </div>
     </div>

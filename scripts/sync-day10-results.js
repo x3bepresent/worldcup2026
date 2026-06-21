@@ -62,7 +62,7 @@ const FIFA_IDS = {
   m35: '400021472',
   m33: '400021469',
   m34: '400021465',
-  // m36: '400021475',
+  m36: '400021475',
 };
 
 /** 手工补充（FIFA API 无半场比分 / 助攻时） */
@@ -106,6 +106,19 @@ const MANUAL = {
     xg_report: 'FIFA M34 · 全场 0-0 · Advocaat 铁桶零封',
     fifa_id: '400021465',
   },
+  m36: {
+    home_score: 0,
+    away_score: 4,
+    status: 'FT',
+    label: '全场结束',
+    scorers: "Daichi Kamada 4'; Ayase Ueda 31', 83'; Junya Ito 69'",
+    highlights:
+      'Estadio BBVA 蒙特雷 · 世界杯第 1000 场 · Kamada 4\' 闪击 · Ueda 双响 · Junya Ito 69\' · Kovacs 主裁 · 日本 4 分追平荷兰',
+    ht_score: '0-2',
+    first_goal_min: 4,
+    xg_report: 'FIFA M36 · 半场 0-2 Kamada+Ueda · 下半场 Ito+Ueda 再入两球',
+    fifa_id: '400021475',
+  },
 };
 
 const REVIEW = {
@@ -115,14 +128,16 @@ const REVIEW = {
     '【赛后复盘】赛前主胜 67%/首推 2-0；实际 2-1。Kessié 30\' 半场领先，Undav 68\'+90+4\' 替补双响逆转。方向：主胜命中；比分 2-1 在 Top3 内；总球 3（走 3 球线）。净胜：仅赢 1 球，-1/1.5 部分达标未全穿。路径：弱队先进球→热门险胜收工，非爆发路径。',
   m34:
     '【赛后复盘】赛前主胜 55%/首推 1-0；实际 0-0 闷平。厄瓜多尔须抢分但未能破门；库拉索 5-4-1 铁桶+Room 零封复刻对德教训。方向：平局（25%）在分布内但非首推；总球 0（小 3 球线）。净胜：厄 -2.25 档全输；路径：铁局/小比分命中，热门哑火。',
+  m36:
+    '【赛后复盘】赛前客胜 41%/首推 0-1；实际 0-4 日本大胜。Kamada 4\' 闪击 · Ueda 31\'/83\' 双响 · Junya Ito 69\'；突 5-3-2 无 Khazri 完全被动。方向：客胜命中；比分远超泊松（0-4 非 Top7）；总球 4（大 2.25 穿盘）。净胜：日本 -1 全赢且穿盘。路径：热门控球爆发——轮换 3-4-3 效率爆表；氛围/路径均未预警 4 球大胜。',
 };
 
-/** F 组：第 2 轮部分（荷瑞已赛 · 突日待赛） */
+/** F 组：第 2 轮 4 场已赛 */
 const GROUP_F = [
   { team: 'Netherlands', pts: 4, p: 2, w: 1, d: 1, l: 0, gf: 7, ga: 3 },
+  { team: 'Japan', pts: 4, p: 2, w: 1, d: 1, l: 0, gf: 6, ga: 2 },
   { team: 'Sweden', pts: 3, p: 2, w: 1, d: 0, l: 1, gf: 6, ga: 6 },
-  { team: 'Japan', pts: 1, p: 1, w: 0, d: 1, l: 0, gf: 2, ga: 2 },
-  { team: 'Tunisia', pts: 0, p: 1, w: 0, d: 0, l: 1, gf: 1, ga: 5 },
+  { team: 'Tunisia', pts: 0, p: 2, w: 0, d: 0, l: 2, gf: 1, ga: 9 },
 ];
 
 /** E 组：第 2 轮 4 场已赛 */
@@ -151,7 +166,7 @@ function patchGroupContext(gc, group, table, homeTeam, awayTeam, extraNotes) {
     gf: r.gf,
     ga: r.ga,
   }));
-  gc.label = `${group}组 · 第 2 轮（部分）`;
+  gc.label = `${group}组 · 第 2 轮后`;
   if (gc.home) {
     gc.home.rank = hr;
     gc.home.pts = table[hr - 1]?.pts ?? 0;
@@ -284,11 +299,48 @@ function applyResult(m, r, reviewKey) {
     if (m.away.star) m.away.star = { ...m.away.stars[0] };
   }
 
+  if (id === 'm36' && m.away?.stars?.[0]) {
+    m.away.stars[0] = {
+      name: 'Ayase Ueda',
+      pos: 'ST',
+      club: 'Feyenoord',
+      stats: '31\'+83\' 双响',
+      rating: 9.0,
+      desc: '轮换 3-4-3 中锋双响 · 日本 4 分追平荷兰',
+    };
+    if (m.away.stars[1] == null) m.away.stars.push({});
+    m.away.stars[1] = {
+      name: 'Daichi Kamada',
+      pos: 'CAM',
+      club: 'Lazio',
+      stats: '4\' 闪击',
+      rating: 8.5,
+      desc: '开场 4 分钟破门 · 世界杯第 1000 场首球',
+    };
+    if (m.away.star) m.away.star = { ...m.away.stars[0] };
+  }
+  if (id === 'm36' && m.home?.stars?.[0]) {
+    m.home.stars[0] = {
+      name: 'Aymen Dahmen',
+      pos: 'GK',
+      club: 'Club Africain',
+      stats: '多次扑救',
+      rating: 6.5,
+      desc: '0-4 仍尽力 · 突尼斯 0 分出局',
+    };
+    if (m.home.star) m.home.star = { ...m.home.stars[0] };
+  }
+
   if (m.group === 'F') {
-    const notes = [
-      '荷兰 4 分领跑 · 瑞典 3 分 · 日本/突尼斯各赛 1 场',
-      '末轮：突尼斯 vs 日本（m36）决定 F 组次席争夺',
-    ];
+    const notes = id === 'm36'
+      ? [
+          '荷兰/日本同 4 分 · 净胜球荷兰领跑 · 瑞典 3 分',
+          '突尼斯 0 分 2 连败出局 · 末轮决定 F 组头名',
+        ]
+      : [
+          'F 组第 2 轮收官 · 荷兰/日本 4 分 · 瑞典 3 分 · 突 0 分',
+          '日本 0-4 突尼斯 · Kamada+Ueda 主导',
+        ];
     m.group_context = patchGroupContext(m.group_context, m.group, GROUP_F, m.home.name, m.away.name, notes);
   }
   if (m.group === 'E') {
@@ -334,7 +386,7 @@ async function main() {
   const MATCH_DATA = loadData(MATCH_PATH, 'MATCH_DATA');
   const RESULTS_DATA = loadData(RESULTS_PATH, 'RESULTS_DATA');
 
-  const SYNC_IDS = ['m34', 'm33', 'm35'];
+  const SYNC_IDS = ['m36', 'm34', 'm33', 'm35'];
   const archiveIds = [];
   for (const id of SYNC_IDS) {
     const m = MATCH_DATA.todayMatches.find(x => x.id === id);
@@ -363,19 +415,20 @@ async function main() {
   }
 
   let snaps = RESULTS_DATA.groupSnapshots || [];
-  snaps = upsertGroup(snaps, 'F', 'F组 · 第2轮（部分）', GROUP_F);
+  snaps = upsertGroup(snaps, 'F', 'F组 · 第2轮后', GROUP_F);
   snaps = upsertGroup(snaps, 'E', 'E组 · 第2轮后', GROUP_E);
   RESULTS_DATA.groupSnapshots = snaps;
 
   MATCH_DATA.lastUpdated = TS;
-  MATCH_DATA.syncSource = 'FIFA 官方赛果 · Day 10 部分同步';
+  MATCH_DATA.syncSource = 'FIFA 官方赛果 · Day 10 全部同步';
   MATCH_DATA.breakingNews = [
+    { tag: 'OFFICIAL', text: '🏁 突 0-4 日 · 世界杯第1000场 · Ueda 双响 · 日本 4 分', time: 'F组' },
+    { tag: 'OFFICIAL', text: 'F组：荷兰 4 · 日本 4 · 瑞典 3 · 突 0', time: '积分榜' },
     { tag: 'OFFICIAL', text: '🏁 厄 0-0 库 · 马宁主裁 · 库拉索铁桶零封 · 各得 1 分', time: 'E组' },
     { tag: 'OFFICIAL', text: 'E组：德国 6 · 科特 3 · 厄 1 · 库 1', time: '积分榜' },
     { tag: 'OFFICIAL', text: '🏁 德 2-1 科特 · Undav 替补双响 · 德国 6 分', time: 'E组' },
     { tag: 'OFFICIAL', text: '🏁 荷 5-1 瑞 · 荷兰 4 分领跑 F 组', time: 'F组' },
-    { tag: 'OFFICIAL', text: 'F组：荷兰 4 · 瑞典 3 · 日本 1 · 突 0（突日待赛）', time: '积分榜' },
-    ...(MATCH_DATA.breakingNews || []).filter(n => !/厄 0-0|德 2-1|荷 5-1/.test(n.text || '')).slice(0, 5),
+    ...(MATCH_DATA.breakingNews || []).filter(n => !/突 0-4|厄 0-0|德 2-1|荷 5-1|突日待赛/.test(n.text || '')).slice(0, 4),
   ].slice(0, 10);
 
   const nextNs = MATCH_DATA.todayMatches.find(m => !m.actualResult || m.actualResult.status === 'NS');
@@ -410,7 +463,7 @@ async function main() {
   }
 
   RESULTS_DATA.lastUpdated = TS;
-  RESULTS_DATA.syncSource = 'FIFA 官方赛果 · Day 10 部分 (m33–m35, m34)';
+  RESULTS_DATA.syncSource = 'FIFA 官方赛果 · Day 10 全部 (m33–m36)';
 
   const day9Results = [
     { id: 'm32', home: 'USA', away: 'Australia', score: '2-0', group: 'D' },
@@ -444,9 +497,9 @@ async function main() {
     standings: [
       ...(RESULTS_DATA.groupSnapshots || []).filter(g => ['C', 'D'].includes(g.group)),
       { group: 'E', label: 'E组 · 第2轮后', table: GROUP_E },
-      { group: 'F', label: 'F组 · 第2轮（部分）', table: GROUP_F },
+      { group: 'F', label: 'F组 · 第2轮后', table: GROUP_F },
     ],
-    injuries: { note: 'Kubo OUT m36 · m33 Undav 替补双响 · m35 已赛' },
+    injuries: { note: 'Day 10 四场已赛 · m36 日 0-4 突 · Ueda 双响 · m33 Undav 替补双响' },
     yesterdayResults: day9Results.map(r => ({ id: r.id, score: r.score })),
   };
 
@@ -463,7 +516,7 @@ async function main() {
     `// Auto-synced by scripts/sync-day10-results.js\n// Updated: ${TS}\nconst LIVE_DATA = ${JSON.stringify(LIVE_DATA, null, 2)};\n`,
   );
 
-  console.log('✅ Day 10 results synced (partial)');
+  console.log('✅ Day 10 results synced');
   for (const id of SYNC_IDS) {
     const r = resolved[id];
     if (r?.home_score != null) {

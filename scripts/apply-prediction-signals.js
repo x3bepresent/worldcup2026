@@ -11,6 +11,7 @@ const {
   buildDepthCalibration,
   buildPublicSummaryNote,
   applyDepthToPrediction,
+  applyDrawContextAdjust,
   buildGroupContext,
   buildInsightKeyFactors,
   buildPreviewPostMatchReview,
@@ -19,8 +20,11 @@ const {
   enrichActualResultForReview,
   buildGoalTimingDisplay,
 } = require('../js/prediction-signals-lib');
+const { computeOutcomeFromXg, computeScoreDistribution } = require('./score-model');
 const { pickMarketSnapshot } = require('./archive-match.js');
+const { refreshBasePrediction, enrichArchivedFull } = require('./archived-enrich.js');
 const HANDICAP = {
+  ...require('./handicap-data-day1-5'),
   ...require('./handicap-data-day6'),
   ...require('./handicap-data-day7'),
   ...require('./handicap-data-day8'),
@@ -140,6 +144,9 @@ function syncSiteMeta(data) {
 
 function enrichMatchSignals(m, handicapMap, snapshots) {
   const copy = JSON.parse(JSON.stringify(m));
+  if (copy.prediction?.xg_home != null) {
+    copy.prediction = refreshBasePrediction(copy);
+  }
   const raw = handicapMap[copy.id];
   if (raw) {
     copy.depth_calibration = buildDepthCalibration(copy, raw);
@@ -196,50 +203,9 @@ function enrichMatchSignals(m, handicapMap, snapshots) {
   return copy;
 }
 
-/** 精简归档场次：只刷新赛后复盘块，不注入完整赛前情报 */
+/** 精简归档场次 — 全量 v2 重算（handicap + 胜平负 + 复盘） */
 function enrichArchivedMatch(m, handicapMap) {
-  const copy = JSON.parse(JSON.stringify(m));
-  const raw = handicapMap[copy.id];
-
-  if (raw && !copy.market_snapshot?.over_pct) {
-    const dc = buildDepthCalibration(copy, raw);
-    copy.market_snapshot = pickMarketSnapshot({ depth_calibration: dc });
-    if (!copy.depth_calibration) copy.depth_calibration = {};
-    if (!copy.depth_calibration.public_summary_note && dc.public_summary_note) {
-      copy.depth_calibration.public_summary_note = dc.public_summary_note;
-    }
-    if (dc.display_summary?.goal_timing && !copy.depth_calibration.display_summary?.goal_timing) {
-      if (!copy.depth_calibration.display_summary) copy.depth_calibration.display_summary = {};
-      copy.depth_calibration.display_summary.goal_timing = dc.display_summary.goal_timing;
-    }
-  }
-
-  if (copy.actualResult?.home_score != null && copy.prediction?.xg_home != null) {
-    const ge = buildGoalEfficiencyReview(copy);
-    if (ge) {
-      if (!copy.depth_calibration) copy.depth_calibration = {};
-      copy.depth_calibration.goal_efficiency = ge;
-    }
-    const dc = copy.depth_calibration;
-    if (dc && !dc.preview_replay && raw) {
-      const fullDc = buildDepthCalibration(copy, raw);
-      if (fullDc.display_summary) {
-        const ar = enrichActualResultForReview(copy);
-        dc.preview_replay = buildPreviewPostMatchReview(
-          fullDc.display_summary,
-          ar,
-          copy.home?.name,
-          copy.away?.name,
-          {
-            tier_home: fullDc.tier_home,
-            tier_gap: fullDc.tier_gap,
-            totals_line: fullDc.totals_line,
-          }
-        );
-      }
-    }
-  }
-  return copy;
+  return enrichArchivedFull(m, handicapMap, GOAL_TIMING);
 }
 
 const MATCH_DATA = loadData(MATCH_PATH, 'MATCH_DATA');

@@ -113,6 +113,45 @@ function pickTeam(t) {
   };
 }
 
+function pickPreMatchContext(m) {
+  const stripReview = (s) => (s || '').replace(/【赛后复盘】[\s\S]*/g, '').trim();
+  const ctx = {
+    key_factor_pre: stripReview(m.prediction?.key_factor) || null,
+  };
+  if (m.coach_analysis?.home || m.coach_analysis?.away) {
+    ctx.coach_analysis = {
+      home: m.coach_analysis.home ? {
+        formation_pref: m.coach_analysis.home.formation_pref,
+        style_summary: m.coach_analysis.home.style_summary,
+        match_note: m.coach_analysis.home.match_note,
+      } : null,
+      away: m.coach_analysis.away ? {
+        formation_pref: m.coach_analysis.away.formation_pref,
+        style_summary: m.coach_analysis.away.style_summary,
+        match_note: m.coach_analysis.away.match_note,
+      } : null,
+    };
+  }
+  if (m.upset_alert) {
+    ctx.upset_alert = {
+      level: m.upset_alert.level,
+      level_cn: m.upset_alert.level_cn,
+      tactical: m.upset_alert.tactical,
+      verdict: m.upset_alert.verdict,
+    };
+  }
+  const hr = (m.home?.rumors || []).slice(0, 4);
+  const ar = (m.away?.rumors || []).slice(0, 4);
+  if (hr.length) ctx.home_rumors = hr;
+  if (ar.length) ctx.away_rumors = ar;
+  if (m.lineup?.diff) {
+    ctx.lineup_diff = { home: m.lineup.diff.home, away: m.lineup.diff.away };
+  }
+  if (m.lineup?.formation) ctx.lineup_formation = m.lineup.formation;
+  const has = Object.values(ctx).some(v => v != null && v !== '');
+  return has ? ctx : null;
+}
+
 /** 从完整赛前 match 对象生成精简归档 */
 function archiveFinishedMatch(m, opts = {}) {
   const archivedAt = opts.archivedAt || new Date().toISOString().replace(/\.\d{3}Z$/, '+08:00');
@@ -154,6 +193,9 @@ function archiveFinishedMatch(m, opts = {}) {
     };
   }
 
+  const preCtx = pickPreMatchContext(m);
+  if (preCtx) out.pre_match_context = preCtx;
+
   return out;
 }
 
@@ -167,5 +209,6 @@ module.exports = {
   pickMarketSnapshot,
   pickDepthCalibration,
   pickTeam,
+  pickPreMatchContext,
   isSlimArchive,
 };

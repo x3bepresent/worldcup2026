@@ -1,29 +1,29 @@
 {
   "stats": {
-    "n": 35,
+    "n": 36,
     "atmosphere": {
       "strongLean": {
         "hit": 1,
-        "n": 3,
+        "n": 2,
         "push": 1
       },
       "modelOver50": {
-        "hit": 7,
-        "n": 17,
+        "hit": 8,
+        "n": 18,
         "push": 2
       },
       "replayTagged": {
-        "hit": 13,
-        "n": 14
+        "hit": 14,
+        "n": 15
       }
     },
     "path": {
-      "hit": 21,
-      "n": 35
+      "hit": 20,
+      "n": 36
     },
     "xgTotal": {
-      "hit": 29,
-      "n": 29,
+      "hit": 30,
+      "n": 30,
       "near": 6
     }
   },
@@ -40,10 +40,10 @@
         "note": "未强判"
       },
       "atmPct": null,
-      "previewPrimary": "铁局/小比分",
-      "previewLean": "中性",
-      "previewMode": "neutral",
-      "pathHit": true,
+      "previewPrimary": "热门爆发",
+      "previewLean": "热门爆发路径",
+      "previewMode": "prediction",
+      "pathHit": false,
       "actualPath": "混合路径",
       "replayHits": [],
       "replayMisses": [],
@@ -247,10 +247,10 @@
         "note": "未强判"
       },
       "atmPct": null,
-      "previewPrimary": "铁局/小比分",
+      "previewPrimary": "热门爆发",
       "previewLean": "预防大比分",
       "previewMode": "prevention",
-      "pathHit": false,
+      "pathHit": true,
       "actualPath": "对攻兑现",
       "replayHits": [],
       "replayMisses": [],
@@ -326,8 +326,8 @@
       },
       "atmPct": null,
       "previewPrimary": "热门爆发",
-      "previewLean": "中性",
-      "previewMode": "neutral",
+      "previewLean": "热门爆发路径",
+      "previewMode": "prediction",
       "pathHit": true,
       "actualPath": "热门爆发",
       "replayHits": [],
@@ -351,10 +351,10 @@
         "note": "未强判"
       },
       "atmPct": null,
-      "previewPrimary": "铁局/小比分",
-      "previewLean": "中性",
-      "previewMode": "neutral",
-      "pathHit": true,
+      "previewPrimary": "热门爆发",
+      "previewLean": "热门爆发路径",
+      "previewMode": "prediction",
+      "pathHit": false,
       "actualPath": "混合路径",
       "replayHits": [],
       "replayMisses": [],
@@ -770,8 +770,8 @@
         "over_pct": 47.8
       },
       "previewPrimary": "热门爆发",
-      "previewLean": "中性",
-      "previewMode": "neutral",
+      "previewLean": "热门爆发路径",
+      "previewMode": "prediction",
       "pathHit": true,
       "actualPath": "热门爆发",
       "replayHits": [
@@ -873,7 +873,7 @@
         "modelOver": false,
         "actualOver": false,
         "line": 2.5,
-        "over_pct": 37.8
+        "over_pct": 34.6
       },
       "previewPrimary": "铁局/小比分",
       "previewLean": "小比分预测",
@@ -932,10 +932,10 @@
       "score": "3-0",
       "total": 3,
       "atm": {
-        "gradeable": true,
-        "verdict": "dull",
-        "hit": false,
-        "note": "偏闷→实际3球"
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
       },
       "atmPct": {
         "hit": false,
@@ -950,7 +950,7 @@
       "pathHit": false,
       "actualPath": "热门爆发",
       "replayHits": [
-        "进球氛围偏沉闷一致"
+        "赛前进球氛围未强判（符合模型五五开读法）"
       ],
       "replayMisses": [
         "净胜全达标超预期（模型曾偏谨慎）"
@@ -973,11 +973,11 @@
         "note": "未强判"
       },
       "atmPct": {
-        "hit": false,
-        "modelOver": true,
+        "hit": true,
+        "modelOver": false,
         "actualOver": false,
         "line": 2.5,
-        "over_pct": 51.1
+        "over_pct": 47.6
       },
       "previewPrimary": "铁局/小比分",
       "previewLean": "大/小比分分裂",
@@ -1090,6 +1090,42 @@
         "hit": true,
         "xgT": 2.37,
         "diff": -2.37
+      },
+      "hasLine": true
+    },
+    {
+      "id": "m36",
+      "label": "Tunisia vs Japan",
+      "score": "0-4",
+      "total": 4,
+      "atm": {
+        "gradeable": false,
+        "verdict": "neutral",
+        "hit": null,
+        "note": "未强判"
+      },
+      "atmPct": {
+        "hit": false,
+        "modelOver": false,
+        "actualOver": true,
+        "line": 2.25,
+        "over_pct": 38
+      },
+      "previewPrimary": "铁局/小比分",
+      "previewLean": "中性",
+      "previewMode": "neutral",
+      "pathHit": false,
+      "actualPath": "热门爆发",
+      "replayHits": [
+        "赛前进球氛围未强判（符合模型五五开读法）"
+      ],
+      "replayMisses": [
+        "净胜全达标超预期（模型曾偏谨慎）"
+      ],
+      "xgDir": {
+        "hit": true,
+        "xgT": 2.3600000000000003,
+        "diff": 1.64
       },
       "hasLine": true
     }
