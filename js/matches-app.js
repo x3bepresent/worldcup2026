@@ -930,16 +930,24 @@ function statPctClass(pct) {
   return 'results-stat-pct--low';
 }
 
+/** 归档/market_snapshot 是否表达了进球氛围倾向（含略偏，不含纯五五开） */
+function hasAtmosphereLean(ms) {
+  if (ms.totals_show_lean) return true;
+  const level = ms.totals_level || '';
+  return /^mild_|^clear_/.test(level);
+}
+
 function computeAtmosphereStrongHit(m) {
   const ms = getMarketSnapshot(m);
   const r = m.actualResult;
-  if (!ms.totals_show_lean || r?.home_score == null) return null;
+  if (!hasAtmosphereLean(ms) || r?.home_score == null) return null;
   const total = r.home_score + r.away_score;
   const line = ms.totals_line ?? 2.5;
   if (Math.abs(total - line) < 0.01) return null;
-  const dull = ms.totals_lean_side === 'dull' || (ms.totals_level || '').includes('low');
+  const level = ms.totals_level || '';
+  const dull = ms.totals_lean_side === 'dull' || level.includes('low');
   const bright = ms.totals_lean_side === 'bright' || ms.totals_lean_side === 'exciting'
-    || (ms.totals_level || '').includes('high');
+    || level.includes('high');
   if (dull) return total < line;
   if (bright) return total > line;
   return null;
@@ -975,7 +983,7 @@ function computeResultsAggregateStats(matches) {
     const atm = computeAtmosphereStrongHit(m);
     if (atm === null) {
       const ms = getMarketSnapshot(m);
-      if (!ms.totals_show_lean) atmNeutral += 1;
+      if (!hasAtmosphereLean(ms)) atmNeutral += 1;
     } else {
       atmN += 1;
       if (atm) atmHit += 1;
@@ -1029,8 +1037,8 @@ function renderResultsSummaryStats(stats) {
       icon: '🌡️',
       label: '进球氛围正确率',
       sub: stats.atmosphere.n
-        ? `仅强倾向场次 · ${stats.atmosphere.neutral} 场未强判`
-        : `暂无强判样本 · ${stats.atmosphere.neutral} 场五五开`,
+        ? `偏闷/偏精彩 vs 实际总进球线 · ${stats.atmosphere.neutral} 场五五开未计`
+        : `暂无倾向样本 · ${stats.atmosphere.neutral} 场五五开`,
       data: stats.atmosphere.n ? stats.atmosphere : { hit: 0, n: 0, pct: 0 },
       muted: !stats.atmosphere.n,
     },
