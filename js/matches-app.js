@@ -950,6 +950,8 @@ function computeResultsAggregateStats(matches) {
   let dirN = 0;
   let top3Hit = 0;
   let top3N = 0;
+  let top5Hit = 0;
+  let top5N = 0;
   let pathHit = 0;
   let pathN = 0;
   let atmHit = 0;
@@ -963,6 +965,8 @@ function computeResultsAggregateStats(matches) {
     if (v.outcomeHit) dirHit += 1;
     top3N += 1;
     if (v.anyTop3Hit) top3Hit += 1;
+    top5N += 1;
+    if (v.anyTop5Hit) top5Hit += 1;
     const eff = computeGoalEfficiencyHit(m);
     if (eff != null) {
       pathN += 1;
@@ -981,6 +985,7 @@ function computeResultsAggregateStats(matches) {
   return {
     direction: { hit: dirHit, n: dirN, pct: statPct(dirHit, dirN) },
     top3: { hit: top3Hit, n: top3N, pct: statPct(top3Hit, top3N) },
+    top5: { hit: top5Hit, n: top5N, pct: statPct(top5Hit, top5N) },
     goalPath: { hit: pathHit, n: pathN, pct: statPct(pathHit, pathN) },
     atmosphere: { hit: atmHit, n: atmN, pct: statPct(atmHit, atmN), neutral: atmNeutral },
     /** @deprecated 与 goalPath 同口径，保留兼容 */
@@ -1004,6 +1009,13 @@ function renderResultsSummaryStats(stats) {
       label: '比分前三正确率',
       sub: '泊松 Top3 含实际',
       data: stats.top3,
+    },
+    {
+      key: 'top5',
+      icon: '📈',
+      label: '比分前五正确率',
+      sub: '泊松 Top5 含实际',
+      data: stats.top5,
     },
     {
       key: 'goalPath',
@@ -1057,6 +1069,7 @@ function computePredictionVerdict(m) {
   const poissonTop = getPoissonTopScore(p);
   const dist = getMatchScoreDistribution(p);
   const top3 = dist ? dist.slice(0, 3) : [];
+  const top5 = dist ? dist.slice(0, 5) : [];
   const officialOutcome = getScoreOutcome(r.home_score, r.away_score);
   const predOutcome = getPredictedOutcome(p);
   const ms = getMarketSnapshot(m);
@@ -1083,6 +1096,8 @@ function computePredictionVerdict(m) {
     predOutcomePct: p[`${predOutcome === 'home' ? 'home_win' : predOutcome === 'away' ? 'away_win' : 'draw'}`],
     top3: top3.map(d => ({ ...d, hit: d.score === official })),
     anyTop3Hit: top3.some(d => d.score === official),
+    top5: top5.map(d => ({ ...d, hit: d.score === official })),
+    anyTop5Hit: top5.some(d => d.score === official),
     dataIntegrity,
     dataIntegrityNote,
     totals: computeTotalsVerdict(m, ms),
@@ -2120,6 +2135,7 @@ function renderScoreCompareHero(m, v) {
     verdictChip('方向', v.outcomeHit),
     verdictChip('比分', v.scoreHit),
     verdictChip('Top3', v.anyTop3Hit),
+    verdictChip('Top5', v.anyTop5Hit),
     t.available ? verdictChip('总进球', t.hit, t.hit == null) : '',
     mg.available ? verdictChip('净胜', mg.hit, mg.hit == null) : '',
     v.goalEfficiencyHit != null ? verdictChip('进球路径', v.goalEfficiencyHit) : '',

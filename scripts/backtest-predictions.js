@@ -120,6 +120,7 @@ for (const m of matches) {
   }
   const inTop1 = topScores[0] === actualScore;
   const inTop3 = topScores.slice(0, 3).includes(actualScore);
+  const inTop5 = topScores.slice(0, 5).includes(actualScore);
   const inTop6 = topScores.slice(0, 6).includes(actualScore);
 
   const defaultLine = 2.5;
@@ -166,6 +167,7 @@ for (const m of matches) {
     exactScoreHit,
     inTop1,
     inTop3,
+    inTop5,
     inTop6,
     predScore,
     xgSum,
@@ -194,6 +196,7 @@ const stats = {
   exactScore: { hit: rows.filter(r => r.exactScoreHit).length, n: rows.length },
   top1: { hit: rows.filter(r => r.inTop1).length, n: rows.length },
   top3: { hit: rows.filter(r => r.inTop3).length, n: rows.length },
+  top5: { hit: rows.filter(r => r.inTop5).length, n: rows.length },
   top6: { hit: rows.filter(r => r.inTop6).length, n: rows.length },
 };
 
@@ -215,6 +218,7 @@ console.log('\n=== 2. 比分精度 ===');
 console.log(`  首推比分完全命中: ${stats.exactScore.hit}/${stats.exactScore.n} = ${pct(stats.exactScore.hit, stats.exactScore.n)}%`);
 console.log(`  泊松 Top1 含实际: ${stats.top1.hit}/${stats.top1.n} = ${pct(stats.top1.hit, stats.top1.n)}%`);
 console.log(`  泊松 Top3 含实际: ${stats.top3.hit}/${stats.top3.n} = ${pct(stats.top3.hit, stats.top3.n)}%`);
+console.log(`  泊松 Top5 含实际: ${stats.top5.hit}/${stats.top5.n} = ${pct(stats.top5.hit, stats.top5.n)}%`);
 console.log(`  泊松 Top6 含实际: ${stats.top6.hit}/${stats.top6.n} = ${pct(stats.top6.hit, stats.top6.n)}%`);
 
 console.log('\n=== 3. 总进球 / xG ===');
