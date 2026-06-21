@@ -1,8 +1,8 @@
-// 今日赛事 — Day 10 (signals enriched)
-// Last updated: 2026-06-21T06:00:00+08:00
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-21T09:31:52.998Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-21T06:00:00+08:00",
-  "syncSource": "FIFA 官方赛果 · Day 10 全部同步 · 推演概要+小组形势",
+  "lastUpdated": "2026-06-21T09:31:52.998Z",
+  "syncSource": "API-Football",
   "breakingNews": [
     {
       "tag": "UPDATE",
