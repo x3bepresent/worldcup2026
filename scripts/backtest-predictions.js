@@ -54,19 +54,6 @@ function pickOutcome(pred) {
   return 'draw';
 }
 
-function pickOutcomeTop2(pred) {
-  return lib.getOutcomeTop2
-    ? lib.getOutcomeTop2(pred)
-    : (() => {
-      const items = [
-        { key: 'home', pct: pred.home_win ?? 0 },
-        { key: 'draw', pct: pred.draw ?? 0 },
-        { key: 'away', pct: pred.away_win ?? 0 },
-      ].sort((a, b) => b.pct - a.pct);
-      return items.slice(0, 2).map(i => i.key);
-    })();
-}
-
 function totalsOverWeight(total, line) {
   if (Math.abs(total - line) < 0.001) return 0.5;
   return total > line ? 1 : 0;
@@ -117,10 +104,8 @@ for (const m of matches) {
   const raw = rawById[m.id];
 
   const pick = pickOutcome(pred);
-  const top2 = pickOutcomeTop2(pred);
   const actualOut = outcomeKey(actual.margin);
   const directionHit = pick === actualOut;
-  const directionTop2Hit = top2.includes(actualOut);
 
   const predScore = pred.score ? String(pred.score).replace(/\s/g, '') : null;
   const actualScore = `${actual.h}-${actual.a}`;
@@ -176,10 +161,8 @@ for (const m of matches) {
     actualTotal: actual.total,
     actualMargin: actual.margin,
     pick,
-    top2,
     actualOut,
     directionHit,
-    directionTop2Hit,
     exactScoreHit,
     inTop1,
     inTop3,
@@ -208,7 +191,6 @@ console.log(`\n📊 回测样本：${rows.length} 场已结束（共 ${matches.l
 // ── 汇总 ──
 const stats = {
   direction: { hit: rows.filter(r => r.directionHit).length, n: rows.length },
-  directionTop2: { hit: rows.filter(r => r.directionTop2Hit).length, n: rows.length },
   exactScore: { hit: rows.filter(r => r.exactScoreHit).length, n: rows.length },
   top1: { hit: rows.filter(r => r.inTop1).length, n: rows.length },
   top3: { hit: rows.filter(r => r.inTop3).length, n: rows.length },
@@ -220,7 +202,6 @@ const totalsN = withHandicap.length;
 
 console.log('=== 1. 胜平负方向 ===');
 console.log(`  最高概率项命中: ${stats.direction.hit}/${stats.direction.n} = ${pct(stats.direction.hit, stats.direction.n)}%`);
-console.log(`  Top2 含实际赛果: ${stats.directionTop2.hit}/${stats.directionTop2.n} = ${pct(stats.directionTop2.hit, stats.directionTop2.n)}%`);
 
 const byOut = { home: [], draw: [], away: [] };
 for (const r of rows) byOut[r.actualOut].push(r);

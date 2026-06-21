@@ -947,7 +947,6 @@ function computeAtmosphereStrongHit(m) {
 
 function computeResultsAggregateStats(matches) {
   let dirHit = 0;
-  let dirTop2Hit = 0;
   let dirN = 0;
   let top3Hit = 0;
   let top3N = 0;
@@ -962,7 +961,6 @@ function computeResultsAggregateStats(matches) {
     if (!v) continue;
     dirN += 1;
     if (v.outcomeHit) dirHit += 1;
-    if (v.outcomeTop2Hit) dirTop2Hit += 1;
     top3N += 1;
     if (v.anyTop3Hit) top3Hit += 1;
     const eff = computeGoalEfficiencyHit(m);
@@ -982,7 +980,6 @@ function computeResultsAggregateStats(matches) {
 
   return {
     direction: { hit: dirHit, n: dirN, pct: statPct(dirHit, dirN) },
-    directionTop2: { hit: dirTop2Hit, n: dirN, pct: statPct(dirTop2Hit, dirN) },
     top3: { hit: top3Hit, n: top3N, pct: statPct(top3Hit, top3N) },
     goalPath: { hit: pathHit, n: pathN, pct: statPct(pathHit, pathN) },
     atmosphere: { hit: atmHit, n: atmN, pct: statPct(atmHit, atmN), neutral: atmNeutral },
@@ -998,15 +995,8 @@ function renderResultsSummaryStats(stats) {
       key: 'direction',
       icon: '🎯',
       label: '方向正确率',
-      sub: '胜平负最高项',
+      sub: '赛前概率最高项 = 实际胜平负',
       data: stats.direction,
-    },
-    {
-      key: 'directionTop2',
-      icon: '🎲',
-      label: 'Top2 方向',
-      sub: '实际赛果落在概率前二',
-      data: stats.directionTop2,
     },
     {
       key: 'top3',
@@ -1038,7 +1028,7 @@ function renderResultsSummaryStats(stats) {
     <div class="results-stats-bar fade-in">
       <div class="results-stats-head">
         <span class="results-stats-title">累计推演核验</span>
-        <span class="results-stats-meta">${stats.direction.n} 场已归档 · 赛前冻结推演对照官方赛果</span>
+        <span class="results-stats-meta">${stats.direction.n} 场已归档 · 冻结赛前推演 vs 官方赛果（仅最高概率方向等硬指标）</span>
       </div>
       <div class="results-stats-grid">
         ${cards.map(c => `
@@ -1069,7 +1059,6 @@ function computePredictionVerdict(m) {
   const top3 = dist ? dist.slice(0, 3) : [];
   const officialOutcome = getScoreOutcome(r.home_score, r.away_score);
   const predOutcome = getPredictedOutcome(p);
-  const top2 = getOutcomeTop2(p);
   const ms = getMarketSnapshot(m);
   const margin = r.home_score - r.away_score;
 
@@ -1089,9 +1078,6 @@ function computePredictionVerdict(m) {
     poissonTop,
     scoreHit: predScore === official,
     outcomeHit: officialOutcome === predOutcome,
-    outcomeTop2Hit: top2.some(o => o.key === officialOutcome),
-    drawCoFavorite: isDrawCoFavorite(p),
-    outcomeTop2: top2,
     officialOutcome,
     predOutcome,
     predOutcomePct: p[`${predOutcome === 'home' ? 'home_win' : predOutcome === 'away' ? 'away_win' : 'draw'}`],
@@ -2132,7 +2118,6 @@ function renderScoreCompareHero(m, v) {
 
   const chips = [
     verdictChip('方向', v.outcomeHit),
-    verdictChip('Top2', v.outcomeTop2Hit),
     verdictChip('比分', v.scoreHit),
     verdictChip('Top3', v.anyTop3Hit),
     t.available ? verdictChip('总进球', t.hit, t.hit == null) : '',
@@ -2165,7 +2150,7 @@ function renderScoreCompareHero(m, v) {
         </div>
         ${renderScoreCompareBoard(m, predH, predA)}
         <div class="score-compare-foot score-compare-foot--pred">
-          ${OUTCOME_CN[v.predOutcome]} ${v.predOutcomePct}%${v.outcomeTop2?.length ? ` · Top2 ${v.outcomeTop2.map(o => OUTCOME_CN[o.key] + ' ' + o.pct + '%').join(' / ')}` : ''}${poissonNote}
+          ${OUTCOME_CN[v.predOutcome]} ${v.predOutcomePct}%${poissonNote}
         </div>
       </div>
     </div>
