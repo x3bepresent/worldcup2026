@@ -1,8 +1,8 @@
-// 今日赛事 — Day 10 (enriched)
-// Last updated: 2026-06-21T03:22:07+08:00
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-21T04:10:02.163Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-21T03:22:07+08:00",
-  "syncSource": "FIFA 赛程 · Day 10 · weather/mystic/injuries/coach/referee enriched",
+  "lastUpdated": "2026-06-21T04:10:02.163Z",
+  "syncSource": "API-Football",
   "breakingNews": [
     {
       "tag": "OFFICIAL",
