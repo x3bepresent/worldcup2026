@@ -38,7 +38,7 @@ function ensureInsightFactors(match) {
 }
 
 const MATCH_DATA = loadData(MATCH_PATH, 'MATCH_DATA');
-const ids = ['m41', 'm42', 'm43', 'm44'];
+const ids = ['m43', 'm42', 'm41', 'm44'];
 
 for (const m of MATCH_DATA.todayMatches || []) {
   if (!ids.includes(m.id)) continue;
@@ -66,7 +66,7 @@ fs.writeFileSync(
 try {
   const LIVE_DATA = loadData(LIVE_PATH, 'LIVE_DATA');
   LIVE_DATA.lastUpdated = TS;
-  LIVE_DATA.injuries = { note: 'Day 12 · K/L组第2轮 · 葡萄牙/英格兰/哥伦比亚须抢分' };
+  LIVE_DATA.injuries = { note: 'Day 12 · I/J组第2轮 · 阿根廷/奥地利榜首 · Haaland vs Mané' };
   fs.writeFileSync(
     LIVE_PATH,
     `// Auto-synced by scripts/enrich-day12.js\n// Updated: ${TS}\nconst LIVE_DATA = ${JSON.stringify(LIVE_DATA, null, 2)};\n`,
