@@ -1,0 +1,464 @@
+{
+  "generated": "2026-06-22T04:35:37.561Z",
+  "matches": {
+    "1": {
+      "fifaId": "400021443",
+      "home": "Mexico",
+      "away": "South Africa"
+    },
+    "2": {
+      "fifaId": "400021441",
+      "home": "Korea Republic",
+      "away": "Czechia"
+    },
+    "3": {
+      "fifaId": "400021449",
+      "home": "Canada",
+      "away": "Bosnia and Herzegovina"
+    },
+    "4": {
+      "fifaId": "400021458",
+      "home": "USA",
+      "away": "Paraguay"
+    },
+    "5": {
+      "fifaId": "400021453",
+      "home": "Haiti",
+      "away": "Scotland"
+    },
+    "6": {
+      "fifaId": "400021463",
+      "home": "Australia",
+      "away": "Türkiye"
+    },
+    "7": {
+      "fifaId": "400021456",
+      "home": "Brazil",
+      "away": "Morocco"
+    },
+    "8": {
+      "fifaId": "400021447",
+      "home": "Qatar",
+      "away": "Switzerland"
+    },
+    "9": {
+      "fifaId": "400021467",
+      "home": "Côte d'Ivoire",
+      "away": "Ecuador"
+    },
+    "10": {
+      "fifaId": "400021464",
+      "home": "Germany",
+      "away": "Curaçao"
+    },
+    "11": {
+      "fifaId": "400021470",
+      "home": "Netherlands",
+      "away": "Japan"
+    },
+    "12": {
+      "fifaId": "400021474",
+      "home": "Sweden",
+      "away": "Tunisia"
+    },
+    "13": {
+      "fifaId": "400021486",
+      "home": "Saudi Arabia",
+      "away": "Uruguay"
+    },
+    "14": {
+      "fifaId": "400021482",
+      "home": "Spain",
+      "away": "Cabo Verde"
+    },
+    "15": {
+      "fifaId": "400021476",
+      "home": "IR Iran",
+      "away": "New Zealand"
+    },
+    "16": {
+      "fifaId": "400021478",
+      "home": "Belgium",
+      "away": "Egypt"
+    },
+    "17": {
+      "fifaId": "400021490",
+      "home": "France",
+      "away": "Senegal"
+    },
+    "18": {
+      "fifaId": "400021488",
+      "home": "Iraq",
+      "away": "Norway"
+    },
+    "19": {
+      "fifaId": "400021496",
+      "home": "Argentina",
+      "away": "Algeria"
+    },
+    "20": {
+      "fifaId": "400021498",
+      "home": "Austria",
+      "away": "Jordan"
+    },
+    "21": {
+      "fifaId": "400021510",
+      "home": "Ghana",
+      "away": "Panama"
+    },
+    "22": {
+      "fifaId": "400021507",
+      "home": "England",
+      "away": "Croatia"
+    },
+    "23": {
+      "fifaId": "400021502",
+      "home": "Portugal",
+      "away": "Congo DR"
+    },
+    "24": {
+      "fifaId": "400021504",
+      "home": "Uzbekistan",
+      "away": "Colombia"
+    },
+    "25": {
+      "fifaId": "400021440",
+      "home": "Czechia",
+      "away": "South Africa"
+    },
+    "26": {
+      "fifaId": "400021446",
+      "home": "Switzerland",
+      "away": "Bosnia and Herzegovina"
+    },
+    "27": {
+      "fifaId": "400021450",
+      "home": "Canada",
+      "away": "Qatar"
+    },
+    "28": {
+      "fifaId": "400021442",
+      "home": "Mexico",
+      "away": "Korea Republic"
+    },
+    "29": {
+      "fifaId": "400021457",
+      "home": "Brazil",
+      "away": "Haiti"
+    },
+    "30": {
+      "fifaId": "400021454",
+      "home": "Scotland",
+      "away": "Morocco"
+    },
+    "31": {
+      "fifaId": "400021460",
+      "home": "Türkiye",
+      "away": "Paraguay"
+    },
+    "32": {
+      "fifaId": "400021462",
+      "home": "USA",
+      "away": "Australia"
+    },
+    "33": {
+      "fifaId": "400021469",
+      "home": "Germany",
+      "away": "Côte d'Ivoire"
+    },
+    "34": {
+      "fifaId": "400021465",
+      "home": "Ecuador",
+      "away": "Curaçao"
+    },
+    "35": {
+      "fifaId": "400021472",
+      "home": "Netherlands",
+      "away": "Sweden"
+    },
+    "36": {
+      "fifaId": "400021475",
+      "home": "Tunisia",
+      "away": "Japan"
+    },
+    "37": {
+      "fifaId": "400021487",
+      "home": "Uruguay",
+      "away": "Cabo Verde"
+    },
+    "38": {
+      "fifaId": "400021483",
+      "home": "Spain",
+      "away": "Saudi Arabia"
+    },
+    "39": {
+      "fifaId": "400021477",
+      "home": "Belgium",
+      "away": "IR Iran"
+    },
+    "40": {
+      "fifaId": "400021480",
+      "home": "New Zealand",
+      "away": "Egypt"
+    },
+    "41": {
+      "fifaId": "400021491",
+      "home": "Norway",
+      "away": "Senegal"
+    },
+    "42": {
+      "fifaId": "400021492",
+      "home": "France",
+      "away": "Iraq"
+    },
+    "43": {
+      "fifaId": "400021494",
+      "home": "Argentina",
+      "away": "Austria"
+    },
+    "44": {
+      "fifaId": "400021499",
+      "home": "Jordan",
+      "away": "Algeria"
+    },
+    "45": {
+      "fifaId": "400021506",
+      "home": "England",
+      "away": "Ghana"
+    },
+    "46": {
+      "fifaId": "400021511",
+      "home": "Panama",
+      "away": "Croatia"
+    },
+    "47": {
+      "fifaId": "400021503",
+      "home": "Portugal",
+      "away": "Uzbekistan"
+    },
+    "48": {
+      "fifaId": "400021501",
+      "home": "Colombia",
+      "away": "Congo DR"
+    },
+    "49": {
+      "fifaId": "400021455",
+      "home": "Scotland",
+      "away": "Brazil"
+    },
+    "50": {
+      "fifaId": "400021452",
+      "home": "Morocco",
+      "away": "Haiti"
+    },
+    "51": {
+      "fifaId": "400021451",
+      "home": "Switzerland",
+      "away": "Canada"
+    },
+    "52": {
+      "fifaId": "400021448",
+      "home": "Bosnia and Herzegovina",
+      "away": "Qatar"
+    },
+    "53": {
+      "fifaId": "400021444",
+      "home": "Czechia",
+      "away": "Mexico"
+    },
+    "54": {
+      "fifaId": "400021445",
+      "home": "South Africa",
+      "away": "Korea Republic"
+    },
+    "55": {
+      "fifaId": "400021468",
+      "home": "Curaçao",
+      "away": "Côte d'Ivoire"
+    },
+    "56": {
+      "fifaId": "400021466",
+      "home": "Ecuador",
+      "away": "Germany"
+    },
+    "57": {
+      "fifaId": "400021471",
+      "home": "Japan",
+      "away": "Sweden"
+    },
+    "58": {
+      "fifaId": "400021473",
+      "home": "Tunisia",
+      "away": "Netherlands"
+    },
+    "59": {
+      "fifaId": "400021459",
+      "home": "Türkiye",
+      "away": "USA"
+    },
+    "60": {
+      "fifaId": "400021461",
+      "home": "Paraguay",
+      "away": "Australia"
+    },
+    "61": {
+      "fifaId": "400021489",
+      "home": "Norway",
+      "away": "France"
+    },
+    "62": {
+      "fifaId": "400021493",
+      "home": "Senegal",
+      "away": "Iraq"
+    },
+    "63": {
+      "fifaId": "400021479",
+      "home": "Egypt",
+      "away": "IR Iran"
+    },
+    "64": {
+      "fifaId": "400021481",
+      "home": "New Zealand",
+      "away": "Belgium"
+    },
+    "65": {
+      "fifaId": "400021485",
+      "home": "Cabo Verde",
+      "away": "Saudi Arabia"
+    },
+    "66": {
+      "fifaId": "400021484",
+      "home": "Uruguay",
+      "away": "Spain"
+    },
+    "67": {
+      "fifaId": "400021508",
+      "home": "Panama",
+      "away": "England"
+    },
+    "68": {
+      "fifaId": "400021509",
+      "home": "Croatia",
+      "away": "Ghana"
+    },
+    "69": {
+      "fifaId": "400021497",
+      "home": "Algeria",
+      "away": "Austria"
+    },
+    "70": {
+      "fifaId": "400021495",
+      "home": "Jordan",
+      "away": "Argentina"
+    },
+    "71": {
+      "fifaId": "400021505",
+      "home": "Colombia",
+      "away": "Portugal"
+    },
+    "72": {
+      "fifaId": "400021500",
+      "home": "Congo DR",
+      "away": "Uzbekistan"
+    },
+    "73": {
+      "fifaId": "400021518"
+    },
+    "74": {
+      "fifaId": "400021513",
+      "home": "Germany"
+    },
+    "75": {
+      "fifaId": "400021522"
+    },
+    "76": {
+      "fifaId": "400021516"
+    },
+    "77": {
+      "fifaId": "400021523"
+    },
+    "78": {
+      "fifaId": "400021514"
+    },
+    "79": {
+      "fifaId": "400021520",
+      "home": "Mexico"
+    },
+    "80": {
+      "fifaId": "400021512"
+    },
+    "81": {
+      "fifaId": "400021524",
+      "home": "USA"
+    },
+    "82": {
+      "fifaId": "400021525"
+    },
+    "83": {
+      "fifaId": "400021526"
+    },
+    "84": {
+      "fifaId": "400021519"
+    },
+    "85": {
+      "fifaId": "400021527"
+    },
+    "86": {
+      "fifaId": "400021521"
+    },
+    "87": {
+      "fifaId": "400021517"
+    },
+    "88": {
+      "fifaId": "400021515"
+    },
+    "89": {
+      "fifaId": "400021533"
+    },
+    "90": {
+      "fifaId": "400021530"
+    },
+    "91": {
+      "fifaId": "400021532"
+    },
+    "92": {
+      "fifaId": "400021531"
+    },
+    "93": {
+      "fifaId": "400021529"
+    },
+    "94": {
+      "fifaId": "400021534"
+    },
+    "95": {
+      "fifaId": "400021528"
+    },
+    "96": {
+      "fifaId": "400021535"
+    },
+    "97": {
+      "fifaId": "400021536"
+    },
+    "98": {
+      "fifaId": "400021538"
+    },
+    "99": {
+      "fifaId": "400021539"
+    },
+    "100": {
+      "fifaId": "400021537"
+    },
+    "101": {
+      "fifaId": "400021541"
+    },
+    "102": {
+      "fifaId": "400021540"
+    },
+    "103": {
+      "fifaId": "400021542"
+    },
+    "104": {
+      "fifaId": "400021543"
+    }
+  }
+}

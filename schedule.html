@@ -288,6 +288,7 @@
 <!-- SCHEDULE BODY -->
 <div class="wrap" id="sched-body"></div>
 
+<script src="js/schedule-scores.js?v=1"></script>
 <script src="js/live-data.js?v=ebf0806"></script>
 <script>
 // ═══════════════════════════════════════════════════════════
@@ -457,12 +458,21 @@ function sortKey(m) {
 }
 MATCHES.sort((a, b) => sortKey(a) - sortKey(b));
 
+// ── Scores: FIFA MatchNumber (#no) → js/schedule-scores.js (auto-generated) ──
+function resolveScore(m) {
+  if (typeof SCHEDULE_SCORES === 'undefined') return null;
+  const row = SCHEDULE_SCORES.byFifaNo?.[String(m.no)] || SCHEDULE_SCORES.byFifaNo?.[m.no];
+  if (!row || row.home == null || row.away == null) return null;
+  return { home: row.home, away: row.away, status: row.status || 'FT' };
+}
+
 // ── Status detection ───────────────────────────────────────
 function status(m) {
+  if (resolveScore(m)) return 'finished';
   const now = new Date();
-  const start = new Date(2026, m.m-1, m.d, ...m.t.split(':').map(Number));
-  const end   = new Date(start.getTime() + 105 * 60000);
-  if (now > end)   return 'finished';
+  const start = new Date(2026, m.m - 1, m.d, ...m.t.split(':').map(Number));
+  const end = new Date(start.getTime() + 105 * 60000);
+  if (now > end) return 'finished';
   if (now >= start) return 'live';
   return 'upcoming';
 }
@@ -473,21 +483,29 @@ function statusHtml(st) {
   return `<span class="t-status sp-up">待赛</span>`;
 }
 
-function scoreHtml(st, fix, home, away) {
-  // Check live-data.js for real scores
+function scoreHtml(st, m) {
+  const resolved = resolveScore(m);
+  if (resolved) {
+    const label = { FT: '全场', AET: '加时', PEN: '点球' }[resolved.status] || '全场';
+    return `<span class="s-done">${resolved.home}–${resolved.away}</span><br><span style="font-size:0.52rem;color:var(--txt2)">${label}</span>`;
+  }
+
+  // 今日进行中：live-data.js
   if (typeof LIVE_DATA !== 'undefined' && LIVE_DATA.fixtures?.length) {
     const found = LIVE_DATA.fixtures.find(f =>
-      f.home?.toLowerCase().includes(home.split(' ')[0].toLowerCase()) &&
-      f.away?.toLowerCase().includes(away.split(' ')[0].toLowerCase())
+      f.home?.toLowerCase().includes(m.home.split(' ')[0].toLowerCase()) &&
+      f.away?.toLowerCase().includes(m.away.split(' ')[0].toLowerCase())
     );
     if (found && found.home_score !== null) {
-      const statusLabel = {FT:'全场',AET:'加时',PEN:'点球',HT:'中场','1H':'上半场','2H':'下半场'}[found.status] || '';
-      if (['FT','AET','PEN'].includes(found.status))
+      const statusLabel = { FT: '全场', AET: '加时', PEN: '点球', HT: '中场', '1H': '上半场', '2H': '下半场' }[found.status] || '';
+      if (['FT', 'AET', 'PEN'].includes(found.status)) {
         return `<span class="s-done">${found.home_score}–${found.away_score}</span><br><span style="font-size:0.52rem;color:var(--txt2)">${statusLabel}</span>`;
+      }
       return `<span class="s-live">${found.home_score}–${found.away_score}</span><br><span style="font-size:0.52rem;color:#ff4455">${statusLabel}</span>`;
     }
   }
-  if (st === 'live')     return `<span class="s-live">● ●</span>`;
+
+  if (st === 'live') return `<span class="s-live">● ●</span>`;
   if (st === 'finished') return `<span class="s-done">—</span>`;
   return `<span class="s-tbd">VS</span>`;
 }
@@ -531,7 +549,7 @@ function renderGroupStage() {
           <span class="t-name">${m.home}</span>
           ${flag(m.home)}
         </div>
-        <div class="mc-score">${scoreHtml(st, null, m.home, m.away)}</div>
+        <div class="mc-score">${scoreHtml(st, m)}</div>
         <div class="mc-away">
           ${flag(m.away)}
           <span class="t-name">${m.away}</span>
