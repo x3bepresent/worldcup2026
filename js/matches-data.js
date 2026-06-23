@@ -1,18 +1,48 @@
-// 今日赛事 — Day 13 preview (K/L)
-// Last updated: 2026-06-23T09:40:52+08:00
+// 今日赛事 — Day 13 (enriched)
+// Last updated: 2026-06-23T13:35:27+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-23T09:40:52+08:00",
-  "syncSource": "FIFA 赛程 · Day 13 · weather enriched · 推演概要+小组形势",
+  "lastUpdated": "2026-06-23T13:35:27+08:00",
+  "syncSource": "FIFA 赛程 · Day 13 · weather/injuries/coach/referee enriched",
   "breakingNews": [
     {
+      "tag": "OFFICIAL",
+      "text": "✅ FIFA 官方裁判 m48 · Maurizio Mariani（意大利）",
+      "time": "官方确认"
+    },
+    {
+      "tag": "OFFICIAL",
+      "text": "✅ FIFA 官方裁判 m46 · Pierre Atcho（加蓬）",
+      "time": "官方确认"
+    },
+    {
+      "tag": "OFFICIAL",
+      "text": "✅ FIFA 官方裁判 m45 · Héctor Said Martínez（洪都拉斯）",
+      "time": "官方确认"
+    },
+    {
+      "tag": "OFFICIAL",
+      "text": "✅ FIFA 官方裁判 m47 · Jalal Jayed（摩洛哥）",
+      "time": "官方确认"
+    },
+    {
       "tag": "UPDATE",
-      "text": "📊 推演升级：模型概要 + 小组形势/晋级路径已纳入今日赛事",
-      "time": "模型"
+      "text": "✅ Day 13 教练分析&冷门预警已纳入（m45–m48）",
+      "time": "6月24日"
+    },
+    {
+      "tag": "INJURY",
+      "text": "✅ m47 C罗破局压力 · m45 Kudus 反击 · m48 Wissa 信心",
+      "time": "6月24日"
     },
     {
       "tag": "UPDATE",
       "text": "✅ Day 13 气候预报已更新（m45–m48）",
       "time": "6月24日"
+    },
+    {
+      "tag": "UPDATE",
+      "text": "📊 推演升级：模型概要 + 小组形势/晋级路径已纳入今日赛事",
+      "time": "模型"
     },
     {
       "tag": "OFFICIAL",
@@ -28,11 +58,6 @@ const MATCH_DATA = {
       "tag": "PREVIEW",
       "text": "K/L组第2轮：葡萄牙须取胜 · 英加榜首对话 · 哥伦比亚领跑",
       "time": "焦点"
-    },
-    {
-      "tag": "REFEREE",
-      "text": "今日各场裁判待 FIFA 官方确认",
-      "time": "裁判"
     }
   ],
   "todayMatches": [
@@ -51,7 +76,7 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月24日 01:00",
       "venue": "NRG Stadium",
       "city": "Houston, USA",
-      "note": "K组第2轮 · 葡萄牙 vs 乌兹别克 · 休斯顿",
+      "note": "K组第2轮 · 葡萄牙 vs 乌兹别克 · 休斯顿 · FIFA 官方裁判已确认（Jalal Jayed）",
       "lineup": {
         "confirmed": false,
         "formation": null,
@@ -96,8 +121,58 @@ const MATCH_DATA = {
           "desc": "1-1 刚果后须取胜",
           "rating": 8.8
         },
-        "injuries": [],
-        "rumors": []
+        "injuries": [
+          {
+            "player": "Cristiano Ronaldo",
+            "status": "FIT",
+            "note": "1-1 刚果 0 射正后压力上升 · 预计首发 ST · Martínez 称「须更早进入状态」",
+            "confirmed": true
+          },
+          {
+            "player": "Bruno Fernandes",
+            "status": "FIT",
+            "note": "B费 节拍器 · 对乌兹别克铁桶肋部渗透是关键",
+            "confirmed": true
+          },
+          {
+            "player": "Rúben Dias",
+            "status": "FIT",
+            "note": "曼城中卫 · 防线领袖 · 须防 Shomurodov 反击",
+            "confirmed": true
+          },
+          {
+            "player": "Rafael Leão",
+            "status": "FIT",
+            "note": "米兰边锋 · 左翼速度破局点 · 1-1 后或比首轮更靠前",
+            "confirmed": true
+          },
+          {
+            "player": "João Félix",
+            "status": "FIT",
+            "note": "二前锋/边路灵活位 · 破密集防守轮换选项",
+            "confirmed": true
+          },
+          {
+            "player": "Vitinha",
+            "status": "FIT",
+            "note": "巴黎中场 · 控球节拍 · 对弱队须主导球权",
+            "confirmed": true
+          },
+          {
+            "player": "Diogo Costa",
+            "status": "FIT",
+            "note": "一门 · 对 Shomurodov 反击须保持防线高度",
+            "confirmed": true
+          }
+        ],
+        "rumors": [
+          "Martínez（赛前）：「1-1 不可接受结果；对乌兹别克必须 3 分，C罗+B费 要更早破局」",
+          "【更衣室】1-1 刚果后媒体曝「C罗球迷质疑 Neves 不传球」；Martínez 公开力挺 B费/Neves 分工",
+          "ESPN 预测 4-3-3：Costa; Dalot, Pepe, Dias, Mendes; Palhinha, Vitinha, B. Fernandes; Leão, Ronaldo, Félix",
+          "K 组 1 分被动——哥伦比亚 3 分领跑；本场再平则出线形势急转",
+          "休斯顿 32°C 夏夜 · Martínez 训练强调 hydration 与早段破局",
+          "Jalal Jayed 摩洛哥主裁 · 对 C罗 禁区内对抗与拖延时间尺度受关注"
+        ]
       },
       "away": {
         "name": "Uzbekistan",
@@ -129,8 +204,51 @@ const MATCH_DATA = {
           "desc": "0 分垫底",
           "rating": 7.8
         },
-        "injuries": [],
-        "rumors": []
+        "injuries": [
+          {
+            "player": "Eldor Shomurodov",
+            "status": "FIT",
+            "note": "罗马射手 · 锋线唯一世界级威胁 · 反击轴心",
+            "confirmed": true
+          },
+          {
+            "player": "Odilbek Abdullaev",
+            "status": "FIT",
+            "note": "中场节拍 · 5-4-1 出球点",
+            "confirmed": true
+          },
+          {
+            "player": "Utkirbek Nafalov",
+            "status": "FIT",
+            "note": "一门 · 对葡萄牙围攻须重复对哥伦比亚表现",
+            "confirmed": true
+          },
+          {
+            "player": "Abdukodir Khusanov",
+            "status": "FIT",
+            "note": "曼城租将中卫 · 对 C罗/Leão 速度的一对一",
+            "confirmed": true
+          },
+          {
+            "player": "Jasurbek Hamrobekov",
+            "status": "FIT",
+            "note": "后腰屏障 · 绞杀 B费 肋部",
+            "confirmed": true
+          },
+          {
+            "player": "Otabek Shukurov",
+            "status": "DOUBT",
+            "note": "首轮后轻微肌肉疲劳 · 仍可能进入轮换名单",
+            "confirmed": false
+          }
+        ],
+        "rumors": [
+          "Katanec（赛前）：「对葡萄牙不是对哥伦比亚——我们会更低位，但亚洲杯四强经验仍在」",
+          "预计 5-4-1/5-3-2 极深低位 · Shomurodov 留前场反击 · Hamrobekov 双闸",
+          "1-3 哥伦比亚后更衣室士气未崩；Katanec 强调「对葡萄牙拿 1 分是巨大成功」",
+          "全队仍以本土联赛球员为主 · 硬实力差距大但低位纪律是生存之本",
+          "塔什干球迷关注时区（北京时间 01:00 = 当地 22:00）· 全队适应良好"
+        ]
       },
       "h2h": {
         "home_wins": 0,
@@ -140,15 +258,39 @@ const MATCH_DATA = {
         "note": "无大赛交锋"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "FIFA Match 47 裁判名单赛前公布。",
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA · Match officials · 2026-06-20",
+        "name": "Jalal Jayed",
+        "nation": "Morocco",
+        "iso": "ma",
+        "age": 44,
+        "wc_experience": "2026 世界杯主裁 · 摩洛哥顶级 · AFC/CAF 执法经验 · 全非组执法葡萄牙战",
+        "avg_yellow": 4.5,
+        "avg_red": 0.12,
+        "avg_penalty": 0.3,
+        "home_win_rate": 50,
+        "bias_index": 50,
+        "bias_note": "摩洛哥全组执法 K 组次轮。C罗/B费 肋部破局 vs Katanec 5-4-1 铁桶；对战术犯规、拖延时间容忍度中等，点球尺度相对明确。",
         "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
-        ]
+          "摩洛哥助理：Zakaria Brinsi、Mostafa Akarkad",
+          "第四官员 Abongile Tom（南非）· 候补 Zakhele Siwela（RSA）",
+          "VAR Leodan González（乌拉圭）· AVAR Hamza El Fariq（MAR）· SVAR Hernán Mastrangelo（ARG）",
+          "休斯顿 32°C 夏夜——领先方后段拖延与战术犯规是黄牌高发点",
+          "葡萄牙 1-1 刚果后须破局；乌兹别克 0 分垫底低位纪律受考验"
+        ],
+        "officials": {
+          "ar1": "Zakaria Brinsi (MAR)",
+          "ar2": "Mostafa Akarkad (MAR)",
+          "fourth": "Abongile Tom (RSA)",
+          "reserve_ar": "Zakhele Siwela (RSA)",
+          "var": "Leodan González (URU)",
+          "avar": "Hamza El Fariq (MAR)",
+          "svar": "Hernán Mastrangelo (ARG)"
+        },
+        "fifa_match_id": "400021503",
+        "fifa_official_id": "328497",
+        "updated": "2026-06-23T13:35:27+08:00"
       },
       "prediction": {
         "home_win": 62,
@@ -1050,6 +1192,128 @@ const MATCH_DATA = {
           "平局：双方各 +1 分；在 L 组：头名 England 3 分 · 次席 Ghana 同分（32强绑定组） · J 组：头名 Argentina 6 分 · 次席 Austria 3 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
           "头名/次席博弈：K 组次席与 L 组次席同槽 M83。"
         ]
+      },
+      "coach_analysis": {
+        "home": {
+          "name": "Roberto Martínez",
+          "age": 51,
+          "nation": "西班牙",
+          "tenure": "2022年—",
+          "wc_exp": "2018 比利时季军主帅 · 2026 葡萄牙带队",
+          "style_tags": [
+            "4-3-3",
+            "C罗核心",
+            "B费节拍",
+            "须破局"
+          ],
+          "formation_pref": "4-3-3 · C罗单锋 + Leão 宽度",
+          "style_summary": "1-1 刚果金冷门后 K 组被动；Martínez 预计最强 XI 围攻乌兹别克，C罗 0 射正后更衣室压力上升，B费+Leão 肋部破局是必选项。",
+          "subs": {
+            "timing": "首换 55–60 分钟",
+            "pattern": "Félix/Leão 互替；C罗 70' 可能换下",
+            "avg_first_sub": "58'",
+            "note": "1-1 后换人会更早"
+          },
+          "when_leading": {
+            "label": "继续宽度",
+            "detail": "1 球领先：维持 4-3-3 穿盘，不早退。"
+          },
+          "when_trailing": {
+            "label": "堆边锋",
+            "detail": "先丢球：55' 换 Leão/Félix 加码。"
+          },
+          "vs_strong": {
+            "label": "对强队：对攻",
+            "detail": "对哥伦比亚末轮会相对保守。"
+          },
+          "vs_weak": {
+            "label": "对弱队：必须穿盘",
+            "detail": "对 0 分乌兹别克 xG 2.05 须兑现。"
+          },
+          "tournament": "1-1 刚果金是本届最大冷门信号之一；Martínez 赛前称「过程 OK 结果不够」。",
+          "traits": [
+            "C罗依赖",
+            "B费节拍",
+            "必须取胜",
+            "更衣室压力"
+          ],
+          "match_note": "1-1 刚果后须 3 分——C罗/B费 肋部+Leão 宽度 vs Katanec 5-4-1；休斯顿湿热宜早破局。"
+        },
+        "away": {
+          "name": "Srečko Katanec",
+          "age": 61,
+          "nation": "斯洛文尼亚",
+          "tenure": "2021年—",
+          "wc_exp": "2026 带队 · 亚洲杯四强",
+          "style_tags": [
+            "4-2-3-1",
+            "Shomurodov 核心",
+            "低位",
+            "定位球"
+          ],
+          "formation_pref": "4-2-3-1 · Shomurodov 单锋",
+          "style_summary": "1-3 哥伦比亚后 0 分垫底；Katanec 对葡萄牙预计 5-4-1 极深低位，Shomurodov 反击 + 定位球偷分是唯一路径。",
+          "subs": {
+            "timing": "首换 70 分钟+",
+            "pattern": "换人偏晚；体能分配优先",
+            "avg_first_sub": "72'",
+            "note": "弱队体能优先"
+          },
+          "when_leading": {
+            "label": "5-4-1 铁桶",
+            "detail": "若意外领先：立即退守。"
+          },
+          "when_trailing": {
+            "label": "维持低位",
+            "detail": "Shomurodov 反击是唯一希望。"
+          },
+          "vs_strong": {
+            "label": "对强队：龟缩",
+            "detail": "对葡萄牙教科书 5-4-1。"
+          },
+          "vs_weak": {
+            "label": "不适用",
+            "detail": "K 组已无更弱对手。"
+          },
+          "tournament": "亚洲杯四强经验；首轮 1-3 后更衣室强调「对葡萄牙拿 1 分仍是成功」。",
+          "traits": [
+            "Shomurodov 依赖",
+            "极深低位",
+            "定位球",
+            "偷分动机"
+          ],
+          "match_note": "1-3 哥伦比亚后 0 分垫底；Shomurodov 反击+定位球偷分，1 分即是胜利。"
+        }
+      },
+      "upset_alert": {
+        "favorite": "Portugal",
+        "underdog": "Uzbekistan",
+        "favorite_iso": "POR",
+        "index": 16,
+        "level": "LOW",
+        "level_cn": "低",
+        "cold_result_pct": 14,
+        "verdict": "葡萄牙 1-1 刚果后深盘——Katanec 5-4-1 + Shomurodov 反击使平局偷分空间约 14%。",
+        "tactical": "Martínez 4-3-3 围攻 vs Katanec 5-4-1；C罗 破局是关键。",
+        "psychology": "葡萄牙「必须 3 分」；乌兹别克「0 分仍可为荣誉而战」。",
+        "historical": "无大赛交锋；葡萄牙 1-1 刚果金是冷门信号。",
+        "factors": [
+          {
+            "tag": "C罗",
+            "impact": "强",
+            "detail": "1-1 后 0 射正压力"
+          },
+          {
+            "tag": "铁桶",
+            "impact": "中",
+            "detail": "Katanec 5-4-1 极守"
+          },
+          {
+            "tag": "湿热",
+            "impact": "中",
+            "detail": "休斯顿 32°C 夏夜"
+          }
+        ]
       }
     },
     {
@@ -1067,7 +1331,7 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月24日 04:00",
       "venue": "Gillette Stadium",
       "city": "Foxborough, USA",
-      "note": "L组第2轮 · 英格兰 vs 加纳 · 波士顿",
+      "note": "L组第2轮 · 英格兰 vs 加纳 · 波士顿 · FIFA 官方裁判已确认（Héctor Said Martínez）",
       "lineup": {
         "confirmed": false,
         "formation": null,
@@ -1112,8 +1376,58 @@ const MATCH_DATA = {
           "desc": "4-2 克罗地亚",
           "rating": 9
         },
-        "injuries": [],
-        "rumors": []
+        "injuries": [
+          {
+            "player": "Jude Bellingham",
+            "status": "FIT",
+            "note": "4-2 克罗地亚双响后 L 组核心 · 伪 10 预计首发",
+            "confirmed": true
+          },
+          {
+            "player": "Harry Kane",
+            "status": "FIT",
+            "note": "队长 · 点球+运动战双响 · 锋线支点",
+            "confirmed": true
+          },
+          {
+            "player": "Bukayo Saka",
+            "status": "FIT",
+            "note": "阿森纳右翼 · 宽度关键 · 对 Kudus 侧对位",
+            "confirmed": true
+          },
+          {
+            "player": "John Stones",
+            "status": "DOUBT",
+            "note": "大腿轻微不适 · 赛前队检 · Guehi 待命",
+            "confirmed": false
+          },
+          {
+            "player": "Phil Foden",
+            "status": "FIT",
+            "note": "曼城攻击手 · 肋部渗透 · 轮换/首发灵活",
+            "confirmed": true
+          },
+          {
+            "player": "Declan Rice",
+            "status": "FIT",
+            "note": "后腰屏障 · 限制 Kudus/Partey 连线",
+            "confirmed": true
+          },
+          {
+            "player": "Jordan Pickford",
+            "status": "FIT",
+            "note": "一门 · 对加纳反击须保持防线深度",
+            "confirmed": true
+          }
+        ],
+        "rumors": [
+          "Tuchel（赛前）：「4-2 只是开始；对加纳须全取 3 分巩固榜首」",
+          "【更衣室】Bellingham 4-2 后称「半场 2-2 提醒我们大赛无轻松局」；Kane 点球+运动战双响提振士气",
+          "BBC 预测 4-2-3-1：Pickford; Walker, Stones, Guehi, Shaw; Rice, Bellingham; Saka, Foden, B. White; Kane",
+          "L 组榜首对话——加纳 1-0 巴拿马后与英格兰同分；平局对双方均可接受但英格兰更须 3 分",
+          "Gillette 波士顿夏夜 · Tuchel 提醒定位球与转换犯规",
+          "Said Martinez 洪都拉斯主裁 · 已执法卡塔尔 1-1 瑞士（3 黄 1 点）"
+        ]
       },
       "away": {
         "name": "Ghana",
@@ -1145,8 +1459,51 @@ const MATCH_DATA = {
           "desc": "1-0 巴拿马",
           "rating": 8.2
         },
-        "injuries": [],
-        "rumors": []
+        "injuries": [
+          {
+            "player": "Mohammed Kudus",
+            "status": "FIT",
+            "note": "西汉姆边锋 · L 组最大反击威胁 · Addo 战术轴心",
+            "confirmed": true
+          },
+          {
+            "player": "Thomas Partey",
+            "status": "FIT",
+            "note": "中场屏障 · 绞杀 Bellingham 肋部",
+            "confirmed": true
+          },
+          {
+            "player": "André Ayew",
+            "status": "FIT",
+            "note": "队长 · 经验前锋 · 定位球威胁",
+            "confirmed": true
+          },
+          {
+            "player": "Caleb Yirenkyi",
+            "status": "FIT",
+            "note": "补时绝杀巴拿马功臣 · 替补/轮换奇兵",
+            "confirmed": true
+          },
+          {
+            "player": "Jordan Ayew",
+            "status": "FIT",
+            "note": "锋线宽度 · 对 Walker 速度的一对一",
+            "confirmed": true
+          },
+          {
+            "player": "Lawrence Ati-Zigi",
+            "status": "FIT",
+            "note": "一门 · 对 Kane/Saka 须保持防线高度",
+            "confirmed": true
+          }
+        ],
+        "rumors": [
+          "Addo（赛前）：「英格兰很强，但 2022 非洲球队不怕他们；Kudus 是我们的武器」",
+          "预计 4-5-1/4-4-2 低位 · Kudus 右翼反击 · Partey 双闸",
+          "1-0 巴拿马补时绝杀后更衣室士气高涨；Addo 强调「对英格兰拿 1 分是巨大成功」",
+          "Kudus 英超状态是最大资产 · 对 Tuchel 高位逼抢体能分配是关键",
+          "Said Martinez 执法 · Addo 提醒球员注意转换犯规与模拟接触"
+        ]
       },
       "h2h": {
         "home_wins": 1,
@@ -1163,15 +1520,39 @@ const MATCH_DATA = {
         "note": "2010 世界杯 1-1"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "FIFA Match 45 裁判名单赛前公布。",
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA · Match officials · 2026-06-20",
+        "name": "Héctor Said Martínez",
+        "nation": "Honduras",
+        "iso": "hn",
+        "age": 34,
+        "wc_experience": "2026 世界杯主裁首秀——已执法卡塔尔 1-1 瑞士（3 黄 1 点）· 中美洲 CONCACAF 代表",
+        "avg_yellow": 4.2,
+        "avg_red": 0.1,
+        "avg_penalty": 0.35,
+        "home_win_rate": 48,
+        "bias_index": 51,
+        "bias_note": "洪都拉斯全组执法 L 组榜首战。Tuchel 高位 vs Addo 低位 + Kudus 反击；对身体对抗与禁区内拉扯尺度受关注，预计 4–5 张黄牌。",
         "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
-        ]
+          "洪都拉斯助理：Walter López、Christian Ramírez",
+          "第四官员 Ma Ning（中国）· 候补 Zhou Fei（CHN）",
+          "VAR Armando Villarreal（美国）· AVAR Erick Miranda（MEX）· SVAR Abdullah Alshehri（KSA）",
+          "Gillette 波士顿夏夜——英格兰 4-2 克罗地亚后高位逼抢或引战术犯规",
+          "L 组榜首对话：加纳 1-0 巴拿马后与英格兰同分"
+        ],
+        "officials": {
+          "ar1": "Walter López (HON)",
+          "ar2": "Christian Ramírez (HON)",
+          "fourth": "Ma Ning (CHN)",
+          "reserve_ar": "Zhou Fei (CHN)",
+          "var": "Armando Villarreal (USA)",
+          "avar": "Erick Miranda (MEX)",
+          "svar": "Abdullah Alshehri (KSA)"
+        },
+        "fifa_match_id": "400021506",
+        "fifa_official_id": "416161",
+        "updated": "2026-06-23T13:35:27+08:00"
       },
       "prediction": {
         "home_win": 56,
@@ -2072,6 +2453,128 @@ const MATCH_DATA = {
           "平局：双方各 +1 分；在 K 组：头名 Colombia 3 分 · 次席 Portugal 1 分（32强绑定组） · A 组：头名 Mexico 6 分 · 次席 South Korea 3 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
           "头名/次席博弈：L 组次席走 M83，16 强进入 H/J 半区。"
         ]
+      },
+      "coach_analysis": {
+        "home": {
+          "name": "Thomas Tuchel",
+          "age": 52,
+          "nation": "德国",
+          "tenure": "2024年—",
+          "wc_exp": "欧冠冠军主帅 · 2026 英格兰带队",
+          "style_tags": [
+            "4-2-3-1",
+            "Bellingham 核心",
+            "高位",
+            "宽度"
+          ],
+          "formation_pref": "4-2-3-1 · Kane 支点 + Saka 宽度",
+          "style_summary": "4-2 克罗地亚半场对攻后 L 组领跑；对加纳 Tuchel 预计维持高位+宽度，Bellingham 伪 10 对位 Partey 屏障是战术轴心。",
+          "subs": {
+            "timing": "首换 58–65 分钟",
+            "pattern": "Rashford/Foden 后手；Kane 打满",
+            "avg_first_sub": "60'",
+            "note": "榜首战轮换有限"
+          },
+          "when_leading": {
+            "label": "控节奏 · 适度轮换",
+            "detail": "2 球+：65' 轮换保护 Bellingham。"
+          },
+          "when_trailing": {
+            "label": "堆前锋",
+            "detail": "unlikely 先丢球；若先丢则 55' 换 Watkins。"
+          },
+          "vs_strong": {
+            "label": "对强队：对攻",
+            "detail": "4-2 克罗地亚已验证高位对攻。"
+          },
+          "vs_weak": {
+            "label": "对弱队：不留余地",
+            "detail": "对加纳须全取 3 分巩固榜首。"
+          },
+          "tournament": "Tuchel 称「4-2 只是开始」；Stones 赛前队检是唯一变数。",
+          "traits": [
+            "Bellingham 核心",
+            "高位",
+            "榜首战",
+            "Kane 点球"
+          ],
+          "match_note": "L 组榜首对话——Bellingham 伪 10 + Saka 宽度 vs Partey 屏障；4-2 克罗地亚后高位对攻延续。"
+        },
+        "away": {
+          "name": "Otto Addo",
+          "age": 49,
+          "nation": "德国/加纳",
+          "tenure": "2024年—",
+          "wc_exp": "2022 带队 · 2026 再任",
+          "style_tags": [
+            "4-2-3-1",
+            "Kudus 核心",
+            "转换",
+            "身体对抗"
+          ],
+          "formation_pref": "4-2-3-1 · Kudus 右翼",
+          "style_summary": "1-0 巴拿马补时绝杀后与英格兰同分；Addo 对 Tuchel 预计 4-5-1 低位 + Kudus 反击，Yirenkyi 补时破门提振更衣室士气。",
+          "subs": {
+            "timing": "首换 60–65 分钟",
+            "pattern": "Semenyo/J. Ayew 后手",
+            "avg_first_sub": "62'",
+            "note": "榜首对话体能关键"
+          },
+          "when_leading": {
+            "label": "4-5-1 收缩",
+            "detail": "若意外领先：Partey 屏障+长传找 Kudus。"
+          },
+          "when_trailing": {
+            "label": "堆边锋",
+            "detail": "先丢球：55' 换进攻手加码。"
+          },
+          "vs_strong": {
+            "label": "对强队：龟缩+转换",
+            "detail": "对英格兰低位 + Kudus 速度是唯一路径。"
+          },
+          "vs_weak": {
+            "label": "对弱队：压上",
+            "detail": "1-0 巴拿马已验证。"
+          },
+          "tournament": "Addo 赛前：「英格兰很强，但 2022 非洲球队不怕他们」；Kudus 英超状态是最大资产。",
+          "traits": [
+            "Kudus 爆点",
+            "Partey 屏障",
+            "转换",
+            "同分榜首战"
+          ],
+          "match_note": "1-0 巴拿马补时绝杀后与英格兰同分；Kudus 反击 vs Tuchel 高位，低位+转换是唯一路径。"
+        }
+      },
+      "upset_alert": {
+        "favorite": "England",
+        "underdog": "Ghana",
+        "favorite_iso": "ENG",
+        "index": 28,
+        "level": "MEDIUM",
+        "level_cn": "中等",
+        "cold_result_pct": 24,
+        "verdict": "加纳 1-0 巴拿马后与英格兰同分——Kudus 反击 + Addo 低位使平局/加纳冷胜约 24%。",
+        "tactical": "Tuchel 4-2-3-1 高位 vs Addo 4-5-1；Kudus 对 Walker 速度对位关键。",
+        "psychology": "英格兰「4-2 只是开始」；加纳「2022 非洲球队不怕英格兰」。",
+        "historical": "大赛英格兰占优；加纳 Kudus 英超状态是变量。",
+        "factors": [
+          {
+            "tag": "Kudus",
+            "impact": "强",
+            "detail": "L 组最大反击威胁"
+          },
+          {
+            "tag": "榜首战",
+            "impact": "强",
+            "detail": "胜者大概率锁定出线"
+          },
+          {
+            "tag": "Stones",
+            "impact": "中",
+            "detail": "赛前队检存疑"
+          }
+        ]
       }
     },
     {
@@ -2089,7 +2592,7 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月24日 07:00",
       "venue": "BMO Field",
       "city": "Toronto, Canada",
-      "note": "L组第2轮 · 巴拿马 vs 克罗地亚 · 多伦多",
+      "note": "L组第2轮 · 巴拿马 vs 克罗地亚 · 多伦多 · FIFA 官方裁判已确认（Pierre Atcho）",
       "lineup": {
         "confirmed": false,
         "formation": null,
@@ -2134,8 +2637,46 @@ const MATCH_DATA = {
           "desc": "0 分须抢分",
           "rating": 7
         },
-        "injuries": [],
-        "rumors": []
+        "injuries": [
+          {
+            "player": "José Fajardo",
+            "status": "FIT",
+            "note": "锋线支点 · 定位球唯一威胁 · 0 分须抢分",
+            "confirmed": true
+          },
+          {
+            "player": "Adalberto Carrasquilla",
+            "status": "DOUBT",
+            "note": "中场轻微拉伤 · 赛前队检 · 首轮后仍未完全恢复",
+            "confirmed": false
+          },
+          {
+            "player": "Michael Amir Murillo",
+            "status": "FIT",
+            "note": "右后卫 · 对 Perišić 宽度的一对一",
+            "confirmed": true
+          },
+          {
+            "player": "Jaime Penedo",
+            "status": "FIT",
+            "note": "一门 · 对 Modrić 远射/定位球须警惕",
+            "confirmed": true
+          },
+          {
+            "player": "Ismael Díaz",
+            "status": "FIT",
+            "note": "锋线速度点 · 反击接应",
+            "confirmed": true
+          }
+        ],
+        "rumors": [
+          "Christiansen（赛前）：「0 分但补时只差一球；对克罗地亚 5-4-1 是生存，Fajardo 定位球是武器」",
+          "【更衣室】补时输给加纳后球员承认「最后 5 分钟是教训」；训练强调定位球与拖延节奏",
+          "FotMob 预测 4-4-2 低位：Mosquera; Murillo, Escobar, Cummings; Anderson, Godoy; Fajardo, Bárcenas, Rodríguez; Ismael Díaz",
+          "硬实力与克罗地亚差距大 · MLS 班底防守纪律是资产",
+          "多伦多 22°C 凉爽 · 利于 90 分钟低位防守",
+          "Pierre Atcho 加蓬主裁 · 已执法挪威 3-2 伊拉克（本届首场）"
+        ]
       },
       "away": {
         "name": "Croatia",
@@ -2167,8 +2708,51 @@ const MATCH_DATA = {
           "desc": "0 分 · 大赛经验",
           "rating": 8.4
         },
-        "injuries": [],
-        "rumors": []
+        "injuries": [
+          {
+            "player": "Luka Modrić",
+            "status": "FIT",
+            "note": "最后一届世界杯 · 节拍器预计首发 · 75' 可能换下",
+            "confirmed": true
+          },
+          {
+            "player": "Joško Gvardiol",
+            "status": "FIT",
+            "note": "曼城中卫 · 防线新核 · 防空 Fajardo 定位球",
+            "confirmed": true
+          },
+          {
+            "player": "Mateo Kovačić",
+            "status": "FIT",
+            "note": "中场轮换 · Modrić 后手接替",
+            "confirmed": true
+          },
+          {
+            "player": "Ivan Perišić",
+            "status": "FIT",
+            "note": "左路宽度 · 对 Murillo 侧突破",
+            "confirmed": true
+          },
+          {
+            "player": "Andrej Kramarić",
+            "status": "FIT",
+            "note": "锋线支点 · 破密集关键",
+            "confirmed": true
+          },
+          {
+            "player": "Dominik Livaković",
+            "status": "FIT",
+            "note": "一门 · 2-4 英格兰后须零封开局",
+            "confirmed": true
+          }
+        ],
+        "rumors": [
+          "Dalić（赛前）：「2-4 英格兰半场对攻证明进攻可以；对巴拿马必须 3 分，Modrić 仍是核心」",
+          "【更衣室】2-4 后 Dalić 称「过程有亮点结果不够」；Baturina/Musa 半场扳平提振进攻信心",
+          "FotMob 预测 4-3-3：Livaković; Juranović, Gvardiol, Šutalo, Sosa; Modrić, Brozović; Kovačić, Perišić, Rebić; Kramarić",
+          "0 分被动 · 巴拿马是「必须拿下的 3 分」；Modrić 75' 换下是后段体能变量",
+          "Pierre Atcho 执法 · Dalić 提醒球员注意拖延时间与战术犯规"
+        ]
       },
       "h2h": {
         "home_wins": 0,
@@ -2178,15 +2762,39 @@ const MATCH_DATA = {
         "note": "无大赛交锋"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "FIFA Match 46 裁判名单赛前公布。",
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA · Match officials · 2026-06-20",
+        "name": "Pierre Atcho",
+        "nation": "Gabon",
+        "iso": "ga",
+        "age": 38,
+        "wc_experience": "2026 世界杯主裁——已执法挪威 3-2 伊拉克（本届首场）· 加蓬 CAF 精英裁判",
+        "avg_yellow": 4.8,
+        "avg_red": 0.14,
+        "avg_penalty": 0.28,
+        "home_win_rate": 47,
+        "bias_index": 49,
+        "bias_note": "加蓬全组执法 L 组次轮。Dalić 控球破局 vs Christiansen 5-4-1 铁桶；对战术犯规、拖延时间容忍度中等，多伦多凉爽利于高强度对抗。",
         "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
-        ]
+          "加蓬助理：Boris Ditsoga、Amos Abeigne Ndong",
+          "第四官员 Khalid Al-Turais（沙特）· 候补 Mohammed Al-Bakry（KSA）",
+          "VAR Nicolás Gallo（哥伦比亚）· AVAR Fu Ming（中国）· SVAR Bastian Dankert（GER）",
+          "巴拿马 0 分须抢分 · 克罗地亚 2-4 英格兰后须穿盘",
+          "多伦多 22°C 凉爽——90 分钟对抗强度可维持"
+        ],
+        "officials": {
+          "ar1": "Boris Ditsoga (GAB)",
+          "ar2": "Amos Abeigne Ndong (GAB)",
+          "fourth": "Khalid Al-Turais (KSA)",
+          "reserve_ar": "Mohammed Al-Bakry (KSA)",
+          "var": "Nicolás Gallo (COL)",
+          "avar": "Fu Ming (CHN)",
+          "svar": "Bastian Dankert (GER)"
+        },
+        "fifa_match_id": "400021511",
+        "fifa_official_id": "416162",
+        "updated": "2026-06-23T13:35:27+08:00"
       },
       "prediction": {
         "home_win": 25,
@@ -3081,6 +3689,128 @@ const MATCH_DATA = {
           "平局：双方各 +1 分；在 K 组：头名 Colombia 3 分 · 次席 Portugal 1 分（32强绑定组） · A 组：头名 Mexico 6 分 · 次席 South Korea 3 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
           "头名/次席博弈：L 组次席走 M83，16 强进入 H/J 半区。"
         ]
+      },
+      "coach_analysis": {
+        "home": {
+          "name": "Thomas Christiansen",
+          "age": 51,
+          "nation": "丹麦/西班牙",
+          "tenure": "2021年—",
+          "wc_exp": "2026 巴拿马带队",
+          "style_tags": [
+            "4-4-2",
+            "低位",
+            "定位球",
+            "Fajardo 支点"
+          ],
+          "formation_pref": "4-4-2 · Fajardo 定位球",
+          "style_summary": "0-1 加纳补时失利后 0 分危急；Christiansen 对克罗地亚预计 5-4-1 极守，Fajardo 定位球偷分 vs Modrić 控球是唯一冷门点。",
+          "subs": {
+            "timing": "首换 70 分钟+",
+            "pattern": "换人偏晚",
+            "avg_first_sub": "72'",
+            "note": "弱队体能分配优先"
+          },
+          "when_leading": {
+            "label": "5-4-1 铁桶",
+            "detail": "若意外领先：立即退守。"
+          },
+          "when_trailing": {
+            "label": "维持低位",
+            "detail": "unlikely 大举压上。"
+          },
+          "vs_strong": {
+            "label": "对强队：龟缩",
+            "detail": "对克罗地亚/英格兰同一模板。"
+          },
+          "vs_weak": {
+            "label": "不适用",
+            "detail": "L 组已无更弱对手。"
+          },
+          "tournament": "补时输给加纳后更衣室强调「对克罗地亚仍须抢分」；MLS 班底体能是隐患。",
+          "traits": [
+            "极深低位",
+            "定位球",
+            "Fajardo",
+            "0 分须抢分"
+          ],
+          "match_note": "0 分须抢分——Fajardo 定位球偷分 vs Modrić 控球；5-4-1 铁桶是生存之本。"
+        },
+        "away": {
+          "name": "Zlatko Dalić",
+          "age": 58,
+          "nation": "克罗地亚",
+          "tenure": "2017年—",
+          "wc_exp": "2018 亚军 · 2022 季军",
+          "style_tags": [
+            "4-3-3",
+            "Modrić 核心",
+            "控球",
+            "大赛经验"
+          ],
+          "formation_pref": "4-3-3 · Modrić 节拍",
+          "style_summary": "2-4 英格兰半场对攻后 0 分被动；Dalić 对巴拿马预计全场压制，Modrić 75' 可能换下，Gvardiol 防线须防 Fajardo 定位球。",
+          "subs": {
+            "timing": "首换 60–65 分钟",
+            "pattern": "Modrić 常 75' 换下；Kovačić 待命",
+            "avg_first_sub": "65'",
+            "note": "0 分须抢分"
+          },
+          "when_leading": {
+            "label": "控节奏",
+            "detail": "1 球领先：维持宽度，Modrić 控节拍。"
+          },
+          "when_trailing": {
+            "label": "堆中场",
+            "detail": "先丢球：60' 换 Kovačić 加强控制。"
+          },
+          "vs_strong": {
+            "label": "对强队：稳守反击",
+            "detail": "对英格兰已验证可对攻。"
+          },
+          "vs_weak": {
+            "label": "对弱队：控球压制",
+            "detail": "对巴拿马 xG 1.42 须兑现。"
+          },
+          "tournament": "2018/2022 大赛 DNA 仍在；2-4 后 Dalić 称「对巴拿马必须 3 分，Modrić 仍是核心」。",
+          "traits": [
+            "Modrić 依赖",
+            "大赛 DNA",
+            "须穿盘",
+            "Gvardiol 防线"
+          ],
+          "match_note": "2-4 英格兰后须穿盘——Modrić 节拍 + Gvardiol 防线 vs MLS 班底，xG 1.42 须兑现。"
+        }
+      },
+      "upset_alert": {
+        "favorite": "Croatia",
+        "underdog": "Panama",
+        "favorite_iso": "CRO",
+        "index": 18,
+        "level": "LOW",
+        "level_cn": "低",
+        "cold_result_pct": 16,
+        "verdict": "克罗地亚 2-4 英格兰后须穿盘——Christiansen 5-4-1 + Fajardo 定位球使 1-1 偷分约 16%。",
+        "tactical": "Dalić 4-3-3 控球 vs Christiansen 5-4-1；Modrić 破密集是关键。",
+        "psychology": "克罗地亚「对巴拿马必须 3 分」；巴拿马「补时输球仍须抢分」。",
+        "historical": "无大赛交锋；巴拿马 MLS 班底防守纪律是资产。",
+        "factors": [
+          {
+            "tag": "Modrić",
+            "impact": "强",
+            "detail": "最后一届大赛核心"
+          },
+          {
+            "tag": "定位球",
+            "impact": "中",
+            "detail": "Fajardo 偷分路径"
+          },
+          {
+            "tag": "气候",
+            "impact": "低",
+            "detail": "多伦多 22°C 凉爽"
+          }
+        ]
       }
     },
     {
@@ -3098,7 +3828,7 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月24日 10:00",
       "venue": "Estadio Akron",
       "city": "Guadalajara, Mexico",
-      "note": "K组第2轮 · 哥伦比亚 vs 刚果（金） · 瓜达拉哈拉",
+      "note": "K组第2轮 · 哥伦比亚 vs 刚果（金） · 瓜达拉哈拉 · FIFA 官方裁判已确认（Maurizio Mariani）",
       "lineup": {
         "confirmed": false,
         "formation": null,
@@ -3143,8 +3873,52 @@ const MATCH_DATA = {
           "desc": "3 分领跑",
           "rating": 8.6
         },
-        "injuries": [],
-        "rumors": []
+        "injuries": [
+          {
+            "player": "Luis Díaz",
+            "status": "FIT",
+            "note": "利物浦边锋 · K 组最大威胁 · 3-1 乌兹别克破门",
+            "confirmed": true
+          },
+          {
+            "player": "James Rodríguez",
+            "status": "FIT",
+            "note": "节拍器+远射 · 预计首发 · 高原夜战关键",
+            "confirmed": true
+          },
+          {
+            "player": "Jefferson Lerma",
+            "status": "FIT",
+            "note": "水晶宫后腰 · 绞杀 Wissa 连线",
+            "confirmed": true
+          },
+          {
+            "player": "Rafael Santos Borré",
+            "status": "FIT",
+            "note": "中锋支点 · 定位球头球 · 破刚果低位",
+            "confirmed": true
+          },
+          {
+            "player": "Santiago Arias",
+            "status": "FIT",
+            "note": "右后卫 · 宽度与定位球",
+            "confirmed": true
+          },
+          {
+            "player": "David Ospina",
+            "status": "FIT",
+            "note": "一门 · 大赛经验 · 对 Wissa 反击",
+            "confirmed": true
+          }
+        ],
+        "rumors": [
+          "Lorenzo（赛前）：「K 组领跑须穿盘；Díaz/James 宽度对 Wissa 反击是战术轴心」",
+          "【更衣室】3-1 乌兹别克后士气高涨；Lorenzo 称「高原夜战宜早破局，不拖入后段体能战」",
+          "预计 4-2-3-1：Ospina; Arias, Sánchez, Sánchez, Mojica; Lerma, Barrios; Díaz, James, Cuadrado; Borré",
+          "K 组 3 分领跑 · 平局仍可接受但 3 分可基本锁定出线",
+          "瓜达拉哈拉 1560m 海拔 · 刚果金后段体能或成变量",
+          "Maurizio Mariani 意大利主裁 · 对 Díaz 肋部突破与 Wissa 反击犯规尺度受关注"
+        ]
       },
       "away": {
         "name": "Congo DR",
@@ -3176,8 +3950,45 @@ const MATCH_DATA = {
           "desc": "1-1 葡萄牙",
           "rating": 7.6
         },
-        "injuries": [],
-        "rumors": []
+        "injuries": [
+          {
+            "player": "Yoane Wissa",
+            "status": "FIT",
+            "note": "布伦特福德射手 · 45+5' 扳平葡萄牙 · 锋线唯一世界级威胁",
+            "confirmed": true
+          },
+          {
+            "player": "Chancel Mbemba",
+            "status": "FIT",
+            "note": "马赛中卫 · 防线领袖 · 对 Díaz 速度的一对一",
+            "confirmed": true
+          },
+          {
+            "player": "Théo Bongonda",
+            "status": "FIT",
+            "note": "边路速度 · Wissa 反击接应",
+            "confirmed": true
+          },
+          {
+            "player": "Arnaud Zombo Anguissa",
+            "status": "FIT",
+            "note": "中场屏障 · 绞杀 James 前插",
+            "confirmed": true
+          },
+          {
+            "player": "Lionel Mpasi",
+            "status": "FIT",
+            "note": "一门 · 1-1 葡萄牙表现获赞",
+            "confirmed": true
+          }
+        ],
+        "rumors": [
+          "Desabre（赛前）：「1-1 葡萄牙是历史时刻；对哥伦比亚我们不怕，Wissa 是我们的武器」",
+          "预计 4-5-1 低位 · Wissa 单箭 · Mbemba 防空 Díaz/James 宽度",
+          "【更衣室】1-1 葡萄牙后全队信心暴涨；Desabre 强调「对哥伦比亚拿 1 分仍是成功」",
+          "Wissa 对位哥伦比亚防线是冷门唯一路径 · 定位球是非洲球队传统破局手段",
+          "高原夜战 1560m · Desabre 训练增加后段体能分配演练"
+        ]
       },
       "h2h": {
         "home_wins": 0,
@@ -3187,15 +3998,39 @@ const MATCH_DATA = {
         "note": "无大赛交锋"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "FIFA Match 48 裁判名单赛前公布。",
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA · Match officials · 2026-06-20",
+        "name": "Maurizio Mariani",
+        "nation": "Italy",
+        "iso": "it",
+        "age": 44,
+        "wc_experience": "2026 世界杯主裁 · 意大利 Serie A 顶级 · UEFA 精英裁判 · 意大利于组执法",
+        "avg_yellow": 4.4,
+        "avg_red": 0.11,
+        "avg_penalty": 0.32,
+        "home_win_rate": 51,
+        "bias_index": 52,
+        "bias_note": "意大利全组执法 K 组次轮。Díaz/James 宽度 vs Wissa 反击；对禁区内拉扯与转换犯规尺度预计偏严，高原夜战体能犯规或升。",
         "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
-        ]
+          "意大利助理：Daniele Bindoni、Alberto Tegoni",
+          "第四官员 Juan Calderón（哥斯达黎加）· 候补 Juan Carlos Mora（CRC）",
+          "VAR Marco Di Bello（意大利）· AVAR Mohammed Obaid Khadim（UAE）· SVAR Carlos Del Cerro Grande（ESP）",
+          "哥伦比亚 K 组领跑宜穿盘 · 刚果 1-1 葡萄牙信心暴涨",
+          "瓜达拉哈拉 1560m 海拔夜战——后段体能与拖延时间是焦点"
+        ],
+        "officials": {
+          "ar1": "Daniele Bindoni (ITA)",
+          "ar2": "Alberto Tegoni (ITA)",
+          "fourth": "Juan Calderón (CRC)",
+          "reserve_ar": "Juan Carlos Mora (CRC)",
+          "var": "Marco Di Bello (ITA)",
+          "avar": "Mohammed Obaid Khadim (UAE)",
+          "svar": "Carlos Del Cerro Grande (ESP)"
+        },
+        "fifa_match_id": "400021501",
+        "fifa_official_id": "416163",
+        "updated": "2026-06-23T13:35:27+08:00"
       },
       "prediction": {
         "home_win": 52,
@@ -4095,6 +4930,128 @@ const MATCH_DATA = {
           "Congo DR 若取胜：积分 4，客场抢分将改变 K 组格局与淘汰赛半区。",
           "平局：双方各 +1 分；在 L 组：头名 England 3 分 · 次席 Ghana 同分（32强绑定组） · J 组：头名 Argentina 6 分 · 次席 Austria 3 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
           "头名/次席博弈：K 组次席与 L 组次席同槽 M83。"
+        ]
+      },
+      "coach_analysis": {
+        "home": {
+          "name": "Néstor Lorenzo",
+          "age": 58,
+          "nation": "阿根廷/哥伦比亚",
+          "tenure": "2022年—",
+          "wc_exp": "2024 美洲杯亚军",
+          "style_tags": [
+            "4-2-3-1",
+            "Díaz 核心",
+            "宽度",
+            "领跑"
+          ],
+          "formation_pref": "4-2-3-1 · Díaz 左翼",
+          "style_summary": "3-1 乌兹别克后 K 组领跑；Lorenzo 对刚果金预计轮换有限，Díaz/James 宽度 + 高原夜战宜早破局穿盘。",
+          "subs": {
+            "timing": "首换 58–65 分钟",
+            "pattern": "Borré/Díaz 互替",
+            "avg_first_sub": "60'",
+            "note": "领跑可适度轮换"
+          },
+          "when_leading": {
+            "label": "控节奏 · 宽度",
+            "detail": "1 球领先：维持 4-2-3-1 宽度。"
+          },
+          "when_trailing": {
+            "label": "堆前锋",
+            "detail": "unlikely 先丢球；若先丢则 55' 换 Borré。"
+          },
+          "vs_strong": {
+            "label": "对强队：对攻",
+            "detail": "对葡萄牙末轮会相对保守。"
+          },
+          "vs_weak": {
+            "label": "对弱队：不留余地",
+            "detail": "对刚果金 Wissa 反击是唯一变数。"
+          },
+          "tournament": "2024 美洲杯亚军；3-1 乌兹别克后更衣室士气高涨，Lerma 屏障稳固。",
+          "traits": [
+            "Díaz 核心",
+            "James 节拍",
+            "K 组领跑",
+            "高原夜战"
+          ],
+          "match_note": "K 组领跑宜穿盘——Díaz/James 宽度 vs Wissa 反击；高原夜战 2240m 后段体能是变量。"
+        },
+        "away": {
+          "name": "Sébastien Desabre",
+          "age": 47,
+          "nation": "法国",
+          "tenure": "2016年—",
+          "wc_exp": "2026 带队 · 2019 非洲杯季军",
+          "style_tags": [
+            "4-2-3-1",
+            "Wissa 核心",
+            "低位",
+            "转换"
+          ],
+          "formation_pref": "4-2-3-1 · Wissa 单锋",
+          "style_summary": "1-1 葡萄牙历史性扳平后信心暴涨；Desabre 对哥伦比亚预计 4-5-1 低位，Wissa 速度 + 定位球偷分 vs Díaz 宽度是冷门路径。",
+          "subs": {
+            "timing": "首换 65–70 分钟",
+            "pattern": "Wissa 打满概率高",
+            "avg_first_sub": "68'",
+            "note": "弱队换人偏晚"
+          },
+          "when_leading": {
+            "label": "5-4-1 收缩",
+            "detail": "若意外领先：立即退守+Wissa 反击。"
+          },
+          "when_trailing": {
+            "label": "Wissa 单核",
+            "detail": "先丢球：60' 换 Bakambu 加强冲击。"
+          },
+          "vs_strong": {
+            "label": "对强队：龟缩+转换",
+            "detail": "对哥伦比亚：低位+Wissa 速度。"
+          },
+          "vs_weak": {
+            "label": "不适用",
+            "detail": "K 组已无更弱对手。"
+          },
+          "tournament": "1-1 葡萄牙（Wissa 45+5'）是本届最大冷门之一；Desabre 大赛防守纪律是资产。",
+          "traits": [
+            "Wissa 依赖",
+            "低位防守",
+            "转换",
+            "1-1 葡萄牙信心"
+          ],
+          "match_note": "1-1 葡萄牙信心暴涨——Wissa 速度+定位球偷分 vs Díaz 肋部，守 0-1 进 70' 可接受。"
+        }
+      },
+      "upset_alert": {
+        "favorite": "Colombia",
+        "underdog": "Congo DR",
+        "favorite_iso": "COL",
+        "index": 22,
+        "level": "LOW",
+        "level_cn": "低",
+        "cold_result_pct": 18,
+        "verdict": "哥伦比亚 K 组领跑——Desabre 1-1 葡萄牙信心 + Wissa 反击使平局偷分约 18%。",
+        "tactical": "Lorenzo 4-2-3-1 宽度 vs Desabre 4-5-1；Wissa 对 Gvardiol 速度对位。",
+        "psychology": "哥伦比亚「宜穿盘巩固榜首」；刚果「1-1 葡萄牙可以复制」。",
+        "historical": "无大赛交锋；刚果 1-1 葡萄牙是最大冷门信号。",
+        "factors": [
+          {
+            "tag": "Wissa",
+            "impact": "强",
+            "detail": "45+5' 扳平葡萄牙"
+          },
+          {
+            "tag": "Díaz",
+            "impact": "强",
+            "detail": "3-1 乌兹别克状态"
+          },
+          {
+            "tag": "高原",
+            "impact": "中",
+            "detail": "瓜达拉哈拉 1560m 夜战"
+          }
         ]
       }
     }

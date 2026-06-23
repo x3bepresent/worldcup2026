@@ -1,7 +1,7 @@
-// Auto-synced by scripts/sync-day12-results.js
-// Updated: 2026-06-23T09:40:52+08:00
+// Auto-synced by scripts/enrich-day13.js
+// Updated: 2026-06-23T13:35:27+08:00
 const LIVE_DATA = {
-  "lastUpdated": "2026-06-23T09:40:52+08:00",
+  "lastUpdated": "2026-06-23T13:35:27+08:00",
   "todayDate": "2026-06-24",
   "fixtures": [
     {
@@ -354,7 +354,7 @@ const LIVE_DATA = {
     }
   ],
   "injuries": {
-    "note": "Day 12 完结 · Messi/Haaland/Mbappé 双响 · 阿根廷 6 分"
+    "note": "Day 13 · m47 C罗/B费 破局 · m45 Kudus vs Bellingham · m46 Modrić 穿盘 · m48 Wissa 反击"
   },
   "yesterdayResults": [
     {
