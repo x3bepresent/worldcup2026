@@ -122,3 +122,124 @@ module.exports = {
   buildM47, buildM45, buildM46, buildM48,
   todayMatches: () => [buildM47(), buildM45(), buildM46(), buildM48()],
 };
+
+function upsertFinished(list, matches) {
+  const out = [...list];
+  for (const m of matches) {
+    const i = out.findIndex(x => x.id === m.id);
+    const copy = JSON.parse(JSON.stringify(m));
+    if (i >= 0) out[i] = copy;
+    else out.push(copy);
+  }
+  return out;
+}
+
+function upsertGroup(snaps, group, label, table) {
+  const i = snaps.findIndex(g => g.group === group);
+  const snap = { group, label, table };
+  if (i >= 0) snaps[i] = snap;
+  else snaps.push(snap);
+  return snaps;
+}
+
+if (require.main === module) {
+  const MATCH_DATA = loadData(MATCH_PATH, 'MATCH_DATA');
+  const RESULTS_DATA = loadData(RESULTS_PATH, 'RESULTS_DATA');
+
+  let toArchive = (MATCH_DATA.todayMatches || []).filter(m =>
+    ['m41', 'm42', 'm43', 'm44'].includes(m.id) && m.actualResult?.status === 'FT',
+  );
+  if (toArchive.length < 4) {
+    toArchive = ['m43', 'm42', 'm41', 'm44']
+      .map(id => (RESULTS_DATA.finishedMatches || []).find(m => m.id === id)
+        || (MATCH_DATA.todayMatches || []).find(m => m.id === id))
+      .filter(Boolean);
+  }
+
+  RESULTS_DATA.lastUpdated = TS;
+  RESULTS_DATA.syncSource = 'FIFA 官方赛果 · Day 12 完结 · Day 13 预览';
+  RESULTS_DATA.breakingNews = [
+    { tag: 'OFFICIAL', text: '🏁 Day 12：阿2-0奥 · 法3-0伊 · 挪3-2塞 · 约1-2阿', time: '6月23日' },
+    { tag: 'OFFICIAL', text: 'I组：法/挪各 6 分 · J组：阿根廷 6 分', time: '积分榜' },
+    { tag: 'PREVIEW', text: '📅 6月24日 · 葡-乌(01:00) · 英-加(04:00) · 巴-克(07:00) · 哥-刚(10:00)', time: '今日赛程' },
+    { tag: 'PREVIEW', text: 'K/L组第2轮：葡萄牙须取胜 · 英加榜首对话', time: '焦点' },
+  ].slice(0, 12);
+
+  RESULTS_DATA.finishedMatches = upsertFinished(RESULTS_DATA.finishedMatches || [], toArchive);
+
+  let snaps = RESULTS_DATA.groupSnapshots || [];
+  snaps = upsertGroup(snaps, 'I', 'I组 · 第2轮后', [
+    { team: 'France', pts: 6, p: 2, w: 2, d: 0, l: 0, gf: 6, ga: 1 },
+    { team: 'Norway', pts: 6, p: 2, w: 2, d: 0, l: 0, gf: 7, ga: 3 },
+    { team: 'Senegal', pts: 0, p: 2, w: 0, d: 0, l: 2, gf: 3, ga: 6 },
+    { team: 'Iraq', pts: 0, p: 2, w: 0, d: 0, l: 2, gf: 1, ga: 7 },
+  ]);
+  snaps = upsertGroup(snaps, 'J', 'J组 · 第2轮后', [
+    { team: 'Argentina', pts: 6, p: 2, w: 2, d: 0, l: 0, gf: 5, ga: 0 },
+    { team: 'Austria', pts: 3, p: 2, w: 1, d: 0, l: 1, gf: 3, ga: 5 },
+    { team: 'Algeria', pts: 3, p: 2, w: 1, d: 0, l: 1, gf: 2, ga: 4 },
+    { team: 'Jordan', pts: 0, p: 2, w: 0, d: 0, l: 2, gf: 1, ga: 5 },
+  ]);
+  RESULTS_DATA.groupSnapshots = snaps;
+
+  const todayMatches = [buildM47(), buildM45(), buildM46(), buildM48()];
+  const first = todayMatches[0];
+  const p0 = first.prediction;
+
+  const NEW_MATCH_DATA = {
+    lastUpdated: TS,
+    syncSource: 'FIFA 赛程 · Day 13 preview · K/L 组第2轮',
+    breakingNews: [
+      { tag: 'OFFICIAL', text: '🏁 昨日：阿2-0奥 · 法3-0伊 · 挪3-2塞 · 约1-2阿 · Messi/Haaland 双响', time: '赛果回顾' },
+      { tag: 'PREVIEW', text: '📅 今日4场 · 葡-乌(01:00) · 英-加(04:00) · 巴-克(07:00) · 哥-刚(10:00)', time: '6月24日' },
+      { tag: 'PREVIEW', text: 'K/L组第2轮：葡萄牙须取胜 · 英加榜首对话 · 哥伦比亚领跑', time: '焦点' },
+      { tag: 'REFEREE', text: '今日各场裁判待 FIFA 官方确认', time: '裁判' },
+    ],
+    todayMatches,
+    nextMatch: {
+      group: first.group, matchday: first.matchday, date: first.date, time: first.time,
+      time_local: first.time_local, timezone: first.timezone,
+      time_beijing: first.time_beijing, date_beijing: first.date_beijing,
+      time_beijing_full: first.time_beijing_full, venue: first.venue, city: first.city,
+      home: { name: first.home.name, iso: first.home.iso, fifaRank: first.home.fifa_rank, rating: first.home.rating },
+      away: { name: first.away.name, iso: first.away.iso, fifaRank: first.away.fifa_rank, rating: first.away.rating },
+      teaser: 'K组第2轮：葡萄牙 vs 乌兹别克 · 休斯顿',
+      home_win: p0.home_win, draw: p0.draw, away_win: p0.away_win, predicted_score: p0.score,
+      key_player_home: first.home.star?.name || 'Cristiano Ronaldo',
+      key_player_away: first.away.star?.name || 'Eldor Shomurodov',
+    },
+    upcomingMatches: todayMatches.slice(1).map(m => ({
+      group: m.group, time_beijing_full: m.time_beijing_full, venue: m.venue, city: m.city,
+      home: { name: m.home.name, iso: m.home.iso }, away: { name: m.away.name, iso: m.away.iso },
+      teaser: m.note?.split(' · ')[0] || `${m.group}组`,
+    })),
+  };
+
+  const day12Results = [
+    { id: 'm43', home: 'Argentina', away: 'Austria', score: '2-0', group: 'J' },
+    { id: 'm42', home: 'France', away: 'Iraq', score: '3-0', group: 'I' },
+    { id: 'm41', home: 'Norway', away: 'Senegal', score: '3-2', group: 'I' },
+    { id: 'm44', home: 'Jordan', away: 'Algeria', score: '1-2', group: 'J' },
+  ];
+
+  const LIVE_DATA = {
+    lastUpdated: TS,
+    todayDate: '2026-06-24',
+    fixtures: todayMatches.map(m => ({
+      id: m.id, fifa_match_number: m.fifa_match_number,
+      home: m.home.name, away: m.away.name, status: 'NS',
+      home_score: null, away_score: null, group: m.group,
+    })),
+    allResults: day12Results,
+    standings: snaps.filter(g => ['I', 'J', 'K', 'L', 'G', 'H'].includes(g.group)),
+    injuries: { note: 'Day 13 赛前 · K/L组第2轮' },
+    yesterdayResults: day12Results.map(r => ({ id: r.id, score: r.score })),
+  };
+
+  fs.writeFileSync(RESULTS_PATH, `// 过往赛果\n// Last updated: ${TS}\nconst RESULTS_DATA = ${JSON.stringify(RESULTS_DATA, null, 2)};\n`);
+  fs.writeFileSync(MATCH_PATH, `// 今日赛事 — Day 13 preview\n// Last updated: ${TS}\nconst MATCH_DATA = ${JSON.stringify(NEW_MATCH_DATA, null, 2)};\n`);
+  fs.writeFileSync(LIVE_PATH, `// Auto-synced by scripts/roll-day13.js\n// Updated: ${TS}\nconst LIVE_DATA = ${JSON.stringify(LIVE_DATA, null, 2)};\n`);
+
+  console.log('✅ Archived:', toArchive.map(m => m.id).join(', '));
+  console.log('✅ Day 13:', todayMatches.map(m => `#${m.fifa_match_number} ${m.home.name} vs ${m.away.name}`).join(' | '));
+}
