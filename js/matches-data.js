@@ -1,7 +1,7 @@
 // 今日赛事 — Day 13 (enriched)
-// Last updated: 2026-06-23T13:35:27+08:00
+// Last updated: 2026-06-23T13:44:38+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-23T13:35:27+08:00",
+  "lastUpdated": "2026-06-23T13:44:38+08:00",
   "syncSource": "FIFA 赛程 · Day 13 · weather/injuries/coach/referee enriched",
   "breakingNews": [
     {
@@ -40,24 +40,29 @@ const MATCH_DATA = {
       "time": "6月24日"
     },
     {
-      "tag": "UPDATE",
-      "text": "📊 推演升级：模型概要 + 小组形势/晋级路径已纳入今日赛事",
-      "time": "模型"
+      "tag": "OFFICIAL",
+      "text": "✅ FIFA 官方裁判 m48 · Maurizio Mariani（意大利）",
+      "time": "官方确认"
     },
     {
       "tag": "OFFICIAL",
-      "text": "🏁 昨日：阿2-0奥 · 法3-0伊 · 挪3-2塞 · 约1-2阿 · Messi/Haaland 双响",
-      "time": "赛果回顾"
+      "text": "✅ FIFA 官方裁判 m46 · Pierre Atcho（加蓬）",
+      "time": "官方确认"
     },
     {
-      "tag": "PREVIEW",
-      "text": "📅 今日4场 · 葡-乌(01:00) · 英-加(04:00) · 巴-克(07:00) · 哥-刚(10:00)",
+      "tag": "OFFICIAL",
+      "text": "✅ FIFA 官方裁判 m45 · Héctor Said Martínez（洪都拉斯）",
+      "time": "官方确认"
+    },
+    {
+      "tag": "OFFICIAL",
+      "text": "✅ FIFA 官方裁判 m47 · Jalal Jayed（摩洛哥）",
+      "time": "官方确认"
+    },
+    {
+      "tag": "INJURY",
+      "text": "✅ m47 C罗破局压力 · m45 Kudus 反击 · m48 Wissa 信心",
       "time": "6月24日"
-    },
-    {
-      "tag": "PREVIEW",
-      "text": "K/L组第2轮：葡萄牙须取胜 · 英加榜首对话 · 哥伦比亚领跑",
-      "time": "焦点"
     }
   ],
   "todayMatches": [
@@ -110,16 +115,34 @@ const MATCH_DATA = {
             "name": "Cristiano Ronaldo",
             "pos": "ST",
             "club": "Al-Nassr",
-            "desc": "1-1 刚果后须取胜",
-            "rating": 8.8
+            "stats": "揭幕战 0 射正 · 大赛 22 球",
+            "rating": 8.8,
+            "desc": "1-1 刚果后须全取 3 分；破局压力与终结效率是本场最大变量"
+          },
+          {
+            "name": "Bruno Fernandes",
+            "pos": "AM",
+            "club": "Manchester United",
+            "stats": "肋部关键传球 · 定位球主罚",
+            "rating": 8.5,
+            "desc": "B费 节拍器 · 对 Katanec 5-4-1 铁桶的肋部渗透与最后一传是关键"
+          },
+          {
+            "name": "Rafael Leão",
+            "pos": "LW",
+            "club": "AC Milan",
+            "stats": "速度型边锋 · 边路 1v1",
+            "rating": 8.3,
+            "desc": "左翼爆点 · 1-1 后 Martínez 或比首轮更靠前，与 C罗 形成宽度破局"
           }
         ],
         "star": {
           "name": "Cristiano Ronaldo",
           "pos": "ST",
           "club": "Al-Nassr",
-          "desc": "1-1 刚果后须取胜",
-          "rating": 8.8
+          "stats": "揭幕战 0 射正 · 大赛 22 球",
+          "rating": 8.8,
+          "desc": "1-1 刚果后须全取 3 分；破局压力与终结效率是本场最大变量"
         },
         "injuries": [
           {
@@ -193,16 +216,34 @@ const MATCH_DATA = {
             "name": "Eldor Shomurodov",
             "pos": "ST",
             "club": "Roma",
-            "desc": "0 分垫底",
-            "rating": 7.8
+            "stats": "1-3 哥伦比亚 · 锋线单箭",
+            "rating": 7.8,
+            "desc": "0 分垫底 · 反击与定位球唯一威胁，守 0-1 进 70' 即是胜利"
+          },
+          {
+            "name": "Abdukodir Khusanov",
+            "pos": "CB",
+            "club": "Manchester City",
+            "stats": "曼城租将 · 中卫领袖",
+            "rating": 7.4,
+            "desc": "对 C罗/Leão 速度的一对一 · 5-4-1 铁桶的防空与出球轴心"
+          },
+          {
+            "name": "Jasurbek Hamrobekov",
+            "pos": "CDM",
+            "club": "Pakhtakor",
+            "stats": "后腰屏障 · 绞杀组织",
+            "rating": 7.2,
+            "desc": "双闸之一 · 限制 B费 肋部拿球，低位防守纪律是生存之本"
           }
         ],
         "star": {
           "name": "Eldor Shomurodov",
           "pos": "ST",
           "club": "Roma",
-          "desc": "0 分垫底",
-          "rating": 7.8
+          "stats": "1-3 哥伦比亚 · 锋线单箭",
+          "rating": 7.8,
+          "desc": "0 分垫底 · 反击与定位球唯一威胁，守 0-1 进 70' 即是胜利"
         },
         "injuries": [
           {
@@ -290,7 +331,7 @@ const MATCH_DATA = {
         },
         "fifa_match_id": "400021503",
         "fifa_official_id": "328497",
-        "updated": "2026-06-23T13:35:27+08:00"
+        "updated": "2026-06-23T13:44:38+08:00"
       },
       "prediction": {
         "home_win": 62,
@@ -1363,18 +1404,36 @@ const MATCH_DATA = {
         "stars": [
           {
             "name": "Jude Bellingham",
-            "pos": "CM",
+            "pos": "AM",
             "club": "Real Madrid",
-            "desc": "4-2 克罗地亚",
-            "rating": 9
+            "stats": "4-2 克罗地亚 · 47'+85' 参与进球",
+            "rating": 9,
+            "desc": "L 组核心 · 伪 10 对位 Partey 屏障，榜首战须延续对克罗地亚的进攻状态"
+          },
+          {
+            "name": "Harry Kane",
+            "pos": "ST",
+            "club": "Bayern Munich",
+            "stats": "12'(点)+42' 双响 · 队长",
+            "rating": 8.9,
+            "desc": "锋线支点+终结 · 点球与运动战双响后信心足，对加纳低位须早早破门"
+          },
+          {
+            "name": "Bukayo Saka",
+            "pos": "RW",
+            "club": "Arsenal",
+            "stats": "右路宽度 · 肋部串联",
+            "rating": 8.6,
+            "desc": "右翼宽度关键 · 与 Kudus 侧对位，Tuchel 4-2-3-1 破密集的重要出球点"
           }
         ],
         "star": {
           "name": "Jude Bellingham",
-          "pos": "CM",
+          "pos": "AM",
           "club": "Real Madrid",
-          "desc": "4-2 克罗地亚",
-          "rating": 9
+          "stats": "4-2 克罗地亚 · 47'+85' 参与进球",
+          "rating": 9,
+          "desc": "L 组核心 · 伪 10 对位 Partey 屏障，榜首战须延续对克罗地亚的进攻状态"
         },
         "injuries": [
           {
@@ -1448,16 +1507,34 @@ const MATCH_DATA = {
             "name": "Mohammed Kudus",
             "pos": "RW",
             "club": "West Ham",
-            "desc": "1-0 巴拿马",
-            "rating": 8.2
+            "stats": "英超状态 · L 组最大反击威胁",
+            "rating": 8.2,
+            "desc": "1-0 巴拿马后同分榜首 · 对 Tuchel 高位逼抢的反击轴心，Addo 战术核心"
+          },
+          {
+            "name": "Thomas Partey",
+            "pos": "CDM",
+            "club": "Arsenal",
+            "stats": "后腰屏障 · 绞杀+出球",
+            "rating": 7.9,
+            "desc": "中场双闸 · 限制 Bellingham 肋部与 Kane 背身，低位防守的枢纽"
+          },
+          {
+            "name": "Caleb Yirenkyi",
+            "pos": "MF",
+            "club": "Hammarby",
+            "stats": "补时绝杀巴拿马",
+            "rating": 7.5,
+            "desc": "揭幕战 90+ 分钟破门功臣 · 替补/轮换奇兵，定位球与后段冲击是冷门点"
           }
         ],
         "star": {
           "name": "Mohammed Kudus",
           "pos": "RW",
           "club": "West Ham",
-          "desc": "1-0 巴拿马",
-          "rating": 8.2
+          "stats": "英超状态 · L 组最大反击威胁",
+          "rating": 8.2,
+          "desc": "1-0 巴拿马后同分榜首 · 对 Tuchel 高位逼抢的反击轴心，Addo 战术核心"
         },
         "injuries": [
           {
@@ -1552,7 +1629,7 @@ const MATCH_DATA = {
         },
         "fifa_match_id": "400021506",
         "fifa_official_id": "416161",
-        "updated": "2026-06-23T13:35:27+08:00"
+        "updated": "2026-06-23T13:44:38+08:00"
       },
       "prediction": {
         "home_win": 56,
@@ -2626,16 +2703,34 @@ const MATCH_DATA = {
             "name": "José Fajardo",
             "pos": "ST",
             "club": "Plaza Amador",
-            "desc": "0 分须抢分",
-            "rating": 7
+            "stats": "定位球威胁 · 锋线支点",
+            "rating": 7,
+            "desc": "0 分须抢分 · 5-4-1 铁桶下定位球偷分是唯一冷门路径"
+          },
+          {
+            "name": "Adalberto Carrasquilla",
+            "pos": "CM",
+            "club": "Houston Dynamo",
+            "stats": "MLS 核心 · 赛前队检",
+            "rating": 6.8,
+            "desc": "中场组织存疑（轻微拉伤）· 若首发则是破 Dalić 压迫的出球点"
+          },
+          {
+            "name": "Ismael Díaz",
+            "pos": "LW",
+            "club": "FC Tulsa",
+            "stats": "边路速度 · 反击接应",
+            "rating": 6.9,
+            "desc": "左路速度点 · 对克罗地亚压上时的反击接应，MLS 班底体能分配关键"
           }
         ],
         "star": {
           "name": "José Fajardo",
           "pos": "ST",
           "club": "Plaza Amador",
-          "desc": "0 分须抢分",
-          "rating": 7
+          "stats": "定位球威胁 · 锋线支点",
+          "rating": 7,
+          "desc": "0 分须抢分 · 5-4-1 铁桶下定位球偷分是唯一冷门路径"
         },
         "injuries": [
           {
@@ -2697,16 +2792,34 @@ const MATCH_DATA = {
             "name": "Luka Modrić",
             "pos": "CM",
             "club": "Real Madrid",
-            "desc": "0 分 · 大赛经验",
-            "rating": 8.4
+            "stats": "最后一届世界杯 · 大赛节拍器",
+            "rating": 8.4,
+            "desc": "2-4 英格兰后 0 分被动 · 须带队穿盘，75' 可能换下是后段变量"
+          },
+          {
+            "name": "Joško Gvardiol",
+            "pos": "CB",
+            "club": "Manchester City",
+            "stats": "曼城中卫 · 防线新核",
+            "rating": 8.2,
+            "desc": "防空 Fajardo 定位球 · 出球发起压制，对 MLS 班底须零失误"
+          },
+          {
+            "name": "Andrej Kramarić",
+            "pos": "ST",
+            "club": "Hoffenheim",
+            "stats": "锋线支点 · 破密集",
+            "rating": 8,
+            "desc": "中锋做球+终结 · 对巴拿马 5-4-1 的肋部渗透与禁区内最后一传"
           }
         ],
         "star": {
           "name": "Luka Modrić",
           "pos": "CM",
           "club": "Real Madrid",
-          "desc": "0 分 · 大赛经验",
-          "rating": 8.4
+          "stats": "最后一届世界杯 · 大赛节拍器",
+          "rating": 8.4,
+          "desc": "2-4 英格兰后 0 分被动 · 须带队穿盘，75' 可能换下是后段变量"
         },
         "injuries": [
           {
@@ -2794,7 +2907,7 @@ const MATCH_DATA = {
         },
         "fifa_match_id": "400021511",
         "fifa_official_id": "416162",
-        "updated": "2026-06-23T13:35:27+08:00"
+        "updated": "2026-06-23T13:44:38+08:00"
       },
       "prediction": {
         "home_win": 25,
@@ -3862,16 +3975,34 @@ const MATCH_DATA = {
             "name": "Luis Díaz",
             "pos": "LW",
             "club": "Liverpool",
-            "desc": "3 分领跑",
-            "rating": 8.6
+            "stats": "3-1 乌兹别克破门 · K 组领跑",
+            "rating": 8.6,
+            "desc": "K 组最大威胁 · 左翼宽度对 Wissa 反击侧须回追，宜早破局穿盘"
+          },
+          {
+            "name": "James Rodríguez",
+            "pos": "AM",
+            "club": "León",
+            "stats": "节拍器+远射 · 大赛经验",
+            "rating": 8.3,
+            "desc": "前腰组织与远射 · 高原夜战破刚果低位的关键，与 Díaz 双核"
+          },
+          {
+            "name": "Jefferson Lerma",
+            "pos": "CDM",
+            "club": "Crystal Palace",
+            "stats": "后腰绞杀 · 屏障",
+            "rating": 7.8,
+            "desc": "限制 Wissa 背身与反击连线 · 3-1 乌兹别克后防线稳固轴心"
           }
         ],
         "star": {
           "name": "Luis Díaz",
           "pos": "LW",
           "club": "Liverpool",
-          "desc": "3 分领跑",
-          "rating": 8.6
+          "stats": "3-1 乌兹别克破门 · K 组领跑",
+          "rating": 8.6,
+          "desc": "K 组最大威胁 · 左翼宽度对 Wissa 反击侧须回追，宜早破局穿盘"
         },
         "injuries": [
           {
@@ -3939,16 +4070,34 @@ const MATCH_DATA = {
             "name": "Yoane Wissa",
             "pos": "ST",
             "club": "Brentford",
-            "desc": "1-1 葡萄牙",
-            "rating": 7.6
+            "stats": "45+5' 扳平葡萄牙 · 英超射手",
+            "rating": 7.8,
+            "desc": "1-1 葡萄牙历史性扳平功臣 · 锋线唯一世界级威胁，速度+跑位是冷门核心"
+          },
+          {
+            "name": "Chancel Mbemba",
+            "pos": "CB",
+            "club": "Marseille",
+            "stats": "马赛中卫 · 防线领袖",
+            "rating": 7.5,
+            "desc": "对 Díaz/James 宽度的一对一 · 5-4-1 低位防空与出球"
+          },
+          {
+            "name": "Théo Bongonda",
+            "pos": "RW",
+            "club": "Anorthosis",
+            "stats": "边路速度 · Wissa 接应",
+            "rating": 7.2,
+            "desc": "右路反击速度点 · 与 Wissa 组成转换双箭，定位球是非洲球队传统武器"
           }
         ],
         "star": {
           "name": "Yoane Wissa",
           "pos": "ST",
           "club": "Brentford",
-          "desc": "1-1 葡萄牙",
-          "rating": 7.6
+          "stats": "45+5' 扳平葡萄牙 · 英超射手",
+          "rating": 7.8,
+          "desc": "1-1 葡萄牙历史性扳平功臣 · 锋线唯一世界级威胁，速度+跑位是冷门核心"
         },
         "injuries": [
           {
@@ -4030,7 +4179,7 @@ const MATCH_DATA = {
         },
         "fifa_match_id": "400021501",
         "fifa_official_id": "416163",
-        "updated": "2026-06-23T13:35:27+08:00"
+        "updated": "2026-06-23T13:44:38+08:00"
       },
       "prediction": {
         "home_win": 52,

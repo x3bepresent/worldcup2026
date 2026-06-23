@@ -9,6 +9,7 @@ const { venueWeather } = require('./venue-weather-day13');
 const { getTeamNews } = require('./injuries-rumors-day13');
 const { getReferee } = require('./referee-data-day13');
 const { buildCoachAnalysis, getUpsetAlert, MATCH_COACH_KEYS } = require('./coach-data-day13');
+const { getTeamStars } = require('./star-data-day13');
 
 const ROOT = path.join(__dirname, '..');
 const MATCH_PATH = path.join(ROOT, 'js', 'matches-data.js');
@@ -49,6 +50,19 @@ function applyTeamNews(match) {
   match.away.rumors = awayNews.rumors;
 }
 
+function applyStars(match) {
+  const home = getTeamStars(match.id, 'home');
+  const away = getTeamStars(match.id, 'away');
+  if (home.stars.length) {
+    match.home.stars = home.stars;
+    match.home.star = home.star;
+  }
+  if (away.stars.length) {
+    match.away.stars = away.stars;
+    match.away.star = away.star;
+  }
+}
+
 function applyCoachAndUpset(match) {
   const keys = MATCH_COACH_KEYS[match.id];
   if (!keys) return;
@@ -85,6 +99,7 @@ for (const m of MATCH_DATA.todayMatches || []) {
   const w = venueWeather(m.id);
   if (w) m.weather = w;
   applyTeamNews(m);
+  applyStars(m);
   applyCoachAndUpset(m);
   applyReferee(m);
   patchWeatherInsight(m);
@@ -137,6 +152,6 @@ for (const id of ids) {
   const m = MATCH_DATA.todayMatches.find(x => x.id === id);
   if (!m) continue;
   console.log(
-    `   ${id} ref=${m.referee?.confirmed ? m.referee.name : 'pending'} · coach=${m.coach_analysis ? 'yes' : 'no'} · injuries H${m.home.injuries?.length}/A${m.away.injuries?.length}`,
+    `   ${id} ref=${m.referee?.confirmed ? m.referee.name : 'pending'} · stars H${m.home.stars?.length}/A${m.away.stars?.length} · coach=${m.coach_analysis ? 'yes' : 'no'}`,
   );
 }
