@@ -1,8 +1,8 @@
-// 今日赛事 — Day 13 (enriched)
-// Last updated: 2026-06-23T13:44:38+08:00
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-23T16:19:32.302Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-23T13:44:38+08:00",
-  "syncSource": "FIFA 赛程 · Day 13 · weather/injuries/coach/referee enriched",
+  "lastUpdated": "2026-06-23T16:19:32.302Z",
+  "syncSource": "API-Football",
   "breakingNews": [
     {
       "tag": "OFFICIAL",
