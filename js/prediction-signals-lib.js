@@ -2689,6 +2689,102 @@ function buildGoalTimingDisplay(raw, homeName, awayName) {
   };
 }
 
+/** 世界杯历史均值：全场 xG 约 44% 落在上半场（可经 goal_timing 微调） */
+const DEFAULT_HT_XG_SHARE = 0.44;
+
+function inferHtXgShare(goalTiming) {
+  if (!goalTiming?.cross_insight?.cross_intervals?.length) return DEFAULT_HT_XG_SHARE;
+  const early = ['1–15', '16–30', '31–45', '1-15', '16-30', '31-45'];
+  const cross = goalTiming.cross_insight.cross_intervals;
+  const earlyHits = cross.filter(iv => early.some(e => String(iv).includes(e.split('–')[0].split('-')[0]))).length;
+  if (earlyHits >= 2) return 0.48;
+  if (cross.length && earlyHits === 0) return 0.40;
+  return DEFAULT_HT_XG_SHARE;
+}
+
+function poissonOutcomeLite(xgH, xgA) {
+  const fact = [1, 1, 2, 6, 24, 120];
+  function pois(k, lam) {
+    if (k < 0 || k > 5) return 0;
+    if (lam <= 0) return k === 0 ? 1 : 0;
+    return Math.exp(-lam) * Math.pow(lam, k) / fact[k];
+  }
+  let hw = 0;
+  let dr = 0;
+  let aw = 0;
+  let top = { score: '0-0', prob: 0 };
+  let mass = 0;
+  const xgHome = Math.max(0, Number(xgH) || 0);
+  const xgAway = Math.max(0, Number(xgA) || 0);
+  for (let h = 0; h <= 5; h++) {
+    for (let a = 0; a <= 5; a++) {
+      const p = pois(h, xgHome) * pois(a, xgAway);
+      mass += p;
+      if (h > a) hw += p;
+      else if (h === a) dr += p;
+      else aw += p;
+      if (p > top.prob) top = { score: h + '-' + a, prob: p };
+    }
+  }
+  const m = mass || 1;
+  const top3 = [];
+  for (let h = 0; h <= 5; h++) {
+    for (let a = 0; a <= 5; a++) {
+      const p = pois(h, xgHome) * pois(a, xgAway) / m;
+      top3.push({ score: h + '-' + a, prob: Math.round(p * 1000) / 10 });
+    }
+  }
+  top3.sort((a, b) => b.prob - a.prob);
+  return {
+    home_win: Math.round((hw / m) * 1000) / 10,
+    draw: Math.round((dr / m) * 1000) / 10,
+    away_win: Math.round((aw / m) * 1000) / 10,
+    score: top.score,
+    score_prob: Math.round((top.prob / m) * 1000) / 10,
+    top3: top3.slice(0, 3),
+  };
+}
+
+/** 赛前半场推演 — 按历史上下半进球比例拆分 xG */
+function buildHalftimePreview(xgH, xgA, homeName, awayName, goalTiming) {
+  const share = inferHtXgShare(goalTiming);
+  const xgHtH = Math.round((Number(xgH) || 0) * share * 100) / 100;
+  const xgHtA = Math.round((Number(xgA) || 0) * share * 100) / 100;
+  const xg2hH = Math.round(((Number(xgH) || 0) - xgHtH) * 100) / 100;
+  const xg2hA = Math.round(((Number(xgA) || 0) - xgHtA) * 100) / 100;
+  const ht = poissonOutcomeLite(xgHtH, xgHtA);
+  const htGoals = xgHtH + xgHtA;
+  const htOver05 = probTotalsAtLeast(xgHtH, xgHtA, 1);
+  const htOver15 = probTotalsAtLeast(xgHtH, xgHtA, 2);
+  const pick = ht.home_win >= ht.draw && ht.home_win >= ht.away_win
+    ? 'home'
+    : ht.away_win >= ht.draw ? 'away' : 'draw';
+  const pickName = pick === 'home' ? homeName : pick === 'away' ? awayName : '平局';
+  return {
+    ht_xg_share: share,
+    xg_home_ht: xgHtH,
+    xg_away_ht: xgHtA,
+    xg_home_2h: xg2hH,
+    xg_away_2h: xg2hA,
+    home_win: ht.home_win,
+    draw: ht.draw,
+    away_win: ht.away_win,
+    top_score: ht.score,
+    top_score_prob: ht.score_prob,
+    top3_scores: ht.top3,
+    ht_goals_expected: Math.round(htGoals * 100) / 100,
+    ht_over_0_5_pct: htOver05,
+    ht_over_1_5_pct: htOver15,
+    pick,
+    pick_name: pickName,
+    summary_cn: '半场 xG ' + xgHtH + '–' + xgHtA + '（约占全场 ' + Math.round(share * 100) + '%）'
+      + ' · 最可能 ' + ht.score + '（' + ht.score_prob + '%）'
+      + ' · 胜平负 ' + ht.home_win + '/' + ht.draw + '/' + ht.away_win
+      + ' · 半场≥1球约 ' + htOver05 + '%',
+    disclaimer_cn: '按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。',
+  };
+}
+
 /** 客户读场要点 — 净胜为主、进球氛围次之、胜平负弱化 */
 function buildCustomerReading(match, displaySummary, tier, tierGap, cover, adjusted) {
   const totalsView = displaySummary.totals_view || {};
@@ -2975,6 +3071,9 @@ function buildDepthCalibration(match, raw) {
   );
   displaySummary.match_preview = buildMatchPreview(
     match, displaySummary, adjusted, tier, ctx
+  );
+  displaySummary.halftime_preview = buildHalftimePreview(
+    ctx.xg_home, ctx.xg_away, match.home.name, match.away.name, null
   );
 
   return {
@@ -3795,6 +3894,7 @@ const exportsObj = {
   classifySpreadOutlook,
   buildCustomerReading,
   buildGoalTimingDisplay,
+  buildHalftimePreview,
   applyDepthToPrediction,
   buildGroupContext,
   buildGroupStandingsNote,

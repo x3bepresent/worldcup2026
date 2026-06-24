@@ -719,6 +719,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 15,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.92,
+            "xg_away_ht": 0.22,
+            "xg_home_2h": 1.18,
+            "xg_away_2h": 0.28,
+            "home_win": 52.5,
+            "draw": 38.8,
+            "away_win": 8.7,
+            "top_score": "0-0",
+            "top_score_prob": 32,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 32
+              },
+              {
+                "score": "1-0",
+                "prob": 29.4
+              },
+              {
+                "score": "2-0",
+                "prob": 13.5
+              }
+            ],
+            "ht_goals_expected": 1.14,
+            "ht_over_0_5_pct": 68,
+            "ht_over_1_5_pct": 31.5,
+            "pick": "home",
+            "pick_name": "Mexico",
+            "summary_cn": "半场 xG 0.92–0.22（约占全场 44%） · 最可能 0-0（32%） · 胜平负 52.5/38.8/8.7 · 半场≥1球约 68%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Mexico · 压制局。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致 · 模型认为仅小胜 1 球仍约 25.9%（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -765,7 +798,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "2-0",
-          "ht_score": null,
+          "ht_score": "1-0",
           "hits": [
             "净胜全达标方向一致",
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -784,7 +817,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "Raúl Jiménez 38', 78'",
-        "highlights": "Ochoa 零封；南非 60 分钟后高原体能崩盘；Marciniak 4 黄 0 红"
+        "highlights": "Ochoa 零封；南非 60 分钟后高原体能崩盘；Marciniak 4 黄 0 红",
+        "ht_score": "1-0"
       }
     },
     {
@@ -1480,6 +1514,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 20,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.79,
+            "xg_away_ht": 0.53,
+            "xg_home_2h": 1.01,
+            "xg_away_2h": 0.67,
+            "home_win": 38.4,
+            "draw": 39.1,
+            "away_win": 22.5,
+            "top_score": "0-0",
+            "top_score_prob": 26.7,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 26.7
+              },
+              {
+                "score": "1-0",
+                "prob": 21.1
+              },
+              {
+                "score": "0-1",
+                "prob": 14.2
+              }
+            ],
+            "ht_goals_expected": 1.32,
+            "ht_over_0_5_pct": 73.3,
+            "ht_over_1_5_pct": 38,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.79–0.53（约占全场 44%） · 最可能 0-0（26.7%） · 胜平负 38.4/39.1/22.5 · 半场≥1球约 73.3%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】South Korea · 均势开放。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -1514,7 +1581,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "2-1",
-          "ht_score": null,
+          "ht_score": "0-0",
           "hits": [
             "净胜全达标方向一致",
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -1533,7 +1600,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "孙兴慜 56', 李康仁 71' · Schick 84'",
-        "highlights": "Sampaio 5 黄；捷克 10 人低位防守被两次洞穿；Schick 头球扳回颜面"
+        "highlights": "Sampaio 5 黄；捷克 10 人低位防守被两次洞穿；Schick 头球扳回颜面",
+        "ht_score": "0-0"
       }
     },
     {
@@ -2229,6 +2297,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 21,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.73,
+            "xg_away_ht": 0.4,
+            "xg_home_2h": 0.92,
+            "xg_away_2h": 0.52,
+            "home_win": 39.4,
+            "draw": 42.5,
+            "away_win": 18.2,
+            "top_score": "0-0",
+            "top_score_prob": 32.3,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 32.3
+              },
+              {
+                "score": "1-0",
+                "prob": 23.6
+              },
+              {
+                "score": "0-1",
+                "prob": 12.9
+              }
+            ],
+            "ht_goals_expected": 1.13,
+            "ht_over_0_5_pct": 67.7,
+            "ht_over_1_5_pct": 31.2,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.73–0.4（约占全场 44%） · 最可能 0-0（32.3%） · 胜平负 39.4/42.5/18.2 · 半场≥1球约 67.7%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Canada · 常规对抗。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -2269,7 +2370,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-1",
-          "ht_score": null,
+          "ht_score": "0-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
@@ -2289,7 +2390,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "Lukic 21' (Kolašinac); Larin 78' (Promise David)",
-        "highlights": "波黑首开纪录；Kolašinac 助攻+门线解围；加拿大61%控球扳平，队史世界杯首分"
+        "highlights": "波黑首开纪录；Kolašinac 助攻+门线解围；加拿大61%控球扳平，队史世界杯首分",
+        "ht_score": "0-1"
       },
       "lineup": {
         "confirmed": true,
@@ -2994,6 +3096,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 16,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.97,
+            "xg_away_ht": 0.37,
+            "xg_home_2h": 1.23,
+            "xg_away_2h": 0.48,
+            "home_win": 49.7,
+            "draw": 36.5,
+            "away_win": 13.8,
+            "top_score": "0-0",
+            "top_score_prob": 26.2,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 26.2
+              },
+              {
+                "score": "1-0",
+                "prob": 25.4
+              },
+              {
+                "score": "2-0",
+                "prob": 12.3
+              }
+            ],
+            "ht_goals_expected": 1.34,
+            "ht_over_0_5_pct": 73.8,
+            "ht_over_1_5_pct": 38.7,
+            "pick": "home",
+            "pick_name": "USA",
+            "summary_cn": "半场 xG 0.97–0.37（约占全场 44%） · 最可能 0-0（26.2%） · 胜平负 49.7/36.5/13.8 · 半场≥1球约 73.8%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】USA · 压制局。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -3034,7 +3169,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "4-1",
-          "ht_score": null,
+          "ht_score": "3-0",
           "hits": [
             "净胜全达标方向一致"
           ],
@@ -3054,7 +3189,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "Bobadilla OG 7'; Balogun 31', 45+5 (Pulisic/Tillman); Mauricio 73' (Enciso); Reyna 90+8 (Freeman)",
-        "highlights": "Balogun 双响；Enciso 替补送出助攻；美国主场4-1大胜领跑D组"
+        "highlights": "Balogun 双响；Enciso 替补送出助攻；美国主场4-1大胜领跑D组",
+        "ht_score": "3-0"
       }
     },
     {
@@ -3757,6 +3893,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 23,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.4,
+            "xg_away_ht": 0.78,
+            "xg_home_2h": 0.52,
+            "xg_away_2h": 1,
+            "home_win": 17.4,
+            "draw": 41.1,
+            "away_win": 41.5,
+            "top_score": "0-0",
+            "top_score_prob": 30.7,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 30.7
+              },
+              {
+                "score": "0-1",
+                "prob": 24
+              },
+              {
+                "score": "1-0",
+                "prob": 12.3
+              }
+            ],
+            "ht_goals_expected": 1.18,
+            "ht_over_0_5_pct": 69.3,
+            "ht_over_1_5_pct": 33,
+            "pick": "away",
+            "pick_name": "Switzerland",
+            "summary_cn": "半场 xG 0.4–0.78（约占全场 44%） · 最可能 0-0（30.7%） · 胜平负 17.4/41.1/41.5 · 半场≥1球约 69.3%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Switzerland · 常规对抗。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -3797,7 +3966,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-1",
-          "ht_score": null,
+          "ht_score": "0-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
@@ -3817,7 +3986,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "Embolo 17' (pen); Khoukhi 90+4'",
-        "highlights": "瑞士控球 68%、xG 3.24 vs 0.76 仍被逼平；Khoukhi 头球绝平 · 出席 67,966"
+        "highlights": "瑞士控球 68%、xG 3.24 vs 0.76 仍被逼平；Khoukhi 头球绝平 · 出席 67,966",
+        "ht_score": "0-1"
       },
       "lineup": {
         "confirmed": true,
@@ -4522,6 +4692,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 18,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.9,
+            "xg_away_ht": 0.46,
+            "xg_home_2h": 1.15,
+            "xg_away_2h": 0.59,
+            "home_win": 44.5,
+            "draw": 37.5,
+            "away_win": 18.1,
+            "top_score": "0-0",
+            "top_score_prob": 25.7,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 25.7
+              },
+              {
+                "score": "1-0",
+                "prob": 23.1
+              },
+              {
+                "score": "0-1",
+                "prob": 11.8
+              }
+            ],
+            "ht_goals_expected": 1.36,
+            "ht_over_0_5_pct": 74.3,
+            "ht_over_1_5_pct": 39.4,
+            "pick": "home",
+            "pick_name": "Brazil",
+            "summary_cn": "半场 xG 0.9–0.46（约占全场 44%） · 最可能 0-0（25.7%） · 胜平负 44.5/37.5/18.1 · 半场≥1球约 74.3%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Brazil · 均势开放。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -4562,7 +4765,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-1",
-          "ht_score": null,
+          "ht_score": "1-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
@@ -4582,7 +4785,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "Saibari 21' (Díaz); Vinícius Jr 32' (Guimarães)",
-        "highlights": "xG 1.27-1.52 · 巴西 20 届世界杯 opener 不败延续 · 出席 80,663 · Casemiro/Ibañez 各1黄"
+        "highlights": "xG 1.27-1.52 · 巴西 20 届世界杯 opener 不败延续 · 出席 80,663 · Casemiro/Ibañez 各1黄",
+        "ht_score": "1-0"
       },
       "lineup": {
         "confirmed": true,
@@ -5287,6 +5491,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 23,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.37,
+            "xg_away_ht": 0.62,
+            "xg_home_2h": 0.48,
+            "xg_away_2h": 0.8,
+            "home_win": 18.5,
+            "draw": 46.2,
+            "away_win": 35.3,
+            "top_score": "0-0",
+            "top_score_prob": 37.2,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 37.2
+              },
+              {
+                "score": "0-1",
+                "prob": 23
+              },
+              {
+                "score": "1-0",
+                "prob": 13.7
+              }
+            ],
+            "ht_goals_expected": 0.99,
+            "ht_over_0_5_pct": 62.8,
+            "ht_over_1_5_pct": 26.1,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.37–0.62（约占全场 44%） · 最可能 0-0（37.2%） · 胜平负 18.5/46.2/35.3 · 半场≥1球约 62.8%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Scotland · 常规对抗。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -5333,7 +5570,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "0-1",
-          "ht_score": null,
+          "ht_score": "1-1",
           "hits": [
             "净胜全达标方向一致",
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -5352,7 +5589,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "McGinn 29'",
-        "highlights": "McGinn 7.8 全场最佳 · Gunn 7.7 零封 · xG 1.05-1.05 · 出席 64,146 · Bellegarde/Hickey 各1黄"
+        "highlights": "McGinn 7.8 全场最佳 · Gunn 7.7 零封 · xG 1.05-1.05 · 出席 64,146 · Bellegarde/Hickey 各1黄",
+        "ht_score": "1-1"
       },
       "lineup": {
         "confirmed": true,
@@ -6057,6 +6295,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 31,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.56,
+            "xg_away_ht": 0.54,
+            "xg_home_2h": 0.71,
+            "xg_away_2h": 0.69,
+            "home_win": 28.6,
+            "draw": 44.1,
+            "away_win": 27.3,
+            "top_score": "0-0",
+            "top_score_prob": 33.3,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 33.3
+              },
+              {
+                "score": "1-0",
+                "prob": 18.6
+              },
+              {
+                "score": "0-1",
+                "prob": 18
+              }
+            ],
+            "ht_goals_expected": 1.1,
+            "ht_over_0_5_pct": 66.7,
+            "ht_over_1_5_pct": 30.1,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.56–0.54（约占全场 44%） · 最可能 0-0（33.3%） · 胜平负 28.6/44.1/27.3 · 半场≥1球约 66.7%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Australia · 常规对抗。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -6103,7 +6374,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "2-0",
-          "ht_score": null,
+          "ht_score": "0-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
@@ -6121,7 +6392,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "Irankunda 27' (Okon-Engstler); Metcalfe 75'",
-        "highlights": "Beach 8.9 MOTM · 土耳其 72% 控球 30 射无果 · Yildiz 46' 替补 · 出席 52,497 · D组澳美同积3分"
+        "highlights": "Beach 8.9 MOTM · 土耳其 72% 控球 30 射无果 · Yildiz 46' 替补 · 出席 52,497 · D组澳美同积3分",
+        "ht_score": "0-1"
       },
       "lineup": {
         "confirmed": true,
@@ -6826,6 +7098,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 4,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 1.67,
+            "xg_away_ht": 0.13,
+            "xg_home_2h": 2.13,
+            "xg_away_2h": 0.17,
+            "home_win": 77,
+            "draw": 20.5,
+            "away_win": 2.6,
+            "top_score": "1-0",
+            "top_score_prob": 27.8,
+            "top3_scores": [
+              {
+                "score": "1-0",
+                "prob": 27.8
+              },
+              {
+                "score": "2-0",
+                "prob": 23.2
+              },
+              {
+                "score": "0-0",
+                "prob": 16.7
+              }
+            ],
+            "ht_goals_expected": 1.8,
+            "ht_over_0_5_pct": 83.3,
+            "ht_over_1_5_pct": 53.4,
+            "pick": "home",
+            "pick_name": "Germany",
+            "summary_cn": "半场 xG 1.67–0.13（约占全场 44%） · 最可能 1-0（27.8%） · 胜平负 77/20.5/2.6 · 半场≥1球约 83.3%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Germany · 压制局。 · 与模型 xG 对照：实力吻合 · 与赛前净胜看法基本一致 · 部分达标净胜=1 约 13%（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
@@ -6872,7 +7177,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "7-1",
-          "ht_score": null,
+          "ht_score": "0-0",
           "hits": [
             "净胜全达标方向一致"
           ],
@@ -6892,7 +7197,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "Nmecha 6' (Wirtz); Comenencia 21'; Schlotterbeck 38'; Havertz 45+5 pen; Musiala 47' (Kimmich); Brown 68' (Undav); Undav 78'; Havertz 88' (Undav)",
-        "highlights": "Comenencia 库拉索世界杯历史首球 · xG 4.22-0.41 · 出席 68,021 · Neuer 第125场 · Musiala/Undav 替补建功"
+        "highlights": "Comenencia 库拉索世界杯历史首球 · xG 4.22-0.41 · 出席 68,021 · Neuer 第125场 · Musiala/Undav 替补建功",
+        "ht_score": "0-0"
       },
       "lineup": {
         "confirmed": true,
@@ -7597,6 +7903,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 19,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.81,
+            "xg_away_ht": 0.46,
+            "xg_home_2h": 1.04,
+            "xg_away_2h": 0.59,
+            "home_win": 41,
+            "draw": 39.6,
+            "away_win": 19.4,
+            "top_score": "0-0",
+            "top_score_prob": 28.1,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 28.1
+              },
+              {
+                "score": "1-0",
+                "prob": 22.8
+              },
+              {
+                "score": "0-1",
+                "prob": 12.9
+              }
+            ],
+            "ht_goals_expected": 1.27,
+            "ht_over_0_5_pct": 71.9,
+            "ht_over_1_5_pct": 36.2,
+            "pick": "home",
+            "pick_name": "Netherlands",
+            "summary_cn": "半场 xG 0.81–0.46（约占全场 44%） · 最可能 0-0（28.1%） · 胜平负 41/39.6/19.4 · 半场≥1球约 71.9%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Netherlands · 均势开放。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -7637,7 +7976,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "2-2",
-          "ht_score": null,
+          "ht_score": "3-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
@@ -7657,7 +7996,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "van Dijk 51' (Gravenberch); Nakamura 57'; Summerville 64'; Kamada 88' (Shiogai)",
-        "highlights": "下半场4球对轰 · Kamada 89' 绝平 · xG 0.78-0.59 · 出席 69,285 · 荷兰16场小组赛不败延续"
+        "highlights": "下半场4球对轰 · Kamada 89' 绝平 · xG 0.78-0.59 · 出席 69,285 · 荷兰16场小组赛不败延续",
+        "ht_score": "3-1"
       },
       "lineup": {
         "confirmed": true,
@@ -8357,6 +8697,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 25,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.66,
+            "xg_away_ht": 0.62,
+            "xg_home_2h": 0.84,
+            "xg_away_2h": 0.78,
+            "home_win": 31,
+            "draw": 40.4,
+            "away_win": 28.6,
+            "top_score": "0-0",
+            "top_score_prob": 27.8,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 27.8
+              },
+              {
+                "score": "1-0",
+                "prob": 18.4
+              },
+              {
+                "score": "0-1",
+                "prob": 17.2
+              }
+            ],
+            "ht_goals_expected": 1.28,
+            "ht_over_0_5_pct": 72.2,
+            "ht_over_1_5_pct": 36.6,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.66–0.62（约占全场 44%） · 最可能 0-0（27.8%） · 胜平负 31/40.4/28.6 · 半场≥1球约 72.2%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Côte d'Ivoire · 均势开放。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -8409,7 +8782,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-0",
-          "ht_score": null,
+          "ht_score": "0-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
@@ -8427,7 +8800,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "Amad Diallo 90' (Singo)",
-        "highlights": "Amad 替补90'绝杀 · 厄瓜多尔三门柱 · xG 1.52-1.01 · 出席 68,274 · 终结厄瓜多尔19场不败"
+        "highlights": "Amad 替补90'绝杀 · 厄瓜多尔三门柱 · xG 1.52-1.01 · 出席 68,274 · 终结厄瓜多尔19场不败",
+        "ht_score": "0-0"
       }
     },
     {
@@ -9123,6 +9497,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 22,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.68,
+            "xg_away_ht": 0.46,
+            "xg_home_2h": 0.87,
+            "xg_away_2h": 0.59,
+            "home_win": 35.7,
+            "draw": 42.8,
+            "away_win": 21.5,
+            "top_score": "0-0",
+            "top_score_prob": 32,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 32
+              },
+              {
+                "score": "1-0",
+                "prob": 21.7
+              },
+              {
+                "score": "0-1",
+                "prob": 14.7
+              }
+            ],
+            "ht_goals_expected": 1.14,
+            "ht_over_0_5_pct": 68,
+            "ht_over_1_5_pct": 31.6,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.68–0.46（约占全场 44%） · 最可能 0-0（32%） · 胜平负 35.7/42.8/21.5 · 半场≥1球约 68%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Sweden · 常规对抗。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -9163,7 +9570,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "5-1",
-          "ht_score": null,
+          "ht_score": "2-1",
           "hits": [
             "净胜全达标方向一致"
           ],
@@ -9183,7 +9590,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "Ayari 7', 90+6' (Bergvall); Isak 30' (Gyökeres); Rekik 43' (Mejbri); Gyökeres 59' (Isak); Svanberg 84' (Isak)",
-        "highlights": "Isak 世界杯首球+2助攻 · Svanberg 替补12秒进球 · xG 约3.2-1.0 · Potter 3-4-3 大胜 · 瑞典领跑F组"
+        "highlights": "Isak 世界杯首球+2助攻 · Svanberg 替补12秒进球 · xG 约3.2-1.0 · Potter 3-4-3 大胜 · 瑞典领跑F组",
+        "ht_score": "2-1"
       }
     },
     {
@@ -9879,6 +10287,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 13,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 1.08,
+            "xg_away_ht": 0.24,
+            "xg_home_2h": 1.37,
+            "xg_away_2h": 0.31,
+            "home_win": 57.7,
+            "draw": 34.1,
+            "away_win": 8.2,
+            "top_score": "1-0",
+            "top_score_prob": 28.9,
+            "top3_scores": [
+              {
+                "score": "1-0",
+                "prob": 28.9
+              },
+              {
+                "score": "0-0",
+                "prob": 26.7
+              },
+              {
+                "score": "2-0",
+                "prob": 15.6
+              }
+            ],
+            "ht_goals_expected": 1.32,
+            "ht_over_0_5_pct": 73.3,
+            "ht_over_1_5_pct": 38,
+            "pick": "home",
+            "pick_name": "Spain",
+            "summary_cn": "半场 xG 1.08–0.24（约占全场 44%） · 最可能 1-0（28.9%） · 胜平负 57.7/34.1/8.2 · 半场≥1球约 73.3%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Spain · 压制局。 · 与模型 xG 对照：实力吻合 · 与赛前净胜看法基本一致 · 模型认为仅小胜 1 球仍约 23.4%（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
@@ -9931,7 +10372,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "0-0",
-          "ht_score": null,
+          "ht_score": "0-0",
           "hits": [],
           "misses": [
             "净胜全达标未兑现",
@@ -9950,7 +10391,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "无进球 · Vozinha 多次扑救零封",
-        "highlights": "xG 2.29-0.29 · 控球 74%-26% · Yamal 71'/Nico Williams 87' 替补 · Pedri 8.6 MOTM · Vozinha 9.0"
+        "highlights": "xG 2.29-0.29 · 控球 74%-26% · Yamal 71'/Nico Williams 87' 替补 · Pedri 8.6 MOTM · Vozinha 9.0",
+        "ht_score": "0-0"
       },
       "lineup": {
         "confirmed": true,
@@ -10655,6 +11097,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 19,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.86,
+            "xg_away_ht": 0.42,
+            "xg_home_2h": 1.09,
+            "xg_away_2h": 0.53,
+            "home_win": 44.1,
+            "draw": 38.8,
+            "away_win": 17.1,
+            "top_score": "0-0",
+            "top_score_prob": 27.8,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 27.8
+              },
+              {
+                "score": "1-0",
+                "prob": 23.9
+              },
+              {
+                "score": "0-1",
+                "prob": 11.7
+              }
+            ],
+            "ht_goals_expected": 1.28,
+            "ht_over_0_5_pct": 72.2,
+            "ht_over_1_5_pct": 36.6,
+            "pick": "home",
+            "pick_name": "Belgium",
+            "summary_cn": "半场 xG 0.86–0.42（约占全场 44%） · 最可能 0-0（27.8%） · 胜平负 44.1/38.8/17.1 · 半场≥1球约 72.2%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Belgium · 压制局。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -10695,7 +11170,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-1",
-          "ht_score": null,
+          "ht_score": "0-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
@@ -10715,7 +11190,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "Ashour (hydration break); Hany OG 65' (Lukaku on, Meunier cross)",
-        "highlights": "Salah 34 岁生日战 · De Bruyne 中柱 · Lukaku 65' 替补即奏效 · 埃及仍无世界杯胜绩 · xG 约1.4-1.1"
+        "highlights": "Salah 34 岁生日战 · De Bruyne 中柱 · Lukaku 65' 替补即奏效 · 埃及仍无世界杯胜绩 · xG 约1.4-1.1",
+        "ht_score": "0-1"
       },
       "lineup": {
         "confirmed": true,
@@ -11427,6 +11903,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 22,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.33,
+            "xg_away_ht": 0.81,
+            "xg_home_2h": 0.42,
+            "xg_away_2h": 1.04,
+            "home_win": 14.2,
+            "draw": 41.1,
+            "away_win": 44.7,
+            "top_score": "0-0",
+            "top_score_prob": 32,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 32
+              },
+              {
+                "score": "0-1",
+                "prob": 25.9
+              },
+              {
+                "score": "1-0",
+                "prob": 10.6
+              }
+            ],
+            "ht_goals_expected": 1.14,
+            "ht_over_0_5_pct": 68,
+            "ht_over_1_5_pct": 31.5,
+            "pick": "away",
+            "pick_name": "Uruguay",
+            "summary_cn": "半场 xG 0.33–0.81（约占全场 44%） · 最可能 0-0（32%） · 胜平负 14.2/41.1/44.7 · 半场≥1球约 68%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Uruguay · 压制局。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -11473,7 +11982,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-1",
-          "ht_score": null,
+          "ht_score": "1-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
@@ -11493,7 +12002,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "Al-Amri 41' (corner spill); Maxi Araújo 80' (rebound)",
-        "highlights": "迈阿密 31°C 湿热 · Ugarte 中柱 · Bielsa 半场换 Núñez/Viña · 乌拉圭控球碾压但未取3分"
+        "highlights": "迈阿密 31°C 湿热 · Ugarte 中柱 · Bielsa 半场换 Núñez/Viña · 乌拉圭控球碾压但未取3分",
+        "ht_score": "1-0"
       }
     },
     {
@@ -12189,6 +12699,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 22,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.68,
+            "xg_away_ht": 0.37,
+            "xg_home_2h": 0.87,
+            "xg_away_2h": 0.48,
+            "home_win": 38,
+            "draw": 44.4,
+            "away_win": 17.6,
+            "top_score": "0-0",
+            "top_score_prob": 35,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 35
+              },
+              {
+                "score": "1-0",
+                "prob": 23.8
+              },
+              {
+                "score": "0-1",
+                "prob": 12.9
+              }
+            ],
+            "ht_goals_expected": 1.05,
+            "ht_over_0_5_pct": 65,
+            "ht_over_1_5_pct": 28.3,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.68–0.37（约占全场 44%） · 最可能 0-0（35%） · 胜平负 38/44.4/17.6 · 半场≥1球约 65%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Iran · 常规对抗。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -12235,7 +12778,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "2-2",
-          "ht_score": null,
+          "ht_score": "1-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
@@ -12255,7 +12798,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "Just 7', 55' (Wood); Rezaeian 32'; Mohebi 64' (Rezaeian cross)",
-        "highlights": "Just 双响 · Wood 两次助攻 · Taremi 中柱 · Crocombe 出击险酿祸 · 场外政治抗议 · xG 约1.8-1.6"
+        "highlights": "Just 双响 · Wood 两次助攻 · Taremi 中柱 · Crocombe 出击险酿祸 · 场外政治抗议 · xG 约1.8-1.6",
+        "ht_score": "1-1"
       }
     },
     {
@@ -13000,6 +13544,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 16,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 1.01,
+            "xg_away_ht": 0.4,
+            "xg_home_2h": 1.29,
+            "xg_away_2h": 0.5,
+            "home_win": 50.2,
+            "draw": 35.3,
+            "away_win": 14.4,
+            "top_score": "1-0",
+            "top_score_prob": 24.7,
+            "top3_scores": [
+              {
+                "score": "1-0",
+                "prob": 24.7
+              },
+              {
+                "score": "0-0",
+                "prob": 24.4
+              },
+              {
+                "score": "2-0",
+                "prob": 12.5
+              }
+            ],
+            "ht_goals_expected": 1.41,
+            "ht_over_0_5_pct": 75.6,
+            "ht_over_1_5_pct": 41.1,
+            "pick": "home",
+            "pick_name": "France",
+            "summary_cn": "半场 xG 1.01–0.4（约占全场 44%） · 最可能 1-0（24.7%） · 胜平负 50.2/35.3/14.4 · 半场≥1球约 75.6%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】France · 压制局。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 23.8%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
@@ -13034,7 +13611,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "3-1",
-          "ht_score": null,
+          "ht_score": "0-0",
           "hits": [
             "净胜全达标方向一致",
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -13053,7 +13630,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "Mbappé 66', 90+6'; Barcola 82' (Rabiot); Mbaye 90+5'",
-        "highlights": "出席 80,545 · Mbappé 双响追平/超越 Giroud 队史射手王(58球) · Olise 8.3 · Faghani 拒判点球引争议 · Jackson 中柱 · Mané 禁区内争议未吹点"
+        "highlights": "出席 80,545 · Mbappé 双响追平/超越 Giroud 队史射手王(58球) · Olise 8.3 · Faghani 拒判点球引争议 · Jackson 中柱 · Mané 禁区内争议未吹点",
+        "ht_score": "0-0"
       },
       "lineup": {
         "confirmed": true,
@@ -13765,6 +14343,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 24,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.36,
+            "xg_away_ht": 0.76,
+            "xg_home_2h": 0.46,
+            "xg_away_2h": 0.96,
+            "home_win": 16,
+            "draw": 42.2,
+            "away_win": 41.8,
+            "top_score": "0-0",
+            "top_score_prob": 32.6,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 32.6
+              },
+              {
+                "score": "0-1",
+                "prob": 24.8
+              },
+              {
+                "score": "1-0",
+                "prob": 11.7
+              }
+            ],
+            "ht_goals_expected": 1.12,
+            "ht_over_0_5_pct": 67.4,
+            "ht_over_1_5_pct": 30.8,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.36–0.76（约占全场 44%） · 最可能 0-0（32.6%） · 胜平负 16/42.2/41.8 · 半场≥1球约 67.4%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Norway · 常规对抗。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法低于 xG 隐含约 1.25 · 部分达标净胜=1 约 25.9%（模型微调：主胜 +0% · 平 -1% · 客 +1%）",
@@ -13811,7 +14422,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-4",
-          "ht_score": null,
+          "ht_score": "1-2",
           "hits": [],
           "misses": [
             "总进球尾部偏差大（赛前已标注无明显倾向）"
@@ -13829,7 +14440,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "Hussein 39'; Haaland 29', 43'; Østigård 76' (Ødegaard); Hussein OG 90+7'",
-        "highlights": "Gillette Stadium 波士顿 · Haaland 世界杯首秀双响 · Hussein 头球扳平后挪威连进 · Ødegaard 助攻角球 · 挪威 I 组净胜球领跑"
+        "highlights": "Gillette Stadium 波士顿 · Haaland 世界杯首秀双响 · Hussein 头球扳平后挪威连进 · Ødegaard 助攻角球 · 挪威 I 组净胜球领跑",
+        "ht_score": "1-2"
       },
       "lineup": {
         "confirmed": true,
@@ -14534,6 +15146,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 11,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 1.23,
+            "xg_away_ht": 0.26,
+            "xg_home_2h": 1.57,
+            "xg_away_2h": 0.34,
+            "home_win": 61.8,
+            "draw": 30.4,
+            "away_win": 7.8,
+            "top_score": "1-0",
+            "top_score_prob": 27.8,
+            "top3_scores": [
+              {
+                "score": "1-0",
+                "prob": 27.8
+              },
+              {
+                "score": "0-0",
+                "prob": 22.6
+              },
+              {
+                "score": "2-0",
+                "prob": 17.1
+              }
+            ],
+            "ht_goals_expected": 1.49,
+            "ht_over_0_5_pct": 77.4,
+            "ht_over_1_5_pct": 43.8,
+            "pick": "home",
+            "pick_name": "Argentina",
+            "summary_cn": "半场 xG 1.23–0.26（约占全场 44%） · 最可能 1-0（27.8%） · 胜平负 61.8/30.4/7.8 · 半场≥1球约 77.4%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Argentina · 压制局。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 模型认为仅小胜 1 球仍约 21.1% · 净胜≥3（全达标）约 36.8%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
@@ -14574,7 +15219,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "3-0",
-          "ht_score": null,
+          "ht_score": "1-0",
           "hits": [
             "净胜全达标方向一致",
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -14593,7 +15238,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "Messi 17', 60', 76' (De Paul / Mac Allister / Nico González)",
-        "highlights": "Arrowhead Stadium 堪萨斯城 · Messi 第200场国家队 · 世界杯首个帽子戏法 · 追平 Klose 16 球纪录 · 六届世界杯均进球 · Marciniak 执法"
+        "highlights": "Arrowhead Stadium 堪萨斯城 · Messi 第200场国家队 · 世界杯首个帽子戏法 · 追平 Klose 16 球纪录 · 六届世界杯均进球 · Marciniak 执法",
+        "ht_score": "1-0"
       },
       "lineup": {
         "confirmed": true,
@@ -15309,6 +15955,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 25,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.73,
+            "xg_away_ht": 0.33,
+            "xg_home_2h": 0.92,
+            "xg_away_2h": 0.42,
+            "home_win": 41.3,
+            "draw": 43.5,
+            "away_win": 15.2,
+            "top_score": "0-0",
+            "top_score_prob": 34.6,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 34.6
+              },
+              {
+                "score": "1-0",
+                "prob": 25.3
+              },
+              {
+                "score": "0-1",
+                "prob": 11.4
+              }
+            ],
+            "ht_goals_expected": 1.06,
+            "ht_over_0_5_pct": 65.4,
+            "ht_over_1_5_pct": 28.6,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.73–0.33（约占全场 44%） · 最可能 0-0（34.6%） · 胜平负 41.3/43.5/15.2 · 半场≥1球约 65.4%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Austria · 常规对抗。 · 与模型 xG 对照：预期偏热 · 赛前净胜看法高于 xG 隐含约 0.75（模型微调：主胜 -3% · 平 +1% · 客 +2%）",
@@ -15355,7 +16034,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "3-1",
-          "ht_score": null,
+          "ht_score": "1-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
@@ -15373,7 +16052,8 @@ const RESULTS_DATA = {
         "status": "FT",
         "label": "全场结束",
         "scorers": "Schmid 20'; Olwan 50'; Al-Arab 77' OG; Arnautović 90+13' (pen)",
-        "highlights": "Levi's Stadium 圣克拉拉 · 奥地利 28 年后再取世界杯胜 · Posch 手球 VAR 取消 Arnautović 进球 · 补时点球锁定 · Al-Tamari 威胁不断"
+        "highlights": "Levi's Stadium 圣克拉拉 · 奥地利 28 年后再取世界杯胜 · Posch 手球 VAR 取消 Arnautović 进球 · 补时点球锁定 · Al-Tamari 威胁不断",
+        "ht_score": "1-0"
       },
       "lineup": {
         "confirmed": true,
@@ -16078,6 +16758,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 16,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.95,
+            "xg_away_ht": 0.32,
+            "xg_home_2h": 1.2,
+            "xg_away_2h": 0.4,
+            "home_win": 50.5,
+            "draw": 37.3,
+            "away_win": 12.2,
+            "top_score": "0-0",
+            "top_score_prob": 28.1,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 28.1
+              },
+              {
+                "score": "1-0",
+                "prob": 26.7
+              },
+              {
+                "score": "2-0",
+                "prob": 12.7
+              }
+            ],
+            "ht_goals_expected": 1.27,
+            "ht_over_0_5_pct": 71.9,
+            "ht_over_1_5_pct": 36.2,
+            "pick": "home",
+            "pick_name": "Portugal",
+            "summary_cn": "半场 xG 0.95–0.32（约占全场 44%） · 最可能 0-0（28.1%） · 胜平负 50.5/37.3/12.2 · 半场≥1球约 71.9%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Portugal · 压制局。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1 · 部分达标净胜=1 约 25%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
@@ -16840,6 +17553,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 21,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.71,
+            "xg_away_ht": 0.52,
+            "xg_home_2h": 0.91,
+            "xg_away_2h": 0.66,
+            "home_win": 35.4,
+            "draw": 41.1,
+            "away_win": 23.5,
+            "top_score": "0-0",
+            "top_score_prob": 29.2,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 29.2
+              },
+              {
+                "score": "1-0",
+                "prob": 20.8
+              },
+              {
+                "score": "0-1",
+                "prob": 15.2
+              }
+            ],
+            "ht_goals_expected": 1.23,
+            "ht_over_0_5_pct": 70.8,
+            "ht_over_1_5_pct": 34.8,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.71–0.52（约占全场 44%） · 最可能 0-0（29.2%） · 胜平负 35.4/41.1/23.5 · 半场≥1球约 70.8%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】England · 均势开放。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
@@ -17604,6 +18350,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 22,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.68,
+            "xg_away_ht": 0.36,
+            "xg_home_2h": 0.87,
+            "xg_away_2h": 0.46,
+            "home_win": 38.3,
+            "draw": 44.5,
+            "away_win": 17.2,
+            "top_score": "0-0",
+            "top_score_prob": 35.3,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 35.3
+              },
+              {
+                "score": "1-0",
+                "prob": 24
+              },
+              {
+                "score": "0-1",
+                "prob": 12.7
+              }
+            ],
+            "ht_goals_expected": 1.04,
+            "ht_over_0_5_pct": 64.7,
+            "ht_over_1_5_pct": 27.9,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.68–0.36（约占全场 44%） · 最可能 0-0（35.3%） · 胜平负 38.3/44.5/17.2 · 半场≥1球约 64.7%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Ghana · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
@@ -18373,6 +19152,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 23,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.39,
+            "xg_away_ht": 0.78,
+            "xg_home_2h": 0.49,
+            "xg_away_2h": 1,
+            "home_win": 17,
+            "draw": 41.2,
+            "away_win": 41.8,
+            "top_score": "0-0",
+            "top_score_prob": 31,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 31
+              },
+              {
+                "score": "0-1",
+                "prob": 24.2
+              },
+              {
+                "score": "1-0",
+                "prob": 12.1
+              }
+            ],
+            "ht_goals_expected": 1.17,
+            "ht_over_0_5_pct": 69,
+            "ht_over_1_5_pct": 32.6,
+            "pick": "away",
+            "pick_name": "Colombia",
+            "summary_cn": "半场 xG 0.39–0.78（约占全场 44%） · 最可能 0-0（31%） · 胜平负 17/41.2/41.8 · 半场≥1球约 69%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Colombia · 常规对抗。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法低于 xG 隐含约 1 · 模型认为仅小胜 1 球仍约 25.4%（模型微调：主胜 +0% · 平 -1% · 客 +1%）",
@@ -18413,7 +19225,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-3",
-          "ht_score": "1-0",
+          "ht_score": "0-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
@@ -18432,7 +19244,7 @@ const RESULTS_DATA = {
         "label": "全场结束",
         "scorers": "Muñoz 41' (Díaz); Fayzullaev 60'; Díaz 65'; Campaz 90+6' (Díaz)",
         "highlights": "Estadio Azteca 墨西哥城 · 乌兹别克世界杯首秀首球(Fayzullaev) · Díaz 传射 · Campaz 补时头球 · 哥伦比亚领跑 K 组",
-        "ht_score": "1-0",
+        "ht_score": "0-1",
         "first_goal_min": 41
       }
     },
@@ -19129,6 +19941,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 22,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.67,
+            "xg_away_ht": 0.39,
+            "xg_home_2h": 0.85,
+            "xg_away_2h": 0.49,
+            "home_win": 37.1,
+            "draw": 44.3,
+            "away_win": 18.6,
+            "top_score": "0-0",
+            "top_score_prob": 34.6,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 34.6
+              },
+              {
+                "score": "1-0",
+                "prob": 23.2
+              },
+              {
+                "score": "0-1",
+                "prob": 13.5
+              }
+            ],
+            "ht_goals_expected": 1.06,
+            "ht_over_0_5_pct": 65.4,
+            "ht_over_1_5_pct": 28.6,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.67–0.39（约占全场 44%） · 最可能 0-0（34.6%） · 胜平负 37.1/44.3/18.6 · 半场≥1球约 65.4%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Czechia · 常规对抗。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
@@ -19888,6 +20733,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 22,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.68,
+            "xg_away_ht": 0.46,
+            "xg_home_2h": 0.87,
+            "xg_away_2h": 0.59,
+            "home_win": 35.7,
+            "draw": 42.8,
+            "away_win": 21.5,
+            "top_score": "0-0",
+            "top_score_prob": 32,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 32
+              },
+              {
+                "score": "1-0",
+                "prob": 21.7
+              },
+              {
+                "score": "0-1",
+                "prob": 14.7
+              }
+            ],
+            "ht_goals_expected": 1.14,
+            "ht_over_0_5_pct": 68,
+            "ht_over_1_5_pct": 31.6,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.68–0.46（约占全场 44%） · 最可能 0-0（32%） · 胜平负 35.7/42.8/21.5 · 半场≥1球约 68%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Switzerland · 常规对抗。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法略高（约 +0.25）（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
@@ -20647,6 +21525,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 21,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.71,
+            "xg_away_ht": 0.39,
+            "xg_home_2h": 0.91,
+            "xg_away_2h": 0.49,
+            "home_win": 38.8,
+            "draw": 43.2,
+            "away_win": 18,
+            "top_score": "0-0",
+            "top_score_prob": 33.3,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 33.3
+              },
+              {
+                "score": "1-0",
+                "prob": 23.6
+              },
+              {
+                "score": "0-1",
+                "prob": 13
+              }
+            ],
+            "ht_goals_expected": 1.1,
+            "ht_over_0_5_pct": 66.7,
+            "ht_over_1_5_pct": 30.1,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.71–0.39（约占全场 44%） · 最可能 0-0（33.3%） · 胜平负 38.8/43.2/18 · 半场≥1球约 66.7%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Canada · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
@@ -21411,6 +22322,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 21,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.67,
+            "xg_away_ht": 0.58,
+            "xg_home_2h": 0.85,
+            "xg_away_2h": 0.74,
+            "home_win": 32.4,
+            "draw": 40.9,
+            "away_win": 26.7,
+            "top_score": "0-0",
+            "top_score_prob": 28.7,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 28.7
+              },
+              {
+                "score": "1-0",
+                "prob": 19.2
+              },
+              {
+                "score": "0-1",
+                "prob": 16.6
+              }
+            ],
+            "ht_goals_expected": 1.25,
+            "ht_over_0_5_pct": 71.3,
+            "ht_over_1_5_pct": 35.5,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.67–0.58（约占全场 44%） · 最可能 0-0（28.7%） · 胜平负 32.4/40.9/26.7 · 半场≥1球约 71.3%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Mexico · 均势开放。 · 与模型 xG 对照：均衡 · 赛前净胜看法略高（约 +0.25）（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -22234,6 +23178,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 31,
               "fav_lead_style": "aggressive"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.63,
+            "xg_away_ht": 0.34,
+            "xg_home_2h": 0.8,
+            "xg_away_2h": 0.44,
+            "home_win": 36.6,
+            "draw": 46.5,
+            "away_win": 17,
+            "top_score": "0-0",
+            "top_score_prob": 37.9,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 37.9
+              },
+              {
+                "score": "1-0",
+                "prob": 23.9
+              },
+              {
+                "score": "0-1",
+                "prob": 12.9
+              }
+            ],
+            "ht_goals_expected": 0.97,
+            "ht_over_0_5_pct": 62.1,
+            "ht_over_1_5_pct": 25.3,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.63–0.34（约占全场 44%） · 最可能 0-0（37.9%） · 胜平负 36.6/46.5/17 · 半场≥1球约 62.1%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           },
           "goal_timing": {
             "sample_label": "近30场",
@@ -23135,6 +24112,39 @@ const RESULTS_DATA = {
               "fav_lead_style": "balanced"
             }
           },
+          "halftime_preview": {
+            "ht_xg_share": 0.4,
+            "xg_home_ht": 0.54,
+            "xg_away_ht": 0.51,
+            "xg_home_2h": 0.81,
+            "xg_away_2h": 0.77,
+            "home_win": 28.3,
+            "draw": 45.3,
+            "away_win": 26.3,
+            "top_score": "0-0",
+            "top_score_prob": 35,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 35
+              },
+              {
+                "score": "1-0",
+                "prob": 18.9
+              },
+              {
+                "score": "0-1",
+                "prob": 17.8
+              }
+            ],
+            "ht_goals_expected": 1.05,
+            "ht_over_0_5_pct": 65,
+            "ht_over_1_5_pct": 28.3,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.54–0.51（约占全场 40%） · 最可能 0-0（35%） · 胜平负 28.3/45.3/26.3 · 半场≥1球约 65%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
+          },
           "goal_timing": {
             "sample_label": "近30场",
             "source_note": "user_screenshot_2026-06-20_sco_mar",
@@ -24034,6 +25044,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 19,
               "fav_lead_style": "aggressive"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.81,
+            "xg_away_ht": 0.3,
+            "xg_home_2h": 1.04,
+            "xg_away_2h": 0.39,
+            "home_win": 45.6,
+            "draw": 41.5,
+            "away_win": 12.9,
+            "top_score": "0-0",
+            "top_score_prob": 33,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 33
+              },
+              {
+                "score": "1-0",
+                "prob": 26.7
+              },
+              {
+                "score": "2-0",
+                "prob": 10.8
+              }
+            ],
+            "ht_goals_expected": 1.11,
+            "ht_over_0_5_pct": 67,
+            "ht_over_1_5_pct": 30.4,
+            "pick": "home",
+            "pick_name": "Brazil",
+            "summary_cn": "半场 xG 0.81–0.3（约占全场 44%） · 最可能 0-0（33%） · 胜平负 45.6/41.5/12.9 · 半场≥1球约 67%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           },
           "goal_timing": {
             "sample_label": "近30场",
@@ -24946,6 +25989,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 30,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.68,
+            "xg_away_ht": 0.52,
+            "xg_home_2h": 0.86,
+            "xg_away_2h": 0.67,
+            "home_win": 34.2,
+            "draw": 41.8,
+            "away_win": 24.1,
+            "top_score": "0-0",
+            "top_score_prob": 30.1,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 30.1
+              },
+              {
+                "score": "1-0",
+                "prob": 20.5
+              },
+              {
+                "score": "0-1",
+                "prob": 15.7
+              }
+            ],
+            "ht_goals_expected": 1.2,
+            "ht_over_0_5_pct": 69.9,
+            "ht_over_1_5_pct": 33.7,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.68–0.52（约占全场 44%） · 最可能 0-0（30.1%） · 胜平负 34.2/41.8/24.1 · 半场≥1球约 69.9%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           },
           "goal_timing": {
             "sample_label": "近30场",
@@ -25873,6 +26949,39 @@ const RESULTS_DATA = {
               "fav_lead_style": "balanced"
             }
           },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.76,
+            "xg_away_ht": 0.46,
+            "xg_home_2h": 0.96,
+            "xg_away_2h": 0.59,
+            "home_win": 39,
+            "draw": 40.8,
+            "away_win": 20.2,
+            "top_score": "0-0",
+            "top_score_prob": 29.5,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 29.5
+              },
+              {
+                "score": "1-0",
+                "prob": 22.4
+              },
+              {
+                "score": "0-1",
+                "prob": 13.6
+              }
+            ],
+            "ht_goals_expected": 1.22,
+            "ht_over_0_5_pct": 70.5,
+            "ht_over_1_5_pct": 34.4,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.76–0.46（约占全场 44%） · 最可能 0-0（29.5%） · 胜平负 39/40.8/20.2 · 半场≥1球约 70.5%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
+          },
           "goal_timing": {
             "sample_label": "近30场",
             "source_note": "user_screenshot_2026-06-20_ned_swe",
@@ -26773,6 +27882,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 17,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.92,
+            "xg_away_ht": 0.39,
+            "xg_home_2h": 1.17,
+            "xg_away_2h": 0.5,
+            "home_win": 47.3,
+            "draw": 37.6,
+            "away_win": 15.2,
+            "top_score": "0-0",
+            "top_score_prob": 27,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 27
+              },
+              {
+                "score": "1-0",
+                "prob": 24.8
+              },
+              {
+                "score": "2-0",
+                "prob": 11.4
+              }
+            ],
+            "ht_goals_expected": 1.31,
+            "ht_over_0_5_pct": 73,
+            "ht_over_1_5_pct": 37.6,
+            "pick": "home",
+            "pick_name": "Germany",
+            "summary_cn": "半场 xG 0.92–0.39（约占全场 44%） · 最可能 0-0（27%） · 胜平负 47.3/37.6/15.2 · 半场≥1球约 73%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           },
           "goal_timing": {
             "sample_label": "近30场",
@@ -27692,6 +28834,39 @@ const RESULTS_DATA = {
               "fav_lead_style": "defensive"
             }
           },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.73,
+            "xg_away_ht": 0.32,
+            "xg_home_2h": 0.92,
+            "xg_away_2h": 0.4,
+            "home_win": 41.6,
+            "draw": 43.7,
+            "away_win": 14.7,
+            "top_score": "0-0",
+            "top_score_prob": 35,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 35
+              },
+              {
+                "score": "1-0",
+                "prob": 25.5
+              },
+              {
+                "score": "0-1",
+                "prob": 11.2
+              }
+            ],
+            "ht_goals_expected": 1.05,
+            "ht_over_0_5_pct": 65,
+            "ht_over_1_5_pct": 28.3,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.73–0.32（约占全场 44%） · 最可能 0-0（35%） · 胜平负 41.6/43.7/14.7 · 半场≥1球约 65%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
+          },
           "goal_timing": {
             "sample_label": "近30场",
             "source_note": "user_screenshot_2026-06-20_ecu_cur",
@@ -28599,6 +29774,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 32,
               "fav_lead_style": "aggressive"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.4,
+            "xg_home_ht": 0.4,
+            "xg_away_ht": 0.54,
+            "xg_home_2h": 0.6,
+            "xg_away_2h": 0.82,
+            "home_win": 21.2,
+            "draw": 48,
+            "away_win": 30.8,
+            "top_score": "0-0",
+            "top_score_prob": 39.1,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 39.1
+              },
+              {
+                "score": "0-1",
+                "prob": 21.1
+              },
+              {
+                "score": "1-0",
+                "prob": 15.6
+              }
+            ],
+            "ht_goals_expected": 0.94,
+            "ht_over_0_5_pct": 60.9,
+            "ht_over_1_5_pct": 24.2,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.4–0.54（约占全场 40%） · 最可能 0-0（39.1%） · 胜平负 21.2/48/30.8 · 半场≥1球约 60.9%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           },
           "goal_timing": {
             "sample_label": "近30场",
@@ -29773,6 +30981,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 12,
               "fav_lead_style": "defensive"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.84,
+            "xg_away_ht": 0.25,
+            "xg_home_2h": 1.08,
+            "xg_away_2h": 0.31,
+            "home_win": 48.4,
+            "draw": 41.1,
+            "away_win": 10.5,
+            "top_score": "0-0",
+            "top_score_prob": 33.6,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 33.6
+              },
+              {
+                "score": "1-0",
+                "prob": 28.2
+              },
+              {
+                "score": "2-0",
+                "prob": 11.9
+              }
+            ],
+            "ht_goals_expected": 1.09,
+            "ht_over_0_5_pct": 66.4,
+            "ht_over_1_5_pct": 29.7,
+            "pick": "home",
+            "pick_name": "Spain",
+            "summary_cn": "半场 xG 0.84–0.25（约占全场 44%） · 最可能 0-0（33.6%） · 胜平负 48.4/41.1/10.5 · 半场≥1球约 66.4%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Spain · 压制局 · 低位反击。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 部分达标净胜=1 约 26.8%（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
@@ -31030,6 +32271,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 25,
               "fav_lead_style": "defensive"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.72,
+            "xg_away_ht": 0.4,
+            "xg_home_2h": 0.92,
+            "xg_away_2h": 0.52,
+            "home_win": 39,
+            "draw": 42.7,
+            "away_win": 18.3,
+            "top_score": "0-0",
+            "top_score_prob": 32.6,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 32.6
+              },
+              {
+                "score": "1-0",
+                "prob": 23.5
+              },
+              {
+                "score": "0-1",
+                "prob": 13.1
+              }
+            ],
+            "ht_goals_expected": 1.12,
+            "ht_over_0_5_pct": 67.4,
+            "ht_over_1_5_pct": 30.8,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.72–0.4（约占全场 44%） · 最可能 0-0（32.6%） · 胜平负 39/42.7/18.3 · 半场≥1球约 67.4%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Belgium · 低位反击。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1 · 模型认为仅小胜 1 球仍约 25.2%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
@@ -32322,6 +33596,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 18,
               "fav_lead_style": "aggressive"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.56,
+            "xg_away_ht": 0.29,
+            "xg_home_2h": 0.71,
+            "xg_away_2h": 0.38,
+            "home_win": 34.5,
+            "draw": 50,
+            "away_win": 15.5,
+            "top_score": "0-0",
+            "top_score_prob": 42.7,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 42.7
+              },
+              {
+                "score": "1-0",
+                "prob": 23.9
+              },
+              {
+                "score": "0-1",
+                "prob": 12.4
+              }
+            ],
+            "ht_goals_expected": 0.85,
+            "ht_over_0_5_pct": 57.3,
+            "ht_over_1_5_pct": 20.9,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.56–0.29（约占全场 44%） · 最可能 0-0（42.7%） · 胜平负 34.5/50/15.5 · 半场≥1球约 57.3%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Uruguay · 低位反击 · 进球偏少。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
@@ -33562,6 +34869,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 22,
               "fav_lead_style": "defensive"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.49,
+            "xg_away_ht": 0.52,
+            "xg_home_2h": 0.63,
+            "xg_away_2h": 0.66,
+            "home_win": 25.8,
+            "draw": 46.3,
+            "away_win": 27.9,
+            "top_score": "0-0",
+            "top_score_prob": 36.4,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 36.4
+              },
+              {
+                "score": "0-1",
+                "prob": 18.9
+              },
+              {
+                "score": "1-0",
+                "prob": 17.8
+              }
+            ],
+            "ht_goals_expected": 1.01,
+            "ht_over_0_5_pct": 63.6,
+            "ht_over_1_5_pct": 26.8,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.49–0.52（约占全场 44%） · 最可能 0-0（36.4%） · 胜平负 25.8/46.3/27.9 · 半场≥1球约 63.6%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Egypt · 低位反击。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -34546,6 +35886,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 19,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.86,
+            "xg_away_ht": 0.59,
+            "xg_home_2h": 1.09,
+            "xg_away_2h": 0.76,
+            "home_win": 39.5,
+            "draw": 37,
+            "away_win": 23.5,
+            "top_score": "0-0",
+            "top_score_prob": 23.5,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 23.5
+              },
+              {
+                "score": "1-0",
+                "prob": 20.2
+              },
+              {
+                "score": "0-1",
+                "prob": 13.8
+              }
+            ],
+            "ht_goals_expected": 1.45,
+            "ht_over_0_5_pct": 76.5,
+            "ht_over_1_5_pct": 42.5,
+            "pick": "home",
+            "pick_name": "Argentina",
+            "summary_cn": "半场 xG 0.86–0.59（约占全场 44%） · 最可能 0-0（23.5%） · 胜平负 39.5/37/23.5 · 半场≥1球约 76.5%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Argentina · 均势开放。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -35306,6 +36679,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 16,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.95,
+            "xg_away_ht": 0.32,
+            "xg_home_2h": 1.2,
+            "xg_away_2h": 0.4,
+            "home_win": 50.5,
+            "draw": 37.3,
+            "away_win": 12.2,
+            "top_score": "0-0",
+            "top_score_prob": 28.1,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 28.1
+              },
+              {
+                "score": "1-0",
+                "prob": 26.7
+              },
+              {
+                "score": "2-0",
+                "prob": 12.7
+              }
+            ],
+            "ht_goals_expected": 1.27,
+            "ht_over_0_5_pct": 71.9,
+            "ht_over_1_5_pct": 36.2,
+            "pick": "home",
+            "pick_name": "France",
+            "summary_cn": "半场 xG 0.95–0.32（约占全场 44%） · 最可能 0-0（28.1%） · 胜平负 50.5/37.3/12.2 · 半场≥1球约 71.9%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】France · 压制局。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 部分达标净胜=1 约 25%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
@@ -36066,6 +37472,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 19,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.83,
+            "xg_away_ht": 0.46,
+            "xg_home_2h": 1.05,
+            "xg_away_2h": 0.59,
+            "home_win": 41.8,
+            "draw": 39.1,
+            "away_win": 19.1,
+            "top_score": "0-0",
+            "top_score_prob": 27.5,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 27.5
+              },
+              {
+                "score": "1-0",
+                "prob": 22.9
+              },
+              {
+                "score": "0-1",
+                "prob": 12.7
+              }
+            ],
+            "ht_goals_expected": 1.29,
+            "ht_over_0_5_pct": 72.5,
+            "ht_over_1_5_pct": 36.9,
+            "pick": "home",
+            "pick_name": "Norway",
+            "summary_cn": "半场 xG 0.83–0.46（约占全场 44%） · 最可能 0-0（27.5%） · 胜平负 41.8/39.1/19.1 · 半场≥1球约 72.5%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Norway · 均势开放。 · 与模型 xG 对照：均衡 · 赛前净胜看法略高（约 +0.25）（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -36832,6 +38271,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 26,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.62,
+            "xg_away_ht": 0.56,
+            "xg_home_2h": 0.8,
+            "xg_away_2h": 0.72,
+            "home_win": 30.7,
+            "draw": 42.4,
+            "away_win": 26.9,
+            "top_score": "0-0",
+            "top_score_prob": 30.7,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 30.7
+              },
+              {
+                "score": "1-0",
+                "prob": 19.1
+              },
+              {
+                "score": "0-1",
+                "prob": 17.2
+              }
+            ],
+            "ht_goals_expected": 1.18,
+            "ht_over_0_5_pct": 69.3,
+            "ht_over_1_5_pct": 33,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.62–0.56（约占全场 44%） · 最可能 0-0（30.7%） · 胜平负 30.7/42.4/26.9 · 半场≥1球约 69.3%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Jordan · 常规对抗。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -37907,6 +39379,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 14,
               "fav_lead_style": "aggressive"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.85,
+            "xg_away_ht": 0.31,
+            "xg_home_2h": 1.08,
+            "xg_away_2h": 0.4,
+            "home_win": 46.9,
+            "draw": 40.2,
+            "away_win": 12.9,
+            "top_score": "0-0",
+            "top_score_prob": 31.4,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 31.4
+              },
+              {
+                "score": "1-0",
+                "prob": 26.7
+              },
+              {
+                "score": "2-0",
+                "prob": 11.3
+              }
+            ],
+            "ht_goals_expected": 1.16,
+            "ht_over_0_5_pct": 68.6,
+            "ht_over_1_5_pct": 32.3,
+            "pick": "home",
+            "pick_name": "Portugal",
+            "summary_cn": "半场 xG 0.85–0.31（约占全场 44%） · 最可能 0-0（31.4%） · 胜平负 46.9/40.2/12.9 · 半场≥1球约 68.6%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Portugal · 压制局 · 低位反击。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 26%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
@@ -39198,6 +40703,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 24,
               "fav_lead_style": "defensive"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.74,
+            "xg_away_ht": 0.48,
+            "xg_home_2h": 0.94,
+            "xg_away_2h": 0.6,
+            "home_win": 37.7,
+            "draw": 41,
+            "away_win": 21.3,
+            "top_score": "0-0",
+            "top_score_prob": 29.5,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 29.5
+              },
+              {
+                "score": "1-0",
+                "prob": 21.8
+              },
+              {
+                "score": "0-1",
+                "prob": 14.2
+              }
+            ],
+            "ht_goals_expected": 1.22,
+            "ht_over_0_5_pct": 70.5,
+            "ht_over_1_5_pct": 34.5,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.74–0.48（约占全场 44%） · 最可能 0-0（29.5%） · 胜平负 37.7/41/21.3 · 半场≥1球约 70.5%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】England · 低位反击。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
@@ -40488,6 +42026,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 16,
               "fav_lead_style": "defensive"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.38,
+            "xg_away_ht": 0.6,
+            "xg_home_2h": 0.48,
+            "xg_away_2h": 0.76,
+            "home_win": 19.3,
+            "draw": 46.6,
+            "away_win": 34.1,
+            "top_score": "0-0",
+            "top_score_prob": 37.5,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 37.5
+              },
+              {
+                "score": "0-1",
+                "prob": 22.5
+              },
+              {
+                "score": "1-0",
+                "prob": 14.3
+              }
+            ],
+            "ht_goals_expected": 0.98,
+            "ht_over_0_5_pct": 62.5,
+            "ht_over_1_5_pct": 25.7,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.38–0.6（约占全场 44%） · 最可能 0-0（37.5%） · 胜平负 19.3/46.6/34.1 · 半场≥1球约 62.5%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Panama · 低位反击 · 进球偏少。 · 与模型 xG 对照：均衡 · 赛前净胜看法略高（约 +0.25）（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -41762,6 +43333,39 @@ const RESULTS_DATA = {
               "draw_trap_pct": 18,
               "fav_lead_style": "defensive"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.71,
+            "xg_away_ht": 0.39,
+            "xg_home_2h": 0.91,
+            "xg_away_2h": 0.49,
+            "home_win": 38.8,
+            "draw": 43.2,
+            "away_win": 18,
+            "top_score": "0-0",
+            "top_score_prob": 33.3,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 33.3
+              },
+              {
+                "score": "1-0",
+                "prob": 23.6
+              },
+              {
+                "score": "0-1",
+                "prob": 13
+              }
+            ],
+            "ht_goals_expected": 1.1,
+            "ht_over_0_5_pct": 66.7,
+            "ht_over_1_5_pct": 30.1,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.71–0.39（约占全场 44%） · 最可能 0-0（33.3%） · 胜平负 38.8/43.2/18 · 半场≥1球约 66.7%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Colombia · 低位反击。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75（模型微调：主胜 -4% · 平 +1% · 客 +3%）",

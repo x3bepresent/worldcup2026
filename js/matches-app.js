@@ -930,6 +930,169 @@ function statPctClass(pct) {
   return 'results-stat-pct--low';
 }
 
+function matchSortKey(m) {
+  const n = parseInt(String(m?.id || '').replace(/\D/g, ''), 10);
+  return Number.isFinite(n) ? n : 0;
+}
+
+function sortedFinishedMatches(matches) {
+  return [...(matches || [])].sort((a, b) => matchSortKey(a) - matchSortKey(b));
+}
+
+function parseHtScore(ht) {
+  if (!ht || typeof ht !== 'string') return null;
+  const m = ht.trim().match(/^(\d+)\s*-\s*(\d+)$/);
+  if (!m) return null;
+  return { h: parseInt(m[1], 10), a: parseInt(m[2], 10) };
+}
+
+function isFirstHalfGoalEntry(entry) {
+  const m = String(entry).match(/(\d+)(?:\+(\d+))?'/);
+  if (!m) return false;
+  const base = parseInt(m[1], 10);
+  return base <= 45;
+}
+
+function splitGoalsByHalfFromScorers(scorers) {
+  const entries = parseGoalEntries(scorers);
+  let ht = 0;
+  let sh = 0;
+  for (const e of entries) {
+    if (!/\d+'/.test(e)) continue;
+    if (isFirstHalfGoalEntry(e)) ht += 1;
+    else sh += 1;
+  }
+  return { ht, sh };
+}
+
+/** 单场核验布尔值 — 供滚动趋势序列使用 */
+function extractVerdictHits(m) {
+  const v = computePredictionVerdict(m);
+  if (!v) return null;
+  const ht = v.halftime?.available ? v.halftime.htDirHit : null;
+  return {
+    direction: v.outcomeHit,
+    top3: v.anyTop3Hit,
+    top5: v.anyTop5Hit,
+    goalPath: v.goalEfficiencyHit,
+    atmosphere: v.atmosphereHit,
+    htDirection: ht,
+  };
+}
+
+/**
+ * 滚动窗口 + 按轮次聚合 — 近期命中率走势
+ * @param {object[]} matches finishedMatches
+ * @param {{ window?: number }} opts
+ */
+function computeResultsTrendSeries(matches, opts = {}) {
+  const windowSize = opts.window ?? 6;
+  const sorted = sortedFinishedMatches(matches);
+  const hitRows = sorted.map(m => ({ id: m.id, hits: extractVerdictHits(m) })).filter(r => r.hits);
+
+  const metricDefs = [
+    { key: 'direction', color: '#7BB8D4' },
+    { key: 'htDirection', color: '#E8A54B' },
+    { key: 'top3', color: 'var(--gold)' },
+    { key: 'top5', color: '#C8A96E' },
+    { key: 'goalPath', color: '#5BBF8A' },
+    { key: 'atmosphere', color: '#9B7EDE' },
+  ];
+
+  const rolling = {};
+  for (const { key } of metricDefs) {
+    const points = [];
+    for (let i = windowSize - 1; i < hitRows.length; i++) {
+      const slice = hitRows.slice(i - windowSize + 1, i + 1);
+      let hit = 0;
+      let n = 0;
+      for (const row of slice) {
+        const val = row.hits[key];
+        if (val === null || val === undefined) continue;
+        n += 1;
+        if (val) hit += 1;
+      }
+      if (!n) continue;
+      points.push({
+        endId: hitRows[i].id,
+        pct: statPct(hit, n),
+        hit,
+        n,
+      });
+    }
+    const last = points[points.length - 1];
+    const prev = points.length > 1 ? points[points.length - 2] : null;
+    const mid = Math.max(1, Math.floor(points.length / 2));
+    const early = points.slice(0, mid);
+    const late = points.slice(mid);
+    const avg = arr => (arr.length ? arr.reduce((s, p) => s + p.pct, 0) / arr.length : null);
+    const earlyAvg = avg(early);
+    const lateAvg = avg(late);
+    rolling[key] = {
+      points,
+      windowSize,
+      stepDelta: last && prev ? Math.round((last.pct - prev.pct) * 10) / 10 : null,
+      trendDelta: earlyAvg != null && lateAvg != null ? Math.round((lateAvg - earlyAvg) * 10) / 10 : null,
+      latestPct: last?.pct ?? null,
+    };
+  }
+
+  const byDay = new Map();
+  for (const m of sorted) {
+    const d = m.matchday || 0;
+    if (!byDay.has(d)) byDay.set(d, []);
+    byDay.get(d).push(m);
+  }
+  const matchdays = [...byDay.keys()].sort((a, b) => a - b);
+  const byMatchday = {};
+  for (const { key } of metricDefs) {
+    byMatchday[key] = matchdays.map(d => {
+      const stats = computeResultsAggregateStats(byDay.get(d));
+      const data = stats[key] || stats.goalPath;
+      return { matchday: d, pct: data?.pct ?? 0, n: data?.n ?? 0, muted: !data?.n };
+    });
+  }
+
+  const htN = hitRows.filter(r => r.hits.htDirection != null).length;
+  return { rolling, byMatchday, matchdays, metricDefs, htSampleN: htN };
+}
+
+function renderSparklineSvg(points, color, opts = {}) {
+  if (!points?.length) return '';
+  const w = opts.width || 108;
+  const h = opts.height || 30;
+  const pad = 4;
+  const vals = points.map(p => p.pct ?? 0);
+  const min = Math.min(30, ...vals);
+  const max = Math.max(70, ...vals);
+  const range = max - min || 1;
+  const step = points.length > 1 ? (w - pad * 2) / (points.length - 1) : 0;
+  const coords = vals.map((v, i) => {
+    const x = pad + i * step;
+    const y = h - pad - ((v - min) / range) * (h - pad * 2);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  });
+  const last = vals[vals.length - 1];
+  const lx = pad + (vals.length - 1) * step;
+  const ly = h - pad - ((last - min) / range) * (h - pad * 2);
+  const area = `${pad},${h - pad} ${coords.join(' ')} ${lx.toFixed(1)},${h - pad}`;
+  return `<svg class="results-trend-spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true">
+    <polygon class="results-trend-fill" points="${area}" fill="${color}" fill-opacity="0.12"/>
+    <polyline class="results-trend-line" fill="none" stroke="${color}" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" points="${coords.join(' ')}"/>
+    <circle class="results-trend-dot" cx="${lx.toFixed(1)}" cy="${ly.toFixed(1)}" r="2.5" fill="${color}"/>
+  </svg>`;
+}
+
+function renderTrendBadge(delta, label) {
+  if (delta == null || Math.abs(delta) < 0.5) {
+    return `<span class="results-trend-badge results-trend-badge--flat" title="${label || ''}">→ 持平</span>`;
+  }
+  if (delta > 0) {
+    return `<span class="results-trend-badge results-trend-badge--up" title="${label || ''}">↑ +${delta}%</span>`;
+  }
+  return `<span class="results-trend-badge results-trend-badge--down" title="${label || ''}">↓ ${delta}%</span>`;
+}
+
 /** 归档/market_snapshot 是否表达了进球氛围倾向（含略偏，不含纯五五开） */
 function hasAtmosphereLean(ms) {
   if (ms.totals_show_lean) return true;
@@ -965,12 +1128,18 @@ function computeResultsAggregateStats(matches) {
   let atmHit = 0;
   let atmN = 0;
   let atmNeutral = 0;
+  let htHit = 0;
+  let htN = 0;
 
   for (const m of matches || []) {
     const v = computePredictionVerdict(m);
     if (!v) continue;
     dirN += 1;
     if (v.outcomeHit) dirHit += 1;
+    if (v.halftime?.available) {
+      htN += 1;
+      if (v.halftime.htDirHit) htHit += 1;
+    }
     top3N += 1;
     if (v.anyTop3Hit) top3Hit += 1;
     top5N += 1;
@@ -992,6 +1161,7 @@ function computeResultsAggregateStats(matches) {
 
   return {
     direction: { hit: dirHit, n: dirN, pct: statPct(dirHit, dirN) },
+    htDirection: { hit: htHit, n: htN, pct: statPct(htHit, htN) },
     top3: { hit: top3Hit, n: top3N, pct: statPct(top3Hit, top3N) },
     top5: { hit: top5Hit, n: top5N, pct: statPct(top5Hit, top5N) },
     goalPath: { hit: pathHit, n: pathN, pct: statPct(pathHit, pathN) },
@@ -1001,8 +1171,9 @@ function computeResultsAggregateStats(matches) {
   };
 }
 
-function renderResultsSummaryStats(stats) {
+function renderResultsSummaryStats(stats, trends) {
   if (!stats?.direction?.n) return '';
+  const windowSize = trends?.rolling?.direction?.windowSize ?? 6;
   const cards = [
     {
       key: 'direction',
@@ -1010,6 +1181,16 @@ function renderResultsSummaryStats(stats) {
       label: '方向正确率',
       sub: '赛前概率最高项 = 实际胜平负',
       data: stats.direction,
+    },
+    {
+      key: 'htDirection',
+      icon: '⏱️',
+      label: '半场方向正确率',
+      sub: stats.htDirection.n
+        ? '赛前最高概率项 = 半场胜平负（有 ht_score 场次）'
+        : '待补全半场比分后统计',
+      data: stats.htDirection.n ? stats.htDirection : { hit: 0, n: 0, pct: 0 },
+      muted: !stats.htDirection.n,
     },
     {
       key: 'top3',
@@ -1044,26 +1225,58 @@ function renderResultsSummaryStats(stats) {
     },
   ];
 
+  const trendNote = trends?.rolling?.direction?.points?.length
+    ? `近 ${windowSize} 场滚动命中率 · 箭头对比前半程 vs 后半程均值`
+    : '';
+
   return `
     <div class="results-stats-bar fade-in">
       <div class="results-stats-head">
         <span class="results-stats-title">累计推演核验</span>
-        <span class="results-stats-meta">${stats.direction.n} 场已归档 · 冻结赛前推演 vs 官方赛果（仅最高概率方向等硬指标）</span>
+        <span class="results-stats-meta">${stats.direction.n} 场已归档 · 冻结赛前推演 vs 官方赛果${trendNote ? ` · ${trendNote}` : ''}</span>
       </div>
       <div class="results-stats-grid">
-        ${cards.map(c => `
+        ${cards.map(c => {
+          const roll = trends?.rolling?.[c.key];
+          const md = trends?.byMatchday?.[c.key] || [];
+          const color = trends?.metricDefs?.find(d => d.key === c.key)?.color || 'var(--gold)';
+          const sparkPts = roll?.points?.length >= 2 ? roll.points : md.filter(p => p.n > 0);
+          const trendDelta = roll?.trendDelta;
+          const trendHtml = !c.muted && sparkPts.length >= 2 ? `
+            <div class="results-stat-trend">
+              ${renderSparklineSvg(sparkPts, color)}
+              <div class="results-stat-trend-meta">
+                ${renderTrendBadge(trendDelta, '后半程 vs 前半程滚动均值')}
+                ${roll?.latestPct != null ? `<span class="results-stat-trend-latest">近窗 ${roll.latestPct}%</span>` : ''}
+              </div>
+            </div>` : '';
+          return `
           <div class="results-stat-card results-stat-card--${c.key}${c.muted ? ' results-stat-card--muted' : ''}">
             <div class="results-stat-card-top">
               <span class="results-stat-icon" aria-hidden="true">${c.icon}</span>
               <span class="results-stat-label">${c.label}</span>
             </div>
             <div class="results-stat-pct ${c.muted ? '' : statPctClass(c.data.pct)}">${c.muted ? '—' : `${c.data.pct}<span class="results-stat-unit">%</span>`}</div>
+            ${trendHtml}
             <div class="results-stat-foot">
               <span class="results-stat-hit">${c.muted ? '样本不足' : `${c.data.hit} / ${c.data.n} 场命中`}</span>
               <span class="results-stat-sub">${c.sub}</span>
             </div>
-          </div>`).join('')}
+          </div>`;
+        }).join('')}
       </div>
+      ${trends?.matchdays?.length >= 2 ? `
+      <div class="results-trend-legend">
+        <span class="results-trend-legend-title">按轮次走势（MD${trends.matchdays.join(' → MD')}）</span>
+        <div class="results-trend-md-row">
+          ${cards.filter(c => !c.muted).map(c => {
+            const md = trends.byMatchday[c.key] || [];
+            const color = trends.metricDefs?.find(d => d.key === c.key)?.color || 'var(--gold)';
+            const labels = md.map(p => `MD${p.matchday} ${p.n ? p.pct + '%' : '—'}`).join(' · ');
+            return `<span class="results-trend-md-chip" style="--trend-color:${color}">${c.label.split('正确')[0]} ${labels}</span>`;
+          }).join('')}
+        </div>
+      </div>` : ''}
     </div>`;
 }
 
@@ -1113,6 +1326,66 @@ function computePredictionVerdict(m) {
     goalTiming: computeGoalTimingVerdict(m),
     goalEfficiencyHit: computeGoalEfficiencyHit(m),
     atmosphereHit: computeAtmosphereStrongHit(m),
+    halftime: computeHalftimeVerdict(m, { officialOutcome, predOutcome, outcomeHit: officialOutcome === predOutcome }),
+  };
+}
+
+/** 上下半场复盘 — 有 ht_score 或 scorers 分钟时可分析 */
+function computeHalftimeVerdict(m, ctx) {
+  const r = m.actualResult;
+  const ht = parseHtScore(r?.ht_score);
+  if (!ht || r?.home_score == null) return { available: false };
+
+  const htOutcome = getScoreOutcome(ht.h, ht.a);
+  const ftOutcome = ctx.officialOutcome;
+  const htGoals = ht.h + ht.a;
+  const ftGoals = r.home_score + r.away_score;
+  const shGoals = ftGoals - htGoals;
+  const byHalf = splitGoalsByHalfFromScorers(r?.scorers);
+  const htMins = parseAllGoalMinutes(r?.scorers).filter(min => min <= 45);
+  const shMins = parseAllGoalMinutes(r?.scorers).filter(min => min > 45);
+
+  const directionFlipped = htOutcome !== ftOutcome;
+  const htDirHit = htOutcome === ctx.predOutcome;
+  const ftDirHit = ctx.outcomeHit;
+
+  let pattern = 'steady';
+  if (directionFlipped) pattern = htDirHit && !ftDirHit ? 'second_half_flip' : !htDirHit && ftDirHit ? 'second_half_rescue' : 'volatile';
+  else if (shGoals > htGoals && htGoals === 0) pattern = 'late_burst';
+  else if (htGoals > shGoals) pattern = 'early_heavy';
+
+  const halvesNote = byHalf.ht + byHalf.sh > 0
+    ? `进球分布：上半 ${byHalf.ht} · 下半 ${byHalf.sh}（由 scorers 解析）`
+    : `比分分布：上半 ${htGoals} 球 · 下半 ${shGoals} 球`;
+
+  let note;
+  if (directionFlipped) {
+    note = `半场 ${r.ht_score}（${OUTCOME_CN[htOutcome]}）→ 全场 ${OUTCOME_CN[ftOutcome]} · ${halvesNote}`;
+  } else {
+    note = `半场至全场均为 ${OUTCOME_CN[ftOutcome]} · ${halvesNote}`;
+  }
+
+  return {
+    available: true,
+    ht_score: r.ht_score,
+    htGoals,
+    shGoals,
+    htOutcome,
+    ftOutcome,
+    directionFlipped,
+    htDirHit,
+    ftDirHit,
+    pattern,
+    htMins,
+    shMins,
+    note,
+    insight: pattern === 'second_half_flip'
+      ? '下半场改写结局 — 总进球/时段模块可重点复盘'
+      : pattern === 'early_heavy'
+        ? '上半场定调 — 与进球时间段高峰窗可交叉验证'
+        : pattern === 'late_burst'
+          ? '下半场爆发 — 偏精彩氛围或弱队开花路径更常见'
+          : null,
   };
 }
 
@@ -1346,6 +1619,45 @@ function renderGoalTimingBlock(gt, homeName, awayName) {
       </div>
       ${body}
       <p class="dc-gt-disclaimer">${hasData ? (gt.disclaimer_cn || '') : '近30场进失球高峰时段；发截图后可更新。'}</p>
+    </div>`;
+}
+
+function renderHalftimePreviewBlock(ht, homeName, awayName) {
+  if (!ht) return '';
+  const top3 = (ht.top3_scores || []).slice(0, 3);
+  return `
+    <div class="dc-halftime-preview">
+      <div class="dc-gt-head">
+        <span class="dc-gt-title">半场推演 · HT Preview</span>
+        <span class="dc-gt-sample">xG 拆分 ${Math.round((ht.ht_xg_share || 0.44) * 100)}%</span>
+      </div>
+      <div class="dc-ht-probs">
+        <div class="dc-ht-prob dc-ht-prob--home">
+          <span class="dc-ht-prob-label">${homeName || '主'}</span>
+          <span class="dc-ht-prob-val">${ht.home_win}<span>%</span></span>
+        </div>
+        <div class="dc-ht-prob dc-ht-prob--draw">
+          <span class="dc-ht-prob-label">平</span>
+          <span class="dc-ht-prob-val">${ht.draw}<span>%</span></span>
+        </div>
+        <div class="dc-ht-prob dc-ht-prob--away">
+          <span class="dc-ht-prob-label">${awayName || '客'}</span>
+          <span class="dc-ht-prob-val">${ht.away_win}<span>%</span></span>
+        </div>
+      </div>
+      <div class="dc-meta-row">
+        <span class="dc-meta-label">半场 xG</span>
+        <span class="dc-meta-value">${ht.xg_home_ht} – ${ht.xg_away_ht} · 下半 ${ht.xg_home_2h} – ${ht.xg_away_2h}</span>
+      </div>
+      <div class="dc-meta-row">
+        <span class="dc-meta-label">最可能半场</span>
+        <span class="dc-meta-value">${ht.top_score}（${ht.top_score_prob}%）${top3.length ? ' · ' + top3.map(s => s.score + ' ' + s.prob + '%').join(' / ') : ''}</span>
+      </div>
+      <div class="dc-meta-row">
+        <span class="dc-meta-label">半场进球</span>
+        <span class="dc-meta-value">期望 ${ht.ht_goals_expected} 球 · ≥1球 ${ht.ht_over_0_5_pct}% · ≥2球 ${ht.ht_over_1_5_pct}%</span>
+      </div>
+      <p class="dc-gt-disclaimer">${ht.disclaimer_cn || ''}</p>
     </div>`;
 }
 
@@ -1790,6 +2102,7 @@ function renderDepthCalibrationBlock(dc, upsetAlert, prediction, homeName, awayN
   const totalsView = s.totals_view || {};
   const readingCard = renderCustomerReadingCard(reading, totalsView, prediction);
   const goalTimingHtml = renderGoalTimingBlock(s.goal_timing, homeName, awayName);
+  const halftimeHtml = renderHalftimePreviewBlock(s.halftime_preview, homeName, awayName);
   const replayRow = replay?.summary_cn ? `
     <div class="dc-preview-replay">
       <div class="dc-preview-replay-head">赛后复盘</div>
@@ -1875,6 +2188,7 @@ function renderDepthCalibrationBlock(dc, upsetAlert, prediction, homeName, awayN
       </div>
       ${readingCard}
       ${goalTimingHtml}
+      ${halftimeHtml}
       ${calibrationRow}
       ${replayRow}
       ${goalEffRow}
@@ -2189,9 +2503,25 @@ function renderMarketVerdictDetails(v) {
   const t = v.totals;
   const mg = v.margin;
   const gt = v.goalTiming;
-  if (!t.available && !mg.available && !gt.available) return '';
+  const ht = v.halftime;
+  if (!t.available && !mg.available && !gt.available && !ht?.available) return '';
   return `
     <div class="pred-verdict-details">
+      ${ht?.available ? `
+      <div class="pred-verdict-detail pred-verdict-detail--stack">
+        <div class="pred-verdict-detail-row">
+          <span class="pred-verdict-detail-label">上下半场</span>
+          <span class="pred-verdict-detail-val">${ht.note}</span>
+        </div>
+        <div class="pred-verdict-ht-chips">
+          ${verdictBadge(ht.htDirHit, '半场方向中', '半场方向偏')}
+          ${ht.directionFlipped
+            ? `<span class="pred-verdict-ht-flip">下半场改写</span>`
+            : `<span class="pred-verdict-ht-steady">半场至全场一致</span>`}
+          ${ht.ftDirHit != null ? verdictBadge(ht.ftDirHit, '全场方向中', '全场方向偏') : ''}
+        </div>
+        ${ht.insight ? `<p class="pred-verdict-ht-insight">${ht.insight}</p>` : ''}
+      </div>` : ''}
       ${t.available ? `
       <div class="pred-verdict-detail">
         <span class="pred-verdict-detail-label">总进球</span>
@@ -2865,8 +3195,10 @@ function initResultsPage() {
 
   const statsEl = document.getElementById('results-summary-stats');
   if (statsEl) {
-    const stats = computeResultsAggregateStats(RESULTS_DATA.finishedMatches);
-    statsEl.innerHTML = renderResultsSummaryStats(stats);
+    const finished = RESULTS_DATA.finishedMatches;
+    const stats = computeResultsAggregateStats(finished);
+    const trends = computeResultsTrendSeries(finished, { window: 6 });
+    statsEl.innerHTML = renderResultsSummaryStats(stats, trends);
   }
 
   const dateEl = document.getElementById('results-date');

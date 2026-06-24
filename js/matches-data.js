@@ -860,6 +860,39 @@ const MATCH_DATA = {
               "draw_trap_pct": 21,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.68,
+            "xg_away_ht": 0.61,
+            "xg_home_2h": 0.87,
+            "xg_away_2h": 0.77,
+            "home_win": 32.1,
+            "draw": 40.2,
+            "away_win": 27.7,
+            "top_score": "0-0",
+            "top_score_prob": 27.5,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 27.5
+              },
+              {
+                "score": "1-0",
+                "prob": 18.7
+              },
+              {
+                "score": "0-1",
+                "prob": 16.8
+              }
+            ],
+            "ht_goals_expected": 1.29,
+            "ht_over_0_5_pct": 72.5,
+            "ht_over_1_5_pct": 37,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.68–0.61（约占全场 44%） · 最可能 0-0（27.5%） · 胜平负 32.1/40.2/27.7 · 半场≥1球约 72.5%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Switzerland · 均势开放。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
@@ -1890,6 +1923,39 @@ const MATCH_DATA = {
               "draw_trap_pct": 26,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.62,
+            "xg_away_ht": 0.46,
+            "xg_home_2h": 0.8,
+            "xg_away_2h": 0.59,
+            "home_win": 33.1,
+            "draw": 44.4,
+            "away_win": 22.6,
+            "top_score": "0-0",
+            "top_score_prob": 34,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 34
+              },
+              {
+                "score": "1-0",
+                "prob": 21.1
+              },
+              {
+                "score": "0-1",
+                "prob": 15.6
+              }
+            ],
+            "ht_goals_expected": 1.08,
+            "ht_over_0_5_pct": 66,
+            "ht_over_1_5_pct": 29.4,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.62–0.46（约占全场 44%） · 最可能 0-0（34%） · 胜平负 33.1/44.4/22.6 · 半场≥1球约 66%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Bosnia and Herzegovina · 常规对抗。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
@@ -2912,6 +2978,39 @@ const MATCH_DATA = {
               "draw_trap_pct": 18,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.39,
+            "xg_away_ht": 0.86,
+            "xg_home_2h": 0.49,
+            "xg_away_2h": 1.09,
+            "home_win": 15.9,
+            "draw": 39.1,
+            "away_win": 45,
+            "top_score": "0-0",
+            "top_score_prob": 28.7,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 28.7
+              },
+              {
+                "score": "0-1",
+                "prob": 24.6
+              },
+              {
+                "score": "1-0",
+                "prob": 11.2
+              }
+            ],
+            "ht_goals_expected": 1.25,
+            "ht_over_0_5_pct": 71.3,
+            "ht_over_1_5_pct": 35.5,
+            "pick": "away",
+            "pick_name": "Brazil",
+            "summary_cn": "半场 xG 0.39–0.86（约占全场 44%） · 最可能 0-0（28.7%） · 胜平负 15.9/39.1/45 · 半场≥1球约 71.3%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Scotland · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 2（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
@@ -3935,6 +4034,39 @@ const MATCH_DATA = {
               "draw_trap_pct": 24,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.76,
+            "xg_away_ht": 0.32,
+            "xg_home_2h": 0.96,
+            "xg_away_2h": 0.4,
+            "home_win": 42.9,
+            "draw": 42.7,
+            "away_win": 14.3,
+            "top_score": "0-0",
+            "top_score_prob": 34,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 34
+              },
+              {
+                "score": "1-0",
+                "prob": 25.8
+              },
+              {
+                "score": "0-1",
+                "prob": 10.9
+              }
+            ],
+            "ht_goals_expected": 1.08,
+            "ht_over_0_5_pct": 66,
+            "ht_over_1_5_pct": 29.4,
+            "pick": "home",
+            "pick_name": "Morocco",
+            "summary_cn": "半场 xG 0.76–0.32（约占全场 44%） · 最可能 0-0（34%） · 胜平负 42.9/42.7/14.3 · 半场≥1球约 66%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Morocco · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 部分达标净胜=1 约 26.6%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
@@ -4963,6 +5095,39 @@ const MATCH_DATA = {
               "draw_trap_pct": 23,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.42,
+            "xg_away_ht": 0.83,
+            "xg_home_2h": 0.53,
+            "xg_away_2h": 1.05,
+            "home_win": 17.5,
+            "draw": 39.6,
+            "away_win": 42.9,
+            "top_score": "0-0",
+            "top_score_prob": 28.7,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 28.7
+              },
+              {
+                "score": "0-1",
+                "prob": 23.8
+              },
+              {
+                "score": "1-0",
+                "prob": 12
+              }
+            ],
+            "ht_goals_expected": 1.25,
+            "ht_over_0_5_pct": 71.3,
+            "ht_over_1_5_pct": 35.5,
+            "pick": "away",
+            "pick_name": "Mexico",
+            "summary_cn": "半场 xG 0.42–0.83（约占全场 44%） · 最可能 0-0（28.7%） · 胜平负 17.5/39.6/42.9 · 半场≥1球约 71.3%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Czechia · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.25（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
@@ -5985,6 +6150,39 @@ const MATCH_DATA = {
               "draw_trap_pct": 21,
               "fav_lead_style": "balanced"
             }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.49,
+            "xg_away_ht": 0.7,
+            "xg_home_2h": 0.63,
+            "xg_away_2h": 0.88,
+            "home_win": 22.4,
+            "draw": 41.8,
+            "away_win": 35.8,
+            "top_score": "0-0",
+            "top_score_prob": 30.4,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 30.4
+              },
+              {
+                "score": "0-1",
+                "prob": 21.3
+              },
+              {
+                "score": "1-0",
+                "prob": 14.9
+              }
+            ],
+            "ht_goals_expected": 1.19,
+            "ht_over_0_5_pct": 69.6,
+            "ht_over_1_5_pct": 33.4,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.49–0.7（约占全场 44%） · 最可能 0-0（30.4%） · 胜平负 22.4/41.8/35.8 · 半场≥1球约 69.6%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】South Africa · 常规对抗。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5（模型微调：主胜 +2% · 平 -1% · 客 -1%）",

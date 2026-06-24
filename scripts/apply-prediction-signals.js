@@ -19,6 +19,7 @@ const {
   buildGoalEfficiencyPreview,
   enrichActualResultForReview,
   buildGoalTimingDisplay,
+  buildHalftimePreview,
 } = require('../js/prediction-signals-lib');
 const { computeOutcomeFromXg, computeScoreDistribution } = require('./score-model');
 const { pickMarketSnapshot } = require('./archive-match.js');
@@ -174,6 +175,13 @@ function enrichMatchSignals(m, handicapMap, snapshots) {
       if (gtRaw && copy.depth_calibration?.display_summary) {
         copy.depth_calibration.display_summary.goal_timing = buildGoalTimingDisplay(
           gtRaw, copy.home?.name, copy.away?.name
+        );
+        copy.depth_calibration.display_summary.halftime_preview = buildHalftimePreview(
+          copy.prediction.xg_home,
+          copy.prediction.xg_away,
+          copy.home?.name,
+          copy.away?.name,
+          copy.depth_calibration.display_summary.goal_timing
         );
       }
       const dc = copy.depth_calibration;
