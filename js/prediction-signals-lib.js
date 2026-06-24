@@ -3442,7 +3442,9 @@ function buildOptimalStrategySummary(ctx) {
   } = ctx;
   const hr = homeRow || { pts: 0, p: 0 };
   const ar = awayRow || { pts: 0, p: 0 };
-  const focus = focusTeam || (STRONG_TEAMS.has(homeTeam) ? homeTeam : STRONG_TEAMS.has(awayTeam) ? awayTeam : homeTeam);
+  const focus = (focusTeam && teamInMatch(focusTeam, homeTeam, awayTeam))
+    ? focusTeam
+    : (STRONG_TEAMS.has(homeTeam) ? homeTeam : STRONG_TEAMS.has(awayTeam) ? awayTeam : homeTeam);
   const fRow = sorted.find(r => r.team === focus) || hr;
   const fRank = sorted.findIndex(r => r.team === focus) + 1;
   const notes = crossNotes || [];
@@ -3526,6 +3528,10 @@ function finishManipulationRisk(base, ctx) {
   return out;
 }
 
+function teamInMatch(team, homeTeam, awayTeam) {
+  return team === homeTeam || team === awayTeam;
+}
+
 function assessManipulationRisk(group, matchday, homeTeam, awayTeam, table, crossNotes, snapshots) {
   const sorted = sortTable(table);
   const homeRow = sorted.find(r => r.team === homeTeam);
@@ -3546,6 +3552,40 @@ function assessManipulationRisk(group, matchday, homeTeam, awayTeam, table, cros
       focus_team: null,
       reason: '小组赛第 1 轮，各队普遍抢分意愿强，故意控分动机低；以下路径预判供后续轮次参考。',
     }, ctx);
+  }
+
+  const hr = homeRow || { pts: 0, p: 0 };
+  const ar = awayRow || { pts: 0, p: 0 };
+
+  /** 末轮垫底生死战：双方均无控分空间（如波黑 vs 卡塔尔各 1 分） */
+  if (matchday >= 3 && hr.pts <= 1 && ar.pts <= 1) {
+    return finishManipulationRisk({
+      level: 'LOW',
+      level_cn: '低',
+      focus_team: null,
+      reason: homeTeam + '（' + hr.pts + ' 分）与 ' + awayTeam + '（' + ar.pts + ' 分）末轮生死战，均无控分空间，须全力抢 3 分。',
+    }, ctx);
+  }
+
+  /** 末轮须胜才能争出线（弱队侧）；已出线强队同场时不覆盖其控分研判 */
+  if (matchday >= 3 && (hr.pts <= 3 || ar.pts <= 3)) {
+    const homeRank = sorted.findIndex(r => r.team === homeTeam) + 1;
+    const awayRank = sorted.findIndex(r => r.team === awayTeam) + 1;
+    const homeMustWin = homeRank >= 2 && hr.pts <= 3 && leader && hr.pts < leader.pts;
+    const awayMustWin = awayRank >= 2 && ar.pts <= 3 && leader && ar.pts < leader.pts;
+    const leaderInMatch = leader && teamInMatch(leader.team, homeTeam, awayTeam);
+    const leaderSecure = leaderInMatch && leader.pts >= 6;
+    if ((homeMustWin || awayMustWin) && !leaderSecure) {
+      const needy = homeMustWin && awayMustWin
+        ? homeTeam + '、' + awayTeam
+        : homeMustWin ? homeTeam : awayTeam;
+      return finishManipulationRisk({
+        level: 'LOW',
+        level_cn: '低',
+        focus_team: null,
+        reason: needy + ' 末轮须抢 3 分争出线，无控分空间；路径博弈须等积分落袋后再谈。',
+      }, ctx);
+    }
   }
 
   const strongInMatch = [homeTeam, awayTeam].filter(t => STRONG_TEAMS.has(t));
@@ -3602,13 +3642,26 @@ function assessManipulationRisk(group, matchday, homeTeam, awayTeam, table, cros
     }, ctx);
   }
 
-  if (matchday >= 3 && leader && leader.pts >= 4) {
-    return finishManipulationRisk({
-      level: 'MEDIUM',
-      level_cn: '中',
-      focus_team: leader.team,
-      reason: leader.team + ' 末轮或存在「避开某 32 强对手 / 保小组第 2 进更顺半区」的战术选择，需结合绑定组（如 C↔F）同期赛果。',
-    }, ctx);
+  if (matchday >= 3 && leader && teamInMatch(leader.team, homeTeam, awayTeam)) {
+    const runner = sorted[1];
+    const topClash = runner && teamInMatch(runner.team, homeTeam, awayTeam)
+      && Math.abs(leader.pts - runner.pts) <= 1;
+    if (topClash) {
+      return finishManipulationRisk({
+        level: 'LOW',
+        level_cn: '低',
+        focus_team: null,
+        reason: leader.team + ' 与 ' + runner.team + ' 积分纠缠、直接对话，均未锁定出线，末轮无控分空间。',
+      }, ctx);
+    }
+    if (leader.pts >= 4) {
+      return finishManipulationRisk({
+        level: 'MEDIUM',
+        level_cn: '中',
+        focus_team: leader.team,
+        reason: leader.team + ' 末轮或存在「避开某 32 强对手 / 保小组第 2 进更顺半区」的战术选择，需结合绑定组（如 C↔F）同期赛果。',
+      }, ctx);
+    }
   }
   const notes = crossNotes || [];
   if (notes.some(n => n.includes('四队同分') || n.includes('均1分') || n.includes('同积'))) {
