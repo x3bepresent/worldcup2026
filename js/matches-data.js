@@ -1,8 +1,8 @@
-// 今日赛事 — Day 9 (signals enriched)
-// Last updated: 2026-06-20T14:00:00+08:00
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-24T16:07:16.033Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-20T14:00:00+08:00",
-  "syncSource": "FIFA 赛程 · Day 14 · weather/injuries/stars/referee enriched · 推演概要+小组形势",
+  "lastUpdated": "2026-06-24T16:07:16.033Z",
+  "syncSource": "API-Football",
   "breakingNews": [
     {
       "tag": "OFFICIAL",
@@ -63,11 +63,6 @@ const MATCH_DATA = {
       "tag": "PREVIEW",
       "text": "📅 今日6场 · 瑞-加/波黑-卡(03:00) · 苏-巴/摩-海(06:00) · 捷-墨/南非-韩(09:00)",
       "time": "6月25日"
-    },
-    {
-      "tag": "PREVIEW",
-      "text": "A/B/C组末轮：墨西哥6分 · 瑞士加拿大各4分 · 巴西/摩洛哥领跑",
-      "time": "焦点"
     }
   ],
   "todayMatches": [
