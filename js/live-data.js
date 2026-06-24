@@ -1,7 +1,7 @@
 // Auto-synced by scripts/enrich-day14.js
-// Updated: 2026-06-24T09:03:10+08:00
+// Updated: 2026-06-24T15:29:03+08:00
 const LIVE_DATA = {
-  "lastUpdated": "2026-06-24T09:03:10+08:00",
+  "lastUpdated": "2026-06-24T15:29:03+08:00",
   "todayDate": "2026-06-25",
   "fixtures": [
     {
@@ -420,7 +420,7 @@ const LIVE_DATA = {
     }
   ],
   "injuries": {
-    "note": "Day 14 · A/B/C组末轮6场 · 墨西哥6分 · 瑞士/加拿大各4分"
+    "note": "Day 14 · m51 Davies/Xhaka · m49 Son/Vinícius · m53 Schick/Azteca · m54 Son 须胜"
   },
   "yesterdayResults": [
     {
