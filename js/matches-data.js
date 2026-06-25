@@ -1,9 +1,14 @@
-// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
-// Last API sync: 2026-06-24T16:07:16.033Z
+// 今日赛事 — Day 9 (signals enriched)
+// Last updated: 2026-06-20T14:00:00+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-24T16:07:16.033Z",
-  "syncSource": "API-Football",
+  "lastUpdated": "2026-06-20T14:00:00+08:00",
+  "syncSource": "API-Football · 推演概要+小组形势",
   "breakingNews": [
+    {
+      "tag": "OFFICIAL",
+      "text": "✅ m54 FIFA 官方首发：韩国 3-4-1-2 · 孙兴慜替补 · 李刚仁前腰",
+      "time": "6月25日"
+    },
     {
       "tag": "OFFICIAL",
       "text": "✅ FIFA 官方裁判 m54 · Mohammed Abdulla（阿联酋）",
@@ -6193,13 +6198,27 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月25日 09:00",
       "venue": "Estadio BBVA",
       "city": "Monterrey, Mexico",
-      "note": "A组末轮 · 南非 vs 韩国 · 蒙特雷 · FIFA 官方裁判已确认（Mohammed Abdulla）",
+      "note": "A组末轮 · 南非 vs 韩国 · 蒙特雷 · FIFA 官方首发已确认（孙兴慜替补）",
       "lineup": {
-        "confirmed": false,
-        "formation": null,
-        "home": "等待官方确认",
-        "away": "等待官方确认",
-        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
+        "confirmed": true,
+        "formation": "4-2-3-1 / 3-4-1-2",
+        "home": "Williams; Modiba, Mbokazi, Mudau, Okon; Mbatha, Sithole; Appollis, Mofokeng, Maseko; Makgopa",
+        "away": "Kim Seung-gyu; Lee Han-beom, Kim Min-jae, Lee Tae-seok; Seol Young-woo, Lee Gi-hyuk, Hwang In-beom, Paik Seung-ho; Lee Kang-in; Hwang Hee-chan, Oh Hyeon-gyu",
+        "note": "✅ FIFA 官方 team sheet（Match 54 · 400021445 · 2026-06-25T00:45:17+08:00）",
+        "source": "FIFA Match Centre · api.fifa.com",
+        "updated": "2026-06-25T00:45:17+08:00",
+        "fifa_match_id": "400021445",
+        "impact": {
+          "xg_home_delta": 0,
+          "xg_away_delta": -0.2,
+          "summary": "FIFA 官方：韩国 3-4-1-2（孙兴慜替补 · 吴贤洙+黄喜灿 双锋 · 金承奎一门） vs 南非 4-2-3-1（无 Tau/Mokoena 首发 · Makgopa 单箭）；韩国最大变阵：队长孙兴慜替补，客场 xG 下调。",
+          "xg_home_before": 1.12,
+          "xg_away_before": 1.58
+        },
+        "diff": {
+          "home": "⚠️ 4-2-3-1：无 Tau/Mokoena 首发 · Makgopa 单箭 · Appollis/Mofokeng/Maseko 攻击线",
+          "away": "⚠️ 3-4-1-2（非预测 4-2-3-1）：孙兴慜 #7 替补 · 吴贤洙+黄喜灿 双锋 · 金承奎一门 · 李刚仁前腰 · 薛英佑/李基赫边翼"
+        },
         "predicted": {
           "formation": "4-2-3-1 / 4-2-3-1",
           "home": "Williams; Mphahlele, Xaba, Mokoena; Modiba, Mthethwa; Tau, Zwane, Baccus; Foster",
@@ -6224,77 +6243,74 @@ const MATCH_DATA = {
         "coach": "Hugo Broos",
         "stars": [
           {
-            "name": "Teboho Mokoena",
-            "pos": "CB",
-            "club": "Lyon",
-            "stats": "里昂中卫 · 1 分须抢分",
-            "rating": 7.8,
-            "desc": "防线领袖 · 对 Son/Hwang 速度的一对一，低位防空关键"
+            "name": "Evidence Makgopa",
+            "pos": "ST",
+            "club": "Orlando Pirates",
+            "stats": "官方 #17 单箭",
+            "rating": 7.5,
+            "desc": "FIFA 官方先发中锋"
           },
           {
-            "name": "Percy Tau",
+            "name": "Oswin Appollis",
             "pos": "RW",
-            "club": "Al Ahly",
-            "stats": "阿尔阿赫利 · 反击速度",
-            "rating": 7.6,
-            "desc": "反击轴心 · 对 Kim Min-jae 侧速度，Broos 战术核心"
+            "club": "Cape Town City",
+            "stats": "官方 #7",
+            "rating": 7.3,
+            "desc": "右路攻击核心"
           },
           {
             "name": "Ronwen Williams",
             "pos": "GK",
             "club": "Mamelodi Sundowns",
-            "stats": "一门 · 1-1 捷克",
+            "stats": "官方 #1",
             "rating": 7.5,
-            "desc": "对 Son 远射/定位球须警惕 · 1-1 捷克后信心足"
+            "desc": "一门 · 对韩国须零封开局"
           }
         ],
         "star": {
-          "name": "Teboho Mokoena",
-          "pos": "CB",
-          "club": "Lyon",
-          "stats": "里昂中卫 · 1 分须抢分",
-          "rating": 7.8,
-          "desc": "防线领袖 · 对 Son/Hwang 速度的一对一，低位防空关键"
+          "name": "Evidence Makgopa",
+          "pos": "ST",
+          "club": "Orlando Pirates",
+          "stats": "官方 #17 单箭",
+          "rating": 7.5,
+          "desc": "FIFA 官方先发中锋"
         },
         "injuries": [
           {
-            "player": "Teboho Mokoena",
-            "status": "FIT",
-            "note": "里昂中卫 · 1 分须抢分 · 防线领袖",
-            "confirmed": true
-          },
-          {
-            "player": "Percy Tau",
-            "status": "FIT",
-            "note": "阿尔阿赫利边锋 · 反击速度 · 对 Kim 侧",
-            "confirmed": true
-          },
-          {
             "player": "Ronwen Williams",
             "status": "FIT",
-            "note": "一门 · 1-1 捷克后信心足",
-            "confirmed": true
-          },
-          {
-            "player": "Sphephelo Sithole",
-            "status": "FIT",
-            "note": "中场屏障 · 绞杀 Son 连线",
+            "note": "FIFA 官方一门 #1",
             "confirmed": true
           },
           {
             "player": "Evidence Makgopa",
             "status": "FIT",
-            "note": "前锋支点 · 定位球",
+            "note": "官方 4-2-3-1 单箭 #17",
+            "confirmed": true
+          },
+          {
+            "player": "Sphephelo Sithole",
+            "status": "FIT",
+            "note": "官方双闸 #13",
+            "confirmed": true
+          },
+          {
+            "player": "Percy Tau",
+            "status": "BENCH",
+            "note": "未进 FIFA XI · 替补后手",
+            "confirmed": true
+          },
+          {
+            "player": "Teboho Mokoena",
+            "status": "BENCH",
+            "note": "未进首发 · 替补",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Broos（赛前）：「1 分须抢分——对韩国 3 分，Tau 反击 vs Son 肋部是战术轴心」",
-          "【更衣室】1-1 捷克后更衣室士气稳；Broos 强调「对韩国拿 1 分仍是成功但我们要争胜」",
-          "预计 4-5-1 低位+反击：Williams; Mokoena, Xoki, Mobbie; Sithole, Zwane; Tau, Makgopa",
-          "A 组末轮 · 韩国 3 分须全取 3 分 · 南非 1 分须抢分",
-          "蒙特雷 33°C 午后 · Broos 训练强调后段体能",
-          "Ko Hyung-jin 韩国第四官员组 · 主裁 Mohammed Abdulla（阿联酋）"
+          "【官方】FIFA 4-2-3-1：Makgopa 单箭 · Appollis/Mofokeng/Maseko 攻击线 · 无 Tau/Mokoena 首发",
+          "Broos 末轮须抢分但变阵年轻化 · Mbatha+Sithole 双闸",
+          "对韩国 3-4-1-2 低位+反击 · 定位球仍是冷门路径"
         ]
       },
       "away": {
@@ -6313,77 +6329,93 @@ const MATCH_DATA = {
         "coach": "Hong Myung-bo",
         "stars": [
           {
-            "name": "Son Heung-min",
-            "pos": "LW",
-            "club": "Tottenham",
-            "stats": "3 分须胜 · 队长",
-            "rating": 8.9,
-            "desc": "热刺队长 · 肋部+远射，Klinsmann 战术轴心，须带队全取 3 分"
-          },
-          {
             "name": "Lee Kang-in",
             "pos": "AM",
             "club": "Paris Saint-Germain",
-            "stats": "2-1 捷克功臣 · 节拍",
+            "stats": "官方 #19 前腰",
             "rating": 8.6,
-            "desc": "巴黎中场 · 肋部渗透与最后一传，对 Sithole 屏障"
+            "desc": "无孙首发时的组织核心"
           },
           {
             "name": "Kim Min-jae",
             "pos": "CB",
             "club": "Bayern Munich",
-            "stats": "拜仁中卫 · 防线领袖",
+            "stats": "官方 #4 中卫",
             "rating": 8.4,
-            "desc": "防空 Makgopa 定位球 · 出球发起压制，对 Tau 反击须保持防线高度"
+            "desc": "三中卫轴心"
+          },
+          {
+            "name": "Hwang Hee-chan",
+            "pos": "FW",
+            "club": "Wolves",
+            "stats": "官方 #11 锋线",
+            "rating": 8.2,
+            "desc": "与吴贤洙双锋"
           }
         ],
         "star": {
-          "name": "Son Heung-min",
-          "pos": "LW",
-          "club": "Tottenham",
-          "stats": "3 分须胜 · 队长",
-          "rating": 8.9,
-          "desc": "热刺队长 · 肋部+远射，Klinsmann 战术轴心，须带队全取 3 分"
+          "name": "Lee Kang-in",
+          "pos": "AM",
+          "club": "Paris Saint-Germain",
+          "stats": "官方 #19 前腰",
+          "rating": 8.6,
+          "desc": "无孙首发时的组织核心"
         },
         "injuries": [
           {
-            "player": "Son Heung-min",
+            "player": "Kim Min-jae",
             "status": "FIT",
-            "note": "热刺队长 · 3 分须胜 · 肋部+远射",
+            "note": "FIFA 官方三中卫 #4",
             "confirmed": true
           },
           {
             "player": "Lee Kang-in",
             "status": "FIT",
-            "note": "巴黎中场 · 2-1 捷克功臣 · 节拍",
-            "confirmed": true
-          },
-          {
-            "player": "Kim Min-jae",
-            "status": "FIT",
-            "note": "拜仁中卫 · 防线领袖 · 防空 Makgopa",
+            "note": "官方前腰 #19",
             "confirmed": true
           },
           {
             "player": "Hwang Hee-chan",
             "status": "FIT",
-            "note": "狼队边锋 · 速度破局",
+            "note": "官方双锋之一 #11",
+            "confirmed": true
+          },
+          {
+            "player": "Oh Hyeon-gyu",
+            "status": "FIT",
+            "note": "官方双锋之一 #18",
+            "confirmed": true
+          },
+          {
+            "player": "Kim Seung-gyu",
+            "status": "FIT",
+            "note": "官方一门 #1",
+            "confirmed": true
+          },
+          {
+            "player": "Son Heung-min",
+            "status": "BENCH",
+            "note": "队长 #7 替补 · 60' 后或破局后手",
             "confirmed": true
           },
           {
             "player": "Jo Hyeon-woo",
-            "status": "FIT",
-            "note": "一门 · 对南非反击须保持防线高度",
+            "status": "BENCH",
+            "note": "替补门将 #21",
+            "confirmed": true
+          },
+          {
+            "player": "Cho Guesung",
+            "status": "BENCH",
+            "note": "替补前锋 #9",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Klinsmann（赛前）：「3 分须胜——Son+李刚仁 肋部是核心，蒙特雷午后体能分配关键」",
-          "【更衣室】2-1 捷克、0-2 墨西哥后更衣室强调「末轮须全取 3 分，Son 要带队」",
-          "预计 4-2-3-1：Jo; Kim, Jung, Hong; Hwang, Lee; Son, Lee, Hwang; Cho",
-          "A 组出线形势复杂 · 须胜且看墨西哥-捷克赛果",
-          "33°C 午后 · Klinsmann 轮换与补水管理是重点",
-          "Mohammed Abdulla 阿联酋主裁 · 对 Son 速度与 Tau 反击犯规尺度受关注"
+          "【官方】FIFA 3-4-1-2：孙兴慜 #7 替补 — 末轮须胜但洪明甫轮换",
+          "李刚仁 #19 前腰 · 吴贤洙 #18 + 黄喜灿 #11 双锋 · 金承奎 #1 一门",
+          "薛英佑 #22 / 李基赫 #3 边翼 · 白昇浩 #8 中场",
+          "A 组出线须胜 · 孙兴慜 60' 后替补破局是最大变量"
         ]
       },
       "h2h": {
@@ -6436,42 +6468,42 @@ const MATCH_DATA = {
         "updated": "2026-06-24T15:29:03+08:00"
       },
       "prediction": {
-        "home_win": 25,
-        "draw": 34,
-        "away_win": 40,
+        "home_win": 28,
+        "draw": 36,
+        "away_win": 36,
         "score": "1-1",
         "confidence": 70,
         "xg_home": 1.12,
-        "xg_away": 1.58,
-        "key_factor": "A组末轮 · 韩国 3 分 vs 南非 1 分 · 孙兴慜 vs Tau · 泊松 1-2/0-2",
+        "xg_away": 1.38,
+        "key_factor": "FIFA 官方：韩国 3-4-1-2（孙兴慜 #7 替补 · 李刚仁前腰 · 吴贤洙+黄喜灿锋线） vs 南非 4-2-3-1（Makgopa 单箭 · 无 Tau/Mokoena 首发）；韩国须胜但队长替补，模型略下调客胜权重",
         "score_dist": [
           {
             "score": "1-1",
-            "prob": 11.9
+            "prob": 12.7
           },
           {
             "score": "0-1",
-            "prob": 10.6
-          },
-          {
-            "score": "1-2",
-            "prob": 9.4
-          },
-          {
-            "score": "0-2",
-            "prob": 8.4
+            "prob": 11.3
           },
           {
             "score": "1-0",
-            "prob": 7.5
+            "prob": 9.2
+          },
+          {
+            "score": "1-2",
+            "prob": 8.8
           },
           {
             "score": "0-0",
-            "prob": 6.7
+            "prob": 8.2
+          },
+          {
+            "score": "0-2",
+            "prob": 7.8
           },
           {
             "score": "2-1",
-            "prob": 6.7
+            "prob": 7.1
           }
         ],
         "insight_factors": [
@@ -6488,19 +6520,20 @@ const MATCH_DATA = {
           {
             "icon": "⚽",
             "label": "战术与阵容",
-            "text": "A组末轮 · 韩国 3 分 vs 南非 1 分 · 孙兴慜 vs Tau · 泊松 1-2/0-2"
+            "text": "FIFA 官方：韩国 3-4-1-2（孙兴慜 #7 替补 · 李刚仁前腰 · 吴贤洙+黄喜灿锋线） vs 南非 4-2-3-1（Makgopa 单箭 · 无 Tau/Mokoena 首发）；韩国须胜但队长替补，模型略下调客胜权重"
           }
         ],
-        "base_home_win": 23,
-        "base_draw": 35,
-        "base_away_win": 41,
+        "base_home_win": 26,
+        "base_draw": 37,
+        "base_away_win": 37,
         "depth_calibrated": true,
         "draw_context": {
           "drawBoost": 10,
           "ironBucket": true,
-          "closeXg": false,
-          "gap": 0.46,
+          "closeXg": true,
+          "gap": 0.26,
           "notes": [
+            "xG 接近且战术偏保守",
             "热门难破密集",
             "抢分遇铁桶"
           ]
@@ -6590,34 +6623,34 @@ const MATCH_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 12
+              "prob": 12.7
             },
             {
               "score": "0-1",
-              "prob": 10.7
+              "prob": 11.4
             },
             {
-              "score": "1-2",
-              "prob": 9.5
+              "score": "1-0",
+              "prob": 9.2
             }
           ],
-          "one_goal_win_pct": 16.6,
-          "two_plus_win_pct": 10.5,
-          "full_cover_pct": 27.1,
+          "one_goal_win_pct": 18.5,
+          "two_plus_win_pct": 12,
+          "full_cover_pct": 30.5,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": -0.458,
-          "dog_cover_ev": 0.458,
+          "fav_cover_ev": -0.39,
+          "dog_cover_ev": 0.39,
           "rational_spread_cn": "客队 守住差距概率略高",
-          "total_xg": 2.7,
+          "total_xg": 2.5,
           "fair_totals_line": 2,
-          "over_2_5_pct": 50.3,
-          "over_3_pct": 28.1,
+          "over_2_5_pct": 45.4,
+          "over_3_pct": 23.9,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 27.1%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 30.5%；仅赢 1 球约 0%"
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -6625,11 +6658,11 @@ const MATCH_DATA = {
           "market_line": 2.5,
           "market_goals_int": 3,
           "line_label": "总进球约 2.5 个",
-          "implied_xg_total": 2.7,
+          "implied_xg_total": 2.5,
           "fair_line": 2,
           "line_gap": 0.5,
-          "over_pct": 50.3,
-          "under_pct": 49.7,
+          "over_pct": 45.4,
+          "under_pct": 54.6,
           "signal": "high_line",
           "signal_cn": "参考偏高",
           "signal_color": "#C8A96E",
@@ -6638,7 +6671,7 @@ const MATCH_DATA = {
           "public_lean_cn": "舆论对总进球看法较分散",
           "index_note": "大/小比分两侧接近",
           "totals_odds": null,
-          "rational_cn": "超 2.5 球接近五五开（约 50.3%）",
+          "rational_cn": "超 2.5 球接近五五开（约 45.4%）",
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
@@ -6649,52 +6682,52 @@ const MATCH_DATA = {
         },
         "adjustment_note": "模型微调：主胜 +2% · 平 -1% · 客 -1%",
         "adjusted_probs": {
-          "home_win": 25,
-          "draw": 34,
-          "away_win": 40
+          "home_win": 28,
+          "draw": 36,
+          "away_win": 36
         },
         "display_summary": {
           "fav_name": "South Africa",
-          "expected_total_goals": 2.26,
-          "poisson_fav_win_pct": 26,
-          "small_lead_pct": 17,
+          "expected_total_goals": 2.09,
+          "poisson_fav_win_pct": 29,
+          "small_lead_pct": 18.8,
           "small_example_score": "1-0",
-          "small_example_pct": 9.6,
-          "big_cover_pct": 9,
+          "small_example_pct": 11.4,
+          "big_cover_pct": 10.2,
           "big_example_score": "2-0",
-          "big_example_pct": 4.5,
+          "big_example_pct": 5.3,
           "win_shape": {
             "fav_name": "South Africa",
             "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以险胜·控局为主（险胜 · 控局 37%）",
+            "lead_cn": "取胜时以险胜·控局为主（险胜 · 控局 39.3%）",
             "shapes": [
               {
                 "key": "narrow_low",
                 "label": "险胜 · 控局",
                 "example": "如 1-0",
-                "field_pct": 9.6,
-                "pct": 37
+                "field_pct": 11.4,
+                "pct": 39.3
               },
               {
                 "key": "narrow_open",
                 "label": "险胜 · 开放",
                 "example": "如 2-1",
                 "field_pct": 7.4,
-                "pct": 28.4
+                "pct": 25.6
               },
               {
                 "key": "comfort_low",
                 "label": "拉开 · 控局",
                 "example": "如 2-0",
-                "field_pct": 5.9,
-                "pct": 22.6
+                "field_pct": 6.9,
+                "pct": 23.9
               },
               {
                 "key": "comfort_open",
                 "label": "拉开 · 开放",
                 "example": "如 3-1+",
-                "field_pct": 3.1,
-                "pct": 12
+                "field_pct": 3.2,
+                "pct": 11.2
               }
             ],
             "paths": [
@@ -6702,47 +6735,47 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 65.4
+                "pct": 64.9
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 22.6
+                "pct": 23.9
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 12
+                "pct": 11.2
               }
             ],
-            "fav_win_pct": 25
+            "fav_win_pct": 28
           },
           "excitement": {
-            "label_cn": "中速开局",
-            "label_key": "moderate",
-            "label_color": "#C8A96E",
-            "sub_cn": "预期首球等待约 39.6 分",
-            "first_goal_wait": 39.6,
-            "fast_pct": 53.1,
-            "moderate_pct": 14.8,
-            "slow_pct": 32.1,
+            "label_cn": "偏晚",
+            "label_key": "slow",
+            "label_color": "#7BB8D4",
+            "sub_cn": "预期首球等待约 42.9 分",
+            "first_goal_wait": 42.9,
+            "fast_pct": 50.3,
+            "moderate_pct": 14.7,
+            "slow_pct": 35,
             "tiers": [
               {
                 "key": "fast",
                 "label": "前 30 分内首球",
-                "pct": 53.1
+                "pct": 50.3
               },
               {
                 "key": "moderate",
                 "label": "30–45 分首球",
-                "pct": 14.8
+                "pct": 14.7
               },
               {
                 "key": "slow",
                 "label": "45 分后首球",
-                "pct": 32.1
+                "pct": 35
               }
             ]
           },
@@ -6764,17 +6797,22 @@ const MATCH_DATA = {
               "note": "湿热中等——韩国须全取 3 分争出线，非洲球队午后高温适应度是变量"
             },
             {
+              "icon": "📋",
+              "label": "官方首发",
+              "note": "FIFA 官方：韩国 3-4-1-2（孙兴慜替补 · 吴贤洙+黄喜灿 双锋 · 金承奎一门） vs 南非 4-2-3-1（无 Tau/Mokoena 首发 · Makgopa 单箭）；韩国最大变阵：队长孙兴慜替补，客场 xG 下调。"
+            },
+            {
               "icon": "⚖️",
               "label": "平局修正",
-              "note": "回测校准：热门难破密集 · 抢分遇铁桶（平 +10%）"
+              "note": "回测校准：xG 接近且战术偏保守 · 热门难破密集 · 抢分遇铁桶（平 +10%）"
             }
           ],
           "xg_context": {
             "baseline_home": 1.12,
-            "baseline_away": 1.58,
+            "baseline_away": 1.38,
             "adjusted_home": 0.93,
-            "adjusted_away": 1.34,
-            "note": "基准 xG 1.12–1.58 → 调整后 0.93–1.34"
+            "adjusted_away": 1.17,
+            "note": "基准 xG 1.12–1.38 → 调整后 0.93–1.17"
           },
           "calibration": {
             "signal_cn": "实力吻合",
@@ -6793,23 +6831,23 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 65.4
+                "pct": 64.9
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 22.6
+                "pct": 23.9
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 12
+                "pct": 11.2
               }
             ],
             "margin_line_cn": "South Africa · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 26,
+            "margin_meet_pct": 29,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -6820,44 +6858,44 @@ const MATCH_DATA = {
             "totals_line": 2.5,
             "totals_line_cn": "总进球参考 2.5",
             "fair_totals_line": 2.25,
-            "model_total_xg": 2.27,
+            "model_total_xg": 2.1,
             "totals_line_gap": 0.25,
-            "totals_high_pct": 39.4,
-            "totals_low_pct": 60.6,
+            "totals_high_pct": 34.9,
+            "totals_low_pct": 65.1,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 14.1,
-            "win_margin2_low_total_pct": 4.5,
-            "win_margin2_high_total_pct": 4.5,
-            "readout_cn": "取胜约 25%；若取胜，以「险胜收工」为主（65.4%）。 对着赛前净胜参考，净胜≥1（全达标）约 26%；对着总进球参考 2.5，模型超线概率约 39.4%。"
+            "win_low_total_pct": 16.7,
+            "win_margin2_low_total_pct": 5.3,
+            "win_margin2_high_total_pct": 4.9,
+            "readout_cn": "取胜约 28%；若取胜，以「险胜收工」为主（64.9%）。 对着赛前净胜参考，净胜≥1（全达标）约 29%；对着总进球参考 2.5，模型超线概率约 34.9%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "0-1",
-              "pct": 13.9
+              "pct": 14.4
             },
             {
               "score": "1-1",
-              "pct": 12.9
+              "pct": 13.3
             },
             {
               "score": "0-0",
-              "pct": 10.4
+              "pct": 12.3
             }
           ],
           "totals_view": {
-            "expected_total": 2.3,
+            "expected_total": 2.1,
             "fair_line": 2.25,
             "market_line": 2.5,
             "line_gap": 0.25,
-            "over_pct": 39.4,
+            "over_pct": 34.9,
             "gap_warning": null,
             "totals_outlook": {
               "level": "mild_low",
               "label_cn": "略倾向沉闷",
               "color": "#7BB8D4",
               "meter_label_cn": "略倾向沉闷",
-              "meter_pos": 39,
+              "meter_pos": 35,
               "lean_side": "dull",
               "lean_strength": "mild",
               "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
@@ -6865,32 +6903,32 @@ const MATCH_DATA = {
               "detail_cn": "略偏闷，模型更看小比分（难超线 2.5）；弱信号。",
               "headline_cn": "进球氛围：略偏闷",
               "show_lean": false,
-              "over_pct": 39.4,
+              "over_pct": 34.9,
               "line_gap": 0.25,
               "market_line": 2.5,
               "market_goals_int": 3,
               "market_goals_cn": "总进球参考 2.5",
               "caution_public_high": false
             },
-            "summary_cn": "预测 2.3 · 合理值 2.25 · 总进球参考 2.5（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向"
+            "summary_cn": "预测 2.1 · 合理值 2.25 · 总进球参考 2.5（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
             "headline_cn": "South Africa · 净胜走向：达到预期难度偏大",
-            "sub_cn": "达标概率约 26% · 达到预期难度偏大 进球氛围：略偏闷 平局权重约 34%，小组赛易出守平——勿只盯胜负一方。",
+            "sub_cn": "达标概率约 29% · 达到预期难度偏大 进球氛围：略偏闷 平局权重约 36%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
               "color": "#D95F6A",
               "fav_name": "South Africa",
               "market_expect_cn": "净胜≥1",
-              "meet_pct": 26,
+              "meet_pct": 29,
               "meet_pct_label": "模型推演达标概率",
               "verdict_cn": "达到预期难度偏大",
               "headline_cn": "South Africa · 净胜走向：达到预期难度偏大",
-              "pill_cn": "达标概率约 26% · 达到预期难度偏大",
-              "detail_cn": "South Africa · 赛前外界预期 净胜≥1。模型推演达标概率约 26%；外界看法高于 xG 隐含约 0.5 球，达到预期难度偏大。",
+              "pill_cn": "达标概率约 29% · 达到预期难度偏大",
+              "detail_cn": "South Africa · 赛前外界预期 净胜≥1。模型推演达标概率约 29%；外界看法高于 xG 隐含约 0.5 球，达到预期难度偏大。",
               "extra_stats_cn": "",
-              "full_cover_pct": 26,
+              "full_cover_pct": 29,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -6903,7 +6941,7 @@ const MATCH_DATA = {
               "label_cn": "略倾向沉闷",
               "color": "#7BB8D4",
               "meter_label_cn": "略倾向沉闷",
-              "meter_pos": 39,
+              "meter_pos": 35,
               "lean_side": "dull",
               "lean_strength": "mild",
               "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
@@ -6911,7 +6949,7 @@ const MATCH_DATA = {
               "detail_cn": "略偏闷，模型更看小比分（难超线 2.5）；弱信号。",
               "headline_cn": "进球氛围：略偏闷",
               "show_lean": false,
-              "over_pct": 39.4,
+              "over_pct": 34.9,
               "line_gap": 0.25,
               "market_line": 2.5,
               "market_goals_int": 3,
@@ -6921,7 +6959,7 @@ const MATCH_DATA = {
             "draw_risk": {
               "level": "high",
               "color": "#C8A96E",
-              "note": "平局权重约 34%，小组赛易出守平——勿只盯胜负一方。"
+              "note": "平局权重约 36%，小组赛易出守平——勿只盯胜负一方。"
             },
             "pills": [
               {
@@ -6934,14 +6972,14 @@ const MATCH_DATA = {
                   "color": "#D95F6A",
                   "fav_name": "South Africa",
                   "market_expect_cn": "净胜≥1",
-                  "meet_pct": 26,
+                  "meet_pct": 29,
                   "meet_pct_label": "模型推演达标概率",
                   "verdict_cn": "达到预期难度偏大",
                   "headline_cn": "South Africa · 净胜走向：达到预期难度偏大",
-                  "pill_cn": "达标概率约 26% · 达到预期难度偏大",
-                  "detail_cn": "South Africa · 赛前外界预期 净胜≥1。模型推演达标概率约 26%；外界看法高于 xG 隐含约 0.5 球，达到预期难度偏大。",
+                  "pill_cn": "达标概率约 29% · 达到预期难度偏大",
+                  "detail_cn": "South Africa · 赛前外界预期 净胜≥1。模型推演达标概率约 29%；外界看法高于 xG 隐含约 0.5 球，达到预期难度偏大。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 26,
+                  "full_cover_pct": 29,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -6949,7 +6987,7 @@ const MATCH_DATA = {
                   "tier_gap": 0.5,
                   "show_cover": true
                 },
-                "text": "达标概率约 26% · 达到预期难度偏大",
+                "text": "达标概率约 29% · 达到预期难度偏大",
                 "color": "#D95F6A",
                 "primary": true
               },
@@ -6962,7 +7000,7 @@ const MATCH_DATA = {
                   "label_cn": "略倾向沉闷",
                   "color": "#7BB8D4",
                   "meter_label_cn": "略倾向沉闷",
-                  "meter_pos": 39,
+                  "meter_pos": 35,
                   "lean_side": "dull",
                   "lean_strength": "mild",
                   "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
@@ -6970,7 +7008,7 @@ const MATCH_DATA = {
                   "detail_cn": "略偏闷，模型更看小比分（难超线 2.5）；弱信号。",
                   "headline_cn": "进球氛围：略偏闷",
                   "show_lean": false,
-                  "over_pct": 39.4,
+                  "over_pct": 34.9,
                   "line_gap": 0.25,
                   "market_line": 2.5,
                   "market_goals_int": 3,
@@ -6988,63 +7026,63 @@ const MATCH_DATA = {
             {
               "side": "home",
               "team": "South Africa",
-              "first_goal_pct": 41,
+              "first_goal_pct": 44.3,
               "start_score": "1-0",
               "fav_name": "South Africa",
               "scorer_is_fav": true,
               "expected_key": "hold_win",
-              "fav_recover_pct": 79.8,
-              "small_lead_pct": 30.9,
-              "big_lead_pct": 22.6,
-              "fav_win_pct": 53.5,
-              "fav_draw_pct": 26.3,
-              "fav_lose_pct": 20.1,
+              "fav_recover_pct": 83.6,
+              "small_lead_pct": 33.1,
+              "big_lead_pct": 25.1,
+              "fav_win_pct": 58.2,
+              "fav_draw_pct": 25.4,
+              "fav_lose_pct": 16.4,
               "outcomes": [
                 {
                   "key": "hold_win",
                   "label": "South Africa 保持胜果（净胜≥1）",
-                  "pct": 53.5
+                  "pct": 58.2
                 },
                 {
                   "key": "drawn",
                   "label": "被扳平",
-                  "pct": 26.3
+                  "pct": 25.4
                 },
                 {
                   "key": "lost",
                   "label": "被逆转落败",
-                  "pct": 20.1
+                  "pct": 16.4
                 }
               ],
               "excitement": {
-                "label_cn": "中速开局",
-                "label_key": "moderate",
-                "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 39.3 分",
-                "first_goal_wait": 39.3,
-                "fast_pct": 46.5,
-                "moderate_pct": 14.4,
-                "slow_pct": 39.1,
+                "label_cn": "偏晚",
+                "label_key": "slow",
+                "label_color": "#7BB8D4",
+                "sub_cn": "预期首球等待约 42.7 分",
+                "first_goal_wait": 42.7,
+                "fast_pct": 43.8,
+                "moderate_pct": 14.1,
+                "slow_pct": 42.1,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 46.5
+                    "pct": 43.8
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 14.4
+                    "pct": 14.1
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 39.1
+                    "pct": 42.1
                   }
                 ]
               },
-              "big_delta": 13.6,
-              "small_delta": 13.9,
+              "big_delta": 14.9,
+              "small_delta": 14.3,
               "narrative": "South Africa 先破门（已 1-0） → 「巩固防守」；South Korea 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
               "live_outlook": {
                 "fav_name": "South Africa",
@@ -7054,25 +7092,25 @@ const MATCH_DATA = {
                     "key": "narrow",
                     "label": "险胜收工",
                     "example": "如 1-0、2-1",
-                    "pct": 65.4
+                    "pct": 64.9
                   },
                   {
                     "key": "clean",
                     "label": "零封拉开",
                     "example": "如 2-0、3-0",
-                    "pct": 22.6
+                    "pct": 23.9
                   },
                   {
                     "key": "open",
                     "label": "开放拉开",
                     "example": "如 3-1+",
-                    "pct": 12
+                    "pct": 11.2
                   }
                 ],
                 "margin_line_cn": "South Africa · 赛前净胜参考 净胜≥1（全达标）",
-                "margin_meet_pct": 53.5,
+                "margin_meet_pct": 58.2,
                 "margin_half_pct": 0,
-                "margin_fail_pct": 30.9,
+                "margin_fail_pct": 33.1,
                 "margin_full_label": "净胜≥1",
                 "margin_half_label": null,
                 "final_2_0_pct": null,
@@ -7081,249 +7119,229 @@ const MATCH_DATA = {
                 "totals_line": 2.5,
                 "totals_line_cn": "总进球参考 2.5",
                 "fair_totals_line": 2.25,
-                "model_total_xg": 1.88,
+                "model_total_xg": 1.73,
                 "totals_line_gap": 0.25,
-                "totals_high_pct": 55.9,
-                "totals_low_pct": 44.1,
+                "totals_high_pct": 51.6,
+                "totals_low_pct": 48.4,
                 "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-                "win_low_total_pct": 26.2,
-                "win_margin2_low_total_pct": 10.9,
-                "win_margin2_high_total_pct": 11.7,
-                "readout_cn": "South Africa 已 1-0 领先：仍取胜约 53.5%。 对着总进球参考 2.5，模型超线概率约 55.9%。 常见 2-0 收尾（相对总进球参考 2.5仍偏小比分）。"
+                "win_low_total_pct": 30.4,
+                "win_margin2_low_total_pct": 12.7,
+                "win_margin2_high_total_pct": 12.4,
+                "readout_cn": "South Africa 已 1-0 领先：仍取胜约 58.2%。 对着总进球参考 2.5，模型超线概率约 51.6%。 常见 2-0 收尾（相对总进球参考 2.5仍偏小比分）。"
               }
             },
             {
               "side": "away",
               "team": "South Korea",
-              "first_goal_pct": 59,
+              "first_goal_pct": 55.7,
               "start_score": "0-1",
               "fav_name": "South Africa",
               "scorer_is_fav": false,
               "expected_key": "upset_hold",
-              "fav_recover_pct": 27.9,
-              "small_lead_pct": 6.8,
-              "big_lead_pct": 2.1,
-              "fav_win_pct": 8.9,
-              "fav_draw_pct": 19,
-              "fav_lose_pct": 72,
+              "fav_recover_pct": 30.6,
+              "small_lead_pct": 7.5,
+              "big_lead_pct": 2.4,
+              "fav_win_pct": 9.9,
+              "fav_draw_pct": 20.7,
+              "fav_lose_pct": 69.4,
               "outcomes": [
                 {
                   "key": "draw",
                   "label": "South Africa 追平（平局）",
-                  "pct": 19
+                  "pct": 20.7
                 },
                 {
                   "key": "win1",
                   "label": "South Africa 净胜1球翻盘（如 2-1）",
-                  "pct": 6.8
+                  "pct": 7.5
                 },
                 {
                   "key": "win2",
                   "label": "South Africa 净胜≥2球翻盘（如 3-1）",
-                  "pct": 2.1
+                  "pct": 2.4
                 },
                 {
                   "key": "upset_hold",
                   "label": "South Korea 保持胜果至终场",
-                  "pct": 72
+                  "pct": 69.4
                 }
               ],
               "excitement": {
-                "label_cn": "中速开局",
-                "label_key": "moderate",
-                "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 40 分",
-                "first_goal_wait": 40,
-                "fast_pct": 45.9,
-                "moderate_pct": 14.3,
-                "slow_pct": 39.8,
+                "label_cn": "偏晚",
+                "label_key": "slow",
+                "label_color": "#7BB8D4",
+                "sub_cn": "预期首球等待约 43.1 分",
+                "first_goal_wait": 43.1,
+                "fast_pct": 43.5,
+                "moderate_pct": 14,
+                "slow_pct": 42.4,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 45.9
+                    "pct": 43.5
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 14.3
+                    "pct": 14
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 39.8
+                    "pct": 42.4
                   }
                 ]
               },
-              "big_delta": -6.9,
-              "small_delta": -10.2,
+              "big_delta": -7.8,
+              "small_delta": -11.3,
               "narrative": "South Korea 先破门（已 0-1） → 「巩固防守」；South Africa 「组织反扑」。热门先丢球（已 0-1），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
               "live_outlook": null
             }
           ],
           "match_preview": {
             "morphology": {
-              "totals_summary": "预测 2.3 · 合理值 2.25 · 总进球参考 2.5（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_summary": "预测 2.1 · 合理值 2.25 · 总进球参考 2.5（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向",
               "totals_line_cn": "总进球参考 2.5",
-              "totals_high_pct": 39.4,
+              "totals_high_pct": 34.9,
               "type_tags": [
                 {
-                  "key": "balanced",
-                  "label": "常规对抗"
+                  "key": "low_scoring",
+                  "label": "进球偏少"
                 }
               ],
               "depth_label": "深度一般",
-              "draw_trap_pct": 30,
-              "readout_cn": "South Africa · 常规对抗。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+              "draw_trap_pct": 31,
+              "readout_cn": "South Africa · 进球偏少。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
             },
             "draw_trap_note": null,
             "archetype": {
               "tags": [
                 {
-                  "key": "balanced",
-                  "label": "常规对抗"
+                  "key": "low_scoring",
+                  "label": "进球偏少"
                 }
               ],
               "depth_score": 0,
               "depth_label": "深度一般",
-              "draw_trap_pct": 30,
+              "draw_trap_pct": 31,
               "fav_lead_style": "balanced"
             }
           },
           "halftime_preview": {
             "ht_xg_share": 0.44,
             "xg_home_ht": 0.41,
-            "xg_away_ht": 0.59,
+            "xg_away_ht": 0.51,
             "xg_home_2h": 0.52,
-            "xg_away_2h": 0.75,
-            "home_win": 20.8,
-            "draw": 46.2,
-            "away_win": 32.9,
+            "xg_away_2h": 0.66,
+            "home_win": 22.2,
+            "draw": 48.6,
+            "away_win": 29.1,
             "top_score": "0-0",
-            "top_score_prob": 36.8,
+            "top_score_prob": 39.9,
             "top3_scores": [
               {
                 "score": "0-0",
-                "prob": 36.8
+                "prob": 39.9
               },
               {
                 "score": "0-1",
-                "prob": 21.7
+                "prob": 20.3
               },
               {
                 "score": "1-0",
-                "prob": 15.1
+                "prob": 16.3
               }
             ],
-            "ht_goals_expected": 1,
-            "ht_over_0_5_pct": 63.2,
-            "ht_over_1_5_pct": 26.4,
+            "ht_goals_expected": 0.92,
+            "ht_over_0_5_pct": 60.1,
+            "ht_over_1_5_pct": 23.5,
             "pick": "draw",
             "pick_name": "平局",
-            "summary_cn": "半场 xG 0.41–0.59（约占全场 44%） · 最可能 0-0（36.8%） · 胜平负 20.8/46.2/32.9 · 半场≥1球约 63.2%",
+            "summary_cn": "半场 xG 0.41–0.51（约占全场 44%） · 最可能 0-0（39.9%） · 胜平负 22.2/48.6/29.1 · 半场≥1球约 60.1%",
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】South Africa · 常规对抗。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
+        "public_summary_note": "【推演概要】South Africa · 进球偏少。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
         "goal_efficiency_preview": {
           "mode": "preview",
-          "xg_total": 2.7,
-          "xg_gap": 0.46,
+          "xg_total": 2.5,
+          "xg_gap": 0.26,
           "xg_home": 1.12,
-          "xg_away": 1.58,
+          "xg_away": 1.38,
           "xg_baseline_home": 1.12,
-          "xg_baseline_away": 1.58,
-          "xg_note": "结构推演用基准 xG 1.12–1.58（进球氛围用调整后 0.93–1.34）",
-          "lean_note": "进球氛围偏闷（预测约 2.3），但「对攻/open」结构需防弱队开花抬高总进球",
+          "xg_baseline_away": 1.38,
+          "xg_note": "结构推演用基准 xG 1.12–1.38（进球氛围用调整后 0.93–1.17）",
+          "lean_note": "总进球大/小标签未达强信号（基准 xG · 需≥60% 或 ≤40%），以下以进球故事线为主。",
           "fav_name": "South Korea",
           "dog_name": "South Africa",
-          "fav_xg": 1.58,
+          "fav_xg": 1.38,
           "dog_xg": 1.12,
-          "path_type": "open",
-          "path_label": "对攻/open",
-          "lean": "prevention_high",
-          "lean_cn": "预防大比分",
-          "lean_mode": "prevention",
+          "path_type": "low",
+          "path_label": "铁局/小比分",
+          "lean": "neutral",
+          "lean_cn": "中性",
+          "lean_mode": "neutral",
           "lean_confidence": null,
-          "prevention_reason_cn": "进球氛围偏闷（预测约 2.3），但「对攻/open」结构需防弱队开花抬高总进球",
+          "prevention_reason_cn": null,
           "atmosphere_link_cn": null,
           "modules_aligned": false,
-          "live_watch": [
-            {
-              "key": "dog_goal",
-              "label": "South Africa进球",
-              "detail": "弱队破门 → 预防大比分抬升；对照弱队开花/对攻路径",
-              "severity": "high"
-            },
-            {
-              "key": "dog_eff",
-              "label": "弱队效率≥1.0",
-              "detail": "弱队射门兑现超预期 → 上调大比分留意（样本：效率≥1.2 易凑 3 球+）",
-              "severity": "high"
-            },
-            {
-              "key": "fav_only",
-              "label": "仅South Korea进球",
-              "detail": "热门单榜领先、弱队仍无球 → 仍按进球氛围小比分，不必因路径升级",
-              "severity": "calm"
-            }
-          ],
-          "prob_over_line": 50.3,
-          "prob_meet_guess": 50.3,
+          "live_watch": [],
+          "prob_over_line": 45.4,
+          "prob_meet_guess": 45.4,
           "guess_n": 3,
-          "prob_4_plus": 28.1,
-          "prob_2_or_less": 49.7,
+          "prob_4_plus": 23.9,
+          "prob_2_or_less": 54.6,
           "totals_line": 2.5,
           "scenarios": [
             {
-              "key": "open",
-              "label": "对攻/open",
-              "example": "2-2 / 4-2 / 3-2",
-              "note": "双方 xG 均有进球预期，任一方效率达标即可凑出 4 球。",
-              "prob_pct": 33
-            },
-            {
-              "key": "dog_bloom",
-              "label": "弱队开花",
-              "example": "2-2 / 1-3 / 3-1",
-              "note": "样本：弱队效率≥1.2 时 71% 总进球≥3；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
-              "prob_pct": 30
+              "key": "low",
+              "label": "铁局/小比分",
+              "example": "1-0 / 1-1 / 0-0",
+              "note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
+              "prob_pct": 56
             },
             {
               "key": "fav_burst",
               "label": "热门爆发",
               "example": "2-0 / 3-0 / 4-1",
               "note": "样本：热门效率≥1.5 时高比分常见；弱队 xG≈1.0 但只进 1 球时也常见此路径。",
-              "prob_pct": 19
+              "prob_pct": 16
             },
             {
-              "key": "low",
-              "label": "铁局/小比分",
-              "example": "1-0 / 1-1 / 0-0",
-              "note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
-              "prob_pct": 19
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "example": "2-2 / 1-3 / 3-1",
+              "note": "样本：弱队效率≥1.2 时 71% 总进球≥3；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
+              "prob_pct": 16
+            },
+            {
+              "key": "open",
+              "label": "对攻/open",
+              "example": "2-2 / 4-2 / 3-2",
+              "note": "双方 xG 均有进球预期，任一方效率达标即可凑出 4 球。",
+              "prob_pct": 13
             }
           ],
           "tags": [
             {
-              "key": "prevention_high",
-              "label": "预防大比分",
-              "color": "#E8A54B",
-              "bg": "rgba(232,165,75,0.12)"
+              "key": "even_xg",
+              "label": "xG接近",
+              "color": "#5BBF8A",
+              "bg": "rgba(91,191,138,0.08)"
             },
             {
-              "key": "open_game",
-              "label": "对攻兑现",
-              "color": "#9B7EDE",
-              "bg": "rgba(155,126,222,0.1)"
+              "key": "low_scoring",
+              "label": "小比分",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
             }
           ],
           "watch_notes": [
-            "弱队上半场效率≥1.0 → 关注弱队开花路径",
-            "结构类似 m12/m26——热门爆发路径需防 4+ 球"
+            "弱队上半场效率≥1.0 → 关注弱队开花路径"
           ],
-          "pattern_note": "双方 xG 均有进球预期，任一方效率达标即可凑出 4 球。",
-          "summary_cn": "【路径·基准 xG】合计 2.7 · South Korea 1.58 / South Africa 1.12 → 主路径「对攻/open」约 33% · 预防大比分。 超 2.5 约 50.3% · ≤2球 49.7%。双方 xG 均有进球预期，任一方效率达标即可凑出 4 球。",
+          "pattern_note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。 已纳入官方首发变阵对 xG 的修正。",
+          "summary_cn": "【路径·基准 xG】合计 2.5 · South Korea 1.38 / South Africa 1.12 → 主路径「铁局/小比分」约 56%。 超 2.5 约 45.4% · ≤2球 54.6%。样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。 已纳入官方首发变阵对 xG 的修正。",
           "in_mid_band": true,
           "sample_note": "结构规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27）· 大/小标签用基准 xG 泊松 ≥60%/≤40%"
         }
