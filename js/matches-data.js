@@ -1,8 +1,8 @@
-// 今日赛事 — Day 9 (signals enriched)
-// Last updated: 2026-06-20T14:00:00+08:00
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-25T16:14:25.798Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-20T14:00:00+08:00",
-  "syncSource": "FIFA 赛程 · Day 15 · weather/injuries/coach/referee enriched · 推演概要+小组形势",
+  "lastUpdated": "2026-06-25T16:14:25.798Z",
+  "syncSource": "API-Football",
   "breakingNews": [
     {
       "tag": "UPDATE",
