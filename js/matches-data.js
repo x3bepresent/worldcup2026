@@ -1,8 +1,8 @@
-// 今日赛事 — Day 9 (signals enriched)
-// Last updated: 2026-06-20T14:00:00+08:00
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-25T03:30:55.482Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-20T14:00:00+08:00",
-  "syncSource": "FIFA 官方赛果 · Day 14（B/C 末轮 4 场已归档 · A 组 m53/m54 待赛） · 推演概要+小组形势",
+  "lastUpdated": "2026-06-25T03:30:55.482Z",
+  "syncSource": "API-Football",
   "breakingNews": [
     {
       "tag": "OFFICIAL",
@@ -63,16 +63,6 @@ const MATCH_DATA = {
       "tag": "UPDATE",
       "text": "📊 推演升级：模型概要 + 小组形势/晋级路径已纳入今日赛事",
       "time": "模型"
-    },
-    {
-      "tag": "OFFICIAL",
-      "text": "🏁 昨日：葡5-0乌 · 英0-0加 · 巴0-1克 · 哥1-0刚 · C罗双响",
-      "time": "赛果回顾"
-    },
-    {
-      "tag": "PREVIEW",
-      "text": "📅 今日6场 · 瑞-加/波黑-卡(03:00) · 苏-巴/摩-海(06:00) · 捷-墨/南非-韩(09:00)",
-      "time": "6月25日"
     }
   ],
   "todayMatches": [
