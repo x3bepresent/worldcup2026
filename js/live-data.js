@@ -1,7 +1,7 @@
 // Auto-synced by scripts/enrich-day15.js
-// Updated: 2026-06-25T15:09:16+08:00
+// Updated: 2026-06-25T15:35:11+08:00
 const LIVE_DATA = {
-  "lastUpdated": "2026-06-25T15:09:16+08:00",
+  "lastUpdated": "2026-06-25T15:35:11+08:00",
   "todayDate": "2026-06-26",
   "fixtures": [
     {

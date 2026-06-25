@@ -7,6 +7,7 @@ const path = require('path');
 const { venueWeather } = require('./venue-weather-day15');
 const { getTeamNews } = require('./injuries-rumors-day15');
 const { getReferee } = require('./referee-data-day15');
+const { buildCoachAnalysis, getUpsetAlert, MATCH_COACH_KEYS } = require('./coach-data-day15');
 const { getTeamStars } = require('./star-data-day15');
 
 const ROOT = path.join(__dirname, '..');
@@ -54,6 +55,14 @@ function patchGroupInsight(match) {
   if (idx >= 0) match.prediction.insight_factors[idx].text = text;
 }
 
+function applyCoachAndUpset(match) {
+  const keys = MATCH_COACH_KEYS[match.id];
+  if (!keys) return;
+  match.coach_analysis = buildCoachAnalysis(keys.homeKey, keys.awayKey);
+  const upset = getUpsetAlert(match.id);
+  if (upset) match.upset_alert = upset;
+}
+
 const ids = ['m55', 'm56', 'm57', 'm58', 'm59', 'm60'];
 const MATCH_DATA = loadData(MATCH_PATH, 'MATCH_DATA');
 
@@ -72,19 +81,20 @@ for (const m of MATCH_DATA.todayMatches || []) {
   const away = getTeamStars(m.id, 'away');
   if (home.stars?.length) { m.home.stars = home.stars; m.home.star = home.star; }
   if (away.stars?.length) { m.away.stars = away.stars; m.away.star = away.star; }
+  applyCoachAndUpset(m);
   m.referee = { ...getReferee(m.id), updated: TS };
   patchWeatherInsight(m);
   patchGroupInsight(m);
 }
 
 MATCH_DATA.lastUpdated = TS;
-MATCH_DATA.syncSource = 'FIFA 赛程 · Day 15 · weather/injuries/stars enriched';
+MATCH_DATA.syncSource = 'FIFA 赛程 · Day 15 · weather/injuries/coach/referee enriched';
 
-const filtered = (MATCH_DATA.breakingNews || []).filter(n => !/Day 15 气候|伤病预报|核心球员/.test(n.text || ''));
+const filtered = (MATCH_DATA.breakingNews || []).filter(n => !/Day 15 气候|教练分析|伤病预报|核心球员/.test(n.text || ''));
 filtered.unshift(
-  { tag: 'INJURY', text: '✅ Day 15 伤病/更衣室：德国/美国或轮换 · 日本瑞典生死战 · 巴拉圭澳大利亚争二', time: '6月26日' },
-  { tag: 'UPDATE', text: '✅ Day 15 核心球员已更新（m55–m60，各队 3 人）', time: '6月26日' },
-  { tag: 'UPDATE', text: '✅ Day 15 气候预报已更新（m55–m60，共6场）', time: '6月26日' },
+  { tag: 'UPDATE', text: '✅ Day 15 教练分析&冷门预警已纳入（m55–m60）', time: '6月26日' },
+  { tag: 'INJURY', text: '✅ Day 15 伤病/更衣室：德国/美国或轮换 · 日本瑞典生死战', time: '6月26日' },
+  { tag: 'UPDATE', text: '✅ Day 15 核心球员+气候预报已更新（共6场）', time: '6月26日' },
 );
 MATCH_DATA.breakingNews = filtered.slice(0, 14);
 
