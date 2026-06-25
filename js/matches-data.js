@@ -1,9 +1,19 @@
-// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
-// Last API sync: 2026-06-25T16:14:25.798Z
+// 今日赛事 — Day 15 (enriched · 官方裁判+场地)
+// Last updated: 2026-06-25T16:06:16+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-25T16:14:25.798Z",
-  "syncSource": "API-Football",
+  "lastUpdated": "2026-06-25T16:06:16+08:00",
+  "syncSource": "FIFA 赛程 · Day 15 · 官方裁判+场地气候已确认 · 推演概要+小组形势",
   "breakingNews": [
+    {
+      "tag": "REFEREE",
+      "text": "✅ FIFA 官方裁判 m55–m60 已确认（Nyberg/Penso/Barton/García/Ghorbal/Turpin）",
+      "time": "6月26日"
+    },
+    {
+      "tag": "UPDATE",
+      "text": "✅ Day 15 场地气候+草皮条件已更新（6 场含 weather_factors）",
+      "time": "6月26日"
+    },
     {
       "tag": "UPDATE",
       "text": "✅ Day 15 教练分析&冷门预警已纳入（m55–m60）",
@@ -12,11 +22,6 @@ const MATCH_DATA = {
     {
       "tag": "INJURY",
       "text": "✅ Day 15 伤病/更衣室：德国/美国或轮换 · 日本瑞典生死战",
-      "time": "6月26日"
-    },
-    {
-      "tag": "UPDATE",
-      "text": "✅ Day 15 核心球员+气候预报已更新（共6场）",
       "time": "6月26日"
     },
     {
@@ -215,16 +220,38 @@ const MATCH_DATA = {
         "note": "无大赛交锋"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "FIFA Match 55 · 库拉索 vs 科特迪瓦 · 裁判名单赛前公布。",
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA · Match officials · 2026-06-25",
+        "name": "Glenn Nyberg",
+        "nation": "Sweden",
+        "iso": "se",
+        "age": 37,
+        "wc_experience": "2026 世界杯 · 小组赛加纳 vs 巴拿马主裁 · UEFA 精英裁判 · 执法 E 组库拉索 vs 科特迪瓦",
+        "avg_yellow": 4.2,
+        "avg_red": 0.1,
+        "avg_penalty": 0.31,
+        "home_win_rate": 47,
+        "bias_index": 49,
+        "bias_note": "瑞典主裁执法 E 组末轮。Advocaat 5-4-1 铁桶 vs Fae 4-3-3 须胜穿盘；对 Pépé 肋部犯规与禁区内拉扯尺度受关注，费城夏夜体能犯规或升。",
         "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+          "瑞典助理：Mahbod Beigi、Andreas Söderkvist",
+          "第四官员 Sandro Schärer（瑞士）· 候补 Stéphane De Almeida（SUI）",
+          "VAR Carlos Del Cerro Grande（西班牙）· AVAR Leodan Gonzalez（乌拉圭）· SVAR Juan Soto（委内瑞拉）",
+          "费城 Lincoln Financial 24°C 夏夜——科特迪瓦须胜破密集",
+          "同开 m56 厄瓜多尔-德国决定 E 组次席"
         ],
-        "updated": "2026-06-25T15:35:11+08:00"
+        "officials": {
+          "ar1": "Mahbod Beigi (SWE)",
+          "ar2": "Andreas Söderkvist (SWE)",
+          "fourth": "Sandro Schärer (SUI)",
+          "reserve_ar": "Stéphane De Almeida (SUI)",
+          "var": "Carlos Del Cerro Grande (ESP)",
+          "avar": "Leodan Gonzalez (URU)",
+          "svar": "Juan Soto (VEN)"
+        },
+        "fifa_match_id": "400021468",
+        "updated": "2026-06-25T16:06:16+08:00"
       },
       "prediction": {
         "home_win": 10,
@@ -274,7 +301,7 @@ const MATCH_DATA = {
           {
             "icon": "🌤️",
             "label": "赛场气候",
-            "text": "费城夏夜温和 · 24°C · 湿度 65% · 降雨概率 20% · 东北风 2级 · 夏夜；气候影响低——科特迪瓦须胜，库拉索铁桶守势"
+            "text": "费城夏夜温和，开放式天然草 · 24°C · 湿度 65% · 降雨概率 20% · 东北风 2级 · 夏夜；气候影响低——科特迪瓦须胜穿盘，Pépé 肋部 vs 铁桶由战术对位主导（24°C · 16:00 ET 开球 · Kentucky 天然草）"
           },
           {
             "icon": "⚽",
@@ -301,18 +328,45 @@ const MATCH_DATA = {
         "city": "费城",
         "country": "美国",
         "venue": "Lincoln Financial Field",
+        "pitch_surface": "Kentucky Bluegrass 天然草",
+        "stadium_type": "开放式 NFL 球场",
         "temp": 24,
         "humidity": 65,
         "altitude_m": 12,
         "rain_chance": 20,
         "wind": "东北风 2级 · 夏夜",
-        "condition_cn": "费城夏夜温和",
+        "condition_cn": "费城夏夜温和，开放式天然草",
         "impact_level": "LOW",
-        "impact_summary": "气候影响低——科特迪瓦须胜，库拉索铁桶守势",
+        "impact": "Lincoln Financial 24°C 夏夜开球（当地 16:00 ET），Kentucky 天然草状态良好；科特迪瓦须胜破 Advocaat 5-4-1，气候非主变量",
+        "impact_summary": "气候影响低——科特迪瓦须胜穿盘，Pépé 肋部 vs 铁桶由战术对位主导",
         "home_adapt": 74,
         "away_adapt": 82,
-        "impact": "Lincoln Financial 24°C 夏夜，库拉索 5-4-1 低位 vs 科特迪瓦肋部渗透",
-        "historical_note": "费城 · E组末轮 · 库拉索 vs 科特迪瓦 · 2026-06-25 22:00 本地",
+        "home_note": "库拉索 1 分须奇迹；Advocaat 5-4-1 在温带夏夜守 90 分钟难度可控",
+        "away_note": "科特迪瓦 3 分须胜；Fae 4-3-3 强攻定位球破局路径清晰",
+        "prediction_note": "干燥天然草利于科特迪瓦地面渗透；若微雨草皮略滑，铁桶退守更稳",
+        "weather_factors": [
+          {
+            "label": "24°C · 16:00 ET 开球",
+            "impact": "低",
+            "detail": "北京时间 6月26日 04:00；开放式球场"
+          },
+          {
+            "label": "Kentucky 天然草",
+            "impact": "低",
+            "detail": "FIFA 标准养护 · 传球速度正常 · 无人工草偏差"
+          },
+          {
+            "label": "湿度 65%",
+            "impact": "低",
+            "detail": "夏夜温和，90 分钟体能消耗可控"
+          },
+          {
+            "label": "降雨 20%",
+            "impact": "低",
+            "detail": "干燥场地 · 定位球是库拉索唯一威胁"
+          }
+        ],
+        "historical_note": "Lincoln Financial · E组末轮 · 库拉索 vs 科特迪瓦 · 预报更新 2026-06-25 22:00 本地",
         "forecast_updated": "2026-06-25 22:00 本地"
       },
       "mystic": {
@@ -628,7 +682,7 @@ const MATCH_DATA = {
             {
               "icon": "🌤️",
               "label": "气候",
-              "note": "气候影响低——科特迪瓦须胜，库拉索铁桶守势"
+              "note": "气候影响低——科特迪瓦须胜穿盘，Pépé 肋部 vs 铁桶由战术对位主导"
             },
             {
               "icon": "⚖️",
@@ -1480,16 +1534,38 @@ const MATCH_DATA = {
         "note": "德国历史占优"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "FIFA Match 56 · 厄瓜多尔 vs 德国 · 裁判名单赛前公布。",
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA · Match officials · 2026-06-25",
+        "name": "Tori Penso",
+        "nation": "United States",
+        "iso": "us",
+        "age": 37,
+        "wc_experience": "2026 世界杯 · 历史第三位执法男足世界杯女裁判 · CONCACAF 精英 · 执法 E 组厄瓜多尔 vs 德国",
+        "avg_yellow": 4,
+        "avg_red": 0.08,
+        "avg_penalty": 0.29,
+        "home_win_rate": 46,
+        "bias_index": 48,
+        "bias_note": "美国女裁判执法 E 组焦点战。Beccacece 须胜 vs Nagelsmann 6 分或轮换；对 Caicedo 屏障犯规与 Musiala 速度尺度受关注，MetLife 人工草对德国短传略有影响。",
         "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+          "美国助理：Brooke Mayo、Kathryn Nesbitt",
+          "第四官员 Campbell-Kirk Kawana-Waugh（新西兰）· 候补 Isaac Trevis（NZL）",
+          "VAR Joe Dickerson（美国）· AVAR Fu Ming（中国）· SVAR Khamis Al Marri（卡塔尔）",
+          "MetLife 25°C 夏夜 · FieldTurf 人工草",
+          "德国 6 分领跑 · 轮换幅度是最大变量"
         ],
-        "updated": "2026-06-25T15:35:11+08:00"
+        "officials": {
+          "ar1": "Brooke Mayo (USA)",
+          "ar2": "Kathryn Nesbitt (USA)",
+          "fourth": "Campbell-Kirk Kawana-Waugh (NZL)",
+          "reserve_ar": "Isaac Trevis (NZL)",
+          "var": "Joe Dickerson (USA)",
+          "avar": "Fu Ming (CHN)",
+          "svar": "Khamis Al Marri (QAT)"
+        },
+        "fifa_match_id": "400021466",
+        "updated": "2026-06-25T16:06:16+08:00"
       },
       "prediction": {
         "home_win": 12,
@@ -1539,7 +1615,7 @@ const MATCH_DATA = {
           {
             "icon": "🌤️",
             "label": "赛场气候",
-            "text": "新泽西夏夜 · 25°C · 湿度 62% · 降雨概率 25% · 海风 2级；气候均衡——厄瓜多尔须胜 vs 德国深盘"
+            "text": "新泽西夏夜，FieldTurf 人工草 · 25°C · 湿度 62% · 降雨概率 25% · 海风 2级；气候均衡——厄瓜多尔 1 分须胜 vs 德国 6 分深盘，人工草对地面流略有偏差（25°C · 16:00 ET 开球 · FieldTurf 人工草）"
           },
           {
             "icon": "⚽",
@@ -1565,18 +1641,45 @@ const MATCH_DATA = {
         "city": "纽约/新泽西",
         "country": "美国",
         "venue": "MetLife Stadium",
+        "pitch_surface": "FieldTurf 人工草",
+        "stadium_type": "开放式 · 无顶盖",
         "temp": 25,
         "humidity": 62,
         "altitude_m": 10,
         "rain_chance": 25,
         "wind": "海风 2级",
-        "condition_cn": "新泽西夏夜",
+        "condition_cn": "新泽西夏夜，FieldTurf 人工草",
         "impact_level": "LOW",
-        "impact_summary": "气候均衡——厄瓜多尔须胜 vs 德国深盘",
+        "impact": "MetLife 25°C 夏夜 · FieldTurf 人工草对德国短传略有影响；厄瓜多尔高原球队适应良好，Caicedo 屏障是关键",
+        "impact_summary": "气候均衡——厄瓜多尔 1 分须胜 vs 德国 6 分深盘，人工草对地面流略有偏差",
         "home_adapt": 80,
         "away_adapt": 86,
-        "impact": "MetLife 25°C，厄瓜多尔高原球队适应良好；德国或轮换",
-        "historical_note": "MetLife · E组末轮 · 厄瓜多尔 vs 德国 · 2026-06-25 22:00 本地",
+        "home_note": "厄瓜多尔 1 分须胜；Estupiñán 宽度+Caicedo 屏障 vs 德国轮换版",
+        "away_note": "德国 6 分已够；Nagelsmann 轮换幅度是最大变量，Musiala 肋部仍占优",
+        "prediction_note": "FieldTurf 球速略快，德国直塞穿透或微升；厄瓜多尔高压逼抢体能分配关键",
+        "weather_factors": [
+          {
+            "label": "25°C · 16:00 ET 开球",
+            "impact": "低",
+            "detail": "北京时间 04:00 · 同开 m55"
+          },
+          {
+            "label": "FieldTurf 人工草",
+            "impact": "低-中",
+            "detail": "球速略快 · 对德国地面流有轻微适应成本"
+          },
+          {
+            "label": "开放式无顶盖",
+            "impact": "低",
+            "detail": "海风 2 级对长传精度略有影响"
+          },
+          {
+            "label": "降雨 25%",
+            "impact": "低",
+            "detail": "人工草排水快 · 对比赛节奏影响有限"
+          }
+        ],
+        "historical_note": "MetLife · E组末轮 · 厄瓜多尔 vs 德国 · 预报更新 2026-06-25 22:00 本地",
         "forecast_updated": "2026-06-25 22:00 本地"
       },
       "mystic": {
@@ -1893,7 +1996,7 @@ const MATCH_DATA = {
             {
               "icon": "🌤️",
               "label": "气候",
-              "note": "气候均衡——厄瓜多尔须胜 vs 德国深盘"
+              "note": "气候均衡——厄瓜多尔 1 分须胜 vs 德国 6 分深盘，人工草对地面流略有偏差"
             },
             {
               "icon": "⚖️",
@@ -2767,16 +2870,38 @@ const MATCH_DATA = {
         "note": "互有胜负"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "FIFA Match 57 · 日本 vs 瑞典 · 裁判名单赛前公布。",
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA · Match officials · 2026-06-25",
+        "name": "Iván Barton",
+        "nation": "El Salvador",
+        "iso": "sv",
+        "age": 35,
+        "wc_experience": "2026 世界杯 · 巴拉圭 vs 土耳其主裁（Almirón 红牌）· CONCACAF 精英 · 执法 F 组日本 vs 瑞典生死战",
+        "avg_yellow": 4.5,
+        "avg_red": 0.15,
+        "avg_penalty": 0.33,
+        "home_win_rate": 48,
+        "bias_index": 50,
+        "bias_note": "萨尔瓦多主裁执法 F 组出线战。Moriyasu Kubo 肋部 vs Tomasson Isak 反击；对身体对抗与模拟接触尺度受关注，达拉斯 34°C 湿热下体能犯规是焦点。",
         "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+          "萨尔瓦多助理：David Morán、Antonio Pupiro（尼加拉瓜）",
+          "第四官员 Dahane Beida（毛里塔尼亚）· 候补 Jerson Emiliano Dos Santos（安哥拉）",
+          "VAR Nicolás Gallo（哥伦比亚）· AVAR Guillermo Pacheco（墨西哥）· SVAR Rodolpho Toski（巴西）",
+          "达拉斯 AT&T 34°C 有顶盖仍热——FIFA 补水暂停概率高",
+          "日本 4 分 vs 瑞典 3 分须胜 · 平局可能双双出局"
         ],
-        "updated": "2026-06-25T15:35:11+08:00"
+        "officials": {
+          "ar1": "David Morán (SLV)",
+          "ar2": "Antonio Pupiro (NCA)",
+          "fourth": "Dahane Beida (MTN)",
+          "reserve_ar": "Jerson Emiliano Dos Santos (ANG)",
+          "var": "Nicolás Gallo (COL)",
+          "avar": "Guillermo Pacheco (MEX)",
+          "svar": "Rodolpho Toski (BRA)"
+        },
+        "fifa_match_id": "400021471",
+        "updated": "2026-06-25T16:06:16+08:00"
       },
       "prediction": {
         "home_win": 38,
@@ -2826,7 +2951,7 @@ const MATCH_DATA = {
           {
             "icon": "🌤️",
             "label": "赛场气候",
-            "text": "达拉斯午后晴热，体感约 38°C · 34°C · 湿度 55% · 降雨概率 15% · 南风 1级 · 晴热；湿热中等——日本/瑞典均分争出线，后段体能是变量"
+            "text": "达拉斯午后晴热，有顶盖仍热，体感约 38°C · 34°C · 湿度 55% · 降雨概率 15% · 南风 1级 · 晴热；湿热中等——F 组出线生死战，FIFA 补水暂停概率高，70' 后犯规或升（34°C · 19:00 CT 开球 · Hellas Matrix 人工草）"
           },
           {
             "icon": "⚽",
@@ -2853,18 +2978,45 @@ const MATCH_DATA = {
         "city": "达拉斯",
         "country": "美国",
         "venue": "AT&T Stadium",
+        "pitch_surface": "Hellas Matrix 人工草",
+        "stadium_type": "可伸缩顶盖 · 通常关闭",
         "temp": 34,
         "humidity": 55,
         "altitude_m": 200,
         "rain_chance": 15,
         "wind": "南风 1级 · 晴热",
-        "condition_cn": "达拉斯午后晴热，体感约 38°C",
+        "condition_cn": "达拉斯午后晴热，有顶盖仍热，体感约 38°C",
         "impact_level": "MEDIUM",
-        "impact_summary": "湿热中等——日本/瑞典均分争出线，后段体能是变量",
+        "impact": "AT&T 34°C 有顶盖封闭但仍热，Hellas 人工草；日本 4 分 vs 瑞典 3 分须胜，Kubo vs Isak 对位+后段体能是核心变量",
+        "impact_summary": "湿热中等——F 组出线生死战，FIFA 补水暂停概率高，70' 后犯规或升",
         "home_adapt": 84,
         "away_adapt": 80,
-        "impact": "AT&T 34°C 有顶盖但仍热，F 组出线战补水暂停概率高",
-        "historical_note": "达拉斯 · F组末轮 · 日本 vs 瑞典 · 2026-06-25 22:00 本地",
+        "home_note": "日本 2022 大赛 DNA；Moriyasu 对湿热有备赛经验",
+        "away_note": "瑞典 3 分须胜；Isak 反击 vs Kubo 一对一，平局可能出局",
+        "prediction_note": "湿热下模型略抬上半场 xG；后段若平局，双方或更保守",
+        "weather_factors": [
+          {
+            "label": "34°C · 19:00 CT 开球",
+            "impact": "中-高",
+            "detail": "北京时间 07:00 · 顶盖通常关闭"
+          },
+          {
+            "label": "Hellas Matrix 人工草",
+            "impact": "低",
+            "detail": "FIFA 认证 · 球速稳定 · 无天然草湿滑风险"
+          },
+          {
+            "label": "湿度 55% · 体感 38°C",
+            "impact": "中",
+            "detail": "补水暂停概率高 · 替补体能是变量"
+          },
+          {
+            "label": "有顶盖封闭",
+            "impact": "中",
+            "detail": "隔绝降雨但散热有限 · 仍属热场"
+          }
+        ],
+        "historical_note": "AT&T Stadium · F组末轮 · 日本 vs 瑞典 · 预报更新 2026-06-25 22:00 本地",
         "forecast_updated": "2026-06-25 22:00 本地"
       },
       "mystic": {
@@ -3181,7 +3333,7 @@ const MATCH_DATA = {
             {
               "icon": "🌤️",
               "label": "气候",
-              "note": "湿热中等——日本/瑞典均分争出线，后段体能是变量"
+              "note": "湿热中等——F 组出线生死战，FIFA 补水暂停概率高，70' 后犯规或升"
             },
             {
               "icon": "⚖️",
@@ -3999,16 +4151,38 @@ const MATCH_DATA = {
         "note": "荷兰占优"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "FIFA Match 58 · 突尼斯 vs 荷兰 · 裁判名单赛前公布。",
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA · Match officials · 2026-06-25",
+        "name": "Katia Itzel García",
+        "nation": "Mexico",
+        "iso": "mx",
+        "age": 38,
+        "wc_experience": "2026 世界杯 · 第三位执法男足世界杯女裁判 · 日本 vs 荷兰第四官员履历 · 执法 F 组突尼斯 vs 荷兰",
+        "avg_yellow": 3.9,
+        "avg_red": 0.07,
+        "avg_penalty": 0.27,
+        "home_win_rate": 45,
+        "bias_index": 47,
+        "bias_note": "墨西哥女裁判执法 F 组末轮。Veglio 5-4-1 荣誉战 vs Koeman 4 分须胜巩固；对 Gakpo 肋部速度与 Khazri 远射犯规尺度受关注，Arrowhead 开放式 32°C 午后。",
         "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+          "墨西哥助理：Sandra Ramírez · 西班牙 José Enrique Naranjo Pérez",
+          "第四官员 Juan Gabriel Benitez（巴拉圭）· 候补 Milciades Saldivar（PAR）",
+          "VAR Erick Miranda（墨西哥）· AVAR Mohammed Obaid Khadim（阿联酋）· SVAR Hernan Mastrangelo（阿根廷）",
+          "堪萨斯城 Arrowhead 32°C 开放式 · 天然草",
+          "同开 m57 联动 F 组出线 · 荷兰深盘或轮换"
         ],
-        "updated": "2026-06-25T15:35:11+08:00"
+        "officials": {
+          "ar1": "Sandra Ramírez (MEX)",
+          "ar2": "José Enrique Naranjo Pérez (ESP)",
+          "fourth": "Juan Gabriel Benitez (PAR)",
+          "reserve_ar": "Milciades Saldivar (PAR)",
+          "var": "Erick Miranda (MEX)",
+          "avar": "Mohammed Obaid Khadim (UAE)",
+          "svar": "Hernan Mastrangelo (ARG)"
+        },
+        "fifa_match_id": "400021473",
+        "updated": "2026-06-25T16:06:16+08:00"
       },
       "prediction": {
         "home_win": 6,
@@ -4058,7 +4232,7 @@ const MATCH_DATA = {
           {
             "icon": "🌤️",
             "label": "赛场气候",
-            "text": "堪萨斯城午后热 · 32°C · 湿度 58% · 降雨概率 30% · 西风 2级 · 热；荷兰深盘 vs 突尼斯 0 分——战术差距大于气候"
+            "text": "堪萨斯城午后热，开放式天然草 · 32°C · 湿度 58% · 降雨概率 30% · 西风 2级 · 热；午后偏热——Koeman 或轮换但 Gakpo 肋部穿盘路径清晰（32°C · 19:00 CT 开球 · Bermuda 天然草）"
           },
           {
             "icon": "⚽",
@@ -4082,18 +4256,45 @@ const MATCH_DATA = {
         "city": "堪萨斯城",
         "country": "美国",
         "venue": "Arrowhead Stadium",
+        "pitch_surface": "Bermuda 天然草",
+        "stadium_type": "开放式 · 无顶盖",
         "temp": 32,
         "humidity": 58,
         "altitude_m": 270,
         "rain_chance": 30,
         "wind": "西风 2级 · 热",
-        "condition_cn": "堪萨斯城午后热",
+        "condition_cn": "堪萨斯城午后热，开放式天然草",
         "impact_level": "MEDIUM",
-        "impact_summary": "荷兰深盘 vs 突尼斯 0 分——战术差距大于气候",
+        "impact": "Arrowhead 32°C 开放式午后，Bermuda 天然草；荷兰 4 分深盘 vs 突尼斯 0 分荣誉战，战术差距大于气候",
+        "impact_summary": "午后偏热——Koeman 或轮换但 Gakpo 肋部穿盘路径清晰",
         "home_adapt": 76,
         "away_adapt": 88,
-        "impact": "Arrowhead 开放式 32°C，荷兰轮换版仍占优",
-        "historical_note": "堪萨斯城 · F组末轮 · 突尼斯 vs 荷兰 · 2026-06-25 22:00 本地",
+        "home_note": "突尼斯 0 分已出局；5-4-1+Khazri 远射是唯一威胁",
+        "away_note": "荷兰 7 球 2 场火力；同开 m57 联动 F 组出线",
+        "prediction_note": "开放式热场对欧洲队适应良好；若 30% 降雨，天然草略滑利于荷兰速度",
+        "weather_factors": [
+          {
+            "label": "32°C · 19:00 CT 开球",
+            "impact": "中",
+            "detail": "北京时间 07:00 · 同开 m57"
+          },
+          {
+            "label": "Bermuda 天然草",
+            "impact": "低",
+            "detail": "NFL 标准养护 · 传球稳定"
+          },
+          {
+            "label": "开放式球场",
+            "impact": "中",
+            "detail": "午后直晒 · 替补轮换价值上升"
+          },
+          {
+            "label": "降雨 30%",
+            "impact": "低-中",
+            "detail": "对流雨可能 · 草皮湿滑略利速度型"
+          }
+        ],
+        "historical_note": "Arrowhead · F组末轮 · 突尼斯 vs 荷兰 · 预报更新 2026-06-25 22:00 本地",
         "forecast_updated": "2026-06-25 22:00 本地"
       },
       "mystic": {
@@ -4410,7 +4611,7 @@ const MATCH_DATA = {
             {
               "icon": "🌤️",
               "label": "气候",
-              "note": "荷兰深盘 vs 突尼斯 0 分——战术差距大于气候"
+              "note": "午后偏热——Koeman 或轮换但 Gakpo 肋部穿盘路径清晰"
             }
           ],
           "xg_context": {
@@ -5214,16 +5415,38 @@ const MATCH_DATA = {
         "note": "美国友谊赛胜"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "FIFA Match 59 · 土耳其 vs 美国 · 裁判名单赛前公布。",
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA · Match officials · 2026-06-25",
+        "name": "Mustapha Ghorbal",
+        "nation": "Algeria",
+        "iso": "dz",
+        "age": 35,
+        "wc_experience": "2026 世界杯 · CAF 精英裁判 · 执法 D 组土耳其 vs 美国 · SoFi 主场大战",
+        "avg_yellow": 4.4,
+        "avg_red": 0.11,
+        "avg_penalty": 0.32,
+        "home_win_rate": 50,
+        "bias_index": 51,
+        "bias_note": "阿尔及利亚主裁执法 D 组末轮。Montella 0 分须胜 vs Pochettino 6 分已出线或轮换；对 Çalhanoğlu 远射与 Pulisic 速度尺度受关注，SoFi 凉爽封闭球场利于高强度对攻。",
         "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+          "阿尔及利亚助理：Mokrane Gourari、Abbes Akram Zerhoun",
+          "第四官员 Omar Al Ali（阿联酋）· 候补 Mohammed Al Hammadi（UAE）",
+          "VAR Antonio García（乌拉圭）· AVAR Mahmoud Ashour（埃及）· SVAR Juan Lara（智利）",
+          "SoFi 23°C 有顶盖 · Hellas Matrix 人工草",
+          "美国主场 SoFi · 土耳其 0 球 2 场须奇迹"
         ],
-        "updated": "2026-06-25T15:35:11+08:00"
+        "officials": {
+          "ar1": "Mokrane Gourari (ALG)",
+          "ar2": "Abbes Akram Zerhoun (ALG)",
+          "fourth": "Omar Al Ali (UAE)",
+          "reserve_ar": "Mohammed Al Hammadi (UAE)",
+          "var": "Antonio García (URU)",
+          "avar": "Mahmoud Ashour (EGY)",
+          "svar": "Juan Lara (CHI)"
+        },
+        "fifa_match_id": "400021459",
+        "updated": "2026-06-25T16:06:16+08:00"
       },
       "prediction": {
         "home_win": 12,
@@ -5273,7 +5496,7 @@ const MATCH_DATA = {
           {
             "icon": "🌤️",
             "label": "赛场气候",
-            "text": "洛杉矶夏夜凉爽 · 23°C · 湿度 58% · 降雨概率 10% · 海风 1级；美国 6 分或轮换 · 土耳其须胜"
+            "text": "洛杉矶夏夜凉爽，有顶盖人工草 · 23°C · 湿度 58% · 降雨概率 10% · 海风 1级；气候影响低——SoFi 主场气势+凉爽封闭球场利于高强度对攻（23°C · 19:00 PT 开球 · Hellas Matrix 人工草）"
           },
           {
             "icon": "⚽",
@@ -5299,18 +5522,45 @@ const MATCH_DATA = {
         "city": "洛杉矶",
         "country": "美国",
         "venue": "SoFi Stadium",
+        "pitch_surface": "Hellas Matrix 人工草",
+        "stadium_type": "有顶盖 · 半封闭",
         "temp": 23,
         "humidity": 58,
         "altitude_m": 30,
         "rain_chance": 10,
         "wind": "海风 1级",
-        "condition_cn": "洛杉矶夏夜凉爽",
+        "condition_cn": "洛杉矶夏夜凉爽，有顶盖人工草",
         "impact_level": "LOW",
-        "impact_summary": "美国 6 分或轮换 · 土耳其须胜",
+        "impact": "SoFi 23°C 有顶盖凉爽，Hellas 人工草；美国 6 分已出线 vs 土耳其 0 分须胜，Pochettino 轮换幅度是最大变量",
+        "impact_summary": "气候影响低——SoFi 主场气势+凉爽封闭球场利于高强度对攻",
         "home_adapt": 78,
         "away_adapt": 92,
-        "impact": "SoFi 23°C 凉爽，Pochettino 末轮轮换幅度是最大变量",
-        "historical_note": "洛杉矶 · D组末轮 · 土耳其 vs 美国 · 2026-06-25 22:00 本地",
+        "home_note": "土耳其 0 分须胜；Montella Çalhanoğlu/Güler 破局 vs 轮换版美国",
+        "away_note": "美国 SoFi 主场 · 6 分已够但 Pochettino 仍要胜利",
+        "prediction_note": "封闭球场隔绝海风与降雨；人工草球速稳定，Pulisic 肋部穿盘路径清晰",
+        "weather_factors": [
+          {
+            "label": "23°C · 19:00 PT 开球",
+            "impact": "低",
+            "detail": "北京时间 10:00 · 同开 m60"
+          },
+          {
+            "label": "Hellas Matrix 人工草",
+            "impact": "低",
+            "detail": "FIFA 标准 · 传球节奏稳定"
+          },
+          {
+            "label": "有顶盖半封闭",
+            "impact": "低",
+            "detail": "隔绝海风与降雨 · 体能消耗最低"
+          },
+          {
+            "label": "降雨 10%",
+            "impact": "低",
+            "detail": "顶盖保护 · 干燥场地"
+          }
+        ],
+        "historical_note": "SoFi · D组末轮 · 土耳其 vs 美国 · 预报更新 2026-06-25 22:00 本地",
         "forecast_updated": "2026-06-25 22:00 本地"
       },
       "mystic": {
@@ -5628,7 +5878,7 @@ const MATCH_DATA = {
             {
               "icon": "🌤️",
               "label": "气候",
-              "note": "美国 6 分或轮换 · 土耳其须胜"
+              "note": "气候影响低——SoFi 主场气势+凉爽封闭球场利于高强度对攻"
             },
             {
               "icon": "⚖️",
@@ -6501,16 +6751,38 @@ const MATCH_DATA = {
         "note": "友谊赛平局"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "FIFA Match 60 · 巴拉圭 vs 澳大利亚 · 裁判名单赛前公布。",
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA · Match officials · 2026-06-25",
+        "name": "Clément Turpin",
+        "nation": "France",
+        "iso": "fr",
+        "age": 42,
+        "wc_experience": "2018/2022 世界杯主裁 · 2026 第二场 · UEFA 精英 · 执法 D 组巴拉圭 vs 澳大利亚生死战",
+        "avg_yellow": 4.3,
+        "avg_red": 0.12,
+        "avg_penalty": 0.3,
+        "home_win_rate": 49,
+        "bias_index": 50,
+        "bias_note": "法国主裁执法 D 组末轮生死战。Alfaro 4-4-2 宽度 vs Popovic 5-4-1 铁桶；对 Almirón 速度与 Goodwin 传中犯规尺度受关注，湾区 21°C 凉爽利于 90 分钟高强度。",
         "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+          "法国助理：Nicolas Danos、Benjamin Pagès",
+          "第四官员 Oshane Nation（牙买加）· 候补 Caleb Wales（特立尼达）",
+          "VAR Jérôme Brisard（法国）· AVAR Willy Delajod（法国）· SVAR Hamza El Fariq（摩洛哥）",
+          "Levi's Stadium 21°C 湾区凉爽 · Bandera 混合天然草",
+          "各 3 分同分 · 谁犯错谁回家"
         ],
-        "updated": "2026-06-25T15:35:11+08:00"
+        "officials": {
+          "ar1": "Nicolas Danos (FRA)",
+          "ar2": "Benjamin Pagès (FRA)",
+          "fourth": "Oshane Nation (JAM)",
+          "reserve_ar": "Caleb Wales (TRI)",
+          "var": "Jérôme Brisard (FRA)",
+          "avar": "Willy Delajod (FRA)",
+          "svar": "Hamza El Fariq (MAR)"
+        },
+        "fifa_match_id": "400021461",
+        "updated": "2026-06-25T16:06:16+08:00"
       },
       "prediction": {
         "home_win": 35,
@@ -6560,7 +6832,7 @@ const MATCH_DATA = {
           {
             "icon": "🌤️",
             "label": "赛场气候",
-            "text": "湾区夏夜凉爽 · 21°C · 湿度 62% · 降雨概率 15% · 太平洋 breeze 2级；均分生死战——巴拉圭/澳大利亚各 3 分"
+            "text": "湾区夏夜凉爽，混合天然草 · 21°C · 湿度 62% · 降雨概率 15% · 太平洋 breeze 2级；气候影响低——凉爽夜场利于 90 分钟高强度，Popovic 5-4-1 vs Alfaro 宽度（21°C · 19:00 PT 开球 · Bandera 混合天然草）"
           },
           {
             "icon": "⚽",
@@ -6587,18 +6859,45 @@ const MATCH_DATA = {
         "city": "旧金山湾区",
         "country": "美国",
         "venue": "Levi's Stadium",
+        "pitch_surface": "Bandera Bermuda 混合天然草",
+        "stadium_type": "开放式 · 无顶盖",
         "temp": 21,
         "humidity": 62,
         "altitude_m": 15,
         "rain_chance": 15,
         "wind": "太平洋 breeze 2级",
-        "condition_cn": "湾区夏夜凉爽",
+        "condition_cn": "湾区夏夜凉爽，混合天然草",
         "impact_level": "LOW",
-        "impact_summary": "均分生死战——巴拉圭/澳大利亚各 3 分",
+        "impact": "Levi's 21°C 湾区凉爽，Bandera 混合草状态佳；巴拉圭/澳大利亚各 3 分生死战，定位球与转换是破局路径",
+        "impact_summary": "气候影响低——凉爽夜场利于 90 分钟高强度，Popovic 5-4-1 vs Alfaro 宽度",
         "home_adapt": 82,
         "away_adapt": 84,
-        "impact": "Levi's 21°C 凉爽，定位球与转换是破局路径",
-        "historical_note": "湾区 · D组末轮 · 巴拉圭 vs 澳大利亚 · 2026-06-25 22:00 本地",
+        "home_note": "巴拉圭 Almirón 速度+定位球；3 分同分谁犯错谁回家",
+        "away_note": "澳大利亚 2-0 美国后信心足；Goodwin 传中+Souttar 防空",
+        "prediction_note": "凉爽天然草利于双方对攻；平局对双方均不够，后段或更开放",
+        "weather_factors": [
+          {
+            "label": "21°C · 19:00 PT 开球",
+            "impact": "低",
+            "detail": "北京时间 10:00 · 同开 m59"
+          },
+          {
+            "label": "Bandera 混合天然草",
+            "impact": "低",
+            "detail": "FIFA 标准养护 · 传球与控球稳定"
+          },
+          {
+            "label": "湾区太平洋 breeze",
+            "impact": "低",
+            "detail": "微风 2 级 · 长传落点略受影响"
+          },
+          {
+            "label": "降雨 15%",
+            "impact": "低",
+            "detail": "干燥凉爽 · 体能消耗可控"
+          }
+        ],
+        "historical_note": "Levi's Stadium · D组末轮 · 巴拉圭 vs 澳大利亚 · 预报更新 2026-06-25 22:00 本地",
         "forecast_updated": "2026-06-25 22:00 本地"
       },
       "mystic": {
@@ -6915,7 +7214,7 @@ const MATCH_DATA = {
             {
               "icon": "🌤️",
               "label": "气候",
-              "note": "均分生死战——巴拉圭/澳大利亚各 3 分"
+              "note": "气候影响低——凉爽夜场利于 90 分钟高强度，Popovic 5-4-1 vs Alfaro 宽度"
             },
             {
               "icon": "⚖️",

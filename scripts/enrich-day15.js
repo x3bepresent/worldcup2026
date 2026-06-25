@@ -88,13 +88,14 @@ for (const m of MATCH_DATA.todayMatches || []) {
 }
 
 MATCH_DATA.lastUpdated = TS;
-MATCH_DATA.syncSource = 'FIFA 赛程 · Day 15 · weather/injuries/coach/referee enriched';
+MATCH_DATA.syncSource = 'FIFA 赛程 · Day 15 · 官方裁判+场地气候已确认';
 
-const filtered = (MATCH_DATA.breakingNews || []).filter(n => !/Day 15 气候|教练分析|伤病预报|核心球员/.test(n.text || ''));
+const filtered = (MATCH_DATA.breakingNews || []).filter(n => !/Day 15 气候|教练分析|伤病预报|核心球员|官方裁判|场地/.test(n.text || ''));
 filtered.unshift(
+  { tag: 'REFEREE', text: '✅ FIFA 官方裁判 m55–m60 已确认（Nyberg/Penso/Barton/García/Ghorbal/Turpin）', time: '6月26日' },
+  { tag: 'UPDATE', text: '✅ Day 15 场地气候+草皮条件已更新（6 场含 weather_factors）', time: '6月26日' },
   { tag: 'UPDATE', text: '✅ Day 15 教练分析&冷门预警已纳入（m55–m60）', time: '6月26日' },
   { tag: 'INJURY', text: '✅ Day 15 伤病/更衣室：德国/美国或轮换 · 日本瑞典生死战', time: '6月26日' },
-  { tag: 'UPDATE', text: '✅ Day 15 核心球员+气候预报已更新（共6场）', time: '6月26日' },
 );
 MATCH_DATA.breakingNews = filtered.slice(0, 14);
 
