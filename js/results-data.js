@@ -2,7 +2,7 @@
 // Last updated: 2026-06-20T14:00:00+08:00
 const RESULTS_DATA = {
   "lastUpdated": "2026-06-20T14:00:00+08:00",
-  "syncSource": "FIFA 官方赛果 · Day 14 全部 6 场完结",
+  "syncSource": "FIFA 官方赛果 · Day 14 完结 · Day 15 预览",
   "breakingNews": [
     {
       "tag": "OFFICIAL",
@@ -10,9 +10,14 @@ const RESULTS_DATA = {
       "time": "6月25日"
     },
     {
-      "tag": "OFFICIAL",
-      "text": "A组：墨西哥 9 分 · 南非出线 | B组：瑞士 7 分 | C组：巴西/摩洛哥各 7 分",
-      "time": "积分榜"
+      "tag": "PREVIEW",
+      "text": "📅 6月26日 D/E/F末轮6场 · 库拉索-科特迪瓦/厄瓜多尔-德国(04:00) · 日本-瑞典/突尼斯-荷兰(07:00) · 土耳其-美国/巴拉圭-澳大利亚(10:00)",
+      "time": "今日赛程"
+    },
+    {
+      "tag": "PREVIEW",
+      "text": "D/E/F组末轮：美国/德国6分 · 日本荷兰各4分 · 巴拉圭澳大利亚各3分",
+      "time": "焦点"
     }
   ],
   "finishedMatches": [
