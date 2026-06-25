@@ -1,10 +1,10 @@
 // Auto-generated — do not edit manually
 // Run: node scripts/build-schedule-scores.js
-// Last updated: 2026-06-25T01:00:20+08:00
+// Last updated: 2026-06-25T09:12:00+08:00
 const SCHEDULE_SCORES = {
-  "lastUpdated": "2026-06-25T01:00:20+08:00",
+  "lastUpdated": "2026-06-25T09:12:00+08:00",
   "source": "results-data.js × FIFA MatchNumber (fifa-match-index.json)",
-  "count": 52,
+  "count": 54,
   "byFifaNo": {
     "1": {
       "home": 2,
@@ -368,6 +368,20 @@ const SCHEDULE_SCORES = {
       "away": 1,
       "status": "FT",
       "siteId": "m52",
+      "via": "fifa_match_id+schedule_teams+fifa_index_teams"
+    },
+    "53": {
+      "home": 0,
+      "away": 3,
+      "status": "FT",
+      "siteId": "m53",
+      "via": "fifa_match_id+schedule_teams+fifa_index_teams"
+    },
+    "54": {
+      "home": 1,
+      "away": 0,
+      "status": "FT",
+      "siteId": "m54",
       "via": "fifa_match_id+schedule_teams+fifa_index_teams"
     }
   }

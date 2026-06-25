@@ -1,6 +1,5 @@
 /**
- * Day 14 赛果同步 — m51/m52/m49/m50（2026-06-25 北京时间 · B/C 组末轮 · 4 场已结束）
- * m53/m54 未开赛，保留在 todayMatches
+ * Day 14 赛果同步 — m51–m54 全部 6 场（2026-06-25 北京时间 · A/B/C 组末轮）
  * Run: node scripts/sync-day14-results.js && node scripts/apply-prediction-signals.js
  */
 const fs = require('fs');
@@ -68,6 +67,8 @@ const FIFA_IDS = {
   m52: '400021448',
   m49: '400021455',
   m50: '400021452',
+  m53: '400021444',
+  m54: '400021445',
 };
 
 const MANUAL = {
@@ -95,6 +96,18 @@ const MANUAL = {
     highlights: 'Mercedes-Benz 亚特兰大 · 摩洛哥 4-2 · Hakimi 39\' · 与海地对攻 · 摩洛哥 7 分 C 组第二',
     ht_score: '2-2', first_goal_min: 10, fifa_id: '400021452',
   },
+  m53: {
+    home_score: 0, away_score: 3, status: 'FT', label: '全场结束',
+    scorers: "Mateo Chavez 55'; Julian Quinones 61'; Alvaro Fidalgo 90'+4'",
+    highlights: 'Azteca 阿兹特克 · 轮换版墨西哥 3-0 · Chavez 55\'/Quinones 61\'/Fidalgo 90+4\' · 墨西哥 9 分 A 组第一',
+    ht_score: '0-0', first_goal_min: 55, fifa_id: '400021444',
+  },
+  m54: {
+    home_score: 1, away_score: 0, status: 'FT', label: '全场结束',
+    scorers: "Thapelo Maseko 63'",
+    highlights: 'BBVA 蒙特雷 · Maseko 63\' 制胜 · 南非 4 分出线 · 韩国孙兴慜替补仍出局',
+    ht_score: '0-0', first_goal_min: 63, fifa_id: '400021445',
+  },
 };
 
 const REVIEW = {
@@ -102,6 +115,8 @@ const REVIEW = {
   m52: '【赛后复盘】赛前主胜 41%/首推 1-1；实际 3-1 波黑胜。Alajbegovic 29\'/Abunada 34\'(og)/Alhaydos 42\'/Mahmic 80\'。方向：主胜命中；比分接近 2-1 推演；总球 4（大 2.5 穿）。路径：垫底对话→波黑末轮 4 分仍出局（净胜球劣势）。',
   m49: '【赛后复盘】赛前客胜 63%/首推 0-1；实际 0-3 巴西胜。Vini 7\'/45+3\' 双响 · Cunha 60\' 穿深盘。方向：客胜命中；比分 0-3 超预期；总球 3（大 2.75 赢）。路径：深盘兑现→巴西 7 分 C 组第一。',
   m50: '【赛后复盘】赛前主胜 49%/首推 1-0；实际 4-2 摩洛哥胜。Bounou 10\'(og)/Hakimi 39\'/Saibari 45+1\'/Rahimi 78\' · 海地 Isidor 43\' 反击。方向：主胜命中；总球 6（大 2.75 穿）；比分远超 xG 小球预期。路径：领跑巩固→摩洛哥 7 分 C 组第二。',
+  m53: '【赛后复盘】赛前客胜 56%/首推 0-1；实际 0-3 墨西哥胜。轮换版仍穿盘：Chavez 55\'/Quinones 61\'/替补 Fidalgo 90+4\' · Jiménez 未出场。方向：客胜命中；0-3 属分布尾部（约 5%）；总球 3（大 2.5 赢）。路径：高原主场+轮换深度→捷克 Schick 替补无果。',
+  m54: '【赛后复盘】赛前客胜 36%/首推 1-1；实际 1-0 南非胜。Maseko 63\' 制胜 · 孙兴慜替补韩国仍出局。方向：主胜冷门命中（28%）；平局/客胜均未中；总球 1（小 2.5 赢）。路径：须胜韩国进攻乏力→南非抢下出线名额。',
 };
 
 const GROUP_B_FINAL = [
@@ -116,6 +131,13 @@ const GROUP_C_FINAL = [
   { team: 'Morocco', pts: 7, p: 3, w: 2, d: 1, l: 0, gf: 6, ga: 3 },
   { team: 'Scotland', pts: 3, p: 3, w: 1, d: 0, l: 2, gf: 1, ga: 5 },
   { team: 'Haiti', pts: 0, p: 3, w: 0, d: 0, l: 3, gf: 2, ga: 7 },
+];
+
+const GROUP_A_FINAL = [
+  { team: 'Mexico', pts: 9, p: 3, w: 3, d: 0, l: 0, gf: 7, ga: 0 },
+  { team: 'South Africa', pts: 4, p: 3, w: 1, d: 1, l: 1, gf: 2, ga: 3 },
+  { team: 'South Korea', pts: 3, p: 3, w: 1, d: 0, l: 2, gf: 2, ga: 3 },
+  { team: 'Czechia', pts: 1, p: 3, w: 0, d: 1, l: 2, gf: 2, ga: 6 },
 ];
 
 function upsertGroup(snaps, group, label, table) {
@@ -174,6 +196,34 @@ function patchStars(m, id) {
       name: 'Soufiane Rahimi', pos: 'ST', club: 'Al-Ain',
       stats: "78' 第三球", rating: 8.0,
       desc: '末段锁定胜局',
+    };
+    if (m.home.star) m.home.star = { ...m.home.stars[0] };
+  }
+  if (id === 'm53' && m.away?.stars?.[0]) {
+    m.away.stars[0] = {
+      name: 'Julián Quiñones', pos: 'FW', club: 'América',
+      stats: "61' 破门", rating: 8.3,
+      desc: '轮换版 3-0 · 锁定 A 组 9 分',
+    };
+    if (!m.away.stars[1]) m.away.stars.push({});
+    m.away.stars[1] = {
+      name: 'Mateo Chávez', pos: 'MF', club: 'Monterrey',
+      stats: "55' 首开", rating: 8.0,
+      desc: '下半场破局高原捷克',
+    };
+    if (!m.away.stars[2]) m.away.stars.push({});
+    m.away.stars[2] = {
+      name: 'Álvaro Fidalgo', pos: 'AM', club: 'América',
+      stats: "90'+4' 锁定", rating: 7.8,
+      desc: '替补登场锦上添花',
+    };
+    if (m.away.star) m.away.star = { ...m.away.stars[0] };
+  }
+  if (id === 'm54' && m.home?.stars?.[0]) {
+    m.home.stars[0] = {
+      name: 'Thapelo Maseko', pos: 'RW', club: 'Mamelodi Sundowns',
+      stats: "63' 制胜球", rating: 8.4,
+      desc: '1-0 爆冷出线 · 韩国孙兴慜替补无果',
     };
     if (m.home.star) m.home.star = { ...m.home.stars[0] };
   }
@@ -241,7 +291,7 @@ async function main() {
 
   const MATCH_DATA = loadData(MATCH_PATH, 'MATCH_DATA');
   const RESULTS_DATA = loadData(RESULTS_PATH, 'RESULTS_DATA');
-  const SYNC_IDS = ['m51', 'm52', 'm49', 'm50'];
+  const SYNC_IDS = ['m51', 'm52', 'm49', 'm50', 'm53', 'm54'];
   const archiveIds = [];
 
   for (const id of SYNC_IDS) {
@@ -267,19 +317,20 @@ async function main() {
   MATCH_DATA.todayMatches = (MATCH_DATA.todayMatches || []).filter(m => !SYNC_IDS.includes(m.id));
 
   let snaps = RESULTS_DATA.groupSnapshots || [];
+  snaps = upsertGroup(snaps, 'A', 'A组 · 末轮后', GROUP_A_FINAL);
   snaps = upsertGroup(snaps, 'B', 'B组 · 末轮后', GROUP_B_FINAL);
   snaps = upsertGroup(snaps, 'C', 'C组 · 末轮后', GROUP_C_FINAL);
   RESULTS_DATA.groupSnapshots = snaps;
   RESULTS_DATA.lastUpdated = TS;
-  RESULTS_DATA.syncSource = 'FIFA 官方赛果 · Day 14 B/C 末轮（4/6 场）';
+  RESULTS_DATA.syncSource = 'FIFA 官方赛果 · Day 14 全部 6 场完结';
   RESULTS_DATA.breakingNews = [
-    { tag: 'OFFICIAL', text: '🏁 Day 14 早场：瑞2-1加 · 波黑3-1卡 · 苏0-3巴 · 摩4-2海', time: '6月25日' },
-    { tag: 'OFFICIAL', text: 'B组出线：瑞士 7 分 · 加拿大 4 分 | C组：巴西/摩洛哥各 7 分', time: '积分榜' },
-    { tag: 'LIVE', text: '⏳ A组末轮 09:00：捷克-墨西哥 · 南非-韩国（待赛）', time: '待赛' },
+    { tag: 'OFFICIAL', text: '🏁 Day 14 完结：墨3-0捷 · 南非1-0韩 · 瑞2-1加 · 波黑3-1卡 · 苏0-3巴 · 摩4-2海', time: '6月25日' },
+    { tag: 'OFFICIAL', text: 'A组：墨西哥 9 分 · 南非出线 | B组：瑞士 7 分 | C组：巴西/摩洛哥各 7 分', time: '积分榜' },
   ].slice(0, 12);
 
   MATCH_DATA.lastUpdated = TS;
-  MATCH_DATA.syncSource = 'FIFA 官方赛果 · Day 14（B/C 末轮 4 场已归档 · A 组 m53/m54 待赛）';
+  MATCH_DATA.syncSource = 'FIFA 官方赛果 · Day 14 全部 6 场完结';
+  MATCH_DATA.breakingNews = RESULTS_DATA.breakingNews;
 
   const day14Results = SYNC_IDS.map(id => {
     const r = resolved[id];
@@ -298,14 +349,15 @@ async function main() {
   LIVE_DATA.todayDate = '2026-06-25';
   LIVE_DATA.allResults = day14Results;
   LIVE_DATA.yesterdayResults = day14Results.map(r => ({ id: r.id, score: r.score }));
-  LIVE_DATA.injuries = { note: 'Day 14 B/C 末轮完结 · 瑞士/巴西头名 · A 组 m53/m54 待赛' };
-  LIVE_DATA.standings = snaps.filter(g => ['B', 'C', 'A'].includes(g.group));
+  LIVE_DATA.injuries = { note: 'Day 14 全部完结 · 墨西哥/瑞士/巴西头名 · 南非爆冷出线' };
+  LIVE_DATA.standings = snaps.filter(g => ['A', 'B', 'C'].includes(g.group));
+  LIVE_DATA.fixtures = [];
 
   fs.writeFileSync(RESULTS_PATH, `// 过往赛果\n// Last updated: ${TS}\nconst RESULTS_DATA = ${JSON.stringify(RESULTS_DATA, null, 2)};\n`);
-  fs.writeFileSync(MATCH_PATH, `// 今日赛事 — Day 14 (B/C 赛果已同步 · A 组待赛)\n// Last updated: ${TS}\nconst MATCH_DATA = ${JSON.stringify(MATCH_DATA, null, 2)};\n`);
+  fs.writeFileSync(MATCH_PATH, `// 今日赛事 — Day 14 全部完结\n// Last updated: ${TS}\nconst MATCH_DATA = ${JSON.stringify(MATCH_DATA, null, 2)};\n`);
   fs.writeFileSync(LIVE_PATH, `// Auto-synced by scripts/sync-day14-results.js\n// Updated: ${TS}\nconst LIVE_DATA = ${JSON.stringify(LIVE_DATA, null, 2)};\n`);
 
-  console.log('✅ Day 14 synced (4/6 finished)');
+  console.log('✅ Day 14 synced (6/6 finished)');
   for (const id of SYNC_IDS) {
     const r = resolved[id];
     if (r) console.log(`   ${id} FT ${r.home_score}-${r.away_score}`);
