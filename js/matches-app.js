@@ -3161,7 +3161,7 @@ function initMatchesPage() {
   const cont = document.getElementById('matches-container');
   if (!cont) return;
   if (!MATCH_DATA.todayMatches?.length) {
-    cont.innerHTML = '<p style="color:var(--txt2);padding:2rem;text-align:center">今日暂无待赛场次 · 请查看下方「明日预告」</p>';
+    cont.innerHTML = '<p style="color:var(--txt2);padding:2rem;text-align:center">今日暂无待赛场次 · 请查看下方「明日预告」<br><span style="font-size:0.85rem;opacity:0.75;margin-top:0.75rem;display:inline-block">若刚更新过数据仍为空，请 <strong>Ctrl+F5</strong> 强刷清除浏览器缓存</span></p>';
   } else {
     MATCH_DATA.todayMatches.forEach(raw => {
       const m = mergeLiveIntoMatch(raw);
