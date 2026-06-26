@@ -1,8 +1,8 @@
-// 今日赛事 — Day 15 (enriched · 官方裁判+场地)
-// Last updated: 2026-06-25T16:06:16+08:00
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-26T03:38:12.576Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-25T16:06:16+08:00",
-  "syncSource": "FIFA 赛程 · Day 15 · 官方裁判+场地气候已确认 · 推演概要+小组形势",
+  "lastUpdated": "2026-06-26T03:38:12.576Z",
+  "syncSource": "API-Football",
   "breakingNews": [
     {
       "tag": "REFEREE",
