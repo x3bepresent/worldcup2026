@@ -10,9 +10,19 @@ const {
   enrichActualResultForReview,
   buildGoalTimingDisplay,
   buildHalftimePreview,
+  buildMatchContextAdjustments,
 } = require('../js/prediction-signals-lib');
-const { computeOutcomeFromXg, computeScoreDistribution } = require('./score-model');
+const { computeOutcomeFromXg, computeScoreDistribution, applyPoissonToPrediction } = require('./score-model');
 const { pickMarketSnapshot } = require('./archive-match.js');
+
+function signedTierFromHandicap(raw, dc) {
+  const mag = Math.abs(Number(dc?.tier_home ?? raw?.market_tier) || 0);
+  if (mag < 0.5) return 0;
+  const lean = raw?.public_lean;
+  if (lean === 'away') return -mag;
+  if (lean === 'home') return mag;
+  return mag;
+}
 
 function mergePreMatchContext(m) {
   const copy = JSON.parse(JSON.stringify(m));
@@ -47,7 +57,7 @@ function refreshBasePrediction(match) {
     p.xg_home,
     p.xg_away,
   );
-  return {
+  let out = {
     ...p,
     home_win: adj.home_win,
     draw: adj.draw,
@@ -60,6 +70,9 @@ function refreshBasePrediction(match) {
     depth_calibrated: false,
     draw_context: adj.draw_context,
   };
+  const ctx = buildMatchContextAdjustments(match, p.xg_home, p.xg_away);
+  out = applyPoissonToPrediction(out, ctx.xg_home, ctx.xg_away, 0);
+  return out;
 }
 
 function enrichArchivedFull(m, handicapMap, goalTimingMap) {
@@ -74,6 +87,13 @@ function enrichArchivedFull(m, handicapMap, goalTimingMap) {
     copy.market_snapshot = pickMarketSnapshot({ depth_calibration: copy.depth_calibration });
     if (copy.prediction) {
       copy.prediction = applyDepthToPrediction(copy.prediction, copy.depth_calibration);
+      const ctx = buildMatchContextAdjustments(copy, copy.prediction.xg_home, copy.prediction.xg_away);
+      copy.prediction = applyPoissonToPrediction(
+        copy.prediction,
+        ctx.xg_home,
+        ctx.xg_away,
+        signedTierFromHandicap(raw, copy.depth_calibration),
+      );
     }
     const gtRaw = goalTimingMap?.[copy.id];
     if (gtRaw && copy.depth_calibration?.display_summary) {

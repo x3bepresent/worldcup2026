@@ -309,10 +309,11 @@ function renderMatchHero(m, p, finished) {
 
       <div class="mf-terminal-focus">
         <div class="mf-terminal-score-card">
-          <div class="mf-terminal-score-label">${finished ? '赛前预测比分' : '娱乐推演比分'}</div>
-          <div class="mf-terminal-score">${formatDisplayScore(p.score)}</div>
+          <div class="mf-terminal-score-label">${finished ? '赛前推介比分 Top3' : '娱乐推演比分 Top3'}</div>
+          ${renderTerminalTop3Scores(p)}
           <div class="mf-terminal-score-meta">
-            xG <span class="xg-home">${p.xg_home}</span> – <span class="xg-away">${p.xg_away}</span>
+            xG <span class="xg-home">${p.xg_poisson_home ?? p.xg_home}</span> – <span class="xg-away">${p.xg_poisson_away ?? p.xg_away}</span>
+            ${p.xg_tier_calibrated ? ' · <span style="color:var(--txt2)">含深盘校准</span>' : ''}
             · 模型置信 <strong style="color:${confColor}">${p.confidence}%</strong>
           </div>
           ${upsetHtml}
@@ -473,8 +474,12 @@ function hasPoissonInputs(p) {
     && Number(p.xg_home) >= 0 && Number(p.xg_away) >= 0;
 }
 
-/** 比分分布：仅由 xG 泊松实时计算，不使用 JSON 手写 score_dist */
+/** 比分分布：由 xG 泊松实时计算（优先 tier 校准后 xG） */
 function getMatchScoreDistribution(p) {
+  const pair = getPoissonXgPair(p);
+  if (typeof computeScoreDistribution === 'function' && pair) {
+    return computeScoreDistribution(pair.xgHome, pair.xgAway, { topN: 5 });
+  }
   if (typeof computeScoreDistribution === 'function' && hasPoissonInputs(p)) {
     return computeScoreDistribution(p.xg_home, p.xg_away, { topN: 5 });
   }
@@ -530,7 +535,56 @@ function isDrawCoFavorite(p) {
 
 const OUTCOME_CN = { home: '主胜', draw: '平局', away: '客胜' };
 
+function getPoissonXgPair(p) {
+  if (!p) return null;
+  const h = p.xg_poisson_home ?? p.xg_home;
+  const a = p.xg_poisson_away ?? p.xg_away;
+  if (h == null || a == null) return null;
+  return { xgHome: h, xgAway: a };
+}
+
+function getMatchScoreTop3(p) {
+  if (p?.score_top3?.length) return p.score_top3;
+  const pair = getPoissonXgPair(p);
+  if (typeof computeTopScores === 'function' && pair) {
+    return computeTopScores(pair.xgHome, pair.xgAway, 3);
+  }
+  if (typeof computeScoreDistribution === 'function' && pair) {
+    return computeScoreDistribution(pair.xgHome, pair.xgAway, { topN: 3 });
+  }
+  if (p?.score) return [{ score: p.score, prob: p.score_prob ?? null }];
+  return [];
+}
+
+function renderTerminalTop3Scores(p) {
+  const top3 = getMatchScoreTop3(p);
+  if (!top3.length) {
+    return `<div class="mf-terminal-score">${formatDisplayScore(p?.score)}</div>`;
+  }
+  const primary = top3[0];
+  const rest = top3.slice(1);
+  const expected = p?.expected_score;
+  const showExpected = expected && expected !== primary.score;
+  return `
+    <div class="mf-terminal-top3">
+      <div class="mf-terminal-top3-primary">
+        <span class="mf-terminal-score mf-terminal-score--lead">${formatDisplayScore(primary.score)}</span>
+        ${primary.prob != null ? `<span class="mf-terminal-top3-pct">${primary.prob}%</span>` : ''}
+      </div>
+      ${rest.length ? `<div class="mf-terminal-top3-row">${rest.map((s, i) => `
+        <span class="mf-terminal-top3-alt" title="排名第 ${i + 2}">
+          <span class="mf-terminal-top3-alt-score">${formatDisplayScore(s.score)}</span>
+          <span class="mf-terminal-top3-alt-pct">${s.prob}%</span>
+        </span>`).join('')}</div>` : ''}
+      ${showExpected ? `<div class="mf-terminal-expected">xG 期望 ${formatDisplayScore(expected)}</div>` : ''}
+    </div>`;
+}
+
 function getPoissonTopScore(p) {
+  const pair = getPoissonXgPair(p);
+  if (typeof computeOutcomeFromXg === 'function' && pair) {
+    return computeOutcomeFromXg(pair.xgHome, pair.xgAway).score;
+  }
   if (typeof computeOutcomeFromXg === 'function' && hasPoissonInputs(p)) {
     return computeOutcomeFromXg(p.xg_home, p.xg_away).score;
   }

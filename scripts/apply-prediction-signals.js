@@ -20,8 +20,9 @@ const {
   enrichActualResultForReview,
   buildGoalTimingDisplay,
   buildHalftimePreview,
+  buildMatchContextAdjustments,
 } = require('../js/prediction-signals-lib');
-const { computeOutcomeFromXg, computeScoreDistribution } = require('./score-model');
+const { computeOutcomeFromXg, computeScoreDistribution, applyPoissonToPrediction } = require('./score-model');
 const { pickMarketSnapshot } = require('./archive-match.js');
 const { refreshBasePrediction, enrichArchivedFull } = require('./archived-enrich.js');
 const HANDICAP = {
@@ -36,6 +37,7 @@ const HANDICAP = {
   ...require('./handicap-data-day13'),
   ...require('./handicap-data-day14'),
   ...require('./handicap-data-day15'),
+  ...require('./handicap-data-day16'),
 };
 const GOAL_TIMING = {
   ...require('./goal-timing-data-day9'),
@@ -50,7 +52,16 @@ const TS = '2026-06-20T14:00:00+08:00';
 /** 与 matches-app.js SHOW_DEPTH_CALIBRATION_PANEL 对齐：交稿时可设为 false */
 const APPEND_SUMMARY_TO_KEY_FACTOR = false;
 
-/** 剥离历次追加的推演/盘口措辞，保留原始赛前分析 */
+/** market_tier 恒为正幅度；public_lean 决定符号（主/客热门） */
+function signedTierFromHandicap(raw, dc) {
+  const mag = Math.abs(Number(dc?.tier_home ?? raw?.market_tier) || 0);
+  if (mag < 0.5) return 0;
+  const lean = raw?.public_lean;
+  if (lean === 'away') return -mag;
+  if (lean === 'home') return mag;
+  return mag;
+}
+
 function stripDepthCalibrationFromKeyFactor(kf) {
   return (kf || '')
     .replace(/\s*【(?:深度校准|推演概要)[^】]*】[\s\S]*/g, '')
@@ -172,6 +183,13 @@ function enrichMatchSignals(m, handicapMap, snapshots) {
     }
     if (copy.prediction) {
       copy.prediction = applyDepthToPrediction(copy.prediction, copy.depth_calibration);
+      const ctx = buildMatchContextAdjustments(copy, copy.prediction.xg_home, copy.prediction.xg_away);
+      copy.prediction = applyPoissonToPrediction(
+        copy.prediction,
+        ctx.xg_home,
+        ctx.xg_away,
+        signedTierFromHandicap(raw, copy.depth_calibration),
+      );
       const gtRaw = GOAL_TIMING[copy.id];
       if (gtRaw && copy.depth_calibration?.display_summary) {
         copy.depth_calibration.display_summary.goal_timing = buildGoalTimingDisplay(
@@ -192,6 +210,9 @@ function enrichMatchSignals(m, handicapMap, snapshots) {
         ? `${baseKf} ${dc.public_summary_note || buildPublicSummaryNote(dc.display_summary, dc.adjustment_note)}`.trim()
         : baseKf;
     }
+  } else if (copy.prediction?.xg_home != null) {
+    const ctx = buildMatchContextAdjustments(copy, copy.prediction.xg_home, copy.prediction.xg_away);
+    copy.prediction = applyPoissonToPrediction(copy.prediction, ctx.xg_home, ctx.xg_away, 0);
   }
   if (snapshots?.length) {
     copy.group_context = buildGroupContext(copy, snapshots);
