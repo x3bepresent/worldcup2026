@@ -1700,11 +1700,371 @@ function isFavCrushScenario(favXg, dogXg, gap) {
   return favXg >= 2.0 && dogXg <= 0.55 && gap >= 1.4;
 }
 
+function normalizeGroupTeamName(name) {
+  if (name === 'IR Iran') return 'Iran';
+  return name;
+}
+
+function findTableRow(table, teamName) {
+  const norm = normalizeGroupTeamName(teamName);
+  return (table || []).find(r => r.team === teamName || normalizeGroupTeamName(r.team) === norm);
+}
+
+function getGroupTableForMatch(match, groupSnapshots) {
+  const g = match.group;
+  if (match.group_context?.standings?.length === 4) return match.group_context.standings;
+  const snap = (groupSnapshots || []).find(s => s.group === g);
+  return snap?.table?.length ? snap.table : buildDefaultTable(g);
+}
+
+function otherGroupTeamsInMatch(group, homeName, awayName, table) {
+  const h = normalizeGroupTeamName(homeName);
+  const a = normalizeGroupTeamName(awayName);
+  const fromTable = (table || []).map(r => r.team);
+  const pool = fromTable.length === 4 ? fromTable : (GROUP_TEAMS[group] || []);
+  return pool
+    .filter(t => normalizeGroupTeamName(t) !== h && normalizeGroupTeamName(t) !== a)
+    .map(t => findTableRow(table, t))
+    .filter(Boolean);
+}
+
+/** 末轮另一场三种赛果下，双方是否均列前二 */
+function bothQualifyWithDraw(homeRow, awayRow, otherRows) {
+  if (!homeRow || !awayRow || otherRows.length !== 2) return false;
+  const [o1, o2] = otherRows;
+  const hFinal = { ...homeRow, pts: homeRow.pts + 1 };
+  const aFinal = { ...awayRow, pts: awayRow.pts + 1 };
+  return otherMatchOutcomes(o1, o2).every(oc => {
+    const top2 = sortTable([
+      hFinal,
+      aFinal,
+      { ...o1, pts: oc.o1Pts },
+      { ...o2, pts: oc.o2Pts },
+    ]).slice(0, 2).map(r => r.team);
+    return teamNameInList(homeRow.team, top2) && teamNameInList(awayRow.team, top2);
+  });
+}
+
+function otherMatchOutcomes(o1, o2) {
+  return [
+    { o1Pts: o1.pts + 3, o2Pts: o2.pts },
+    { o1Pts: o1.pts + 1, o2Pts: o2.pts + 1 },
+    { o1Pts: o1.pts, o2Pts: o2.pts + 3 },
+  ];
+}
+
+function teamNameInList(teamName, list) {
+  return (list || []).some(t => t === teamName || normalizeGroupTeamName(t) === normalizeGroupTeamName(teamName));
+}
+
+/** 本场取 ptsAfter 后，三种平行赛果下是否稳居前二 */
+function teamStaysTop2WithPts(teamRow, partnerRow, otherRows, ptsAfter) {
+  const [o1, o2] = otherRows;
+  const self = { ...teamRow, pts: ptsAfter };
+  return otherMatchOutcomes(o1, o2).every(oc => {
+    const top2 = sortTable([
+      self,
+      { ...partnerRow },
+      { ...o1, pts: oc.o1Pts },
+      { ...o2, pts: oc.o2Pts },
+    ]).slice(0, 2).map(r => r.team);
+    return teamNameInList(teamRow.team, top2);
+  });
+}
+
+/** 输球（本场 0 分）是否仍稳居前二 */
+function teamAlreadyQualified(teamRow, partnerRow, otherRows) {
+  return teamStaysTop2WithPts(teamRow, partnerRow, otherRows, teamRow.pts);
+}
+
+/** 某场赛果下谁列前二 */
+function top2TeamsAfter(homeRow, homePts, awayRow, awayPts, o1, o2, oc) {
+  return sortTable([
+    { ...homeRow, pts: homePts },
+    { ...awayRow, pts: awayPts },
+    { ...o1, pts: oc.o1Pts },
+    { ...o2, pts: oc.o2Pts },
+  ]).slice(0, 2).map(r => r.team);
+}
+
+/**
+ * 零和结构：有胜负时恰有一队晋级、一队淘汰（三种平行赛果下均成立）。
+ * 即用户所述——「踢平都出线；分出胜负只有一个能活」。
+ */
+function isZeroSumDecisiveMatch(homeRow, awayRow, otherRows) {
+  const [o1, o2] = otherRows;
+  return otherMatchOutcomes(o1, o2).every(oc => {
+    const ifHomeWins = top2TeamsAfter(homeRow, homeRow.pts + 3, awayRow, awayRow.pts, o1, o2, oc);
+    const ifAwayWins = top2TeamsAfter(homeRow, homeRow.pts, awayRow, awayRow.pts + 3, o1, o2, oc);
+    const homeWinZeroSum = teamNameInList(homeRow.team, ifHomeWins) && !teamNameInList(awayRow.team, ifHomeWins);
+    const awayWinZeroSum = teamNameInList(awayRow.team, ifAwayWins) && !teamNameInList(homeRow.team, ifAwayWins);
+    return homeWinZeroSum && awayWinZeroSum;
+  });
+}
+
+function weakIsHomeTeam(weakRow, homeRow) {
+  return teamNameInList(weakRow.team, [homeRow.team]);
+}
+
+function standingsAfter(homeRow, homePts, awayRow, awayPts, o1, o2, oc) {
+  return sortTable([
+    { ...homeRow, pts: homePts },
+    { ...awayRow, pts: awayPts },
+    { ...o1, pts: oc.o1Pts },
+    { ...o2, pts: oc.o2Pts },
+  ]);
+}
+
+/** 48 队制：该名次+积分是否已基本无缘淘汰赛（含争八第 3） */
+function isKnockoutEliminated(rank, pts) {
+  if (rank >= 4) return true;
+  if (rank === 3 && pts <= 3) return true;
+  return false;
+}
+
+function weakResultOutcomes(weakRow, strongRow, homeRow, awayRow, otherRows, weakAdd, strongAdd) {
+  const [o1, o2] = otherRows;
+  const weakHome = weakIsHomeTeam(weakRow, homeRow);
+  return otherMatchOutcomes(o1, o2).map(oc => {
+    const hPts = homeRow.pts + (weakHome ? weakAdd : strongAdd);
+    const aPts = awayRow.pts + (weakHome ? strongAdd : weakAdd);
+    const st = standingsAfter(homeRow, hPts, awayRow, aPts, o1, o2, oc);
+    const rank = st.findIndex(r => teamNameInList(weakRow.team, [r.team])) + 1;
+    const pts = weakRow.pts + weakAdd;
+    return { rank, pts, eliminated: isKnockoutEliminated(rank, pts) };
+  });
+}
+
+/**
+ * 不对称「保平争第三」—— 48 队制争八场景：
+ * 强队已锁前二；弱队输球必死、平局可争第 3 进争八池、赢球稳进。
+ */
+function detectAsymmetricThirdDrawSafety(homeRow, awayRow, otherRows, homeName, awayName, match) {
+  const pairs = [
+    { strong: homeRow, weak: awayRow, strongName: homeName, weakName: awayName },
+    { strong: awayRow, weak: homeRow, strongName: awayName, weakName: homeName },
+  ];
+  const homeRating = match?.home?.rating || match?.home?.fifa_rank || 0;
+  const awayRating = match?.away?.rating || match?.away?.fifa_rank || 0;
+
+  for (const p of pairs) {
+    const strongIn = teamAlreadyQualified(p.strong, p.weak, otherRows);
+    const weakIn = teamAlreadyQualified(p.weak, p.strong, otherRows);
+    if (!strongIn || weakIn) continue;
+
+    const lossOuts = weakResultOutcomes(p.weak, p.strong, homeRow, awayRow, otherRows, 0, 3);
+    const drawOuts = weakResultOutcomes(p.weak, p.strong, homeRow, awayRow, otherRows, 1, 1);
+    const winOuts = weakResultOutcomes(p.weak, p.strong, homeRow, awayRow, otherRows, 3, 0);
+
+    const weakDeadOnLoss = lossOuts.every(r => r.eliminated);
+    const weakThirdLiveOnDraw = drawOuts.some(r => r.rank === 3 && !r.eliminated);
+    const weakThroughOnWin = winOuts.every(r => !r.eliminated && (r.rank <= 2 || r.rank === 3));
+
+    if (!weakDeadOnLoss || !weakThirdLiveOnDraw) continue;
+
+    const weakIsHome = weakIsHomeTeam(p.weak, homeRow);
+    const weakRating = weakIsHome ? homeRating : awayRating;
+    const strongRating = weakIsHome ? awayRating : homeRating;
+    const weakLikelyUnderdog = (strongRating && weakRating && weakRating < strongRating - 4)
+      || STRONG_TEAMS.has(p.strongName) && !STRONG_TEAMS.has(p.weakName);
+
+    return {
+      strong_side: p.strongName,
+      weak_side: p.weakName,
+      weak_is_home: weakIsHome,
+      weak_dead_on_loss: weakDeadOnLoss,
+      weak_third_live_on_draw: weakThirdLiveOnDraw,
+      weak_through_on_win: weakThroughOnWin,
+      weak_likely_underdog: weakLikelyUnderdog,
+      draw_pts_if_draw: p.weak.pts + 1,
+    };
+  }
+  return null;
+}
+
+/**
+ * 末轮出线博弈 — 逻辑剖析（区分「默契球」vs「已出线控分/争顺位」）
+ * @returns {object|null}
+ */
+function analyzeQualificationLogic(match, groupSnapshots) {
+  const md = match.matchday || 1;
+  if (md < 3) return null;
+
+  const homeName = match.home?.name;
+  const awayName = match.away?.name;
+  if (!homeName || !awayName) return null;
+
+  const table = getGroupTableForMatch(match, groupSnapshots);
+  const homeRow = findTableRow(table, homeName);
+  const awayRow = findTableRow(table, awayName);
+  const otherRows = otherGroupTeamsInMatch(match.group, homeName, awayName, table);
+  if (!homeRow || !awayRow || otherRows.length !== 2) return null;
+
+  const [o1, o2] = otherRows;
+  const bothQualifyIfDraw = bothQualifyWithDraw(homeRow, awayRow, otherRows);
+  const zeroSumDecisive = isZeroSumDecisiveMatch(homeRow, awayRow, otherRows);
+  const homeAlreadyIn = teamAlreadyQualified(homeRow, awayRow, otherRows);
+  const awayAlreadyIn = teamAlreadyQualified(awayRow, homeRow, otherRows);
+  const bothAlreadyIn = homeAlreadyIn && awayAlreadyIn;
+  const homeOutIfLoss = !teamStaysTop2WithPts(homeRow, awayRow, otherRows, homeRow.pts);
+  const awayOutIfLoss = !teamStaysTop2WithPts(awayRow, homeRow, otherRows, awayRow.pts);
+  const equalPts = homeRow.pts === awayRow.pts;
+  const bracket = KNOCKOUT_BRACKET[match.group];
+
+  const logicSteps = [];
+  logicSteps.push(
+    homeName + ' ' + homeRow.pts + ' 分 vs ' + awayName + ' ' + awayRow.pts + ' 分；'
+    + '同组另一场 ' + o1.team + '（' + o1.pts + ' 分）vs ' + o2.team + '（' + o2.pts + ' 分）',
+  );
+
+  let scenarioType = null;
+
+  /**
+   * 默契球（结构型）—— 与用户定义对齐：
+   * ① 握手 → 双方都能出线；② 有胜负 → 零和（仅胜者活、败者死）；③ 且赛前并非「输球也稳出线」。
+   * 典型：双方各 3 分末轮对话。实力接近是心理层，不在此硬编码。
+   * 反例：各 6 分已出线 —— 一方赢球时 loser 仍可能在前二，非零和。
+   */
+  const tacitDrawStructure = bothQualifyIfDraw && zeroSumDecisive && !bothAlreadyIn;
+
+  /**
+   * 已出线控分：输球亦锁前二 —— 胜负不影响「进不进淘汰赛」，只影响头/次席与 32 强/16 强对位。
+   * 可能轮换练兵，但不存在「必须握手才能两人携手出线」的逻辑。
+   */
+  const pathControlStructure = bothAlreadyIn && bothQualifyIfDraw;
+
+  const asymmetricThird = detectAsymmetricThirdDrawSafety(
+    homeRow, awayRow, otherRows, homeName, awayName, match,
+  );
+
+  if (tacitDrawStructure) {
+    scenarioType = 'tacit_draw';
+    logicSteps.push('逻辑：若握手 → 双方均可出线（不论同组另一场结果）');
+    logicSteps.push('逻辑：若有胜负 → 胜者晋级、败者淘汰（零和，只活一队）');
+    logicSteps.push('逻辑：此结构下，实力接近的双方不愿冒险 —— 各取 1 分携手晋级是理性选择');
+    if (equalPts && homeRow.pts <= 3) {
+      logicSteps.push('典型：双方同积 ' + homeRow.pts + ' 分末轮对话 —— 「踢平都活、谁输谁死」');
+    }
+  } else if (asymmetricThird) {
+    scenarioType = 'asymmetric_third';
+    logicSteps.push('逻辑：' + asymmetricThird.strong_side + ' 已锁前二（输球亦稳出线）→ 本场胜负对其仅影响顺位/练兵');
+    logicSteps.push('逻辑：' + asymmetricThird.weak_side + ' 仍不确定 —— 输球基本出局；握手可列第 3，仍有机会进「12 进 8」争八池（'
+      + asymmetricThird.draw_pts_if_draw + ' 分）');
+    logicSteps.push('逻辑：弱队若赢球当然稳进，但怕冒进输球 → 理性策略转为「保平争胜」，主动性偏保守');
+    logicSteps.push('逻辑：强队无生死压力或接受低强度 → 与弱队「各取所需」的平局概率上升（不对称默契）');
+  } else if (pathControlStructure) {
+    scenarioType = 'path_control';
+    logicSteps.push('逻辑：即使本场输球，' + homeName + '、' + awayName + ' 仍稳居前二 → 均已出线');
+    logicSteps.push('逻辑：胜负不改变「进不进淘汰赛」，只决定头名/次席 → 32 强/16 强对位不同'
+      + (bracket?.tradeoff ? '（' + bracket.tradeoff + '）' : ''));
+    logicSteps.push('逻辑：可轮换、试战术，但≠默契球 —— 没有「必须平局才能两人携手出线」的必要；头名之争仍可能真刀真枪');
+  } else if (bothAlreadyIn) {
+    scenarioType = 'path_control';
+    logicSteps.push('逻辑：双方均已锁定出线；本场影响排名与淘汰路径，非生死战');
+  } else if (homeOutIfLoss || awayOutIfLoss) {
+    scenarioType = 'must_fight';
+    logicSteps.push('逻辑：至少一方输球可能出局 → 须全力抢分，无控分/默契空间');
+  }
+
+  return {
+    home_pts: homeRow.pts,
+    away_pts: awayRow.pts,
+    home_already_qualified: homeAlreadyIn,
+    away_already_qualified: awayAlreadyIn,
+    both_already_qualified: bothAlreadyIn,
+    both_qualify_if_draw: bothQualifyIfDraw,
+    zero_sum_decisive: zeroSumDecisive,
+    home_out_if_loss: homeOutIfLoss,
+    away_out_if_loss: awayOutIfLoss,
+    tacit_draw_structure: tacitDrawStructure,
+    path_control_structure: pathControlStructure,
+    asymmetric_third: asymmetricThird,
+    scenario_type: scenarioType,
+    logic_steps: logicSteps,
+    path_tradeoff: bracket?.tradeoff || null,
+  };
+}
+
+/**
+ * 末轮出线博弈 → 推演修正（基于逻辑分类，非一律抬平局）
+ */
+function computeQualificationDynamics(match, groupSnapshots) {
+  const logic = analyzeQualificationLogic(match, groupSnapshots);
+  if (!logic?.scenario_type) return null;
+
+  let drawBoost = 0;
+  let xgScaleHome = 1;
+  let xgScaleAway = 1;
+  const notes = [];
+
+  if (logic.scenario_type === 'tacit_draw') {
+    drawBoost += 10;
+    xgScaleHome *= 0.88;
+    xgScaleAway *= 0.88;
+    notes.push('默契球结构：平局为双方携手出线交汇点');
+    if (logic.home_out_if_loss && logic.away_out_if_loss) {
+      drawBoost += 2;
+      notes.push('双方输球均有出局风险');
+    }
+  } else if (logic.scenario_type === 'asymmetric_third') {
+    const asym = logic.asymmetric_third;
+    drawBoost += 7;
+    if (asym.weak_likely_underdog) drawBoost += 2;
+    notes.push('争八不对称：弱队保平争第三，平局权重上调');
+    if (asym.weak_is_home) {
+      xgScaleHome *= 0.93;
+      xgScaleAway *= 0.96;
+    } else {
+      xgScaleHome *= 0.96;
+      xgScaleAway *= 0.93;
+    }
+    notes.push(asym.weak_side + ' 输球出局 · 平局争第 3 · 赢球稳进');
+  } else if (logic.scenario_type === 'path_control') {
+    xgScaleHome *= 0.94;
+    xgScaleAway *= 0.94;
+    notes.push('已出线：或轮换/练兵，xG 略降');
+    notes.push('头名/次席影响淘汰对位，不额外抬平局');
+  } else if (logic.scenario_type === 'must_fight') {
+    return null;
+  }
+
+  if (!drawBoost && xgScaleHome >= 0.99 && xgScaleAway >= 0.99) return null;
+
+  let summary;
+  if (logic.scenario_type === 'tacit_draw') {
+    summary = '对称默契球：踢平都活、谁输谁死，推演上调平局权重';
+  } else if (logic.scenario_type === 'asymmetric_third') {
+    summary = '争八不对称默契：强队已出线，弱队保平争第三（输球出局）';
+  } else if (logic.scenario_type === 'path_control') {
+    summary = '已出线控分：胜负只争头/次席与淘汰对位，可练兵但≠默契球';
+  } else {
+    summary = logic.logic_steps[logic.logic_steps.length - 1] || '';
+  }
+
+  return {
+    scenario_type: logic.scenario_type,
+    mutual_draw_advances: logic.tacit_draw_structure,
+    path_control: logic.path_control_structure,
+    asymmetric_third: logic.asymmetric_third,
+    both_already_qualified: logic.both_already_qualified,
+    home_already_qualified: logic.home_already_qualified,
+    away_already_qualified: logic.away_already_qualified,
+    home_out_if_loss: logic.home_out_if_loss,
+    away_out_if_loss: logic.away_out_if_loss,
+    logic_steps: logic.logic_steps,
+    drawBoost: Math.min(12, drawBoost),
+    xgScaleHome,
+    xgScaleAway,
+    notes,
+    summary,
+  };
+}
+
 /**
  * 平局 / 铁桶 / 势均力敌 — 回测 v2 修正层
  * @returns {{ drawBoost, ironBucket, closeXg, gap, notes }}
  */
-function detectDrawContextFlags(match, xgHome, xgAway) {
+function detectDrawContextFlags(match, xgHome, xgAway, qualDynamics) {
   const xgH = Number(xgHome) || 0;
   const xgA = Number(xgAway) || 0;
   const gap = Math.round(Math.abs(xgH - xgA) * 100) / 100;
@@ -1740,19 +2100,25 @@ function detectDrawContextFlags(match, xgHome, xgAway) {
     drawBoost += 5;
     notes.push('深盘但 xG 难拉开');
   }
+  if (qualDynamics?.drawBoost) {
+    drawBoost += qualDynamics.drawBoost;
+    notes.push(...(qualDynamics.notes || []));
+  }
 
   return {
-    drawBoost: Math.min(10, drawBoost),
+    drawBoost: Math.min(18, drawBoost),
     ironBucket,
     closeXg,
     gap,
     notes,
+    qual_dynamics: qualDynamics || null,
   };
 }
 
 /** 在泊松胜平负上叠加平局修正（从胜负两侧按比例扣回） */
-function applyDrawContextAdjust(probs, match, xgHome, xgAway) {
-  const ctx = detectDrawContextFlags(match, xgHome, xgAway);
+function applyDrawContextAdjust(probs, match, xgHome, xgAway, groupSnapshots) {
+  const qualDynamics = computeQualificationDynamics(match, groupSnapshots);
+  const ctx = detectDrawContextFlags(match, xgHome, xgAway, qualDynamics);
   const hw = Number(probs.home_win) || 0;
   const d = Number(probs.draw) || 0;
   const aw = Number(probs.away_win) || 0;
@@ -1767,6 +2133,21 @@ function applyDrawContextAdjust(probs, match, xgHome, xgAway) {
     aw - boost * (aw / winTotal),
   );
   return { ...adj, draw_context: ctx };
+}
+
+/** 在深度校准后的胜平负上叠加末轮出线博弈平局修正 */
+function applyQualificationDrawBoost(probs, qualDynamics) {
+  if (!qualDynamics?.drawBoost) return probs;
+  const hw = Number(probs.home_win) || 0;
+  const d = Number(probs.draw) || 0;
+  const aw = Number(probs.away_win) || 0;
+  const winTotal = hw + aw || 1;
+  const boost = qualDynamics.drawBoost;
+  return normalizeProb(
+    hw - boost * (hw / winTotal),
+    d + boost,
+    aw - boost * (aw / winTotal),
+  );
 }
 
 /** 胜平负概率排序（高→低） */
@@ -1800,15 +2181,20 @@ function outcomeTop2Hit(probs, actualKey) {
 }
 
 /** 伤病 + 气候 → 调整后 xG（基准 xG 含 sync-lineups 预调；此处仅追加展示因子） */
-function buildMatchContextAdjustments(match, xgHome, xgAway) {
+function buildMatchContextAdjustments(match, xgHome, xgAway, groupSnapshots) {
   const homeInj = summarizeInjuries(match.home?.name || '主队', match.home?.injuries);
   const awayInj = summarizeInjuries(match.away?.name || '客队', match.away?.injuries);
   const wx = weatherXgModifier(match.weather);
   const lineupNote = lineupContextNote(match);
-  const tac = detectDrawContextFlags(match, xgHome, xgAway);
+  const qualDynamics = computeQualificationDynamics(match, groupSnapshots);
+  const tac = detectDrawContextFlags(match, xgHome, xgAway, qualDynamics);
 
   let xgH = Math.max(0.15, xgHome * (1 - homeInj.mod) * wx.mod);
   let xgA = Math.max(0.15, xgAway * (1 - awayInj.mod) * wx.mod);
+  if (qualDynamics) {
+    xgH *= qualDynamics.xgScaleHome;
+    xgA *= qualDynamics.xgScaleAway;
+  }
   if (tac.ironBucket && tac.gap < 1.05) {
     xgH = Math.round(xgH * 0.94 * 100) / 100;
     xgA = Math.round(xgA * 0.96 * 100) / 100;
@@ -1831,6 +2217,16 @@ function buildMatchContextAdjustments(match, xgHome, xgAway) {
   if (lineupNote) {
     factors.push({ icon: '📋', label: '官方首发', note: lineupNote });
   }
+  if (qualDynamics?.summary) {
+    factors.push({
+      icon: '🎯',
+      label: '出线博弈',
+      note: qualDynamics.summary
+        + (qualDynamics.scenario_type === 'tacit_draw' ? ' · 对称默契球'
+          : qualDynamics.scenario_type === 'asymmetric_third' ? ' · 争八不对称'
+          : qualDynamics.scenario_type === 'path_control' ? ' · 已出线争顺位' : ''),
+    });
+  }
   if (tac.drawBoost > 0) {
     factors.push({
       icon: '⚖️',
@@ -1838,7 +2234,15 @@ function buildMatchContextAdjustments(match, xgHome, xgAway) {
       note: '回测校准：' + tac.notes.join(' · ') + '（平 +' + tac.drawBoost + '%）',
     });
   }
-  return { xg_home: xgH, xg_away: xgA, factors, coach_home: coachH, coach_away: coachA, draw_context: tac };
+  return {
+    xg_home: xgH,
+    xg_away: xgA,
+    factors,
+    coach_home: coachH,
+    coach_away: coachA,
+    draw_context: tac,
+    qual_dynamics: qualDynamics,
+  };
 }
 
 function applyScenarioXg(xgH, xgA, coachHome, coachAway, scorerSide) {
@@ -3557,6 +3961,52 @@ function assessManipulationRisk(group, matchday, homeTeam, awayTeam, table, cros
   const hr = homeRow || { pts: 0, p: 0 };
   const ar = awayRow || { pts: 0, p: 0 };
 
+  const qualDyn = computeQualificationDynamics(
+    { group, matchday, home: { name: homeTeam }, away: { name: awayTeam } },
+    snapshots,
+  );
+  const qualLogic = analyzeQualificationLogic(
+    { group, matchday, home: { name: homeTeam }, away: { name: awayTeam } },
+    snapshots,
+  );
+  if (qualLogic?.tacit_draw_structure) {
+    return finishManipulationRisk({
+      level: 'HIGH',
+      level_cn: '高',
+      focus_team: null,
+      reason: homeTeam + ' 与 ' + awayTeam + ' 末轮存在「默契平局」结构：握手双方均可出线；'
+        + '若分出胜负则零和（仅胜者晋级、败者淘汰）'
+        + (qualLogic.home_pts === qualLogic.away_pts && qualLogic.home_pts <= 3
+          ? '（双方同积 ' + qualLogic.home_pts + ' 分，典型「踢平都活、谁输谁死」）'
+          : '')
+        + '。实力接近时双方或不愿冒险，推演上调平局权重。',
+      logic_steps: qualLogic.logic_steps,
+    }, ctx);
+  }
+  if (qualLogic?.asymmetric_third) {
+    const a = qualLogic.asymmetric_third;
+    return finishManipulationRisk({
+      level: 'MEDIUM',
+      level_cn: '中',
+      focus_team: a.weak_side,
+      reason: a.strong_side + ' 已锁前二；' + a.weak_side + ' 仍不确定：输球基本出局，握手可争第 3 进「12 进 8」争八池（'
+        + a.draw_pts_if_draw + ' 分），赢球则稳进。弱队或「保平争胜」、强队可低强度——不对称默契，推演略抬平局。',
+      logic_steps: qualLogic.logic_steps,
+    }, ctx);
+  }
+  if (qualLogic?.path_control_structure) {
+    return finishManipulationRisk({
+      level: 'MEDIUM',
+      level_cn: '中',
+      focus_team: STRONG_TEAMS.has(homeTeam) ? homeTeam : STRONG_TEAMS.has(awayTeam) ? awayTeam : null,
+      reason: homeTeam + '、' + awayTeam + ' 均已锁定出线（输球亦稳居前二）。'
+        + '胜负不影响晋级，只争头名/次席及淘汰赛对位'
+        + (bracket?.tradeoff ? '（' + bracket.tradeoff + '）' : '')
+        + '。可轮换练兵，但≠默契球——没有「必须平局才能携手出线」的逻辑。',
+      logic_steps: qualLogic.logic_steps,
+    }, ctx);
+  }
+
   /** 末轮垫底生死战：双方均无控分空间（如波黑 vs 卡塔尔各 1 分） */
   if (matchday >= 3 && hr.pts <= 1 && ar.pts <= 1) {
     return finishManipulationRisk({
@@ -3865,6 +4315,22 @@ function buildInsightKeyFactors(match, groupContext, baseKeyFactor) {
     factors.push({ icon: '📊', label: '小组积分', text: standingsNote });
   }
 
+  const risk = groupContext?.manipulation_risk;
+  if (risk && (risk.level === 'HIGH' || risk.level === 'MEDIUM')) {
+    const gist = risk.reason || risk.optimal_summary || '';
+    const logicHint = risk.logic_steps?.length
+      ? ' · ' + risk.logic_steps.filter(s => s.startsWith('逻辑：')).slice(-1)[0].replace(/^逻辑：/, '')
+      : '';
+    if (gist) {
+      factors.push({
+        icon: '🎯',
+        label: '出线博弈',
+        text: gist.split('。')[0] + logicHint
+          + (risk.level_cn === '高' ? ' · 默契球结构' : risk.level_cn === '中' ? ' · 已出线争顺位' : ''),
+      });
+    }
+  }
+
   const w = match.weather;
   if (w) {
     const wx = weatherXgModifier(w);
@@ -3905,6 +4371,9 @@ const exportsObj = {
   buildMatchContextAdjustments,
   detectDrawContextFlags,
   applyDrawContextAdjust,
+  analyzeQualificationLogic,
+  computeQualificationDynamics,
+  applyQualificationDrawBoost,
   rankOutcomes,
   getOutcomeTop2,
   isDrawInTop2,

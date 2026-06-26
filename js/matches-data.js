@@ -201,31 +201,31 @@ const MATCH_DATA = {
         "score_dist": [
           {
             "score": "1-1",
-            "prob": 11.2
+            "prob": 11.8
+          },
+          {
+            "score": "0-1",
+            "prob": 8.5
           },
           {
             "score": "1-2",
             "prob": 8.5
           },
           {
-            "score": "2-1",
+            "score": "1-0",
             "prob": 8.3
           },
           {
-            "score": "0-1",
-            "prob": 7.6
-          },
-          {
-            "score": "1-0",
-            "prob": 7.4
-          },
-          {
-            "score": "2-2",
-            "prob": 6.3
+            "score": "2-1",
+            "prob": 8.2
           },
           {
             "score": "0-2",
-            "prob": 5.8
+            "prob": 6.1
+          },
+          {
+            "score": "0-0",
+            "prob": 6
           }
         ],
         "insight_factors": [
@@ -233,6 +233,11 @@ const MATCH_DATA = {
             "icon": "📊",
             "label": "小组积分",
             "text": "Norway 暂列 I 组第 2（6 分 · 已赛 2 场） vs France 第 1（6 分 · 已赛 2 场）"
+          },
+          {
+            "icon": "🎯",
+            "label": "出线博弈",
+            "text": "Norway、France 均已锁定出线（输球亦稳居前二） · 可轮换、试战术，但≠默契球 —— 没有「必须平局才能两人携手出线」的必要；头名之争仍可能真刀真枪 · 已出线争顺位"
           },
           {
             "icon": "🌤️",
@@ -256,27 +261,77 @@ const MATCH_DATA = {
           "gap": 0.04,
           "notes": [
             "xG 极接近"
-          ]
+          ],
+          "qual_dynamics": {
+            "scenario_type": "path_control",
+            "mutual_draw_advances": false,
+            "path_control": true,
+            "asymmetric_third": null,
+            "both_already_qualified": true,
+            "home_already_qualified": true,
+            "away_already_qualified": true,
+            "home_out_if_loss": false,
+            "away_out_if_loss": false,
+            "logic_steps": [
+              "Norway 6 分 vs France 6 分；同组另一场 Senegal（0 分）vs Iraq（0 分）",
+              "逻辑：即使本场输球，Norway、France 仍稳居前二 → 均已出线",
+              "逻辑：胜负不改变「进不进淘汰赛」，只决定头名/次席 → 32 强/16 强对位不同（I 组次席走 M78，与 E 组次席同槽，16 强汇入 C/F 半区。）",
+              "逻辑：可轮换、试战术，但≠默契球 —— 没有「必须平局才能两人携手出线」的必要；头名之争仍可能真刀真枪"
+            ],
+            "drawBoost": 0,
+            "xgScaleHome": 0.94,
+            "xgScaleAway": 0.94,
+            "notes": [
+              "已出线：或轮换/练兵，xG 略降",
+              "头名/次席影响淘汰对位，不额外抬平局"
+            ],
+            "summary": "已出线控分：胜负只争头/次席与淘汰对位，可练兵但≠默契球"
+          }
         },
-        "xg_poisson_home": 1.48,
-        "xg_poisson_away": 1.52,
+        "xg_poisson_home": 1.39,
+        "xg_poisson_away": 1.43,
         "xg_tier_calibrated": false,
-        "score_prob": 11.2,
+        "score_prob": 11.8,
         "score_top3": [
           {
             "score": "1-1",
-            "prob": 11.2
+            "prob": 11.8
+          },
+          {
+            "score": "0-1",
+            "prob": 8.5
           },
           {
             "score": "1-2",
             "prob": 8.5
-          },
-          {
-            "score": "2-1",
-            "prob": 8.3
           }
         ],
-        "expected_score": "1-2"
+        "expected_score": "1-1",
+        "qual_dynamics": {
+          "scenario_type": "path_control",
+          "mutual_draw_advances": false,
+          "path_control": true,
+          "asymmetric_third": null,
+          "both_already_qualified": true,
+          "home_already_qualified": true,
+          "away_already_qualified": true,
+          "home_out_if_loss": false,
+          "away_out_if_loss": false,
+          "logic_steps": [
+            "Norway 6 分 vs France 6 分；同组另一场 Senegal（0 分）vs Iraq（0 分）",
+            "逻辑：即使本场输球，Norway、France 仍稳居前二 → 均已出线",
+            "逻辑：胜负不改变「进不进淘汰赛」，只决定头名/次席 → 32 强/16 强对位不同（I 组次席走 M78，与 E 组次席同槽，16 强汇入 C/F 半区。）",
+            "逻辑：可轮换、试战术，但≠默契球 —— 没有「必须平局才能两人携手出线」的必要；头名之争仍可能真刀真枪"
+          ],
+          "drawBoost": 0,
+          "xgScaleHome": 0.94,
+          "xgScaleAway": 0.94,
+          "notes": [
+            "已出线：或轮换/练兵，xG 略降",
+            "头名/次席影响淘汰对位，不额外抬平局"
+          ],
+          "summary": "已出线控分：胜负只争头/次席与淘汰对位，可练兵但≠默契球"
+        }
       },
       "weather": {
         "city": "波士顿",
@@ -421,46 +476,46 @@ const MATCH_DATA = {
         },
         "display_summary": {
           "fav_name": "France",
-          "expected_total_goals": 2.96,
-          "poisson_fav_win_pct": 38.6,
-          "small_lead_pct": 20.1,
+          "expected_total_goals": 2.79,
+          "poisson_fav_win_pct": 38.2,
+          "small_lead_pct": 20.4,
           "small_example_score": "0-1",
-          "small_example_pct": 7.6,
-          "big_cover_pct": 18.5,
+          "small_example_pct": 8.6,
+          "big_cover_pct": 17.8,
           "big_example_score": "0-2",
-          "big_example_pct": 5.8,
+          "big_example_pct": 6.1,
           "win_shape": {
             "fav_name": "France",
             "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以险胜·开放为主（险胜 · 开放 32.4%）",
+            "lead_cn": "取胜时以险胜·开放为主（险胜 · 开放 31%）",
             "shapes": [
               {
                 "key": "narrow_low",
                 "label": "险胜 · 控局",
                 "example": "如 1-0",
-                "field_pct": 7.6,
-                "pct": 19.8
+                "field_pct": 8.6,
+                "pct": 22.5
               },
               {
                 "key": "narrow_open",
                 "label": "险胜 · 开放",
                 "example": "如 2-1",
-                "field_pct": 12.5,
-                "pct": 32.4
+                "field_pct": 11.9,
+                "pct": 31
               },
               {
                 "key": "comfort_low",
                 "label": "拉开 · 控局",
                 "example": "如 2-0",
-                "field_pct": 8.7,
-                "pct": 22.6
+                "field_pct": 9.1,
+                "pct": 23.7
               },
               {
                 "key": "comfort_open",
                 "label": "拉开 · 开放",
                 "example": "如 3-1+",
-                "field_pct": 9.7,
-                "pct": 25.2
+                "field_pct": 8.7,
+                "pct": 22.8
               }
             ],
             "paths": [
@@ -468,19 +523,19 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 52.2
+                "pct": 53.5
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 22.6
+                "pct": 23.7
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 25.2
+                "pct": 22.8
               }
             ],
             "fav_win_pct": 37
@@ -489,26 +544,26 @@ const MATCH_DATA = {
             "label_cn": "中速开局",
             "label_key": "moderate",
             "label_color": "#C8A96E",
-            "sub_cn": "预期首球等待约 30 分",
-            "first_goal_wait": 30,
-            "fast_pct": 63.2,
-            "moderate_pct": 14.5,
-            "slow_pct": 22.3,
+            "sub_cn": "预期首球等待约 31.9 分",
+            "first_goal_wait": 31.9,
+            "fast_pct": 60.9,
+            "moderate_pct": 14.6,
+            "slow_pct": 24.4,
             "tiers": [
               {
                 "key": "fast",
                 "label": "前 30 分内首球",
-                "pct": 63.2
+                "pct": 60.9
               },
               {
                 "key": "moderate",
                 "label": "30–45 分首球",
-                "pct": 14.5
+                "pct": 14.6
               },
               {
                 "key": "slow",
                 "label": "45 分后首球",
-                "pct": 22.3
+                "pct": 24.4
               }
             ]
           },
@@ -530,6 +585,11 @@ const MATCH_DATA = {
               "note": "I组榜首战各6分——Haaland vs Mbappé 由战术主导"
             },
             {
+              "icon": "🎯",
+              "label": "出线博弈",
+              "note": "已出线控分：胜负只争头/次席与淘汰对位，可练兵但≠默契球 · 已出线争顺位"
+            },
+            {
               "icon": "⚖️",
               "label": "平局修正",
               "note": "回测校准：xG 极接近（平 +4%）"
@@ -538,9 +598,9 @@ const MATCH_DATA = {
           "xg_context": {
             "baseline_home": 1.48,
             "baseline_away": 1.52,
-            "adjusted_home": 1.48,
-            "adjusted_away": 1.52,
-            "note": "基准 xG 1.48–1.52（未因伤病/气候下调）"
+            "adjusted_home": 1.39,
+            "adjusted_away": 1.43,
+            "note": "基准 xG 1.48–1.52 → 调整后 1.39–1.43"
           },
           "calibration": {
             "signal_cn": "均衡",
@@ -559,19 +619,19 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 52.2
+                "pct": 53.5
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 22.6
+                "pct": 23.7
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 25.2
+                "pct": 22.8
               }
             ],
             "margin_line_cn": "净胜差距参考 · 势均力敌",
@@ -585,38 +645,38 @@ const MATCH_DATA = {
             "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
             "totals_line": 2.75,
             "totals_line_cn": "总进球参考 2.75",
-            "fair_totals_line": 2.75,
-            "model_total_xg": 3,
-            "totals_line_gap": 0,
-            "totals_high_pct": 46,
-            "totals_low_pct": 54,
+            "fair_totals_line": 2,
+            "model_total_xg": 2.82,
+            "totals_line_gap": 0.75,
+            "totals_high_pct": 42,
+            "totals_low_pct": 58,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 13.4,
-            "win_margin2_low_total_pct": 5.8,
-            "win_margin2_high_total_pct": 12.7,
-            "readout_cn": "取胜约 37%；若取胜，以「险胜收工」为主（52.2%）。 对着赛前净胜参考，净胜≥1（全达标）约 0%；对着总进球参考 2.75，模型超线概率约 46%。"
+            "win_low_total_pct": 14.7,
+            "win_margin2_low_total_pct": 6.1,
+            "win_margin2_high_total_pct": 11.6,
+            "readout_cn": "取胜约 37%；若取胜，以「险胜收工」为主（53.5%）。 对着赛前净胜参考，净胜≥1（全达标）约 0%；对着总进球参考 2.75，模型超线概率约 42%。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 11.3
+              "pct": 11.9
             },
             {
-              "score": "1-2",
+              "score": "0-1",
               "pct": 8.6
             },
             {
-              "score": "2-1",
-              "pct": 8.4
+              "score": "1-2",
+              "pct": 8.5
             }
           ],
           "totals_view": {
-            "expected_total": 3,
-            "fair_line": 2.75,
+            "expected_total": 2.8,
+            "fair_line": 2,
             "market_line": 2.75,
-            "line_gap": 0,
-            "over_pct": 46,
+            "line_gap": 0.75,
+            "over_pct": 42,
             "gap_warning": null,
             "totals_outlook": {
               "level": "neutral",
@@ -631,14 +691,14 @@ const MATCH_DATA = {
               "detail_cn": "模型五五开，临场决定节奏。",
               "headline_cn": "进球氛围：几乎五五开",
               "show_lean": false,
-              "over_pct": 46,
-              "line_gap": 0,
+              "over_pct": 42,
+              "line_gap": 0.75,
               "market_line": 2.75,
               "market_goals_int": 3,
               "market_goals_cn": "总进球参考 2.75",
               "caution_public_high": false
             },
-            "summary_cn": "预测 3 · 合理值 2.75 · 总进球参考 2.75 · 模型在常见进球预期附近均衡，不作强倾向"
+            "summary_cn": "预测 2.8 · 合理值 2 · 总进球参考 2.75（高于合理值 0.75） · 高于合理值 0.75 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
             "headline_cn": "净胜走向：双方实力接近",
@@ -671,8 +731,8 @@ const MATCH_DATA = {
               "detail_cn": "模型五五开，临场决定节奏。",
               "headline_cn": "进球氛围：几乎五五开",
               "show_lean": false,
-              "over_pct": 46,
-              "line_gap": 0,
+              "over_pct": 42,
+              "line_gap": 0.75,
               "market_line": 2.75,
               "market_goals_int": 3,
               "market_goals_cn": "总进球参考 2.75",
@@ -720,8 +780,8 @@ const MATCH_DATA = {
                   "detail_cn": "模型五五开，临场决定节奏。",
                   "headline_cn": "进球氛围：几乎五五开",
                   "show_lean": false,
-                  "over_pct": 46,
-                  "line_gap": 0,
+                  "over_pct": 42,
+                  "line_gap": 0.75,
                   "market_line": 2.75,
                   "market_goals_int": 3,
                   "market_goals_cn": "总进球参考 2.75",
@@ -743,48 +803,48 @@ const MATCH_DATA = {
               "fav_name": "Norway",
               "scorer_is_fav": false,
               "expected_key": "fav_recover",
-              "fav_recover_pct": 81.6,
-              "small_lead_pct": 27.2,
-              "big_lead_pct": 32.1,
-              "fav_win_pct": 59.3,
-              "fav_draw_pct": 22.3,
-              "fav_lose_pct": 18.4,
+              "fav_recover_pct": 82.4,
+              "small_lead_pct": 28.2,
+              "big_lead_pct": 31.7,
+              "fav_win_pct": 59.9,
+              "fav_draw_pct": 22.5,
+              "fav_lose_pct": 17.6,
               "outcomes": [
                 {
                   "key": "draw",
                   "label": "Norway 追平（平局）",
-                  "pct": 22.3
+                  "pct": 22.5
                 },
                 {
                   "key": "win1",
                   "label": "Norway 净胜1球翻盘（如 2-1）",
-                  "pct": 27.2
+                  "pct": 28.2
                 },
                 {
                   "key": "win2",
                   "label": "Norway 净胜≥2球翻盘（如 3-1）",
-                  "pct": 32.1
+                  "pct": 31.7
                 },
                 {
                   "key": "upset_hold",
                   "label": "Norway 保持胜果至终场",
-                  "pct": 18.4
+                  "pct": 17.6
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 30 分",
-                "first_goal_wait": 30,
-                "fast_pct": 56,
+                "sub_cn": "预期首球等待约 31.8 分",
+                "first_goal_wait": 31.8,
+                "fast_pct": 53.9,
                 "moderate_pct": 14.8,
-                "slow_pct": 29.2,
+                "slow_pct": 31.3,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 56
+                    "pct": 53.9
                   },
                   {
                     "key": "moderate",
@@ -794,12 +854,12 @@ const MATCH_DATA = {
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 29.2
+                    "pct": 31.3
                   }
                 ]
               },
-              "big_delta": 13.6,
-              "small_delta": 7.1,
+              "big_delta": 13.9,
+              "small_delta": 7.8,
               "narrative": "Norway 先破门（已 1-0） → 「巩固防守」；France 「组织反扑」。落后方压上反扑，比赛更开放，但热门要净胜两球以上仍须连续破门。",
               "live_outlook": null
             },
@@ -811,43 +871,43 @@ const MATCH_DATA = {
               "fav_name": "France",
               "scorer_is_fav": true,
               "expected_key": "hold_win",
-              "fav_recover_pct": 82.6,
-              "small_lead_pct": 27.3,
-              "big_lead_pct": 33.6,
-              "fav_win_pct": 60.9,
-              "fav_draw_pct": 21.7,
-              "fav_lose_pct": 17.3,
+              "fav_recover_pct": 83.6,
+              "small_lead_pct": 28.4,
+              "big_lead_pct": 33.2,
+              "fav_win_pct": 61.6,
+              "fav_draw_pct": 22,
+              "fav_lose_pct": 16.4,
               "outcomes": [
                 {
                   "key": "hold_win",
                   "label": "France 保持胜果（净胜≥1）",
-                  "pct": 60.9
+                  "pct": 61.6
                 },
                 {
                   "key": "drawn",
                   "label": "被扳平",
-                  "pct": 21.7
+                  "pct": 22
                 },
                 {
                   "key": "lost",
                   "label": "被逆转落败",
-                  "pct": 17.3
+                  "pct": 16.4
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 30 分",
-                "first_goal_wait": 30,
-                "fast_pct": 56,
+                "sub_cn": "预期首球等待约 32 分",
+                "first_goal_wait": 32,
+                "fast_pct": 53.6,
                 "moderate_pct": 14.8,
-                "slow_pct": 29.2,
+                "slow_pct": 31.6,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 56
+                    "pct": 53.6
                   },
                   {
                     "key": "moderate",
@@ -857,12 +917,12 @@ const MATCH_DATA = {
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 29.2
+                    "pct": 31.6
                   }
                 ]
               },
-              "big_delta": 15.1,
-              "small_delta": 7.2,
+              "big_delta": 15.4,
+              "small_delta": 8,
               "narrative": "France 先破门（已 0-1） → 「巩固防守」；Norway 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
               "live_outlook": {
                 "fav_name": "France",
@@ -872,25 +932,25 @@ const MATCH_DATA = {
                     "key": "narrow",
                     "label": "险胜收工",
                     "example": "如 1-0、2-1",
-                    "pct": 52.2
+                    "pct": 53.5
                   },
                   {
                     "key": "clean",
                     "label": "零封拉开",
                     "example": "如 2-0、3-0",
-                    "pct": 22.6
+                    "pct": 23.7
                   },
                   {
                     "key": "open",
                     "label": "开放拉开",
                     "example": "如 3-1+",
-                    "pct": 25.2
+                    "pct": 22.8
                   }
                 ],
                 "margin_line_cn": "净胜差距参考 · 势均力敌",
-                "margin_meet_pct": 17.3,
+                "margin_meet_pct": 16.4,
                 "margin_half_pct": 0,
-                "margin_fail_pct": 11.4,
+                "margin_fail_pct": 11.1,
                 "margin_full_label": "净胜≥1",
                 "margin_half_label": null,
                 "final_2_0_pct": null,
@@ -898,24 +958,24 @@ const MATCH_DATA = {
                 "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
                 "totals_line": 2.75,
                 "totals_line_cn": "总进球参考 2.75",
-                "fair_totals_line": 2,
-                "model_total_xg": 2.46,
-                "totals_line_gap": 0.75,
-                "totals_high_pct": 57.4,
-                "totals_low_pct": 42.6,
+                "fair_totals_line": 2.25,
+                "model_total_xg": 2.3,
+                "totals_line_gap": 0.5,
+                "totals_high_pct": 53.6,
+                "totals_low_pct": 46.4,
                 "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
                 "win_low_total_pct": 0,
                 "win_margin2_low_total_pct": 0,
-                "win_margin2_high_total_pct": 5.9,
-                "readout_cn": "France 已 1-0 领先：仍取胜约 17.3%。 对着总进球参考 2.75，模型超线概率约 57.4%。 若再扩大，偏「险胜收工」。"
+                "win_margin2_high_total_pct": 5.3,
+                "readout_cn": "France 已 1-0 领先：仍取胜约 16.4%。 对着总进球参考 2.75，模型超线概率约 53.6%。 若再扩大，偏「险胜收工」。"
               }
             }
           ],
           "match_preview": {
             "morphology": {
-              "totals_summary": "预测 3 · 合理值 2.75 · 总进球参考 2.75 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_summary": "预测 2.8 · 合理值 2 · 总进球参考 2.75（高于合理值 0.75） · 高于合理值 0.75 · 模型在常见进球预期附近均衡，不作强倾向",
               "totals_line_cn": "总进球参考 2.75",
-              "totals_high_pct": 46,
+              "totals_high_pct": 42,
               "type_tags": [
                 {
                   "key": "even_open",
@@ -942,35 +1002,35 @@ const MATCH_DATA = {
           },
           "halftime_preview": {
             "ht_xg_share": 0.44,
-            "xg_home_ht": 0.65,
-            "xg_away_ht": 0.67,
-            "xg_home_2h": 0.83,
-            "xg_away_2h": 0.85,
-            "home_win": 29.5,
-            "draw": 39.7,
-            "away_win": 30.8,
+            "xg_home_ht": 0.61,
+            "xg_away_ht": 0.63,
+            "xg_home_2h": 0.78,
+            "xg_away_2h": 0.8,
+            "home_win": 28.8,
+            "draw": 41.2,
+            "away_win": 30,
             "top_score": "0-0",
-            "top_score_prob": 26.7,
+            "top_score_prob": 28.9,
             "top3_scores": [
               {
                 "score": "0-0",
-                "prob": 26.7
+                "prob": 28.9
               },
               {
                 "score": "0-1",
-                "prob": 17.9
+                "prob": 18.2
               },
               {
                 "score": "1-0",
-                "prob": 17.4
+                "prob": 17.7
               }
             ],
-            "ht_goals_expected": 1.32,
-            "ht_over_0_5_pct": 73.3,
-            "ht_over_1_5_pct": 38,
+            "ht_goals_expected": 1.24,
+            "ht_over_0_5_pct": 71.1,
+            "ht_over_1_5_pct": 35.2,
             "pick": "draw",
             "pick_name": "平局",
-            "summary_cn": "半场 xG 0.65–0.67（约占全场 44%） · 最可能 0-0（26.7%） · 胜平负 29.5/39.7/30.8 · 半场≥1球约 73.3%",
+            "summary_cn": "半场 xG 0.61–0.63（约占全场 44%） · 最可能 0-0（28.9%） · 胜平负 28.8/41.2/30 · 半场≥1球约 71.1%",
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
@@ -983,7 +1043,7 @@ const MATCH_DATA = {
           "xg_away": 1.52,
           "xg_baseline_home": 1.48,
           "xg_baseline_away": 1.52,
-          "xg_note": "结构推演用基准 xG 1.48–1.52",
+          "xg_note": "结构推演用基准 xG 1.48–1.52（进球氛围用调整后 1.39–1.43）",
           "lean_note": "大/小概率接近或路径互斥——不作单边大/小标签。",
           "fav_name": "France",
           "dog_name": "Norway",
@@ -1146,8 +1206,39 @@ const MATCH_DATA = {
           "level": "MEDIUM",
           "level_cn": "中",
           "focus_team": "France",
-          "reason": "I 组次席走 M78，与 E 组次席同槽，16 强汇入 C/F 半区。",
-          "optimal_summary": "策略最优解（推演）：France 已握出线主动，末轮或适度收敛进攻、锻炼新兵并演练新战术，把核心体能留给淘汰赛；若次席仍紧追，仍宜控制场面——可借机锻炼新兵、尝试新战术演练——在出线分已足够的前提下，非胜结果亦可接受，以换取更顺的淘汰半区；但须守住净胜球边界，避免失手跌入第 3 争八区。"
+          "reason": "Norway、France 均已锁定出线（输球亦稳居前二）。胜负不影响晋级，只争头名/次席及淘汰赛对位（I 组次席走 M78，与 E 组次席同槽，16 强汇入 C/F 半区。）。可轮换练兵，但≠默契球——没有「必须平局才能携手出线」的逻辑。",
+          "logic_steps": [
+            "Norway 6 分 vs France 6 分；同组另一场 Senegal（0 分）vs Iraq（0 分）",
+            "逻辑：即使本场输球，Norway、France 仍稳居前二 → 均已出线",
+            "逻辑：胜负不改变「进不进淘汰赛」，只决定头名/次席 → 32 强/16 强对位不同（I 组次席走 M78，与 E 组次席同槽，16 强汇入 C/F 半区。）",
+            "逻辑：可轮换、试战术，但≠默契球 —— 没有「必须平局才能两人携手出线」的必要；头名之争仍可能真刀真枪"
+          ],
+          "optimal_summary": "策略最优解（推演）：France 已握出线主动，末轮或适度收敛进攻、锻炼新兵并演练新战术，把核心体能留给淘汰赛；若次席仍紧追，仍宜控制场面——可借机锻炼新兵、尝试新战术演练——在出线分已足够的前提下，非胜结果亦可接受，以换取更顺的淘汰半区；但须守住净胜球边界，避免失手跌入第 3 争八区。",
+          "qual_model": {
+            "scenario_type": "path_control",
+            "mutual_draw_advances": false,
+            "path_control": true,
+            "asymmetric_third": null,
+            "both_already_qualified": true,
+            "home_already_qualified": true,
+            "away_already_qualified": true,
+            "home_out_if_loss": false,
+            "away_out_if_loss": false,
+            "logic_steps": [
+              "Norway 6 分 vs France 6 分；同组另一场 Senegal（0 分）vs Iraq（0 分）",
+              "逻辑：即使本场输球，Norway、France 仍稳居前二 → 均已出线",
+              "逻辑：胜负不改变「进不进淘汰赛」，只决定头名/次席 → 32 强/16 强对位不同（I 组次席走 M78，与 E 组次席同槽，16 强汇入 C/F 半区。）",
+              "逻辑：可轮换、试战术，但≠默契球 —— 没有「必须平局才能两人携手出线」的必要；头名之争仍可能真刀真枪"
+            ],
+            "drawBoost": 0,
+            "xgScaleHome": 0.94,
+            "xgScaleAway": 0.94,
+            "notes": [
+              "已出线：或轮换/练兵，xG 略降",
+              "头名/次席影响淘汰对位，不额外抬平局"
+            ],
+            "summary": "已出线控分：胜负只争头/次席与淘汰对位，可练兵但≠默契球"
+          }
         },
         "knockout_note": "48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。",
         "scenarios": [
@@ -1372,7 +1463,8 @@ const MATCH_DATA = {
           "gap": 0.84,
           "notes": [
             "热门难破密集"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.98,
         "xg_poisson_away": 0.66,
@@ -1392,7 +1484,8 @@ const MATCH_DATA = {
             "prob": 9.3
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "weather": {
         "city": "多伦多",
@@ -2495,6 +2588,11 @@ const MATCH_DATA = {
             "text": "Egypt 暂列 G 组第 1（4 分 · 已赛 2 场） vs IR Iran 第 —（0 分 · 已赛 0 场）"
           },
           {
+            "icon": "🎯",
+            "label": "出线博弈",
+            "text": "Egypt 末轮或存在「避开某 32 强对手 / 保小组第 2 进更顺半区」的战术选择，需结合绑定组（如 C↔F）同期赛果 · 已出线争顺位"
+          },
+          {
             "icon": "🌤️",
             "label": "赛场气候",
             "text": "西雅图凌晨凉湿 · 18°C · 湿度 65% · 降雨概率 30% · 普吉特湾 3级；埃及 4 分 vs 伊朗 2 分须胜（18°C · 23:00 PT）"
@@ -2514,7 +2612,8 @@ const MATCH_DATA = {
           "ironBucket": false,
           "closeXg": true,
           "gap": 0.16,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.38,
         "xg_poisson_away": 1.22,
@@ -2534,7 +2633,8 @@ const MATCH_DATA = {
             "prob": 9.1
           }
         ],
-        "expected_score": "1-1"
+        "expected_score": "1-1",
+        "qual_dynamics": null
       },
       "weather": {
         "city": "西雅图",
@@ -3635,7 +3735,8 @@ const MATCH_DATA = {
           "gap": 0.93,
           "notes": [
             "热门难破密集"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 0.56,
         "xg_poisson_away": 2.1,
@@ -3655,7 +3756,8 @@ const MATCH_DATA = {
             "prob": 10.8
           }
         ],
-        "expected_score": "1-2"
+        "expected_score": "1-2",
+        "qual_dynamics": null
       },
       "weather": {
         "city": "温哥华",
@@ -4779,7 +4881,8 @@ const MATCH_DATA = {
           "ironBucket": false,
           "closeXg": true,
           "gap": 0.3,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.04,
         "xg_poisson_away": 1.31,
@@ -4799,7 +4902,8 @@ const MATCH_DATA = {
             "prob": 9.9
           }
         ],
-        "expected_score": "1-1"
+        "expected_score": "1-1",
+        "qual_dynamics": null
       },
       "weather": {
         "city": "休斯顿",
@@ -5912,7 +6016,8 @@ const MATCH_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 0.63,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 0.84,
         "xg_poisson_away": 1.88,
@@ -5932,7 +6037,8 @@ const MATCH_DATA = {
             "prob": 10.4
           }
         ],
-        "expected_score": "1-2"
+        "expected_score": "1-2",
+        "qual_dynamics": null
       },
       "weather": {
         "city": "瓜达拉哈拉",

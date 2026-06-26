@@ -5,6 +5,7 @@ const {
   buildDepthCalibration,
   applyDepthToPrediction,
   applyDrawContextAdjust,
+  applyQualificationDrawBoost,
   buildPreviewPostMatchReview,
   buildGoalEfficiencyReview,
   enrichActualResultForReview,
@@ -47,7 +48,7 @@ function mergePreMatchContext(m) {
   return copy;
 }
 
-function refreshBasePrediction(match) {
+function refreshBasePrediction(match, groupSnapshots) {
   const p = match.prediction;
   if (!p || p.xg_home == null || p.xg_away == null) return p;
   const raw = computeOutcomeFromXg(p.xg_home, p.xg_away);
@@ -56,6 +57,7 @@ function refreshBasePrediction(match) {
     match,
     p.xg_home,
     p.xg_away,
+    groupSnapshots,
   );
   let out = {
     ...p,
@@ -69,16 +71,18 @@ function refreshBasePrediction(match) {
     base_away_win: adj.away_win,
     depth_calibrated: false,
     draw_context: adj.draw_context,
+    qual_dynamics: adj.draw_context?.qual_dynamics || null,
   };
-  const ctx = buildMatchContextAdjustments(match, p.xg_home, p.xg_away);
+  const ctx = buildMatchContextAdjustments(match, p.xg_home, p.xg_away, groupSnapshots);
+  if (ctx.qual_dynamics) out.qual_dynamics = ctx.qual_dynamics;
   out = applyPoissonToPrediction(out, ctx.xg_home, ctx.xg_away, 0);
   return out;
 }
 
-function enrichArchivedFull(m, handicapMap, goalTimingMap) {
+function enrichArchivedFull(m, handicapMap, goalTimingMap, groupSnapshots) {
   const copy = mergePreMatchContext(m);
   if (copy.prediction?.xg_home != null) {
-    copy.prediction = refreshBasePrediction(copy);
+    copy.prediction = refreshBasePrediction(copy, groupSnapshots);
   }
 
   const raw = handicapMap[copy.id];
@@ -87,13 +91,20 @@ function enrichArchivedFull(m, handicapMap, goalTimingMap) {
     copy.market_snapshot = pickMarketSnapshot({ depth_calibration: copy.depth_calibration });
     if (copy.prediction) {
       copy.prediction = applyDepthToPrediction(copy.prediction, copy.depth_calibration);
-      const ctx = buildMatchContextAdjustments(copy, copy.prediction.xg_home, copy.prediction.xg_away);
+      const ctx = buildMatchContextAdjustments(copy, copy.prediction.xg_home, copy.prediction.xg_away, groupSnapshots);
+      if (ctx.qual_dynamics) copy.prediction.qual_dynamics = ctx.qual_dynamics;
       copy.prediction = applyPoissonToPrediction(
         copy.prediction,
         ctx.xg_home,
         ctx.xg_away,
         signedTierFromHandicap(raw, copy.depth_calibration),
       );
+      if (ctx.qual_dynamics?.drawBoost) {
+        const boosted = applyQualificationDrawBoost(copy.prediction, ctx.qual_dynamics);
+        copy.prediction.home_win = boosted.home_win;
+        copy.prediction.draw = boosted.draw;
+        copy.prediction.away_win = boosted.away_win;
+      }
     }
     const gtRaw = goalTimingMap?.[copy.id];
     if (gtRaw && copy.depth_calibration?.display_summary) {

@@ -2439,6 +2439,10 @@ function renderGroupContextPanel(gc) {
             ${risk.focus_team ? `<span class="gc-risk-focus">关注 ${risk.focus_team}</span>` : ''}
           </div>
           <p class="gc-risk-text">${risk.reason || ''}</p>
+          ${(risk.logic_steps || []).length ? `
+          <ol class="gc-risk-logic">
+            ${risk.logic_steps.map(s => `<li>${s.replace(/^逻辑：/, '')}</li>`).join('')}
+          </ol>` : ''}
           ${risk.optimal_summary ? `
           <div class="gc-risk-optimal">
             <span class="gc-risk-optimal-icon" aria-hidden="true">💡</span>

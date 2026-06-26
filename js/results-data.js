@@ -86,7 +86,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 1.6,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 2.52,
         "xg_poisson_away": 0.35,
@@ -106,7 +107,8 @@ const RESULTS_DATA = {
             "prob": 14.3
           }
         ],
-        "expected_score": "3-0"
+        "expected_score": "3-0",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 1.25,
@@ -900,7 +902,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 0.6,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.8,
         "xg_poisson_away": 1.2,
@@ -920,7 +923,8 @@ const RESULTS_DATA = {
             "prob": 9
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0.25,
@@ -1702,7 +1706,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 0.73,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.65,
         "xg_poisson_away": 0.92,
@@ -1722,7 +1727,8 @@ const RESULTS_DATA = {
             "prob": 10.4
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0.25,
@@ -2520,7 +2526,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 1.35,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 2.5,
         "xg_poisson_away": 0.7,
@@ -2540,7 +2547,8 @@ const RESULTS_DATA = {
             "prob": 10.2
           }
         ],
-        "expected_score": "3-1"
+        "expected_score": "3-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0.75,
@@ -3331,7 +3339,8 @@ const RESULTS_DATA = {
           "gap": 0.86,
           "notes": [
             "xG 暗示胶着"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 0.92,
         "xg_poisson_away": 1.78,
@@ -3351,7 +3360,8 @@ const RESULTS_DATA = {
             "prob": 10.6
           }
         ],
-        "expected_score": "1-2"
+        "expected_score": "1-2",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": -0.25,
@@ -4154,7 +4164,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 1,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 2.05,
         "xg_poisson_away": 1.05,
@@ -4174,7 +4185,8 @@ const RESULTS_DATA = {
             "prob": 9.5
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0.25,
@@ -4972,7 +4984,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 0.57,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 0.85,
         "xg_poisson_away": 1.42,
@@ -4992,7 +5005,8 @@ const RESULTS_DATA = {
             "prob": 10.4
           }
         ],
-        "expected_score": "1-1"
+        "expected_score": "1-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": -0.25,
@@ -5751,13 +5765,13 @@ const RESULTS_DATA = {
         "xg_home": 1.35,
         "xg_away": 1.28,
         "home_win": 33,
-        "draw": 36,
+        "draw": 37,
         "away_win": 30,
         "score": "1-1",
         "confidence": 70,
         "key_factor": "2-0 爆冷——Irankunda 27'、Metcalfe 75' 世界波；Popovic 5-4-1 克制土耳其 72% 控球。Beach 替 Ryan 一门 8.9 评分。",
         "base_home_win": 33,
-        "base_draw": 36,
+        "base_draw": 37,
         "base_away_win": 30,
         "depth_calibrated": true,
         "score_dist": [
@@ -5791,14 +5805,15 @@ const RESULTS_DATA = {
           }
         ],
         "draw_context": {
-          "drawBoost": 10,
+          "drawBoost": 11,
           "ironBucket": true,
           "closeXg": true,
           "gap": 0.07,
           "notes": [
             "xG 极接近",
             "热门难破密集"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.27,
         "xg_poisson_away": 1.23,
@@ -5818,7 +5833,8 @@ const RESULTS_DATA = {
             "prob": 10.1
           }
         ],
-        "expected_score": "1-1"
+        "expected_score": "1-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0,
@@ -5910,7 +5926,7 @@ const RESULTS_DATA = {
         "adjustment_note": "模型微调：主胜 +0% · 平 +0% · 客 +0%",
         "adjusted_probs": {
           "home_win": 33,
-          "draw": 36,
+          "draw": 37,
           "away_win": 30
         },
         "display_summary": {
@@ -6026,7 +6042,7 @@ const RESULTS_DATA = {
             {
               "icon": "⚖️",
               "label": "平局修正",
-              "note": "回测校准：xG 极接近 · 热门难破密集（平 +10%）"
+              "note": "回测校准：xG 极接近 · 热门难破密集（平 +11%）"
             }
           ],
           "xg_context": {
@@ -6136,7 +6152,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "净胜走向：双方实力接近",
-            "sub_cn": "双方实力接近，暂无单侧净胜预期。 进球氛围：几乎五五开 平局权重约 36%，小组赛易出守平——勿只盯胜负一方。",
+            "sub_cn": "双方实力接近，暂无单侧净胜预期。 进球氛围：几乎五五开 平局权重约 37%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
               "level": "even",
               "label_cn": "势均力敌",
@@ -6175,7 +6191,7 @@ const RESULTS_DATA = {
             "draw_risk": {
               "level": "high",
               "color": "#C8A96E",
-              "note": "平局权重约 36%，小组赛易出守平——勿只盯胜负一方。"
+              "note": "平局权重约 37%，小组赛易出守平——勿只盯胜负一方。"
             },
             "pills": [
               {
@@ -6617,7 +6633,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 3.5,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 4.28,
         "xg_poisson_away": 0.35,
@@ -6637,7 +6654,8 @@ const RESULTS_DATA = {
             "prob": 11.7
           }
         ],
-        "expected_score": "4-0"
+        "expected_score": "4-0",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 1.75,
@@ -7441,7 +7459,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 0.8,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.85,
         "xg_poisson_away": 1.05,
@@ -7461,7 +7480,8 @@ const RESULTS_DATA = {
             "prob": 9.9
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0.25,
@@ -8261,7 +8281,8 @@ const RESULTS_DATA = {
           "gap": 0.1,
           "notes": [
             "xG 极接近"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.5,
         "xg_poisson_away": 1.4,
@@ -8281,7 +8302,8 @@ const RESULTS_DATA = {
             "prob": 8.3
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0,
@@ -9073,7 +9095,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 0.5,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.55,
         "xg_poisson_away": 1.05,
@@ -9093,7 +9116,8 @@ const RESULTS_DATA = {
             "prob": 9.4
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0.25,
@@ -9882,7 +9906,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 1.9,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 2.87,
         "xg_poisson_away": 0.35,
@@ -9902,7 +9927,8 @@ const RESULTS_DATA = {
             "prob": 11.5
           }
         ],
-        "expected_score": "3-0"
+        "expected_score": "3-0",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 1.25,
@@ -10711,7 +10737,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 1,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 2.25,
         "xg_poisson_away": 0.8,
@@ -10731,7 +10758,8 @@ const RESULTS_DATA = {
             "prob": 9.6
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0.75,
@@ -11531,7 +11559,8 @@ const RESULTS_DATA = {
           "gap": 1.1,
           "notes": [
             "xG 暗示胶着"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 0.6,
         "xg_poisson_away": 2.15,
@@ -11551,7 +11580,8 @@ const RESULTS_DATA = {
             "prob": 10.6
           }
         ],
-        "expected_score": "1-2"
+        "expected_score": "1-2",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": -0.75,
@@ -12351,7 +12381,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 0.7,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.55,
         "xg_poisson_away": 0.85,
@@ -12371,7 +12402,8 @@ const RESULTS_DATA = {
             "prob": 10.9
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0.25,
@@ -13166,7 +13198,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 1.4,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 2.72,
         "xg_poisson_away": 0.69,
@@ -13186,7 +13219,8 @@ const RESULTS_DATA = {
             "prob": 9
           }
         ],
-        "expected_score": "3-1"
+        "expected_score": "3-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 1.25,
@@ -14028,7 +14062,8 @@ const RESULTS_DATA = {
           "gap": 0.9,
           "notes": [
             "xG 暗示胶着"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 0.58,
         "xg_poisson_away": 2.2,
@@ -14048,7 +14083,8 @@ const RESULTS_DATA = {
             "prob": 11
           }
         ],
-        "expected_score": "1-2"
+        "expected_score": "1-2",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": -1.5,
@@ -14855,7 +14891,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 2.2,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 3.28,
         "xg_poisson_away": 0.36,
@@ -14875,7 +14912,8 @@ const RESULTS_DATA = {
             "prob": 12.7
           }
         ],
-        "expected_score": "3-0"
+        "expected_score": "3-0",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 2,
@@ -15674,7 +15712,8 @@ const RESULTS_DATA = {
           "gap": 0.9,
           "notes": [
             "xG 暗示胶着"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 2.01,
         "xg_poisson_away": 0.57,
@@ -15694,7 +15733,8 @@ const RESULTS_DATA = {
             "prob": 10.3
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 1,
@@ -16505,7 +16545,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 1.43,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 2.63,
         "xg_poisson_away": 0.48,
@@ -16525,7 +16566,8 @@ const RESULTS_DATA = {
             "prob": 11.7
           }
         ],
-        "expected_score": "3-0"
+        "expected_score": "3-0",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 1.75,
@@ -17319,7 +17361,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 0.44,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.86,
         "xg_poisson_away": 1.06,
@@ -17339,7 +17382,8 @@ const RESULTS_DATA = {
             "prob": 9.9
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0.5,
@@ -18135,7 +18179,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 0.73,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.91,
         "xg_poisson_away": 0.64,
@@ -18155,7 +18200,8 @@ const RESULTS_DATA = {
             "prob": 9.5
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 1,
@@ -18951,7 +18997,8 @@ const RESULTS_DATA = {
           "gap": 0.9,
           "notes": [
             "xG 暗示胶着"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 0.67,
         "xg_poisson_away": 2.2,
@@ -18971,7 +19018,8 @@ const RESULTS_DATA = {
             "prob": 10.1
           }
         ],
-        "expected_score": "1-2"
+        "expected_score": "1-2",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": -1.25,
@@ -19764,7 +19812,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 0.64,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.82,
         "xg_poisson_away": 0.73,
@@ -19784,7 +19833,8 @@ const RESULTS_DATA = {
             "prob": 10.4
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0.75,
@@ -20575,7 +20625,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 0.5,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.79,
         "xg_poisson_away": 0.93,
@@ -20595,7 +20646,8 @@ const RESULTS_DATA = {
             "prob": 10.6
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0.5,
@@ -21386,7 +21438,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 0.74,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.98,
         "xg_poisson_away": 0.7,
@@ -21406,7 +21459,8 @@ const RESULTS_DATA = {
             "prob": 9.5
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 1,
@@ -22202,7 +22256,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": true,
           "gap": 0.2,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.52,
         "xg_poisson_away": 1.32,
@@ -22222,7 +22277,8 @@ const RESULTS_DATA = {
             "prob": 8.9
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0.25,
@@ -23047,7 +23103,8 @@ const RESULTS_DATA = {
           "notes": [
             "热门难破密集",
             "抢分遇铁桶"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.7,
         "xg_poisson_away": 0.57,
@@ -23067,7 +23124,8 @@ const RESULTS_DATA = {
             "prob": 10.3
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 1,
@@ -24012,7 +24070,8 @@ const RESULTS_DATA = {
           "gap": 0.07,
           "notes": [
             "xG 极接近"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.23,
         "xg_poisson_away": 1.52,
@@ -24032,7 +24091,8 @@ const RESULTS_DATA = {
             "prob": 9.1
           }
         ],
-        "expected_score": "1-2"
+        "expected_score": "1-2",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": -0.5,
@@ -24957,7 +25017,8 @@ const RESULTS_DATA = {
           "ironBucket": true,
           "closeXg": false,
           "gap": 1.16,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 2.33,
         "xg_poisson_away": 0.45,
@@ -24977,7 +25038,8 @@ const RESULTS_DATA = {
             "prob": 13.1
           }
         ],
-        "expected_score": "2-0"
+        "expected_score": "2-0",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 2.5,
@@ -25923,7 +25985,8 @@ const RESULTS_DATA = {
           "notes": [
             "xG 接近且战术偏保守",
             "热门难破密集"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.69,
         "xg_poisson_away": 1.02,
@@ -25943,7 +26006,8 @@ const RESULTS_DATA = {
             "prob": 9.7
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0.5,
@@ -26915,7 +26979,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 0.67,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 2.02,
         "xg_poisson_away": 0.9,
@@ -26935,7 +27000,8 @@ const RESULTS_DATA = {
             "prob": 9.9
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0.75,
@@ -27855,7 +27921,8 @@ const RESULTS_DATA = {
           "ironBucket": true,
           "closeXg": false,
           "gap": 1.2,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 2.51,
         "xg_poisson_away": 0.68,
@@ -27875,7 +27942,8 @@ const RESULTS_DATA = {
             "prob": 10.3
           }
         ],
-        "expected_score": "3-1"
+        "expected_score": "3-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 1.25,
@@ -28773,14 +28841,14 @@ const RESULTS_DATA = {
       "prediction": {
         "xg_home": 1.65,
         "xg_away": 0.72,
-        "home_win": 47,
-        "draw": 35,
+        "home_win": 45,
+        "draw": 37,
         "away_win": 18,
         "score": "2-0",
         "confidence": 72,
         "key_factor": "【赛后复盘】赛前主胜 55%/首推 1-0；实际 0-0 闷平。厄瓜多尔须抢分但未能破门；库拉索 5-4-1 铁桶+Room 零封复刻对德教训。方向：平局（25%）在分布内但非首推；总球 0（小 3 球线）。净胜：厄 -2.25 档全输；路径：铁局/小比分命中，热门哑火",
-        "base_home_win": 52,
-        "base_draw": 34,
+        "base_home_win": 50,
+        "base_draw": 36,
         "base_away_win": 14,
         "depth_calibrated": true,
         "score_dist": [
@@ -28814,14 +28882,15 @@ const RESULTS_DATA = {
           }
         ],
         "draw_context": {
-          "drawBoost": 10,
+          "drawBoost": 12,
           "ironBucket": true,
           "closeXg": false,
           "gap": 0.93,
           "notes": [
             "热门难破密集",
             "深盘但 xG 难拉开"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 2.03,
         "xg_poisson_away": 0.45,
@@ -28841,7 +28910,8 @@ const RESULTS_DATA = {
             "prob": 11.7
           }
         ],
-        "expected_score": "2-0"
+        "expected_score": "2-0",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 2.25,
@@ -28940,8 +29010,8 @@ const RESULTS_DATA = {
         },
         "adjustment_note": "模型微调：主胜 -5% · 平 +1% · 客 +4%",
         "adjusted_probs": {
-          "home_win": 47,
-          "draw": 35,
+          "home_win": 45,
+          "draw": 37,
           "away_win": 18
         },
         "display_summary": {
@@ -29008,7 +29078,7 @@ const RESULTS_DATA = {
                 "pct": 19.2
               }
             ],
-            "fav_win_pct": 47
+            "fav_win_pct": 45
           },
           "excitement": {
             "label_cn": "中速开局",
@@ -29057,7 +29127,7 @@ const RESULTS_DATA = {
             {
               "icon": "⚖️",
               "label": "平局修正",
-              "note": "回测校准：热门难破密集 · 深盘但 xG 难拉开（平 +10%）"
+              "note": "回测校准：热门难破密集 · 深盘但 xG 难拉开（平 +12%）"
             }
           ],
           "xg_context": {
@@ -29119,7 +29189,7 @@ const RESULTS_DATA = {
             "win_low_total_pct": 29.4,
             "win_margin2_low_total_pct": 12.9,
             "win_margin2_high_total_pct": 11.1,
-            "readout_cn": "取胜约 47%；若取胜，以「险胜收工」为主（47%）。 对着赛前净胜参考，净胜≥3（全达标）约 12.5%；对着总进球参考 3，模型超线概率约 18.4%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 3。"
+            "readout_cn": "取胜约 45%；若取胜，以「险胜收工」为主（47%）。 对着赛前净胜参考，净胜≥3（全达标）约 12.5%；对着总进球参考 3，模型超线概率约 18.4%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 3。"
           },
           "totals_line": 3,
           "score_patterns": [
@@ -29167,7 +29237,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Ecuador · 净胜走向：达到预期难度偏大",
-            "sub_cn": "达标概率约 12.5% · 达到预期难度偏大 进球氛围：倾向沉闷 平局权重约 35%，小组赛易出守平——勿只盯胜负一方。",
+            "sub_cn": "达标概率约 12.5% · 达到预期难度偏大 进球氛围：倾向沉闷 平局权重约 37%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
@@ -29212,7 +29282,7 @@ const RESULTS_DATA = {
             "draw_risk": {
               "level": "high",
               "color": "#C8A96E",
-              "note": "平局权重约 35%，小组赛易出守平——勿只盯胜负一方。"
+              "note": "平局权重约 37%，小组赛易出守平——勿只盯胜负一方。"
             },
             "pills": [
               {
@@ -29468,10 +29538,10 @@ const RESULTS_DATA = {
                 }
               ],
               "depth_label": "深度一般",
-              "draw_trap_pct": 29,
+              "draw_trap_pct": 31,
               "readout_cn": "Ecuador · 低位反击 · 进球偏少。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
             },
-            "draw_trap_note": "平局风险：低位反击队若先进球或被追平，1-1 / 0-0 比客胜更现实（约 29% 冷门空间含平局）。",
+            "draw_trap_note": "平局风险：低位反击队若先进球或被追平，1-1 / 0-0 比客胜更现实（约 31% 冷门空间含平局）。",
             "archetype": {
               "tags": [
                 {
@@ -29485,7 +29555,7 @@ const RESULTS_DATA = {
               ],
               "depth_score": 0,
               "depth_label": "深度一般",
-              "draw_trap_pct": 29,
+              "draw_trap_pct": 31,
               "fav_lead_style": "defensive"
             }
           },
@@ -29735,15 +29805,15 @@ const RESULTS_DATA = {
       "prediction": {
         "xg_home": 1,
         "xg_away": 1.36,
-        "home_win": 27,
-        "draw": 39,
-        "away_win": 35,
+        "home_win": 26,
+        "draw": 42,
+        "away_win": 33,
         "score": "0-1",
         "confidence": 68,
         "key_factor": "【赛后复盘】赛前客胜 41%/首推 0-1；实际 0-4 日本大胜。Kamada 4' 闪击 · Ueda 31'/83' 双响 · Junya Ito 69'；突 5-3-2 无 Khazri 完全被动。方向：客胜命中；比分远超泊松（0-4 非 Top7）；总球 4（大 2.25 穿盘）。净胜：日本 -1 全赢且穿盘。路径：热门控球爆发——轮换 3-4-3 效率爆表；氛围/路径均未预警 4 球大胜",
-        "base_home_win": 24,
-        "base_draw": 38,
-        "base_away_win": 39,
+        "base_home_win": 23,
+        "base_draw": 41,
+        "base_away_win": 37,
         "depth_calibrated": true,
         "score_dist": [
           {
@@ -29776,7 +29846,7 @@ const RESULTS_DATA = {
           }
         ],
         "draw_context": {
-          "drawBoost": 10,
+          "drawBoost": 13,
           "ironBucket": true,
           "closeXg": true,
           "gap": 0.36,
@@ -29784,7 +29854,8 @@ const RESULTS_DATA = {
             "xG 接近且战术偏保守",
             "热门难破密集",
             "抢分遇铁桶"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 0.76,
         "xg_poisson_away": 1.67,
@@ -29804,7 +29875,8 @@ const RESULTS_DATA = {
             "prob": 11.2
           }
         ],
-        "expected_score": "1-2"
+        "expected_score": "1-2",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": -1,
@@ -29903,9 +29975,9 @@ const RESULTS_DATA = {
         },
         "adjustment_note": "模型微调：主胜 +3% · 平 +1% · 客 -4%",
         "adjusted_probs": {
-          "home_win": 27,
-          "draw": 39,
-          "away_win": 35
+          "home_win": 26,
+          "draw": 42,
+          "away_win": 33
         },
         "display_summary": {
           "fav_name": "Japan",
@@ -29971,7 +30043,7 @@ const RESULTS_DATA = {
                 "pct": 17
               }
             ],
-            "fav_win_pct": 35
+            "fav_win_pct": 33
           },
           "excitement": {
             "label_cn": "中速开局",
@@ -30025,7 +30097,7 @@ const RESULTS_DATA = {
             {
               "icon": "⚖️",
               "label": "平局修正",
-              "note": "回测校准：xG 接近且战术偏保守 · 热门难破密集 · 抢分遇铁桶（平 +10%）"
+              "note": "回测校准：xG 接近且战术偏保守 · 热门难破密集 · 抢分遇铁桶（平 +13%）"
             }
           ],
           "xg_context": {
@@ -30087,7 +30159,7 @@ const RESULTS_DATA = {
             "win_low_total_pct": 22.9,
             "win_margin2_low_total_pct": 9.1,
             "win_margin2_high_total_pct": 20.7,
-            "readout_cn": "取胜约 35%；若取胜，以「险胜收工」为主（54.1%）。 对着赛前净胜参考，净胜≥2（全达标）约 20.7%；对着总进球参考 2.25，模型超线概率约 52.3%。"
+            "readout_cn": "取胜约 33%；若取胜，以「险胜收工」为主（54.1%）。 对着赛前净胜参考，净胜≥2（全达标）约 20.7%；对着总进球参考 2.25，模型超线概率约 52.3%。"
           },
           "totals_line": 2.25,
           "score_patterns": [
@@ -30135,7 +30207,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Japan · 净胜走向：达标与否难下定论",
-            "sub_cn": "达标概率约 20.7% · 达标与否难下定论 进球氛围：几乎五五开 平局权重约 39%，小组赛易出守平——勿只盯胜负一方。",
+            "sub_cn": "达标概率约 20.7% · 达标与否难下定论 进球氛围：几乎五五开 平局权重约 42%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
               "level": "uncertain",
               "label_cn": "净胜幅度难下定论",
@@ -30180,7 +30252,7 @@ const RESULTS_DATA = {
             "draw_risk": {
               "level": "high",
               "color": "#C8A96E",
-              "note": "平局权重约 39%，小组赛易出守平——勿只盯胜负一方。"
+              "note": "平局权重约 42%，小组赛易出守平——勿只盯胜负一方。"
             },
             "pills": [
               {
@@ -30432,7 +30504,7 @@ const RESULTS_DATA = {
                 }
               ],
               "depth_label": "深度一般",
-              "draw_trap_pct": 32,
+              "draw_trap_pct": 35,
               "readout_cn": "Japan · 进球偏少。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
             },
             "draw_trap_note": null,
@@ -30445,7 +30517,7 @@ const RESULTS_DATA = {
               ],
               "depth_score": 0,
               "depth_label": "深度一般",
-              "draw_trap_pct": 32,
+              "draw_trap_pct": 35,
               "fav_lead_style": "aggressive"
             }
           },
@@ -30981,7 +31053,8 @@ const RESULTS_DATA = {
           "ironBucket": true,
           "closeXg": false,
           "gap": 1.63,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 2.4,
         "xg_poisson_away": 0.35,
@@ -31001,7 +31074,8 @@ const RESULTS_DATA = {
             "prob": 14.7
           }
         ],
-        "expected_score": "2-0"
+        "expected_score": "2-0",
+        "qual_dynamics": null
       },
       "weather": {
         "city": "亚特兰大",
@@ -32290,7 +32364,8 @@ const RESULTS_DATA = {
           "ironBucket": true,
           "closeXg": false,
           "gap": 0.87,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 2.06,
         "xg_poisson_away": 0.71,
@@ -32310,7 +32385,8 @@ const RESULTS_DATA = {
             "prob": 9.4
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "weather": {
         "city": "洛杉矶",
@@ -33625,7 +33701,8 @@ const RESULTS_DATA = {
           "gap": 0.96,
           "notes": [
             "热门难破密集"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.63,
         "xg_poisson_away": 0.49,
@@ -33645,7 +33722,8 @@ const RESULTS_DATA = {
             "prob": 12
           }
         ],
-        "expected_score": "2-0"
+        "expected_score": "2-0",
+        "qual_dynamics": null
       },
       "weather": {
         "city": "迈阿密",
@@ -34937,7 +35015,8 @@ const RESULTS_DATA = {
           "gap": 0.06,
           "notes": [
             "xG 极接近"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.12,
         "xg_poisson_away": 1.18,
@@ -34957,7 +35036,8 @@ const RESULTS_DATA = {
             "prob": 11.2
           }
         ],
-        "expected_score": "1-1"
+        "expected_score": "1-1",
+        "qual_dynamics": null
       },
       "weather": {
         "city": "温哥华",
@@ -36013,7 +36093,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 0.6,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.95,
         "xg_poisson_away": 1.35,
@@ -36033,7 +36114,8 @@ const RESULTS_DATA = {
             "prob": 7.2
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0.25,
@@ -36825,7 +36907,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 1.43,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 2.63,
         "xg_poisson_away": 0.48,
@@ -36845,7 +36928,8 @@ const RESULTS_DATA = {
             "prob": 11.7
           }
         ],
-        "expected_score": "3-0"
+        "expected_score": "3-0",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 1.5,
@@ -37637,7 +37721,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 0.83,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 2.12,
         "xg_poisson_away": 0.93,
@@ -37657,7 +37742,8 @@ const RESULTS_DATA = {
             "prob": 9.9
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0.5,
@@ -38458,7 +38544,8 @@ const RESULTS_DATA = {
           "gap": 0.14,
           "notes": [
             "xG 极接近"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.42,
         "xg_poisson_away": 1.28,
@@ -38478,7 +38565,8 @@ const RESULTS_DATA = {
             "prob": 8.7
           }
         ],
-        "expected_score": "1-1"
+        "expected_score": "1-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0,
@@ -39542,7 +39630,8 @@ const RESULTS_DATA = {
           "gap": 1.27,
           "notes": [
             "抢分遇铁桶"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 2.35,
         "xg_poisson_away": 0.5,
@@ -39562,7 +39651,8 @@ const RESULTS_DATA = {
             "prob": 12.5
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "weather": {
         "city": "休斯顿",
@@ -40893,7 +40983,8 @@ const RESULTS_DATA = {
           "gap": 0.73,
           "notes": [
             "热门难破密集"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.98,
         "xg_poisson_away": 0.93,
@@ -40913,7 +41004,8 @@ const RESULTS_DATA = {
             "prob": 10
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "weather": {
         "city": "波士顿",
@@ -42223,7 +42315,8 @@ const RESULTS_DATA = {
           "notes": [
             "热门难破密集",
             "抢分遇铁桶"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 0.86,
         "xg_poisson_away": 1.36,
@@ -42243,7 +42336,8 @@ const RESULTS_DATA = {
             "prob": 10.9
           }
         ],
-        "expected_score": "1-1"
+        "expected_score": "1-1",
+        "qual_dynamics": null
       },
       "weather": {
         "city": "多伦多",
@@ -43557,7 +43651,8 @@ const RESULTS_DATA = {
           "gap": 0.8,
           "notes": [
             "热门难破密集"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.98,
         "xg_poisson_away": 0.7,
@@ -43577,7 +43672,8 @@ const RESULTS_DATA = {
             "prob": 9.5
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "weather": {
         "city": "瓜达拉哈拉",
@@ -44643,7 +44739,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": true,
           "gap": 0.17,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.55,
         "xg_poisson_away": 1.38,
@@ -44663,7 +44760,8 @@ const RESULTS_DATA = {
             "prob": 8.3
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0,
@@ -45424,15 +45522,15 @@ const RESULTS_DATA = {
       "prediction": {
         "xg_home": 1.42,
         "xg_away": 1.05,
-        "home_win": 41,
-        "draw": 36,
-        "away_win": 23,
+        "home_win": 39,
+        "draw": 39,
+        "away_win": 22,
         "score": "1-0",
         "confidence": 68,
         "key_factor": "【赛后复盘】赛前主胜 41%/首推 1-1；实际 3-1 波黑胜。Alajbegovic 29'/Abunada 34'(og)/Alhaydos 42'/Mahmic 80'。方向：主胜命中；比分接近 2-1 推演；总球 4（大 2.5 穿）。路径：垫底对话→波黑末轮 4 分仍出局（净胜球劣势）。",
-        "base_home_win": 39,
-        "base_draw": 37,
-        "base_away_win": 24,
+        "base_home_win": 37,
+        "base_draw": 40,
+        "base_away_win": 23,
         "depth_calibrated": true,
         "score_dist": [
           {
@@ -45465,7 +45563,7 @@ const RESULTS_DATA = {
           }
         ],
         "draw_context": {
-          "drawBoost": 10,
+          "drawBoost": 13,
           "ironBucket": true,
           "closeXg": true,
           "gap": 0.37,
@@ -45473,7 +45571,8 @@ const RESULTS_DATA = {
             "xG 接近且战术偏保守",
             "热门难破密集",
             "抢分遇铁桶"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.57,
         "xg_poisson_away": 0.89,
@@ -45493,7 +45592,8 @@ const RESULTS_DATA = {
             "prob": 10.5
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0.5,
@@ -45584,9 +45684,9 @@ const RESULTS_DATA = {
         },
         "adjustment_note": "模型微调：主胜 +2% · 平 -1% · 客 -1%",
         "adjusted_probs": {
-          "home_win": 41,
-          "draw": 36,
-          "away_win": 23
+          "home_win": 39,
+          "draw": 39,
+          "away_win": 22
         },
         "display_summary": {
           "fav_name": "Bosnia and Herzegovina",
@@ -45652,7 +45752,7 @@ const RESULTS_DATA = {
                 "pct": 18
               }
             ],
-            "fav_win_pct": 41
+            "fav_win_pct": 39
           },
           "excitement": {
             "label_cn": "中速开局",
@@ -45701,7 +45801,7 @@ const RESULTS_DATA = {
             {
               "icon": "⚖️",
               "label": "平局修正",
-              "note": "回测校准：xG 接近且战术偏保守 · 热门难破密集 · 抢分遇铁桶（平 +10%）"
+              "note": "回测校准：xG 接近且战术偏保守 · 热门难破密集 · 抢分遇铁桶（平 +13%）"
             }
           ],
           "xg_context": {
@@ -45763,7 +45863,7 @@ const RESULTS_DATA = {
             "win_low_total_pct": 21.4,
             "win_margin2_low_total_pct": 8.5,
             "win_margin2_high_total_pct": 11.7,
-            "readout_cn": "取胜约 41%；若取胜，以「险胜收工」为主（53.9%）。 对着赛前净胜参考，净胜≥1（全达标）约 43.9%；对着总进球参考 2.5，模型超线概率约 41.3%。"
+            "readout_cn": "取胜约 39%；若取胜，以「险胜收工」为主（53.9%）。 对着赛前净胜参考，净胜≥1（全达标）约 43.9%；对着总进球参考 2.5，模型超线概率约 41.3%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
@@ -45811,7 +45911,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Bosnia and Herzegovina · 净胜走向：有达标可能",
-            "sub_cn": "达标概率约 43.9% · 有达标可能 进球氛围：几乎五五开 平局权重约 36%，小组赛易出守平——勿只盯胜负一方。",
+            "sub_cn": "达标概率约 43.9% · 有达标可能 进球氛围：几乎五五开 平局权重约 39%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -45856,7 +45956,7 @@ const RESULTS_DATA = {
             "draw_risk": {
               "level": "high",
               "color": "#C8A96E",
-              "note": "平局权重约 36%，小组赛易出守平——勿只盯胜负一方。"
+              "note": "平局权重约 39%，小组赛易出守平——勿只盯胜负一方。"
             },
             "pills": [
               {
@@ -46108,7 +46208,7 @@ const RESULTS_DATA = {
                 }
               ],
               "depth_label": "深度一般",
-              "draw_trap_pct": 31,
+              "draw_trap_pct": 34,
               "readout_cn": "Bosnia and Herzegovina · 常规对抗。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
             },
             "draw_trap_note": null,
@@ -46121,7 +46221,7 @@ const RESULTS_DATA = {
               ],
               "depth_score": 0,
               "depth_label": "深度一般",
-              "draw_trap_pct": 31,
+              "draw_trap_pct": 34,
               "fav_lead_style": "balanced"
             }
           },
@@ -46282,40 +46382,40 @@ const RESULTS_DATA = {
       "prediction": {
         "xg_home": 0.88,
         "xg_away": 1.95,
-        "home_win": 11,
-        "draw": 26,
-        "away_win": 63,
+        "home_win": 8,
+        "draw": 44,
+        "away_win": 48,
         "score": "0-2",
         "confidence": 76,
         "key_factor": "【赛后复盘】赛前客胜 63%/首推 0-1；实际 0-3 巴西胜。Vini 7'/45+3' 双响 · Cunha 60' 穿深盘。方向：客胜命中；比分 0-3 超预期；总球 3（大 2.75 赢）。路径：深盘兑现→巴西 7 分 C 组第一。",
-        "base_home_win": 16,
-        "base_draw": 25,
-        "base_away_win": 60,
+        "base_home_win": 14,
+        "base_draw": 34,
+        "base_away_win": 52,
         "depth_calibrated": true,
         "score_dist": [
           {
             "score": "0-2",
-            "prob": 13.4
+            "prob": 14.4
           },
           {
             "score": "0-1",
-            "prob": 11.3
+            "prob": 12.6
           },
           {
             "score": "0-3",
-            "prob": 10.6
+            "prob": 11
           },
           {
             "score": "1-2",
-            "prob": 9
+            "prob": 8.8
           },
           {
             "score": "1-1",
-            "prob": 7.6
+            "prob": 7.7
           },
           {
             "score": "1-3",
-            "prob": 7.1
+            "prob": 6.7
           },
           {
             "score": "0-4",
@@ -46323,33 +46423,105 @@ const RESULTS_DATA = {
           }
         ],
         "draw_context": {
-          "drawBoost": 3,
+          "drawBoost": 12,
           "ironBucket": true,
           "closeXg": false,
           "gap": 1.07,
           "notes": [
-            "抢分遇铁桶"
-          ]
+            "抢分遇铁桶",
+            "争八不对称：弱队保平争第三，平局权重上调",
+            "Scotland 输球出局 · 平局争第 3 · 赢球稳进"
+          ],
+          "qual_dynamics": {
+            "scenario_type": "asymmetric_third",
+            "mutual_draw_advances": false,
+            "path_control": false,
+            "asymmetric_third": {
+              "strong_side": "Brazil",
+              "weak_side": "Scotland",
+              "weak_is_home": true,
+              "weak_dead_on_loss": true,
+              "weak_third_live_on_draw": true,
+              "weak_through_on_win": true,
+              "weak_likely_underdog": true,
+              "draw_pts_if_draw": 4
+            },
+            "both_already_qualified": false,
+            "home_already_qualified": false,
+            "away_already_qualified": true,
+            "home_out_if_loss": true,
+            "away_out_if_loss": false,
+            "logic_steps": [
+              "Scotland 3 分 vs Brazil 7 分；同组另一场 Morocco（7 分）vs Haiti（0 分）",
+              "逻辑：Brazil 已锁前二（输球亦稳出线）→ 本场胜负对其仅影响顺位/练兵",
+              "逻辑：Scotland 仍不确定 —— 输球基本出局；握手可列第 3，仍有机会进「12 进 8」争八池（4 分）",
+              "逻辑：弱队若赢球当然稳进，但怕冒进输球 → 理性策略转为「保平争胜」，主动性偏保守",
+              "逻辑：强队无生死压力或接受低强度 → 与弱队「各取所需」的平局概率上升（不对称默契）"
+            ],
+            "drawBoost": 9,
+            "xgScaleHome": 0.93,
+            "xgScaleAway": 0.96,
+            "notes": [
+              "争八不对称：弱队保平争第三，平局权重上调",
+              "Scotland 输球出局 · 平局争第 3 · 赢球稳进"
+            ],
+            "summary": "争八不对称默契：强队已出线，弱队保平争第三（输球出局）"
+          }
         },
-        "xg_poisson_home": 0.67,
-        "xg_poisson_away": 2.37,
+        "xg_poisson_home": 0.61,
+        "xg_poisson_away": 2.29,
         "xg_tier_calibrated": true,
-        "score_prob": 13.4,
+        "score_prob": 14.4,
         "score_top3": [
           {
             "score": "0-2",
-            "prob": 13.4
+            "prob": 14.4
           },
           {
             "score": "0-1",
-            "prob": 11.3
+            "prob": 12.6
           },
           {
             "score": "0-3",
-            "prob": 10.6
+            "prob": 11
           }
         ],
-        "expected_score": "1-2"
+        "expected_score": "1-2",
+        "qual_dynamics": {
+          "scenario_type": "asymmetric_third",
+          "mutual_draw_advances": false,
+          "path_control": false,
+          "asymmetric_third": {
+            "strong_side": "Brazil",
+            "weak_side": "Scotland",
+            "weak_is_home": true,
+            "weak_dead_on_loss": true,
+            "weak_third_live_on_draw": true,
+            "weak_through_on_win": true,
+            "weak_likely_underdog": true,
+            "draw_pts_if_draw": 4
+          },
+          "both_already_qualified": false,
+          "home_already_qualified": false,
+          "away_already_qualified": true,
+          "home_out_if_loss": true,
+          "away_out_if_loss": false,
+          "logic_steps": [
+            "Scotland 3 分 vs Brazil 7 分；同组另一场 Morocco（7 分）vs Haiti（0 分）",
+            "逻辑：Brazil 已锁前二（输球亦稳出线）→ 本场胜负对其仅影响顺位/练兵",
+            "逻辑：Scotland 仍不确定 —— 输球基本出局；握手可列第 3，仍有机会进「12 进 8」争八池（4 分）",
+            "逻辑：弱队若赢球当然稳进，但怕冒进输球 → 理性策略转为「保平争胜」，主动性偏保守",
+            "逻辑：强队无生死压力或接受低强度 → 与弱队「各取所需」的平局概率上升（不对称默契）"
+          ],
+          "drawBoost": 9,
+          "xgScaleHome": 0.93,
+          "xgScaleAway": 0.96,
+          "notes": [
+            "争八不对称：弱队保平争第三，平局权重上调",
+            "Scotland 输球出局 · 平局争第 3 · 赢球稳进"
+          ],
+          "summary": "争八不对称默契：强队已出线，弱队保平争第三（输球出局）"
+        }
       },
       "market_snapshot": {
         "market_tier": 1.25,
@@ -46440,9 +46612,9 @@ const RESULTS_DATA = {
         },
         "adjustment_note": "模型微调：主胜 -5% · 平 +1% · 客 +4%",
         "adjusted_probs": {
-          "home_win": 11,
-          "draw": 26,
-          "away_win": 63
+          "home_win": 9,
+          "draw": 35,
+          "away_win": 56
         },
         "display_summary": {
           "fav_name": "Scotland",
@@ -46508,7 +46680,7 @@ const RESULTS_DATA = {
                 "pct": 13.4
               }
             ],
-            "fav_win_pct": 11
+            "fav_win_pct": 9
           },
           "excitement": {
             "label_cn": "中速开局",
@@ -46619,7 +46791,7 @@ const RESULTS_DATA = {
             "win_low_total_pct": 7.6,
             "win_margin2_low_total_pct": 2.3,
             "win_margin2_high_total_pct": 2.9,
-            "readout_cn": "取胜约 11%；若取胜，以「险胜收工」为主（68.4%）。 对着赛前净胜参考，净胜≥2（全达标）约 5.2%；对着总进球参考 2.75，模型超线概率约 41.7%。"
+            "readout_cn": "取胜约 9%；若取胜，以「险胜收工」为主（68.4%）。 对着赛前净胜参考，净胜≥2（全达标）约 5.2%；对着总进球参考 2.75，模型超线概率约 41.7%。"
           },
           "totals_line": 2.75,
           "score_patterns": [
@@ -46667,7 +46839,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Scotland · 净胜走向：达到预期难度偏大",
-            "sub_cn": "达标概率约 5.2% · 达到预期难度偏大 进球氛围：几乎五五开",
+            "sub_cn": "达标概率约 5.2% · 达到预期难度偏大 进球氛围：几乎五五开 平局权重约 35%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
@@ -46709,7 +46881,11 @@ const RESULTS_DATA = {
               "market_goals_cn": "总进球参考 2.75",
               "caution_public_high": false
             },
-            "draw_risk": null,
+            "draw_risk": {
+              "level": "high",
+              "color": "#C8A96E",
+              "note": "平局权重约 35%，小组赛易出守平——勿只盯胜负一方。"
+            },
             "pills": [
               {
                 "key": "spread",
@@ -46960,7 +47136,7 @@ const RESULTS_DATA = {
                 }
               ],
               "depth_label": "深度一般",
-              "draw_trap_pct": 21,
+              "draw_trap_pct": 29,
               "readout_cn": "Scotland · 常规对抗。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
             },
             "draw_trap_note": null,
@@ -46973,7 +47149,7 @@ const RESULTS_DATA = {
               ],
               "depth_score": 0,
               "depth_label": "深度一般",
-              "draw_trap_pct": 21,
+              "draw_trap_pct": 29,
               "fav_lead_style": "balanced"
             }
           },
@@ -47181,7 +47357,8 @@ const RESULTS_DATA = {
           "notes": [
             "热门难破密集",
             "抢分遇铁桶"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 2.1,
         "xg_poisson_away": 0.45,
@@ -47201,7 +47378,8 @@ const RESULTS_DATA = {
             "prob": 12.1
           }
         ],
-        "expected_score": "2-0"
+        "expected_score": "2-0",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 1.5,
@@ -48034,7 +48212,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 0.63,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 0.65,
         "xg_poisson_away": 1.82,
@@ -48054,7 +48233,8 @@ const RESULTS_DATA = {
             "prob": 10
           }
         ],
-        "expected_score": "1-2"
+        "expected_score": "1-2",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 1,
@@ -48857,76 +49037,148 @@ const RESULTS_DATA = {
       "prediction": {
         "xg_home": 1.12,
         "xg_away": 1.38,
-        "home_win": 28,
-        "draw": 36,
-        "away_win": 36,
+        "home_win": 22,
+        "draw": 51,
+        "away_win": 27,
         "score": "0-1",
         "confidence": 70,
         "key_factor": "【赛后复盘】赛前客胜 36%/首推 1-1；实际 1-0 南非胜。Maseko 63' 制胜 · 孙兴慜替补韩国仍出局。方向：主胜冷门命中（28%）；平局/客胜均未中；总球 1（小 2.5 赢）。路径：须胜韩国进攻乏力→南非抢下出线名额。",
-        "base_home_win": 26,
-        "base_draw": 37,
-        "base_away_win": 37,
+        "base_home_win": 23,
+        "base_draw": 45,
+        "base_away_win": 32,
         "depth_calibrated": true,
         "score_dist": [
           {
             "score": "0-1",
-            "prob": 12.9
+            "prob": 13.9
           },
           {
             "score": "1-1",
-            "prob": 12
+            "prob": 12.4
           },
           {
             "score": "0-2",
-            "prob": 10.1
-          },
-          {
-            "score": "1-2",
-            "prob": 9.4
+            "prob": 10.2
           },
           {
             "score": "0-0",
-            "prob": 8.3
+            "prob": 9.4
+          },
+          {
+            "score": "1-2",
+            "prob": 9.1
           },
           {
             "score": "1-0",
-            "prob": 7.7
+            "prob": 8.4
           },
           {
             "score": "2-1",
-            "prob": 5.6
+            "prob": 5.5
           }
         ],
         "draw_context": {
-          "drawBoost": 10,
+          "drawBoost": 18,
           "ironBucket": true,
           "closeXg": true,
           "gap": 0.26,
           "notes": [
             "xG 接近且战术偏保守",
             "热门难破密集",
-            "抢分遇铁桶"
-          ]
+            "抢分遇铁桶",
+            "争八不对称：弱队保平争第三，平局权重上调",
+            "South Korea 输球出局 · 平局争第 3 · 赢球稳进"
+          ],
+          "qual_dynamics": {
+            "scenario_type": "asymmetric_third",
+            "mutual_draw_advances": false,
+            "path_control": false,
+            "asymmetric_third": {
+              "strong_side": "South Africa",
+              "weak_side": "South Korea",
+              "weak_is_home": false,
+              "weak_dead_on_loss": true,
+              "weak_third_live_on_draw": true,
+              "weak_through_on_win": true,
+              "weak_likely_underdog": false,
+              "draw_pts_if_draw": 4
+            },
+            "both_already_qualified": false,
+            "home_already_qualified": true,
+            "away_already_qualified": false,
+            "home_out_if_loss": false,
+            "away_out_if_loss": true,
+            "logic_steps": [
+              "South Africa 4 分 vs South Korea 3 分；同组另一场 Mexico（9 分）vs Czechia（1 分）",
+              "逻辑：South Africa 已锁前二（输球亦稳出线）→ 本场胜负对其仅影响顺位/练兵",
+              "逻辑：South Korea 仍不确定 —— 输球基本出局；握手可列第 3，仍有机会进「12 进 8」争八池（4 分）",
+              "逻辑：弱队若赢球当然稳进，但怕冒进输球 → 理性策略转为「保平争胜」，主动性偏保守",
+              "逻辑：强队无生死压力或接受低强度 → 与弱队「各取所需」的平局概率上升（不对称默契）"
+            ],
+            "drawBoost": 7,
+            "xgScaleHome": 0.96,
+            "xgScaleAway": 0.93,
+            "notes": [
+              "争八不对称：弱队保平争第三，平局权重上调",
+              "South Korea 输球出局 · 平局争第 3 · 赢球稳进"
+            ],
+            "summary": "争八不对称默契：强队已出线，弱队保平争第三（输球出局）"
+          }
         },
-        "xg_poisson_home": 0.93,
-        "xg_poisson_away": 1.56,
+        "xg_poisson_home": 0.89,
+        "xg_poisson_away": 1.47,
         "xg_tier_calibrated": true,
-        "score_prob": 12.9,
+        "score_prob": 13.9,
         "score_top3": [
           {
             "score": "0-1",
-            "prob": 12.9
+            "prob": 13.9
           },
           {
             "score": "1-1",
-            "prob": 12
+            "prob": 12.4
           },
           {
             "score": "0-2",
-            "prob": 10.1
+            "prob": 10.2
           }
         ],
-        "expected_score": "1-2"
+        "expected_score": "1-1",
+        "qual_dynamics": {
+          "scenario_type": "asymmetric_third",
+          "mutual_draw_advances": false,
+          "path_control": false,
+          "asymmetric_third": {
+            "strong_side": "South Africa",
+            "weak_side": "South Korea",
+            "weak_is_home": false,
+            "weak_dead_on_loss": true,
+            "weak_third_live_on_draw": true,
+            "weak_through_on_win": true,
+            "weak_likely_underdog": false,
+            "draw_pts_if_draw": 4
+          },
+          "both_already_qualified": false,
+          "home_already_qualified": true,
+          "away_already_qualified": false,
+          "home_out_if_loss": false,
+          "away_out_if_loss": true,
+          "logic_steps": [
+            "South Africa 4 分 vs South Korea 3 分；同组另一场 Mexico（9 分）vs Czechia（1 分）",
+            "逻辑：South Africa 已锁前二（输球亦稳出线）→ 本场胜负对其仅影响顺位/练兵",
+            "逻辑：South Korea 仍不确定 —— 输球基本出局；握手可列第 3，仍有机会进「12 进 8」争八池（4 分）",
+            "逻辑：弱队若赢球当然稳进，但怕冒进输球 → 理性策略转为「保平争胜」，主动性偏保守",
+            "逻辑：强队无生死压力或接受低强度 → 与弱队「各取所需」的平局概率上升（不对称默契）"
+          ],
+          "drawBoost": 7,
+          "xgScaleHome": 0.96,
+          "xgScaleAway": 0.93,
+          "notes": [
+            "争八不对称：弱队保平争第三，平局权重上调",
+            "South Korea 输球出局 · 平局争第 3 · 赢球稳进"
+          ],
+          "summary": "争八不对称默契：强队已出线，弱队保平争第三（输球出局）"
+        }
       },
       "market_snapshot": {
         "market_tier": 0.5,
@@ -49017,9 +49269,9 @@ const RESULTS_DATA = {
         },
         "adjustment_note": "模型微调：主胜 +2% · 平 -1% · 客 -1%",
         "adjusted_probs": {
-          "home_win": 28,
-          "draw": 36,
-          "away_win": 36
+          "home_win": 25,
+          "draw": 44,
+          "away_win": 31
         },
         "display_summary": {
           "fav_name": "South Africa",
@@ -49085,7 +49337,7 @@ const RESULTS_DATA = {
                 "pct": 14.4
               }
             ],
-            "fav_win_pct": 28
+            "fav_win_pct": 25
           },
           "excitement": {
             "label_cn": "中速开局",
@@ -49139,7 +49391,7 @@ const RESULTS_DATA = {
             {
               "icon": "⚖️",
               "label": "平局修正",
-              "note": "回测校准：xG 接近且战术偏保守 · 热门难破密集 · 抢分遇铁桶（平 +10%）"
+              "note": "回测校准：xG 接近且战术偏保守 · 热门难破密集 · 抢分遇铁桶（平 +13%）"
             }
           ],
           "xg_context": {
@@ -49201,7 +49453,7 @@ const RESULTS_DATA = {
             "win_low_total_pct": 15,
             "win_margin2_low_total_pct": 5.2,
             "win_margin2_high_total_pct": 6.1,
-            "readout_cn": "取胜约 28%；若取胜，以「险胜收工」为主（62.1%）。 对着赛前净胜参考，净胜≥1（全达标）约 29.7%；对着总进球参考 2.5，模型超线概率约 42.1%。"
+            "readout_cn": "取胜约 25%；若取胜，以「险胜收工」为主（62.1%）。 对着赛前净胜参考，净胜≥1（全达标）约 29.7%；对着总进球参考 2.5，模型超线概率约 42.1%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
@@ -49249,7 +49501,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "South Africa · 净胜走向：达到预期难度偏大",
-            "sub_cn": "达标概率约 29.7% · 达到预期难度偏大 进球氛围：几乎五五开 平局权重约 36%，小组赛易出守平——勿只盯胜负一方。",
+            "sub_cn": "达标概率约 29.7% · 达到预期难度偏大 进球氛围：几乎五五开 平局权重约 44%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
@@ -49294,7 +49546,7 @@ const RESULTS_DATA = {
             "draw_risk": {
               "level": "high",
               "color": "#C8A96E",
-              "note": "平局权重约 36%，小组赛易出守平——勿只盯胜负一方。"
+              "note": "平局权重约 44%，小组赛易出守平——勿只盯胜负一方。"
             },
             "pills": [
               {
@@ -49546,7 +49798,7 @@ const RESULTS_DATA = {
                 }
               ],
               "depth_label": "深度一般",
-              "draw_trap_pct": 31,
+              "draw_trap_pct": 38,
               "readout_cn": "South Africa · 常规对抗。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
             },
             "draw_trap_note": null,
@@ -49559,7 +49811,7 @@ const RESULTS_DATA = {
               ],
               "depth_score": 0,
               "depth_label": "深度一般",
-              "draw_trap_pct": 31,
+              "draw_trap_pct": 38,
               "fav_lead_style": "balanced"
             }
           },
@@ -49775,7 +50027,8 @@ const RESULTS_DATA = {
           "gap": 0.9,
           "notes": [
             "xG 暗示胶着"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 0.6,
         "xg_poisson_away": 2.04,
@@ -49795,7 +50048,8 @@ const RESULTS_DATA = {
             "prob": 10.1
           }
         ],
-        "expected_score": "1-2"
+        "expected_score": "1-2",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 1,
@@ -50592,7 +50846,8 @@ const RESULTS_DATA = {
           "gap": 0.96,
           "notes": [
             "xG 暗示胶着"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 0.71,
         "xg_poisson_away": 2.3,
@@ -50612,7 +50867,8 @@ const RESULTS_DATA = {
             "prob": 10
           }
         ],
-        "expected_score": "1-2"
+        "expected_score": "1-2",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 1.25,
@@ -51413,7 +51669,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": true,
           "gap": 0.26,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.58,
         "xg_poisson_away": 1.32,
@@ -51433,7 +51690,8 @@ const RESULTS_DATA = {
             "prob": 8.7
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0,
@@ -52217,7 +52475,8 @@ const RESULTS_DATA = {
           "ironBucket": false,
           "closeXg": false,
           "gap": 1.37,
-          "notes": []
+          "notes": [],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 0.44,
         "xg_poisson_away": 2.53,
@@ -52237,7 +52496,8 @@ const RESULTS_DATA = {
             "prob": 13
           }
         ],
-        "expected_score": "0-3"
+        "expected_score": "0-3",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 1.5,
@@ -52991,74 +53251,146 @@ const RESULTS_DATA = {
       "prediction": {
         "xg_home": 0.85,
         "xg_away": 1.78,
-        "home_win": 12,
-        "draw": 28,
-        "away_win": 60,
+        "home_win": 9,
+        "draw": 46,
+        "away_win": 45,
         "score": "0-2",
         "confidence": 74,
         "key_factor": "【赛后复盘】赛前客胜 60%/首推 0-2；实际 3-2 土耳其胜（冷门）。Trusty 3'(og)/Güler 10'/Yılmaz 31'/Berhalter 49'/Ayhan 90+8'。方向：主胜冷门命中；客胜未中；总球 5（大 2.75 穿）。路径：轮换版美国后防松动→土耳其 3 分仍出局。",
-        "base_home_win": 17,
-        "base_draw": 27,
-        "base_away_win": 56,
+        "base_home_win": 15,
+        "base_draw": 36,
+        "base_away_win": 49,
         "depth_calibrated": true,
         "score_dist": [
           {
             "score": "0-2",
-            "prob": 13.8
+            "prob": 14.7
           },
           {
             "score": "0-1",
-            "prob": 12.9
+            "prob": 14.2
           },
           {
             "score": "0-3",
-            "prob": 9.8
+            "prob": 10.1
           },
           {
             "score": "1-2",
-            "prob": 9.2
+            "prob": 9
           },
           {
             "score": "1-1",
-            "prob": 8.6
-          },
-          {
-            "score": "1-3",
-            "prob": 6.6
+            "prob": 8.7
           },
           {
             "score": "0-0",
-            "prob": 6
+            "prob": 6.9
+          },
+          {
+            "score": "1-3",
+            "prob": 6.2
           }
         ],
         "draw_context": {
-          "drawBoost": 4,
+          "drawBoost": 13,
           "ironBucket": false,
           "closeXg": false,
           "gap": 0.93,
           "notes": [
-            "xG 暗示胶着"
-          ]
+            "xG 暗示胶着",
+            "争八不对称：弱队保平争第三，平局权重上调",
+            "Türkiye 输球出局 · 平局争第 3 · 赢球稳进"
+          ],
+          "qual_dynamics": {
+            "scenario_type": "asymmetric_third",
+            "mutual_draw_advances": false,
+            "path_control": false,
+            "asymmetric_third": {
+              "strong_side": "USA",
+              "weak_side": "Türkiye",
+              "weak_is_home": true,
+              "weak_dead_on_loss": true,
+              "weak_third_live_on_draw": true,
+              "weak_through_on_win": true,
+              "weak_likely_underdog": true,
+              "draw_pts_if_draw": 4
+            },
+            "both_already_qualified": false,
+            "home_already_qualified": false,
+            "away_already_qualified": true,
+            "home_out_if_loss": true,
+            "away_out_if_loss": false,
+            "logic_steps": [
+              "Türkiye 3 分 vs USA 6 分；同组另一场 Australia（4 分）vs Paraguay（4 分）",
+              "逻辑：USA 已锁前二（输球亦稳出线）→ 本场胜负对其仅影响顺位/练兵",
+              "逻辑：Türkiye 仍不确定 —— 输球基本出局；握手可列第 3，仍有机会进「12 进 8」争八池（4 分）",
+              "逻辑：弱队若赢球当然稳进，但怕冒进输球 → 理性策略转为「保平争胜」，主动性偏保守",
+              "逻辑：强队无生死压力或接受低强度 → 与弱队「各取所需」的平局概率上升（不对称默契）"
+            ],
+            "drawBoost": 9,
+            "xgScaleHome": 0.93,
+            "xgScaleAway": 0.96,
+            "notes": [
+              "争八不对称：弱队保平争第三，平局权重上调",
+              "Türkiye 输球出局 · 平局争第 3 · 赢球稳进"
+            ],
+            "summary": "争八不对称默契：强队已出线，弱队保平争第三（输球出局）"
+          }
         },
-        "xg_poisson_home": 0.67,
-        "xg_poisson_away": 2.14,
+        "xg_poisson_home": 0.61,
+        "xg_poisson_away": 2.07,
         "xg_tier_calibrated": true,
-        "score_prob": 13.8,
+        "score_prob": 14.7,
         "score_top3": [
           {
             "score": "0-2",
-            "prob": 13.8
+            "prob": 14.7
           },
           {
             "score": "0-1",
-            "prob": 12.9
+            "prob": 14.2
           },
           {
             "score": "0-3",
-            "prob": 9.8
+            "prob": 10.1
           }
         ],
-        "expected_score": "1-2"
+        "expected_score": "1-2",
+        "qual_dynamics": {
+          "scenario_type": "asymmetric_third",
+          "mutual_draw_advances": false,
+          "path_control": false,
+          "asymmetric_third": {
+            "strong_side": "USA",
+            "weak_side": "Türkiye",
+            "weak_is_home": true,
+            "weak_dead_on_loss": true,
+            "weak_third_live_on_draw": true,
+            "weak_through_on_win": true,
+            "weak_likely_underdog": true,
+            "draw_pts_if_draw": 4
+          },
+          "both_already_qualified": false,
+          "home_already_qualified": false,
+          "away_already_qualified": true,
+          "home_out_if_loss": true,
+          "away_out_if_loss": false,
+          "logic_steps": [
+            "Türkiye 3 分 vs USA 6 分；同组另一场 Australia（4 分）vs Paraguay（4 分）",
+            "逻辑：USA 已锁前二（输球亦稳出线）→ 本场胜负对其仅影响顺位/练兵",
+            "逻辑：Türkiye 仍不确定 —— 输球基本出局；握手可列第 3，仍有机会进「12 进 8」争八池（4 分）",
+            "逻辑：弱队若赢球当然稳进，但怕冒进输球 → 理性策略转为「保平争胜」，主动性偏保守",
+            "逻辑：强队无生死压力或接受低强度 → 与弱队「各取所需」的平局概率上升（不对称默契）"
+          ],
+          "drawBoost": 9,
+          "xgScaleHome": 0.93,
+          "xgScaleAway": 0.96,
+          "notes": [
+            "争八不对称：弱队保平争第三，平局权重上调",
+            "Türkiye 输球出局 · 平局争第 3 · 赢球稳进"
+          ],
+          "summary": "争八不对称默契：强队已出线，弱队保平争第三（输球出局）"
+        }
       },
       "market_snapshot": {
         "market_tier": 1,
@@ -53149,9 +53481,9 @@ const RESULTS_DATA = {
         },
         "adjustment_note": "模型微调：主胜 -5% · 平 +1% · 客 +4%",
         "adjusted_probs": {
-          "home_win": 12,
-          "draw": 28,
-          "away_win": 60
+          "home_win": 10,
+          "draw": 37,
+          "away_win": 53
         },
         "display_summary": {
           "fav_name": "Türkiye",
@@ -53217,7 +53549,7 @@ const RESULTS_DATA = {
                 "pct": 12.2
               }
             ],
-            "fav_win_pct": 12
+            "fav_win_pct": 10
           },
           "excitement": {
             "label_cn": "中速开局",
@@ -53328,7 +53660,7 @@ const RESULTS_DATA = {
             "win_low_total_pct": 8.8,
             "win_margin2_low_total_pct": 2.6,
             "win_margin2_high_total_pct": 2.9,
-            "readout_cn": "取胜约 12%；若取胜，以「险胜收工」为主（68.8%）。 对着赛前净胜参考，净胜≥2（全达标）约 5.5%；对着总进球参考 2.75，模型超线概率约 37.3%。"
+            "readout_cn": "取胜约 10%；若取胜，以「险胜收工」为主（68.8%）。 对着赛前净胜参考，净胜≥2（全达标）约 5.5%；对着总进球参考 2.75，模型超线概率约 37.3%。"
           },
           "totals_line": 2.75,
           "score_patterns": [
@@ -53376,7 +53708,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Türkiye · 净胜走向：达到预期难度偏大",
-            "sub_cn": "达标概率约 5.5% · 达到预期难度偏大 进球氛围：略偏闷",
+            "sub_cn": "达标概率约 5.5% · 达到预期难度偏大 进球氛围：略偏闷 平局权重约 37%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
@@ -53418,7 +53750,11 @@ const RESULTS_DATA = {
               "market_goals_cn": "总进球参考 2.75",
               "caution_public_high": false
             },
-            "draw_risk": null,
+            "draw_risk": {
+              "level": "high",
+              "color": "#C8A96E",
+              "note": "平局权重约 37%，小组赛易出守平——勿只盯胜负一方。"
+            },
             "pills": [
               {
                 "key": "spread",
@@ -53669,7 +54005,7 @@ const RESULTS_DATA = {
                 }
               ],
               "depth_label": "深度一般",
-              "draw_trap_pct": 23,
+              "draw_trap_pct": 31,
               "readout_cn": "Türkiye · 常规对抗。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
             },
             "draw_trap_note": null,
@@ -53682,7 +54018,7 @@ const RESULTS_DATA = {
               ],
               "depth_score": 0,
               "depth_label": "深度一般",
-              "draw_trap_pct": 23,
+              "draw_trap_pct": 31,
               "fav_lead_style": "balanced"
             }
           },
@@ -53855,7 +54191,8 @@ const RESULTS_DATA = {
           "gap": 0.14,
           "notes": [
             "xG 极接近"
-          ]
+          ],
+          "qual_dynamics": null
         },
         "xg_poisson_home": 1.42,
         "xg_poisson_away": 1.28,
@@ -53875,7 +54212,8 @@ const RESULTS_DATA = {
             "prob": 8.7
           }
         ],
-        "expected_score": "1-1"
+        "expected_score": "1-1",
+        "qual_dynamics": null
       },
       "market_snapshot": {
         "market_tier": 0,

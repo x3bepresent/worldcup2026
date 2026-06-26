@@ -3601,6 +3601,16 @@ footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--bor
   line-height: 1.68;
   color: var(--gc-text-body, #C9CBD8);
 }
+.gc-risk-logic {
+  margin: 0.65rem 0 0;
+  padding-left: 1.15rem;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--gc-text-soft, var(--txt2));
+}
+.gc-risk-logic li + li {
+  margin-top: 0.35rem;
+}
 .gc-risk-optimal {
   display: flex;
   align-items: flex-start;

@@ -14,6 +14,8 @@ const {
   applyDrawContextAdjust,
   buildGroupContext,
   buildInsightKeyFactors,
+  computeQualificationDynamics,
+  applyQualificationDrawBoost,
   buildPreviewPostMatchReview,
   buildGoalEfficiencyReview,
   buildGoalEfficiencyPreview,
@@ -162,7 +164,7 @@ function syncSiteMeta(data) {
 function enrichMatchSignals(m, handicapMap, snapshots) {
   const copy = JSON.parse(JSON.stringify(m));
   if (copy.prediction?.xg_home != null) {
-    copy.prediction = refreshBasePrediction(copy);
+    copy.prediction = refreshBasePrediction(copy, snapshots);
   }
   const raw = handicapMap[copy.id];
   if (raw) {
@@ -183,13 +185,20 @@ function enrichMatchSignals(m, handicapMap, snapshots) {
     }
     if (copy.prediction) {
       copy.prediction = applyDepthToPrediction(copy.prediction, copy.depth_calibration);
-      const ctx = buildMatchContextAdjustments(copy, copy.prediction.xg_home, copy.prediction.xg_away);
+      const ctx = buildMatchContextAdjustments(copy, copy.prediction.xg_home, copy.prediction.xg_away, snapshots);
+      if (ctx.qual_dynamics) copy.prediction.qual_dynamics = ctx.qual_dynamics;
       copy.prediction = applyPoissonToPrediction(
         copy.prediction,
         ctx.xg_home,
         ctx.xg_away,
         signedTierFromHandicap(raw, copy.depth_calibration),
       );
+      if (ctx.qual_dynamics?.drawBoost) {
+        const boosted = applyQualificationDrawBoost(copy.prediction, ctx.qual_dynamics);
+        copy.prediction.home_win = boosted.home_win;
+        copy.prediction.draw = boosted.draw;
+        copy.prediction.away_win = boosted.away_win;
+      }
       const gtRaw = GOAL_TIMING[copy.id];
       if (gtRaw && copy.depth_calibration?.display_summary) {
         copy.depth_calibration.display_summary.goal_timing = buildGoalTimingDisplay(
@@ -211,7 +220,8 @@ function enrichMatchSignals(m, handicapMap, snapshots) {
         : baseKf;
     }
   } else if (copy.prediction?.xg_home != null) {
-    const ctx = buildMatchContextAdjustments(copy, copy.prediction.xg_home, copy.prediction.xg_away);
+    const ctx = buildMatchContextAdjustments(copy, copy.prediction.xg_home, copy.prediction.xg_away, snapshots);
+    if (ctx.qual_dynamics) copy.prediction.qual_dynamics = ctx.qual_dynamics;
     copy.prediction = applyPoissonToPrediction(copy.prediction, ctx.xg_home, ctx.xg_away, 0);
   }
   if (snapshots?.length) {
@@ -220,6 +230,9 @@ function enrichMatchSignals(m, handicapMap, snapshots) {
   if (copy.prediction) {
     const baseKf = stripDepthCalibrationFromKeyFactor(copy.prediction.key_factor || '');
     copy.prediction.insight_factors = buildInsightKeyFactors(copy, copy.group_context, baseKf);
+    if (copy.prediction.qual_dynamics?.summary && copy.group_context?.manipulation_risk) {
+      copy.group_context.manipulation_risk.qual_model = copy.prediction.qual_dynamics;
+    }
   }
   if (copy.actualResult?.home_score != null && copy.prediction?.xg_home != null) {
     const ge = buildGoalEfficiencyReview(copy);
@@ -238,8 +251,8 @@ function enrichMatchSignals(m, handicapMap, snapshots) {
 }
 
 /** 精简归档场次 — 全量 v2 重算（handicap + 胜平负 + 复盘） */
-function enrichArchivedMatch(m, handicapMap) {
-  return enrichArchivedFull(m, handicapMap, GOAL_TIMING);
+function enrichArchivedMatch(m, handicapMap, snapshots) {
+  return enrichArchivedFull(m, handicapMap, GOAL_TIMING, snapshots);
 }
 
 const MATCH_DATA = loadData(MATCH_PATH, 'MATCH_DATA');
@@ -260,7 +273,7 @@ if (RESULTS_DATA?.finishedMatches?.length) {
   RESULTS_DATA.finishedMatches = RESULTS_DATA.finishedMatches.map(m => {
     if (m.archived) {
       resultsUpdated += 1;
-      return enrichArchivedMatch(m, allHandicap);
+      return enrichArchivedMatch(m, allHandicap, groupSnapshots);
     }
     if (allHandicap[m.id]) {
       resultsUpdated += 1;
