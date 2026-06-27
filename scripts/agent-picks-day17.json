@@ -37,17 +37,17 @@
     {
       "id": "m69",
       "match": "Algeria vs Austria",
-      "primary": "totals",
-      "tendency_cn": "更倾向大小球",
+      "primary": "spread",
+      "tendency_cn": "更倾向让球盘",
       "confidence": "high",
       "confidence_cn": "大信心",
       "spread": {
         "side": "fav",
-        "pick_cn": "奥地利 PK 不败"
+        "pick_cn": "奥地利 PK @0.84"
       },
       "totals": {
-        "side": "over",
-        "pick_cn": "大球 1.5/2"
+        "side": "under",
+        "pick_cn": "小球 1.5/2 @0.82"
       }
     },
     {

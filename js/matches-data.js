@@ -2,7 +2,7 @@
 // Last updated: 2026-06-20T14:00:00+08:00
 const MATCH_DATA = {
   "lastUpdated": "2026-06-20T14:00:00+08:00",
-  "syncSource": "API-Football · 推演概要+小组形势",
+  "syncSource": "FIFA 官方首发 m67–m68 · Day 17 · 推演概要+小组形势",
   "breakingNews": [
     {
       "tag": "UPDATE",
@@ -46,13 +46,27 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月28日 05:00",
       "venue": "MetLife Stadium",
       "city": "East Rutherford, USA",
-      "note": "L组末轮 · 巴拿马 vs 英格兰 · 纽约/新泽西",
+      "note": "L组末轮 · 巴拿马 vs 英格兰 · 纽约/新泽西 · FIFA 官方首发已确认",
       "lineup": {
-        "confirmed": false,
-        "formation": null,
-        "home": "等待官方确认",
-        "away": "等待官方确认",
-        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
+        "confirmed": true,
+        "formation": "5-4-1 / 4-2-3-1",
+        "home": "Orlando Mosquera; Amir Murillo, José Córdoba, Fidel Escobar, Andrés Andrade, Cristian Martínez; Carlos Harvey, Edgar Bárcenas, José Luis Rodríguez, Tomás Rodríguez; Jorge Gutiérrez",
+        "away": "Jordan Pickford; Jarell Quansah, Ezri Konsa, Marc Guéhi, Nico O'Reilly; Elliot Anderson, Jude Bellingham; Bukayo Saka, Morgan Rogers, Marcus Rashford; Harry Kane",
+        "note": "✅ FIFA 官方 team sheet（Match 67 · 400021508 · 2026-06-27T20:35:21+08:00）",
+        "source": "FIFA Match Centre · api.fifa.com",
+        "updated": "2026-06-27T20:35:21+08:00",
+        "fifa_match_id": "400021508",
+        "impact": {
+          "xg_home_delta": 0,
+          "xg_away_delta": -0.18,
+          "summary": "英格兰 FIFA 官方 5 处轮换（Rice/Foden/Walker-Stones 等替补）；Kane+Bellingham+Saka+Rashford+Rogers 仍在。中场控场降档 → 客队 xG 下调，深盘穿盘难度维持偏高。",
+          "xg_home_before": 0.68,
+          "xg_away_before": 2.08
+        },
+        "diff": {
+          "home": "⚠️ Fajardo 替补 · Gutiérrez(26) 突前；Murillo+Córdoba 中卫 · 维持 5-4-1 铁桶",
+          "away": "⚠️ 5 处轮换：Quansah/O'Reilly/Anderson/Rogers/Rashford 进 XI；Rice(4)·Mainoo(16)·Foden 未进 · Stones(5) 替补 · James 伤缺"
+        },
         "predicted": {
           "formation": "5-4-1 / 4-2-3-1",
           "home": "Mosquera; Anderson, Escobar, Cummings; Fajardo, Bristán, Rodríguez; Gómez, Torres, Waterman; Ismael",
@@ -93,7 +107,8 @@ const MATCH_DATA = {
         },
         "injuries": [],
         "rumors": [
-          "巴拿马 0 分须奇迹 · 5-4-1 铁桶"
+          "【官方】5-4-1 铁桶 · Gutiérrez 替 Fajardo 突前",
+          "0 分已出局 · Murillo+Córdoba 防线"
         ]
       },
       "away": {
@@ -142,14 +157,40 @@ const MATCH_DATA = {
         },
         "injuries": [
           {
+            "player": "Reece James",
+            "status": "OUT",
+            "note": "伤缺 · Quansah 替右闸",
+            "confirmed": true
+          },
+          {
             "player": "Jude Bellingham",
             "status": "FIT",
-            "note": "4 分争头名",
+            "note": "FIFA 官方 #10 先发",
+            "confirmed": true
+          },
+          {
+            "player": "Harry Kane",
+            "status": "FIT",
+            "note": "FIFA 官方 #9 队长",
+            "confirmed": true
+          },
+          {
+            "player": "Declan Rice",
+            "status": "BENCH",
+            "note": "FIFA 官方替补 #4 · 5 轮换",
+            "confirmed": true
+          },
+          {
+            "player": "John Stones",
+            "status": "BENCH",
+            "note": "FIFA 官方替补 #5",
             "confirmed": true
           }
         ],
         "rumors": [
-          "Tuchel：末轮须确保出线顺位"
+          "【官方】Tuchel 5 处轮换：Rice·Mainoo·Foden·Gordon·Madueke 替补",
+          "Quansah 世界杯首秀 · Saka+Rashford+Rogers 进攻线",
+          "4 分争头名 · 赢球锁 L 组第一"
         ]
       },
       "h2h": {
@@ -179,42 +220,42 @@ const MATCH_DATA = {
         "updated": "2026-06-27T06:00:10+08:00"
       },
       "prediction": {
-        "home_win": 14,
-        "draw": 20,
-        "away_win": 65,
+        "home_win": 16,
+        "draw": 22,
+        "away_win": 62,
         "score": "0-2",
         "confidence": 78,
         "xg_home": 0.68,
-        "xg_away": 2.08,
-        "key_factor": "L组末轮 · 巴拿马 0 分 vs 英格兰 4 分 · Bellingham/Kane vs 铁桶 · 泊松 0-2/0-3",
+        "xg_away": 1.9,
+        "key_factor": "L组末轮 · 巴拿马 5-4-1 铁桶 vs 英格兰官方 5 轮换 4-2-3-1 · Rice/Foden 替补 · 深盘穿盘仍难",
         "score_dist": [
           {
             "score": "0-2",
-            "prob": 16.3
-          },
-          {
-            "score": "0-3",
-            "prob": 13.9
+            "prob": 17.3
           },
           {
             "score": "0-1",
+            "prob": 15.6
+          },
+          {
+            "score": "0-3",
             "prob": 12.7
           },
           {
-            "score": "0-4",
-            "prob": 8.9
-          },
-          {
             "score": "1-2",
-            "prob": 7.2
+            "prob": 7.6
           },
           {
-            "score": "1-3",
-            "prob": 6.1
+            "score": "0-0",
+            "prob": 7.1
+          },
+          {
+            "score": "0-4",
+            "prob": 7
           },
           {
             "score": "1-1",
-            "prob": 5.6
+            "prob": 6.9
           }
         ],
         "insight_factors": [
@@ -231,41 +272,41 @@ const MATCH_DATA = {
           {
             "icon": "⚽",
             "label": "战术与阵容",
-            "text": "L组末轮 · 巴拿马 0 分 vs 英格兰 4 分 · Bellingham/Kane vs 铁桶 · 泊松 0-2/0-3"
+            "text": "L组末轮 · 巴拿马 5-4-1 铁桶 vs 英格兰官方 5 轮换 4-2-3-1 · Rice/Foden 替补 · 深盘穿盘仍难"
           }
         ],
-        "base_home_win": 11.2,
-        "base_draw": 19.4,
-        "base_away_win": 69.4,
+        "base_home_win": 12.7,
+        "base_draw": 21.3,
+        "base_away_win": 66,
         "depth_calibrated": true,
         "draw_context": {
           "drawBoost": 0,
           "ironBucket": true,
           "closeXg": false,
-          "gap": 1.4,
+          "gap": 1.22,
           "notes": [],
           "qual_dynamics": null
         },
         "qual_dynamics": null,
         "xg_poisson_home": 0.44,
-        "xg_poisson_away": 2.56,
+        "xg_poisson_away": 2.21,
         "xg_tier_calibrated": true,
-        "score_prob": 16.3,
+        "score_prob": 17.3,
         "score_top3": [
           {
             "score": "0-2",
-            "prob": 16.3
-          },
-          {
-            "score": "0-3",
-            "prob": 13.9
+            "prob": 17.3
           },
           {
             "score": "0-1",
+            "prob": 15.6
+          },
+          {
+            "score": "0-3",
             "prob": 12.7
           }
         ],
-        "expected_score": "0-3"
+        "expected_score": "0-2"
       },
       "weather": {
         "city": "纽约/新泽西",
@@ -337,42 +378,42 @@ const MATCH_DATA = {
         "spread_cover": {
           "top3_scores": [
             {
-              "score": "0-2",
-              "prob": 13.8
-            },
-            {
               "score": "0-1",
-              "prob": 13.2
+              "prob": 14.4
             },
             {
-              "score": "0-3",
-              "prob": 9.5
+              "score": "0-2",
+              "prob": 13.7
+            },
+            {
+              "score": "1-1",
+              "prob": 9.8
             }
           ],
-          "one_goal_win_pct": 8.2,
-          "two_plus_win_pct": 2.9,
-          "full_cover_pct": 25.4,
-          "dog_hold_pct": 74.6,
-          "fav_win_pct": 48.3,
-          "cover_given_win_pct": 48.1,
+          "one_goal_win_pct": 9.3,
+          "two_plus_win_pct": 3.3,
+          "full_cover_pct": 23.4,
+          "dog_hold_pct": 76.6,
+          "fav_win_pct": 45.6,
+          "cover_given_win_pct": 43,
           "grid_max_goals": 6,
-          "grid_tail_pct": 0.6,
+          "grid_tail_pct": 0.3,
           "half_cover_pct": 0,
-          "half_lose_pct": 25.1,
+          "half_lose_pct": 26,
           "push_pct": null,
           "margin_full_label": "净胜≥3",
           "margin_half_label": null,
-          "fav_cover_ev": -0.195,
-          "dog_cover_ev": 0.196,
+          "fav_cover_ev": -0.271,
+          "dog_cover_ev": 0.271,
           "rational_spread_cn": "主队 守住差距概率略高",
-          "total_xg": 2.76,
+          "total_xg": 2.58,
           "fair_totals_line": 2,
-          "over_2_5_pct": 51.8,
-          "over_3_pct": 29.5,
+          "over_2_5_pct": 47.5,
+          "over_3_pct": 25.7,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 25.1%：常见「赢球但净胜仅 1 球」",
-          "full_cover_pct_raw": 23.2,
-          "dog_hold_pct_raw": 76.8
+          "margin_risk_note": "净胜 1 球概率 26%：常见「赢球但净胜仅 1 球」",
+          "full_cover_pct_raw": 19.6,
+          "dog_hold_pct_raw": 80.4
         },
         "spread_odds": {
           "fav": 0.85,
@@ -384,11 +425,11 @@ const MATCH_DATA = {
           "market_line": 3.25,
           "market_goals_int": 4,
           "line_label": "总进球约 3–3.5 个",
-          "implied_xg_total": 2.76,
+          "implied_xg_total": 2.58,
           "fair_line": 2,
           "line_gap": 1.25,
-          "over_pct": 39.8,
-          "under_pct": 60.2,
+          "over_pct": 36,
+          "under_pct": 64,
           "signal": "high_line",
           "signal_cn": "参考偏高",
           "signal_color": "#C8A96E",
@@ -401,7 +442,7 @@ const MATCH_DATA = {
             "under": 1.02,
             "note": "大比分 0.86 · 小比分 1.02"
           },
-          "rational_cn": "模型略看小比分（超 3.25 约 60.2% 难达）",
+          "rational_cn": "模型略看小比分（超 3.25 约 64% 难达）",
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 3.25,
@@ -440,11 +481,11 @@ const MATCH_DATA = {
           "tendency_reason_cn": "升盘抬水 + 皇冠受让 1.02 高水；英格兰出线后穿深盘比总进球线更可控。",
           "confidence": "high",
           "confidence_cn": "大信心",
-          "confidence_reason_cn": "盘路（升盘+皇冠 0.85/1.02 挺受让）· xG 隐含仅 -0.75 现开 -2.25 · 穿盘约 25%、受让 EV 为正；今日最强「热门防守」样本。",
+          "confidence_reason_cn": "盘路（升盘+皇冠 0.85/1.02 挺受让）· 官方 5 轮换 Rice/Foden 替补 · 穿盘约 25%；今日最强「热门防守」样本。",
           "spread": {
             "side": "dog",
             "label_cn": "巴拿马 +2/2.5 @1.02",
-            "reason_cn": "英格兰胜约 65% 但穿 -2.25 仅约 25%；0-1/0-2 为 Top 路径（0-2 赢半）。皇冠受让 1.02 高水，模型 EV 约 +0.38。"
+            "reason_cn": "FIFA 官方英格兰 5 轮换（Rice/Mainoo/Foden 替补）；xG 客 2.08→1.90。胜约 65% 但穿 -2.25 约 25%；0-1/0-2 仍守住。"
           },
           "totals": {
             "side": "under",
@@ -471,7 +512,7 @@ const MATCH_DATA = {
             },
             "vote_summary_cn": "小球(model) · 小球(line) · 大球(odds) · 观望(situation)",
             "situation_dampened": false,
-            "over_pct": 39.8,
+            "over_pct": 36,
             "line_gap": 1.25
           }
         },
@@ -482,52 +523,52 @@ const MATCH_DATA = {
         },
         "adjustment_note": "模型微调：主胜 +3% · 平 +1% · 客 -4%",
         "adjusted_probs": {
-          "home_win": 14,
-          "draw": 20,
-          "away_win": 65
+          "home_win": 16,
+          "draw": 22,
+          "away_win": 62
         },
         "display_summary": {
           "fav_name": "England",
-          "expected_total_goals": 2.67,
-          "poisson_fav_win_pct": 69.4,
-          "small_lead_pct": 25.4,
+          "expected_total_goals": 2.37,
+          "poisson_fav_win_pct": 62.3,
+          "small_lead_pct": 26.9,
           "small_example_score": "0-1",
-          "small_example_pct": 13.4,
-          "big_cover_pct": 44,
+          "small_example_pct": 15.7,
+          "big_cover_pct": 35.5,
           "big_example_score": "0-2",
-          "big_example_pct": 14,
+          "big_example_pct": 13.6,
           "win_shape": {
             "fav_name": "England",
             "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 34.1%）",
+            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 34.3%）",
             "shapes": [
               {
                 "key": "narrow_low",
                 "label": "险胜 · 控局",
                 "example": "如 1-0",
-                "field_pct": 13.4,
-                "pct": 19.3
+                "field_pct": 15.7,
+                "pct": 25.1
               },
               {
                 "key": "narrow_open",
                 "label": "险胜 · 开放",
                 "example": "如 2-1",
-                "field_pct": 12,
-                "pct": 17.3
+                "field_pct": 11.2,
+                "pct": 18
               },
               {
                 "key": "comfort_low",
                 "label": "拉开 · 控局",
                 "example": "如 2-0",
-                "field_pct": 23.6,
-                "pct": 34.1
+                "field_pct": 21.4,
+                "pct": 34.3
               },
               {
                 "key": "comfort_open",
                 "label": "拉开 · 开放",
                 "example": "如 3-1+",
-                "field_pct": 20.3,
-                "pct": 29.3
+                "field_pct": 14.1,
+                "pct": 22.6
               }
             ],
             "paths": [
@@ -535,47 +576,47 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 36.6
+                "pct": 43.1
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 34.1
+                "pct": 34.3
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 29.3
+                "pct": 22.6
               }
             ],
-            "fav_win_pct": 65
+            "fav_win_pct": 62
           },
           "excitement": {
             "label_cn": "中速开局",
             "label_key": "moderate",
             "label_color": "#C8A96E",
-            "sub_cn": "预期首球等待约 32.6 分",
-            "first_goal_wait": 32.6,
-            "fast_pct": 60.1,
-            "moderate_pct": 14.7,
-            "slow_pct": 25.2,
+            "sub_cn": "预期首球等待约 37.3 分",
+            "first_goal_wait": 37.3,
+            "fast_pct": 55.2,
+            "moderate_pct": 14.8,
+            "slow_pct": 30,
             "tiers": [
               {
                 "key": "fast",
                 "label": "前 30 分内首球",
-                "pct": 60.1
+                "pct": 55.2
               },
               {
                 "key": "moderate",
                 "label": "30–45 分首球",
-                "pct": 14.7
+                "pct": 14.8
               },
               {
                 "key": "slow",
                 "label": "45 分后首球",
-                "pct": 25.2
+                "pct": 30
               }
             ]
           },
@@ -584,7 +625,7 @@ const MATCH_DATA = {
             {
               "icon": "🏥",
               "label": "伤病",
-              "note": "Panama 暂无重要伤停 · England 暂无重要伤停"
+              "note": "Panama 暂无重要伤停 · England：Reece James 缺阵"
             },
             {
               "icon": "👔",
@@ -595,14 +636,19 @@ const MATCH_DATA = {
               "icon": "🌤️",
               "label": "气候",
               "note": "英格兰深盘 · 巴拿马铁桶"
+            },
+            {
+              "icon": "📋",
+              "label": "官方首发",
+              "note": "英格兰 FIFA 官方 5 处轮换（Rice/Foden/Walker-Stones 等替补）；Kane+Bellingham+Saka+Rashford+Rogers 仍在。中场控场降档 → 客队 xG 下调，深盘穿盘难度维持偏高。"
             }
           ],
           "xg_context": {
             "baseline_home": 0.68,
-            "baseline_away": 2.08,
+            "baseline_away": 1.9,
             "adjusted_home": 0.68,
-            "adjusted_away": 2.08,
-            "note": "基准 xG 0.68–2.08（未因伤病/气候下调）"
+            "adjusted_away": 1.73,
+            "note": "基准 xG 0.68–1.9 → 调整后 0.68–1.73"
           },
           "calibration": {
             "signal_cn": "预期偏热",
@@ -611,7 +657,7 @@ const MATCH_DATA = {
             "tier_gap": -1.5,
             "implied_tier_label": "England -0.75 · Panama +0.75",
             "market_tier_label": "England -2.25 · Panama +2.25",
-            "summary_cn": "与模型 xG 对照：预期偏热 · 赛前净胜看法低于 xG 隐含约 1.5 · 模型认为仅小胜 1 球仍约 25.1% · 净胜≥3（全达标）约 25.4%"
+            "summary_cn": "与模型 xG 对照：预期偏热 · 赛前净胜看法低于 xG 隐含约 1.5 · 模型认为仅小胜 1 球仍约 26.7% · 净胜≥3（全达标）约 21.6%"
           },
           "win_outlook": {
             "fav_name": "England",
@@ -621,25 +667,25 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 36.6
+                "pct": 43.1
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 34.1
+                "pct": 34.3
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 29.3
+                "pct": 22.6
               }
             ],
             "margin_line_cn": "England · 赛前净胜参考 净胜≥3（全达标）",
-            "margin_meet_pct": 24.8,
+            "margin_meet_pct": 21.2,
             "margin_half_pct": 0,
-            "margin_fail_pct": 25.4,
+            "margin_fail_pct": 26.9,
             "margin_full_label": "净胜≥3",
             "margin_half_label": null,
             "final_2_0_pct": null,
@@ -647,67 +693,67 @@ const MATCH_DATA = {
             "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
             "totals_line": 3.25,
             "totals_line_cn": "总进球参考 3.25",
-            "fair_totals_line": 2,
-            "model_total_xg": 2.76,
-            "totals_line_gap": 1.25,
-            "totals_high_pct": 39.8,
-            "totals_low_pct": 60.2,
+            "fair_totals_line": 2.25,
+            "model_total_xg": 2.41,
+            "totals_line_gap": 1,
+            "totals_high_pct": 32.2,
+            "totals_low_pct": 67.8,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 27.4,
-            "win_margin2_low_total_pct": 14,
-            "win_margin2_high_total_pct": 30,
-            "readout_cn": "取胜约 65%；若取胜，以「险胜收工」为主（36.6%）。 对着赛前净胜参考，净胜≥3（全达标）约 24.8%；对着总进球参考 3.25，模型超线概率约 39.8%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 3.25。"
+            "win_low_total_pct": 29.2,
+            "win_margin2_low_total_pct": 13.6,
+            "win_margin2_high_total_pct": 21.9,
+            "readout_cn": "取胜约 62%；若取胜，以「险胜收工」为主（43.1%）。 对着赛前净胜参考，净胜≥3（全达标）约 21.2%；对着总进球参考 3.25，模型超线概率约 32.2%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 3.25。"
           },
           "totals_line": 3.25,
           "score_patterns": [
             {
-              "score": "0-2",
-              "pct": 13.8
-            },
-            {
               "score": "0-1",
-              "pct": 13.2
+              "pct": 15.6
             },
             {
-              "score": "0-3",
-              "pct": 9.5
+              "score": "0-2",
+              "pct": 13.5
+            },
+            {
+              "score": "1-1",
+              "pct": 10.6
             }
           ],
           "totals_view": {
-            "expected_total": 2.7,
-            "fair_line": 2,
+            "expected_total": 2.4,
+            "fair_line": 2.25,
             "market_line": 3.25,
-            "line_gap": 1.25,
-            "over_pct": 39.8,
+            "line_gap": 1,
+            "over_pct": 32.2,
             "gap_warning": {
-              "level": "high",
-              "cn": "总进球参考 3.25，合理值 2——高于合理值 1.25，模型宜谨慎"
+              "level": "medium",
+              "cn": "总进球参考 3.25 vs 合理值 2.25，高于合理值 1"
             },
             "totals_outlook": {
               "level": "mild_low",
               "label_cn": "略倾向沉闷",
               "color": "#7BB8D4",
               "meter_label_cn": "略倾向沉闷",
-              "meter_pos": 40,
+              "meter_pos": 32,
               "lean_side": "dull",
               "lean_strength": "mild",
               "section_intro_cn": "对照总进球参考 3.25，看偏闷还是偏精彩",
               "pill_cn": "略偏闷（弱）",
-              "detail_cn": "略偏闷，模型更看小比分（难超线 3.25）；弱信号。 警惕参考定得偏高、实际仍走小比分。",
+              "detail_cn": "略偏闷，模型更看小比分（难超线 3.25）；弱信号。",
               "headline_cn": "进球氛围：略偏闷",
               "show_lean": false,
-              "over_pct": 39.8,
-              "line_gap": 1.25,
+              "over_pct": 32.2,
+              "line_gap": 1,
               "market_line": 3.25,
               "market_goals_int": 4,
               "market_goals_cn": "总进球参考 3.25",
               "caution_public_high": true
             },
-            "summary_cn": "预测 2.7 · 合理值 2 · 总进球参考 3.25（高于合理值 1.25） · ⚠ 高于合理值 1.25 · 模型在常见进球预期附近均衡，不作强倾向"
+            "summary_cn": "预测 2.4 · 合理值 2.25 · 总进球参考 3.25（高于合理值 1） · 高于合理值 1 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
             "headline_cn": "England -2.25 穿盘：达标与否难下定论",
-            "sub_cn": "England 胜 48.3% · 胜后穿 48.1% · Panama +2.25 守 74.6% 进球氛围：略偏闷",
+            "sub_cn": "England 胜 43% · 胜后穿 37.9% · Panama +2.25 守 78.4% 进球氛围：略偏闷",
             "spread": {
               "level": "uncertain",
               "label_cn": "净胜幅度难下定论",
@@ -717,23 +763,23 @@ const MATCH_DATA = {
               "fav_handicap_cn": "England -2.25",
               "dog_handicap_cn": "Panama +2.25",
               "market_expect_cn": "England -2.25 · 净胜≥3",
-              "meet_pct": 25.4,
-              "dog_hold_pct": 74.6,
-              "fav_win_pct": 48.3,
-              "cover_given_win_pct": 48.1,
-              "full_cover_pct_raw": 23.2,
+              "meet_pct": 21.6,
+              "dog_hold_pct": 78.4,
+              "fav_win_pct": 43,
+              "cover_given_win_pct": 37.9,
+              "full_cover_pct_raw": 16.3,
               "meet_pct_label": "England -2.25 穿盘概率（校准）",
               "dog_hold_label": "Panama +2.25 守住概率（校准）",
-              "two_stage_cn": "England 取胜约 48.3% · 赢球后穿盘约 48.1% · Panama +2.25 守住约 74.6%",
-              "grid_tail_pct": 0.6,
+              "two_stage_cn": "England 取胜约 43% · 赢球后穿盘约 37.9% · Panama +2.25 守住约 78.4%",
+              "grid_tail_pct": null,
               "verdict_cn": "达标与否难下定论",
               "headline_cn": "England -2.25 穿盘：达标与否难下定论",
-              "pill_cn": "England 胜 48.3% · 胜后穿 48.1% · Panama +2.25 守 74.6%",
-              "detail_cn": "England 取胜约 48.3% · 赢球后穿盘约 48.1% · Panama +2.25 守住约 74.6%（泊松 raw 23.2% → 校准 25.4%）（仅胜 1 球约 25.1%）。",
-              "extra_stats_cn": "仅胜 1 球约 25.1%",
-              "full_cover_pct": 25.4,
+              "pill_cn": "England 胜 43% · 胜后穿 37.9% · Panama +2.25 守 78.4%",
+              "detail_cn": "England 取胜约 43% · 赢球后穿盘约 37.9% · Panama +2.25 守住约 78.4%（泊松 raw 16.3% → 校准 21.6%）（仅胜 1 球约 26.7%）。",
+              "extra_stats_cn": "仅胜 1 球约 26.7%",
+              "full_cover_pct": 21.6,
               "half_cover_pct": 0,
-              "lose1_pct": 25.1,
+              "lose1_pct": 26.7,
               "margin_full_label": "净胜≥3",
               "margin_half_label": null,
               "tier_gap": -1.5,
@@ -744,16 +790,16 @@ const MATCH_DATA = {
               "label_cn": "略倾向沉闷",
               "color": "#7BB8D4",
               "meter_label_cn": "略倾向沉闷",
-              "meter_pos": 40,
+              "meter_pos": 32,
               "lean_side": "dull",
               "lean_strength": "mild",
               "section_intro_cn": "对照总进球参考 3.25，看偏闷还是偏精彩",
               "pill_cn": "略偏闷（弱）",
-              "detail_cn": "略偏闷，模型更看小比分（难超线 3.25）；弱信号。 警惕参考定得偏高、实际仍走小比分。",
+              "detail_cn": "略偏闷，模型更看小比分（难超线 3.25）；弱信号。",
               "headline_cn": "进球氛围：略偏闷",
               "show_lean": false,
-              "over_pct": 39.8,
-              "line_gap": 1.25,
+              "over_pct": 32.2,
+              "line_gap": 1,
               "market_line": 3.25,
               "market_goals_int": 4,
               "market_goals_cn": "总进球参考 3.25",
@@ -774,29 +820,29 @@ const MATCH_DATA = {
                   "fav_handicap_cn": "England -2.25",
                   "dog_handicap_cn": "Panama +2.25",
                   "market_expect_cn": "England -2.25 · 净胜≥3",
-                  "meet_pct": 25.4,
-                  "dog_hold_pct": 74.6,
-                  "fav_win_pct": 48.3,
-                  "cover_given_win_pct": 48.1,
-                  "full_cover_pct_raw": 23.2,
+                  "meet_pct": 21.6,
+                  "dog_hold_pct": 78.4,
+                  "fav_win_pct": 43,
+                  "cover_given_win_pct": 37.9,
+                  "full_cover_pct_raw": 16.3,
                   "meet_pct_label": "England -2.25 穿盘概率（校准）",
                   "dog_hold_label": "Panama +2.25 守住概率（校准）",
-                  "two_stage_cn": "England 取胜约 48.3% · 赢球后穿盘约 48.1% · Panama +2.25 守住约 74.6%",
-                  "grid_tail_pct": 0.6,
+                  "two_stage_cn": "England 取胜约 43% · 赢球后穿盘约 37.9% · Panama +2.25 守住约 78.4%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "达标与否难下定论",
                   "headline_cn": "England -2.25 穿盘：达标与否难下定论",
-                  "pill_cn": "England 胜 48.3% · 胜后穿 48.1% · Panama +2.25 守 74.6%",
-                  "detail_cn": "England 取胜约 48.3% · 赢球后穿盘约 48.1% · Panama +2.25 守住约 74.6%（泊松 raw 23.2% → 校准 25.4%）（仅胜 1 球约 25.1%）。",
-                  "extra_stats_cn": "仅胜 1 球约 25.1%",
-                  "full_cover_pct": 25.4,
+                  "pill_cn": "England 胜 43% · 胜后穿 37.9% · Panama +2.25 守 78.4%",
+                  "detail_cn": "England 取胜约 43% · 赢球后穿盘约 37.9% · Panama +2.25 守住约 78.4%（泊松 raw 16.3% → 校准 21.6%）（仅胜 1 球约 26.7%）。",
+                  "extra_stats_cn": "仅胜 1 球约 26.7%",
+                  "full_cover_pct": 21.6,
                   "half_cover_pct": 0,
-                  "lose1_pct": 25.1,
+                  "lose1_pct": 26.7,
                   "margin_full_label": "净胜≥3",
                   "margin_half_label": null,
                   "tier_gap": -1.5,
                   "show_cover": true
                 },
-                "text": "England 胜 48.3% · 胜后穿 48.1% · Panama +2.25 守 74.6%",
+                "text": "England 胜 43% · 胜后穿 37.9% · Panama +2.25 守 78.4%",
                 "color": "#8A96A8",
                 "primary": true
               },
@@ -809,16 +855,16 @@ const MATCH_DATA = {
                   "label_cn": "略倾向沉闷",
                   "color": "#7BB8D4",
                   "meter_label_cn": "略倾向沉闷",
-                  "meter_pos": 40,
+                  "meter_pos": 32,
                   "lean_side": "dull",
                   "lean_strength": "mild",
                   "section_intro_cn": "对照总进球参考 3.25，看偏闷还是偏精彩",
                   "pill_cn": "略偏闷（弱）",
-                  "detail_cn": "略偏闷，模型更看小比分（难超线 3.25）；弱信号。 警惕参考定得偏高、实际仍走小比分。",
+                  "detail_cn": "略偏闷，模型更看小比分（难超线 3.25）；弱信号。",
                   "headline_cn": "进球氛围：略偏闷",
                   "show_lean": false,
-                  "over_pct": 39.8,
-                  "line_gap": 1.25,
+                  "over_pct": 32.2,
+                  "line_gap": 1,
                   "market_line": 3.25,
                   "market_goals_int": 4,
                   "market_goals_cn": "总进球参考 3.25",
@@ -835,131 +881,131 @@ const MATCH_DATA = {
             {
               "side": "home",
               "team": "Panama",
-              "first_goal_pct": 24.6,
+              "first_goal_pct": 28.2,
               "start_score": "1-0",
               "fav_name": "England",
               "scorer_is_fav": false,
               "expected_key": "fav_recover",
-              "fav_recover_pct": 68.2,
-              "small_lead_pct": 21.7,
-              "big_lead_pct": 18.9,
-              "fav_win_pct": 40.6,
-              "fav_draw_pct": 27.6,
-              "fav_lose_pct": 31.8,
+              "fav_recover_pct": 61.2,
+              "small_lead_pct": 19.2,
+              "big_lead_pct": 13.1,
+              "fav_win_pct": 32.4,
+              "fav_draw_pct": 28.8,
+              "fav_lose_pct": 38.8,
               "outcomes": [
                 {
                   "key": "draw",
                   "label": "England 追平（平局）",
-                  "pct": 27.6
+                  "pct": 28.8
                 },
                 {
                   "key": "win1",
                   "label": "England 净胜1球翻盘（如 2-1）",
-                  "pct": 21.7
+                  "pct": 19.2
                 },
                 {
                   "key": "win2",
                   "label": "England 净胜≥2球翻盘（如 3-1）",
-                  "pct": 18.9
+                  "pct": 13.1
                 },
                 {
                   "key": "upset_hold",
                   "label": "Panama 保持胜果至终场",
-                  "pct": 31.8
+                  "pct": 38.8
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 31.7 分",
-                "first_goal_wait": 31.7,
-                "fast_pct": 54,
-                "moderate_pct": 14.8,
-                "slow_pct": 31.2,
+                "sub_cn": "预期首球等待约 36.4 分",
+                "first_goal_wait": 36.4,
+                "fast_pct": 49.1,
+                "moderate_pct": 14.6,
+                "slow_pct": 36.3,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 54
+                    "pct": 49.1
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 14.8
+                    "pct": 14.6
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 31.2
+                    "pct": 36.3
                   }
                 ]
               },
-              "big_delta": -25.1,
-              "small_delta": -3.7,
+              "big_delta": -22.4,
+              "small_delta": -7.7,
               "narrative": "Panama 先破门（已 1-0） → 「巩固防守」；England 「组织反扑」。热门先丢球（已 1-0），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
               "live_outlook": null
             },
             {
               "side": "away",
               "team": "England",
-              "first_goal_pct": 75.4,
+              "first_goal_pct": 71.8,
               "start_score": "0-1",
               "fav_name": "England",
               "scorer_is_fav": true,
               "expected_key": "hold_win",
-              "fav_recover_pct": 96.8,
-              "small_lead_pct": 24.6,
-              "big_lead_pct": 62,
-              "fav_win_pct": 86.5,
-              "fav_draw_pct": 10.3,
-              "fav_lose_pct": 3.2,
+              "fav_recover_pct": 96,
+              "small_lead_pct": 28.6,
+              "big_lead_pct": 54.9,
+              "fav_win_pct": 83.5,
+              "fav_draw_pct": 12.5,
+              "fav_lose_pct": 4,
               "outcomes": [
                 {
                   "key": "hold_win",
                   "label": "England 保持胜果（净胜≥1）",
-                  "pct": 86.5
+                  "pct": 83.5
                 },
                 {
                   "key": "drawn",
                   "label": "被扳平",
-                  "pct": 10.3
+                  "pct": 12.5
                 },
                 {
                   "key": "lost",
                   "label": "被逆转落败",
-                  "pct": 3.2
+                  "pct": 4
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 33.6 分",
-                "first_goal_wait": 33.6,
-                "fast_pct": 51.9,
-                "moderate_pct": 14.7,
-                "slow_pct": 33.3,
+                "sub_cn": "预期首球等待约 38.3 分",
+                "first_goal_wait": 38.3,
+                "fast_pct": 47.4,
+                "moderate_pct": 14.5,
+                "slow_pct": 38.2,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 51.9
+                    "pct": 47.4
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 14.7
+                    "pct": 14.5
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 33.3
+                    "pct": 38.2
                   }
                 ]
               },
-              "big_delta": 18,
-              "small_delta": -0.8,
+              "big_delta": 19.4,
+              "small_delta": 1.7,
               "narrative": "England 先破门（已 0-1） → 「巩固防守」；Panama 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
               "live_outlook": {
                 "fav_name": "England",
@@ -969,138 +1015,138 @@ const MATCH_DATA = {
                     "key": "narrow",
                     "label": "险胜收工",
                     "example": "如 1-0、2-1",
-                    "pct": 36.6
+                    "pct": 43.1
                   },
                   {
                     "key": "clean",
                     "label": "零封拉开",
                     "example": "如 2-0、3-0",
-                    "pct": 34.1
+                    "pct": 34.3
                   },
                   {
                     "key": "open",
                     "label": "开放拉开",
                     "example": "如 3-1+",
-                    "pct": 29.3
+                    "pct": 22.6
                   }
                 ],
                 "margin_line_cn": "England · 赛前净胜参考 净胜≥3（全达标）",
-                "margin_meet_pct": 34,
+                "margin_meet_pct": 26.6,
                 "margin_half_pct": 0,
-                "margin_fail_pct": 24.6,
+                "margin_fail_pct": 28.6,
                 "margin_full_label": "净胜≥3",
                 "margin_half_label": null,
                 "final_2_0_pct": null,
-                "final_3_0_plus_pct": 26.3,
+                "final_3_0_plus_pct": 21.3,
                 "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
                 "totals_line": 3.25,
                 "totals_line_cn": "总进球参考 3.25",
                 "fair_totals_line": 2.25,
-                "model_total_xg": 2.2,
+                "model_total_xg": 1.93,
                 "totals_line_gap": 1,
-                "totals_high_pct": 50.8,
-                "totals_low_pct": 49.2,
+                "totals_high_pct": 43.7,
+                "totals_low_pct": 56.3,
                 "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-                "win_low_total_pct": 29.1,
-                "win_margin2_low_total_pct": 18,
-                "win_margin2_high_total_pct": 44,
-                "readout_cn": "England 已 1-0 领先：仍取胜约 86.5%。 对着总进球参考 3.25，模型超线概率约 50.8%。 常见收尾：2-0 约 18%（部分达标，非全达标）； 3-0+ 约 26.3%（对着 净胜≥3 全达标）。"
+                "win_low_total_pct": 34.1,
+                "win_margin2_low_total_pct": 19.5,
+                "win_margin2_high_total_pct": 35.4,
+                "readout_cn": "England 已 1-0 领先：仍取胜约 83.5%。 对着总进球参考 3.25，模型超线概率约 43.7%。 常见收尾：2-0 约 19.5%（部分达标，非全达标）； 3-0+ 约 21.3%（对着 净胜≥3 全达标）。"
               }
             }
           ],
           "match_preview": {
             "morphology": {
-              "totals_summary": "预测 2.7 · 合理值 2 · 总进球参考 3.25（高于合理值 1.25） · ⚠ 高于合理值 1.25 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_summary": "预测 2.4 · 合理值 2.25 · 总进球参考 3.25（高于合理值 1） · 高于合理值 1 · 模型在常见进球预期附近均衡，不作强倾向",
               "totals_line_cn": "总进球参考 3.25",
-              "totals_high_pct": 39.8,
+              "totals_high_pct": 32.2,
               "type_tags": [
                 {
-                  "key": "dominance",
-                  "label": "压制局"
+                  "key": "balanced",
+                  "label": "常规对抗"
                 }
               ],
               "depth_label": "深度一般",
-              "draw_trap_pct": 16,
-              "readout_cn": "England · 压制局。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+              "draw_trap_pct": 18,
+              "readout_cn": "England · 常规对抗。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
             },
             "draw_trap_note": null,
             "archetype": {
               "tags": [
                 {
-                  "key": "dominance",
-                  "label": "压制局"
+                  "key": "balanced",
+                  "label": "常规对抗"
                 }
               ],
               "depth_score": 0,
               "depth_label": "深度一般",
-              "draw_trap_pct": 16,
+              "draw_trap_pct": 18,
               "fav_lead_style": "balanced"
             }
           },
           "halftime_preview": {
             "ht_xg_share": 0.44,
             "xg_home_ht": 0.3,
-            "xg_away_ht": 0.92,
+            "xg_away_ht": 0.76,
             "xg_home_2h": 0.38,
-            "xg_away_2h": 1.16,
-            "home_win": 11.7,
-            "draw": 38.3,
-            "away_win": 50,
+            "xg_away_2h": 0.97,
+            "home_win": 13.5,
+            "draw": 43,
+            "away_win": 43.5,
             "top_score": "0-0",
-            "top_score_prob": 29.5,
+            "top_score_prob": 34.7,
             "top3_scores": [
               {
                 "score": "0-0",
-                "prob": 29.5
+                "prob": 34.7
               },
               {
                 "score": "0-1",
-                "prob": 27.2
+                "prob": 26.3
               },
               {
-                "score": "0-2",
-                "prob": 12.5
+                "score": "1-0",
+                "prob": 10.4
               }
             ],
-            "ht_goals_expected": 1.22,
-            "ht_over_0_5_pct": 70.5,
-            "ht_over_1_5_pct": 34.4,
+            "ht_goals_expected": 1.06,
+            "ht_over_0_5_pct": 65.3,
+            "ht_over_1_5_pct": 28.6,
             "pick": "away",
             "pick_name": "England",
-            "summary_cn": "半场 xG 0.3–0.92（约占全场 44%） · 最可能 0-0（29.5%） · 胜平负 11.7/38.3/50 · 半场≥1球约 70.5%",
+            "summary_cn": "半场 xG 0.3–0.76（约占全场 44%） · 最可能 0-0（34.7%） · 胜平负 13.5/43/43.5 · 半场≥1球约 65.3%",
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】England · 压制局。 · 与模型 xG 对照：预期偏热 · 赛前净胜看法低于 xG 隐含约 1.5 · 模型认为仅小胜 1 球仍约 25.1% · 净胜≥3（全达标）约 25.4%（模型微调：主胜 +3% · 平 +1% · 客 -4%）",
+        "public_summary_note": "【推演概要】England · 常规对抗。 · 与模型 xG 对照：预期偏热 · 赛前净胜看法低于 xG 隐含约 1.5 · 模型认为仅小胜 1 球仍约 26.7% · 净胜≥3（全达标）约 21.6%（模型微调：主胜 +3% · 平 +1% · 客 -4%）",
         "goal_efficiency_preview": {
           "mode": "preview",
-          "xg_total": 2.76,
-          "xg_gap": 1.4,
+          "xg_total": 2.58,
+          "xg_gap": 1.22,
           "xg_home": 0.68,
-          "xg_away": 2.08,
+          "xg_away": 1.9,
           "xg_baseline_home": 0.68,
-          "xg_baseline_away": 2.08,
-          "xg_note": "结构推演用基准 xG 0.68–2.08",
+          "xg_baseline_away": 1.9,
+          "xg_note": "结构推演用基准 xG 0.68–1.9（进球氛围用调整后 0.68–1.73）",
           "lean_note": "与进球氛围同向——可参考权重提高",
           "fav_name": "England",
           "dog_name": "Panama",
-          "fav_xg": 2.08,
+          "fav_xg": 1.9,
           "dog_xg": 0.68,
           "path_type": "low",
           "path_label": "铁局/小比分",
           "lean": "low",
           "lean_cn": "小比分预测",
           "lean_mode": "prediction",
-          "lean_confidence": 71.5,
+          "lean_confidence": 75,
           "prevention_reason_cn": null,
           "atmosphere_link_cn": "与进球氛围同向——可参考权重提高",
           "modules_aligned": true,
           "live_watch": [],
-          "prob_over_line": 39.8,
-          "prob_meet_guess": 28.5,
+          "prob_over_line": 36,
+          "prob_meet_guess": 25,
           "guess_n": 4,
-          "prob_4_plus": 28.5,
-          "prob_2_or_less": 48.9,
+          "prob_4_plus": 25,
+          "prob_2_or_less": 53.1,
           "totals_line": 3.25,
           "scenarios": [
             {
@@ -1108,28 +1154,28 @@ const MATCH_DATA = {
               "label": "铁局/小比分",
               "example": "1-0 / 1-1 / 0-0",
               "note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
-              "prob_pct": 65
-            },
-            {
-              "key": "open",
-              "label": "对攻/open",
-              "example": "2-2 / 4-2 / 3-2",
-              "note": "双方 xG 均有进球预期，任一方效率达标即可凑出 4 球。",
-              "prob_pct": 14
+              "prob_pct": 69
             },
             {
               "key": "fav_burst",
               "label": "热门爆发",
               "example": "2-0 / 3-0 / 4-1",
               "note": "样本：热门效率≥1.5 时高比分常见；弱队 xG≈1.0 但只进 1 球时也常见此路径。",
-              "prob_pct": 10
+              "prob_pct": 17
             },
             {
               "key": "dog_bloom",
               "label": "弱队开花",
               "example": "2-2 / 1-3 / 3-1",
               "note": "样本：弱队效率≥1.2 时 71% 总进球≥3；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
-              "prob_pct": 10
+              "prob_pct": 7
+            },
+            {
+              "key": "open",
+              "label": "对攻/open",
+              "example": "2-2 / 4-2 / 3-2",
+              "note": "双方 xG 均有进球预期，任一方效率达标即可凑出 4 球。",
+              "prob_pct": 7
             }
           ],
           "tags": [
@@ -1155,8 +1201,8 @@ const MATCH_DATA = {
           "watch_notes": [
             "xG 差≥1.0——样本多为小比分"
           ],
-          "pattern_note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
-          "summary_cn": "【路径·基准 xG】合计 2.76 · England 2.08 / Panama 0.68 → 主路径「铁局/小比分」约 65% · 小比分预测。 至少 4 球约 28.5% · 超 3.25 约 39.8% · ≤2球 48.9%。样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
+          "pattern_note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。 已纳入官方首发变阵对 xG 的修正。",
+          "summary_cn": "【路径·基准 xG】合计 2.58 · England 1.9 / Panama 0.68 → 主路径「铁局/小比分」约 69% · 小比分预测。 至少 4 球约 25% · 超 3.25 约 36% · ≤2球 53.1%。样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。 已纳入官方首发变阵对 xG 的修正。",
           "in_mid_band": true,
           "sample_note": "结构规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27）· 大/小标签用基准 xG 泊松 ≥60%/≤40%"
         }
@@ -1264,12 +1310,12 @@ const MATCH_DATA = {
         "market_tier": -2.25,
         "tier_label": "England -2.25 · Panama +2.25",
         "totals_line": 3.25,
-        "over_pct": 39.8,
-        "fair_line": 2,
-        "line_gap": 1.25,
-        "full_cover_pct": 25.4,
-        "fav_win_pct": 48.3,
-        "cover_given_win_pct": 48.1,
+        "over_pct": 32.2,
+        "fair_line": 2.25,
+        "line_gap": 1,
+        "full_cover_pct": 21.6,
+        "fav_win_pct": 43,
+        "cover_given_win_pct": 37.9,
         "spread_level": "uncertain",
         "spread_market_expect": "England -2.25 · 净胜≥3",
         "line_move_tag": "fav_defense",
@@ -1299,13 +1345,27 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 6月28日 05:00",
       "venue": "Lincoln Financial Field",
       "city": "Philadelphia, USA",
-      "note": "L组末轮 · 克罗地亚 vs 加纳 · 费城",
+      "note": "L组末轮 · 克罗地亚 vs 加纳 · 费城 · FIFA 官方首发已确认",
       "lineup": {
-        "confirmed": false,
-        "formation": null,
-        "home": "等待官方确认",
-        "away": "等待官方确认",
-        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
+        "confirmed": true,
+        "formation": "4-2-3-1 / 4-1-2-3",
+        "home": "Dominik Livaković; Josip Stanisic, Marin Pongračić, Josip Šutalo; Mateo Kovačić, Luka Modrić; Ivan Perišić, Martin Baturina, Nikola Vlašić, Petar Šušić; Ante Budimir",
+        "away": "Benjamin Asare; Gideon Mensah, Jonas Adjetey, Derrick Luckassen, Marvin Senaya; Thomas Partey; Kwasi Sibo, Elisha Owusu; Antoine Semenyo, Jordan Ayew, Kamaldeen Sulemana",
+        "note": "✅ FIFA 官方 team sheet（Match 68 · 400021509 · 2026-06-27T20:35:21+08:00）",
+        "source": "FIFA Match Centre · api.fifa.com",
+        "updated": "2026-06-27T20:35:21+08:00",
+        "fifa_match_id": "400021509",
+        "impact": {
+          "xg_home_delta": -0.06,
+          "xg_away_delta": -0.12,
+          "summary": "克罗地亚 Gvardiol·Brozović·Kramarić 未进 XI（Budimir 中锋 · Kovačić 搭档 Modrić）；加纳 Kudus 替补 · Asare 一门 · 4-1-2-3 偏守。双方进攻点轮换，总 xG 略降。",
+          "xg_home_before": 1.42,
+          "xg_away_before": 1.38
+        },
+        "diff": {
+          "home": "⚠️ Gvardiol·Brozović·Kramarić 替补；Budimir(11) 先发 · Vlašić+Baturina 肋部 · 须胜 3 分",
+          "away": "⚠️ Kudus 未进 XI · Asare(16) 替 Ati-Zigi；Partey 单后腰 4-1-2-3 · 4 分可平出线"
+        },
         "predicted": {
           "formation": "4-3-3 / 4-2-3-1",
           "home": "Livaković; Juranović, Gvardiol, Šutalo, Sosa; Modrić, Brozović, Pašalić; Perišić, Kramarić, Ivanušec",
@@ -1353,14 +1413,21 @@ const MATCH_DATA = {
         },
         "injuries": [
           {
+            "player": "Joško Gvardiol",
+            "status": "BENCH",
+            "note": "FIFA 未进 XI · Pongračić+Šutalo 中卫",
+            "confirmed": true
+          },
+          {
             "player": "Luka Modrić",
             "status": "FIT",
-            "note": "3 分须胜",
+            "note": "FIFA 官方 #10 · 200 场里程碑",
             "confirmed": true
           }
         ],
         "rumors": [
-          "克罗地亚末轮须 3 分"
+          "【官方】Gvardiol·Brozović·Kramarić 轮换 · Budimir 先发中锋",
+          "克罗地亚 3 分须胜抢榜首"
         ]
       },
       "away": {
@@ -1403,13 +1470,20 @@ const MATCH_DATA = {
         "injuries": [
           {
             "player": "Mohammed Kudus",
+            "status": "BENCH",
+            "note": "FIFA 未进 XI · Sulemana+Semenyo 边路",
+            "confirmed": true
+          },
+          {
+            "player": "Thomas Partey",
             "status": "FIT",
-            "note": "4 分领跑",
+            "note": "FIFA 官方单后腰 #5",
             "confirmed": true
           }
         ],
         "rumors": [
-          "加纳净胜球优势"
+          "【官方】Kudus 替补 · Asare 一门 · 4-1-2-3 可接受平局",
+          "加纳 4 分领跑 · 平局仍保出线主动权"
         ]
       },
       "h2h": {
@@ -1440,21 +1514,21 @@ const MATCH_DATA = {
       },
       "prediction": {
         "home_win": 31,
-        "draw": 42,
-        "away_win": 27,
+        "draw": 43,
+        "away_win": 25,
         "score": "1-1",
         "confidence": 70,
-        "xg_home": 1.42,
-        "xg_away": 1.38,
-        "key_factor": "L组榜首对话 · 加纳 4 分 vs 克罗地亚 3 分须胜 · Modrić vs Kudus · 泊松 1-1/2-1",
+        "xg_home": 1.36,
+        "xg_away": 1.26,
+        "key_factor": "L组 · 加纳 4 分 vs 克罗地亚须胜 · 官方：Gvardiol/Kudus 轮换 · Modrić vs Partey · 泊松 1-1/1-0",
         "score_dist": [
           {
             "score": "1-1",
-            "prob": 11.8
+            "prob": 12.3
           },
           {
             "score": "1-0",
-            "prob": 9.9
+            "prob": 11.3
           },
           {
             "score": "2-1",
@@ -1462,19 +1536,19 @@ const MATCH_DATA = {
           },
           {
             "score": "2-0",
-            "prob": 7.7
+            "prob": 8.4
           },
           {
             "score": "0-1",
-            "prob": 7.6
-          },
-          {
-            "score": "1-2",
-            "prob": 7.1
+            "prob": 8.2
           },
           {
             "score": "0-0",
-            "prob": 6.3
+            "prob": 7.5
+          },
+          {
+            "score": "1-2",
+            "prob": 6.7
           }
         ],
         "insight_factors": [
@@ -1496,18 +1570,18 @@ const MATCH_DATA = {
           {
             "icon": "⚽",
             "label": "战术与阵容",
-            "text": "L组榜首对话 · 加纳 4 分 vs 克罗地亚 3 分须胜 · Modrić vs Kudus · 泊松 1-1/2-1"
+            "text": "L组 · 加纳 4 分 vs 克罗地亚须胜 · 官方：Gvardiol/Kudus 轮换 · Modrić vs Partey · 泊松 1-1/1-0"
           }
         ],
         "base_home_win": 33,
-        "base_draw": 36,
-        "base_away_win": 31,
+        "base_draw": 37,
+        "base_away_win": 29,
         "depth_calibrated": true,
         "draw_context": {
           "drawBoost": 11,
           "ironBucket": false,
           "closeXg": true,
-          "gap": 0.04,
+          "gap": 0.1,
           "notes": [
             "xG 极接近",
             "争八不对称：弱队保平争第三，平局权重上调",
@@ -1584,18 +1658,18 @@ const MATCH_DATA = {
           ],
           "summary": "争八不对称默契：强队已出线，弱队保平争第三（输球出局）"
         },
-        "xg_poisson_home": 1.56,
-        "xg_poisson_away": 1.2,
+        "xg_poisson_home": 1.5,
+        "xg_poisson_away": 1.09,
         "xg_tier_calibrated": true,
-        "score_prob": 11.8,
+        "score_prob": 12.3,
         "score_top3": [
           {
             "score": "1-1",
-            "prob": 11.8
+            "prob": 12.3
           },
           {
             "score": "1-0",
-            "prob": 9.9
+            "prob": 11.3
           },
           {
             "score": "2-1",
@@ -1675,22 +1749,22 @@ const MATCH_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 11.9
+              "prob": 12.5
             },
             {
               "score": "1-0",
-              "prob": 8.6
+              "prob": 9.9
             },
             {
-              "score": "2-1",
-              "prob": 8.5
+              "score": "0-1",
+              "prob": 9.2
             }
           ],
-          "one_goal_win_pct": 20.4,
-          "two_plus_win_pct": 17.9,
-          "full_cover_pct": 47.1,
-          "dog_hold_pct": 52.9,
-          "fav_win_pct": 38.2,
+          "one_goal_win_pct": 21.2,
+          "two_plus_win_pct": 18,
+          "full_cover_pct": 47.7,
+          "dog_hold_pct": 52.3,
+          "fav_win_pct": 39.2,
           "cover_given_win_pct": 100,
           "grid_max_goals": 6,
           "grid_tail_pct": 0.1,
@@ -1699,17 +1773,17 @@ const MATCH_DATA = {
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": -0.236,
-          "dog_cover_ev": 0.236,
+          "fav_cover_ev": -0.216,
+          "dog_cover_ev": 0.216,
           "rational_spread_cn": "客队 守住差距概率略高",
-          "total_xg": 2.8,
+          "total_xg": 2.62,
           "fair_totals_line": 2,
-          "over_2_5_pct": 53,
-          "over_3_pct": 30.7,
+          "over_2_5_pct": 48.6,
+          "over_3_pct": 26.8,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 38.2%；仅赢 1 球约 0%",
-          "full_cover_pct_raw": 38.2,
-          "dog_hold_pct_raw": 61.8
+          "margin_risk_note": "净胜≥1 约 39.2%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 39.2,
+          "dog_hold_pct_raw": 60.8
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -1717,11 +1791,11 @@ const MATCH_DATA = {
           "market_line": 2,
           "market_goals_int": 2,
           "line_label": "总进球约 2 个",
-          "implied_xg_total": 2.8,
+          "implied_xg_total": 2.62,
           "fair_line": 2,
           "line_gap": 0,
-          "over_pct": 52.8,
-          "under_pct": 47.2,
+          "over_pct": 48.4,
+          "under_pct": 51.6,
           "signal": "aligned",
           "signal_cn": "线与模型贴合",
           "signal_color": "#5BBF8A",
@@ -1734,7 +1808,7 @@ const MATCH_DATA = {
             "under": 1.02,
             "note": "大比分 0.86 · 小比分 1.02"
           },
-          "rational_cn": "超 2 球接近五五开（约 52.8%）",
+          "rational_cn": "超 2 球接近五五开（约 48.4%）",
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2,
@@ -1803,7 +1877,7 @@ const MATCH_DATA = {
             },
             "vote_summary_cn": "观望(model) · 观望(line) · 大球(odds) · 小球(situation)",
             "situation_dampened": false,
-            "over_pct": 52.8,
+            "over_pct": 48.4,
             "line_gap": 0
           }
         },
@@ -1815,51 +1889,51 @@ const MATCH_DATA = {
         "adjustment_note": "模型微调：主胜 +2% · 平 -1% · 客 -1%",
         "adjusted_probs": {
           "home_win": 35,
-          "draw": 35,
-          "away_win": 30
+          "draw": 36,
+          "away_win": 28
         },
         "display_summary": {
           "fav_name": "Croatia",
-          "expected_total_goals": 2.62,
-          "poisson_fav_win_pct": 36.9,
-          "small_lead_pct": 20.5,
+          "expected_total_goals": 2.45,
+          "poisson_fav_win_pct": 37.5,
+          "small_lead_pct": 21.2,
           "small_example_score": "1-0",
-          "small_example_pct": 9.5,
-          "big_cover_pct": 16.4,
+          "small_example_pct": 10.7,
+          "big_cover_pct": 16.3,
           "big_example_score": "2-0",
-          "big_example_pct": 6.2,
+          "big_example_pct": 6.7,
           "win_shape": {
             "fav_name": "Croatia",
             "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以险胜·开放为主（险胜 · 开放 29.9%）",
+            "lead_cn": "取胜时以险胜·控局为主（险胜 · 控局 28.5%）",
             "shapes": [
               {
                 "key": "narrow_low",
                 "label": "险胜 · 控局",
                 "example": "如 1-0",
-                "field_pct": 9.5,
-                "pct": 25.7
+                "field_pct": 10.7,
+                "pct": 28.5
               },
               {
                 "key": "narrow_open",
                 "label": "险胜 · 开放",
                 "example": "如 2-1",
-                "field_pct": 11,
-                "pct": 29.9
+                "field_pct": 10.5,
+                "pct": 28
               },
               {
                 "key": "comfort_low",
                 "label": "拉开 · 控局",
                 "example": "如 2-0",
-                "field_pct": 9,
-                "pct": 24.4
+                "field_pct": 9.6,
+                "pct": 25.5
               },
               {
                 "key": "comfort_open",
                 "label": "拉开 · 开放",
                 "example": "如 3-1+",
-                "field_pct": 7.4,
-                "pct": 20
+                "field_pct": 6.8,
+                "pct": 18
               }
             ],
             "paths": [
@@ -1867,19 +1941,19 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 55.6
+                "pct": 56.5
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 24.4
+                "pct": 25.5
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 20
+                "pct": 18
               }
             ],
             "fav_win_pct": 35
@@ -1888,16 +1962,16 @@ const MATCH_DATA = {
             "label_cn": "中速开局",
             "label_key": "moderate",
             "label_color": "#C8A96E",
-            "sub_cn": "预期首球等待约 34.1 分",
-            "first_goal_wait": 34.1,
-            "fast_pct": 58.5,
+            "sub_cn": "预期首球等待约 36.4 分",
+            "first_goal_wait": 36.4,
+            "fast_pct": 56.1,
             "moderate_pct": 14.8,
-            "slow_pct": 26.7,
+            "slow_pct": 29.1,
             "tiers": [
               {
                 "key": "fast",
                 "label": "前 30 分内首球",
-                "pct": 58.5
+                "pct": 56.1
               },
               {
                 "key": "moderate",
@@ -1907,7 +1981,7 @@ const MATCH_DATA = {
               {
                 "key": "slow",
                 "label": "45 分后首球",
-                "pct": 26.7
+                "pct": 29.1
               }
             ]
           },
@@ -1929,6 +2003,11 @@ const MATCH_DATA = {
               "note": "L组榜首对话 · 加纳 4 分 vs 克罗地亚 3 分"
             },
             {
+              "icon": "📋",
+              "label": "官方首发",
+              "note": "克罗地亚 Gvardiol·Brozović·Kramarić 未进 XI（Budimir 中锋 · Kovačić 搭档 Modrić）；加纳 Kudus 替补 · Asare 一门 · 4-1-2-3 偏守。双方进攻点轮换，总 xG 略降。"
+            },
+            {
               "icon": "🎯",
               "label": "出线博弈",
               "note": "争八不对称默契：强队已出线，弱队保平争第三（输球出局） · 争八不对称"
@@ -1940,11 +2019,11 @@ const MATCH_DATA = {
             }
           ],
           "xg_context": {
-            "baseline_home": 1.42,
-            "baseline_away": 1.38,
-            "adjusted_home": 1.32,
-            "adjusted_away": 1.32,
-            "note": "基准 xG 1.42–1.38 → 调整后 1.32–1.32"
+            "baseline_home": 1.36,
+            "baseline_away": 1.26,
+            "adjusted_home": 1.26,
+            "adjusted_away": 1.21,
+            "note": "基准 xG 1.36–1.26 → 调整后 1.26–1.21"
           },
           "calibration": {
             "signal_cn": "实力吻合",
@@ -1963,23 +2042,23 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 55.6
+                "pct": 56.5
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 24.4
+                "pct": 25.5
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 20
+                "pct": 18
               }
             ],
             "margin_line_cn": "Croatia · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 46.4,
+            "margin_meet_pct": 46.7,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -1990,37 +2069,37 @@ const MATCH_DATA = {
             "totals_line": 2,
             "totals_line_cn": "总进球参考 2",
             "fair_totals_line": 2,
-            "model_total_xg": 2.64,
+            "model_total_xg": 2.47,
             "totals_line_gap": 0,
-            "totals_high_pct": 48.9,
-            "totals_low_pct": 51.1,
+            "totals_high_pct": 44.7,
+            "totals_low_pct": 55.3,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 15.7,
-            "win_margin2_low_total_pct": 6.2,
-            "win_margin2_high_total_pct": 10.1,
-            "readout_cn": "取胜约 35%；若取胜，以「险胜收工」为主（55.6%）。 对着赛前净胜参考，净胜≥1（全达标）约 46.4%；对着总进球参考 2，模型超线概率约 48.9%。"
+            "win_low_total_pct": 17.4,
+            "win_margin2_low_total_pct": 6.7,
+            "win_margin2_high_total_pct": 9.6,
+            "readout_cn": "取胜约 35%；若取胜，以「险胜收工」为主（56.5%）。 对着赛前净胜参考，净胜≥1（全达标）约 46.7%；对着总进球参考 2，模型超线概率约 44.7%。"
           },
           "totals_line": 2,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 12.4
-            },
-            {
-              "score": "0-1",
-              "pct": 9.4
+              "pct": 12.9
             },
             {
               "score": "1-0",
-              "pct": 9.4
+              "pct": 10.7
+            },
+            {
+              "score": "0-1",
+              "pct": 10.2
             }
           ],
           "totals_view": {
-            "expected_total": 2.6,
+            "expected_total": 2.5,
             "fair_line": 2,
             "market_line": 2,
             "line_gap": 0,
-            "over_pct": 48.9,
+            "over_pct": 44.7,
             "gap_warning": null,
             "totals_outlook": {
               "level": "neutral",
@@ -2035,18 +2114,18 @@ const MATCH_DATA = {
               "detail_cn": "模型五五开，临场决定节奏。",
               "headline_cn": "进球氛围：几乎五五开",
               "show_lean": false,
-              "over_pct": 48.9,
+              "over_pct": 44.7,
               "line_gap": 0,
               "market_line": 2,
               "market_goals_int": 2,
               "market_goals_cn": "总进球参考 2",
               "caution_public_high": false
             },
-            "summary_cn": "预测 2.6 · 合理值 2 · 总进球参考 2 · 模型在常见进球预期附近均衡，不作强倾向"
+            "summary_cn": "预测 2.5 · 合理值 2 · 总进球参考 2 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
             "headline_cn": "Croatia -0.5 穿盘：有达标可能",
-            "sub_cn": "Croatia 胜 36.9% · 胜后穿 100% · Ghana +0.5 守 53.6% 进球氛围：几乎五五开 平局权重约 35%，小组赛易出守平——勿只盯胜负一方。",
+            "sub_cn": "Croatia 胜 37.6% · 胜后穿 100% · Ghana +0.5 守 53.2% 进球氛围：几乎五五开 平局权重约 36%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -2056,21 +2135,21 @@ const MATCH_DATA = {
               "fav_handicap_cn": "Croatia -0.5",
               "dog_handicap_cn": "Ghana +0.5",
               "market_expect_cn": "Croatia -0.5 · 净胜≥1",
-              "meet_pct": 46.4,
-              "dog_hold_pct": 53.6,
-              "fav_win_pct": 36.9,
+              "meet_pct": 46.8,
+              "dog_hold_pct": 53.2,
+              "fav_win_pct": 37.6,
               "cover_given_win_pct": 100,
-              "full_cover_pct_raw": 36.9,
+              "full_cover_pct_raw": 37.6,
               "meet_pct_label": "Croatia -0.5 穿盘概率（校准）",
               "dog_hold_label": "Ghana +0.5 守住概率（校准）",
-              "two_stage_cn": "Croatia 取胜约 36.9% · 赢球后穿盘约 100% · Ghana +0.5 守住约 53.6%",
+              "two_stage_cn": "Croatia 取胜约 37.6% · 赢球后穿盘约 100% · Ghana +0.5 守住约 53.2%",
               "grid_tail_pct": null,
               "verdict_cn": "有达标可能",
               "headline_cn": "Croatia -0.5 穿盘：有达标可能",
-              "pill_cn": "Croatia 胜 36.9% · 胜后穿 100% · Ghana +0.5 守 53.6%",
-              "detail_cn": "Croatia 取胜约 36.9% · 赢球后穿盘约 100% · Ghana +0.5 守住约 53.6%（泊松 raw 36.9% → 校准 46.4%）；穿盘与受让守住均有一定空间。",
+              "pill_cn": "Croatia 胜 37.6% · 胜后穿 100% · Ghana +0.5 守 53.2%",
+              "detail_cn": "Croatia 取胜约 37.6% · 赢球后穿盘约 100% · Ghana +0.5 守住约 53.2%（泊松 raw 37.6% → 校准 46.8%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 46.4,
+              "full_cover_pct": 46.8,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -2091,7 +2170,7 @@ const MATCH_DATA = {
               "detail_cn": "模型五五开，临场决定节奏。",
               "headline_cn": "进球氛围：几乎五五开",
               "show_lean": false,
-              "over_pct": 48.9,
+              "over_pct": 44.7,
               "line_gap": 0,
               "market_line": 2,
               "market_goals_int": 2,
@@ -2101,7 +2180,7 @@ const MATCH_DATA = {
             "draw_risk": {
               "level": "high",
               "color": "#C8A96E",
-              "note": "平局权重约 35%，小组赛易出守平——勿只盯胜负一方。"
+              "note": "平局权重约 36%，小组赛易出守平——勿只盯胜负一方。"
             },
             "pills": [
               {
@@ -2117,21 +2196,21 @@ const MATCH_DATA = {
                   "fav_handicap_cn": "Croatia -0.5",
                   "dog_handicap_cn": "Ghana +0.5",
                   "market_expect_cn": "Croatia -0.5 · 净胜≥1",
-                  "meet_pct": 46.4,
-                  "dog_hold_pct": 53.6,
-                  "fav_win_pct": 36.9,
+                  "meet_pct": 46.8,
+                  "dog_hold_pct": 53.2,
+                  "fav_win_pct": 37.6,
                   "cover_given_win_pct": 100,
-                  "full_cover_pct_raw": 36.9,
+                  "full_cover_pct_raw": 37.6,
                   "meet_pct_label": "Croatia -0.5 穿盘概率（校准）",
                   "dog_hold_label": "Ghana +0.5 守住概率（校准）",
-                  "two_stage_cn": "Croatia 取胜约 36.9% · 赢球后穿盘约 100% · Ghana +0.5 守住约 53.6%",
+                  "two_stage_cn": "Croatia 取胜约 37.6% · 赢球后穿盘约 100% · Ghana +0.5 守住约 53.2%",
                   "grid_tail_pct": null,
                   "verdict_cn": "有达标可能",
                   "headline_cn": "Croatia -0.5 穿盘：有达标可能",
-                  "pill_cn": "Croatia 胜 36.9% · 胜后穿 100% · Ghana +0.5 守 53.6%",
-                  "detail_cn": "Croatia 取胜约 36.9% · 赢球后穿盘约 100% · Ghana +0.5 守住约 53.6%（泊松 raw 36.9% → 校准 46.4%）；穿盘与受让守住均有一定空间。",
+                  "pill_cn": "Croatia 胜 37.6% · 胜后穿 100% · Ghana +0.5 守 53.2%",
+                  "detail_cn": "Croatia 取胜约 37.6% · 赢球后穿盘约 100% · Ghana +0.5 守住约 53.2%（泊松 raw 37.6% → 校准 46.8%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 46.4,
+                  "full_cover_pct": 46.8,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -2139,7 +2218,7 @@ const MATCH_DATA = {
                   "tier_gap": 0.5,
                   "show_cover": true
                 },
-                "text": "Croatia 胜 36.9% · 胜后穿 100% · Ghana +0.5 守 53.6%",
+                "text": "Croatia 胜 37.6% · 胜后穿 100% · Ghana +0.5 守 53.2%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -2160,7 +2239,7 @@ const MATCH_DATA = {
                   "detail_cn": "模型五五开，临场决定节奏。",
                   "headline_cn": "进球氛围：几乎五五开",
                   "show_lean": false,
-                  "over_pct": 48.9,
+                  "over_pct": 44.7,
                   "line_gap": 0,
                   "market_line": 2,
                   "market_goals_int": 2,
@@ -2178,63 +2257,63 @@ const MATCH_DATA = {
             {
               "side": "home",
               "team": "Croatia",
-              "first_goal_pct": 50,
+              "first_goal_pct": 51,
               "start_score": "1-0",
               "fav_name": "Croatia",
               "scorer_is_fav": true,
               "expected_key": "hold_win",
-              "fav_recover_pct": 84,
-              "small_lead_pct": 29.4,
-              "big_lead_pct": 32,
-              "fav_win_pct": 61.4,
-              "fav_draw_pct": 22.6,
-              "fav_lose_pct": 16.1,
+              "fav_recover_pct": 85.6,
+              "small_lead_pct": 30.7,
+              "big_lead_pct": 32.5,
+              "fav_win_pct": 63.2,
+              "fav_draw_pct": 22.4,
+              "fav_lose_pct": 14.4,
               "outcomes": [
                 {
                   "key": "hold_win",
                   "label": "Croatia 保持胜果（净胜≥1）",
-                  "pct": 61.4
+                  "pct": 63.2
                 },
                 {
                   "key": "drawn",
                   "label": "被扳平",
-                  "pct": 22.6
+                  "pct": 22.4
                 },
                 {
                   "key": "lost",
                   "label": "被逆转落败",
-                  "pct": 16.1
+                  "pct": 14.4
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 34.1 分",
-                "first_goal_wait": 34.1,
-                "fast_pct": 51.4,
-                "moderate_pct": 14.7,
-                "slow_pct": 33.9,
+                "sub_cn": "预期首球等待约 36.6 分",
+                "first_goal_wait": 36.6,
+                "fast_pct": 49,
+                "moderate_pct": 14.6,
+                "slow_pct": 36.5,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 51.4
+                    "pct": 49
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 14.7
+                    "pct": 14.6
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 33.9
+                    "pct": 36.5
                   }
                 ]
               },
-              "big_delta": 15.6,
-              "small_delta": 8.9,
+              "big_delta": 16.2,
+              "small_delta": 9.5,
               "narrative": "Croatia 先破门（已 1-0） → 「巩固防守」；Ghana 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
               "live_outlook": {
                 "fav_name": "Croatia",
@@ -2244,25 +2323,25 @@ const MATCH_DATA = {
                     "key": "narrow",
                     "label": "险胜收工",
                     "example": "如 1-0、2-1",
-                    "pct": 55.6
+                    "pct": 56.5
                   },
                   {
                     "key": "clean",
                     "label": "零封拉开",
                     "example": "如 2-0、3-0",
-                    "pct": 24.4
+                    "pct": 25.5
                   },
                   {
                     "key": "open",
                     "label": "开放拉开",
                     "example": "如 3-1+",
-                    "pct": 20
+                    "pct": 18
                   }
                 ],
                 "margin_line_cn": "Croatia · 赛前净胜参考 净胜≥1（全达标）",
-                "margin_meet_pct": 61.4,
+                "margin_meet_pct": 63.2,
                 "margin_half_pct": 0,
-                "margin_fail_pct": 29.4,
+                "margin_fail_pct": 30.7,
                 "margin_full_label": "净胜≥1",
                 "margin_half_label": null,
                 "final_2_0_pct": null,
@@ -2271,36 +2350,36 @@ const MATCH_DATA = {
                 "totals_line": 2,
                 "totals_line_cn": "总进球参考 2",
                 "fair_totals_line": 2.25,
-                "model_total_xg": 2.16,
+                "model_total_xg": 2.02,
                 "totals_line_gap": -0.25,
-                "totals_high_pct": 63.6,
-                "totals_low_pct": 36.4,
+                "totals_high_pct": 59.8,
+                "totals_low_pct": 40.2,
                 "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-                "win_low_total_pct": 23.2,
-                "win_margin2_low_total_pct": 11.7,
-                "win_margin2_high_total_pct": 20.3,
-                "readout_cn": "Croatia 已 1-0 领先：仍取胜约 61.4%。 对着总进球参考 2，模型超线概率约 63.6%。 常见 2-0 收尾（相对总进球参考 2仍偏小比分）。"
+                "win_low_total_pct": 26.2,
+                "win_margin2_low_total_pct": 12.9,
+                "win_margin2_high_total_pct": 19.6,
+                "readout_cn": "Croatia 已 1-0 领先：仍取胜约 63.2%。 对着总进球参考 2，模型超线概率约 59.8%。 常见 2-0 收尾（相对总进球参考 2仍偏小比分）。"
               }
             },
             {
               "side": "away",
               "team": "Ghana",
-              "first_goal_pct": 50,
+              "first_goal_pct": 49,
               "start_score": "0-1",
               "fav_name": "Croatia",
               "scorer_is_fav": false,
               "expected_key": "upset_hold",
-              "fav_recover_pct": 38.7,
+              "fav_recover_pct": 39,
               "small_lead_pct": 11,
-              "big_lead_pct": 5.1,
-              "fav_win_pct": 16.1,
-              "fav_draw_pct": 22.6,
-              "fav_lose_pct": 61.4,
+              "big_lead_pct": 4.9,
+              "fav_win_pct": 15.8,
+              "fav_draw_pct": 23.2,
+              "fav_lose_pct": 61,
               "outcomes": [
                 {
                   "key": "draw",
                   "label": "Croatia 追平（平局）",
-                  "pct": 22.6
+                  "pct": 23.2
                 },
                 {
                   "key": "win1",
@@ -2310,52 +2389,52 @@ const MATCH_DATA = {
                 {
                   "key": "win2",
                   "label": "Croatia 净胜≥2球翻盘（如 3-1）",
-                  "pct": 5.1
+                  "pct": 4.9
                 },
                 {
                   "key": "upset_hold",
                   "label": "Ghana 保持胜果至终场",
-                  "pct": 61.4
+                  "pct": 61
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 34.1 分",
-                "first_goal_wait": 34.1,
-                "fast_pct": 51.4,
-                "moderate_pct": 14.7,
-                "slow_pct": 33.9,
+                "sub_cn": "预期首球等待约 36.3 分",
+                "first_goal_wait": 36.3,
+                "fast_pct": 49.2,
+                "moderate_pct": 14.6,
+                "slow_pct": 36.2,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 51.4
+                    "pct": 49.2
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 14.7
+                    "pct": 14.6
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 33.9
+                    "pct": 36.2
                   }
                 ]
               },
-              "big_delta": -11.3,
-              "small_delta": -9.5,
+              "big_delta": -11.4,
+              "small_delta": -10.2,
               "narrative": "Ghana 先破门（已 0-1） → 「巩固防守」；Croatia 「组织反扑」。热门先丢球（已 0-1），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
               "live_outlook": null
             }
           ],
           "match_preview": {
             "morphology": {
-              "totals_summary": "预测 2.6 · 合理值 2 · 总进球参考 2 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_summary": "预测 2.5 · 合理值 2 · 总进球参考 2 · 模型在常见进球预期附近均衡，不作强倾向",
               "totals_line_cn": "总进球参考 2",
-              "totals_high_pct": 48.9,
+              "totals_high_pct": 44.7,
               "type_tags": [
                 {
                   "key": "balanced",
@@ -2382,60 +2461,60 @@ const MATCH_DATA = {
           },
           "halftime_preview": {
             "ht_xg_share": 0.44,
-            "xg_home_ht": 0.58,
-            "xg_away_ht": 0.58,
-            "xg_home_2h": 0.74,
-            "xg_away_2h": 0.74,
-            "home_win": 28.6,
-            "draw": 42.8,
-            "away_win": 28.6,
+            "xg_home_ht": 0.55,
+            "xg_away_ht": 0.53,
+            "xg_home_2h": 0.71,
+            "xg_away_2h": 0.68,
+            "home_win": 28.4,
+            "draw": 44.6,
+            "away_win": 27,
             "top_score": "0-0",
-            "top_score_prob": 31.4,
+            "top_score_prob": 34,
             "top3_scores": [
               {
                 "score": "0-0",
-                "prob": 31.4
-              },
-              {
-                "score": "0-1",
-                "prob": 18.2
+                "prob": 34
               },
               {
                 "score": "1-0",
-                "prob": 18.2
+                "prob": 18.7
+              },
+              {
+                "score": "0-1",
+                "prob": 18
               }
             ],
-            "ht_goals_expected": 1.16,
-            "ht_over_0_5_pct": 68.6,
-            "ht_over_1_5_pct": 32.3,
+            "ht_goals_expected": 1.08,
+            "ht_over_0_5_pct": 66,
+            "ht_over_1_5_pct": 29.4,
             "pick": "draw",
             "pick_name": "平局",
-            "summary_cn": "半场 xG 0.58–0.58（约占全场 44%） · 最可能 0-0（31.4%） · 胜平负 28.6/42.8/28.6 · 半场≥1球约 68.6%",
+            "summary_cn": "半场 xG 0.55–0.53（约占全场 44%） · 最可能 0-0（34%） · 胜平负 28.4/44.6/27 · 半场≥1球约 66%",
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
         "public_summary_note": "【推演概要】Croatia · 常规对抗。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
         "goal_efficiency_preview": {
           "mode": "preview",
-          "xg_total": 2.8,
-          "xg_gap": 0.04,
-          "xg_home": 1.42,
-          "xg_away": 1.38,
-          "xg_baseline_home": 1.42,
-          "xg_baseline_away": 1.38,
-          "xg_note": "结构推演用基准 xG 1.42–1.38（进球氛围用调整后 1.32–1.32）",
-          "lean_note": "基准 xG 结构偏多球，但进球氛围偏闷（预测约 2.6）——作岔路预警，非默认剧本",
+          "xg_total": 2.62,
+          "xg_gap": 0.1,
+          "xg_home": 1.36,
+          "xg_away": 1.26,
+          "xg_baseline_home": 1.36,
+          "xg_baseline_away": 1.26,
+          "xg_note": "结构推演用基准 xG 1.36–1.26（进球氛围用调整后 1.26–1.21）",
+          "lean_note": "基准 xG 结构偏多球，但进球氛围偏闷（预测约 2.5）——作岔路预警，非默认剧本",
           "fav_name": "Croatia",
           "dog_name": "Ghana",
-          "fav_xg": 1.42,
-          "dog_xg": 1.38,
+          "fav_xg": 1.36,
+          "dog_xg": 1.26,
           "path_type": "low",
           "path_label": "铁局/小比分",
           "lean": "prevention_high",
           "lean_cn": "预防大比分",
           "lean_mode": "prevention",
-          "lean_confidence": 76.7,
-          "prevention_reason_cn": "基准 xG 结构偏多球，但进球氛围偏闷（预测约 2.6）——作岔路预警，非默认剧本",
+          "lean_confidence": 73.5,
+          "prevention_reason_cn": "基准 xG 结构偏多球，但进球氛围偏闷（预测约 2.5）——作岔路预警，非默认剧本",
           "atmosphere_link_cn": null,
           "modules_aligned": false,
           "live_watch": [
@@ -2458,11 +2537,11 @@ const MATCH_DATA = {
               "severity": "calm"
             }
           ],
-          "prob_over_line": 52.8,
-          "prob_meet_guess": 76.7,
+          "prob_over_line": 48.4,
+          "prob_meet_guess": 73.5,
           "guess_n": 2,
-          "prob_4_plus": 30.4,
-          "prob_2_or_less": 47.2,
+          "prob_4_plus": 26.5,
+          "prob_2_or_less": 51.6,
           "totals_line": 2,
           "scenarios": [
             {
@@ -2470,27 +2549,27 @@ const MATCH_DATA = {
               "label": "铁局/小比分",
               "example": "1-0 / 1-1 / 0-0",
               "note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
-              "prob_pct": 45
-            },
-            {
-              "key": "open",
-              "label": "对攻/open",
-              "example": "2-2 / 4-2 / 3-2",
-              "note": "双方 xG 均有进球预期，任一方效率达标即可凑出 4 球。",
-              "prob_pct": 23
-            },
-            {
-              "key": "dog_bloom",
-              "label": "弱队开花",
-              "example": "2-2 / 1-3 / 3-1",
-              "note": "样本：弱队效率≥1.2 时 71% 总进球≥3；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
-              "prob_pct": 20
+              "prob_pct": 56
             },
             {
               "key": "fav_burst",
               "label": "热门爆发",
               "example": "2-0 / 3-0 / 4-1",
               "note": "样本：热门效率≥1.5 时高比分常见；弱队 xG≈1.0 但只进 1 球时也常见此路径。",
+              "prob_pct": 16
+            },
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "example": "2-2 / 1-3 / 3-1",
+              "note": "样本：弱队效率≥1.2 时 71% 总进球≥3；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
+              "prob_pct": 16
+            },
+            {
+              "key": "open",
+              "label": "对攻/open",
+              "example": "2-2 / 4-2 / 3-2",
+              "note": "双方 xG 均有进球预期，任一方效率达标即可凑出 4 球。",
               "prob_pct": 13
             }
           ],
@@ -2517,8 +2596,8 @@ const MATCH_DATA = {
           "watch_notes": [
             "弱队上半场效率≥1.0 → 关注弱队开花路径"
           ],
-          "pattern_note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
-          "summary_cn": "【路径·基准 xG】合计 2.8 · Croatia 1.42 / Ghana 1.38 → 主路径「铁局/小比分」约 45% · 预防大比分。 至少 2 球约 76.7% · 超 2 约 52.8% · ≤2球 47.2%。样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
+          "pattern_note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。 已纳入官方首发变阵对 xG 的修正。",
+          "summary_cn": "【路径·基准 xG】合计 2.62 · Croatia 1.36 / Ghana 1.26 → 主路径「铁局/小比分」约 56% · 预防大比分。 至少 2 球约 73.5% · 超 2 约 48.4% · ≤2球 51.6%。样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。 已纳入官方首发变阵对 xG 的修正。",
           "in_mid_band": true,
           "sample_note": "结构规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27）· 大/小标签用基准 xG 泊松 ≥60%/≤40%"
         }
@@ -2669,11 +2748,11 @@ const MATCH_DATA = {
         "market_tier": 0.5,
         "tier_label": "Croatia -0.5 · Ghana +0.5",
         "totals_line": 2,
-        "over_pct": 48.9,
+        "over_pct": 44.7,
         "fair_line": 2,
         "line_gap": 0,
-        "full_cover_pct": 46.4,
-        "fav_win_pct": 36.9,
+        "full_cover_pct": 46.8,
+        "fav_win_pct": 37.6,
         "cover_given_win_pct": 100,
         "spread_level": "possible",
         "spread_market_expect": "Croatia -0.5 · 净胜≥1",
@@ -5674,7 +5753,7 @@ const MATCH_DATA = {
         "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
         "blocker_spread_note": "",
         "public_lean_cn": "舆论倾向 Austria（约 55%）",
-        "analysis": "J组同分 · 阿尔及利亚 vs 奥地利 · 现盘 PK 偏奥。",
+        "analysis": "J组末轮 · 阿尔 vs 奥各 3 分 · 皇冠大小 大 1.06 / 小 0.82 · PK 偏奥。",
         "spread_cover": {
           "top3_scores": [
             {
@@ -5736,11 +5815,11 @@ const MATCH_DATA = {
           "signal_desc": "总进球参考低于合理值，模型偏大比分。",
           "public_over_pct": 50,
           "public_lean_cn": "舆论对总进球看法较分散",
-          "index_note": "大比分侧 0.97 / 小比分侧 0.91 · 小比分侧更热",
+          "index_note": "大比分侧 1.06 / 小比分侧 0.82 · 小比分侧更热",
           "totals_odds": {
-            "over": 0.97,
-            "under": 0.91,
-            "note": "大比分 0.97 · 小比分 0.91"
+            "over": 1.06,
+            "under": 0.82,
+            "note": "大比分 1.06 · 小比分 0.82"
           },
           "rational_cn": "模型略看大比分（超 1.75 约 68%）",
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
@@ -5750,11 +5829,11 @@ const MATCH_DATA = {
           "wc_note": "堪萨斯城 neutral · 主客仅为 FIFA 标记",
           "spread_open_cn": "Algeria +0/0.5@0.86 · Austria -0/0.5@0.96",
           "spread_now_cn": "Algeria +0@1.05 · Austria -0@0.84",
-          "totals_now_cn": "大小 1.5/2 · 大 0.97 / 小 0.91",
+          "totals_now_cn": "大小 1.5/2 · 大 1.06 / 小 0.82",
           "tag": "away_edge",
           "tag_cn": "向奥地利倾斜",
           "tag_color": "#7BB8D4",
-          "detail_cn": "阿尔及利亚 +0/0.5 @0.86 → 平手 @1.05；奥地利 0.96→0.84，已出线一方获定价支持。"
+          "detail_cn": "阿尔及利亚 +0/0.5 @0.86 → 平手 @1.05；奥地利 0.96→0.84。大小 1.5/2 皇冠现 大 1.06 / 小 0.82，小球低水与出线默契同向。"
         },
         "totals_pick_layers": {
           "model_side": "over",
@@ -5776,23 +5855,25 @@ const MATCH_DATA = {
           "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
         },
         "agent_pick": {
-          "primary": "totals",
-          "tendency_cn": "更倾向大小球",
-          "tendency_reason_cn": "模型超线约 61% + 低线 1.5/2 大球低水；出线默契曾指小球，三层校验后以模型+盘面为准。",
+          "primary": "spread",
+          "tendency_cn": "更倾向让球盘",
+          "tendency_reason_cn": "出线不对称默契 → 奥地利 PK 约 73% 不输、无输半；优于大小 1.5/2 结构。",
           "confidence": "high",
           "confidence_cn": "大信心",
-          "confidence_reason_cn": "模型大球约 61%、公允线 ~2.0 现 1.75 偏低 · 大 0.97 低水；形势默契与盘口冲突后改跟模型+盘面，为今日「大小倾向」大信心场。",
+          "confidence_reason_cn": "积分模型平局 47% + 皇冠 PK 奥 0.84；PK 走水路径与争八默契同向，为今日最清晰「让球倾向」场。",
           "spread": {
             "side": "fav",
-            "label_cn": "奥地利 PK（-0）不败",
-            "reason_cn": "奥地利已锁前二，盘口 0.96→0.84 获支持；阿尔须胜但模型平局权重 +9%，PK 下更信客队不败。"
+            "label_cn": "奥地利 PK（-0）@0.84",
+            "reason_cn": "已锁前二 · 输球亦出线；阿尔须胜但模型平局 +9% → 不败约 73%。无输半档，符合先不输。"
           },
           "totals": {
-            "side": "over",
-            "label_cn": "大球 1.5/2",
-            "reason_cn": "模型超 1.75 约 61%、公允 ~2.0；大 0.97 低水。默契战约束总进球，但低线+定价优先大球（形势已降权）。",
+            "side": "under",
+            "label_cn": "小球 1.5/2 @0.82",
+            "reason_cn": "副项 · 皇冠小 0.82 + 默契战；但 1-1 输半、模型约 68% 超线，不作★。",
             "situation_conflict": true,
-            "situation_conflict_cn": "形势偏小球，模型与盘口指向大球 · 形势降权，跟模型+盘面"
+            "situation_conflict_cn": "形势偏小球，模型与盘口指向大球 · 形势降权，跟模型+盘面",
+            "manual_override": true,
+            "recommended_side": "over"
           },
           "picked_at": "2026-06-28",
           "pick_meta": {
@@ -5801,7 +5882,7 @@ const MATCH_DATA = {
             "market_line_side": "over",
             "market_odds_side": "under",
             "market_side": "over",
-            "pick_side": "over",
+            "pick_side": "under",
             "recommended_side": "over",
             "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
             "conflict": true,
@@ -6638,11 +6719,11 @@ const MATCH_DATA = {
         "spread_market_expect": "势均力敌",
         "line_move_tag": "away_edge",
         "line_move_cn": "向奥地利倾斜",
-        "agent_pick_primary": "totals",
-        "agent_pick_tendency_cn": "更倾向大小球",
+        "agent_pick_primary": "spread",
+        "agent_pick_tendency_cn": "更倾向让球盘",
         "agent_pick_confidence": "high",
-        "agent_spread_cn": "奥地利 PK（-0）不败",
-        "agent_totals_cn": "大球 1.5/2",
+        "agent_spread_cn": "奥地利 PK（-0）@0.84",
+        "agent_totals_cn": "小球 1.5/2 @0.82",
         "totals_level": "mild_high",
         "totals_show_lean": false,
         "totals_lean_side": "exciting"
@@ -7925,9 +8006,9 @@ const MATCH_DATA = {
       "rating": 87
     },
     "teaser": "L组末轮 · 巴拿马 vs 英格兰",
-    "home_win": 14,
-    "draw": 20,
-    "away_win": 65,
+    "home_win": 16,
+    "draw": 22,
+    "away_win": 62,
     "predicted_score": "0-2",
     "key_player_home": "José Fajardo",
     "key_player_away": "Jude Bellingham"
