@@ -171,6 +171,7 @@ function enrichMatchSignals(m, handicapMap, snapshots) {
   const raw = handicapMap[copy.id];
   if (raw) {
     copy.depth_calibration = buildDepthCalibration(copy, raw);
+    copy.market_snapshot = pickMarketSnapshot(copy);
     if (copy.actualResult && copy.depth_calibration?.display_summary) {
       const ar = enrichActualResultForReview(copy);
       copy.depth_calibration.preview_replay = buildPreviewPostMatchReview(

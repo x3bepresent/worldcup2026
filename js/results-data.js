@@ -122,9 +122,18 @@ const RESULTS_DATA = {
         "over_pct": 47.1,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 48.5,
+        "full_cover_pct": 46,
+        "fav_win_pct": 74.8,
+        "cover_given_win_pct": 65.9,
         "spread_level": "possible",
         "spread_market_expect": "Mexico -1.25 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -145,35 +154,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "2-0",
-              "prob": 16.7
+              "prob": 16.5
             },
             {
               "score": "1-0",
-              "prob": 15.9
+              "prob": 15.7
             },
             {
               "score": "3-0",
-              "prob": 11.7
+              "prob": 11.5
             }
           ],
-          "one_goal_win_pct": 25.9,
-          "two_plus_win_pct": 48.5,
-          "full_cover_pct": 48.5,
-          "dog_hold_pct": 51.5,
+          "one_goal_win_pct": 25.5,
+          "two_plus_win_pct": 49.3,
+          "full_cover_pct": 46,
+          "dog_hold_pct": 54,
+          "fav_win_pct": 74.8,
+          "cover_given_win_pct": 65.9,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.6,
           "half_cover_pct": 0,
-          "half_lose_pct": 25.9,
+          "half_lose_pct": 25.5,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
           "margin_half_label": null,
-          "fav_cover_ev": 0.099,
-          "dog_cover_ev": -0.099,
+          "fav_cover_ev": 0.113,
+          "dog_cover_ev": -0.113,
           "rational_spread_cn": "主队 净胜达标概率略高",
           "total_xg": 2.6,
           "fair_totals_line": 2,
-          "over_2_5_pct": 47.1,
-          "over_3_pct": 24.9,
+          "over_2_5_pct": 47.9,
+          "over_3_pct": 26,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 25.9%：常见「赢球但净胜仅 1 球」"
+          "margin_risk_note": "净胜 1 球概率 25.5%：常见「赢球但净胜仅 1 球」",
+          "full_cover_pct_raw": 49.3,
+          "dog_hold_pct_raw": 50.7
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -198,6 +213,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -334,7 +351,7 @@ const RESULTS_DATA = {
             "tier_gap": 0,
             "implied_tier_label": "Mexico -1.25 · South Africa +1.25",
             "market_tier_label": "Mexico -1.25 · South Africa +1.25",
-            "summary_cn": "与模型 xG 对照：均衡 · 与赛前净胜看法基本一致 · 模型认为仅小胜 1 球仍约 25.9%"
+            "summary_cn": "与模型 xG 对照：均衡 · 与赛前净胜看法基本一致 · 模型认为仅小胜 1 球仍约 25.5%"
           },
           "win_outlook": {
             "fav_name": "Mexico",
@@ -360,7 +377,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Mexico · 赛前净胜参考 净胜≥2（全达标）",
-            "margin_meet_pct": 48.5,
+            "margin_meet_pct": 45.6,
             "margin_half_pct": 0,
             "margin_fail_pct": 25.9,
             "margin_full_label": "净胜≥2",
@@ -379,21 +396,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 32.6,
             "win_margin2_low_total_pct": 16.7,
             "win_margin2_high_total_pct": 31.8,
-            "readout_cn": "取胜约 74%；若取胜，以「零封拉开」为主（38.2%）。 对着赛前净胜参考，净胜≥2（全达标）约 48.5%；对着总进球参考 2.5，模型超线概率约 47.1%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.5。"
+            "readout_cn": "取胜约 74%；若取胜，以「零封拉开」为主（38.2%）。 对着赛前净胜参考，净胜≥2（全达标）约 45.6%；对着总进球参考 2.5，模型超线概率约 47.1%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.5。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "2-0",
-              "pct": 16.7
+              "pct": 16.5
             },
             {
               "score": "1-0",
-              "pct": 15.9
+              "pct": 15.7
             },
             {
               "score": "3-0",
-              "pct": 11.7
+              "pct": 11.5
             }
           ],
           "totals_view": {
@@ -427,7 +444,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Mexico -1.25 穿盘：有达标可能",
-            "sub_cn": "Mexico -1.25 穿盘 48.5% · South Africa +1.25 守住 51.5% 进球氛围：几乎五五开",
+            "sub_cn": "Mexico 胜 74.8% · 胜后穿 65.9% · South Africa +1.25 守 54% 进球氛围：几乎五五开",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -437,18 +454,23 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Mexico -1.25",
               "dog_handicap_cn": "South Africa +1.25",
               "market_expect_cn": "Mexico -1.25 · 净胜≥2",
-              "meet_pct": 48.5,
-              "dog_hold_pct": 51.5,
-              "meet_pct_label": "Mexico -1.25 穿盘概率",
-              "dog_hold_label": "South Africa +1.25 守住概率",
+              "meet_pct": 46,
+              "dog_hold_pct": 54,
+              "fav_win_pct": 74.8,
+              "cover_given_win_pct": 65.9,
+              "full_cover_pct_raw": 49.3,
+              "meet_pct_label": "Mexico -1.25 穿盘概率（校准）",
+              "dog_hold_label": "South Africa +1.25 守住概率（校准）",
+              "two_stage_cn": "Mexico 取胜约 74.8% · 赢球后穿盘约 65.9% · South Africa +1.25 守住约 54%",
+              "grid_tail_pct": 0.6,
               "verdict_cn": "有达标可能",
               "headline_cn": "Mexico -1.25 穿盘：有达标可能",
-              "pill_cn": "Mexico -1.25 穿盘 48.5% · South Africa +1.25 守住 51.5%",
-              "detail_cn": "Mexico -1.25 穿盘约 48.5%（净胜≥2） · South Africa +1.25 守住约 51.5%；穿盘与受让守住均有一定空间（仅胜 1 球约 25.9%）。",
-              "extra_stats_cn": "仅胜 1 球约 25.9%",
-              "full_cover_pct": 48.5,
+              "pill_cn": "Mexico 胜 74.8% · 胜后穿 65.9% · South Africa +1.25 守 54%",
+              "detail_cn": "Mexico 取胜约 74.8% · 赢球后穿盘约 65.9% · South Africa +1.25 守住约 54%（泊松 raw 49.3% → 校准 46%）；穿盘与受让守住均有一定空间（仅胜 1 球约 25.5%）。",
+              "extra_stats_cn": "仅胜 1 球约 25.5%",
+              "full_cover_pct": 46,
               "half_cover_pct": 0,
-              "lose1_pct": 25.9,
+              "lose1_pct": 25.5,
               "margin_full_label": "净胜≥2",
               "margin_half_label": null,
               "tier_gap": 0,
@@ -489,24 +511,29 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Mexico -1.25",
                   "dog_handicap_cn": "South Africa +1.25",
                   "market_expect_cn": "Mexico -1.25 · 净胜≥2",
-                  "meet_pct": 48.5,
-                  "dog_hold_pct": 51.5,
-                  "meet_pct_label": "Mexico -1.25 穿盘概率",
-                  "dog_hold_label": "South Africa +1.25 守住概率",
+                  "meet_pct": 46,
+                  "dog_hold_pct": 54,
+                  "fav_win_pct": 74.8,
+                  "cover_given_win_pct": 65.9,
+                  "full_cover_pct_raw": 49.3,
+                  "meet_pct_label": "Mexico -1.25 穿盘概率（校准）",
+                  "dog_hold_label": "South Africa +1.25 守住概率（校准）",
+                  "two_stage_cn": "Mexico 取胜约 74.8% · 赢球后穿盘约 65.9% · South Africa +1.25 守住约 54%",
+                  "grid_tail_pct": 0.6,
                   "verdict_cn": "有达标可能",
                   "headline_cn": "Mexico -1.25 穿盘：有达标可能",
-                  "pill_cn": "Mexico -1.25 穿盘 48.5% · South Africa +1.25 守住 51.5%",
-                  "detail_cn": "Mexico -1.25 穿盘约 48.5%（净胜≥2） · South Africa +1.25 守住约 51.5%；穿盘与受让守住均有一定空间（仅胜 1 球约 25.9%）。",
-                  "extra_stats_cn": "仅胜 1 球约 25.9%",
-                  "full_cover_pct": 48.5,
+                  "pill_cn": "Mexico 胜 74.8% · 胜后穿 65.9% · South Africa +1.25 守 54%",
+                  "detail_cn": "Mexico 取胜约 74.8% · 赢球后穿盘约 65.9% · South Africa +1.25 守住约 54%（泊松 raw 49.3% → 校准 46%）；穿盘与受让守住均有一定空间（仅胜 1 球约 25.5%）。",
+                  "extra_stats_cn": "仅胜 1 球约 25.5%",
+                  "full_cover_pct": 46,
                   "half_cover_pct": 0,
-                  "lose1_pct": 25.9,
+                  "lose1_pct": 25.5,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": null,
                   "tier_gap": 0,
                   "show_cover": true
                 },
-                "text": "Mexico -1.25 穿盘 48.5% · South Africa +1.25 守住 51.5%",
+                "text": "Mexico 胜 74.8% · 胜后穿 65.9% · South Africa +1.25 守 54%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -781,7 +808,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Mexico · 压制局。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致 · 模型认为仅小胜 1 球仍约 25.9%（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
+        "public_summary_note": "【推演概要】Mexico · 压制局。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致 · 模型认为仅小胜 1 球仍约 25.5%（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
         "goal_efficiency": {
           "xg_total": 2.6,
           "xg_gap": 1.6,
@@ -949,9 +976,18 @@ const RESULTS_DATA = {
         "over_pct": 57.2,
         "fair_line": 2.75,
         "line_gap": -0.25,
-        "full_cover_pct": 51,
-        "spread_level": "likely",
+        "full_cover_pct": 47.1,
+        "fav_win_pct": 51.3,
+        "cover_given_win_pct": 100,
+        "spread_level": "possible",
         "spread_market_expect": "South Korea -0.25 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -972,35 +1008,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 10.9
+              "prob": 10.8
             },
             {
               "score": "2-1",
-              "prob": 9.8
+              "prob": 9.7
             },
             {
               "score": "1-0",
-              "prob": 9.1
+              "prob": 9
             }
           ],
-          "one_goal_win_pct": 23.1,
-          "two_plus_win_pct": 27.9,
-          "full_cover_pct": 51,
-          "dog_hold_pct": 49,
+          "one_goal_win_pct": 22.9,
+          "two_plus_win_pct": 28.4,
+          "full_cover_pct": 47.1,
+          "dog_hold_pct": 52.9,
+          "fav_win_pct": 51.3,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.3,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": 0.02,
-          "dog_cover_ev": -0.02,
+          "fav_cover_ev": 0.026,
+          "dog_cover_ev": -0.026,
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 3,
           "fair_totals_line": 2.75,
-          "over_2_5_pct": 57.2,
-          "over_3_pct": 34.5,
+          "over_2_5_pct": 57.6,
+          "over_3_pct": 35.1,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 51%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 51.3%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 51.3,
+          "dog_hold_pct_raw": 48.7
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -1025,6 +1067,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -1187,7 +1231,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "South Korea · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 51,
+            "margin_meet_pct": 47,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -1206,21 +1250,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 17.2,
             "win_margin2_low_total_pct": 8.2,
             "win_margin2_high_total_pct": 19.8,
-            "readout_cn": "取胜约 51%；若取胜，以「险胜收工」为主（45.3%）。 对着赛前净胜参考，净胜≥1（全达标）约 51%；对着总进球参考 2.5，模型超线概率约 57.2%。"
+            "readout_cn": "取胜约 51%；若取胜，以「险胜收工」为主（45.3%）。 对着赛前净胜参考，净胜≥1（全达标）约 47%；对着总进球参考 2.5，模型超线概率约 57.2%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 10.9
+              "pct": 10.8
             },
             {
               "score": "2-1",
-              "pct": 9.8
+              "pct": 9.7
             },
             {
               "score": "1-0",
-              "pct": 9.1
+              "pct": 9
             }
           ],
           "totals_view": {
@@ -1253,27 +1297,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 3 · 合理值 2.75 · 总进球参考 2.5（低于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "South Korea -0.25 穿盘：达到预期较有希望",
-            "sub_cn": "South Korea -0.25 穿盘 51% · Czechia +0.25 守住 49% 进球氛围：几乎五五开",
+            "headline_cn": "South Korea -0.25 穿盘：有达标可能",
+            "sub_cn": "South Korea 胜 51.3% · 胜后穿 100% · Czechia +0.25 守 52.9% 进球氛围：几乎五五开",
             "spread": {
-              "level": "likely",
-              "label_cn": "达到预期较有希望",
-              "color": "#5BBF8A",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "South Korea",
               "dog_name": "Czechia",
               "fav_handicap_cn": "South Korea -0.25",
               "dog_handicap_cn": "Czechia +0.25",
               "market_expect_cn": "South Korea -0.25 · 净胜≥1",
-              "meet_pct": 51,
-              "dog_hold_pct": 49,
-              "meet_pct_label": "South Korea -0.25 穿盘概率",
-              "dog_hold_label": "Czechia +0.25 守住概率",
-              "verdict_cn": "达到预期较有希望",
-              "headline_cn": "South Korea -0.25 穿盘：达到预期较有希望",
-              "pill_cn": "South Korea -0.25 穿盘 51% · Czechia +0.25 守住 49%",
-              "detail_cn": "South Korea -0.25 穿盘约 51%（净胜≥1） · Czechia +0.25 守住约 49%；模型认为热门穿盘概率相对较高。",
+              "meet_pct": 47.1,
+              "dog_hold_pct": 52.9,
+              "fav_win_pct": 51.3,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 51.3,
+              "meet_pct_label": "South Korea -0.25 穿盘概率（校准）",
+              "dog_hold_label": "Czechia +0.25 守住概率（校准）",
+              "two_stage_cn": "South Korea 取胜约 51.3% · 赢球后穿盘约 100% · Czechia +0.25 守住约 52.9%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "South Korea -0.25 穿盘：有达标可能",
+              "pill_cn": "South Korea 胜 51.3% · 胜后穿 100% · Czechia +0.25 守 52.9%",
+              "detail_cn": "South Korea 取胜约 51.3% · 赢球后穿盘约 100% · Czechia +0.25 守住约 52.9%（泊松 raw 51.3% → 校准 47.1%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 51,
+              "full_cover_pct": 47.1,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -1308,24 +1357,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "likely",
-                  "label_cn": "达到预期较有希望",
-                  "color": "#5BBF8A",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "South Korea",
                   "dog_name": "Czechia",
                   "fav_handicap_cn": "South Korea -0.25",
                   "dog_handicap_cn": "Czechia +0.25",
                   "market_expect_cn": "South Korea -0.25 · 净胜≥1",
-                  "meet_pct": 51,
-                  "dog_hold_pct": 49,
-                  "meet_pct_label": "South Korea -0.25 穿盘概率",
-                  "dog_hold_label": "Czechia +0.25 守住概率",
-                  "verdict_cn": "达到预期较有希望",
-                  "headline_cn": "South Korea -0.25 穿盘：达到预期较有希望",
-                  "pill_cn": "South Korea -0.25 穿盘 51% · Czechia +0.25 守住 49%",
-                  "detail_cn": "South Korea -0.25 穿盘约 51%（净胜≥1） · Czechia +0.25 守住约 49%；模型认为热门穿盘概率相对较高。",
+                  "meet_pct": 47.1,
+                  "dog_hold_pct": 52.9,
+                  "fav_win_pct": 51.3,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 51.3,
+                  "meet_pct_label": "South Korea -0.25 穿盘概率（校准）",
+                  "dog_hold_label": "Czechia +0.25 守住概率（校准）",
+                  "two_stage_cn": "South Korea 取胜约 51.3% · 赢球后穿盘约 100% · Czechia +0.25 守住约 52.9%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "South Korea -0.25 穿盘：有达标可能",
+                  "pill_cn": "South Korea 胜 51.3% · 胜后穿 100% · Czechia +0.25 守 52.9%",
+                  "detail_cn": "South Korea 取胜约 51.3% · 赢球后穿盘约 100% · Czechia +0.25 守住约 52.9%（泊松 raw 51.3% → 校准 47.1%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 51,
+                  "full_cover_pct": 47.1,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -1333,8 +1387,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0,
                   "show_cover": true
                 },
-                "text": "South Korea -0.25 穿盘 51% · Czechia +0.25 守住 49%",
-                "color": "#5BBF8A",
+                "text": "South Korea 胜 51.3% · 胜后穿 100% · Czechia +0.25 守 52.9%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -1649,7 +1703,7 @@ const RESULTS_DATA = {
           "summary_cn": "命中：净胜全达标方向一致 · 赛前进球氛围未强判（符合模型五五开读法）。",
           "totals_actual": 3,
           "totals_line": 2.5,
-          "spread_level": "likely",
+          "spread_level": "possible",
           "totals_level": "neutral"
         }
       },
@@ -1764,9 +1818,18 @@ const RESULTS_DATA = {
         "over_pct": 47,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 54.3,
-        "spread_level": "likely",
+        "full_cover_pct": 48.9,
+        "fav_win_pct": 54.5,
+        "cover_given_win_pct": 100,
+        "spread_level": "possible",
         "spread_market_expect": "Canada -0.25 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -1787,35 +1850,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-0",
-              "prob": 12.7
+              "prob": 12.6
             },
             {
               "score": "1-1",
-              "prob": 11.7
+              "prob": 11.6
             },
             {
               "score": "2-0",
-              "prob": 10.5
+              "prob": 10.4
             }
           ],
-          "one_goal_win_pct": 25.2,
-          "two_plus_win_pct": 29.1,
-          "full_cover_pct": 54.3,
-          "dog_hold_pct": 45.7,
+          "one_goal_win_pct": 25,
+          "two_plus_win_pct": 29.5,
+          "full_cover_pct": 48.9,
+          "dog_hold_pct": 51.1,
+          "fav_win_pct": 54.5,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": 0.086,
-          "dog_cover_ev": -0.086,
+          "fav_cover_ev": 0.09,
+          "dog_cover_ev": -0.09,
           "rational_spread_cn": "主队 净胜达标概率略高",
           "total_xg": 2.57,
           "fair_totals_line": 2,
-          "over_2_5_pct": 47,
-          "over_3_pct": 25.2,
+          "over_2_5_pct": 47.3,
+          "over_3_pct": 25.6,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 54.3%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 54.5%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 54.5,
+          "dog_hold_pct_raw": 45.5
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -1840,6 +1909,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -2002,7 +2073,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Canada · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 54.3,
+            "margin_meet_pct": 48.8,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -2021,21 +2092,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 23.2,
             "win_margin2_low_total_pct": 10.5,
             "win_margin2_high_total_pct": 18.6,
-            "readout_cn": "取胜约 54%；若取胜，以「险胜收工」为主（46.3%）。 对着赛前净胜参考，净胜≥1（全达标）约 54.3%；对着总进球参考 2.5，模型超线概率约 47%。"
+            "readout_cn": "取胜约 54%；若取胜，以「险胜收工」为主（46.3%）。 对着赛前净胜参考，净胜≥1（全达标）约 48.8%；对着总进球参考 2.5，模型超线概率约 47%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 12.7
+              "pct": 12.6
             },
             {
               "score": "1-1",
-              "pct": 11.7
+              "pct": 11.6
             },
             {
               "score": "2-0",
-              "pct": 10.5
+              "pct": 10.4
             }
           ],
           "totals_view": {
@@ -2068,27 +2139,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.5 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Canada -0.25 穿盘：达到预期较有希望",
-            "sub_cn": "Canada -0.25 穿盘 54.3% · Bosnia and Herzegovina +0.25 守住 45.7% 进球氛围：几乎五五开",
+            "headline_cn": "Canada -0.25 穿盘：有达标可能",
+            "sub_cn": "Canada 胜 54.5% · 胜后穿 100% · Bosnia and Herzegovina +0.25 守 51.1% 进球氛围：几乎五五开",
             "spread": {
-              "level": "likely",
-              "label_cn": "达到预期较有希望",
-              "color": "#5BBF8A",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Canada",
               "dog_name": "Bosnia and Herzegovina",
               "fav_handicap_cn": "Canada -0.25",
               "dog_handicap_cn": "Bosnia and Herzegovina +0.25",
               "market_expect_cn": "Canada -0.25 · 净胜≥1",
-              "meet_pct": 54.3,
-              "dog_hold_pct": 45.7,
-              "meet_pct_label": "Canada -0.25 穿盘概率",
-              "dog_hold_label": "Bosnia and Herzegovina +0.25 守住概率",
-              "verdict_cn": "达到预期较有希望",
-              "headline_cn": "Canada -0.25 穿盘：达到预期较有希望",
-              "pill_cn": "Canada -0.25 穿盘 54.3% · Bosnia and Herzegovina +0.25 守住 45.7%",
-              "detail_cn": "Canada -0.25 穿盘约 54.3%（净胜≥1） · Bosnia and Herzegovina +0.25 守住约 45.7%；模型认为热门穿盘概率相对较高。",
+              "meet_pct": 48.9,
+              "dog_hold_pct": 51.1,
+              "fav_win_pct": 54.5,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 54.5,
+              "meet_pct_label": "Canada -0.25 穿盘概率（校准）",
+              "dog_hold_label": "Bosnia and Herzegovina +0.25 守住概率（校准）",
+              "two_stage_cn": "Canada 取胜约 54.5% · 赢球后穿盘约 100% · Bosnia and Herzegovina +0.25 守住约 51.1%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Canada -0.25 穿盘：有达标可能",
+              "pill_cn": "Canada 胜 54.5% · 胜后穿 100% · Bosnia and Herzegovina +0.25 守 51.1%",
+              "detail_cn": "Canada 取胜约 54.5% · 赢球后穿盘约 100% · Bosnia and Herzegovina +0.25 守住约 51.1%（泊松 raw 54.5% → 校准 48.9%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 54.3,
+              "full_cover_pct": 48.9,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -2123,24 +2199,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "likely",
-                  "label_cn": "达到预期较有希望",
-                  "color": "#5BBF8A",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Canada",
                   "dog_name": "Bosnia and Herzegovina",
                   "fav_handicap_cn": "Canada -0.25",
                   "dog_handicap_cn": "Bosnia and Herzegovina +0.25",
                   "market_expect_cn": "Canada -0.25 · 净胜≥1",
-                  "meet_pct": 54.3,
-                  "dog_hold_pct": 45.7,
-                  "meet_pct_label": "Canada -0.25 穿盘概率",
-                  "dog_hold_label": "Bosnia and Herzegovina +0.25 守住概率",
-                  "verdict_cn": "达到预期较有希望",
-                  "headline_cn": "Canada -0.25 穿盘：达到预期较有希望",
-                  "pill_cn": "Canada -0.25 穿盘 54.3% · Bosnia and Herzegovina +0.25 守住 45.7%",
-                  "detail_cn": "Canada -0.25 穿盘约 54.3%（净胜≥1） · Bosnia and Herzegovina +0.25 守住约 45.7%；模型认为热门穿盘概率相对较高。",
+                  "meet_pct": 48.9,
+                  "dog_hold_pct": 51.1,
+                  "fav_win_pct": 54.5,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 54.5,
+                  "meet_pct_label": "Canada -0.25 穿盘概率（校准）",
+                  "dog_hold_label": "Bosnia and Herzegovina +0.25 守住概率（校准）",
+                  "two_stage_cn": "Canada 取胜约 54.5% · 赢球后穿盘约 100% · Bosnia and Herzegovina +0.25 守住约 51.1%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Canada -0.25 穿盘：有达标可能",
+                  "pill_cn": "Canada 胜 54.5% · 胜后穿 100% · Bosnia and Herzegovina +0.25 守 51.1%",
+                  "detail_cn": "Canada 取胜约 54.5% · 赢球后穿盘约 100% · Bosnia and Herzegovina +0.25 守住约 51.1%（泊松 raw 54.5% → 校准 48.9%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 54.3,
+                  "full_cover_pct": 48.9,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -2148,8 +2229,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0,
                   "show_cover": true
                 },
-                "text": "Canada -0.25 穿盘 54.3% · Bosnia and Herzegovina +0.25 守住 45.7%",
-                "color": "#5BBF8A",
+                "text": "Canada 胜 54.5% · 胜后穿 100% · Bosnia and Herzegovina +0.25 守 51.1%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -2465,13 +2546,11 @@ const RESULTS_DATA = {
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
-          "misses": [
-            "净胜全达标未兑现"
-          ],
-          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。 偏差：净胜全达标未兑现。",
+          "misses": [],
+          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。",
           "totals_actual": 2,
           "totals_line": 2.5,
-          "spread_level": "likely",
+          "spread_level": "possible",
           "totals_level": "neutral"
         }
       },
@@ -2595,9 +2674,18 @@ const RESULTS_DATA = {
         "over_pct": 46.2,
         "fair_line": 2.75,
         "line_gap": 0,
-        "full_cover_pct": 67.3,
+        "full_cover_pct": 58.9,
+        "fav_win_pct": 67.9,
+        "cover_given_win_pct": 100,
         "spread_level": "likely",
         "spread_market_expect": "USA -0.75 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -2618,35 +2706,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "2-0",
-              "prob": 11.8
+              "prob": 11.5
             },
             {
               "score": "1-0",
-              "prob": 10.7
+              "prob": 10.5
             },
             {
               "score": "2-1",
-              "prob": 10
+              "prob": 9.8
             }
           ],
-          "one_goal_win_pct": 24.3,
-          "two_plus_win_pct": 43,
-          "full_cover_pct": 67.3,
-          "dog_hold_pct": 32.7,
+          "one_goal_win_pct": 23.9,
+          "two_plus_win_pct": 44,
+          "full_cover_pct": 58.9,
+          "dog_hold_pct": 41.1,
+          "fav_win_pct": 67.9,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.7,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": 0.346,
-          "dog_cover_ev": -0.346,
+          "fav_cover_ev": 0.358,
+          "dog_cover_ev": -0.358,
           "rational_spread_cn": "主队 净胜达标概率略高",
           "total_xg": 3.05,
           "fair_totals_line": 2.75,
-          "over_2_5_pct": 57.7,
-          "over_3_pct": 34.8,
-          "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 67.3%；仅赢 1 球约 0%"
+          "over_2_5_pct": 58.5,
+          "over_3_pct": 35.9,
+          "totals_lean_cn": "超 2.5 偏大比分（约 58.5%）；4球+偏少",
+          "margin_risk_note": "净胜≥1 约 67.9%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 67.9,
+          "dog_hold_pct_raw": 32.1
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -2671,6 +2765,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -2833,7 +2929,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "USA · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 67.3,
+            "margin_meet_pct": 58.6,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -2852,21 +2948,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 22.4,
             "win_margin2_low_total_pct": 11.8,
             "win_margin2_high_total_pct": 31.3,
-            "readout_cn": "取胜约 67%；若取胜，以「险胜收工」为主（36.2%）。 对着赛前净胜参考，净胜≥1（全达标）约 67.3%；对着总进球参考 2.75，模型超线概率约 46.2%。"
+            "readout_cn": "取胜约 67%；若取胜，以「险胜收工」为主（36.2%）。 对着赛前净胜参考，净胜≥1（全达标）约 58.6%；对着总进球参考 2.75，模型超线概率约 46.2%。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "2-0",
-              "pct": 11.8
+              "pct": 11.5
             },
             {
               "score": "1-0",
-              "pct": 10.7
+              "pct": 10.5
             },
             {
               "score": "2-1",
-              "pct": 10
+              "pct": 9.8
             }
           ],
           "totals_view": {
@@ -2900,7 +2996,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "USA -0.75 穿盘：达到预期较有希望",
-            "sub_cn": "USA -0.75 穿盘 67.3% · Paraguay +0.75 守住 32.7% 进球氛围：几乎五五开",
+            "sub_cn": "USA 胜 67.9% · 胜后穿 100% · Paraguay +0.75 守 41.1% 进球氛围：几乎五五开",
             "spread": {
               "level": "likely",
               "label_cn": "达到预期较有希望",
@@ -2910,16 +3006,21 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "USA -0.75",
               "dog_handicap_cn": "Paraguay +0.75",
               "market_expect_cn": "USA -0.75 · 净胜≥1",
-              "meet_pct": 67.3,
-              "dog_hold_pct": 32.7,
-              "meet_pct_label": "USA -0.75 穿盘概率",
-              "dog_hold_label": "Paraguay +0.75 守住概率",
+              "meet_pct": 58.9,
+              "dog_hold_pct": 41.1,
+              "fav_win_pct": 67.9,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 67.9,
+              "meet_pct_label": "USA -0.75 穿盘概率（校准）",
+              "dog_hold_label": "Paraguay +0.75 守住概率（校准）",
+              "two_stage_cn": "USA 取胜约 67.9% · 赢球后穿盘约 100% · Paraguay +0.75 守住约 41.1%",
+              "grid_tail_pct": 0.7,
               "verdict_cn": "达到预期较有希望",
               "headline_cn": "USA -0.75 穿盘：达到预期较有希望",
-              "pill_cn": "USA -0.75 穿盘 67.3% · Paraguay +0.75 守住 32.7%",
-              "detail_cn": "USA -0.75 穿盘约 67.3%（净胜≥1） · Paraguay +0.75 守住约 32.7%；模型认为热门穿盘概率相对较高。",
+              "pill_cn": "USA 胜 67.9% · 胜后穿 100% · Paraguay +0.75 守 41.1%",
+              "detail_cn": "USA 取胜约 67.9% · 赢球后穿盘约 100% · Paraguay +0.75 守住约 41.1%（泊松 raw 67.9% → 校准 58.9%）；模型认为热门穿盘概率相对较高。",
               "extra_stats_cn": "",
-              "full_cover_pct": 67.3,
+              "full_cover_pct": 58.9,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -2962,16 +3063,21 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "USA -0.75",
                   "dog_handicap_cn": "Paraguay +0.75",
                   "market_expect_cn": "USA -0.75 · 净胜≥1",
-                  "meet_pct": 67.3,
-                  "dog_hold_pct": 32.7,
-                  "meet_pct_label": "USA -0.75 穿盘概率",
-                  "dog_hold_label": "Paraguay +0.75 守住概率",
+                  "meet_pct": 58.9,
+                  "dog_hold_pct": 41.1,
+                  "fav_win_pct": 67.9,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 67.9,
+                  "meet_pct_label": "USA -0.75 穿盘概率（校准）",
+                  "dog_hold_label": "Paraguay +0.75 守住概率（校准）",
+                  "two_stage_cn": "USA 取胜约 67.9% · 赢球后穿盘约 100% · Paraguay +0.75 守住约 41.1%",
+                  "grid_tail_pct": 0.7,
                   "verdict_cn": "达到预期较有希望",
                   "headline_cn": "USA -0.75 穿盘：达到预期较有希望",
-                  "pill_cn": "USA -0.75 穿盘 67.3% · Paraguay +0.75 守住 32.7%",
-                  "detail_cn": "USA -0.75 穿盘约 67.3%（净胜≥1） · Paraguay +0.75 守住约 32.7%；模型认为热门穿盘概率相对较高。",
+                  "pill_cn": "USA 胜 67.9% · 胜后穿 100% · Paraguay +0.75 守 41.1%",
+                  "detail_cn": "USA 取胜约 67.9% · 赢球后穿盘约 100% · Paraguay +0.75 守住约 41.1%（泊松 raw 67.9% → 校准 58.9%）；模型认为热门穿盘概率相对较高。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 67.3,
+                  "full_cover_pct": 58.9,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -2979,7 +3085,7 @@ const RESULTS_DATA = {
                   "tier_gap": 0,
                   "show_cover": true
                 },
-                "text": "USA -0.75 穿盘 67.3% · Paraguay +0.75 守住 32.7%",
+                "text": "USA 胜 67.9% · 胜后穿 100% · Paraguay +0.75 守 41.1%",
                 "color": "#5BBF8A",
                 "primary": true
               },
@@ -3419,9 +3525,18 @@ const RESULTS_DATA = {
         "over_pct": 50.1,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 57.2,
-        "spread_level": "likely",
+        "full_cover_pct": 49.6,
+        "fav_win_pct": 57.5,
+        "cover_given_win_pct": 100,
+        "spread_level": "possible",
         "spread_market_expect": "Switzerland -0.25 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -3442,35 +3557,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "0-1",
-              "prob": 12.1
+              "prob": 12
             },
             {
               "score": "1-1",
-              "prob": 11.1
+              "prob": 11
             },
             {
               "score": "0-2",
-              "prob": 10.8
+              "prob": 10.7
             }
           ],
-          "one_goal_win_pct": 13,
+          "one_goal_win_pct": 12.9,
           "two_plus_win_pct": 6.4,
-          "full_cover_pct": 57.2,
-          "dog_hold_pct": 42.8,
+          "full_cover_pct": 49.6,
+          "dog_hold_pct": 50.4,
+          "fav_win_pct": 57.5,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": 0.144,
-          "dog_cover_ev": -0.144,
+          "fav_cover_ev": 0.15,
+          "dog_cover_ev": -0.15,
           "rational_spread_cn": "客队 净胜达标概率略高",
           "total_xg": 2.7,
           "fair_totals_line": 2,
-          "over_2_5_pct": 50.1,
-          "over_3_pct": 27.9,
+          "over_2_5_pct": 50.5,
+          "over_3_pct": 28.4,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 57.2%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 57.5%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 57.5,
+          "dog_hold_pct_raw": 42.5
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -3495,6 +3616,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -3662,7 +3785,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Switzerland · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 57.2,
+            "margin_meet_pct": 49.5,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -3681,21 +3804,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 22.8,
             "win_margin2_low_total_pct": 10.8,
             "win_margin2_high_total_pct": 21.4,
-            "readout_cn": "取胜约 55%；若取胜，以「险胜收工」为主（43.8%）。 对着赛前净胜参考，净胜≥1（全达标）约 57.2%；对着总进球参考 2.5，模型超线概率约 50.1%。"
+            "readout_cn": "取胜约 55%；若取胜，以「险胜收工」为主（43.8%）。 对着赛前净胜参考，净胜≥1（全达标）约 49.5%；对着总进球参考 2.5，模型超线概率约 50.1%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "0-1",
-              "pct": 12.1
+              "pct": 12
             },
             {
               "score": "1-1",
-              "pct": 11.1
+              "pct": 11
             },
             {
               "score": "0-2",
-              "pct": 10.8
+              "pct": 10.7
             }
           ],
           "totals_view": {
@@ -3728,27 +3851,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.6 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Switzerland -0.25 穿盘：达到预期较有希望",
-            "sub_cn": "Switzerland -0.25 穿盘 57.2% · Qatar +0.25 守住 42.8% 进球氛围：几乎五五开",
+            "headline_cn": "Switzerland -0.25 穿盘：有达标可能",
+            "sub_cn": "Switzerland 胜 57.5% · 胜后穿 100% · Qatar +0.25 守 50.4% 进球氛围：几乎五五开",
             "spread": {
-              "level": "likely",
-              "label_cn": "达到预期较有希望",
-              "color": "#5BBF8A",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Switzerland",
               "dog_name": "Qatar",
               "fav_handicap_cn": "Switzerland -0.25",
               "dog_handicap_cn": "Qatar +0.25",
               "market_expect_cn": "Switzerland -0.25 · 净胜≥1",
-              "meet_pct": 57.2,
-              "dog_hold_pct": 42.8,
-              "meet_pct_label": "Switzerland -0.25 穿盘概率",
-              "dog_hold_label": "Qatar +0.25 守住概率",
-              "verdict_cn": "达到预期较有希望",
-              "headline_cn": "Switzerland -0.25 穿盘：达到预期较有希望",
-              "pill_cn": "Switzerland -0.25 穿盘 57.2% · Qatar +0.25 守住 42.8%",
-              "detail_cn": "Switzerland -0.25 穿盘约 57.2%（净胜≥1） · Qatar +0.25 守住约 42.8%；模型认为热门穿盘概率相对较高。",
+              "meet_pct": 49.6,
+              "dog_hold_pct": 50.4,
+              "fav_win_pct": 57.5,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 57.5,
+              "meet_pct_label": "Switzerland -0.25 穿盘概率（校准）",
+              "dog_hold_label": "Qatar +0.25 守住概率（校准）",
+              "two_stage_cn": "Switzerland 取胜约 57.5% · 赢球后穿盘约 100% · Qatar +0.25 守住约 50.4%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Switzerland -0.25 穿盘：有达标可能",
+              "pill_cn": "Switzerland 胜 57.5% · 胜后穿 100% · Qatar +0.25 守 50.4%",
+              "detail_cn": "Switzerland 取胜约 57.5% · 赢球后穿盘约 100% · Qatar +0.25 守住约 50.4%（泊松 raw 57.5% → 校准 49.6%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 57.2,
+              "full_cover_pct": 49.6,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -3783,24 +3911,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "likely",
-                  "label_cn": "达到预期较有希望",
-                  "color": "#5BBF8A",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Switzerland",
                   "dog_name": "Qatar",
                   "fav_handicap_cn": "Switzerland -0.25",
                   "dog_handicap_cn": "Qatar +0.25",
                   "market_expect_cn": "Switzerland -0.25 · 净胜≥1",
-                  "meet_pct": 57.2,
-                  "dog_hold_pct": 42.8,
-                  "meet_pct_label": "Switzerland -0.25 穿盘概率",
-                  "dog_hold_label": "Qatar +0.25 守住概率",
-                  "verdict_cn": "达到预期较有希望",
-                  "headline_cn": "Switzerland -0.25 穿盘：达到预期较有希望",
-                  "pill_cn": "Switzerland -0.25 穿盘 57.2% · Qatar +0.25 守住 42.8%",
-                  "detail_cn": "Switzerland -0.25 穿盘约 57.2%（净胜≥1） · Qatar +0.25 守住约 42.8%；模型认为热门穿盘概率相对较高。",
+                  "meet_pct": 49.6,
+                  "dog_hold_pct": 50.4,
+                  "fav_win_pct": 57.5,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 57.5,
+                  "meet_pct_label": "Switzerland -0.25 穿盘概率（校准）",
+                  "dog_hold_label": "Qatar +0.25 守住概率（校准）",
+                  "two_stage_cn": "Switzerland 取胜约 57.5% · 赢球后穿盘约 100% · Qatar +0.25 守住约 50.4%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Switzerland -0.25 穿盘：有达标可能",
+                  "pill_cn": "Switzerland 胜 57.5% · 胜后穿 100% · Qatar +0.25 守 50.4%",
+                  "detail_cn": "Switzerland 取胜约 57.5% · 赢球后穿盘约 100% · Qatar +0.25 守住约 50.4%（泊松 raw 57.5% → 校准 49.6%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 57.2,
+                  "full_cover_pct": 49.6,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -3808,8 +3941,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0,
                   "show_cover": true
                 },
-                "text": "Switzerland -0.25 穿盘 57.2% · Qatar +0.25 守住 42.8%",
-                "color": "#5BBF8A",
+                "text": "Switzerland 胜 57.5% · 胜后穿 100% · Qatar +0.25 守 50.4%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -4125,13 +4258,11 @@ const RESULTS_DATA = {
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
-          "misses": [
-            "净胜全达标未兑现"
-          ],
-          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。 偏差：净胜全达标未兑现。",
+          "misses": [],
+          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。",
           "totals_actual": 2,
           "totals_line": 2.5,
-          "spread_level": "likely",
+          "spread_level": "possible",
           "totals_level": "neutral"
         }
       },
@@ -4255,9 +4386,18 @@ const RESULTS_DATA = {
         "over_pct": 47.7,
         "fair_line": 2.75,
         "line_gap": 0,
-        "full_cover_pct": 59.7,
+        "full_cover_pct": 51.1,
+        "fav_win_pct": 60.2,
+        "cover_given_win_pct": 100,
         "spread_level": "likely",
         "spread_market_expect": "Brazil -0.25 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -4278,35 +4418,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "2-1",
-              "prob": 10.1
+              "prob": 10
             },
             {
               "score": "1-1",
-              "prob": 9.9
+              "prob": 9.7
             },
             {
               "score": "2-0",
-              "prob": 9.7
+              "prob": 9.5
             }
           ],
-          "one_goal_win_pct": 23.9,
-          "two_plus_win_pct": 35.8,
-          "full_cover_pct": 59.7,
-          "dog_hold_pct": 40.3,
+          "one_goal_win_pct": 23.6,
+          "two_plus_win_pct": 36.7,
+          "full_cover_pct": 51.1,
+          "dog_hold_pct": 48.9,
+          "fav_win_pct": 60.2,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.5,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": 0.194,
-          "dog_cover_ev": -0.194,
+          "fav_cover_ev": 0.204,
+          "dog_cover_ev": -0.204,
           "rational_spread_cn": "主队 净胜达标概率略高",
           "total_xg": 3.1,
           "fair_totals_line": 2.75,
-          "over_2_5_pct": 59.1,
-          "over_3_pct": 36.3,
-          "totals_lean_cn": "超 2.5 偏大比分（约 59.1%）；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 59.7%；仅赢 1 球约 0%"
+          "over_2_5_pct": 59.7,
+          "over_3_pct": 37.2,
+          "totals_lean_cn": "超 2.5 偏大比分（约 59.7%）；4球+偏少",
+          "margin_risk_note": "净胜≥1 约 60.2%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 60.2,
+          "dog_hold_pct_raw": 39.8
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -4331,6 +4477,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -4493,7 +4641,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Brazil · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 59.7,
+            "margin_meet_pct": 50.8,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -4512,21 +4660,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 19.1,
             "win_margin2_low_total_pct": 9.7,
             "win_margin2_high_total_pct": 26.2,
-            "readout_cn": "取胜约 60%；若取胜，以「险胜收工」为主（40.1%）。 对着赛前净胜参考，净胜≥1（全达标）约 59.7%；对着总进球参考 2.75，模型超线概率约 47.7%。"
+            "readout_cn": "取胜约 60%；若取胜，以「险胜收工」为主（40.1%）。 对着赛前净胜参考，净胜≥1（全达标）约 50.8%；对着总进球参考 2.75，模型超线概率约 47.7%。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "2-1",
-              "pct": 10.1
+              "pct": 10
             },
             {
               "score": "1-1",
-              "pct": 9.9
+              "pct": 9.7
             },
             {
               "score": "2-0",
-              "pct": 9.7
+              "pct": 9.5
             }
           ],
           "totals_view": {
@@ -4560,7 +4708,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Brazil -0.25 穿盘：达到预期较有希望",
-            "sub_cn": "Brazil -0.25 穿盘 59.7% · Morocco +0.25 守住 40.3% 进球氛围：几乎五五开",
+            "sub_cn": "Brazil 胜 60.2% · 胜后穿 100% · Morocco +0.25 守 48.9% 进球氛围：几乎五五开",
             "spread": {
               "level": "likely",
               "label_cn": "达到预期较有希望",
@@ -4570,16 +4718,21 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Brazil -0.25",
               "dog_handicap_cn": "Morocco +0.25",
               "market_expect_cn": "Brazil -0.25 · 净胜≥1",
-              "meet_pct": 59.7,
-              "dog_hold_pct": 40.3,
-              "meet_pct_label": "Brazil -0.25 穿盘概率",
-              "dog_hold_label": "Morocco +0.25 守住概率",
+              "meet_pct": 51.1,
+              "dog_hold_pct": 48.9,
+              "fav_win_pct": 60.2,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 60.2,
+              "meet_pct_label": "Brazil -0.25 穿盘概率（校准）",
+              "dog_hold_label": "Morocco +0.25 守住概率（校准）",
+              "two_stage_cn": "Brazil 取胜约 60.2% · 赢球后穿盘约 100% · Morocco +0.25 守住约 48.9%",
+              "grid_tail_pct": 0.5,
               "verdict_cn": "达到预期较有希望",
               "headline_cn": "Brazil -0.25 穿盘：达到预期较有希望",
-              "pill_cn": "Brazil -0.25 穿盘 59.7% · Morocco +0.25 守住 40.3%",
-              "detail_cn": "Brazil -0.25 穿盘约 59.7%（净胜≥1） · Morocco +0.25 守住约 40.3%；模型认为热门穿盘概率相对较高。",
+              "pill_cn": "Brazil 胜 60.2% · 胜后穿 100% · Morocco +0.25 守 48.9%",
+              "detail_cn": "Brazil 取胜约 60.2% · 赢球后穿盘约 100% · Morocco +0.25 守住约 48.9%（泊松 raw 60.2% → 校准 51.1%）；模型认为热门穿盘概率相对较高。",
               "extra_stats_cn": "",
-              "full_cover_pct": 59.7,
+              "full_cover_pct": 51.1,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -4622,16 +4775,21 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Brazil -0.25",
                   "dog_handicap_cn": "Morocco +0.25",
                   "market_expect_cn": "Brazil -0.25 · 净胜≥1",
-                  "meet_pct": 59.7,
-                  "dog_hold_pct": 40.3,
-                  "meet_pct_label": "Brazil -0.25 穿盘概率",
-                  "dog_hold_label": "Morocco +0.25 守住概率",
+                  "meet_pct": 51.1,
+                  "dog_hold_pct": 48.9,
+                  "fav_win_pct": 60.2,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 60.2,
+                  "meet_pct_label": "Brazil -0.25 穿盘概率（校准）",
+                  "dog_hold_label": "Morocco +0.25 守住概率（校准）",
+                  "two_stage_cn": "Brazil 取胜约 60.2% · 赢球后穿盘约 100% · Morocco +0.25 守住约 48.9%",
+                  "grid_tail_pct": 0.5,
                   "verdict_cn": "达到预期较有希望",
                   "headline_cn": "Brazil -0.25 穿盘：达到预期较有希望",
-                  "pill_cn": "Brazil -0.25 穿盘 59.7% · Morocco +0.25 守住 40.3%",
-                  "detail_cn": "Brazil -0.25 穿盘约 59.7%（净胜≥1） · Morocco +0.25 守住约 40.3%；模型认为热门穿盘概率相对较高。",
+                  "pill_cn": "Brazil 胜 60.2% · 胜后穿 100% · Morocco +0.25 守 48.9%",
+                  "detail_cn": "Brazil 取胜约 60.2% · 赢球后穿盘约 100% · Morocco +0.25 守住约 48.9%（泊松 raw 60.2% → 校准 51.1%）；模型认为热门穿盘概率相对较高。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 59.7,
+                  "full_cover_pct": 51.1,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -4639,7 +4797,7 @@ const RESULTS_DATA = {
                   "tier_gap": 0,
                   "show_cover": true
                 },
-                "text": "Brazil -0.25 穿盘 59.7% · Morocco +0.25 守住 40.3%",
+                "text": "Brazil 胜 60.2% · 胜后穿 100% · Morocco +0.25 守 48.9%",
                 "color": "#5BBF8A",
                 "primary": true
               },
@@ -5086,9 +5244,18 @@ const RESULTS_DATA = {
         "over_pct": 52.7,
         "fair_line": 2.25,
         "line_gap": 0,
-        "full_cover_pct": 50.2,
-        "spread_level": "likely",
+        "full_cover_pct": 46.6,
+        "fav_win_pct": 50.4,
+        "cover_given_win_pct": 100,
+        "spread_level": "possible",
         "spread_market_expect": "Scotland -0.25 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -5117,27 +5284,33 @@ const RESULTS_DATA = {
             },
             {
               "score": "0-2",
-              "prob": 10.5
+              "prob": 10.4
             }
           ],
           "one_goal_win_pct": 15.3,
           "two_plus_win_pct": 7.2,
-          "full_cover_pct": 50.2,
-          "dog_hold_pct": 49.8,
+          "full_cover_pct": 46.6,
+          "dog_hold_pct": 53.4,
+          "fav_win_pct": 50.4,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": 0.004,
-          "dog_cover_ev": -0.004,
+          "fav_cover_ev": 0.008,
+          "dog_cover_ev": -0.008,
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 2.27,
           "fair_totals_line": 2.25,
-          "over_2_5_pct": 39.4,
-          "over_3_pct": 19.2,
-          "totals_lean_cn": "超 2.5 偏小比分（约 60.6%）；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 50.2%；仅赢 1 球约 0%"
+          "over_2_5_pct": 39.6,
+          "over_3_pct": 19.4,
+          "totals_lean_cn": "超 2.5 偏小比分（约 60.4%）；4球+偏少",
+          "margin_risk_note": "净胜≥1 约 50.4%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 50.4,
+          "dog_hold_pct_raw": 49.6
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -5162,6 +5335,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.25,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -5324,7 +5499,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Scotland · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 50.2,
+            "margin_meet_pct": 46.5,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -5343,7 +5518,7 @@ const RESULTS_DATA = {
             "win_low_total_pct": 25.2,
             "win_margin2_low_total_pct": 10.5,
             "win_margin2_high_total_pct": 24.6,
-            "readout_cn": "取胜约 50%；若取胜，以「险胜收工」为主（50.9%）。 对着赛前净胜参考，净胜≥1（全达标）约 50.2%；对着总进球参考 2.25，模型超线概率约 52.7%。"
+            "readout_cn": "取胜约 50%；若取胜，以「险胜收工」为主（50.9%）。 对着赛前净胜参考，净胜≥1（全达标）约 46.5%；对着总进球参考 2.25，模型超线概率约 52.7%。"
           },
           "totals_line": 2.25,
           "score_patterns": [
@@ -5357,7 +5532,7 @@ const RESULTS_DATA = {
             },
             {
               "score": "0-2",
-              "pct": 10.5
+              "pct": 10.4
             }
           ],
           "totals_view": {
@@ -5390,27 +5565,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.3 · 合理值 2.25 · 总进球参考 2.25 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Scotland -0.25 穿盘：达到预期较有希望",
-            "sub_cn": "Scotland -0.25 穿盘 50.2% · Haiti +0.25 守住 49.8% 进球氛围：几乎五五开",
+            "headline_cn": "Scotland -0.25 穿盘：有达标可能",
+            "sub_cn": "Scotland 胜 50.4% · 胜后穿 100% · Haiti +0.25 守 53.4% 进球氛围：几乎五五开",
             "spread": {
-              "level": "likely",
-              "label_cn": "达到预期较有希望",
-              "color": "#5BBF8A",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Scotland",
               "dog_name": "Haiti",
               "fav_handicap_cn": "Scotland -0.25",
               "dog_handicap_cn": "Haiti +0.25",
               "market_expect_cn": "Scotland -0.25 · 净胜≥1",
-              "meet_pct": 50.2,
-              "dog_hold_pct": 49.8,
-              "meet_pct_label": "Scotland -0.25 穿盘概率",
-              "dog_hold_label": "Haiti +0.25 守住概率",
-              "verdict_cn": "达到预期较有希望",
-              "headline_cn": "Scotland -0.25 穿盘：达到预期较有希望",
-              "pill_cn": "Scotland -0.25 穿盘 50.2% · Haiti +0.25 守住 49.8%",
-              "detail_cn": "Scotland -0.25 穿盘约 50.2%（净胜≥1） · Haiti +0.25 守住约 49.8%；模型认为热门穿盘概率相对较高。",
+              "meet_pct": 46.6,
+              "dog_hold_pct": 53.4,
+              "fav_win_pct": 50.4,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 50.4,
+              "meet_pct_label": "Scotland -0.25 穿盘概率（校准）",
+              "dog_hold_label": "Haiti +0.25 守住概率（校准）",
+              "two_stage_cn": "Scotland 取胜约 50.4% · 赢球后穿盘约 100% · Haiti +0.25 守住约 53.4%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Scotland -0.25 穿盘：有达标可能",
+              "pill_cn": "Scotland 胜 50.4% · 胜后穿 100% · Haiti +0.25 守 53.4%",
+              "detail_cn": "Scotland 取胜约 50.4% · 赢球后穿盘约 100% · Haiti +0.25 守住约 53.4%（泊松 raw 50.4% → 校准 46.6%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 50.2,
+              "full_cover_pct": 46.6,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -5445,24 +5625,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "likely",
-                  "label_cn": "达到预期较有希望",
-                  "color": "#5BBF8A",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Scotland",
                   "dog_name": "Haiti",
                   "fav_handicap_cn": "Scotland -0.25",
                   "dog_handicap_cn": "Haiti +0.25",
                   "market_expect_cn": "Scotland -0.25 · 净胜≥1",
-                  "meet_pct": 50.2,
-                  "dog_hold_pct": 49.8,
-                  "meet_pct_label": "Scotland -0.25 穿盘概率",
-                  "dog_hold_label": "Haiti +0.25 守住概率",
-                  "verdict_cn": "达到预期较有希望",
-                  "headline_cn": "Scotland -0.25 穿盘：达到预期较有希望",
-                  "pill_cn": "Scotland -0.25 穿盘 50.2% · Haiti +0.25 守住 49.8%",
-                  "detail_cn": "Scotland -0.25 穿盘约 50.2%（净胜≥1） · Haiti +0.25 守住约 49.8%；模型认为热门穿盘概率相对较高。",
+                  "meet_pct": 46.6,
+                  "dog_hold_pct": 53.4,
+                  "fav_win_pct": 50.4,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 50.4,
+                  "meet_pct_label": "Scotland -0.25 穿盘概率（校准）",
+                  "dog_hold_label": "Haiti +0.25 守住概率（校准）",
+                  "two_stage_cn": "Scotland 取胜约 50.4% · 赢球后穿盘约 100% · Haiti +0.25 守住约 53.4%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Scotland -0.25 穿盘：有达标可能",
+                  "pill_cn": "Scotland 胜 50.4% · 胜后穿 100% · Haiti +0.25 守 53.4%",
+                  "detail_cn": "Scotland 取胜约 50.4% · 赢球后穿盘约 100% · Haiti +0.25 守住约 53.4%（泊松 raw 50.4% → 校准 46.6%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 50.2,
+                  "full_cover_pct": 46.6,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -5470,8 +5655,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0,
                   "show_cover": true
                 },
-                "text": "Scotland -0.25 穿盘 50.2% · Haiti +0.25 守住 49.8%",
-                "color": "#5BBF8A",
+                "text": "Scotland 胜 50.4% · 胜后穿 100% · Haiti +0.25 守 53.4%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -5798,7 +5983,7 @@ const RESULTS_DATA = {
           "summary_cn": "命中：净胜全达标方向一致 · 赛前进球氛围未强判（符合模型五五开读法）。",
           "totals_actual": 1,
           "totals_line": 2.25,
-          "spread_level": "likely",
+          "spread_level": "possible",
           "totals_level": "neutral"
         }
       },
@@ -5925,9 +6110,18 @@ const RESULTS_DATA = {
         "over_pct": 45.4,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 0,
+        "full_cover_pct": 12.6,
+        "fav_win_pct": null,
+        "cover_given_win_pct": null,
         "spread_level": "even",
         "spread_market_expect": "势均力敌",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -5952,17 +6146,21 @@ const RESULTS_DATA = {
             },
             {
               "score": "1-0",
-              "prob": 9.8
+              "prob": 9.7
             },
             {
               "score": "0-1",
-              "prob": 9.3
+              "prob": 9.2
             }
           ],
           "one_goal_win_pct": 21,
-          "two_plus_win_pct": 17.4,
-          "full_cover_pct": 0,
-          "dog_hold_pct": null,
+          "two_plus_win_pct": 17.6,
+          "full_cover_pct": 12.6,
+          "dog_hold_pct": 87.4,
+          "fav_win_pct": null,
+          "cover_given_win_pct": null,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
@@ -5973,10 +6171,12 @@ const RESULTS_DATA = {
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 2.63,
           "fair_totals_line": 2,
-          "over_2_5_pct": 48.7,
-          "over_3_pct": 26.7,
+          "over_2_5_pct": 48.9,
+          "over_3_pct": 27,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 0,
+          "dog_hold_pct_raw": null
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -6001,6 +6201,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -6168,7 +6370,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "净胜差距参考 · 势均力敌",
-            "margin_meet_pct": 0,
+            "margin_meet_pct": 12.6,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -6187,17 +6389,17 @@ const RESULTS_DATA = {
             "win_low_total_pct": 17.1,
             "win_margin2_low_total_pct": 6.6,
             "win_margin2_high_total_pct": 9.7,
-            "readout_cn": "取胜约 33%；若取胜，以「险胜收工」为主（56.3%）。 对着赛前净胜参考，净胜≥1（全达标）约 0%；对着总进球参考 2.5，模型超线概率约 45.4%。"
+            "readout_cn": "取胜约 33%；若取胜，以「险胜收工」为主（56.3%）。 对着赛前净胜参考，净胜≥1（全达标）约 12.6%；对着总进球参考 2.5，模型超线概率约 45.4%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 12.9
+              "pct": 12.8
             },
             {
               "score": "1-0",
-              "pct": 10.5
+              "pct": 10.4
             },
             {
               "score": "0-1",
@@ -6247,7 +6449,7 @@ const RESULTS_DATA = {
               "headline_cn": "净胜走向：双方实力接近",
               "pill_cn": "双方实力接近，暂无单侧净胜预期。",
               "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
-              "full_cover_pct": 0,
+              "full_cover_pct": 12.6,
               "half_cover_pct": 0,
               "show_cover": false
             },
@@ -6292,7 +6494,7 @@ const RESULTS_DATA = {
                   "headline_cn": "净胜走向：双方实力接近",
                   "pill_cn": "双方实力接近，暂无单侧净胜预期。",
                   "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
-                  "full_cover_pct": 0,
+                  "full_cover_pct": 12.6,
                   "half_cover_pct": 0,
                   "show_cover": false
                 },
@@ -6747,9 +6949,18 @@ const RESULTS_DATA = {
         "over_pct": 60.9,
         "fair_line": 3,
         "line_gap": 0.25,
-        "full_cover_pct": 80.7,
+        "full_cover_pct": 67.6,
+        "fav_win_pct": 94.7,
+        "cover_given_win_pct": 88.3,
         "spread_level": "likely",
         "spread_market_expect": "Germany -1.75 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "mild_high",
         "totals_show_lean": false,
         "totals_lean_side": "exciting"
@@ -6770,35 +6981,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "3-0",
-              "prob": 18.6
+              "prob": 15.8
             },
             {
               "score": "4-0",
-              "prob": 17.7
+              "prob": 15
             },
             {
               "score": "2-0",
-              "prob": 14.7
+              "prob": 12.5
             }
           ],
-          "one_goal_win_pct": 13,
-          "two_plus_win_pct": 80.7,
-          "full_cover_pct": 80.7,
-          "dog_hold_pct": 19.3,
-          "half_cover_pct": 13,
+          "one_goal_win_pct": 11.1,
+          "two_plus_win_pct": 83.6,
+          "full_cover_pct": 67.6,
+          "dog_hold_pct": 32.4,
+          "fav_win_pct": 94.7,
+          "cover_given_win_pct": 88.3,
+          "grid_max_goals": 7,
+          "grid_tail_pct": 4,
+          "half_cover_pct": 11.1,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
           "margin_half_label": "部分达标净胜=1",
-          "fav_cover_ev": 0.744,
-          "dog_cover_ev": -0.744,
+          "fav_cover_ev": 0.783,
+          "dog_cover_ev": -0.783,
           "rational_spread_cn": "主队 净胜达标概率略高",
           "total_xg": 4.1,
           "fair_totals_line": 3,
-          "over_2_5_pct": 72.6,
-          "over_3_pct": 49.2,
-          "totals_lean_cn": "超 2.5 偏大比分（约 72.6%）",
-          "margin_risk_note": "净胜≥2 约 80.7%；部分达标净胜=1 约 13%；仅赢 1 球约 0%"
+          "over_2_5_pct": 76.7,
+          "over_3_pct": 56.9,
+          "totals_lean_cn": "超 2.5 偏大比分（约 76.7%）；4球+偏多",
+          "margin_risk_note": "净胜≥2 约 83.6%；部分达标净胜=1 约 11.1%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 83.6,
+          "dog_hold_pct_raw": 16.4
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -6823,6 +7040,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 3.25,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
           "draw": -1,
@@ -6959,7 +7178,7 @@ const RESULTS_DATA = {
             "tier_gap": 0,
             "implied_tier_label": "Germany -1.75 · Curaçao +1.75",
             "market_tier_label": "Germany -1.75 · Curaçao +1.75",
-            "summary_cn": "与模型 xG 对照：实力吻合 · 与赛前净胜看法基本一致 · 部分达标净胜=1 约 13%"
+            "summary_cn": "与模型 xG 对照：实力吻合 · 与赛前净胜看法基本一致 · 部分达标净胜=1 约 11.1%"
           },
           "win_outlook": {
             "fav_name": "Germany",
@@ -6985,7 +7204,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Germany · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
-            "margin_meet_pct": 80.7,
+            "margin_meet_pct": 66,
             "margin_half_pct": 13,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -7004,21 +7223,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 22.4,
             "win_margin2_low_total_pct": 14.7,
             "win_margin2_high_total_pct": 66,
-            "readout_cn": "取胜约 93%；若取胜，以「开放拉开」为主（50.6%）。 对着赛前净胜参考，净胜≥2（全达标）约 80.7%；部分达标净胜=1 约 13%；对着总进球参考 3.25，模型超线概率约 60.9%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 3.25。"
+            "readout_cn": "取胜约 93%；若取胜，以「开放拉开」为主（50.6%）。 对着赛前净胜参考，净胜≥2（全达标）约 66%；部分达标净胜=1 约 13%；对着总进球参考 3.25，模型超线概率约 60.9%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 3.25。"
           },
           "totals_line": 3.25,
           "score_patterns": [
             {
               "score": "3-0",
-              "pct": 18.6
+              "pct": 15.8
             },
             {
               "score": "4-0",
-              "pct": 17.7
+              "pct": 15
             },
             {
               "score": "2-0",
-              "pct": 14.7
+              "pct": 12.5
             }
           ],
           "totals_view": {
@@ -7052,7 +7271,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Germany -1.75 穿盘：达到预期较有希望",
-            "sub_cn": "Germany -1.75 穿盘 80.7% · Curaçao +1.75 守住 19.3% 进球氛围：略偏精彩",
+            "sub_cn": "Germany 胜 94.7% · 胜后穿 88.3% · Curaçao +1.75 守 32.4% 进球氛围：略偏精彩",
             "spread": {
               "level": "likely",
               "label_cn": "达到预期较有希望",
@@ -7062,17 +7281,22 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Germany -1.75",
               "dog_handicap_cn": "Curaçao +1.75",
               "market_expect_cn": "Germany -1.75 · 净胜≥2",
-              "meet_pct": 80.7,
-              "dog_hold_pct": 19.3,
-              "meet_pct_label": "Germany -1.75 穿盘概率",
-              "dog_hold_label": "Curaçao +1.75 守住概率",
+              "meet_pct": 67.6,
+              "dog_hold_pct": 32.4,
+              "fav_win_pct": 94.7,
+              "cover_given_win_pct": 88.3,
+              "full_cover_pct_raw": 83.6,
+              "meet_pct_label": "Germany -1.75 穿盘概率（校准）",
+              "dog_hold_label": "Curaçao +1.75 守住概率（校准）",
+              "two_stage_cn": "Germany 取胜约 94.7% · 赢球后穿盘约 88.3% · Curaçao +1.75 守住约 32.4%",
+              "grid_tail_pct": 4,
               "verdict_cn": "达到预期较有希望",
               "headline_cn": "Germany -1.75 穿盘：达到预期较有希望",
-              "pill_cn": "Germany -1.75 穿盘 80.7% · Curaçao +1.75 守住 19.3%",
-              "detail_cn": "Germany -1.75 穿盘约 80.7%（净胜≥2） · Curaçao +1.75 守住约 19.3%；模型认为热门穿盘概率相对较高（部分达标净胜=1 约 13%）。",
-              "extra_stats_cn": "部分达标净胜=1 约 13%",
-              "full_cover_pct": 80.7,
-              "half_cover_pct": 13,
+              "pill_cn": "Germany 胜 94.7% · 胜后穿 88.3% · Curaçao +1.75 守 32.4%",
+              "detail_cn": "Germany 取胜约 94.7% · 赢球后穿盘约 88.3% · Curaçao +1.75 守住约 32.4%（泊松 raw 83.6% → 校准 67.6%）；模型认为热门穿盘概率相对较高。",
+              "extra_stats_cn": "",
+              "full_cover_pct": 67.6,
+              "half_cover_pct": 11.1,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
               "margin_half_label": "部分达标净胜=1",
@@ -7114,24 +7338,29 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Germany -1.75",
                   "dog_handicap_cn": "Curaçao +1.75",
                   "market_expect_cn": "Germany -1.75 · 净胜≥2",
-                  "meet_pct": 80.7,
-                  "dog_hold_pct": 19.3,
-                  "meet_pct_label": "Germany -1.75 穿盘概率",
-                  "dog_hold_label": "Curaçao +1.75 守住概率",
+                  "meet_pct": 67.6,
+                  "dog_hold_pct": 32.4,
+                  "fav_win_pct": 94.7,
+                  "cover_given_win_pct": 88.3,
+                  "full_cover_pct_raw": 83.6,
+                  "meet_pct_label": "Germany -1.75 穿盘概率（校准）",
+                  "dog_hold_label": "Curaçao +1.75 守住概率（校准）",
+                  "two_stage_cn": "Germany 取胜约 94.7% · 赢球后穿盘约 88.3% · Curaçao +1.75 守住约 32.4%",
+                  "grid_tail_pct": 4,
                   "verdict_cn": "达到预期较有希望",
                   "headline_cn": "Germany -1.75 穿盘：达到预期较有希望",
-                  "pill_cn": "Germany -1.75 穿盘 80.7% · Curaçao +1.75 守住 19.3%",
-                  "detail_cn": "Germany -1.75 穿盘约 80.7%（净胜≥2） · Curaçao +1.75 守住约 19.3%；模型认为热门穿盘概率相对较高（部分达标净胜=1 约 13%）。",
-                  "extra_stats_cn": "部分达标净胜=1 约 13%",
-                  "full_cover_pct": 80.7,
-                  "half_cover_pct": 13,
+                  "pill_cn": "Germany 胜 94.7% · 胜后穿 88.3% · Curaçao +1.75 守 32.4%",
+                  "detail_cn": "Germany 取胜约 94.7% · 赢球后穿盘约 88.3% · Curaçao +1.75 守住约 32.4%（泊松 raw 83.6% → 校准 67.6%）；模型认为热门穿盘概率相对较高。",
+                  "extra_stats_cn": "",
+                  "full_cover_pct": 67.6,
+                  "half_cover_pct": 11.1,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": "部分达标净胜=1",
                   "tier_gap": 0,
                   "show_cover": true
                 },
-                "text": "Germany -1.75 穿盘 80.7% · Curaçao +1.75 守住 19.3%",
+                "text": "Germany 胜 94.7% · 胜后穿 88.3% · Curaçao +1.75 守 32.4%",
                 "color": "#5BBF8A",
                 "primary": true
               },
@@ -7406,7 +7635,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Germany · 压制局。 · 与模型 xG 对照：实力吻合 · 与赛前净胜看法基本一致 · 部分达标净胜=1 约 13%（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
+        "public_summary_note": "【推演概要】Germany · 压制局。 · 与模型 xG 对照：实力吻合 · 与赛前净胜看法基本一致 · 部分达标净胜=1 约 11.1%（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
         "goal_efficiency": {
           "xg_total": 4.1,
           "xg_gap": 3.5,
@@ -7584,9 +7813,18 @@ const RESULTS_DATA = {
         "over_pct": 43.5,
         "fair_line": 2,
         "line_gap": 0.75,
-        "full_cover_pct": 55.6,
-        "spread_level": "likely",
+        "full_cover_pct": 48.8,
+        "fav_win_pct": 56,
+        "cover_given_win_pct": 100,
+        "spread_level": "possible",
         "spread_market_expect": "Netherlands -0.25 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -7607,35 +7845,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 10.8
+              "prob": 10.7
             },
             {
               "score": "1-0",
-              "prob": 10.3
+              "prob": 10.2
             },
             {
               "score": "2-1",
-              "prob": 10
+              "prob": 9.9
             }
           ],
-          "one_goal_win_pct": 24.1,
-          "two_plus_win_pct": 31.5,
-          "full_cover_pct": 55.6,
-          "dog_hold_pct": 44.4,
+          "one_goal_win_pct": 23.9,
+          "two_plus_win_pct": 32.1,
+          "full_cover_pct": 48.8,
+          "dog_hold_pct": 51.2,
+          "fav_win_pct": 56,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.3,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": 0.112,
-          "dog_cover_ev": -0.112,
+          "fav_cover_ev": 0.12,
+          "dog_cover_ev": -0.12,
           "rational_spread_cn": "主队 净胜达标概率略高",
           "total_xg": 2.9,
           "fair_totals_line": 2,
-          "over_2_5_pct": 54.8,
-          "over_3_pct": 32.2,
+          "over_2_5_pct": 55.3,
+          "over_3_pct": 32.8,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 55.6%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 56%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 56,
+          "dog_hold_pct_raw": 44
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -7660,6 +7904,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -7822,7 +8068,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Netherlands · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 55.6,
+            "margin_meet_pct": 48.6,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -7841,21 +8087,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 19.8,
             "win_margin2_low_total_pct": 9.5,
             "win_margin2_high_total_pct": 21.9,
-            "readout_cn": "取胜约 56%；若取胜，以「险胜收工」为主（43.4%）。 对着赛前净胜参考，净胜≥1（全达标）约 55.6%；对着总进球参考 2.75，模型超线概率约 43.5%。"
+            "readout_cn": "取胜约 56%；若取胜，以「险胜收工」为主（43.4%）。 对着赛前净胜参考，净胜≥1（全达标）约 48.6%；对着总进球参考 2.75，模型超线概率约 43.5%。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 10.8
+              "pct": 10.7
             },
             {
               "score": "1-0",
-              "pct": 10.3
+              "pct": 10.2
             },
             {
               "score": "2-1",
-              "pct": 10
+              "pct": 9.9
             }
           ],
           "totals_view": {
@@ -7888,27 +8134,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.8 · 合理值 2 · 总进球参考 2.75（高于合理值 0.75） · 高于合理值 0.75 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Netherlands -0.25 穿盘：达到预期较有希望",
-            "sub_cn": "Netherlands -0.25 穿盘 55.6% · Japan +0.25 守住 44.4% 进球氛围：几乎五五开",
+            "headline_cn": "Netherlands -0.25 穿盘：有达标可能",
+            "sub_cn": "Netherlands 胜 56% · 胜后穿 100% · Japan +0.25 守 51.2% 进球氛围：几乎五五开",
             "spread": {
-              "level": "likely",
-              "label_cn": "达到预期较有希望",
-              "color": "#5BBF8A",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Netherlands",
               "dog_name": "Japan",
               "fav_handicap_cn": "Netherlands -0.25",
               "dog_handicap_cn": "Japan +0.25",
               "market_expect_cn": "Netherlands -0.25 · 净胜≥1",
-              "meet_pct": 55.6,
-              "dog_hold_pct": 44.4,
-              "meet_pct_label": "Netherlands -0.25 穿盘概率",
-              "dog_hold_label": "Japan +0.25 守住概率",
-              "verdict_cn": "达到预期较有希望",
-              "headline_cn": "Netherlands -0.25 穿盘：达到预期较有希望",
-              "pill_cn": "Netherlands -0.25 穿盘 55.6% · Japan +0.25 守住 44.4%",
-              "detail_cn": "Netherlands -0.25 穿盘约 55.6%（净胜≥1） · Japan +0.25 守住约 44.4%；模型认为热门穿盘概率相对较高。",
+              "meet_pct": 48.8,
+              "dog_hold_pct": 51.2,
+              "fav_win_pct": 56,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 56,
+              "meet_pct_label": "Netherlands -0.25 穿盘概率（校准）",
+              "dog_hold_label": "Japan +0.25 守住概率（校准）",
+              "two_stage_cn": "Netherlands 取胜约 56% · 赢球后穿盘约 100% · Japan +0.25 守住约 51.2%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Netherlands -0.25 穿盘：有达标可能",
+              "pill_cn": "Netherlands 胜 56% · 胜后穿 100% · Japan +0.25 守 51.2%",
+              "detail_cn": "Netherlands 取胜约 56% · 赢球后穿盘约 100% · Japan +0.25 守住约 51.2%（泊松 raw 56% → 校准 48.8%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 55.6,
+              "full_cover_pct": 48.8,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -7943,24 +8194,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "likely",
-                  "label_cn": "达到预期较有希望",
-                  "color": "#5BBF8A",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Netherlands",
                   "dog_name": "Japan",
                   "fav_handicap_cn": "Netherlands -0.25",
                   "dog_handicap_cn": "Japan +0.25",
                   "market_expect_cn": "Netherlands -0.25 · 净胜≥1",
-                  "meet_pct": 55.6,
-                  "dog_hold_pct": 44.4,
-                  "meet_pct_label": "Netherlands -0.25 穿盘概率",
-                  "dog_hold_label": "Japan +0.25 守住概率",
-                  "verdict_cn": "达到预期较有希望",
-                  "headline_cn": "Netherlands -0.25 穿盘：达到预期较有希望",
-                  "pill_cn": "Netherlands -0.25 穿盘 55.6% · Japan +0.25 守住 44.4%",
-                  "detail_cn": "Netherlands -0.25 穿盘约 55.6%（净胜≥1） · Japan +0.25 守住约 44.4%；模型认为热门穿盘概率相对较高。",
+                  "meet_pct": 48.8,
+                  "dog_hold_pct": 51.2,
+                  "fav_win_pct": 56,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 56,
+                  "meet_pct_label": "Netherlands -0.25 穿盘概率（校准）",
+                  "dog_hold_label": "Japan +0.25 守住概率（校准）",
+                  "two_stage_cn": "Netherlands 取胜约 56% · 赢球后穿盘约 100% · Japan +0.25 守住约 51.2%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Netherlands -0.25 穿盘：有达标可能",
+                  "pill_cn": "Netherlands 胜 56% · 胜后穿 100% · Japan +0.25 守 51.2%",
+                  "detail_cn": "Netherlands 取胜约 56% · 赢球后穿盘约 100% · Japan +0.25 守住约 51.2%（泊松 raw 56% → 校准 48.8%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 55.6,
+                  "full_cover_pct": 48.8,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -7968,8 +8224,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0,
                   "show_cover": true
                 },
-                "text": "Netherlands -0.25 穿盘 55.6% · Japan +0.25 守住 44.4%",
-                "color": "#5BBF8A",
+                "text": "Netherlands 胜 56% · 胜后穿 100% · Japan +0.25 守 51.2%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -8285,13 +8541,11 @@ const RESULTS_DATA = {
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
-          "misses": [
-            "净胜全达标未兑现"
-          ],
-          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。 偏差：净胜全达标未兑现。",
+          "misses": [],
+          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。",
           "totals_actual": 4,
           "totals_line": 2.75,
-          "spread_level": "likely",
+          "spread_level": "possible",
           "totals_level": "neutral"
         }
       },
@@ -8417,9 +8671,18 @@ const RESULTS_DATA = {
         "over_pct": 55.1,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 0,
+        "full_cover_pct": 12.6,
+        "fav_win_pct": null,
+        "cover_given_win_pct": null,
         "spread_level": "even",
         "spread_market_expect": "势均力敌",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -8451,10 +8714,14 @@ const RESULTS_DATA = {
               "prob": 8.3
             }
           ],
-          "one_goal_win_pct": 20.7,
-          "two_plus_win_pct": 19,
-          "full_cover_pct": 0,
-          "dog_hold_pct": null,
+          "one_goal_win_pct": 20.6,
+          "two_plus_win_pct": 19.3,
+          "full_cover_pct": 12.6,
+          "dog_hold_pct": 87.4,
+          "fav_win_pct": null,
+          "cover_given_win_pct": null,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
@@ -8465,10 +8732,12 @@ const RESULTS_DATA = {
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 2.9,
           "fair_totals_line": 2,
-          "over_2_5_pct": 55.1,
-          "over_3_pct": 32.5,
+          "over_2_5_pct": 55.3,
+          "over_3_pct": 32.9,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 0,
+          "dog_hold_pct_raw": null
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -8493,6 +8762,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -8660,7 +8931,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "净胜差距参考 · 势均力敌",
-            "margin_meet_pct": 0,
+            "margin_meet_pct": 12.6,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -8679,7 +8950,7 @@ const RESULTS_DATA = {
             "win_low_total_pct": 14.6,
             "win_margin2_low_total_pct": 6.2,
             "win_margin2_high_total_pct": 12.8,
-            "readout_cn": "取胜约 38%；若取胜，以「险胜收工」为主（52.1%）。 对着赛前净胜参考，净胜≥1（全达标）约 0%；对着总进球参考 2.5，模型超线概率约 55.1%。"
+            "readout_cn": "取胜约 38%；若取胜，以「险胜收工」为主（52.1%）。 对着赛前净胜参考，净胜≥1（全达标）约 12.6%；对着总进球参考 2.5，模型超线概率约 55.1%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
@@ -8739,7 +9010,7 @@ const RESULTS_DATA = {
               "headline_cn": "净胜走向：双方实力接近",
               "pill_cn": "双方实力接近，暂无单侧净胜预期。",
               "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
-              "full_cover_pct": 0,
+              "full_cover_pct": 12.6,
               "half_cover_pct": 0,
               "show_cover": false
             },
@@ -8780,7 +9051,7 @@ const RESULTS_DATA = {
                   "headline_cn": "净胜走向：双方实力接近",
                   "pill_cn": "双方实力接近，暂无单侧净胜预期。",
                   "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
-                  "full_cover_pct": 0,
+                  "full_cover_pct": 12.6,
                   "half_cover_pct": 0,
                   "show_cover": false
                 },
@@ -9232,9 +9503,18 @@ const RESULTS_DATA = {
         "over_pct": 47.8,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 48.7,
+        "full_cover_pct": 45.7,
+        "fav_win_pct": 48.8,
+        "cover_given_win_pct": 100,
         "spread_level": "possible",
         "spread_market_expect": "Sweden -0.25 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -9255,35 +9535,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 12.2
+              "prob": 12.1
             },
             {
               "score": "1-0",
-              "prob": 11.6
+              "prob": 11.5
             },
             {
               "score": "2-1",
               "prob": 9.4
             }
           ],
-          "one_goal_win_pct": 23.9,
-          "two_plus_win_pct": 24.7,
-          "full_cover_pct": 48.7,
-          "dog_hold_pct": 51.3,
+          "one_goal_win_pct": 23.8,
+          "two_plus_win_pct": 25,
+          "full_cover_pct": 45.7,
+          "dog_hold_pct": 54.3,
+          "fav_win_pct": 48.8,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": -0.026,
-          "dog_cover_ev": 0.026,
+          "fav_cover_ev": -0.024,
+          "dog_cover_ev": 0.024,
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 2.6,
           "fair_totals_line": 2,
-          "over_2_5_pct": 47.8,
-          "over_3_pct": 26,
+          "over_2_5_pct": 48.1,
+          "over_3_pct": 26.3,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 48.7%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 48.8%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 48.8,
+          "dog_hold_pct_raw": 51.2
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -9308,6 +9594,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -9470,7 +9758,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Sweden · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 48.7,
+            "margin_meet_pct": 45.7,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -9489,17 +9777,17 @@ const RESULTS_DATA = {
             "win_low_total_pct": 20.6,
             "win_margin2_low_total_pct": 9,
             "win_margin2_high_total_pct": 15.7,
-            "readout_cn": "取胜约 49%；若取胜，以「险胜收工」为主（49.2%）。 对着赛前净胜参考，净胜≥1（全达标）约 48.7%；对着总进球参考 2.5，模型超线概率约 47.8%。"
+            "readout_cn": "取胜约 49%；若取胜，以「险胜收工」为主（49.2%）。 对着赛前净胜参考，净胜≥1（全达标）约 45.7%；对着总进球参考 2.5，模型超线概率约 47.8%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 12.2
+              "pct": 12.1
             },
             {
               "score": "1-0",
-              "pct": 11.6
+              "pct": 11.5
             },
             {
               "score": "2-1",
@@ -9537,7 +9825,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Sweden -0.25 穿盘：有达标可能",
-            "sub_cn": "Sweden -0.25 穿盘 48.7% · Tunisia +0.25 守住 51.3% 进球氛围：几乎五五开",
+            "sub_cn": "Sweden 胜 48.8% · 胜后穿 100% · Tunisia +0.25 守 54.3% 进球氛围：几乎五五开",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -9547,16 +9835,21 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Sweden -0.25",
               "dog_handicap_cn": "Tunisia +0.25",
               "market_expect_cn": "Sweden -0.25 · 净胜≥1",
-              "meet_pct": 48.7,
-              "dog_hold_pct": 51.3,
-              "meet_pct_label": "Sweden -0.25 穿盘概率",
-              "dog_hold_label": "Tunisia +0.25 守住概率",
+              "meet_pct": 45.7,
+              "dog_hold_pct": 54.3,
+              "fav_win_pct": 48.8,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 48.8,
+              "meet_pct_label": "Sweden -0.25 穿盘概率（校准）",
+              "dog_hold_label": "Tunisia +0.25 守住概率（校准）",
+              "two_stage_cn": "Sweden 取胜约 48.8% · 赢球后穿盘约 100% · Tunisia +0.25 守住约 54.3%",
+              "grid_tail_pct": null,
               "verdict_cn": "有达标可能",
               "headline_cn": "Sweden -0.25 穿盘：有达标可能",
-              "pill_cn": "Sweden -0.25 穿盘 48.7% · Tunisia +0.25 守住 51.3%",
-              "detail_cn": "Sweden -0.25 穿盘约 48.7%（净胜≥1） · Tunisia +0.25 守住约 51.3%；穿盘与受让守住均有一定空间。",
+              "pill_cn": "Sweden 胜 48.8% · 胜后穿 100% · Tunisia +0.25 守 54.3%",
+              "detail_cn": "Sweden 取胜约 48.8% · 赢球后穿盘约 100% · Tunisia +0.25 守住约 54.3%（泊松 raw 48.8% → 校准 45.7%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 48.7,
+              "full_cover_pct": 45.7,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -9599,16 +9892,21 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Sweden -0.25",
                   "dog_handicap_cn": "Tunisia +0.25",
                   "market_expect_cn": "Sweden -0.25 · 净胜≥1",
-                  "meet_pct": 48.7,
-                  "dog_hold_pct": 51.3,
-                  "meet_pct_label": "Sweden -0.25 穿盘概率",
-                  "dog_hold_label": "Tunisia +0.25 守住概率",
+                  "meet_pct": 45.7,
+                  "dog_hold_pct": 54.3,
+                  "fav_win_pct": 48.8,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 48.8,
+                  "meet_pct_label": "Sweden -0.25 穿盘概率（校准）",
+                  "dog_hold_label": "Tunisia +0.25 守住概率（校准）",
+                  "two_stage_cn": "Sweden 取胜约 48.8% · 赢球后穿盘约 100% · Tunisia +0.25 守住约 54.3%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "有达标可能",
                   "headline_cn": "Sweden -0.25 穿盘：有达标可能",
-                  "pill_cn": "Sweden -0.25 穿盘 48.7% · Tunisia +0.25 守住 51.3%",
-                  "detail_cn": "Sweden -0.25 穿盘约 48.7%（净胜≥1） · Tunisia +0.25 守住约 51.3%；穿盘与受让守住均有一定空间。",
+                  "pill_cn": "Sweden 胜 48.8% · 胜后穿 100% · Tunisia +0.25 守 54.3%",
+                  "detail_cn": "Sweden 取胜约 48.8% · 赢球后穿盘约 100% · Tunisia +0.25 守住约 54.3%（泊松 raw 48.8% → 校准 45.7%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 48.7,
+                  "full_cover_pct": 45.7,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -9616,7 +9914,7 @@ const RESULTS_DATA = {
                   "tier_gap": 0,
                   "show_cover": true
                 },
-                "text": "Sweden -0.25 穿盘 48.7% · Tunisia +0.25 守住 51.3%",
+                "text": "Sweden 胜 48.8% · 胜后穿 100% · Tunisia +0.25 守 54.3%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -10054,9 +10352,18 @@ const RESULTS_DATA = {
         "over_pct": 44.3,
         "fair_line": 2.75,
         "line_gap": 0,
-        "full_cover_pct": 55,
-        "spread_level": "likely",
+        "full_cover_pct": 48.9,
+        "fav_win_pct": 79,
+        "cover_given_win_pct": 71.2,
+        "spread_level": "possible",
         "spread_market_expect": "Spain -1.25 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -10077,35 +10384,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "2-0",
-              "prob": 15.5
+              "prob": 15.1
             },
             {
               "score": "3-0",
-              "prob": 12.7
+              "prob": 12.4
             },
             {
               "score": "1-0",
-              "prob": 12.7
+              "prob": 12.4
             }
           ],
-          "one_goal_win_pct": 23.4,
-          "two_plus_win_pct": 55,
-          "full_cover_pct": 55,
-          "dog_hold_pct": 45,
+          "one_goal_win_pct": 22.8,
+          "two_plus_win_pct": 56.2,
+          "full_cover_pct": 48.9,
+          "dog_hold_pct": 51.1,
+          "fav_win_pct": 79,
+          "cover_given_win_pct": 71.2,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 1.3,
           "half_cover_pct": 0,
-          "half_lose_pct": 23.4,
+          "half_lose_pct": 22.8,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
           "margin_half_label": null,
-          "fav_cover_ev": 0.217,
-          "dog_cover_ev": -0.217,
+          "fav_cover_ev": 0.238,
+          "dog_cover_ev": -0.238,
           "rational_spread_cn": "主队 净胜达标概率略高",
           "total_xg": 3,
           "fair_totals_line": 2.75,
-          "over_2_5_pct": 56,
-          "over_3_pct": 32.7,
+          "over_2_5_pct": 57.1,
+          "over_3_pct": 34.4,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 23.4%：常见「赢球但净胜仅 1 球」"
+          "margin_risk_note": "净胜 1 球概率 22.8%：常见「赢球但净胜仅 1 球」",
+          "full_cover_pct_raw": 56.2,
+          "dog_hold_pct_raw": 43.8
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -10130,6 +10443,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
           "draw": -1,
@@ -10266,7 +10581,7 @@ const RESULTS_DATA = {
             "tier_gap": 0,
             "implied_tier_label": "Spain -1.25 · Cape Verde +1.25",
             "market_tier_label": "Spain -1.25 · Cape Verde +1.25",
-            "summary_cn": "与模型 xG 对照：实力吻合 · 与赛前净胜看法基本一致 · 模型认为仅小胜 1 球仍约 23.4%"
+            "summary_cn": "与模型 xG 对照：实力吻合 · 与赛前净胜看法基本一致 · 模型认为仅小胜 1 球仍约 22.8%"
           },
           "win_outlook": {
             "fav_name": "Spain",
@@ -10292,7 +10607,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Spain · 赛前净胜参考 净胜≥2（全达标）",
-            "margin_meet_pct": 55,
+            "margin_meet_pct": 48.3,
             "margin_half_pct": 0,
             "margin_fail_pct": 23.4,
             "margin_full_label": "净胜≥2",
@@ -10311,21 +10626,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 28.2,
             "win_margin2_low_total_pct": 15.5,
             "win_margin2_high_total_pct": 39.5,
-            "readout_cn": "取胜约 80%；若取胜，以「零封拉开」为主（36%）。 对着赛前净胜参考，净胜≥2（全达标）约 55%；对着总进球参考 2.75，模型超线概率约 44.3%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.75。"
+            "readout_cn": "取胜约 80%；若取胜，以「零封拉开」为主（36%）。 对着赛前净胜参考，净胜≥2（全达标）约 48.3%；对着总进球参考 2.75，模型超线概率约 44.3%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.75。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "2-0",
-              "pct": 15.5
+              "pct": 15.1
             },
             {
               "score": "3-0",
-              "pct": 12.7
+              "pct": 12.4
             },
             {
               "score": "1-0",
-              "pct": 12.7
+              "pct": 12.4
             }
           ],
           "totals_view": {
@@ -10358,29 +10673,34 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.8 · 合理值 2.75 · 总进球参考 2.75 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Spain -1.25 穿盘：达到预期较有希望",
-            "sub_cn": "Spain -1.25 穿盘 55% · Cape Verde +1.25 守住 45% 进球氛围：几乎五五开",
+            "headline_cn": "Spain -1.25 穿盘：有达标可能",
+            "sub_cn": "Spain 胜 79% · 胜后穿 71.2% · Cape Verde +1.25 守 51.1% 进球氛围：几乎五五开",
             "spread": {
-              "level": "likely",
-              "label_cn": "达到预期较有希望",
-              "color": "#5BBF8A",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Spain",
               "dog_name": "Cape Verde",
               "fav_handicap_cn": "Spain -1.25",
               "dog_handicap_cn": "Cape Verde +1.25",
               "market_expect_cn": "Spain -1.25 · 净胜≥2",
-              "meet_pct": 55,
-              "dog_hold_pct": 45,
-              "meet_pct_label": "Spain -1.25 穿盘概率",
-              "dog_hold_label": "Cape Verde +1.25 守住概率",
-              "verdict_cn": "达到预期较有希望",
-              "headline_cn": "Spain -1.25 穿盘：达到预期较有希望",
-              "pill_cn": "Spain -1.25 穿盘 55% · Cape Verde +1.25 守住 45%",
-              "detail_cn": "Spain -1.25 穿盘约 55%（净胜≥2） · Cape Verde +1.25 守住约 45%；模型认为热门穿盘概率相对较高（仅胜 1 球约 23.4%）。",
-              "extra_stats_cn": "仅胜 1 球约 23.4%",
-              "full_cover_pct": 55,
+              "meet_pct": 48.9,
+              "dog_hold_pct": 51.1,
+              "fav_win_pct": 79,
+              "cover_given_win_pct": 71.2,
+              "full_cover_pct_raw": 56.2,
+              "meet_pct_label": "Spain -1.25 穿盘概率（校准）",
+              "dog_hold_label": "Cape Verde +1.25 守住概率（校准）",
+              "two_stage_cn": "Spain 取胜约 79% · 赢球后穿盘约 71.2% · Cape Verde +1.25 守住约 51.1%",
+              "grid_tail_pct": 1.3,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Spain -1.25 穿盘：有达标可能",
+              "pill_cn": "Spain 胜 79% · 胜后穿 71.2% · Cape Verde +1.25 守 51.1%",
+              "detail_cn": "Spain 取胜约 79% · 赢球后穿盘约 71.2% · Cape Verde +1.25 守住约 51.1%（泊松 raw 56.2% → 校准 48.9%）；穿盘与受让守住均有一定空间（仅胜 1 球约 22.8%）。",
+              "extra_stats_cn": "仅胜 1 球约 22.8%",
+              "full_cover_pct": 48.9,
               "half_cover_pct": 0,
-              "lose1_pct": 23.4,
+              "lose1_pct": 22.8,
               "margin_full_label": "净胜≥2",
               "margin_half_label": null,
               "tier_gap": 0,
@@ -10413,33 +10733,38 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "likely",
-                  "label_cn": "达到预期较有希望",
-                  "color": "#5BBF8A",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Spain",
                   "dog_name": "Cape Verde",
                   "fav_handicap_cn": "Spain -1.25",
                   "dog_handicap_cn": "Cape Verde +1.25",
                   "market_expect_cn": "Spain -1.25 · 净胜≥2",
-                  "meet_pct": 55,
-                  "dog_hold_pct": 45,
-                  "meet_pct_label": "Spain -1.25 穿盘概率",
-                  "dog_hold_label": "Cape Verde +1.25 守住概率",
-                  "verdict_cn": "达到预期较有希望",
-                  "headline_cn": "Spain -1.25 穿盘：达到预期较有希望",
-                  "pill_cn": "Spain -1.25 穿盘 55% · Cape Verde +1.25 守住 45%",
-                  "detail_cn": "Spain -1.25 穿盘约 55%（净胜≥2） · Cape Verde +1.25 守住约 45%；模型认为热门穿盘概率相对较高（仅胜 1 球约 23.4%）。",
-                  "extra_stats_cn": "仅胜 1 球约 23.4%",
-                  "full_cover_pct": 55,
+                  "meet_pct": 48.9,
+                  "dog_hold_pct": 51.1,
+                  "fav_win_pct": 79,
+                  "cover_given_win_pct": 71.2,
+                  "full_cover_pct_raw": 56.2,
+                  "meet_pct_label": "Spain -1.25 穿盘概率（校准）",
+                  "dog_hold_label": "Cape Verde +1.25 守住概率（校准）",
+                  "two_stage_cn": "Spain 取胜约 79% · 赢球后穿盘约 71.2% · Cape Verde +1.25 守住约 51.1%",
+                  "grid_tail_pct": 1.3,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Spain -1.25 穿盘：有达标可能",
+                  "pill_cn": "Spain 胜 79% · 胜后穿 71.2% · Cape Verde +1.25 守 51.1%",
+                  "detail_cn": "Spain 取胜约 79% · 赢球后穿盘约 71.2% · Cape Verde +1.25 守住约 51.1%（泊松 raw 56.2% → 校准 48.9%）；穿盘与受让守住均有一定空间（仅胜 1 球约 22.8%）。",
+                  "extra_stats_cn": "仅胜 1 球约 22.8%",
+                  "full_cover_pct": 48.9,
                   "half_cover_pct": 0,
-                  "lose1_pct": 23.4,
+                  "lose1_pct": 22.8,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": null,
                   "tier_gap": 0,
                   "show_cover": true
                 },
-                "text": "Spain -1.25 穿盘 55% · Cape Verde +1.25 守住 45%",
-                "color": "#5BBF8A",
+                "text": "Spain 胜 79% · 胜后穿 71.2% · Cape Verde +1.25 守 51.1%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -10713,7 +11038,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Spain · 压制局。 · 与模型 xG 对照：实力吻合 · 与赛前净胜看法基本一致 · 模型认为仅小胜 1 球仍约 23.4%（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
+        "public_summary_note": "【推演概要】Spain · 压制局。 · 与模型 xG 对照：实力吻合 · 与赛前净胜看法基本一致 · 模型认为仅小胜 1 球仍约 22.8%（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
         "goal_efficiency": {
           "xg_total": 3,
           "xg_gap": 1.9,
@@ -10766,13 +11091,12 @@ const RESULTS_DATA = {
           "ht_score": "0-0",
           "hits": [],
           "misses": [
-            "净胜全达标未兑现",
             "总进球尾部偏差大（赛前已标注无明显倾向）"
           ],
-          "summary_cn": "偏差：净胜全达标未兑现 · 总进球尾部偏差大（赛前已标注无明显倾向）。",
+          "summary_cn": "偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
           "totals_actual": 0,
           "totals_line": 2.75,
-          "spread_level": "likely",
+          "spread_level": "possible",
           "totals_level": "neutral"
         }
       },
@@ -10896,9 +11220,18 @@ const RESULTS_DATA = {
         "over_pct": 54.7,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 60.1,
+        "full_cover_pct": 51.3,
+        "fav_win_pct": 60.6,
+        "cover_given_win_pct": 100,
         "spread_level": "likely",
         "spread_market_expect": "Belgium -0.75 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -10919,35 +11252,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-0",
-              "prob": 10.9
+              "prob": 10.8
             },
             {
               "score": "2-0",
-              "prob": 10.6
+              "prob": 10.5
             },
             {
               "score": "1-1",
-              "prob": 10.4
+              "prob": 10.2
             }
           ],
-          "one_goal_win_pct": 24.6,
-          "two_plus_win_pct": 35.5,
-          "full_cover_pct": 60.1,
-          "dog_hold_pct": 39.9,
+          "one_goal_win_pct": 24.4,
+          "two_plus_win_pct": 36.2,
+          "full_cover_pct": 51.3,
+          "dog_hold_pct": 48.7,
+          "fav_win_pct": 60.6,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.4,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": 0.202,
-          "dog_cover_ev": -0.202,
+          "fav_cover_ev": 0.212,
+          "dog_cover_ev": -0.212,
           "rational_spread_cn": "主队 净胜达标概率略高",
           "total_xg": 2.9,
           "fair_totals_line": 2,
-          "over_2_5_pct": 54.7,
-          "over_3_pct": 32,
+          "over_2_5_pct": 55.2,
+          "over_3_pct": 32.8,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 60.1%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 60.6%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 60.6,
+          "dog_hold_pct_raw": 39.4
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -10972,6 +11311,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -11134,7 +11475,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Belgium · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 60.1,
+            "margin_meet_pct": 51.1,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -11153,21 +11494,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 21.5,
             "win_margin2_low_total_pct": 10.6,
             "win_margin2_high_total_pct": 24.9,
-            "readout_cn": "取胜约 60%；若取胜，以「险胜收工」为主（40.9%）。 对着赛前净胜参考，净胜≥1（全达标）约 60.1%；对着总进球参考 2.5，模型超线概率约 54.7%。"
+            "readout_cn": "取胜约 60%；若取胜，以「险胜收工」为主（40.9%）。 对着赛前净胜参考，净胜≥1（全达标）约 51.1%；对着总进球参考 2.5，模型超线概率约 54.7%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 10.9
+              "pct": 10.8
             },
             {
               "score": "2-0",
-              "pct": 10.6
+              "pct": 10.5
             },
             {
               "score": "1-1",
-              "pct": 10.4
+              "pct": 10.2
             }
           ],
           "totals_view": {
@@ -11201,7 +11542,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Belgium -0.75 穿盘：达到预期较有希望",
-            "sub_cn": "Belgium -0.75 穿盘 60.1% · Egypt +0.75 守住 39.9% 进球氛围：几乎五五开",
+            "sub_cn": "Belgium 胜 60.6% · 胜后穿 100% · Egypt +0.75 守 48.7% 进球氛围：几乎五五开",
             "spread": {
               "level": "likely",
               "label_cn": "达到预期较有希望",
@@ -11211,16 +11552,21 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Belgium -0.75",
               "dog_handicap_cn": "Egypt +0.75",
               "market_expect_cn": "Belgium -0.75 · 净胜≥1",
-              "meet_pct": 60.1,
-              "dog_hold_pct": 39.9,
-              "meet_pct_label": "Belgium -0.75 穿盘概率",
-              "dog_hold_label": "Egypt +0.75 守住概率",
+              "meet_pct": 51.3,
+              "dog_hold_pct": 48.7,
+              "fav_win_pct": 60.6,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 60.6,
+              "meet_pct_label": "Belgium -0.75 穿盘概率（校准）",
+              "dog_hold_label": "Egypt +0.75 守住概率（校准）",
+              "two_stage_cn": "Belgium 取胜约 60.6% · 赢球后穿盘约 100% · Egypt +0.75 守住约 48.7%",
+              "grid_tail_pct": 0.4,
               "verdict_cn": "达到预期较有希望",
               "headline_cn": "Belgium -0.75 穿盘：达到预期较有希望",
-              "pill_cn": "Belgium -0.75 穿盘 60.1% · Egypt +0.75 守住 39.9%",
-              "detail_cn": "Belgium -0.75 穿盘约 60.1%（净胜≥1） · Egypt +0.75 守住约 39.9%；模型认为热门穿盘概率相对较高。",
+              "pill_cn": "Belgium 胜 60.6% · 胜后穿 100% · Egypt +0.75 守 48.7%",
+              "detail_cn": "Belgium 取胜约 60.6% · 赢球后穿盘约 100% · Egypt +0.75 守住约 48.7%（泊松 raw 60.6% → 校准 51.3%）；模型认为热门穿盘概率相对较高。",
               "extra_stats_cn": "",
-              "full_cover_pct": 60.1,
+              "full_cover_pct": 51.3,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -11263,16 +11609,21 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Belgium -0.75",
                   "dog_handicap_cn": "Egypt +0.75",
                   "market_expect_cn": "Belgium -0.75 · 净胜≥1",
-                  "meet_pct": 60.1,
-                  "dog_hold_pct": 39.9,
-                  "meet_pct_label": "Belgium -0.75 穿盘概率",
-                  "dog_hold_label": "Egypt +0.75 守住概率",
+                  "meet_pct": 51.3,
+                  "dog_hold_pct": 48.7,
+                  "fav_win_pct": 60.6,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 60.6,
+                  "meet_pct_label": "Belgium -0.75 穿盘概率（校准）",
+                  "dog_hold_label": "Egypt +0.75 守住概率（校准）",
+                  "two_stage_cn": "Belgium 取胜约 60.6% · 赢球后穿盘约 100% · Egypt +0.75 守住约 48.7%",
+                  "grid_tail_pct": 0.4,
                   "verdict_cn": "达到预期较有希望",
                   "headline_cn": "Belgium -0.75 穿盘：达到预期较有希望",
-                  "pill_cn": "Belgium -0.75 穿盘 60.1% · Egypt +0.75 守住 39.9%",
-                  "detail_cn": "Belgium -0.75 穿盘约 60.1%（净胜≥1） · Egypt +0.75 守住约 39.9%；模型认为热门穿盘概率相对较高。",
+                  "pill_cn": "Belgium 胜 60.6% · 胜后穿 100% · Egypt +0.75 守 48.7%",
+                  "detail_cn": "Belgium 取胜约 60.6% · 赢球后穿盘约 100% · Egypt +0.75 守住约 48.7%（泊松 raw 60.6% → 校准 51.3%）；模型认为热门穿盘概率相对较高。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 60.1,
+                  "full_cover_pct": 51.3,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -11280,7 +11631,7 @@ const RESULTS_DATA = {
                   "tier_gap": 0,
                   "show_cover": true
                 },
-                "text": "Belgium -0.75 穿盘 60.1% · Egypt +0.75 守住 39.9%",
+                "text": "Belgium 胜 60.6% · 胜后穿 100% · Egypt +0.75 守 48.7%",
                 "color": "#5BBF8A",
                 "primary": true
               },
@@ -11729,9 +12080,18 @@ const RESULTS_DATA = {
         "over_pct": 47.5,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 63.1,
+        "full_cover_pct": 52.9,
+        "fav_win_pct": 63.4,
+        "cover_given_win_pct": 100,
         "spread_level": "likely",
         "spread_market_expect": "Uruguay -0.75 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -11752,35 +12112,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "0-1",
-              "prob": 13.9
+              "prob": 13.8
             },
             {
               "score": "0-2",
-              "prob": 12.9
+              "prob": 12.7
             },
             {
               "score": "1-1",
-              "prob": 10.4
+              "prob": 10.3
             }
           ],
-          "one_goal_win_pct": 10.6,
-          "two_plus_win_pct": 4.2,
-          "full_cover_pct": 63.1,
-          "dog_hold_pct": 36.9,
+          "one_goal_win_pct": 10.5,
+          "two_plus_win_pct": 4.1,
+          "full_cover_pct": 52.9,
+          "dog_hold_pct": 47.1,
+          "fav_win_pct": 63.4,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.3,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": 0.262,
-          "dog_cover_ev": -0.262,
+          "fav_cover_ev": 0.268,
+          "dog_cover_ev": -0.268,
           "rational_spread_cn": "客队 净胜达标概率略高",
           "total_xg": 2.6,
           "fair_totals_line": 2,
-          "over_2_5_pct": 47.5,
-          "over_3_pct": 25.5,
+          "over_2_5_pct": 48,
+          "over_3_pct": 26.2,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 63.1%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 63.4%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 63.4,
+          "dog_hold_pct_raw": 36.6
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -11805,6 +12171,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -11972,7 +12340,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Uruguay · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 63.1,
+            "margin_meet_pct": 52.7,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -11991,21 +12359,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 26.8,
             "win_margin2_low_total_pct": 12.9,
             "win_margin2_high_total_pct": 24.2,
-            "readout_cn": "取胜约 60%；若取胜，以「险胜收工」为主（41.3%）。 对着赛前净胜参考，净胜≥1（全达标）约 63.1%；对着总进球参考 2.5，模型超线概率约 47.5%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.5。"
+            "readout_cn": "取胜约 60%；若取胜，以「险胜收工」为主（41.3%）。 对着赛前净胜参考，净胜≥1（全达标）约 52.7%；对着总进球参考 2.5，模型超线概率约 47.5%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.5。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "0-1",
-              "pct": 13.9
+              "pct": 13.8
             },
             {
               "score": "0-2",
-              "pct": 12.9
+              "pct": 12.7
             },
             {
               "score": "1-1",
-              "pct": 10.4
+              "pct": 10.3
             }
           ],
           "totals_view": {
@@ -12039,7 +12407,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Uruguay -0.75 穿盘：达到预期较有希望",
-            "sub_cn": "Uruguay -0.75 穿盘 63.1% · Saudi Arabia +0.75 守住 36.9% 进球氛围：几乎五五开",
+            "sub_cn": "Uruguay 胜 63.4% · 胜后穿 100% · Saudi Arabia +0.75 守 47.1% 进球氛围：几乎五五开",
             "spread": {
               "level": "likely",
               "label_cn": "达到预期较有希望",
@@ -12049,16 +12417,21 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Uruguay -0.75",
               "dog_handicap_cn": "Saudi Arabia +0.75",
               "market_expect_cn": "Uruguay -0.75 · 净胜≥1",
-              "meet_pct": 63.1,
-              "dog_hold_pct": 36.9,
-              "meet_pct_label": "Uruguay -0.75 穿盘概率",
-              "dog_hold_label": "Saudi Arabia +0.75 守住概率",
+              "meet_pct": 52.9,
+              "dog_hold_pct": 47.1,
+              "fav_win_pct": 63.4,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 63.4,
+              "meet_pct_label": "Uruguay -0.75 穿盘概率（校准）",
+              "dog_hold_label": "Saudi Arabia +0.75 守住概率（校准）",
+              "two_stage_cn": "Uruguay 取胜约 63.4% · 赢球后穿盘约 100% · Saudi Arabia +0.75 守住约 47.1%",
+              "grid_tail_pct": null,
               "verdict_cn": "达到预期较有希望",
               "headline_cn": "Uruguay -0.75 穿盘：达到预期较有希望",
-              "pill_cn": "Uruguay -0.75 穿盘 63.1% · Saudi Arabia +0.75 守住 36.9%",
-              "detail_cn": "Uruguay -0.75 穿盘约 63.1%（净胜≥1） · Saudi Arabia +0.75 守住约 36.9%；模型认为热门穿盘概率相对较高。",
+              "pill_cn": "Uruguay 胜 63.4% · 胜后穿 100% · Saudi Arabia +0.75 守 47.1%",
+              "detail_cn": "Uruguay 取胜约 63.4% · 赢球后穿盘约 100% · Saudi Arabia +0.75 守住约 47.1%（泊松 raw 63.4% → 校准 52.9%）；模型认为热门穿盘概率相对较高。",
               "extra_stats_cn": "",
-              "full_cover_pct": 63.1,
+              "full_cover_pct": 52.9,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -12101,16 +12474,21 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Uruguay -0.75",
                   "dog_handicap_cn": "Saudi Arabia +0.75",
                   "market_expect_cn": "Uruguay -0.75 · 净胜≥1",
-                  "meet_pct": 63.1,
-                  "dog_hold_pct": 36.9,
-                  "meet_pct_label": "Uruguay -0.75 穿盘概率",
-                  "dog_hold_label": "Saudi Arabia +0.75 守住概率",
+                  "meet_pct": 52.9,
+                  "dog_hold_pct": 47.1,
+                  "fav_win_pct": 63.4,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 63.4,
+                  "meet_pct_label": "Uruguay -0.75 穿盘概率（校准）",
+                  "dog_hold_label": "Saudi Arabia +0.75 守住概率（校准）",
+                  "two_stage_cn": "Uruguay 取胜约 63.4% · 赢球后穿盘约 100% · Saudi Arabia +0.75 守住约 47.1%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "达到预期较有希望",
                   "headline_cn": "Uruguay -0.75 穿盘：达到预期较有希望",
-                  "pill_cn": "Uruguay -0.75 穿盘 63.1% · Saudi Arabia +0.75 守住 36.9%",
-                  "detail_cn": "Uruguay -0.75 穿盘约 63.1%（净胜≥1） · Saudi Arabia +0.75 守住约 36.9%；模型认为热门穿盘概率相对较高。",
+                  "pill_cn": "Uruguay 胜 63.4% · 胜后穿 100% · Saudi Arabia +0.75 守 47.1%",
+                  "detail_cn": "Uruguay 取胜约 63.4% · 赢球后穿盘约 100% · Saudi Arabia +0.75 守住约 47.1%（泊松 raw 63.4% → 校准 52.9%）；模型认为热门穿盘概率相对较高。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 63.1,
+                  "full_cover_pct": 52.9,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -12118,7 +12496,7 @@ const RESULTS_DATA = {
                   "tier_gap": 0,
                   "show_cover": true
                 },
-                "text": "Uruguay -0.75 穿盘 63.1% · Saudi Arabia +0.75 守住 36.9%",
+                "text": "Uruguay 胜 63.4% · 胜后穿 100% · Saudi Arabia +0.75 守 47.1%",
                 "color": "#5BBF8A",
                 "primary": true
               },
@@ -12562,9 +12940,18 @@ const RESULTS_DATA = {
         "over_pct": 42.7,
         "fair_line": 2.25,
         "line_gap": 0.25,
-        "full_cover_pct": 53.6,
-        "spread_level": "likely",
+        "full_cover_pct": 48.5,
+        "fav_win_pct": 53.8,
+        "cover_given_win_pct": 100,
+        "spread_level": "possible",
         "spread_market_expect": "Iran -0.25 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -12593,27 +12980,33 @@ const RESULTS_DATA = {
             },
             {
               "score": "2-0",
-              "prob": 11
+              "prob": 10.9
             }
           ],
-          "one_goal_win_pct": 25.7,
-          "two_plus_win_pct": 27.9,
-          "full_cover_pct": 53.6,
-          "dog_hold_pct": 46.4,
+          "one_goal_win_pct": 25.6,
+          "two_plus_win_pct": 28.1,
+          "full_cover_pct": 48.5,
+          "dog_hold_pct": 51.5,
+          "fav_win_pct": 53.8,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": 0.072,
-          "dog_cover_ev": -0.072,
+          "fav_cover_ev": 0.076,
+          "dog_cover_ev": -0.076,
           "rational_spread_cn": "主队 净胜达标概率略高",
           "total_xg": 2.4,
           "fair_totals_line": 2.25,
-          "over_2_5_pct": 42.7,
-          "over_3_pct": 21.7,
+          "over_2_5_pct": 43,
+          "over_3_pct": 22,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 53.6%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 53.8%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 53.8,
+          "dog_hold_pct_raw": 46.2
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -12638,6 +13031,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -12800,7 +13195,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Iran · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 53.6,
+            "margin_meet_pct": 48.4,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -12819,7 +13214,7 @@ const RESULTS_DATA = {
             "win_low_total_pct": 25.1,
             "win_margin2_low_total_pct": 11,
             "win_margin2_high_total_pct": 16.9,
-            "readout_cn": "取胜约 54%；若取胜，以「险胜收工」为主（48%）。 对着赛前净胜参考，净胜≥1（全达标）约 53.6%；对着总进球参考 2.5，模型超线概率约 42.7%。"
+            "readout_cn": "取胜约 54%；若取胜，以「险胜收工」为主（48%）。 对着赛前净胜参考，净胜≥1（全达标）约 48.4%；对着总进球参考 2.5，模型超线概率约 42.7%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
@@ -12833,7 +13228,7 @@ const RESULTS_DATA = {
             },
             {
               "score": "2-0",
-              "pct": 11
+              "pct": 10.9
             }
           ],
           "totals_view": {
@@ -12866,27 +13261,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.4 · 合理值 2.25 · 总进球参考 2.5（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Iran -0.25 穿盘：达到预期较有希望",
-            "sub_cn": "Iran -0.25 穿盘 53.6% · New Zealand +0.25 守住 46.4% 进球氛围：几乎五五开",
+            "headline_cn": "Iran -0.25 穿盘：有达标可能",
+            "sub_cn": "Iran 胜 53.8% · 胜后穿 100% · New Zealand +0.25 守 51.5% 进球氛围：几乎五五开",
             "spread": {
-              "level": "likely",
-              "label_cn": "达到预期较有希望",
-              "color": "#5BBF8A",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Iran",
               "dog_name": "New Zealand",
               "fav_handicap_cn": "Iran -0.25",
               "dog_handicap_cn": "New Zealand +0.25",
               "market_expect_cn": "Iran -0.25 · 净胜≥1",
-              "meet_pct": 53.6,
-              "dog_hold_pct": 46.4,
-              "meet_pct_label": "Iran -0.25 穿盘概率",
-              "dog_hold_label": "New Zealand +0.25 守住概率",
-              "verdict_cn": "达到预期较有希望",
-              "headline_cn": "Iran -0.25 穿盘：达到预期较有希望",
-              "pill_cn": "Iran -0.25 穿盘 53.6% · New Zealand +0.25 守住 46.4%",
-              "detail_cn": "Iran -0.25 穿盘约 53.6%（净胜≥1） · New Zealand +0.25 守住约 46.4%；模型认为热门穿盘概率相对较高。",
+              "meet_pct": 48.5,
+              "dog_hold_pct": 51.5,
+              "fav_win_pct": 53.8,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 53.8,
+              "meet_pct_label": "Iran -0.25 穿盘概率（校准）",
+              "dog_hold_label": "New Zealand +0.25 守住概率（校准）",
+              "two_stage_cn": "Iran 取胜约 53.8% · 赢球后穿盘约 100% · New Zealand +0.25 守住约 51.5%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Iran -0.25 穿盘：有达标可能",
+              "pill_cn": "Iran 胜 53.8% · 胜后穿 100% · New Zealand +0.25 守 51.5%",
+              "detail_cn": "Iran 取胜约 53.8% · 赢球后穿盘约 100% · New Zealand +0.25 守住约 51.5%（泊松 raw 53.8% → 校准 48.5%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 53.6,
+              "full_cover_pct": 48.5,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -12921,24 +13321,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "likely",
-                  "label_cn": "达到预期较有希望",
-                  "color": "#5BBF8A",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Iran",
                   "dog_name": "New Zealand",
                   "fav_handicap_cn": "Iran -0.25",
                   "dog_handicap_cn": "New Zealand +0.25",
                   "market_expect_cn": "Iran -0.25 · 净胜≥1",
-                  "meet_pct": 53.6,
-                  "dog_hold_pct": 46.4,
-                  "meet_pct_label": "Iran -0.25 穿盘概率",
-                  "dog_hold_label": "New Zealand +0.25 守住概率",
-                  "verdict_cn": "达到预期较有希望",
-                  "headline_cn": "Iran -0.25 穿盘：达到预期较有希望",
-                  "pill_cn": "Iran -0.25 穿盘 53.6% · New Zealand +0.25 守住 46.4%",
-                  "detail_cn": "Iran -0.25 穿盘约 53.6%（净胜≥1） · New Zealand +0.25 守住约 46.4%；模型认为热门穿盘概率相对较高。",
+                  "meet_pct": 48.5,
+                  "dog_hold_pct": 51.5,
+                  "fav_win_pct": 53.8,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 53.8,
+                  "meet_pct_label": "Iran -0.25 穿盘概率（校准）",
+                  "dog_hold_label": "New Zealand +0.25 守住概率（校准）",
+                  "two_stage_cn": "Iran 取胜约 53.8% · 赢球后穿盘约 100% · New Zealand +0.25 守住约 51.5%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Iran -0.25 穿盘：有达标可能",
+                  "pill_cn": "Iran 胜 53.8% · 胜后穿 100% · New Zealand +0.25 守 51.5%",
+                  "detail_cn": "Iran 取胜约 53.8% · 赢球后穿盘约 100% · New Zealand +0.25 守住约 51.5%（泊松 raw 53.8% → 校准 48.5%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 53.6,
+                  "full_cover_pct": 48.5,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -12946,8 +13351,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0,
                   "show_cover": true
                 },
-                "text": "Iran -0.25 穿盘 53.6% · New Zealand +0.25 守住 46.4%",
-                "color": "#5BBF8A",
+                "text": "Iran 胜 53.8% · 胜后穿 100% · New Zealand +0.25 守 51.5%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -13269,13 +13674,11 @@ const RESULTS_DATA = {
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
-          "misses": [
-            "净胜全达标未兑现"
-          ],
-          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。 偏差：净胜全达标未兑现。",
+          "misses": [],
+          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。",
           "totals_actual": 4,
           "totals_line": 2.5,
-          "spread_level": "likely",
+          "spread_level": "possible",
           "totals_level": "neutral"
         }
       },
@@ -13390,9 +13793,18 @@ const RESULTS_DATA = {
         "over_pct": 49.3,
         "fair_line": 2.75,
         "line_gap": 0,
-        "full_cover_pct": 44.1,
+        "full_cover_pct": 43.8,
+        "fav_win_pct": 68.5,
+        "cover_given_win_pct": 66,
         "spread_level": "possible",
         "spread_market_expect": "France -1.25 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -13408,40 +13820,46 @@ const RESULTS_DATA = {
         "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
         "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "public_lean_cn": "舆论倾向 France（约 76%）",
-        "analysis": "外界普遍看好法国且预期净胜幅度上调；模型仍认为一球小胜与两球小胜并存，总进球集中在 2–3 个较合理。 赛前净胜参考高于 xG 隐含（+0.5），且净胜 1 球占 23.8%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "analysis": "外界普遍看好法国且预期净胜幅度上调；模型仍认为一球小胜与两球小胜并存，总进球集中在 2–3 个较合理。 赛前净胜参考高于 xG 隐含（+0.5），且净胜 1 球占 23.3%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "spread_cover": {
           "top3_scores": [
             {
               "score": "2-0",
-              "prob": 11.1
+              "prob": 10.9
             },
             {
               "score": "2-1",
-              "prob": 10
+              "prob": 9.8
             },
             {
               "score": "1-0",
-              "prob": 9.7
+              "prob": 9.5
             }
           ],
-          "one_goal_win_pct": 23.8,
-          "two_plus_win_pct": 44.1,
-          "full_cover_pct": 44.1,
-          "dog_hold_pct": 55.9,
+          "one_goal_win_pct": 23.3,
+          "two_plus_win_pct": 45.2,
+          "full_cover_pct": 43.8,
+          "dog_hold_pct": 56.2,
+          "fav_win_pct": 68.5,
+          "cover_given_win_pct": 66,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.9,
           "half_cover_pct": 0,
-          "half_lose_pct": 23.8,
+          "half_lose_pct": 23.3,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
           "margin_half_label": null,
-          "fav_cover_ev": 0.001,
-          "dog_cover_ev": -0.001,
+          "fav_cover_ev": 0.021,
+          "dog_cover_ev": -0.021,
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 3.2,
           "fair_totals_line": 2.75,
-          "over_2_5_pct": 60.8,
-          "over_3_pct": 37.9,
-          "totals_lean_cn": "超 2.5 偏大比分（约 60.8%）；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 23.8%：常见「赢球但净胜仅 1 球」"
+          "over_2_5_pct": 61.6,
+          "over_3_pct": 39.2,
+          "totals_lean_cn": "超 2.5 偏大比分（约 61.6%）；4球+偏少",
+          "margin_risk_note": "净胜 1 球概率 23.3%：常见「赢球但净胜仅 1 球」",
+          "full_cover_pct_raw": 45.2,
+          "dog_hold_pct_raw": 54.8
         },
         "spread_odds": {
           "fav": 1.04,
@@ -13455,35 +13873,41 @@ const RESULTS_DATA = {
             "top3_scores": [
               {
                 "score": "2-0",
-                "prob": 11.1
+                "prob": 10.9
               },
               {
                 "score": "2-1",
-                "prob": 10
+                "prob": 9.8
               },
               {
                 "score": "1-0",
-                "prob": 9.7
+                "prob": 9.5
               }
             ],
-            "one_goal_win_pct": 23.8,
-            "two_plus_win_pct": 44.1,
-            "full_cover_pct": 44.1,
-            "dog_hold_pct": 55.9,
+            "one_goal_win_pct": 23.3,
+            "two_plus_win_pct": 45.2,
+            "full_cover_pct": 43.8,
+            "dog_hold_pct": 56.2,
+            "fav_win_pct": 68.5,
+            "cover_given_win_pct": 66,
+            "grid_max_goals": 6,
+            "grid_tail_pct": 0.9,
             "half_cover_pct": 0,
             "half_lose_pct": 0,
-            "push_pct": 23.8,
+            "push_pct": 23.3,
             "margin_full_label": "净胜≥2",
             "margin_half_label": "走水净胜=1",
-            "fav_cover_ev": 0.12,
-            "dog_cover_ev": -0.12,
+            "fav_cover_ev": 0.137,
+            "dog_cover_ev": -0.137,
             "rational_spread_cn": "主队 净胜达标概率略高",
             "total_xg": 3.2,
             "fair_totals_line": 2.75,
-            "over_2_5_pct": 60.8,
-            "over_3_pct": 37.9,
-            "totals_lean_cn": "超 2.5 偏大比分（约 60.8%）；4球+偏少",
-            "margin_risk_note": "净胜 1 球概率 23.8%：参考净胜 1 球时，仅赢一球与拉开差距须分开看"
+            "over_2_5_pct": 61.6,
+            "over_3_pct": 39.2,
+            "totals_lean_cn": "超 2.5 偏大比分（约 61.6%）；4球+偏少",
+            "margin_risk_note": "净胜 1 球概率 23.3%：参考净胜 1 球时，仅赢一球与拉开差距须分开看",
+            "full_cover_pct_raw": 45.2,
+            "dog_hold_pct_raw": 54.8
           },
           "odds": {
             "fav": 0.75,
@@ -13516,6 +13940,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
           "draw": 1,
@@ -13652,7 +14078,7 @@ const RESULTS_DATA = {
             "tier_gap": 0.5,
             "implied_tier_label": "France -0.75 · Senegal +0.75",
             "market_tier_label": "France -1.25 · Senegal +1.25",
-            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 23.8%"
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 23.3%"
           },
           "win_outlook": {
             "fav_name": "France",
@@ -13678,7 +14104,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "France · 赛前净胜参考 净胜≥2（全达标）",
-            "margin_meet_pct": 44.1,
+            "margin_meet_pct": 50.4,
             "margin_half_pct": 0,
             "margin_fail_pct": 23.8,
             "margin_full_label": "净胜≥2",
@@ -13697,21 +14123,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 20.8,
             "win_margin2_low_total_pct": 11.1,
             "win_margin2_high_total_pct": 33,
-            "readout_cn": "取胜约 64%；若取胜，以「开放拉开」为主（36.1%）。 对着赛前净胜参考，净胜≥2（全达标）约 44.1%；对着总进球参考 2.75，模型超线概率约 49.3%。"
+            "readout_cn": "取胜约 64%；若取胜，以「开放拉开」为主（36.1%）。 对着赛前净胜参考，净胜≥2（全达标）约 50.4%；对着总进球参考 2.75，模型超线概率约 49.3%。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "2-0",
-              "pct": 11.1
+              "pct": 10.9
             },
             {
               "score": "2-1",
-              "pct": 10
+              "pct": 9.8
             },
             {
               "score": "1-0",
-              "pct": 9.7
+              "pct": 9.5
             }
           ],
           "totals_view": {
@@ -13745,7 +14171,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "France -1.25 穿盘：有达标可能",
-            "sub_cn": "France -1.25 穿盘 44.1% · Senegal +1.25 守住 55.9% 进球氛围：几乎五五开",
+            "sub_cn": "France 胜 68.5% · 胜后穿 66% · Senegal +1.25 守 56.2% 进球氛围：几乎五五开",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -13755,18 +14181,23 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "France -1.25",
               "dog_handicap_cn": "Senegal +1.25",
               "market_expect_cn": "France -1.25 · 净胜≥2",
-              "meet_pct": 44.1,
-              "dog_hold_pct": 55.9,
-              "meet_pct_label": "France -1.25 穿盘概率",
-              "dog_hold_label": "Senegal +1.25 守住概率",
+              "meet_pct": 43.8,
+              "dog_hold_pct": 56.2,
+              "fav_win_pct": 68.5,
+              "cover_given_win_pct": 66,
+              "full_cover_pct_raw": 45.2,
+              "meet_pct_label": "France -1.25 穿盘概率（校准）",
+              "dog_hold_label": "Senegal +1.25 守住概率（校准）",
+              "two_stage_cn": "France 取胜约 68.5% · 赢球后穿盘约 66% · Senegal +1.25 守住约 56.2%",
+              "grid_tail_pct": 0.9,
               "verdict_cn": "有达标可能",
               "headline_cn": "France -1.25 穿盘：有达标可能",
-              "pill_cn": "France -1.25 穿盘 44.1% · Senegal +1.25 守住 55.9%",
-              "detail_cn": "France -1.25 穿盘约 44.1%（净胜≥2） · Senegal +1.25 守住约 55.9%；穿盘与受让守住均有一定空间（仅胜 1 球约 23.8%）。",
-              "extra_stats_cn": "仅胜 1 球约 23.8%",
-              "full_cover_pct": 44.1,
+              "pill_cn": "France 胜 68.5% · 胜后穿 66% · Senegal +1.25 守 56.2%",
+              "detail_cn": "France 取胜约 68.5% · 赢球后穿盘约 66% · Senegal +1.25 守住约 56.2%；穿盘与受让守住均有一定空间（仅胜 1 球约 23.3%）。",
+              "extra_stats_cn": "仅胜 1 球约 23.3%",
+              "full_cover_pct": 43.8,
               "half_cover_pct": 0,
-              "lose1_pct": 23.8,
+              "lose1_pct": 23.3,
               "margin_full_label": "净胜≥2",
               "margin_half_label": null,
               "tier_gap": 0.5,
@@ -13807,24 +14238,29 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "France -1.25",
                   "dog_handicap_cn": "Senegal +1.25",
                   "market_expect_cn": "France -1.25 · 净胜≥2",
-                  "meet_pct": 44.1,
-                  "dog_hold_pct": 55.9,
-                  "meet_pct_label": "France -1.25 穿盘概率",
-                  "dog_hold_label": "Senegal +1.25 守住概率",
+                  "meet_pct": 43.8,
+                  "dog_hold_pct": 56.2,
+                  "fav_win_pct": 68.5,
+                  "cover_given_win_pct": 66,
+                  "full_cover_pct_raw": 45.2,
+                  "meet_pct_label": "France -1.25 穿盘概率（校准）",
+                  "dog_hold_label": "Senegal +1.25 守住概率（校准）",
+                  "two_stage_cn": "France 取胜约 68.5% · 赢球后穿盘约 66% · Senegal +1.25 守住约 56.2%",
+                  "grid_tail_pct": 0.9,
                   "verdict_cn": "有达标可能",
                   "headline_cn": "France -1.25 穿盘：有达标可能",
-                  "pill_cn": "France -1.25 穿盘 44.1% · Senegal +1.25 守住 55.9%",
-                  "detail_cn": "France -1.25 穿盘约 44.1%（净胜≥2） · Senegal +1.25 守住约 55.9%；穿盘与受让守住均有一定空间（仅胜 1 球约 23.8%）。",
-                  "extra_stats_cn": "仅胜 1 球约 23.8%",
-                  "full_cover_pct": 44.1,
+                  "pill_cn": "France 胜 68.5% · 胜后穿 66% · Senegal +1.25 守 56.2%",
+                  "detail_cn": "France 取胜约 68.5% · 赢球后穿盘约 66% · Senegal +1.25 守住约 56.2%；穿盘与受让守住均有一定空间（仅胜 1 球约 23.3%）。",
+                  "extra_stats_cn": "仅胜 1 球约 23.3%",
+                  "full_cover_pct": 43.8,
                   "half_cover_pct": 0,
-                  "lose1_pct": 23.8,
+                  "lose1_pct": 23.3,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": null,
                   "tier_gap": 0.5,
                   "show_cover": true
                 },
-                "text": "France -1.25 穿盘 44.1% · Senegal +1.25 守住 55.9%",
+                "text": "France 胜 68.5% · 胜后穿 66% · Senegal +1.25 守 56.2%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -14099,7 +14535,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】France · 压制局。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 23.8%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
+        "public_summary_note": "【推演概要】France · 压制局。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 23.3%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
         "goal_efficiency": {
           "xg_total": 3.2,
           "xg_gap": 1.4,
@@ -14266,9 +14702,18 @@ const RESULTS_DATA = {
         "over_pct": 46.2,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 32.5,
-        "spread_level": "partial",
+        "full_cover_pct": 41.6,
+        "fav_win_pct": 58.7,
+        "cover_given_win_pct": 56.2,
+        "spread_level": "possible",
         "spread_market_expect": "Norway -1.5 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -14289,22 +14734,26 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "0-1",
-              "prob": 13.7
+              "prob": 13.6
             },
             {
               "score": "0-2",
-              "prob": 11.8
+              "prob": 11.7
             },
             {
               "score": "1-1",
-              "prob": 11.2
+              "prob": 11.1
             }
           ],
           "one_goal_win_pct": 12.3,
           "two_plus_win_pct": 5.4,
-          "full_cover_pct": 32.5,
-          "dog_hold_pct": 67.5,
-          "half_cover_pct": 25.9,
+          "full_cover_pct": 41.6,
+          "dog_hold_pct": 58.4,
+          "fav_win_pct": 58.7,
+          "cover_given_win_pct": 56.2,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
+          "half_cover_pct": 25.7,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
@@ -14314,10 +14763,12 @@ const RESULTS_DATA = {
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 2.54,
           "fair_totals_line": 2,
-          "over_2_5_pct": 46.2,
-          "over_3_pct": 24.4,
+          "over_2_5_pct": 46.5,
+          "over_3_pct": 24.9,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥2 约 32.5%；部分达标净胜=1 约 25.9%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥2 约 33%；部分达标净胜=1 约 25.7%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 33,
+          "dog_hold_pct_raw": 67
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -14342,6 +14793,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": -1,
@@ -14483,7 +14936,7 @@ const RESULTS_DATA = {
             "tier_gap": -1.25,
             "implied_tier_label": "Norway -0.25 · Iraq +0.25",
             "market_tier_label": "Norway -1.5 · Iraq +1.5",
-            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法低于 xG 隐含约 1.25 · 部分达标净胜=1 约 25.9%"
+            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法低于 xG 隐含约 1.25 · 部分达标净胜=1 约 25.7%"
           },
           "win_outlook": {
             "fav_name": "Norway",
@@ -14509,7 +14962,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Norway · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
-            "margin_meet_pct": 32.5,
+            "margin_meet_pct": 41.3,
             "margin_half_pct": 25.9,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -14528,21 +14981,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 25.5,
             "win_margin2_low_total_pct": 11.8,
             "win_margin2_high_total_pct": 20.8,
-            "readout_cn": "取胜约 56%；若取胜，以「险胜收工」为主（44.3%）。 对着赛前净胜参考，净胜≥2（全达标）约 32.5%；部分达标净胜=1 约 25.9%；对着总进球参考 2.5，模型超线概率约 46.2%。"
+            "readout_cn": "取胜约 56%；若取胜，以「险胜收工」为主（44.3%）。 对着赛前净胜参考，净胜≥2（全达标）约 41.3%；部分达标净胜=1 约 25.9%；对着总进球参考 2.5，模型超线概率约 46.2%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "0-1",
-              "pct": 13.7
+              "pct": 13.6
             },
             {
               "score": "0-2",
-              "pct": 11.8
+              "pct": 11.7
             },
             {
               "score": "1-1",
-              "pct": 11.2
+              "pct": 11.1
             }
           ],
           "totals_view": {
@@ -14575,28 +15028,33 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.5 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Norway -1.5 穿盘：部分达标更现实",
-            "sub_cn": "Norway -1.5 穿盘 32.5% · Iraq +1.5 守住 67.5% 进球氛围：几乎五五开",
+            "headline_cn": "Norway -1.5 穿盘：有达标可能",
+            "sub_cn": "Norway 胜 58.7% · 胜后穿 56.2% · Iraq +1.5 守 58.4% 进球氛围：几乎五五开",
             "spread": {
-              "level": "partial",
-              "label_cn": "部分达标更现实",
+              "level": "possible",
+              "label_cn": "有达标可能",
               "color": "#C8A96E",
               "fav_name": "Norway",
               "dog_name": "Iraq",
               "fav_handicap_cn": "Norway -1.5",
               "dog_handicap_cn": "Iraq +1.5",
               "market_expect_cn": "Norway -1.5 · 净胜≥2",
-              "meet_pct": 32.5,
-              "dog_hold_pct": 67.5,
-              "meet_pct_label": "Norway -1.5 穿盘概率",
-              "dog_hold_label": "Iraq +1.5 守住概率",
-              "verdict_cn": "部分达标更现实",
-              "headline_cn": "Norway -1.5 穿盘：部分达标更现实",
-              "pill_cn": "Norway -1.5 穿盘 32.5% · Iraq +1.5 守住 67.5%",
-              "detail_cn": "Norway -1.5 穿盘约 32.5%（净胜≥2） · Iraq +1.5 守住约 67.5%；全穿偏难，仅赢一球/受让守住更现实（部分达标净胜=1 约 25.9%）。",
-              "extra_stats_cn": "部分达标净胜=1 约 25.9%",
-              "full_cover_pct": 32.5,
-              "half_cover_pct": 25.9,
+              "meet_pct": 41.6,
+              "dog_hold_pct": 58.4,
+              "fav_win_pct": 58.7,
+              "cover_given_win_pct": 56.2,
+              "full_cover_pct_raw": 33,
+              "meet_pct_label": "Norway -1.5 穿盘概率（校准）",
+              "dog_hold_label": "Iraq +1.5 守住概率（校准）",
+              "two_stage_cn": "Norway 取胜约 58.7% · 赢球后穿盘约 56.2% · Iraq +1.5 守住约 58.4%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Norway -1.5 穿盘：有达标可能",
+              "pill_cn": "Norway 胜 58.7% · 胜后穿 56.2% · Iraq +1.5 守 58.4%",
+              "detail_cn": "Norway 取胜约 58.7% · 赢球后穿盘约 56.2% · Iraq +1.5 守住约 58.4%（泊松 raw 33% → 校准 41.6%）；穿盘与受让守住均有一定空间（部分达标净胜=1 约 25.7%）。",
+              "extra_stats_cn": "部分达标净胜=1 约 25.7%",
+              "full_cover_pct": 41.6,
+              "half_cover_pct": 25.7,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
               "margin_half_label": "部分达标净胜=1",
@@ -14630,32 +15088,37 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "partial",
-                  "label_cn": "部分达标更现实",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
                   "color": "#C8A96E",
                   "fav_name": "Norway",
                   "dog_name": "Iraq",
                   "fav_handicap_cn": "Norway -1.5",
                   "dog_handicap_cn": "Iraq +1.5",
                   "market_expect_cn": "Norway -1.5 · 净胜≥2",
-                  "meet_pct": 32.5,
-                  "dog_hold_pct": 67.5,
-                  "meet_pct_label": "Norway -1.5 穿盘概率",
-                  "dog_hold_label": "Iraq +1.5 守住概率",
-                  "verdict_cn": "部分达标更现实",
-                  "headline_cn": "Norway -1.5 穿盘：部分达标更现实",
-                  "pill_cn": "Norway -1.5 穿盘 32.5% · Iraq +1.5 守住 67.5%",
-                  "detail_cn": "Norway -1.5 穿盘约 32.5%（净胜≥2） · Iraq +1.5 守住约 67.5%；全穿偏难，仅赢一球/受让守住更现实（部分达标净胜=1 约 25.9%）。",
-                  "extra_stats_cn": "部分达标净胜=1 约 25.9%",
-                  "full_cover_pct": 32.5,
-                  "half_cover_pct": 25.9,
+                  "meet_pct": 41.6,
+                  "dog_hold_pct": 58.4,
+                  "fav_win_pct": 58.7,
+                  "cover_given_win_pct": 56.2,
+                  "full_cover_pct_raw": 33,
+                  "meet_pct_label": "Norway -1.5 穿盘概率（校准）",
+                  "dog_hold_label": "Iraq +1.5 守住概率（校准）",
+                  "two_stage_cn": "Norway 取胜约 58.7% · 赢球后穿盘约 56.2% · Iraq +1.5 守住约 58.4%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Norway -1.5 穿盘：有达标可能",
+                  "pill_cn": "Norway 胜 58.7% · 胜后穿 56.2% · Iraq +1.5 守 58.4%",
+                  "detail_cn": "Norway 取胜约 58.7% · 赢球后穿盘约 56.2% · Iraq +1.5 守住约 58.4%（泊松 raw 33% → 校准 41.6%）；穿盘与受让守住均有一定空间（部分达标净胜=1 约 25.7%）。",
+                  "extra_stats_cn": "部分达标净胜=1 约 25.7%",
+                  "full_cover_pct": 41.6,
+                  "half_cover_pct": 25.7,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": "部分达标净胜=1",
                   "tier_gap": -1.25,
                   "show_cover": true
                 },
-                "text": "Norway -1.5 穿盘 32.5% · Iraq +1.5 守住 67.5%",
+                "text": "Norway 胜 58.7% · 胜后穿 56.2% · Iraq +1.5 守 58.4%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -14930,7 +15393,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Norway · 常规对抗。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法低于 xG 隐含约 1.25 · 部分达标净胜=1 约 25.9%（模型微调：主胜 +0% · 平 -1% · 客 +1%）",
+        "public_summary_note": "【推演概要】Norway · 常规对抗。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法低于 xG 隐含约 1.25 · 部分达标净胜=1 约 25.7%（模型微调：主胜 +0% · 平 -1% · 客 +1%）",
         "goal_efficiency": {
           "xg_total": 2.54,
           "xg_gap": 0.9,
@@ -14975,14 +15438,16 @@ const RESULTS_DATA = {
         "preview_replay": {
           "actual_score": "1-4",
           "ht_score": "1-2",
-          "hits": [],
+          "hits": [
+            "净胜全达标方向一致"
+          ],
           "misses": [
             "总进球尾部偏差大（赛前已标注无明显倾向）"
           ],
-          "summary_cn": "偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
+          "summary_cn": "命中：净胜全达标方向一致。 偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
           "totals_actual": 5,
           "totals_line": 2.5,
-          "spread_level": "partial",
+          "spread_level": "possible",
           "totals_level": "neutral"
         }
       },
@@ -15106,9 +15571,18 @@ const RESULTS_DATA = {
         "over_pct": 40.3,
         "fair_line": 2.75,
         "line_gap": 0.25,
-        "full_cover_pct": 36.8,
+        "full_cover_pct": 47.8,
+        "fav_win_pct": 82.3,
+        "cover_given_win_pct": 47.9,
         "spread_level": "possible",
         "spread_market_expect": "Argentina -2 · 净胜≥3",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -15124,40 +15598,46 @@ const RESULTS_DATA = {
         "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
         "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "public_lean_cn": "舆论倾向 Argentina（约 84%）",
-        "analysis": "外界高度看好阿根廷；模型认为净胜 2 球有难度，小比分取胜与平局均需保留权重。 赛前净胜参考高于 xG 隐含（+0.75），且净胜 1 球占 21.1%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "analysis": "外界高度看好阿根廷；模型认为净胜 2 球有难度，小比分取胜与平局均需保留权重。 赛前净胜参考高于 xG 隐含（+0.75），且净胜 1 球占 20.2%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "spread_cover": {
           "top3_scores": [
             {
               "score": "2-0",
-              "prob": 14
+              "prob": 13.4
             },
             {
               "score": "3-0",
-              "prob": 13.1
+              "prob": 12.5
             },
             {
               "score": "1-0",
-              "prob": 10
+              "prob": 9.6
             }
           ],
-          "one_goal_win_pct": 21.1,
-          "two_plus_win_pct": 60.5,
-          "full_cover_pct": 36.8,
-          "dog_hold_pct": 63.2,
+          "one_goal_win_pct": 20.2,
+          "two_plus_win_pct": 62.1,
+          "full_cover_pct": 47.8,
+          "dog_hold_pct": 52.2,
+          "fav_win_pct": 82.3,
+          "cover_given_win_pct": 47.9,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 2.4,
           "half_cover_pct": 0,
-          "half_lose_pct": 21.1,
-          "push_pct": 23.7,
+          "half_lose_pct": 20.2,
+          "push_pct": 22.7,
           "margin_full_label": "净胜≥3",
           "margin_half_label": "走水净胜=2",
-          "fav_cover_ev": 0.184,
-          "dog_cover_ev": -0.184,
+          "fav_cover_ev": 0.217,
+          "dog_cover_ev": -0.217,
           "rational_spread_cn": "主队 净胜达标概率略高",
           "total_xg": 3.4,
           "fair_totals_line": 2.75,
-          "over_2_5_pct": 63.7,
-          "over_3_pct": 40.3,
-          "totals_lean_cn": "超 2.5 偏大比分（约 63.7%）",
-          "margin_risk_note": "净胜 1 球概率 21.1%：常见「赢球但净胜仅 1 球」"
+          "over_2_5_pct": 65.2,
+          "over_3_pct": 42.8,
+          "totals_lean_cn": "超 2.5 偏大比分（约 65.2%）",
+          "margin_risk_note": "净胜 1 球概率 20.2%：常见「赢球但净胜仅 1 球」",
+          "full_cover_pct_raw": 39.4,
+          "dog_hold_pct_raw": 60.6
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -15182,6 +15662,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 3,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
           "draw": 1,
@@ -15318,7 +15800,7 @@ const RESULTS_DATA = {
             "tier_gap": 0.75,
             "implied_tier_label": "Argentina -1.25 · Algeria +1.25",
             "market_tier_label": "Argentina -2 · Algeria +2",
-            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 模型认为仅小胜 1 球仍约 21.1% · 净胜≥3（全达标）约 36.8%"
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 模型认为仅小胜 1 球仍约 20.2% · 净胜≥3（全达标）约 47.8%"
           },
           "win_outlook": {
             "fav_name": "Argentina",
@@ -15344,7 +15826,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Argentina · 赛前净胜参考 净胜≥3（全达标） · 走水净胜=2",
-            "margin_meet_pct": 36.8,
+            "margin_meet_pct": 46.3,
             "margin_half_pct": 0,
             "margin_fail_pct": 21.1,
             "margin_full_label": "净胜≥3",
@@ -15363,21 +15845,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 24,
             "win_margin2_low_total_pct": 14,
             "win_margin2_high_total_pct": 33.4,
-            "readout_cn": "取胜约 78%；若取胜，以「开放拉开」为主（40.9%）。 对着赛前净胜参考，净胜≥3（全达标）约 36.8%；对着总进球参考 3，模型超线概率约 40.3%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 3。"
+            "readout_cn": "取胜约 78%；若取胜，以「开放拉开」为主（40.9%）。 对着赛前净胜参考，净胜≥3（全达标）约 46.3%；对着总进球参考 3，模型超线概率约 40.3%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 3。"
           },
           "totals_line": 3,
           "score_patterns": [
             {
               "score": "2-0",
-              "pct": 14
+              "pct": 13.4
             },
             {
               "score": "3-0",
-              "pct": 13.1
+              "pct": 12.5
             },
             {
               "score": "1-0",
-              "pct": 10
+              "pct": 9.6
             }
           ],
           "totals_view": {
@@ -15411,7 +15893,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Argentina -2 穿盘：有达标可能",
-            "sub_cn": "Argentina -2 穿盘 36.8% · Algeria +2 守住 63.2% 进球氛围：几乎五五开",
+            "sub_cn": "Argentina 胜 82.3% · 胜后穿 47.9% · Algeria +2 守 52.2% 进球氛围：几乎五五开",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -15421,18 +15903,23 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Argentina -2",
               "dog_handicap_cn": "Algeria +2",
               "market_expect_cn": "Argentina -2 · 净胜≥3",
-              "meet_pct": 36.8,
-              "dog_hold_pct": 63.2,
-              "meet_pct_label": "Argentina -2 穿盘概率",
-              "dog_hold_label": "Algeria +2 守住概率",
+              "meet_pct": 47.8,
+              "dog_hold_pct": 52.2,
+              "fav_win_pct": 82.3,
+              "cover_given_win_pct": 47.9,
+              "full_cover_pct_raw": 39.4,
+              "meet_pct_label": "Argentina -2 穿盘概率（校准）",
+              "dog_hold_label": "Algeria +2 守住概率（校准）",
+              "two_stage_cn": "Argentina 取胜约 82.3% · 赢球后穿盘约 47.9% · Algeria +2 守住约 52.2%",
+              "grid_tail_pct": 2.4,
               "verdict_cn": "有达标可能",
               "headline_cn": "Argentina -2 穿盘：有达标可能",
-              "pill_cn": "Argentina -2 穿盘 36.8% · Algeria +2 守住 63.2%",
-              "detail_cn": "Argentina -2 穿盘约 36.8%（净胜≥3） · Algeria +2 守住约 63.2%；穿盘与受让守住均有一定空间（仅胜 1 球约 21.1%）。",
-              "extra_stats_cn": "仅胜 1 球约 21.1%",
-              "full_cover_pct": 36.8,
+              "pill_cn": "Argentina 胜 82.3% · 胜后穿 47.9% · Algeria +2 守 52.2%",
+              "detail_cn": "Argentina 取胜约 82.3% · 赢球后穿盘约 47.9% · Algeria +2 守住约 52.2%（泊松 raw 39.4% → 校准 47.8%）；穿盘与受让守住均有一定空间（仅胜 1 球约 20.2%）。",
+              "extra_stats_cn": "仅胜 1 球约 20.2%",
+              "full_cover_pct": 47.8,
               "half_cover_pct": 0,
-              "lose1_pct": 21.1,
+              "lose1_pct": 20.2,
               "margin_full_label": "净胜≥3",
               "margin_half_label": "走水净胜=2",
               "tier_gap": 0.75,
@@ -15473,24 +15960,29 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Argentina -2",
                   "dog_handicap_cn": "Algeria +2",
                   "market_expect_cn": "Argentina -2 · 净胜≥3",
-                  "meet_pct": 36.8,
-                  "dog_hold_pct": 63.2,
-                  "meet_pct_label": "Argentina -2 穿盘概率",
-                  "dog_hold_label": "Algeria +2 守住概率",
+                  "meet_pct": 47.8,
+                  "dog_hold_pct": 52.2,
+                  "fav_win_pct": 82.3,
+                  "cover_given_win_pct": 47.9,
+                  "full_cover_pct_raw": 39.4,
+                  "meet_pct_label": "Argentina -2 穿盘概率（校准）",
+                  "dog_hold_label": "Algeria +2 守住概率（校准）",
+                  "two_stage_cn": "Argentina 取胜约 82.3% · 赢球后穿盘约 47.9% · Algeria +2 守住约 52.2%",
+                  "grid_tail_pct": 2.4,
                   "verdict_cn": "有达标可能",
                   "headline_cn": "Argentina -2 穿盘：有达标可能",
-                  "pill_cn": "Argentina -2 穿盘 36.8% · Algeria +2 守住 63.2%",
-                  "detail_cn": "Argentina -2 穿盘约 36.8%（净胜≥3） · Algeria +2 守住约 63.2%；穿盘与受让守住均有一定空间（仅胜 1 球约 21.1%）。",
-                  "extra_stats_cn": "仅胜 1 球约 21.1%",
-                  "full_cover_pct": 36.8,
+                  "pill_cn": "Argentina 胜 82.3% · 胜后穿 47.9% · Algeria +2 守 52.2%",
+                  "detail_cn": "Argentina 取胜约 82.3% · 赢球后穿盘约 47.9% · Algeria +2 守住约 52.2%（泊松 raw 39.4% → 校准 47.8%）；穿盘与受让守住均有一定空间（仅胜 1 球约 20.2%）。",
+                  "extra_stats_cn": "仅胜 1 球约 20.2%",
+                  "full_cover_pct": 47.8,
                   "half_cover_pct": 0,
-                  "lose1_pct": 21.1,
+                  "lose1_pct": 20.2,
                   "margin_full_label": "净胜≥3",
                   "margin_half_label": "走水净胜=2",
                   "tier_gap": 0.75,
                   "show_cover": true
                 },
-                "text": "Argentina -2 穿盘 36.8% · Algeria +2 守住 63.2%",
+                "text": "Argentina 胜 82.3% · 胜后穿 47.9% · Algeria +2 守 52.2%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -15765,7 +16257,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Argentina · 压制局。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 模型认为仅小胜 1 球仍约 21.1% · 净胜≥3（全达标）约 36.8%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
+        "public_summary_note": "【推演概要】Argentina · 压制局。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 模型认为仅小胜 1 球仍约 20.2% · 净胜≥3（全达标）约 47.8%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
         "goal_efficiency": {
           "xg_total": 3.4,
           "xg_gap": 2.2,
@@ -15938,9 +16430,18 @@ const RESULTS_DATA = {
         "over_pct": 42.6,
         "fair_line": 2.25,
         "line_gap": 0.25,
-        "full_cover_pct": 32.1,
-        "spread_level": "uncertain",
+        "full_cover_pct": 41.3,
+        "fav_win_pct": 58.9,
+        "cover_given_win_pct": 55.2,
+        "spread_level": "possible",
         "spread_market_expect": "Austria -1 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -15961,7 +16462,7 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-0",
-              "prob": 15.1
+              "prob": 15
             },
             {
               "score": "2-0",
@@ -15969,27 +16470,33 @@ const RESULTS_DATA = {
             },
             {
               "score": "1-1",
-              "prob": 11.3
+              "prob": 11.2
             }
           ],
-          "one_goal_win_pct": 26.5,
-          "two_plus_win_pct": 32.1,
-          "full_cover_pct": 32.1,
-          "dog_hold_pct": 67.9,
+          "one_goal_win_pct": 26.4,
+          "two_plus_win_pct": 32.5,
+          "full_cover_pct": 41.3,
+          "dog_hold_pct": 58.7,
+          "fav_win_pct": 58.9,
+          "cover_given_win_pct": 55.2,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
-          "push_pct": 26.5,
+          "push_pct": 26.4,
           "margin_full_label": "净胜≥2",
           "margin_half_label": "走水净胜=1",
-          "fav_cover_ev": -0.093,
-          "dog_cover_ev": 0.093,
+          "fav_cover_ev": -0.086,
+          "dog_cover_ev": 0.086,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.4,
           "fair_totals_line": 2.25,
-          "over_2_5_pct": 42.6,
-          "over_3_pct": 21.6,
+          "over_2_5_pct": 42.9,
+          "over_3_pct": 22,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 26.5%：参考净胜 1 球时，仅赢一球与拉开差距须分开看"
+          "margin_risk_note": "净胜 1 球概率 26.4%：参考净胜 1 球时，仅赢一球与拉开差距须分开看",
+          "full_cover_pct_raw": 32.5,
+          "dog_hold_pct_raw": 67.5
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -16014,6 +16521,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -3,
           "draw": 1,
@@ -16181,7 +16690,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Austria · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
-            "margin_meet_pct": 32.1,
+            "margin_meet_pct": 41.1,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -16200,13 +16709,13 @@ const RESULTS_DATA = {
             "win_low_total_pct": 27.5,
             "win_margin2_low_total_pct": 12.4,
             "win_margin2_high_total_pct": 19.7,
-            "readout_cn": "取胜约 52%；若取胜，以「险胜收工」为主（45.2%）。 对着赛前净胜参考，净胜≥2（全达标）约 32.1%；对着总进球参考 2.5，模型超线概率约 42.6%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.5。"
+            "readout_cn": "取胜约 52%；若取胜，以「险胜收工」为主（45.2%）。 对着赛前净胜参考，净胜≥2（全达标）约 41.1%；对着总进球参考 2.5，模型超线概率约 42.6%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.5。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 15.1
+              "pct": 15
             },
             {
               "score": "2-0",
@@ -16214,7 +16723,7 @@ const RESULTS_DATA = {
             },
             {
               "score": "1-1",
-              "pct": 11.3
+              "pct": 11.2
             }
           ],
           "totals_view": {
@@ -16247,27 +16756,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.4 · 合理值 2.25 · 总进球参考 2.5（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Austria -1 穿盘：达标与否难下定论",
-            "sub_cn": "Austria -1 穿盘 32.1% · Jordan +1 守住 67.9% 进球氛围：几乎五五开 平局权重约 30%，小组赛易出守平——勿只盯胜负一方。",
+            "headline_cn": "Austria -1 穿盘：有达标可能",
+            "sub_cn": "Austria 胜 58.9% · 胜后穿 55.2% · Jordan +1 守 58.7% 进球氛围：几乎五五开 平局权重约 30%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
-              "level": "uncertain",
-              "label_cn": "净胜幅度难下定论",
-              "color": "#8A96A8",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Austria",
               "dog_name": "Jordan",
               "fav_handicap_cn": "Austria -1",
               "dog_handicap_cn": "Jordan +1",
               "market_expect_cn": "Austria -1 · 净胜≥2",
-              "meet_pct": 32.1,
-              "dog_hold_pct": 67.9,
-              "meet_pct_label": "Austria -1 穿盘概率",
-              "dog_hold_label": "Jordan +1 守住概率",
-              "verdict_cn": "达标与否难下定论",
-              "headline_cn": "Austria -1 穿盘：达标与否难下定论",
-              "pill_cn": "Austria -1 穿盘 32.1% · Jordan +1 守住 67.9%",
-              "detail_cn": "Austria -1 穿盘约 32.1%（净胜≥2） · Jordan +1 守住约 67.9%。",
+              "meet_pct": 41.3,
+              "dog_hold_pct": 58.7,
+              "fav_win_pct": 58.9,
+              "cover_given_win_pct": 55.2,
+              "full_cover_pct_raw": 32.5,
+              "meet_pct_label": "Austria -1 穿盘概率（校准）",
+              "dog_hold_label": "Jordan +1 守住概率（校准）",
+              "two_stage_cn": "Austria 取胜约 58.9% · 赢球后穿盘约 55.2% · Jordan +1 守住约 58.7%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Austria -1 穿盘：有达标可能",
+              "pill_cn": "Austria 胜 58.9% · 胜后穿 55.2% · Jordan +1 守 58.7%",
+              "detail_cn": "Austria 取胜约 58.9% · 赢球后穿盘约 55.2% · Jordan +1 守住约 58.7%（泊松 raw 32.5% → 校准 41.3%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 32.1,
+              "full_cover_pct": 41.3,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
@@ -16306,24 +16820,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "uncertain",
-                  "label_cn": "净胜幅度难下定论",
-                  "color": "#8A96A8",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Austria",
                   "dog_name": "Jordan",
                   "fav_handicap_cn": "Austria -1",
                   "dog_handicap_cn": "Jordan +1",
                   "market_expect_cn": "Austria -1 · 净胜≥2",
-                  "meet_pct": 32.1,
-                  "dog_hold_pct": 67.9,
-                  "meet_pct_label": "Austria -1 穿盘概率",
-                  "dog_hold_label": "Jordan +1 守住概率",
-                  "verdict_cn": "达标与否难下定论",
-                  "headline_cn": "Austria -1 穿盘：达标与否难下定论",
-                  "pill_cn": "Austria -1 穿盘 32.1% · Jordan +1 守住 67.9%",
-                  "detail_cn": "Austria -1 穿盘约 32.1%（净胜≥2） · Jordan +1 守住约 67.9%。",
+                  "meet_pct": 41.3,
+                  "dog_hold_pct": 58.7,
+                  "fav_win_pct": 58.9,
+                  "cover_given_win_pct": 55.2,
+                  "full_cover_pct_raw": 32.5,
+                  "meet_pct_label": "Austria -1 穿盘概率（校准）",
+                  "dog_hold_label": "Jordan +1 守住概率（校准）",
+                  "two_stage_cn": "Austria 取胜约 58.9% · 赢球后穿盘约 55.2% · Jordan +1 守住约 58.7%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Austria -1 穿盘：有达标可能",
+                  "pill_cn": "Austria 胜 58.9% · 胜后穿 55.2% · Jordan +1 守 58.7%",
+                  "detail_cn": "Austria 取胜约 58.9% · 赢球后穿盘约 55.2% · Jordan +1 守住约 58.7%（泊松 raw 32.5% → 校准 41.3%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 32.1,
+                  "full_cover_pct": 41.3,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
@@ -16331,8 +16850,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0.75,
                   "show_cover": true
                 },
-                "text": "Austria -1 穿盘 32.1% · Jordan +1 守住 67.9%",
-                "color": "#8A96A8",
+                "text": "Austria 胜 58.9% · 胜后穿 55.2% · Jordan +1 守 58.7%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -16652,13 +17171,14 @@ const RESULTS_DATA = {
           "actual_score": "3-1",
           "ht_score": "1-0",
           "hits": [
+            "净胜全达标方向一致",
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
           "misses": [],
-          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。",
+          "summary_cn": "命中：净胜全达标方向一致 · 赛前进球氛围未强判（符合模型五五开读法）。",
           "totals_actual": 4,
           "totals_line": 2.5,
-          "spread_level": "uncertain",
+          "spread_level": "possible",
           "totals_level": "neutral"
         }
       },
@@ -16782,9 +17302,18 @@ const RESULTS_DATA = {
         "over_pct": 42.2,
         "fair_line": 2,
         "line_gap": 0.75,
-        "full_cover_pct": 44.7,
+        "full_cover_pct": 44,
+        "fav_win_pct": 70.1,
+        "cover_given_win_pct": 65,
         "spread_level": "possible",
         "spread_market_expect": "Portugal -1.75 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -16805,35 +17334,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "2-0",
-              "prob": 13.4
+              "prob": 13.2
             },
             {
               "score": "1-0",
-              "prob": 12.5
+              "prob": 12.3
             },
             {
               "score": "2-1",
-              "prob": 9.7
+              "prob": 9.5
             }
           ],
-          "one_goal_win_pct": 25,
-          "two_plus_win_pct": 44.7,
-          "full_cover_pct": 44.7,
-          "dog_hold_pct": 55.3,
-          "half_cover_pct": 25,
+          "one_goal_win_pct": 24.6,
+          "two_plus_win_pct": 45.6,
+          "full_cover_pct": 44,
+          "dog_hold_pct": 56,
+          "fav_win_pct": 70.1,
+          "cover_given_win_pct": 65,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.7,
+          "half_cover_pct": 24.6,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
           "margin_half_label": "部分达标净胜=1",
-          "fav_cover_ev": 0.144,
-          "dog_cover_ev": -0.144,
+          "fav_cover_ev": 0.157,
+          "dog_cover_ev": -0.157,
           "rational_spread_cn": "主队 净胜达标概率略高",
           "total_xg": 2.87,
           "fair_totals_line": 2,
-          "over_2_5_pct": 53.7,
-          "over_3_pct": 30.8,
+          "over_2_5_pct": 54.4,
+          "over_3_pct": 31.9,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥2 约 44.7%；部分达标净胜=1 约 25%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥2 约 45.6%；部分达标净胜=1 约 24.6%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 45.6,
+          "dog_hold_pct_raw": 54.4
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -16858,6 +17393,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
           "draw": 1,
@@ -16994,7 +17531,7 @@ const RESULTS_DATA = {
             "tier_gap": 1,
             "implied_tier_label": "Portugal -0.75 · Congo DR +0.75",
             "market_tier_label": "Portugal -1.75 · Congo DR +1.75",
-            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1 · 部分达标净胜=1 约 25%"
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1 · 部分达标净胜=1 约 24.6%"
           },
           "win_outlook": {
             "fav_name": "Portugal",
@@ -17020,7 +17557,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Portugal · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
-            "margin_meet_pct": 44.7,
+            "margin_meet_pct": 50.7,
             "margin_half_pct": 25,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -17039,21 +17576,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 25.9,
             "win_margin2_low_total_pct": 13.4,
             "win_margin2_high_total_pct": 31.3,
-            "readout_cn": "取胜约 65%；若取胜，以「险胜收工」为主（35.8%）。 对着赛前净胜参考，净胜≥2（全达标）约 44.7%；部分达标净胜=1 约 25%；对着总进球参考 2.75，模型超线概率约 42.2%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.75。"
+            "readout_cn": "取胜约 65%；若取胜，以「险胜收工」为主（35.8%）。 对着赛前净胜参考，净胜≥2（全达标）约 50.7%；部分达标净胜=1 约 25%；对着总进球参考 2.75，模型超线概率约 42.2%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.75。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "2-0",
-              "pct": 13.4
+              "pct": 13.2
             },
             {
               "score": "1-0",
-              "pct": 12.5
+              "pct": 12.3
             },
             {
               "score": "2-1",
-              "pct": 9.7
+              "pct": 9.5
             }
           ],
           "totals_view": {
@@ -17087,7 +17624,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Portugal -1.75 穿盘：有达标可能",
-            "sub_cn": "Portugal -1.75 穿盘 44.7% · Congo DR +1.75 守住 55.3% 进球氛围：几乎五五开",
+            "sub_cn": "Portugal 胜 70.1% · 胜后穿 65% · Congo DR +1.75 守 56% 进球氛围：几乎五五开",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -17097,17 +17634,22 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Portugal -1.75",
               "dog_handicap_cn": "Congo DR +1.75",
               "market_expect_cn": "Portugal -1.75 · 净胜≥2",
-              "meet_pct": 44.7,
-              "dog_hold_pct": 55.3,
-              "meet_pct_label": "Portugal -1.75 穿盘概率",
-              "dog_hold_label": "Congo DR +1.75 守住概率",
+              "meet_pct": 44,
+              "dog_hold_pct": 56,
+              "fav_win_pct": 70.1,
+              "cover_given_win_pct": 65,
+              "full_cover_pct_raw": 45.6,
+              "meet_pct_label": "Portugal -1.75 穿盘概率（校准）",
+              "dog_hold_label": "Congo DR +1.75 守住概率（校准）",
+              "two_stage_cn": "Portugal 取胜约 70.1% · 赢球后穿盘约 65% · Congo DR +1.75 守住约 56%",
+              "grid_tail_pct": 0.7,
               "verdict_cn": "有达标可能",
               "headline_cn": "Portugal -1.75 穿盘：有达标可能",
-              "pill_cn": "Portugal -1.75 穿盘 44.7% · Congo DR +1.75 守住 55.3%",
-              "detail_cn": "Portugal -1.75 穿盘约 44.7%（净胜≥2） · Congo DR +1.75 守住约 55.3%；穿盘与受让守住均有一定空间（部分达标净胜=1 约 25%）。",
-              "extra_stats_cn": "部分达标净胜=1 约 25%",
-              "full_cover_pct": 44.7,
-              "half_cover_pct": 25,
+              "pill_cn": "Portugal 胜 70.1% · 胜后穿 65% · Congo DR +1.75 守 56%",
+              "detail_cn": "Portugal 取胜约 70.1% · 赢球后穿盘约 65% · Congo DR +1.75 守住约 56%（泊松 raw 45.6% → 校准 44%）；穿盘与受让守住均有一定空间（部分达标净胜=1 约 24.6%）。",
+              "extra_stats_cn": "部分达标净胜=1 约 24.6%",
+              "full_cover_pct": 44,
+              "half_cover_pct": 24.6,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
               "margin_half_label": "部分达标净胜=1",
@@ -17149,24 +17691,29 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Portugal -1.75",
                   "dog_handicap_cn": "Congo DR +1.75",
                   "market_expect_cn": "Portugal -1.75 · 净胜≥2",
-                  "meet_pct": 44.7,
-                  "dog_hold_pct": 55.3,
-                  "meet_pct_label": "Portugal -1.75 穿盘概率",
-                  "dog_hold_label": "Congo DR +1.75 守住概率",
+                  "meet_pct": 44,
+                  "dog_hold_pct": 56,
+                  "fav_win_pct": 70.1,
+                  "cover_given_win_pct": 65,
+                  "full_cover_pct_raw": 45.6,
+                  "meet_pct_label": "Portugal -1.75 穿盘概率（校准）",
+                  "dog_hold_label": "Congo DR +1.75 守住概率（校准）",
+                  "two_stage_cn": "Portugal 取胜约 70.1% · 赢球后穿盘约 65% · Congo DR +1.75 守住约 56%",
+                  "grid_tail_pct": 0.7,
                   "verdict_cn": "有达标可能",
                   "headline_cn": "Portugal -1.75 穿盘：有达标可能",
-                  "pill_cn": "Portugal -1.75 穿盘 44.7% · Congo DR +1.75 守住 55.3%",
-                  "detail_cn": "Portugal -1.75 穿盘约 44.7%（净胜≥2） · Congo DR +1.75 守住约 55.3%；穿盘与受让守住均有一定空间（部分达标净胜=1 约 25%）。",
-                  "extra_stats_cn": "部分达标净胜=1 约 25%",
-                  "full_cover_pct": 44.7,
-                  "half_cover_pct": 25,
+                  "pill_cn": "Portugal 胜 70.1% · 胜后穿 65% · Congo DR +1.75 守 56%",
+                  "detail_cn": "Portugal 取胜约 70.1% · 赢球后穿盘约 65% · Congo DR +1.75 守住约 56%（泊松 raw 45.6% → 校准 44%）；穿盘与受让守住均有一定空间（部分达标净胜=1 约 24.6%）。",
+                  "extra_stats_cn": "部分达标净胜=1 约 24.6%",
+                  "full_cover_pct": 44,
+                  "half_cover_pct": 24.6,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": "部分达标净胜=1",
                   "tier_gap": 1,
                   "show_cover": true
                 },
-                "text": "Portugal -1.75 穿盘 44.7% · Congo DR +1.75 守住 55.3%",
+                "text": "Portugal 胜 70.1% · 胜后穿 65% · Congo DR +1.75 守 56%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -17441,7 +17988,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Portugal · 压制局。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1 · 部分达标净胜=1 约 25%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
+        "public_summary_note": "【推演概要】Portugal · 压制局。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1 · 部分达标净胜=1 约 24.6%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
         "goal_efficiency": {
           "xg_total": 2.87,
           "xg_gap": 1.43,
@@ -17609,9 +18156,18 @@ const RESULTS_DATA = {
         "over_pct": 52.7,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 47.3,
+        "full_cover_pct": 45,
+        "fav_win_pct": 47.5,
+        "cover_given_win_pct": 100,
         "spread_level": "possible",
         "spread_market_expect": "England -0.5 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -17632,7 +18188,7 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 11.7
+              "prob": 11.6
             },
             {
               "score": "1-0",
@@ -17640,27 +18196,33 @@ const RESULTS_DATA = {
             },
             {
               "score": "2-1",
-              "prob": 9.5
+              "prob": 9.4
             }
           ],
-          "one_goal_win_pct": 23,
-          "two_plus_win_pct": 24.4,
-          "full_cover_pct": 47.3,
-          "dog_hold_pct": 52.7,
+          "one_goal_win_pct": 22.8,
+          "two_plus_win_pct": 24.7,
+          "full_cover_pct": 45,
+          "dog_hold_pct": 55,
+          "fav_win_pct": 47.5,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": -0.054,
-          "dog_cover_ev": 0.054,
+          "fav_cover_ev": -0.05,
+          "dog_cover_ev": 0.05,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.8,
           "fair_totals_line": 2,
-          "over_2_5_pct": 52.7,
-          "over_3_pct": 30.3,
+          "over_2_5_pct": 53,
+          "over_3_pct": 30.7,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 47.3%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 47.5%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 47.5,
+          "dog_hold_pct_raw": 52.5
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -17685,6 +18247,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
           "draw": -1,
@@ -17847,7 +18411,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "England · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 47.3,
+            "margin_meet_pct": 44.9,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -17866,13 +18430,13 @@ const RESULTS_DATA = {
             "win_low_total_pct": 18,
             "win_margin2_low_total_pct": 8,
             "win_margin2_high_total_pct": 16.3,
-            "readout_cn": "取胜约 49%；若取胜，以「险胜收工」为主（48.5%）。 对着赛前净胜参考，净胜≥1（全达标）约 47.3%；对着总进球参考 2.5，模型超线概率约 52.7%。"
+            "readout_cn": "取胜约 49%；若取胜，以「险胜收工」为主（48.5%）。 对着赛前净胜参考，净胜≥1（全达标）约 44.9%；对着总进球参考 2.5，模型超线概率约 52.7%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 11.7
+              "pct": 11.6
             },
             {
               "score": "1-0",
@@ -17880,7 +18444,7 @@ const RESULTS_DATA = {
             },
             {
               "score": "2-1",
-              "pct": 9.5
+              "pct": 9.4
             }
           ],
           "totals_view": {
@@ -17914,7 +18478,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "England -0.5 穿盘：有达标可能",
-            "sub_cn": "England -0.5 穿盘 47.3% · Croatia +0.5 守住 52.7% 进球氛围：几乎五五开",
+            "sub_cn": "England 胜 47.5% · 胜后穿 100% · Croatia +0.5 守 55% 进球氛围：几乎五五开",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -17924,16 +18488,21 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "England -0.5",
               "dog_handicap_cn": "Croatia +0.5",
               "market_expect_cn": "England -0.5 · 净胜≥1",
-              "meet_pct": 47.3,
-              "dog_hold_pct": 52.7,
-              "meet_pct_label": "England -0.5 穿盘概率",
-              "dog_hold_label": "Croatia +0.5 守住概率",
+              "meet_pct": 45,
+              "dog_hold_pct": 55,
+              "fav_win_pct": 47.5,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 47.5,
+              "meet_pct_label": "England -0.5 穿盘概率（校准）",
+              "dog_hold_label": "Croatia +0.5 守住概率（校准）",
+              "two_stage_cn": "England 取胜约 47.5% · 赢球后穿盘约 100% · Croatia +0.5 守住约 55%",
+              "grid_tail_pct": null,
               "verdict_cn": "有达标可能",
               "headline_cn": "England -0.5 穿盘：有达标可能",
-              "pill_cn": "England -0.5 穿盘 47.3% · Croatia +0.5 守住 52.7%",
-              "detail_cn": "England -0.5 穿盘约 47.3%（净胜≥1） · Croatia +0.5 守住约 52.7%；穿盘与受让守住均有一定空间。",
+              "pill_cn": "England 胜 47.5% · 胜后穿 100% · Croatia +0.5 守 55%",
+              "detail_cn": "England 取胜约 47.5% · 赢球后穿盘约 100% · Croatia +0.5 守住约 55%（泊松 raw 47.5% → 校准 45%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 47.3,
+              "full_cover_pct": 45,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -17976,16 +18545,21 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "England -0.5",
                   "dog_handicap_cn": "Croatia +0.5",
                   "market_expect_cn": "England -0.5 · 净胜≥1",
-                  "meet_pct": 47.3,
-                  "dog_hold_pct": 52.7,
-                  "meet_pct_label": "England -0.5 穿盘概率",
-                  "dog_hold_label": "Croatia +0.5 守住概率",
+                  "meet_pct": 45,
+                  "dog_hold_pct": 55,
+                  "fav_win_pct": 47.5,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 47.5,
+                  "meet_pct_label": "England -0.5 穿盘概率（校准）",
+                  "dog_hold_label": "Croatia +0.5 守住概率（校准）",
+                  "two_stage_cn": "England 取胜约 47.5% · 赢球后穿盘约 100% · Croatia +0.5 守住约 55%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "有达标可能",
                   "headline_cn": "England -0.5 穿盘：有达标可能",
-                  "pill_cn": "England -0.5 穿盘 47.3% · Croatia +0.5 守住 52.7%",
-                  "detail_cn": "England -0.5 穿盘约 47.3%（净胜≥1） · Croatia +0.5 守住约 52.7%；穿盘与受让守住均有一定空间。",
+                  "pill_cn": "England 胜 47.5% · 胜后穿 100% · Croatia +0.5 守 55%",
+                  "detail_cn": "England 取胜约 47.5% · 赢球后穿盘约 100% · Croatia +0.5 守住约 55%（泊松 raw 47.5% → 校准 45%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 47.3,
+                  "full_cover_pct": 45,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -17993,7 +18567,7 @@ const RESULTS_DATA = {
                   "tier_gap": 0.5,
                   "show_cover": true
                 },
-                "text": "England -0.5 穿盘 47.3% · Croatia +0.5 守住 52.7%",
+                "text": "England 胜 47.5% · 胜后穿 100% · Croatia +0.5 守 55%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -18438,9 +19012,18 @@ const RESULTS_DATA = {
         "over_pct": 55.1,
         "fair_line": 2.25,
         "line_gap": 0,
-        "full_cover_pct": 28.4,
-        "spread_level": "skeptical",
+        "full_cover_pct": 39.1,
+        "fav_win_pct": 54.5,
+        "cover_given_win_pct": 52.5,
+        "spread_level": "possible",
         "spread_market_expect": "Ghana -1 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -18461,7 +19044,7 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-0",
-              "prob": 14.6
+              "prob": 14.5
             },
             {
               "score": "1-1",
@@ -18469,27 +19052,33 @@ const RESULTS_DATA = {
             },
             {
               "score": "2-0",
-              "prob": 11.3
+              "prob": 11.2
             }
           ],
-          "one_goal_win_pct": 26,
-          "two_plus_win_pct": 28.4,
-          "full_cover_pct": 28.4,
-          "dog_hold_pct": 71.6,
+          "one_goal_win_pct": 25.9,
+          "two_plus_win_pct": 28.6,
+          "full_cover_pct": 39.1,
+          "dog_hold_pct": 60.9,
+          "fav_win_pct": 54.5,
+          "cover_given_win_pct": 52.5,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
-          "push_pct": 26,
+          "push_pct": 25.9,
           "margin_full_label": "净胜≥2",
           "margin_half_label": "走水净胜=1",
-          "fav_cover_ev": -0.172,
-          "dog_cover_ev": 0.172,
+          "fav_cover_ev": -0.169,
+          "dog_cover_ev": 0.169,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.37,
           "fair_totals_line": 2.25,
-          "over_2_5_pct": 41.9,
-          "over_3_pct": 21.1,
-          "totals_lean_cn": "超 2.5 偏小比分（约 58.1%）；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 26%：参考净胜 1 球时，仅赢一球与拉开差距须分开看"
+          "over_2_5_pct": 42.2,
+          "over_3_pct": 21.4,
+          "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
+          "margin_risk_note": "净胜 1 球概率 25.9%：参考净胜 1 球时，仅赢一球与拉开差距须分开看",
+          "full_cover_pct_raw": 28.6,
+          "dog_hold_pct_raw": 71.4
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -18514,6 +19103,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.25,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
           "draw": 1,
@@ -18676,7 +19267,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Ghana · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
-            "margin_meet_pct": 28.4,
+            "margin_meet_pct": 39,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -18695,13 +19286,13 @@ const RESULTS_DATA = {
             "win_low_total_pct": 25.9,
             "win_margin2_low_total_pct": 11.3,
             "win_margin2_high_total_pct": 28.4,
-            "readout_cn": "取胜约 50%；若取胜，以「险胜收工」为主（47.8%）。 对着赛前净胜参考，净胜≥2（全达标）约 28.4%；对着总进球参考 2.25，模型超线概率约 55.1%。"
+            "readout_cn": "取胜约 50%；若取胜，以「险胜收工」为主（47.8%）。 对着赛前净胜参考，净胜≥2（全达标）约 39%；对着总进球参考 2.25，模型超线概率约 55.1%。"
           },
           "totals_line": 2.25,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 14.6
+              "pct": 14.5
             },
             {
               "score": "1-1",
@@ -18709,7 +19300,7 @@ const RESULTS_DATA = {
             },
             {
               "score": "2-0",
-              "pct": 11.3
+              "pct": 11.2
             }
           ],
           "totals_view": {
@@ -18742,27 +19333,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.3 · 合理值 2.25 · 总进球参考 2.25 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Ghana -1 穿盘：达到预期难度偏大",
-            "sub_cn": "Ghana -1 穿盘 28.4% · Panama +1 守住 71.6% 进球氛围：几乎五五开",
+            "headline_cn": "Ghana -1 穿盘：有达标可能",
+            "sub_cn": "Ghana 胜 54.5% · 胜后穿 52.5% · Panama +1 守 60.9% 进球氛围：几乎五五开",
             "spread": {
-              "level": "skeptical",
-              "label_cn": "外界预期偏高",
-              "color": "#D95F6A",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Ghana",
               "dog_name": "Panama",
               "fav_handicap_cn": "Ghana -1",
               "dog_handicap_cn": "Panama +1",
               "market_expect_cn": "Ghana -1 · 净胜≥2",
-              "meet_pct": 28.4,
-              "dog_hold_pct": 71.6,
-              "meet_pct_label": "Ghana -1 穿盘概率",
-              "dog_hold_label": "Panama +1 守住概率",
-              "verdict_cn": "达到预期难度偏大",
-              "headline_cn": "Ghana -1 穿盘：达到预期难度偏大",
-              "pill_cn": "Ghana -1 穿盘 28.4% · Panama +1 守住 71.6%",
-              "detail_cn": "Ghana -1 穿盘约 28.4%（净胜≥2） · Panama +1 守住约 71.6%；盘口相对 xG 偏深约 0.75 球，热门穿盘难度偏大。",
+              "meet_pct": 39.1,
+              "dog_hold_pct": 60.9,
+              "fav_win_pct": 54.5,
+              "cover_given_win_pct": 52.5,
+              "full_cover_pct_raw": 28.6,
+              "meet_pct_label": "Ghana -1 穿盘概率（校准）",
+              "dog_hold_label": "Panama +1 守住概率（校准）",
+              "two_stage_cn": "Ghana 取胜约 54.5% · 赢球后穿盘约 52.5% · Panama +1 守住约 60.9%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Ghana -1 穿盘：有达标可能",
+              "pill_cn": "Ghana 胜 54.5% · 胜后穿 52.5% · Panama +1 守 60.9%",
+              "detail_cn": "Ghana 取胜约 54.5% · 赢球后穿盘约 52.5% · Panama +1 守住约 60.9%（泊松 raw 28.6% → 校准 39.1%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 28.4,
+              "full_cover_pct": 39.1,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
@@ -18797,24 +19393,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "skeptical",
-                  "label_cn": "外界预期偏高",
-                  "color": "#D95F6A",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Ghana",
                   "dog_name": "Panama",
                   "fav_handicap_cn": "Ghana -1",
                   "dog_handicap_cn": "Panama +1",
                   "market_expect_cn": "Ghana -1 · 净胜≥2",
-                  "meet_pct": 28.4,
-                  "dog_hold_pct": 71.6,
-                  "meet_pct_label": "Ghana -1 穿盘概率",
-                  "dog_hold_label": "Panama +1 守住概率",
-                  "verdict_cn": "达到预期难度偏大",
-                  "headline_cn": "Ghana -1 穿盘：达到预期难度偏大",
-                  "pill_cn": "Ghana -1 穿盘 28.4% · Panama +1 守住 71.6%",
-                  "detail_cn": "Ghana -1 穿盘约 28.4%（净胜≥2） · Panama +1 守住约 71.6%；盘口相对 xG 偏深约 0.75 球，热门穿盘难度偏大。",
+                  "meet_pct": 39.1,
+                  "dog_hold_pct": 60.9,
+                  "fav_win_pct": 54.5,
+                  "cover_given_win_pct": 52.5,
+                  "full_cover_pct_raw": 28.6,
+                  "meet_pct_label": "Ghana -1 穿盘概率（校准）",
+                  "dog_hold_label": "Panama +1 守住概率（校准）",
+                  "two_stage_cn": "Ghana 取胜约 54.5% · 赢球后穿盘约 52.5% · Panama +1 守住约 60.9%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Ghana -1 穿盘：有达标可能",
+                  "pill_cn": "Ghana 胜 54.5% · 胜后穿 52.5% · Panama +1 守 60.9%",
+                  "detail_cn": "Ghana 取胜约 54.5% · 赢球后穿盘约 52.5% · Panama +1 守住约 60.9%（泊松 raw 28.6% → 校准 39.1%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 28.4,
+                  "full_cover_pct": 39.1,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
@@ -18822,8 +19423,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0.75,
                   "show_cover": true
                 },
-                "text": "Ghana -1 穿盘 28.4% · Panama +1 守住 71.6%",
-                "color": "#D95F6A",
+                "text": "Ghana 胜 54.5% · 胜后穿 52.5% · Panama +1 守 60.9%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -19149,7 +19750,7 @@ const RESULTS_DATA = {
           "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。",
           "totals_actual": 1,
           "totals_line": 2.25,
-          "spread_level": "skeptical",
+          "spread_level": "possible",
           "totals_level": "neutral"
         }
       },
@@ -19267,9 +19868,18 @@ const RESULTS_DATA = {
         "over_pct": 49.1,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 32.9,
-        "spread_level": "uncertain",
+        "full_cover_pct": 41.8,
+        "fav_win_pct": 58.5,
+        "cover_given_win_pct": 57,
+        "spread_level": "possible",
         "spread_market_expect": "Colombia -1.25 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -19290,35 +19900,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "0-1",
-              "prob": 12.6
+              "prob": 12.5
             },
             {
               "score": "0-2",
-              "prob": 11.2
+              "prob": 11.1
             },
             {
               "score": "1-1",
-              "prob": 11.1
+              "prob": 11
             }
           ],
-          "one_goal_win_pct": 12.5,
+          "one_goal_win_pct": 12.4,
           "two_plus_win_pct": 5.9,
-          "full_cover_pct": 32.9,
-          "dog_hold_pct": 67.1,
+          "full_cover_pct": 41.8,
+          "dog_hold_pct": 58.2,
+          "fav_win_pct": 58.5,
+          "cover_given_win_pct": 57,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
           "half_cover_pct": 0,
-          "half_lose_pct": 25.4,
+          "half_lose_pct": 25.2,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
           "margin_half_label": null,
-          "fav_cover_ev": -0.215,
-          "dog_cover_ev": 0.215,
+          "fav_cover_ev": -0.207,
+          "dog_cover_ev": 0.207,
           "rational_spread_cn": "主队 守住差距概率略高",
           "total_xg": 2.66,
           "fair_totals_line": 2,
-          "over_2_5_pct": 49.1,
-          "over_3_pct": 27,
+          "over_2_5_pct": 49.5,
+          "over_3_pct": 27.5,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 25.4%：常见「赢球但净胜仅 1 球」"
+          "margin_risk_note": "净胜 1 球概率 25.2%：常见「赢球但净胜仅 1 球」",
+          "full_cover_pct_raw": 33.4,
+          "dog_hold_pct_raw": 66.6
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -19343,6 +19959,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": -1,
@@ -19484,7 +20102,7 @@ const RESULTS_DATA = {
             "tier_gap": -1,
             "implied_tier_label": "Colombia -0.25 · Uzbekistan +0.25",
             "market_tier_label": "Colombia -1.25 · Uzbekistan +1.25",
-            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法低于 xG 隐含约 1 · 模型认为仅小胜 1 球仍约 25.4%"
+            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法低于 xG 隐含约 1 · 模型认为仅小胜 1 球仍约 25.2%"
           },
           "win_outlook": {
             "fav_name": "Colombia",
@@ -19510,7 +20128,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Colombia · 赛前净胜参考 净胜≥2（全达标）",
-            "margin_meet_pct": 32.9,
+            "margin_meet_pct": 41.5,
             "margin_half_pct": 0,
             "margin_fail_pct": 25.4,
             "margin_full_label": "净胜≥2",
@@ -19529,21 +20147,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 23.8,
             "win_margin2_low_total_pct": 11.2,
             "win_margin2_high_total_pct": 21.7,
-            "readout_cn": "取胜约 57%；若取胜，以「险胜收工」为主（43.5%）。 对着赛前净胜参考，净胜≥2（全达标）约 32.9%；对着总进球参考 2.5，模型超线概率约 49.1%。"
+            "readout_cn": "取胜约 57%；若取胜，以「险胜收工」为主（43.5%）。 对着赛前净胜参考，净胜≥2（全达标）约 41.5%；对着总进球参考 2.5，模型超线概率约 49.1%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "0-1",
-              "pct": 12.6
+              "pct": 12.5
             },
             {
               "score": "0-2",
-              "pct": 11.2
+              "pct": 11.1
             },
             {
               "score": "1-1",
-              "pct": 11.1
+              "pct": 11
             }
           ],
           "totals_view": {
@@ -19576,29 +20194,34 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.6 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Colombia -1.25 穿盘：达标与否难下定论",
-            "sub_cn": "Colombia -1.25 穿盘 32.9% · Uzbekistan +1.25 守住 67.1% 进球氛围：几乎五五开",
+            "headline_cn": "Colombia -1.25 穿盘：有达标可能",
+            "sub_cn": "Colombia 胜 58.5% · 胜后穿 57% · Uzbekistan +1.25 守 58.2% 进球氛围：几乎五五开",
             "spread": {
-              "level": "uncertain",
-              "label_cn": "净胜幅度难下定论",
-              "color": "#8A96A8",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Colombia",
               "dog_name": "Uzbekistan",
               "fav_handicap_cn": "Colombia -1.25",
               "dog_handicap_cn": "Uzbekistan +1.25",
               "market_expect_cn": "Colombia -1.25 · 净胜≥2",
-              "meet_pct": 32.9,
-              "dog_hold_pct": 67.1,
-              "meet_pct_label": "Colombia -1.25 穿盘概率",
-              "dog_hold_label": "Uzbekistan +1.25 守住概率",
-              "verdict_cn": "达标与否难下定论",
-              "headline_cn": "Colombia -1.25 穿盘：达标与否难下定论",
-              "pill_cn": "Colombia -1.25 穿盘 32.9% · Uzbekistan +1.25 守住 67.1%",
-              "detail_cn": "Colombia -1.25 穿盘约 32.9%（净胜≥2） · Uzbekistan +1.25 守住约 67.1%（仅胜 1 球约 25.4%）。",
-              "extra_stats_cn": "仅胜 1 球约 25.4%",
-              "full_cover_pct": 32.9,
+              "meet_pct": 41.8,
+              "dog_hold_pct": 58.2,
+              "fav_win_pct": 58.5,
+              "cover_given_win_pct": 57,
+              "full_cover_pct_raw": 33.4,
+              "meet_pct_label": "Colombia -1.25 穿盘概率（校准）",
+              "dog_hold_label": "Uzbekistan +1.25 守住概率（校准）",
+              "two_stage_cn": "Colombia 取胜约 58.5% · 赢球后穿盘约 57% · Uzbekistan +1.25 守住约 58.2%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Colombia -1.25 穿盘：有达标可能",
+              "pill_cn": "Colombia 胜 58.5% · 胜后穿 57% · Uzbekistan +1.25 守 58.2%",
+              "detail_cn": "Colombia 取胜约 58.5% · 赢球后穿盘约 57% · Uzbekistan +1.25 守住约 58.2%（泊松 raw 33.4% → 校准 41.8%）；穿盘与受让守住均有一定空间（仅胜 1 球约 25.2%）。",
+              "extra_stats_cn": "仅胜 1 球约 25.2%",
+              "full_cover_pct": 41.8,
               "half_cover_pct": 0,
-              "lose1_pct": 25.4,
+              "lose1_pct": 25.2,
               "margin_full_label": "净胜≥2",
               "margin_half_label": null,
               "tier_gap": -1,
@@ -19631,33 +20254,38 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "uncertain",
-                  "label_cn": "净胜幅度难下定论",
-                  "color": "#8A96A8",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Colombia",
                   "dog_name": "Uzbekistan",
                   "fav_handicap_cn": "Colombia -1.25",
                   "dog_handicap_cn": "Uzbekistan +1.25",
                   "market_expect_cn": "Colombia -1.25 · 净胜≥2",
-                  "meet_pct": 32.9,
-                  "dog_hold_pct": 67.1,
-                  "meet_pct_label": "Colombia -1.25 穿盘概率",
-                  "dog_hold_label": "Uzbekistan +1.25 守住概率",
-                  "verdict_cn": "达标与否难下定论",
-                  "headline_cn": "Colombia -1.25 穿盘：达标与否难下定论",
-                  "pill_cn": "Colombia -1.25 穿盘 32.9% · Uzbekistan +1.25 守住 67.1%",
-                  "detail_cn": "Colombia -1.25 穿盘约 32.9%（净胜≥2） · Uzbekistan +1.25 守住约 67.1%（仅胜 1 球约 25.4%）。",
-                  "extra_stats_cn": "仅胜 1 球约 25.4%",
-                  "full_cover_pct": 32.9,
+                  "meet_pct": 41.8,
+                  "dog_hold_pct": 58.2,
+                  "fav_win_pct": 58.5,
+                  "cover_given_win_pct": 57,
+                  "full_cover_pct_raw": 33.4,
+                  "meet_pct_label": "Colombia -1.25 穿盘概率（校准）",
+                  "dog_hold_label": "Uzbekistan +1.25 守住概率（校准）",
+                  "two_stage_cn": "Colombia 取胜约 58.5% · 赢球后穿盘约 57% · Uzbekistan +1.25 守住约 58.2%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Colombia -1.25 穿盘：有达标可能",
+                  "pill_cn": "Colombia 胜 58.5% · 胜后穿 57% · Uzbekistan +1.25 守 58.2%",
+                  "detail_cn": "Colombia 取胜约 58.5% · 赢球后穿盘约 57% · Uzbekistan +1.25 守住约 58.2%（泊松 raw 33.4% → 校准 41.8%）；穿盘与受让守住均有一定空间（仅胜 1 球约 25.2%）。",
+                  "extra_stats_cn": "仅胜 1 球约 25.2%",
+                  "full_cover_pct": 41.8,
                   "half_cover_pct": 0,
-                  "lose1_pct": 25.4,
+                  "lose1_pct": 25.2,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": null,
                   "tier_gap": -1,
                   "show_cover": true
                 },
-                "text": "Colombia -1.25 穿盘 32.9% · Uzbekistan +1.25 守住 67.1%",
-                "color": "#8A96A8",
+                "text": "Colombia 胜 58.5% · 胜后穿 57% · Uzbekistan +1.25 守 58.2%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -19931,7 +20559,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Colombia · 常规对抗。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法低于 xG 隐含约 1 · 模型认为仅小胜 1 球仍约 25.4%（模型微调：主胜 +0% · 平 -1% · 客 +1%）",
+        "public_summary_note": "【推演概要】Colombia · 常规对抗。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法低于 xG 隐含约 1 · 模型认为仅小胜 1 球仍约 25.2%（模型微调：主胜 +0% · 平 -1% · 客 +1%）",
         "goal_efficiency": {
           "xg_total": 2.66,
           "xg_gap": 0.9,
@@ -19971,13 +20599,14 @@ const RESULTS_DATA = {
           "actual_score": "1-3",
           "ht_score": "0-1",
           "hits": [
+            "净胜全达标方向一致",
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
           "misses": [],
-          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。",
+          "summary_cn": "命中：净胜全达标方向一致 · 赛前进球氛围未强判（符合模型五五开读法）。",
           "totals_actual": 4,
           "totals_line": 2.5,
-          "spread_level": "uncertain",
+          "spread_level": "possible",
           "totals_level": "neutral"
         }
       },
@@ -20093,9 +20722,18 @@ const RESULTS_DATA = {
         "over_pct": 55.9,
         "fair_line": 2.25,
         "line_gap": 0,
-        "full_cover_pct": 52.1,
-        "spread_level": "likely",
+        "full_cover_pct": 47.6,
+        "fav_win_pct": 52.2,
+        "cover_given_win_pct": 100,
+        "spread_level": "possible",
         "spread_market_expect": "Czechia -0.75 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -20116,35 +20754,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-0",
-              "prob": 13.9
+              "prob": 13.8
             },
             {
               "score": "1-1",
-              "prob": 12.2
+              "prob": 12.1
             },
             {
               "score": "2-0",
               "prob": 10.5
             }
           ],
-          "one_goal_win_pct": 25.4,
-          "two_plus_win_pct": 26.6,
-          "full_cover_pct": 52.1,
-          "dog_hold_pct": 47.9,
+          "one_goal_win_pct": 25.3,
+          "two_plus_win_pct": 26.9,
+          "full_cover_pct": 47.6,
+          "dog_hold_pct": 52.4,
+          "fav_win_pct": 52.2,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": 0.042,
-          "dog_cover_ev": -0.042,
+          "fav_cover_ev": 0.044,
+          "dog_cover_ev": -0.044,
           "rational_spread_cn": "主队 净胜达标概率略高",
           "total_xg": 2.4,
           "fair_totals_line": 2.25,
-          "over_2_5_pct": 42.7,
-          "over_3_pct": 21.7,
+          "over_2_5_pct": 43,
+          "over_3_pct": 22,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 52.1%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 52.2%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 52.2,
+          "dog_hold_pct_raw": 47.8
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -20169,6 +20813,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.25,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
           "draw": -1,
@@ -20331,7 +20977,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Czechia · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 52.1,
+            "margin_meet_pct": 47.6,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -20350,17 +20996,17 @@ const RESULTS_DATA = {
             "win_low_total_pct": 24.4,
             "win_margin2_low_total_pct": 10.5,
             "win_margin2_high_total_pct": 26.6,
-            "readout_cn": "取胜约 54%；若取胜，以「险胜收工」为主（48.8%）。 对着赛前净胜参考，净胜≥1（全达标）约 52.1%；对着总进球参考 2.25，模型超线概率约 55.9%。"
+            "readout_cn": "取胜约 54%；若取胜，以「险胜收工」为主（48.8%）。 对着赛前净胜参考，净胜≥1（全达标）约 47.6%；对着总进球参考 2.25，模型超线概率约 55.9%。"
           },
           "totals_line": 2.25,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 13.9
+              "pct": 13.8
             },
             {
               "score": "1-1",
-              "pct": 12.2
+              "pct": 12.1
             },
             {
               "score": "2-0",
@@ -20397,27 +21043,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.4 · 合理值 2.25 · 总进球参考 2.25 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Czechia -0.75 穿盘：达到预期较有希望",
-            "sub_cn": "Czechia -0.75 穿盘 52.1% · South Africa +0.75 守住 47.9% 进球氛围：几乎五五开",
+            "headline_cn": "Czechia -0.75 穿盘：有达标可能",
+            "sub_cn": "Czechia 胜 52.2% · 胜后穿 100% · South Africa +0.75 守 52.4% 进球氛围：几乎五五开",
             "spread": {
-              "level": "likely",
-              "label_cn": "达到预期较有希望",
-              "color": "#5BBF8A",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Czechia",
               "dog_name": "South Africa",
               "fav_handicap_cn": "Czechia -0.75",
               "dog_handicap_cn": "South Africa +0.75",
               "market_expect_cn": "Czechia -0.75 · 净胜≥1",
-              "meet_pct": 52.1,
-              "dog_hold_pct": 47.9,
-              "meet_pct_label": "Czechia -0.75 穿盘概率",
-              "dog_hold_label": "South Africa +0.75 守住概率",
-              "verdict_cn": "达到预期较有希望",
-              "headline_cn": "Czechia -0.75 穿盘：达到预期较有希望",
-              "pill_cn": "Czechia -0.75 穿盘 52.1% · South Africa +0.75 守住 47.9%",
-              "detail_cn": "Czechia -0.75 穿盘约 52.1%（净胜≥1） · South Africa +0.75 守住约 47.9%；模型认为热门穿盘概率相对较高。",
+              "meet_pct": 47.6,
+              "dog_hold_pct": 52.4,
+              "fav_win_pct": 52.2,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 52.2,
+              "meet_pct_label": "Czechia -0.75 穿盘概率（校准）",
+              "dog_hold_label": "South Africa +0.75 守住概率（校准）",
+              "two_stage_cn": "Czechia 取胜约 52.2% · 赢球后穿盘约 100% · South Africa +0.75 守住约 52.4%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Czechia -0.75 穿盘：有达标可能",
+              "pill_cn": "Czechia 胜 52.2% · 胜后穿 100% · South Africa +0.75 守 52.4%",
+              "detail_cn": "Czechia 取胜约 52.2% · 赢球后穿盘约 100% · South Africa +0.75 守住约 52.4%（泊松 raw 52.2% → 校准 47.6%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 52.1,
+              "full_cover_pct": 47.6,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -20452,24 +21103,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "likely",
-                  "label_cn": "达到预期较有希望",
-                  "color": "#5BBF8A",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Czechia",
                   "dog_name": "South Africa",
                   "fav_handicap_cn": "Czechia -0.75",
                   "dog_handicap_cn": "South Africa +0.75",
                   "market_expect_cn": "Czechia -0.75 · 净胜≥1",
-                  "meet_pct": 52.1,
-                  "dog_hold_pct": 47.9,
-                  "meet_pct_label": "Czechia -0.75 穿盘概率",
-                  "dog_hold_label": "South Africa +0.75 守住概率",
-                  "verdict_cn": "达到预期较有希望",
-                  "headline_cn": "Czechia -0.75 穿盘：达到预期较有希望",
-                  "pill_cn": "Czechia -0.75 穿盘 52.1% · South Africa +0.75 守住 47.9%",
-                  "detail_cn": "Czechia -0.75 穿盘约 52.1%（净胜≥1） · South Africa +0.75 守住约 47.9%；模型认为热门穿盘概率相对较高。",
+                  "meet_pct": 47.6,
+                  "dog_hold_pct": 52.4,
+                  "fav_win_pct": 52.2,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 52.2,
+                  "meet_pct_label": "Czechia -0.75 穿盘概率（校准）",
+                  "dog_hold_label": "South Africa +0.75 守住概率（校准）",
+                  "two_stage_cn": "Czechia 取胜约 52.2% · 赢球后穿盘约 100% · South Africa +0.75 守住约 52.4%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Czechia -0.75 穿盘：有达标可能",
+                  "pill_cn": "Czechia 胜 52.2% · 胜后穿 100% · South Africa +0.75 守 52.4%",
+                  "detail_cn": "Czechia 取胜约 52.2% · 赢球后穿盘约 100% · South Africa +0.75 守住约 52.4%（泊松 raw 52.2% → 校准 47.6%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 52.1,
+                  "full_cover_pct": 47.6,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -20477,8 +21133,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0.5,
                   "show_cover": true
                 },
-                "text": "Czechia -0.75 穿盘 52.1% · South Africa +0.75 守住 47.9%",
-                "color": "#5BBF8A",
+                "text": "Czechia 胜 52.2% · 胜后穿 100% · South Africa +0.75 守 52.4%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -20794,13 +21450,11 @@ const RESULTS_DATA = {
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
-          "misses": [
-            "净胜全达标未兑现"
-          ],
-          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。 偏差：净胜全达标未兑现。",
+          "misses": [],
+          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。",
           "totals_actual": 2,
           "totals_line": 2.25,
-          "spread_level": "likely",
+          "spread_level": "possible",
           "totals_level": "neutral"
         }
       },
@@ -20917,9 +21571,18 @@ const RESULTS_DATA = {
         "over_pct": 47.8,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 48.7,
+        "full_cover_pct": 45.7,
+        "fav_win_pct": 48.8,
+        "cover_given_win_pct": 100,
         "spread_level": "possible",
         "spread_market_expect": "Switzerland -0.5 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -20940,35 +21603,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 12.2
+              "prob": 12.1
             },
             {
               "score": "1-0",
-              "prob": 11.6
+              "prob": 11.5
             },
             {
               "score": "2-1",
               "prob": 9.4
             }
           ],
-          "one_goal_win_pct": 23.9,
-          "two_plus_win_pct": 24.7,
-          "full_cover_pct": 48.7,
-          "dog_hold_pct": 51.3,
+          "one_goal_win_pct": 23.8,
+          "two_plus_win_pct": 25,
+          "full_cover_pct": 45.7,
+          "dog_hold_pct": 54.3,
+          "fav_win_pct": 48.8,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": -0.026,
-          "dog_cover_ev": 0.026,
+          "fav_cover_ev": -0.024,
+          "dog_cover_ev": 0.024,
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 2.6,
           "fair_totals_line": 2,
-          "over_2_5_pct": 47.8,
-          "over_3_pct": 26,
+          "over_2_5_pct": 48.1,
+          "over_3_pct": 26.3,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 48.7%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 48.8%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 48.8,
+          "dog_hold_pct_raw": 51.2
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -20993,6 +21662,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
           "draw": -1,
@@ -21155,7 +21826,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Switzerland · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 48.7,
+            "margin_meet_pct": 45.7,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -21174,17 +21845,17 @@ const RESULTS_DATA = {
             "win_low_total_pct": 20.6,
             "win_margin2_low_total_pct": 9,
             "win_margin2_high_total_pct": 15.7,
-            "readout_cn": "取胜约 51%；若取胜，以「险胜收工」为主（49.2%）。 对着赛前净胜参考，净胜≥1（全达标）约 48.7%；对着总进球参考 2.5，模型超线概率约 47.8%。"
+            "readout_cn": "取胜约 51%；若取胜，以「险胜收工」为主（49.2%）。 对着赛前净胜参考，净胜≥1（全达标）约 45.7%；对着总进球参考 2.5，模型超线概率约 47.8%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 12.2
+              "pct": 12.1
             },
             {
               "score": "1-0",
-              "pct": 11.6
+              "pct": 11.5
             },
             {
               "score": "2-1",
@@ -21222,7 +21893,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Switzerland -0.5 穿盘：有达标可能",
-            "sub_cn": "Switzerland -0.5 穿盘 48.7% · Bosnia and Herzegovina +0.5 守住 51.3% 进球氛围：几乎五五开",
+            "sub_cn": "Switzerland 胜 48.8% · 胜后穿 100% · Bosnia and Herzegovina +0.5 守 54.3% 进球氛围：几乎五五开",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -21232,16 +21903,21 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Switzerland -0.5",
               "dog_handicap_cn": "Bosnia and Herzegovina +0.5",
               "market_expect_cn": "Switzerland -0.5 · 净胜≥1",
-              "meet_pct": 48.7,
-              "dog_hold_pct": 51.3,
-              "meet_pct_label": "Switzerland -0.5 穿盘概率",
-              "dog_hold_label": "Bosnia and Herzegovina +0.5 守住概率",
+              "meet_pct": 45.7,
+              "dog_hold_pct": 54.3,
+              "fav_win_pct": 48.8,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 48.8,
+              "meet_pct_label": "Switzerland -0.5 穿盘概率（校准）",
+              "dog_hold_label": "Bosnia and Herzegovina +0.5 守住概率（校准）",
+              "two_stage_cn": "Switzerland 取胜约 48.8% · 赢球后穿盘约 100% · Bosnia and Herzegovina +0.5 守住约 54.3%",
+              "grid_tail_pct": null,
               "verdict_cn": "有达标可能",
               "headline_cn": "Switzerland -0.5 穿盘：有达标可能",
-              "pill_cn": "Switzerland -0.5 穿盘 48.7% · Bosnia and Herzegovina +0.5 守住 51.3%",
-              "detail_cn": "Switzerland -0.5 穿盘约 48.7%（净胜≥1） · Bosnia and Herzegovina +0.5 守住约 51.3%；穿盘与受让守住均有一定空间。",
+              "pill_cn": "Switzerland 胜 48.8% · 胜后穿 100% · Bosnia and Herzegovina +0.5 守 54.3%",
+              "detail_cn": "Switzerland 取胜约 48.8% · 赢球后穿盘约 100% · Bosnia and Herzegovina +0.5 守住约 54.3%（泊松 raw 48.8% → 校准 45.7%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 48.7,
+              "full_cover_pct": 45.7,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -21284,16 +21960,21 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Switzerland -0.5",
                   "dog_handicap_cn": "Bosnia and Herzegovina +0.5",
                   "market_expect_cn": "Switzerland -0.5 · 净胜≥1",
-                  "meet_pct": 48.7,
-                  "dog_hold_pct": 51.3,
-                  "meet_pct_label": "Switzerland -0.5 穿盘概率",
-                  "dog_hold_label": "Bosnia and Herzegovina +0.5 守住概率",
+                  "meet_pct": 45.7,
+                  "dog_hold_pct": 54.3,
+                  "fav_win_pct": 48.8,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 48.8,
+                  "meet_pct_label": "Switzerland -0.5 穿盘概率（校准）",
+                  "dog_hold_label": "Bosnia and Herzegovina +0.5 守住概率（校准）",
+                  "two_stage_cn": "Switzerland 取胜约 48.8% · 赢球后穿盘约 100% · Bosnia and Herzegovina +0.5 守住约 54.3%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "有达标可能",
                   "headline_cn": "Switzerland -0.5 穿盘：有达标可能",
-                  "pill_cn": "Switzerland -0.5 穿盘 48.7% · Bosnia and Herzegovina +0.5 守住 51.3%",
-                  "detail_cn": "Switzerland -0.5 穿盘约 48.7%（净胜≥1） · Bosnia and Herzegovina +0.5 守住约 51.3%；穿盘与受让守住均有一定空间。",
+                  "pill_cn": "Switzerland 胜 48.8% · 胜后穿 100% · Bosnia and Herzegovina +0.5 守 54.3%",
+                  "detail_cn": "Switzerland 取胜约 48.8% · 赢球后穿盘约 100% · Bosnia and Herzegovina +0.5 守住约 54.3%（泊松 raw 48.8% → 校准 45.7%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 48.7,
+                  "full_cover_pct": 45.7,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -21301,7 +21982,7 @@ const RESULTS_DATA = {
                   "tier_gap": 0.25,
                   "show_cover": true
                 },
-                "text": "Switzerland -0.5 穿盘 48.7% · Bosnia and Herzegovina +0.5 守住 51.3%",
+                "text": "Switzerland 胜 48.8% · 胜后穿 100% · Bosnia and Herzegovina +0.5 守 54.3%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -21741,9 +22422,18 @@ const RESULTS_DATA = {
         "over_pct": 45.3,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 29.1,
-        "spread_level": "skeptical",
+        "full_cover_pct": 39.6,
+        "fav_win_pct": 54.8,
+        "cover_given_win_pct": 53.7,
+        "spread_level": "possible",
         "spread_market_expect": "Canada -1 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -21764,35 +22454,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-0",
-              "prob": 13.4
+              "prob": 13.3
             },
             {
               "score": "1-1",
-              "prob": 11.8
+              "prob": 11.7
             },
             {
               "score": "2-0",
               "prob": 10.8
             }
           ],
-          "one_goal_win_pct": 25.5,
-          "two_plus_win_pct": 29.1,
-          "full_cover_pct": 29.1,
-          "dog_hold_pct": 70.9,
+          "one_goal_win_pct": 25.4,
+          "two_plus_win_pct": 29.4,
+          "full_cover_pct": 39.6,
+          "dog_hold_pct": 60.4,
+          "fav_win_pct": 54.8,
+          "cover_given_win_pct": 53.7,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
-          "push_pct": 25.5,
+          "push_pct": 25.4,
           "margin_full_label": "净胜≥2",
           "margin_half_label": "走水净胜=1",
-          "fav_cover_ev": -0.164,
-          "dog_cover_ev": 0.164,
+          "fav_cover_ev": -0.158,
+          "dog_cover_ev": 0.158,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.5,
           "fair_totals_line": 2,
-          "over_2_5_pct": 45.3,
-          "over_3_pct": 23.7,
+          "over_2_5_pct": 45.5,
+          "over_3_pct": 24.1,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 25.5%：参考净胜 1 球时，仅赢一球与拉开差距须分开看"
+          "margin_risk_note": "净胜 1 球概率 25.4%：参考净胜 1 球时，仅赢一球与拉开差距须分开看",
+          "full_cover_pct_raw": 29.4,
+          "dog_hold_pct_raw": 70.6
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -21817,6 +22513,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
           "draw": 1,
@@ -21979,7 +22677,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Canada · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
-            "margin_meet_pct": 29.1,
+            "margin_meet_pct": 39.4,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -21998,17 +22696,17 @@ const RESULTS_DATA = {
             "win_low_total_pct": 24.2,
             "win_margin2_low_total_pct": 10.8,
             "win_margin2_high_total_pct": 18.2,
-            "readout_cn": "取胜约 51%；若取胜，以「险胜收工」为主（46.7%）。 对着赛前净胜参考，净胜≥2（全达标）约 29.1%；对着总进球参考 2.5，模型超线概率约 45.3%。"
+            "readout_cn": "取胜约 51%；若取胜，以「险胜收工」为主（46.7%）。 对着赛前净胜参考，净胜≥2（全达标）约 39.4%；对着总进球参考 2.5，模型超线概率约 45.3%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 13.4
+              "pct": 13.3
             },
             {
               "score": "1-1",
-              "pct": 11.8
+              "pct": 11.7
             },
             {
               "score": "2-0",
@@ -22045,27 +22743,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.5 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Canada -1 穿盘：达到预期难度偏大",
-            "sub_cn": "Canada -1 穿盘 29.1% · Qatar +1 守住 70.9% 进球氛围：几乎五五开",
+            "headline_cn": "Canada -1 穿盘：有达标可能",
+            "sub_cn": "Canada 胜 54.8% · 胜后穿 53.7% · Qatar +1 守 60.4% 进球氛围：几乎五五开",
             "spread": {
-              "level": "skeptical",
-              "label_cn": "外界预期偏高",
-              "color": "#D95F6A",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Canada",
               "dog_name": "Qatar",
               "fav_handicap_cn": "Canada -1",
               "dog_handicap_cn": "Qatar +1",
               "market_expect_cn": "Canada -1 · 净胜≥2",
-              "meet_pct": 29.1,
-              "dog_hold_pct": 70.9,
-              "meet_pct_label": "Canada -1 穿盘概率",
-              "dog_hold_label": "Qatar +1 守住概率",
-              "verdict_cn": "达到预期难度偏大",
-              "headline_cn": "Canada -1 穿盘：达到预期难度偏大",
-              "pill_cn": "Canada -1 穿盘 29.1% · Qatar +1 守住 70.9%",
-              "detail_cn": "Canada -1 穿盘约 29.1%（净胜≥2） · Qatar +1 守住约 70.9%；盘口相对 xG 偏深约 0.75 球，热门穿盘难度偏大。",
+              "meet_pct": 39.6,
+              "dog_hold_pct": 60.4,
+              "fav_win_pct": 54.8,
+              "cover_given_win_pct": 53.7,
+              "full_cover_pct_raw": 29.4,
+              "meet_pct_label": "Canada -1 穿盘概率（校准）",
+              "dog_hold_label": "Qatar +1 守住概率（校准）",
+              "two_stage_cn": "Canada 取胜约 54.8% · 赢球后穿盘约 53.7% · Qatar +1 守住约 60.4%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Canada -1 穿盘：有达标可能",
+              "pill_cn": "Canada 胜 54.8% · 胜后穿 53.7% · Qatar +1 守 60.4%",
+              "detail_cn": "Canada 取胜约 54.8% · 赢球后穿盘约 53.7% · Qatar +1 守住约 60.4%（泊松 raw 29.4% → 校准 39.6%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 29.1,
+              "full_cover_pct": 39.6,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
@@ -22100,24 +22803,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "skeptical",
-                  "label_cn": "外界预期偏高",
-                  "color": "#D95F6A",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Canada",
                   "dog_name": "Qatar",
                   "fav_handicap_cn": "Canada -1",
                   "dog_handicap_cn": "Qatar +1",
                   "market_expect_cn": "Canada -1 · 净胜≥2",
-                  "meet_pct": 29.1,
-                  "dog_hold_pct": 70.9,
-                  "meet_pct_label": "Canada -1 穿盘概率",
-                  "dog_hold_label": "Qatar +1 守住概率",
-                  "verdict_cn": "达到预期难度偏大",
-                  "headline_cn": "Canada -1 穿盘：达到预期难度偏大",
-                  "pill_cn": "Canada -1 穿盘 29.1% · Qatar +1 守住 70.9%",
-                  "detail_cn": "Canada -1 穿盘约 29.1%（净胜≥2） · Qatar +1 守住约 70.9%；盘口相对 xG 偏深约 0.75 球，热门穿盘难度偏大。",
+                  "meet_pct": 39.6,
+                  "dog_hold_pct": 60.4,
+                  "fav_win_pct": 54.8,
+                  "cover_given_win_pct": 53.7,
+                  "full_cover_pct_raw": 29.4,
+                  "meet_pct_label": "Canada -1 穿盘概率（校准）",
+                  "dog_hold_label": "Qatar +1 守住概率（校准）",
+                  "two_stage_cn": "Canada 取胜约 54.8% · 赢球后穿盘约 53.7% · Qatar +1 守住约 60.4%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Canada -1 穿盘：有达标可能",
+                  "pill_cn": "Canada 胜 54.8% · 胜后穿 53.7% · Qatar +1 守 60.4%",
+                  "detail_cn": "Canada 取胜约 54.8% · 赢球后穿盘约 53.7% · Qatar +1 守住约 60.4%（泊松 raw 29.4% → 校准 39.6%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 29.1,
+                  "full_cover_pct": 39.6,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
@@ -22125,8 +22833,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0.75,
                   "show_cover": true
                 },
-                "text": "Canada -1 穿盘 29.1% · Qatar +1 守住 70.9%",
-                "color": "#D95F6A",
+                "text": "Canada 胜 54.8% · 胜后穿 53.7% · Qatar +1 守 60.4%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -22445,15 +23153,16 @@ const RESULTS_DATA = {
         "preview_replay": {
           "actual_score": "6-0",
           "ht_score": "3-0",
-          "hits": [],
+          "hits": [
+            "净胜全达标方向一致"
+          ],
           "misses": [
-            "净胜全达标超预期（模型曾偏谨慎）",
             "总进球尾部偏差大（赛前已标注无明显倾向）"
           ],
-          "summary_cn": "偏差：净胜全达标超预期（模型曾偏谨慎） · 总进球尾部偏差大（赛前已标注无明显倾向）。",
+          "summary_cn": "命中：净胜全达标方向一致。 偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
           "totals_actual": 6,
           "totals_line": 2.5,
-          "spread_level": "skeptical",
+          "spread_level": "possible",
           "totals_level": "neutral"
         }
       },
@@ -22570,9 +23279,18 @@ const RESULTS_DATA = {
         "over_pct": 53.7,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 41.9,
+        "full_cover_pct": 49.2,
+        "fav_win_pct": 42,
+        "cover_given_win_pct": 100,
         "spread_level": "possible",
         "spread_market_expect": "Mexico -0.25 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -22593,35 +23311,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 11.8
+              "prob": 11.7
             },
             {
               "score": "2-1",
-              "prob": 9
+              "prob": 8.9
             },
             {
               "score": "1-0",
               "prob": 8.9
             }
           ],
-          "one_goal_win_pct": 21.5,
-          "two_plus_win_pct": 20.4,
-          "full_cover_pct": 41.9,
-          "dog_hold_pct": 58.1,
+          "one_goal_win_pct": 21.4,
+          "two_plus_win_pct": 20.6,
+          "full_cover_pct": 49.2,
+          "dog_hold_pct": 50.8,
+          "fav_win_pct": 42,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": -0.162,
-          "dog_cover_ev": 0.162,
+          "fav_cover_ev": -0.16,
+          "dog_cover_ev": 0.16,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.84,
           "fair_totals_line": 2,
-          "over_2_5_pct": 53.7,
-          "over_3_pct": 31.2,
+          "over_2_5_pct": 53.9,
+          "over_3_pct": 31.6,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 41.9%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 42%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 42,
+          "dog_hold_pct_raw": 58
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -22646,6 +23370,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -22808,7 +23534,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Mexico · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 41.9,
+            "margin_meet_pct": 49.1,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -22827,17 +23553,17 @@ const RESULTS_DATA = {
             "win_low_total_pct": 15.7,
             "win_margin2_low_total_pct": 6.8,
             "win_margin2_high_total_pct": 13.6,
-            "readout_cn": "取胜约 42%；若取胜，以「险胜收工」为主（51.3%）。 对着赛前净胜参考，净胜≥1（全达标）约 41.9%；对着总进球参考 2.5，模型超线概率约 53.7%。"
+            "readout_cn": "取胜约 42%；若取胜，以「险胜收工」为主（51.3%）。 对着赛前净胜参考，净胜≥1（全达标）约 49.1%；对着总进球参考 2.5，模型超线概率约 53.7%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 11.8
+              "pct": 11.7
             },
             {
               "score": "2-1",
-              "pct": 9
+              "pct": 8.9
             },
             {
               "score": "1-0",
@@ -22875,7 +23601,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Mexico -0.25 穿盘：有达标可能",
-            "sub_cn": "Mexico -0.25 穿盘 41.9% · South Korea +0.25 守住 58.1% 进球氛围：几乎五五开",
+            "sub_cn": "Mexico 胜 42% · 胜后穿 100% · South Korea +0.25 守 50.8% 进球氛围：几乎五五开",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -22885,16 +23611,21 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Mexico -0.25",
               "dog_handicap_cn": "South Korea +0.25",
               "market_expect_cn": "Mexico -0.25 · 净胜≥1",
-              "meet_pct": 41.9,
-              "dog_hold_pct": 58.1,
-              "meet_pct_label": "Mexico -0.25 穿盘概率",
-              "dog_hold_label": "South Korea +0.25 守住概率",
+              "meet_pct": 49.2,
+              "dog_hold_pct": 50.8,
+              "fav_win_pct": 42,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 42,
+              "meet_pct_label": "Mexico -0.25 穿盘概率（校准）",
+              "dog_hold_label": "South Korea +0.25 守住概率（校准）",
+              "two_stage_cn": "Mexico 取胜约 42% · 赢球后穿盘约 100% · South Korea +0.25 守住约 50.8%",
+              "grid_tail_pct": null,
               "verdict_cn": "有达标可能",
               "headline_cn": "Mexico -0.25 穿盘：有达标可能",
-              "pill_cn": "Mexico -0.25 穿盘 41.9% · South Korea +0.25 守住 58.1%",
-              "detail_cn": "Mexico -0.25 穿盘约 41.9%（净胜≥1） · South Korea +0.25 守住约 58.1%；穿盘与受让守住均有一定空间。",
+              "pill_cn": "Mexico 胜 42% · 胜后穿 100% · South Korea +0.25 守 50.8%",
+              "detail_cn": "Mexico 取胜约 42% · 赢球后穿盘约 100% · South Korea +0.25 守住约 50.8%（泊松 raw 42% → 校准 49.2%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 41.9,
+              "full_cover_pct": 49.2,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -22937,16 +23668,21 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Mexico -0.25",
                   "dog_handicap_cn": "South Korea +0.25",
                   "market_expect_cn": "Mexico -0.25 · 净胜≥1",
-                  "meet_pct": 41.9,
-                  "dog_hold_pct": 58.1,
-                  "meet_pct_label": "Mexico -0.25 穿盘概率",
-                  "dog_hold_label": "South Korea +0.25 守住概率",
+                  "meet_pct": 49.2,
+                  "dog_hold_pct": 50.8,
+                  "fav_win_pct": 42,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 42,
+                  "meet_pct_label": "Mexico -0.25 穿盘概率（校准）",
+                  "dog_hold_label": "South Korea +0.25 守住概率（校准）",
+                  "two_stage_cn": "Mexico 取胜约 42% · 赢球后穿盘约 100% · South Korea +0.25 守住约 50.8%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "有达标可能",
                   "headline_cn": "Mexico -0.25 穿盘：有达标可能",
-                  "pill_cn": "Mexico -0.25 穿盘 41.9% · South Korea +0.25 守住 58.1%",
-                  "detail_cn": "Mexico -0.25 穿盘约 41.9%（净胜≥1） · South Korea +0.25 守住约 58.1%；穿盘与受让守住均有一定空间。",
+                  "pill_cn": "Mexico 胜 42% · 胜后穿 100% · South Korea +0.25 守 50.8%",
+                  "detail_cn": "Mexico 取胜约 42% · 赢球后穿盘约 100% · South Korea +0.25 守住约 50.8%（泊松 raw 42% → 校准 49.2%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 41.9,
+                  "full_cover_pct": 49.2,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -22954,7 +23690,7 @@ const RESULTS_DATA = {
                   "tier_gap": 0.25,
                   "show_cover": true
                 },
-                "text": "Mexico -0.25 穿盘 41.9% · South Korea +0.25 守住 58.1%",
+                "text": "Mexico 胜 42% · 胜后穿 100% · South Korea +0.25 守 50.8%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -23428,9 +24164,18 @@ const RESULTS_DATA = {
         "over_pct": 34.6,
         "fair_line": 2.25,
         "line_gap": 0.25,
-        "full_cover_pct": 24.2,
+        "full_cover_pct": 26,
+        "fav_win_pct": 50.8,
+        "cover_given_win_pct": 47.9,
         "spread_level": "skeptical",
         "spread_market_expect": "USA -1 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -23455,31 +24200,37 @@ const RESULTS_DATA = {
             },
             {
               "score": "1-1",
-              "prob": 12.3
+              "prob": 12.2
             },
             {
               "score": "2-0",
-              "prob": 11.3
+              "prob": 11.2
             }
           ],
-          "one_goal_win_pct": 26.3,
-          "two_plus_win_pct": 26,
-          "full_cover_pct": 26,
-          "dog_hold_pct": 74,
+          "one_goal_win_pct": 26.2,
+          "two_plus_win_pct": 26.2,
+          "full_cover_pct": 37.8,
+          "dog_hold_pct": 62.2,
+          "fav_win_pct": 52.4,
+          "cover_given_win_pct": 50,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
-          "push_pct": 26.3,
+          "push_pct": 26.2,
           "margin_full_label": "净胜≥2",
           "margin_half_label": "走水净胜=1",
-          "fav_cover_ev": -0.217,
-          "dog_cover_ev": 0.217,
+          "fav_cover_ev": -0.214,
+          "dog_cover_ev": 0.214,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.21,
           "fair_totals_line": 2.25,
-          "over_2_5_pct": 37.8,
-          "over_3_pct": 18,
-          "totals_lean_cn": "超 2.5 偏小比分（约 62.2%）；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 26.3%：参考净胜 1 球时，仅赢一球与拉开差距须分开看"
+          "over_2_5_pct": 38,
+          "over_3_pct": 18.2,
+          "totals_lean_cn": "超 2.5 偏小比分（约 62%）；4球+偏少",
+          "margin_risk_note": "净胜 1 球概率 26.2%：参考净胜 1 球时，仅赢一球与拉开差距须分开看",
+          "full_cover_pct_raw": 26.2,
+          "dog_hold_pct_raw": 73.8
         },
         "spread_odds": {
           "fav": 1.02,
@@ -23512,6 +24263,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
           "draw": 1,
@@ -23684,7 +24437,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "USA · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
-            "margin_meet_pct": 24.2,
+            "margin_meet_pct": 25.9,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -23703,7 +24456,7 @@ const RESULTS_DATA = {
             "win_low_total_pct": 27.8,
             "win_margin2_low_total_pct": 11.1,
             "win_margin2_high_total_pct": 13,
-            "readout_cn": "取胜约 41%；若取胜，以「险胜收工」为主（52.3%）。 对着赛前净胜参考，净胜≥2（全达标）约 24.2%；对着总进球参考 2.5，模型超线概率约 34.6%。"
+            "readout_cn": "取胜约 41%；若取胜，以「险胜收工」为主（52.3%）。 对着赛前净胜参考，净胜≥2（全达标）约 25.9%；对着总进球参考 2.5，模型超线概率约 34.6%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
@@ -23713,7 +24466,7 @@ const RESULTS_DATA = {
             },
             {
               "score": "1-1",
-              "pct": 12.5
+              "pct": 12.4
             },
             {
               "score": "0-0",
@@ -23751,7 +24504,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "USA -1 穿盘：达到预期难度偏大",
-            "sub_cn": "USA -1 穿盘 24.2% · Australia +1 守住 75.8% 进球氛围：略偏闷 平局权重约 38%，小组赛易出守平——勿只盯胜负一方。",
+            "sub_cn": "USA 胜 50.8% · 胜后穿 47.9% · Australia +1 守 74% 进球氛围：略偏闷 平局权重约 38%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
@@ -23761,16 +24514,21 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "USA -1",
               "dog_handicap_cn": "Australia +1",
               "market_expect_cn": "USA -1 · 净胜≥2",
-              "meet_pct": 24.2,
-              "dog_hold_pct": 75.8,
-              "meet_pct_label": "USA -1 穿盘概率",
-              "dog_hold_label": "Australia +1 守住概率",
+              "meet_pct": 26,
+              "dog_hold_pct": 74,
+              "fav_win_pct": 50.8,
+              "cover_given_win_pct": 47.9,
+              "full_cover_pct_raw": 24.3,
+              "meet_pct_label": "USA -1 穿盘概率（校准）",
+              "dog_hold_label": "Australia +1 守住概率（校准）",
+              "two_stage_cn": "USA 取胜约 50.8% · 赢球后穿盘约 47.9% · Australia +1 守住约 74%",
+              "grid_tail_pct": null,
               "verdict_cn": "达到预期难度偏大",
               "headline_cn": "USA -1 穿盘：达到预期难度偏大",
-              "pill_cn": "USA -1 穿盘 24.2% · Australia +1 守住 75.8%",
-              "detail_cn": "USA -1 穿盘约 24.2%（净胜≥2） · Australia +1 守住约 75.8%；盘口相对 xG 偏深约 0.75 球，热门穿盘难度偏大。",
+              "pill_cn": "USA 胜 50.8% · 胜后穿 47.9% · Australia +1 守 74%",
+              "detail_cn": "USA 取胜约 50.8% · 赢球后穿盘约 47.9% · Australia +1 守住约 74%（泊松 raw 24.3% → 校准 26%）；盘口相对 xG 偏深约 0.75 球，热门穿盘难度偏大。",
               "extra_stats_cn": "",
-              "full_cover_pct": 24.2,
+              "full_cover_pct": 26,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
@@ -23817,16 +24575,21 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "USA -1",
                   "dog_handicap_cn": "Australia +1",
                   "market_expect_cn": "USA -1 · 净胜≥2",
-                  "meet_pct": 24.2,
-                  "dog_hold_pct": 75.8,
-                  "meet_pct_label": "USA -1 穿盘概率",
-                  "dog_hold_label": "Australia +1 守住概率",
+                  "meet_pct": 26,
+                  "dog_hold_pct": 74,
+                  "fav_win_pct": 50.8,
+                  "cover_given_win_pct": 47.9,
+                  "full_cover_pct_raw": 24.3,
+                  "meet_pct_label": "USA -1 穿盘概率（校准）",
+                  "dog_hold_label": "Australia +1 守住概率（校准）",
+                  "two_stage_cn": "USA 取胜约 50.8% · 赢球后穿盘约 47.9% · Australia +1 守住约 74%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "达到预期难度偏大",
                   "headline_cn": "USA -1 穿盘：达到预期难度偏大",
-                  "pill_cn": "USA -1 穿盘 24.2% · Australia +1 守住 75.8%",
-                  "detail_cn": "USA -1 穿盘约 24.2%（净胜≥2） · Australia +1 守住约 75.8%；盘口相对 xG 偏深约 0.75 球，热门穿盘难度偏大。",
+                  "pill_cn": "USA 胜 50.8% · 胜后穿 47.9% · Australia +1 守 74%",
+                  "detail_cn": "USA 取胜约 50.8% · 赢球后穿盘约 47.9% · Australia +1 守住约 74%（泊松 raw 24.3% → 校准 26%）；盘口相对 xG 偏深约 0.75 球，热门穿盘难度偏大。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 24.2,
+                  "full_cover_pct": 26,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
@@ -23834,7 +24597,7 @@ const RESULTS_DATA = {
                   "tier_gap": 0.75,
                   "show_cover": true
                 },
-                "text": "USA -1 穿盘 24.2% · Australia +1 守住 75.8%",
+                "text": "USA 胜 50.8% · 胜后穿 47.9% · Australia +1 守 74%",
                 "color": "#D95F6A",
                 "primary": true
               },
@@ -24406,9 +25169,18 @@ const RESULTS_DATA = {
         "over_pct": 61.2,
         "fair_line": 2,
         "line_gap": 0.25,
-        "full_cover_pct": 35.2,
+        "full_cover_pct": 45.5,
+        "fav_win_pct": 35.3,
+        "cover_given_win_pct": 100,
         "spread_level": "possible",
         "spread_market_expect": "Morocco -0.5 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "mild_high",
         "totals_show_lean": false,
         "totals_lean_side": "exciting"
@@ -24433,31 +25205,37 @@ const RESULTS_DATA = {
             },
             {
               "score": "1-0",
-              "prob": 9.8
+              "prob": 9.7
             },
             {
               "score": "0-1",
-              "prob": 9.3
+              "prob": 9.2
             }
           ],
           "one_goal_win_pct": 21,
-          "two_plus_win_pct": 17.4,
-          "full_cover_pct": 35.2,
-          "dog_hold_pct": 64.8,
+          "two_plus_win_pct": 17.6,
+          "full_cover_pct": 45.5,
+          "dog_hold_pct": 54.5,
+          "fav_win_pct": 35.3,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": -0.296,
-          "dog_cover_ev": 0.296,
+          "fav_cover_ev": -0.294,
+          "dog_cover_ev": 0.294,
           "rational_spread_cn": "主队 守住差距概率略高",
           "total_xg": 2.63,
           "fair_totals_line": 2,
-          "over_2_5_pct": 48.7,
-          "over_3_pct": 26.7,
+          "over_2_5_pct": 48.9,
+          "over_3_pct": 27,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 35.2%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 35.3%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 35.3,
+          "dog_hold_pct_raw": 64.7
         },
         "spread_odds": {
           "fav": 0.7,
@@ -24490,6 +25268,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.25,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -1,
           "draw": -1,
@@ -24657,7 +25437,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Morocco · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 35.2,
+            "margin_meet_pct": 45.5,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -24676,7 +25456,7 @@ const RESULTS_DATA = {
             "win_low_total_pct": 15.2,
             "win_margin2_low_total_pct": 5.9,
             "win_margin2_high_total_pct": 15.3,
-            "readout_cn": "取胜约 35%；若取胜，以「险胜收工」为主（56.6%）。 对着赛前净胜参考，净胜≥1（全达标）约 35.2%；对着总进球参考 2.25，模型超线概率约 61.2%。"
+            "readout_cn": "取胜约 35%；若取胜，以「险胜收工」为主（56.6%）。 对着赛前净胜参考，净胜≥1（全达标）约 45.5%；对着总进球参考 2.25，模型超线概率约 61.2%。"
           },
           "totals_line": 2.25,
           "score_patterns": [
@@ -24686,11 +25466,11 @@ const RESULTS_DATA = {
             },
             {
               "score": "1-0",
-              "pct": 9.8
+              "pct": 9.7
             },
             {
               "score": "0-1",
-              "pct": 9.3
+              "pct": 9.2
             }
           ],
           "totals_view": {
@@ -24724,7 +25504,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Morocco -0.5 穿盘：有达标可能",
-            "sub_cn": "Morocco -0.5 穿盘 35.2% · Scotland +0.5 守住 64.8% 进球氛围：略偏精彩 平局约 29%，与热门取胜概率接近（Top2 区间），存在「赢球变平局」空间。",
+            "sub_cn": "Morocco 胜 35.3% · 胜后穿 100% · Scotland +0.5 守 54.5% 进球氛围：略偏精彩 平局约 29%，与热门取胜概率接近（Top2 区间），存在「赢球变平局」空间。",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -24734,16 +25514,21 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Morocco -0.5",
               "dog_handicap_cn": "Scotland +0.5",
               "market_expect_cn": "Morocco -0.5 · 净胜≥1",
-              "meet_pct": 35.2,
-              "dog_hold_pct": 64.8,
-              "meet_pct_label": "Morocco -0.5 穿盘概率",
-              "dog_hold_label": "Scotland +0.5 守住概率",
+              "meet_pct": 45.5,
+              "dog_hold_pct": 54.5,
+              "fav_win_pct": 35.3,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 35.3,
+              "meet_pct_label": "Morocco -0.5 穿盘概率（校准）",
+              "dog_hold_label": "Scotland +0.5 守住概率（校准）",
+              "two_stage_cn": "Morocco 取胜约 35.3% · 赢球后穿盘约 100% · Scotland +0.5 守住约 54.5%",
+              "grid_tail_pct": null,
               "verdict_cn": "有达标可能",
               "headline_cn": "Morocco -0.5 穿盘：有达标可能",
-              "pill_cn": "Morocco -0.5 穿盘 35.2% · Scotland +0.5 守住 64.8%",
-              "detail_cn": "Morocco -0.5 穿盘约 35.2%（净胜≥1） · Scotland +0.5 守住约 64.8%；穿盘与受让守住均有一定空间。",
+              "pill_cn": "Morocco 胜 35.3% · 胜后穿 100% · Scotland +0.5 守 54.5%",
+              "detail_cn": "Morocco 取胜约 35.3% · 赢球后穿盘约 100% · Scotland +0.5 守住约 54.5%（泊松 raw 35.3% → 校准 45.5%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 35.2,
+              "full_cover_pct": 45.5,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -24790,16 +25575,21 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Morocco -0.5",
                   "dog_handicap_cn": "Scotland +0.5",
                   "market_expect_cn": "Morocco -0.5 · 净胜≥1",
-                  "meet_pct": 35.2,
-                  "dog_hold_pct": 64.8,
-                  "meet_pct_label": "Morocco -0.5 穿盘概率",
-                  "dog_hold_label": "Scotland +0.5 守住概率",
+                  "meet_pct": 45.5,
+                  "dog_hold_pct": 54.5,
+                  "fav_win_pct": 35.3,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 35.3,
+                  "meet_pct_label": "Morocco -0.5 穿盘概率（校准）",
+                  "dog_hold_label": "Scotland +0.5 守住概率（校准）",
+                  "two_stage_cn": "Morocco 取胜约 35.3% · 赢球后穿盘约 100% · Scotland +0.5 守住约 54.5%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "有达标可能",
                   "headline_cn": "Morocco -0.5 穿盘：有达标可能",
-                  "pill_cn": "Morocco -0.5 穿盘 35.2% · Scotland +0.5 守住 64.8%",
-                  "detail_cn": "Morocco -0.5 穿盘约 35.2%（净胜≥1） · Scotland +0.5 守住约 64.8%；穿盘与受让守住均有一定空间。",
+                  "pill_cn": "Morocco 胜 35.3% · 胜后穿 100% · Scotland +0.5 守 54.5%",
+                  "detail_cn": "Morocco 取胜约 35.3% · 赢球后穿盘约 100% · Scotland +0.5 守住约 54.5%（泊松 raw 35.3% → 校准 45.5%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 35.2,
+                  "full_cover_pct": 45.5,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -24807,7 +25597,7 @@ const RESULTS_DATA = {
                   "tier_gap": -0.5,
                   "show_cover": true
                 },
-                "text": "Morocco -0.5 穿盘 35.2% · Scotland +0.5 守住 64.8%",
+                "text": "Morocco 胜 35.3% · 胜后穿 100% · Scotland +0.5 守 54.5%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -25364,9 +26154,18 @@ const RESULTS_DATA = {
         "over_pct": 24.2,
         "fair_line": 2,
         "line_gap": 1.5,
-        "full_cover_pct": 17.8,
+        "full_cover_pct": 22.8,
+        "fav_win_pct": 65,
+        "cover_given_win_pct": 28.5,
         "spread_level": "skeptical",
         "spread_market_expect": "Brazil -2.5 · 净胜≥3",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "clear_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -25382,28 +26181,32 @@ const RESULTS_DATA = {
         "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
         "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "public_lean_cn": "舆论倾向 Brazil（约 72%）",
-        "analysis": "魔方：巴西 -2.5 / 大小 3.5（开盘 3.75 下调）大 0.98 小 0.89；深盘高于 xG 隐含，大胜需早段破门；海地 5-4-1 极守或拖慢节奏。 赛前净胜参考高于 xG 隐含（+1.75），且净胜 1 球占 26.4%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "analysis": "魔方：巴西 -2.5 / 大小 3.5（开盘 3.75 下调）大 0.98 小 0.89；深盘高于 xG 隐含，大胜需早段破门；海地 5-4-1 极守或拖慢节奏。 赛前净胜参考高于 xG 隐含（+1.75），且净胜 1 球占 26.2%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "spread_cover": {
           "top3_scores": [
             {
               "score": "1-0",
-              "prob": 14.8
+              "prob": 14.6
             },
             {
               "score": "2-0",
-              "prob": 13.7
+              "prob": 13.5
             },
             {
               "score": "1-1",
-              "prob": 10.2
+              "prob": 10.1
             }
           ],
-          "one_goal_win_pct": 26.4,
-          "two_plus_win_pct": 38.3,
-          "full_cover_pct": 17.8,
-          "dog_hold_pct": 82.2,
-          "half_cover_pct": 20.5,
-          "half_lose_pct": 26.4,
+          "one_goal_win_pct": 26.2,
+          "two_plus_win_pct": 38.8,
+          "full_cover_pct": 22.8,
+          "dog_hold_pct": 77.2,
+          "fav_win_pct": 65,
+          "cover_given_win_pct": 28.5,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.3,
+          "half_cover_pct": 20.3,
+          "half_lose_pct": 26.2,
           "push_pct": null,
           "margin_full_label": "净胜≥3",
           "margin_half_label": "部分达标净胜=2",
@@ -25412,10 +26215,12 @@ const RESULTS_DATA = {
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 2.54,
           "fair_totals_line": 2,
-          "over_2_5_pct": 46,
-          "over_3_pct": 24.2,
+          "over_2_5_pct": 46.5,
+          "over_3_pct": 24.9,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥3 约 17.8%；部分达标净胜=2 约 20.5%；仅赢 1 球约 26.4%"
+          "margin_risk_note": "净胜≥3 约 18.5%；部分达标净胜=2 约 20.3%；仅赢 1 球约 26.2%",
+          "full_cover_pct_raw": 18.5,
+          "dog_hold_pct_raw": 81.5
         },
         "spread_odds": {
           "fav": 0.85,
@@ -25448,6 +26253,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 3.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
           "draw": 1,
@@ -25589,7 +26396,7 @@ const RESULTS_DATA = {
             "tier_gap": 1.75,
             "implied_tier_label": "Brazil -0.75 · Haiti +0.75",
             "market_tier_label": "Brazil -2.5 · Haiti +2.5",
-            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.75 · 模型认为仅小胜 1 球仍约 26.4% · 部分达标净胜=2 约 20.5% · 净胜≥3（全达标）约 17.8%"
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.75 · 模型认为仅小胜 1 球仍约 26.2% · 部分达标净胜=2 约 20.3% · 净胜≥3（全达标）约 22.8%"
           },
           "win_outlook": {
             "fav_name": "Brazil",
@@ -25615,7 +26422,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Brazil · 赛前净胜参考 净胜≥3（全达标） · 部分达标净胜=2",
-            "margin_meet_pct": 17.8,
+            "margin_meet_pct": 22.4,
             "margin_half_pct": 20.5,
             "margin_fail_pct": 26.4,
             "margin_full_label": "净胜≥3",
@@ -25634,21 +26441,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 28.4,
             "win_margin2_low_total_pct": 13.7,
             "win_margin2_high_total_pct": 16.2,
-            "readout_cn": "取胜约 60%；若取胜，以「险胜收工」为主（40.8%）。 对着赛前净胜参考，净胜≥3（全达标）约 17.8%；部分达标净胜=2 约 20.5%；对着总进球参考 3.5，模型超线概率约 24.2%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 3.5。"
+            "readout_cn": "取胜约 60%；若取胜，以「险胜收工」为主（40.8%）。 对着赛前净胜参考，净胜≥3（全达标）约 22.4%；部分达标净胜=2 约 20.5%；对着总进球参考 3.5，模型超线概率约 24.2%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 3.5。"
           },
           "totals_line": 3.5,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 14.8
+              "pct": 14.6
             },
             {
               "score": "2-0",
-              "pct": 13.7
+              "pct": 13.5
             },
             {
               "score": "1-1",
-              "pct": 10.2
+              "pct": 10.1
             }
           ],
           "totals_view": {
@@ -25685,7 +26492,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Brazil -2.5 穿盘：达到预期难度偏大",
-            "sub_cn": "Brazil -2.5 穿盘 17.8% · Haiti +2.5 守住 82.2% 进球氛围：倾向沉闷",
+            "sub_cn": "Brazil 胜 65% · 胜后穿 28.5% · Haiti +2.5 守 77.2% 进球氛围：倾向沉闷",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
@@ -25695,18 +26502,23 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Brazil -2.5",
               "dog_handicap_cn": "Haiti +2.5",
               "market_expect_cn": "Brazil -2.5 · 净胜≥3",
-              "meet_pct": 17.8,
-              "dog_hold_pct": 82.2,
-              "meet_pct_label": "Brazil -2.5 穿盘概率",
-              "dog_hold_label": "Haiti +2.5 守住概率",
+              "meet_pct": 22.8,
+              "dog_hold_pct": 77.2,
+              "fav_win_pct": 65,
+              "cover_given_win_pct": 28.5,
+              "full_cover_pct_raw": 18.5,
+              "meet_pct_label": "Brazil -2.5 穿盘概率（校准）",
+              "dog_hold_label": "Haiti +2.5 守住概率（校准）",
+              "two_stage_cn": "Brazil 取胜约 65% · 赢球后穿盘约 28.5% · Haiti +2.5 守住约 77.2%",
+              "grid_tail_pct": null,
               "verdict_cn": "达到预期难度偏大",
               "headline_cn": "Brazil -2.5 穿盘：达到预期难度偏大",
-              "pill_cn": "Brazil -2.5 穿盘 17.8% · Haiti +2.5 守住 82.2%",
-              "detail_cn": "Brazil -2.5 穿盘约 17.8%（净胜≥3） · Haiti +2.5 守住约 82.2%；盘口相对 xG 偏深约 1.75 球，热门穿盘难度偏大（部分达标净胜=2 约 20.5% · 仅胜 1 球约 26.4%）。",
-              "extra_stats_cn": "部分达标净胜=2 约 20.5% · 仅胜 1 球约 26.4%",
-              "full_cover_pct": 17.8,
-              "half_cover_pct": 20.5,
-              "lose1_pct": 26.4,
+              "pill_cn": "Brazil 胜 65% · 胜后穿 28.5% · Haiti +2.5 守 77.2%",
+              "detail_cn": "Brazil 取胜约 65% · 赢球后穿盘约 28.5% · Haiti +2.5 守住约 77.2%（泊松 raw 18.5% → 校准 22.8%）；盘口相对 xG 偏深约 1.75 球，热门穿盘难度偏大（部分达标净胜=2 约 20.3% · 仅胜 1 球约 26.2%）。",
+              "extra_stats_cn": "部分达标净胜=2 约 20.3% · 仅胜 1 球约 26.2%",
+              "full_cover_pct": 22.8,
+              "half_cover_pct": 20.3,
+              "lose1_pct": 26.2,
               "margin_full_label": "净胜≥3",
               "margin_half_label": "部分达标净胜=2",
               "tier_gap": 1.75,
@@ -25747,24 +26559,29 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Brazil -2.5",
                   "dog_handicap_cn": "Haiti +2.5",
                   "market_expect_cn": "Brazil -2.5 · 净胜≥3",
-                  "meet_pct": 17.8,
-                  "dog_hold_pct": 82.2,
-                  "meet_pct_label": "Brazil -2.5 穿盘概率",
-                  "dog_hold_label": "Haiti +2.5 守住概率",
+                  "meet_pct": 22.8,
+                  "dog_hold_pct": 77.2,
+                  "fav_win_pct": 65,
+                  "cover_given_win_pct": 28.5,
+                  "full_cover_pct_raw": 18.5,
+                  "meet_pct_label": "Brazil -2.5 穿盘概率（校准）",
+                  "dog_hold_label": "Haiti +2.5 守住概率（校准）",
+                  "two_stage_cn": "Brazil 取胜约 65% · 赢球后穿盘约 28.5% · Haiti +2.5 守住约 77.2%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "达到预期难度偏大",
                   "headline_cn": "Brazil -2.5 穿盘：达到预期难度偏大",
-                  "pill_cn": "Brazil -2.5 穿盘 17.8% · Haiti +2.5 守住 82.2%",
-                  "detail_cn": "Brazil -2.5 穿盘约 17.8%（净胜≥3） · Haiti +2.5 守住约 82.2%；盘口相对 xG 偏深约 1.75 球，热门穿盘难度偏大（部分达标净胜=2 约 20.5% · 仅胜 1 球约 26.4%）。",
-                  "extra_stats_cn": "部分达标净胜=2 约 20.5% · 仅胜 1 球约 26.4%",
-                  "full_cover_pct": 17.8,
-                  "half_cover_pct": 20.5,
-                  "lose1_pct": 26.4,
+                  "pill_cn": "Brazil 胜 65% · 胜后穿 28.5% · Haiti +2.5 守 77.2%",
+                  "detail_cn": "Brazil 取胜约 65% · 赢球后穿盘约 28.5% · Haiti +2.5 守住约 77.2%（泊松 raw 18.5% → 校准 22.8%）；盘口相对 xG 偏深约 1.75 球，热门穿盘难度偏大（部分达标净胜=2 约 20.3% · 仅胜 1 球约 26.2%）。",
+                  "extra_stats_cn": "部分达标净胜=2 约 20.3% · 仅胜 1 球约 26.2%",
+                  "full_cover_pct": 22.8,
+                  "half_cover_pct": 20.3,
+                  "lose1_pct": 26.2,
                   "margin_full_label": "净胜≥3",
                   "margin_half_label": "部分达标净胜=2",
                   "tier_gap": 1.75,
                   "show_cover": true
                 },
-                "text": "Brazil -2.5 穿盘 17.8% · Haiti +2.5 守住 82.2%",
+                "text": "Brazil 胜 65% · 胜后穿 28.5% · Haiti +2.5 守 77.2%",
                 "color": "#D95F6A",
                 "primary": true
               },
@@ -26087,7 +26904,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "以上为两队近30场历史进球/失球时间段统计，供读场参考；非本场赛果预测，与灵力分析娱乐板块无关。"
           }
         },
-        "public_summary_note": "【推演概要】Brazil · 压制局 · 低位反击。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.75 · 模型认为仅小胜 1 球仍约 26.4% · 部分达标净胜=2 约 20.5% · 净胜≥3（全达标）约 17.8%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
+        "public_summary_note": "【推演概要】Brazil · 压制局 · 低位反击。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.75 · 模型认为仅小胜 1 球仍约 26.2% · 部分达标净胜=2 约 20.3% · 净胜≥3（全达标）约 22.8%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
         "goal_efficiency": {
           "xg_total": 2.54,
           "xg_gap": 1.16,
@@ -26343,9 +27160,18 @@ const RESULTS_DATA = {
         "over_pct": 47.6,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 44,
-        "spread_level": "possible",
+        "full_cover_pct": 50.4,
+        "fav_win_pct": 44.2,
+        "cover_given_win_pct": 100,
+        "spread_level": "likely",
         "spread_market_expect": "Türkiye -0.5 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -26374,27 +27200,33 @@ const RESULTS_DATA = {
             },
             {
               "score": "2-1",
-              "prob": 9.3
+              "prob": 9.2
             }
           ],
-          "one_goal_win_pct": 22.7,
-          "two_plus_win_pct": 22.5,
-          "full_cover_pct": 45.2,
-          "dog_hold_pct": 54.8,
+          "one_goal_win_pct": 22.6,
+          "two_plus_win_pct": 22.8,
+          "full_cover_pct": 43.8,
+          "dog_hold_pct": 56.2,
+          "fav_win_pct": 45.3,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": -0.096,
-          "dog_cover_ev": 0.096,
+          "fav_cover_ev": -0.094,
+          "dog_cover_ev": 0.094,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.73,
           "fair_totals_line": 2,
-          "over_2_5_pct": 51.1,
-          "over_3_pct": 28.8,
+          "over_2_5_pct": 51.3,
+          "over_3_pct": 29.2,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 45.2%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 45.3%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 45.3,
+          "dog_hold_pct_raw": 54.7
         },
         "spread_odds": {
           "fav": 1,
@@ -26427,6 +27259,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
           "draw": -1,
@@ -26599,7 +27433,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Türkiye · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 44,
+            "margin_meet_pct": 50.3,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -26618,13 +27452,13 @@ const RESULTS_DATA = {
             "win_low_total_pct": 18.9,
             "win_margin2_low_total_pct": 7.9,
             "win_margin2_high_total_pct": 13.3,
-            "readout_cn": "取胜约 41%；若取胜，以「险胜收工」为主（51.8%）。 对着赛前净胜参考，净胜≥1（全达标）约 44%；对着总进球参考 2.5，模型超线概率约 47.6%。"
+            "readout_cn": "取胜约 41%；若取胜，以「险胜收工」为主（51.8%）。 对着赛前净胜参考，净胜≥1（全达标）约 50.3%；对着总进球参考 2.5，模型超线概率约 47.6%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 12.5
+              "pct": 12.4
             },
             {
               "score": "1-0",
@@ -26665,27 +27499,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.6 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Türkiye -0.5 穿盘：有达标可能",
-            "sub_cn": "Türkiye -0.5 穿盘 44% · Paraguay +0.5 守住 56% 进球氛围：几乎五五开 平局权重约 34%，小组赛易出守平——勿只盯胜负一方。",
+            "headline_cn": "Türkiye -0.5 穿盘：达到预期较有希望",
+            "sub_cn": "Türkiye 胜 44.2% · 胜后穿 100% · Paraguay +0.5 守 49.6% 进球氛围：几乎五五开 平局权重约 34%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
-              "level": "possible",
-              "label_cn": "有达标可能",
-              "color": "#C8A96E",
+              "level": "likely",
+              "label_cn": "达到预期较有希望",
+              "color": "#5BBF8A",
               "fav_name": "Türkiye",
               "dog_name": "Paraguay",
               "fav_handicap_cn": "Türkiye -0.5",
               "dog_handicap_cn": "Paraguay +0.5",
               "market_expect_cn": "Türkiye -0.5 · 净胜≥1",
-              "meet_pct": 44,
-              "dog_hold_pct": 56,
-              "meet_pct_label": "Türkiye -0.5 穿盘概率",
-              "dog_hold_label": "Paraguay +0.5 守住概率",
-              "verdict_cn": "有达标可能",
-              "headline_cn": "Türkiye -0.5 穿盘：有达标可能",
-              "pill_cn": "Türkiye -0.5 穿盘 44% · Paraguay +0.5 守住 56%",
-              "detail_cn": "Türkiye -0.5 穿盘约 44%（净胜≥1） · Paraguay +0.5 守住约 56%；穿盘与受让守住均有一定空间。",
+              "meet_pct": 50.4,
+              "dog_hold_pct": 49.6,
+              "fav_win_pct": 44.2,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 44.2,
+              "meet_pct_label": "Türkiye -0.5 穿盘概率（校准）",
+              "dog_hold_label": "Paraguay +0.5 守住概率（校准）",
+              "two_stage_cn": "Türkiye 取胜约 44.2% · 赢球后穿盘约 100% · Paraguay +0.5 守住约 49.6%",
+              "grid_tail_pct": null,
+              "verdict_cn": "达到预期较有希望",
+              "headline_cn": "Türkiye -0.5 穿盘：达到预期较有希望",
+              "pill_cn": "Türkiye 胜 44.2% · 胜后穿 100% · Paraguay +0.5 守 49.6%",
+              "detail_cn": "Türkiye 取胜约 44.2% · 赢球后穿盘约 100% · Paraguay +0.5 守住约 49.6%（泊松 raw 44.2% → 校准 50.4%）；模型认为热门穿盘概率相对较高。",
               "extra_stats_cn": "",
-              "full_cover_pct": 44,
+              "full_cover_pct": 50.4,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -26724,24 +27563,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "possible",
-                  "label_cn": "有达标可能",
-                  "color": "#C8A96E",
+                  "level": "likely",
+                  "label_cn": "达到预期较有希望",
+                  "color": "#5BBF8A",
                   "fav_name": "Türkiye",
                   "dog_name": "Paraguay",
                   "fav_handicap_cn": "Türkiye -0.5",
                   "dog_handicap_cn": "Paraguay +0.5",
                   "market_expect_cn": "Türkiye -0.5 · 净胜≥1",
-                  "meet_pct": 44,
-                  "dog_hold_pct": 56,
-                  "meet_pct_label": "Türkiye -0.5 穿盘概率",
-                  "dog_hold_label": "Paraguay +0.5 守住概率",
-                  "verdict_cn": "有达标可能",
-                  "headline_cn": "Türkiye -0.5 穿盘：有达标可能",
-                  "pill_cn": "Türkiye -0.5 穿盘 44% · Paraguay +0.5 守住 56%",
-                  "detail_cn": "Türkiye -0.5 穿盘约 44%（净胜≥1） · Paraguay +0.5 守住约 56%；穿盘与受让守住均有一定空间。",
+                  "meet_pct": 50.4,
+                  "dog_hold_pct": 49.6,
+                  "fav_win_pct": 44.2,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 44.2,
+                  "meet_pct_label": "Türkiye -0.5 穿盘概率（校准）",
+                  "dog_hold_label": "Paraguay +0.5 守住概率（校准）",
+                  "two_stage_cn": "Türkiye 取胜约 44.2% · 赢球后穿盘约 100% · Paraguay +0.5 守住约 49.6%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "达到预期较有希望",
+                  "headline_cn": "Türkiye -0.5 穿盘：达到预期较有希望",
+                  "pill_cn": "Türkiye 胜 44.2% · 胜后穿 100% · Paraguay +0.5 守 49.6%",
+                  "detail_cn": "Türkiye 取胜约 44.2% · 赢球后穿盘约 100% · Paraguay +0.5 守住约 49.6%（泊松 raw 44.2% → 校准 50.4%）；模型认为热门穿盘概率相对较高。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 44,
+                  "full_cover_pct": 50.4,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -26749,8 +27593,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0.5,
                   "show_cover": true
                 },
-                "text": "Türkiye -0.5 穿盘 44% · Paraguay +0.5 守住 56%",
-                "color": "#C8A96E",
+                "text": "Türkiye 胜 44.2% · 胜后穿 100% · Paraguay +0.5 守 49.6%",
+                "color": "#5BBF8A",
                 "primary": true
               },
               {
@@ -27131,11 +27975,13 @@ const RESULTS_DATA = {
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
-          "misses": [],
-          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。",
+          "misses": [
+            "净胜全达标未兑现"
+          ],
+          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。 偏差：净胜全达标未兑现。",
           "totals_actual": 1,
           "totals_line": 2.5,
-          "spread_level": "possible",
+          "spread_level": "likely",
           "totals_level": "neutral"
         }
       },
@@ -27348,9 +28194,18 @@ const RESULTS_DATA = {
         "over_pct": 40.7,
         "fair_line": 2,
         "line_gap": 0.75,
-        "full_cover_pct": 52.7,
-        "spread_level": "likely",
+        "full_cover_pct": 48.1,
+        "fav_win_pct": 53,
+        "cover_given_win_pct": 100,
+        "spread_level": "possible",
         "spread_market_expect": "Netherlands -0.75 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -27371,35 +28226,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 11.4
+              "prob": 11.3
             },
             {
               "score": "1-0",
-              "prob": 10.9
+              "prob": 10.8
             },
             {
               "score": "2-1",
               "prob": 9.8
             }
           ],
-          "one_goal_win_pct": 24.1,
-          "two_plus_win_pct": 28.6,
-          "full_cover_pct": 52.7,
-          "dog_hold_pct": 47.3,
+          "one_goal_win_pct": 24,
+          "two_plus_win_pct": 29,
+          "full_cover_pct": 48.1,
+          "dog_hold_pct": 51.9,
+          "fav_win_pct": 53,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": 0.054,
-          "dog_cover_ev": -0.054,
+          "fav_cover_ev": 0.06,
+          "dog_cover_ev": -0.06,
           "rational_spread_cn": "主队 净胜达标概率略高",
           "total_xg": 2.77,
           "fair_totals_line": 2,
-          "over_2_5_pct": 51.9,
-          "over_3_pct": 29.5,
+          "over_2_5_pct": 52.2,
+          "over_3_pct": 30,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 52.7%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 53%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 53,
+          "dog_hold_pct_raw": 47
         },
         "spread_odds": {
           "fav": 0.88,
@@ -27432,6 +28293,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
           "draw": -1,
@@ -27594,7 +28457,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Netherlands · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 52.7,
+            "margin_meet_pct": 47.9,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -27613,17 +28476,17 @@ const RESULTS_DATA = {
             "win_low_total_pct": 20.2,
             "win_margin2_low_total_pct": 9.4,
             "win_margin2_high_total_pct": 19.2,
-            "readout_cn": "取胜约 55%；若取胜，以「险胜收工」为主（45.8%）。 对着赛前净胜参考，净胜≥1（全达标）约 52.7%；对着总进球参考 2.75，模型超线概率约 40.7%。"
+            "readout_cn": "取胜约 55%；若取胜，以「险胜收工」为主（45.8%）。 对着赛前净胜参考，净胜≥1（全达标）约 47.9%；对着总进球参考 2.75，模型超线概率约 40.7%。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 11.4
+              "pct": 11.3
             },
             {
               "score": "1-0",
-              "pct": 10.9
+              "pct": 10.8
             },
             {
               "score": "2-1",
@@ -27660,27 +28523,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.7 · 合理值 2 · 总进球参考 2.75（高于合理值 0.75） · 高于合理值 0.75 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Netherlands -0.75 穿盘：达到预期较有希望",
-            "sub_cn": "Netherlands -0.75 穿盘 52.7% · Sweden +0.75 守住 47.3% 进球氛围：几乎五五开",
+            "headline_cn": "Netherlands -0.75 穿盘：有达标可能",
+            "sub_cn": "Netherlands 胜 53% · 胜后穿 100% · Sweden +0.75 守 51.9% 进球氛围：几乎五五开",
             "spread": {
-              "level": "likely",
-              "label_cn": "达到预期较有希望",
-              "color": "#5BBF8A",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Netherlands",
               "dog_name": "Sweden",
               "fav_handicap_cn": "Netherlands -0.75",
               "dog_handicap_cn": "Sweden +0.75",
               "market_expect_cn": "Netherlands -0.75 · 净胜≥1",
-              "meet_pct": 52.7,
-              "dog_hold_pct": 47.3,
-              "meet_pct_label": "Netherlands -0.75 穿盘概率",
-              "dog_hold_label": "Sweden +0.75 守住概率",
-              "verdict_cn": "达到预期较有希望",
-              "headline_cn": "Netherlands -0.75 穿盘：达到预期较有希望",
-              "pill_cn": "Netherlands -0.75 穿盘 52.7% · Sweden +0.75 守住 47.3%",
-              "detail_cn": "Netherlands -0.75 穿盘约 52.7%（净胜≥1） · Sweden +0.75 守住约 47.3%；模型认为热门穿盘概率相对较高。",
+              "meet_pct": 48.1,
+              "dog_hold_pct": 51.9,
+              "fav_win_pct": 53,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 53,
+              "meet_pct_label": "Netherlands -0.75 穿盘概率（校准）",
+              "dog_hold_label": "Sweden +0.75 守住概率（校准）",
+              "two_stage_cn": "Netherlands 取胜约 53% · 赢球后穿盘约 100% · Sweden +0.75 守住约 51.9%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Netherlands -0.75 穿盘：有达标可能",
+              "pill_cn": "Netherlands 胜 53% · 胜后穿 100% · Sweden +0.75 守 51.9%",
+              "detail_cn": "Netherlands 取胜约 53% · 赢球后穿盘约 100% · Sweden +0.75 守住约 51.9%（泊松 raw 53% → 校准 48.1%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 52.7,
+              "full_cover_pct": 48.1,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -27715,24 +28583,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "likely",
-                  "label_cn": "达到预期较有希望",
-                  "color": "#5BBF8A",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Netherlands",
                   "dog_name": "Sweden",
                   "fav_handicap_cn": "Netherlands -0.75",
                   "dog_handicap_cn": "Sweden +0.75",
                   "market_expect_cn": "Netherlands -0.75 · 净胜≥1",
-                  "meet_pct": 52.7,
-                  "dog_hold_pct": 47.3,
-                  "meet_pct_label": "Netherlands -0.75 穿盘概率",
-                  "dog_hold_label": "Sweden +0.75 守住概率",
-                  "verdict_cn": "达到预期较有希望",
-                  "headline_cn": "Netherlands -0.75 穿盘：达到预期较有希望",
-                  "pill_cn": "Netherlands -0.75 穿盘 52.7% · Sweden +0.75 守住 47.3%",
-                  "detail_cn": "Netherlands -0.75 穿盘约 52.7%（净胜≥1） · Sweden +0.75 守住约 47.3%；模型认为热门穿盘概率相对较高。",
+                  "meet_pct": 48.1,
+                  "dog_hold_pct": 51.9,
+                  "fav_win_pct": 53,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 53,
+                  "meet_pct_label": "Netherlands -0.75 穿盘概率（校准）",
+                  "dog_hold_label": "Sweden +0.75 守住概率（校准）",
+                  "two_stage_cn": "Netherlands 取胜约 53% · 赢球后穿盘约 100% · Sweden +0.75 守住约 51.9%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Netherlands -0.75 穿盘：有达标可能",
+                  "pill_cn": "Netherlands 胜 53% · 胜后穿 100% · Sweden +0.75 守 51.9%",
+                  "detail_cn": "Netherlands 取胜约 53% · 赢球后穿盘约 100% · Sweden +0.75 守住约 51.9%（泊松 raw 53% → 校准 48.1%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 52.7,
+                  "full_cover_pct": 48.1,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -27740,8 +28613,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0.5,
                   "show_cover": true
                 },
-                "text": "Netherlands -0.75 穿盘 52.7% · Sweden +0.75 守住 47.3%",
-                "color": "#5BBF8A",
+                "text": "Netherlands 胜 53% · 胜后穿 100% · Sweden +0.75 守 51.9%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -28121,7 +28994,7 @@ const RESULTS_DATA = {
           "summary_cn": "命中：净胜全达标方向一致。 偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
           "totals_actual": 6,
           "totals_line": 2.75,
-          "spread_level": "likely",
+          "spread_level": "possible",
           "totals_level": "neutral"
         }
       },
@@ -28301,9 +29174,18 @@ const RESULTS_DATA = {
         "over_pct": 33.5,
         "fair_line": 2.75,
         "line_gap": 0.25,
-        "full_cover_pct": 39.8,
+        "full_cover_pct": 48.5,
+        "fav_win_pct": 64.9,
+        "cover_given_win_pct": 62.7,
         "spread_level": "possible",
         "spread_market_expect": "Germany -1.25 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -28319,40 +29201,46 @@ const RESULTS_DATA = {
         "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
         "blocker_spread_note": "",
         "public_lean_cn": "舆论倾向 Germany（约 68%）",
-        "analysis": "即时：德国 -1/1.5（-1.25）德 1.07 / 科特 0.82 / 大小 3.0 大 1.00 小 0.88（初 2.5 升）；深于此前一球盘，大小维持 3 球，大球水位略升。 赛前净胜参考高于 xG 隐含（+0.5），且净胜 1 球占 24.6%——热门净胜拉开偏难。",
+        "analysis": "即时：德国 -1/1.5（-1.25）德 1.07 / 科特 0.82 / 大小 3.0 大 1.00 小 0.88（初 2.5 升）；深于此前一球盘，大小维持 3 球，大球水位略升。 赛前净胜参考高于 xG 隐含（+0.5），且净胜 1 球占 24.2%——热门净胜拉开偏难。",
         "spread_cover": {
           "top3_scores": [
             {
               "score": "2-0",
-              "prob": 11.3
+              "prob": 11.2
             },
             {
               "score": "1-0",
-              "prob": 10.8
+              "prob": 10.7
             },
             {
               "score": "2-1",
-              "prob": 10.1
+              "prob": 9.9
             }
           ],
-          "one_goal_win_pct": 24.6,
-          "two_plus_win_pct": 39.8,
-          "full_cover_pct": 39.8,
-          "dog_hold_pct": 60.2,
+          "one_goal_win_pct": 24.2,
+          "two_plus_win_pct": 40.7,
+          "full_cover_pct": 48.5,
+          "dog_hold_pct": 51.5,
+          "fav_win_pct": 64.9,
+          "cover_given_win_pct": 62.7,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.6,
           "half_cover_pct": 0,
-          "half_lose_pct": 24.6,
+          "half_lose_pct": 24.2,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
           "margin_half_label": null,
-          "fav_cover_ev": -0.081,
-          "dog_cover_ev": 0.081,
+          "fav_cover_ev": -0.065,
+          "dog_cover_ev": 0.065,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.98,
           "fair_totals_line": 2.75,
-          "over_2_5_pct": 56.3,
-          "over_3_pct": 33.5,
+          "over_2_5_pct": 57,
+          "over_3_pct": 34.5,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 24.6%：常见「赢球但净胜仅 1 球」"
+          "margin_risk_note": "净胜 1 球概率 24.2%：常见「赢球但净胜仅 1 球」",
+          "full_cover_pct_raw": 40.7,
+          "dog_hold_pct_raw": 59.3
         },
         "spread_odds": {
           "fav": 1.07,
@@ -28385,6 +29273,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 3,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
           "draw": -1,
@@ -28526,7 +29416,7 @@ const RESULTS_DATA = {
             "tier_gap": 0.5,
             "implied_tier_label": "Germany -0.75 · Côte d'Ivoire +0.75",
             "market_tier_label": "Germany -1.25 · Côte d'Ivoire +1.25",
-            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 24.6%"
+            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 24.2%"
           },
           "win_outlook": {
             "fav_name": "Germany",
@@ -28552,7 +29442,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Germany · 赛前净胜参考 净胜≥2（全达标）",
-            "margin_meet_pct": 39.8,
+            "margin_meet_pct": 48,
             "margin_half_pct": 0,
             "margin_fail_pct": 24.6,
             "margin_full_label": "净胜≥2",
@@ -28571,21 +29461,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 22.2,
             "win_margin2_low_total_pct": 11.3,
             "win_margin2_high_total_pct": 20.6,
-            "readout_cn": "取胜约 66%；若取胜，以「险胜收工」为主（38.1%）。 对着赛前净胜参考，净胜≥2（全达标）约 39.8%；对着总进球参考 3，模型超线概率约 33.5%。"
+            "readout_cn": "取胜约 66%；若取胜，以「险胜收工」为主（38.1%）。 对着赛前净胜参考，净胜≥2（全达标）约 48%；对着总进球参考 3，模型超线概率约 33.5%。"
           },
           "totals_line": 3,
           "score_patterns": [
             {
               "score": "2-0",
-              "pct": 11.3
+              "pct": 11.2
             },
             {
               "score": "1-0",
-              "pct": 10.8
+              "pct": 10.7
             },
             {
               "score": "2-1",
-              "pct": 10.1
+              "pct": 9.9
             }
           ],
           "totals_view": {
@@ -28619,7 +29509,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Germany -1.25 穿盘：有达标可能",
-            "sub_cn": "Germany -1.25 穿盘 39.8% · Côte d'Ivoire +1.25 守住 60.2% 进球氛围：略偏闷",
+            "sub_cn": "Germany 胜 64.9% · 胜后穿 62.7% · Côte d'Ivoire +1.25 守 51.5% 进球氛围：略偏闷",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -28629,18 +29519,23 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Germany -1.25",
               "dog_handicap_cn": "Côte d'Ivoire +1.25",
               "market_expect_cn": "Germany -1.25 · 净胜≥2",
-              "meet_pct": 39.8,
-              "dog_hold_pct": 60.2,
-              "meet_pct_label": "Germany -1.25 穿盘概率",
-              "dog_hold_label": "Côte d'Ivoire +1.25 守住概率",
+              "meet_pct": 48.5,
+              "dog_hold_pct": 51.5,
+              "fav_win_pct": 64.9,
+              "cover_given_win_pct": 62.7,
+              "full_cover_pct_raw": 40.7,
+              "meet_pct_label": "Germany -1.25 穿盘概率（校准）",
+              "dog_hold_label": "Côte d'Ivoire +1.25 守住概率（校准）",
+              "two_stage_cn": "Germany 取胜约 64.9% · 赢球后穿盘约 62.7% · Côte d'Ivoire +1.25 守住约 51.5%",
+              "grid_tail_pct": 0.6,
               "verdict_cn": "有达标可能",
               "headline_cn": "Germany -1.25 穿盘：有达标可能",
-              "pill_cn": "Germany -1.25 穿盘 39.8% · Côte d'Ivoire +1.25 守住 60.2%",
-              "detail_cn": "Germany -1.25 穿盘约 39.8%（净胜≥2） · Côte d'Ivoire +1.25 守住约 60.2%；穿盘与受让守住均有一定空间（仅胜 1 球约 24.6%）。",
-              "extra_stats_cn": "仅胜 1 球约 24.6%",
-              "full_cover_pct": 39.8,
+              "pill_cn": "Germany 胜 64.9% · 胜后穿 62.7% · Côte d'Ivoire +1.25 守 51.5%",
+              "detail_cn": "Germany 取胜约 64.9% · 赢球后穿盘约 62.7% · Côte d'Ivoire +1.25 守住约 51.5%（泊松 raw 40.7% → 校准 48.5%）；穿盘与受让守住均有一定空间（仅胜 1 球约 24.2%）。",
+              "extra_stats_cn": "仅胜 1 球约 24.2%",
+              "full_cover_pct": 48.5,
               "half_cover_pct": 0,
-              "lose1_pct": 24.6,
+              "lose1_pct": 24.2,
               "margin_full_label": "净胜≥2",
               "margin_half_label": null,
               "tier_gap": 0.5,
@@ -28681,24 +29576,29 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Germany -1.25",
                   "dog_handicap_cn": "Côte d'Ivoire +1.25",
                   "market_expect_cn": "Germany -1.25 · 净胜≥2",
-                  "meet_pct": 39.8,
-                  "dog_hold_pct": 60.2,
-                  "meet_pct_label": "Germany -1.25 穿盘概率",
-                  "dog_hold_label": "Côte d'Ivoire +1.25 守住概率",
+                  "meet_pct": 48.5,
+                  "dog_hold_pct": 51.5,
+                  "fav_win_pct": 64.9,
+                  "cover_given_win_pct": 62.7,
+                  "full_cover_pct_raw": 40.7,
+                  "meet_pct_label": "Germany -1.25 穿盘概率（校准）",
+                  "dog_hold_label": "Côte d'Ivoire +1.25 守住概率（校准）",
+                  "two_stage_cn": "Germany 取胜约 64.9% · 赢球后穿盘约 62.7% · Côte d'Ivoire +1.25 守住约 51.5%",
+                  "grid_tail_pct": 0.6,
                   "verdict_cn": "有达标可能",
                   "headline_cn": "Germany -1.25 穿盘：有达标可能",
-                  "pill_cn": "Germany -1.25 穿盘 39.8% · Côte d'Ivoire +1.25 守住 60.2%",
-                  "detail_cn": "Germany -1.25 穿盘约 39.8%（净胜≥2） · Côte d'Ivoire +1.25 守住约 60.2%；穿盘与受让守住均有一定空间（仅胜 1 球约 24.6%）。",
-                  "extra_stats_cn": "仅胜 1 球约 24.6%",
-                  "full_cover_pct": 39.8,
+                  "pill_cn": "Germany 胜 64.9% · 胜后穿 62.7% · Côte d'Ivoire +1.25 守 51.5%",
+                  "detail_cn": "Germany 取胜约 64.9% · 赢球后穿盘约 62.7% · Côte d'Ivoire +1.25 守住约 51.5%（泊松 raw 40.7% → 校准 48.5%）；穿盘与受让守住均有一定空间（仅胜 1 球约 24.2%）。",
+                  "extra_stats_cn": "仅胜 1 球约 24.2%",
+                  "full_cover_pct": 48.5,
                   "half_cover_pct": 0,
-                  "lose1_pct": 24.6,
+                  "lose1_pct": 24.2,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": null,
                   "tier_gap": 0.5,
                   "show_cover": true
                 },
-                "text": "Germany -1.25 穿盘 39.8% · Côte d'Ivoire +1.25 守住 60.2%",
+                "text": "Germany 胜 64.9% · 胜后穿 62.7% · Côte d'Ivoire +1.25 守 51.5%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -29031,7 +29931,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "以上为两队近30场历史进球/失球时间段统计，供读场参考；非本场赛果预测，与灵力分析娱乐板块无关。"
           }
         },
-        "public_summary_note": "【推演概要】Germany · 压制局 · 低位反击。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 24.6%（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
+        "public_summary_note": "【推演概要】Germany · 压制局 · 低位反击。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 24.2%（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
         "goal_efficiency": {
           "xg_total": 2.98,
           "xg_gap": 1.2,
@@ -29280,9 +30180,18 @@ const RESULTS_DATA = {
         "over_pct": 18.4,
         "fair_line": 2.25,
         "line_gap": 0.75,
-        "full_cover_pct": 12.5,
+        "full_cover_pct": 19.7,
+        "fav_win_pct": 40,
+        "cover_given_win_pct": 32.2,
         "spread_level": "skeptical",
         "spread_market_expect": "Ecuador -2.25 · 净胜≥3",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "clear_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -29298,40 +30207,46 @@ const RESULTS_DATA = {
         "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
         "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "public_lean_cn": "舆论倾向 Ecuador（约 72%）",
-        "analysis": "即时：厄瓜多尔 -2.25（初 1.5–1.75 升至两球/两球半，12 家升盘）/ 大小 3.0（初 2.75 升，15 家升盘）；大 0.96 小 0.88。库拉索 1-7 德国后深盘，弱队或铁桶但市场仍看主队大胜。 赛前净胜参考高于 xG 隐含（+2），且净胜 1 球占 26.8%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "analysis": "即时：厄瓜多尔 -2.25（初 1.5–1.75 升至两球/两球半，12 家升盘）/ 大小 3.0（初 2.75 升，15 家升盘）；大 0.96 小 0.88。库拉索 1-7 德国后深盘，弱队或铁桶但市场仍看主队大胜。 赛前净胜参考高于 xG 隐含（+2），且净胜 1 球占 26.6%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "spread_cover": {
           "top3_scores": [
             {
               "score": "1-0",
-              "prob": 15.5
+              "prob": 15.4
             },
             {
               "score": "2-0",
-              "prob": 12.8
+              "prob": 12.7
             },
             {
               "score": "1-1",
-              "prob": 11.2
+              "prob": 11.1
             }
           ],
-          "one_goal_win_pct": 26.8,
-          "two_plus_win_pct": 32.7,
-          "full_cover_pct": 13.9,
-          "dog_hold_pct": 86.1,
+          "one_goal_win_pct": 26.6,
+          "two_plus_win_pct": 33,
+          "full_cover_pct": 20.5,
+          "dog_hold_pct": 79.5,
+          "fav_win_pct": 41,
+          "cover_given_win_pct": 35.1,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
           "half_cover_pct": 0,
-          "half_lose_pct": 26.8,
+          "half_lose_pct": 26.6,
           "push_pct": null,
           "margin_full_label": "净胜≥3",
           "margin_half_label": null,
-          "fav_cover_ev": -0.401,
-          "dog_cover_ev": 0.401,
+          "fav_cover_ev": -0.393,
+          "dog_cover_ev": 0.393,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.37,
           "fair_totals_line": 2.25,
-          "over_2_5_pct": 41.8,
-          "over_3_pct": 20.9,
-          "totals_lean_cn": "超 2.5 偏小比分（约 58.2%）；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 26.8%：常见「赢球但净胜仅 1 球」"
+          "over_2_5_pct": 42.2,
+          "over_3_pct": 21.4,
+          "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
+          "margin_risk_note": "净胜 1 球概率 26.6%：常见「赢球但净胜仅 1 球」",
+          "full_cover_pct_raw": 14.4,
+          "dog_hold_pct_raw": 85.6
         },
         "spread_odds": {
           "fav": 0.95,
@@ -29364,6 +30279,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 3,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
           "draw": 1,
@@ -29505,7 +30422,7 @@ const RESULTS_DATA = {
             "tier_gap": 2,
             "implied_tier_label": "Ecuador -0.25 · Curaçao +0.25",
             "market_tier_label": "Ecuador -2.25 · Curaçao +2.25",
-            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 2 · 模型认为仅小胜 1 球仍约 27.2% · 净胜≥3（全达标）约 12.5%"
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 2 · 模型认为仅小胜 1 球仍约 27.1% · 净胜≥3（全达标）约 19.7%"
           },
           "win_outlook": {
             "fav_name": "Ecuador",
@@ -29531,7 +30448,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Ecuador · 赛前净胜参考 净胜≥3（全达标）",
-            "margin_meet_pct": 12.5,
+            "margin_meet_pct": 19.5,
             "margin_half_pct": 0,
             "margin_fail_pct": 27.2,
             "margin_full_label": "净胜≥3",
@@ -29550,17 +30467,17 @@ const RESULTS_DATA = {
             "win_low_total_pct": 29.4,
             "win_margin2_low_total_pct": 12.9,
             "win_margin2_high_total_pct": 11.1,
-            "readout_cn": "取胜约 45%；若取胜，以「险胜收工」为主（47%）。 对着赛前净胜参考，净胜≥3（全达标）约 12.5%；对着总进球参考 3，模型超线概率约 18.4%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 3。"
+            "readout_cn": "取胜约 45%；若取胜，以「险胜收工」为主（47%）。 对着赛前净胜参考，净胜≥3（全达标）约 19.5%；对着总进球参考 3，模型超线概率约 18.4%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 3。"
           },
           "totals_line": 3,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 16.6
+              "pct": 16.5
             },
             {
               "score": "2-0",
-              "pct": 12.9
+              "pct": 12.8
             },
             {
               "score": "1-1",
@@ -29598,7 +30515,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Ecuador -2.25 穿盘：达到预期难度偏大",
-            "sub_cn": "Ecuador -2.25 穿盘 12.5% · Curaçao +2.25 守住 87.5% 进球氛围：倾向沉闷 平局权重约 37%，小组赛易出守平——勿只盯胜负一方。",
+            "sub_cn": "Ecuador 胜 40% · 胜后穿 32.2% · Curaçao +2.25 守 80.3% 进球氛围：倾向沉闷 平局权重约 37%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
@@ -29608,18 +30525,23 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Ecuador -2.25",
               "dog_handicap_cn": "Curaçao +2.25",
               "market_expect_cn": "Ecuador -2.25 · 净胜≥3",
-              "meet_pct": 12.5,
-              "dog_hold_pct": 87.5,
-              "meet_pct_label": "Ecuador -2.25 穿盘概率",
-              "dog_hold_label": "Curaçao +2.25 守住概率",
+              "meet_pct": 19.7,
+              "dog_hold_pct": 80.3,
+              "fav_win_pct": 40,
+              "cover_given_win_pct": 32.2,
+              "full_cover_pct_raw": 12.9,
+              "meet_pct_label": "Ecuador -2.25 穿盘概率（校准）",
+              "dog_hold_label": "Curaçao +2.25 守住概率（校准）",
+              "two_stage_cn": "Ecuador 取胜约 40% · 赢球后穿盘约 32.2% · Curaçao +2.25 守住约 80.3%",
+              "grid_tail_pct": null,
               "verdict_cn": "达到预期难度偏大",
               "headline_cn": "Ecuador -2.25 穿盘：达到预期难度偏大",
-              "pill_cn": "Ecuador -2.25 穿盘 12.5% · Curaçao +2.25 守住 87.5%",
-              "detail_cn": "Ecuador -2.25 穿盘约 12.5%（净胜≥3） · Curaçao +2.25 守住约 87.5%；盘口相对 xG 偏深约 2 球，热门穿盘难度偏大（仅胜 1 球约 27.2%）。",
-              "extra_stats_cn": "仅胜 1 球约 27.2%",
-              "full_cover_pct": 12.5,
+              "pill_cn": "Ecuador 胜 40% · 胜后穿 32.2% · Curaçao +2.25 守 80.3%",
+              "detail_cn": "Ecuador 取胜约 40% · 赢球后穿盘约 32.2% · Curaçao +2.25 守住约 80.3%（泊松 raw 12.9% → 校准 19.7%）；盘口相对 xG 偏深约 2 球，热门穿盘难度偏大（仅胜 1 球约 27.1%）。",
+              "extra_stats_cn": "仅胜 1 球约 27.1%",
+              "full_cover_pct": 19.7,
               "half_cover_pct": 0,
-              "lose1_pct": 27.2,
+              "lose1_pct": 27.1,
               "margin_full_label": "净胜≥3",
               "margin_half_label": null,
               "tier_gap": 2,
@@ -29664,24 +30586,29 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Ecuador -2.25",
                   "dog_handicap_cn": "Curaçao +2.25",
                   "market_expect_cn": "Ecuador -2.25 · 净胜≥3",
-                  "meet_pct": 12.5,
-                  "dog_hold_pct": 87.5,
-                  "meet_pct_label": "Ecuador -2.25 穿盘概率",
-                  "dog_hold_label": "Curaçao +2.25 守住概率",
+                  "meet_pct": 19.7,
+                  "dog_hold_pct": 80.3,
+                  "fav_win_pct": 40,
+                  "cover_given_win_pct": 32.2,
+                  "full_cover_pct_raw": 12.9,
+                  "meet_pct_label": "Ecuador -2.25 穿盘概率（校准）",
+                  "dog_hold_label": "Curaçao +2.25 守住概率（校准）",
+                  "two_stage_cn": "Ecuador 取胜约 40% · 赢球后穿盘约 32.2% · Curaçao +2.25 守住约 80.3%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "达到预期难度偏大",
                   "headline_cn": "Ecuador -2.25 穿盘：达到预期难度偏大",
-                  "pill_cn": "Ecuador -2.25 穿盘 12.5% · Curaçao +2.25 守住 87.5%",
-                  "detail_cn": "Ecuador -2.25 穿盘约 12.5%（净胜≥3） · Curaçao +2.25 守住约 87.5%；盘口相对 xG 偏深约 2 球，热门穿盘难度偏大（仅胜 1 球约 27.2%）。",
-                  "extra_stats_cn": "仅胜 1 球约 27.2%",
-                  "full_cover_pct": 12.5,
+                  "pill_cn": "Ecuador 胜 40% · 胜后穿 32.2% · Curaçao +2.25 守 80.3%",
+                  "detail_cn": "Ecuador 取胜约 40% · 赢球后穿盘约 32.2% · Curaçao +2.25 守住约 80.3%（泊松 raw 12.9% → 校准 19.7%）；盘口相对 xG 偏深约 2 球，热门穿盘难度偏大（仅胜 1 球约 27.1%）。",
+                  "extra_stats_cn": "仅胜 1 球约 27.1%",
+                  "full_cover_pct": 19.7,
                   "half_cover_pct": 0,
-                  "lose1_pct": 27.2,
+                  "lose1_pct": 27.1,
                   "margin_full_label": "净胜≥3",
                   "margin_half_label": null,
                   "tier_gap": 2,
                   "show_cover": true
                 },
-                "text": "Ecuador -2.25 穿盘 12.5% · Curaçao +2.25 守住 87.5%",
+                "text": "Ecuador 胜 40% · 胜后穿 32.2% · Curaçao +2.25 守 80.3%",
                 "color": "#D95F6A",
                 "primary": true
               },
@@ -30014,7 +30941,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "以上为两队近30场历史进球/失球时间段统计，供读场参考；非本场赛果预测，与灵力分析娱乐板块无关。"
           }
         },
-        "public_summary_note": "【推演概要】Ecuador · 低位反击 · 进球偏少。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 2 · 模型认为仅小胜 1 球仍约 27.2% · 净胜≥3（全达标）约 12.5%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
+        "public_summary_note": "【推演概要】Ecuador · 低位反击 · 进球偏少。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 2 · 模型认为仅小胜 1 球仍约 27.1% · 净胜≥3（全达标）约 19.7%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
         "goal_efficiency": {
           "xg_total": 2.37,
           "xg_gap": 0.93,
@@ -30256,9 +31183,18 @@ const RESULTS_DATA = {
         "over_pct": 52.3,
         "fair_line": 2.25,
         "line_gap": 0,
-        "full_cover_pct": 20.7,
+        "full_cover_pct": 24,
+        "fav_win_pct": 45.1,
+        "cover_given_win_pct": 46.2,
         "spread_level": "uncertain",
         "spread_market_expect": "Japan -1 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -30279,35 +31215,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "0-1",
-              "prob": 12.9
+              "prob": 12.8
             },
             {
               "score": "1-1",
-              "prob": 12.9
+              "prob": 12.8
             },
             {
               "score": "0-0",
-              "prob": 9.5
+              "prob": 9.4
             }
           ],
-          "one_goal_win_pct": 17.6,
+          "one_goal_win_pct": 17.5,
           "two_plus_win_pct": 10.1,
-          "full_cover_pct": 21.1,
-          "dog_hold_pct": 78.9,
+          "full_cover_pct": 24.3,
+          "dog_hold_pct": 75.7,
+          "fav_win_pct": 45,
+          "cover_given_win_pct": 47.1,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
-          "push_pct": 23.9,
+          "push_pct": 23.8,
           "margin_full_label": "净胜≥2",
           "margin_half_label": "走水净胜=1",
-          "fav_cover_ev": -0.34,
-          "dog_cover_ev": 0.34,
+          "fav_cover_ev": -0.338,
+          "dog_cover_ev": 0.338,
           "rational_spread_cn": "主队 守住差距概率略高",
           "total_xg": 2.36,
           "fair_totals_line": 2.25,
-          "over_2_5_pct": 41.8,
-          "over_3_pct": 21,
-          "totals_lean_cn": "超 2.5 偏小比分（约 58.2%）；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 17.6%：参考净胜 1 球时，仅赢一球与拉开差距须分开看"
+          "over_2_5_pct": 41.9,
+          "over_3_pct": 21.2,
+          "totals_lean_cn": "超 2.5 偏小比分（约 58.1%）；4球+偏少",
+          "margin_risk_note": "净胜 1 球概率 17.5%：参考净胜 1 球时，仅赢一球与拉开差距须分开看",
+          "full_cover_pct_raw": 21.2,
+          "dog_hold_pct_raw": 78.8
         },
         "spread_odds": {
           "fav": 0.77,
@@ -30340,6 +31282,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.25,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 3,
           "draw": 1,
@@ -30512,7 +31456,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Japan · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
-            "margin_meet_pct": 20.7,
+            "margin_meet_pct": 24,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -30531,7 +31475,7 @@ const RESULTS_DATA = {
             "win_low_total_pct": 22.9,
             "win_margin2_low_total_pct": 9.1,
             "win_margin2_high_total_pct": 20.7,
-            "readout_cn": "取胜约 33%；若取胜，以「险胜收工」为主（54.1%）。 对着赛前净胜参考，净胜≥2（全达标）约 20.7%；对着总进球参考 2.25，模型超线概率约 52.3%。"
+            "readout_cn": "取胜约 33%；若取胜，以「险胜收工」为主（54.1%）。 对着赛前净胜参考，净胜≥2（全达标）约 24%；对着总进球参考 2.25，模型超线概率约 52.3%。"
           },
           "totals_line": 2.25,
           "score_patterns": [
@@ -30545,7 +31489,7 @@ const RESULTS_DATA = {
             },
             {
               "score": "0-0",
-              "pct": 10.6
+              "pct": 10.5
             }
           ],
           "totals_view": {
@@ -30579,7 +31523,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Japan -1 穿盘：达标与否难下定论",
-            "sub_cn": "Japan -1 穿盘 20.7% · Tunisia +1 守住 79.3% 进球氛围：几乎五五开 平局权重约 42%，小组赛易出守平——勿只盯胜负一方。",
+            "sub_cn": "Japan 胜 45.1% · 胜后穿 46.2% · Tunisia +1 守 76% 进球氛围：几乎五五开 平局权重约 42%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
               "level": "uncertain",
               "label_cn": "净胜幅度难下定论",
@@ -30589,16 +31533,21 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Japan -1",
               "dog_handicap_cn": "Tunisia +1",
               "market_expect_cn": "Japan -1 · 净胜≥2",
-              "meet_pct": 20.7,
-              "dog_hold_pct": 79.3,
-              "meet_pct_label": "Japan -1 穿盘概率",
-              "dog_hold_label": "Tunisia +1 守住概率",
+              "meet_pct": 24,
+              "dog_hold_pct": 76,
+              "fav_win_pct": 45.1,
+              "cover_given_win_pct": 46.2,
+              "full_cover_pct_raw": 20.8,
+              "meet_pct_label": "Japan -1 穿盘概率（校准）",
+              "dog_hold_label": "Tunisia +1 守住概率（校准）",
+              "two_stage_cn": "Japan 取胜约 45.1% · 赢球后穿盘约 46.2% · Tunisia +1 守住约 76%",
+              "grid_tail_pct": null,
               "verdict_cn": "达标与否难下定论",
               "headline_cn": "Japan -1 穿盘：达标与否难下定论",
-              "pill_cn": "Japan -1 穿盘 20.7% · Tunisia +1 守住 79.3%",
-              "detail_cn": "Japan -1 穿盘约 20.7%（净胜≥2） · Tunisia +1 守住约 79.3%。",
+              "pill_cn": "Japan 胜 45.1% · 胜后穿 46.2% · Tunisia +1 守 76%",
+              "detail_cn": "Japan 取胜约 45.1% · 赢球后穿盘约 46.2% · Tunisia +1 守住约 76%（泊松 raw 20.8% → 校准 24%）。",
               "extra_stats_cn": "",
-              "full_cover_pct": 20.7,
+              "full_cover_pct": 24,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
@@ -30645,16 +31594,21 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Japan -1",
                   "dog_handicap_cn": "Tunisia +1",
                   "market_expect_cn": "Japan -1 · 净胜≥2",
-                  "meet_pct": 20.7,
-                  "dog_hold_pct": 79.3,
-                  "meet_pct_label": "Japan -1 穿盘概率",
-                  "dog_hold_label": "Tunisia +1 守住概率",
+                  "meet_pct": 24,
+                  "dog_hold_pct": 76,
+                  "fav_win_pct": 45.1,
+                  "cover_given_win_pct": 46.2,
+                  "full_cover_pct_raw": 20.8,
+                  "meet_pct_label": "Japan -1 穿盘概率（校准）",
+                  "dog_hold_label": "Tunisia +1 守住概率（校准）",
+                  "two_stage_cn": "Japan 取胜约 45.1% · 赢球后穿盘约 46.2% · Tunisia +1 守住约 76%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "达标与否难下定论",
                   "headline_cn": "Japan -1 穿盘：达标与否难下定论",
-                  "pill_cn": "Japan -1 穿盘 20.7% · Tunisia +1 守住 79.3%",
-                  "detail_cn": "Japan -1 穿盘约 20.7%（净胜≥2） · Tunisia +1 守住约 79.3%。",
+                  "pill_cn": "Japan 胜 45.1% · 胜后穿 46.2% · Tunisia +1 守 76%",
+                  "detail_cn": "Japan 取胜约 45.1% · 赢球后穿盘约 46.2% · Tunisia +1 守住约 76%（泊松 raw 20.8% → 校准 24%）。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 20.7,
+                  "full_cover_pct": 24,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
@@ -30662,7 +31616,7 @@ const RESULTS_DATA = {
                   "tier_gap": -1,
                   "show_cover": true
                 },
-                "text": "Japan -1 穿盘 20.7% · Tunisia +1 守住 79.3%",
+                "text": "Japan 胜 45.1% · 胜后穿 46.2% · Tunisia +1 守 76%",
                 "color": "#8A96A8",
                 "primary": true
               },
@@ -31532,35 +32486,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "2-0",
-              "prob": 14.8
+              "prob": 14.5
             },
             {
               "score": "1-0",
-              "prob": 13.1
+              "prob": 12.9
             },
             {
               "score": "3-0",
-              "prob": 11.1
+              "prob": 10.9
             }
           ],
-          "one_goal_win_pct": 24.7,
-          "two_plus_win_pct": 49.2,
-          "full_cover_pct": 49.2,
-          "dog_hold_pct": 50.8,
-          "half_cover_pct": 24.7,
+          "one_goal_win_pct": 24.2,
+          "two_plus_win_pct": 50.1,
+          "full_cover_pct": 46.5,
+          "dog_hold_pct": 53.5,
+          "fav_win_pct": 74.3,
+          "cover_given_win_pct": 67.5,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.8,
+          "half_cover_pct": 24.2,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
           "margin_half_label": "部分达标净胜=1",
-          "fav_cover_ev": 0.23,
-          "dog_cover_ev": -0.23,
+          "fav_cover_ev": 0.244,
+          "dog_cover_ev": -0.244,
           "rational_spread_cn": "主队 净胜达标概率略高",
           "total_xg": 2.87,
           "fair_totals_line": 2,
-          "over_2_5_pct": 53.4,
-          "over_3_pct": 30.5,
+          "over_2_5_pct": 54.3,
+          "over_3_pct": 31.8,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥2 约 49.2%；部分达标净胜=1 约 24.7%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥2 约 50.1%；部分达标净胜=1 约 24.2%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 50.1,
+          "dog_hold_pct_raw": 49.9
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -31585,6 +32545,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
           "draw": -1,
@@ -31721,7 +32683,7 @@ const RESULTS_DATA = {
             "tier_gap": 0.5,
             "implied_tier_label": "Spain -1.25 · Saudi Arabia +1.25",
             "market_tier_label": "Spain -1.75 · Saudi Arabia +1.75",
-            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 部分达标净胜=1 约 26.8%"
+            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 部分达标净胜=1 约 26.5%"
           },
           "win_outlook": {
             "fav_name": "Spain",
@@ -31747,7 +32709,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Spain · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
-            "margin_meet_pct": 42.8,
+            "margin_meet_pct": 49.6,
             "margin_half_pct": 26.8,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -31766,21 +32728,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 32,
             "win_margin2_low_total_pct": 15.7,
             "win_margin2_high_total_pct": 27.1,
-            "readout_cn": "取胜约 76%；若取胜，以「险胜收工」为主（38.5%）。 对着赛前净胜参考，净胜≥2（全达标）约 42.8%；部分达标净胜=1 约 26.8%；对着总进球参考 2.75，模型超线概率约 33.5%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.75。"
+            "readout_cn": "取胜约 76%；若取胜，以「险胜收工」为主（38.5%）。 对着赛前净胜参考，净胜≥2（全达标）约 49.6%；部分达标净胜=1 约 26.8%；对着总进球参考 2.75，模型超线概率约 33.5%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.75。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 16.3
+              "pct": 16.1
             },
             {
               "score": "2-0",
-              "pct": 15.7
+              "pct": 15.5
             },
             {
               "score": "3-0",
-              "pct": 10
+              "pct": 9.9
             }
           ],
           "totals_view": {
@@ -31814,7 +32776,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Spain -1.75 穿盘：有达标可能",
-            "sub_cn": "Spain -1.75 穿盘 42.8% · Saudi Arabia +1.75 守住 57.2% 进球氛围：略偏闷",
+            "sub_cn": "Spain 胜 69.9% · 胜后穿 62% · Saudi Arabia +1.75 守 50.1% 进球氛围：略偏闷",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -31824,17 +32786,22 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Spain -1.75",
               "dog_handicap_cn": "Saudi Arabia +1.75",
               "market_expect_cn": "Spain -1.75 · 净胜≥2",
-              "meet_pct": 42.8,
-              "dog_hold_pct": 57.2,
-              "meet_pct_label": "Spain -1.75 穿盘概率",
-              "dog_hold_label": "Saudi Arabia +1.75 守住概率",
+              "meet_pct": 49.9,
+              "dog_hold_pct": 50.1,
+              "fav_win_pct": 69.9,
+              "cover_given_win_pct": 62,
+              "full_cover_pct_raw": 43.3,
+              "meet_pct_label": "Spain -1.75 穿盘概率（校准）",
+              "dog_hold_label": "Saudi Arabia +1.75 守住概率（校准）",
+              "two_stage_cn": "Spain 取胜约 69.9% · 赢球后穿盘约 62% · Saudi Arabia +1.75 守住约 50.1%",
+              "grid_tail_pct": 0.4,
               "verdict_cn": "有达标可能",
               "headline_cn": "Spain -1.75 穿盘：有达标可能",
-              "pill_cn": "Spain -1.75 穿盘 42.8% · Saudi Arabia +1.75 守住 57.2%",
-              "detail_cn": "Spain -1.75 穿盘约 42.8%（净胜≥2） · Saudi Arabia +1.75 守住约 57.2%；穿盘与受让守住均有一定空间（部分达标净胜=1 约 26.8%）。",
-              "extra_stats_cn": "部分达标净胜=1 约 26.8%",
-              "full_cover_pct": 42.8,
-              "half_cover_pct": 26.8,
+              "pill_cn": "Spain 胜 69.9% · 胜后穿 62% · Saudi Arabia +1.75 守 50.1%",
+              "detail_cn": "Spain 取胜约 69.9% · 赢球后穿盘约 62% · Saudi Arabia +1.75 守住约 50.1%（泊松 raw 43.3% → 校准 49.9%）；穿盘与受让守住均有一定空间（部分达标净胜=1 约 26.5%）。",
+              "extra_stats_cn": "部分达标净胜=1 约 26.5%",
+              "full_cover_pct": 49.9,
+              "half_cover_pct": 26.5,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
               "margin_half_label": "部分达标净胜=1",
@@ -31876,24 +32843,29 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Spain -1.75",
                   "dog_handicap_cn": "Saudi Arabia +1.75",
                   "market_expect_cn": "Spain -1.75 · 净胜≥2",
-                  "meet_pct": 42.8,
-                  "dog_hold_pct": 57.2,
-                  "meet_pct_label": "Spain -1.75 穿盘概率",
-                  "dog_hold_label": "Saudi Arabia +1.75 守住概率",
+                  "meet_pct": 49.9,
+                  "dog_hold_pct": 50.1,
+                  "fav_win_pct": 69.9,
+                  "cover_given_win_pct": 62,
+                  "full_cover_pct_raw": 43.3,
+                  "meet_pct_label": "Spain -1.75 穿盘概率（校准）",
+                  "dog_hold_label": "Saudi Arabia +1.75 守住概率（校准）",
+                  "two_stage_cn": "Spain 取胜约 69.9% · 赢球后穿盘约 62% · Saudi Arabia +1.75 守住约 50.1%",
+                  "grid_tail_pct": 0.4,
                   "verdict_cn": "有达标可能",
                   "headline_cn": "Spain -1.75 穿盘：有达标可能",
-                  "pill_cn": "Spain -1.75 穿盘 42.8% · Saudi Arabia +1.75 守住 57.2%",
-                  "detail_cn": "Spain -1.75 穿盘约 42.8%（净胜≥2） · Saudi Arabia +1.75 守住约 57.2%；穿盘与受让守住均有一定空间（部分达标净胜=1 约 26.8%）。",
-                  "extra_stats_cn": "部分达标净胜=1 约 26.8%",
-                  "full_cover_pct": 42.8,
-                  "half_cover_pct": 26.8,
+                  "pill_cn": "Spain 胜 69.9% · 胜后穿 62% · Saudi Arabia +1.75 守 50.1%",
+                  "detail_cn": "Spain 取胜约 69.9% · 赢球后穿盘约 62% · Saudi Arabia +1.75 守住约 50.1%（泊松 raw 43.3% → 校准 49.9%）；穿盘与受让守住均有一定空间（部分达标净胜=1 约 26.5%）。",
+                  "extra_stats_cn": "部分达标净胜=1 约 26.5%",
+                  "full_cover_pct": 49.9,
+                  "half_cover_pct": 26.5,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": "部分达标净胜=1",
                   "tier_gap": 0.5,
                   "show_cover": true
                 },
-                "text": "Spain -1.75 穿盘 42.8% · Saudi Arabia +1.75 守住 57.2%",
+                "text": "Spain 胜 69.9% · 胜后穿 62% · Saudi Arabia +1.75 守 50.1%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -32176,7 +33148,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Spain · 压制局 · 低位反击。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 部分达标净胜=1 约 26.8%（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
+        "public_summary_note": "【推演概要】Spain · 压制局 · 低位反击。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 部分达标净胜=1 约 26.5%（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
         "preview_replay": {
           "actual_score": "4-0",
           "ht_score": "3-0",
@@ -32465,6 +33437,29 @@ const RESULTS_DATA = {
         "updated": "2026-06-22T04:28:33+08:00",
         "elapsed": "99''",
         "xg_report": "FIFA M38 · Yamal 10' 首开 · Oyarzabal 21'/24' 连入两球 · 下半场 Altambakti 乌龙"
+      },
+      "market_snapshot": {
+        "market_tier": 1.75,
+        "tier_label": "Spain -1.75 · Saudi Arabia +1.75",
+        "totals_line": 2.75,
+        "over_pct": 33.5,
+        "fair_line": 2,
+        "line_gap": 0.75,
+        "full_cover_pct": 49.9,
+        "fav_win_pct": 69.9,
+        "cover_given_win_pct": 62,
+        "spread_level": "possible",
+        "spread_market_expect": "Spain -1.75 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
+        "totals_level": "mild_low",
+        "totals_show_lean": false,
+        "totals_lean_side": "dull"
       }
     },
     {
@@ -32849,40 +33844,46 @@ const RESULTS_DATA = {
         "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
         "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "public_lean_cn": "舆论倾向 Belgium（约 58%）",
-        "analysis": "即时：比利时 -1/1.5（-1.25）比 0.98 / 伊 0.91 / 大小 2.5/3（2.75）大 1.07 小 0.81；较初盘 -0.75 升档，大小升线后小球侧更热。 赛前净胜参考高于 xG 隐含（+1），且净胜 1 球占 24.1%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "analysis": "即时：比利时 -1/1.5（-1.25）比 0.98 / 伊 0.91 / 大小 2.5/3（2.75）大 1.07 小 0.81；较初盘 -0.75 升档，大小升线后小球侧更热。 赛前净胜参考高于 xG 隐含（+1），且净胜 1 球占 23.8%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "spread_cover": {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 10.5
+              "prob": 10.4
             },
             {
               "score": "2-1",
-              "prob": 10.1
+              "prob": 10
             },
             {
               "score": "1-0",
-              "prob": 10
+              "prob": 9.9
             }
           ],
-          "one_goal_win_pct": 24.1,
-          "two_plus_win_pct": 33,
-          "full_cover_pct": 33,
-          "dog_hold_pct": 67,
+          "one_goal_win_pct": 23.8,
+          "two_plus_win_pct": 33.7,
+          "full_cover_pct": 41.9,
+          "dog_hold_pct": 58.1,
+          "fav_win_pct": 57.5,
+          "cover_given_win_pct": 58.6,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.4,
           "half_cover_pct": 0,
-          "half_lose_pct": 24.1,
+          "half_lose_pct": 23.8,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
           "margin_half_label": null,
-          "fav_cover_ev": -0.219,
-          "dog_cover_ev": 0.219,
+          "fav_cover_ev": -0.207,
+          "dog_cover_ev": 0.207,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.97,
           "fair_totals_line": 2.75,
-          "over_2_5_pct": 56.4,
-          "over_3_pct": 33.6,
+          "over_2_5_pct": 56.8,
+          "over_3_pct": 34.4,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 24.1%：常见「赢球但净胜仅 1 球」"
+          "margin_risk_note": "净胜 1 球概率 23.8%：常见「赢球但净胜仅 1 球」",
+          "full_cover_pct_raw": 33.7,
+          "dog_hold_pct_raw": 66.3
         },
         "spread_odds": {
           "fav": 0.98,
@@ -32915,6 +33916,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
           "draw": 1,
@@ -33051,7 +34054,7 @@ const RESULTS_DATA = {
             "tier_gap": 1,
             "implied_tier_label": "Belgium -0.25 · Iran +0.25",
             "market_tier_label": "Belgium -1.25 · Iran +1.25",
-            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1 · 模型认为仅小胜 1 球仍约 25.2%"
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1 · 模型认为仅小胜 1 球仍约 25%"
           },
           "win_outlook": {
             "fav_name": "Belgium",
@@ -33077,7 +34080,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Belgium · 赛前净胜参考 净胜≥2（全达标）",
-            "margin_meet_pct": 28.9,
+            "margin_meet_pct": 39.3,
             "margin_half_pct": 0,
             "margin_fail_pct": 25.2,
             "margin_full_label": "净胜≥2",
@@ -33096,13 +34099,13 @@ const RESULTS_DATA = {
             "win_low_total_pct": 23.2,
             "win_margin2_low_total_pct": 10.5,
             "win_margin2_high_total_pct": 18.4,
-            "readout_cn": "取胜约 52%；若取胜，以「险胜收工」为主（46.5%）。 对着赛前净胜参考，净胜≥2（全达标）约 28.9%；对着总进球参考 2.75，模型超线概率约 35.9%。"
+            "readout_cn": "取胜约 52%；若取胜，以「险胜收工」为主（46.5%）。 对着赛前净胜参考，净胜≥2（全达标）约 39.3%；对着总进球参考 2.75，模型超线概率约 35.9%。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 12.8
+              "pct": 12.7
             },
             {
               "score": "1-1",
@@ -33110,7 +34113,7 @@ const RESULTS_DATA = {
             },
             {
               "score": "2-0",
-              "pct": 10.5
+              "pct": 10.4
             }
           ],
           "totals_view": {
@@ -33143,29 +34146,34 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.5 · 合理值 2 · 总进球参考 2.75（高于合理值 0.75） · 高于合理值 0.75 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Belgium -1.25 穿盘：达到预期难度偏大",
-            "sub_cn": "Belgium -1.25 穿盘 28.9% · Iran +1.25 守住 71.1% 进球氛围：略偏闷",
+            "headline_cn": "Belgium -1.25 穿盘：有达标可能",
+            "sub_cn": "Belgium 胜 54.2% · 胜后穿 53.9% · Iran +1.25 守 60.5% 进球氛围：略偏闷",
             "spread": {
-              "level": "skeptical",
-              "label_cn": "外界预期偏高",
-              "color": "#D95F6A",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Belgium",
               "dog_name": "Iran",
               "fav_handicap_cn": "Belgium -1.25",
               "dog_handicap_cn": "Iran +1.25",
               "market_expect_cn": "Belgium -1.25 · 净胜≥2",
-              "meet_pct": 28.9,
-              "dog_hold_pct": 71.1,
-              "meet_pct_label": "Belgium -1.25 穿盘概率",
-              "dog_hold_label": "Iran +1.25 守住概率",
-              "verdict_cn": "达到预期难度偏大",
-              "headline_cn": "Belgium -1.25 穿盘：达到预期难度偏大",
-              "pill_cn": "Belgium -1.25 穿盘 28.9% · Iran +1.25 守住 71.1%",
-              "detail_cn": "Belgium -1.25 穿盘约 28.9%（净胜≥2） · Iran +1.25 守住约 71.1%；盘口相对 xG 偏深约 1 球，热门穿盘难度偏大（仅胜 1 球约 25.2%）。",
-              "extra_stats_cn": "仅胜 1 球约 25.2%",
-              "full_cover_pct": 28.9,
+              "meet_pct": 39.5,
+              "dog_hold_pct": 60.5,
+              "fav_win_pct": 54.2,
+              "cover_given_win_pct": 53.9,
+              "full_cover_pct_raw": 29.2,
+              "meet_pct_label": "Belgium -1.25 穿盘概率（校准）",
+              "dog_hold_label": "Iran +1.25 守住概率（校准）",
+              "two_stage_cn": "Belgium 取胜约 54.2% · 赢球后穿盘约 53.9% · Iran +1.25 守住约 60.5%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Belgium -1.25 穿盘：有达标可能",
+              "pill_cn": "Belgium 胜 54.2% · 胜后穿 53.9% · Iran +1.25 守 60.5%",
+              "detail_cn": "Belgium 取胜约 54.2% · 赢球后穿盘约 53.9% · Iran +1.25 守住约 60.5%（泊松 raw 29.2% → 校准 39.5%）；穿盘与受让守住均有一定空间（仅胜 1 球约 25%）。",
+              "extra_stats_cn": "仅胜 1 球约 25%",
+              "full_cover_pct": 39.5,
               "half_cover_pct": 0,
-              "lose1_pct": 25.2,
+              "lose1_pct": 25,
               "margin_full_label": "净胜≥2",
               "margin_half_label": null,
               "tier_gap": 1,
@@ -33198,33 +34206,38 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "skeptical",
-                  "label_cn": "外界预期偏高",
-                  "color": "#D95F6A",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Belgium",
                   "dog_name": "Iran",
                   "fav_handicap_cn": "Belgium -1.25",
                   "dog_handicap_cn": "Iran +1.25",
                   "market_expect_cn": "Belgium -1.25 · 净胜≥2",
-                  "meet_pct": 28.9,
-                  "dog_hold_pct": 71.1,
-                  "meet_pct_label": "Belgium -1.25 穿盘概率",
-                  "dog_hold_label": "Iran +1.25 守住概率",
-                  "verdict_cn": "达到预期难度偏大",
-                  "headline_cn": "Belgium -1.25 穿盘：达到预期难度偏大",
-                  "pill_cn": "Belgium -1.25 穿盘 28.9% · Iran +1.25 守住 71.1%",
-                  "detail_cn": "Belgium -1.25 穿盘约 28.9%（净胜≥2） · Iran +1.25 守住约 71.1%；盘口相对 xG 偏深约 1 球，热门穿盘难度偏大（仅胜 1 球约 25.2%）。",
-                  "extra_stats_cn": "仅胜 1 球约 25.2%",
-                  "full_cover_pct": 28.9,
+                  "meet_pct": 39.5,
+                  "dog_hold_pct": 60.5,
+                  "fav_win_pct": 54.2,
+                  "cover_given_win_pct": 53.9,
+                  "full_cover_pct_raw": 29.2,
+                  "meet_pct_label": "Belgium -1.25 穿盘概率（校准）",
+                  "dog_hold_label": "Iran +1.25 守住概率（校准）",
+                  "two_stage_cn": "Belgium 取胜约 54.2% · 赢球后穿盘约 53.9% · Iran +1.25 守住约 60.5%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Belgium -1.25 穿盘：有达标可能",
+                  "pill_cn": "Belgium 胜 54.2% · 胜后穿 53.9% · Iran +1.25 守 60.5%",
+                  "detail_cn": "Belgium 取胜约 54.2% · 赢球后穿盘约 53.9% · Iran +1.25 守住约 60.5%（泊松 raw 29.2% → 校准 39.5%）；穿盘与受让守住均有一定空间（仅胜 1 球约 25%）。",
+                  "extra_stats_cn": "仅胜 1 球约 25%",
+                  "full_cover_pct": 39.5,
                   "half_cover_pct": 0,
-                  "lose1_pct": 25.2,
+                  "lose1_pct": 25,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": null,
                   "tier_gap": 1,
                   "show_cover": true
                 },
-                "text": "Belgium -1.25 穿盘 28.9% · Iran +1.25 守住 71.1%",
-                "color": "#D95F6A",
+                "text": "Belgium 胜 54.2% · 胜后穿 53.9% · Iran +1.25 守 60.5%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -33498,7 +34511,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Belgium · 低位反击。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1 · 模型认为仅小胜 1 球仍约 25.2%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
+        "public_summary_note": "【推演概要】Belgium · 低位反击。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1 · 模型认为仅小胜 1 球仍约 25%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
         "preview_replay": {
           "actual_score": "0-0",
           "ht_score": "0-0",
@@ -33509,7 +34522,7 @@ const RESULTS_DATA = {
           "summary_cn": "偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
           "totals_actual": 0,
           "totals_line": 2.75,
-          "spread_level": "skeptical",
+          "spread_level": "possible",
           "totals_level": "mild_low"
         },
         "goal_efficiency": {
@@ -33791,6 +34804,29 @@ const RESULTS_DATA = {
         "updated": "2026-06-22T04:28:33+08:00",
         "elapsed": "96''",
         "xg_report": "FIFA M39 · 全场 0-0 · Ezatolahi 屏障 + Casteels 零封"
+      },
+      "market_snapshot": {
+        "market_tier": 1.25,
+        "tier_label": "Belgium -1.25 · Iran +1.25",
+        "totals_line": 2.75,
+        "over_pct": 35.9,
+        "fair_line": 2,
+        "line_gap": 0.75,
+        "full_cover_pct": 39.5,
+        "fav_win_pct": 54.2,
+        "cover_given_win_pct": 53.9,
+        "spread_level": "possible",
+        "spread_market_expect": "Belgium -1.25 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
+        "totals_level": "mild_low",
+        "totals_show_lean": false,
+        "totals_lean_side": "dull"
       }
     },
     {
@@ -34202,35 +35238,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-0",
-              "prob": 13.4
+              "prob": 13.3
             },
             {
               "score": "2-0",
-              "prob": 11.9
+              "prob": 11.8
             },
             {
               "score": "1-1",
-              "prob": 11
+              "prob": 10.9
             }
           ],
-          "one_goal_win_pct": 25.8,
-          "two_plus_win_pct": 34,
-          "full_cover_pct": 34,
-          "dog_hold_pct": 66,
+          "one_goal_win_pct": 25.6,
+          "two_plus_win_pct": 34.5,
+          "full_cover_pct": 42.4,
+          "dog_hold_pct": 57.6,
+          "fav_win_pct": 60.1,
+          "cover_given_win_pct": 57.4,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
-          "push_pct": 25.8,
+          "push_pct": 25.6,
           "margin_full_label": "净胜≥2",
           "margin_half_label": "走水净胜=1",
-          "fav_cover_ev": -0.062,
-          "dog_cover_ev": 0.062,
+          "fav_cover_ev": -0.054,
+          "dog_cover_ev": 0.054,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.6,
           "fair_totals_line": 2,
-          "over_2_5_pct": 47.6,
-          "over_3_pct": 25.7,
+          "over_2_5_pct": 48,
+          "over_3_pct": 26.2,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 25.8%：参考净胜 1 球时，仅赢一球与拉开差距须分开看"
+          "margin_risk_note": "净胜 1 球概率 25.6%：参考净胜 1 球时，仅赢一球与拉开差距须分开看",
+          "full_cover_pct_raw": 34.5,
+          "dog_hold_pct_raw": 65.5
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -34255,6 +35297,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.25,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
           "draw": 1,
@@ -34422,7 +35466,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Uruguay · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
-            "margin_meet_pct": 23.6,
+            "margin_meet_pct": 25.6,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -34441,7 +35485,7 @@ const RESULTS_DATA = {
             "win_low_total_pct": 29.9,
             "win_margin2_low_total_pct": 11.6,
             "win_margin2_high_total_pct": 23.6,
-            "readout_cn": "取胜约 50%；若取胜，以「险胜收工」为主（53.7%）。 对着赛前净胜参考，净胜≥2（全达标）约 23.6%；对着总进球参考 2.25，模型超线概率约 44.1%。"
+            "readout_cn": "取胜约 50%；若取胜，以「险胜收工」为主（53.7%）。 对着赛前净胜参考，净胜≥2（全达标）约 25.6%；对着总进球参考 2.25，模型超线概率约 44.1%。"
           },
           "totals_line": 2.25,
           "score_patterns": [
@@ -34455,7 +35499,7 @@ const RESULTS_DATA = {
             },
             {
               "score": "1-1",
-              "pct": 12.3
+              "pct": 12.2
             }
           ],
           "totals_view": {
@@ -34489,7 +35533,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Uruguay -1 穿盘：达到预期难度偏大",
-            "sub_cn": "Uruguay -1 穿盘 23.6% · Cape Verde +1 守住 76.4% 进球氛围：几乎五五开 平局权重约 31%，小组赛易出守平——勿只盯胜负一方。",
+            "sub_cn": "Uruguay 胜 50.9% · 胜后穿 46.5% · Cape Verde +1 守 74.4% 进球氛围：几乎五五开 平局权重约 31%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
@@ -34499,16 +35543,21 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Uruguay -1",
               "dog_handicap_cn": "Cape Verde +1",
               "market_expect_cn": "Uruguay -1 · 净胜≥2",
-              "meet_pct": 23.6,
-              "dog_hold_pct": 76.4,
-              "meet_pct_label": "Uruguay -1 穿盘概率",
-              "dog_hold_label": "Cape Verde +1 守住概率",
+              "meet_pct": 25.6,
+              "dog_hold_pct": 74.4,
+              "fav_win_pct": 50.9,
+              "cover_given_win_pct": 46.5,
+              "full_cover_pct_raw": 23.7,
+              "meet_pct_label": "Uruguay -1 穿盘概率（校准）",
+              "dog_hold_label": "Cape Verde +1 守住概率（校准）",
+              "two_stage_cn": "Uruguay 取胜约 50.9% · 赢球后穿盘约 46.5% · Cape Verde +1 守住约 74.4%",
+              "grid_tail_pct": null,
               "verdict_cn": "达到预期难度偏大",
               "headline_cn": "Uruguay -1 穿盘：达到预期难度偏大",
-              "pill_cn": "Uruguay -1 穿盘 23.6% · Cape Verde +1 守住 76.4%",
-              "detail_cn": "Uruguay -1 穿盘约 23.6%（净胜≥2） · Cape Verde +1 守住约 76.4%；盘口相对 xG 偏深约 0.75 球，热门穿盘难度偏大。",
+              "pill_cn": "Uruguay 胜 50.9% · 胜后穿 46.5% · Cape Verde +1 守 74.4%",
+              "detail_cn": "Uruguay 取胜约 50.9% · 赢球后穿盘约 46.5% · Cape Verde +1 守住约 74.4%（泊松 raw 23.7% → 校准 25.6%）；盘口相对 xG 偏深约 0.75 球，热门穿盘难度偏大。",
               "extra_stats_cn": "",
-              "full_cover_pct": 23.6,
+              "full_cover_pct": 25.6,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
@@ -34555,16 +35604,21 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Uruguay -1",
                   "dog_handicap_cn": "Cape Verde +1",
                   "market_expect_cn": "Uruguay -1 · 净胜≥2",
-                  "meet_pct": 23.6,
-                  "dog_hold_pct": 76.4,
-                  "meet_pct_label": "Uruguay -1 穿盘概率",
-                  "dog_hold_label": "Cape Verde +1 守住概率",
+                  "meet_pct": 25.6,
+                  "dog_hold_pct": 74.4,
+                  "fav_win_pct": 50.9,
+                  "cover_given_win_pct": 46.5,
+                  "full_cover_pct_raw": 23.7,
+                  "meet_pct_label": "Uruguay -1 穿盘概率（校准）",
+                  "dog_hold_label": "Cape Verde +1 守住概率（校准）",
+                  "two_stage_cn": "Uruguay 取胜约 50.9% · 赢球后穿盘约 46.5% · Cape Verde +1 守住约 74.4%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "达到预期难度偏大",
                   "headline_cn": "Uruguay -1 穿盘：达到预期难度偏大",
-                  "pill_cn": "Uruguay -1 穿盘 23.6% · Cape Verde +1 守住 76.4%",
-                  "detail_cn": "Uruguay -1 穿盘约 23.6%（净胜≥2） · Cape Verde +1 守住约 76.4%；盘口相对 xG 偏深约 0.75 球，热门穿盘难度偏大。",
+                  "pill_cn": "Uruguay 胜 50.9% · 胜后穿 46.5% · Cape Verde +1 守 74.4%",
+                  "detail_cn": "Uruguay 取胜约 50.9% · 赢球后穿盘约 46.5% · Cape Verde +1 守住约 74.4%（泊松 raw 23.7% → 校准 25.6%）；盘口相对 xG 偏深约 0.75 球，热门穿盘难度偏大。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 23.6,
+                  "full_cover_pct": 25.6,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
@@ -34572,7 +35626,7 @@ const RESULTS_DATA = {
                   "tier_gap": 0.75,
                   "show_cover": true
                 },
-                "text": "Uruguay -1 穿盘 23.6% · Cape Verde +1 守住 76.4%",
+                "text": "Uruguay 胜 50.9% · 胜后穿 46.5% · Cape Verde +1 守 74.4%",
                 "color": "#D95F6A",
                 "primary": true
               },
@@ -35137,6 +36191,29 @@ const RESULTS_DATA = {
         "updated": "2026-06-22T04:28:33+08:00",
         "elapsed": "99''",
         "xg_report": "FIFA M37 · 半场 2-1 · 61' Varela 扳平 · 全场 2-2 平局"
+      },
+      "market_snapshot": {
+        "market_tier": 1,
+        "tier_label": "Uruguay -1 · Cape Verde +1",
+        "totals_line": 2.25,
+        "over_pct": 44.1,
+        "fair_line": 2.25,
+        "line_gap": 0,
+        "full_cover_pct": 25.6,
+        "fav_win_pct": 50.9,
+        "cover_given_win_pct": 46.5,
+        "spread_level": "skeptical",
+        "spread_market_expect": "Uruguay -1 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
+        "totals_level": "neutral",
+        "totals_show_lean": false,
+        "totals_lean_side": "neutral"
       }
     },
     {
@@ -35531,17 +36608,21 @@ const RESULTS_DATA = {
             },
             {
               "score": "0-1",
-              "prob": 11.9
+              "prob": 11.8
             },
             {
               "score": "1-0",
-              "prob": 11.3
+              "prob": 11.2
             }
           ],
           "one_goal_win_pct": 20.5,
-          "two_plus_win_pct": 13.8,
-          "full_cover_pct": 0,
-          "dog_hold_pct": null,
+          "two_plus_win_pct": 13.9,
+          "full_cover_pct": 12.6,
+          "dog_hold_pct": 87.4,
+          "fav_win_pct": null,
+          "cover_given_win_pct": null,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
@@ -35552,10 +36633,12 @@ const RESULTS_DATA = {
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 2.3,
           "fair_totals_line": 2.25,
-          "over_2_5_pct": 40.3,
-          "over_3_pct": 19.9,
-          "totals_lean_cn": "超 2.5 偏小比分（约 59.7%）；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%"
+          "over_2_5_pct": 40.4,
+          "over_3_pct": 20,
+          "totals_lean_cn": "超 2.5 偏小比分（约 59.6%）；4球+偏少",
+          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 0,
+          "dog_hold_pct_raw": null
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -35580,6 +36663,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -35747,7 +36832,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "净胜差距参考 · 势均力敌",
-            "margin_meet_pct": 0,
+            "margin_meet_pct": 12.6,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -35766,7 +36851,7 @@ const RESULTS_DATA = {
             "win_low_total_pct": 18.9,
             "win_margin2_low_total_pct": 7,
             "win_margin2_high_total_pct": 8.6,
-            "readout_cn": "取胜约 35%；若取胜，以「险胜收工」为主（58%）。 对着赛前净胜参考，净胜≥1（全达标）约 0%；对着总进球参考 2.5，模型超线概率约 40.3%。"
+            "readout_cn": "取胜约 35%；若取胜，以「险胜收工」为主（58%）。 对着赛前净胜参考，净胜≥1（全达标）约 12.6%；对着总进球参考 2.5，模型超线概率约 40.3%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
@@ -35776,11 +36861,11 @@ const RESULTS_DATA = {
             },
             {
               "score": "0-1",
-              "pct": 11.9
+              "pct": 11.8
             },
             {
               "score": "1-0",
-              "pct": 11.3
+              "pct": 11.2
             }
           ],
           "totals_view": {
@@ -35826,7 +36911,7 @@ const RESULTS_DATA = {
               "headline_cn": "净胜走向：双方实力接近",
               "pill_cn": "双方实力接近，暂无单侧净胜预期。",
               "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
-              "full_cover_pct": 0,
+              "full_cover_pct": 12.6,
               "half_cover_pct": 0,
               "show_cover": false
             },
@@ -35871,7 +36956,7 @@ const RESULTS_DATA = {
                   "headline_cn": "净胜走向：双方实力接近",
                   "pill_cn": "双方实力接近，暂无单侧净胜预期。",
                   "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
-                  "full_cover_pct": 0,
+                  "full_cover_pct": 12.6,
                   "half_cover_pct": 0,
                   "show_cover": false
                 },
@@ -36437,6 +37522,29 @@ const RESULTS_DATA = {
         "updated": "2026-06-22T04:28:33+08:00",
         "elapsed": "101''",
         "xg_report": "FIFA M40 · Surman 15' 半场领先 · 下半场 Zico/Salah/Trezeguet 三球逆转"
+      },
+      "market_snapshot": {
+        "market_tier": 0,
+        "tier_label": "势均力敌",
+        "totals_line": 2.5,
+        "over_pct": 40.3,
+        "fair_line": 2.25,
+        "line_gap": 0.25,
+        "full_cover_pct": 12.6,
+        "fav_win_pct": null,
+        "cover_given_win_pct": null,
+        "spread_level": "even",
+        "spread_market_expect": "势均力敌",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
+        "totals_level": "neutral",
+        "totals_show_lean": false,
+        "totals_lean_side": "neutral"
       }
     },
     {
@@ -36540,9 +37648,18 @@ const RESULTS_DATA = {
         "over_pct": 63.4,
         "fair_line": 2.75,
         "line_gap": -0.25,
-        "full_cover_pct": 50.9,
-        "spread_level": "likely",
+        "full_cover_pct": 47.1,
+        "fav_win_pct": 51.3,
+        "cover_given_win_pct": 100,
+        "spread_level": "possible",
         "spread_market_expect": "Argentina -0.25 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "mild_high",
         "totals_show_lean": false,
         "totals_lean_side": "exciting"
@@ -36563,35 +37680,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 9.9
+              "prob": 9.8
             },
             {
               "score": "2-1",
-              "prob": 9.6
+              "prob": 9.5
             },
             {
               "score": "1-0",
-              "prob": 7.3
+              "prob": 7.2
             }
           ],
-          "one_goal_win_pct": 22.2,
-          "two_plus_win_pct": 28.7,
-          "full_cover_pct": 50.9,
-          "dog_hold_pct": 49.1,
+          "one_goal_win_pct": 22,
+          "two_plus_win_pct": 29.4,
+          "full_cover_pct": 47.1,
+          "dog_hold_pct": 52.9,
+          "fav_win_pct": 51.3,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.4,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": 0.018,
-          "dog_cover_ev": -0.018,
+          "fav_cover_ev": 0.026,
+          "dog_cover_ev": -0.026,
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 3.3,
           "fair_totals_line": 2.75,
-          "over_2_5_pct": 63.4,
-          "over_3_pct": 40.9,
-          "totals_lean_cn": "超 2.5 偏大比分（约 63.4%）",
-          "margin_risk_note": "净胜≥1 约 50.9%；仅赢 1 球约 0%"
+          "over_2_5_pct": 63.9,
+          "over_3_pct": 41.7,
+          "totals_lean_cn": "超 2.5 偏大比分（约 63.9%）",
+          "margin_risk_note": "净胜≥1 约 51.3%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 51.3,
+          "dog_hold_pct_raw": 48.7
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -36616,6 +37739,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -36778,7 +37903,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Argentina · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 50.9,
+            "margin_meet_pct": 46.9,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -36797,21 +37922,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 14.5,
             "win_margin2_low_total_pct": 7.1,
             "win_margin2_high_total_pct": 21.5,
-            "readout_cn": "取胜约 51%；若取胜，以「险胜收工」为主（43.7%）。 对着赛前净胜参考，净胜≥1（全达标）约 50.9%；对着总进球参考 2.5，模型超线概率约 63.4%。"
+            "readout_cn": "取胜约 51%；若取胜，以「险胜收工」为主（43.7%）。 对着赛前净胜参考，净胜≥1（全达标）约 46.9%；对着总进球参考 2.5，模型超线概率约 63.4%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 9.9
+              "pct": 9.8
             },
             {
               "score": "2-1",
-              "pct": 9.6
+              "pct": 9.5
             },
             {
               "score": "1-0",
-              "pct": 7.3
+              "pct": 7.2
             }
           ],
           "totals_view": {
@@ -36844,27 +37969,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 3.2 · 合理值 2.75 · 总进球参考 2.5（低于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Argentina -0.25 穿盘：达到预期较有希望",
-            "sub_cn": "Argentina -0.25 穿盘 50.9% · Austria +0.25 守住 49.1% 进球氛围：略偏精彩",
+            "headline_cn": "Argentina -0.25 穿盘：有达标可能",
+            "sub_cn": "Argentina 胜 51.3% · 胜后穿 100% · Austria +0.25 守 52.9% 进球氛围：略偏精彩",
             "spread": {
-              "level": "likely",
-              "label_cn": "达到预期较有希望",
-              "color": "#5BBF8A",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Argentina",
               "dog_name": "Austria",
               "fav_handicap_cn": "Argentina -0.25",
               "dog_handicap_cn": "Austria +0.25",
               "market_expect_cn": "Argentina -0.25 · 净胜≥1",
-              "meet_pct": 50.9,
-              "dog_hold_pct": 49.1,
-              "meet_pct_label": "Argentina -0.25 穿盘概率",
-              "dog_hold_label": "Austria +0.25 守住概率",
-              "verdict_cn": "达到预期较有希望",
-              "headline_cn": "Argentina -0.25 穿盘：达到预期较有希望",
-              "pill_cn": "Argentina -0.25 穿盘 50.9% · Austria +0.25 守住 49.1%",
-              "detail_cn": "Argentina -0.25 穿盘约 50.9%（净胜≥1） · Austria +0.25 守住约 49.1%；模型认为热门穿盘概率相对较高。",
+              "meet_pct": 47.1,
+              "dog_hold_pct": 52.9,
+              "fav_win_pct": 51.3,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 51.3,
+              "meet_pct_label": "Argentina -0.25 穿盘概率（校准）",
+              "dog_hold_label": "Austria +0.25 守住概率（校准）",
+              "two_stage_cn": "Argentina 取胜约 51.3% · 赢球后穿盘约 100% · Austria +0.25 守住约 52.9%",
+              "grid_tail_pct": 0.4,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Argentina -0.25 穿盘：有达标可能",
+              "pill_cn": "Argentina 胜 51.3% · 胜后穿 100% · Austria +0.25 守 52.9%",
+              "detail_cn": "Argentina 取胜约 51.3% · 赢球后穿盘约 100% · Austria +0.25 守住约 52.9%（泊松 raw 51.3% → 校准 47.1%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 50.9,
+              "full_cover_pct": 47.1,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -36899,24 +38029,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "likely",
-                  "label_cn": "达到预期较有希望",
-                  "color": "#5BBF8A",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Argentina",
                   "dog_name": "Austria",
                   "fav_handicap_cn": "Argentina -0.25",
                   "dog_handicap_cn": "Austria +0.25",
                   "market_expect_cn": "Argentina -0.25 · 净胜≥1",
-                  "meet_pct": 50.9,
-                  "dog_hold_pct": 49.1,
-                  "meet_pct_label": "Argentina -0.25 穿盘概率",
-                  "dog_hold_label": "Austria +0.25 守住概率",
-                  "verdict_cn": "达到预期较有希望",
-                  "headline_cn": "Argentina -0.25 穿盘：达到预期较有希望",
-                  "pill_cn": "Argentina -0.25 穿盘 50.9% · Austria +0.25 守住 49.1%",
-                  "detail_cn": "Argentina -0.25 穿盘约 50.9%（净胜≥1） · Austria +0.25 守住约 49.1%；模型认为热门穿盘概率相对较高。",
+                  "meet_pct": 47.1,
+                  "dog_hold_pct": 52.9,
+                  "fav_win_pct": 51.3,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 51.3,
+                  "meet_pct_label": "Argentina -0.25 穿盘概率（校准）",
+                  "dog_hold_label": "Austria +0.25 守住概率（校准）",
+                  "two_stage_cn": "Argentina 取胜约 51.3% · 赢球后穿盘约 100% · Austria +0.25 守住约 52.9%",
+                  "grid_tail_pct": 0.4,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Argentina -0.25 穿盘：有达标可能",
+                  "pill_cn": "Argentina 胜 51.3% · 胜后穿 100% · Austria +0.25 守 52.9%",
+                  "detail_cn": "Argentina 取胜约 51.3% · 赢球后穿盘约 100% · Austria +0.25 守住约 52.9%（泊松 raw 51.3% → 校准 47.1%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 50.9,
+                  "full_cover_pct": 47.1,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -36924,8 +38059,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0,
                   "show_cover": true
                 },
-                "text": "Argentina -0.25 穿盘 50.9% · Austria +0.25 守住 49.1%",
-                "color": "#5BBF8A",
+                "text": "Argentina 胜 51.3% · 胜后穿 100% · Austria +0.25 守 52.9%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -37246,7 +38381,7 @@ const RESULTS_DATA = {
           "summary_cn": "命中：净胜全达标方向一致 · 赛前进球氛围未强判（符合模型五五开读法）。",
           "totals_actual": 2,
           "totals_line": 2.5,
-          "spread_level": "likely",
+          "spread_level": "possible",
           "totals_level": "mild_high"
         }
       },
@@ -37365,9 +38500,18 @@ const RESULTS_DATA = {
         "over_pct": 42.2,
         "fair_line": 2,
         "line_gap": 0.75,
-        "full_cover_pct": 44.7,
+        "full_cover_pct": 44,
+        "fav_win_pct": 70.1,
+        "cover_given_win_pct": 65,
         "spread_level": "possible",
         "spread_market_expect": "France -1.5 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -37388,22 +38532,26 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "2-0",
-              "prob": 13.4
+              "prob": 13.2
             },
             {
               "score": "1-0",
-              "prob": 12.5
+              "prob": 12.3
             },
             {
               "score": "2-1",
-              "prob": 9.7
+              "prob": 9.5
             }
           ],
-          "one_goal_win_pct": 25,
-          "two_plus_win_pct": 44.7,
-          "full_cover_pct": 44.7,
-          "dog_hold_pct": 55.3,
-          "half_cover_pct": 25,
+          "one_goal_win_pct": 24.6,
+          "two_plus_win_pct": 45.6,
+          "full_cover_pct": 44,
+          "dog_hold_pct": 56,
+          "fav_win_pct": 70.1,
+          "cover_given_win_pct": 65,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.7,
+          "half_cover_pct": 24.6,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
@@ -37413,10 +38561,12 @@ const RESULTS_DATA = {
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 2.87,
           "fair_totals_line": 2,
-          "over_2_5_pct": 53.7,
-          "over_3_pct": 30.8,
+          "over_2_5_pct": 54.4,
+          "over_3_pct": 31.9,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥2 约 44.7%；部分达标净胜=1 约 25%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥2 约 45.6%；部分达标净胜=1 约 24.6%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 45.6,
+          "dog_hold_pct_raw": 54.4
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -37441,6 +38591,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
           "draw": 1,
@@ -37577,7 +38729,7 @@ const RESULTS_DATA = {
             "tier_gap": 0.75,
             "implied_tier_label": "France -0.75 · Iraq +0.75",
             "market_tier_label": "France -1.5 · Iraq +1.5",
-            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 部分达标净胜=1 约 25%"
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 部分达标净胜=1 约 24.6%"
           },
           "win_outlook": {
             "fav_name": "France",
@@ -37603,7 +38755,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "France · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
-            "margin_meet_pct": 44.7,
+            "margin_meet_pct": 50.7,
             "margin_half_pct": 25,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -37622,21 +38774,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 25.9,
             "win_margin2_low_total_pct": 13.4,
             "win_margin2_high_total_pct": 31.3,
-            "readout_cn": "取胜约 66%；若取胜，以「险胜收工」为主（35.8%）。 对着赛前净胜参考，净胜≥2（全达标）约 44.7%；部分达标净胜=1 约 25%；对着总进球参考 2.75，模型超线概率约 42.2%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.75。"
+            "readout_cn": "取胜约 66%；若取胜，以「险胜收工」为主（35.8%）。 对着赛前净胜参考，净胜≥2（全达标）约 50.7%；部分达标净胜=1 约 25%；对着总进球参考 2.75，模型超线概率约 42.2%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.75。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "2-0",
-              "pct": 13.4
+              "pct": 13.2
             },
             {
               "score": "1-0",
-              "pct": 12.5
+              "pct": 12.3
             },
             {
               "score": "2-1",
-              "pct": 9.7
+              "pct": 9.5
             }
           ],
           "totals_view": {
@@ -37670,7 +38822,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "France -1.5 穿盘：有达标可能",
-            "sub_cn": "France -1.5 穿盘 44.7% · Iraq +1.5 守住 55.3% 进球氛围：几乎五五开",
+            "sub_cn": "France 胜 70.1% · 胜后穿 65% · Iraq +1.5 守 56% 进球氛围：几乎五五开",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -37680,17 +38832,22 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "France -1.5",
               "dog_handicap_cn": "Iraq +1.5",
               "market_expect_cn": "France -1.5 · 净胜≥2",
-              "meet_pct": 44.7,
-              "dog_hold_pct": 55.3,
-              "meet_pct_label": "France -1.5 穿盘概率",
-              "dog_hold_label": "Iraq +1.5 守住概率",
+              "meet_pct": 44,
+              "dog_hold_pct": 56,
+              "fav_win_pct": 70.1,
+              "cover_given_win_pct": 65,
+              "full_cover_pct_raw": 45.6,
+              "meet_pct_label": "France -1.5 穿盘概率（校准）",
+              "dog_hold_label": "Iraq +1.5 守住概率（校准）",
+              "two_stage_cn": "France 取胜约 70.1% · 赢球后穿盘约 65% · Iraq +1.5 守住约 56%",
+              "grid_tail_pct": 0.7,
               "verdict_cn": "有达标可能",
               "headline_cn": "France -1.5 穿盘：有达标可能",
-              "pill_cn": "France -1.5 穿盘 44.7% · Iraq +1.5 守住 55.3%",
-              "detail_cn": "France -1.5 穿盘约 44.7%（净胜≥2） · Iraq +1.5 守住约 55.3%；穿盘与受让守住均有一定空间（部分达标净胜=1 约 25%）。",
-              "extra_stats_cn": "部分达标净胜=1 约 25%",
-              "full_cover_pct": 44.7,
-              "half_cover_pct": 25,
+              "pill_cn": "France 胜 70.1% · 胜后穿 65% · Iraq +1.5 守 56%",
+              "detail_cn": "France 取胜约 70.1% · 赢球后穿盘约 65% · Iraq +1.5 守住约 56%（泊松 raw 45.6% → 校准 44%）；穿盘与受让守住均有一定空间（部分达标净胜=1 约 24.6%）。",
+              "extra_stats_cn": "部分达标净胜=1 约 24.6%",
+              "full_cover_pct": 44,
+              "half_cover_pct": 24.6,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
               "margin_half_label": "部分达标净胜=1",
@@ -37732,24 +38889,29 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "France -1.5",
                   "dog_handicap_cn": "Iraq +1.5",
                   "market_expect_cn": "France -1.5 · 净胜≥2",
-                  "meet_pct": 44.7,
-                  "dog_hold_pct": 55.3,
-                  "meet_pct_label": "France -1.5 穿盘概率",
-                  "dog_hold_label": "Iraq +1.5 守住概率",
+                  "meet_pct": 44,
+                  "dog_hold_pct": 56,
+                  "fav_win_pct": 70.1,
+                  "cover_given_win_pct": 65,
+                  "full_cover_pct_raw": 45.6,
+                  "meet_pct_label": "France -1.5 穿盘概率（校准）",
+                  "dog_hold_label": "Iraq +1.5 守住概率（校准）",
+                  "two_stage_cn": "France 取胜约 70.1% · 赢球后穿盘约 65% · Iraq +1.5 守住约 56%",
+                  "grid_tail_pct": 0.7,
                   "verdict_cn": "有达标可能",
                   "headline_cn": "France -1.5 穿盘：有达标可能",
-                  "pill_cn": "France -1.5 穿盘 44.7% · Iraq +1.5 守住 55.3%",
-                  "detail_cn": "France -1.5 穿盘约 44.7%（净胜≥2） · Iraq +1.5 守住约 55.3%；穿盘与受让守住均有一定空间（部分达标净胜=1 约 25%）。",
-                  "extra_stats_cn": "部分达标净胜=1 约 25%",
-                  "full_cover_pct": 44.7,
-                  "half_cover_pct": 25,
+                  "pill_cn": "France 胜 70.1% · 胜后穿 65% · Iraq +1.5 守 56%",
+                  "detail_cn": "France 取胜约 70.1% · 赢球后穿盘约 65% · Iraq +1.5 守住约 56%（泊松 raw 45.6% → 校准 44%）；穿盘与受让守住均有一定空间（部分达标净胜=1 约 24.6%）。",
+                  "extra_stats_cn": "部分达标净胜=1 约 24.6%",
+                  "full_cover_pct": 44,
+                  "half_cover_pct": 24.6,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": "部分达标净胜=1",
                   "tier_gap": 0.75,
                   "show_cover": true
                 },
-                "text": "France -1.5 穿盘 44.7% · Iraq +1.5 守住 55.3%",
+                "text": "France 胜 70.1% · 胜后穿 65% · Iraq +1.5 守 56%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -38024,7 +39186,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】France · 压制局。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 部分达标净胜=1 约 25%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
+        "public_summary_note": "【推演概要】France · 压制局。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 部分达标净胜=1 约 24.6%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
         "goal_efficiency": {
           "xg_total": 2.87,
           "xg_gap": 1.43,
@@ -38190,9 +39352,18 @@ const RESULTS_DATA = {
         "over_pct": 55.5,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 56.3,
-        "spread_level": "likely",
+        "full_cover_pct": 49.1,
+        "fav_win_pct": 56.6,
+        "cover_given_win_pct": 100,
+        "spread_level": "possible",
         "spread_market_expect": "Norway -0.5 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -38213,35 +39384,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 10.7
+              "prob": 10.6
             },
             {
               "score": "1-0",
-              "prob": 10.2
+              "prob": 10.1
             },
             {
               "score": "2-1",
-              "prob": 10
+              "prob": 9.9
             }
           ],
-          "one_goal_win_pct": 24.1,
-          "two_plus_win_pct": 32.1,
-          "full_cover_pct": 56.3,
-          "dog_hold_pct": 43.7,
+          "one_goal_win_pct": 23.9,
+          "two_plus_win_pct": 32.8,
+          "full_cover_pct": 49.1,
+          "dog_hold_pct": 50.9,
+          "fav_win_pct": 56.6,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.3,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": 0.126,
-          "dog_cover_ev": -0.126,
+          "fav_cover_ev": 0.132,
+          "dog_cover_ev": -0.132,
           "rational_spread_cn": "主队 净胜达标概率略高",
           "total_xg": 2.93,
           "fair_totals_line": 2,
-          "over_2_5_pct": 55.5,
-          "over_3_pct": 32.8,
+          "over_2_5_pct": 55.9,
+          "over_3_pct": 33.5,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 56.3%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 56.6%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 56.6,
+          "dog_hold_pct_raw": 43.4
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -38266,6 +39443,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -38428,7 +39607,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Norway · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 56.3,
+            "margin_meet_pct": 49,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -38447,21 +39626,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 19.7,
             "win_margin2_low_total_pct": 9.6,
             "win_margin2_high_total_pct": 22.6,
-            "readout_cn": "取胜约 56%；若取胜，以「险胜收工」为主（42.9%）。 对着赛前净胜参考，净胜≥1（全达标）约 56.3%；对着总进球参考 2.5，模型超线概率约 55.5%。"
+            "readout_cn": "取胜约 56%；若取胜，以「险胜收工」为主（42.9%）。 对着赛前净胜参考，净胜≥1（全达标）约 49%；对着总进球参考 2.5，模型超线概率约 55.5%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 10.7
+              "pct": 10.6
             },
             {
               "score": "1-0",
-              "pct": 10.2
+              "pct": 10.1
             },
             {
               "score": "2-1",
-              "pct": 10
+              "pct": 9.9
             }
           ],
           "totals_view": {
@@ -38494,27 +39673,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.9 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Norway -0.5 穿盘：达到预期较有希望",
-            "sub_cn": "Norway -0.5 穿盘 56.3% · Senegal +0.5 守住 43.7% 进球氛围：几乎五五开",
+            "headline_cn": "Norway -0.5 穿盘：有达标可能",
+            "sub_cn": "Norway 胜 56.6% · 胜后穿 100% · Senegal +0.5 守 50.9% 进球氛围：几乎五五开",
             "spread": {
-              "level": "likely",
-              "label_cn": "达到预期较有希望",
-              "color": "#5BBF8A",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Norway",
               "dog_name": "Senegal",
               "fav_handicap_cn": "Norway -0.5",
               "dog_handicap_cn": "Senegal +0.5",
               "market_expect_cn": "Norway -0.5 · 净胜≥1",
-              "meet_pct": 56.3,
-              "dog_hold_pct": 43.7,
-              "meet_pct_label": "Norway -0.5 穿盘概率",
-              "dog_hold_label": "Senegal +0.5 守住概率",
-              "verdict_cn": "达到预期较有希望",
-              "headline_cn": "Norway -0.5 穿盘：达到预期较有希望",
-              "pill_cn": "Norway -0.5 穿盘 56.3% · Senegal +0.5 守住 43.7%",
-              "detail_cn": "Norway -0.5 穿盘约 56.3%（净胜≥1） · Senegal +0.5 守住约 43.7%；模型认为热门穿盘概率相对较高。",
+              "meet_pct": 49.1,
+              "dog_hold_pct": 50.9,
+              "fav_win_pct": 56.6,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 56.6,
+              "meet_pct_label": "Norway -0.5 穿盘概率（校准）",
+              "dog_hold_label": "Senegal +0.5 守住概率（校准）",
+              "two_stage_cn": "Norway 取胜约 56.6% · 赢球后穿盘约 100% · Senegal +0.5 守住约 50.9%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Norway -0.5 穿盘：有达标可能",
+              "pill_cn": "Norway 胜 56.6% · 胜后穿 100% · Senegal +0.5 守 50.9%",
+              "detail_cn": "Norway 取胜约 56.6% · 赢球后穿盘约 100% · Senegal +0.5 守住约 50.9%（泊松 raw 56.6% → 校准 49.1%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 56.3,
+              "full_cover_pct": 49.1,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -38549,24 +39733,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "likely",
-                  "label_cn": "达到预期较有希望",
-                  "color": "#5BBF8A",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Norway",
                   "dog_name": "Senegal",
                   "fav_handicap_cn": "Norway -0.5",
                   "dog_handicap_cn": "Senegal +0.5",
                   "market_expect_cn": "Norway -0.5 · 净胜≥1",
-                  "meet_pct": 56.3,
-                  "dog_hold_pct": 43.7,
-                  "meet_pct_label": "Norway -0.5 穿盘概率",
-                  "dog_hold_label": "Senegal +0.5 守住概率",
-                  "verdict_cn": "达到预期较有希望",
-                  "headline_cn": "Norway -0.5 穿盘：达到预期较有希望",
-                  "pill_cn": "Norway -0.5 穿盘 56.3% · Senegal +0.5 守住 43.7%",
-                  "detail_cn": "Norway -0.5 穿盘约 56.3%（净胜≥1） · Senegal +0.5 守住约 43.7%；模型认为热门穿盘概率相对较高。",
+                  "meet_pct": 49.1,
+                  "dog_hold_pct": 50.9,
+                  "fav_win_pct": 56.6,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 56.6,
+                  "meet_pct_label": "Norway -0.5 穿盘概率（校准）",
+                  "dog_hold_label": "Senegal +0.5 守住概率（校准）",
+                  "two_stage_cn": "Norway 取胜约 56.6% · 赢球后穿盘约 100% · Senegal +0.5 守住约 50.9%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Norway -0.5 穿盘：有达标可能",
+                  "pill_cn": "Norway 胜 56.6% · 胜后穿 100% · Senegal +0.5 守 50.9%",
+                  "detail_cn": "Norway 取胜约 56.6% · 赢球后穿盘约 100% · Senegal +0.5 守住约 50.9%（泊松 raw 56.6% → 校准 49.1%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 56.3,
+                  "full_cover_pct": 49.1,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -38574,8 +39763,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0.25,
                   "show_cover": true
                 },
-                "text": "Norway -0.5 穿盘 56.3% · Senegal +0.5 守住 43.7%",
-                "color": "#5BBF8A",
+                "text": "Norway 胜 56.6% · 胜后穿 100% · Senegal +0.5 守 50.9%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -38903,7 +40092,7 @@ const RESULTS_DATA = {
           "summary_cn": "命中：净胜全达标方向一致。 偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
           "totals_actual": 5,
           "totals_line": 2.5,
-          "spread_level": "likely",
+          "spread_level": "possible",
           "totals_level": "neutral"
         }
       },
@@ -39024,9 +40213,18 @@ const RESULTS_DATA = {
         "over_pct": 62.7,
         "fair_line": 2,
         "line_gap": 0.25,
-        "full_cover_pct": 0,
+        "full_cover_pct": 12.6,
+        "fav_win_pct": null,
+        "cover_given_win_pct": null,
         "spread_level": "even",
         "spread_market_expect": "势均力敌",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "mild_high",
         "totals_show_lean": false,
         "totals_lean_side": "exciting"
@@ -39047,7 +40245,7 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 12.3
+              "prob": 12.2
             },
             {
               "score": "1-0",
@@ -39058,10 +40256,14 @@ const RESULTS_DATA = {
               "prob": 8.7
             }
           ],
-          "one_goal_win_pct": 21.4,
-          "two_plus_win_pct": 18.8,
-          "full_cover_pct": 0,
-          "dog_hold_pct": null,
+          "one_goal_win_pct": 21.3,
+          "two_plus_win_pct": 19,
+          "full_cover_pct": 12.6,
+          "dog_hold_pct": 87.4,
+          "fav_win_pct": null,
+          "cover_given_win_pct": null,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
@@ -39072,10 +40274,12 @@ const RESULTS_DATA = {
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 2.7,
           "fair_totals_line": 2,
-          "over_2_5_pct": 50.4,
-          "over_3_pct": 28.2,
+          "over_2_5_pct": 50.6,
+          "over_3_pct": 28.5,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 0,
+          "dog_hold_pct_raw": null
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -39100,6 +40304,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.25,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -39267,7 +40473,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "净胜差距参考 · 势均力敌",
-            "margin_meet_pct": 0,
+            "margin_meet_pct": 12.6,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -39286,13 +40492,13 @@ const RESULTS_DATA = {
             "win_low_total_pct": 16.4,
             "win_margin2_low_total_pct": 6.8,
             "win_margin2_high_total_pct": 18.8,
-            "readout_cn": "取胜约 38%；若取胜，以「险胜收工」为主（53.1%）。 对着赛前净胜参考，净胜≥1（全达标）约 0%；对着总进球参考 2.25，模型超线概率约 62.7%。"
+            "readout_cn": "取胜约 38%；若取胜，以「险胜收工」为主（53.1%）。 对着赛前净胜参考，净胜≥1（全达标）约 12.6%；对着总进球参考 2.25，模型超线概率约 62.7%。"
           },
           "totals_line": 2.25,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 12.3
+              "pct": 12.2
             },
             {
               "score": "1-0",
@@ -39346,7 +40552,7 @@ const RESULTS_DATA = {
               "headline_cn": "净胜走向：双方实力接近",
               "pill_cn": "双方实力接近，暂无单侧净胜预期。",
               "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
-              "full_cover_pct": 0,
+              "full_cover_pct": 12.6,
               "half_cover_pct": 0,
               "show_cover": false
             },
@@ -39391,7 +40597,7 @@ const RESULTS_DATA = {
                   "headline_cn": "净胜走向：双方实力接近",
                   "pill_cn": "双方实力接近，暂无单侧净胜预期。",
                   "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
-                  "full_cover_pct": 0,
+                  "full_cover_pct": 12.6,
                   "half_cover_pct": 0,
                   "show_cover": false
                 },
@@ -40156,40 +41362,46 @@ const RESULTS_DATA = {
         "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
         "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "public_lean_cn": "舆论倾向 Portugal（约 72%）",
-        "analysis": "葡萄牙 1-1 刚果后须取胜；乌兹别克 0 分垫底。 赛前净胜参考高于 xG 隐含（+0.5），且净胜 1 球占 25.2%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "analysis": "葡萄牙 1-1 刚果后须取胜；乌兹别克 0 分垫底。 赛前净胜参考高于 xG 隐含（+0.5），且净胜 1 球占 24.8%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "spread_cover": {
           "top3_scores": [
             {
               "score": "2-0",
-              "prob": 12.6
+              "prob": 12.5
             },
             {
               "score": "1-0",
-              "prob": 12.3
+              "prob": 12.2
             },
             {
               "score": "2-1",
-              "prob": 9.9
+              "prob": 9.7
             }
           ],
-          "one_goal_win_pct": 25.2,
-          "two_plus_win_pct": 41.2,
-          "full_cover_pct": 41.2,
-          "dog_hold_pct": 58.8,
+          "one_goal_win_pct": 24.8,
+          "two_plus_win_pct": 41.9,
+          "full_cover_pct": 49.1,
+          "dog_hold_pct": 50.9,
+          "fav_win_pct": 66.8,
+          "cover_given_win_pct": 62.8,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.5,
           "half_cover_pct": 0,
-          "half_lose_pct": 25.2,
+          "half_lose_pct": 24.8,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
           "margin_half_label": null,
-          "fav_cover_ev": -0.051,
-          "dog_cover_ev": 0.051,
-          "rational_spread_cn": "客队 守住差距概率略高",
+          "fav_cover_ev": -0.037,
+          "dog_cover_ev": 0.037,
+          "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 2.83,
           "fair_totals_line": 2,
-          "over_2_5_pct": 52.9,
-          "over_3_pct": 30.2,
+          "over_2_5_pct": 53.5,
+          "over_3_pct": 31.1,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 25.2%：常见「赢球但净胜仅 1 球」"
+          "margin_risk_note": "净胜 1 球概率 24.8%：常见「赢球但净胜仅 1 球」",
+          "full_cover_pct_raw": 41.9,
+          "dog_hold_pct_raw": 58.1
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -40214,6 +41426,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
           "draw": 1,
@@ -40355,7 +41569,7 @@ const RESULTS_DATA = {
             "tier_gap": 0.5,
             "implied_tier_label": "Portugal -0.75 · Uzbekistan +0.75",
             "market_tier_label": "Portugal -1.25 · Uzbekistan +1.25",
-            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 26%"
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 25.7%"
           },
           "win_outlook": {
             "fav_name": "Portugal",
@@ -40381,7 +41595,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Portugal · 赛前净胜参考 净胜≥2（全达标）",
-            "margin_meet_pct": 39.8,
+            "margin_meet_pct": 48,
             "margin_half_pct": 0,
             "margin_fail_pct": 26,
             "margin_full_label": "净胜≥2",
@@ -40400,21 +41614,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 27.5,
             "win_margin2_low_total_pct": 13.5,
             "win_margin2_high_total_pct": 26.3,
-            "readout_cn": "取胜约 60%；若取胜，以「险胜收工」为主（39.5%）。 对着赛前净胜参考，净胜≥2（全达标）约 39.8%；对着总进球参考 2.75，模型超线概率约 37.3%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.75。"
+            "readout_cn": "取胜约 60%；若取胜，以「险胜收工」为主（39.5%）。 对着赛前净胜参考，净胜≥2（全达标）约 48%；对着总进球参考 2.75，模型超线概率约 37.3%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.75。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 14
+              "pct": 13.8
             },
             {
               "score": "2-0",
-              "pct": 13.5
+              "pct": 13.3
             },
             {
               "score": "1-1",
-              "pct": 9.9
+              "pct": 9.8
             }
           ],
           "totals_view": {
@@ -40448,7 +41662,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Portugal -1.25 穿盘：有达标可能",
-            "sub_cn": "Portugal -1.25 穿盘 39.8% · Uzbekistan +1.25 守住 60.2% 进球氛围：略偏闷",
+            "sub_cn": "Portugal 胜 66.1% · 胜后穿 61.1% · Uzbekistan +1.25 守 51.7% 进球氛围：略偏闷",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -40458,18 +41672,23 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Portugal -1.25",
               "dog_handicap_cn": "Uzbekistan +1.25",
               "market_expect_cn": "Portugal -1.25 · 净胜≥2",
-              "meet_pct": 39.8,
-              "dog_hold_pct": 60.2,
-              "meet_pct_label": "Portugal -1.25 穿盘概率",
-              "dog_hold_label": "Uzbekistan +1.25 守住概率",
+              "meet_pct": 48.3,
+              "dog_hold_pct": 51.7,
+              "fav_win_pct": 66.1,
+              "cover_given_win_pct": 61.1,
+              "full_cover_pct_raw": 40.4,
+              "meet_pct_label": "Portugal -1.25 穿盘概率（校准）",
+              "dog_hold_label": "Uzbekistan +1.25 守住概率（校准）",
+              "two_stage_cn": "Portugal 取胜约 66.1% · 赢球后穿盘约 61.1% · Uzbekistan +1.25 守住约 51.7%",
+              "grid_tail_pct": 0.4,
               "verdict_cn": "有达标可能",
               "headline_cn": "Portugal -1.25 穿盘：有达标可能",
-              "pill_cn": "Portugal -1.25 穿盘 39.8% · Uzbekistan +1.25 守住 60.2%",
-              "detail_cn": "Portugal -1.25 穿盘约 39.8%（净胜≥2） · Uzbekistan +1.25 守住约 60.2%；穿盘与受让守住均有一定空间（仅胜 1 球约 26%）。",
-              "extra_stats_cn": "仅胜 1 球约 26%",
-              "full_cover_pct": 39.8,
+              "pill_cn": "Portugal 胜 66.1% · 胜后穿 61.1% · Uzbekistan +1.25 守 51.7%",
+              "detail_cn": "Portugal 取胜约 66.1% · 赢球后穿盘约 61.1% · Uzbekistan +1.25 守住约 51.7%（泊松 raw 40.4% → 校准 48.3%）；穿盘与受让守住均有一定空间（仅胜 1 球约 25.7%）。",
+              "extra_stats_cn": "仅胜 1 球约 25.7%",
+              "full_cover_pct": 48.3,
               "half_cover_pct": 0,
-              "lose1_pct": 26,
+              "lose1_pct": 25.7,
               "margin_full_label": "净胜≥2",
               "margin_half_label": null,
               "tier_gap": 0.5,
@@ -40510,24 +41729,29 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Portugal -1.25",
                   "dog_handicap_cn": "Uzbekistan +1.25",
                   "market_expect_cn": "Portugal -1.25 · 净胜≥2",
-                  "meet_pct": 39.8,
-                  "dog_hold_pct": 60.2,
-                  "meet_pct_label": "Portugal -1.25 穿盘概率",
-                  "dog_hold_label": "Uzbekistan +1.25 守住概率",
+                  "meet_pct": 48.3,
+                  "dog_hold_pct": 51.7,
+                  "fav_win_pct": 66.1,
+                  "cover_given_win_pct": 61.1,
+                  "full_cover_pct_raw": 40.4,
+                  "meet_pct_label": "Portugal -1.25 穿盘概率（校准）",
+                  "dog_hold_label": "Uzbekistan +1.25 守住概率（校准）",
+                  "two_stage_cn": "Portugal 取胜约 66.1% · 赢球后穿盘约 61.1% · Uzbekistan +1.25 守住约 51.7%",
+                  "grid_tail_pct": 0.4,
                   "verdict_cn": "有达标可能",
                   "headline_cn": "Portugal -1.25 穿盘：有达标可能",
-                  "pill_cn": "Portugal -1.25 穿盘 39.8% · Uzbekistan +1.25 守住 60.2%",
-                  "detail_cn": "Portugal -1.25 穿盘约 39.8%（净胜≥2） · Uzbekistan +1.25 守住约 60.2%；穿盘与受让守住均有一定空间（仅胜 1 球约 26%）。",
-                  "extra_stats_cn": "仅胜 1 球约 26%",
-                  "full_cover_pct": 39.8,
+                  "pill_cn": "Portugal 胜 66.1% · 胜后穿 61.1% · Uzbekistan +1.25 守 51.7%",
+                  "detail_cn": "Portugal 取胜约 66.1% · 赢球后穿盘约 61.1% · Uzbekistan +1.25 守住约 51.7%（泊松 raw 40.4% → 校准 48.3%）；穿盘与受让守住均有一定空间（仅胜 1 球约 25.7%）。",
+                  "extra_stats_cn": "仅胜 1 球约 25.7%",
+                  "full_cover_pct": 48.3,
                   "half_cover_pct": 0,
-                  "lose1_pct": 26,
+                  "lose1_pct": 25.7,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": null,
                   "tier_gap": 0.5,
                   "show_cover": true
                 },
-                "text": "Portugal -1.25 穿盘 39.8% · Uzbekistan +1.25 守住 60.2%",
+                "text": "Portugal 胜 66.1% · 胜后穿 61.1% · Uzbekistan +1.25 守 51.7%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -40810,7 +42034,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Portugal · 压制局 · 低位反击。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 26%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
+        "public_summary_note": "【推演概要】Portugal · 压制局 · 低位反击。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 25.7%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
         "preview_replay": {
           "actual_score": "5-0",
           "ht_score": "3-0",
@@ -41101,6 +42325,29 @@ const RESULTS_DATA = {
         "fifa_match_id": "400021503",
         "updated": "2026-06-24T06:34:53+08:00",
         "elapsed": "96''"
+      },
+      "market_snapshot": {
+        "market_tier": 1.25,
+        "tier_label": "Portugal -1.25 · Uzbekistan +1.25",
+        "totals_line": 2.75,
+        "over_pct": 37.3,
+        "fair_line": 2,
+        "line_gap": 0.75,
+        "full_cover_pct": 48.3,
+        "fav_win_pct": 66.1,
+        "cover_given_win_pct": 61.1,
+        "spread_level": "possible",
+        "spread_market_expect": "Portugal -1.25 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
+        "totals_level": "mild_low",
+        "totals_show_lean": false,
+        "totals_lean_side": "dull"
       }
     },
     {
@@ -41525,35 +42772,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 10.8
+              "prob": 10.7
             },
             {
               "score": "2-1",
-              "prob": 10
+              "prob": 9.9
             },
             {
               "score": "1-0",
-              "prob": 9.6
+              "prob": 9.5
             }
           ],
-          "one_goal_win_pct": 23.7,
-          "two_plus_win_pct": 30.3,
-          "full_cover_pct": 54,
-          "dog_hold_pct": 46,
+          "one_goal_win_pct": 23.4,
+          "two_plus_win_pct": 30.9,
+          "full_cover_pct": 48.8,
+          "dog_hold_pct": 51.2,
+          "fav_win_pct": 54.3,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.3,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": 0.08,
-          "dog_cover_ev": -0.08,
+          "fav_cover_ev": 0.086,
+          "dog_cover_ev": -0.086,
           "rational_spread_cn": "主队 净胜达标概率略高",
           "total_xg": 2.97,
           "fair_totals_line": 2.75,
-          "over_2_5_pct": 56.4,
-          "over_3_pct": 33.8,
+          "over_2_5_pct": 56.9,
+          "over_3_pct": 34.4,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 54%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 54.3%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 54.3,
+          "dog_hold_pct_raw": 45.7
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -41578,6 +42831,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
           "draw": -1,
@@ -41745,7 +43000,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "England · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 51.1,
+            "margin_meet_pct": 47,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -41764,13 +43019,13 @@ const RESULTS_DATA = {
             "win_low_total_pct": 19.7,
             "win_margin2_low_total_pct": 9,
             "win_margin2_high_total_pct": 18.2,
-            "readout_cn": "取胜约 51%；若取胜，以「险胜收工」为主（46.8%）。 对着赛前净胜参考，净胜≥1（全达标）约 51.1%；对着总进球参考 2.75，模型超线概率约 40.5%。"
+            "readout_cn": "取胜约 51%；若取胜，以「险胜收工」为主（46.8%）。 对着赛前净胜参考，净胜≥1（全达标）约 47%；对着总进球参考 2.75，模型超线概率约 40.5%。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 11.6
+              "pct": 11.5
             },
             {
               "score": "1-0",
@@ -41811,27 +43066,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.7 · 合理值 2 · 总进球参考 2.75（高于合理值 0.75） · 高于合理值 0.75 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "England -0.75 穿盘：达到预期较有希望",
-            "sub_cn": "England -0.75 穿盘 51.1% · Ghana +0.75 守住 48.9% 进球氛围：几乎五五开",
+            "headline_cn": "England -0.75 穿盘：有达标可能",
+            "sub_cn": "England 胜 51.3% · 胜后穿 100% · Ghana +0.75 守 52.9% 进球氛围：几乎五五开",
             "spread": {
-              "level": "likely",
-              "label_cn": "达到预期较有希望",
-              "color": "#5BBF8A",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "England",
               "dog_name": "Ghana",
               "fav_handicap_cn": "England -0.75",
               "dog_handicap_cn": "Ghana +0.75",
               "market_expect_cn": "England -0.75 · 净胜≥1",
-              "meet_pct": 51.1,
-              "dog_hold_pct": 48.9,
-              "meet_pct_label": "England -0.75 穿盘概率",
-              "dog_hold_label": "Ghana +0.75 守住概率",
-              "verdict_cn": "达到预期较有希望",
-              "headline_cn": "England -0.75 穿盘：达到预期较有希望",
-              "pill_cn": "England -0.75 穿盘 51.1% · Ghana +0.75 守住 48.9%",
-              "detail_cn": "England -0.75 穿盘约 51.1%（净胜≥1） · Ghana +0.75 守住约 48.9%；模型认为热门穿盘概率相对较高。",
+              "meet_pct": 47.1,
+              "dog_hold_pct": 52.9,
+              "fav_win_pct": 51.3,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 51.3,
+              "meet_pct_label": "England -0.75 穿盘概率（校准）",
+              "dog_hold_label": "Ghana +0.75 守住概率（校准）",
+              "two_stage_cn": "England 取胜约 51.3% · 赢球后穿盘约 100% · Ghana +0.75 守住约 52.9%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "England -0.75 穿盘：有达标可能",
+              "pill_cn": "England 胜 51.3% · 胜后穿 100% · Ghana +0.75 守 52.9%",
+              "detail_cn": "England 取胜约 51.3% · 赢球后穿盘约 100% · Ghana +0.75 守住约 52.9%（泊松 raw 51.3% → 校准 47.1%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 51.1,
+              "full_cover_pct": 47.1,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -41866,24 +43126,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "likely",
-                  "label_cn": "达到预期较有希望",
-                  "color": "#5BBF8A",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "England",
                   "dog_name": "Ghana",
                   "fav_handicap_cn": "England -0.75",
                   "dog_handicap_cn": "Ghana +0.75",
                   "market_expect_cn": "England -0.75 · 净胜≥1",
-                  "meet_pct": 51.1,
-                  "dog_hold_pct": 48.9,
-                  "meet_pct_label": "England -0.75 穿盘概率",
-                  "dog_hold_label": "Ghana +0.75 守住概率",
-                  "verdict_cn": "达到预期较有希望",
-                  "headline_cn": "England -0.75 穿盘：达到预期较有希望",
-                  "pill_cn": "England -0.75 穿盘 51.1% · Ghana +0.75 守住 48.9%",
-                  "detail_cn": "England -0.75 穿盘约 51.1%（净胜≥1） · Ghana +0.75 守住约 48.9%；模型认为热门穿盘概率相对较高。",
+                  "meet_pct": 47.1,
+                  "dog_hold_pct": 52.9,
+                  "fav_win_pct": 51.3,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 51.3,
+                  "meet_pct_label": "England -0.75 穿盘概率（校准）",
+                  "dog_hold_label": "Ghana +0.75 守住概率（校准）",
+                  "two_stage_cn": "England 取胜约 51.3% · 赢球后穿盘约 100% · Ghana +0.75 守住约 52.9%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "England -0.75 穿盘：有达标可能",
+                  "pill_cn": "England 胜 51.3% · 胜后穿 100% · Ghana +0.75 守 52.9%",
+                  "detail_cn": "England 取胜约 51.3% · 赢球后穿盘约 100% · Ghana +0.75 守住约 52.9%（泊松 raw 51.3% → 校准 47.1%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 51.1,
+                  "full_cover_pct": 47.1,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -41891,8 +43156,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0.5,
                   "show_cover": true
                 },
-                "text": "England -0.75 穿盘 51.1% · Ghana +0.75 守住 48.9%",
-                "color": "#5BBF8A",
+                "text": "England 胜 51.3% · 胜后穿 100% · Ghana +0.75 守 52.9%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -42172,13 +43437,12 @@ const RESULTS_DATA = {
           "ht_score": "0-0",
           "hits": [],
           "misses": [
-            "净胜全达标未兑现",
             "总进球尾部偏差大（赛前已标注无明显倾向）"
           ],
-          "summary_cn": "偏差：净胜全达标未兑现 · 总进球尾部偏差大（赛前已标注无明显倾向）。",
+          "summary_cn": "偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
           "totals_actual": 0,
           "totals_line": 2.75,
-          "spread_level": "likely",
+          "spread_level": "possible",
           "totals_level": "neutral"
         },
         "goal_efficiency": {
@@ -42462,6 +43726,29 @@ const RESULTS_DATA = {
         "fifa_match_id": "400021506",
         "updated": "2026-06-24T06:34:53+08:00",
         "elapsed": "97''"
+      },
+      "market_snapshot": {
+        "market_tier": 0.75,
+        "tier_label": "England -0.75 · Ghana +0.75",
+        "totals_line": 2.75,
+        "over_pct": 40.5,
+        "fair_line": 2,
+        "line_gap": 0.75,
+        "full_cover_pct": 47.1,
+        "fav_win_pct": 51.3,
+        "cover_given_win_pct": 100,
+        "spread_level": "possible",
+        "spread_market_expect": "England -0.75 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
+        "totals_level": "neutral",
+        "totals_show_lean": false,
+        "totals_lean_side": "neutral"
       }
     },
     {
@@ -42872,31 +44159,37 @@ const RESULTS_DATA = {
             },
             {
               "score": "1-1",
-              "prob": 12.7
+              "prob": 12.6
             },
             {
               "score": "0-2",
-              "prob": 9.5
+              "prob": 9.4
             }
           ],
           "one_goal_win_pct": 16.4,
           "two_plus_win_pct": 8.8,
-          "full_cover_pct": 25.3,
-          "dog_hold_pct": 74.7,
+          "full_cover_pct": 37.3,
+          "dog_hold_pct": 62.7,
+          "fav_win_pct": 25.2,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": -0.494,
-          "dog_cover_ev": 0.494,
+          "fav_cover_ev": -0.496,
+          "dog_cover_ev": 0.496,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.37,
           "fair_totals_line": 2.25,
-          "over_2_5_pct": 42,
-          "over_3_pct": 21.2,
-          "totals_lean_cn": "超 2.5 偏小比分（约 58%）；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 25.3%；仅赢 1 球约 0%"
+          "over_2_5_pct": 42.2,
+          "over_3_pct": 21.4,
+          "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
+          "margin_risk_note": "净胜≥1 约 25.2%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 25.2,
+          "dog_hold_pct_raw": 74.8
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -42921,6 +44214,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.25,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -43088,7 +44383,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Panama · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 23.8,
+            "margin_meet_pct": 25.7,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -43107,7 +44402,7 @@ const RESULTS_DATA = {
             "win_low_total_pct": 13.4,
             "win_margin2_low_total_pct": 4,
             "win_margin2_high_total_pct": 7.7,
-            "readout_cn": "取胜约 22%；若取胜，以「险胜收工」为主（67.5%）。 对着赛前净胜参考，净胜≥1（全达标）约 23.8%；对着总进球参考 2.25，模型超线概率约 51.5%。"
+            "readout_cn": "取胜约 22%；若取胜，以「险胜收工」为主（67.5%）。 对着赛前净胜参考，净胜≥1（全达标）约 25.7%；对着总进球参考 2.25，模型超线概率约 51.5%。"
           },
           "totals_line": 2.25,
           "score_patterns": [
@@ -43155,7 +44450,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Panama -0.25 穿盘：达标与否难下定论",
-            "sub_cn": "Panama -0.25 穿盘 23.8% · Croatia +0.25 守住 76.2% 进球氛围：几乎五五开 平局权重约 37%，小组赛易出守平——勿只盯胜负一方。",
+            "sub_cn": "Panama 胜 23.7% · 胜后穿 100% · Croatia +0.25 守 74.4% 进球氛围：几乎五五开 平局权重约 37%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
               "level": "uncertain",
               "label_cn": "净胜幅度难下定论",
@@ -43165,16 +44460,21 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Panama -0.25",
               "dog_handicap_cn": "Croatia +0.25",
               "market_expect_cn": "Panama -0.25 · 净胜≥1",
-              "meet_pct": 23.8,
-              "dog_hold_pct": 76.2,
-              "meet_pct_label": "Panama -0.25 穿盘概率",
-              "dog_hold_label": "Croatia +0.25 守住概率",
+              "meet_pct": 25.6,
+              "dog_hold_pct": 74.4,
+              "fav_win_pct": 23.7,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 23.7,
+              "meet_pct_label": "Panama -0.25 穿盘概率（校准）",
+              "dog_hold_label": "Croatia +0.25 守住概率（校准）",
+              "two_stage_cn": "Panama 取胜约 23.7% · 赢球后穿盘约 100% · Croatia +0.25 守住约 74.4%",
+              "grid_tail_pct": null,
               "verdict_cn": "达标与否难下定论",
               "headline_cn": "Panama -0.25 穿盘：达标与否难下定论",
-              "pill_cn": "Panama -0.25 穿盘 23.8% · Croatia +0.25 守住 76.2%",
-              "detail_cn": "Panama -0.25 穿盘约 23.8%（净胜≥1） · Croatia +0.25 守住约 76.2%。",
+              "pill_cn": "Panama 胜 23.7% · 胜后穿 100% · Croatia +0.25 守 74.4%",
+              "detail_cn": "Panama 取胜约 23.7% · 赢球后穿盘约 100% · Croatia +0.25 守住约 74.4%（泊松 raw 23.7% → 校准 25.6%）。",
               "extra_stats_cn": "",
-              "full_cover_pct": 23.8,
+              "full_cover_pct": 25.6,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -43221,16 +44521,21 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Panama -0.25",
                   "dog_handicap_cn": "Croatia +0.25",
                   "market_expect_cn": "Panama -0.25 · 净胜≥1",
-                  "meet_pct": 23.8,
-                  "dog_hold_pct": 76.2,
-                  "meet_pct_label": "Panama -0.25 穿盘概率",
-                  "dog_hold_label": "Croatia +0.25 守住概率",
+                  "meet_pct": 25.6,
+                  "dog_hold_pct": 74.4,
+                  "fav_win_pct": 23.7,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 23.7,
+                  "meet_pct_label": "Panama -0.25 穿盘概率（校准）",
+                  "dog_hold_label": "Croatia +0.25 守住概率（校准）",
+                  "two_stage_cn": "Panama 取胜约 23.7% · 赢球后穿盘约 100% · Croatia +0.25 守住约 74.4%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "达标与否难下定论",
                   "headline_cn": "Panama -0.25 穿盘：达标与否难下定论",
-                  "pill_cn": "Panama -0.25 穿盘 23.8% · Croatia +0.25 守住 76.2%",
-                  "detail_cn": "Panama -0.25 穿盘约 23.8%（净胜≥1） · Croatia +0.25 守住约 76.2%。",
+                  "pill_cn": "Panama 胜 23.7% · 胜后穿 100% · Croatia +0.25 守 74.4%",
+                  "detail_cn": "Panama 取胜约 23.7% · 赢球后穿盘约 100% · Croatia +0.25 守住约 74.4%（泊松 raw 23.7% → 校准 25.6%）。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 23.8,
+                  "full_cover_pct": 25.6,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -43238,7 +44543,7 @@ const RESULTS_DATA = {
                   "tier_gap": 0.25,
                   "show_cover": true
                 },
-                "text": "Panama -0.25 穿盘 23.8% · Croatia +0.25 守住 76.2%",
+                "text": "Panama 胜 23.7% · 胜后穿 100% · Croatia +0.25 守 74.4%",
                 "color": "#8A96A8",
                 "primary": true
               },
@@ -43810,6 +45115,29 @@ const RESULTS_DATA = {
         "fifa_match_id": "400021511",
         "updated": "2026-06-24T06:34:53+08:00",
         "elapsed": "96''"
+      },
+      "market_snapshot": {
+        "market_tier": 0.25,
+        "tier_label": "Panama -0.25 · Croatia +0.25",
+        "totals_line": 2.25,
+        "over_pct": 51.5,
+        "fair_line": 2.25,
+        "line_gap": 0,
+        "full_cover_pct": 25.6,
+        "fav_win_pct": 23.7,
+        "cover_given_win_pct": 100,
+        "spread_level": "uncertain",
+        "spread_market_expect": "Panama -0.25 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
+        "totals_level": "neutral",
+        "totals_show_lean": false,
+        "totals_lean_side": "neutral"
       }
     },
     {
@@ -44215,35 +45543,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-0",
-              "prob": 12.4
+              "prob": 12.3
             },
             {
               "score": "1-1",
-              "prob": 11.4
+              "prob": 11.3
             },
             {
               "score": "2-0",
               "prob": 10.6
             }
           ],
-          "one_goal_win_pct": 25.1,
-          "two_plus_win_pct": 30.8,
-          "full_cover_pct": 30.8,
-          "dog_hold_pct": 69.2,
+          "one_goal_win_pct": 25,
+          "two_plus_win_pct": 31.2,
+          "full_cover_pct": 40.6,
+          "dog_hold_pct": 59.4,
+          "fav_win_pct": 56.2,
+          "cover_given_win_pct": 55.5,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
-          "push_pct": 25.1,
+          "push_pct": 25,
           "margin_full_label": "净胜≥2",
           "margin_half_label": "走水净胜=1",
-          "fav_cover_ev": -0.133,
-          "dog_cover_ev": 0.133,
+          "fav_cover_ev": -0.126,
+          "dog_cover_ev": 0.126,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.64,
           "fair_totals_line": 2,
-          "over_2_5_pct": 48.7,
-          "over_3_pct": 26.6,
+          "over_2_5_pct": 49.1,
+          "over_3_pct": 27.1,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 25.1%：参考净胜 1 球时，仅赢一球与拉开差距须分开看"
+          "margin_risk_note": "净胜 1 球概率 25%：参考净胜 1 球时，仅赢一球与拉开差距须分开看",
+          "full_cover_pct_raw": 31.2,
+          "dog_hold_pct_raw": 68.8
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -44268,6 +45602,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
           "draw": 1,
@@ -44435,7 +45771,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Colombia · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
-            "margin_meet_pct": 29.1,
+            "margin_meet_pct": 39.4,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -44454,17 +45790,17 @@ const RESULTS_DATA = {
             "win_low_total_pct": 24.2,
             "win_margin2_low_total_pct": 10.8,
             "win_margin2_high_total_pct": 18.2,
-            "readout_cn": "取胜约 47%；若取胜，以「险胜收工」为主（46.7%）。 对着赛前净胜参考，净胜≥2（全达标）约 29.1%；对着总进球参考 2.5，模型超线概率约 45.3%。"
+            "readout_cn": "取胜约 47%；若取胜，以「险胜收工」为主（46.7%）。 对着赛前净胜参考，净胜≥2（全达标）约 39.4%；对着总进球参考 2.5，模型超线概率约 45.3%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 13.4
+              "pct": 13.3
             },
             {
               "score": "1-1",
-              "pct": 11.8
+              "pct": 11.7
             },
             {
               "score": "2-0",
@@ -44501,27 +45837,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.5 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Colombia -1 穿盘：达到预期难度偏大",
-            "sub_cn": "Colombia -1 穿盘 29.1% · Congo DR +1 守住 70.9% 进球氛围：几乎五五开 平局权重约 32%，小组赛易出守平——勿只盯胜负一方。",
+            "headline_cn": "Colombia -1 穿盘：有达标可能",
+            "sub_cn": "Colombia 胜 54.8% · 胜后穿 53.7% · Congo DR +1 守 60.4% 进球氛围：几乎五五开 平局权重约 32%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
-              "level": "skeptical",
-              "label_cn": "外界预期偏高",
-              "color": "#D95F6A",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Colombia",
               "dog_name": "Congo DR",
               "fav_handicap_cn": "Colombia -1",
               "dog_handicap_cn": "Congo DR +1",
               "market_expect_cn": "Colombia -1 · 净胜≥2",
-              "meet_pct": 29.1,
-              "dog_hold_pct": 70.9,
-              "meet_pct_label": "Colombia -1 穿盘概率",
-              "dog_hold_label": "Congo DR +1 守住概率",
-              "verdict_cn": "达到预期难度偏大",
-              "headline_cn": "Colombia -1 穿盘：达到预期难度偏大",
-              "pill_cn": "Colombia -1 穿盘 29.1% · Congo DR +1 守住 70.9%",
-              "detail_cn": "Colombia -1 穿盘约 29.1%（净胜≥2） · Congo DR +1 守住约 70.9%；盘口相对 xG 偏深约 0.75 球，热门穿盘难度偏大。",
+              "meet_pct": 39.6,
+              "dog_hold_pct": 60.4,
+              "fav_win_pct": 54.8,
+              "cover_given_win_pct": 53.7,
+              "full_cover_pct_raw": 29.4,
+              "meet_pct_label": "Colombia -1 穿盘概率（校准）",
+              "dog_hold_label": "Congo DR +1 守住概率（校准）",
+              "two_stage_cn": "Colombia 取胜约 54.8% · 赢球后穿盘约 53.7% · Congo DR +1 守住约 60.4%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Colombia -1 穿盘：有达标可能",
+              "pill_cn": "Colombia 胜 54.8% · 胜后穿 53.7% · Congo DR +1 守 60.4%",
+              "detail_cn": "Colombia 取胜约 54.8% · 赢球后穿盘约 53.7% · Congo DR +1 守住约 60.4%（泊松 raw 29.4% → 校准 39.6%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 29.1,
+              "full_cover_pct": 39.6,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
@@ -44560,24 +45901,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "skeptical",
-                  "label_cn": "外界预期偏高",
-                  "color": "#D95F6A",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Colombia",
                   "dog_name": "Congo DR",
                   "fav_handicap_cn": "Colombia -1",
                   "dog_handicap_cn": "Congo DR +1",
                   "market_expect_cn": "Colombia -1 · 净胜≥2",
-                  "meet_pct": 29.1,
-                  "dog_hold_pct": 70.9,
-                  "meet_pct_label": "Colombia -1 穿盘概率",
-                  "dog_hold_label": "Congo DR +1 守住概率",
-                  "verdict_cn": "达到预期难度偏大",
-                  "headline_cn": "Colombia -1 穿盘：达到预期难度偏大",
-                  "pill_cn": "Colombia -1 穿盘 29.1% · Congo DR +1 守住 70.9%",
-                  "detail_cn": "Colombia -1 穿盘约 29.1%（净胜≥2） · Congo DR +1 守住约 70.9%；盘口相对 xG 偏深约 0.75 球，热门穿盘难度偏大。",
+                  "meet_pct": 39.6,
+                  "dog_hold_pct": 60.4,
+                  "fav_win_pct": 54.8,
+                  "cover_given_win_pct": 53.7,
+                  "full_cover_pct_raw": 29.4,
+                  "meet_pct_label": "Colombia -1 穿盘概率（校准）",
+                  "dog_hold_label": "Congo DR +1 守住概率（校准）",
+                  "two_stage_cn": "Colombia 取胜约 54.8% · 赢球后穿盘约 53.7% · Congo DR +1 守住约 60.4%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Colombia -1 穿盘：有达标可能",
+                  "pill_cn": "Colombia 胜 54.8% · 胜后穿 53.7% · Congo DR +1 守 60.4%",
+                  "detail_cn": "Colombia 取胜约 54.8% · 赢球后穿盘约 53.7% · Congo DR +1 守住约 60.4%（泊松 raw 29.4% → 校准 39.6%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 29.1,
+                  "full_cover_pct": 39.6,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
@@ -44585,8 +45931,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0.75,
                   "show_cover": true
                 },
-                "text": "Colombia -1 穿盘 29.1% · Congo DR +1 守住 70.9%",
-                "color": "#D95F6A",
+                "text": "Colombia 胜 54.8% · 胜后穿 53.7% · Congo DR +1 守 60.4%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -44871,7 +46217,7 @@ const RESULTS_DATA = {
           "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。",
           "totals_actual": 1,
           "totals_line": 2.5,
-          "spread_level": "skeptical",
+          "spread_level": "possible",
           "totals_level": "neutral"
         },
         "goal_efficiency": {
@@ -45149,6 +46495,29 @@ const RESULTS_DATA = {
         "fifa_match_id": "400021501",
         "updated": "2026-06-24T06:34:53+08:00",
         "elapsed": "97''"
+      },
+      "market_snapshot": {
+        "market_tier": 1,
+        "tier_label": "Colombia -1 · Congo DR +1",
+        "totals_line": 2.5,
+        "over_pct": 45.3,
+        "fair_line": 2,
+        "line_gap": 0.5,
+        "full_cover_pct": 39.6,
+        "fav_win_pct": 54.8,
+        "cover_given_win_pct": 53.7,
+        "spread_level": "possible",
+        "spread_market_expect": "Colombia -1 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
+        "totals_level": "neutral",
+        "totals_show_lean": false,
+        "totals_lean_side": "neutral"
       }
     },
     {
@@ -45264,9 +46633,18 @@ const RESULTS_DATA = {
         "over_pct": 44.4,
         "fair_line": 2.75,
         "line_gap": 0,
-        "full_cover_pct": 0,
+        "full_cover_pct": 12.6,
+        "fav_win_pct": null,
+        "cover_given_win_pct": null,
         "spread_level": "even",
         "spread_market_expect": "势均力敌",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -45287,7 +46665,7 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 11.5
+              "prob": 11.4
             },
             {
               "score": "2-1",
@@ -45298,10 +46676,14 @@ const RESULTS_DATA = {
               "prob": 8.3
             }
           ],
-          "one_goal_win_pct": 21.1,
-          "two_plus_win_pct": 20.2,
-          "full_cover_pct": 0,
-          "dog_hold_pct": null,
+          "one_goal_win_pct": 20.9,
+          "two_plus_win_pct": 20.5,
+          "full_cover_pct": 12.6,
+          "dog_hold_pct": 87.4,
+          "fav_win_pct": null,
+          "cover_given_win_pct": null,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
@@ -45312,10 +46694,12 @@ const RESULTS_DATA = {
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 2.93,
           "fair_totals_line": 2.75,
-          "over_2_5_pct": 55.7,
-          "over_3_pct": 33.2,
+          "over_2_5_pct": 56,
+          "over_3_pct": 33.6,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 0,
+          "dog_hold_pct_raw": null
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -45340,6 +46724,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -45502,7 +46888,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "净胜差距参考 · 势均力敌",
-            "margin_meet_pct": 0,
+            "margin_meet_pct": 12.6,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -45521,13 +46907,13 @@ const RESULTS_DATA = {
             "win_low_total_pct": 14.8,
             "win_margin2_low_total_pct": 6.5,
             "win_margin2_high_total_pct": 13.8,
-            "readout_cn": "取胜约 41%；若取胜，以「险胜收工」为主（51%）。 对着赛前净胜参考，净胜≥1（全达标）约 0%；对着总进球参考 2.75，模型超线概率约 44.4%。"
+            "readout_cn": "取胜约 41%；若取胜，以「险胜收工」为主（51%）。 对着赛前净胜参考，净胜≥1（全达标）约 12.6%；对着总进球参考 2.75，模型超线概率约 44.4%。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 11.5
+              "pct": 11.4
             },
             {
               "score": "2-1",
@@ -45581,7 +46967,7 @@ const RESULTS_DATA = {
               "headline_cn": "净胜走向：双方实力接近",
               "pill_cn": "双方实力接近，暂无单侧净胜预期。",
               "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
-              "full_cover_pct": 0,
+              "full_cover_pct": 12.6,
               "half_cover_pct": 0,
               "show_cover": false
             },
@@ -45622,7 +47008,7 @@ const RESULTS_DATA = {
                   "headline_cn": "净胜走向：双方实力接近",
                   "pill_cn": "双方实力接近，暂无单侧净胜预期。",
                   "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
-                  "full_cover_pct": 0,
+                  "full_cover_pct": 12.6,
                   "half_cover_pct": 0,
                   "show_cover": false
                 },
@@ -46097,9 +47483,18 @@ const RESULTS_DATA = {
         "over_pct": 41.3,
         "fair_line": 2.25,
         "line_gap": 0.25,
-        "full_cover_pct": 43.9,
-        "spread_level": "possible",
+        "full_cover_pct": 50.3,
+        "fav_win_pct": 44,
+        "cover_given_win_pct": 100,
+        "spread_level": "likely",
         "spread_market_expect": "Bosnia and Herzegovina -0.5 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -46120,35 +47515,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 12.7
+              "prob": 12.6
             },
             {
               "score": "1-0",
-              "prob": 12.1
+              "prob": 12
             },
             {
               "score": "2-1",
               "prob": 9
             }
           ],
-          "one_goal_win_pct": 23.6,
-          "two_plus_win_pct": 21.8,
-          "full_cover_pct": 45.3,
-          "dog_hold_pct": 54.7,
+          "one_goal_win_pct": 23.5,
+          "two_plus_win_pct": 22,
+          "full_cover_pct": 43.9,
+          "dog_hold_pct": 56.1,
+          "fav_win_pct": 45.5,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": -0.094,
-          "dog_cover_ev": 0.094,
+          "fav_cover_ev": -0.09,
+          "dog_cover_ev": 0.09,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.47,
           "fair_totals_line": 2,
-          "over_2_5_pct": 44.6,
-          "over_3_pct": 23.3,
+          "over_2_5_pct": 44.8,
+          "over_3_pct": 23.5,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 45.3%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 45.5%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 45.5,
+          "dog_hold_pct_raw": 54.5
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -46173,6 +47574,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
           "draw": -1,
@@ -46340,7 +47743,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Bosnia and Herzegovina · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 43.9,
+            "margin_meet_pct": 50.2,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -46359,21 +47762,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 21.4,
             "win_margin2_low_total_pct": 8.5,
             "win_margin2_high_total_pct": 11.7,
-            "readout_cn": "取胜约 39%；若取胜，以「险胜收工」为主（53.9%）。 对着赛前净胜参考，净胜≥1（全达标）约 43.9%；对着总进球参考 2.5，模型超线概率约 41.3%。"
+            "readout_cn": "取胜约 39%；若取胜，以「险胜收工」为主（53.9%）。 对着赛前净胜参考，净胜≥1（全达标）约 50.2%；对着总进球参考 2.5，模型超线概率约 41.3%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 13
-            },
-            {
-              "score": "1-0",
               "pct": 12.9
             },
             {
+              "score": "1-0",
+              "pct": 12.8
+            },
+            {
               "score": "0-1",
-              "pct": 9.8
+              "pct": 9.7
             }
           ],
           "totals_view": {
@@ -46406,27 +47809,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.3 · 合理值 2.25 · 总进球参考 2.5（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Bosnia and Herzegovina -0.5 穿盘：有达标可能",
-            "sub_cn": "Bosnia and Herzegovina -0.5 穿盘 43.9% · Qatar +0.5 守住 56.1% 进球氛围：几乎五五开 平局权重约 39%，小组赛易出守平——勿只盯胜负一方。",
+            "headline_cn": "Bosnia and Herzegovina -0.5 穿盘：达到预期较有希望",
+            "sub_cn": "Bosnia and Herzegovina 胜 44% · 胜后穿 100% · Qatar +0.5 守 49.7% 进球氛围：几乎五五开 平局权重约 39%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
-              "level": "possible",
-              "label_cn": "有达标可能",
-              "color": "#C8A96E",
+              "level": "likely",
+              "label_cn": "达到预期较有希望",
+              "color": "#5BBF8A",
               "fav_name": "Bosnia and Herzegovina",
               "dog_name": "Qatar",
               "fav_handicap_cn": "Bosnia and Herzegovina -0.5",
               "dog_handicap_cn": "Qatar +0.5",
               "market_expect_cn": "Bosnia and Herzegovina -0.5 · 净胜≥1",
-              "meet_pct": 43.9,
-              "dog_hold_pct": 56.1,
-              "meet_pct_label": "Bosnia and Herzegovina -0.5 穿盘概率",
-              "dog_hold_label": "Qatar +0.5 守住概率",
-              "verdict_cn": "有达标可能",
-              "headline_cn": "Bosnia and Herzegovina -0.5 穿盘：有达标可能",
-              "pill_cn": "Bosnia and Herzegovina -0.5 穿盘 43.9% · Qatar +0.5 守住 56.1%",
-              "detail_cn": "Bosnia and Herzegovina -0.5 穿盘约 43.9%（净胜≥1） · Qatar +0.5 守住约 56.1%；穿盘与受让守住均有一定空间。",
+              "meet_pct": 50.3,
+              "dog_hold_pct": 49.7,
+              "fav_win_pct": 44,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 44,
+              "meet_pct_label": "Bosnia and Herzegovina -0.5 穿盘概率（校准）",
+              "dog_hold_label": "Qatar +0.5 守住概率（校准）",
+              "two_stage_cn": "Bosnia and Herzegovina 取胜约 44% · 赢球后穿盘约 100% · Qatar +0.5 守住约 49.7%",
+              "grid_tail_pct": null,
+              "verdict_cn": "达到预期较有希望",
+              "headline_cn": "Bosnia and Herzegovina -0.5 穿盘：达到预期较有希望",
+              "pill_cn": "Bosnia and Herzegovina 胜 44% · 胜后穿 100% · Qatar +0.5 守 49.7%",
+              "detail_cn": "Bosnia and Herzegovina 取胜约 44% · 赢球后穿盘约 100% · Qatar +0.5 守住约 49.7%（泊松 raw 44% → 校准 50.3%）；模型认为热门穿盘概率相对较高。",
               "extra_stats_cn": "",
-              "full_cover_pct": 43.9,
+              "full_cover_pct": 50.3,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -46465,24 +47873,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "possible",
-                  "label_cn": "有达标可能",
-                  "color": "#C8A96E",
+                  "level": "likely",
+                  "label_cn": "达到预期较有希望",
+                  "color": "#5BBF8A",
                   "fav_name": "Bosnia and Herzegovina",
                   "dog_name": "Qatar",
                   "fav_handicap_cn": "Bosnia and Herzegovina -0.5",
                   "dog_handicap_cn": "Qatar +0.5",
                   "market_expect_cn": "Bosnia and Herzegovina -0.5 · 净胜≥1",
-                  "meet_pct": 43.9,
-                  "dog_hold_pct": 56.1,
-                  "meet_pct_label": "Bosnia and Herzegovina -0.5 穿盘概率",
-                  "dog_hold_label": "Qatar +0.5 守住概率",
-                  "verdict_cn": "有达标可能",
-                  "headline_cn": "Bosnia and Herzegovina -0.5 穿盘：有达标可能",
-                  "pill_cn": "Bosnia and Herzegovina -0.5 穿盘 43.9% · Qatar +0.5 守住 56.1%",
-                  "detail_cn": "Bosnia and Herzegovina -0.5 穿盘约 43.9%（净胜≥1） · Qatar +0.5 守住约 56.1%；穿盘与受让守住均有一定空间。",
+                  "meet_pct": 50.3,
+                  "dog_hold_pct": 49.7,
+                  "fav_win_pct": 44,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 44,
+                  "meet_pct_label": "Bosnia and Herzegovina -0.5 穿盘概率（校准）",
+                  "dog_hold_label": "Qatar +0.5 守住概率（校准）",
+                  "two_stage_cn": "Bosnia and Herzegovina 取胜约 44% · 赢球后穿盘约 100% · Qatar +0.5 守住约 49.7%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "达到预期较有希望",
+                  "headline_cn": "Bosnia and Herzegovina -0.5 穿盘：达到预期较有希望",
+                  "pill_cn": "Bosnia and Herzegovina 胜 44% · 胜后穿 100% · Qatar +0.5 守 49.7%",
+                  "detail_cn": "Bosnia and Herzegovina 取胜约 44% · 赢球后穿盘约 100% · Qatar +0.5 守住约 49.7%（泊松 raw 44% → 校准 50.3%）；模型认为热门穿盘概率相对较高。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 43.9,
+                  "full_cover_pct": 50.3,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -46490,8 +47903,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0.5,
                   "show_cover": true
                 },
-                "text": "Bosnia and Herzegovina -0.5 穿盘 43.9% · Qatar +0.5 守住 56.1%",
-                "color": "#C8A96E",
+                "text": "Bosnia and Herzegovina 胜 44% · 胜后穿 100% · Qatar +0.5 守 49.7%",
+                "color": "#5BBF8A",
                 "primary": true
               },
               {
@@ -46818,7 +48231,7 @@ const RESULTS_DATA = {
           "summary_cn": "命中：净胜全达标方向一致 · 赛前进球氛围未强判（符合模型五五开读法）。",
           "totals_actual": 4,
           "totals_line": 2.5,
-          "spread_level": "possible",
+          "spread_level": "likely",
           "totals_level": "neutral"
         }
       },
@@ -47036,9 +48449,18 @@ const RESULTS_DATA = {
         "over_pct": 41.7,
         "fair_line": 2,
         "line_gap": 0.75,
-        "full_cover_pct": 5.2,
+        "full_cover_pct": 15.5,
+        "fav_win_pct": 16.3,
+        "cover_given_win_pct": 31.7,
         "spread_level": "skeptical",
         "spread_market_expect": "Scotland -1.25 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -47059,35 +48481,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "0-1",
-              "prob": 11.7
+              "prob": 11.6
             },
             {
               "score": "0-2",
-              "prob": 11.4
+              "prob": 11.3
             },
             {
               "score": "1-1",
-              "prob": 10.3
+              "prob": 10.2
             }
           ],
-          "one_goal_win_pct": 11.3,
+          "one_goal_win_pct": 11.2,
           "two_plus_win_pct": 5.2,
-          "full_cover_pct": 5.2,
-          "dog_hold_pct": 94.8,
+          "full_cover_pct": 15.5,
+          "dog_hold_pct": 84.5,
+          "fav_win_pct": 16.3,
+          "cover_given_win_pct": 31.7,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.4,
           "half_cover_pct": 0,
-          "half_lose_pct": 11.3,
+          "half_lose_pct": 11.2,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
           "margin_half_label": null,
-          "fav_cover_ev": -0.839,
-          "dog_cover_ev": 0.839,
+          "fav_cover_ev": -0.841,
+          "dog_cover_ev": 0.841,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.83,
           "fair_totals_line": 2,
-          "over_2_5_pct": 53.1,
-          "over_3_pct": 30.4,
+          "over_2_5_pct": 53.6,
+          "over_3_pct": 31.2,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥2 约 5.2%；仅赢 1 球约 11.3%"
+          "margin_risk_note": "净胜≥2 约 5.2%；仅赢 1 球约 11.2%",
+          "full_cover_pct_raw": 5.2,
+          "dog_hold_pct_raw": 94.8
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -47112,6 +48540,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
           "draw": 1,
@@ -47279,7 +48709,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Scotland · 赛前净胜参考 净胜≥2（全达标）",
-            "margin_meet_pct": 5.2,
+            "margin_meet_pct": 15.5,
             "margin_half_pct": 0,
             "margin_fail_pct": 11.3,
             "margin_full_label": "净胜≥2",
@@ -47298,21 +48728,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 7.6,
             "win_margin2_low_total_pct": 2.3,
             "win_margin2_high_total_pct": 2.9,
-            "readout_cn": "取胜约 9%；若取胜，以「险胜收工」为主（68.4%）。 对着赛前净胜参考，净胜≥2（全达标）约 5.2%；对着总进球参考 2.75，模型超线概率约 41.7%。"
+            "readout_cn": "取胜约 9%；若取胜，以「险胜收工」为主（68.4%）。 对着赛前净胜参考，净胜≥2（全达标）约 15.5%；对着总进球参考 2.75，模型超线概率约 41.7%。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "0-1",
-              "pct": 11.7
+              "pct": 11.6
             },
             {
               "score": "0-2",
-              "pct": 11.4
+              "pct": 11.3
             },
             {
               "score": "1-1",
-              "pct": 10.3
+              "pct": 10.2
             }
           ],
           "totals_view": {
@@ -47346,7 +48776,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Scotland -1.25 穿盘：达到预期难度偏大",
-            "sub_cn": "Scotland -1.25 穿盘 5.2% · Brazil +1.25 守住 94.8% 进球氛围：几乎五五开 平局权重约 35%，小组赛易出守平——勿只盯胜负一方。",
+            "sub_cn": "Scotland 胜 16.3% · 胜后穿 31.7% · Brazil +1.25 守 84.5% 进球氛围：几乎五五开 平局权重约 35%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
@@ -47356,18 +48786,23 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Scotland -1.25",
               "dog_handicap_cn": "Brazil +1.25",
               "market_expect_cn": "Scotland -1.25 · 净胜≥2",
-              "meet_pct": 5.2,
-              "dog_hold_pct": 94.8,
-              "meet_pct_label": "Scotland -1.25 穿盘概率",
-              "dog_hold_label": "Brazil +1.25 守住概率",
+              "meet_pct": 15.5,
+              "dog_hold_pct": 84.5,
+              "fav_win_pct": 16.3,
+              "cover_given_win_pct": 31.7,
+              "full_cover_pct_raw": 5.2,
+              "meet_pct_label": "Scotland -1.25 穿盘概率（校准）",
+              "dog_hold_label": "Brazil +1.25 守住概率（校准）",
+              "two_stage_cn": "Scotland 取胜约 16.3% · 赢球后穿盘约 31.7% · Brazil +1.25 守住约 84.5%",
+              "grid_tail_pct": 0.4,
               "verdict_cn": "达到预期难度偏大",
               "headline_cn": "Scotland -1.25 穿盘：达到预期难度偏大",
-              "pill_cn": "Scotland -1.25 穿盘 5.2% · Brazil +1.25 守住 94.8%",
-              "detail_cn": "Scotland -1.25 穿盘约 5.2%（净胜≥2） · Brazil +1.25 守住约 94.8%；盘口相对 xG 偏深约 2 球，热门穿盘难度偏大。",
+              "pill_cn": "Scotland 胜 16.3% · 胜后穿 31.7% · Brazil +1.25 守 84.5%",
+              "detail_cn": "Scotland 取胜约 16.3% · 赢球后穿盘约 31.7% · Brazil +1.25 守住约 84.5%（泊松 raw 5.2% → 校准 15.5%）；盘口相对 xG 偏深约 2 球，热门穿盘难度偏大。",
               "extra_stats_cn": "",
-              "full_cover_pct": 5.2,
+              "full_cover_pct": 15.5,
               "half_cover_pct": 0,
-              "lose1_pct": 11.3,
+              "lose1_pct": 11.2,
               "margin_full_label": "净胜≥2",
               "margin_half_label": null,
               "tier_gap": 2,
@@ -47412,24 +48847,29 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Scotland -1.25",
                   "dog_handicap_cn": "Brazil +1.25",
                   "market_expect_cn": "Scotland -1.25 · 净胜≥2",
-                  "meet_pct": 5.2,
-                  "dog_hold_pct": 94.8,
-                  "meet_pct_label": "Scotland -1.25 穿盘概率",
-                  "dog_hold_label": "Brazil +1.25 守住概率",
+                  "meet_pct": 15.5,
+                  "dog_hold_pct": 84.5,
+                  "fav_win_pct": 16.3,
+                  "cover_given_win_pct": 31.7,
+                  "full_cover_pct_raw": 5.2,
+                  "meet_pct_label": "Scotland -1.25 穿盘概率（校准）",
+                  "dog_hold_label": "Brazil +1.25 守住概率（校准）",
+                  "two_stage_cn": "Scotland 取胜约 16.3% · 赢球后穿盘约 31.7% · Brazil +1.25 守住约 84.5%",
+                  "grid_tail_pct": 0.4,
                   "verdict_cn": "达到预期难度偏大",
                   "headline_cn": "Scotland -1.25 穿盘：达到预期难度偏大",
-                  "pill_cn": "Scotland -1.25 穿盘 5.2% · Brazil +1.25 守住 94.8%",
-                  "detail_cn": "Scotland -1.25 穿盘约 5.2%（净胜≥2） · Brazil +1.25 守住约 94.8%；盘口相对 xG 偏深约 2 球，热门穿盘难度偏大。",
+                  "pill_cn": "Scotland 胜 16.3% · 胜后穿 31.7% · Brazil +1.25 守 84.5%",
+                  "detail_cn": "Scotland 取胜约 16.3% · 赢球后穿盘约 31.7% · Brazil +1.25 守住约 84.5%（泊松 raw 5.2% → 校准 15.5%）；盘口相对 xG 偏深约 2 球，热门穿盘难度偏大。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 5.2,
+                  "full_cover_pct": 15.5,
                   "half_cover_pct": 0,
-                  "lose1_pct": 11.3,
+                  "lose1_pct": 11.2,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": null,
                   "tier_gap": 2,
                   "show_cover": true
                 },
-                "text": "Scotland -1.25 穿盘 5.2% · Brazil +1.25 守住 94.8%",
+                "text": "Scotland 胜 16.3% · 胜后穿 31.7% · Brazil +1.25 守 84.5%",
                 "color": "#D95F6A",
                 "primary": true
               },
@@ -47905,9 +49345,18 @@ const RESULTS_DATA = {
         "over_pct": 30,
         "fair_line": 2.25,
         "line_gap": 0.5,
-        "full_cover_pct": 32.4,
-        "spread_level": "partial",
+        "full_cover_pct": 41.4,
+        "fav_win_pct": 59.7,
+        "cover_given_win_pct": 54.9,
+        "spread_level": "possible",
         "spread_market_expect": "Morocco -1.5 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -47928,22 +49377,26 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-0",
-              "prob": 15.1
+              "prob": 15
             },
             {
               "score": "2-0",
-              "prob": 13
+              "prob": 12.9
             },
             {
               "score": "1-1",
-              "prob": 10.9
+              "prob": 10.8
             }
           ],
-          "one_goal_win_pct": 26.6,
-          "two_plus_win_pct": 34.4,
-          "full_cover_pct": 34.4,
-          "dog_hold_pct": 65.6,
-          "half_cover_pct": 26.6,
+          "one_goal_win_pct": 26.5,
+          "two_plus_win_pct": 34.8,
+          "full_cover_pct": 42.5,
+          "dog_hold_pct": 57.5,
+          "fav_win_pct": 61.3,
+          "cover_given_win_pct": 56.8,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
+          "half_cover_pct": 26.5,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
@@ -47953,10 +49406,12 @@ const RESULTS_DATA = {
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 2.44,
           "fair_totals_line": 2,
-          "over_2_5_pct": 43.6,
-          "over_3_pct": 22.3,
+          "over_2_5_pct": 44,
+          "over_3_pct": 22.8,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥2 约 34.4%；部分达标净胜=1 约 26.6%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥2 约 34.8%；部分达标净胜=1 约 26.5%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 34.8,
+          "dog_hold_pct_raw": 65.2
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -47981,6 +49436,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
           "draw": 1,
@@ -48122,7 +49579,7 @@ const RESULTS_DATA = {
             "tier_gap": 0.75,
             "implied_tier_label": "Morocco -0.75 · Haiti +0.75",
             "market_tier_label": "Morocco -1.5 · Haiti +1.5",
-            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 部分达标净胜=1 约 27.1%"
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 部分达标净胜=1 约 26.9%"
           },
           "win_outlook": {
             "fav_name": "Morocco",
@@ -48148,7 +49605,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Morocco · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
-            "margin_meet_pct": 32.4,
+            "margin_meet_pct": 41.2,
             "margin_half_pct": 27.1,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -48167,21 +49624,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 29.3,
             "win_margin2_low_total_pct": 13.1,
             "win_margin2_high_total_pct": 19.3,
-            "readout_cn": "取胜约 49%；若取胜，以「险胜收工」为主（45.5%）。 对着赛前净胜参考，净胜≥2（全达标）约 32.4%；部分达标净胜=1 约 27.1%；对着总进球参考 2.75，模型超线概率约 30%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.75。"
+            "readout_cn": "取胜约 49%；若取胜，以「险胜收工」为主（45.5%）。 对着赛前净胜参考，净胜≥2（全达标）约 41.2%；部分达标净胜=1 约 27.1%；对着总进球参考 2.75，模型超线概率约 30%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.75。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 16.2
+              "pct": 16.1
             },
             {
               "score": "2-0",
-              "pct": 13.1
+              "pct": 13
             },
             {
               "score": "1-1",
-              "pct": 11.2
+              "pct": 11.1
             }
           ],
           "totals_view": {
@@ -48214,28 +49671,33 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.3 · 合理值 2.25 · 总进球参考 2.75（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Morocco -1.5 穿盘：部分达标更现实",
-            "sub_cn": "Morocco -1.5 穿盘 32.4% · Haiti +1.5 守住 67.6% 进球氛围：略偏闷 平局权重约 35%，小组赛易出守平——勿只盯胜负一方。",
+            "headline_cn": "Morocco -1.5 穿盘：有达标可能",
+            "sub_cn": "Morocco 胜 59.7% · 胜后穿 54.9% · Haiti +1.5 守 58.6% 进球氛围：略偏闷 平局权重约 35%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
-              "level": "partial",
-              "label_cn": "部分达标更现实",
+              "level": "possible",
+              "label_cn": "有达标可能",
               "color": "#C8A96E",
               "fav_name": "Morocco",
               "dog_name": "Haiti",
               "fav_handicap_cn": "Morocco -1.5",
               "dog_handicap_cn": "Haiti +1.5",
               "market_expect_cn": "Morocco -1.5 · 净胜≥2",
-              "meet_pct": 32.4,
-              "dog_hold_pct": 67.6,
-              "meet_pct_label": "Morocco -1.5 穿盘概率",
-              "dog_hold_label": "Haiti +1.5 守住概率",
-              "verdict_cn": "部分达标更现实",
-              "headline_cn": "Morocco -1.5 穿盘：部分达标更现实",
-              "pill_cn": "Morocco -1.5 穿盘 32.4% · Haiti +1.5 守住 67.6%",
-              "detail_cn": "Morocco -1.5 穿盘约 32.4%（净胜≥2） · Haiti +1.5 守住约 67.6%；全穿偏难，仅赢一球/受让守住更现实（部分达标净胜=1 约 27.1%）。",
-              "extra_stats_cn": "部分达标净胜=1 约 27.1%",
-              "full_cover_pct": 32.4,
-              "half_cover_pct": 27.1,
+              "meet_pct": 41.4,
+              "dog_hold_pct": 58.6,
+              "fav_win_pct": 59.7,
+              "cover_given_win_pct": 54.9,
+              "full_cover_pct_raw": 32.8,
+              "meet_pct_label": "Morocco -1.5 穿盘概率（校准）",
+              "dog_hold_label": "Haiti +1.5 守住概率（校准）",
+              "two_stage_cn": "Morocco 取胜约 59.7% · 赢球后穿盘约 54.9% · Haiti +1.5 守住约 58.6%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Morocco -1.5 穿盘：有达标可能",
+              "pill_cn": "Morocco 胜 59.7% · 胜后穿 54.9% · Haiti +1.5 守 58.6%",
+              "detail_cn": "Morocco 取胜约 59.7% · 赢球后穿盘约 54.9% · Haiti +1.5 守住约 58.6%（泊松 raw 32.8% → 校准 41.4%）；穿盘与受让守住均有一定空间（部分达标净胜=1 约 26.9%）。",
+              "extra_stats_cn": "部分达标净胜=1 约 26.9%",
+              "full_cover_pct": 41.4,
+              "half_cover_pct": 26.9,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
               "margin_half_label": "部分达标净胜=1",
@@ -48273,32 +49735,37 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "partial",
-                  "label_cn": "部分达标更现实",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
                   "color": "#C8A96E",
                   "fav_name": "Morocco",
                   "dog_name": "Haiti",
                   "fav_handicap_cn": "Morocco -1.5",
                   "dog_handicap_cn": "Haiti +1.5",
                   "market_expect_cn": "Morocco -1.5 · 净胜≥2",
-                  "meet_pct": 32.4,
-                  "dog_hold_pct": 67.6,
-                  "meet_pct_label": "Morocco -1.5 穿盘概率",
-                  "dog_hold_label": "Haiti +1.5 守住概率",
-                  "verdict_cn": "部分达标更现实",
-                  "headline_cn": "Morocco -1.5 穿盘：部分达标更现实",
-                  "pill_cn": "Morocco -1.5 穿盘 32.4% · Haiti +1.5 守住 67.6%",
-                  "detail_cn": "Morocco -1.5 穿盘约 32.4%（净胜≥2） · Haiti +1.5 守住约 67.6%；全穿偏难，仅赢一球/受让守住更现实（部分达标净胜=1 约 27.1%）。",
-                  "extra_stats_cn": "部分达标净胜=1 约 27.1%",
-                  "full_cover_pct": 32.4,
-                  "half_cover_pct": 27.1,
+                  "meet_pct": 41.4,
+                  "dog_hold_pct": 58.6,
+                  "fav_win_pct": 59.7,
+                  "cover_given_win_pct": 54.9,
+                  "full_cover_pct_raw": 32.8,
+                  "meet_pct_label": "Morocco -1.5 穿盘概率（校准）",
+                  "dog_hold_label": "Haiti +1.5 守住概率（校准）",
+                  "two_stage_cn": "Morocco 取胜约 59.7% · 赢球后穿盘约 54.9% · Haiti +1.5 守住约 58.6%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Morocco -1.5 穿盘：有达标可能",
+                  "pill_cn": "Morocco 胜 59.7% · 胜后穿 54.9% · Haiti +1.5 守 58.6%",
+                  "detail_cn": "Morocco 取胜约 59.7% · 赢球后穿盘约 54.9% · Haiti +1.5 守住约 58.6%（泊松 raw 32.8% → 校准 41.4%）；穿盘与受让守住均有一定空间（部分达标净胜=1 约 26.9%）。",
+                  "extra_stats_cn": "部分达标净胜=1 约 26.9%",
+                  "full_cover_pct": 41.4,
+                  "half_cover_pct": 26.9,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": "部分达标净胜=1",
                   "tier_gap": 0.75,
                   "show_cover": true
                 },
-                "text": "Morocco -1.5 穿盘 32.4% · Haiti +1.5 守住 67.6%",
+                "text": "Morocco 胜 59.7% · 胜后穿 54.9% · Haiti +1.5 守 58.6%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -48573,7 +50040,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Morocco · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 部分达标净胜=1 约 27.1%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
+        "public_summary_note": "【推演概要】Morocco · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 部分达标净胜=1 约 26.9%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
         "goal_efficiency": {
           "xg_total": 2.44,
           "xg_gap": 1,
@@ -48618,14 +50085,16 @@ const RESULTS_DATA = {
         "preview_replay": {
           "actual_score": "4-2",
           "ht_score": "2-2",
-          "hits": [],
+          "hits": [
+            "净胜全达标方向一致"
+          ],
           "misses": [
             "总进球尾部偏差大（赛前已标注无明显倾向）"
           ],
-          "summary_cn": "偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
+          "summary_cn": "命中：净胜全达标方向一致。 偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
           "totals_actual": 6,
           "totals_line": 2.75,
-          "spread_level": "partial",
+          "spread_level": "possible",
           "totals_level": "mild_low"
         }
       },
@@ -48771,9 +50240,18 @@ const RESULTS_DATA = {
         "over_pct": 39.9,
         "fair_line": 2.25,
         "line_gap": 0.25,
-        "full_cover_pct": 6.7,
+        "full_cover_pct": 16.3,
+        "fav_win_pct": 21.4,
+        "cover_given_win_pct": 31.5,
         "spread_level": "skeptical",
         "spread_market_expect": "Czechia -1 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -48805,13 +50283,17 @@ const RESULTS_DATA = {
               "prob": 10.8
             }
           ],
-          "one_goal_win_pct": 14.7,
+          "one_goal_win_pct": 14.6,
           "two_plus_win_pct": 6.7,
-          "full_cover_pct": 6.7,
-          "dog_hold_pct": 93.3,
+          "full_cover_pct": 16.3,
+          "dog_hold_pct": 83.7,
+          "fav_win_pct": 21.4,
+          "cover_given_win_pct": 31.5,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
-          "push_pct": 14.7,
+          "push_pct": 14.6,
           "margin_full_label": "净胜≥2",
           "margin_half_label": "走水净胜=1",
           "fav_cover_ev": -0.719,
@@ -48819,10 +50301,12 @@ const RESULTS_DATA = {
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.29,
           "fair_totals_line": 2.25,
-          "over_2_5_pct": 39.9,
-          "over_3_pct": 19.5,
-          "totals_lean_cn": "超 2.5 偏小比分（约 60.1%）；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 14.7%：参考净胜 1 球时，仅赢一球与拉开差距须分开看"
+          "over_2_5_pct": 40.1,
+          "over_3_pct": 19.8,
+          "totals_lean_cn": "超 2.5 偏小比分（约 59.9%）；4球+偏少",
+          "margin_risk_note": "净胜 1 球概率 14.6%：参考净胜 1 球时，仅赢一球与拉开差距须分开看",
+          "full_cover_pct_raw": 6.7,
+          "dog_hold_pct_raw": 93.3
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -48847,6 +50331,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
           "draw": 1,
@@ -49014,7 +50500,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Czechia · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
-            "margin_meet_pct": 6.7,
+            "margin_meet_pct": 16.3,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -49033,7 +50519,7 @@ const RESULTS_DATA = {
             "win_low_total_pct": 11.9,
             "win_margin2_low_total_pct": 3.5,
             "win_margin2_high_total_pct": 3.2,
-            "readout_cn": "取胜约 16%；若取胜，以「险胜收工」为主（68.6%）。 对着赛前净胜参考，净胜≥2（全达标）约 6.7%；对着总进球参考 2.5，模型超线概率约 39.9%。"
+            "readout_cn": "取胜约 16%；若取胜，以「险胜收工」为主（68.6%）。 对着赛前净胜参考，净胜≥2（全达标）约 16.3%；对着总进球参考 2.5，模型超线概率约 39.9%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
@@ -49081,7 +50567,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Czechia -1 穿盘：达到预期难度偏大",
-            "sub_cn": "Czechia -1 穿盘 6.7% · Mexico +1 守住 93.3% 进球氛围：略偏闷",
+            "sub_cn": "Czechia 胜 21.4% · 胜后穿 31.5% · Mexico +1 守 83.7% 进球氛围：略偏闷",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
@@ -49091,16 +50577,21 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Czechia -1",
               "dog_handicap_cn": "Mexico +1",
               "market_expect_cn": "Czechia -1 · 净胜≥2",
-              "meet_pct": 6.7,
-              "dog_hold_pct": 93.3,
-              "meet_pct_label": "Czechia -1 穿盘概率",
-              "dog_hold_label": "Mexico +1 守住概率",
+              "meet_pct": 16.3,
+              "dog_hold_pct": 83.7,
+              "fav_win_pct": 21.4,
+              "cover_given_win_pct": 31.5,
+              "full_cover_pct_raw": 6.7,
+              "meet_pct_label": "Czechia -1 穿盘概率（校准）",
+              "dog_hold_label": "Mexico +1 守住概率（校准）",
+              "two_stage_cn": "Czechia 取胜约 21.4% · 赢球后穿盘约 31.5% · Mexico +1 守住约 83.7%",
+              "grid_tail_pct": null,
               "verdict_cn": "达到预期难度偏大",
               "headline_cn": "Czechia -1 穿盘：达到预期难度偏大",
-              "pill_cn": "Czechia -1 穿盘 6.7% · Mexico +1 守住 93.3%",
-              "detail_cn": "Czechia -1 穿盘约 6.7%（净胜≥2） · Mexico +1 守住约 93.3%；盘口相对 xG 偏深约 1.25 球，热门穿盘难度偏大。",
+              "pill_cn": "Czechia 胜 21.4% · 胜后穿 31.5% · Mexico +1 守 83.7%",
+              "detail_cn": "Czechia 取胜约 21.4% · 赢球后穿盘约 31.5% · Mexico +1 守住约 83.7%（泊松 raw 6.7% → 校准 16.3%）；盘口相对 xG 偏深约 1.25 球，热门穿盘难度偏大。",
               "extra_stats_cn": "",
-              "full_cover_pct": 6.7,
+              "full_cover_pct": 16.3,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
@@ -49143,16 +50634,21 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Czechia -1",
                   "dog_handicap_cn": "Mexico +1",
                   "market_expect_cn": "Czechia -1 · 净胜≥2",
-                  "meet_pct": 6.7,
-                  "dog_hold_pct": 93.3,
-                  "meet_pct_label": "Czechia -1 穿盘概率",
-                  "dog_hold_label": "Mexico +1 守住概率",
+                  "meet_pct": 16.3,
+                  "dog_hold_pct": 83.7,
+                  "fav_win_pct": 21.4,
+                  "cover_given_win_pct": 31.5,
+                  "full_cover_pct_raw": 6.7,
+                  "meet_pct_label": "Czechia -1 穿盘概率（校准）",
+                  "dog_hold_label": "Mexico +1 守住概率（校准）",
+                  "two_stage_cn": "Czechia 取胜约 21.4% · 赢球后穿盘约 31.5% · Mexico +1 守住约 83.7%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "达到预期难度偏大",
                   "headline_cn": "Czechia -1 穿盘：达到预期难度偏大",
-                  "pill_cn": "Czechia -1 穿盘 6.7% · Mexico +1 守住 93.3%",
-                  "detail_cn": "Czechia -1 穿盘约 6.7%（净胜≥2） · Mexico +1 守住约 93.3%；盘口相对 xG 偏深约 1.25 球，热门穿盘难度偏大。",
+                  "pill_cn": "Czechia 胜 21.4% · 胜后穿 31.5% · Mexico +1 守 83.7%",
+                  "detail_cn": "Czechia 取胜约 21.4% · 赢球后穿盘约 31.5% · Mexico +1 守住约 83.7%（泊松 raw 6.7% → 校准 16.3%）；盘口相对 xG 偏深约 1.25 球，热门穿盘难度偏大。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 6.7,
+                  "full_cover_pct": 16.3,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
@@ -49160,7 +50656,7 @@ const RESULTS_DATA = {
                   "tier_gap": 1.25,
                   "show_cover": true
                 },
-                "text": "Czechia -1 穿盘 6.7% · Mexico +1 守住 93.3%",
+                "text": "Czechia 胜 21.4% · 胜后穿 31.5% · Mexico +1 守 83.7%",
                 "color": "#D95F6A",
                 "primary": true
               },
@@ -49726,9 +51222,18 @@ const RESULTS_DATA = {
         "over_pct": 42.1,
         "fair_line": 2.25,
         "line_gap": 0.25,
-        "full_cover_pct": 29.7,
-        "spread_level": "skeptical",
+        "full_cover_pct": 39.7,
+        "fav_win_pct": 29.7,
+        "cover_given_win_pct": 100,
+        "spread_level": "possible",
         "spread_market_expect": "South Africa -0.5 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -49753,17 +51258,21 @@ const RESULTS_DATA = {
             },
             {
               "score": "0-1",
-              "prob": 11.4
+              "prob": 11.3
             },
             {
               "score": "1-0",
               "prob": 9.2
             }
           ],
-          "one_goal_win_pct": 18.5,
-          "two_plus_win_pct": 12,
-          "full_cover_pct": 30.5,
-          "dog_hold_pct": 69.5,
+          "one_goal_win_pct": 18.4,
+          "two_plus_win_pct": 12.1,
+          "full_cover_pct": 40.2,
+          "dog_hold_pct": 59.8,
+          "fav_win_pct": 30.5,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
@@ -49774,10 +51283,12 @@ const RESULTS_DATA = {
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.5,
           "fair_totals_line": 2,
-          "over_2_5_pct": 45.4,
-          "over_3_pct": 23.9,
+          "over_2_5_pct": 45.6,
+          "over_3_pct": 24.2,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 30.5%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 30.5%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 30.5,
+          "dog_hold_pct_raw": 69.5
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -49802,6 +51313,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
           "draw": -1,
@@ -49974,7 +51487,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "South Africa · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 29.7,
+            "margin_meet_pct": 39.7,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -49993,7 +51506,7 @@ const RESULTS_DATA = {
             "win_low_total_pct": 15,
             "win_margin2_low_total_pct": 5.2,
             "win_margin2_high_total_pct": 6.1,
-            "readout_cn": "取胜约 25%；若取胜，以「险胜收工」为主（62.1%）。 对着赛前净胜参考，净胜≥1（全达标）约 29.7%；对着总进球参考 2.5，模型超线概率约 42.1%。"
+            "readout_cn": "取胜约 25%；若取胜，以「险胜收工」为主（62.1%）。 对着赛前净胜参考，净胜≥1（全达标）约 39.7%；对着总进球参考 2.5，模型超线概率约 42.1%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
@@ -50003,7 +51516,7 @@ const RESULTS_DATA = {
             },
             {
               "score": "0-1",
-              "pct": 12.4
+              "pct": 12.3
             },
             {
               "score": "1-0",
@@ -50040,27 +51553,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.4 · 合理值 2.25 · 总进球参考 2.5（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "South Africa -0.5 穿盘：达到预期难度偏大",
-            "sub_cn": "South Africa -0.5 穿盘 29.7% · South Korea +0.5 守住 70.3% 进球氛围：几乎五五开 平局权重约 44%，小组赛易出守平——勿只盯胜负一方。",
+            "headline_cn": "South Africa -0.5 穿盘：有达标可能",
+            "sub_cn": "South Africa 胜 29.7% · 胜后穿 100% · South Korea +0.5 守 60.3% 进球氛围：几乎五五开 平局权重约 44%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
-              "level": "skeptical",
-              "label_cn": "外界预期偏高",
-              "color": "#D95F6A",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "South Africa",
               "dog_name": "South Korea",
               "fav_handicap_cn": "South Africa -0.5",
               "dog_handicap_cn": "South Korea +0.5",
               "market_expect_cn": "South Africa -0.5 · 净胜≥1",
-              "meet_pct": 29.7,
-              "dog_hold_pct": 70.3,
-              "meet_pct_label": "South Africa -0.5 穿盘概率",
-              "dog_hold_label": "South Korea +0.5 守住概率",
-              "verdict_cn": "达到预期难度偏大",
-              "headline_cn": "South Africa -0.5 穿盘：达到预期难度偏大",
-              "pill_cn": "South Africa -0.5 穿盘 29.7% · South Korea +0.5 守住 70.3%",
-              "detail_cn": "South Africa -0.5 穿盘约 29.7%（净胜≥1） · South Korea +0.5 守住约 70.3%；盘口相对 xG 偏深约 0.5 球，热门穿盘难度偏大。",
+              "meet_pct": 39.7,
+              "dog_hold_pct": 60.3,
+              "fav_win_pct": 29.7,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 29.7,
+              "meet_pct_label": "South Africa -0.5 穿盘概率（校准）",
+              "dog_hold_label": "South Korea +0.5 守住概率（校准）",
+              "two_stage_cn": "South Africa 取胜约 29.7% · 赢球后穿盘约 100% · South Korea +0.5 守住约 60.3%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "South Africa -0.5 穿盘：有达标可能",
+              "pill_cn": "South Africa 胜 29.7% · 胜后穿 100% · South Korea +0.5 守 60.3%",
+              "detail_cn": "South Africa 取胜约 29.7% · 赢球后穿盘约 100% · South Korea +0.5 守住约 60.3%（泊松 raw 29.7% → 校准 39.7%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 29.7,
+              "full_cover_pct": 39.7,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -50099,24 +51617,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "skeptical",
-                  "label_cn": "外界预期偏高",
-                  "color": "#D95F6A",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "South Africa",
                   "dog_name": "South Korea",
                   "fav_handicap_cn": "South Africa -0.5",
                   "dog_handicap_cn": "South Korea +0.5",
                   "market_expect_cn": "South Africa -0.5 · 净胜≥1",
-                  "meet_pct": 29.7,
-                  "dog_hold_pct": 70.3,
-                  "meet_pct_label": "South Africa -0.5 穿盘概率",
-                  "dog_hold_label": "South Korea +0.5 守住概率",
-                  "verdict_cn": "达到预期难度偏大",
-                  "headline_cn": "South Africa -0.5 穿盘：达到预期难度偏大",
-                  "pill_cn": "South Africa -0.5 穿盘 29.7% · South Korea +0.5 守住 70.3%",
-                  "detail_cn": "South Africa -0.5 穿盘约 29.7%（净胜≥1） · South Korea +0.5 守住约 70.3%；盘口相对 xG 偏深约 0.5 球，热门穿盘难度偏大。",
+                  "meet_pct": 39.7,
+                  "dog_hold_pct": 60.3,
+                  "fav_win_pct": 29.7,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 29.7,
+                  "meet_pct_label": "South Africa -0.5 穿盘概率（校准）",
+                  "dog_hold_label": "South Korea +0.5 守住概率（校准）",
+                  "two_stage_cn": "South Africa 取胜约 29.7% · 赢球后穿盘约 100% · South Korea +0.5 守住约 60.3%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "South Africa -0.5 穿盘：有达标可能",
+                  "pill_cn": "South Africa 胜 29.7% · 胜后穿 100% · South Korea +0.5 守 60.3%",
+                  "detail_cn": "South Africa 取胜约 29.7% · 赢球后穿盘约 100% · South Korea +0.5 守住约 60.3%（泊松 raw 29.7% → 校准 39.7%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 29.7,
+                  "full_cover_pct": 39.7,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -50124,8 +51647,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0.5,
                   "show_cover": true
                 },
-                "text": "South Africa -0.5 穿盘 29.7% · South Korea +0.5 守住 70.3%",
-                "color": "#D95F6A",
+                "text": "South Africa 胜 29.7% · 胜后穿 100% · South Korea +0.5 守 60.3%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -50445,15 +51968,14 @@ const RESULTS_DATA = {
           "actual_score": "1-0",
           "ht_score": "0-0",
           "hits": [
+            "净胜全达标方向一致",
             "赛前进球氛围未强判（符合模型五五开读法）"
           ],
-          "misses": [
-            "净胜全达标超预期（模型曾偏谨慎）"
-          ],
-          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。 偏差：净胜全达标超预期（模型曾偏谨慎）。",
+          "misses": [],
+          "summary_cn": "命中：净胜全达标方向一致 · 赛前进球氛围未强判（符合模型五五开读法）。",
           "totals_actual": 1,
           "totals_line": 2.5,
-          "spread_level": "skeptical",
+          "spread_level": "possible",
           "totals_level": "neutral"
         }
       },
@@ -50608,9 +52130,18 @@ const RESULTS_DATA = {
         "over_pct": 44.2,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 5.1,
+        "full_cover_pct": 15.4,
+        "fav_win_pct": 17.2,
+        "cover_given_win_pct": 29.5,
         "spread_level": "skeptical",
         "spread_market_expect": "Curaçao -1 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -50631,35 +52162,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "0-1",
-              "prob": 14.5
+              "prob": 14.4
             },
             {
               "score": "0-2",
-              "prob": 12.2
+              "prob": 12.1
             },
             {
               "score": "1-1",
-              "prob": 11.3
+              "prob": 11.2
             }
           ],
-          "one_goal_win_pct": 12.2,
+          "one_goal_win_pct": 12.1,
           "two_plus_win_pct": 5.1,
-          "full_cover_pct": 5.1,
-          "dog_hold_pct": 94.9,
+          "full_cover_pct": 15.4,
+          "dog_hold_pct": 84.6,
+          "fav_win_pct": 17.2,
+          "cover_given_win_pct": 29.5,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
-          "push_pct": 12.2,
+          "push_pct": 12.1,
           "margin_full_label": "净胜≥2",
           "margin_half_label": "走水净胜=1",
-          "fav_cover_ev": -0.776,
-          "dog_cover_ev": 0.776,
+          "fav_cover_ev": -0.777,
+          "dog_cover_ev": 0.777,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.46,
           "fair_totals_line": 2,
-          "over_2_5_pct": 44.2,
-          "over_3_pct": 22.8,
+          "over_2_5_pct": 44.5,
+          "over_3_pct": 23.3,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 12.2%：参考净胜 1 球时，仅赢一球与拉开差距须分开看"
+          "margin_risk_note": "净胜 1 球概率 12.1%：参考净胜 1 球时，仅赢一球与拉开差距须分开看",
+          "full_cover_pct_raw": 5.1,
+          "dog_hold_pct_raw": 94.9
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -50684,6 +52221,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
           "draw": 1,
@@ -50851,7 +52390,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Curaçao · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
-            "margin_meet_pct": 5.1,
+            "margin_meet_pct": 15.4,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -50870,21 +52409,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 9.3,
             "win_margin2_low_total_pct": 2.6,
             "win_margin2_high_total_pct": 2.5,
-            "readout_cn": "取胜约 11%；若取胜，以「险胜收工」为主（70.5%）。 对着赛前净胜参考，净胜≥2（全达标）约 5.1%；对着总进球参考 2.5，模型超线概率约 44.2%。"
+            "readout_cn": "取胜约 11%；若取胜，以「险胜收工」为主（70.5%）。 对着赛前净胜参考，净胜≥2（全达标）约 15.4%；对着总进球参考 2.5，模型超线概率约 44.2%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "0-1",
-              "pct": 14.5
+              "pct": 14.4
             },
             {
               "score": "0-2",
-              "pct": 12.2
+              "pct": 12.1
             },
             {
               "score": "1-1",
-              "pct": 11.3
+              "pct": 11.2
             }
           ],
           "totals_view": {
@@ -50918,7 +52457,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Curaçao -1 穿盘：达到预期难度偏大",
-            "sub_cn": "Curaçao -1 穿盘 5.1% · Côte d'Ivoire +1 守住 94.9% 进球氛围：几乎五五开",
+            "sub_cn": "Curaçao 胜 17.2% · 胜后穿 29.5% · Côte d'Ivoire +1 守 84.6% 进球氛围：几乎五五开",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
@@ -50928,16 +52467,21 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Curaçao -1",
               "dog_handicap_cn": "Côte d'Ivoire +1",
               "market_expect_cn": "Curaçao -1 · 净胜≥2",
-              "meet_pct": 5.1,
-              "dog_hold_pct": 94.9,
-              "meet_pct_label": "Curaçao -1 穿盘概率",
-              "dog_hold_label": "Côte d'Ivoire +1 守住概率",
+              "meet_pct": 15.4,
+              "dog_hold_pct": 84.6,
+              "fav_win_pct": 17.2,
+              "cover_given_win_pct": 29.5,
+              "full_cover_pct_raw": 5.1,
+              "meet_pct_label": "Curaçao -1 穿盘概率（校准）",
+              "dog_hold_label": "Côte d'Ivoire +1 守住概率（校准）",
+              "two_stage_cn": "Curaçao 取胜约 17.2% · 赢球后穿盘约 29.5% · Côte d'Ivoire +1 守住约 84.6%",
+              "grid_tail_pct": null,
               "verdict_cn": "达到预期难度偏大",
               "headline_cn": "Curaçao -1 穿盘：达到预期难度偏大",
-              "pill_cn": "Curaçao -1 穿盘 5.1% · Côte d'Ivoire +1 守住 94.9%",
-              "detail_cn": "Curaçao -1 穿盘约 5.1%（净胜≥2） · Côte d'Ivoire +1 守住约 94.9%；盘口相对 xG 偏深约 1.25 球，热门穿盘难度偏大。",
+              "pill_cn": "Curaçao 胜 17.2% · 胜后穿 29.5% · Côte d'Ivoire +1 守 84.6%",
+              "detail_cn": "Curaçao 取胜约 17.2% · 赢球后穿盘约 29.5% · Côte d'Ivoire +1 守住约 84.6%（泊松 raw 5.1% → 校准 15.4%）；盘口相对 xG 偏深约 1.25 球，热门穿盘难度偏大。",
               "extra_stats_cn": "",
-              "full_cover_pct": 5.1,
+              "full_cover_pct": 15.4,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
@@ -50980,16 +52524,21 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Curaçao -1",
                   "dog_handicap_cn": "Côte d'Ivoire +1",
                   "market_expect_cn": "Curaçao -1 · 净胜≥2",
-                  "meet_pct": 5.1,
-                  "dog_hold_pct": 94.9,
-                  "meet_pct_label": "Curaçao -1 穿盘概率",
-                  "dog_hold_label": "Côte d'Ivoire +1 守住概率",
+                  "meet_pct": 15.4,
+                  "dog_hold_pct": 84.6,
+                  "fav_win_pct": 17.2,
+                  "cover_given_win_pct": 29.5,
+                  "full_cover_pct_raw": 5.1,
+                  "meet_pct_label": "Curaçao -1 穿盘概率（校准）",
+                  "dog_hold_label": "Côte d'Ivoire +1 守住概率（校准）",
+                  "two_stage_cn": "Curaçao 取胜约 17.2% · 赢球后穿盘约 29.5% · Côte d'Ivoire +1 守住约 84.6%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "达到预期难度偏大",
                   "headline_cn": "Curaçao -1 穿盘：达到预期难度偏大",
-                  "pill_cn": "Curaçao -1 穿盘 5.1% · Côte d'Ivoire +1 守住 94.9%",
-                  "detail_cn": "Curaçao -1 穿盘约 5.1%（净胜≥2） · Côte d'Ivoire +1 守住约 94.9%；盘口相对 xG 偏深约 1.25 球，热门穿盘难度偏大。",
+                  "pill_cn": "Curaçao 胜 17.2% · 胜后穿 29.5% · Côte d'Ivoire +1 守 84.6%",
+                  "detail_cn": "Curaçao 取胜约 17.2% · 赢球后穿盘约 29.5% · Côte d'Ivoire +1 守住约 84.6%（泊松 raw 5.1% → 校准 15.4%）；盘口相对 xG 偏深约 1.25 球，热门穿盘难度偏大。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 5.1,
+                  "full_cover_pct": 15.4,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
@@ -50997,7 +52546,7 @@ const RESULTS_DATA = {
                   "tier_gap": 1.25,
                   "show_cover": true
                 },
-                "text": "Curaçao -1 穿盘 5.1% · Côte d'Ivoire +1 守住 94.9%",
+                "text": "Curaçao 胜 17.2% · 胜后穿 29.5% · Côte d'Ivoire +1 守 84.6%",
                 "color": "#D95F6A",
                 "primary": true
               },
@@ -51438,9 +52987,18 @@ const RESULTS_DATA = {
         "over_pct": 41.2,
         "fair_line": 2,
         "line_gap": 0.75,
-        "full_cover_pct": 6,
+        "full_cover_pct": 15.8,
+        "fav_win_pct": 18,
+        "cover_given_win_pct": 32.9,
         "spread_level": "skeptical",
         "spread_market_expect": "Ecuador -1.25 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -51461,35 +53019,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "0-1",
-              "prob": 11.6
+              "prob": 11.5
             },
             {
               "score": "0-2",
-              "prob": 10.9
+              "prob": 10.8
             },
             {
               "score": "1-1",
-              "prob": 10.7
+              "prob": 10.6
             }
           ],
-          "one_goal_win_pct": 12.2,
-          "two_plus_win_pct": 6,
-          "full_cover_pct": 6,
-          "dog_hold_pct": 94,
+          "one_goal_win_pct": 12.1,
+          "two_plus_win_pct": 5.9,
+          "full_cover_pct": 15.8,
+          "dog_hold_pct": 84.2,
+          "fav_win_pct": 18,
+          "cover_given_win_pct": 32.9,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.3,
           "half_cover_pct": 0,
-          "half_lose_pct": 12.2,
+          "half_lose_pct": 12.1,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
           "margin_half_label": null,
-          "fav_cover_ev": -0.819,
-          "dog_cover_ev": 0.819,
+          "fav_cover_ev": -0.821,
+          "dog_cover_ev": 0.821,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.8,
           "fair_totals_line": 2,
-          "over_2_5_pct": 52.4,
-          "over_3_pct": 29.9,
+          "over_2_5_pct": 52.9,
+          "over_3_pct": 30.6,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥2 约 6%；仅赢 1 球约 12.2%"
+          "margin_risk_note": "净胜≥2 约 5.9%；仅赢 1 球约 12.1%",
+          "full_cover_pct_raw": 5.9,
+          "dog_hold_pct_raw": 94.1
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -51514,6 +53078,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
           "draw": 1,
@@ -51655,7 +53221,7 @@ const RESULTS_DATA = {
             "tier_gap": 1.5,
             "implied_tier_label": "Germany -0.25 · Ecuador +0.25",
             "market_tier_label": "Ecuador -1.25 · Germany +1.25",
-            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.5 · 模型认为仅小胜 1 球仍约 12.2%"
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.5 · 模型认为仅小胜 1 球仍约 12.1%"
           },
           "win_outlook": {
             "fav_name": "Ecuador",
@@ -51681,7 +53247,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Ecuador · 赛前净胜参考 净胜≥2（全达标）",
-            "margin_meet_pct": 6,
+            "margin_meet_pct": 15.9,
             "margin_half_pct": 0,
             "margin_fail_pct": 12.2,
             "margin_full_label": "净胜≥2",
@@ -51700,21 +53266,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 8.3,
             "win_margin2_low_total_pct": 2.6,
             "win_margin2_high_total_pct": 3.4,
-            "readout_cn": "取胜约 12%；若取胜，以「险胜收工」为主（67.1%）。 对着赛前净胜参考，净胜≥2（全达标）约 6%；对着总进球参考 2.75，模型超线概率约 41.2%。"
+            "readout_cn": "取胜约 12%；若取胜，以「险胜收工」为主（67.1%）。 对着赛前净胜参考，净胜≥2（全达标）约 15.9%；对着总进球参考 2.75，模型超线概率约 41.2%。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "0-1",
-              "pct": 11.6
+              "pct": 11.5
             },
             {
               "score": "0-2",
-              "pct": 10.9
+              "pct": 10.8
             },
             {
               "score": "1-1",
-              "pct": 10.7
+              "pct": 10.6
             }
           ],
           "totals_view": {
@@ -51748,7 +53314,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Ecuador -1.25 穿盘：达到预期难度偏大",
-            "sub_cn": "Ecuador -1.25 穿盘 6% · Germany +1.25 守住 94% 进球氛围：几乎五五开",
+            "sub_cn": "Ecuador 胜 18% · 胜后穿 32.9% · Germany +1.25 守 84.2% 进球氛围：几乎五五开",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
@@ -51758,18 +53324,23 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Ecuador -1.25",
               "dog_handicap_cn": "Germany +1.25",
               "market_expect_cn": "Ecuador -1.25 · 净胜≥2",
-              "meet_pct": 6,
-              "dog_hold_pct": 94,
-              "meet_pct_label": "Ecuador -1.25 穿盘概率",
-              "dog_hold_label": "Germany +1.25 守住概率",
+              "meet_pct": 15.8,
+              "dog_hold_pct": 84.2,
+              "fav_win_pct": 18,
+              "cover_given_win_pct": 32.9,
+              "full_cover_pct_raw": 5.9,
+              "meet_pct_label": "Ecuador -1.25 穿盘概率（校准）",
+              "dog_hold_label": "Germany +1.25 守住概率（校准）",
+              "two_stage_cn": "Ecuador 取胜约 18% · 赢球后穿盘约 32.9% · Germany +1.25 守住约 84.2%",
+              "grid_tail_pct": null,
               "verdict_cn": "达到预期难度偏大",
               "headline_cn": "Ecuador -1.25 穿盘：达到预期难度偏大",
-              "pill_cn": "Ecuador -1.25 穿盘 6% · Germany +1.25 守住 94%",
-              "detail_cn": "Ecuador -1.25 穿盘约 6%（净胜≥2） · Germany +1.25 守住约 94%；盘口相对 xG 偏深约 1.5 球，热门穿盘难度偏大。",
+              "pill_cn": "Ecuador 胜 18% · 胜后穿 32.9% · Germany +1.25 守 84.2%",
+              "detail_cn": "Ecuador 取胜约 18% · 赢球后穿盘约 32.9% · Germany +1.25 守住约 84.2%（泊松 raw 5.9% → 校准 15.8%）；盘口相对 xG 偏深约 1.5 球，热门穿盘难度偏大。",
               "extra_stats_cn": "",
-              "full_cover_pct": 6,
+              "full_cover_pct": 15.8,
               "half_cover_pct": 0,
-              "lose1_pct": 12.2,
+              "lose1_pct": 12.1,
               "margin_full_label": "净胜≥2",
               "margin_half_label": null,
               "tier_gap": 1.5,
@@ -51810,24 +53381,29 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Ecuador -1.25",
                   "dog_handicap_cn": "Germany +1.25",
                   "market_expect_cn": "Ecuador -1.25 · 净胜≥2",
-                  "meet_pct": 6,
-                  "dog_hold_pct": 94,
-                  "meet_pct_label": "Ecuador -1.25 穿盘概率",
-                  "dog_hold_label": "Germany +1.25 守住概率",
+                  "meet_pct": 15.8,
+                  "dog_hold_pct": 84.2,
+                  "fav_win_pct": 18,
+                  "cover_given_win_pct": 32.9,
+                  "full_cover_pct_raw": 5.9,
+                  "meet_pct_label": "Ecuador -1.25 穿盘概率（校准）",
+                  "dog_hold_label": "Germany +1.25 守住概率（校准）",
+                  "two_stage_cn": "Ecuador 取胜约 18% · 赢球后穿盘约 32.9% · Germany +1.25 守住约 84.2%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "达到预期难度偏大",
                   "headline_cn": "Ecuador -1.25 穿盘：达到预期难度偏大",
-                  "pill_cn": "Ecuador -1.25 穿盘 6% · Germany +1.25 守住 94%",
-                  "detail_cn": "Ecuador -1.25 穿盘约 6%（净胜≥2） · Germany +1.25 守住约 94%；盘口相对 xG 偏深约 1.5 球，热门穿盘难度偏大。",
+                  "pill_cn": "Ecuador 胜 18% · 胜后穿 32.9% · Germany +1.25 守 84.2%",
+                  "detail_cn": "Ecuador 取胜约 18% · 赢球后穿盘约 32.9% · Germany +1.25 守住约 84.2%（泊松 raw 5.9% → 校准 15.8%）；盘口相对 xG 偏深约 1.5 球，热门穿盘难度偏大。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 6,
+                  "full_cover_pct": 15.8,
                   "half_cover_pct": 0,
-                  "lose1_pct": 12.2,
+                  "lose1_pct": 12.1,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": null,
                   "tier_gap": 1.5,
                   "show_cover": true
                 },
-                "text": "Ecuador -1.25 穿盘 6% · Germany +1.25 守住 94%",
+                "text": "Ecuador 胜 18% · 胜后穿 32.9% · Germany +1.25 守 84.2%",
                 "color": "#D95F6A",
                 "primary": true
               },
@@ -52102,7 +53678,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Ecuador · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.5 · 模型认为仅小胜 1 球仍约 12.2%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
+        "public_summary_note": "【推演概要】Ecuador · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.5 · 模型认为仅小胜 1 球仍约 12.1%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
         "goal_efficiency": {
           "xg_total": 2.8,
           "xg_gap": 0.96,
@@ -52272,9 +53848,18 @@ const RESULTS_DATA = {
         "over_pct": 55,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 0,
+        "full_cover_pct": 12.6,
+        "fav_win_pct": null,
+        "cover_given_win_pct": null,
         "spread_level": "even",
         "spread_market_expect": "势均力敌",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -52295,7 +53880,7 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 11.6
+              "prob": 11.5
             },
             {
               "score": "2-1",
@@ -52303,13 +53888,17 @@ const RESULTS_DATA = {
             },
             {
               "score": "1-0",
-              "prob": 8.8
+              "prob": 8.7
             }
           ],
-          "one_goal_win_pct": 21.7,
-          "two_plus_win_pct": 21.6,
-          "full_cover_pct": 0,
-          "dog_hold_pct": null,
+          "one_goal_win_pct": 21.6,
+          "two_plus_win_pct": 21.9,
+          "full_cover_pct": 12.6,
+          "dog_hold_pct": 87.4,
+          "fav_win_pct": null,
+          "cover_given_win_pct": null,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
@@ -52320,10 +53909,12 @@ const RESULTS_DATA = {
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 2.9,
           "fair_totals_line": 2,
-          "over_2_5_pct": 55,
-          "over_3_pct": 32.5,
+          "over_2_5_pct": 55.3,
+          "over_3_pct": 32.9,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 0,
+          "dog_hold_pct_raw": null
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -52348,6 +53939,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -52510,7 +54103,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "净胜差距参考 · 势均力敌",
-            "margin_meet_pct": 0,
+            "margin_meet_pct": 12.6,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -52529,13 +54122,13 @@ const RESULTS_DATA = {
             "win_low_total_pct": 15.7,
             "win_margin2_low_total_pct": 6.9,
             "win_margin2_high_total_pct": 14.7,
-            "readout_cn": "取胜约 43%；若取胜，以「险胜收工」为主（50.1%）。 对着赛前净胜参考，净胜≥1（全达标）约 0%；对着总进球参考 2.5，模型超线概率约 55%。"
+            "readout_cn": "取胜约 43%；若取胜，以「险胜收工」为主（50.1%）。 对着赛前净胜参考，净胜≥1（全达标）约 12.6%；对着总进球参考 2.5，模型超线概率约 55%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 11.6
+              "pct": 11.5
             },
             {
               "score": "2-1",
@@ -52543,7 +54136,7 @@ const RESULTS_DATA = {
             },
             {
               "score": "1-0",
-              "pct": 8.8
+              "pct": 8.7
             }
           ],
           "totals_view": {
@@ -52589,7 +54182,7 @@ const RESULTS_DATA = {
               "headline_cn": "净胜走向：双方实力接近",
               "pill_cn": "双方实力接近，暂无单侧净胜预期。",
               "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
-              "full_cover_pct": 0,
+              "full_cover_pct": 12.6,
               "half_cover_pct": 0,
               "show_cover": false
             },
@@ -52630,7 +54223,7 @@ const RESULTS_DATA = {
                   "headline_cn": "净胜走向：双方实力接近",
                   "pill_cn": "双方实力接近，暂无单侧净胜预期。",
                   "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
-                  "full_cover_pct": 0,
+                  "full_cover_pct": 12.6,
                   "half_cover_pct": 0,
                   "show_cover": false
                 },
@@ -53079,9 +54672,18 @@ const RESULTS_DATA = {
         "over_pct": 27.9,
         "fair_line": 2,
         "line_gap": 1,
-        "full_cover_pct": 3,
+        "full_cover_pct": 14.2,
+        "fav_win_pct": 11.3,
+        "cover_given_win_pct": 25.9,
         "spread_level": "skeptical",
         "spread_market_expect": "Tunisia -1.5 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "clear_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -53102,22 +54704,26 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "0-2",
-              "prob": 14
+              "prob": 13.8
             },
             {
               "score": "0-1",
-              "prob": 13.6
+              "prob": 13.4
             },
             {
               "score": "0-3",
-              "prob": 9.5
+              "prob": 9.4
             }
           ],
-          "one_goal_win_pct": 8.5,
-          "two_plus_win_pct": 3,
-          "full_cover_pct": 3,
-          "dog_hold_pct": 97,
-          "half_cover_pct": 8.5,
+          "one_goal_win_pct": 8.4,
+          "two_plus_win_pct": 2.9,
+          "full_cover_pct": 14.2,
+          "dog_hold_pct": 85.8,
+          "fav_win_pct": 11.3,
+          "cover_given_win_pct": 25.9,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.5,
+          "half_cover_pct": 8.4,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
@@ -53127,10 +54733,12 @@ const RESULTS_DATA = {
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 2.73,
           "fair_totals_line": 2,
-          "over_2_5_pct": 50.5,
-          "over_3_pct": 27.9,
+          "over_2_5_pct": 51.1,
+          "over_3_pct": 28.9,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥2 约 3%；部分达标净胜=1 约 8.5%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥2 约 2.9%；部分达标净胜=1 约 8.4%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 2.9,
+          "dog_hold_pct_raw": 97.1
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -53155,6 +54763,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 3,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
           "draw": 1,
@@ -53291,7 +54901,7 @@ const RESULTS_DATA = {
             "tier_gap": 2.25,
             "implied_tier_label": "Netherlands -0.75 · Tunisia +0.75",
             "market_tier_label": "Tunisia -1.5 · Netherlands +1.5",
-            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 2.25 · 部分达标净胜=1 约 8.5%"
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 2.25 · 部分达标净胜=1 约 8.4%"
           },
           "win_outlook": {
             "fav_name": "Tunisia",
@@ -53317,7 +54927,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Tunisia · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
-            "margin_meet_pct": 3,
+            "margin_meet_pct": 14.3,
             "margin_half_pct": 8.5,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -53336,21 +54946,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 6.1,
             "win_margin2_low_total_pct": 1.5,
             "win_margin2_high_total_pct": 1.1,
-            "readout_cn": "取胜约 6%；若取胜，以「险胜收工」为主（74.1%）。 对着赛前净胜参考，净胜≥2（全达标）约 3%；部分达标净胜=1 约 8.5%；对着总进球参考 3，模型超线概率约 27.9%。"
+            "readout_cn": "取胜约 6%；若取胜，以「险胜收工」为主（74.1%）。 对着赛前净胜参考，净胜≥2（全达标）约 14.3%；部分达标净胜=1 约 8.5%；对着总进球参考 3，模型超线概率约 27.9%。"
           },
           "totals_line": 3,
           "score_patterns": [
             {
               "score": "0-2",
-              "pct": 14
+              "pct": 13.8
             },
             {
               "score": "0-1",
-              "pct": 13.6
+              "pct": 13.4
             },
             {
               "score": "0-3",
-              "pct": 9.5
+              "pct": 9.4
             }
           ],
           "totals_view": {
@@ -53387,7 +54997,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Tunisia -1.5 穿盘：达到预期难度偏大",
-            "sub_cn": "Tunisia -1.5 穿盘 3% · Netherlands +1.5 守住 97% 进球氛围：倾向沉闷",
+            "sub_cn": "Tunisia 胜 11.3% · 胜后穿 25.9% · Netherlands +1.5 守 85.8% 进球氛围：倾向沉闷",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
@@ -53397,17 +55007,22 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Tunisia -1.5",
               "dog_handicap_cn": "Netherlands +1.5",
               "market_expect_cn": "Tunisia -1.5 · 净胜≥2",
-              "meet_pct": 3,
-              "dog_hold_pct": 97,
-              "meet_pct_label": "Tunisia -1.5 穿盘概率",
-              "dog_hold_label": "Netherlands +1.5 守住概率",
+              "meet_pct": 14.2,
+              "dog_hold_pct": 85.8,
+              "fav_win_pct": 11.3,
+              "cover_given_win_pct": 25.9,
+              "full_cover_pct_raw": 2.9,
+              "meet_pct_label": "Tunisia -1.5 穿盘概率（校准）",
+              "dog_hold_label": "Netherlands +1.5 守住概率（校准）",
+              "two_stage_cn": "Tunisia 取胜约 11.3% · 赢球后穿盘约 25.9% · Netherlands +1.5 守住约 85.8%",
+              "grid_tail_pct": 0.5,
               "verdict_cn": "达到预期难度偏大",
               "headline_cn": "Tunisia -1.5 穿盘：达到预期难度偏大",
-              "pill_cn": "Tunisia -1.5 穿盘 3% · Netherlands +1.5 守住 97%",
-              "detail_cn": "Tunisia -1.5 穿盘约 3%（净胜≥2） · Netherlands +1.5 守住约 97%；盘口相对 xG 偏深约 2.25 球，热门穿盘难度偏大。",
+              "pill_cn": "Tunisia 胜 11.3% · 胜后穿 25.9% · Netherlands +1.5 守 85.8%",
+              "detail_cn": "Tunisia 取胜约 11.3% · 赢球后穿盘约 25.9% · Netherlands +1.5 守住约 85.8%（泊松 raw 2.9% → 校准 14.2%）；盘口相对 xG 偏深约 2.25 球，热门穿盘难度偏大。",
               "extra_stats_cn": "",
-              "full_cover_pct": 3,
-              "half_cover_pct": 8.5,
+              "full_cover_pct": 14.2,
+              "half_cover_pct": 8.4,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
               "margin_half_label": "部分达标净胜=1",
@@ -53449,24 +55064,29 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Tunisia -1.5",
                   "dog_handicap_cn": "Netherlands +1.5",
                   "market_expect_cn": "Tunisia -1.5 · 净胜≥2",
-                  "meet_pct": 3,
-                  "dog_hold_pct": 97,
-                  "meet_pct_label": "Tunisia -1.5 穿盘概率",
-                  "dog_hold_label": "Netherlands +1.5 守住概率",
+                  "meet_pct": 14.2,
+                  "dog_hold_pct": 85.8,
+                  "fav_win_pct": 11.3,
+                  "cover_given_win_pct": 25.9,
+                  "full_cover_pct_raw": 2.9,
+                  "meet_pct_label": "Tunisia -1.5 穿盘概率（校准）",
+                  "dog_hold_label": "Netherlands +1.5 守住概率（校准）",
+                  "two_stage_cn": "Tunisia 取胜约 11.3% · 赢球后穿盘约 25.9% · Netherlands +1.5 守住约 85.8%",
+                  "grid_tail_pct": 0.5,
                   "verdict_cn": "达到预期难度偏大",
                   "headline_cn": "Tunisia -1.5 穿盘：达到预期难度偏大",
-                  "pill_cn": "Tunisia -1.5 穿盘 3% · Netherlands +1.5 守住 97%",
-                  "detail_cn": "Tunisia -1.5 穿盘约 3%（净胜≥2） · Netherlands +1.5 守住约 97%；盘口相对 xG 偏深约 2.25 球，热门穿盘难度偏大。",
+                  "pill_cn": "Tunisia 胜 11.3% · 胜后穿 25.9% · Netherlands +1.5 守 85.8%",
+                  "detail_cn": "Tunisia 取胜约 11.3% · 赢球后穿盘约 25.9% · Netherlands +1.5 守住约 85.8%（泊松 raw 2.9% → 校准 14.2%）；盘口相对 xG 偏深约 2.25 球，热门穿盘难度偏大。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 3,
-                  "half_cover_pct": 8.5,
+                  "full_cover_pct": 14.2,
+                  "half_cover_pct": 8.4,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": "部分达标净胜=1",
                   "tier_gap": 2.25,
                   "show_cover": true
                 },
-                "text": "Tunisia -1.5 穿盘 3% · Netherlands +1.5 守住 97%",
+                "text": "Tunisia 胜 11.3% · 胜后穿 25.9% · Netherlands +1.5 守 85.8%",
                 "color": "#D95F6A",
                 "primary": true
               },
@@ -53741,7 +55361,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Tunisia · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 2.25 · 部分达标净胜=1 约 8.5%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
+        "public_summary_note": "【推演概要】Tunisia · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 2.25 · 部分达标净胜=1 约 8.4%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
         "goal_efficiency": {
           "xg_total": 2.73,
           "xg_gap": 1.37,
@@ -53983,9 +55603,18 @@ const RESULTS_DATA = {
         "over_pct": 37.3,
         "fair_line": 2,
         "line_gap": 0.75,
-        "full_cover_pct": 5.5,
+        "full_cover_pct": 15.6,
+        "fav_win_pct": 17.6,
+        "cover_given_win_pct": 31.3,
         "spread_level": "skeptical",
         "spread_market_expect": "Türkiye -1 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -54006,35 +55635,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "0-1",
-              "prob": 13
+              "prob": 12.9
             },
             {
               "score": "0-2",
-              "prob": 11.5
+              "prob": 11.4
             },
             {
               "score": "1-1",
-              "prob": 11
+              "prob": 10.9
             }
           ],
-          "one_goal_win_pct": 12.2,
+          "one_goal_win_pct": 12.1,
           "two_plus_win_pct": 5.5,
-          "full_cover_pct": 5.5,
-          "dog_hold_pct": 94.5,
+          "full_cover_pct": 15.6,
+          "dog_hold_pct": 84.4,
+          "fav_win_pct": 17.6,
+          "cover_given_win_pct": 31.3,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
-          "push_pct": 12.2,
+          "push_pct": 12.1,
           "margin_full_label": "净胜≥2",
           "margin_half_label": "走水净胜=1",
-          "fav_cover_ev": -0.768,
-          "dog_cover_ev": 0.768,
+          "fav_cover_ev": -0.769,
+          "dog_cover_ev": 0.769,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.63,
           "fair_totals_line": 2,
-          "over_2_5_pct": 48.4,
-          "over_3_pct": 26.3,
+          "over_2_5_pct": 48.8,
+          "over_3_pct": 26.9,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 12.2%：参考净胜 1 球时，仅赢一球与拉开差距须分开看"
+          "margin_risk_note": "净胜 1 球概率 12.1%：参考净胜 1 球时，仅赢一球与拉开差距须分开看",
+          "full_cover_pct_raw": 5.5,
+          "dog_hold_pct_raw": 94.5
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -54059,6 +55694,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
           "draw": 1,
@@ -54226,7 +55863,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Türkiye · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
-            "margin_meet_pct": 5.5,
+            "margin_meet_pct": 15.6,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -54245,21 +55882,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 8.8,
             "win_margin2_low_total_pct": 2.6,
             "win_margin2_high_total_pct": 2.9,
-            "readout_cn": "取胜约 10%；若取胜，以「险胜收工」为主（68.8%）。 对着赛前净胜参考，净胜≥2（全达标）约 5.5%；对着总进球参考 2.75，模型超线概率约 37.3%。"
+            "readout_cn": "取胜约 10%；若取胜，以「险胜收工」为主（68.8%）。 对着赛前净胜参考，净胜≥2（全达标）约 15.6%；对着总进球参考 2.75，模型超线概率约 37.3%。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "0-1",
-              "pct": 13
+              "pct": 12.9
             },
             {
               "score": "0-2",
-              "pct": 11.5
+              "pct": 11.4
             },
             {
               "score": "1-1",
-              "pct": 11
+              "pct": 10.9
             }
           ],
           "totals_view": {
@@ -54293,7 +55930,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Türkiye -1 穿盘：达到预期难度偏大",
-            "sub_cn": "Türkiye -1 穿盘 5.5% · USA +1 守住 94.5% 进球氛围：略偏闷 平局权重约 37%，小组赛易出守平——勿只盯胜负一方。",
+            "sub_cn": "Türkiye 胜 17.6% · 胜后穿 31.3% · USA +1 守 84.4% 进球氛围：略偏闷 平局权重约 37%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
@@ -54303,16 +55940,21 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Türkiye -1",
               "dog_handicap_cn": "USA +1",
               "market_expect_cn": "Türkiye -1 · 净胜≥2",
-              "meet_pct": 5.5,
-              "dog_hold_pct": 94.5,
-              "meet_pct_label": "Türkiye -1 穿盘概率",
-              "dog_hold_label": "USA +1 守住概率",
+              "meet_pct": 15.6,
+              "dog_hold_pct": 84.4,
+              "fav_win_pct": 17.6,
+              "cover_given_win_pct": 31.3,
+              "full_cover_pct_raw": 5.5,
+              "meet_pct_label": "Türkiye -1 穿盘概率（校准）",
+              "dog_hold_label": "USA +1 守住概率（校准）",
+              "two_stage_cn": "Türkiye 取胜约 17.6% · 赢球后穿盘约 31.3% · USA +1 守住约 84.4%",
+              "grid_tail_pct": null,
               "verdict_cn": "达到预期难度偏大",
               "headline_cn": "Türkiye -1 穿盘：达到预期难度偏大",
-              "pill_cn": "Türkiye -1 穿盘 5.5% · USA +1 守住 94.5%",
-              "detail_cn": "Türkiye -1 穿盘约 5.5%（净胜≥2） · USA +1 守住约 94.5%；盘口相对 xG 偏深约 1.25 球，热门穿盘难度偏大。",
+              "pill_cn": "Türkiye 胜 17.6% · 胜后穿 31.3% · USA +1 守 84.4%",
+              "detail_cn": "Türkiye 取胜约 17.6% · 赢球后穿盘约 31.3% · USA +1 守住约 84.4%（泊松 raw 5.5% → 校准 15.6%）；盘口相对 xG 偏深约 1.25 球，热门穿盘难度偏大。",
               "extra_stats_cn": "",
-              "full_cover_pct": 5.5,
+              "full_cover_pct": 15.6,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
@@ -54359,16 +56001,21 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Türkiye -1",
                   "dog_handicap_cn": "USA +1",
                   "market_expect_cn": "Türkiye -1 · 净胜≥2",
-                  "meet_pct": 5.5,
-                  "dog_hold_pct": 94.5,
-                  "meet_pct_label": "Türkiye -1 穿盘概率",
-                  "dog_hold_label": "USA +1 守住概率",
+                  "meet_pct": 15.6,
+                  "dog_hold_pct": 84.4,
+                  "fav_win_pct": 17.6,
+                  "cover_given_win_pct": 31.3,
+                  "full_cover_pct_raw": 5.5,
+                  "meet_pct_label": "Türkiye -1 穿盘概率（校准）",
+                  "dog_hold_label": "USA +1 守住概率（校准）",
+                  "two_stage_cn": "Türkiye 取胜约 17.6% · 赢球后穿盘约 31.3% · USA +1 守住约 84.4%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "达到预期难度偏大",
                   "headline_cn": "Türkiye -1 穿盘：达到预期难度偏大",
-                  "pill_cn": "Türkiye -1 穿盘 5.5% · USA +1 守住 94.5%",
-                  "detail_cn": "Türkiye -1 穿盘约 5.5%（净胜≥2） · USA +1 守住约 94.5%；盘口相对 xG 偏深约 1.25 球，热门穿盘难度偏大。",
+                  "pill_cn": "Türkiye 胜 17.6% · 胜后穿 31.3% · USA +1 守 84.4%",
+                  "detail_cn": "Türkiye 取胜约 17.6% · 赢球后穿盘约 31.3% · USA +1 守住约 84.4%（泊松 raw 5.5% → 校准 15.6%）；盘口相对 xG 偏深约 1.25 球，热门穿盘难度偏大。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 5.5,
+                  "full_cover_pct": 15.6,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
@@ -54376,7 +56023,7 @@ const RESULTS_DATA = {
                   "tier_gap": 1.25,
                   "show_cover": true
                 },
-                "text": "Türkiye -1 穿盘 5.5% · USA +1 守住 94.5%",
+                "text": "Türkiye 胜 17.6% · 胜后穿 31.3% · USA +1 守 84.4%",
                 "color": "#D95F6A",
                 "primary": true
               },
@@ -54817,9 +56464,18 @@ const RESULTS_DATA = {
         "over_pct": 50.4,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 0,
+        "full_cover_pct": 12.6,
+        "fav_win_pct": null,
+        "cover_given_win_pct": null,
         "spread_level": "even",
         "spread_market_expect": "势均力敌",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -54840,7 +56496,7 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 12.3
+              "prob": 12.2
             },
             {
               "score": "1-0",
@@ -54851,10 +56507,14 @@ const RESULTS_DATA = {
               "prob": 8.7
             }
           ],
-          "one_goal_win_pct": 21.4,
-          "two_plus_win_pct": 18.8,
-          "full_cover_pct": 0,
-          "dog_hold_pct": null,
+          "one_goal_win_pct": 21.3,
+          "two_plus_win_pct": 19,
+          "full_cover_pct": 12.6,
+          "dog_hold_pct": 87.4,
+          "fav_win_pct": null,
+          "cover_given_win_pct": null,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
@@ -54865,10 +56525,12 @@ const RESULTS_DATA = {
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 2.7,
           "fair_totals_line": 2,
-          "over_2_5_pct": 50.4,
-          "over_3_pct": 28.2,
+          "over_2_5_pct": 50.6,
+          "over_3_pct": 28.5,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 0,
+          "dog_hold_pct_raw": null
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -54893,6 +56555,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -55060,7 +56724,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "净胜差距参考 · 势均力敌",
-            "margin_meet_pct": 0,
+            "margin_meet_pct": 12.6,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -55079,13 +56743,13 @@ const RESULTS_DATA = {
             "win_low_total_pct": 16.4,
             "win_margin2_low_total_pct": 6.8,
             "win_margin2_high_total_pct": 12,
-            "readout_cn": "取胜约 38%；若取胜，以「险胜收工」为主（53.1%）。 对着赛前净胜参考，净胜≥1（全达标）约 0%；对着总进球参考 2.5，模型超线概率约 50.4%。"
+            "readout_cn": "取胜约 38%；若取胜，以「险胜收工」为主（53.1%）。 对着赛前净胜参考，净胜≥1（全达标）约 12.6%；对着总进球参考 2.5，模型超线概率约 50.4%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 12.3
+              "pct": 12.2
             },
             {
               "score": "1-0",
@@ -55139,7 +56803,7 @@ const RESULTS_DATA = {
               "headline_cn": "净胜走向：双方实力接近",
               "pill_cn": "双方实力接近，暂无单侧净胜预期。",
               "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
-              "full_cover_pct": 0,
+              "full_cover_pct": 12.6,
               "half_cover_pct": 0,
               "show_cover": false
             },
@@ -55184,7 +56848,7 @@ const RESULTS_DATA = {
                   "headline_cn": "净胜走向：双方实力接近",
                   "pill_cn": "双方实力接近，暂无单侧净胜预期。",
                   "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
-                  "full_cover_pct": 0,
+                  "full_cover_pct": 12.6,
                   "half_cover_pct": 0,
                   "show_cover": false
                 },
@@ -55647,9 +57311,18 @@ const RESULTS_DATA = {
         "over_pct": 46,
         "fair_line": 2.75,
         "line_gap": 0,
-        "full_cover_pct": 0,
+        "full_cover_pct": 12.6,
+        "fav_win_pct": null,
+        "cover_given_win_pct": null,
         "spread_level": "even",
         "spread_market_expect": "势均力敌",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -55670,21 +57343,25 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 11.3
+              "prob": 11.2
             },
             {
               "score": "1-2",
-              "prob": 8.6
+              "prob": 8.5
             },
             {
               "score": "2-1",
-              "prob": 8.4
+              "prob": 8.3
             }
           ],
-          "one_goal_win_pct": 19.6,
-          "two_plus_win_pct": 17.3,
-          "full_cover_pct": 0,
-          "dog_hold_pct": null,
+          "one_goal_win_pct": 19.5,
+          "two_plus_win_pct": 17.5,
+          "full_cover_pct": 12.6,
+          "dog_hold_pct": 87.4,
+          "fav_win_pct": null,
+          "cover_given_win_pct": null,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
@@ -55695,10 +57372,12 @@ const RESULTS_DATA = {
           "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 3,
           "fair_totals_line": 2.75,
-          "over_2_5_pct": 57.3,
-          "over_3_pct": 34.7,
+          "over_2_5_pct": 57.6,
+          "over_3_pct": 35.2,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 0,
+          "dog_hold_pct_raw": null
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -55723,6 +57402,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -55890,7 +57571,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "净胜差距参考 · 势均力敌",
-            "margin_meet_pct": 0,
+            "margin_meet_pct": 12.6,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -55909,21 +57590,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 13.4,
             "win_margin2_low_total_pct": 5.8,
             "win_margin2_high_total_pct": 12.7,
-            "readout_cn": "取胜约 37%；若取胜，以「险胜收工」为主（52.2%）。 对着赛前净胜参考，净胜≥1（全达标）约 0%；对着总进球参考 2.75，模型超线概率约 46%。"
+            "readout_cn": "取胜约 37%；若取胜，以「险胜收工」为主（52.2%）。 对着赛前净胜参考，净胜≥1（全达标）约 12.6%；对着总进球参考 2.75，模型超线概率约 46%。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 11.3
+              "pct": 11.2
             },
             {
               "score": "1-2",
-              "pct": 8.6
+              "pct": 8.5
             },
             {
               "score": "2-1",
-              "pct": 8.4
+              "pct": 8.3
             }
           ],
           "totals_view": {
@@ -55969,7 +57650,7 @@ const RESULTS_DATA = {
               "headline_cn": "净胜走向：双方实力接近",
               "pill_cn": "双方实力接近，暂无单侧净胜预期。",
               "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
-              "full_cover_pct": 0,
+              "full_cover_pct": 12.6,
               "half_cover_pct": 0,
               "show_cover": false
             },
@@ -56010,7 +57691,7 @@ const RESULTS_DATA = {
                   "headline_cn": "净胜走向：双方实力接近",
                   "pill_cn": "双方实力接近，暂无单侧净胜预期。",
                   "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
-                  "full_cover_pct": 0,
+                  "full_cover_pct": 12.6,
                   "half_cover_pct": 0,
                   "show_cover": false
                 },
@@ -56459,9 +58140,18 @@ const RESULTS_DATA = {
         "over_pct": 47.7,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 31.5,
-        "spread_level": "uncertain",
+        "full_cover_pct": 40.9,
+        "fav_win_pct": 57.2,
+        "cover_given_win_pct": 55.8,
+        "spread_level": "possible",
         "spread_market_expect": "Senegal -1 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -56482,7 +58172,7 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-0",
-              "prob": 12.9
+              "prob": 12.8
             },
             {
               "score": "1-1",
@@ -56490,27 +58180,33 @@ const RESULTS_DATA = {
             },
             {
               "score": "2-0",
-              "prob": 11.1
+              "prob": 11
             }
           ],
-          "one_goal_win_pct": 25.4,
-          "two_plus_win_pct": 31.5,
-          "full_cover_pct": 31.5,
-          "dog_hold_pct": 68.5,
+          "one_goal_win_pct": 25.3,
+          "two_plus_win_pct": 31.9,
+          "full_cover_pct": 40.9,
+          "dog_hold_pct": 59.1,
+          "fav_win_pct": 57.2,
+          "cover_given_win_pct": 55.8,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
-          "push_pct": 25.4,
+          "push_pct": 25.3,
           "margin_full_label": "净胜≥2",
           "margin_half_label": "走水净胜=1",
-          "fav_cover_ev": -0.116,
-          "dog_cover_ev": 0.116,
+          "fav_cover_ev": -0.109,
+          "dog_cover_ev": 0.109,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.6,
           "fair_totals_line": 2,
-          "over_2_5_pct": 47.7,
-          "over_3_pct": 25.8,
+          "over_2_5_pct": 48.1,
+          "over_3_pct": 26.2,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 25.4%：参考净胜 1 球时，仅赢一球与拉开差距须分开看"
+          "margin_risk_note": "净胜 1 球概率 25.3%：参考净胜 1 球时，仅赢一球与拉开差距须分开看",
+          "full_cover_pct_raw": 31.9,
+          "dog_hold_pct_raw": 68.1
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -56535,6 +58231,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
           "draw": 1,
@@ -56697,7 +58395,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Senegal · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
-            "margin_meet_pct": 31.5,
+            "margin_meet_pct": 40.7,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
@@ -56716,13 +58414,13 @@ const RESULTS_DATA = {
             "win_low_total_pct": 24,
             "win_margin2_low_total_pct": 11.1,
             "win_margin2_high_total_pct": 20.4,
-            "readout_cn": "取胜约 53%；若取胜，以「险胜收工」为主（44.8%）。 对着赛前净胜参考，净胜≥2（全达标）约 31.5%；对着总进球参考 2.5，模型超线概率约 47.7%。"
+            "readout_cn": "取胜约 53%；若取胜，以「险胜收工」为主（44.8%）。 对着赛前净胜参考，净胜≥2（全达标）约 40.7%；对着总进球参考 2.5，模型超线概率约 47.7%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 12.9
+              "pct": 12.8
             },
             {
               "score": "1-1",
@@ -56730,7 +58428,7 @@ const RESULTS_DATA = {
             },
             {
               "score": "2-0",
-              "pct": 11.1
+              "pct": 11
             }
           ],
           "totals_view": {
@@ -56763,27 +58461,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.6 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Senegal -1 穿盘：达标与否难下定论",
-            "sub_cn": "Senegal -1 穿盘 31.5% · Iraq +1 守住 68.5% 进球氛围：几乎五五开",
+            "headline_cn": "Senegal -1 穿盘：有达标可能",
+            "sub_cn": "Senegal 胜 57.2% · 胜后穿 55.8% · Iraq +1 守 59.1% 进球氛围：几乎五五开",
             "spread": {
-              "level": "uncertain",
-              "label_cn": "净胜幅度难下定论",
-              "color": "#8A96A8",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Senegal",
               "dog_name": "Iraq",
               "fav_handicap_cn": "Senegal -1",
               "dog_handicap_cn": "Iraq +1",
               "market_expect_cn": "Senegal -1 · 净胜≥2",
-              "meet_pct": 31.5,
-              "dog_hold_pct": 68.5,
-              "meet_pct_label": "Senegal -1 穿盘概率",
-              "dog_hold_label": "Iraq +1 守住概率",
-              "verdict_cn": "达标与否难下定论",
-              "headline_cn": "Senegal -1 穿盘：达标与否难下定论",
-              "pill_cn": "Senegal -1 穿盘 31.5% · Iraq +1 守住 68.5%",
-              "detail_cn": "Senegal -1 穿盘约 31.5%（净胜≥2） · Iraq +1 守住约 68.5%。",
+              "meet_pct": 40.9,
+              "dog_hold_pct": 59.1,
+              "fav_win_pct": 57.2,
+              "cover_given_win_pct": 55.8,
+              "full_cover_pct_raw": 31.9,
+              "meet_pct_label": "Senegal -1 穿盘概率（校准）",
+              "dog_hold_label": "Iraq +1 守住概率（校准）",
+              "two_stage_cn": "Senegal 取胜约 57.2% · 赢球后穿盘约 55.8% · Iraq +1 守住约 59.1%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Senegal -1 穿盘：有达标可能",
+              "pill_cn": "Senegal 胜 57.2% · 胜后穿 55.8% · Iraq +1 守 59.1%",
+              "detail_cn": "Senegal 取胜约 57.2% · 赢球后穿盘约 55.8% · Iraq +1 守住约 59.1%（泊松 raw 31.9% → 校准 40.9%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 31.5,
+              "full_cover_pct": 40.9,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
@@ -56818,24 +58521,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "uncertain",
-                  "label_cn": "净胜幅度难下定论",
-                  "color": "#8A96A8",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Senegal",
                   "dog_name": "Iraq",
                   "fav_handicap_cn": "Senegal -1",
                   "dog_handicap_cn": "Iraq +1",
                   "market_expect_cn": "Senegal -1 · 净胜≥2",
-                  "meet_pct": 31.5,
-                  "dog_hold_pct": 68.5,
-                  "meet_pct_label": "Senegal -1 穿盘概率",
-                  "dog_hold_label": "Iraq +1 守住概率",
-                  "verdict_cn": "达标与否难下定论",
-                  "headline_cn": "Senegal -1 穿盘：达标与否难下定论",
-                  "pill_cn": "Senegal -1 穿盘 31.5% · Iraq +1 守住 68.5%",
-                  "detail_cn": "Senegal -1 穿盘约 31.5%（净胜≥2） · Iraq +1 守住约 68.5%。",
+                  "meet_pct": 40.9,
+                  "dog_hold_pct": 59.1,
+                  "fav_win_pct": 57.2,
+                  "cover_given_win_pct": 55.8,
+                  "full_cover_pct_raw": 31.9,
+                  "meet_pct_label": "Senegal -1 穿盘概率（校准）",
+                  "dog_hold_label": "Iraq +1 守住概率（校准）",
+                  "two_stage_cn": "Senegal 取胜约 57.2% · 赢球后穿盘约 55.8% · Iraq +1 守住约 59.1%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Senegal -1 穿盘：有达标可能",
+                  "pill_cn": "Senegal 胜 57.2% · 胜后穿 55.8% · Iraq +1 守 59.1%",
+                  "detail_cn": "Senegal 取胜约 57.2% · 赢球后穿盘约 55.8% · Iraq +1 守住约 59.1%（泊松 raw 31.9% → 校准 40.9%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 31.5,
+                  "full_cover_pct": 40.9,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
@@ -56843,8 +58551,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0.75,
                   "show_cover": true
                 },
-                "text": "Senegal -1 穿盘 31.5% · Iraq +1 守住 68.5%",
-                "color": "#8A96A8",
+                "text": "Senegal 胜 57.2% · 胜后穿 55.8% · Iraq +1 守 59.1%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -57163,14 +58871,16 @@ const RESULTS_DATA = {
         "preview_replay": {
           "actual_score": "5-0",
           "ht_score": "1-0",
-          "hits": [],
+          "hits": [
+            "净胜全达标方向一致"
+          ],
           "misses": [
             "总进球尾部偏差大（赛前已标注无明显倾向）"
           ],
-          "summary_cn": "偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
+          "summary_cn": "命中：净胜全达标方向一致。 偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
           "totals_actual": 5,
           "totals_line": 2.5,
-          "spread_level": "uncertain",
+          "spread_level": "possible",
           "totals_level": "neutral"
         }
       },
@@ -57359,9 +59069,18 @@ const RESULTS_DATA = {
         "over_pct": 47.9,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 40.5,
+        "full_cover_pct": 48.4,
+        "fav_win_pct": 40.6,
+        "cover_given_win_pct": 100,
         "spread_level": "possible",
         "spread_market_expect": "Egypt -0.25 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -57382,7 +59101,7 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 12.6
+              "prob": 12.5
             },
             {
               "score": "1-0",
@@ -57393,24 +59112,30 @@ const RESULTS_DATA = {
               "prob": 9.1
             }
           ],
-          "one_goal_win_pct": 21.8,
-          "two_plus_win_pct": 18.7,
-          "full_cover_pct": 40.5,
-          "dog_hold_pct": 59.5,
+          "one_goal_win_pct": 21.7,
+          "two_plus_win_pct": 18.9,
+          "full_cover_pct": 48.4,
+          "dog_hold_pct": 51.6,
+          "fav_win_pct": 40.6,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": -0.19,
-          "dog_cover_ev": 0.19,
+          "fav_cover_ev": -0.188,
+          "dog_cover_ev": 0.188,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.6,
           "fair_totals_line": 2,
-          "over_2_5_pct": 47.9,
-          "over_3_pct": 26.1,
+          "over_2_5_pct": 48.1,
+          "over_3_pct": 26.3,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 40.5%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 40.6%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 40.6,
+          "dog_hold_pct_raw": 59.4
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -57435,6 +59160,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -57597,7 +59324,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Egypt · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 40.5,
+            "margin_meet_pct": 48.4,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -57616,13 +59343,13 @@ const RESULTS_DATA = {
             "win_low_total_pct": 17.4,
             "win_margin2_low_total_pct": 7.1,
             "win_margin2_high_total_pct": 11.6,
-            "readout_cn": "取胜约 37%；若取胜，以「险胜收工」为主（53.8%）。 对着赛前净胜参考，净胜≥1（全达标）约 40.5%；对着总进球参考 2.5，模型超线概率约 47.9%。"
+            "readout_cn": "取胜约 37%；若取胜，以「险胜收工」为主（53.8%）。 对着赛前净胜参考，净胜≥1（全达标）约 48.4%；对着总进球参考 2.5，模型超线概率约 47.9%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 12.6
+              "pct": 12.5
             },
             {
               "score": "1-0",
@@ -57664,7 +59391,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Egypt -0.25 穿盘：有达标可能",
-            "sub_cn": "Egypt -0.25 穿盘 40.5% · IR Iran +0.25 守住 59.5% 进球氛围：几乎五五开 平局权重约 33%，小组赛易出守平——勿只盯胜负一方。",
+            "sub_cn": "Egypt 胜 40.6% · 胜后穿 100% · IR Iran +0.25 守 51.6% 进球氛围：几乎五五开 平局权重约 33%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -57674,16 +59401,21 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Egypt -0.25",
               "dog_handicap_cn": "IR Iran +0.25",
               "market_expect_cn": "Egypt -0.25 · 净胜≥1",
-              "meet_pct": 40.5,
-              "dog_hold_pct": 59.5,
-              "meet_pct_label": "Egypt -0.25 穿盘概率",
-              "dog_hold_label": "IR Iran +0.25 守住概率",
+              "meet_pct": 48.4,
+              "dog_hold_pct": 51.6,
+              "fav_win_pct": 40.6,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 40.6,
+              "meet_pct_label": "Egypt -0.25 穿盘概率（校准）",
+              "dog_hold_label": "IR Iran +0.25 守住概率（校准）",
+              "two_stage_cn": "Egypt 取胜约 40.6% · 赢球后穿盘约 100% · IR Iran +0.25 守住约 51.6%",
+              "grid_tail_pct": null,
               "verdict_cn": "有达标可能",
               "headline_cn": "Egypt -0.25 穿盘：有达标可能",
-              "pill_cn": "Egypt -0.25 穿盘 40.5% · IR Iran +0.25 守住 59.5%",
-              "detail_cn": "Egypt -0.25 穿盘约 40.5%（净胜≥1） · IR Iran +0.25 守住约 59.5%；穿盘与受让守住均有一定空间。",
+              "pill_cn": "Egypt 胜 40.6% · 胜后穿 100% · IR Iran +0.25 守 51.6%",
+              "detail_cn": "Egypt 取胜约 40.6% · 赢球后穿盘约 100% · IR Iran +0.25 守住约 51.6%（泊松 raw 40.6% → 校准 48.4%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 40.5,
+              "full_cover_pct": 48.4,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -57730,16 +59462,21 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Egypt -0.25",
                   "dog_handicap_cn": "IR Iran +0.25",
                   "market_expect_cn": "Egypt -0.25 · 净胜≥1",
-                  "meet_pct": 40.5,
-                  "dog_hold_pct": 59.5,
-                  "meet_pct_label": "Egypt -0.25 穿盘概率",
-                  "dog_hold_label": "IR Iran +0.25 守住概率",
+                  "meet_pct": 48.4,
+                  "dog_hold_pct": 51.6,
+                  "fav_win_pct": 40.6,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 40.6,
+                  "meet_pct_label": "Egypt -0.25 穿盘概率（校准）",
+                  "dog_hold_label": "IR Iran +0.25 守住概率（校准）",
+                  "two_stage_cn": "Egypt 取胜约 40.6% · 赢球后穿盘约 100% · IR Iran +0.25 守住约 51.6%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "有达标可能",
                   "headline_cn": "Egypt -0.25 穿盘：有达标可能",
-                  "pill_cn": "Egypt -0.25 穿盘 40.5% · IR Iran +0.25 守住 59.5%",
-                  "detail_cn": "Egypt -0.25 穿盘约 40.5%（净胜≥1） · IR Iran +0.25 守住约 59.5%；穿盘与受让守住均有一定空间。",
+                  "pill_cn": "Egypt 胜 40.6% · 胜后穿 100% · IR Iran +0.25 守 51.6%",
+                  "detail_cn": "Egypt 取胜约 40.6% · 赢球后穿盘约 100% · IR Iran +0.25 守住约 51.6%（泊松 raw 40.6% → 校准 48.4%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 40.5,
+                  "full_cover_pct": 48.4,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -57747,7 +59484,7 @@ const RESULTS_DATA = {
                   "tier_gap": 0.25,
                   "show_cover": true
                 },
-                "text": "Egypt -0.25 穿盘 40.5% · IR Iran +0.25 守住 59.5%",
+                "text": "Egypt 胜 40.6% · 胜后穿 100% · IR Iran +0.25 守 51.6%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -58194,9 +59931,18 @@ const RESULTS_DATA = {
         "over_pct": 36,
         "fair_line": 2,
         "line_gap": 0.75,
-        "full_cover_pct": 5.3,
+        "full_cover_pct": 15.5,
+        "fav_win_pct": 17.3,
+        "cover_given_win_pct": 30.5,
         "spread_level": "skeptical",
         "spread_market_expect": "New Zealand -1.25 · 净胜≥2",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -58217,35 +59963,41 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "0-1",
-              "prob": 13.5
+              "prob": 13.4
             },
             {
               "score": "0-2",
-              "prob": 11.8
+              "prob": 11.7
             },
             {
               "score": "1-1",
-              "prob": 11.1
+              "prob": 11
             }
           ],
-          "one_goal_win_pct": 12.1,
+          "one_goal_win_pct": 12,
           "two_plus_win_pct": 5.3,
-          "full_cover_pct": 5.3,
-          "dog_hold_pct": 94.7,
+          "full_cover_pct": 15.5,
+          "dog_hold_pct": 84.5,
+          "fav_win_pct": 17.3,
+          "cover_given_win_pct": 30.5,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
           "half_cover_pct": 0,
-          "half_lose_pct": 12.1,
+          "half_lose_pct": 12,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
           "margin_half_label": null,
-          "fav_cover_ev": -0.833,
-          "dog_cover_ev": 0.833,
+          "fav_cover_ev": -0.834,
+          "dog_cover_ev": 0.834,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.57,
           "fair_totals_line": 2,
-          "over_2_5_pct": 46.9,
-          "over_3_pct": 25,
+          "over_2_5_pct": 47.3,
+          "over_3_pct": 25.6,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥2 约 5.3%；仅赢 1 球约 12.1%"
+          "margin_risk_note": "净胜≥2 约 5.3%；仅赢 1 球约 12%",
+          "full_cover_pct_raw": 5.3,
+          "dog_hold_pct_raw": 94.7
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -58270,6 +60022,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.75,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
           "draw": 1,
@@ -58411,7 +60165,7 @@ const RESULTS_DATA = {
             "tier_gap": 1.5,
             "implied_tier_label": "Belgium -0.25 · New Zealand +0.25",
             "market_tier_label": "New Zealand -1.25 · Belgium +1.25",
-            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.5 · 模型认为仅小胜 1 球仍约 12.1%"
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.5 · 模型认为仅小胜 1 球仍约 12%"
           },
           "win_outlook": {
             "fav_name": "New Zealand",
@@ -58437,7 +60191,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "New Zealand · 赛前净胜参考 净胜≥2（全达标）",
-            "margin_meet_pct": 5.3,
+            "margin_meet_pct": 15.5,
             "margin_half_pct": 0,
             "margin_fail_pct": 12.1,
             "margin_full_label": "净胜≥2",
@@ -58456,21 +60210,21 @@ const RESULTS_DATA = {
             "win_low_total_pct": 8.9,
             "win_margin2_low_total_pct": 2.6,
             "win_margin2_high_total_pct": 2.7,
-            "readout_cn": "取胜约 11%；若取胜，以「险胜收工」为主（69.6%）。 对着赛前净胜参考，净胜≥2（全达标）约 5.3%；对着总进球参考 2.75，模型超线概率约 36%。"
+            "readout_cn": "取胜约 11%；若取胜，以「险胜收工」为主（69.6%）。 对着赛前净胜参考，净胜≥2（全达标）约 15.5%；对着总进球参考 2.75，模型超线概率约 36%。"
           },
           "totals_line": 2.75,
           "score_patterns": [
             {
               "score": "0-1",
-              "pct": 13.5
+              "pct": 13.4
             },
             {
               "score": "0-2",
-              "pct": 11.8
+              "pct": 11.7
             },
             {
               "score": "1-1",
-              "pct": 11.1
+              "pct": 11
             }
           ],
           "totals_view": {
@@ -58504,7 +60258,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "New Zealand -1.25 穿盘：达到预期难度偏大",
-            "sub_cn": "New Zealand -1.25 穿盘 5.3% · Belgium +1.25 守住 94.7% 进球氛围：略偏闷",
+            "sub_cn": "New Zealand 胜 17.3% · 胜后穿 30.5% · Belgium +1.25 守 84.5% 进球氛围：略偏闷",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
@@ -58514,18 +60268,23 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "New Zealand -1.25",
               "dog_handicap_cn": "Belgium +1.25",
               "market_expect_cn": "New Zealand -1.25 · 净胜≥2",
-              "meet_pct": 5.3,
-              "dog_hold_pct": 94.7,
-              "meet_pct_label": "New Zealand -1.25 穿盘概率",
-              "dog_hold_label": "Belgium +1.25 守住概率",
+              "meet_pct": 15.5,
+              "dog_hold_pct": 84.5,
+              "fav_win_pct": 17.3,
+              "cover_given_win_pct": 30.5,
+              "full_cover_pct_raw": 5.3,
+              "meet_pct_label": "New Zealand -1.25 穿盘概率（校准）",
+              "dog_hold_label": "Belgium +1.25 守住概率（校准）",
+              "two_stage_cn": "New Zealand 取胜约 17.3% · 赢球后穿盘约 30.5% · Belgium +1.25 守住约 84.5%",
+              "grid_tail_pct": null,
               "verdict_cn": "达到预期难度偏大",
               "headline_cn": "New Zealand -1.25 穿盘：达到预期难度偏大",
-              "pill_cn": "New Zealand -1.25 穿盘 5.3% · Belgium +1.25 守住 94.7%",
-              "detail_cn": "New Zealand -1.25 穿盘约 5.3%（净胜≥2） · Belgium +1.25 守住约 94.7%；盘口相对 xG 偏深约 1.5 球，热门穿盘难度偏大。",
+              "pill_cn": "New Zealand 胜 17.3% · 胜后穿 30.5% · Belgium +1.25 守 84.5%",
+              "detail_cn": "New Zealand 取胜约 17.3% · 赢球后穿盘约 30.5% · Belgium +1.25 守住约 84.5%（泊松 raw 5.3% → 校准 15.5%）；盘口相对 xG 偏深约 1.5 球，热门穿盘难度偏大。",
               "extra_stats_cn": "",
-              "full_cover_pct": 5.3,
+              "full_cover_pct": 15.5,
               "half_cover_pct": 0,
-              "lose1_pct": 12.1,
+              "lose1_pct": 12,
               "margin_full_label": "净胜≥2",
               "margin_half_label": null,
               "tier_gap": 1.5,
@@ -58566,24 +60325,29 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "New Zealand -1.25",
                   "dog_handicap_cn": "Belgium +1.25",
                   "market_expect_cn": "New Zealand -1.25 · 净胜≥2",
-                  "meet_pct": 5.3,
-                  "dog_hold_pct": 94.7,
-                  "meet_pct_label": "New Zealand -1.25 穿盘概率",
-                  "dog_hold_label": "Belgium +1.25 守住概率",
+                  "meet_pct": 15.5,
+                  "dog_hold_pct": 84.5,
+                  "fav_win_pct": 17.3,
+                  "cover_given_win_pct": 30.5,
+                  "full_cover_pct_raw": 5.3,
+                  "meet_pct_label": "New Zealand -1.25 穿盘概率（校准）",
+                  "dog_hold_label": "Belgium +1.25 守住概率（校准）",
+                  "two_stage_cn": "New Zealand 取胜约 17.3% · 赢球后穿盘约 30.5% · Belgium +1.25 守住约 84.5%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "达到预期难度偏大",
                   "headline_cn": "New Zealand -1.25 穿盘：达到预期难度偏大",
-                  "pill_cn": "New Zealand -1.25 穿盘 5.3% · Belgium +1.25 守住 94.7%",
-                  "detail_cn": "New Zealand -1.25 穿盘约 5.3%（净胜≥2） · Belgium +1.25 守住约 94.7%；盘口相对 xG 偏深约 1.5 球，热门穿盘难度偏大。",
+                  "pill_cn": "New Zealand 胜 17.3% · 胜后穿 30.5% · Belgium +1.25 守 84.5%",
+                  "detail_cn": "New Zealand 取胜约 17.3% · 赢球后穿盘约 30.5% · Belgium +1.25 守住约 84.5%（泊松 raw 5.3% → 校准 15.5%）；盘口相对 xG 偏深约 1.5 球，热门穿盘难度偏大。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 5.3,
+                  "full_cover_pct": 15.5,
                   "half_cover_pct": 0,
-                  "lose1_pct": 12.1,
+                  "lose1_pct": 12,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": null,
                   "tier_gap": 1.5,
                   "show_cover": true
                 },
-                "text": "New Zealand -1.25 穿盘 5.3% · Belgium +1.25 守住 94.7%",
+                "text": "New Zealand 胜 17.3% · 胜后穿 30.5% · Belgium +1.25 守 84.5%",
                 "color": "#D95F6A",
                 "primary": true
               },
@@ -58858,7 +60622,7 @@ const RESULTS_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】New Zealand · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.5 · 模型认为仅小胜 1 球仍约 12.1%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
+        "public_summary_note": "【推演概要】New Zealand · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.5 · 模型认为仅小胜 1 球仍约 12%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
         "goal_efficiency": {
           "xg_total": 2.57,
           "xg_gap": 0.93,
@@ -59028,9 +60792,18 @@ const RESULTS_DATA = {
         "over_pct": 47.9,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 30,
-        "spread_level": "uncertain",
+        "full_cover_pct": 39.9,
+        "fav_win_pct": 30,
+        "cover_given_win_pct": 100,
+        "spread_level": "possible",
         "spread_market_expect": "Cabo Verde -0.25 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -59064,8 +60837,12 @@ const RESULTS_DATA = {
           ],
           "one_goal_win_pct": 18,
           "two_plus_win_pct": 12,
-          "full_cover_pct": 30,
-          "dog_hold_pct": 70,
+          "full_cover_pct": 39.9,
+          "dog_hold_pct": 60.1,
+          "fav_win_pct": 30,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
@@ -59076,10 +60853,12 @@ const RESULTS_DATA = {
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.6,
           "fair_totals_line": 2,
-          "over_2_5_pct": 47.9,
-          "over_3_pct": 26,
+          "over_2_5_pct": 48.1,
+          "over_3_pct": 26.3,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 30%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 30%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 30,
+          "dog_hold_pct_raw": 70
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -59104,6 +60883,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
           "draw": 0,
@@ -59266,7 +61047,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Cabo Verde · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 30,
+            "margin_meet_pct": 39.9,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -59285,7 +61066,7 @@ const RESULTS_DATA = {
             "win_low_total_pct": 13.5,
             "win_margin2_low_total_pct": 4.9,
             "win_margin2_high_total_pct": 7,
-            "readout_cn": "取胜约 30%；若取胜，以「险胜收工」为主（60%）。 对着赛前净胜参考，净胜≥1（全达标）约 30%；对着总进球参考 2.5，模型超线概率约 47.9%。"
+            "readout_cn": "取胜约 30%；若取胜，以「险胜收工」为主（60%）。 对着赛前净胜参考，净胜≥1（全达标）约 39.9%；对着总进球参考 2.5，模型超线概率约 47.9%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
@@ -59332,27 +61113,32 @@ const RESULTS_DATA = {
             "summary_cn": "预测 2.6 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Cabo Verde -0.25 穿盘：达标与否难下定论",
-            "sub_cn": "Cabo Verde -0.25 穿盘 30% · Saudi Arabia +0.25 守住 70% 进球氛围：几乎五五开",
+            "headline_cn": "Cabo Verde -0.25 穿盘：有达标可能",
+            "sub_cn": "Cabo Verde 胜 30% · 胜后穿 100% · Saudi Arabia +0.25 守 60.1% 进球氛围：几乎五五开",
             "spread": {
-              "level": "uncertain",
-              "label_cn": "净胜幅度难下定论",
-              "color": "#8A96A8",
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
               "fav_name": "Cabo Verde",
               "dog_name": "Saudi Arabia",
               "fav_handicap_cn": "Cabo Verde -0.25",
               "dog_handicap_cn": "Saudi Arabia +0.25",
               "market_expect_cn": "Cabo Verde -0.25 · 净胜≥1",
-              "meet_pct": 30,
-              "dog_hold_pct": 70,
-              "meet_pct_label": "Cabo Verde -0.25 穿盘概率",
-              "dog_hold_label": "Saudi Arabia +0.25 守住概率",
-              "verdict_cn": "达标与否难下定论",
-              "headline_cn": "Cabo Verde -0.25 穿盘：达标与否难下定论",
-              "pill_cn": "Cabo Verde -0.25 穿盘 30% · Saudi Arabia +0.25 守住 70%",
-              "detail_cn": "Cabo Verde -0.25 穿盘约 30%（净胜≥1） · Saudi Arabia +0.25 守住约 70%。",
+              "meet_pct": 39.9,
+              "dog_hold_pct": 60.1,
+              "fav_win_pct": 30,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 30,
+              "meet_pct_label": "Cabo Verde -0.25 穿盘概率（校准）",
+              "dog_hold_label": "Saudi Arabia +0.25 守住概率（校准）",
+              "two_stage_cn": "Cabo Verde 取胜约 30% · 赢球后穿盘约 100% · Saudi Arabia +0.25 守住约 60.1%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Cabo Verde -0.25 穿盘：有达标可能",
+              "pill_cn": "Cabo Verde 胜 30% · 胜后穿 100% · Saudi Arabia +0.25 守 60.1%",
+              "detail_cn": "Cabo Verde 取胜约 30% · 赢球后穿盘约 100% · Saudi Arabia +0.25 守住约 60.1%（泊松 raw 30% → 校准 39.9%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 30,
+              "full_cover_pct": 39.9,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -59387,24 +61173,29 @@ const RESULTS_DATA = {
                 "icon": "⚖️",
                 "label": "让球盘",
                 "outlook": {
-                  "level": "uncertain",
-                  "label_cn": "净胜幅度难下定论",
-                  "color": "#8A96A8",
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
                   "fav_name": "Cabo Verde",
                   "dog_name": "Saudi Arabia",
                   "fav_handicap_cn": "Cabo Verde -0.25",
                   "dog_handicap_cn": "Saudi Arabia +0.25",
                   "market_expect_cn": "Cabo Verde -0.25 · 净胜≥1",
-                  "meet_pct": 30,
-                  "dog_hold_pct": 70,
-                  "meet_pct_label": "Cabo Verde -0.25 穿盘概率",
-                  "dog_hold_label": "Saudi Arabia +0.25 守住概率",
-                  "verdict_cn": "达标与否难下定论",
-                  "headline_cn": "Cabo Verde -0.25 穿盘：达标与否难下定论",
-                  "pill_cn": "Cabo Verde -0.25 穿盘 30% · Saudi Arabia +0.25 守住 70%",
-                  "detail_cn": "Cabo Verde -0.25 穿盘约 30%（净胜≥1） · Saudi Arabia +0.25 守住约 70%。",
+                  "meet_pct": 39.9,
+                  "dog_hold_pct": 60.1,
+                  "fav_win_pct": 30,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 30,
+                  "meet_pct_label": "Cabo Verde -0.25 穿盘概率（校准）",
+                  "dog_hold_label": "Saudi Arabia +0.25 守住概率（校准）",
+                  "two_stage_cn": "Cabo Verde 取胜约 30% · 赢球后穿盘约 100% · Saudi Arabia +0.25 守住约 60.1%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Cabo Verde -0.25 穿盘：有达标可能",
+                  "pill_cn": "Cabo Verde 胜 30% · 胜后穿 100% · Saudi Arabia +0.25 守 60.1%",
+                  "detail_cn": "Cabo Verde 取胜约 30% · 赢球后穿盘约 100% · Saudi Arabia +0.25 守住约 60.1%（泊松 raw 30% → 校准 39.9%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 30,
+                  "full_cover_pct": 39.9,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -59412,8 +61203,8 @@ const RESULTS_DATA = {
                   "tier_gap": 0.25,
                   "show_cover": true
                 },
-                "text": "Cabo Verde -0.25 穿盘 30% · Saudi Arabia +0.25 守住 70%",
-                "color": "#8A96A8",
+                "text": "Cabo Verde 胜 30% · 胜后穿 100% · Saudi Arabia +0.25 守 60.1%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -59751,7 +61542,7 @@ const RESULTS_DATA = {
           "summary_cn": "偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
           "totals_actual": 0,
           "totals_line": 2.5,
-          "spread_level": "uncertain",
+          "spread_level": "possible",
           "totals_level": "neutral"
         }
       },
@@ -59869,9 +61660,18 @@ const RESULTS_DATA = {
         "over_pct": 51,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 23.8,
+        "full_cover_pct": 25.6,
+        "fav_win_pct": 23.7,
+        "cover_given_win_pct": 100,
         "spread_level": "skeptical",
         "spread_market_expect": "Uruguay -0.75 · 净胜≥1",
+        "line_move_tag": null,
+        "line_move_cn": null,
+        "agent_pick_primary": null,
+        "agent_pick_tendency_cn": null,
+        "agent_pick_confidence": null,
+        "agent_spread_cn": null,
+        "agent_totals_cn": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -59892,7 +61692,7 @@ const RESULTS_DATA = {
           "top3_scores": [
             {
               "score": "1-1",
-              "prob": 11.6
+              "prob": 11.5
             },
             {
               "score": "0-1",
@@ -59903,24 +61703,30 @@ const RESULTS_DATA = {
               "prob": 9.7
             }
           ],
-          "one_goal_win_pct": 15.1,
+          "one_goal_win_pct": 15,
           "two_plus_win_pct": 8.7,
-          "full_cover_pct": 23.8,
-          "dog_hold_pct": 76.2,
+          "full_cover_pct": 25.6,
+          "dog_hold_pct": 74.4,
+          "fav_win_pct": 23.7,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": -0.524,
-          "dog_cover_ev": 0.524,
+          "fav_cover_ev": -0.526,
+          "dog_cover_ev": 0.526,
           "rational_spread_cn": "客队 守住差距概率略高",
           "total_xg": 2.73,
           "fair_totals_line": 2,
-          "over_2_5_pct": 51,
-          "over_3_pct": 28.7,
+          "over_2_5_pct": 51.3,
+          "over_3_pct": 29.1,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 23.8%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥1 约 23.7%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 23.7,
+          "dog_hold_pct_raw": 76.3
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -59945,6 +61751,8 @@ const RESULTS_DATA = {
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
+        "market_line_movement": null,
+        "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
           "draw": 1,
@@ -60107,7 +61915,7 @@ const RESULTS_DATA = {
               }
             ],
             "margin_line_cn": "Uruguay · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 23.8,
+            "margin_meet_pct": 25.7,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -60126,13 +61934,13 @@ const RESULTS_DATA = {
             "win_low_total_pct": 10.5,
             "win_margin2_low_total_pct": 3.6,
             "win_margin2_high_total_pct": 5.1,
-            "readout_cn": "取胜约 19%；若取胜，以「险胜收工」为主（63.3%）。 对着赛前净胜参考，净胜≥1（全达标）约 23.8%；对着总进球参考 2.5，模型超线概率约 51%。"
+            "readout_cn": "取胜约 19%；若取胜，以「险胜收工」为主（63.3%）。 对着赛前净胜参考，净胜≥1（全达标）约 25.7%；对着总进球参考 2.5，模型超线概率约 51%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 11.6
+              "pct": 11.5
             },
             {
               "score": "0-1",
@@ -60174,7 +61982,7 @@ const RESULTS_DATA = {
           },
           "customer_reading": {
             "headline_cn": "Uruguay -0.75 穿盘：达到预期难度偏大",
-            "sub_cn": "Uruguay -0.75 穿盘 23.8% · Spain +0.75 守住 76.2% 进球氛围：几乎五五开",
+            "sub_cn": "Uruguay 胜 23.7% · 胜后穿 100% · Spain +0.75 守 74.4% 进球氛围：几乎五五开",
             "spread": {
               "level": "skeptical",
               "label_cn": "外界预期偏高",
@@ -60184,16 +61992,21 @@ const RESULTS_DATA = {
               "fav_handicap_cn": "Uruguay -0.75",
               "dog_handicap_cn": "Spain +0.75",
               "market_expect_cn": "Uruguay -0.75 · 净胜≥1",
-              "meet_pct": 23.8,
-              "dog_hold_pct": 76.2,
-              "meet_pct_label": "Uruguay -0.75 穿盘概率",
-              "dog_hold_label": "Spain +0.75 守住概率",
+              "meet_pct": 25.6,
+              "dog_hold_pct": 74.4,
+              "fav_win_pct": 23.7,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 23.7,
+              "meet_pct_label": "Uruguay -0.75 穿盘概率（校准）",
+              "dog_hold_label": "Spain +0.75 守住概率（校准）",
+              "two_stage_cn": "Uruguay 取胜约 23.7% · 赢球后穿盘约 100% · Spain +0.75 守住约 74.4%",
+              "grid_tail_pct": null,
               "verdict_cn": "达到预期难度偏大",
               "headline_cn": "Uruguay -0.75 穿盘：达到预期难度偏大",
-              "pill_cn": "Uruguay -0.75 穿盘 23.8% · Spain +0.75 守住 76.2%",
-              "detail_cn": "Uruguay -0.75 穿盘约 23.8%（净胜≥1） · Spain +0.75 守住约 76.2%；盘口相对 xG 偏深约 1 球，热门穿盘难度偏大。",
+              "pill_cn": "Uruguay 胜 23.7% · 胜后穿 100% · Spain +0.75 守 74.4%",
+              "detail_cn": "Uruguay 取胜约 23.7% · 赢球后穿盘约 100% · Spain +0.75 守住约 74.4%（泊松 raw 23.7% → 校准 25.6%）；盘口相对 xG 偏深约 1 球，热门穿盘难度偏大。",
               "extra_stats_cn": "",
-              "full_cover_pct": 23.8,
+              "full_cover_pct": 25.6,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -60236,16 +62049,21 @@ const RESULTS_DATA = {
                   "fav_handicap_cn": "Uruguay -0.75",
                   "dog_handicap_cn": "Spain +0.75",
                   "market_expect_cn": "Uruguay -0.75 · 净胜≥1",
-                  "meet_pct": 23.8,
-                  "dog_hold_pct": 76.2,
-                  "meet_pct_label": "Uruguay -0.75 穿盘概率",
-                  "dog_hold_label": "Spain +0.75 守住概率",
+                  "meet_pct": 25.6,
+                  "dog_hold_pct": 74.4,
+                  "fav_win_pct": 23.7,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 23.7,
+                  "meet_pct_label": "Uruguay -0.75 穿盘概率（校准）",
+                  "dog_hold_label": "Spain +0.75 守住概率（校准）",
+                  "two_stage_cn": "Uruguay 取胜约 23.7% · 赢球后穿盘约 100% · Spain +0.75 守住约 74.4%",
+                  "grid_tail_pct": null,
                   "verdict_cn": "达到预期难度偏大",
                   "headline_cn": "Uruguay -0.75 穿盘：达到预期难度偏大",
-                  "pill_cn": "Uruguay -0.75 穿盘 23.8% · Spain +0.75 守住 76.2%",
-                  "detail_cn": "Uruguay -0.75 穿盘约 23.8%（净胜≥1） · Spain +0.75 守住约 76.2%；盘口相对 xG 偏深约 1 球，热门穿盘难度偏大。",
+                  "pill_cn": "Uruguay 胜 23.7% · 胜后穿 100% · Spain +0.75 守 74.4%",
+                  "detail_cn": "Uruguay 取胜约 23.7% · 赢球后穿盘约 100% · Spain +0.75 守住约 74.4%（泊松 raw 23.7% → 校准 25.6%）；盘口相对 xG 偏深约 1 球，热门穿盘难度偏大。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 23.8,
+                  "full_cover_pct": 25.6,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -60253,7 +62071,7 @@ const RESULTS_DATA = {
                   "tier_gap": 1,
                   "show_cover": true
                 },
-                "text": "Uruguay -0.75 穿盘 23.8% · Spain +0.75 守住 76.2%",
+                "text": "Uruguay 胜 23.7% · 胜后穿 100% · Spain +0.75 守 74.4%",
                 "color": "#D95F6A",
                 "primary": true
               },

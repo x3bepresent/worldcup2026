@@ -7,14 +7,8 @@ const path = require('path');
 const lib = require('../js/prediction-signals-lib.js');
 const scoreModel = require('../js/score-model.js');
 
-const handicapFiles = [
-  'handicap-data-day1-5.js',
-  'handicap-data-day6.js',
-  'handicap-data-day7.js',
-  'handicap-data-day8.js',
-  'handicap-data-day9.js',
-  'handicap-data-day10.js',
-];
+const handicapFiles = fs.readdirSync(path.join(__dirname))
+  .filter(f => f.startsWith('handicap-data-day') && f.endsWith('.js'));
 const rawById = {};
 for (const f of handicapFiles) {
   Object.assign(rawById, require(path.join(__dirname, f)));
@@ -60,7 +54,7 @@ function totalsOverWeight(total, line) {
 }
 
 function getTierCoverThresholds(tier) {
-  return lib.getTierCoverThresholds ? lib.getTierCoverThresholds(tier) : { fullMin: 2, halfExact: null };
+  return lib.getTierCoverThresholds(tier);
 }
 
 /** 实际赛果对着亚让档的结算：full / half / lose */
@@ -149,6 +143,11 @@ for (const m of matches) {
       lineGap: totals.line_gap,
       modelOverPct: totals.over_pct,
       fullCoverPct: cover.full_cover_pct,
+      fullCoverPctRaw: cover.full_cover_pct_raw,
+      favWinPct: cover.fav_win_pct,
+      coverGivenWinPct: cover.cover_given_win_pct,
+      gridMaxGoals: cover.grid_max_goals,
+      gridTailPct: cover.grid_tail_pct,
       actualSpread,
       favWon,
       fullCoverHit: actualSpread === 'full_cover',
@@ -379,6 +378,38 @@ if (totalsN && pct(withHandicap.filter(r => r.modelOverPct >= 50 && r.actualOver
 if (pct(stats.direction.hit, stats.direction.n) < 50) issues.push('胜平负方向弱于随机');
 else if (pct(stats.direction.hit, stats.direction.n) >= 55) issues.push('胜平负方向尚可');
 issues.forEach((t, i) => console.log(`  ${i + 1}. ${t}`));
+
+console.log('\n=== 11. 让球穿盘校准（raw vs 校准）===');
+const spreadRows = withHandicap.filter(r => Math.abs(r.spread.tier) >= 0.01);
+if (spreadRows.length) {
+  let brierRaw = 0;
+  let brierCal = 0;
+  let hitRaw50 = { hit: 0, n: 0 };
+  let hitCal50 = { hit: 0, n: 0 };
+  spreadRows.forEach(r => {
+    const y = r.spread.fullCoverHit ? 1 : 0;
+    const raw = (r.spread.fullCoverPctRaw ?? r.spread.fullCoverPct) / 100;
+    const cal = r.spread.fullCoverPct / 100;
+    brierRaw += (raw - y) ** 2;
+    brierCal += (cal - y) ** 2;
+    if (r.spread.fullCoverPctRaw >= 50) {
+      hitRaw50.n += 1;
+      if (y) hitRaw50.hit += 1;
+    }
+    if (r.spread.fullCoverPct >= 50) {
+      hitCal50.n += 1;
+      if (y) hitCal50.hit += 1;
+    }
+  });
+  const nSp = spreadRows.length;
+  const fullHit = spreadRows.filter(r => r.spread.fullCoverHit).length;
+  console.log(`  样本 ${nSp} 场 · 实际热门穿盘 ${pct(fullHit, nSp)}%`);
+  console.log(`  Brier(raw): ${(brierRaw / nSp).toFixed(3)} · Brier(校准): ${(brierCal / nSp).toFixed(3)}`);
+  console.log(`  预测≥50% raw 命中: ${hitRaw50.hit}/${hitRaw50.n} · 校准后: ${hitCal50.hit}/${hitCal50.n}`);
+  const avgGrid = spreadRows.reduce((s, r) => s + (r.spread.gridMaxGoals || 0), 0) / nSp;
+  const avgTail = spreadRows.reduce((s, r) => s + (r.spread.gridTailPct || 0), 0) / nSp;
+  console.log(`  动态网格均上限 ${avgGrid.toFixed(1)} 球 · 平均截断质量 ${avgTail.toFixed(2)}%`);
+}
 
 // output json for reference
 fs.writeFileSync(

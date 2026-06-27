@@ -890,6 +890,8 @@ function buildMarketPreview(m) {
   const meetPct = ms.full_cover_pct ?? sp.meet_pct ?? sp.full_cover_pct;
   const dogHoldPct = sp.dog_hold_pct ?? dc.spread_cover?.dog_hold_pct
     ?? (meetPct != null ? Math.round((100 - meetPct) * 10) / 10 : null);
+  const favWinPct = sp.fav_win_pct ?? dc.spread_cover?.fav_win_pct ?? null;
+  const coverGivenWinPct = sp.cover_given_win_pct ?? dc.spread_cover?.cover_given_win_pct ?? null;
   const spreadVerdict = sp.verdict_cn || sp.label_cn || '';
   const level = ms.spread_level ?? sp.level;
   const showWinCoverWarn = !!(dc.blocker_spread_note)
@@ -901,6 +903,9 @@ function buildMarketPreview(m) {
       ? `${favHandicapCn} 穿盘 ≠ 仅赢球 · ${dogHandicapCn} 在仅赢 1 球时通常仍可守住`
       : (showWinCoverWarn ? '热门赢球 ≠ 让球穿盘 · 赛果复盘以让球/大小球为主口径' : ''));
 
+  const lineMove = dc.market_line_movement || null;
+  const agentPick = dc.agent_pick || null;
+
   return {
     available: true,
     favHandicapCn,
@@ -909,6 +914,8 @@ function buildMarketPreview(m) {
     marketExpect,
     meetPct,
     dogHoldPct,
+    favWinPct,
+    coverGivenWinPct,
     spreadVerdict,
     stance,
     stanceCn: SPREAD_STANCE_CN[stance],
@@ -922,6 +929,8 @@ function buildMarketPreview(m) {
     warnText,
     signalCn: dc.signal_cn,
     signalColor: dc.signal_color,
+    lineMove,
+    agentPick,
   };
 }
 
@@ -931,16 +940,65 @@ function renderMarketPreviewStrip(m) {
   const meetPctHtml = preview.meetPct != null && preview.gradableSpread
     ? `<span class="mf-market-preview-sub">${preview.favHandicapCn || '热门'} 穿盘 ${preview.meetPct}%</span>`
     : '';
+  const twoStageHtml = preview.favWinPct != null && preview.coverGivenWinPct != null && preview.gradableSpread
+    ? `<span class="mf-market-preview-sub mf-market-preview-sub--stage">胜 ${preview.favWinPct}% · 胜后穿 ${preview.coverGivenWinPct}%</span>`
+    : '';
   const dogHoldHtml = preview.dogHoldPct != null && preview.gradableSpread
     ? `<span class="mf-market-preview-sub">${preview.dogHandicapCn || '受让'} 守住 ${preview.dogHoldPct}%</span>`
     : '';
+  const lineMove = preview.lineMove;
+  const lineMoveHtml = lineMove ? `
+      <div class="mf-market-preview-lines">
+        ${lineMove.spread_open_cn ? `<div class="mf-market-preview-line"><span class="mf-market-preview-line-k">初盘</span><span class="mf-market-preview-line-v">${lineMove.spread_open_cn}</span></div>` : ''}
+        ${lineMove.spread_now_cn ? `<div class="mf-market-preview-line"><span class="mf-market-preview-line-k">现盘</span><span class="mf-market-preview-line-v">${lineMove.spread_now_cn}</span></div>` : ''}
+        ${lineMove.totals_now_cn ? `<div class="mf-market-preview-line"><span class="mf-market-preview-line-k">大小</span><span class="mf-market-preview-line-v">${lineMove.totals_now_cn}</span></div>` : ''}
+        <div class="mf-market-preview-line-move" style="--move-color:${lineMove.tag_color || '#C8A96E'}">
+          <span class="mf-market-preview-move-tag">${lineMove.tag_cn}</span>
+          ${lineMove.detail_cn ? `<span class="mf-market-preview-move-detail">${lineMove.detail_cn}</span>` : ''}
+        </div>
+        ${lineMove.wc_note ? `<p class="mf-market-preview-wc-note">${lineMove.wc_note}</p>` : ''}
+      </div>` : '';
+  const ap = preview.agentPick;
+  const isHighConf = ap?.confidence === 'high';
+  const agentPickHtml = ap?.spread && ap?.totals ? `
+      <div class="mf-market-preview-pick${isHighConf ? ' mf-market-preview-pick--high' : ''}">
+        <div class="mf-market-preview-pick-head">
+          <span class="mf-market-preview-pick-k">赛前双选</span>
+          ${isHighConf ? `<span class="mf-market-preview-pick-high">大信心</span>` : ''}
+          <span class="mf-market-preview-pick-tendency">${ap.tendency_cn || (ap.primary === 'totals' ? '更倾向大小球' : '更倾向让球盘')}</span>
+        </div>
+        ${isHighConf && ap.confidence_reason_cn ? `<p class="mf-market-preview-pick-high-reason">${ap.confidence_reason_cn}</p>` : ''}
+        ${ap.tendency_reason_cn ? `<p class="mf-market-preview-pick-tendency-reason">${ap.tendency_reason_cn}</p>` : ''}
+        <div class="mf-market-preview-pick-grid">
+          <div class="mf-market-preview-pick-row${ap.primary === 'spread' ? ' mf-market-preview-pick-row--primary' : ''}">
+            <span class="mf-market-preview-pick-type">让球${ap.primary === 'spread' ? ' ★' : ''}</span>
+            <span class="mf-market-preview-pick-val">${ap.spread.label_cn}</span>
+            <p class="mf-market-preview-pick-reason">${ap.spread.reason_cn || ''}</p>
+          </div>
+          <div class="mf-market-preview-pick-row${ap.primary === 'totals' ? ' mf-market-preview-pick-row--primary' : ''}">
+            <span class="mf-market-preview-pick-type">大小${ap.primary === 'totals' ? ' ★' : ''}</span>
+            <span class="mf-market-preview-pick-val">${ap.totals.label_cn}</span>
+            <p class="mf-market-preview-pick-reason">${ap.totals.reason_cn || ''}</p>
+          </div>
+        </div>
+      </div>` : (ap ? `
+      <div class="mf-market-preview-pick">
+        <div class="mf-market-preview-pick-head">
+          <span class="mf-market-preview-pick-k">本场选项</span>
+          <span class="mf-market-preview-pick-badge">${ap.market === 'totals' ? '大小球' : '让球'}</span>
+        </div>
+        <div class="mf-market-preview-pick-val">${ap.label_cn || ap.label}</div>
+        <p class="mf-market-preview-pick-reason">${ap.reason_cn || ''}</p>
+      </div>` : '');
   return `
-    <div class="mf-market-preview fade-in">
+    <div class="mf-market-preview fade-in${preview.agentPick?.confidence === 'high' ? ' mf-market-preview--high' : ''}">
       <div class="mf-market-preview-head">
         <span class="mf-market-preview-kicker">盘口要点</span>
+        ${preview.agentPick?.confidence === 'high' ? `<span class="mf-market-preview-high-badge">大信心</span>` : ''}
         <span class="mf-market-preview-badge">热门 -X 穿盘 · 受让 +X 守住</span>
         ${preview.signalCn ? `<span class="mf-market-preview-signal" style="color:${preview.signalColor || '#C8A96E'}">${preview.signalCn}</span>` : ''}
       </div>
+      ${lineMoveHtml}
       <div class="mf-market-preview-grid">
         <div class="mf-market-preview-cell mf-market-preview-cell--spread">
           <span class="mf-market-preview-label">让球盘口</span>
@@ -950,6 +1008,7 @@ function renderMarketPreviewStrip(m) {
         <div class="mf-market-preview-cell mf-market-preview-cell--stance" style="--stance-color:${preview.stanceColor}">
           <span class="mf-market-preview-label">模型立场</span>
           <span class="mf-market-preview-val mf-market-preview-val--stance">${preview.stanceCn}</span>
+          ${twoStageHtml}
           ${meetPctHtml}
           ${dogHoldHtml}
         </div>
@@ -964,6 +1023,7 @@ function renderMarketPreviewStrip(m) {
         <span class="mf-market-preview-warn-icon" aria-hidden="true">⚠</span>
         <span>${preview.warnText}</span>
       </div>` : ''}
+      ${agentPickHtml}
     </div>`;
 }
 
@@ -2008,12 +2068,24 @@ function renderSpreadOutlookMeter(sp) {
   const barW = Math.max(4, Math.min(100, pct));
   const favLine = sp.fav_handicap_cn || sp.market_expect_cn || '—';
   const dogLine = sp.dog_handicap_cn;
+  const twoStage = sp.two_stage_cn || (sp.fav_win_pct != null && sp.cover_given_win_pct != null
+    ? `${sp.fav_name || '热门'} 取胜 ${sp.fav_win_pct}% · 赢球后穿盘 ${sp.cover_given_win_pct}%`
+    : '');
+  const rawNote = sp.full_cover_pct_raw != null && Math.abs(sp.full_cover_pct_raw - pct) >= 1.5
+    ? `泊松 raw ${sp.full_cover_pct_raw}% → 校准 ${pct}%`
+    : (sp.grid_tail_pct != null && sp.grid_tail_pct > 0.3 ? `网格截断修正约 ${sp.grid_tail_pct}%` : '');
   return `
     <div class="dc-read-meter dc-spread-meter dc-spread-meter--${sp.level || 'uncertain'}">
       <div class="dc-spread-meter-kv">
         <span class="dc-spread-meter-k">让球盘口</span>
         <span class="dc-spread-meter-v">${favLine}${dogLine ? ` · ${dogLine}` : ''}</span>
       </div>
+      ${twoStage ? `
+      <div class="dc-spread-meter-stage">
+        ${sp.fav_win_pct != null ? `<span class="dc-spread-meter-stage-item"><span class="dc-spread-meter-stage-k">热门取胜</span><span class="dc-spread-meter-stage-v">${sp.fav_win_pct}%</span></span>` : ''}
+        ${sp.cover_given_win_pct != null ? `<span class="dc-spread-meter-stage-item"><span class="dc-spread-meter-stage-k">胜后穿盘</span><span class="dc-spread-meter-stage-v">${sp.cover_given_win_pct}%</span></span>` : ''}
+        ${dogHold != null ? `<span class="dc-spread-meter-stage-item dc-spread-meter-stage-item--dog"><span class="dc-spread-meter-stage-k">受让守住</span><span class="dc-spread-meter-stage-v">${dogHold}%</span></span>` : ''}
+      </div>` : ''}
       <div class="dc-spread-meter-bar-wrap">
         <div class="dc-spread-meter-bar-head">
           <span class="dc-spread-meter-bar-label">${sp.meet_pct_label || '热门穿盘概率'}</span>
@@ -2023,12 +2095,13 @@ function renderSpreadOutlookMeter(sp) {
           <div class="dc-spread-meter-bar-fill" style="width:${barW}%;background:${sp.color || '#7BB8D4'}"></div>
         </div>
       </div>
-      ${dogHold != null ? `
+      ${!twoStage && dogHold != null ? `
       <div class="dc-spread-meter-dog">
         <span class="dc-spread-meter-dog-label">${sp.dog_hold_label || '受让守住概率'}</span>
         <span class="dc-spread-meter-dog-pct">${dogHold}%</span>
       </div>` : ''}
       <div class="dc-read-meter-tag dc-spread-meter-verdict" style="color:${sp.color || '#8A96A8'}">${sp.verdict_cn || ''}</div>
+      ${rawNote ? `<p class="dc-read-meter-foot dc-read-meter-foot--sub">${rawNote}</p>` : ''}
       ${sp.extra_stats_cn ? `<p class="dc-read-meter-foot dc-read-meter-foot--sub">${sp.extra_stats_cn}</p>` : ''}
     </div>`;
 }

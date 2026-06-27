@@ -2445,12 +2445,59 @@ function computeFirstGoalScenarios(match, xgH, xgA, marketTier, baseline, totals
   ];
 }
 
+/** 动态泊松网格上限：ceil(xG)+3，至少 6、至多 10 */
+function computeDynamicMaxGoals(xgHome, xgAway) {
+  const xgH = Math.max(0, Number(xgHome) || 0);
+  const xgA = Math.max(0, Number(xgAway) || 0);
+  return Math.min(10, Math.max(6, Math.ceil(xgH) + 3, Math.ceil(xgA) + 3));
+}
+
+/**
+ * 穿盘概率校准 — 基于 58 场有让球归档回测的分段收缩（Brier 0.254→0.236）
+ * raw 为泊松网格加总；输出为展示用校准值
+ */
+function calibrateSpreadCoverPct(rawPct) {
+  const raw = Number(rawPct);
+  if (rawPct == null || Number.isNaN(raw)) return null;
+  const bins = [
+    [0, 25, 28],
+    [25, 35, 52],
+    [35, 45, 58],
+    [45, 55, 42],
+    [55, 65, 40],
+    [65, 101, 48],
+  ];
+  for (let i = 0; i < bins.length; i++) {
+    const lo = bins[i][0];
+    const hi = bins[i][1];
+    const target = bins[i][2];
+    if (raw >= lo && raw < hi) {
+      return Math.round((0.55 * raw + 0.45 * target) * 10) / 10;
+    }
+  }
+  return Math.round(raw * 10) / 10;
+}
+
+function applySpreadCalibrationToCover(cover) {
+  if (!cover || cover.full_cover_pct == null) return cover;
+  const rawCover = cover.full_cover_pct;
+  const rawDog = cover.dog_hold_pct;
+  const calCover = calibrateSpreadCoverPct(rawCover);
+  const calDog = calCover != null ? Math.round((100 - calCover) * 10) / 10 : rawDog;
+  return Object.assign({}, cover, {
+    full_cover_pct_raw: rawCover,
+    dog_hold_pct_raw: rawDog,
+    full_cover_pct: calCover,
+    dog_hold_pct: calDog,
+  });
+}
+
 /** 泊松全表 — 穿盘 / 净胜球 / 大小球（内部推演，非真实盘口 API） */
 function computeSpreadCover(xgHome, xgAway, marketTierHome, maxGoals) {
-  maxGoals = maxGoals || 5;
   const xgH = Math.max(0, Number(xgHome) || 0);
   const xgA = Math.max(0, Number(xgAway) || 0);
   const tier = Number(marketTierHome) || 0;
+  if (maxGoals == null) maxGoals = computeDynamicMaxGoals(xgH, xgA);
 
   let win1 = 0;
   let win2p = 0;
@@ -2461,7 +2508,8 @@ function computeSpreadCover(xgHome, xgAway, marketTierHome, maxGoals) {
   let over3 = 0;
   const top = [];
 
-  const fact = [1, 1, 2, 6, 24, 120];
+  const fact = [1];
+  for (let i = 1; i <= maxGoals; i++) fact[i] = fact[i - 1] * i;
   function pois(k, lam) {
     if (k < 0 || k > maxGoals) return 0;
     if (lam <= 0) return k === 0 ? 1 : 0;
@@ -2549,6 +2597,10 @@ function computeSpreadCover(xgHome, xgAway, marketTierHome, maxGoals) {
 
   const top3 = top.slice(0, 3).map(c => ({ score: c.score, prob: pct(c.prob) }));
   const dogHoldPct = favSide === 'balanced' ? null : pct(mass - favFullCover);
+  const favWinMass = favFullCover + favHalfCover + favHalfLose + favPush;
+  const favWinPct = favSide === 'balanced' ? null : pct(favWinMass);
+  const coverGivenWinPct = favWinMass > 0 ? Math.round((favFullCover / favWinMass) * 1000) / 10 : null;
+  const gridTailPct = Math.round((1 - mass) * 1000) / 10;
 
   let rationalSpreadCn = '均衡';
   if (favEv > 0.04) rationalSpreadCn = (favSide === 'home' ? '主队' : '客队') + ' 净胜达标概率略高';
@@ -2566,12 +2618,16 @@ function computeSpreadCover(xgHome, xgAway, marketTierHome, maxGoals) {
   if (over3Pct >= 55) totalsLeanCn += '；4球+偏多';
   else if (over3Pct <= 40) totalsLeanCn += '；4球+偏少';
 
-  return {
+  return applySpreadCalibrationToCover({
     top3_scores: top3,
     one_goal_win_pct: pct(win1),
     two_plus_win_pct: pct(win2p),
     full_cover_pct: pct(favFullCover),
     dog_hold_pct: dogHoldPct,
+    fav_win_pct: favWinPct,
+    cover_given_win_pct: coverGivenWinPct,
+    grid_max_goals: maxGoals,
+    grid_tail_pct: gridTailPct,
     half_cover_pct: pct(favHalfCover),
     half_lose_pct: pct(favHalfLose),
     push_pct: th.pushExact != null ? pct(favPush) : (isIntegerOne ? pct(win1) : null),
@@ -2594,7 +2650,7 @@ function computeSpreadCover(xgHome, xgAway, marketTierHome, maxGoals) {
           : pct(favHalfLose) >= 20
             ? '净胜 1 球概率 ' + pct(favHalfLose) + '%：常见「赢球但净胜仅 1 球」'
             : th.fullLabel + ' 约 ' + pct(favFullCover) + '%；仅赢 1 球约 ' + pct(favHalfLose) + '%',
-  };
+  });
 }
 
 /** 内部：亚盘总进球分隔线 vs 模型 fair_line */
@@ -2924,9 +2980,13 @@ function classifySpreadOutlook(cover, tier, tierGap, favName, winOutlook, homeNa
   const hk = formatSpreadHandicapLines(t, homeName, awayName);
   const pct = n => Math.round((Number(n) || 0) * 10) / 10;
   const full = pct(cover?.full_cover_pct ?? winOutlook?.margin_meet_pct ?? 0);
+  const rawFull = pct(cover?.full_cover_pct_raw ?? full);
   const half = pct(cover?.half_cover_pct ?? winOutlook?.margin_half_pct ?? 0);
   const lose1 = pct(cover?.half_lose_pct ?? winOutlook?.margin_fail_pct ?? 0);
   const dogHold = pct(cover?.dog_hold_pct ?? (full != null ? Math.max(0, 100 - full) : null));
+  const favWin = pct(cover?.fav_win_pct ?? 0);
+  const coverGivenWin = pct(cover?.cover_given_win_pct ?? 0);
+  const gridTail = pct(cover?.grid_tail_pct ?? 0);
 
   if (Math.abs(t) < 0.01) {
     return {
@@ -2982,8 +3042,17 @@ function classifySpreadOutlook(cover, tier, tierGap, favName, winOutlook, homeNa
   if (th.halfLabel && half >= 12) extras.push(th.halfLabel + ' 约 ' + half + '%');
   if (lose1 >= 18) extras.push('仅胜 1 球约 ' + lose1 + '%');
 
-  let detail_cn = hk.favHandicapCn + ' 穿盘约 ' + full + '%（' + th.fullLabel + '）'
-    + ' · ' + hk.dogHandicapCn + ' 守住约 ' + dogHold + '%';
+  const twoStageParts = [];
+  if (favWin > 0) twoStageParts.push(hk.favName + ' 取胜约 ' + favWin + '%');
+  if (coverGivenWin > 0) twoStageParts.push('赢球后穿盘约 ' + coverGivenWin + '%');
+  if (dogHold != null) twoStageParts.push(hk.dogHandicapCn + ' 守住约 ' + dogHold + '%');
+  const two_stage_cn = twoStageParts.join(' · ');
+
+  let detail_cn = two_stage_cn || (hk.favHandicapCn + ' 穿盘约 ' + full + '%（' + th.fullLabel + '）'
+    + ' · ' + hk.dogHandicapCn + ' 守住约 ' + dogHold + '%');
+  if (Math.abs(rawFull - full) >= 1.5) {
+    detail_cn += '（泊松 raw ' + rawFull + '% → 校准 ' + full + '%）';
+  }
   if (level === 'skeptical') {
     detail_cn += '；盘口相对 xG 偏深约 ' + Math.abs(gap) + ' 球，热门穿盘难度偏大';
   } else if (level === 'narrow') {
@@ -2999,7 +3068,9 @@ function classifySpreadOutlook(cover, tier, tierGap, favName, winOutlook, homeNa
   detail_cn += '。';
 
   const headline_cn = hk.favHandicapCn + ' 穿盘：' + verdict_cn;
-  const pill_cn = hk.favHandicapCn + ' 穿盘 ' + full + '% · ' + hk.dogHandicapCn + ' 守住 ' + dogHold + '%';
+  const pill_cn = (favWin > 0 && coverGivenWin > 0
+    ? hk.favName + ' 胜 ' + favWin + '% · 胜后穿 ' + coverGivenWin + '% · ' + hk.dogHandicapCn + ' 守 ' + dogHold + '%'
+    : hk.favHandicapCn + ' 穿盘 ' + full + '% · ' + hk.dogHandicapCn + ' 守住 ' + dogHold + '%');
 
   return {
     level,
@@ -3012,8 +3083,13 @@ function classifySpreadOutlook(cover, tier, tierGap, favName, winOutlook, homeNa
     market_expect_cn: hk.favHandicapCn + ' · ' + th.fullLabel,
     meet_pct: full,
     dog_hold_pct: dogHold,
-    meet_pct_label: hk.favHandicapCn + ' 穿盘概率',
-    dog_hold_label: hk.dogHandicapCn + ' 守住概率',
+    fav_win_pct: favWin || null,
+    cover_given_win_pct: coverGivenWin || null,
+    full_cover_pct_raw: rawFull,
+    meet_pct_label: hk.favHandicapCn + ' 穿盘概率（校准）',
+    dog_hold_label: hk.dogHandicapCn + ' 守住概率（校准）',
+    two_stage_cn,
+    grid_tail_pct: gridTail > 0.3 ? gridTail : null,
     verdict_cn,
     headline_cn,
     pill_cn,
@@ -3390,6 +3466,46 @@ function buildTotalsDisplay(totals, expectedTotalGoals, xgPair) {
 }
 
 /**
+ * 盘路变化展示 — 初盘/现盘（用户录入）+ 世界杯主客说明
+ */
+function buildMarketLineMovement(raw, homeName, awayName) {
+  if (!raw?.spread_now && !raw?.line_move) return null;
+  const tagMeta = {
+    flat: { cn: '盘口平稳', color: '#7BB8D4' },
+    fav_defense: { cn: '热门防守', color: '#D95F6A' },
+    fav_strength: { cn: '热门加强', color: '#5BBF8A' },
+    dog_value: { cn: '受让增值', color: '#5BBF8A' },
+    correction: { cn: '盘口修正', color: '#C8A96E' },
+    away_edge: { cn: '向客队倾斜', color: '#7BB8D4' },
+    home_edge: { cn: '向主队倾斜', color: '#7BB8D4' },
+  };
+  const open = raw.spread_open;
+  const now = raw.spread_now;
+  const tn = raw.totals_now;
+  const tag = raw.line_move?.tag || 'flat';
+  const meta = tagMeta[tag] || tagMeta.flat;
+  const fmtSpread = block => {
+    if (!block) return null;
+    const hOdds = block.home_odds != null ? '@' + block.home_odds : '';
+    const aOdds = block.away_odds != null ? '@' + block.away_odds : '';
+    return homeName + ' ' + block.home_handicap + hOdds + ' · ' + awayName + ' ' + block.away_handicap + aOdds;
+  };
+  return {
+    wc_note: raw.wc_venue_note
+      || '世界杯中立赛场 · FIFA 主/客仅为赛历标签，不等于真实主场优势',
+    spread_open_cn: fmtSpread(open),
+    spread_now_cn: fmtSpread(now),
+    totals_now_cn: tn
+      ? '大小 ' + (tn.line_display || tn.line) + ' · 大 ' + tn.over_odds + ' / 小 ' + tn.under_odds
+      : null,
+    tag,
+    tag_cn: raw.line_move?.cn || meta.cn,
+    tag_color: meta.color,
+    detail_cn: raw.line_move?.detail || '',
+  };
+}
+
+/**
  * @param {object} raw — 内部录入，含 market_tier / public_lean / public_pct
  */
 function buildDepthCalibration(match, raw) {
@@ -3529,6 +3645,8 @@ function buildDepthCalibration(match, raw) {
     spread_alt: spreadAlt,
     totals_analysis: totals,
     totals_line: raw.totals_line ?? 2.5,
+    market_line_movement: buildMarketLineMovement(raw, match.home.name, match.away.name),
+    agent_pick: raw.agent_pick || null,
     applied_delta: delta,
     adjustment_note: '模型微调：主胜 ' + (delta.home_win >= 0 ? '+' : '') + delta.home_win
       + '% · 平 ' + (delta.draw >= 0 ? '+' : '') + delta.draw
@@ -4398,6 +4516,9 @@ const exportsObj = {
   formatSpreadHandicapLines,
   formatTierLabel,
   computeSpreadCover,
+  computeDynamicMaxGoals,
+  calibrateSpreadCoverPct,
+  getTierCoverThresholds,
   computeTotalsAnalysis,
   classifyExcitementLabel,
   buildExcitementView,
@@ -4434,6 +4555,7 @@ const exportsObj = {
   enrichActualResultForReview,
   inferMatchArchetype,
   buildDepthCalibration,
+  buildMarketLineMovement,
   buildPublicSummaryNote,
   buildCalibrationDisplay,
   buildTotalsDisplay,
