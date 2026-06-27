@@ -1603,46 +1603,46 @@ const MATCH_DATA = {
         },
         "display_summary": {
           "fav_name": "Croatia",
-          "expected_total_goals": 2.77,
-          "poisson_fav_win_pct": 38.2,
+          "expected_total_goals": 2.62,
+          "poisson_fav_win_pct": 36.9,
           "small_lead_pct": 20.5,
           "small_example_score": "1-0",
-          "small_example_pct": 8.7,
-          "big_cover_pct": 17.7,
+          "small_example_pct": 9.5,
+          "big_cover_pct": 16.4,
           "big_example_score": "2-0",
           "big_example_pct": 6.2,
           "win_shape": {
             "fav_name": "Croatia",
             "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以险胜·开放为主（险胜 · 开放 30.9%）",
+            "lead_cn": "取胜时以险胜·开放为主（险胜 · 开放 29.9%）",
             "shapes": [
               {
                 "key": "narrow_low",
                 "label": "险胜 · 控局",
                 "example": "如 1-0",
-                "field_pct": 8.7,
-                "pct": 22.8
+                "field_pct": 9.5,
+                "pct": 25.7
               },
               {
                 "key": "narrow_open",
                 "label": "险胜 · 开放",
                 "example": "如 2-1",
-                "field_pct": 11.8,
-                "pct": 30.9
+                "field_pct": 11,
+                "pct": 29.9
               },
               {
                 "key": "comfort_low",
                 "label": "拉开 · 控局",
                 "example": "如 2-0",
-                "field_pct": 9.1,
-                "pct": 23.8
+                "field_pct": 9,
+                "pct": 24.4
               },
               {
                 "key": "comfort_open",
                 "label": "拉开 · 开放",
                 "example": "如 3-1+",
-                "field_pct": 8.6,
-                "pct": 22.5
+                "field_pct": 7.4,
+                "pct": 20
               }
             ],
             "paths": [
@@ -1650,19 +1650,19 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 53.7
+                "pct": 55.6
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 23.8
+                "pct": 24.4
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 22.5
+                "pct": 20
               }
             ],
             "fav_win_pct": 33
@@ -1671,26 +1671,26 @@ const MATCH_DATA = {
             "label_cn": "中速开局",
             "label_key": "moderate",
             "label_color": "#C8A96E",
-            "sub_cn": "预期首球等待约 32.1 分",
-            "first_goal_wait": 32.1,
-            "fast_pct": 60.7,
-            "moderate_pct": 14.7,
-            "slow_pct": 24.7,
+            "sub_cn": "预期首球等待约 34.1 分",
+            "first_goal_wait": 34.1,
+            "fast_pct": 58.5,
+            "moderate_pct": 14.8,
+            "slow_pct": 26.7,
             "tiers": [
               {
                 "key": "fast",
                 "label": "前 30 分内首球",
-                "pct": 60.7
+                "pct": 58.5
               },
               {
                 "key": "moderate",
                 "label": "30–45 分首球",
-                "pct": 14.7
+                "pct": 14.8
               },
               {
                 "key": "slow",
                 "label": "45 分后首球",
-                "pct": 24.7
+                "pct": 26.7
               }
             ]
           },
@@ -1712,17 +1712,22 @@ const MATCH_DATA = {
               "note": "L组榜首对话 · 加纳 4 分 vs 克罗地亚 3 分"
             },
             {
+              "icon": "🎯",
+              "label": "出线博弈",
+              "note": "争八不对称默契：强队已出线，弱队保平争第三（输球出局） · 争八不对称"
+            },
+            {
               "icon": "⚖️",
               "label": "平局修正",
-              "note": "回测校准：xG 极接近（平 +4%）"
+              "note": "回测校准：xG 极接近 · 争八不对称：弱队保平争第三，平局权重上调 · Croatia 输球出局 · 平局争第 3 · 赢球稳进（平 +11%）"
             }
           ],
           "xg_context": {
             "baseline_home": 1.42,
             "baseline_away": 1.38,
-            "adjusted_home": 1.42,
-            "adjusted_away": 1.38,
-            "note": "基准 xG 1.42–1.38（未因伤病/气候下调）"
+            "adjusted_home": 1.32,
+            "adjusted_away": 1.32,
+            "note": "基准 xG 1.42–1.38 → 调整后 1.32–1.32"
           },
           "calibration": {
             "signal_cn": "均衡",
@@ -1741,19 +1746,19 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 53.7
+                "pct": 55.6
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 23.8
+                "pct": 24.4
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 22.5
+                "pct": 20
               }
             ],
             "margin_line_cn": "净胜差距参考 · 势均力敌",
@@ -1768,37 +1773,37 @@ const MATCH_DATA = {
             "totals_line": 2.5,
             "totals_line_cn": "总进球参考 2.5",
             "fair_totals_line": 2,
-            "model_total_xg": 2.8,
+            "model_total_xg": 2.64,
             "totals_line_gap": 0.5,
-            "totals_high_pct": 52.8,
-            "totals_low_pct": 47.2,
+            "totals_high_pct": 48.9,
+            "totals_low_pct": 51.1,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 14.9,
+            "win_low_total_pct": 15.7,
             "win_margin2_low_total_pct": 6.2,
-            "win_margin2_high_total_pct": 11.5,
-            "readout_cn": "取胜约 33%；若取胜，以「险胜收工」为主（53.7%）。 对着赛前净胜参考，净胜≥1（全达标）约 0%；对着总进球参考 2.5，模型超线概率约 52.8%。"
+            "win_margin2_high_total_pct": 10.1,
+            "readout_cn": "取胜约 33%；若取胜，以「险胜收工」为主（55.6%）。 对着赛前净胜参考，净胜≥1（全达标）约 0%；对着总进球参考 2.5，模型超线概率约 48.9%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 12
+              "pct": 12.5
+            },
+            {
+              "score": "0-1",
+              "pct": 9.5
             },
             {
               "score": "1-0",
-              "pct": 8.7
-            },
-            {
-              "score": "2-1",
-              "pct": 8.5
+              "pct": 9.5
             }
           ],
           "totals_view": {
-            "expected_total": 2.8,
+            "expected_total": 2.6,
             "fair_line": 2,
             "market_line": 2.5,
             "line_gap": 0.5,
-            "over_pct": 52.8,
+            "over_pct": 48.9,
             "gap_warning": null,
             "totals_outlook": {
               "level": "neutral",
@@ -1813,14 +1818,14 @@ const MATCH_DATA = {
               "detail_cn": "模型五五开，临场决定节奏。",
               "headline_cn": "进球氛围：几乎五五开",
               "show_lean": false,
-              "over_pct": 52.8,
+              "over_pct": 48.9,
               "line_gap": 0.5,
               "market_line": 2.5,
               "market_goals_int": 3,
               "market_goals_cn": "总进球参考 2.5",
               "caution_public_high": false
             },
-            "summary_cn": "预测 2.8 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
+            "summary_cn": "预测 2.6 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
             "headline_cn": "净胜走向：双方实力接近",
@@ -1853,7 +1858,7 @@ const MATCH_DATA = {
               "detail_cn": "模型五五开，临场决定节奏。",
               "headline_cn": "进球氛围：几乎五五开",
               "show_lean": false,
-              "over_pct": 52.8,
+              "over_pct": 48.9,
               "line_gap": 0.5,
               "market_line": 2.5,
               "market_goals_int": 3,
@@ -1906,7 +1911,7 @@ const MATCH_DATA = {
                   "detail_cn": "模型五五开，临场决定节奏。",
                   "headline_cn": "进球氛围：几乎五五开",
                   "show_lean": false,
-                  "over_pct": 52.8,
+                  "over_pct": 48.9,
                   "line_gap": 0.5,
                   "market_line": 2.5,
                   "market_goals_int": 3,
@@ -1924,63 +1929,63 @@ const MATCH_DATA = {
             {
               "side": "home",
               "team": "Croatia",
-              "first_goal_pct": 50.7,
+              "first_goal_pct": 50,
               "start_score": "1-0",
               "fav_name": "Croatia",
               "scorer_is_fav": true,
               "expected_key": "hold_win",
-              "fav_recover_pct": 83.7,
-              "small_lead_pct": 28.5,
-              "big_lead_pct": 33.1,
-              "fav_win_pct": 61.6,
-              "fav_draw_pct": 22.1,
-              "fav_lose_pct": 16.3,
+              "fav_recover_pct": 84,
+              "small_lead_pct": 29.4,
+              "big_lead_pct": 32,
+              "fav_win_pct": 61.4,
+              "fav_draw_pct": 22.6,
+              "fav_lose_pct": 16.1,
               "outcomes": [
                 {
                   "key": "hold_win",
                   "label": "Croatia 保持胜果（净胜≥1）",
-                  "pct": 61.6
+                  "pct": 61.4
                 },
                 {
                   "key": "drawn",
                   "label": "被扳平",
-                  "pct": 22.1
+                  "pct": 22.6
                 },
                 {
                   "key": "lost",
                   "label": "被逆转落败",
-                  "pct": 16.3
+                  "pct": 16.1
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 32.3 分",
-                "first_goal_wait": 32.3,
-                "fast_pct": 53.4,
-                "moderate_pct": 14.8,
-                "slow_pct": 31.9,
+                "sub_cn": "预期首球等待约 34.1 分",
+                "first_goal_wait": 34.1,
+                "fast_pct": 51.4,
+                "moderate_pct": 14.7,
+                "slow_pct": 33.9,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 53.4
+                    "pct": 51.4
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 14.8
+                    "pct": 14.7
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 31.9
+                    "pct": 33.9
                   }
                 ]
               },
-              "big_delta": 15.4,
-              "small_delta": 8,
+              "big_delta": 15.6,
+              "small_delta": 8.9,
               "narrative": "Croatia 先破门（已 1-0） → 「巩固防守」；Ghana 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
               "live_outlook": {
                 "fav_name": "Croatia",
@@ -1990,23 +1995,23 @@ const MATCH_DATA = {
                     "key": "narrow",
                     "label": "险胜收工",
                     "example": "如 1-0、2-1",
-                    "pct": 53.7
+                    "pct": 55.6
                   },
                   {
                     "key": "clean",
                     "label": "零封拉开",
                     "example": "如 2-0、3-0",
-                    "pct": 23.8
+                    "pct": 24.4
                   },
                   {
                     "key": "open",
                     "label": "开放拉开",
                     "example": "如 3-1+",
-                    "pct": 22.5
+                    "pct": 20
                   }
                 ],
                 "margin_line_cn": "净胜差距参考 · 势均力敌",
-                "margin_meet_pct": 16.3,
+                "margin_meet_pct": 16.1,
                 "margin_half_pct": 0,
                 "margin_fail_pct": 11,
                 "margin_full_label": "净胜≥1",
@@ -2017,31 +2022,31 @@ const MATCH_DATA = {
                 "totals_line": 2.5,
                 "totals_line_cn": "总进球参考 2.5",
                 "fair_totals_line": 2.25,
-                "model_total_xg": 2.29,
+                "model_total_xg": 2.16,
                 "totals_line_gap": 0.25,
-                "totals_high_pct": 66.6,
-                "totals_low_pct": 33.4,
+                "totals_high_pct": 63.6,
+                "totals_low_pct": 36.4,
                 "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
                 "win_low_total_pct": 0,
                 "win_margin2_low_total_pct": 0,
-                "win_margin2_high_total_pct": 5.3,
-                "readout_cn": "Croatia 已 1-0 领先：仍取胜约 16.3%。 对着总进球参考 2.5，模型超线概率约 66.6%。 若再扩大，偏「险胜收工」。"
+                "win_margin2_high_total_pct": 5.1,
+                "readout_cn": "Croatia 已 1-0 领先：仍取胜约 16.1%。 对着总进球参考 2.5，模型超线概率约 63.6%。 若再扩大，偏「险胜收工」。"
               }
             },
             {
               "side": "away",
               "team": "Ghana",
-              "first_goal_pct": 49.3,
+              "first_goal_pct": 50,
               "start_score": "0-1",
               "fav_name": "Ghana",
               "scorer_is_fav": false,
               "expected_key": "fav_recover",
-              "fav_recover_pct": 82.5,
-              "small_lead_pct": 28.3,
-              "big_lead_pct": 31.7,
-              "fav_win_pct": 59.9,
+              "fav_recover_pct": 84,
+              "small_lead_pct": 29.4,
+              "big_lead_pct": 32,
+              "fav_win_pct": 61.4,
               "fav_draw_pct": 22.6,
-              "fav_lose_pct": 17.5,
+              "fav_lose_pct": 16.1,
               "outcomes": [
                 {
                   "key": "draw",
@@ -2051,73 +2056,73 @@ const MATCH_DATA = {
                 {
                   "key": "win1",
                   "label": "Ghana 净胜1球翻盘（如 2-1）",
-                  "pct": 28.3
+                  "pct": 29.4
                 },
                 {
                   "key": "win2",
                   "label": "Ghana 净胜≥2球翻盘（如 3-1）",
-                  "pct": 31.7
+                  "pct": 32
                 },
                 {
                   "key": "upset_hold",
                   "label": "Ghana 保持胜果至终场",
-                  "pct": 17.5
+                  "pct": 16.1
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 32 分",
-                "first_goal_wait": 32,
-                "fast_pct": 53.6,
-                "moderate_pct": 14.8,
-                "slow_pct": 31.6,
+                "sub_cn": "预期首球等待约 34.1 分",
+                "first_goal_wait": 34.1,
+                "fast_pct": 51.4,
+                "moderate_pct": 14.7,
+                "slow_pct": 33.9,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 53.6
+                    "pct": 51.4
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 14.8
+                    "pct": 14.7
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 31.6
+                    "pct": 33.9
                   }
                 ]
               },
-              "big_delta": 14,
-              "small_delta": 7.8,
+              "big_delta": 15.6,
+              "small_delta": 8.9,
               "narrative": "Ghana 先破门（已 0-1） → 「巩固防守」；Croatia 「组织反扑」。落后方压上反扑，比赛更开放，但热门要净胜两球以上仍须连续破门。",
               "live_outlook": null
             }
           ],
           "match_preview": {
             "morphology": {
-              "totals_summary": "预测 2.8 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_summary": "预测 2.6 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向",
               "totals_line_cn": "总进球参考 2.5",
-              "totals_high_pct": 52.8,
+              "totals_high_pct": 48.9,
               "type_tags": [
                 {
-                  "key": "even_open",
-                  "label": "均势开放"
+                  "key": "balanced",
+                  "label": "常规对抗"
                 }
               ],
               "depth_label": "深度一般",
               "draw_trap_pct": 31,
-              "readout_cn": "Croatia · 均势开放。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+              "readout_cn": "Croatia · 常规对抗。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
             },
             "draw_trap_note": null,
             "archetype": {
               "tags": [
                 {
-                  "key": "even_open",
-                  "label": "均势开放"
+                  "key": "balanced",
+                  "label": "常规对抗"
                 }
               ],
               "depth_score": 0,
@@ -2128,39 +2133,39 @@ const MATCH_DATA = {
           },
           "halftime_preview": {
             "ht_xg_share": 0.44,
-            "xg_home_ht": 0.62,
-            "xg_away_ht": 0.61,
-            "xg_home_2h": 0.8,
-            "xg_away_2h": 0.77,
-            "home_win": 29.6,
-            "draw": 41.4,
-            "away_win": 29,
+            "xg_home_ht": 0.58,
+            "xg_away_ht": 0.58,
+            "xg_home_2h": 0.74,
+            "xg_away_2h": 0.74,
+            "home_win": 28.6,
+            "draw": 42.8,
+            "away_win": 28.6,
             "top_score": "0-0",
-            "top_score_prob": 29.2,
+            "top_score_prob": 31.4,
             "top3_scores": [
               {
                 "score": "0-0",
-                "prob": 29.2
-              },
-              {
-                "score": "1-0",
-                "prob": 18.1
+                "prob": 31.4
               },
               {
                 "score": "0-1",
-                "prob": 17.8
+                "prob": 18.2
+              },
+              {
+                "score": "1-0",
+                "prob": 18.2
               }
             ],
-            "ht_goals_expected": 1.23,
-            "ht_over_0_5_pct": 70.8,
-            "ht_over_1_5_pct": 34.8,
+            "ht_goals_expected": 1.16,
+            "ht_over_0_5_pct": 68.6,
+            "ht_over_1_5_pct": 32.3,
             "pick": "draw",
             "pick_name": "平局",
-            "summary_cn": "半场 xG 0.62–0.61（约占全场 44%） · 最可能 0-0（29.2%） · 胜平负 29.6/41.4/29 · 半场≥1球约 70.8%",
+            "summary_cn": "半场 xG 0.58–0.58（约占全场 44%） · 最可能 0-0（31.4%） · 胜平负 28.6/42.8/28.6 · 半场≥1球约 68.6%",
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Croatia · 均势开放。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
+        "public_summary_note": "【推演概要】Croatia · 常规对抗。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
         "goal_efficiency_preview": {
           "mode": "preview",
           "xg_total": 2.8,
@@ -2169,7 +2174,7 @@ const MATCH_DATA = {
           "xg_away": 1.38,
           "xg_baseline_home": 1.42,
           "xg_baseline_away": 1.38,
-          "xg_note": "结构推演用基准 xG 1.42–1.38",
+          "xg_note": "结构推演用基准 xG 1.42–1.38（进球氛围用调整后 1.32–1.32）",
           "lean_note": "大/小概率接近或路径互斥——不作单边大/小标签。",
           "fav_name": "Croatia",
           "dog_name": "Ghana",
@@ -2384,6 +2389,2340 @@ const MATCH_DATA = {
           "Ghana 若取胜：积分 7，客场抢分将改变 L 组格局与淘汰赛半区。",
           "平局：双方各 +1 分；在 K 组：头名 Colombia 6 分 · 次席 Portugal 4 分（32强绑定组） · A 组：头名 Mexico 9 分 · 次席 South Africa 4 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
           "头名/次席博弈：L 组次席走 M83，16 强进入 H/J 半区。"
+        ]
+      }
+    },
+    {
+      "id": "m71",
+      "fifa_match_number": 71,
+      "fifa_match_id": "400021505",
+      "group": "K",
+      "matchday": 3,
+      "date": "2026-06-27",
+      "time": "19:30",
+      "time_local": "19:30 ET",
+      "timezone": "EDT (UTC-4)",
+      "time_beijing": "07:30",
+      "date_beijing": "6月28日",
+      "time_beijing_full": "北京时间 6月28日 07:30",
+      "venue": "Hard Rock Stadium",
+      "city": "Miami Gardens, USA",
+      "note": "K组末轮 · 哥伦比亚 vs 葡萄牙 · 迈阿密",
+      "lineup": {
+        "confirmed": false,
+        "formation": null,
+        "home": "等待官方确认",
+        "away": "等待官方确认",
+        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
+        "predicted": {
+          "formation": "4-2-3-1 / 4-3-3",
+          "home": "Campos; Muñoz, Sánchez, Lerma; Arias, Barrios, Ríos; Díaz, James, Quinteros; Borré",
+          "away": "Costa; Cancelo, Dias, Pepe, Mendes; Palhinha, Vitinha; Leão, Bruno Fernandes, Rafael Leão; Ronaldo",
+          "source": "BBC 预测",
+          "alt": null
+        }
+      },
+      "home": {
+        "name": "Colombia",
+        "iso": "co",
+        "flag": "",
+        "fifa_rank": 27,
+        "rating": 75,
+        "form": [
+          "W",
+          "W",
+          "W",
+          "D",
+          "W"
+        ],
+        "coach": "Néstor Lorenzo",
+        "stars": [
+          {
+            "name": "Luis Díaz",
+            "pos": "LW",
+            "club": "Liverpool",
+            "rating": 8.6,
+            "desc": "速度"
+          },
+          {
+            "name": "James Rodríguez",
+            "pos": "AM",
+            "club": "León",
+            "rating": 8.2,
+            "desc": "组织"
+          }
+        ],
+        "star": {
+          "name": "Luis Díaz",
+          "pos": "LW",
+          "club": "Liverpool",
+          "rating": 8.6,
+          "desc": "6 分争头名"
+        },
+        "injuries": [
+          {
+            "player": "Luis Díaz",
+            "status": "FIT",
+            "note": "6 分争头名",
+            "confirmed": true
+          }
+        ],
+        "rumors": [
+          "哥伦比亚末轮须保头名"
+        ]
+      },
+      "away": {
+        "name": "Portugal",
+        "iso": "pt",
+        "flag": "",
+        "fifa_rank": 6,
+        "rating": 88,
+        "form": [
+          "W",
+          "D",
+          "W",
+          "W",
+          "W"
+        ],
+        "coach": "Roberto Martínez",
+        "stars": [
+          {
+            "name": "Cristiano Ronaldo",
+            "pos": "ST",
+            "club": "Al-Nassr",
+            "rating": 8.8,
+            "desc": "锋线"
+          },
+          {
+            "name": "Bruno Fernandes",
+            "pos": "AM",
+            "club": "Man Utd",
+            "rating": 8.5,
+            "desc": "组织"
+          }
+        ],
+        "star": {
+          "name": "Cristiano Ronaldo",
+          "pos": "ST",
+          "club": "Al-Nassr",
+          "rating": 8.8,
+          "desc": "4 分争头名"
+        },
+        "injuries": [
+          {
+            "player": "Cristiano Ronaldo",
+            "status": "FIT",
+            "note": "4 分争头名",
+            "confirmed": true
+          }
+        ],
+        "rumors": [
+          "葡萄牙须胜抢 K 组第一"
+        ]
+      },
+      "h2h": {
+        "home_wins": 0,
+        "draws": 1,
+        "away_wins": 1,
+        "recent": [
+          {
+            "year": 2014,
+            "comp": "世界杯",
+            "score": "0-1",
+            "winner": "Portugal"
+          }
+        ],
+        "note": "葡萄牙大赛占优"
+      },
+      "referee": {
+        "confirmed": false,
+        "pending": true,
+        "name": "等待官方确认",
+        "nation": "待公布",
+        "iso": null,
+        "bias_note": "FIFA Match 71 · 哥伦比亚 vs 葡萄牙 · 裁判名单赛前公布。",
+        "tendencies": [
+          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+        ],
+        "updated": "2026-06-27T06:00:10+08:00"
+      },
+      "prediction": {
+        "home_win": 35,
+        "draw": 28,
+        "away_win": 37,
+        "score": "1-1",
+        "confidence": 72,
+        "xg_home": 1.55,
+        "xg_away": 1.58,
+        "key_factor": "K组榜首战 · 哥伦/葡各争头名 · Díaz vs Ronaldo · 泊松 1-1/2-1",
+        "score_dist": [
+          {
+            "score": "1-1",
+            "prob": 12.4
+          },
+          {
+            "score": "0-1",
+            "prob": 9.5
+          },
+          {
+            "score": "1-0",
+            "prob": 9.3
+          },
+          {
+            "score": "1-2",
+            "prob": 8.3
+          },
+          {
+            "score": "2-1",
+            "prob": 8.1
+          },
+          {
+            "score": "0-0",
+            "prob": 7.1
+          },
+          {
+            "score": "0-2",
+            "prob": 6.3
+          }
+        ],
+        "insight_factors": [
+          {
+            "icon": "📊",
+            "label": "小组积分",
+            "text": "Colombia 暂列 K 组第 1（6 分 · 已赛 2 场） vs Portugal 第 2（4 分 · 已赛 2 场）"
+          },
+          {
+            "icon": "🎯",
+            "label": "出线博弈",
+            "text": "Colombia、Portugal 均已锁定出线（输球亦稳居前二） · 可轮换、试战术，但≠默契球 —— 没有「必须平局才能两人携手出线」的必要；头名之争仍可能真刀真枪 · 已出线争顺位"
+          },
+          {
+            "icon": "🌤️",
+            "label": "赛场气候",
+            "text": "迈阿密湿热 · 31°C · 湿度 76% · 降雨概率 40% · 海风 3级；K组榜首战 · 哥伦 6 分 vs 葡萄牙 4 分（31°C 湿度 76%）"
+          },
+          {
+            "icon": "⚽",
+            "label": "战术与阵容",
+            "text": "K组榜首战 · 哥伦/葡各争头名 · Díaz vs Ronaldo · 泊松 1-1/2-1"
+          }
+        ],
+        "base_home_win": 35,
+        "base_draw": 28,
+        "base_away_win": 37,
+        "depth_calibrated": true,
+        "draw_context": {
+          "drawBoost": 4,
+          "ironBucket": false,
+          "closeXg": true,
+          "gap": 0.03,
+          "notes": [
+            "xG 极接近"
+          ],
+          "qual_dynamics": {
+            "scenario_type": "path_control",
+            "mutual_draw_advances": false,
+            "path_control": true,
+            "asymmetric_third": null,
+            "both_already_qualified": true,
+            "home_already_qualified": true,
+            "away_already_qualified": true,
+            "home_out_if_loss": false,
+            "away_out_if_loss": false,
+            "logic_steps": [
+              "Colombia 6 分 vs Portugal 4 分；同组另一场 Congo DR（1 分）vs Uzbekistan（0 分）",
+              "逻辑：即使本场输球，Colombia、Portugal 仍稳居前二 → 均已出线",
+              "逻辑：胜负不改变「进不进淘汰赛」，只决定头名/次席 → 32 强/16 强对位不同（K 组次席与 L 组次席同槽 M83。）",
+              "逻辑：可轮换、试战术，但≠默契球 —— 没有「必须平局才能两人携手出线」的必要；头名之争仍可能真刀真枪"
+            ],
+            "drawBoost": 0,
+            "xgScaleHome": 0.94,
+            "xgScaleAway": 0.94,
+            "notes": [
+              "已出线：或轮换/练兵，xG 略降",
+              "头名/次席影响淘汰对位，不额外抬平局"
+            ],
+            "summary": "已出线控分：胜负只争头/次席与淘汰对位，可练兵但≠默契球"
+          }
+        },
+        "qual_dynamics": {
+          "scenario_type": "path_control",
+          "mutual_draw_advances": false,
+          "path_control": true,
+          "asymmetric_third": null,
+          "both_already_qualified": true,
+          "home_already_qualified": true,
+          "away_already_qualified": true,
+          "home_out_if_loss": false,
+          "away_out_if_loss": false,
+          "logic_steps": [
+            "Colombia 6 分 vs Portugal 4 分；同组另一场 Congo DR（1 分）vs Uzbekistan（0 分）",
+            "逻辑：即使本场输球，Colombia、Portugal 仍稳居前二 → 均已出线",
+            "逻辑：胜负不改变「进不进淘汰赛」，只决定头名/次席 → 32 强/16 强对位不同（K 组次席与 L 组次席同槽 M83。）",
+            "逻辑：可轮换、试战术，但≠默契球 —— 没有「必须平局才能两人携手出线」的必要；头名之争仍可能真刀真枪"
+          ],
+          "drawBoost": 0,
+          "xgScaleHome": 0.94,
+          "xgScaleAway": 0.94,
+          "notes": [
+            "已出线：或轮换/练兵，xG 略降",
+            "头名/次席影响淘汰对位，不额外抬平局"
+          ],
+          "summary": "已出线控分：胜负只争头/次席与淘汰对位，可练兵但≠默契球"
+        },
+        "xg_poisson_home": 1.31,
+        "xg_poisson_away": 1.34,
+        "xg_tier_calibrated": false,
+        "score_prob": 12.4,
+        "score_top3": [
+          {
+            "score": "1-1",
+            "prob": 12.4
+          },
+          {
+            "score": "0-1",
+            "prob": 9.5
+          },
+          {
+            "score": "1-0",
+            "prob": 9.3
+          }
+        ],
+        "expected_score": "1-1"
+      },
+      "weather": {
+        "city": "迈阿密",
+        "country": "美国",
+        "venue": "Hard Rock Stadium",
+        "pitch_surface": "天然草",
+        "stadium_type": "开放式",
+        "temp": 31,
+        "humidity": 76,
+        "altitude_m": 5,
+        "rain_chance": 40,
+        "wind": "海风 3级",
+        "condition_cn": "迈阿密湿热",
+        "impact_level": "MEDIUM",
+        "impact_summary": "K组榜首战 · 哥伦 6 分 vs 葡萄牙 4 分",
+        "home_adapt": 86,
+        "away_adapt": 84,
+        "weather_factors": [
+          {
+            "label": "31°C 湿度 76%",
+            "impact": "中",
+            "detail": "北京时间 07:30 · 同开 m72"
+          }
+        ],
+        "forecast_updated": "2026-06-27 22:00 本地"
+      },
+      "mystic": {
+        "date_bazi": {
+          "year": "丙午年",
+          "month": "甲午月",
+          "day": "丁酉日",
+          "day_summary": "丁酉日——火金相制",
+          "hour_home": "见各场",
+          "hour_home_element": "金"
+        },
+        "wuxing": {
+          "home": {
+            "verdict": "待定"
+          },
+          "away": {
+            "verdict": "待定"
+          },
+          "summary": "文化解读"
+        },
+        "hexagram": {
+          "name": "待卦",
+          "symbol": "☯",
+          "quote": "赛前更新",
+          "general": "",
+          "scenarios": []
+        },
+        "home_score": 48,
+        "away_score": 52,
+        "mystic_verdict": "榜首对话，火金相制宜对攻。",
+        "disclaimer": "文化解读 · 非竞技推演"
+      },
+      "depth_calibration": {
+        "tier_home": 0,
+        "tier_label": "势均力敌",
+        "implied_tier": 0,
+        "tier_gap": 0,
+        "signal": "neutral",
+        "signal_cn": "均衡",
+        "signal_color": "#7BB8D4",
+        "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
+        "blocker_spread_note": "",
+        "public_lean_cn": "舆论倾向 Portugal（约 53%）",
+        "analysis": "K组榜首战 · 哥伦 6 分 vs 葡萄牙 4 分。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "1-1",
+              "prob": 10.8
+            },
+            {
+              "score": "1-2",
+              "prob": 8.6
+            },
+            {
+              "score": "2-1",
+              "prob": 8.4
+            }
+          ],
+          "one_goal_win_pct": 19.4,
+          "two_plus_win_pct": 17.9,
+          "full_cover_pct": 0,
+          "half_cover_pct": 0,
+          "half_lose_pct": 0,
+          "push_pct": null,
+          "margin_full_label": "净胜≥1",
+          "margin_half_label": null,
+          "fav_cover_ev": 0,
+          "dog_cover_ev": 0,
+          "rational_spread_cn": "两边净胜达标概率接近",
+          "total_xg": 3.13,
+          "fair_totals_line": 2.75,
+          "over_2_5_pct": 60.1,
+          "over_3_pct": 37.5,
+          "totals_lean_cn": "超 2.5 偏大比分（约 60.1%）；4球+偏少",
+          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%"
+        },
+        "spread_odds": null,
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 2.5,
+          "market_goals_int": 3,
+          "line_label": "总进球约 2.5 个",
+          "implied_xg_total": 3.13,
+          "fair_line": 2.75,
+          "line_gap": -0.25,
+          "over_pct": 60.1,
+          "under_pct": 39.9,
+          "signal": "low_line",
+          "signal_cn": "参考偏低",
+          "signal_color": "#7BB8D4",
+          "signal_desc": "总进球参考低于合理值，模型偏大比分。",
+          "public_over_pct": 50,
+          "public_lean_cn": "舆论对总进球看法较分散",
+          "index_note": "大/小比分两侧接近",
+          "totals_odds": null,
+          "rational_cn": "模型略看大比分（超 2.5 约 60.1%）",
+          "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
+        },
+        "totals_line": 2.5,
+        "applied_delta": {
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
+        },
+        "adjustment_note": "模型微调：主胜 +0% · 平 +0% · 客 +0%",
+        "adjusted_probs": {
+          "home_win": 35,
+          "draw": 28,
+          "away_win": 37
+        },
+        "display_summary": {
+          "fav_name": "Portugal",
+          "expected_total_goals": 2.63,
+          "poisson_fav_win_pct": 37.6,
+          "small_lead_pct": 20.7,
+          "small_example_score": "0-1",
+          "small_example_pct": 9.5,
+          "big_cover_pct": 16.9,
+          "big_example_score": "0-2",
+          "big_example_pct": 6.4,
+          "win_shape": {
+            "fav_name": "Portugal",
+            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
+            "lead_cn": "取胜时以险胜·开放为主（险胜 · 开放 29.8%）",
+            "shapes": [
+              {
+                "key": "narrow_low",
+                "label": "险胜 · 控局",
+                "example": "如 1-0",
+                "field_pct": 9.5,
+                "pct": 25.3
+              },
+              {
+                "key": "narrow_open",
+                "label": "险胜 · 开放",
+                "example": "如 2-1",
+                "field_pct": 11.2,
+                "pct": 29.8
+              },
+              {
+                "key": "comfort_low",
+                "label": "拉开 · 控局",
+                "example": "如 2-0",
+                "field_pct": 9.2,
+                "pct": 24.5
+              },
+              {
+                "key": "comfort_open",
+                "label": "拉开 · 开放",
+                "example": "如 3-1+",
+                "field_pct": 7.7,
+                "pct": 20.4
+              }
+            ],
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 55.1
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 24.5
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 20.4
+              }
+            ],
+            "fav_win_pct": 37
+          },
+          "excitement": {
+            "label_cn": "中速开局",
+            "label_key": "moderate",
+            "label_color": "#C8A96E",
+            "sub_cn": "预期首球等待约 34 分",
+            "first_goal_wait": 34,
+            "fast_pct": 58.7,
+            "moderate_pct": 14.8,
+            "slow_pct": 26.6,
+            "tiers": [
+              {
+                "key": "fast",
+                "label": "前 30 分内首球",
+                "pct": 58.7
+              },
+              {
+                "key": "moderate",
+                "label": "30–45 分首球",
+                "pct": 14.8
+              },
+              {
+                "key": "slow",
+                "label": "45 分后首球",
+                "pct": 26.6
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "Colombia 暂无重要伤停 · Portugal 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "— / —（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "K组榜首战 · 哥伦 6 分 vs 葡萄牙 4 分"
+            },
+            {
+              "icon": "🎯",
+              "label": "出线博弈",
+              "note": "已出线控分：胜负只争头/次席与淘汰对位，可练兵但≠默契球 · 已出线争顺位"
+            },
+            {
+              "icon": "⚖️",
+              "label": "平局修正",
+              "note": "回测校准：xG 极接近（平 +4%）"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 1.55,
+            "baseline_away": 1.58,
+            "adjusted_home": 1.31,
+            "adjusted_away": 1.34,
+            "note": "基准 xG 1.55–1.58 → 调整后 1.31–1.34"
+          },
+          "calibration": {
+            "signal_cn": "均衡",
+            "signal_color": "#7BB8D4",
+            "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
+            "tier_gap": 0,
+            "implied_tier_label": "势均力敌",
+            "market_tier_label": "势均力敌",
+            "summary_cn": "与模型 xG 对照：均衡 · 与赛前净胜看法基本一致"
+          },
+          "win_outlook": {
+            "fav_name": "Portugal",
+            "state_label": null,
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 55.1
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 24.5
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 20.4
+              }
+            ],
+            "margin_line_cn": "净胜差距参考 · 势均力敌",
+            "margin_meet_pct": 0,
+            "margin_half_pct": 0,
+            "margin_fail_pct": 0,
+            "margin_full_label": "净胜≥1",
+            "margin_half_label": null,
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
+            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+            "totals_line": 2.5,
+            "totals_line_cn": "总进球参考 2.5",
+            "fair_totals_line": 2,
+            "model_total_xg": 2.65,
+            "totals_line_gap": 0.5,
+            "totals_high_pct": 49.2,
+            "totals_low_pct": 50.8,
+            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+            "win_low_total_pct": 15.9,
+            "win_margin2_low_total_pct": 6.4,
+            "win_margin2_high_total_pct": 10.5,
+            "readout_cn": "取胜约 37%；若取胜，以「险胜收工」为主（55.1%）。 对着赛前净胜参考，净胜≥1（全达标）约 0%；对着总进球参考 2.5，模型超线概率约 49.2%。"
+          },
+          "totals_line": 2.5,
+          "score_patterns": [
+            {
+              "score": "1-1",
+              "pct": 12.5
+            },
+            {
+              "score": "0-1",
+              "pct": 9.5
+            },
+            {
+              "score": "1-0",
+              "pct": 9.3
+            }
+          ],
+          "totals_view": {
+            "expected_total": 2.6,
+            "fair_line": 2,
+            "market_line": 2.5,
+            "line_gap": 0.5,
+            "over_pct": 49.2,
+            "gap_warning": null,
+            "totals_outlook": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 49.2,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "summary_cn": "预测 2.6 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
+          },
+          "customer_reading": {
+            "headline_cn": "净胜走向：双方实力接近",
+            "sub_cn": "双方实力接近，暂无单侧净胜预期。 进球氛围：几乎五五开",
+            "spread": {
+              "level": "even",
+              "label_cn": "势均力敌",
+              "color": "#8A96A8",
+              "fav_name": null,
+              "market_expect_cn": "势均力敌",
+              "meet_pct": null,
+              "verdict_cn": "无明确净胜拉开预期",
+              "headline_cn": "净胜走向：双方实力接近",
+              "pill_cn": "双方实力接近，暂无单侧净胜预期。",
+              "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
+              "full_cover_pct": 0,
+              "half_cover_pct": 0,
+              "show_cover": false
+            },
+            "totals": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 49.2,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "draw_risk": null,
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "净胜走向",
+                "outlook": {
+                  "level": "even",
+                  "label_cn": "势均力敌",
+                  "color": "#8A96A8",
+                  "fav_name": null,
+                  "market_expect_cn": "势均力敌",
+                  "meet_pct": null,
+                  "verdict_cn": "无明确净胜拉开预期",
+                  "headline_cn": "净胜走向：双方实力接近",
+                  "pill_cn": "双方实力接近，暂无单侧净胜预期。",
+                  "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
+                  "full_cover_pct": 0,
+                  "half_cover_pct": 0,
+                  "show_cover": false
+                },
+                "text": "双方实力接近，暂无单侧净胜预期。",
+                "color": "#8A96A8",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "◎",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "neutral",
+                  "label_cn": "暂无明显倾向",
+                  "color": "#8A96A8",
+                  "meter_label_cn": "几乎五五开",
+                  "meter_pos": 50,
+                  "lean_side": "neutral",
+                  "lean_strength": "none",
+                  "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+                  "pill_cn": "几乎五五开",
+                  "detail_cn": "模型五五开，临场决定节奏。",
+                  "headline_cn": "进球氛围：几乎五五开",
+                  "show_lean": false,
+                  "over_pct": 49.2,
+                  "line_gap": 0.5,
+                  "market_line": 2.5,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "总进球参考 2.5",
+                  "caution_public_high": false
+                },
+                "text": "几乎五五开",
+                "color": "#8A96A8",
+                "muted": true
+              }
+            ],
+            "methodology_note": "读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "Colombia",
+              "first_goal_pct": 49.4,
+              "start_score": "1-0",
+              "fav_name": "Colombia",
+              "scorer_is_fav": false,
+              "expected_key": "fav_recover",
+              "fav_recover_pct": 83.5,
+              "small_lead_pct": 29.3,
+              "big_lead_pct": 31.4,
+              "fav_win_pct": 60.7,
+              "fav_draw_pct": 22.8,
+              "fav_lose_pct": 16.5,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "Colombia 追平（平局）",
+                  "pct": 22.8
+                },
+                {
+                  "key": "win1",
+                  "label": "Colombia 净胜1球翻盘（如 2-1）",
+                  "pct": 29.3
+                },
+                {
+                  "key": "win2",
+                  "label": "Colombia 净胜≥2球翻盘（如 3-1）",
+                  "pct": 31.4
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "Colombia 保持胜果至终场",
+                  "pct": 16.5
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 34 分",
+                "first_goal_wait": 34,
+                "fast_pct": 51.5,
+                "moderate_pct": 14.7,
+                "slow_pct": 33.7,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 51.5
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.7
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 33.7
+                  }
+                ]
+              },
+              "big_delta": 14.5,
+              "small_delta": 8.6,
+              "narrative": "Colombia 先破门（已 1-0） → 「巩固防守」；Portugal 「组织反扑」。落后方压上反扑，比赛更开放，但热门要净胜两球以上仍须连续破门。",
+              "live_outlook": null
+            },
+            {
+              "side": "away",
+              "team": "Portugal",
+              "first_goal_pct": 50.6,
+              "start_score": "0-1",
+              "fav_name": "Portugal",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 84.3,
+              "small_lead_pct": 29.3,
+              "big_lead_pct": 32.6,
+              "fav_win_pct": 62,
+              "fav_draw_pct": 22.3,
+              "fav_lose_pct": 15.7,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "Portugal 保持胜果（净胜≥1）",
+                  "pct": 62
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 22.3
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 15.7
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 34 分",
+                "first_goal_wait": 34,
+                "fast_pct": 51.5,
+                "moderate_pct": 14.7,
+                "slow_pct": 33.7,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 51.5
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.7
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 33.7
+                  }
+                ]
+              },
+              "big_delta": 15.7,
+              "small_delta": 8.6,
+              "narrative": "Portugal 先破门（已 0-1） → 「巩固防守」；Colombia 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
+              "live_outlook": {
+                "fav_name": "Portugal",
+                "state_label": "Portugal 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 55.1
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 24.5
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 20.4
+                  }
+                ],
+                "margin_line_cn": "净胜差距参考 · 势均力敌",
+                "margin_meet_pct": 15.7,
+                "margin_half_pct": 0,
+                "margin_fail_pct": 10.8,
+                "margin_full_label": "净胜≥1",
+                "margin_half_label": null,
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.5,
+                "totals_line_cn": "总进球参考 2.5",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 2.17,
+                "totals_line_gap": 0.25,
+                "totals_high_pct": 63.8,
+                "totals_low_pct": 36.2,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 0,
+                "win_margin2_low_total_pct": 0,
+                "win_margin2_high_total_pct": 4.9,
+                "readout_cn": "Portugal 已 1-0 领先：仍取胜约 15.7%。 对着总进球参考 2.5，模型超线概率约 63.8%。 若再扩大，偏「险胜收工」。"
+              }
+            }
+          ],
+          "match_preview": {
+            "morphology": {
+              "totals_summary": "预测 2.6 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球参考 2.5",
+              "totals_high_pct": 49.2,
+              "type_tags": [
+                {
+                  "key": "balanced",
+                  "label": "常规对抗"
+                }
+              ],
+              "depth_label": "深度一般",
+              "draw_trap_pct": 24,
+              "readout_cn": "Portugal · 常规对抗。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+            },
+            "draw_trap_note": null,
+            "archetype": {
+              "tags": [
+                {
+                  "key": "balanced",
+                  "label": "常规对抗"
+                }
+              ],
+              "depth_score": 0,
+              "depth_label": "深度一般",
+              "draw_trap_pct": 24,
+              "fav_lead_style": "balanced"
+            }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.58,
+            "xg_away_ht": 0.59,
+            "xg_home_2h": 0.73,
+            "xg_away_2h": 0.75,
+            "home_win": 28.4,
+            "draw": 42.6,
+            "away_win": 29,
+            "top_score": "0-0",
+            "top_score_prob": 31,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 31
+              },
+              {
+                "score": "0-1",
+                "prob": 18.3
+              },
+              {
+                "score": "1-0",
+                "prob": 18
+              }
+            ],
+            "ht_goals_expected": 1.17,
+            "ht_over_0_5_pct": 69,
+            "ht_over_1_5_pct": 32.6,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.58–0.59（约占全场 44%） · 最可能 0-0（31%） · 胜平负 28.4/42.6/29 · 半场≥1球约 69%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
+          }
+        },
+        "public_summary_note": "【推演概要】Portugal · 常规对抗。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
+        "goal_efficiency_preview": {
+          "mode": "preview",
+          "xg_total": 3.13,
+          "xg_gap": 0.03,
+          "xg_home": 1.55,
+          "xg_away": 1.58,
+          "xg_baseline_home": 1.55,
+          "xg_baseline_away": 1.58,
+          "xg_note": "结构推演用基准 xG 1.55–1.58（进球氛围用调整后 1.31–1.34）",
+          "lean_note": "基准 xG 结构偏多球，但进球氛围偏闷（预测约 2.6）——作岔路预警，非默认剧本",
+          "fav_name": "Portugal",
+          "dog_name": "Colombia",
+          "fav_xg": 1.58,
+          "dog_xg": 1.55,
+          "path_type": "low",
+          "path_label": "铁局/小比分",
+          "lean": "prevention_high",
+          "lean_cn": "预防大比分",
+          "lean_mode": "prevention",
+          "lean_confidence": 60.1,
+          "prevention_reason_cn": "基准 xG 结构偏多球，但进球氛围偏闷（预测约 2.6）——作岔路预警，非默认剧本",
+          "atmosphere_link_cn": null,
+          "modules_aligned": false,
+          "live_watch": [
+            {
+              "key": "dog_goal",
+              "label": "Colombia进球",
+              "detail": "弱队破门 → 预防大比分抬升；对照弱队开花/对攻路径",
+              "severity": "high"
+            },
+            {
+              "key": "dog_eff",
+              "label": "弱队效率≥1.0",
+              "detail": "弱队射门兑现超预期 → 上调大比分留意（样本：效率≥1.2 易凑 3 球+）",
+              "severity": "high"
+            },
+            {
+              "key": "fav_only",
+              "label": "仅Portugal进球",
+              "detail": "热门单榜领先、弱队仍无球 → 仍按进球氛围小比分，不必因路径升级",
+              "severity": "calm"
+            }
+          ],
+          "prob_over_line": 60.1,
+          "prob_meet_guess": 60.1,
+          "guess_n": 3,
+          "prob_4_plus": 37.5,
+          "prob_2_or_less": 39.9,
+          "totals_line": 2.5,
+          "scenarios": [
+            {
+              "key": "low",
+              "label": "铁局/小比分",
+              "example": "1-0 / 1-1 / 0-0",
+              "note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
+              "prob_pct": 45
+            },
+            {
+              "key": "open",
+              "label": "对攻/open",
+              "example": "2-2 / 4-2 / 3-2",
+              "note": "双方 xG 均有进球预期，任一方效率达标即可凑出 4 球。",
+              "prob_pct": 23
+            },
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "example": "2-2 / 1-3 / 3-1",
+              "note": "样本：弱队效率≥1.2 时 71% 总进球≥3；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
+              "prob_pct": 20
+            },
+            {
+              "key": "fav_burst",
+              "label": "热门爆发",
+              "example": "2-0 / 3-0 / 4-1",
+              "note": "样本：热门效率≥1.5 时高比分常见；弱队 xG≈1.0 但只进 1 球时也常见此路径。",
+              "prob_pct": 13
+            }
+          ],
+          "tags": [
+            {
+              "key": "prevention_high",
+              "label": "预防大比分",
+              "color": "#E8A54B",
+              "bg": "rgba(232,165,75,0.12)"
+            },
+            {
+              "key": "even_xg",
+              "label": "xG接近",
+              "color": "#5BBF8A",
+              "bg": "rgba(91,191,138,0.08)"
+            },
+            {
+              "key": "low_scoring",
+              "label": "小比分",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            }
+          ],
+          "watch_notes": [
+            "弱队上半场效率≥1.0 → 关注弱队开花路径",
+            "结构类似 m12/m26——热门爆发路径需防 4+ 球"
+          ],
+          "pattern_note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
+          "summary_cn": "【路径·基准 xG】合计 3.13 · Portugal 1.58 / Colombia 1.55 → 主路径「铁局/小比分」约 45% · 预防大比分。 超 2.5 约 60.1% · ≤2球 39.9%。样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
+          "in_mid_band": false,
+          "sample_note": "结构规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27）· 大/小标签用基准 xG 泊松 ≥60%/≤40%"
+        }
+      },
+      "group_context": {
+        "group": "K",
+        "label": "K组 · 第2轮后",
+        "matchday": 3,
+        "standings": [
+          {
+            "team": "Colombia",
+            "pts": 6,
+            "p": 2,
+            "w": 2,
+            "d": 0,
+            "l": 0,
+            "gf": 4,
+            "ga": 1
+          },
+          {
+            "team": "Portugal",
+            "pts": 4,
+            "p": 2,
+            "w": 1,
+            "d": 1,
+            "l": 0,
+            "gf": 6,
+            "ga": 1
+          },
+          {
+            "team": "Congo DR",
+            "pts": 1,
+            "p": 2,
+            "w": 0,
+            "d": 1,
+            "l": 1,
+            "gf": 1,
+            "ga": 2
+          },
+          {
+            "team": "Uzbekistan",
+            "pts": 0,
+            "p": 2,
+            "w": 0,
+            "d": 0,
+            "l": 2,
+            "gf": 1,
+            "ga": 8
+          }
+        ],
+        "home": {
+          "team": "Colombia",
+          "rank": 1,
+          "pts": 6,
+          "played": 2,
+          "if_1st": "32强 M87 · K 组第 1 vs 最佳第 3（D/E/I/J/L 池） → 当前 L 组第 2倾向 Ghana",
+          "if_1st_r16": "16强 M96 · 对阵 B 组第 1 vs 最佳第 3 之胜者",
+          "if_1st_corridor": "葡萄牙头名通道",
+          "if_2nd": "32强 M83 · K 组第 2 vs L 组第 2 → 当前 L 组第 1倾向 England（强队）",
+          "if_2nd_r16": "16强 M93 · 对阵 H 组第 1 vs J 组第 2 之胜者",
+          "if_2nd_corridor": "哥伦比亚/乌兹别克次席 → 16 强或遇西班牙/阿根廷半区",
+          "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 J/L/I/H 等组第 3 横向比较",
+          "if_3rd_r16": "32 强对手取决于 Annex C 第 3 名组合（495 种可能）"
+        },
+        "away": {
+          "team": "Portugal",
+          "rank": 2,
+          "pts": 4,
+          "played": 2,
+          "if_1st": "32强 M87 · K 组第 1 vs 最佳第 3（D/E/I/J/L 池） → 当前 L 组第 2倾向 Ghana",
+          "if_1st_r16": "16强 M96 · 对阵 B 组第 1 vs 最佳第 3 之胜者",
+          "if_1st_corridor": "葡萄牙头名通道",
+          "if_2nd": "32强 M83 · K 组第 2 vs L 组第 2 → 当前 L 组第 1倾向 England（强队）",
+          "if_2nd_r16": "16强 M93 · 对阵 H 组第 1 vs J 组第 2 之胜者",
+          "if_2nd_corridor": "哥伦比亚/乌兹别克次席 → 16 强或遇西班牙/阿根廷半区",
+          "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 J/L/I/H 等组第 3 横向比较",
+          "if_3rd_r16": "32 强对手取决于 Annex C 第 3 名组合（495 种可能）"
+        },
+        "cross_group_notes": [
+          "L 组：头名 England 4 分 · 次席 Ghana 同分（32强绑定组）",
+          "J 组：头名 Argentina 6 分 · 次席 Austria 3 分（32强绑定组）",
+          "G 组 Belgium 5 分领跑",
+          "H 组 Spain 7 分领跑",
+          "E 组 Germany 6 分领跑",
+          "F 组 Netherlands 7 分领跑",
+          "I 组 France 9 分领跑",
+          "D 组 USA 6 分领跑"
+        ],
+        "path_tradeoff": "K 组次席与 L 组次席同槽 M83。",
+        "manipulation_risk": {
+          "level": "MEDIUM",
+          "level_cn": "中",
+          "focus_team": "Colombia",
+          "reason": "Colombia、Portugal 均已锁定出线（输球亦稳居前二）。胜负不影响晋级，只争头名/次席及淘汰赛对位（K 组次席与 L 组次席同槽 M83。）。可轮换练兵，但≠默契球——没有「必须平局才能携手出线」的逻辑。",
+          "logic_steps": [
+            "Colombia 6 分 vs Portugal 4 分；同组另一场 Congo DR（1 分）vs Uzbekistan（0 分）",
+            "逻辑：即使本场输球，Colombia、Portugal 仍稳居前二 → 均已出线",
+            "逻辑：胜负不改变「进不进淘汰赛」，只决定头名/次席 → 32 强/16 强对位不同（K 组次席与 L 组次席同槽 M83。）",
+            "逻辑：可轮换、试战术，但≠默契球 —— 没有「必须平局才能两人携手出线」的必要；头名之争仍可能真刀真枪"
+          ],
+          "optimal_summary": "策略最优解（推演）：Colombia 已握出线主动，末轮或适度收敛进攻、锻炼新兵并演练新战术，把核心体能留给淘汰赛；若次席仍紧追，仍宜控制场面——可借机锻炼新兵、尝试新战术演练——在出线分已足够的前提下，非胜结果亦可接受，以换取更顺的淘汰半区；但须守住净胜球边界，避免失手跌入第 3 争八区。",
+          "qual_model": {
+            "scenario_type": "path_control",
+            "mutual_draw_advances": false,
+            "path_control": true,
+            "asymmetric_third": null,
+            "both_already_qualified": true,
+            "home_already_qualified": true,
+            "away_already_qualified": true,
+            "home_out_if_loss": false,
+            "away_out_if_loss": false,
+            "logic_steps": [
+              "Colombia 6 分 vs Portugal 4 分；同组另一场 Congo DR（1 分）vs Uzbekistan（0 分）",
+              "逻辑：即使本场输球，Colombia、Portugal 仍稳居前二 → 均已出线",
+              "逻辑：胜负不改变「进不进淘汰赛」，只决定头名/次席 → 32 强/16 强对位不同（K 组次席与 L 组次席同槽 M83。）",
+              "逻辑：可轮换、试战术，但≠默契球 —— 没有「必须平局才能两人携手出线」的必要；头名之争仍可能真刀真枪"
+            ],
+            "drawBoost": 0,
+            "xgScaleHome": 0.94,
+            "xgScaleAway": 0.94,
+            "notes": [
+              "已出线：或轮换/练兵，xG 略降",
+              "头名/次席影响淘汰对位，不额外抬平局"
+            ],
+            "summary": "已出线控分：胜负只争头/次席与淘汰对位，可练兵但≠默契球"
+          }
+        },
+        "knockout_note": "48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。",
+        "scenarios": [
+          "Colombia 若取胜：积分 9，K 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
+          "Portugal 若取胜：积分 7，客场抢分将改变 K 组格局与淘汰赛半区。",
+          "平局：双方各 +1 分；在 L 组：头名 England 4 分 · 次席 Ghana 同分（32强绑定组） · J 组：头名 Argentina 6 分 · 次席 Austria 3 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
+          "头名/次席博弈：K 组次席与 L 组次席同槽 M83。"
+        ]
+      }
+    },
+    {
+      "id": "m72",
+      "fifa_match_number": 72,
+      "fifa_match_id": "400021500",
+      "group": "K",
+      "matchday": 3,
+      "date": "2026-06-27",
+      "time": "19:30",
+      "time_local": "19:30 ET",
+      "timezone": "EDT (UTC-4)",
+      "time_beijing": "07:30",
+      "date_beijing": "6月28日",
+      "time_beijing_full": "北京时间 6月28日 07:30",
+      "venue": "Mercedes-Benz Stadium",
+      "city": "Atlanta, USA",
+      "note": "K组末轮 · 刚果(金) vs 乌兹别克 · 亚特兰大",
+      "lineup": {
+        "confirmed": false,
+        "formation": null,
+        "home": "等待官方确认",
+        "away": "等待官方确认",
+        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
+        "predicted": {
+          "formation": "4-2-3-1 / 4-4-2",
+          "home": "Mpebe; Muyuma, Mukau, Batubinsika; Mbemba, Mwamba; Bamba, Kakuta, Wissa; Bakambu",
+          "away": "Nesterov; Khusanov, Ismailov, Alikulov; Shomurodov, Jaloliddinov; Hamrobekov, Nasirov; Turgunboev, Abdullaev",
+          "source": "ESPN 预测",
+          "alt": null
+        }
+      },
+      "home": {
+        "name": "Congo DR",
+        "iso": "cd",
+        "flag": "",
+        "fifa_rank": 61,
+        "rating": 63,
+        "form": [
+          "D",
+          "L",
+          "W",
+          "D",
+          "W"
+        ],
+        "coach": "Sébastien Desabre",
+        "stars": [
+          {
+            "name": "Yoane Wissa",
+            "pos": "ST",
+            "club": "Brentford",
+            "rating": 8,
+            "desc": "锋线"
+          },
+          {
+            "name": "Chancel Mbemba",
+            "pos": "CB",
+            "club": "Marseille",
+            "rating": 7.8,
+            "desc": "防线"
+          }
+        ],
+        "star": {
+          "name": "Yoane Wissa",
+          "pos": "ST",
+          "club": "Brentford",
+          "rating": 8,
+          "desc": "1 分须胜"
+        },
+        "injuries": [
+          {
+            "player": "Yoane Wissa",
+            "status": "FIT",
+            "note": "1 分须胜",
+            "confirmed": true
+          }
+        ],
+        "rumors": [
+          "刚果(金)末轮须 3 分争出线"
+        ]
+      },
+      "away": {
+        "name": "Uzbekistan",
+        "iso": "uz",
+        "flag": "",
+        "fifa_rank": 62,
+        "rating": 58,
+        "form": [
+          "L",
+          "L",
+          "D",
+          "W",
+          "L"
+        ],
+        "coach": "Slavisa Jokanovic",
+        "stars": [
+          {
+            "name": "Eldor Shomurodov",
+            "pos": "ST",
+            "club": "Cagliari",
+            "rating": 7.5,
+            "desc": "锋线"
+          }
+        ],
+        "star": {
+          "name": "Eldor Shomurodov",
+          "pos": "ST",
+          "club": "Cagliari",
+          "rating": 7.5,
+          "desc": "0 分出局"
+        },
+        "injuries": [],
+        "rumors": [
+          "乌兹别克 0 分已出局"
+        ]
+      },
+      "h2h": {
+        "home_wins": 0,
+        "draws": 0,
+        "away_wins": 0,
+        "recent": [],
+        "note": "无大赛交锋"
+      },
+      "referee": {
+        "confirmed": false,
+        "pending": true,
+        "name": "等待官方确认",
+        "nation": "待公布",
+        "iso": null,
+        "bias_note": "FIFA Match 72 · 刚果(金) vs 乌兹别克 · 裁判名单赛前公布。",
+        "tendencies": [
+          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+        ],
+        "updated": "2026-06-27T06:00:10+08:00"
+      },
+      "prediction": {
+        "home_win": 57,
+        "draw": 26,
+        "away_win": 17,
+        "score": "1-0",
+        "confidence": 74,
+        "xg_home": 1.48,
+        "xg_away": 0.72,
+        "key_factor": "K组末轮 · 刚果(金) 1 分须胜 vs 乌兹别克 0 分 · Wissa 穿盘 · 泊松 2-0/1-0",
+        "score_dist": [
+          {
+            "score": "1-0",
+            "prob": 17
+          },
+          {
+            "score": "2-0",
+            "prob": 15.1
+          },
+          {
+            "score": "1-1",
+            "prob": 9.7
+          },
+          {
+            "score": "0-0",
+            "prob": 9.5
+          },
+          {
+            "score": "3-0",
+            "prob": 9
+          },
+          {
+            "score": "2-1",
+            "prob": 8.6
+          },
+          {
+            "score": "0-1",
+            "prob": 5.4
+          }
+        ],
+        "insight_factors": [
+          {
+            "icon": "📊",
+            "label": "小组积分",
+            "text": "Congo DR 暂列 K 组第 3（1 分 · 已赛 2 场） vs Uzbekistan 第 4（0 分 · 已赛 2 场）；组内 Colombia 6分、Portugal 4分 领先；直接对话权重极高"
+          },
+          {
+            "icon": "🌤️",
+            "label": "赛场气候",
+            "text": "亚特兰大夏午 · 29°C · 湿度 68% · 降雨概率 30% · 封闭；刚果(金) 1 分须胜 vs 乌兹别克 0 分（29°C 封闭）"
+          },
+          {
+            "icon": "⚽",
+            "label": "战术与阵容",
+            "text": "K组末轮 · 刚果(金) 1 分须胜 vs 乌兹别克 0 分 · Wissa 穿盘 · 泊松 2-0/1-0"
+          }
+        ],
+        "base_home_win": 55.2,
+        "base_draw": 26.5,
+        "base_away_win": 18.2,
+        "depth_calibrated": true,
+        "draw_context": {
+          "drawBoost": 0,
+          "ironBucket": false,
+          "closeXg": false,
+          "gap": 0.76,
+          "notes": [],
+          "qual_dynamics": null
+        },
+        "qual_dynamics": null,
+        "xg_poisson_home": 1.78,
+        "xg_poisson_away": 0.57,
+        "xg_tier_calibrated": true,
+        "score_prob": 17,
+        "score_top3": [
+          {
+            "score": "1-0",
+            "prob": 17
+          },
+          {
+            "score": "2-0",
+            "prob": 15.1
+          },
+          {
+            "score": "1-1",
+            "prob": 9.7
+          }
+        ],
+        "expected_score": "2-1"
+      },
+      "weather": {
+        "city": "亚特兰大",
+        "country": "美国",
+        "venue": "Mercedes-Benz Stadium",
+        "pitch_surface": "人工草（有顶盖）",
+        "stadium_type": "封闭式",
+        "temp": 29,
+        "humidity": 68,
+        "altitude_m": 320,
+        "rain_chance": 30,
+        "wind": "封闭",
+        "condition_cn": "亚特兰大夏午",
+        "impact_level": "LOW",
+        "impact_summary": "刚果(金) 1 分须胜 vs 乌兹别克 0 分",
+        "home_adapt": 82,
+        "away_adapt": 76,
+        "weather_factors": [
+          {
+            "label": "29°C 封闭",
+            "impact": "低",
+            "detail": "北京时间 07:30"
+          }
+        ],
+        "forecast_updated": "2026-06-27 22:00 本地"
+      },
+      "mystic": {
+        "date_bazi": {
+          "year": "丙午年",
+          "month": "甲午月",
+          "day": "丁酉日",
+          "day_summary": "丁酉日——火金相制",
+          "hour_home": "见各场",
+          "hour_home_element": "金"
+        },
+        "wuxing": {
+          "home": {
+            "verdict": "待定"
+          },
+          "away": {
+            "verdict": "待定"
+          },
+          "summary": "文化解读"
+        },
+        "hexagram": {
+          "name": "待卦",
+          "symbol": "☯",
+          "quote": "赛前更新",
+          "general": "",
+          "scenarios": []
+        },
+        "home_score": 65,
+        "away_score": 35,
+        "mystic_verdict": "刚果(金)须破局，乌兹别克守势。",
+        "disclaimer": "文化解读 · 非竞技推演"
+      },
+      "depth_calibration": {
+        "tier_home": 0.75,
+        "tier_label": "Congo DR 被看好 · 净胜约 0.5–1 球",
+        "implied_tier": 0.25,
+        "tier_gap": 0.5,
+        "signal": "genuine_favorite",
+        "signal_cn": "实力吻合",
+        "signal_color": "#5BBF8A",
+        "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
+        "blocker_spread_note": "",
+        "public_lean_cn": "舆论倾向 Congo DR（约 65%）",
+        "analysis": "刚果(金) 1 分须胜 vs 乌兹别克 0 分。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "1-0",
+              "prob": 16.5
+            },
+            {
+              "score": "2-0",
+              "prob": 12.2
+            },
+            {
+              "score": "1-1",
+              "prob": 11.9
+            }
+          ],
+          "one_goal_win_pct": 26.9,
+          "two_plus_win_pct": 28.3,
+          "full_cover_pct": 55.2,
+          "half_cover_pct": 0,
+          "half_lose_pct": 0,
+          "push_pct": null,
+          "margin_full_label": "净胜≥1",
+          "margin_half_label": null,
+          "fav_cover_ev": 0.104,
+          "dog_cover_ev": -0.104,
+          "rational_spread_cn": "主队 净胜达标概率略高",
+          "total_xg": 2.2,
+          "fair_totals_line": 2.25,
+          "over_2_5_pct": 37.5,
+          "over_3_pct": 17.7,
+          "totals_lean_cn": "超 2.5 偏小比分（约 62.5%）；4球+偏少",
+          "margin_risk_note": "净胜≥1 约 55.2%；仅赢 1 球约 0%"
+        },
+        "spread_odds": null,
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 2.5,
+          "market_goals_int": 3,
+          "line_label": "总进球约 2.5 个",
+          "implied_xg_total": 2.2,
+          "fair_line": 2.25,
+          "line_gap": 0.25,
+          "over_pct": 37.5,
+          "under_pct": 62.5,
+          "signal": "high_line",
+          "signal_cn": "参考偏高",
+          "signal_color": "#C8A96E",
+          "signal_desc": "总进球参考高于合理值，模型偏小比分。",
+          "public_over_pct": 50,
+          "public_lean_cn": "舆论对总进球看法较分散",
+          "index_note": "大/小比分两侧接近",
+          "totals_odds": null,
+          "rational_cn": "模型略看小比分（超 2.5 约 62.5% 难达）",
+          "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
+        },
+        "totals_line": 2.5,
+        "applied_delta": {
+          "home_win": 2,
+          "draw": -1,
+          "away_win": -1
+        },
+        "adjustment_note": "模型微调：主胜 +2% · 平 -1% · 客 -1%",
+        "adjusted_probs": {
+          "home_win": 57,
+          "draw": 26,
+          "away_win": 17
+        },
+        "display_summary": {
+          "fav_name": "Congo DR",
+          "expected_total_goals": 2.18,
+          "poisson_fav_win_pct": 55.2,
+          "small_lead_pct": 26.9,
+          "small_example_score": "1-0",
+          "small_example_pct": 16.5,
+          "big_cover_pct": 28.3,
+          "big_example_score": "2-0",
+          "big_example_pct": 12.2,
+          "win_shape": {
+            "fav_name": "Congo DR",
+            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
+            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 33%）",
+            "shapes": [
+              {
+                "key": "narrow_low",
+                "label": "险胜 · 控局",
+                "example": "如 1-0",
+                "field_pct": 16.5,
+                "pct": 29.8
+              },
+              {
+                "key": "narrow_open",
+                "label": "险胜 · 开放",
+                "example": "如 2-1",
+                "field_pct": 10.5,
+                "pct": 19
+              },
+              {
+                "key": "comfort_low",
+                "label": "拉开 · 控局",
+                "example": "如 2-0",
+                "field_pct": 18.2,
+                "pct": 33
+              },
+              {
+                "key": "comfort_open",
+                "label": "拉开 · 开放",
+                "example": "如 3-1+",
+                "field_pct": 10.1,
+                "pct": 18.2
+              }
+            ],
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 48.8
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 33
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 18.2
+              }
+            ],
+            "fav_win_pct": 57
+          },
+          "excitement": {
+            "label_cn": "中速开局",
+            "label_key": "moderate",
+            "label_color": "#C8A96E",
+            "sub_cn": "预期首球等待约 40.9 分",
+            "first_goal_wait": 40.9,
+            "fast_pct": 52,
+            "moderate_pct": 14.7,
+            "slow_pct": 33.3,
+            "tiers": [
+              {
+                "key": "fast",
+                "label": "前 30 分内首球",
+                "pct": 52
+              },
+              {
+                "key": "moderate",
+                "label": "30–45 分首球",
+                "pct": 14.7
+              },
+              {
+                "key": "slow",
+                "label": "45 分后首球",
+                "pct": 33.3
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "Congo DR 暂无重要伤停 · Uzbekistan 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "— / —（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "刚果(金) 1 分须胜 vs 乌兹别克 0 分"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 1.48,
+            "baseline_away": 0.72,
+            "adjusted_home": 1.48,
+            "adjusted_away": 0.72,
+            "note": "基准 xG 1.48–0.72（未因伤病/气候下调）"
+          },
+          "calibration": {
+            "signal_cn": "实力吻合",
+            "signal_color": "#5BBF8A",
+            "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
+            "tier_gap": 0.5,
+            "implied_tier_label": "Congo DR 被看好 · 净胜约 0.25 球",
+            "market_tier_label": "Congo DR 被看好 · 净胜约 0.5–1 球",
+            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5"
+          },
+          "win_outlook": {
+            "fav_name": "Congo DR",
+            "state_label": null,
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 48.8
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 33
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 18.2
+              }
+            ],
+            "margin_line_cn": "Congo DR · 赛前净胜参考 净胜≥1（全达标）",
+            "margin_meet_pct": 55.2,
+            "margin_half_pct": 0,
+            "margin_fail_pct": 0,
+            "margin_full_label": "净胜≥1",
+            "margin_half_label": null,
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
+            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+            "totals_line": 2.5,
+            "totals_line_cn": "总进球参考 2.5",
+            "fair_totals_line": 2.25,
+            "model_total_xg": 2.2,
+            "totals_line_gap": 0.25,
+            "totals_high_pct": 37.5,
+            "totals_low_pct": 62.5,
+            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+            "win_low_total_pct": 28.7,
+            "win_margin2_low_total_pct": 12.2,
+            "win_margin2_high_total_pct": 16.1,
+            "readout_cn": "取胜约 57%；若取胜，以「险胜收工」为主（48.8%）。 对着赛前净胜参考，净胜≥1（全达标）约 55.2%；对着总进球参考 2.5，模型超线概率约 37.5%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.5。"
+          },
+          "totals_line": 2.5,
+          "score_patterns": [
+            {
+              "score": "1-0",
+              "pct": 16.5
+            },
+            {
+              "score": "2-0",
+              "pct": 12.2
+            },
+            {
+              "score": "1-1",
+              "pct": 11.9
+            }
+          ],
+          "totals_view": {
+            "expected_total": 2.2,
+            "fair_line": 2.25,
+            "market_line": 2.5,
+            "line_gap": 0.25,
+            "over_pct": 37.5,
+            "gap_warning": null,
+            "totals_outlook": {
+              "level": "mild_low",
+              "label_cn": "略倾向沉闷",
+              "color": "#7BB8D4",
+              "meter_label_cn": "略倾向沉闷",
+              "meter_pos": 38,
+              "lean_side": "dull",
+              "lean_strength": "mild",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "略偏闷（弱）",
+              "detail_cn": "略偏闷，模型更看小比分（难超线 2.5）；弱信号。",
+              "headline_cn": "进球氛围：略偏闷",
+              "show_lean": false,
+              "over_pct": 37.5,
+              "line_gap": 0.25,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "summary_cn": "预测 2.2 · 合理值 2.25 · 总进球参考 2.5（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向"
+          },
+          "customer_reading": {
+            "headline_cn": "Congo DR · 净胜走向：达到预期较有希望",
+            "sub_cn": "达标概率约 55.2% · 达到预期较有希望 进球氛围：略偏闷",
+            "spread": {
+              "level": "likely",
+              "label_cn": "达到预期较有希望",
+              "color": "#5BBF8A",
+              "fav_name": "Congo DR",
+              "market_expect_cn": "净胜≥1",
+              "meet_pct": 55.2,
+              "meet_pct_label": "模型推演达标概率",
+              "verdict_cn": "达到预期较有希望",
+              "headline_cn": "Congo DR · 净胜走向：达到预期较有希望",
+              "pill_cn": "达标概率约 55.2% · 达到预期较有希望",
+              "detail_cn": "Congo DR · 赛前外界预期 净胜≥1。模型推演达标概率约 55.2%；模型认为达到外界预期档的概率相对较高。",
+              "extra_stats_cn": "",
+              "full_cover_pct": 55.2,
+              "half_cover_pct": 0,
+              "lose1_pct": 0,
+              "margin_full_label": "净胜≥1",
+              "margin_half_label": null,
+              "tier_gap": 0.5,
+              "show_cover": true
+            },
+            "totals": {
+              "level": "mild_low",
+              "label_cn": "略倾向沉闷",
+              "color": "#7BB8D4",
+              "meter_label_cn": "略倾向沉闷",
+              "meter_pos": 38,
+              "lean_side": "dull",
+              "lean_strength": "mild",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "略偏闷（弱）",
+              "detail_cn": "略偏闷，模型更看小比分（难超线 2.5）；弱信号。",
+              "headline_cn": "进球氛围：略偏闷",
+              "show_lean": false,
+              "over_pct": 37.5,
+              "line_gap": 0.25,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "draw_risk": null,
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "净胜走向",
+                "outlook": {
+                  "level": "likely",
+                  "label_cn": "达到预期较有希望",
+                  "color": "#5BBF8A",
+                  "fav_name": "Congo DR",
+                  "market_expect_cn": "净胜≥1",
+                  "meet_pct": 55.2,
+                  "meet_pct_label": "模型推演达标概率",
+                  "verdict_cn": "达到预期较有希望",
+                  "headline_cn": "Congo DR · 净胜走向：达到预期较有希望",
+                  "pill_cn": "达标概率约 55.2% · 达到预期较有希望",
+                  "detail_cn": "Congo DR · 赛前外界预期 净胜≥1。模型推演达标概率约 55.2%；模型认为达到外界预期档的概率相对较高。",
+                  "extra_stats_cn": "",
+                  "full_cover_pct": 55.2,
+                  "half_cover_pct": 0,
+                  "lose1_pct": 0,
+                  "margin_full_label": "净胜≥1",
+                  "margin_half_label": null,
+                  "tier_gap": 0.5,
+                  "show_cover": true
+                },
+                "text": "达标概率约 55.2% · 达到预期较有希望",
+                "color": "#5BBF8A",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "◎",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "mild_low",
+                  "label_cn": "略倾向沉闷",
+                  "color": "#7BB8D4",
+                  "meter_label_cn": "略倾向沉闷",
+                  "meter_pos": 38,
+                  "lean_side": "dull",
+                  "lean_strength": "mild",
+                  "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+                  "pill_cn": "略偏闷（弱）",
+                  "detail_cn": "略偏闷，模型更看小比分（难超线 2.5）；弱信号。",
+                  "headline_cn": "进球氛围：略偏闷",
+                  "show_lean": false,
+                  "over_pct": 37.5,
+                  "line_gap": 0.25,
+                  "market_line": 2.5,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "总进球参考 2.5",
+                  "caution_public_high": false
+                },
+                "text": "略偏闷（弱）",
+                "color": "#7BB8D4",
+                "muted": true
+              }
+            ],
+            "methodology_note": "读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "Congo DR",
+              "first_goal_pct": 67.3,
+              "start_score": "1-0",
+              "fav_name": "Congo DR",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 94.9,
+              "small_lead_pct": 31.7,
+              "big_lead_pct": 48.1,
+              "fav_win_pct": 79.9,
+              "fav_draw_pct": 15,
+              "fav_lose_pct": 5.2,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "Congo DR 保持胜果（净胜≥1）",
+                  "pct": 79.9
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 15
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 5.2
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 41.9 分",
+                "first_goal_wait": 41.9,
+                "fast_pct": 44.4,
+                "moderate_pct": 14.1,
+                "slow_pct": 41.4,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 44.4
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.1
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 41.4
+                  }
+                ]
+              },
+              "big_delta": 19.8,
+              "small_delta": 4.8,
+              "narrative": "Congo DR 先破门（已 1-0） → 「巩固防守」；Uzbekistan 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
+              "live_outlook": {
+                "fav_name": "Congo DR",
+                "state_label": "Congo DR 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 48.8
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 33
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 18.2
+                  }
+                ],
+                "margin_line_cn": "Congo DR · 赛前净胜参考 净胜≥1（全达标）",
+                "margin_meet_pct": 79.9,
+                "margin_half_pct": 0,
+                "margin_fail_pct": 31.7,
+                "margin_full_label": "净胜≥1",
+                "margin_half_label": null,
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.5,
+                "totals_line_cn": "总进球参考 2.5",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 1.76,
+                "totals_line_gap": 0.25,
+                "totals_high_pct": 52.5,
+                "totals_low_pct": 47.5,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 36.7,
+                "win_margin2_low_total_pct": 19.6,
+                "win_margin2_high_total_pct": 28.6,
+                "readout_cn": "Congo DR 已 1-0 领先：仍取胜约 79.9%。 对着总进球参考 2.5，模型超线概率约 52.5%。 常见 2-0 收尾（相对总进球参考 2.5仍偏小比分）。"
+              }
+            },
+            {
+              "side": "away",
+              "team": "Uzbekistan",
+              "first_goal_pct": 32.7,
+              "start_score": "0-1",
+              "fav_name": "Congo DR",
+              "scorer_is_fav": false,
+              "expected_key": "fav_recover",
+              "fav_recover_pct": 54.4,
+              "small_lead_pct": 16.6,
+              "big_lead_pct": 9.3,
+              "fav_win_pct": 25.8,
+              "fav_draw_pct": 28.6,
+              "fav_lose_pct": 45.6,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "Congo DR 追平（平局）",
+                  "pct": 28.6
+                },
+                {
+                  "key": "win1",
+                  "label": "Congo DR 净胜1球翻盘（如 2-1）",
+                  "pct": 16.6
+                },
+                {
+                  "key": "win2",
+                  "label": "Congo DR 净胜≥2球翻盘（如 3-1）",
+                  "pct": 9.3
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "Uzbekistan 保持胜果至终场",
+                  "pct": 45.6
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 40 分",
+                "first_goal_wait": 40,
+                "fast_pct": 45.9,
+                "moderate_pct": 14.3,
+                "slow_pct": 39.8,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 45.9
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.3
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 39.8
+                  }
+                ]
+              },
+              "big_delta": -19,
+              "small_delta": -10.3,
+              "narrative": "Uzbekistan 先破门（已 0-1） → 「巩固防守」；Congo DR 「组织反扑」。热门先丢球（已 0-1），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
+              "live_outlook": null
+            }
+          ],
+          "match_preview": {
+            "morphology": {
+              "totals_summary": "预测 2.2 · 合理值 2.25 · 总进球参考 2.5（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球参考 2.5",
+              "totals_high_pct": 37.5,
+              "type_tags": [
+                {
+                  "key": "low_scoring",
+                  "label": "进球偏少"
+                }
+              ],
+              "depth_label": "深度一般",
+              "draw_trap_pct": 23,
+              "readout_cn": "Congo DR · 进球偏少。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+            },
+            "draw_trap_note": null,
+            "archetype": {
+              "tags": [
+                {
+                  "key": "low_scoring",
+                  "label": "进球偏少"
+                }
+              ],
+              "depth_score": 0,
+              "depth_label": "深度一般",
+              "draw_trap_pct": 23,
+              "fav_lead_style": "balanced"
+            }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.65,
+            "xg_away_ht": 0.32,
+            "xg_home_2h": 0.83,
+            "xg_away_2h": 0.4,
+            "home_win": 38,
+            "draw": 46.2,
+            "away_win": 15.8,
+            "top_score": "0-0",
+            "top_score_prob": 37.9,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 37.9
+              },
+              {
+                "score": "1-0",
+                "prob": 24.6
+              },
+              {
+                "score": "0-1",
+                "prob": 12.1
+              }
+            ],
+            "ht_goals_expected": 0.97,
+            "ht_over_0_5_pct": 62.1,
+            "ht_over_1_5_pct": 25.3,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.65–0.32（约占全场 44%） · 最可能 0-0（37.9%） · 胜平负 38/46.2/15.8 · 半场≥1球约 62.1%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
+          }
+        },
+        "public_summary_note": "【推演概要】Congo DR · 进球偏少。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
+        "goal_efficiency_preview": {
+          "mode": "preview",
+          "xg_total": 2.2,
+          "xg_gap": 0.76,
+          "xg_home": 1.48,
+          "xg_away": 0.72,
+          "xg_baseline_home": 1.48,
+          "xg_baseline_away": 0.72,
+          "xg_note": "结构推演用基准 xG 1.48–0.72",
+          "lean_note": "与进球氛围同向——可参考权重提高",
+          "fav_name": "Congo DR",
+          "dog_name": "Uzbekistan",
+          "fav_xg": 1.48,
+          "dog_xg": 0.72,
+          "path_type": "dog_bloom",
+          "path_label": "弱队开花",
+          "lean": "low",
+          "lean_cn": "小比分预测",
+          "lean_mode": "prediction",
+          "lean_confidence": 62.5,
+          "prevention_reason_cn": null,
+          "atmosphere_link_cn": "与进球氛围同向——可参考权重提高",
+          "modules_aligned": true,
+          "live_watch": [],
+          "prob_over_line": 37.5,
+          "prob_meet_guess": 37.5,
+          "guess_n": 3,
+          "prob_4_plus": 17.7,
+          "prob_2_or_less": 62.5,
+          "totals_line": 2.5,
+          "scenarios": [
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "example": "2-2 / 1-3 / 3-1",
+              "note": "样本：弱队效率≥1.2 时 71% 总进球≥3；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
+              "prob_pct": 40
+            },
+            {
+              "key": "low",
+              "label": "铁局/小比分",
+              "example": "1-0 / 1-1 / 0-0",
+              "note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
+              "prob_pct": 40
+            },
+            {
+              "key": "fav_burst",
+              "label": "热门爆发",
+              "example": "2-0 / 3-0 / 4-1",
+              "note": "样本：热门效率≥1.5 时高比分常见；弱队 xG≈1.0 但只进 1 球时也常见此路径。",
+              "prob_pct": 11
+            },
+            {
+              "key": "open",
+              "label": "对攻/open",
+              "example": "2-2 / 4-2 / 3-2",
+              "note": "双方 xG 均有进球预期，任一方效率达标即可凑出 4 球。",
+              "prob_pct": 9
+            }
+          ],
+          "tags": [
+            {
+              "key": "lean_low",
+              "label": "小比分预测",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "color": "#E8B84B",
+              "bg": "rgba(232,184,75,0.12)"
+            }
+          ],
+          "watch_notes": [],
+          "pattern_note": "样本：弱队效率≥1.2 时 71% 总进球≥3；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
+          "summary_cn": "【路径·基准 xG】合计 2.2 · Congo DR 1.48 / Uzbekistan 0.72 → 主路径「弱队开花」约 40% · 小比分预测。 超 2.5 约 37.5% · ≤2球 62.5%。样本：弱队效率≥1.2 时 71% 总进球≥3；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
+          "in_mid_band": true,
+          "sample_note": "结构规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27）· 大/小标签用基准 xG 泊松 ≥60%/≤40%"
+        }
+      },
+      "group_context": {
+        "group": "K",
+        "label": "K组 · 第2轮后",
+        "matchday": 3,
+        "standings": [
+          {
+            "team": "Colombia",
+            "pts": 6,
+            "p": 2,
+            "w": 2,
+            "d": 0,
+            "l": 0,
+            "gf": 4,
+            "ga": 1
+          },
+          {
+            "team": "Portugal",
+            "pts": 4,
+            "p": 2,
+            "w": 1,
+            "d": 1,
+            "l": 0,
+            "gf": 6,
+            "ga": 1
+          },
+          {
+            "team": "Congo DR",
+            "pts": 1,
+            "p": 2,
+            "w": 0,
+            "d": 1,
+            "l": 1,
+            "gf": 1,
+            "ga": 2
+          },
+          {
+            "team": "Uzbekistan",
+            "pts": 0,
+            "p": 2,
+            "w": 0,
+            "d": 0,
+            "l": 2,
+            "gf": 1,
+            "ga": 8
+          }
+        ],
+        "home": {
+          "team": "Congo DR",
+          "rank": 3,
+          "pts": 1,
+          "played": 2,
+          "if_1st": "32强 M87 · K 组第 1 vs 最佳第 3（D/E/I/J/L 池） → 当前 L 组第 2倾向 Ghana",
+          "if_1st_r16": "16强 M96 · 对阵 B 组第 1 vs 最佳第 3 之胜者",
+          "if_1st_corridor": "葡萄牙头名通道",
+          "if_2nd": "32强 M83 · K 组第 2 vs L 组第 2 → 当前 L 组第 1倾向 England（强队）",
+          "if_2nd_r16": "16强 M93 · 对阵 H 组第 1 vs J 组第 2 之胜者",
+          "if_2nd_corridor": "哥伦比亚/乌兹别克次席 → 16 强或遇西班牙/阿根廷半区",
+          "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 J/L/I/H 等组第 3 横向比较",
+          "if_3rd_r16": "32 强对手取决于 Annex C 第 3 名组合（495 种可能）"
+        },
+        "away": {
+          "team": "Uzbekistan",
+          "rank": 4,
+          "pts": 0,
+          "played": 2,
+          "if_1st": "32强 M87 · K 组第 1 vs 最佳第 3（D/E/I/J/L 池） → 当前 L 组第 2倾向 Ghana",
+          "if_1st_r16": "16强 M96 · 对阵 B 组第 1 vs 最佳第 3 之胜者",
+          "if_1st_corridor": "葡萄牙头名通道",
+          "if_2nd": "32强 M83 · K 组第 2 vs L 组第 2 → 当前 L 组第 1倾向 England（强队）",
+          "if_2nd_r16": "16强 M93 · 对阵 H 组第 1 vs J 组第 2 之胜者",
+          "if_2nd_corridor": "哥伦比亚/乌兹别克次席 → 16 强或遇西班牙/阿根廷半区",
+          "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 J/L/I/H 等组第 3 横向比较",
+          "if_3rd_r16": "32 强对手取决于 Annex C 第 3 名组合（495 种可能）"
+        },
+        "cross_group_notes": [
+          "L 组：头名 England 4 分 · 次席 Ghana 同分（32强绑定组）",
+          "J 组：头名 Argentina 6 分 · 次席 Austria 3 分（32强绑定组）",
+          "G 组 Belgium 5 分领跑",
+          "H 组 Spain 7 分领跑",
+          "E 组 Germany 6 分领跑",
+          "F 组 Netherlands 7 分领跑",
+          "I 组 France 9 分领跑",
+          "D 组 USA 6 分领跑"
+        ],
+        "path_tradeoff": "K 组次席与 L 组次席同槽 M83。",
+        "manipulation_risk": {
+          "level": "LOW",
+          "level_cn": "低",
+          "focus_team": null,
+          "reason": "Congo DR（1 分）与 Uzbekistan（0 分）末轮生死战，均无控分空间，须全力抢 3 分。"
+        },
+        "knockout_note": "48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。",
+        "scenarios": [
+          "Congo DR 若取胜：积分 4，K 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
+          "Uzbekistan 若取胜：积分 3，客场抢分将改变 K 组格局与淘汰赛半区。",
+          "平局：双方各 +1 分；在 L 组：头名 England 4 分 · 次席 Ghana 同分（32强绑定组） · J 组：头名 Argentina 6 分 · 次席 Austria 3 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
+          "头名/次席博弈：K 组次席与 L 组次席同槽 M83。"
         ]
       }
     },
@@ -2843,46 +5182,46 @@ const MATCH_DATA = {
         },
         "display_summary": {
           "fav_name": "Algeria",
-          "expected_total_goals": 2.76,
-          "poisson_fav_win_pct": 38.8,
-          "small_lead_pct": 20.7,
+          "expected_total_goals": 2.62,
+          "poisson_fav_win_pct": 37.3,
+          "small_lead_pct": 20.6,
           "small_example_score": "1-0",
-          "small_example_pct": 8.8,
-          "big_cover_pct": 18.1,
+          "small_example_pct": 9.5,
+          "big_cover_pct": 16.7,
           "big_example_score": "2-0",
           "big_example_pct": 6.3,
           "win_shape": {
             "fav_name": "Algeria",
             "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以险胜·开放为主（险胜 · 开放 30.6%）",
+            "lead_cn": "取胜时以险胜·开放为主（险胜 · 开放 29.7%）",
             "shapes": [
               {
                 "key": "narrow_low",
                 "label": "险胜 · 控局",
                 "example": "如 1-0",
-                "field_pct": 8.8,
-                "pct": 22.8
+                "field_pct": 9.5,
+                "pct": 25.6
               },
               {
                 "key": "narrow_open",
                 "label": "险胜 · 开放",
                 "example": "如 2-1",
-                "field_pct": 11.9,
-                "pct": 30.6
+                "field_pct": 11.1,
+                "pct": 29.7
               },
               {
                 "key": "comfort_low",
                 "label": "拉开 · 控局",
                 "example": "如 2-0",
-                "field_pct": 9.3,
-                "pct": 24
+                "field_pct": 9.2,
+                "pct": 24.5
               },
               {
                 "key": "comfort_open",
                 "label": "拉开 · 开放",
                 "example": "如 3-1+",
-                "field_pct": 8.8,
-                "pct": 22.6
+                "field_pct": 7.5,
+                "pct": 20.2
               }
             ],
             "paths": [
@@ -2890,19 +5229,19 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 53.4
+                "pct": 55.3
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 24
+                "pct": 24.5
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 22.6
+                "pct": 20.2
               }
             ],
             "fav_win_pct": 32
@@ -2911,26 +5250,26 @@ const MATCH_DATA = {
             "label_cn": "中速开局",
             "label_key": "moderate",
             "label_color": "#C8A96E",
-            "sub_cn": "预期首球等待约 32.3 分",
-            "first_goal_wait": 32.3,
-            "fast_pct": 60.5,
-            "moderate_pct": 14.7,
-            "slow_pct": 24.8,
+            "sub_cn": "预期首球等待约 34.1 分",
+            "first_goal_wait": 34.1,
+            "fast_pct": 58.5,
+            "moderate_pct": 14.8,
+            "slow_pct": 26.7,
             "tiers": [
               {
                 "key": "fast",
                 "label": "前 30 分内首球",
-                "pct": 60.5
+                "pct": 58.5
               },
               {
                 "key": "moderate",
                 "label": "30–45 分首球",
-                "pct": 14.7
+                "pct": 14.8
               },
               {
                 "key": "slow",
                 "label": "45 分后首球",
-                "pct": 24.8
+                "pct": 26.7
               }
             ]
           },
@@ -2952,17 +5291,22 @@ const MATCH_DATA = {
               "note": "J组同分生死战 · 阿尔及利亚 vs 奥地利各 3 分"
             },
             {
+              "icon": "🎯",
+              "label": "出线博弈",
+              "note": "争八不对称默契：强队已出线，弱队保平争第三（输球出局） · 争八不对称"
+            },
+            {
               "icon": "⚖️",
               "label": "平局修正",
-              "note": "回测校准：xG 极接近（平 +4%）"
+              "note": "回测校准：xG 极接近 · 争八不对称：弱队保平争第三，平局权重上调 · Algeria 输球出局 · 平局争第 3 · 赢球稳进（平 +13%）"
             }
           ],
           "xg_context": {
             "baseline_home": 1.52,
             "baseline_away": 1.45,
-            "adjusted_home": 1.43,
-            "adjusted_away": 1.36,
-            "note": "基准 xG 1.52–1.45 → 调整后 1.43–1.36"
+            "adjusted_home": 1.33,
+            "adjusted_away": 1.31,
+            "note": "基准 xG 1.52–1.45 → 调整后 1.33–1.31"
           },
           "calibration": {
             "signal_cn": "均衡",
@@ -2981,19 +5325,19 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 53.4
+                "pct": 55.3
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 24
+                "pct": 24.5
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 22.6
+                "pct": 20.2
               }
             ],
             "margin_line_cn": "净胜差距参考 · 势均力敌",
@@ -3008,37 +5352,37 @@ const MATCH_DATA = {
             "totals_line": 2.5,
             "totals_line_cn": "总进球参考 2.5",
             "fair_totals_line": 2,
-            "model_total_xg": 2.79,
+            "model_total_xg": 2.64,
             "totals_line_gap": 0.5,
-            "totals_high_pct": 52.5,
-            "totals_low_pct": 47.5,
+            "totals_high_pct": 48.9,
+            "totals_low_pct": 51.1,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 15.2,
+            "win_low_total_pct": 15.9,
             "win_margin2_low_total_pct": 6.3,
-            "win_margin2_high_total_pct": 11.8,
-            "readout_cn": "取胜约 32%；若取胜，以「险胜收工」为主（53.4%）。 对着赛前净胜参考，净胜≥1（全达标）约 0%；对着总进球参考 2.5，模型超线概率约 52.5%。"
+            "win_margin2_high_total_pct": 10.3,
+            "readout_cn": "取胜约 32%；若取胜，以「险胜收工」为主（55.3%）。 对着赛前净胜参考，净胜≥1（全达标）约 0%；对着总进球参考 2.5，模型超线概率约 48.9%。"
           },
           "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 12
+              "pct": 12.5
             },
             {
               "score": "1-0",
-              "pct": 8.8
+              "pct": 9.5
             },
             {
-              "score": "2-1",
-              "pct": 8.6
+              "score": "0-1",
+              "pct": 9.4
             }
           ],
           "totals_view": {
-            "expected_total": 2.8,
+            "expected_total": 2.6,
             "fair_line": 2,
             "market_line": 2.5,
             "line_gap": 0.5,
-            "over_pct": 52.5,
+            "over_pct": 48.9,
             "gap_warning": null,
             "totals_outlook": {
               "level": "neutral",
@@ -3053,14 +5397,14 @@ const MATCH_DATA = {
               "detail_cn": "模型五五开，临场决定节奏。",
               "headline_cn": "进球氛围：几乎五五开",
               "show_lean": false,
-              "over_pct": 52.5,
+              "over_pct": 48.9,
               "line_gap": 0.5,
               "market_line": 2.5,
               "market_goals_int": 3,
               "market_goals_cn": "总进球参考 2.5",
               "caution_public_high": false
             },
-            "summary_cn": "预测 2.8 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
+            "summary_cn": "预测 2.6 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
             "headline_cn": "净胜走向：双方实力接近",
@@ -3093,7 +5437,7 @@ const MATCH_DATA = {
               "detail_cn": "模型五五开，临场决定节奏。",
               "headline_cn": "进球氛围：几乎五五开",
               "show_lean": false,
-              "over_pct": 52.5,
+              "over_pct": 48.9,
               "line_gap": 0.5,
               "market_line": 2.5,
               "market_goals_int": 3,
@@ -3146,7 +5490,7 @@ const MATCH_DATA = {
                   "detail_cn": "模型五五开，临场决定节奏。",
                   "headline_cn": "进球氛围：几乎五五开",
                   "show_lean": false,
-                  "over_pct": 52.5,
+                  "over_pct": 48.9,
                   "line_gap": 0.5,
                   "market_line": 2.5,
                   "market_goals_int": 3,
@@ -3164,63 +5508,63 @@ const MATCH_DATA = {
             {
               "side": "home",
               "team": "Algeria",
-              "first_goal_pct": 51.3,
+              "first_goal_pct": 50.4,
               "start_score": "1-0",
               "fav_name": "Algeria",
               "scorer_is_fav": true,
               "expected_key": "hold_win",
               "fav_recover_pct": 84.2,
-              "small_lead_pct": 28.6,
-              "big_lead_pct": 33.7,
-              "fav_win_pct": 62.3,
-              "fav_draw_pct": 21.9,
-              "fav_lose_pct": 15.9,
+              "small_lead_pct": 29.4,
+              "big_lead_pct": 32.4,
+              "fav_win_pct": 61.8,
+              "fav_draw_pct": 22.4,
+              "fav_lose_pct": 15.8,
               "outcomes": [
                 {
                   "key": "hold_win",
                   "label": "Algeria 保持胜果（净胜≥1）",
-                  "pct": 62.3
+                  "pct": 61.8
                 },
                 {
                   "key": "drawn",
                   "label": "被扳平",
-                  "pct": 21.9
+                  "pct": 22.4
                 },
                 {
                   "key": "lost",
                   "label": "被逆转落败",
-                  "pct": 15.9
+                  "pct": 15.8
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 32.4 分",
-                "first_goal_wait": 32.4,
-                "fast_pct": 53.2,
-                "moderate_pct": 14.8,
-                "slow_pct": 32,
+                "sub_cn": "预期首球等待约 34.1 分",
+                "first_goal_wait": 34.1,
+                "fast_pct": 51.4,
+                "moderate_pct": 14.7,
+                "slow_pct": 33.9,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 53.2
+                    "pct": 51.4
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 14.8
+                    "pct": 14.7
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 32
+                    "pct": 33.9
                   }
                 ]
               },
-              "big_delta": 15.6,
-              "small_delta": 7.9,
+              "big_delta": 15.7,
+              "small_delta": 8.8,
               "narrative": "Algeria 先破门（已 1-0） → 「巩固防守」；Austria 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
               "live_outlook": {
                 "fav_name": "Algeria",
@@ -3230,23 +5574,23 @@ const MATCH_DATA = {
                     "key": "narrow",
                     "label": "险胜收工",
                     "example": "如 1-0、2-1",
-                    "pct": 53.4
+                    "pct": 55.3
                   },
                   {
                     "key": "clean",
                     "label": "零封拉开",
                     "example": "如 2-0、3-0",
-                    "pct": 24
+                    "pct": 24.5
                   },
                   {
                     "key": "open",
                     "label": "开放拉开",
                     "example": "如 3-1+",
-                    "pct": 22.6
+                    "pct": 20.2
                   }
                 ],
                 "margin_line_cn": "净胜差距参考 · 势均力敌",
-                "margin_meet_pct": 15.9,
+                "margin_meet_pct": 15.8,
                 "margin_half_pct": 0,
                 "margin_fail_pct": 10.8,
                 "margin_full_label": "净胜≥1",
@@ -3257,107 +5601,107 @@ const MATCH_DATA = {
                 "totals_line": 2.5,
                 "totals_line_cn": "总进球参考 2.5",
                 "fair_totals_line": 2.25,
-                "model_total_xg": 2.28,
+                "model_total_xg": 2.16,
                 "totals_line_gap": 0.25,
-                "totals_high_pct": 66.4,
-                "totals_low_pct": 33.6,
+                "totals_high_pct": 63.6,
+                "totals_low_pct": 36.4,
                 "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
                 "win_low_total_pct": 0,
                 "win_margin2_low_total_pct": 0,
-                "win_margin2_high_total_pct": 5.1,
-                "readout_cn": "Algeria 已 1-0 领先：仍取胜约 15.9%。 对着总进球参考 2.5，模型超线概率约 66.4%。 若再扩大，偏「险胜收工」。"
+                "win_margin2_high_total_pct": 4.9,
+                "readout_cn": "Algeria 已 1-0 领先：仍取胜约 15.8%。 对着总进球参考 2.5，模型超线概率约 63.6%。 若再扩大，偏「险胜收工」。"
               }
             },
             {
               "side": "away",
               "team": "Austria",
-              "first_goal_pct": 48.7,
+              "first_goal_pct": 49.6,
               "start_score": "0-1",
               "fav_name": "Austria",
               "scorer_is_fav": false,
               "expected_key": "fav_recover",
-              "fav_recover_pct": 82.1,
-              "small_lead_pct": 28.3,
-              "big_lead_pct": 31,
-              "fav_win_pct": 59.3,
-              "fav_draw_pct": 22.8,
-              "fav_lose_pct": 17.9,
+              "fav_recover_pct": 83.7,
+              "small_lead_pct": 29.4,
+              "big_lead_pct": 31.6,
+              "fav_win_pct": 61,
+              "fav_draw_pct": 22.7,
+              "fav_lose_pct": 16.3,
               "outcomes": [
                 {
                   "key": "draw",
                   "label": "Austria 追平（平局）",
-                  "pct": 22.8
+                  "pct": 22.7
                 },
                 {
                   "key": "win1",
                   "label": "Austria 净胜1球翻盘（如 2-1）",
-                  "pct": 28.3
+                  "pct": 29.4
                 },
                 {
                   "key": "win2",
                   "label": "Austria 净胜≥2球翻盘（如 3-1）",
-                  "pct": 31
+                  "pct": 31.6
                 },
                 {
                   "key": "upset_hold",
                   "label": "Austria 保持胜果至终场",
-                  "pct": 17.9
+                  "pct": 16.3
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 32.1 分",
-                "first_goal_wait": 32.1,
-                "fast_pct": 53.5,
-                "moderate_pct": 14.8,
-                "slow_pct": 31.7,
+                "sub_cn": "预期首球等待约 34.1 分",
+                "first_goal_wait": 34.1,
+                "fast_pct": 51.4,
+                "moderate_pct": 14.7,
+                "slow_pct": 33.9,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 53.5
+                    "pct": 51.4
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 14.8
+                    "pct": 14.7
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 31.7
+                    "pct": 33.9
                   }
                 ]
               },
-              "big_delta": 12.9,
-              "small_delta": 7.6,
+              "big_delta": 14.9,
+              "small_delta": 8.8,
               "narrative": "Austria 先破门（已 0-1） → 「巩固防守」；Algeria 「组织反扑」。落后方压上反扑，比赛更开放，但热门要净胜两球以上仍须连续破门。",
               "live_outlook": null
             }
           ],
           "match_preview": {
             "morphology": {
-              "totals_summary": "预测 2.8 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_summary": "预测 2.6 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向",
               "totals_line_cn": "总进球参考 2.5",
-              "totals_high_pct": 52.5,
+              "totals_high_pct": 48.9,
               "type_tags": [
                 {
-                  "key": "even_open",
-                  "label": "均势开放"
+                  "key": "balanced",
+                  "label": "常规对抗"
                 }
               ],
               "depth_label": "深度一般",
               "draw_trap_pct": 32,
-              "readout_cn": "Algeria · 均势开放。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+              "readout_cn": "Algeria · 常规对抗。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
             },
             "draw_trap_note": null,
             "archetype": {
               "tags": [
                 {
-                  "key": "even_open",
-                  "label": "均势开放"
+                  "key": "balanced",
+                  "label": "常规对抗"
                 }
               ],
               "depth_score": 0,
@@ -3368,39 +5712,39 @@ const MATCH_DATA = {
           },
           "halftime_preview": {
             "ht_xg_share": 0.44,
-            "xg_home_ht": 0.63,
-            "xg_away_ht": 0.6,
-            "xg_home_2h": 0.8,
-            "xg_away_2h": 0.76,
-            "home_win": 30.3,
-            "draw": 41.4,
+            "xg_home_ht": 0.59,
+            "xg_away_ht": 0.58,
+            "xg_home_2h": 0.74,
+            "xg_away_2h": 0.73,
+            "home_win": 29,
+            "draw": 42.6,
             "away_win": 28.4,
             "top_score": "0-0",
-            "top_score_prob": 29.2,
+            "top_score_prob": 31,
             "top3_scores": [
               {
                 "score": "0-0",
-                "prob": 29.2
+                "prob": 31
               },
               {
                 "score": "1-0",
-                "prob": 18.4
+                "prob": 18.3
               },
               {
                 "score": "0-1",
-                "prob": 17.5
+                "prob": 18
               }
             ],
-            "ht_goals_expected": 1.23,
-            "ht_over_0_5_pct": 70.8,
-            "ht_over_1_5_pct": 34.8,
+            "ht_goals_expected": 1.17,
+            "ht_over_0_5_pct": 69,
+            "ht_over_1_5_pct": 32.6,
             "pick": "draw",
             "pick_name": "平局",
-            "summary_cn": "半场 xG 0.63–0.6（约占全场 44%） · 最可能 0-0（29.2%） · 胜平负 30.3/41.4/28.4 · 半场≥1球约 70.8%",
+            "summary_cn": "半场 xG 0.59–0.58（约占全场 44%） · 最可能 0-0（31%） · 胜平负 29/42.6/28.4 · 半场≥1球约 69%",
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Algeria · 均势开放。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
+        "public_summary_note": "【推演概要】Algeria · 常规对抗。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
         "goal_efficiency_preview": {
           "mode": "preview",
           "xg_total": 2.97,
@@ -3409,7 +5753,7 @@ const MATCH_DATA = {
           "xg_away": 1.45,
           "xg_baseline_home": 1.52,
           "xg_baseline_away": 1.45,
-          "xg_note": "结构推演用基准 xG 1.52–1.45（进球氛围用调整后 1.43–1.36）",
+          "xg_note": "结构推演用基准 xG 1.52–1.45（进球氛围用调整后 1.33–1.31）",
           "lean_note": "大/小概率接近或路径互斥——不作单边大/小标签。",
           "fav_name": "Algeria",
           "dog_name": "Austria",
@@ -4745,2335 +7089,6 @@ const MATCH_DATA = {
           "头名/次席博弈：J 组与 H 组绑定；阿根廷若头名走 M86→M95。"
         ]
       }
-    },
-    {
-      "id": "m71",
-      "fifa_match_number": 71,
-      "fifa_match_id": "400021505",
-      "group": "K",
-      "matchday": 3,
-      "date": "2026-06-27",
-      "time": "19:30",
-      "time_local": "19:30 ET",
-      "timezone": "EDT (UTC-4)",
-      "time_beijing": "07:30",
-      "date_beijing": "6月28日",
-      "time_beijing_full": "北京时间 6月28日 07:30",
-      "venue": "Hard Rock Stadium",
-      "city": "Miami Gardens, USA",
-      "note": "K组末轮 · 哥伦比亚 vs 葡萄牙 · 迈阿密",
-      "lineup": {
-        "confirmed": false,
-        "formation": null,
-        "home": "等待官方确认",
-        "away": "等待官方确认",
-        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
-        "predicted": {
-          "formation": "4-2-3-1 / 4-3-3",
-          "home": "Campos; Muñoz, Sánchez, Lerma; Arias, Barrios, Ríos; Díaz, James, Quinteros; Borré",
-          "away": "Costa; Cancelo, Dias, Pepe, Mendes; Palhinha, Vitinha; Leão, Bruno Fernandes, Rafael Leão; Ronaldo",
-          "source": "BBC 预测",
-          "alt": null
-        }
-      },
-      "home": {
-        "name": "Colombia",
-        "iso": "co",
-        "flag": "",
-        "fifa_rank": 27,
-        "rating": 75,
-        "form": [
-          "W",
-          "W",
-          "W",
-          "D",
-          "W"
-        ],
-        "coach": "Néstor Lorenzo",
-        "stars": [
-          {
-            "name": "Luis Díaz",
-            "pos": "LW",
-            "club": "Liverpool",
-            "rating": 8.6,
-            "desc": "速度"
-          },
-          {
-            "name": "James Rodríguez",
-            "pos": "AM",
-            "club": "León",
-            "rating": 8.2,
-            "desc": "组织"
-          }
-        ],
-        "star": {
-          "name": "Luis Díaz",
-          "pos": "LW",
-          "club": "Liverpool",
-          "rating": 8.6,
-          "desc": "6 分争头名"
-        },
-        "injuries": [
-          {
-            "player": "Luis Díaz",
-            "status": "FIT",
-            "note": "6 分争头名",
-            "confirmed": true
-          }
-        ],
-        "rumors": [
-          "哥伦比亚末轮须保头名"
-        ]
-      },
-      "away": {
-        "name": "Portugal",
-        "iso": "pt",
-        "flag": "",
-        "fifa_rank": 6,
-        "rating": 88,
-        "form": [
-          "W",
-          "D",
-          "W",
-          "W",
-          "W"
-        ],
-        "coach": "Roberto Martínez",
-        "stars": [
-          {
-            "name": "Cristiano Ronaldo",
-            "pos": "ST",
-            "club": "Al-Nassr",
-            "rating": 8.8,
-            "desc": "锋线"
-          },
-          {
-            "name": "Bruno Fernandes",
-            "pos": "AM",
-            "club": "Man Utd",
-            "rating": 8.5,
-            "desc": "组织"
-          }
-        ],
-        "star": {
-          "name": "Cristiano Ronaldo",
-          "pos": "ST",
-          "club": "Al-Nassr",
-          "rating": 8.8,
-          "desc": "4 分争头名"
-        },
-        "injuries": [
-          {
-            "player": "Cristiano Ronaldo",
-            "status": "FIT",
-            "note": "4 分争头名",
-            "confirmed": true
-          }
-        ],
-        "rumors": [
-          "葡萄牙须胜抢 K 组第一"
-        ]
-      },
-      "h2h": {
-        "home_wins": 0,
-        "draws": 1,
-        "away_wins": 1,
-        "recent": [
-          {
-            "year": 2014,
-            "comp": "世界杯",
-            "score": "0-1",
-            "winner": "Portugal"
-          }
-        ],
-        "note": "葡萄牙大赛占优"
-      },
-      "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "FIFA Match 71 · 哥伦比亚 vs 葡萄牙 · 裁判名单赛前公布。",
-        "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
-        ],
-        "updated": "2026-06-27T06:00:10+08:00"
-      },
-      "prediction": {
-        "home_win": 35,
-        "draw": 28,
-        "away_win": 37,
-        "score": "1-1",
-        "confidence": 72,
-        "xg_home": 1.55,
-        "xg_away": 1.58,
-        "key_factor": "K组榜首战 · 哥伦/葡各争头名 · Díaz vs Ronaldo · 泊松 1-1/2-1",
-        "score_dist": [
-          {
-            "score": "1-1",
-            "prob": 12.4
-          },
-          {
-            "score": "0-1",
-            "prob": 9.5
-          },
-          {
-            "score": "1-0",
-            "prob": 9.3
-          },
-          {
-            "score": "1-2",
-            "prob": 8.3
-          },
-          {
-            "score": "2-1",
-            "prob": 8.1
-          },
-          {
-            "score": "0-0",
-            "prob": 7.1
-          },
-          {
-            "score": "0-2",
-            "prob": 6.3
-          }
-        ],
-        "insight_factors": [
-          {
-            "icon": "📊",
-            "label": "小组积分",
-            "text": "Colombia 暂列 K 组第 1（6 分 · 已赛 2 场） vs Portugal 第 2（4 分 · 已赛 2 场）"
-          },
-          {
-            "icon": "🎯",
-            "label": "出线博弈",
-            "text": "Colombia、Portugal 均已锁定出线（输球亦稳居前二） · 可轮换、试战术，但≠默契球 —— 没有「必须平局才能两人携手出线」的必要；头名之争仍可能真刀真枪 · 已出线争顺位"
-          },
-          {
-            "icon": "🌤️",
-            "label": "赛场气候",
-            "text": "迈阿密湿热 · 31°C · 湿度 76% · 降雨概率 40% · 海风 3级；K组榜首战 · 哥伦 6 分 vs 葡萄牙 4 分（31°C 湿度 76%）"
-          },
-          {
-            "icon": "⚽",
-            "label": "战术与阵容",
-            "text": "K组榜首战 · 哥伦/葡各争头名 · Díaz vs Ronaldo · 泊松 1-1/2-1"
-          }
-        ],
-        "base_home_win": 35,
-        "base_draw": 28,
-        "base_away_win": 37,
-        "depth_calibrated": true,
-        "draw_context": {
-          "drawBoost": 4,
-          "ironBucket": false,
-          "closeXg": true,
-          "gap": 0.03,
-          "notes": [
-            "xG 极接近"
-          ],
-          "qual_dynamics": {
-            "scenario_type": "path_control",
-            "mutual_draw_advances": false,
-            "path_control": true,
-            "asymmetric_third": null,
-            "both_already_qualified": true,
-            "home_already_qualified": true,
-            "away_already_qualified": true,
-            "home_out_if_loss": false,
-            "away_out_if_loss": false,
-            "logic_steps": [
-              "Colombia 6 分 vs Portugal 4 分；同组另一场 Congo DR（1 分）vs Uzbekistan（0 分）",
-              "逻辑：即使本场输球，Colombia、Portugal 仍稳居前二 → 均已出线",
-              "逻辑：胜负不改变「进不进淘汰赛」，只决定头名/次席 → 32 强/16 强对位不同（K 组次席与 L 组次席同槽 M83。）",
-              "逻辑：可轮换、试战术，但≠默契球 —— 没有「必须平局才能两人携手出线」的必要；头名之争仍可能真刀真枪"
-            ],
-            "drawBoost": 0,
-            "xgScaleHome": 0.94,
-            "xgScaleAway": 0.94,
-            "notes": [
-              "已出线：或轮换/练兵，xG 略降",
-              "头名/次席影响淘汰对位，不额外抬平局"
-            ],
-            "summary": "已出线控分：胜负只争头/次席与淘汰对位，可练兵但≠默契球"
-          }
-        },
-        "qual_dynamics": {
-          "scenario_type": "path_control",
-          "mutual_draw_advances": false,
-          "path_control": true,
-          "asymmetric_third": null,
-          "both_already_qualified": true,
-          "home_already_qualified": true,
-          "away_already_qualified": true,
-          "home_out_if_loss": false,
-          "away_out_if_loss": false,
-          "logic_steps": [
-            "Colombia 6 分 vs Portugal 4 分；同组另一场 Congo DR（1 分）vs Uzbekistan（0 分）",
-            "逻辑：即使本场输球，Colombia、Portugal 仍稳居前二 → 均已出线",
-            "逻辑：胜负不改变「进不进淘汰赛」，只决定头名/次席 → 32 强/16 强对位不同（K 组次席与 L 组次席同槽 M83。）",
-            "逻辑：可轮换、试战术，但≠默契球 —— 没有「必须平局才能两人携手出线」的必要；头名之争仍可能真刀真枪"
-          ],
-          "drawBoost": 0,
-          "xgScaleHome": 0.94,
-          "xgScaleAway": 0.94,
-          "notes": [
-            "已出线：或轮换/练兵，xG 略降",
-            "头名/次席影响淘汰对位，不额外抬平局"
-          ],
-          "summary": "已出线控分：胜负只争头/次席与淘汰对位，可练兵但≠默契球"
-        },
-        "xg_poisson_home": 1.31,
-        "xg_poisson_away": 1.34,
-        "xg_tier_calibrated": false,
-        "score_prob": 12.4,
-        "score_top3": [
-          {
-            "score": "1-1",
-            "prob": 12.4
-          },
-          {
-            "score": "0-1",
-            "prob": 9.5
-          },
-          {
-            "score": "1-0",
-            "prob": 9.3
-          }
-        ],
-        "expected_score": "1-1"
-      },
-      "weather": {
-        "city": "迈阿密",
-        "country": "美国",
-        "venue": "Hard Rock Stadium",
-        "pitch_surface": "天然草",
-        "stadium_type": "开放式",
-        "temp": 31,
-        "humidity": 76,
-        "altitude_m": 5,
-        "rain_chance": 40,
-        "wind": "海风 3级",
-        "condition_cn": "迈阿密湿热",
-        "impact_level": "MEDIUM",
-        "impact_summary": "K组榜首战 · 哥伦 6 分 vs 葡萄牙 4 分",
-        "home_adapt": 86,
-        "away_adapt": 84,
-        "weather_factors": [
-          {
-            "label": "31°C 湿度 76%",
-            "impact": "中",
-            "detail": "北京时间 07:30 · 同开 m72"
-          }
-        ],
-        "forecast_updated": "2026-06-27 22:00 本地"
-      },
-      "mystic": {
-        "date_bazi": {
-          "year": "丙午年",
-          "month": "甲午月",
-          "day": "丁酉日",
-          "day_summary": "丁酉日——火金相制",
-          "hour_home": "见各场",
-          "hour_home_element": "金"
-        },
-        "wuxing": {
-          "home": {
-            "verdict": "待定"
-          },
-          "away": {
-            "verdict": "待定"
-          },
-          "summary": "文化解读"
-        },
-        "hexagram": {
-          "name": "待卦",
-          "symbol": "☯",
-          "quote": "赛前更新",
-          "general": "",
-          "scenarios": []
-        },
-        "home_score": 48,
-        "away_score": 52,
-        "mystic_verdict": "榜首对话，火金相制宜对攻。",
-        "disclaimer": "文化解读 · 非竞技推演"
-      },
-      "depth_calibration": {
-        "tier_home": 0,
-        "tier_label": "势均力敌",
-        "implied_tier": 0,
-        "tier_gap": 0,
-        "signal": "neutral",
-        "signal_cn": "均衡",
-        "signal_color": "#7BB8D4",
-        "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
-        "blocker_spread_note": "",
-        "public_lean_cn": "舆论倾向 Portugal（约 53%）",
-        "analysis": "K组榜首战 · 哥伦 6 分 vs 葡萄牙 4 分。",
-        "spread_cover": {
-          "top3_scores": [
-            {
-              "score": "1-1",
-              "prob": 10.8
-            },
-            {
-              "score": "1-2",
-              "prob": 8.6
-            },
-            {
-              "score": "2-1",
-              "prob": 8.4
-            }
-          ],
-          "one_goal_win_pct": 19.4,
-          "two_plus_win_pct": 17.9,
-          "full_cover_pct": 0,
-          "half_cover_pct": 0,
-          "half_lose_pct": 0,
-          "push_pct": null,
-          "margin_full_label": "净胜≥1",
-          "margin_half_label": null,
-          "fav_cover_ev": 0,
-          "dog_cover_ev": 0,
-          "rational_spread_cn": "两边净胜达标概率接近",
-          "total_xg": 3.13,
-          "fair_totals_line": 2.75,
-          "over_2_5_pct": 60.1,
-          "over_3_pct": 37.5,
-          "totals_lean_cn": "超 2.5 偏大比分（约 60.1%）；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%"
-        },
-        "spread_odds": null,
-        "spread_alt": null,
-        "totals_analysis": {
-          "market_line": 2.5,
-          "market_goals_int": 3,
-          "line_label": "总进球约 2.5 个",
-          "implied_xg_total": 3.13,
-          "fair_line": 2.75,
-          "line_gap": -0.25,
-          "over_pct": 60.1,
-          "under_pct": 39.9,
-          "signal": "low_line",
-          "signal_cn": "参考偏低",
-          "signal_color": "#7BB8D4",
-          "signal_desc": "总进球参考低于合理值，模型偏大比分。",
-          "public_over_pct": 50,
-          "public_lean_cn": "舆论对总进球看法较分散",
-          "index_note": "大/小比分两侧接近",
-          "totals_odds": null,
-          "rational_cn": "模型略看大比分（超 2.5 约 60.1%）",
-          "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
-        },
-        "totals_line": 2.5,
-        "applied_delta": {
-          "home_win": 0,
-          "draw": 0,
-          "away_win": 0
-        },
-        "adjustment_note": "模型微调：主胜 +0% · 平 +0% · 客 +0%",
-        "adjusted_probs": {
-          "home_win": 35,
-          "draw": 28,
-          "away_win": 37
-        },
-        "display_summary": {
-          "fav_name": "Portugal",
-          "expected_total_goals": 2.8,
-          "poisson_fav_win_pct": 38,
-          "small_lead_pct": 20.4,
-          "small_example_score": "0-1",
-          "small_example_pct": 8.5,
-          "big_cover_pct": 17.7,
-          "big_example_score": "0-2",
-          "big_example_pct": 6.1,
-          "win_shape": {
-            "fav_name": "Portugal",
-            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以险胜·开放为主（险胜 · 开放 31.2%）",
-            "shapes": [
-              {
-                "key": "narrow_low",
-                "label": "险胜 · 控局",
-                "example": "如 1-0",
-                "field_pct": 8.5,
-                "pct": 22.3
-              },
-              {
-                "key": "narrow_open",
-                "label": "险胜 · 开放",
-                "example": "如 2-1",
-                "field_pct": 11.9,
-                "pct": 31.2
-              },
-              {
-                "key": "comfort_low",
-                "label": "拉开 · 控局",
-                "example": "如 2-0",
-                "field_pct": 9,
-                "pct": 23.6
-              },
-              {
-                "key": "comfort_open",
-                "label": "拉开 · 开放",
-                "example": "如 3-1+",
-                "field_pct": 8.7,
-                "pct": 22.9
-              }
-            ],
-            "paths": [
-              {
-                "key": "narrow",
-                "label": "险胜收工",
-                "example": "如 1-0、2-1",
-                "pct": 53.5
-              },
-              {
-                "key": "clean",
-                "label": "零封拉开",
-                "example": "如 2-0、3-0",
-                "pct": 23.6
-              },
-              {
-                "key": "open",
-                "label": "开放拉开",
-                "example": "如 3-1+",
-                "pct": 22.9
-              }
-            ],
-            "fav_win_pct": 37
-          },
-          "excitement": {
-            "label_cn": "中速开局",
-            "label_key": "moderate",
-            "label_color": "#C8A96E",
-            "sub_cn": "预期首球等待约 31.8 分",
-            "first_goal_wait": 31.8,
-            "fast_pct": 61.1,
-            "moderate_pct": 14.6,
-            "slow_pct": 24.3,
-            "tiers": [
-              {
-                "key": "fast",
-                "label": "前 30 分内首球",
-                "pct": 61.1
-              },
-              {
-                "key": "moderate",
-                "label": "30–45 分首球",
-                "pct": 14.6
-              },
-              {
-                "key": "slow",
-                "label": "45 分后首球",
-                "pct": 24.3
-              }
-            ]
-          },
-          "baseline_label": "全场预期（含伤病·气候）",
-          "context_factors": [
-            {
-              "icon": "🏥",
-              "label": "伤病",
-              "note": "Colombia 暂无重要伤停 · Portugal 暂无重要伤停"
-            },
-            {
-              "icon": "👔",
-              "label": "教练风格",
-              "note": "— / —（领先时）"
-            },
-            {
-              "icon": "🌤️",
-              "label": "气候",
-              "note": "K组榜首战 · 哥伦 6 分 vs 葡萄牙 4 分"
-            },
-            {
-              "icon": "⚖️",
-              "label": "平局修正",
-              "note": "回测校准：xG 极接近（平 +4%）"
-            }
-          ],
-          "xg_context": {
-            "baseline_home": 1.55,
-            "baseline_away": 1.58,
-            "adjusted_home": 1.4,
-            "adjusted_away": 1.43,
-            "note": "基准 xG 1.55–1.58 → 调整后 1.4–1.43"
-          },
-          "calibration": {
-            "signal_cn": "均衡",
-            "signal_color": "#7BB8D4",
-            "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
-            "tier_gap": 0,
-            "implied_tier_label": "势均力敌",
-            "market_tier_label": "势均力敌",
-            "summary_cn": "与模型 xG 对照：均衡 · 与赛前净胜看法基本一致"
-          },
-          "win_outlook": {
-            "fav_name": "Portugal",
-            "state_label": null,
-            "paths": [
-              {
-                "key": "narrow",
-                "label": "险胜收工",
-                "example": "如 1-0、2-1",
-                "pct": 53.5
-              },
-              {
-                "key": "clean",
-                "label": "零封拉开",
-                "example": "如 2-0、3-0",
-                "pct": 23.6
-              },
-              {
-                "key": "open",
-                "label": "开放拉开",
-                "example": "如 3-1+",
-                "pct": 22.9
-              }
-            ],
-            "margin_line_cn": "净胜差距参考 · 势均力敌",
-            "margin_meet_pct": 0,
-            "margin_half_pct": 0,
-            "margin_fail_pct": 0,
-            "margin_full_label": "净胜≥1",
-            "margin_half_label": null,
-            "final_2_0_pct": null,
-            "final_3_0_plus_pct": null,
-            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-            "totals_line": 2.5,
-            "totals_line_cn": "总进球参考 2.5",
-            "fair_totals_line": 2,
-            "model_total_xg": 2.83,
-            "totals_line_gap": 0.5,
-            "totals_high_pct": 53.5,
-            "totals_low_pct": 46.5,
-            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 14.6,
-            "win_margin2_low_total_pct": 6.1,
-            "win_margin2_high_total_pct": 11.6,
-            "readout_cn": "取胜约 37%；若取胜，以「险胜收工」为主（53.5%）。 对着赛前净胜参考，净胜≥1（全达标）约 0%；对着总进球参考 2.5，模型超线概率约 53.5%。"
-          },
-          "totals_line": 2.5,
-          "score_patterns": [
-            {
-              "score": "1-1",
-              "pct": 11.9
-            },
-            {
-              "score": "1-2",
-              "pct": 8.5
-            },
-            {
-              "score": "0-1",
-              "pct": 8.5
-            }
-          ],
-          "totals_view": {
-            "expected_total": 2.8,
-            "fair_line": 2,
-            "market_line": 2.5,
-            "line_gap": 0.5,
-            "over_pct": 53.5,
-            "gap_warning": null,
-            "totals_outlook": {
-              "level": "neutral",
-              "label_cn": "暂无明显倾向",
-              "color": "#8A96A8",
-              "meter_label_cn": "几乎五五开",
-              "meter_pos": 50,
-              "lean_side": "neutral",
-              "lean_strength": "none",
-              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
-              "pill_cn": "几乎五五开",
-              "detail_cn": "模型五五开，临场决定节奏。",
-              "headline_cn": "进球氛围：几乎五五开",
-              "show_lean": false,
-              "over_pct": 53.5,
-              "line_gap": 0.5,
-              "market_line": 2.5,
-              "market_goals_int": 3,
-              "market_goals_cn": "总进球参考 2.5",
-              "caution_public_high": false
-            },
-            "summary_cn": "预测 2.8 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
-          },
-          "customer_reading": {
-            "headline_cn": "净胜走向：双方实力接近",
-            "sub_cn": "双方实力接近，暂无单侧净胜预期。 进球氛围：几乎五五开",
-            "spread": {
-              "level": "even",
-              "label_cn": "势均力敌",
-              "color": "#8A96A8",
-              "fav_name": null,
-              "market_expect_cn": "势均力敌",
-              "meet_pct": null,
-              "verdict_cn": "无明确净胜拉开预期",
-              "headline_cn": "净胜走向：双方实力接近",
-              "pill_cn": "双方实力接近，暂无单侧净胜预期。",
-              "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
-              "full_cover_pct": 0,
-              "half_cover_pct": 0,
-              "show_cover": false
-            },
-            "totals": {
-              "level": "neutral",
-              "label_cn": "暂无明显倾向",
-              "color": "#8A96A8",
-              "meter_label_cn": "几乎五五开",
-              "meter_pos": 50,
-              "lean_side": "neutral",
-              "lean_strength": "none",
-              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
-              "pill_cn": "几乎五五开",
-              "detail_cn": "模型五五开，临场决定节奏。",
-              "headline_cn": "进球氛围：几乎五五开",
-              "show_lean": false,
-              "over_pct": 53.5,
-              "line_gap": 0.5,
-              "market_line": 2.5,
-              "market_goals_int": 3,
-              "market_goals_cn": "总进球参考 2.5",
-              "caution_public_high": false
-            },
-            "draw_risk": null,
-            "pills": [
-              {
-                "key": "spread",
-                "icon": "⚖️",
-                "label": "净胜走向",
-                "outlook": {
-                  "level": "even",
-                  "label_cn": "势均力敌",
-                  "color": "#8A96A8",
-                  "fav_name": null,
-                  "market_expect_cn": "势均力敌",
-                  "meet_pct": null,
-                  "verdict_cn": "无明确净胜拉开预期",
-                  "headline_cn": "净胜走向：双方实力接近",
-                  "pill_cn": "双方实力接近，暂无单侧净胜预期。",
-                  "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
-                  "full_cover_pct": 0,
-                  "half_cover_pct": 0,
-                  "show_cover": false
-                },
-                "text": "双方实力接近，暂无单侧净胜预期。",
-                "color": "#8A96A8",
-                "primary": true
-              },
-              {
-                "key": "totals",
-                "icon": "◎",
-                "label": "进球氛围",
-                "outlook": {
-                  "level": "neutral",
-                  "label_cn": "暂无明显倾向",
-                  "color": "#8A96A8",
-                  "meter_label_cn": "几乎五五开",
-                  "meter_pos": 50,
-                  "lean_side": "neutral",
-                  "lean_strength": "none",
-                  "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
-                  "pill_cn": "几乎五五开",
-                  "detail_cn": "模型五五开，临场决定节奏。",
-                  "headline_cn": "进球氛围：几乎五五开",
-                  "show_lean": false,
-                  "over_pct": 53.5,
-                  "line_gap": 0.5,
-                  "market_line": 2.5,
-                  "market_goals_int": 3,
-                  "market_goals_cn": "总进球参考 2.5",
-                  "caution_public_high": false
-                },
-                "text": "几乎五五开",
-                "color": "#8A96A8",
-                "muted": true
-              }
-            ],
-            "methodology_note": "读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。"
-          },
-          "first_goal_scenarios": [
-            {
-              "side": "home",
-              "team": "Colombia",
-              "first_goal_pct": 49.5,
-              "start_score": "1-0",
-              "fav_name": "Colombia",
-              "scorer_is_fav": false,
-              "expected_key": "fav_recover",
-              "fav_recover_pct": 82.6,
-              "small_lead_pct": 28.1,
-              "big_lead_pct": 32,
-              "fav_win_pct": 60.1,
-              "fav_draw_pct": 22.5,
-              "fav_lose_pct": 17.5,
-              "outcomes": [
-                {
-                  "key": "draw",
-                  "label": "Colombia 追平（平局）",
-                  "pct": 22.5
-                },
-                {
-                  "key": "win1",
-                  "label": "Colombia 净胜1球翻盘（如 2-1）",
-                  "pct": 28.1
-                },
-                {
-                  "key": "win2",
-                  "label": "Colombia 净胜≥2球翻盘（如 3-1）",
-                  "pct": 32
-                },
-                {
-                  "key": "upset_hold",
-                  "label": "Colombia 保持胜果至终场",
-                  "pct": 17.5
-                }
-              ],
-              "excitement": {
-                "label_cn": "中速开局",
-                "label_key": "moderate",
-                "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 31.7 分",
-                "first_goal_wait": 31.7,
-                "fast_pct": 54,
-                "moderate_pct": 14.8,
-                "slow_pct": 31.2,
-                "tiers": [
-                  {
-                    "key": "fast",
-                    "label": "前 30 分内首球",
-                    "pct": 54
-                  },
-                  {
-                    "key": "moderate",
-                    "label": "30–45 分首球",
-                    "pct": 14.8
-                  },
-                  {
-                    "key": "slow",
-                    "label": "45 分后首球",
-                    "pct": 31.2
-                  }
-                ]
-              },
-              "big_delta": 14.3,
-              "small_delta": 7.7,
-              "narrative": "Colombia 先破门（已 1-0） → 「巩固防守」；Portugal 「组织反扑」。落后方压上反扑，比赛更开放，但热门要净胜两球以上仍须连续破门。",
-              "live_outlook": null
-            },
-            {
-              "side": "away",
-              "team": "Portugal",
-              "first_goal_pct": 50.5,
-              "start_score": "0-1",
-              "fav_name": "Portugal",
-              "scorer_is_fav": true,
-              "expected_key": "hold_win",
-              "fav_recover_pct": 83.4,
-              "small_lead_pct": 28.3,
-              "big_lead_pct": 33.1,
-              "fav_win_pct": 61.3,
-              "fav_draw_pct": 22.1,
-              "fav_lose_pct": 16.6,
-              "outcomes": [
-                {
-                  "key": "hold_win",
-                  "label": "Portugal 保持胜果（净胜≥1）",
-                  "pct": 61.3
-                },
-                {
-                  "key": "drawn",
-                  "label": "被扳平",
-                  "pct": 22.1
-                },
-                {
-                  "key": "lost",
-                  "label": "被逆转落败",
-                  "pct": 16.6
-                }
-              ],
-              "excitement": {
-                "label_cn": "中速开局",
-                "label_key": "moderate",
-                "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 31.9 分",
-                "first_goal_wait": 31.9,
-                "fast_pct": 53.7,
-                "moderate_pct": 14.8,
-                "slow_pct": 31.5,
-                "tiers": [
-                  {
-                    "key": "fast",
-                    "label": "前 30 分内首球",
-                    "pct": 53.7
-                  },
-                  {
-                    "key": "moderate",
-                    "label": "30–45 分首球",
-                    "pct": 14.8
-                  },
-                  {
-                    "key": "slow",
-                    "label": "45 分后首球",
-                    "pct": 31.5
-                  }
-                ]
-              },
-              "big_delta": 15.4,
-              "small_delta": 7.9,
-              "narrative": "Portugal 先破门（已 0-1） → 「巩固防守」；Colombia 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
-              "live_outlook": {
-                "fav_name": "Portugal",
-                "state_label": "Portugal 已 1-0 领先",
-                "paths": [
-                  {
-                    "key": "narrow",
-                    "label": "险胜收工",
-                    "example": "如 1-0、2-1",
-                    "pct": 53.5
-                  },
-                  {
-                    "key": "clean",
-                    "label": "零封拉开",
-                    "example": "如 2-0、3-0",
-                    "pct": 23.6
-                  },
-                  {
-                    "key": "open",
-                    "label": "开放拉开",
-                    "example": "如 3-1+",
-                    "pct": 22.9
-                  }
-                ],
-                "margin_line_cn": "净胜差距参考 · 势均力敌",
-                "margin_meet_pct": 16.6,
-                "margin_half_pct": 0,
-                "margin_fail_pct": 11.2,
-                "margin_full_label": "净胜≥1",
-                "margin_half_label": null,
-                "final_2_0_pct": null,
-                "final_3_0_plus_pct": null,
-                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-                "totals_line": 2.5,
-                "totals_line_cn": "总进球参考 2.5",
-                "fair_totals_line": 2.25,
-                "model_total_xg": 2.31,
-                "totals_line_gap": 0.25,
-                "totals_high_pct": 67.1,
-                "totals_low_pct": 32.9,
-                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-                "win_low_total_pct": 0,
-                "win_margin2_low_total_pct": 0,
-                "win_margin2_high_total_pct": 5.4,
-                "readout_cn": "Portugal 已 1-0 领先：仍取胜约 16.6%。 对着总进球参考 2.5，模型超线概率约 67.1%。 若再扩大，偏「险胜收工」。"
-              }
-            }
-          ],
-          "match_preview": {
-            "morphology": {
-              "totals_summary": "预测 2.8 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向",
-              "totals_line_cn": "总进球参考 2.5",
-              "totals_high_pct": 53.5,
-              "type_tags": [
-                {
-                  "key": "even_open",
-                  "label": "均势开放"
-                }
-              ],
-              "depth_label": "深度一般",
-              "draw_trap_pct": 24,
-              "readout_cn": "Portugal · 均势开放。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
-            },
-            "draw_trap_note": null,
-            "archetype": {
-              "tags": [
-                {
-                  "key": "even_open",
-                  "label": "均势开放"
-                }
-              ],
-              "depth_score": 0,
-              "depth_label": "深度一般",
-              "draw_trap_pct": 24,
-              "fav_lead_style": "balanced"
-            }
-          },
-          "halftime_preview": {
-            "ht_xg_share": 0.44,
-            "xg_home_ht": 0.62,
-            "xg_away_ht": 0.63,
-            "xg_home_2h": 0.78,
-            "xg_away_2h": 0.8,
-            "home_win": 29.2,
-            "draw": 41,
-            "away_win": 29.8,
-            "top_score": "0-0",
-            "top_score_prob": 28.7,
-            "top3_scores": [
-              {
-                "score": "0-0",
-                "prob": 28.7
-              },
-              {
-                "score": "0-1",
-                "prob": 18.1
-              },
-              {
-                "score": "1-0",
-                "prob": 17.8
-              }
-            ],
-            "ht_goals_expected": 1.25,
-            "ht_over_0_5_pct": 71.3,
-            "ht_over_1_5_pct": 35.5,
-            "pick": "draw",
-            "pick_name": "平局",
-            "summary_cn": "半场 xG 0.62–0.63（约占全场 44%） · 最可能 0-0（28.7%） · 胜平负 29.2/41/29.8 · 半场≥1球约 71.3%",
-            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
-          }
-        },
-        "public_summary_note": "【推演概要】Portugal · 均势开放。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
-        "goal_efficiency_preview": {
-          "mode": "preview",
-          "xg_total": 3.13,
-          "xg_gap": 0.03,
-          "xg_home": 1.55,
-          "xg_away": 1.58,
-          "xg_baseline_home": 1.55,
-          "xg_baseline_away": 1.58,
-          "xg_note": "结构推演用基准 xG 1.55–1.58（进球氛围用调整后 1.4–1.43）",
-          "lean_note": "基准 xG 结构偏多球，但进球氛围偏闷（预测约 2.8）——作岔路预警，非默认剧本",
-          "fav_name": "Portugal",
-          "dog_name": "Colombia",
-          "fav_xg": 1.58,
-          "dog_xg": 1.55,
-          "path_type": "low",
-          "path_label": "铁局/小比分",
-          "lean": "prevention_high",
-          "lean_cn": "预防大比分",
-          "lean_mode": "prevention",
-          "lean_confidence": 60.1,
-          "prevention_reason_cn": "基准 xG 结构偏多球，但进球氛围偏闷（预测约 2.8）——作岔路预警，非默认剧本",
-          "atmosphere_link_cn": null,
-          "modules_aligned": false,
-          "live_watch": [
-            {
-              "key": "dog_goal",
-              "label": "Colombia进球",
-              "detail": "弱队破门 → 预防大比分抬升；对照弱队开花/对攻路径",
-              "severity": "high"
-            },
-            {
-              "key": "dog_eff",
-              "label": "弱队效率≥1.0",
-              "detail": "弱队射门兑现超预期 → 上调大比分留意（样本：效率≥1.2 易凑 3 球+）",
-              "severity": "high"
-            },
-            {
-              "key": "fav_only",
-              "label": "仅Portugal进球",
-              "detail": "热门单榜领先、弱队仍无球 → 仍按进球氛围小比分，不必因路径升级",
-              "severity": "calm"
-            }
-          ],
-          "prob_over_line": 60.1,
-          "prob_meet_guess": 60.1,
-          "guess_n": 3,
-          "prob_4_plus": 37.5,
-          "prob_2_or_less": 39.9,
-          "totals_line": 2.5,
-          "scenarios": [
-            {
-              "key": "low",
-              "label": "铁局/小比分",
-              "example": "1-0 / 1-1 / 0-0",
-              "note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
-              "prob_pct": 45
-            },
-            {
-              "key": "open",
-              "label": "对攻/open",
-              "example": "2-2 / 4-2 / 3-2",
-              "note": "双方 xG 均有进球预期，任一方效率达标即可凑出 4 球。",
-              "prob_pct": 23
-            },
-            {
-              "key": "dog_bloom",
-              "label": "弱队开花",
-              "example": "2-2 / 1-3 / 3-1",
-              "note": "样本：弱队效率≥1.2 时 71% 总进球≥3；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
-              "prob_pct": 20
-            },
-            {
-              "key": "fav_burst",
-              "label": "热门爆发",
-              "example": "2-0 / 3-0 / 4-1",
-              "note": "样本：热门效率≥1.5 时高比分常见；弱队 xG≈1.0 但只进 1 球时也常见此路径。",
-              "prob_pct": 13
-            }
-          ],
-          "tags": [
-            {
-              "key": "prevention_high",
-              "label": "预防大比分",
-              "color": "#E8A54B",
-              "bg": "rgba(232,165,75,0.12)"
-            },
-            {
-              "key": "even_xg",
-              "label": "xG接近",
-              "color": "#5BBF8A",
-              "bg": "rgba(91,191,138,0.08)"
-            },
-            {
-              "key": "low_scoring",
-              "label": "小比分",
-              "color": "#7BB8D4",
-              "bg": "rgba(123,184,212,0.1)"
-            }
-          ],
-          "watch_notes": [
-            "弱队上半场效率≥1.0 → 关注弱队开花路径",
-            "结构类似 m12/m26——热门爆发路径需防 4+ 球"
-          ],
-          "pattern_note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
-          "summary_cn": "【路径·基准 xG】合计 3.13 · Portugal 1.58 / Colombia 1.55 → 主路径「铁局/小比分」约 45% · 预防大比分。 超 2.5 约 60.1% · ≤2球 39.9%。样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
-          "in_mid_band": false,
-          "sample_note": "结构规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27）· 大/小标签用基准 xG 泊松 ≥60%/≤40%"
-        }
-      },
-      "group_context": {
-        "group": "K",
-        "label": "K组 · 第2轮后",
-        "matchday": 3,
-        "standings": [
-          {
-            "team": "Colombia",
-            "pts": 6,
-            "p": 2,
-            "w": 2,
-            "d": 0,
-            "l": 0,
-            "gf": 4,
-            "ga": 1
-          },
-          {
-            "team": "Portugal",
-            "pts": 4,
-            "p": 2,
-            "w": 1,
-            "d": 1,
-            "l": 0,
-            "gf": 6,
-            "ga": 1
-          },
-          {
-            "team": "Congo DR",
-            "pts": 1,
-            "p": 2,
-            "w": 0,
-            "d": 1,
-            "l": 1,
-            "gf": 1,
-            "ga": 2
-          },
-          {
-            "team": "Uzbekistan",
-            "pts": 0,
-            "p": 2,
-            "w": 0,
-            "d": 0,
-            "l": 2,
-            "gf": 1,
-            "ga": 8
-          }
-        ],
-        "home": {
-          "team": "Colombia",
-          "rank": 1,
-          "pts": 6,
-          "played": 2,
-          "if_1st": "32强 M87 · K 组第 1 vs 最佳第 3（D/E/I/J/L 池） → 当前 L 组第 2倾向 Ghana",
-          "if_1st_r16": "16强 M96 · 对阵 B 组第 1 vs 最佳第 3 之胜者",
-          "if_1st_corridor": "葡萄牙头名通道",
-          "if_2nd": "32强 M83 · K 组第 2 vs L 组第 2 → 当前 L 组第 1倾向 England（强队）",
-          "if_2nd_r16": "16强 M93 · 对阵 H 组第 1 vs J 组第 2 之胜者",
-          "if_2nd_corridor": "哥伦比亚/乌兹别克次席 → 16 强或遇西班牙/阿根廷半区",
-          "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 J/L/I/H 等组第 3 横向比较",
-          "if_3rd_r16": "32 强对手取决于 Annex C 第 3 名组合（495 种可能）"
-        },
-        "away": {
-          "team": "Portugal",
-          "rank": 2,
-          "pts": 4,
-          "played": 2,
-          "if_1st": "32强 M87 · K 组第 1 vs 最佳第 3（D/E/I/J/L 池） → 当前 L 组第 2倾向 Ghana",
-          "if_1st_r16": "16强 M96 · 对阵 B 组第 1 vs 最佳第 3 之胜者",
-          "if_1st_corridor": "葡萄牙头名通道",
-          "if_2nd": "32强 M83 · K 组第 2 vs L 组第 2 → 当前 L 组第 1倾向 England（强队）",
-          "if_2nd_r16": "16强 M93 · 对阵 H 组第 1 vs J 组第 2 之胜者",
-          "if_2nd_corridor": "哥伦比亚/乌兹别克次席 → 16 强或遇西班牙/阿根廷半区",
-          "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 J/L/I/H 等组第 3 横向比较",
-          "if_3rd_r16": "32 强对手取决于 Annex C 第 3 名组合（495 种可能）"
-        },
-        "cross_group_notes": [
-          "L 组：头名 England 4 分 · 次席 Ghana 同分（32强绑定组）",
-          "J 组：头名 Argentina 6 分 · 次席 Austria 3 分（32强绑定组）",
-          "G 组 Belgium 5 分领跑",
-          "H 组 Spain 7 分领跑",
-          "E 组 Germany 6 分领跑",
-          "F 组 Netherlands 7 分领跑",
-          "I 组 France 9 分领跑",
-          "D 组 USA 6 分领跑"
-        ],
-        "path_tradeoff": "K 组次席与 L 组次席同槽 M83。",
-        "manipulation_risk": {
-          "level": "MEDIUM",
-          "level_cn": "中",
-          "focus_team": "Colombia",
-          "reason": "Colombia、Portugal 均已锁定出线（输球亦稳居前二）。胜负不影响晋级，只争头名/次席及淘汰赛对位（K 组次席与 L 组次席同槽 M83。）。可轮换练兵，但≠默契球——没有「必须平局才能携手出线」的逻辑。",
-          "logic_steps": [
-            "Colombia 6 分 vs Portugal 4 分；同组另一场 Congo DR（1 分）vs Uzbekistan（0 分）",
-            "逻辑：即使本场输球，Colombia、Portugal 仍稳居前二 → 均已出线",
-            "逻辑：胜负不改变「进不进淘汰赛」，只决定头名/次席 → 32 强/16 强对位不同（K 组次席与 L 组次席同槽 M83。）",
-            "逻辑：可轮换、试战术，但≠默契球 —— 没有「必须平局才能两人携手出线」的必要；头名之争仍可能真刀真枪"
-          ],
-          "optimal_summary": "策略最优解（推演）：Colombia 已握出线主动，末轮或适度收敛进攻、锻炼新兵并演练新战术，把核心体能留给淘汰赛；若次席仍紧追，仍宜控制场面——可借机锻炼新兵、尝试新战术演练——在出线分已足够的前提下，非胜结果亦可接受，以换取更顺的淘汰半区；但须守住净胜球边界，避免失手跌入第 3 争八区。",
-          "qual_model": {
-            "scenario_type": "path_control",
-            "mutual_draw_advances": false,
-            "path_control": true,
-            "asymmetric_third": null,
-            "both_already_qualified": true,
-            "home_already_qualified": true,
-            "away_already_qualified": true,
-            "home_out_if_loss": false,
-            "away_out_if_loss": false,
-            "logic_steps": [
-              "Colombia 6 分 vs Portugal 4 分；同组另一场 Congo DR（1 分）vs Uzbekistan（0 分）",
-              "逻辑：即使本场输球，Colombia、Portugal 仍稳居前二 → 均已出线",
-              "逻辑：胜负不改变「进不进淘汰赛」，只决定头名/次席 → 32 强/16 强对位不同（K 组次席与 L 组次席同槽 M83。）",
-              "逻辑：可轮换、试战术，但≠默契球 —— 没有「必须平局才能两人携手出线」的必要；头名之争仍可能真刀真枪"
-            ],
-            "drawBoost": 0,
-            "xgScaleHome": 0.94,
-            "xgScaleAway": 0.94,
-            "notes": [
-              "已出线：或轮换/练兵，xG 略降",
-              "头名/次席影响淘汰对位，不额外抬平局"
-            ],
-            "summary": "已出线控分：胜负只争头/次席与淘汰对位，可练兵但≠默契球"
-          }
-        },
-        "knockout_note": "48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。",
-        "scenarios": [
-          "Colombia 若取胜：积分 9，K 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
-          "Portugal 若取胜：积分 7，客场抢分将改变 K 组格局与淘汰赛半区。",
-          "平局：双方各 +1 分；在 L 组：头名 England 4 分 · 次席 Ghana 同分（32强绑定组） · J 组：头名 Argentina 6 分 · 次席 Austria 3 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
-          "头名/次席博弈：K 组次席与 L 组次席同槽 M83。"
-        ]
-      }
-    },
-    {
-      "id": "m72",
-      "fifa_match_number": 72,
-      "fifa_match_id": "400021500",
-      "group": "K",
-      "matchday": 3,
-      "date": "2026-06-27",
-      "time": "19:30",
-      "time_local": "19:30 ET",
-      "timezone": "EDT (UTC-4)",
-      "time_beijing": "07:30",
-      "date_beijing": "6月28日",
-      "time_beijing_full": "北京时间 6月28日 07:30",
-      "venue": "Mercedes-Benz Stadium",
-      "city": "Atlanta, USA",
-      "note": "K组末轮 · 刚果(金) vs 乌兹别克 · 亚特兰大",
-      "lineup": {
-        "confirmed": false,
-        "formation": null,
-        "home": "等待官方确认",
-        "away": "等待官方确认",
-        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
-        "predicted": {
-          "formation": "4-2-3-1 / 4-4-2",
-          "home": "Mpebe; Muyuma, Mukau, Batubinsika; Mbemba, Mwamba; Bamba, Kakuta, Wissa; Bakambu",
-          "away": "Nesterov; Khusanov, Ismailov, Alikulov; Shomurodov, Jaloliddinov; Hamrobekov, Nasirov; Turgunboev, Abdullaev",
-          "source": "ESPN 预测",
-          "alt": null
-        }
-      },
-      "home": {
-        "name": "Congo DR",
-        "iso": "cd",
-        "flag": "",
-        "fifa_rank": 61,
-        "rating": 63,
-        "form": [
-          "D",
-          "L",
-          "W",
-          "D",
-          "W"
-        ],
-        "coach": "Sébastien Desabre",
-        "stars": [
-          {
-            "name": "Yoane Wissa",
-            "pos": "ST",
-            "club": "Brentford",
-            "rating": 8,
-            "desc": "锋线"
-          },
-          {
-            "name": "Chancel Mbemba",
-            "pos": "CB",
-            "club": "Marseille",
-            "rating": 7.8,
-            "desc": "防线"
-          }
-        ],
-        "star": {
-          "name": "Yoane Wissa",
-          "pos": "ST",
-          "club": "Brentford",
-          "rating": 8,
-          "desc": "1 分须胜"
-        },
-        "injuries": [
-          {
-            "player": "Yoane Wissa",
-            "status": "FIT",
-            "note": "1 分须胜",
-            "confirmed": true
-          }
-        ],
-        "rumors": [
-          "刚果(金)末轮须 3 分争出线"
-        ]
-      },
-      "away": {
-        "name": "Uzbekistan",
-        "iso": "uz",
-        "flag": "",
-        "fifa_rank": 62,
-        "rating": 58,
-        "form": [
-          "L",
-          "L",
-          "D",
-          "W",
-          "L"
-        ],
-        "coach": "Slavisa Jokanovic",
-        "stars": [
-          {
-            "name": "Eldor Shomurodov",
-            "pos": "ST",
-            "club": "Cagliari",
-            "rating": 7.5,
-            "desc": "锋线"
-          }
-        ],
-        "star": {
-          "name": "Eldor Shomurodov",
-          "pos": "ST",
-          "club": "Cagliari",
-          "rating": 7.5,
-          "desc": "0 分出局"
-        },
-        "injuries": [],
-        "rumors": [
-          "乌兹别克 0 分已出局"
-        ]
-      },
-      "h2h": {
-        "home_wins": 0,
-        "draws": 0,
-        "away_wins": 0,
-        "recent": [],
-        "note": "无大赛交锋"
-      },
-      "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "FIFA Match 72 · 刚果(金) vs 乌兹别克 · 裁判名单赛前公布。",
-        "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
-        ],
-        "updated": "2026-06-27T06:00:10+08:00"
-      },
-      "prediction": {
-        "home_win": 57,
-        "draw": 26,
-        "away_win": 17,
-        "score": "1-0",
-        "confidence": 74,
-        "xg_home": 1.48,
-        "xg_away": 0.72,
-        "key_factor": "K组末轮 · 刚果(金) 1 分须胜 vs 乌兹别克 0 分 · Wissa 穿盘 · 泊松 2-0/1-0",
-        "score_dist": [
-          {
-            "score": "1-0",
-            "prob": 17
-          },
-          {
-            "score": "2-0",
-            "prob": 15.1
-          },
-          {
-            "score": "1-1",
-            "prob": 9.7
-          },
-          {
-            "score": "0-0",
-            "prob": 9.5
-          },
-          {
-            "score": "3-0",
-            "prob": 9
-          },
-          {
-            "score": "2-1",
-            "prob": 8.6
-          },
-          {
-            "score": "0-1",
-            "prob": 5.4
-          }
-        ],
-        "insight_factors": [
-          {
-            "icon": "📊",
-            "label": "小组积分",
-            "text": "Congo DR 暂列 K 组第 3（1 分 · 已赛 2 场） vs Uzbekistan 第 4（0 分 · 已赛 2 场）；组内 Colombia 6分、Portugal 4分 领先；直接对话权重极高"
-          },
-          {
-            "icon": "🌤️",
-            "label": "赛场气候",
-            "text": "亚特兰大夏午 · 29°C · 湿度 68% · 降雨概率 30% · 封闭；刚果(金) 1 分须胜 vs 乌兹别克 0 分（29°C 封闭）"
-          },
-          {
-            "icon": "⚽",
-            "label": "战术与阵容",
-            "text": "K组末轮 · 刚果(金) 1 分须胜 vs 乌兹别克 0 分 · Wissa 穿盘 · 泊松 2-0/1-0"
-          }
-        ],
-        "base_home_win": 55.2,
-        "base_draw": 26.5,
-        "base_away_win": 18.2,
-        "depth_calibrated": true,
-        "draw_context": {
-          "drawBoost": 0,
-          "ironBucket": false,
-          "closeXg": false,
-          "gap": 0.76,
-          "notes": [],
-          "qual_dynamics": null
-        },
-        "qual_dynamics": null,
-        "xg_poisson_home": 1.78,
-        "xg_poisson_away": 0.57,
-        "xg_tier_calibrated": true,
-        "score_prob": 17,
-        "score_top3": [
-          {
-            "score": "1-0",
-            "prob": 17
-          },
-          {
-            "score": "2-0",
-            "prob": 15.1
-          },
-          {
-            "score": "1-1",
-            "prob": 9.7
-          }
-        ],
-        "expected_score": "2-1"
-      },
-      "weather": {
-        "city": "亚特兰大",
-        "country": "美国",
-        "venue": "Mercedes-Benz Stadium",
-        "pitch_surface": "人工草（有顶盖）",
-        "stadium_type": "封闭式",
-        "temp": 29,
-        "humidity": 68,
-        "altitude_m": 320,
-        "rain_chance": 30,
-        "wind": "封闭",
-        "condition_cn": "亚特兰大夏午",
-        "impact_level": "LOW",
-        "impact_summary": "刚果(金) 1 分须胜 vs 乌兹别克 0 分",
-        "home_adapt": 82,
-        "away_adapt": 76,
-        "weather_factors": [
-          {
-            "label": "29°C 封闭",
-            "impact": "低",
-            "detail": "北京时间 07:30"
-          }
-        ],
-        "forecast_updated": "2026-06-27 22:00 本地"
-      },
-      "mystic": {
-        "date_bazi": {
-          "year": "丙午年",
-          "month": "甲午月",
-          "day": "丁酉日",
-          "day_summary": "丁酉日——火金相制",
-          "hour_home": "见各场",
-          "hour_home_element": "金"
-        },
-        "wuxing": {
-          "home": {
-            "verdict": "待定"
-          },
-          "away": {
-            "verdict": "待定"
-          },
-          "summary": "文化解读"
-        },
-        "hexagram": {
-          "name": "待卦",
-          "symbol": "☯",
-          "quote": "赛前更新",
-          "general": "",
-          "scenarios": []
-        },
-        "home_score": 65,
-        "away_score": 35,
-        "mystic_verdict": "刚果(金)须破局，乌兹别克守势。",
-        "disclaimer": "文化解读 · 非竞技推演"
-      },
-      "depth_calibration": {
-        "tier_home": 0.75,
-        "tier_label": "Congo DR 被看好 · 净胜约 0.5–1 球",
-        "implied_tier": 0.25,
-        "tier_gap": 0.5,
-        "signal": "genuine_favorite",
-        "signal_cn": "实力吻合",
-        "signal_color": "#5BBF8A",
-        "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
-        "blocker_spread_note": "",
-        "public_lean_cn": "舆论倾向 Congo DR（约 65%）",
-        "analysis": "刚果(金) 1 分须胜 vs 乌兹别克 0 分。",
-        "spread_cover": {
-          "top3_scores": [
-            {
-              "score": "1-0",
-              "prob": 16.5
-            },
-            {
-              "score": "2-0",
-              "prob": 12.2
-            },
-            {
-              "score": "1-1",
-              "prob": 11.9
-            }
-          ],
-          "one_goal_win_pct": 26.9,
-          "two_plus_win_pct": 28.3,
-          "full_cover_pct": 55.2,
-          "half_cover_pct": 0,
-          "half_lose_pct": 0,
-          "push_pct": null,
-          "margin_full_label": "净胜≥1",
-          "margin_half_label": null,
-          "fav_cover_ev": 0.104,
-          "dog_cover_ev": -0.104,
-          "rational_spread_cn": "主队 净胜达标概率略高",
-          "total_xg": 2.2,
-          "fair_totals_line": 2.25,
-          "over_2_5_pct": 37.5,
-          "over_3_pct": 17.7,
-          "totals_lean_cn": "超 2.5 偏小比分（约 62.5%）；4球+偏少",
-          "margin_risk_note": "净胜≥1 约 55.2%；仅赢 1 球约 0%"
-        },
-        "spread_odds": null,
-        "spread_alt": null,
-        "totals_analysis": {
-          "market_line": 2.5,
-          "market_goals_int": 3,
-          "line_label": "总进球约 2.5 个",
-          "implied_xg_total": 2.2,
-          "fair_line": 2.25,
-          "line_gap": 0.25,
-          "over_pct": 37.5,
-          "under_pct": 62.5,
-          "signal": "high_line",
-          "signal_cn": "参考偏高",
-          "signal_color": "#C8A96E",
-          "signal_desc": "总进球参考高于合理值，模型偏小比分。",
-          "public_over_pct": 50,
-          "public_lean_cn": "舆论对总进球看法较分散",
-          "index_note": "大/小比分两侧接近",
-          "totals_odds": null,
-          "rational_cn": "模型略看小比分（超 2.5 约 62.5% 难达）",
-          "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
-        },
-        "totals_line": 2.5,
-        "applied_delta": {
-          "home_win": 2,
-          "draw": -1,
-          "away_win": -1
-        },
-        "adjustment_note": "模型微调：主胜 +2% · 平 -1% · 客 -1%",
-        "adjusted_probs": {
-          "home_win": 57,
-          "draw": 26,
-          "away_win": 17
-        },
-        "display_summary": {
-          "fav_name": "Congo DR",
-          "expected_total_goals": 2.18,
-          "poisson_fav_win_pct": 55.2,
-          "small_lead_pct": 26.9,
-          "small_example_score": "1-0",
-          "small_example_pct": 16.5,
-          "big_cover_pct": 28.3,
-          "big_example_score": "2-0",
-          "big_example_pct": 12.2,
-          "win_shape": {
-            "fav_name": "Congo DR",
-            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 33%）",
-            "shapes": [
-              {
-                "key": "narrow_low",
-                "label": "险胜 · 控局",
-                "example": "如 1-0",
-                "field_pct": 16.5,
-                "pct": 29.8
-              },
-              {
-                "key": "narrow_open",
-                "label": "险胜 · 开放",
-                "example": "如 2-1",
-                "field_pct": 10.5,
-                "pct": 19
-              },
-              {
-                "key": "comfort_low",
-                "label": "拉开 · 控局",
-                "example": "如 2-0",
-                "field_pct": 18.2,
-                "pct": 33
-              },
-              {
-                "key": "comfort_open",
-                "label": "拉开 · 开放",
-                "example": "如 3-1+",
-                "field_pct": 10.1,
-                "pct": 18.2
-              }
-            ],
-            "paths": [
-              {
-                "key": "narrow",
-                "label": "险胜收工",
-                "example": "如 1-0、2-1",
-                "pct": 48.8
-              },
-              {
-                "key": "clean",
-                "label": "零封拉开",
-                "example": "如 2-0、3-0",
-                "pct": 33
-              },
-              {
-                "key": "open",
-                "label": "开放拉开",
-                "example": "如 3-1+",
-                "pct": 18.2
-              }
-            ],
-            "fav_win_pct": 57
-          },
-          "excitement": {
-            "label_cn": "中速开局",
-            "label_key": "moderate",
-            "label_color": "#C8A96E",
-            "sub_cn": "预期首球等待约 40.9 分",
-            "first_goal_wait": 40.9,
-            "fast_pct": 52,
-            "moderate_pct": 14.7,
-            "slow_pct": 33.3,
-            "tiers": [
-              {
-                "key": "fast",
-                "label": "前 30 分内首球",
-                "pct": 52
-              },
-              {
-                "key": "moderate",
-                "label": "30–45 分首球",
-                "pct": 14.7
-              },
-              {
-                "key": "slow",
-                "label": "45 分后首球",
-                "pct": 33.3
-              }
-            ]
-          },
-          "baseline_label": "全场预期（含伤病·气候）",
-          "context_factors": [
-            {
-              "icon": "🏥",
-              "label": "伤病",
-              "note": "Congo DR 暂无重要伤停 · Uzbekistan 暂无重要伤停"
-            },
-            {
-              "icon": "👔",
-              "label": "教练风格",
-              "note": "— / —（领先时）"
-            },
-            {
-              "icon": "🌤️",
-              "label": "气候",
-              "note": "刚果(金) 1 分须胜 vs 乌兹别克 0 分"
-            }
-          ],
-          "xg_context": {
-            "baseline_home": 1.48,
-            "baseline_away": 0.72,
-            "adjusted_home": 1.48,
-            "adjusted_away": 0.72,
-            "note": "基准 xG 1.48–0.72（未因伤病/气候下调）"
-          },
-          "calibration": {
-            "signal_cn": "实力吻合",
-            "signal_color": "#5BBF8A",
-            "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
-            "tier_gap": 0.5,
-            "implied_tier_label": "Congo DR 被看好 · 净胜约 0.25 球",
-            "market_tier_label": "Congo DR 被看好 · 净胜约 0.5–1 球",
-            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5"
-          },
-          "win_outlook": {
-            "fav_name": "Congo DR",
-            "state_label": null,
-            "paths": [
-              {
-                "key": "narrow",
-                "label": "险胜收工",
-                "example": "如 1-0、2-1",
-                "pct": 48.8
-              },
-              {
-                "key": "clean",
-                "label": "零封拉开",
-                "example": "如 2-0、3-0",
-                "pct": 33
-              },
-              {
-                "key": "open",
-                "label": "开放拉开",
-                "example": "如 3-1+",
-                "pct": 18.2
-              }
-            ],
-            "margin_line_cn": "Congo DR · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 55.2,
-            "margin_half_pct": 0,
-            "margin_fail_pct": 0,
-            "margin_full_label": "净胜≥1",
-            "margin_half_label": null,
-            "final_2_0_pct": null,
-            "final_3_0_plus_pct": null,
-            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-            "totals_line": 2.5,
-            "totals_line_cn": "总进球参考 2.5",
-            "fair_totals_line": 2.25,
-            "model_total_xg": 2.2,
-            "totals_line_gap": 0.25,
-            "totals_high_pct": 37.5,
-            "totals_low_pct": 62.5,
-            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 28.7,
-            "win_margin2_low_total_pct": 12.2,
-            "win_margin2_high_total_pct": 16.1,
-            "readout_cn": "取胜约 57%；若取胜，以「险胜收工」为主（48.8%）。 对着赛前净胜参考，净胜≥1（全达标）约 55.2%；对着总进球参考 2.5，模型超线概率约 37.5%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.5。"
-          },
-          "totals_line": 2.5,
-          "score_patterns": [
-            {
-              "score": "1-0",
-              "pct": 16.5
-            },
-            {
-              "score": "2-0",
-              "pct": 12.2
-            },
-            {
-              "score": "1-1",
-              "pct": 11.9
-            }
-          ],
-          "totals_view": {
-            "expected_total": 2.2,
-            "fair_line": 2.25,
-            "market_line": 2.5,
-            "line_gap": 0.25,
-            "over_pct": 37.5,
-            "gap_warning": null,
-            "totals_outlook": {
-              "level": "mild_low",
-              "label_cn": "略倾向沉闷",
-              "color": "#7BB8D4",
-              "meter_label_cn": "略倾向沉闷",
-              "meter_pos": 38,
-              "lean_side": "dull",
-              "lean_strength": "mild",
-              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
-              "pill_cn": "略偏闷（弱）",
-              "detail_cn": "略偏闷，模型更看小比分（难超线 2.5）；弱信号。",
-              "headline_cn": "进球氛围：略偏闷",
-              "show_lean": false,
-              "over_pct": 37.5,
-              "line_gap": 0.25,
-              "market_line": 2.5,
-              "market_goals_int": 3,
-              "market_goals_cn": "总进球参考 2.5",
-              "caution_public_high": false
-            },
-            "summary_cn": "预测 2.2 · 合理值 2.25 · 总进球参考 2.5（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向"
-          },
-          "customer_reading": {
-            "headline_cn": "Congo DR · 净胜走向：达到预期较有希望",
-            "sub_cn": "达标概率约 55.2% · 达到预期较有希望 进球氛围：略偏闷",
-            "spread": {
-              "level": "likely",
-              "label_cn": "达到预期较有希望",
-              "color": "#5BBF8A",
-              "fav_name": "Congo DR",
-              "market_expect_cn": "净胜≥1",
-              "meet_pct": 55.2,
-              "meet_pct_label": "模型推演达标概率",
-              "verdict_cn": "达到预期较有希望",
-              "headline_cn": "Congo DR · 净胜走向：达到预期较有希望",
-              "pill_cn": "达标概率约 55.2% · 达到预期较有希望",
-              "detail_cn": "Congo DR · 赛前外界预期 净胜≥1。模型推演达标概率约 55.2%；模型认为达到外界预期档的概率相对较高。",
-              "extra_stats_cn": "",
-              "full_cover_pct": 55.2,
-              "half_cover_pct": 0,
-              "lose1_pct": 0,
-              "margin_full_label": "净胜≥1",
-              "margin_half_label": null,
-              "tier_gap": 0.5,
-              "show_cover": true
-            },
-            "totals": {
-              "level": "mild_low",
-              "label_cn": "略倾向沉闷",
-              "color": "#7BB8D4",
-              "meter_label_cn": "略倾向沉闷",
-              "meter_pos": 38,
-              "lean_side": "dull",
-              "lean_strength": "mild",
-              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
-              "pill_cn": "略偏闷（弱）",
-              "detail_cn": "略偏闷，模型更看小比分（难超线 2.5）；弱信号。",
-              "headline_cn": "进球氛围：略偏闷",
-              "show_lean": false,
-              "over_pct": 37.5,
-              "line_gap": 0.25,
-              "market_line": 2.5,
-              "market_goals_int": 3,
-              "market_goals_cn": "总进球参考 2.5",
-              "caution_public_high": false
-            },
-            "draw_risk": null,
-            "pills": [
-              {
-                "key": "spread",
-                "icon": "⚖️",
-                "label": "净胜走向",
-                "outlook": {
-                  "level": "likely",
-                  "label_cn": "达到预期较有希望",
-                  "color": "#5BBF8A",
-                  "fav_name": "Congo DR",
-                  "market_expect_cn": "净胜≥1",
-                  "meet_pct": 55.2,
-                  "meet_pct_label": "模型推演达标概率",
-                  "verdict_cn": "达到预期较有希望",
-                  "headline_cn": "Congo DR · 净胜走向：达到预期较有希望",
-                  "pill_cn": "达标概率约 55.2% · 达到预期较有希望",
-                  "detail_cn": "Congo DR · 赛前外界预期 净胜≥1。模型推演达标概率约 55.2%；模型认为达到外界预期档的概率相对较高。",
-                  "extra_stats_cn": "",
-                  "full_cover_pct": 55.2,
-                  "half_cover_pct": 0,
-                  "lose1_pct": 0,
-                  "margin_full_label": "净胜≥1",
-                  "margin_half_label": null,
-                  "tier_gap": 0.5,
-                  "show_cover": true
-                },
-                "text": "达标概率约 55.2% · 达到预期较有希望",
-                "color": "#5BBF8A",
-                "primary": true
-              },
-              {
-                "key": "totals",
-                "icon": "◎",
-                "label": "进球氛围",
-                "outlook": {
-                  "level": "mild_low",
-                  "label_cn": "略倾向沉闷",
-                  "color": "#7BB8D4",
-                  "meter_label_cn": "略倾向沉闷",
-                  "meter_pos": 38,
-                  "lean_side": "dull",
-                  "lean_strength": "mild",
-                  "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
-                  "pill_cn": "略偏闷（弱）",
-                  "detail_cn": "略偏闷，模型更看小比分（难超线 2.5）；弱信号。",
-                  "headline_cn": "进球氛围：略偏闷",
-                  "show_lean": false,
-                  "over_pct": 37.5,
-                  "line_gap": 0.25,
-                  "market_line": 2.5,
-                  "market_goals_int": 3,
-                  "market_goals_cn": "总进球参考 2.5",
-                  "caution_public_high": false
-                },
-                "text": "略偏闷（弱）",
-                "color": "#7BB8D4",
-                "muted": true
-              }
-            ],
-            "methodology_note": "读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。"
-          },
-          "first_goal_scenarios": [
-            {
-              "side": "home",
-              "team": "Congo DR",
-              "first_goal_pct": 67.3,
-              "start_score": "1-0",
-              "fav_name": "Congo DR",
-              "scorer_is_fav": true,
-              "expected_key": "hold_win",
-              "fav_recover_pct": 94.9,
-              "small_lead_pct": 31.7,
-              "big_lead_pct": 48.1,
-              "fav_win_pct": 79.9,
-              "fav_draw_pct": 15,
-              "fav_lose_pct": 5.2,
-              "outcomes": [
-                {
-                  "key": "hold_win",
-                  "label": "Congo DR 保持胜果（净胜≥1）",
-                  "pct": 79.9
-                },
-                {
-                  "key": "drawn",
-                  "label": "被扳平",
-                  "pct": 15
-                },
-                {
-                  "key": "lost",
-                  "label": "被逆转落败",
-                  "pct": 5.2
-                }
-              ],
-              "excitement": {
-                "label_cn": "中速开局",
-                "label_key": "moderate",
-                "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 41.9 分",
-                "first_goal_wait": 41.9,
-                "fast_pct": 44.4,
-                "moderate_pct": 14.1,
-                "slow_pct": 41.4,
-                "tiers": [
-                  {
-                    "key": "fast",
-                    "label": "前 30 分内首球",
-                    "pct": 44.4
-                  },
-                  {
-                    "key": "moderate",
-                    "label": "30–45 分首球",
-                    "pct": 14.1
-                  },
-                  {
-                    "key": "slow",
-                    "label": "45 分后首球",
-                    "pct": 41.4
-                  }
-                ]
-              },
-              "big_delta": 19.8,
-              "small_delta": 4.8,
-              "narrative": "Congo DR 先破门（已 1-0） → 「巩固防守」；Uzbekistan 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
-              "live_outlook": {
-                "fav_name": "Congo DR",
-                "state_label": "Congo DR 已 1-0 领先",
-                "paths": [
-                  {
-                    "key": "narrow",
-                    "label": "险胜收工",
-                    "example": "如 1-0、2-1",
-                    "pct": 48.8
-                  },
-                  {
-                    "key": "clean",
-                    "label": "零封拉开",
-                    "example": "如 2-0、3-0",
-                    "pct": 33
-                  },
-                  {
-                    "key": "open",
-                    "label": "开放拉开",
-                    "example": "如 3-1+",
-                    "pct": 18.2
-                  }
-                ],
-                "margin_line_cn": "Congo DR · 赛前净胜参考 净胜≥1（全达标）",
-                "margin_meet_pct": 79.9,
-                "margin_half_pct": 0,
-                "margin_fail_pct": 31.7,
-                "margin_full_label": "净胜≥1",
-                "margin_half_label": null,
-                "final_2_0_pct": null,
-                "final_3_0_plus_pct": null,
-                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-                "totals_line": 2.5,
-                "totals_line_cn": "总进球参考 2.5",
-                "fair_totals_line": 2.25,
-                "model_total_xg": 1.76,
-                "totals_line_gap": 0.25,
-                "totals_high_pct": 52.5,
-                "totals_low_pct": 47.5,
-                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-                "win_low_total_pct": 36.7,
-                "win_margin2_low_total_pct": 19.6,
-                "win_margin2_high_total_pct": 28.6,
-                "readout_cn": "Congo DR 已 1-0 领先：仍取胜约 79.9%。 对着总进球参考 2.5，模型超线概率约 52.5%。 常见 2-0 收尾（相对总进球参考 2.5仍偏小比分）。"
-              }
-            },
-            {
-              "side": "away",
-              "team": "Uzbekistan",
-              "first_goal_pct": 32.7,
-              "start_score": "0-1",
-              "fav_name": "Congo DR",
-              "scorer_is_fav": false,
-              "expected_key": "fav_recover",
-              "fav_recover_pct": 54.4,
-              "small_lead_pct": 16.6,
-              "big_lead_pct": 9.3,
-              "fav_win_pct": 25.8,
-              "fav_draw_pct": 28.6,
-              "fav_lose_pct": 45.6,
-              "outcomes": [
-                {
-                  "key": "draw",
-                  "label": "Congo DR 追平（平局）",
-                  "pct": 28.6
-                },
-                {
-                  "key": "win1",
-                  "label": "Congo DR 净胜1球翻盘（如 2-1）",
-                  "pct": 16.6
-                },
-                {
-                  "key": "win2",
-                  "label": "Congo DR 净胜≥2球翻盘（如 3-1）",
-                  "pct": 9.3
-                },
-                {
-                  "key": "upset_hold",
-                  "label": "Uzbekistan 保持胜果至终场",
-                  "pct": 45.6
-                }
-              ],
-              "excitement": {
-                "label_cn": "中速开局",
-                "label_key": "moderate",
-                "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 40 分",
-                "first_goal_wait": 40,
-                "fast_pct": 45.9,
-                "moderate_pct": 14.3,
-                "slow_pct": 39.8,
-                "tiers": [
-                  {
-                    "key": "fast",
-                    "label": "前 30 分内首球",
-                    "pct": 45.9
-                  },
-                  {
-                    "key": "moderate",
-                    "label": "30–45 分首球",
-                    "pct": 14.3
-                  },
-                  {
-                    "key": "slow",
-                    "label": "45 分后首球",
-                    "pct": 39.8
-                  }
-                ]
-              },
-              "big_delta": -19,
-              "small_delta": -10.3,
-              "narrative": "Uzbekistan 先破门（已 0-1） → 「巩固防守」；Congo DR 「组织反扑」。热门先丢球（已 0-1），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
-              "live_outlook": null
-            }
-          ],
-          "match_preview": {
-            "morphology": {
-              "totals_summary": "预测 2.2 · 合理值 2.25 · 总进球参考 2.5（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向",
-              "totals_line_cn": "总进球参考 2.5",
-              "totals_high_pct": 37.5,
-              "type_tags": [
-                {
-                  "key": "low_scoring",
-                  "label": "进球偏少"
-                }
-              ],
-              "depth_label": "深度一般",
-              "draw_trap_pct": 23,
-              "readout_cn": "Congo DR · 进球偏少。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
-            },
-            "draw_trap_note": null,
-            "archetype": {
-              "tags": [
-                {
-                  "key": "low_scoring",
-                  "label": "进球偏少"
-                }
-              ],
-              "depth_score": 0,
-              "depth_label": "深度一般",
-              "draw_trap_pct": 23,
-              "fav_lead_style": "balanced"
-            }
-          },
-          "halftime_preview": {
-            "ht_xg_share": 0.44,
-            "xg_home_ht": 0.65,
-            "xg_away_ht": 0.32,
-            "xg_home_2h": 0.83,
-            "xg_away_2h": 0.4,
-            "home_win": 38,
-            "draw": 46.2,
-            "away_win": 15.8,
-            "top_score": "0-0",
-            "top_score_prob": 37.9,
-            "top3_scores": [
-              {
-                "score": "0-0",
-                "prob": 37.9
-              },
-              {
-                "score": "1-0",
-                "prob": 24.6
-              },
-              {
-                "score": "0-1",
-                "prob": 12.1
-              }
-            ],
-            "ht_goals_expected": 0.97,
-            "ht_over_0_5_pct": 62.1,
-            "ht_over_1_5_pct": 25.3,
-            "pick": "draw",
-            "pick_name": "平局",
-            "summary_cn": "半场 xG 0.65–0.32（约占全场 44%） · 最可能 0-0（37.9%） · 胜平负 38/46.2/15.8 · 半场≥1球约 62.1%",
-            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
-          }
-        },
-        "public_summary_note": "【推演概要】Congo DR · 进球偏少。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
-        "goal_efficiency_preview": {
-          "mode": "preview",
-          "xg_total": 2.2,
-          "xg_gap": 0.76,
-          "xg_home": 1.48,
-          "xg_away": 0.72,
-          "xg_baseline_home": 1.48,
-          "xg_baseline_away": 0.72,
-          "xg_note": "结构推演用基准 xG 1.48–0.72",
-          "lean_note": "与进球氛围同向——可参考权重提高",
-          "fav_name": "Congo DR",
-          "dog_name": "Uzbekistan",
-          "fav_xg": 1.48,
-          "dog_xg": 0.72,
-          "path_type": "dog_bloom",
-          "path_label": "弱队开花",
-          "lean": "low",
-          "lean_cn": "小比分预测",
-          "lean_mode": "prediction",
-          "lean_confidence": 62.5,
-          "prevention_reason_cn": null,
-          "atmosphere_link_cn": "与进球氛围同向——可参考权重提高",
-          "modules_aligned": true,
-          "live_watch": [],
-          "prob_over_line": 37.5,
-          "prob_meet_guess": 37.5,
-          "guess_n": 3,
-          "prob_4_plus": 17.7,
-          "prob_2_or_less": 62.5,
-          "totals_line": 2.5,
-          "scenarios": [
-            {
-              "key": "dog_bloom",
-              "label": "弱队开花",
-              "example": "2-2 / 1-3 / 3-1",
-              "note": "样本：弱队效率≥1.2 时 71% 总进球≥3；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
-              "prob_pct": 40
-            },
-            {
-              "key": "low",
-              "label": "铁局/小比分",
-              "example": "1-0 / 1-1 / 0-0",
-              "note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
-              "prob_pct": 40
-            },
-            {
-              "key": "fav_burst",
-              "label": "热门爆发",
-              "example": "2-0 / 3-0 / 4-1",
-              "note": "样本：热门效率≥1.5 时高比分常见；弱队 xG≈1.0 但只进 1 球时也常见此路径。",
-              "prob_pct": 11
-            },
-            {
-              "key": "open",
-              "label": "对攻/open",
-              "example": "2-2 / 4-2 / 3-2",
-              "note": "双方 xG 均有进球预期，任一方效率达标即可凑出 4 球。",
-              "prob_pct": 9
-            }
-          ],
-          "tags": [
-            {
-              "key": "lean_low",
-              "label": "小比分预测",
-              "color": "#7BB8D4",
-              "bg": "rgba(123,184,212,0.1)"
-            },
-            {
-              "key": "dog_bloom",
-              "label": "弱队开花",
-              "color": "#E8B84B",
-              "bg": "rgba(232,184,75,0.12)"
-            }
-          ],
-          "watch_notes": [],
-          "pattern_note": "样本：弱队效率≥1.2 时 71% 总进球≥3；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
-          "summary_cn": "【路径·基准 xG】合计 2.2 · Congo DR 1.48 / Uzbekistan 0.72 → 主路径「弱队开花」约 40% · 小比分预测。 超 2.5 约 37.5% · ≤2球 62.5%。样本：弱队效率≥1.2 时 71% 总进球≥3；弱队 xG≥0.8 且差值 0.5–0.9 需防此路径。",
-          "in_mid_band": true,
-          "sample_note": "结构规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27）· 大/小标签用基准 xG 泊松 ≥60%/≤40%"
-        }
-      },
-      "group_context": {
-        "group": "K",
-        "label": "K组 · 第2轮后",
-        "matchday": 3,
-        "standings": [
-          {
-            "team": "Colombia",
-            "pts": 6,
-            "p": 2,
-            "w": 2,
-            "d": 0,
-            "l": 0,
-            "gf": 4,
-            "ga": 1
-          },
-          {
-            "team": "Portugal",
-            "pts": 4,
-            "p": 2,
-            "w": 1,
-            "d": 1,
-            "l": 0,
-            "gf": 6,
-            "ga": 1
-          },
-          {
-            "team": "Congo DR",
-            "pts": 1,
-            "p": 2,
-            "w": 0,
-            "d": 1,
-            "l": 1,
-            "gf": 1,
-            "ga": 2
-          },
-          {
-            "team": "Uzbekistan",
-            "pts": 0,
-            "p": 2,
-            "w": 0,
-            "d": 0,
-            "l": 2,
-            "gf": 1,
-            "ga": 8
-          }
-        ],
-        "home": {
-          "team": "Congo DR",
-          "rank": 3,
-          "pts": 1,
-          "played": 2,
-          "if_1st": "32强 M87 · K 组第 1 vs 最佳第 3（D/E/I/J/L 池） → 当前 L 组第 2倾向 Ghana",
-          "if_1st_r16": "16强 M96 · 对阵 B 组第 1 vs 最佳第 3 之胜者",
-          "if_1st_corridor": "葡萄牙头名通道",
-          "if_2nd": "32强 M83 · K 组第 2 vs L 组第 2 → 当前 L 组第 1倾向 England（强队）",
-          "if_2nd_r16": "16强 M93 · 对阵 H 组第 1 vs J 组第 2 之胜者",
-          "if_2nd_corridor": "哥伦比亚/乌兹别克次席 → 16 强或遇西班牙/阿根廷半区",
-          "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 J/L/I/H 等组第 3 横向比较",
-          "if_3rd_r16": "32 强对手取决于 Annex C 第 3 名组合（495 种可能）"
-        },
-        "away": {
-          "team": "Uzbekistan",
-          "rank": 4,
-          "pts": 0,
-          "played": 2,
-          "if_1st": "32强 M87 · K 组第 1 vs 最佳第 3（D/E/I/J/L 池） → 当前 L 组第 2倾向 Ghana",
-          "if_1st_r16": "16强 M96 · 对阵 B 组第 1 vs 最佳第 3 之胜者",
-          "if_1st_corridor": "葡萄牙头名通道",
-          "if_2nd": "32强 M83 · K 组第 2 vs L 组第 2 → 当前 L 组第 1倾向 England（强队）",
-          "if_2nd_r16": "16强 M93 · 对阵 H 组第 1 vs J 组第 2 之胜者",
-          "if_2nd_corridor": "哥伦比亚/乌兹别克次席 → 16 强或遇西班牙/阿根廷半区",
-          "if_3rd": "12 个小组第 3 中取成绩最好的 8 支进 32 强（先比积分 → 净胜球 → 进球数 → 公平竞赛分）；本组需与 J/L/I/H 等组第 3 横向比较",
-          "if_3rd_r16": "32 强对手取决于 Annex C 第 3 名组合（495 种可能）"
-        },
-        "cross_group_notes": [
-          "L 组：头名 England 4 分 · 次席 Ghana 同分（32强绑定组）",
-          "J 组：头名 Argentina 6 分 · 次席 Austria 3 分（32强绑定组）",
-          "G 组 Belgium 5 分领跑",
-          "H 组 Spain 7 分领跑",
-          "E 组 Germany 6 分领跑",
-          "F 组 Netherlands 7 分领跑",
-          "I 组 France 9 分领跑",
-          "D 组 USA 6 分领跑"
-        ],
-        "path_tradeoff": "K 组次席与 L 组次席同槽 M83。",
-        "manipulation_risk": {
-          "level": "LOW",
-          "level_cn": "低",
-          "focus_team": null,
-          "reason": "Congo DR（1 分）与 Uzbekistan（0 分）末轮生死战，均无控分空间，须全力抢 3 分。"
-        },
-        "knockout_note": "48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。",
-        "scenarios": [
-          "Congo DR 若取胜：积分 4，K 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
-          "Uzbekistan 若取胜：积分 3，客场抢分将改变 K 组格局与淘汰赛半区。",
-          "平局：双方各 +1 分；在 L 组：头名 England 4 分 · 次席 Ghana 同分（32强绑定组） · J 组：头名 Argentina 6 分 · 次席 Austria 3 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
-          "头名/次席博弈：K 组次席与 L 组次席同槽 M83。"
-        ]
-      }
     }
   ],
   "nextMatch": {
@@ -7125,36 +7140,6 @@ const MATCH_DATA = {
       "teaser": "L组末轮"
     },
     {
-      "group": "J",
-      "time_beijing_full": "北京时间 6月28日 10:00",
-      "venue": "Arrowhead Stadium",
-      "city": "Kansas City, USA",
-      "home": {
-        "name": "Algeria",
-        "iso": "dz"
-      },
-      "away": {
-        "name": "Austria",
-        "iso": "at"
-      },
-      "teaser": "J组末轮"
-    },
-    {
-      "group": "J",
-      "time_beijing_full": "北京时间 6月28日 10:00",
-      "venue": "AT&T Stadium",
-      "city": "Arlington, USA",
-      "home": {
-        "name": "Jordan",
-        "iso": "jo"
-      },
-      "away": {
-        "name": "Argentina",
-        "iso": "ar"
-      },
-      "teaser": "J组末轮"
-    },
-    {
       "group": "K",
       "time_beijing_full": "北京时间 6月28日 07:30",
       "venue": "Hard Rock Stadium",
@@ -7183,6 +7168,36 @@ const MATCH_DATA = {
         "iso": "uz"
       },
       "teaser": "K组末轮"
+    },
+    {
+      "group": "J",
+      "time_beijing_full": "北京时间 6月28日 10:00",
+      "venue": "Arrowhead Stadium",
+      "city": "Kansas City, USA",
+      "home": {
+        "name": "Algeria",
+        "iso": "dz"
+      },
+      "away": {
+        "name": "Austria",
+        "iso": "at"
+      },
+      "teaser": "J组末轮"
+    },
+    {
+      "group": "J",
+      "time_beijing_full": "北京时间 6月28日 10:00",
+      "venue": "AT&T Stadium",
+      "city": "Arlington, USA",
+      "home": {
+        "name": "Jordan",
+        "iso": "jo"
+      },
+      "away": {
+        "name": "Argentina",
+        "iso": "ar"
+      },
+      "teaser": "J组末轮"
     }
   ]
 };

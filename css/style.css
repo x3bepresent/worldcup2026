@@ -479,6 +479,105 @@ footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--bor
   border-top: 1px solid rgba(255,255,255,0.05);
   padding-top: 0.75rem;
 }
+.mf-terminal-market-kicker {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: var(--txt2);
+  text-align: center;
+  margin-bottom: 0.35rem;
+  opacity: 0.9;
+}
+.mf-market-preview {
+  margin: 0 1.25rem 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(200, 169, 110, 0.28);
+  background: linear-gradient(180deg, rgba(200, 169, 110, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
+}
+.mf-market-preview-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.65rem;
+  margin-bottom: 0.65rem;
+}
+.mf-market-preview-kicker {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+}
+.mf-market-preview-badge {
+  font-size: 0.64rem;
+  color: var(--txt2);
+}
+.mf-market-preview-signal {
+  font-size: 0.68rem;
+  font-weight: 700;
+  margin-left: auto;
+}
+.mf-market-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+.mf-market-preview-cell {
+  padding: 0.55rem 0.65rem;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  min-width: 0;
+}
+.mf-market-preview-cell--stance {
+  border-color: color-mix(in srgb, var(--stance-color, #C8A96E) 35%, transparent);
+}
+.mf-market-preview-cell--strong {
+  border-color: color-mix(in srgb, var(--stance-color, #7BB8D4) 35%, transparent);
+}
+.mf-market-preview-label {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: var(--txt2);
+  margin-bottom: 0.25rem;
+}
+.mf-market-preview-val {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--txt);
+  line-height: 1.35;
+}
+.mf-market-preview-val--stance {
+  color: var(--stance-color, #C8A96E);
+}
+.mf-market-preview-meta,
+.mf-market-preview-sub {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.68rem;
+  color: var(--txt2);
+  line-height: 1.45;
+}
+.mf-market-preview-warn {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin-top: 0.65rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: 4px;
+  font-size: 0.74rem;
+  line-height: 1.55;
+  color: #E8A54B;
+  background: rgba(232, 165, 75, 0.08);
+  border: 1px solid rgba(232, 165, 75, 0.28);
+}
+.mf-market-preview-warn-icon {
+  flex-shrink: 0;
+  font-weight: 800;
+}
 /* legacy aliases (results / shared) */
 .mf-flag { width: 52px; height: 52px; object-fit: cover; border-radius: 50%; }
 .mf-team-name { font-size: 1.1rem; font-weight: 800; line-height: 1.25; }
@@ -867,6 +966,63 @@ footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--bor
   color: var(--txt2);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
+.vchip--conflict {
+  background: rgba(232, 165, 75, 0.12);
+  color: #E8A54B;
+  border: 1px solid rgba(232, 165, 75, 0.35);
+}
+.pred-verdict-primary {
+  margin-bottom: 0.85rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+.pred-verdict-primary--hit {
+  border-color: rgba(91, 191, 138, 0.35);
+  background: rgba(91, 191, 138, 0.08);
+}
+.pred-verdict-primary--miss {
+  border-color: rgba(217, 95, 106, 0.28);
+  background: rgba(217, 95, 106, 0.06);
+}
+.pred-verdict-primary-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.65rem;
+}
+.pred-verdict-primary-kicker {
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: var(--gold);
+}
+.pred-verdict-primary-label {
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+.pred-verdict-primary-na {
+  font-size: 0.74rem;
+  color: var(--txt2);
+}
+.pred-verdict-primary-note {
+  margin: 0.45rem 0 0;
+  font-size: 0.74rem;
+  color: var(--txt2);
+  line-height: 1.55;
+}
+.pred-verdict-conflict {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #E8A54B;
+  padding: 0.12rem 0.45rem;
+  border-radius: 3px;
+  background: rgba(232, 165, 75, 0.1);
+  border: 1px solid rgba(232, 165, 75, 0.28);
+}
 .score-compare-xg {
   font-size: 0.76rem;
   color: var(--txt2);
@@ -1006,7 +1162,11 @@ footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--bor
   gap: 0.35rem;
   min-width: 0;
 }
-.results-stat-card--direction { border-top: 3px solid #7BB8D4; }
+.results-stat-card--spread { border-top: 3px solid #5BBF8A; }
+.results-stat-card--totals { border-top: 3px solid #E8A54B; }
+.results-stat-card--primary { border-top: 3px solid #7BB8D4; }
+.results-stat-card--featured { background: rgba(255,255,255,0.02); }
+.results-stat-card--direction { border-top: 3px solid #8A96A8; }
 .results-stat-card--htDirection { border-top: 3px solid #E8A54B; }
 .results-stat-card--top3 { border-top: 3px solid var(--gold); }
 .results-stat-card--goalEff { border-top: 3px solid #5BBF8A; }
@@ -3681,6 +3841,9 @@ footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--bor
     text-align: center;
   }
   .mf-terminal-score { font-size: 2.15rem; }
+  .mf-market-preview { margin: 0 0.75rem 0.85rem; padding: 0.75rem 0.85rem; }
+  .mf-market-preview-grid { grid-template-columns: 1fr; }
+  .mf-market-preview-signal { margin-left: 0; }
 }
 @media (min-width: 1200px) {
   .mf-detail-grid { grid-template-columns: 1fr 1fr 1fr 1fr; }

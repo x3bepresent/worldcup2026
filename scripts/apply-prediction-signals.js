@@ -7,6 +7,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { sortMatchesByKickoff } = require('./match-sort');
 const {
   buildDepthCalibration,
   buildPublicSummaryNote,
@@ -267,7 +268,9 @@ const groupSnapshots = RESULTS_DATA?.groupSnapshots || [];
 
 const allHandicap = { ...HANDICAP };
 
-MATCH_DATA.todayMatches = MATCH_DATA.todayMatches.map(m => enrichMatchSignals(m, allHandicap, groupSnapshots));
+MATCH_DATA.todayMatches = sortMatchesByKickoff(
+  MATCH_DATA.todayMatches.map(m => enrichMatchSignals(m, allHandicap, groupSnapshots))
+);
 
 if (RESULTS_DATA?.finishedMatches?.length) {
   let resultsUpdated = 0;

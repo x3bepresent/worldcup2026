@@ -6,6 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const { computeScoreDistribution, computeOutcomeFromXg } = require('./score-model');
 const { pendingReferee, lineupFromPrediction } = require('./pending-templates');
+const { sortMatchesByKickoff } = require('./match-sort');
 
 const ROOT = path.join(__dirname, '..');
 const MATCH_PATH = path.join(ROOT, 'js', 'matches-data.js');
@@ -203,7 +204,7 @@ function buildM72() {
 }
 
 function allTodayMatches() {
-  return [buildM67(), buildM68(), buildM69(), buildM70(), buildM71(), buildM72()];
+  return sortMatchesByKickoff([buildM67(), buildM68(), buildM69(), buildM70(), buildM71(), buildM72()]);
 }
 
 module.exports = {

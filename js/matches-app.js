@@ -268,8 +268,8 @@ function renderMatchHero(m, p, finished) {
         </div>` : '';
 
   const footnote = finished
-    ? '官方赛果见上方核验区 · 此处为赛前模型冻结预测 · 仅供娱乐推演'
-    : `模型娱乐推演 · ${PLAY_NOTE_STD}`;
+    ? '官方赛果见上方核验区 · 此处为赛前模型冻结预测 · 复盘以让球/大小球为主口径'
+    : `胜平负为 1X2 参考 · 赛果复盘优先让球/大小球 · ${PLAY_NOTE_STD}`;
 
   const oddsCellClass = (side) => {
     const base = `mf-terminal-odds-cell${top2Keys.has(side) ? ' mf-terminal-odds-cell--top2' : ''}`;
@@ -285,6 +285,7 @@ function renderMatchHero(m, p, finished) {
       </div>
 
       <div class="mf-terminal-market">
+        <div class="mf-terminal-market-kicker">胜平负 · 1X2 参考</div>
         <div class="mf-terminal-market-row">
           <div class="${oddsCellClass('home')}">
             <span class="mf-terminal-odds-val mf-terminal-odds-val--home">${p.home_win}%</span>
@@ -760,35 +761,187 @@ function computeTotalsVerdict(m, ms) {
   };
 }
 
-function computeMarginVerdict(m, ms, margin) {
+const SPREAD_STANCE_CN = {
+  expect_cover: '预期热门达标穿盘',
+  expect_no_cover: '预期热门难穿盘',
+  expect_partial: '预期部分达标',
+  neutral: '净胜无强判',
+};
+
+function inferModelSpreadStance(level, fullPred) {
+  const full = fullPred ?? 0;
+  if (level === 'likely' || level === 'possible') return 'expect_cover';
+  if (level === 'skeptical' || level === 'narrow') return 'expect_no_cover';
+  if (level === 'partial') return 'expect_partial';
+  if (full >= 45) return 'expect_cover';
+  if (full < 28) return 'expect_no_cover';
+  return 'neutral';
+}
+
+/** 让球/净胜档复盘 — 模型盘口立场 vs 实际穿盘结果 */
+function computeHandicapVerdict(m, ms, margin) {
   const tier = ms.market_tier;
-  if (!tier) return { available: false };
+  if (tier == null || Math.abs(Number(tier)) < 0.01) return { available: false };
   const spreadActual = actualSpreadResult(margin, tier);
   const fullPred = ms.full_cover_pct;
   const level = ms.spread_level;
-  let hit = null;
+  const stance = inferModelSpreadStance(level, fullPred);
+  const favSide = tier > 0 ? 'home' : 'away';
+  const favName = favSide === 'home' ? m.home?.name : m.away?.name;
+  const th = getTierCoverThresholds(tier);
+  const actualCovers = spreadActual === 'full_cover' || spreadActual === 'half_cover';
+  const actualFails = spreadActual === 'half_lose' || spreadActual === 'full_lose';
 
-  if (spreadActual === 'full_cover') {
-    hit = fullPred != null ? fullPred >= 35 : null;
-  } else if (spreadActual === 'half_cover') {
-    hit = level === 'narrow' || level === 'partial' || (fullPred != null && fullPred < 45);
-  } else if (spreadActual === 'half_lose' || spreadActual === 'full_lose') {
-    hit = level === 'skeptical' || (fullPred != null && fullPred < 35);
+  let hit = null;
+  if (stance === 'expect_cover') {
+    if (actualCovers) hit = true;
+    else if (actualFails || spreadActual === 'partial') hit = false;
+  } else if (stance === 'expect_no_cover') {
+    if (actualFails) hit = true;
+    else if (actualCovers) hit = false;
+  } else if (stance === 'expect_partial') {
+    if (spreadActual === 'half_cover' || spreadActual === 'full_cover' || spreadActual === 'partial') hit = true;
+    else if (actualFails) hit = false;
   }
 
   const replay = m.depth_calibration?.preview_replay;
   if (replay?.hits?.some(h => /净胜|小胜|部分达标/.test(h))) hit = true;
   if (replay?.misses?.some(h => /净胜/.test(h))) hit = false;
 
+  const lineDesc = ms.tier_label || `${favName || '热门'} · ${th.fullLabel}`;
+  const gradable = stance !== 'neutral' && hit != null;
+
   return {
     available: true,
+    tier,
+    favSide,
+    favName,
+    lineDesc,
+    stance,
+    stanceCn: SPREAD_STANCE_CN[stance],
+    spreadActual,
     actual: SPREAD_RESULT_CN[spreadActual] || spreadActual,
-    marketExpect: ms.spread_market_expect || ms.tier_label || '—',
+    level,
     modelPct: fullPred,
     hit,
-    note: `外界 ${ms.spread_market_expect || '净胜档'} · 实际 ${SPREAD_RESULT_CN[spreadActual] || spreadActual}`
-      + (fullPred != null ? ` · 模型全达标 ${fullPred}%` : ''),
+    gradable,
+    marketExpect: ms.spread_market_expect || '—',
+    note: `盘口 ${lineDesc} · 模型${SPREAD_STANCE_CN[stance]} · 实际${SPREAD_RESULT_CN[spreadActual] || spreadActual}`
+      + (fullPred != null ? ` · 达标概率 ${fullPred}%` : ''),
   };
+}
+
+function computeMarginVerdict(m, ms, margin) {
+  return computeHandicapVerdict(m, ms, margin);
+}
+
+function resolvePrimaryMarketVerdict(v, ms) {
+  const hc = v.handicap;
+  if (hc?.gradable && hc.hit != null) {
+    return { hit: hc.hit, source: 'spread', label: '让球盘' };
+  }
+  const t = v.totals;
+  if (t?.available && ms.totals_show_lean && t.hit != null) {
+    return { hit: t.hit, source: 'totals', label: '大小球' };
+  }
+  if (hc?.available) {
+    return { hit: null, source: 'spread', label: '让球盘', ungraded: true };
+  }
+  return { hit: v.outcomeHit, source: 'direction', label: '胜平负' };
+}
+
+/** 今日赛事 · 赛前盘口要点（与赛果页主口径一致） */
+function buildMarketPreview(m) {
+  const dc = m.depth_calibration;
+  if (!dc) return null;
+  const ms = getMarketSnapshot(m);
+  const ds = dc.display_summary || {};
+  const sp = ds.customer_reading?.spread || {};
+  const to = ds.customer_reading?.totals || {};
+  const tier = ms.market_tier ?? dc.tier_home ?? 0;
+  const tierAbs = Math.abs(Number(tier) || 0);
+  const stance = inferModelSpreadStance(ms.spread_level ?? sp.level, ms.full_cover_pct ?? sp.meet_pct);
+  const totalsLine = ms.totals_line ?? dc.totals_line ?? ds.totals_line;
+  const showTotalsLean = ms.totals_show_lean ?? to.show_lean ?? false;
+  const totalsSide = ms.totals_lean_side ?? to.lean_side ?? null;
+  const totalsLabel = showTotalsLean
+    ? (totalsSide === 'over' ? `偏大 ${totalsLine}` : totalsSide === 'under' ? `偏小 ${totalsLine}` : `大小 ${totalsLine}`)
+    : (totalsLine != null ? `参考线 ${totalsLine} · 无强判` : '大小无强判');
+  const totalsDetail = showTotalsLean && to.detail_cn ? String(to.detail_cn).split('；')[0] : '';
+  const favSide = tier > 0 ? 'home' : tier < 0 ? 'away' : null;
+  const favName = sp.fav_name || (favSide === 'home' ? m.home?.name : favSide === 'away' ? m.away?.name : null);
+  const th = tierAbs >= 0.01 ? getTierCoverThresholds(tier) : null;
+  const lineDesc = dc.tier_label || ms.tier_label
+    || (favName && th ? `${favName} · ${th.fullLabel}` : null)
+    || (tierAbs < 0.01 ? '势均力敌 · 无让球档' : '—');
+  const marketExpect = sp.market_expect_cn || ms.spread_market_expect || (th ? th.fullLabel : '—');
+  const meetPct = ms.full_cover_pct ?? sp.meet_pct ?? sp.full_cover_pct;
+  const spreadVerdict = sp.verdict_cn || sp.label_cn || '';
+  const level = ms.spread_level ?? sp.level;
+  const showWinCoverWarn = !!(dc.blocker_spread_note)
+    || level === 'skeptical'
+    || level === 'narrow'
+    || (stance === 'expect_no_cover' && tierAbs >= 0.5);
+  const warnText = dc.blocker_spread_note
+    || (showWinCoverWarn ? '赢球 ≠ 穿盘 · 赛果复盘以让球/大小球为主口径，胜平负仅作参考' : '');
+
+  return {
+    available: true,
+    lineDesc,
+    marketExpect,
+    meetPct,
+    spreadVerdict,
+    stance,
+    stanceCn: SPREAD_STANCE_CN[stance],
+    stanceColor: sp.color || (stance === 'expect_no_cover' ? '#D95F6A' : stance === 'expect_cover' ? '#5BBF8A' : '#C8A96E'),
+    totalsLabel,
+    totalsDetail,
+    totalsColor: to.color || '#7BB8D4',
+    totalsStrong: showTotalsLean,
+    gradableSpread: stance !== 'neutral' && tierAbs >= 0.01,
+    showWinCoverWarn,
+    warnText,
+    signalCn: dc.signal_cn,
+    signalColor: dc.signal_color,
+  };
+}
+
+function renderMarketPreviewStrip(m) {
+  const preview = buildMarketPreview(m);
+  if (!preview?.available) return '';
+  const meetPctHtml = preview.meetPct != null && preview.gradableSpread
+    ? `<span class="mf-market-preview-sub">达标概率 ${preview.meetPct}%</span>`
+    : '';
+  return `
+    <div class="mf-market-preview fade-in">
+      <div class="mf-market-preview-head">
+        <span class="mf-market-preview-kicker">盘口要点</span>
+        <span class="mf-market-preview-badge">赛果复盘主口径 · 让球 → 大小 → 胜平负</span>
+        ${preview.signalCn ? `<span class="mf-market-preview-signal" style="color:${preview.signalColor || '#C8A96E'}">${preview.signalCn}</span>` : ''}
+      </div>
+      <div class="mf-market-preview-grid">
+        <div class="mf-market-preview-cell mf-market-preview-cell--spread">
+          <span class="mf-market-preview-label">让球 / 净胜</span>
+          <span class="mf-market-preview-val">${preview.lineDesc}</span>
+          <span class="mf-market-preview-meta">外界 ${preview.marketExpect}${preview.spreadVerdict ? ` · ${preview.spreadVerdict}` : ''}</span>
+        </div>
+        <div class="mf-market-preview-cell mf-market-preview-cell--stance" style="--stance-color:${preview.stanceColor}">
+          <span class="mf-market-preview-label">模型立场</span>
+          <span class="mf-market-preview-val mf-market-preview-val--stance">${preview.stanceCn}</span>
+          ${meetPctHtml}
+        </div>
+        <div class="mf-market-preview-cell mf-market-preview-cell--totals${preview.totalsStrong ? ' mf-market-preview-cell--strong' : ''}" style="--stance-color:${preview.totalsColor}">
+          <span class="mf-market-preview-label">大小球</span>
+          <span class="mf-market-preview-val">${preview.totalsLabel}</span>
+          ${preview.totalsDetail ? `<span class="mf-market-preview-meta">${preview.totalsDetail}</span>` : ''}
+        </div>
+      </div>
+      ${preview.showWinCoverWarn && preview.warnText ? `
+      <div class="mf-market-preview-warn">
+        <span class="mf-market-preview-warn-icon" aria-hidden="true">⚠</span>
+        <span>${preview.warnText}</span>
+      </div>` : ''}
+    </div>`;
 }
 
 function computeGoalTimingPeakStats(gt, sideMins, homeName, awayName) {
@@ -989,6 +1142,19 @@ function matchSortKey(m) {
   return Number.isFinite(n) ? n : 0;
 }
 
+function kickoffSortKey(m) {
+  const t = String(m?.time_beijing || m?.time || '').trim();
+  const parts = t.match(/^(\d{1,2}):(\d{2})$/);
+  if (parts) return parseInt(parts[1], 10) * 60 + parseInt(parts[2], 10);
+  return matchSortKey(m) * 10000;
+}
+
+function sortedTodayMatches(matches) {
+  return [...(matches || [])].sort(
+    (a, b) => kickoffSortKey(a) - kickoffSortKey(b) || matchSortKey(a) - matchSortKey(b)
+  );
+}
+
 function sortedFinishedMatches(matches) {
   return [...(matches || [])].sort((a, b) => matchSortKey(a) - matchSortKey(b));
 }
@@ -1025,6 +1191,9 @@ function extractVerdictHits(m) {
   if (!v) return null;
   const ht = v.halftime?.available ? v.halftime.htDirHit : null;
   return {
+    spread: v.handicap?.gradable ? v.handicap.hit : null,
+    totals: v.totals?.available && getMarketSnapshot(m).totals_show_lean ? v.totals.hit : null,
+    primary: v.primaryHit,
     direction: v.outcomeHit,
     top3: v.anyTop3Hit,
     top5: v.anyTop5Hit,
@@ -1045,8 +1214,11 @@ function computeResultsTrendSeries(matches, opts = {}) {
   const hitRows = sorted.map(m => ({ id: m.id, hits: extractVerdictHits(m) })).filter(r => r.hits);
 
   const metricDefs = [
-    { key: 'direction', color: '#7BB8D4' },
-    { key: 'htDirection', color: '#E8A54B' },
+    { key: 'spread', color: '#5BBF8A' },
+    { key: 'totals', color: '#E8A54B' },
+    { key: 'primary', color: '#7BB8D4' },
+    { key: 'direction', color: '#8A96A8' },
+    { key: 'htDirection', color: '#C8A96E' },
     { key: 'top3', color: 'var(--gold)' },
     { key: 'top5', color: '#C8A96E' },
     { key: 'goalPath', color: '#5BBF8A' },
@@ -1171,8 +1343,15 @@ function computeAtmosphereStrongHit(m) {
 }
 
 function computeResultsAggregateStats(matches) {
+  let spreadHit = 0;
+  let spreadN = 0;
+  let totalsHit = 0;
+  let totalsN = 0;
+  let primaryHit = 0;
+  let primaryN = 0;
   let dirHit = 0;
   let dirN = 0;
+  let dirSpreadMiss = 0;
   let top3Hit = 0;
   let top3N = 0;
   let top5Hit = 0;
@@ -1190,6 +1369,20 @@ function computeResultsAggregateStats(matches) {
     if (!v) continue;
     dirN += 1;
     if (v.outcomeHit) dirHit += 1;
+    if (v.outcomeSpreadConflict) dirSpreadMiss += 1;
+    if (v.handicap?.gradable) {
+      spreadN += 1;
+      if (v.handicap.hit) spreadHit += 1;
+    }
+    const ms = getMarketSnapshot(m);
+    if (v.totals?.available && ms.totals_show_lean && v.totals.hit != null) {
+      totalsN += 1;
+      if (v.totals.hit) totalsHit += 1;
+    }
+    if (v.primaryHit != null) {
+      primaryN += 1;
+      if (v.primaryHit) primaryHit += 1;
+    }
     if (v.halftime?.available) {
       htN += 1;
       if (v.halftime.htDirHit) htHit += 1;
@@ -1205,7 +1398,6 @@ function computeResultsAggregateStats(matches) {
     }
     const atm = computeAtmosphereStrongHit(m);
     if (atm === null) {
-      const ms = getMarketSnapshot(m);
       if (!hasAtmosphereLean(ms)) atmNeutral += 1;
     } else {
       atmN += 1;
@@ -1214,7 +1406,10 @@ function computeResultsAggregateStats(matches) {
   }
 
   return {
-    direction: { hit: dirHit, n: dirN, pct: statPct(dirHit, dirN) },
+    spread: { hit: spreadHit, n: spreadN, pct: statPct(spreadHit, spreadN) },
+    totals: { hit: totalsHit, n: totalsN, pct: statPct(totalsHit, totalsN) },
+    primary: { hit: primaryHit, n: primaryN, pct: statPct(primaryHit, primaryN) },
+    direction: { hit: dirHit, n: dirN, pct: statPct(dirHit, dirN), spreadMiss: dirSpreadMiss },
     htDirection: { hit: htHit, n: htN, pct: statPct(htHit, htN) },
     top3: { hit: top3Hit, n: top3N, pct: statPct(top3Hit, top3N) },
     top5: { hit: top5Hit, n: top5N, pct: statPct(top5Hit, top5N) },
@@ -1227,21 +1422,53 @@ function computeResultsAggregateStats(matches) {
 
 function renderResultsSummaryStats(stats, trends) {
   if (!stats?.direction?.n) return '';
-  const windowSize = trends?.rolling?.direction?.windowSize ?? 6;
+  const windowSize = trends?.rolling?.spread?.windowSize ?? trends?.rolling?.primary?.windowSize ?? 6;
+  const spreadMissNote = stats.direction.spreadMiss
+    ? ` · ${stats.direction.spreadMiss} 场胜平负中但让球未中`
+    : '';
   const cards = [
     {
-      key: 'direction',
+      key: 'spread',
+      icon: '📐',
+      label: '让球盘命中率',
+      sub: '模型净胜立场 vs 实际穿盘（赢球输盘计未中）',
+      data: stats.spread.n ? stats.spread : { hit: 0, n: 0, pct: 0 },
+      muted: !stats.spread.n,
+      featured: true,
+    },
+    {
+      key: 'totals',
+      icon: '⚽',
+      label: '大小球命中率',
+      sub: stats.totals.n
+        ? '模型大小倾向 vs 实际总进球线'
+        : '暂无强判大小倾向样本',
+      data: stats.totals.n ? stats.totals : { hit: 0, n: 0, pct: 0 },
+      muted: !stats.totals.n,
+      featured: true,
+    },
+    {
+      key: 'primary',
       icon: '🎯',
-      label: '方向正确率',
-      sub: '赛前概率最高项 = 实际胜平负',
+      label: '盘口综合命中率',
+      sub: '优先让球 → 大小 → 无盘时胜平负',
+      data: stats.primary.n ? stats.primary : { hit: 0, n: 0, pct: 0 },
+      muted: !stats.primary.n,
+      featured: true,
+    },
+    {
+      key: 'direction',
+      icon: '↔️',
+      label: '胜平负方向',
+      sub: `仅 1X2 口径 · 不含让球${spreadMissNote}`,
       data: stats.direction,
     },
     {
       key: 'htDirection',
       icon: '⏱️',
-      label: '半场方向正确率',
+      label: '半场胜平负',
       sub: stats.htDirection.n
-        ? '赛前最高概率项 = 半场胜平负（有 ht_score 场次）'
+        ? '半场最高概率项 = 半场结果（参考）'
         : '待补全半场比分后统计',
       data: stats.htDirection.n ? stats.htDirection : { hit: 0, n: 0, pct: 0 },
       muted: !stats.htDirection.n,
@@ -1249,37 +1476,20 @@ function renderResultsSummaryStats(stats, trends) {
     {
       key: 'top3',
       icon: '📊',
-      label: '比分前三正确率',
+      label: '比分前三',
       sub: '泊松 Top3 含实际',
       data: stats.top3,
     },
     {
-      key: 'top5',
-      icon: '📈',
-      label: '比分前五正确率',
-      sub: '泊松 Top5 含实际',
-      data: stats.top5,
-    },
-    {
       key: 'goalPath',
       icon: '🛤️',
-      label: '进球路径正确率',
+      label: '进球路径',
       sub: '赛前主路径 vs 赛后兑现',
       data: stats.goalPath,
     },
-    {
-      key: 'atmosphere',
-      icon: '🌡️',
-      label: '进球氛围正确率',
-      sub: stats.atmosphere.n
-        ? `偏闷/偏精彩 vs 实际总进球线 · ${stats.atmosphere.neutral} 场五五开未计`
-        : `暂无倾向样本 · ${stats.atmosphere.neutral} 场五五开`,
-      data: stats.atmosphere.n ? stats.atmosphere : { hit: 0, n: 0, pct: 0 },
-      muted: !stats.atmosphere.n,
-    },
   ];
 
-  const trendNote = trends?.rolling?.direction?.points?.length
+  const trendNote = trends?.rolling?.spread?.points?.length || trends?.rolling?.primary?.points?.length
     ? `近 ${windowSize} 场滚动命中率 · 箭头对比前半程 vs 后半程均值`
     : '';
 
@@ -1287,7 +1497,7 @@ function renderResultsSummaryStats(stats, trends) {
     <div class="results-stats-bar fade-in">
       <div class="results-stats-head">
         <span class="results-stats-title">累计推演核验</span>
-        <span class="results-stats-meta">${stats.direction.n} 场已归档 · 冻结赛前推演 vs 官方赛果${trendNote ? ` · ${trendNote}` : ''}</span>
+        <span class="results-stats-meta">${stats.direction.n} 场已归档 · 主口径以让球/大小球为准${spreadMissNote}${trendNote ? ` · ${trendNote}` : ''}</span>
       </div>
       <div class="results-stats-grid">
         ${cards.map(c => {
@@ -1305,7 +1515,7 @@ function renderResultsSummaryStats(stats, trends) {
               </div>
             </div>` : '';
           return `
-          <div class="results-stat-card results-stat-card--${c.key}${c.muted ? ' results-stat-card--muted' : ''}">
+          <div class="results-stat-card results-stat-card--${c.key}${c.muted ? ' results-stat-card--muted' : ''}${c.featured ? ' results-stat-card--featured' : ''}">
             <div class="results-stat-card-top">
               <span class="results-stat-icon" aria-hidden="true">${c.icon}</span>
               <span class="results-stat-label">${c.label}</span>
@@ -1360,12 +1570,21 @@ function computePredictionVerdict(m) {
     dataIntegrityNote = '预测比分与泊松最可能值不同（人工设定或历史版本）';
   }
 
+  const totals = computeTotalsVerdict(m, ms);
+  const handicap = computeHandicapVerdict(m, ms, margin);
+  const outcomeHit = officialOutcome === predOutcome;
+  const outcomeSpreadConflict = outcomeHit && handicap.gradable && handicap.hit === false;
+  const primary = resolvePrimaryMarketVerdict(
+    { handicap, totals, outcomeHit },
+    ms
+  );
+
   return {
     official,
     predScore,
     poissonTop,
     scoreHit: predScore === official,
-    outcomeHit: officialOutcome === predOutcome,
+    outcomeHit,
     officialOutcome,
     predOutcome,
     predOutcomePct: p[`${predOutcome === 'home' ? 'home_win' : predOutcome === 'away' ? 'away_win' : 'draw'}`],
@@ -1375,12 +1594,17 @@ function computePredictionVerdict(m) {
     anyTop5Hit: top5.some(d => d.score === official),
     dataIntegrity,
     dataIntegrityNote,
-    totals: computeTotalsVerdict(m, ms),
-    margin: computeMarginVerdict(m, ms, margin),
+    totals,
+    handicap,
+    margin: handicap,
+    primaryHit: primary.ungraded ? null : primary.hit,
+    primarySource: primary.source,
+    primaryLabel: primary.label,
+    outcomeSpreadConflict,
     goalTiming: computeGoalTimingVerdict(m),
     goalEfficiencyHit: computeGoalEfficiencyHit(m),
     atmosphereHit: computeAtmosphereStrongHit(m),
-    halftime: computeHalftimeVerdict(m, { officialOutcome, predOutcome, outcomeHit: officialOutcome === predOutcome }),
+    halftime: computeHalftimeVerdict(m, { officialOutcome, predOutcome, outcomeHit }),
   };
 }
 
@@ -2471,6 +2695,23 @@ function verdictChip(label, hit, neutral) {
   return `<span class="vchip ${hit ? 'vchip--hit' : 'vchip--miss'}">${label} ${hit ? '✓' : '✗'}</span>`;
 }
 
+function renderPrimaryVerdictBanner(v) {
+  if (v.primaryHit == null && !v.handicap?.available) return '';
+  const ok = v.primaryHit;
+  const label = v.primaryLabel || '盘口';
+  const stateClass = ok ? 'hit' : (v.primaryHit == null ? 'na' : 'miss');
+  return `
+    <div class="pred-verdict-primary pred-verdict-primary--${stateClass}">
+      <div class="pred-verdict-primary-main">
+        <span class="pred-verdict-primary-kicker">主口径</span>
+        <span class="pred-verdict-primary-label">${label}</span>
+        ${v.primaryHit != null ? verdictBadge(ok, '命中', '未中') : '<span class="pred-verdict-primary-na">无强判 · 不计入盘口统计</span>'}
+      </div>
+      ${v.outcomeSpreadConflict ? '<span class="pred-verdict-conflict">胜平负中 · 让球未中（赢球输盘）</span>' : ''}
+      ${v.handicap?.note ? `<p class="pred-verdict-primary-note">${v.handicap.note}</p>` : ''}
+    </div>`;
+}
+
 function renderScoreCompareTeamRow(team, goals, role) {
   const g = goals != null ? goals : '—';
   const flag = team?.iso
@@ -2508,22 +2749,22 @@ function renderScoreCompareHero(m, v) {
     : '';
 
   const t = v.totals;
-  const mg = v.margin;
+  const hc = v.handicap || v.margin;
   const gt = v.goalTiming;
 
   const chips = [
-    verdictChip('方向', v.outcomeHit),
-    verdictChip('比分', v.scoreHit),
+    hc?.gradable ? verdictChip('让球盘', hc.hit) : (hc?.available ? verdictChip('让球盘', null, true) : ''),
+    t.available ? verdictChip('大小球', t.hit, t.hit == null) : '',
+    v.primaryHit != null ? verdictChip('主口径', v.primaryHit) : '',
+    verdictChip('胜平负', v.outcomeHit),
+    v.outcomeSpreadConflict ? '<span class="vchip vchip--conflict">赢球输盘</span>' : '',
     verdictChip('Top3', v.anyTop3Hit),
-    verdictChip('Top5', v.anyTop5Hit),
-    t.available ? verdictChip('总进球', t.hit, t.hit == null) : '',
-    mg.available ? verdictChip('净胜', mg.hit, mg.hit == null) : '',
     v.goalEfficiencyHit != null ? verdictChip('进球路径', v.goalEfficiencyHit) : '',
-    v.atmosphereHit != null ? verdictChip('进球氛围', v.atmosphereHit) : '',
     gt.available ? verdictChip('时段', gt.hit, gt.hit == null) : '',
   ].filter(Boolean).join('');
 
   return `
+    ${renderPrimaryVerdictBanner(v)}
     <div class="score-compare-hero">
       <div class="score-compare-col score-compare-col--official">
         <div class="score-compare-col-head">
@@ -2559,12 +2800,29 @@ function renderScoreCompareHero(m, v) {
 
 function renderMarketVerdictDetails(v) {
   const t = v.totals;
-  const mg = v.margin;
+  const hc = v.handicap || v.margin;
   const gt = v.goalTiming;
   const ht = v.halftime;
-  if (!t.available && !mg.available && !gt.available && !ht?.available) return '';
+  if (!t.available && !hc.available && !gt.available && !ht?.available) return '';
   return `
     <div class="pred-verdict-details">
+      ${hc.available ? `
+      <div class="pred-verdict-detail pred-verdict-detail--stack">
+        <div class="pred-verdict-detail-row">
+          <span class="pred-verdict-detail-label">让球盘</span>
+          <span class="pred-verdict-detail-val">${hc.note || hc.lineDesc || '—'}</span>
+        </div>
+        <div class="pred-verdict-ht-chips">
+          ${hc.gradable ? verdictBadge(hc.hit, '盘口命中', '盘口未中') : '<span class="pred-verdict-primary-na">净胜无强判 · 不计入让球统计</span>'}
+          ${v.outcomeSpreadConflict ? '<span class="pred-verdict-conflict">胜平负中 · 让球未中</span>' : ''}
+        </div>
+      </div>` : ''}
+      ${t.available ? `
+      <div class="pred-verdict-detail">
+        <span class="pred-verdict-detail-label">大小球</span>
+        <span class="pred-verdict-detail-val">预测偏${t.modelSide} · 实际${t.actualSide}（线 ${t.line}）</span>
+        ${verdictBadgeOrNeutral(t.hit, '命中', '未中', '走水')}
+      </div>` : ''}
       ${ht?.available ? `
       <div class="pred-verdict-detail pred-verdict-detail--stack">
         <div class="pred-verdict-detail-row">
@@ -2572,26 +2830,19 @@ function renderMarketVerdictDetails(v) {
           <span class="pred-verdict-detail-val">${ht.note}</span>
         </div>
         <div class="pred-verdict-ht-chips">
-          ${verdictBadge(ht.htDirHit, '半场方向中', '半场方向偏')}
+          ${verdictBadge(ht.htDirHit, '半场胜平负中', '半场胜平负偏')}
           ${ht.directionFlipped
             ? `<span class="pred-verdict-ht-flip">下半场改写</span>`
             : `<span class="pred-verdict-ht-steady">半场至全场一致</span>`}
-          ${ht.ftDirHit != null ? verdictBadge(ht.ftDirHit, '全场方向中', '全场方向偏') : ''}
+          ${ht.ftDirHit != null ? verdictBadge(ht.ftDirHit, '全场胜平负中', '全场胜平负偏') : ''}
         </div>
         ${ht.insight ? `<p class="pred-verdict-ht-insight">${ht.insight}</p>` : ''}
       </div>` : ''}
-      ${t.available ? `
       <div class="pred-verdict-detail">
-        <span class="pred-verdict-detail-label">总进球</span>
-        <span class="pred-verdict-detail-val">预测偏${t.modelSide} · 实际${t.actualSide}（线 ${t.line}）</span>
-        ${verdictBadgeOrNeutral(t.hit, '命中', '未中', '走水')}
-      </div>` : ''}
-      ${mg.available ? `
-      <div class="pred-verdict-detail">
-        <span class="pred-verdict-detail-label">净胜档</span>
-        <span class="pred-verdict-detail-val">实际 ${mg.actual}${mg.modelPct != null ? ` · 模型全达标 ${mg.modelPct}%` : ''}</span>
-        ${verdictBadgeOrNeutral(mg.hit, '一致', '偏差', '难判')}
-      </div>` : ''}
+        <span class="pred-verdict-detail-label">胜平负</span>
+        <span class="pred-verdict-detail-val">赛前最高概率项 vs 实际结果（不含让球）</span>
+        ${verdictBadge(v.outcomeHit, '方向中', '方向偏')}
+      </div>
       ${v.goalEfficiencyHit != null ? `
       <div class="pred-verdict-detail">
         <span class="pred-verdict-detail-label">进球路径</span>
@@ -2808,7 +3059,7 @@ function renderPredictionInsightStrip(p, m, finished) {
   const verdict = finished ? computePredictionVerdict(m) : null;
   const calNote = m.prediction?.depth_calibrated ? '（含<strong>舆论校准</strong>微调）' : '';
   const verdictHtml = finished && verdict
-    ? ` <strong class="mf-pred-insight-verdict mf-pred-insight-verdict--${verdict.anyTop3Hit ? 'hit' : 'miss'}">官方 ${officialScore} · Top3 ${verdict.anyTop3Hit ? '有命中' : '均未中'}</strong>`
+    ? ` <strong class="mf-pred-insight-verdict mf-pred-insight-verdict--${verdict.primaryHit != null ? (verdict.primaryHit ? 'hit' : 'miss') : (verdict.anyTop3Hit ? 'hit' : 'miss')}">官方 ${officialScore} · ${verdict.primaryLabel || '盘口'} ${verdict.primaryHit != null ? (verdict.primaryHit ? '命中' : '未中') : `Top3 ${verdict.anyTop3Hit ? '有命中' : '均未中'}`}${verdict.outcomeSpreadConflict ? ' · 赢球输盘' : ''}</strong>`
     : '';
   const factorRows = renderInsightFactorRows(p.insight_factors, p.key_factor || '综合因素分析');
   return `
@@ -3031,6 +3282,7 @@ function renderMatch(m) {
 
     <!-- TEAMS HERO · Match Terminal -->
     ${renderMatchHero(m, p, finished)}
+    ${!finished ? renderMarketPreviewStrip(m) : ''}
 
     ${renderPredictionInsightStrip(p, m, finished)}
     ${renderDepthCalibrationBlock(m.depth_calibration, m.upset_alert, p, m.home?.name, m.away?.name)}
@@ -3221,7 +3473,7 @@ function initMatchesPage() {
   if (!MATCH_DATA.todayMatches?.length) {
     cont.innerHTML = '<p style="color:var(--txt2);padding:2rem;text-align:center">今日暂无待赛场次 · 请查看下方「明日预告」<br><span style="font-size:0.85rem;opacity:0.75;margin-top:0.75rem;display:inline-block">若刚更新过数据仍为空，请 <strong>Ctrl+F5</strong> 强刷清除浏览器缓存</span></p>';
   } else {
-    MATCH_DATA.todayMatches.forEach(raw => {
+    sortedTodayMatches(MATCH_DATA.todayMatches).forEach(raw => {
       const m = mergeLiveIntoMatch(raw);
       cont.innerHTML += renderMatch(m);
       cont.innerHTML += '<div style="height:2rem"></div>';
@@ -3261,7 +3513,7 @@ function initResultsPage() {
 
   const dateEl = document.getElementById('results-date');
   if (dateEl) {
-    dateEl.textContent = `📅 已归档 ${RESULTS_DATA.finishedMatches.length} 场 · 精简复盘模式（推演 vs 赛果核验）`;
+    dateEl.textContent = `📅 已归档 ${RESULTS_DATA.finishedMatches.length} 场 · 盘口优先复盘（让球/大小球 → 胜平负）`;
   }
 
   const cont = document.getElementById('results-container');
