@@ -1,8 +1,8 @@
-// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
-// Last API sync: 2026-06-27T15:07:08.196Z
+// 今日赛事 — Day 9 (signals enriched)
+// Last updated: 2026-06-20T14:00:00+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-27T15:07:08.196Z",
-  "syncSource": "API-Football",
+  "lastUpdated": "2026-06-20T14:00:00+08:00",
+  "syncSource": "API-Football · 推演概要+小组形势",
   "breakingNews": [
     {
       "tag": "UPDATE",
@@ -333,7 +333,7 @@ const MATCH_DATA = {
         "signal_desc": "舆论一边倒但实力差未同步放大，模型略下调热门方权重。",
         "blocker_spread_note": "",
         "public_lean_cn": "舆论倾向 England（约 78%）",
-        "analysis": "巴拿马 0 分 vs 英格兰 4 分 · 现盘英格兰 -2/2.5 · 升盘防守。",
+        "analysis": "巴拿马 0 分 vs 英格兰 4 分 · 皇冠 -2/2.5 英 0.85 / 巴 1.02 · 升盘防守。",
         "spread_cover": {
           "top3_scores": [
             {
@@ -375,9 +375,9 @@ const MATCH_DATA = {
           "dog_hold_pct_raw": 76.8
         },
         "spread_odds": {
-          "fav": 0.94,
-          "dog": 0.94,
-          "note": "Panama 0.94 · England 0.94"
+          "fav": 0.85,
+          "dog": 1.02,
+          "note": "Panama 0.85 · England 1.02"
         },
         "spread_alt": null,
         "totals_analysis": {
@@ -408,12 +408,12 @@ const MATCH_DATA = {
         "market_line_movement": {
           "wc_note": "美东 neutral · 主客仅为 FIFA 标记",
           "spread_open_cn": "Panama +2@1.16 · England -2@0.7",
-          "spread_now_cn": "Panama +2/2.5@0.94 · England -2/2.5@0.94",
+          "spread_now_cn": "Panama +2/2.5@1.02 · England -2/2.5@0.85",
           "totals_now_cn": "大小 3/3.5 · 大 0.86 / 小 1.02",
           "tag": "fav_defense",
           "tag_cn": "升盘抬水 · 热门防守",
           "tag_color": "#D95F6A",
-          "detail_cn": "英格兰 -2 → -2/2.5，赔率 0.70→0.94 拉平；出线后限损盘，非信心增强。"
+          "detail_cn": "初盘英格兰 -2 @0.70 → 现 -2/2.5；皇冠 CROWN 现 英格兰 0.85 / 巴拿马 1.02，热门低水、受让高水，定价偏挺受让。"
         },
         "totals_pick_layers": {
           "model_side": "under",
@@ -437,14 +437,14 @@ const MATCH_DATA = {
         "agent_pick": {
           "primary": "spread",
           "tendency_cn": "更倾向让球盘",
-          "tendency_reason_cn": "升盘抬水信号清晰；英格兰出线后穿深盘比总进球线更可控。",
+          "tendency_reason_cn": "升盘抬水 + 皇冠受让 1.02 高水；英格兰出线后穿深盘比总进球线更可控。",
           "confidence": "high",
           "confidence_cn": "大信心",
-          "confidence_reason_cn": "盘路（升盘抬水）· xG（0.68 vs 2.08）· 模型穿盘分解三线一致；今日最强「热门防守」样本，受让深盘为首选。",
+          "confidence_reason_cn": "盘路（升盘+皇冠 0.85/1.02 挺受让）· xG 隐含仅 -0.75 现开 -2.25 · 穿盘约 25%、受让 EV 为正；今日最强「热门防守」样本。",
           "spread": {
             "side": "dog",
-            "label_cn": "巴拿马 +2/2.5 守住",
-            "reason_cn": "英格兰已出线或轮换；模型胜约 70% 但穿 -2.25 校准后约 51%；升盘抬水典型防守，铁桶下 0-1/0-2 仍可守住。"
+            "label_cn": "巴拿马 +2/2.5 @1.02",
+            "reason_cn": "英格兰胜约 65% 但穿 -2.25 仅约 25%；0-1/0-2 为 Top 路径（0-2 赢半）。皇冠受让 1.02 高水，模型 EV 约 +0.38。"
           },
           "totals": {
             "side": "under",
@@ -1277,7 +1277,7 @@ const MATCH_DATA = {
         "agent_pick_primary": "spread",
         "agent_pick_tendency_cn": "更倾向让球盘",
         "agent_pick_confidence": "high",
-        "agent_spread_cn": "巴拿马 +2/2.5 守住",
+        "agent_spread_cn": "巴拿马 +2/2.5 @1.02",
         "agent_totals_cn": "小球 3/3.5",
         "totals_level": "mild_low",
         "totals_show_lean": false,
