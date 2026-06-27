@@ -179,9 +179,9 @@ const MATCH_DATA = {
         "updated": "2026-06-27T06:00:10+08:00"
       },
       "prediction": {
-        "home_win": 6,
+        "home_win": 13,
         "draw": 20,
-        "away_win": 73,
+        "away_win": 66,
         "score": "0-2",
         "confidence": 78,
         "xg_home": 0.68,
@@ -323,17 +323,17 @@ const MATCH_DATA = {
         "disclaimer": "文化解读 · 非竞技推演"
       },
       "depth_calibration": {
-        "tier_home": 1.5,
-        "tier_label": "Panama 被看好 · 净胜约 1.5 球",
+        "tier_home": -1.5,
+        "tier_label": "England -1.5 · Panama +1.5",
         "implied_tier": -0.75,
-        "tier_gap": 2.25,
-        "signal": "blocker_inflate",
-        "signal_cn": "大众心理预期偏高",
-        "signal_color": "#D95F6A",
-        "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
-        "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "tier_gap": -0.75,
+        "signal": "heat_deflection",
+        "signal_cn": "预期偏热",
+        "signal_color": "#C8A96E",
+        "signal_desc": "舆论一边倒但实力差未同步放大，模型略下调热门方权重。",
+        "blocker_spread_note": "",
         "public_lean_cn": "舆论倾向 England（约 78%）",
-        "analysis": "巴拿马 0 分 vs 英格兰 4 分 · 深盘。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "analysis": "巴拿马 0 分 vs 英格兰 4 分 · 英格兰 -1.5 深盘。",
         "spread_cover": {
           "top3_scores": [
             {
@@ -351,8 +351,9 @@ const MATCH_DATA = {
           ],
           "one_goal_win_pct": 8.3,
           "two_plus_win_pct": 2.9,
-          "full_cover_pct": 2.9,
-          "half_cover_pct": 8.3,
+          "full_cover_pct": 44,
+          "dog_hold_pct": 56,
+          "half_cover_pct": 25.4,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
@@ -365,7 +366,7 @@ const MATCH_DATA = {
           "over_2_5_pct": 51.1,
           "over_3_pct": 28.5,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥2 约 2.9%；部分达标净胜=1 约 8.3%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥2 约 44%；部分达标净胜=1 约 25.4%；仅赢 1 球约 0%"
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -391,58 +392,58 @@ const MATCH_DATA = {
         },
         "totals_line": 2.75,
         "applied_delta": {
-          "home_win": -5,
+          "home_win": 2,
           "draw": 1,
-          "away_win": 4
+          "away_win": -3
         },
-        "adjustment_note": "模型微调：主胜 -5% · 平 +1% · 客 +4%",
+        "adjustment_note": "模型微调：主胜 +2% · 平 +1% · 客 -3%",
         "adjusted_probs": {
-          "home_win": 6,
+          "home_win": 13,
           "draw": 20,
-          "away_win": 73
+          "away_win": 66
         },
         "display_summary": {
-          "fav_name": "Panama",
+          "fav_name": "England",
           "expected_total_goals": 2.67,
-          "poisson_fav_win_pct": 11.2,
-          "small_lead_pct": 8.3,
-          "small_example_score": "1-0",
-          "small_example_pct": 4.4,
-          "big_cover_pct": 2.9,
-          "big_example_score": "2-0",
-          "big_example_pct": 1.5,
+          "poisson_fav_win_pct": 69.4,
+          "small_lead_pct": 25.4,
+          "small_example_score": "0-1",
+          "small_example_pct": 13.4,
+          "big_cover_pct": 44,
+          "big_example_score": "0-2",
+          "big_example_pct": 14,
           "win_shape": {
-            "fav_name": "Panama",
+            "fav_name": "England",
             "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以险胜·控局为主（险胜 · 控局 39.2%）",
+            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 34.1%）",
             "shapes": [
               {
                 "key": "narrow_low",
                 "label": "险胜 · 控局",
                 "example": "如 1-0",
-                "field_pct": 4.4,
-                "pct": 39.2
+                "field_pct": 13.4,
+                "pct": 19.3
               },
               {
                 "key": "narrow_open",
                 "label": "险胜 · 开放",
                 "example": "如 2-1",
-                "field_pct": 3.9,
-                "pct": 35.1
+                "field_pct": 12,
+                "pct": 17.3
               },
               {
                 "key": "comfort_low",
                 "label": "拉开 · 控局",
                 "example": "如 2-0",
-                "field_pct": 1.8,
-                "pct": 16.3
+                "field_pct": 23.6,
+                "pct": 34.1
               },
               {
                 "key": "comfort_open",
                 "label": "拉开 · 开放",
                 "example": "如 3-1+",
-                "field_pct": 1.1,
-                "pct": 9.4
+                "field_pct": 20.3,
+                "pct": 29.3
               }
             ],
             "paths": [
@@ -450,22 +451,22 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 74.3
+                "pct": 36.6
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 16.3
+                "pct": 34.1
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 9.4
+                "pct": 29.3
               }
             ],
-            "fav_win_pct": 6
+            "fav_win_pct": 66
           },
           "excitement": {
             "label_cn": "中速开局",
@@ -520,40 +521,40 @@ const MATCH_DATA = {
             "note": "基准 xG 0.68–2.08（未因伤病/气候下调）"
           },
           "calibration": {
-            "signal_cn": "大众心理预期偏高",
-            "signal_color": "#D95F6A",
-            "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
-            "tier_gap": 2.25,
-            "implied_tier_label": "England 被看好 · 净胜约 0.5–1 球",
-            "market_tier_label": "Panama 被看好 · 净胜约 1.5 球",
-            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 2.25 · 部分达标净胜=1 约 8.3%"
+            "signal_cn": "预期偏热",
+            "signal_color": "#C8A96E",
+            "signal_desc": "舆论一边倒但实力差未同步放大，模型略下调热门方权重。",
+            "tier_gap": -0.75,
+            "implied_tier_label": "England -0.75 · Panama +0.75",
+            "market_tier_label": "England -1.5 · Panama +1.5",
+            "summary_cn": "与模型 xG 对照：预期偏热 · 赛前净胜看法低于 xG 隐含约 0.75 · 部分达标净胜=1 约 25.4%"
           },
           "win_outlook": {
-            "fav_name": "Panama",
+            "fav_name": "England",
             "state_label": null,
             "paths": [
               {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 74.3
+                "pct": 36.6
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 16.3
+                "pct": 34.1
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 9.4
+                "pct": 29.3
               }
             ],
-            "margin_line_cn": "Panama · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
-            "margin_meet_pct": 2.9,
-            "margin_half_pct": 8.3,
+            "margin_line_cn": "England · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
+            "margin_meet_pct": 44,
+            "margin_half_pct": 25.4,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
             "margin_half_label": "部分达标净胜=1",
@@ -568,10 +569,10 @@ const MATCH_DATA = {
             "totals_high_pct": 39.8,
             "totals_low_pct": 60.2,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 5.9,
-            "win_margin2_low_total_pct": 1.5,
-            "win_margin2_high_total_pct": 1.4,
-            "readout_cn": "取胜约 6%；若取胜，以「险胜收工」为主（74.3%）。 对着赛前净胜参考，净胜≥2（全达标）约 2.9%；部分达标净胜=1 约 8.3%；对着总进球参考 2.75，模型超线概率约 39.8%。"
+            "win_low_total_pct": 27.4,
+            "win_margin2_low_total_pct": 14,
+            "win_margin2_high_total_pct": 30,
+            "readout_cn": "取胜约 66%；若取胜，以「险胜收工」为主（36.6%）。 对着赛前净胜参考，净胜≥2（全达标）约 44%；部分达标净胜=1 约 25.4%；对着总进球参考 2.75，模型超线概率约 39.8%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.75。"
           },
           "totals_line": 2.75,
           "score_patterns": [
@@ -618,27 +619,32 @@ const MATCH_DATA = {
             "summary_cn": "预测 2.7 · 合理值 2 · 总进球参考 2.75（高于合理值 0.75） · 高于合理值 0.75 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Panama · 净胜走向：达到预期难度偏大",
-            "sub_cn": "达标概率约 2.9% · 达到预期难度偏大 进球氛围：略偏闷",
+            "headline_cn": "England -1.5 穿盘：有达标可能",
+            "sub_cn": "England -1.5 穿盘 44% · Panama +1.5 守住 56% 进球氛围：略偏闷",
             "spread": {
-              "level": "skeptical",
-              "label_cn": "外界预期偏高",
-              "color": "#D95F6A",
-              "fav_name": "Panama",
-              "market_expect_cn": "净胜≥2",
-              "meet_pct": 2.9,
-              "meet_pct_label": "模型推演达标概率",
-              "verdict_cn": "达到预期难度偏大",
-              "headline_cn": "Panama · 净胜走向：达到预期难度偏大",
-              "pill_cn": "达标概率约 2.9% · 达到预期难度偏大",
-              "detail_cn": "Panama · 赛前外界预期 净胜≥2。模型推演达标概率约 2.9%；外界看法高于 xG 隐含约 2.25 球，达到预期难度偏大。",
-              "extra_stats_cn": "",
-              "full_cover_pct": 2.9,
-              "half_cover_pct": 8.3,
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
+              "fav_name": "England",
+              "dog_name": "Panama",
+              "fav_handicap_cn": "England -1.5",
+              "dog_handicap_cn": "Panama +1.5",
+              "market_expect_cn": "England -1.5 · 净胜≥2",
+              "meet_pct": 44,
+              "dog_hold_pct": 56,
+              "meet_pct_label": "England -1.5 穿盘概率",
+              "dog_hold_label": "Panama +1.5 守住概率",
+              "verdict_cn": "有达标可能",
+              "headline_cn": "England -1.5 穿盘：有达标可能",
+              "pill_cn": "England -1.5 穿盘 44% · Panama +1.5 守住 56%",
+              "detail_cn": "England -1.5 穿盘约 44%（净胜≥2） · Panama +1.5 守住约 56%；穿盘与受让守住均有一定空间（部分达标净胜=1 约 25.4%）。",
+              "extra_stats_cn": "部分达标净胜=1 约 25.4%",
+              "full_cover_pct": 44,
+              "half_cover_pct": 25.4,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
               "margin_half_label": "部分达标净胜=1",
-              "tier_gap": 2.25,
+              "tier_gap": -0.75,
               "show_cover": true
             },
             "totals": {
@@ -666,30 +672,35 @@ const MATCH_DATA = {
               {
                 "key": "spread",
                 "icon": "⚖️",
-                "label": "净胜走向",
+                "label": "让球盘",
                 "outlook": {
-                  "level": "skeptical",
-                  "label_cn": "外界预期偏高",
-                  "color": "#D95F6A",
-                  "fav_name": "Panama",
-                  "market_expect_cn": "净胜≥2",
-                  "meet_pct": 2.9,
-                  "meet_pct_label": "模型推演达标概率",
-                  "verdict_cn": "达到预期难度偏大",
-                  "headline_cn": "Panama · 净胜走向：达到预期难度偏大",
-                  "pill_cn": "达标概率约 2.9% · 达到预期难度偏大",
-                  "detail_cn": "Panama · 赛前外界预期 净胜≥2。模型推演达标概率约 2.9%；外界看法高于 xG 隐含约 2.25 球，达到预期难度偏大。",
-                  "extra_stats_cn": "",
-                  "full_cover_pct": 2.9,
-                  "half_cover_pct": 8.3,
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
+                  "fav_name": "England",
+                  "dog_name": "Panama",
+                  "fav_handicap_cn": "England -1.5",
+                  "dog_handicap_cn": "Panama +1.5",
+                  "market_expect_cn": "England -1.5 · 净胜≥2",
+                  "meet_pct": 44,
+                  "dog_hold_pct": 56,
+                  "meet_pct_label": "England -1.5 穿盘概率",
+                  "dog_hold_label": "Panama +1.5 守住概率",
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "England -1.5 穿盘：有达标可能",
+                  "pill_cn": "England -1.5 穿盘 44% · Panama +1.5 守住 56%",
+                  "detail_cn": "England -1.5 穿盘约 44%（净胜≥2） · Panama +1.5 守住约 56%；穿盘与受让守住均有一定空间（部分达标净胜=1 约 25.4%）。",
+                  "extra_stats_cn": "部分达标净胜=1 约 25.4%",
+                  "full_cover_pct": 44,
+                  "half_cover_pct": 25.4,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": "部分达标净胜=1",
-                  "tier_gap": 2.25,
+                  "tier_gap": -0.75,
                   "show_cover": true
                 },
-                "text": "达标概率约 2.9% · 达到预期难度偏大",
-                "color": "#D95F6A",
+                "text": "England -1.5 穿盘 44% · Panama +1.5 守住 56%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -729,30 +740,35 @@ const MATCH_DATA = {
               "team": "Panama",
               "first_goal_pct": 24.6,
               "start_score": "1-0",
-              "fav_name": "Panama",
-              "scorer_is_fav": true,
-              "expected_key": "hold_win",
-              "fav_recover_pct": 59.4,
-              "small_lead_pct": 21.6,
-              "big_lead_pct": 10.2,
-              "fav_win_pct": 31.8,
+              "fav_name": "England",
+              "scorer_is_fav": false,
+              "expected_key": "fav_recover",
+              "fav_recover_pct": 68.2,
+              "small_lead_pct": 21.7,
+              "big_lead_pct": 18.9,
+              "fav_win_pct": 40.6,
               "fav_draw_pct": 27.6,
-              "fav_lose_pct": 40.6,
+              "fav_lose_pct": 31.8,
               "outcomes": [
                 {
-                  "key": "hold_win",
-                  "label": "Panama 保持胜果（净胜≥1）",
-                  "pct": 31.8
-                },
-                {
-                  "key": "drawn",
-                  "label": "被扳平",
+                  "key": "draw",
+                  "label": "England 追平（平局）",
                   "pct": 27.6
                 },
                 {
-                  "key": "lost",
-                  "label": "被逆转落败",
-                  "pct": 40.6
+                  "key": "win1",
+                  "label": "England 净胜1球翻盘（如 2-1）",
+                  "pct": 21.7
+                },
+                {
+                  "key": "win2",
+                  "label": "England 净胜≥2球翻盘（如 3-1）",
+                  "pct": 18.9
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "Panama 保持胜果至终场",
+                  "pct": 31.8
                 }
               ],
               "excitement": {
@@ -782,89 +798,40 @@ const MATCH_DATA = {
                   }
                 ]
               },
-              "big_delta": 7.3,
-              "small_delta": 13.3,
-              "narrative": "Panama 先破门（已 1-0） → 「巩固防守」；England 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
-              "live_outlook": {
-                "fav_name": "Panama",
-                "state_label": "Panama 已 1-0 领先",
-                "paths": [
-                  {
-                    "key": "narrow",
-                    "label": "险胜收工",
-                    "example": "如 1-0、2-1",
-                    "pct": 74.3
-                  },
-                  {
-                    "key": "clean",
-                    "label": "零封拉开",
-                    "example": "如 2-0、3-0",
-                    "pct": 16.3
-                  },
-                  {
-                    "key": "open",
-                    "label": "开放拉开",
-                    "example": "如 3-1+",
-                    "pct": 9.4
-                  }
-                ],
-                "margin_line_cn": "Panama · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
-                "margin_meet_pct": 10.2,
-                "margin_half_pct": 21.6,
-                "margin_fail_pct": 21.6,
-                "margin_full_label": "净胜≥2",
-                "margin_half_label": "部分达标净胜=1",
-                "final_2_0_pct": null,
-                "final_3_0_plus_pct": null,
-                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-                "totals_line": 2.75,
-                "totals_line_cn": "总进球参考 2.75",
-                "fair_totals_line": 2.25,
-                "model_total_xg": 2.33,
-                "totals_line_gap": 0.5,
-                "totals_high_pct": 53.9,
-                "totals_low_pct": 46.1,
-                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-                "win_low_total_pct": 15,
-                "win_margin2_low_total_pct": 5.2,
-                "win_margin2_high_total_pct": 5,
-                "readout_cn": "Panama 已 1-0 领先：仍取胜约 31.8%。 对着总进球参考 2.75，模型超线概率约 53.9%。 若再扩大，偏「险胜收工」。"
-              }
+              "big_delta": -25.1,
+              "small_delta": -3.7,
+              "narrative": "Panama 先破门（已 1-0） → 「巩固防守」；England 「组织反扑」。热门先丢球（已 1-0），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
+              "live_outlook": null
             },
             {
               "side": "away",
               "team": "England",
               "first_goal_pct": 75.4,
               "start_score": "0-1",
-              "fav_name": "Panama",
-              "scorer_is_fav": false,
-              "expected_key": "upset_hold",
-              "fav_recover_pct": 13.5,
-              "small_lead_pct": 2.6,
-              "big_lead_pct": 0.6,
-              "fav_win_pct": 3.2,
+              "fav_name": "England",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 96.8,
+              "small_lead_pct": 24.6,
+              "big_lead_pct": 62,
+              "fav_win_pct": 86.5,
               "fav_draw_pct": 10.3,
-              "fav_lose_pct": 86.5,
+              "fav_lose_pct": 3.2,
               "outcomes": [
                 {
-                  "key": "draw",
-                  "label": "Panama 追平（平局）",
+                  "key": "hold_win",
+                  "label": "England 保持胜果（净胜≥1）",
+                  "pct": 86.5
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
                   "pct": 10.3
                 },
                 {
-                  "key": "win1",
-                  "label": "Panama 净胜1球翻盘（如 2-1）",
-                  "pct": 2.6
-                },
-                {
-                  "key": "win2",
-                  "label": "Panama 净胜≥2球翻盘（如 3-1）",
-                  "pct": 0.6
-                },
-                {
-                  "key": "upset_hold",
-                  "label": "England 保持胜果至终场",
-                  "pct": 86.5
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 3.2
                 }
               ],
               "excitement": {
@@ -894,10 +861,54 @@ const MATCH_DATA = {
                   }
                 ]
               },
-              "big_delta": -2.3,
-              "small_delta": -5.7,
-              "narrative": "England 先破门（已 0-1） → 「巩固防守」；Panama 「组织反扑」。净胜两球及以上概率与全场预期接近。",
-              "live_outlook": null
+              "big_delta": 18,
+              "small_delta": -0.8,
+              "narrative": "England 先破门（已 0-1） → 「巩固防守」；Panama 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
+              "live_outlook": {
+                "fav_name": "England",
+                "state_label": "England 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 36.6
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 34.1
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 29.3
+                  }
+                ],
+                "margin_line_cn": "England · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
+                "margin_meet_pct": 62,
+                "margin_half_pct": 24.6,
+                "margin_fail_pct": 24.6,
+                "margin_full_label": "净胜≥2",
+                "margin_half_label": "部分达标净胜=1",
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.75,
+                "totals_line_cn": "总进球参考 2.75",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 2.2,
+                "totals_line_gap": 0.5,
+                "totals_high_pct": 50.8,
+                "totals_low_pct": 49.2,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 29.1,
+                "win_margin2_low_total_pct": 18,
+                "win_margin2_high_total_pct": 44,
+                "readout_cn": "England 已 1-0 领先：仍取胜约 86.5%。 对着总进球参考 2.75，模型超线概率约 50.8%。 常见 2-0 收尾（相对总进球参考 2.75仍偏小比分）。"
+              }
             }
           ],
           "match_preview": {
@@ -907,20 +918,20 @@ const MATCH_DATA = {
               "totals_high_pct": 39.8,
               "type_tags": [
                 {
-                  "key": "balanced",
-                  "label": "常规对抗"
+                  "key": "dominance",
+                  "label": "压制局"
                 }
               ],
               "depth_label": "深度一般",
               "draw_trap_pct": 16,
-              "readout_cn": "Panama · 常规对抗。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+              "readout_cn": "England · 压制局。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
             },
             "draw_trap_note": null,
             "archetype": {
               "tags": [
                 {
-                  "key": "balanced",
-                  "label": "常规对抗"
+                  "key": "dominance",
+                  "label": "压制局"
                 }
               ],
               "depth_score": 0,
@@ -963,7 +974,7 @@ const MATCH_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Panama · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 2.25 · 部分达标净胜=1 约 8.3%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
+        "public_summary_note": "【推演概要】England · 压制局。 · 与模型 xG 对照：预期偏热 · 赛前净胜看法低于 xG 隐含约 0.75 · 部分达标净胜=1 约 25.4%（模型微调：主胜 +2% · 平 +1% · 客 -3%）",
         "goal_efficiency_preview": {
           "mode": "preview",
           "xg_total": 2.76,
@@ -1552,6 +1563,7 @@ const MATCH_DATA = {
           "one_goal_win_pct": 20.5,
           "two_plus_win_pct": 17.7,
           "full_cover_pct": 0,
+          "dog_hold_pct": null,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
@@ -1874,7 +1886,7 @@ const MATCH_DATA = {
               {
                 "key": "spread",
                 "icon": "⚖️",
-                "label": "净胜走向",
+                "label": "让球盘",
                 "outlook": {
                   "level": "even",
                   "label_cn": "势均力敌",
@@ -2775,6 +2787,7 @@ const MATCH_DATA = {
           "one_goal_win_pct": 19.4,
           "two_plus_win_pct": 17.9,
           "full_cover_pct": 0,
+          "dog_hold_pct": null,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
@@ -3093,7 +3106,7 @@ const MATCH_DATA = {
               {
                 "key": "spread",
                 "icon": "⚖️",
-                "label": "净胜走向",
+                "label": "让球盘",
                 "outlook": {
                   "level": "even",
                   "label_cn": "势均力敌",
@@ -3905,7 +3918,7 @@ const MATCH_DATA = {
       },
       "depth_calibration": {
         "tier_home": 0.75,
-        "tier_label": "Congo DR 被看好 · 净胜约 0.5–1 球",
+        "tier_label": "Congo DR -0.75 · Uzbekistan +0.75",
         "implied_tier": 0.25,
         "tier_gap": 0.5,
         "signal": "genuine_favorite",
@@ -3933,6 +3946,7 @@ const MATCH_DATA = {
           "one_goal_win_pct": 26.9,
           "two_plus_win_pct": 28.3,
           "full_cover_pct": 55.2,
+          "dog_hold_pct": 44.8,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
@@ -4105,8 +4119,8 @@ const MATCH_DATA = {
             "signal_color": "#5BBF8A",
             "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
             "tier_gap": 0.5,
-            "implied_tier_label": "Congo DR 被看好 · 净胜约 0.25 球",
-            "market_tier_label": "Congo DR 被看好 · 净胜约 0.5–1 球",
+            "implied_tier_label": "Congo DR -0.25 · Uzbekistan +0.25",
+            "market_tier_label": "Congo DR -0.75 · Uzbekistan +0.75",
             "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5"
           },
           "win_outlook": {
@@ -4199,20 +4213,25 @@ const MATCH_DATA = {
             "summary_cn": "预测 2.2 · 合理值 2.25 · 总进球参考 2.5（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Congo DR · 净胜走向：达到预期较有希望",
-            "sub_cn": "达标概率约 55.2% · 达到预期较有希望 进球氛围：略偏闷",
+            "headline_cn": "Congo DR -0.75 穿盘：达到预期较有希望",
+            "sub_cn": "Congo DR -0.75 穿盘 55.2% · Uzbekistan +0.75 守住 44.8% 进球氛围：略偏闷",
             "spread": {
               "level": "likely",
               "label_cn": "达到预期较有希望",
               "color": "#5BBF8A",
               "fav_name": "Congo DR",
-              "market_expect_cn": "净胜≥1",
+              "dog_name": "Uzbekistan",
+              "fav_handicap_cn": "Congo DR -0.75",
+              "dog_handicap_cn": "Uzbekistan +0.75",
+              "market_expect_cn": "Congo DR -0.75 · 净胜≥1",
               "meet_pct": 55.2,
-              "meet_pct_label": "模型推演达标概率",
+              "dog_hold_pct": 44.8,
+              "meet_pct_label": "Congo DR -0.75 穿盘概率",
+              "dog_hold_label": "Uzbekistan +0.75 守住概率",
               "verdict_cn": "达到预期较有希望",
-              "headline_cn": "Congo DR · 净胜走向：达到预期较有希望",
-              "pill_cn": "达标概率约 55.2% · 达到预期较有希望",
-              "detail_cn": "Congo DR · 赛前外界预期 净胜≥1。模型推演达标概率约 55.2%；模型认为达到外界预期档的概率相对较高。",
+              "headline_cn": "Congo DR -0.75 穿盘：达到预期较有希望",
+              "pill_cn": "Congo DR -0.75 穿盘 55.2% · Uzbekistan +0.75 守住 44.8%",
+              "detail_cn": "Congo DR -0.75 穿盘约 55.2%（净胜≥1） · Uzbekistan +0.75 守住约 44.8%；模型认为热门穿盘概率相对较高。",
               "extra_stats_cn": "",
               "full_cover_pct": 55.2,
               "half_cover_pct": 0,
@@ -4247,19 +4266,24 @@ const MATCH_DATA = {
               {
                 "key": "spread",
                 "icon": "⚖️",
-                "label": "净胜走向",
+                "label": "让球盘",
                 "outlook": {
                   "level": "likely",
                   "label_cn": "达到预期较有希望",
                   "color": "#5BBF8A",
                   "fav_name": "Congo DR",
-                  "market_expect_cn": "净胜≥1",
+                  "dog_name": "Uzbekistan",
+                  "fav_handicap_cn": "Congo DR -0.75",
+                  "dog_handicap_cn": "Uzbekistan +0.75",
+                  "market_expect_cn": "Congo DR -0.75 · 净胜≥1",
                   "meet_pct": 55.2,
-                  "meet_pct_label": "模型推演达标概率",
+                  "dog_hold_pct": 44.8,
+                  "meet_pct_label": "Congo DR -0.75 穿盘概率",
+                  "dog_hold_label": "Uzbekistan +0.75 守住概率",
                   "verdict_cn": "达到预期较有希望",
-                  "headline_cn": "Congo DR · 净胜走向：达到预期较有希望",
-                  "pill_cn": "达标概率约 55.2% · 达到预期较有希望",
-                  "detail_cn": "Congo DR · 赛前外界预期 净胜≥1。模型推演达标概率约 55.2%；模型认为达到外界预期档的概率相对较高。",
+                  "headline_cn": "Congo DR -0.75 穿盘：达到预期较有希望",
+                  "pill_cn": "Congo DR -0.75 穿盘 55.2% · Uzbekistan +0.75 守住 44.8%",
+                  "detail_cn": "Congo DR -0.75 穿盘约 55.2%（净胜≥1） · Uzbekistan +0.75 守住约 44.8%；模型认为热门穿盘概率相对较高。",
                   "extra_stats_cn": "",
                   "full_cover_pct": 55.2,
                   "half_cover_pct": 0,
@@ -4269,7 +4293,7 @@ const MATCH_DATA = {
                   "tier_gap": 0.5,
                   "show_cover": true
                 },
-                "text": "达标概率约 55.2% · 达到预期较有希望",
+                "text": "Congo DR -0.75 穿盘 55.2% · Uzbekistan +0.75 守住 44.8%",
                 "color": "#5BBF8A",
                 "primary": true
               },
@@ -5131,6 +5155,7 @@ const MATCH_DATA = {
           "one_goal_win_pct": 20.4,
           "two_plus_win_pct": 18.8,
           "full_cover_pct": 0,
+          "dog_hold_pct": null,
           "half_cover_pct": 0,
           "half_lose_pct": 0,
           "push_pct": null,
@@ -5453,7 +5478,7 @@ const MATCH_DATA = {
               {
                 "key": "spread",
                 "icon": "⚖️",
-                "label": "净胜走向",
+                "label": "让球盘",
                 "outlook": {
                   "level": "even",
                   "label_cn": "势均力敌",
@@ -6111,9 +6136,9 @@ const MATCH_DATA = {
         "updated": "2026-06-27T06:00:10+08:00"
       },
       "prediction": {
-        "home_win": 3,
+        "home_win": 10,
         "draw": 17,
-        "away_win": 80,
+        "away_win": 73,
         "score": "0-2",
         "confidence": 76,
         "xg_home": 0.62,
@@ -6260,17 +6285,17 @@ const MATCH_DATA = {
         "disclaimer": "文化解读 · 非竞技推演"
       },
       "depth_calibration": {
-        "tier_home": 1.75,
-        "tier_label": "Jordan 被看好 · 净胜约 1.5–2 球",
+        "tier_home": -1.75,
+        "tier_label": "Argentina -1.75 · Jordan +1.75",
         "implied_tier": -1.25,
-        "tier_gap": 3,
-        "signal": "blocker_inflate",
-        "signal_cn": "大众心理预期偏高",
-        "signal_color": "#D95F6A",
-        "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
-        "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "tier_gap": -0.5,
+        "signal": "heat_deflection",
+        "signal_cn": "预期偏热",
+        "signal_color": "#C8A96E",
+        "signal_desc": "舆论一边倒但实力差未同步放大，模型略下调热门方权重。",
+        "blocker_spread_note": "",
         "public_lean_cn": "舆论倾向 Argentina（约 82%）",
-        "analysis": "阿根廷 6 分已出线 vs 约旦 0 分。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "analysis": "阿根廷 6 分已出线 vs 约旦 0 分 · 阿根廷 -1.75。",
         "spread_cover": {
           "top3_scores": [
             {
@@ -6288,21 +6313,22 @@ const MATCH_DATA = {
           ],
           "one_goal_win_pct": 6,
           "two_plus_win_pct": 1.9,
-          "full_cover_pct": 1.9,
-          "half_cover_pct": 6,
+          "full_cover_pct": 52.8,
+          "dog_hold_pct": 47.2,
+          "half_cover_pct": 23.6,
           "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
           "margin_half_label": "部分达标净胜=1",
-          "fav_cover_ev": -0.902,
-          "dog_cover_ev": 0.902,
-          "rational_spread_cn": "客队 守住差距概率略高",
+          "fav_cover_ev": 0.292,
+          "dog_cover_ev": -0.292,
+          "rational_spread_cn": "客队 净胜达标概率略高",
           "total_xg": 3.04,
           "fair_totals_line": 2.75,
           "over_2_5_pct": 57,
           "over_3_pct": 33.7,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜≥2 约 1.9%；仅赢 1 球约 0%"
+          "margin_risk_note": "净胜≥2 约 52.8%；部分达标净胜=1 约 23.6%；仅赢 1 球约 0%"
         },
         "spread_odds": null,
         "spread_alt": null,
@@ -6328,58 +6354,58 @@ const MATCH_DATA = {
         },
         "totals_line": 2.75,
         "applied_delta": {
-          "home_win": -5,
+          "home_win": 2,
           "draw": 1,
-          "away_win": 4
+          "away_win": -3
         },
-        "adjustment_note": "模型微调：主胜 -5% · 平 +1% · 客 +4%",
+        "adjustment_note": "模型微调：主胜 +2% · 平 +1% · 客 -3%",
         "adjusted_probs": {
-          "home_win": 3,
+          "home_win": 10,
           "draw": 17,
-          "away_win": 80
+          "away_win": 73
         },
         "display_summary": {
-          "fav_name": "Jordan",
+          "fav_name": "Argentina",
           "expected_total_goals": 2.59,
-          "poisson_fav_win_pct": 8.4,
-          "small_lead_pct": 6.6,
-          "small_example_score": "1-0",
-          "small_example_pct": 3.8,
-          "big_cover_pct": 1.8,
-          "big_example_score": "2-0",
-          "big_example_pct": 1,
+          "poisson_fav_win_pct": 73.8,
+          "small_lead_pct": 25.5,
+          "small_example_score": "0-1",
+          "small_example_pct": 14.9,
+          "big_cover_pct": 48.3,
+          "big_example_score": "0-2",
+          "big_example_pct": 15.9,
           "win_shape": {
-            "fav_name": "Jordan",
+            "fav_name": "Argentina",
             "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以险胜·控局为主（险胜 · 控局 45.6%）",
+            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 37%）",
             "shapes": [
               {
                 "key": "narrow_low",
                 "label": "险胜 · 控局",
                 "example": "如 1-0",
-                "field_pct": 3.8,
-                "pct": 45.6
+                "field_pct": 14.9,
+                "pct": 20.1
               },
               {
                 "key": "narrow_open",
                 "label": "险胜 · 开放",
                 "example": "如 2-1",
-                "field_pct": 2.7,
-                "pct": 32.7
+                "field_pct": 10.6,
+                "pct": 14.4
               },
               {
                 "key": "comfort_low",
                 "label": "拉开 · 控局",
                 "example": "如 2-0",
-                "field_pct": 1.2,
-                "pct": 14.8
+                "field_pct": 27.2,
+                "pct": 37
               },
               {
                 "key": "comfort_open",
                 "label": "拉开 · 开放",
                 "example": "如 3-1+",
-                "field_pct": 0.6,
-                "pct": 6.9
+                "field_pct": 21,
+                "pct": 28.5
               }
             ],
             "paths": [
@@ -6387,22 +6413,22 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 78.3
+                "pct": 34.5
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 14.8
+                "pct": 37
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 6.9
+                "pct": 28.5
               }
             ],
-            "fav_win_pct": 3
+            "fav_win_pct": 73
           },
           "excitement": {
             "label_cn": "中速开局",
@@ -6457,40 +6483,40 @@ const MATCH_DATA = {
             "note": "基准 xG 0.62–2.42 → 调整后 0.55–2.14"
           },
           "calibration": {
-            "signal_cn": "大众心理预期偏高",
-            "signal_color": "#D95F6A",
-            "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
-            "tier_gap": 3,
-            "implied_tier_label": "Argentina 被看好 · 净胜约 1–2 球",
-            "market_tier_label": "Jordan 被看好 · 净胜约 1.5–2 球",
-            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 3"
+            "signal_cn": "预期偏热",
+            "signal_color": "#C8A96E",
+            "signal_desc": "舆论一边倒但实力差未同步放大，模型略下调热门方权重。",
+            "tier_gap": -0.5,
+            "implied_tier_label": "Argentina -1.25 · Jordan +1.25",
+            "market_tier_label": "Argentina -1.75 · Jordan +1.75",
+            "summary_cn": "与模型 xG 对照：预期偏热 · 赛前净胜看法低于 xG 隐含约 0.5 · 部分达标净胜=1 约 25.5%"
           },
           "win_outlook": {
-            "fav_name": "Jordan",
+            "fav_name": "Argentina",
             "state_label": null,
             "paths": [
               {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 78.3
+                "pct": 34.5
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 14.8
+                "pct": 37
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 6.9
+                "pct": 28.5
               }
             ],
-            "margin_line_cn": "Jordan · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
-            "margin_meet_pct": 1.8,
-            "margin_half_pct": 6.6,
+            "margin_line_cn": "Argentina · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
+            "margin_meet_pct": 48.3,
+            "margin_half_pct": 25.5,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
             "margin_half_label": "部分达标净胜=1",
@@ -6505,10 +6531,10 @@ const MATCH_DATA = {
             "totals_high_pct": 38,
             "totals_low_pct": 62,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 4.9,
-            "win_margin2_low_total_pct": 1,
-            "win_margin2_high_total_pct": 0.8,
-            "readout_cn": "取胜约 3%；若取胜，以「险胜收工」为主（78.3%）。 对着赛前净胜参考，净胜≥2（全达标）约 1.8%；部分达标净胜=1 约 6.6%；对着总进球参考 2.75，模型超线概率约 38%。"
+            "win_low_total_pct": 30.8,
+            "win_margin2_low_total_pct": 15.9,
+            "win_margin2_high_total_pct": 32.4,
+            "readout_cn": "取胜约 73%；若取胜，以「零封拉开」为主（37%）。 对着赛前净胜参考，净胜≥2（全达标）约 48.3%；部分达标净胜=1 约 25.5%；对着总进球参考 2.75，模型超线概率约 38%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.75。"
           },
           "totals_line": 2.75,
           "score_patterns": [
@@ -6555,27 +6581,32 @@ const MATCH_DATA = {
             "summary_cn": "预测 2.6 · 合理值 2 · 总进球参考 2.75（高于合理值 0.75） · 高于合理值 0.75 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Jordan · 净胜走向：达到预期难度偏大",
-            "sub_cn": "达标概率约 1.8% · 达到预期难度偏大 进球氛围：略偏闷",
+            "headline_cn": "Argentina -1.75 穿盘：有达标可能",
+            "sub_cn": "Argentina -1.75 穿盘 48.3% · Jordan +1.75 守住 51.7% 进球氛围：略偏闷",
             "spread": {
-              "level": "skeptical",
-              "label_cn": "外界预期偏高",
-              "color": "#D95F6A",
-              "fav_name": "Jordan",
-              "market_expect_cn": "净胜≥2",
-              "meet_pct": 1.8,
-              "meet_pct_label": "模型推演达标概率",
-              "verdict_cn": "达到预期难度偏大",
-              "headline_cn": "Jordan · 净胜走向：达到预期难度偏大",
-              "pill_cn": "达标概率约 1.8% · 达到预期难度偏大",
-              "detail_cn": "Jordan · 赛前外界预期 净胜≥2。模型推演达标概率约 1.8%；外界看法高于 xG 隐含约 3 球，达到预期难度偏大。",
-              "extra_stats_cn": "",
-              "full_cover_pct": 1.8,
-              "half_cover_pct": 6.6,
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
+              "fav_name": "Argentina",
+              "dog_name": "Jordan",
+              "fav_handicap_cn": "Argentina -1.75",
+              "dog_handicap_cn": "Jordan +1.75",
+              "market_expect_cn": "Argentina -1.75 · 净胜≥2",
+              "meet_pct": 48.3,
+              "dog_hold_pct": 51.7,
+              "meet_pct_label": "Argentina -1.75 穿盘概率",
+              "dog_hold_label": "Jordan +1.75 守住概率",
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Argentina -1.75 穿盘：有达标可能",
+              "pill_cn": "Argentina -1.75 穿盘 48.3% · Jordan +1.75 守住 51.7%",
+              "detail_cn": "Argentina -1.75 穿盘约 48.3%（净胜≥2） · Jordan +1.75 守住约 51.7%；穿盘与受让守住均有一定空间（部分达标净胜=1 约 25.5%）。",
+              "extra_stats_cn": "部分达标净胜=1 约 25.5%",
+              "full_cover_pct": 48.3,
+              "half_cover_pct": 25.5,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
               "margin_half_label": "部分达标净胜=1",
-              "tier_gap": 3,
+              "tier_gap": -0.5,
               "show_cover": true
             },
             "totals": {
@@ -6603,30 +6634,35 @@ const MATCH_DATA = {
               {
                 "key": "spread",
                 "icon": "⚖️",
-                "label": "净胜走向",
+                "label": "让球盘",
                 "outlook": {
-                  "level": "skeptical",
-                  "label_cn": "外界预期偏高",
-                  "color": "#D95F6A",
-                  "fav_name": "Jordan",
-                  "market_expect_cn": "净胜≥2",
-                  "meet_pct": 1.8,
-                  "meet_pct_label": "模型推演达标概率",
-                  "verdict_cn": "达到预期难度偏大",
-                  "headline_cn": "Jordan · 净胜走向：达到预期难度偏大",
-                  "pill_cn": "达标概率约 1.8% · 达到预期难度偏大",
-                  "detail_cn": "Jordan · 赛前外界预期 净胜≥2。模型推演达标概率约 1.8%；外界看法高于 xG 隐含约 3 球，达到预期难度偏大。",
-                  "extra_stats_cn": "",
-                  "full_cover_pct": 1.8,
-                  "half_cover_pct": 6.6,
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
+                  "fav_name": "Argentina",
+                  "dog_name": "Jordan",
+                  "fav_handicap_cn": "Argentina -1.75",
+                  "dog_handicap_cn": "Jordan +1.75",
+                  "market_expect_cn": "Argentina -1.75 · 净胜≥2",
+                  "meet_pct": 48.3,
+                  "dog_hold_pct": 51.7,
+                  "meet_pct_label": "Argentina -1.75 穿盘概率",
+                  "dog_hold_label": "Jordan +1.75 守住概率",
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Argentina -1.75 穿盘：有达标可能",
+                  "pill_cn": "Argentina -1.75 穿盘 48.3% · Jordan +1.75 守住 51.7%",
+                  "detail_cn": "Argentina -1.75 穿盘约 48.3%（净胜≥2） · Jordan +1.75 守住约 51.7%；穿盘与受让守住均有一定空间（部分达标净胜=1 约 25.5%）。",
+                  "extra_stats_cn": "部分达标净胜=1 约 25.5%",
+                  "full_cover_pct": 48.3,
+                  "half_cover_pct": 25.5,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
                   "margin_half_label": "部分达标净胜=1",
-                  "tier_gap": 3,
+                  "tier_gap": -0.5,
                   "show_cover": true
                 },
-                "text": "达标概率约 1.8% · 达到预期难度偏大",
-                "color": "#D95F6A",
+                "text": "Argentina -1.75 穿盘 48.3% · Jordan +1.75 守住 51.7%",
+                "color": "#C8A96E",
                 "primary": true
               },
               {
@@ -6666,30 +6702,35 @@ const MATCH_DATA = {
               "team": "Jordan",
               "first_goal_pct": 20.4,
               "start_score": "1-0",
-              "fav_name": "Jordan",
-              "scorer_is_fav": true,
-              "expected_key": "hold_win",
-              "fav_recover_pct": 55.7,
-              "small_lead_pct": 20.2,
-              "big_lead_pct": 7.8,
-              "fav_win_pct": 27.9,
+              "fav_name": "Argentina",
+              "scorer_is_fav": false,
+              "expected_key": "fav_recover",
+              "fav_recover_pct": 72.1,
+              "small_lead_pct": 23,
+              "big_lead_pct": 21.3,
+              "fav_win_pct": 44.3,
               "fav_draw_pct": 27.8,
-              "fav_lose_pct": 44.3,
+              "fav_lose_pct": 27.9,
               "outcomes": [
                 {
-                  "key": "hold_win",
-                  "label": "Jordan 保持胜果（净胜≥1）",
-                  "pct": 27.9
-                },
-                {
-                  "key": "drawn",
-                  "label": "被扳平",
+                  "key": "draw",
+                  "label": "Argentina 追平（平局）",
                   "pct": 27.8
                 },
                 {
-                  "key": "lost",
-                  "label": "被逆转落败",
-                  "pct": 44.3
+                  "key": "win1",
+                  "label": "Argentina 净胜1球翻盘（如 2-1）",
+                  "pct": 23
+                },
+                {
+                  "key": "win2",
+                  "label": "Argentina 净胜≥2球翻盘（如 3-1）",
+                  "pct": 21.3
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "Jordan 保持胜果至终场",
+                  "pct": 27.9
                 }
               ],
               "excitement": {
@@ -6719,89 +6760,40 @@ const MATCH_DATA = {
                   }
                 ]
               },
-              "big_delta": 6,
-              "small_delta": 13.6,
-              "narrative": "Jordan 先破门（已 1-0） → 「巩固防守」；Argentina 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
-              "live_outlook": {
-                "fav_name": "Jordan",
-                "state_label": "Jordan 已 1-0 领先",
-                "paths": [
-                  {
-                    "key": "narrow",
-                    "label": "险胜收工",
-                    "example": "如 1-0、2-1",
-                    "pct": 78.3
-                  },
-                  {
-                    "key": "clean",
-                    "label": "零封拉开",
-                    "example": "如 2-0、3-0",
-                    "pct": 14.8
-                  },
-                  {
-                    "key": "open",
-                    "label": "开放拉开",
-                    "example": "如 3-1+",
-                    "pct": 6.9
-                  }
-                ],
-                "margin_line_cn": "Jordan · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
-                "margin_meet_pct": 7.8,
-                "margin_half_pct": 20.2,
-                "margin_fail_pct": 20.2,
-                "margin_full_label": "净胜≥2",
-                "margin_half_label": "部分达标净胜=1",
-                "final_2_0_pct": null,
-                "final_3_0_plus_pct": null,
-                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-                "totals_line": 2.75,
-                "totals_line_cn": "总进球参考 2.75",
-                "fair_totals_line": 2.25,
-                "model_total_xg": 2.29,
-                "totals_line_gap": 0.5,
-                "totals_high_pct": 52.8,
-                "totals_low_pct": 47.2,
-                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-                "win_low_total_pct": 14.7,
-                "win_margin2_low_total_pct": 4.4,
-                "win_margin2_high_total_pct": 3.4,
-                "readout_cn": "Jordan 已 1-0 领先：仍取胜约 27.9%。 对着总进球参考 2.75，模型超线概率约 52.8%。 若再扩大，偏「险胜收工」。"
-              }
+              "big_delta": -27,
+              "small_delta": -2.5,
+              "narrative": "Jordan 先破门（已 1-0） → 「巩固防守」；Argentina 「组织反扑」。热门先丢球（已 1-0），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
+              "live_outlook": null
             },
             {
               "side": "away",
               "team": "Argentina",
               "first_goal_pct": 79.6,
               "start_score": "0-1",
-              "fav_name": "Jordan",
-              "scorer_is_fav": false,
-              "expected_key": "upset_hold",
-              "fav_recover_pct": 10.3,
-              "small_lead_pct": 1.8,
-              "big_lead_pct": 0.3,
-              "fav_win_pct": 2,
+              "fav_name": "Argentina",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 98,
+              "small_lead_pct": 23.5,
+              "big_lead_pct": 66.2,
+              "fav_win_pct": 89.7,
               "fav_draw_pct": 8.3,
-              "fav_lose_pct": 89.7,
+              "fav_lose_pct": 2,
               "outcomes": [
                 {
-                  "key": "draw",
-                  "label": "Jordan 追平（平局）",
+                  "key": "hold_win",
+                  "label": "Argentina 保持胜果（净胜≥1）",
+                  "pct": 89.7
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
                   "pct": 8.3
                 },
                 {
-                  "key": "win1",
-                  "label": "Jordan 净胜1球翻盘（如 2-1）",
-                  "pct": 1.8
-                },
-                {
-                  "key": "win2",
-                  "label": "Jordan 净胜≥2球翻盘（如 3-1）",
-                  "pct": 0.3
-                },
-                {
-                  "key": "upset_hold",
-                  "label": "Argentina 保持胜果至终场",
-                  "pct": 89.7
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 2
                 }
               ],
               "excitement": {
@@ -6831,10 +6823,54 @@ const MATCH_DATA = {
                   }
                 ]
               },
-              "big_delta": -1.5,
-              "small_delta": -4.8,
-              "narrative": "Argentina 先破门（已 0-1） → 「巩固防守」；Jordan 「组织反扑」。净胜两球及以上概率与全场预期接近。",
-              "live_outlook": null
+              "big_delta": 17.9,
+              "small_delta": -2,
+              "narrative": "Argentina 先破门（已 0-1） → 「巩固防守」；Jordan 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
+              "live_outlook": {
+                "fav_name": "Argentina",
+                "state_label": "Argentina 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 34.5
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 37
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 28.5
+                  }
+                ],
+                "margin_line_cn": "Argentina · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
+                "margin_meet_pct": 66.2,
+                "margin_half_pct": 23.5,
+                "margin_fail_pct": 23.5,
+                "margin_full_label": "净胜≥2",
+                "margin_half_label": "部分达标净胜=1",
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.75,
+                "totals_line_cn": "总进球参考 2.75",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 2.12,
+                "totals_line_gap": 0.5,
+                "totals_high_pct": 48.8,
+                "totals_low_pct": 51.2,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 31.9,
+                "win_margin2_low_total_pct": 19.8,
+                "win_margin2_high_total_pct": 46.3,
+                "readout_cn": "Argentina 已 1-0 领先：仍取胜约 89.7%。 对着总进球参考 2.75，模型超线概率约 48.8%。 常见 2-0 收尾（相对总进球参考 2.75仍偏小比分）。"
+              }
             }
           ],
           "match_preview": {
@@ -6844,20 +6880,20 @@ const MATCH_DATA = {
               "totals_high_pct": 38,
               "type_tags": [
                 {
-                  "key": "balanced",
-                  "label": "常规对抗"
+                  "key": "dominance",
+                  "label": "压制局"
                 }
               ],
               "depth_label": "深度一般",
               "draw_trap_pct": 13,
-              "readout_cn": "Jordan · 常规对抗。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+              "readout_cn": "Argentina · 压制局。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
             },
             "draw_trap_note": null,
             "archetype": {
               "tags": [
                 {
-                  "key": "balanced",
-                  "label": "常规对抗"
+                  "key": "dominance",
+                  "label": "压制局"
                 }
               ],
               "depth_score": 0,
@@ -6900,7 +6936,7 @@ const MATCH_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Jordan · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 3（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
+        "public_summary_note": "【推演概要】Argentina · 压制局。 · 与模型 xG 对照：预期偏热 · 赛前净胜看法低于 xG 隐含约 0.5 · 部分达标净胜=1 约 25.5%（模型微调：主胜 +2% · 平 +1% · 客 -3%）",
         "goal_efficiency_preview": {
           "mode": "preview",
           "xg_total": 3.04,
@@ -7116,9 +7152,9 @@ const MATCH_DATA = {
       "rating": 87
     },
     "teaser": "L组末轮 · 巴拿马 vs 英格兰",
-    "home_win": 6,
+    "home_win": 13,
     "draw": 20,
-    "away_win": 73,
+    "away_win": 66,
     "predicted_score": "0-2",
     "key_player_home": "José Fajardo",
     "key_player_away": "Jude Bellingham"

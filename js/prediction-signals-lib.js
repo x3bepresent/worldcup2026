@@ -97,18 +97,40 @@ function normalizeProb(hw, d, aw) {
   };
 }
 
+/**
+ * 让球盘口文案 — market_tier 正=主让、负=客让；返回热门 -X / 受让 +X
+ */
+function formatSpreadHandicapLines(marketTier, homeName, awayName) {
+  const t = Number(marketTier) || 0;
+  const abs = Math.round(Math.abs(t) * 100) / 100;
+  if (abs < 0.01) {
+    return {
+      favSide: null,
+      favName: null,
+      dogName: null,
+      favHandicapCn: null,
+      dogHandicapCn: null,
+      lineAbs: 0,
+    };
+  }
+  const favSide = t > 0 ? 'home' : 'away';
+  const favName = favSide === 'home' ? homeName : awayName;
+  const dogName = favSide === 'home' ? awayName : homeName;
+  const lineStr = String(abs).replace(/\.0+$/, '').replace(/(\.\d)0+$/, '$1');
+  return {
+    favSide,
+    favName,
+    dogName,
+    favHandicapCn: favName + ' -' + lineStr,
+    dogHandicapCn: dogName + ' +' + lineStr,
+    lineAbs: abs,
+  };
+}
+
 function formatTierLabel(marketTier, homeName, awayName) {
-  const t = Number(marketTier);
-  const abs = Math.abs(t);
-  let tierStr;
-  if (abs === 0) tierStr = '势均力敌';
-  else if (Math.abs(abs - 1.25) < 0.01) tierStr = '净胜约 1–2 球';
-  else if (Math.abs(abs - 1.75) < 0.01) tierStr = '净胜约 1.5–2 球';
-  else if (Math.abs(abs - 0.75) < 0.01) tierStr = '净胜约 0.5–1 球';
-  else tierStr = '净胜约 ' + abs + ' 球';
-  if (t > 0) return homeName + ' 被看好 · ' + tierStr;
-  if (t < 0) return awayName + ' 被看好 · ' + tierStr;
-  return '势均力敌';
+  const hk = formatSpreadHandicapLines(marketTier, homeName, awayName);
+  if (!hk.favHandicapCn) return '势均力敌';
+  return hk.favHandicapCn + ' · ' + hk.dogHandicapCn;
 }
 
 function formatTotalsLineLabel(line) {
@@ -2526,6 +2548,7 @@ function computeSpreadCover(xgHome, xgAway, marketTierHome, maxGoals) {
   }
 
   const top3 = top.slice(0, 3).map(c => ({ score: c.score, prob: pct(c.prob) }));
+  const dogHoldPct = favSide === 'balanced' ? null : pct(mass - favFullCover);
 
   let rationalSpreadCn = '均衡';
   if (favEv > 0.04) rationalSpreadCn = (favSide === 'home' ? '主队' : '客队') + ' 净胜达标概率略高';
@@ -2548,6 +2571,7 @@ function computeSpreadCover(xgHome, xgAway, marketTierHome, maxGoals) {
     one_goal_win_pct: pct(win1),
     two_plus_win_pct: pct(win2p),
     full_cover_pct: pct(favFullCover),
+    dog_hold_pct: dogHoldPct,
     half_cover_pct: pct(favHalfCover),
     half_lose_pct: pct(favHalfLose),
     push_pct: th.pushExact != null ? pct(favPush) : (isIntegerOne ? pct(win1) : null),
@@ -2891,16 +2915,18 @@ function classifyTotalsOutlook(overPct, lineGap, marketLine, fairLine, opts) {
 }
 
 /**
- * 净胜档读场（核心：热门能否达到赛前外界净胜预期）
+ * 让球读场 — 热门 -X 能否穿盘 / 受让 +X 能否守住（同一泊松表的两面）
  */
-function classifySpreadOutlook(cover, tier, tierGap, favName, winOutlook) {
+function classifySpreadOutlook(cover, tier, tierGap, favName, winOutlook, homeName, awayName) {
   const t = Number(tier) || 0;
   const gap = Number(tierGap) || 0;
   const th = getTierCoverThresholds(t);
+  const hk = formatSpreadHandicapLines(t, homeName, awayName);
   const pct = n => Math.round((Number(n) || 0) * 10) / 10;
   const full = pct(cover?.full_cover_pct ?? winOutlook?.margin_meet_pct ?? 0);
   const half = pct(cover?.half_cover_pct ?? winOutlook?.margin_half_pct ?? 0);
   const lose1 = pct(cover?.half_lose_pct ?? winOutlook?.margin_fail_pct ?? 0);
+  const dogHold = pct(cover?.dog_hold_pct ?? (full != null ? Math.max(0, 100 - full) : null));
 
   if (Math.abs(t) < 0.01) {
     return {
@@ -2956,33 +2982,38 @@ function classifySpreadOutlook(cover, tier, tierGap, favName, winOutlook) {
   if (th.halfLabel && half >= 12) extras.push(th.halfLabel + ' 约 ' + half + '%');
   if (lose1 >= 18) extras.push('仅胜 1 球约 ' + lose1 + '%');
 
-  let detail_cn = favName + ' · 赛前外界预期 ' + th.fullLabel
-    + '。模型推演达标概率约 ' + full + '%';
+  let detail_cn = hk.favHandicapCn + ' 穿盘约 ' + full + '%（' + th.fullLabel + '）'
+    + ' · ' + hk.dogHandicapCn + ' 守住约 ' + dogHold + '%';
   if (level === 'skeptical') {
-    detail_cn += '；外界看法高于 xG 隐含约 ' + gap + ' 球，达到预期难度偏大';
+    detail_cn += '；盘口相对 xG 偏深约 ' + Math.abs(gap) + ' 球，热门穿盘难度偏大';
   } else if (level === 'narrow') {
-    detail_cn += '；赢球可期，但净胜难拉到预期档';
+    detail_cn += '；热门赢球可期，但难稳定净胜穿盘';
   } else if (level === 'likely') {
-    detail_cn += '；模型认为达到外界预期档的概率相对较高';
+    detail_cn += '；模型认为热门穿盘概率相对较高';
   } else if (level === 'possible') {
-    detail_cn += '；有一定达标空间，但非高把握';
+    detail_cn += '；穿盘与受让守住均有一定空间';
   } else if (level === 'partial') {
-    detail_cn += '；全档达标偏难，部分达标更现实';
+    detail_cn += '；全穿偏难，仅赢一球/受让守住更现实';
   }
   if (extras.length) detail_cn += '（' + extras.join(' · ') + '）';
   detail_cn += '。';
 
-  const headline_cn = favName + ' · 净胜走向：' + verdict_cn;
-  const pill_cn = '达标概率约 ' + full + '% · ' + verdict_cn;
+  const headline_cn = hk.favHandicapCn + ' 穿盘：' + verdict_cn;
+  const pill_cn = hk.favHandicapCn + ' 穿盘 ' + full + '% · ' + hk.dogHandicapCn + ' 守住 ' + dogHold + '%';
 
   return {
     level,
     label_cn,
     color,
     fav_name: favName,
-    market_expect_cn: th.fullLabel,
+    dog_name: hk.dogName,
+    fav_handicap_cn: hk.favHandicapCn,
+    dog_handicap_cn: hk.dogHandicapCn,
+    market_expect_cn: hk.favHandicapCn + ' · ' + th.fullLabel,
     meet_pct: full,
-    meet_pct_label: '模型推演达标概率',
+    dog_hold_pct: dogHold,
+    meet_pct_label: hk.favHandicapCn + ' 穿盘概率',
+    dog_hold_label: hk.dogHandicapCn + ' 守住概率',
     verdict_cn,
     headline_cn,
     pill_cn,
@@ -3200,7 +3231,8 @@ function buildCustomerReading(match, displaySummary, tier, tierGap, cover, adjus
       totalsView.fair_line
     );
   const spreadOutlook = classifySpreadOutlook(
-    cover, tier, tierGap, displaySummary.fav_name, displaySummary.win_outlook
+    cover, tier, tierGap, displaySummary.fav_name, displaySummary.win_outlook,
+    match.home.name, match.away.name
   );
 
   const drawPct = adjusted?.draw ?? 0;
@@ -3233,7 +3265,7 @@ function buildCustomerReading(match, displaySummary, tier, tierGap, cover, adjus
     {
       key: 'spread',
       icon: '⚖️',
-      label: '净胜走向',
+      label: '让球盘',
       outlook: spreadOutlook,
       text: spreadOutlook.pill_cn || spreadOutlook.detail_cn,
       color: spreadOutlook.color,
@@ -4363,6 +4395,8 @@ function buildInsightKeyFactors(match, groupContext, baseKeyFactor) {
 const exportsObj = {
   SIGNAL_META,
   impliedTierFromXg,
+  formatSpreadHandicapLines,
+  formatTierLabel,
   computeSpreadCover,
   computeTotalsAnalysis,
   classifyExcitementLabel,

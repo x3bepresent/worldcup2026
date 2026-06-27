@@ -2597,6 +2597,16 @@ footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--bor
   transition: width 0.3s ease;
 }
 .dc-spread-meter-verdict { margin-top: 0.35rem; }
+.dc-spread-meter-dog {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin: 0.35rem 0 0.15rem;
+  font-size: 0.74rem;
+}
+.dc-spread-meter-dog-label { color: var(--txt2); }
+.dc-spread-meter-dog-pct { font-weight: 800; color: #7BB8D4; }
 .dc-ga-meter { margin-top: 0; }
 .dc-reading-draw {
   margin-bottom: 0.5rem;

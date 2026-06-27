@@ -762,10 +762,10 @@ function computeTotalsVerdict(m, ms) {
 }
 
 const SPREAD_STANCE_CN = {
-  expect_cover: '预期热门达标穿盘',
-  expect_no_cover: '预期热门难穿盘',
-  expect_partial: '预期部分达标',
-  neutral: '净胜无强判',
+  expect_cover: '预期热门穿盘',
+  expect_no_cover: '预期热门难穿盘 · 受让可守',
+  expect_partial: '预期仅小胜/受让守住',
+  neutral: '让球无强判',
 };
 
 function inferModelSpreadStance(level, fullPred) {
@@ -789,26 +789,34 @@ function computeHandicapVerdict(m, ms, margin) {
   const favSide = tier > 0 ? 'home' : 'away';
   const favName = favSide === 'home' ? m.home?.name : m.away?.name;
   const th = getTierCoverThresholds(tier);
-  const actualCovers = spreadActual === 'full_cover' || spreadActual === 'half_cover';
-  const actualFails = spreadActual === 'half_lose' || spreadActual === 'full_lose';
+  const favFullCover = spreadActual === 'full_cover';
+  const dogHoldActual = spreadActual === 'half_cover' || spreadActual === 'half_lose'
+    || spreadActual === 'full_lose' || spreadActual === 'push';
 
   let hit = null;
   if (stance === 'expect_cover') {
-    if (actualCovers) hit = true;
-    else if (actualFails || spreadActual === 'partial') hit = false;
+    if (favFullCover) hit = true;
+    else if (dogHoldActual || spreadActual === 'partial') hit = false;
   } else if (stance === 'expect_no_cover') {
-    if (actualFails) hit = true;
-    else if (actualCovers) hit = false;
+    if (dogHoldActual) hit = true;
+    else if (favFullCover) hit = false;
   } else if (stance === 'expect_partial') {
-    if (spreadActual === 'half_cover' || spreadActual === 'full_cover' || spreadActual === 'partial') hit = true;
-    else if (actualFails) hit = false;
+    if (spreadActual === 'half_cover' || favFullCover || spreadActual === 'partial') hit = true;
+    else if (spreadActual === 'full_lose') hit = false;
   }
 
   const replay = m.depth_calibration?.preview_replay;
-  if (replay?.hits?.some(h => /净胜|小胜|部分达标/.test(h))) hit = true;
-  if (replay?.misses?.some(h => /净胜/.test(h))) hit = false;
+  if (replay?.hits?.some(h => /净胜|小胜|部分达标|穿盘|守住/.test(h))) hit = true;
+  if (replay?.misses?.some(h => /净胜|穿盘/.test(h))) hit = false;
 
-  const lineDesc = ms.tier_label || `${favName || '热门'} · ${th.fullLabel}`;
+  const dc = m.depth_calibration || {};
+  const ds = dc.display_summary || {};
+  const sp = ds.customer_reading?.spread || {};
+  const lineDesc = ms.tier_label || dc.tier_label
+    || (favName ? `${favName} -${Math.abs(Number(tier))}` : null);
+  const dogLine = sp.dog_handicap_cn;
+  const favLine = sp.fav_handicap_cn;
+  const dogHold = sp.dog_hold_pct ?? dc.spread_cover?.dog_hold_pct;
   const gradable = stance !== 'neutral' && hit != null;
 
   return {
@@ -816,18 +824,23 @@ function computeHandicapVerdict(m, ms, margin) {
     tier,
     favSide,
     favName,
-    lineDesc,
+    favLine,
+    dogLine,
+    lineDesc: favLine && dogLine ? `${favLine} · ${dogLine}` : lineDesc,
     stance,
     stanceCn: SPREAD_STANCE_CN[stance],
     spreadActual,
     actual: SPREAD_RESULT_CN[spreadActual] || spreadActual,
     level,
     modelPct: fullPred,
+    dogHoldPct: dogHold,
     hit,
     gradable,
     marketExpect: ms.spread_market_expect || '—',
-    note: `盘口 ${lineDesc} · 模型${SPREAD_STANCE_CN[stance]} · 实际${SPREAD_RESULT_CN[spreadActual] || spreadActual}`
-      + (fullPred != null ? ` · 达标概率 ${fullPred}%` : ''),
+    note: favLine && dogLine
+      ? `${favLine} 穿盘 ${fullPred ?? '—'}% · ${dogLine} 守住 ${dogHold ?? '—'}% · 模型${SPREAD_STANCE_CN[stance]}`
+      : `盘口 ${lineDesc} · 模型${SPREAD_STANCE_CN[stance]} · 实际${SPREAD_RESULT_CN[spreadActual] || spreadActual}`
+        + (fullPred != null ? ` · 穿盘概率 ${fullPred}%` : ''),
   };
 }
 
@@ -868,14 +881,15 @@ function buildMarketPreview(m) {
     ? (totalsSide === 'over' ? `偏大 ${totalsLine}` : totalsSide === 'under' ? `偏小 ${totalsLine}` : `大小 ${totalsLine}`)
     : (totalsLine != null ? `参考线 ${totalsLine} · 无强判` : '大小无强判');
   const totalsDetail = showTotalsLean && to.detail_cn ? String(to.detail_cn).split('；')[0] : '';
-  const favSide = tier > 0 ? 'home' : tier < 0 ? 'away' : null;
-  const favName = sp.fav_name || (favSide === 'home' ? m.home?.name : favSide === 'away' ? m.away?.name : null);
-  const th = tierAbs >= 0.01 ? getTierCoverThresholds(tier) : null;
-  const lineDesc = dc.tier_label || ms.tier_label
-    || (favName && th ? `${favName} · ${th.fullLabel}` : null)
-    || (tierAbs < 0.01 ? '势均力敌 · 无让球档' : '—');
-  const marketExpect = sp.market_expect_cn || ms.spread_market_expect || (th ? th.fullLabel : '—');
+  const favHandicapCn = sp.fav_handicap_cn || dc.tier_label?.split(' · ')[0] || null;
+  const dogHandicapCn = sp.dog_handicap_cn || dc.tier_label?.split(' · ')[1] || null;
+  const lineDesc = favHandicapCn && dogHandicapCn
+    ? `${favHandicapCn} · ${dogHandicapCn}`
+    : (dc.tier_label || ms.tier_label || (tierAbs < 0.01 ? '势均力敌 · 无让球' : '—'));
+  const marketExpect = sp.market_expect_cn || ms.spread_market_expect || '—';
   const meetPct = ms.full_cover_pct ?? sp.meet_pct ?? sp.full_cover_pct;
+  const dogHoldPct = sp.dog_hold_pct ?? dc.spread_cover?.dog_hold_pct
+    ?? (meetPct != null ? Math.round((100 - meetPct) * 10) / 10 : null);
   const spreadVerdict = sp.verdict_cn || sp.label_cn || '';
   const level = ms.spread_level ?? sp.level;
   const showWinCoverWarn = !!(dc.blocker_spread_note)
@@ -883,13 +897,18 @@ function buildMarketPreview(m) {
     || level === 'narrow'
     || (stance === 'expect_no_cover' && tierAbs >= 0.5);
   const warnText = dc.blocker_spread_note
-    || (showWinCoverWarn ? '赢球 ≠ 穿盘 · 赛果复盘以让球/大小球为主口径，胜平负仅作参考' : '');
+    || (showWinCoverWarn && favHandicapCn && dogHandicapCn
+      ? `${favHandicapCn} 穿盘 ≠ 仅赢球 · ${dogHandicapCn} 在仅赢 1 球时通常仍可守住`
+      : (showWinCoverWarn ? '热门赢球 ≠ 让球穿盘 · 赛果复盘以让球/大小球为主口径' : ''));
 
   return {
     available: true,
+    favHandicapCn,
+    dogHandicapCn,
     lineDesc,
     marketExpect,
     meetPct,
+    dogHoldPct,
     spreadVerdict,
     stance,
     stanceCn: SPREAD_STANCE_CN[stance],
@@ -910,25 +929,29 @@ function renderMarketPreviewStrip(m) {
   const preview = buildMarketPreview(m);
   if (!preview?.available) return '';
   const meetPctHtml = preview.meetPct != null && preview.gradableSpread
-    ? `<span class="mf-market-preview-sub">达标概率 ${preview.meetPct}%</span>`
+    ? `<span class="mf-market-preview-sub">${preview.favHandicapCn || '热门'} 穿盘 ${preview.meetPct}%</span>`
+    : '';
+  const dogHoldHtml = preview.dogHoldPct != null && preview.gradableSpread
+    ? `<span class="mf-market-preview-sub">${preview.dogHandicapCn || '受让'} 守住 ${preview.dogHoldPct}%</span>`
     : '';
   return `
     <div class="mf-market-preview fade-in">
       <div class="mf-market-preview-head">
         <span class="mf-market-preview-kicker">盘口要点</span>
-        <span class="mf-market-preview-badge">赛果复盘主口径 · 让球 → 大小 → 胜平负</span>
+        <span class="mf-market-preview-badge">热门 -X 穿盘 · 受让 +X 守住</span>
         ${preview.signalCn ? `<span class="mf-market-preview-signal" style="color:${preview.signalColor || '#C8A96E'}">${preview.signalCn}</span>` : ''}
       </div>
       <div class="mf-market-preview-grid">
         <div class="mf-market-preview-cell mf-market-preview-cell--spread">
-          <span class="mf-market-preview-label">让球 / 净胜</span>
+          <span class="mf-market-preview-label">让球盘口</span>
           <span class="mf-market-preview-val">${preview.lineDesc}</span>
-          <span class="mf-market-preview-meta">外界 ${preview.marketExpect}${preview.spreadVerdict ? ` · ${preview.spreadVerdict}` : ''}</span>
+          <span class="mf-market-preview-meta">${preview.marketExpect}${preview.spreadVerdict ? ` · ${preview.spreadVerdict}` : ''}</span>
         </div>
         <div class="mf-market-preview-cell mf-market-preview-cell--stance" style="--stance-color:${preview.stanceColor}">
           <span class="mf-market-preview-label">模型立场</span>
           <span class="mf-market-preview-val mf-market-preview-val--stance">${preview.stanceCn}</span>
           ${meetPctHtml}
+          ${dogHoldHtml}
         </div>
         <div class="mf-market-preview-cell mf-market-preview-cell--totals${preview.totalsStrong ? ' mf-market-preview-cell--strong' : ''}" style="--stance-color:${preview.totalsColor}">
           <span class="mf-market-preview-label">大小球</span>
@@ -1981,30 +2004,40 @@ function renderSpreadOutlookMeter(sp) {
     return `<p class="dc-read-meter-foot">${sp.detail_cn || sp.pill_cn || ''}</p>`;
   }
   const pct = sp.meet_pct ?? 0;
+  const dogHold = sp.dog_hold_pct;
   const barW = Math.max(4, Math.min(100, pct));
+  const favLine = sp.fav_handicap_cn || sp.market_expect_cn || '—';
+  const dogLine = sp.dog_handicap_cn;
   return `
     <div class="dc-read-meter dc-spread-meter dc-spread-meter--${sp.level || 'uncertain'}">
       <div class="dc-spread-meter-kv">
-        <span class="dc-spread-meter-k">外界净胜猜测</span>
-        <span class="dc-spread-meter-v">${sp.market_expect_cn || '—'}</span>
+        <span class="dc-spread-meter-k">让球盘口</span>
+        <span class="dc-spread-meter-v">${favLine}${dogLine ? ` · ${dogLine}` : ''}</span>
       </div>
       <div class="dc-spread-meter-bar-wrap">
         <div class="dc-spread-meter-bar-head">
-          <span class="dc-spread-meter-bar-label">${sp.meet_pct_label || '模型推演达标概率'}</span>
+          <span class="dc-spread-meter-bar-label">${sp.meet_pct_label || '热门穿盘概率'}</span>
           <span class="dc-spread-meter-pct" style="color:${sp.color || '#7BB8D4'}">${pct}%</span>
         </div>
-        <div class="dc-spread-meter-bar" role="img" aria-label="达标概率 ${pct}%">
+        <div class="dc-spread-meter-bar" role="img" aria-label="穿盘概率 ${pct}%">
           <div class="dc-spread-meter-bar-fill" style="width:${barW}%;background:${sp.color || '#7BB8D4'}"></div>
         </div>
       </div>
+      ${dogHold != null ? `
+      <div class="dc-spread-meter-dog">
+        <span class="dc-spread-meter-dog-label">${sp.dog_hold_label || '受让守住概率'}</span>
+        <span class="dc-spread-meter-dog-pct">${dogHold}%</span>
+      </div>` : ''}
       <div class="dc-read-meter-tag dc-spread-meter-verdict" style="color:${sp.color || '#8A96A8'}">${sp.verdict_cn || ''}</div>
       ${sp.extra_stats_cn ? `<p class="dc-read-meter-foot dc-read-meter-foot--sub">${sp.extra_stats_cn}</p>` : ''}
     </div>`;
 }
 
 function renderReadingPillHead(p) {
-  const team = p.key === 'spread' && p.outlook?.fav_name
-    ? `<span class="dc-reading-pill-team">${p.outlook.fav_name}</span>` : '';
+  const team = p.key === 'spread' && p.outlook?.fav_handicap_cn
+    ? `<span class="dc-reading-pill-team">${p.outlook.fav_handicap_cn}</span>`
+    : (p.key === 'spread' && p.outlook?.fav_name
+      ? `<span class="dc-reading-pill-team">${p.outlook.fav_name}</span>` : '');
   const label = p.key === 'totals' ? '进球氛围' : p.label;
   return `
       <div class="dc-reading-pill-head">
