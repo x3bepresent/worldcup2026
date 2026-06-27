@@ -2,17 +2,22 @@
 // Last updated: 2026-06-20T14:00:00+08:00
 const RESULTS_DATA = {
   "lastUpdated": "2026-06-20T14:00:00+08:00",
-  "syncSource": "FIFA 官方赛果 · Day 15 全部 6 场完结",
+  "syncSource": "FIFA 官方赛果 · Day 16 完结 · Day 17 预览",
   "breakingNews": [
     {
       "tag": "OFFICIAL",
-      "text": "🏁 Day 15 完结：厄瓜多尔2-1德国爆冷 · 土3-2美 · 荷3-1突 · 日1-1瑞 · 澳0-0巴",
-      "time": "6月26日"
+      "text": "🏁 Day 16 完结：法国4-1挪威 · 比5-1新西兰 · 塞5-0伊 · 西1-0乌 · 埃1-1伊 · 佛0-0沙",
+      "time": "6月27日"
     },
     {
       "tag": "OFFICIAL",
-      "text": "D/E/F出线：美国/德国/荷兰头名 · 澳大利亚/科特迪瓦/日本次席",
+      "text": "G/H/I出线：比利时/西班牙/法国头名 · 埃及/佛得角/挪威次席",
       "time": "积分榜"
+    },
+    {
+      "tag": "PREVIEW",
+      "text": "📅 6月28日 J/K/L末轮6场 · 巴拿马-英格兰/克罗地亚-加纳(05:00) · 哥伦-葡/刚果-乌兹(07:30) · 阿尔-奥/约-阿(10:00)",
+      "time": "今日赛程"
     }
   ],
   "finishedMatches": [
@@ -31031,7 +31036,7 @@ const RESULTS_DATA = {
           {
             "icon": "📊",
             "label": "小组积分",
-            "text": "Spain 暂列 H 组第 1（4 分 · 已赛 2 场） vs Saudi Arabia 第 4（1 分 · 已赛 2 场）"
+            "text": "Spain 暂列 H 组第 1（7 分 · 已赛 3 场） vs Saudi Arabia 第 4（2 分 · 已赛 3 场）"
           },
           {
             "icon": "🌤️",
@@ -31842,45 +31847,45 @@ const RESULTS_DATA = {
       },
       "group_context": {
         "group": "H",
-        "label": "H组 · 第2轮后",
+        "label": "H组 · 末轮后",
         "matchday": 2,
         "standings": [
           {
             "team": "Spain",
-            "pts": 4,
-            "p": 2,
-            "w": 1,
+            "pts": 7,
+            "p": 3,
+            "w": 2,
             "d": 1,
             "l": 0,
-            "gf": 4,
-            "ga": 0
-          },
-          {
-            "team": "Uruguay",
-            "pts": 2,
-            "p": 2,
-            "w": 0,
-            "d": 2,
-            "l": 0,
-            "gf": 3,
-            "ga": 2
+            "gf": 5,
+            "ga": 1
           },
           {
             "team": "Cape Verde",
-            "pts": 2,
-            "p": 2,
+            "pts": 3,
+            "p": 3,
             "w": 0,
-            "d": 2,
+            "d": 3,
             "l": 0,
             "gf": 2,
             "ga": 2
           },
           {
-            "team": "Saudi Arabia",
-            "pts": 1,
-            "p": 2,
+            "team": "Uruguay",
+            "pts": 2,
+            "p": 3,
             "w": 0,
-            "d": 1,
+            "d": 2,
+            "l": 1,
+            "gf": 3,
+            "ga": 3
+          },
+          {
+            "team": "Saudi Arabia",
+            "pts": 2,
+            "p": 3,
+            "w": 0,
+            "d": 2,
             "l": 1,
             "gf": 1,
             "ga": 5
@@ -31889,8 +31894,8 @@ const RESULTS_DATA = {
         "home": {
           "team": "Spain",
           "rank": 1,
-          "pts": 4,
-          "played": 2,
+          "pts": 7,
+          "played": 3,
           "if_1st": "32强 M84 · H 组第 1 vs J 组第 2 → 当前 J 组第 2倾向 Austria",
           "if_1st_r16": "16强 M93 · 对阵 K 组第 2 vs L 组第 2 之胜者",
           "if_1st_corridor": "西班牙头名 → 16 强或遇 K/L 次席",
@@ -31903,8 +31908,8 @@ const RESULTS_DATA = {
         "away": {
           "team": "Saudi Arabia",
           "rank": 4,
-          "pts": 1,
-          "played": 2,
+          "pts": 2,
+          "played": 3,
           "if_1st": "32强 M84 · H 组第 1 vs J 组第 2 → 当前 J 组第 2倾向 Austria",
           "if_1st_r16": "16强 M93 · 对阵 K 组第 2 vs L 组第 2 之胜者",
           "if_1st_corridor": "西班牙头名 → 16 强或遇 K/L 次席",
@@ -31916,10 +31921,10 @@ const RESULTS_DATA = {
         },
         "cross_group_notes": [
           "J 组：头名 Argentina 6 分 · 次席 Austria 3 分（32强绑定组）",
-          "G 组：头名 Egypt 4 分 · 次席 Iran 2 分（32强绑定组）",
+          "G 组：头名 Belgium 5 分 · 次席 Egypt 5 分（32强绑定组）",
           "E 组 Germany 6 分领跑",
           "F 组 Netherlands 7 分领跑",
-          "I 组 France 6 分领跑",
+          "I 组 France 9 分领跑",
           "D 组 USA 6 分领跑"
         ],
         "path_tradeoff": "H 组与 J 组绑定；头名次席决定 32 强对位。",
@@ -31931,9 +31936,9 @@ const RESULTS_DATA = {
         },
         "knockout_note": "48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。",
         "scenarios": [
-          "Spain 若取胜：积分 7，H 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
-          "Saudi Arabia 若取胜：积分 4，客场抢分将改变 H 组格局与淘汰赛半区。",
-          "平局：双方各 +1 分；在 J 组：头名 Argentina 6 分 · 次席 Austria 3 分（32强绑定组） · G 组：头名 Egypt 4 分 · 次席 Iran 2 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
+          "Spain 若取胜：积分 10，H 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
+          "Saudi Arabia 若取胜：积分 5，客场抢分将改变 H 组格局与淘汰赛半区。",
+          "平局：双方各 +1 分；在 J 组：头名 Argentina 6 分 · 次席 Austria 3 分（32强绑定组） · G 组：头名 Belgium 5 分 · 次席 Egypt 5 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
           "头名/次席博弈：H 组与 J 组绑定；头名次席决定 32 强对位。"
         ]
       },
@@ -32342,7 +32347,7 @@ const RESULTS_DATA = {
           {
             "icon": "📊",
             "label": "小组积分",
-            "text": "Belgium 暂列 G 组第 3（2 分 · 已赛 2 场） vs Iran 第 2（2 分 · 已赛 2 场）；组内 Egypt 4分 领先；直接对话权重极高"
+            "text": "Belgium 暂列 G 组第 1（5 分 · 已赛 3 场） vs Iran 第 3（3 分 · 已赛 3 场）"
           },
           {
             "icon": "🌤️",
@@ -33158,55 +33163,55 @@ const RESULTS_DATA = {
       },
       "group_context": {
         "group": "G",
-        "label": "G组 · 第2轮后",
+        "label": "G组 · 末轮后",
         "matchday": 2,
         "standings": [
           {
-            "team": "Egypt",
-            "pts": 4,
-            "p": 2,
+            "team": "Belgium",
+            "pts": 5,
+            "p": 3,
             "w": 1,
-            "d": 1,
-            "l": 0,
-            "gf": 4,
-            "ga": 3
-          },
-          {
-            "team": "Iran",
-            "pts": 2,
-            "p": 2,
-            "w": 0,
             "d": 2,
             "l": 0,
-            "gf": 2,
+            "gf": 6,
             "ga": 2
           },
           {
-            "team": "Belgium",
-            "pts": 2,
-            "p": 2,
-            "w": 0,
+            "team": "Egypt",
+            "pts": 5,
+            "p": 3,
+            "w": 1,
             "d": 2,
             "l": 0,
-            "gf": 1,
-            "ga": 1
+            "gf": 5,
+            "ga": 4
+          },
+          {
+            "team": "Iran",
+            "pts": 3,
+            "p": 3,
+            "w": 0,
+            "d": 3,
+            "l": 0,
+            "gf": 3,
+            "ga": 3
           },
           {
             "team": "New Zealand",
             "pts": 1,
-            "p": 2,
+            "p": 3,
             "w": 0,
             "d": 0,
-            "l": 2,
-            "gf": 3,
-            "ga": 5
+            "l": 3,
+            "gf": 4,
+            "ga": 10
           }
         ],
         "home": {
           "team": "Belgium",
-          "rank": 3,
-          "pts": 2,
-          "played": 2,
+          "rank": 1,
+          "pts": 5,
+          "played": 3,
           "if_1st": "32强 M82 · G 组第 1 vs 最佳第 3（A/E/H/I/J 池） → 当前 D 组第 2倾向 Australia",
           "if_1st_r16": "16强 M94 · 对阵 D 组第 1 vs 最佳第 3 之胜者",
           "if_1st_corridor": "比利时头名通道",
@@ -33218,9 +33223,9 @@ const RESULTS_DATA = {
         },
         "away": {
           "team": "Iran",
-          "rank": 2,
-          "pts": 2,
-          "played": 2,
+          "rank": 3,
+          "pts": 3,
+          "played": 3,
           "if_1st": "32强 M82 · G 组第 1 vs 最佳第 3（A/E/H/I/J 池） → 当前 D 组第 2倾向 Australia",
           "if_1st_r16": "16强 M94 · 对阵 D 组第 1 vs 最佳第 3 之胜者",
           "if_1st_corridor": "比利时头名通道",
@@ -33232,10 +33237,10 @@ const RESULTS_DATA = {
         },
         "cross_group_notes": [
           "D 组：头名 USA 6 分 · 次席 Australia 4 分（32强绑定组）",
-          "H 组：头名 Spain 4 分 · 次席 Uruguay 2 分（32强绑定组）",
+          "H 组：头名 Spain 7 分 · 次席 Cape Verde 3 分（32强绑定组）",
           "E 组 Germany 6 分领跑",
           "F 组 Netherlands 7 分领跑",
-          "I 组 France 6 分领跑"
+          "I 组 France 9 分领跑"
         ],
         "path_tradeoff": "G 组次席与 D 组次席同槽，16 强进入 J/H 半区。",
         "manipulation_risk": {
@@ -33246,9 +33251,9 @@ const RESULTS_DATA = {
         },
         "knockout_note": "48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。",
         "scenarios": [
-          "Belgium 若取胜：积分 5，G 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
-          "Iran 若取胜：积分 5，客场抢分将改变 G 组格局与淘汰赛半区。",
-          "平局：双方各 +1 分；在 D 组：头名 USA 6 分 · 次席 Australia 4 分（32强绑定组） · H 组：头名 Spain 4 分 · 次席 Uruguay 2 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
+          "Belgium 若取胜：积分 8，G 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
+          "Iran 若取胜：积分 6，客场抢分将改变 G 组格局与淘汰赛半区。",
+          "平局：双方各 +1 分；在 D 组：头名 USA 6 分 · 次席 Australia 4 分（32强绑定组） · H 组：头名 Spain 7 分 · 次席 Cape Verde 3 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
           "头名/次席博弈：G 组次席与 D 组次席同槽，16 强进入 J/H 半区。"
         ]
       },
@@ -33677,7 +33682,7 @@ const RESULTS_DATA = {
           {
             "icon": "📊",
             "label": "小组积分",
-            "text": "Uruguay 暂列 H 组第 2（2 分 · 已赛 2 场） vs Cape Verde 第 3（2 分 · 已赛 2 场）；组内 Spain 4分 领先；直接对话权重极高"
+            "text": "Uruguay 暂列 H 组第 3（2 分 · 已赛 3 场） vs Cape Verde 第 2（3 分 · 已赛 3 场）；组内 Spain 7分 领先；直接对话权重极高"
           },
           {
             "icon": "🌤️",
@@ -34492,45 +34497,45 @@ const RESULTS_DATA = {
       },
       "group_context": {
         "group": "H",
-        "label": "H组 · 第2轮后",
+        "label": "H组 · 末轮后",
         "matchday": 2,
         "standings": [
           {
             "team": "Spain",
-            "pts": 4,
-            "p": 2,
-            "w": 1,
+            "pts": 7,
+            "p": 3,
+            "w": 2,
             "d": 1,
             "l": 0,
-            "gf": 4,
-            "ga": 0
-          },
-          {
-            "team": "Uruguay",
-            "pts": 2,
-            "p": 2,
-            "w": 0,
-            "d": 2,
-            "l": 0,
-            "gf": 3,
-            "ga": 2
+            "gf": 5,
+            "ga": 1
           },
           {
             "team": "Cape Verde",
-            "pts": 2,
-            "p": 2,
+            "pts": 3,
+            "p": 3,
             "w": 0,
-            "d": 2,
+            "d": 3,
             "l": 0,
             "gf": 2,
             "ga": 2
           },
           {
-            "team": "Saudi Arabia",
-            "pts": 1,
-            "p": 2,
+            "team": "Uruguay",
+            "pts": 2,
+            "p": 3,
             "w": 0,
-            "d": 1,
+            "d": 2,
+            "l": 1,
+            "gf": 3,
+            "ga": 3
+          },
+          {
+            "team": "Saudi Arabia",
+            "pts": 2,
+            "p": 3,
+            "w": 0,
+            "d": 2,
             "l": 1,
             "gf": 1,
             "ga": 5
@@ -34538,9 +34543,9 @@ const RESULTS_DATA = {
         ],
         "home": {
           "team": "Uruguay",
-          "rank": 2,
+          "rank": 3,
           "pts": 2,
-          "played": 2,
+          "played": 3,
           "if_1st": "32强 M84 · H 组第 1 vs J 组第 2 → 当前 J 组第 2倾向 Austria",
           "if_1st_r16": "16强 M93 · 对阵 K 组第 2 vs L 组第 2 之胜者",
           "if_1st_corridor": "西班牙头名 → 16 强或遇 K/L 次席",
@@ -34552,9 +34557,9 @@ const RESULTS_DATA = {
         },
         "away": {
           "team": "Cape Verde",
-          "rank": 3,
-          "pts": 2,
-          "played": 2,
+          "rank": 2,
+          "pts": 3,
+          "played": 3,
           "if_1st": "32强 M84 · H 组第 1 vs J 组第 2 → 当前 J 组第 2倾向 Austria",
           "if_1st_r16": "16强 M93 · 对阵 K 组第 2 vs L 组第 2 之胜者",
           "if_1st_corridor": "西班牙头名 → 16 强或遇 K/L 次席",
@@ -34566,10 +34571,10 @@ const RESULTS_DATA = {
         },
         "cross_group_notes": [
           "J 组：头名 Argentina 6 分 · 次席 Austria 3 分（32强绑定组）",
-          "G 组：头名 Egypt 4 分 · 次席 Iran 2 分（32强绑定组）",
+          "G 组：头名 Belgium 5 分 · 次席 Egypt 5 分（32强绑定组）",
           "E 组 Germany 6 分领跑",
           "F 组 Netherlands 7 分领跑",
-          "I 组 France 6 分领跑",
+          "I 组 France 9 分领跑",
           "D 组 USA 6 分领跑"
         ],
         "path_tradeoff": "H 组与 J 组绑定；头名次席决定 32 强对位。",
@@ -34582,8 +34587,8 @@ const RESULTS_DATA = {
         "knockout_note": "48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。",
         "scenarios": [
           "Uruguay 若取胜：积分 5，H 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
-          "Cape Verde 若取胜：积分 5，客场抢分将改变 H 组格局与淘汰赛半区。",
-          "平局：双方各 +1 分；在 J 组：头名 Argentina 6 分 · 次席 Austria 3 分（32强绑定组） · G 组：头名 Egypt 4 分 · 次席 Iran 2 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
+          "Cape Verde 若取胜：积分 6，客场抢分将改变 H 组格局与淘汰赛半区。",
+          "平局：双方各 +1 分；在 J 组：头名 Argentina 6 分 · 次席 Austria 3 分（32强绑定组） · G 组：头名 Belgium 5 分 · 次席 Egypt 5 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
           "头名/次席博弈：H 组与 J 组绑定；头名次席决定 32 强对位。"
         ]
       },
@@ -34991,7 +34996,7 @@ const RESULTS_DATA = {
           {
             "icon": "📊",
             "label": "小组积分",
-            "text": "New Zealand 暂列 G 组第 4（1 分 · 已赛 2 场） vs Egypt 第 1（4 分 · 已赛 2 场）"
+            "text": "New Zealand 暂列 G 组第 4（1 分 · 已赛 3 场） vs Egypt 第 2（5 分 · 已赛 3 场）"
           },
           {
             "icon": "🌤️",
@@ -35792,55 +35797,55 @@ const RESULTS_DATA = {
       },
       "group_context": {
         "group": "G",
-        "label": "G组 · 第2轮后",
+        "label": "G组 · 末轮后",
         "matchday": 2,
         "standings": [
           {
-            "team": "Egypt",
-            "pts": 4,
-            "p": 2,
+            "team": "Belgium",
+            "pts": 5,
+            "p": 3,
             "w": 1,
-            "d": 1,
-            "l": 0,
-            "gf": 4,
-            "ga": 3
-          },
-          {
-            "team": "Iran",
-            "pts": 2,
-            "p": 2,
-            "w": 0,
             "d": 2,
             "l": 0,
-            "gf": 2,
+            "gf": 6,
             "ga": 2
           },
           {
-            "team": "Belgium",
-            "pts": 2,
-            "p": 2,
-            "w": 0,
+            "team": "Egypt",
+            "pts": 5,
+            "p": 3,
+            "w": 1,
             "d": 2,
             "l": 0,
-            "gf": 1,
-            "ga": 1
+            "gf": 5,
+            "ga": 4
+          },
+          {
+            "team": "Iran",
+            "pts": 3,
+            "p": 3,
+            "w": 0,
+            "d": 3,
+            "l": 0,
+            "gf": 3,
+            "ga": 3
           },
           {
             "team": "New Zealand",
             "pts": 1,
-            "p": 2,
+            "p": 3,
             "w": 0,
             "d": 0,
-            "l": 2,
-            "gf": 3,
-            "ga": 5
+            "l": 3,
+            "gf": 4,
+            "ga": 10
           }
         ],
         "home": {
           "team": "New Zealand",
           "rank": 4,
           "pts": 1,
-          "played": 2,
+          "played": 3,
           "if_1st": "32强 M82 · G 组第 1 vs 最佳第 3（A/E/H/I/J 池） → 当前 D 组第 2倾向 Australia",
           "if_1st_r16": "16强 M94 · 对阵 D 组第 1 vs 最佳第 3 之胜者",
           "if_1st_corridor": "比利时头名通道",
@@ -35852,9 +35857,9 @@ const RESULTS_DATA = {
         },
         "away": {
           "team": "Egypt",
-          "rank": 1,
-          "pts": 4,
-          "played": 2,
+          "rank": 2,
+          "pts": 5,
+          "played": 3,
           "if_1st": "32强 M82 · G 组第 1 vs 最佳第 3（A/E/H/I/J 池） → 当前 D 组第 2倾向 Australia",
           "if_1st_r16": "16强 M94 · 对阵 D 组第 1 vs 最佳第 3 之胜者",
           "if_1st_corridor": "比利时头名通道",
@@ -35866,10 +35871,10 @@ const RESULTS_DATA = {
         },
         "cross_group_notes": [
           "D 组：头名 USA 6 分 · 次席 Australia 4 分（32强绑定组）",
-          "H 组：头名 Spain 4 分 · 次席 Uruguay 2 分（32强绑定组）",
+          "H 组：头名 Spain 7 分 · 次席 Cape Verde 3 分（32强绑定组）",
           "E 组 Germany 6 分领跑",
           "F 组 Netherlands 7 分领跑",
-          "I 组 France 6 分领跑"
+          "I 组 France 9 分领跑"
         ],
         "path_tradeoff": "G 组次席与 D 组次席同槽，16 强进入 J/H 半区。",
         "manipulation_risk": {
@@ -35881,8 +35886,8 @@ const RESULTS_DATA = {
         "knockout_note": "48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。",
         "scenarios": [
           "New Zealand 若取胜：积分 4，G 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
-          "Egypt 若取胜：积分 7，客场抢分将改变 G 组格局与淘汰赛半区。",
-          "平局：双方各 +1 分；在 D 组：头名 USA 6 分 · 次席 Australia 4 分（32强绑定组） · H 组：头名 Spain 4 分 · 次席 Uruguay 2 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
+          "Egypt 若取胜：积分 8，客场抢分将改变 G 组格局与淘汰赛半区。",
+          "平局：双方各 +1 分；在 D 组：头名 USA 6 分 · 次席 Australia 4 分（32强绑定组） · H 组：头名 Spain 7 分 · 次席 Cape Verde 3 分（32强绑定组） 背景下，名次差 1 位可能改变 32 强对手。",
           "头名/次席博弈：G 组次席与 D 组次席同槽，16 强进入 J/H 半区。"
         ]
       },
@@ -40484,11 +40489,11 @@ const RESULTS_DATA = {
         "cross_group_notes": [
           "L 组：头名 England 4 分 · 次席 Ghana 同分（32强绑定组）",
           "J 组：头名 Argentina 6 分 · 次席 Austria 3 分（32强绑定组）",
-          "G 组 Egypt 4 分领跑",
-          "H 组 Spain 4 分领跑",
+          "G 组 Belgium 5 分领跑",
+          "H 组 Spain 7 分领跑",
           "E 组 Germany 6 分领跑",
           "F 组 Netherlands 7 分领跑",
-          "I 组 France 6 分领跑",
+          "I 组 France 9 分领跑",
           "D 组 USA 6 分领跑"
         ],
         "path_tradeoff": "K 组次席与 L 组次席同槽 M83。",
@@ -41834,11 +41839,11 @@ const RESULTS_DATA = {
         "cross_group_notes": [
           "K 组：头名 Colombia 6 分 · 次席 Portugal 4 分（32强绑定组）",
           "A 组：头名 Mexico 9 分 · 次席 South Africa 4 分（32强绑定组）",
-          "G 组 Egypt 4 分领跑",
-          "H 组 Spain 4 分领跑",
+          "G 组 Belgium 5 分领跑",
+          "H 组 Spain 7 分领跑",
           "E 组 Germany 6 分领跑",
           "F 组 Netherlands 7 分领跑",
-          "I 组 France 6 分领跑",
+          "I 组 France 9 分领跑",
           "D 组 USA 6 分领跑"
         ],
         "path_tradeoff": "L 组次席走 M83，16 强进入 H/J 半区。",
@@ -43171,11 +43176,11 @@ const RESULTS_DATA = {
         "cross_group_notes": [
           "K 组：头名 Colombia 6 分 · 次席 Portugal 4 分（32强绑定组）",
           "A 组：头名 Mexico 9 分 · 次席 South Africa 4 分（32强绑定组）",
-          "G 组 Egypt 4 分领跑",
-          "H 组 Spain 4 分领跑",
+          "G 组 Belgium 5 分领跑",
+          "H 组 Spain 7 分领跑",
           "E 组 Germany 6 分领跑",
           "F 组 Netherlands 7 分领跑",
-          "I 组 France 6 分领跑",
+          "I 组 France 9 分领跑",
           "D 组 USA 6 分领跑"
         ],
         "path_tradeoff": "L 组次席走 M83，16 强进入 H/J 半区。",
@@ -44499,11 +44504,11 @@ const RESULTS_DATA = {
         "cross_group_notes": [
           "L 组：头名 England 4 分 · 次席 Ghana 同分（32强绑定组）",
           "J 组：头名 Argentina 6 分 · 次席 Austria 3 分（32强绑定组）",
-          "G 组 Egypt 4 分领跑",
-          "H 组 Spain 4 分领跑",
+          "G 组 Belgium 5 分领跑",
+          "H 组 Spain 7 分领跑",
           "E 组 Germany 6 分领跑",
           "F 组 Netherlands 7 分领跑",
-          "I 组 France 6 分领跑",
+          "I 组 France 9 分领跑",
           "D 组 USA 6 分领跑"
         ],
         "path_tradeoff": "K 组次席与 L 组次席同槽 M83。",
@@ -54947,6 +54952,5003 @@ const RESULTS_DATA = {
         "fifa_match_id": "400021461",
         "updated": "2026-06-26T10:54:45+08:00"
       }
+    },
+    {
+      "id": "m61",
+      "archived": true,
+      "archivedAt": "2026-06-27T06:00:06+08:00",
+      "group": "I",
+      "matchday": 3,
+      "date_beijing": "6月27日",
+      "time_beijing": "03:00",
+      "time_beijing_full": "北京时间 6月27日 03:00",
+      "venue": "Gillette Stadium",
+      "city": "Foxborough, USA",
+      "note": "I组末轮 · 挪威 vs 法国 · 波士顿 · 已结束 1-4",
+      "home": {
+        "name": "Norway",
+        "iso": "no",
+        "rating": 76
+      },
+      "away": {
+        "name": "France",
+        "iso": "fr",
+        "rating": 91
+      },
+      "prediction": {
+        "xg_home": 1.48,
+        "xg_away": 1.52,
+        "home_win": 35,
+        "draw": 28,
+        "away_win": 37,
+        "score": "1-1",
+        "confidence": 70,
+        "key_factor": "【赛后复盘】赛前客胜 37%/首推 1-1；实际 1-4 法国胜。Dembélé 7'/20'/32' 帽子戏法 · Aasgaard 21' · Doué 90+4'。方向：客胜命中；比分 1-4 深盘穿；总球 5（大 2.75 穿）。路径：法国 9 分 I 组第一 · 挪威 6 分第二。",
+        "base_home_win": 35,
+        "base_draw": 28,
+        "base_away_win": 37,
+        "depth_calibrated": true,
+        "score_dist": [
+          {
+            "score": "1-1",
+            "prob": 11.2
+          },
+          {
+            "score": "1-2",
+            "prob": 8.5
+          },
+          {
+            "score": "2-1",
+            "prob": 8.3
+          },
+          {
+            "score": "0-1",
+            "prob": 7.6
+          },
+          {
+            "score": "1-0",
+            "prob": 7.4
+          },
+          {
+            "score": "2-2",
+            "prob": 6.3
+          },
+          {
+            "score": "0-2",
+            "prob": 5.8
+          }
+        ],
+        "draw_context": {
+          "drawBoost": 4,
+          "ironBucket": false,
+          "closeXg": true,
+          "gap": 0.04,
+          "notes": [
+            "xG 极接近"
+          ],
+          "qual_dynamics": null
+        },
+        "qual_dynamics": null,
+        "xg_poisson_home": 1.48,
+        "xg_poisson_away": 1.52,
+        "xg_tier_calibrated": false,
+        "score_prob": 11.2,
+        "score_top3": [
+          {
+            "score": "1-1",
+            "prob": 11.2
+          },
+          {
+            "score": "1-2",
+            "prob": 8.5
+          },
+          {
+            "score": "2-1",
+            "prob": 8.3
+          }
+        ],
+        "expected_score": "1-2"
+      },
+      "market_snapshot": {
+        "market_tier": 0,
+        "tier_label": "势均力敌",
+        "totals_line": 2.75,
+        "over_pct": 46,
+        "fair_line": 2.75,
+        "line_gap": 0,
+        "full_cover_pct": 0,
+        "spread_level": "even",
+        "spread_market_expect": "势均力敌",
+        "totals_level": "neutral",
+        "totals_show_lean": false,
+        "totals_lean_side": "neutral"
+      },
+      "depth_calibration": {
+        "tier_home": 0,
+        "tier_label": "势均力敌",
+        "implied_tier": 0,
+        "tier_gap": 0,
+        "signal": "neutral",
+        "signal_cn": "均衡",
+        "signal_color": "#7BB8D4",
+        "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
+        "blocker_spread_note": "",
+        "public_lean_cn": "舆论倾向 France（约 52%）",
+        "analysis": "挪威/法国各 6 分榜首战。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "1-1",
+              "prob": 11.3
+            },
+            {
+              "score": "1-2",
+              "prob": 8.6
+            },
+            {
+              "score": "2-1",
+              "prob": 8.4
+            }
+          ],
+          "one_goal_win_pct": 19.6,
+          "two_plus_win_pct": 17.3,
+          "full_cover_pct": 0,
+          "half_cover_pct": 0,
+          "half_lose_pct": 0,
+          "push_pct": null,
+          "margin_full_label": "净胜≥1",
+          "margin_half_label": null,
+          "fav_cover_ev": 0,
+          "dog_cover_ev": 0,
+          "rational_spread_cn": "两边净胜达标概率接近",
+          "total_xg": 3,
+          "fair_totals_line": 2.75,
+          "over_2_5_pct": 57.3,
+          "over_3_pct": 34.7,
+          "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
+          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%"
+        },
+        "spread_odds": null,
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 2.75,
+          "market_goals_int": 3,
+          "line_label": "总进球约 2.5–3 个",
+          "implied_xg_total": 3,
+          "fair_line": 2.75,
+          "line_gap": 0,
+          "over_pct": 46,
+          "under_pct": 54,
+          "signal": "aligned",
+          "signal_cn": "线与模型贴合",
+          "signal_color": "#5BBF8A",
+          "signal_desc": "总进球参考与合理值接近。",
+          "public_over_pct": 50,
+          "public_lean_cn": "舆论对总进球看法较分散",
+          "index_note": "大/小比分两侧接近",
+          "totals_odds": null,
+          "rational_cn": "超 2.75 球接近五五开（约 46%）",
+          "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
+        },
+        "totals_line": 2.75,
+        "applied_delta": {
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
+        },
+        "adjustment_note": "模型微调：主胜 +0% · 平 +0% · 客 +0%",
+        "adjusted_probs": {
+          "home_win": 35,
+          "draw": 28,
+          "away_win": 37
+        },
+        "display_summary": {
+          "fav_name": "France",
+          "expected_total_goals": 2.96,
+          "poisson_fav_win_pct": 38.6,
+          "small_lead_pct": 20.1,
+          "small_example_score": "0-1",
+          "small_example_pct": 7.6,
+          "big_cover_pct": 18.5,
+          "big_example_score": "0-2",
+          "big_example_pct": 5.8,
+          "win_shape": {
+            "fav_name": "France",
+            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
+            "lead_cn": "取胜时以险胜·开放为主（险胜 · 开放 32.4%）",
+            "shapes": [
+              {
+                "key": "narrow_low",
+                "label": "险胜 · 控局",
+                "example": "如 1-0",
+                "field_pct": 7.6,
+                "pct": 19.8
+              },
+              {
+                "key": "narrow_open",
+                "label": "险胜 · 开放",
+                "example": "如 2-1",
+                "field_pct": 12.5,
+                "pct": 32.4
+              },
+              {
+                "key": "comfort_low",
+                "label": "拉开 · 控局",
+                "example": "如 2-0",
+                "field_pct": 8.7,
+                "pct": 22.6
+              },
+              {
+                "key": "comfort_open",
+                "label": "拉开 · 开放",
+                "example": "如 3-1+",
+                "field_pct": 9.7,
+                "pct": 25.2
+              }
+            ],
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 52.2
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 22.6
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 25.2
+              }
+            ],
+            "fav_win_pct": 37
+          },
+          "excitement": {
+            "label_cn": "中速开局",
+            "label_key": "moderate",
+            "label_color": "#C8A96E",
+            "sub_cn": "预期首球等待约 30 分",
+            "first_goal_wait": 30,
+            "fast_pct": 63.2,
+            "moderate_pct": 14.5,
+            "slow_pct": 22.3,
+            "tiers": [
+              {
+                "key": "fast",
+                "label": "前 30 分内首球",
+                "pct": 63.2
+              },
+              {
+                "key": "moderate",
+                "label": "30–45 分首球",
+                "pct": 14.5
+              },
+              {
+                "key": "slow",
+                "label": "45 分后首球",
+                "pct": 22.3
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "Norway 暂无重要伤停 · France 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "— / —（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "气候信息暂无"
+            },
+            {
+              "icon": "⚖️",
+              "label": "平局修正",
+              "note": "回测校准：xG 极接近（平 +4%）"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 1.48,
+            "baseline_away": 1.52,
+            "adjusted_home": 1.48,
+            "adjusted_away": 1.52,
+            "note": "基准 xG 1.48–1.52（未因伤病/气候下调）"
+          },
+          "calibration": {
+            "signal_cn": "均衡",
+            "signal_color": "#7BB8D4",
+            "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
+            "tier_gap": 0,
+            "implied_tier_label": "势均力敌",
+            "market_tier_label": "势均力敌",
+            "summary_cn": "与模型 xG 对照：均衡 · 与赛前净胜看法基本一致"
+          },
+          "win_outlook": {
+            "fav_name": "France",
+            "state_label": null,
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 52.2
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 22.6
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 25.2
+              }
+            ],
+            "margin_line_cn": "净胜差距参考 · 势均力敌",
+            "margin_meet_pct": 0,
+            "margin_half_pct": 0,
+            "margin_fail_pct": 0,
+            "margin_full_label": "净胜≥1",
+            "margin_half_label": null,
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
+            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+            "totals_line": 2.75,
+            "totals_line_cn": "总进球参考 2.75",
+            "fair_totals_line": 2.75,
+            "model_total_xg": 3,
+            "totals_line_gap": 0,
+            "totals_high_pct": 46,
+            "totals_low_pct": 54,
+            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+            "win_low_total_pct": 13.4,
+            "win_margin2_low_total_pct": 5.8,
+            "win_margin2_high_total_pct": 12.7,
+            "readout_cn": "取胜约 37%；若取胜，以「险胜收工」为主（52.2%）。 对着赛前净胜参考，净胜≥1（全达标）约 0%；对着总进球参考 2.75，模型超线概率约 46%。"
+          },
+          "totals_line": 2.75,
+          "score_patterns": [
+            {
+              "score": "1-1",
+              "pct": 11.3
+            },
+            {
+              "score": "1-2",
+              "pct": 8.6
+            },
+            {
+              "score": "2-1",
+              "pct": 8.4
+            }
+          ],
+          "totals_view": {
+            "expected_total": 3,
+            "fair_line": 2.75,
+            "market_line": 2.75,
+            "line_gap": 0,
+            "over_pct": 46,
+            "gap_warning": null,
+            "totals_outlook": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.75，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 46,
+              "line_gap": 0,
+              "market_line": 2.75,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.75",
+              "caution_public_high": false
+            },
+            "summary_cn": "预测 3 · 合理值 2.75 · 总进球参考 2.75 · 模型在常见进球预期附近均衡，不作强倾向"
+          },
+          "customer_reading": {
+            "headline_cn": "净胜走向：双方实力接近",
+            "sub_cn": "双方实力接近，暂无单侧净胜预期。 进球氛围：几乎五五开",
+            "spread": {
+              "level": "even",
+              "label_cn": "势均力敌",
+              "color": "#8A96A8",
+              "fav_name": null,
+              "market_expect_cn": "势均力敌",
+              "meet_pct": null,
+              "verdict_cn": "无明确净胜拉开预期",
+              "headline_cn": "净胜走向：双方实力接近",
+              "pill_cn": "双方实力接近，暂无单侧净胜预期。",
+              "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
+              "full_cover_pct": 0,
+              "half_cover_pct": 0,
+              "show_cover": false
+            },
+            "totals": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.75，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 46,
+              "line_gap": 0,
+              "market_line": 2.75,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.75",
+              "caution_public_high": false
+            },
+            "draw_risk": null,
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "净胜走向",
+                "outlook": {
+                  "level": "even",
+                  "label_cn": "势均力敌",
+                  "color": "#8A96A8",
+                  "fav_name": null,
+                  "market_expect_cn": "势均力敌",
+                  "meet_pct": null,
+                  "verdict_cn": "无明确净胜拉开预期",
+                  "headline_cn": "净胜走向：双方实力接近",
+                  "pill_cn": "双方实力接近，暂无单侧净胜预期。",
+                  "detail_cn": "赛前外界为势均力敌档，模型未给出哪一方能明显拉开净胜的信号。",
+                  "full_cover_pct": 0,
+                  "half_cover_pct": 0,
+                  "show_cover": false
+                },
+                "text": "双方实力接近，暂无单侧净胜预期。",
+                "color": "#8A96A8",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "◎",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "neutral",
+                  "label_cn": "暂无明显倾向",
+                  "color": "#8A96A8",
+                  "meter_label_cn": "几乎五五开",
+                  "meter_pos": 50,
+                  "lean_side": "neutral",
+                  "lean_strength": "none",
+                  "section_intro_cn": "对照总进球参考 2.75，看偏闷还是偏精彩",
+                  "pill_cn": "几乎五五开",
+                  "detail_cn": "模型五五开，临场决定节奏。",
+                  "headline_cn": "进球氛围：几乎五五开",
+                  "show_lean": false,
+                  "over_pct": 46,
+                  "line_gap": 0,
+                  "market_line": 2.75,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "总进球参考 2.75",
+                  "caution_public_high": false
+                },
+                "text": "几乎五五开",
+                "color": "#8A96A8",
+                "muted": true
+              }
+            ],
+            "methodology_note": "读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "Norway",
+              "first_goal_pct": 49.3,
+              "start_score": "1-0",
+              "fav_name": "Norway",
+              "scorer_is_fav": false,
+              "expected_key": "fav_recover",
+              "fav_recover_pct": 81.6,
+              "small_lead_pct": 27.2,
+              "big_lead_pct": 32.1,
+              "fav_win_pct": 59.3,
+              "fav_draw_pct": 22.3,
+              "fav_lose_pct": 18.4,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "Norway 追平（平局）",
+                  "pct": 22.3
+                },
+                {
+                  "key": "win1",
+                  "label": "Norway 净胜1球翻盘（如 2-1）",
+                  "pct": 27.2
+                },
+                {
+                  "key": "win2",
+                  "label": "Norway 净胜≥2球翻盘（如 3-1）",
+                  "pct": 32.1
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "Norway 保持胜果至终场",
+                  "pct": 18.4
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 30 分",
+                "first_goal_wait": 30,
+                "fast_pct": 56,
+                "moderate_pct": 14.8,
+                "slow_pct": 29.2,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 56
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.8
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 29.2
+                  }
+                ]
+              },
+              "big_delta": 13.6,
+              "small_delta": 7.1,
+              "narrative": "Norway 先破门（已 1-0） → 「巩固防守」；France 「组织反扑」。落后方压上反扑，比赛更开放，但热门要净胜两球以上仍须连续破门。",
+              "live_outlook": null
+            },
+            {
+              "side": "away",
+              "team": "France",
+              "first_goal_pct": 50.7,
+              "start_score": "0-1",
+              "fav_name": "France",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 82.6,
+              "small_lead_pct": 27.3,
+              "big_lead_pct": 33.6,
+              "fav_win_pct": 60.9,
+              "fav_draw_pct": 21.7,
+              "fav_lose_pct": 17.3,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "France 保持胜果（净胜≥1）",
+                  "pct": 60.9
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 21.7
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 17.3
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 30 分",
+                "first_goal_wait": 30,
+                "fast_pct": 56,
+                "moderate_pct": 14.8,
+                "slow_pct": 29.2,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 56
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.8
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 29.2
+                  }
+                ]
+              },
+              "big_delta": 15.1,
+              "small_delta": 7.2,
+              "narrative": "France 先破门（已 0-1） → 「巩固防守」；Norway 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
+              "live_outlook": {
+                "fav_name": "France",
+                "state_label": "France 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 52.2
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 22.6
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 25.2
+                  }
+                ],
+                "margin_line_cn": "净胜差距参考 · 势均力敌",
+                "margin_meet_pct": 17.3,
+                "margin_half_pct": 0,
+                "margin_fail_pct": 11.4,
+                "margin_full_label": "净胜≥1",
+                "margin_half_label": null,
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.75,
+                "totals_line_cn": "总进球参考 2.75",
+                "fair_totals_line": 2,
+                "model_total_xg": 2.46,
+                "totals_line_gap": 0.75,
+                "totals_high_pct": 57.4,
+                "totals_low_pct": 42.6,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 0,
+                "win_margin2_low_total_pct": 0,
+                "win_margin2_high_total_pct": 5.9,
+                "readout_cn": "France 已 1-0 领先：仍取胜约 17.3%。 对着总进球参考 2.75，模型超线概率约 57.4%。 若再扩大，偏「险胜收工」。"
+              }
+            }
+          ],
+          "match_preview": {
+            "morphology": {
+              "totals_summary": "预测 3 · 合理值 2.75 · 总进球参考 2.75 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球参考 2.75",
+              "totals_high_pct": 46,
+              "type_tags": [
+                {
+                  "key": "even_open",
+                  "label": "均势开放"
+                }
+              ],
+              "depth_label": "深度一般",
+              "draw_trap_pct": 24,
+              "readout_cn": "France · 均势开放。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+            },
+            "draw_trap_note": null,
+            "archetype": {
+              "tags": [
+                {
+                  "key": "even_open",
+                  "label": "均势开放"
+                }
+              ],
+              "depth_score": 0,
+              "depth_label": "深度一般",
+              "draw_trap_pct": 24,
+              "fav_lead_style": "balanced"
+            }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.65,
+            "xg_away_ht": 0.67,
+            "xg_home_2h": 0.83,
+            "xg_away_2h": 0.85,
+            "home_win": 29.5,
+            "draw": 39.7,
+            "away_win": 30.8,
+            "top_score": "0-0",
+            "top_score_prob": 26.7,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 26.7
+              },
+              {
+                "score": "0-1",
+                "prob": 17.9
+              },
+              {
+                "score": "1-0",
+                "prob": 17.4
+              }
+            ],
+            "ht_goals_expected": 1.32,
+            "ht_over_0_5_pct": 73.3,
+            "ht_over_1_5_pct": 38,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.65–0.67（约占全场 44%） · 最可能 0-0（26.7%） · 胜平负 29.5/39.7/30.8 · 半场≥1球约 73.3%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
+          }
+        },
+        "public_summary_note": "【推演概要】France · 均势开放。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
+        "goal_efficiency": {
+          "xg_total": 3,
+          "xg_gap": 0.04,
+          "xg_home": 1.48,
+          "xg_away": 1.52,
+          "fav_name": "France",
+          "dog_name": "Norway",
+          "fav_xg": 1.52,
+          "dog_xg": 1.48,
+          "fav_goals": 4,
+          "dog_goals": 1,
+          "fav_eff": 2.63,
+          "dog_eff": 0.68,
+          "total_goals": 5,
+          "goal_diff_vs_xg": 2,
+          "path_type": "fav_burst",
+          "path_label": "热门爆发",
+          "tags": [
+            {
+              "key": "high_scoring",
+              "label": "大比分",
+              "color": "#D95F6A",
+              "bg": "rgba(217,95,106,0.12)"
+            },
+            {
+              "key": "even_xg",
+              "label": "xG接近",
+              "color": "#5BBF8A",
+              "bg": "rgba(91,191,138,0.08)"
+            },
+            {
+              "key": "fav_burst",
+              "label": "热门爆发",
+              "color": "#FF6B35",
+              "bg": "rgba(255,107,53,0.1)"
+            }
+          ],
+          "pattern_note": "热门效率≥1.5 且总进球≥4——样本内高比分硬路径（热门打穿）。",
+          "summary_cn": "赛前 xG 总 3（差 0.04）· 热门 France 1.52→4（效率 2.63）· 弱队 Norway 1.48→1（效率 0.68）→ 热门爆发。热门效率≥1.5 且总进球≥4——样本内高比分硬路径（热门打穿）。",
+          "in_mid_band": true
+        },
+        "preview_replay": {
+          "actual_score": "1-4",
+          "ht_score": "1-3",
+          "hits": [],
+          "misses": [
+            "总进球尾部偏差大（赛前已标注无明显倾向）"
+          ],
+          "summary_cn": "偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
+          "totals_actual": 5,
+          "totals_line": 2.75,
+          "spread_level": "even",
+          "totals_level": "neutral"
+        }
+      },
+      "actualResult": {
+        "home_score": 1,
+        "away_score": 4,
+        "status": "FT",
+        "label": "全场结束",
+        "scorers": "Thelo AASGAARD 21'; Ousmane DEMBELE 7'; Ousmane DEMBELE 20'; Ousmane DEMBELE 32'; Desire DOUE 90'+4'",
+        "highlights": "波士顿 · 法国 4-1 挪威 · Dembélé 帽子戏法 · 法国 9 分 I 组第一 · 挪威 6 分第二",
+        "ht_score": "1-3",
+        "first_goal_min": 7,
+        "fifa_match_id": "400021489",
+        "updated": "2026-06-27T06:00:06+08:00"
+      }
+    },
+    {
+      "id": "m62",
+      "archived": true,
+      "archivedAt": "2026-06-27T06:00:06+08:00",
+      "group": "I",
+      "matchday": 3,
+      "date_beijing": "6月27日",
+      "time_beijing": "03:00",
+      "time_beijing_full": "北京时间 6月27日 03:00",
+      "venue": "BMO Field",
+      "city": "Toronto, Canada",
+      "note": "I组末轮 · 塞内加尔 vs 伊拉克 · 多伦多 · 已结束 5-0",
+      "home": {
+        "name": "Senegal",
+        "iso": "sn",
+        "rating": 77
+      },
+      "away": {
+        "name": "Iraq",
+        "iso": "iq",
+        "rating": 65
+      },
+      "prediction": {
+        "xg_home": 1.72,
+        "xg_away": 0.88,
+        "home_win": 53,
+        "draw": 25,
+        "away_win": 22,
+        "score": "2-0",
+        "confidence": 74,
+        "key_factor": "【赛后复盘】赛前主胜 48%/首推 2-0；实际 5-0 塞内加尔大胜。Diarra 4' · Sarr 56' · Gueye 59'/71' · Ndiaye 82'。方向：主胜命中；比分 5-0 超 Top3；总球 5（大 2.5 穿）。路径：塞内加尔 3 分第三 · 伊拉克 0 分出局。",
+        "base_home_win": 56.9,
+        "base_draw": 23.9,
+        "base_away_win": 19.2,
+        "depth_calibrated": true,
+        "score_dist": [
+          {
+            "score": "2-0",
+            "prob": 13.4
+          },
+          {
+            "score": "1-0",
+            "prob": 12.9
+          },
+          {
+            "score": "2-1",
+            "prob": 9.4
+          },
+          {
+            "score": "3-0",
+            "prob": 9.3
+          },
+          {
+            "score": "1-1",
+            "prob": 9
+          },
+          {
+            "score": "3-1",
+            "prob": 6.5
+          },
+          {
+            "score": "0-0",
+            "prob": 6.2
+          }
+        ],
+        "draw_context": {
+          "drawBoost": 0,
+          "ironBucket": false,
+          "closeXg": false,
+          "gap": 0.84,
+          "notes": [],
+          "qual_dynamics": null
+        },
+        "qual_dynamics": null,
+        "xg_poisson_home": 2.08,
+        "xg_poisson_away": 0.7,
+        "xg_tier_calibrated": true,
+        "score_prob": 13.4,
+        "score_top3": [
+          {
+            "score": "2-0",
+            "prob": 13.4
+          },
+          {
+            "score": "1-0",
+            "prob": 12.9
+          },
+          {
+            "score": "2-1",
+            "prob": 9.4
+          }
+        ],
+        "expected_score": "2-1"
+      },
+      "market_snapshot": {
+        "market_tier": 1,
+        "tier_label": "Senegal 被看好 · 净胜约 1 球",
+        "totals_line": 2.5,
+        "over_pct": 47.7,
+        "fair_line": 2,
+        "line_gap": 0.5,
+        "full_cover_pct": 31.5,
+        "spread_level": "uncertain",
+        "spread_market_expect": "净胜≥2",
+        "totals_level": "neutral",
+        "totals_show_lean": false,
+        "totals_lean_side": "neutral"
+      },
+      "depth_calibration": {
+        "tier_home": 1,
+        "tier_label": "Senegal 被看好 · 净胜约 1 球",
+        "implied_tier": 0.25,
+        "tier_gap": 0.75,
+        "signal": "blocker_inflate",
+        "signal_cn": "大众心理预期偏高",
+        "signal_color": "#D95F6A",
+        "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+        "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "public_lean_cn": "舆论倾向 Senegal（约 68%）",
+        "analysis": "塞内加尔 0 分须胜 vs 伊拉克 0 分。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "1-0",
+              "prob": 12.9
+            },
+            {
+              "score": "1-1",
+              "prob": 11.3
+            },
+            {
+              "score": "2-0",
+              "prob": 11.1
+            }
+          ],
+          "one_goal_win_pct": 25.4,
+          "two_plus_win_pct": 31.5,
+          "full_cover_pct": 31.5,
+          "half_cover_pct": 0,
+          "half_lose_pct": 0,
+          "push_pct": 25.4,
+          "margin_full_label": "净胜≥2",
+          "margin_half_label": "走水净胜=1",
+          "fav_cover_ev": -0.116,
+          "dog_cover_ev": 0.116,
+          "rational_spread_cn": "客队 守住差距概率略高",
+          "total_xg": 2.6,
+          "fair_totals_line": 2,
+          "over_2_5_pct": 47.7,
+          "over_3_pct": 25.8,
+          "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
+          "margin_risk_note": "净胜 1 球概率 25.4%：参考净胜 1 球时，仅赢一球与拉开差距须分开看"
+        },
+        "spread_odds": null,
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 2.5,
+          "market_goals_int": 3,
+          "line_label": "总进球约 2.5 个",
+          "implied_xg_total": 2.6,
+          "fair_line": 2,
+          "line_gap": 0.5,
+          "over_pct": 47.7,
+          "under_pct": 52.3,
+          "signal": "high_line",
+          "signal_cn": "参考偏高",
+          "signal_color": "#C8A96E",
+          "signal_desc": "总进球参考高于合理值，模型偏小比分。",
+          "public_over_pct": 50,
+          "public_lean_cn": "舆论对总进球看法较分散",
+          "index_note": "大/小比分两侧接近",
+          "totals_odds": null,
+          "rational_cn": "超 2.5 球接近五五开（约 47.7%）",
+          "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
+        },
+        "totals_line": 2.5,
+        "applied_delta": {
+          "home_win": -4,
+          "draw": 1,
+          "away_win": 3
+        },
+        "adjustment_note": "模型微调：主胜 -4% · 平 +1% · 客 +3%",
+        "adjusted_probs": {
+          "home_win": 53,
+          "draw": 25,
+          "away_win": 22
+        },
+        "display_summary": {
+          "fav_name": "Senegal",
+          "expected_total_goals": 2.56,
+          "poisson_fav_win_pct": 56.9,
+          "small_lead_pct": 25.4,
+          "small_example_score": "1-0",
+          "small_example_pct": 12.9,
+          "big_cover_pct": 31.5,
+          "big_example_score": "2-0",
+          "big_example_pct": 11.1,
+          "win_shape": {
+            "fav_name": "Senegal",
+            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
+            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 30.6%）",
+            "shapes": [
+              {
+                "key": "narrow_low",
+                "label": "险胜 · 控局",
+                "example": "如 1-0",
+                "field_pct": 12.9,
+                "pct": 22.7
+              },
+              {
+                "key": "narrow_open",
+                "label": "险胜 · 开放",
+                "example": "如 2-1",
+                "field_pct": 12.5,
+                "pct": 22.1
+              },
+              {
+                "key": "comfort_low",
+                "label": "拉开 · 控局",
+                "example": "如 2-0",
+                "field_pct": 17.4,
+                "pct": 30.6
+              },
+              {
+                "key": "comfort_open",
+                "label": "拉开 · 开放",
+                "example": "如 3-1+",
+                "field_pct": 14,
+                "pct": 24.6
+              }
+            ],
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 44.8
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 30.6
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 24.6
+              }
+            ],
+            "fav_win_pct": 53
+          },
+          "excitement": {
+            "label_cn": "中速开局",
+            "label_key": "moderate",
+            "label_color": "#C8A96E",
+            "sub_cn": "预期首球等待约 34.6 分",
+            "first_goal_wait": 34.6,
+            "fast_pct": 58,
+            "moderate_pct": 14.8,
+            "slow_pct": 27.3,
+            "tiers": [
+              {
+                "key": "fast",
+                "label": "前 30 分内首球",
+                "pct": 58
+              },
+              {
+                "key": "moderate",
+                "label": "30–45 分首球",
+                "pct": 14.8
+              },
+              {
+                "key": "slow",
+                "label": "45 分后首球",
+                "pct": 27.3
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "Senegal 暂无重要伤停 · Iraq 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "— / —（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "气候信息暂无"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 1.72,
+            "baseline_away": 0.88,
+            "adjusted_home": 1.72,
+            "adjusted_away": 0.88,
+            "note": "基准 xG 1.72–0.88（未因伤病/气候下调）"
+          },
+          "calibration": {
+            "signal_cn": "大众心理预期偏高",
+            "signal_color": "#D95F6A",
+            "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+            "tier_gap": 0.75,
+            "implied_tier_label": "Senegal 被看好 · 净胜约 0.25 球",
+            "market_tier_label": "Senegal 被看好 · 净胜约 1 球",
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75"
+          },
+          "win_outlook": {
+            "fav_name": "Senegal",
+            "state_label": null,
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 44.8
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 30.6
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 24.6
+              }
+            ],
+            "margin_line_cn": "Senegal · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
+            "margin_meet_pct": 31.5,
+            "margin_half_pct": 0,
+            "margin_fail_pct": 0,
+            "margin_full_label": "净胜≥2",
+            "margin_half_label": "走水净胜=1",
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
+            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+            "totals_line": 2.5,
+            "totals_line_cn": "总进球参考 2.5",
+            "fair_totals_line": 2,
+            "model_total_xg": 2.6,
+            "totals_line_gap": 0.5,
+            "totals_high_pct": 47.7,
+            "totals_low_pct": 52.3,
+            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+            "win_low_total_pct": 24,
+            "win_margin2_low_total_pct": 11.1,
+            "win_margin2_high_total_pct": 20.4,
+            "readout_cn": "取胜约 53%；若取胜，以「险胜收工」为主（44.8%）。 对着赛前净胜参考，净胜≥2（全达标）约 31.5%；对着总进球参考 2.5，模型超线概率约 47.7%。"
+          },
+          "totals_line": 2.5,
+          "score_patterns": [
+            {
+              "score": "1-0",
+              "pct": 12.9
+            },
+            {
+              "score": "1-1",
+              "pct": 11.3
+            },
+            {
+              "score": "2-0",
+              "pct": 11.1
+            }
+          ],
+          "totals_view": {
+            "expected_total": 2.6,
+            "fair_line": 2,
+            "market_line": 2.5,
+            "line_gap": 0.5,
+            "over_pct": 47.7,
+            "gap_warning": null,
+            "totals_outlook": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 47.7,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "summary_cn": "预测 2.6 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
+          },
+          "customer_reading": {
+            "headline_cn": "Senegal · 净胜走向：达标与否难下定论",
+            "sub_cn": "达标概率约 31.5% · 达标与否难下定论 进球氛围：几乎五五开",
+            "spread": {
+              "level": "uncertain",
+              "label_cn": "净胜幅度难下定论",
+              "color": "#8A96A8",
+              "fav_name": "Senegal",
+              "market_expect_cn": "净胜≥2",
+              "meet_pct": 31.5,
+              "meet_pct_label": "模型推演达标概率",
+              "verdict_cn": "达标与否难下定论",
+              "headline_cn": "Senegal · 净胜走向：达标与否难下定论",
+              "pill_cn": "达标概率约 31.5% · 达标与否难下定论",
+              "detail_cn": "Senegal · 赛前外界预期 净胜≥2。模型推演达标概率约 31.5%。",
+              "extra_stats_cn": "",
+              "full_cover_pct": 31.5,
+              "half_cover_pct": 0,
+              "lose1_pct": 0,
+              "margin_full_label": "净胜≥2",
+              "margin_half_label": "走水净胜=1",
+              "tier_gap": 0.75,
+              "show_cover": true
+            },
+            "totals": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 47.7,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "draw_risk": null,
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "净胜走向",
+                "outlook": {
+                  "level": "uncertain",
+                  "label_cn": "净胜幅度难下定论",
+                  "color": "#8A96A8",
+                  "fav_name": "Senegal",
+                  "market_expect_cn": "净胜≥2",
+                  "meet_pct": 31.5,
+                  "meet_pct_label": "模型推演达标概率",
+                  "verdict_cn": "达标与否难下定论",
+                  "headline_cn": "Senegal · 净胜走向：达标与否难下定论",
+                  "pill_cn": "达标概率约 31.5% · 达标与否难下定论",
+                  "detail_cn": "Senegal · 赛前外界预期 净胜≥2。模型推演达标概率约 31.5%。",
+                  "extra_stats_cn": "",
+                  "full_cover_pct": 31.5,
+                  "half_cover_pct": 0,
+                  "lose1_pct": 0,
+                  "margin_full_label": "净胜≥2",
+                  "margin_half_label": "走水净胜=1",
+                  "tier_gap": 0.75,
+                  "show_cover": true
+                },
+                "text": "达标概率约 31.5% · 达标与否难下定论",
+                "color": "#8A96A8",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "◎",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "neutral",
+                  "label_cn": "暂无明显倾向",
+                  "color": "#8A96A8",
+                  "meter_label_cn": "几乎五五开",
+                  "meter_pos": 50,
+                  "lean_side": "neutral",
+                  "lean_strength": "none",
+                  "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+                  "pill_cn": "几乎五五开",
+                  "detail_cn": "模型五五开，临场决定节奏。",
+                  "headline_cn": "进球氛围：几乎五五开",
+                  "show_lean": false,
+                  "over_pct": 47.7,
+                  "line_gap": 0.5,
+                  "market_line": 2.5,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "总进球参考 2.5",
+                  "caution_public_high": false
+                },
+                "text": "几乎五五开",
+                "color": "#8A96A8",
+                "muted": true
+              }
+            ],
+            "methodology_note": "读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "Senegal",
+              "first_goal_pct": 66.2,
+              "start_score": "1-0",
+              "fav_name": "Senegal",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 93.6,
+              "small_lead_pct": 28.5,
+              "big_lead_pct": 50,
+              "fav_win_pct": 78.5,
+              "fav_draw_pct": 15.1,
+              "fav_lose_pct": 6.4,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "Senegal 保持胜果（净胜≥1）",
+                  "pct": 78.5
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 15.1
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 6.4
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 35.3 分",
+                "first_goal_wait": 35.3,
+                "fast_pct": 50.2,
+                "moderate_pct": 14.7,
+                "slow_pct": 35.2,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 50.2
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.7
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 35.2
+                  }
+                ]
+              },
+              "big_delta": 18.5,
+              "small_delta": 3.1,
+              "narrative": "Senegal 先破门（已 1-0） → 「巩固防守」；Iraq 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
+              "live_outlook": {
+                "fav_name": "Senegal",
+                "state_label": "Senegal 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 44.8
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 30.6
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 24.6
+                  }
+                ],
+                "margin_line_cn": "Senegal · 赛前净胜参考 净胜≥2（全达标） · 走水净胜=1",
+                "margin_meet_pct": 50,
+                "margin_half_pct": 0,
+                "margin_fail_pct": 28.5,
+                "margin_full_label": "净胜≥2",
+                "margin_half_label": "走水净胜=1",
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.5,
+                "totals_line_cn": "总进球参考 2.5",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 2.09,
+                "totals_line_gap": 0.25,
+                "totals_high_pct": 61.7,
+                "totals_low_pct": 38.3,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 28.8,
+                "win_margin2_low_total_pct": 16.5,
+                "win_margin2_high_total_pct": 33.5,
+                "readout_cn": "Senegal 已 1-0 领先：仍取胜约 78.5%。 对着总进球参考 2.5，模型超线概率约 61.7%。 常见 2-0 收尾（相对总进球参考 2.5仍偏小比分）。"
+              }
+            },
+            {
+              "side": "away",
+              "team": "Iraq",
+              "first_goal_pct": 33.8,
+              "start_score": "0-1",
+              "fav_name": "Senegal",
+              "scorer_is_fav": false,
+              "expected_key": "fav_recover",
+              "fav_recover_pct": 56.6,
+              "small_lead_pct": 17.6,
+              "big_lead_pct": 11.7,
+              "fav_win_pct": 29.3,
+              "fav_draw_pct": 27.3,
+              "fav_lose_pct": 43.4,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "Senegal 追平（平局）",
+                  "pct": 27.3
+                },
+                {
+                  "key": "win1",
+                  "label": "Senegal 净胜1球翻盘（如 2-1）",
+                  "pct": 17.6
+                },
+                {
+                  "key": "win2",
+                  "label": "Senegal 净胜≥2球翻盘（如 3-1）",
+                  "pct": 11.7
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "Iraq 保持胜果至终场",
+                  "pct": 43.4
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 34 分",
+                "first_goal_wait": 34,
+                "fast_pct": 51.5,
+                "moderate_pct": 14.7,
+                "slow_pct": 33.7,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 51.5
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.7
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 33.7
+                  }
+                ]
+              },
+              "big_delta": -19.8,
+              "small_delta": -7.8,
+              "narrative": "Iraq 先破门（已 0-1） → 「巩固防守」；Senegal 「组织反扑」。热门先丢球（已 0-1），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
+              "live_outlook": null
+            }
+          ],
+          "match_preview": {
+            "morphology": {
+              "totals_summary": "预测 2.6 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球参考 2.5",
+              "totals_high_pct": 47.7,
+              "type_tags": [
+                {
+                  "key": "balanced",
+                  "label": "常规对抗"
+                }
+              ],
+              "depth_label": "深度一般",
+              "draw_trap_pct": 20,
+              "readout_cn": "Senegal · 常规对抗。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+            },
+            "draw_trap_note": null,
+            "archetype": {
+              "tags": [
+                {
+                  "key": "balanced",
+                  "label": "常规对抗"
+                }
+              ],
+              "depth_score": 0,
+              "depth_label": "深度一般",
+              "draw_trap_pct": 20,
+              "fav_lead_style": "balanced"
+            }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.76,
+            "xg_away_ht": 0.39,
+            "xg_home_2h": 0.96,
+            "xg_away_2h": 0.49,
+            "home_win": 40.9,
+            "draw": 41.8,
+            "away_win": 17.3,
+            "top_score": "0-0",
+            "top_score_prob": 31.7,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 31.7
+              },
+              {
+                "score": "1-0",
+                "prob": 24.1
+              },
+              {
+                "score": "0-1",
+                "prob": 12.4
+              }
+            ],
+            "ht_goals_expected": 1.15,
+            "ht_over_0_5_pct": 68.3,
+            "ht_over_1_5_pct": 31.9,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.76–0.39（约占全场 44%） · 最可能 0-0（31.7%） · 胜平负 40.9/41.8/17.3 · 半场≥1球约 68.3%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
+          }
+        },
+        "public_summary_note": "【推演概要】Senegal · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
+        "goal_efficiency": {
+          "xg_total": 2.6,
+          "xg_gap": 0.84,
+          "xg_home": 1.72,
+          "xg_away": 0.88,
+          "fav_name": "Senegal",
+          "dog_name": "Iraq",
+          "fav_xg": 1.72,
+          "dog_xg": 0.88,
+          "fav_goals": 5,
+          "dog_goals": 0,
+          "fav_eff": 2.91,
+          "dog_eff": 0,
+          "total_goals": 5,
+          "goal_diff_vs_xg": 2.4,
+          "path_type": "fav_burst",
+          "path_label": "热门爆发",
+          "tags": [
+            {
+              "key": "high_scoring",
+              "label": "大比分",
+              "color": "#D95F6A",
+              "bg": "rgba(217,95,106,0.12)"
+            },
+            {
+              "key": "dog_quiet",
+              "label": "弱队哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            },
+            {
+              "key": "fav_burst",
+              "label": "热门爆发",
+              "color": "#FF6B35",
+              "bg": "rgba(255,107,53,0.1)"
+            }
+          ],
+          "pattern_note": "热门效率≥1.5 且总进球≥4——样本内高比分硬路径（热门打穿）。",
+          "summary_cn": "赛前 xG 总 2.6（差 0.84）· 热门 Senegal 1.72→5（效率 2.91）· 弱队 Iraq 0.88→0（效率 0）→ 热门爆发。热门效率≥1.5 且总进球≥4——样本内高比分硬路径（热门打穿）。",
+          "in_mid_band": true
+        },
+        "preview_replay": {
+          "actual_score": "5-0",
+          "ht_score": "1-0",
+          "hits": [],
+          "misses": [
+            "总进球尾部偏差大（赛前已标注无明显倾向）"
+          ],
+          "summary_cn": "偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
+          "totals_actual": 5,
+          "totals_line": 2.5,
+          "spread_level": "uncertain",
+          "totals_level": "neutral"
+        }
+      },
+      "actualResult": {
+        "home_score": 5,
+        "away_score": 0,
+        "status": "FT",
+        "label": "全场结束",
+        "scorers": "Habib DIARRA 4'; Ismaila SARR 56'; Pape GUEYE 59'; Pape GUEYE 71'; Iliman NDIAYE 82'",
+        "highlights": "多伦多 · 塞内加尔 5-0 伊拉克 · Diarra/Sarr/Gueye 双响 · 塞内加尔 3 分第三",
+        "ht_score": "1-0",
+        "first_goal_min": 4,
+        "fifa_match_id": "400021493",
+        "updated": "2026-06-27T06:00:06+08:00"
+      }
+    },
+    {
+      "id": "m63",
+      "archived": true,
+      "archivedAt": "2026-06-27T06:00:06+08:00",
+      "group": "G",
+      "matchday": 3,
+      "date_beijing": "6月27日",
+      "time_beijing": "11:00",
+      "time_beijing_full": "北京时间 6月27日 11:00",
+      "venue": "Lumen Field",
+      "city": "Seattle, USA",
+      "note": "G组末轮 · 埃及 vs 伊朗 · 西雅图 · 已结束 1-1",
+      "home": {
+        "name": "Egypt",
+        "iso": "eg",
+        "rating": 72
+      },
+      "away": {
+        "name": "IR Iran",
+        "iso": "ir",
+        "rating": 75
+      },
+      "prediction": {
+        "xg_home": 1.38,
+        "xg_away": 1.22,
+        "home_win": 33,
+        "draw": 40,
+        "away_win": 27,
+        "score": "1-1",
+        "confidence": 68,
+        "key_factor": "【赛后复盘】赛前主胜 41%/首推 1-1；实际 1-1 平局。Saber 5' · Rezaeian 14' 早段对轰。方向：平局命中；总球 2（小 2.5 走水）。路径：埃及 5 分第二 · 伊朗 3 分第三 · 比利时 G 组第一。",
+        "base_home_win": 37,
+        "base_draw": 33,
+        "base_away_win": 30,
+        "depth_calibrated": true,
+        "score_dist": [
+          {
+            "score": "1-1",
+            "prob": 12.9
+          },
+          {
+            "score": "1-0",
+            "prob": 11.4
+          },
+          {
+            "score": "0-1",
+            "prob": 9.8
+          },
+          {
+            "score": "0-0",
+            "prob": 8.6
+          },
+          {
+            "score": "2-1",
+            "prob": 8.5
+          },
+          {
+            "score": "2-0",
+            "prob": 7.5
+          },
+          {
+            "score": "1-2",
+            "prob": 7.3
+          }
+        ],
+        "draw_context": {
+          "drawBoost": 7,
+          "ironBucket": false,
+          "closeXg": true,
+          "gap": 0.16,
+          "notes": [
+            "争八不对称：弱队保平争第三，平局权重上调",
+            "IR Iran 输球出局 · 平局争第 3 · 赢球稳进"
+          ],
+          "qual_dynamics": {
+            "scenario_type": "asymmetric_third",
+            "mutual_draw_advances": false,
+            "path_control": false,
+            "asymmetric_third": {
+              "strong_side": "Egypt",
+              "weak_side": "IR Iran",
+              "weak_is_home": false,
+              "weak_dead_on_loss": true,
+              "weak_third_live_on_draw": true,
+              "weak_through_on_win": true,
+              "weak_likely_underdog": false,
+              "draw_pts_if_draw": 4
+            },
+            "both_already_qualified": false,
+            "home_already_qualified": true,
+            "away_already_qualified": false,
+            "home_out_if_loss": false,
+            "away_out_if_loss": true,
+            "logic_steps": [
+              "Egypt 5 分 vs IR Iran 3 分；同组另一场 Belgium（5 分）vs New Zealand（1 分）",
+              "逻辑：Egypt 已锁前二（输球亦稳出线）→ 本场胜负对其仅影响顺位/练兵",
+              "逻辑：IR Iran 仍不确定 —— 输球基本出局；握手可列第 3，仍有机会进「12 进 8」争八池（4 分）",
+              "逻辑：弱队若赢球当然稳进，但怕冒进输球 → 理性策略转为「保平争胜」，主动性偏保守",
+              "逻辑：强队无生死压力或接受低强度 → 与弱队「各取所需」的平局概率上升（不对称默契）"
+            ],
+            "drawBoost": 7,
+            "xgScaleHome": 0.96,
+            "xgScaleAway": 0.93,
+            "notes": [
+              "争八不对称：弱队保平争第三，平局权重上调",
+              "IR Iran 输球出局 · 平局争第 3 · 赢球稳进"
+            ],
+            "summary": "争八不对称默契：强队已出线，弱队保平争第三（输球出局）"
+          }
+        },
+        "qual_dynamics": {
+          "scenario_type": "asymmetric_third",
+          "mutual_draw_advances": false,
+          "path_control": false,
+          "asymmetric_third": {
+            "strong_side": "Egypt",
+            "weak_side": "IR Iran",
+            "weak_is_home": false,
+            "weak_dead_on_loss": true,
+            "weak_third_live_on_draw": true,
+            "weak_through_on_win": true,
+            "weak_likely_underdog": false,
+            "draw_pts_if_draw": 4
+          },
+          "both_already_qualified": false,
+          "home_already_qualified": true,
+          "away_already_qualified": false,
+          "home_out_if_loss": false,
+          "away_out_if_loss": true,
+          "logic_steps": [
+            "Egypt 5 分 vs IR Iran 3 分；同组另一场 Belgium（5 分）vs New Zealand（1 分）",
+            "逻辑：Egypt 已锁前二（输球亦稳出线）→ 本场胜负对其仅影响顺位/练兵",
+            "逻辑：IR Iran 仍不确定 —— 输球基本出局；握手可列第 3，仍有机会进「12 进 8」争八池（4 分）",
+            "逻辑：弱队若赢球当然稳进，但怕冒进输球 → 理性策略转为「保平争胜」，主动性偏保守",
+            "逻辑：强队无生死压力或接受低强度 → 与弱队「各取所需」的平局概率上升（不对称默契）"
+          ],
+          "drawBoost": 7,
+          "xgScaleHome": 0.96,
+          "xgScaleAway": 0.93,
+          "notes": [
+            "争八不对称：弱队保平争第三，平局权重上调",
+            "IR Iran 输球出局 · 平局争第 3 · 赢球稳进"
+          ],
+          "summary": "争八不对称默契：强队已出线，弱队保平争第三（输球出局）"
+        },
+        "xg_poisson_home": 1.32,
+        "xg_poisson_away": 1.13,
+        "xg_tier_calibrated": false,
+        "score_prob": 12.9,
+        "score_top3": [
+          {
+            "score": "1-1",
+            "prob": 12.9
+          },
+          {
+            "score": "1-0",
+            "prob": 11.4
+          },
+          {
+            "score": "0-1",
+            "prob": 9.8
+          }
+        ],
+        "expected_score": "1-1"
+      },
+      "market_snapshot": {
+        "market_tier": 0.25,
+        "tier_label": "Egypt 被看好 · 净胜约 0.25 球",
+        "totals_line": 2.5,
+        "over_pct": 47.9,
+        "fair_line": 2,
+        "line_gap": 0.5,
+        "full_cover_pct": 40.5,
+        "spread_level": "possible",
+        "spread_market_expect": "净胜≥1",
+        "totals_level": "neutral",
+        "totals_show_lean": false,
+        "totals_lean_side": "neutral"
+      },
+      "depth_calibration": {
+        "tier_home": 0.25,
+        "tier_label": "Egypt 被看好 · 净胜约 0.25 球",
+        "implied_tier": 0,
+        "tier_gap": 0.25,
+        "signal": "neutral",
+        "signal_cn": "均衡",
+        "signal_color": "#7BB8D4",
+        "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
+        "blocker_spread_note": "",
+        "public_lean_cn": "舆论倾向 Egypt（约 55%）",
+        "analysis": "埃及 4 分领跑 vs 伊朗 2 分须胜。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "1-1",
+              "prob": 12.6
+            },
+            {
+              "score": "1-0",
+              "prob": 10.3
+            },
+            {
+              "score": "0-1",
+              "prob": 9.1
+            }
+          ],
+          "one_goal_win_pct": 21.8,
+          "two_plus_win_pct": 18.7,
+          "full_cover_pct": 40.5,
+          "half_cover_pct": 0,
+          "half_lose_pct": 0,
+          "push_pct": null,
+          "margin_full_label": "净胜≥1",
+          "margin_half_label": null,
+          "fav_cover_ev": -0.19,
+          "dog_cover_ev": 0.19,
+          "rational_spread_cn": "客队 守住差距概率略高",
+          "total_xg": 2.6,
+          "fair_totals_line": 2,
+          "over_2_5_pct": 47.9,
+          "over_3_pct": 26.1,
+          "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
+          "margin_risk_note": "净胜≥1 约 40.5%；仅赢 1 球约 0%"
+        },
+        "spread_odds": null,
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 2.5,
+          "market_goals_int": 3,
+          "line_label": "总进球约 2.5 个",
+          "implied_xg_total": 2.6,
+          "fair_line": 2,
+          "line_gap": 0.5,
+          "over_pct": 47.9,
+          "under_pct": 52.1,
+          "signal": "high_line",
+          "signal_cn": "参考偏高",
+          "signal_color": "#C8A96E",
+          "signal_desc": "总进球参考高于合理值，模型偏小比分。",
+          "public_over_pct": 50,
+          "public_lean_cn": "舆论对总进球看法较分散",
+          "index_note": "大/小比分两侧接近",
+          "totals_odds": null,
+          "rational_cn": "超 2.5 球接近五五开（约 47.9%）",
+          "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
+        },
+        "totals_line": 2.5,
+        "applied_delta": {
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
+        },
+        "adjustment_note": "模型微调：主胜 +0% · 平 +0% · 客 +0%",
+        "adjusted_probs": {
+          "home_win": 37,
+          "draw": 33,
+          "away_win": 30
+        },
+        "display_summary": {
+          "fav_name": "Egypt",
+          "expected_total_goals": 2.58,
+          "poisson_fav_win_pct": 40.5,
+          "small_lead_pct": 21.8,
+          "small_example_score": "1-0",
+          "small_example_pct": 10.3,
+          "big_cover_pct": 18.7,
+          "big_example_score": "2-0",
+          "big_example_pct": 7.1,
+          "win_shape": {
+            "fav_name": "Egypt",
+            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
+            "lead_cn": "取胜时以险胜·开放为主（险胜 · 开放 28.4%）",
+            "shapes": [
+              {
+                "key": "narrow_low",
+                "label": "险胜 · 控局",
+                "example": "如 1-0",
+                "field_pct": 10.3,
+                "pct": 25.4
+              },
+              {
+                "key": "narrow_open",
+                "label": "险胜 · 开放",
+                "example": "如 2-1",
+                "field_pct": 11.5,
+                "pct": 28.4
+              },
+              {
+                "key": "comfort_low",
+                "label": "拉开 · 控局",
+                "example": "如 2-0",
+                "field_pct": 10.4,
+                "pct": 25.6
+              },
+              {
+                "key": "comfort_open",
+                "label": "拉开 · 开放",
+                "example": "如 3-1+",
+                "field_pct": 8.3,
+                "pct": 20.6
+              }
+            ],
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 53.8
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 25.6
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 20.6
+              }
+            ],
+            "fav_win_pct": 37
+          },
+          "excitement": {
+            "label_cn": "中速开局",
+            "label_key": "moderate",
+            "label_color": "#C8A96E",
+            "sub_cn": "预期首球等待约 34.6 分",
+            "first_goal_wait": 34.6,
+            "fast_pct": 58,
+            "moderate_pct": 14.8,
+            "slow_pct": 27.3,
+            "tiers": [
+              {
+                "key": "fast",
+                "label": "前 30 分内首球",
+                "pct": 58
+              },
+              {
+                "key": "moderate",
+                "label": "30–45 分首球",
+                "pct": 14.8
+              },
+              {
+                "key": "slow",
+                "label": "45 分后首球",
+                "pct": 27.3
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "Egypt 暂无重要伤停 · IR Iran 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "— / —（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "气候信息暂无"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 1.38,
+            "baseline_away": 1.22,
+            "adjusted_home": 1.38,
+            "adjusted_away": 1.22,
+            "note": "基准 xG 1.38–1.22（未因伤病/气候下调）"
+          },
+          "calibration": {
+            "signal_cn": "均衡",
+            "signal_color": "#7BB8D4",
+            "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
+            "tier_gap": 0.25,
+            "implied_tier_label": "势均力敌",
+            "market_tier_label": "Egypt 被看好 · 净胜约 0.25 球",
+            "summary_cn": "与模型 xG 对照：均衡 · 赛前净胜看法略高（约 +0.25）"
+          },
+          "win_outlook": {
+            "fav_name": "Egypt",
+            "state_label": null,
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 53.8
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 25.6
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 20.6
+              }
+            ],
+            "margin_line_cn": "Egypt · 赛前净胜参考 净胜≥1（全达标）",
+            "margin_meet_pct": 40.5,
+            "margin_half_pct": 0,
+            "margin_fail_pct": 0,
+            "margin_full_label": "净胜≥1",
+            "margin_half_label": null,
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
+            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+            "totals_line": 2.5,
+            "totals_line_cn": "总进球参考 2.5",
+            "fair_totals_line": 2,
+            "model_total_xg": 2.6,
+            "totals_line_gap": 0.5,
+            "totals_high_pct": 47.9,
+            "totals_low_pct": 52.1,
+            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+            "win_low_total_pct": 17.4,
+            "win_margin2_low_total_pct": 7.1,
+            "win_margin2_high_total_pct": 11.6,
+            "readout_cn": "取胜约 37%；若取胜，以「险胜收工」为主（53.8%）。 对着赛前净胜参考，净胜≥1（全达标）约 40.5%；对着总进球参考 2.5，模型超线概率约 47.9%。"
+          },
+          "totals_line": 2.5,
+          "score_patterns": [
+            {
+              "score": "1-1",
+              "pct": 12.6
+            },
+            {
+              "score": "1-0",
+              "pct": 10.3
+            },
+            {
+              "score": "0-1",
+              "pct": 9.1
+            }
+          ],
+          "totals_view": {
+            "expected_total": 2.6,
+            "fair_line": 2,
+            "market_line": 2.5,
+            "line_gap": 0.5,
+            "over_pct": 47.9,
+            "gap_warning": null,
+            "totals_outlook": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 47.9,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "summary_cn": "预测 2.6 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
+          },
+          "customer_reading": {
+            "headline_cn": "Egypt · 净胜走向：有达标可能",
+            "sub_cn": "达标概率约 40.5% · 有达标可能 进球氛围：几乎五五开 平局权重约 33%，小组赛易出守平——勿只盯胜负一方。",
+            "spread": {
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
+              "fav_name": "Egypt",
+              "market_expect_cn": "净胜≥1",
+              "meet_pct": 40.5,
+              "meet_pct_label": "模型推演达标概率",
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Egypt · 净胜走向：有达标可能",
+              "pill_cn": "达标概率约 40.5% · 有达标可能",
+              "detail_cn": "Egypt · 赛前外界预期 净胜≥1。模型推演达标概率约 40.5%；有一定达标空间，但非高把握。",
+              "extra_stats_cn": "",
+              "full_cover_pct": 40.5,
+              "half_cover_pct": 0,
+              "lose1_pct": 0,
+              "margin_full_label": "净胜≥1",
+              "margin_half_label": null,
+              "tier_gap": 0.25,
+              "show_cover": true
+            },
+            "totals": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 47.9,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "draw_risk": {
+              "level": "high",
+              "color": "#C8A96E",
+              "note": "平局权重约 33%，小组赛易出守平——勿只盯胜负一方。"
+            },
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "净胜走向",
+                "outlook": {
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
+                  "fav_name": "Egypt",
+                  "market_expect_cn": "净胜≥1",
+                  "meet_pct": 40.5,
+                  "meet_pct_label": "模型推演达标概率",
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Egypt · 净胜走向：有达标可能",
+                  "pill_cn": "达标概率约 40.5% · 有达标可能",
+                  "detail_cn": "Egypt · 赛前外界预期 净胜≥1。模型推演达标概率约 40.5%；有一定达标空间，但非高把握。",
+                  "extra_stats_cn": "",
+                  "full_cover_pct": 40.5,
+                  "half_cover_pct": 0,
+                  "lose1_pct": 0,
+                  "margin_full_label": "净胜≥1",
+                  "margin_half_label": null,
+                  "tier_gap": 0.25,
+                  "show_cover": true
+                },
+                "text": "达标概率约 40.5% · 有达标可能",
+                "color": "#C8A96E",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "◎",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "neutral",
+                  "label_cn": "暂无明显倾向",
+                  "color": "#8A96A8",
+                  "meter_label_cn": "几乎五五开",
+                  "meter_pos": 50,
+                  "lean_side": "neutral",
+                  "lean_strength": "none",
+                  "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+                  "pill_cn": "几乎五五开",
+                  "detail_cn": "模型五五开，临场决定节奏。",
+                  "headline_cn": "进球氛围：几乎五五开",
+                  "show_lean": false,
+                  "over_pct": 47.9,
+                  "line_gap": 0.5,
+                  "market_line": 2.5,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "总进球参考 2.5",
+                  "caution_public_high": false
+                },
+                "text": "几乎五五开",
+                "color": "#8A96A8",
+                "muted": true
+              }
+            ],
+            "methodology_note": "读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "Egypt",
+              "first_goal_pct": 53.1,
+              "start_score": "1-0",
+              "fav_name": "Egypt",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 86.4,
+              "small_lead_pct": 29.8,
+              "big_lead_pct": 35.3,
+              "fav_win_pct": 65.1,
+              "fav_draw_pct": 21.3,
+              "fav_lose_pct": 13.6,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "Egypt 保持胜果（净胜≥1）",
+                  "pct": 65.1
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 21.3
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 13.6
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 34.7 分",
+                "first_goal_wait": 34.7,
+                "fast_pct": 50.7,
+                "moderate_pct": 14.7,
+                "slow_pct": 34.6,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 50.7
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.7
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 34.6
+                  }
+                ]
+              },
+              "big_delta": 16.6,
+              "small_delta": 8,
+              "narrative": "Egypt 先破门（已 1-0） → 「巩固防守」；IR Iran 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
+              "live_outlook": {
+                "fav_name": "Egypt",
+                "state_label": "Egypt 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 53.8
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 25.6
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 20.6
+                  }
+                ],
+                "margin_line_cn": "Egypt · 赛前净胜参考 净胜≥1（全达标）",
+                "margin_meet_pct": 65.1,
+                "margin_half_pct": 0,
+                "margin_fail_pct": 29.8,
+                "margin_full_label": "净胜≥1",
+                "margin_half_label": null,
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.5,
+                "totals_line_cn": "总进球参考 2.5",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 2.12,
+                "totals_line_gap": 0.25,
+                "totals_high_pct": 62.6,
+                "totals_low_pct": 37.4,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 24.7,
+                "win_margin2_low_total_pct": 12.8,
+                "win_margin2_high_total_pct": 22.5,
+                "readout_cn": "Egypt 已 1-0 领先：仍取胜约 65.1%。 对着总进球参考 2.5，模型超线概率约 62.6%。 常见 2-0 收尾（相对总进球参考 2.5仍偏小比分）。"
+              }
+            },
+            {
+              "side": "away",
+              "team": "IR Iran",
+              "first_goal_pct": 46.9,
+              "start_score": "0-1",
+              "fav_name": "Egypt",
+              "scorer_is_fav": false,
+              "expected_key": "upset_hold",
+              "fav_recover_pct": 41.7,
+              "small_lead_pct": 12.1,
+              "big_lead_pct": 5.9,
+              "fav_win_pct": 18,
+              "fav_draw_pct": 23.7,
+              "fav_lose_pct": 58.3,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "Egypt 追平（平局）",
+                  "pct": 23.7
+                },
+                {
+                  "key": "win1",
+                  "label": "Egypt 净胜1球翻盘（如 2-1）",
+                  "pct": 12.1
+                },
+                {
+                  "key": "win2",
+                  "label": "Egypt 净胜≥2球翻盘（如 3-1）",
+                  "pct": 5.9
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "IR Iran 保持胜果至终场",
+                  "pct": 58.3
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 34.5 分",
+                "first_goal_wait": 34.5,
+                "fast_pct": 51,
+                "moderate_pct": 14.7,
+                "slow_pct": 34.3,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 51
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.7
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 34.3
+                  }
+                ]
+              },
+              "big_delta": -12.8,
+              "small_delta": -9.7,
+              "narrative": "IR Iran 先破门（已 0-1） → 「巩固防守」；Egypt 「组织反扑」。热门先丢球（已 0-1），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
+              "live_outlook": null
+            }
+          ],
+          "match_preview": {
+            "morphology": {
+              "totals_summary": "预测 2.6 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球参考 2.5",
+              "totals_high_pct": 47.9,
+              "type_tags": [
+                {
+                  "key": "balanced",
+                  "label": "常规对抗"
+                }
+              ],
+              "depth_label": "深度一般",
+              "draw_trap_pct": 28,
+              "readout_cn": "Egypt · 常规对抗。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+            },
+            "draw_trap_note": null,
+            "archetype": {
+              "tags": [
+                {
+                  "key": "balanced",
+                  "label": "常规对抗"
+                }
+              ],
+              "depth_score": 0,
+              "depth_label": "深度一般",
+              "draw_trap_pct": 28,
+              "fav_lead_style": "balanced"
+            }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.61,
+            "xg_away_ht": 0.54,
+            "xg_home_2h": 0.77,
+            "xg_away_2h": 0.68,
+            "home_win": 30.8,
+            "draw": 43,
+            "away_win": 26.3,
+            "top_score": "0-0",
+            "top_score_prob": 31.7,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 31.7
+              },
+              {
+                "score": "1-0",
+                "prob": 19.3
+              },
+              {
+                "score": "0-1",
+                "prob": 17.1
+              }
+            ],
+            "ht_goals_expected": 1.15,
+            "ht_over_0_5_pct": 68.3,
+            "ht_over_1_5_pct": 31.9,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.61–0.54（约占全场 44%） · 最可能 0-0（31.7%） · 胜平负 30.8/43/26.3 · 半场≥1球约 68.3%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
+          }
+        },
+        "public_summary_note": "【推演概要】Egypt · 常规对抗。 · 与模型 xG 对照：均衡 · 赛前净胜看法略高（约 +0.25）（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
+        "goal_efficiency": {
+          "xg_total": 2.6,
+          "xg_gap": 0.16,
+          "xg_home": 1.38,
+          "xg_away": 1.22,
+          "fav_name": "Egypt",
+          "dog_name": "IR Iran",
+          "fav_xg": 1.38,
+          "dog_xg": 1.22,
+          "fav_goals": 1,
+          "dog_goals": 1,
+          "fav_eff": 0.72,
+          "dog_eff": 0.82,
+          "total_goals": 2,
+          "goal_diff_vs_xg": -0.6,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小比分",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "even_xg",
+              "label": "xG接近",
+              "color": "#5BBF8A",
+              "bg": "rgba(91,191,138,0.08)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "热门未达 xG 预期——小比分收场常见。",
+          "summary_cn": "赛前 xG 总 2.6（差 0.16）· 热门 Egypt 1.38→1（效率 0.72）· 弱队 IR Iran 1.22→1（效率 0.82）→ 混合路径。热门未达 xG 预期——小比分收场常见。",
+          "in_mid_band": true
+        },
+        "preview_replay": {
+          "actual_score": "1-1",
+          "ht_score": "1-1",
+          "hits": [
+            "赛前进球氛围未强判（符合模型五五开读法）"
+          ],
+          "misses": [],
+          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。",
+          "totals_actual": 2,
+          "totals_line": 2.5,
+          "spread_level": "possible",
+          "totals_level": "neutral"
+        }
+      },
+      "actualResult": {
+        "home_score": 1,
+        "away_score": 1,
+        "status": "FT",
+        "label": "全场结束",
+        "scorers": "MAHMOUD SABER 5'; Ramin REZAEIAN 14'",
+        "highlights": "西雅图 · 埃及 1-1 伊朗 · 早段对轰 · 埃及 5 分 G 组第二 · 伊朗 3 分第三",
+        "ht_score": "1-1",
+        "first_goal_min": 5,
+        "fifa_match_id": "400021479",
+        "updated": "2026-06-27T06:00:06+08:00"
+      }
+    },
+    {
+      "id": "m64",
+      "archived": true,
+      "archivedAt": "2026-06-27T06:00:06+08:00",
+      "group": "G",
+      "matchday": 3,
+      "date_beijing": "6月27日",
+      "time_beijing": "11:00",
+      "time_beijing_full": "北京时间 6月27日 11:00",
+      "venue": "BC Place",
+      "city": "Vancouver, Canada",
+      "note": "G组末轮 · 新西兰 vs 比利时 · 温哥华 · 已结束 1-5",
+      "home": {
+        "name": "New Zealand",
+        "iso": "nz",
+        "rating": 58
+      },
+      "away": {
+        "name": "Belgium",
+        "iso": "be",
+        "rating": 86
+      },
+      "prediction": {
+        "xg_home": 0.82,
+        "xg_away": 1.75,
+        "home_win": 11,
+        "draw": 29,
+        "away_win": 60,
+        "score": "0-2",
+        "confidence": 76,
+        "key_factor": "【赛后复盘】赛前客胜 57%/首推 0-2；实际 1-5 比利时大胜。Trossard 28'/50' · De Bruyne 66' · Lukaku 86' · Just 84' 挽回颜面。方向：客胜命中；比分 1-5 穿盘；总球 6（大 2.75 穿）。路径：比利时 5 分 G 组第一（净胜球压埃及）。",
+        "base_home_win": 16,
+        "base_draw": 28,
+        "base_away_win": 56,
+        "depth_calibrated": true,
+        "score_dist": [
+          {
+            "score": "0-2",
+            "prob": 14.6
+          },
+          {
+            "score": "0-1",
+            "prob": 13.5
+          },
+          {
+            "score": "0-3",
+            "prob": 10.6
+          },
+          {
+            "score": "1-2",
+            "prob": 8.9
+          },
+          {
+            "score": "1-1",
+            "prob": 8.2
+          },
+          {
+            "score": "1-3",
+            "prob": 6.4
+          },
+          {
+            "score": "0-0",
+            "prob": 6.2
+          }
+        ],
+        "draw_context": {
+          "drawBoost": 4,
+          "ironBucket": false,
+          "closeXg": false,
+          "gap": 0.93,
+          "notes": [
+            "xG 暗示胶着"
+          ],
+          "qual_dynamics": null
+        },
+        "qual_dynamics": null,
+        "xg_poisson_home": 0.61,
+        "xg_poisson_away": 2.17,
+        "xg_tier_calibrated": true,
+        "score_prob": 14.6,
+        "score_top3": [
+          {
+            "score": "0-2",
+            "prob": 14.6
+          },
+          {
+            "score": "0-1",
+            "prob": 13.5
+          },
+          {
+            "score": "0-3",
+            "prob": 10.6
+          }
+        ],
+        "expected_score": "1-2"
+      },
+      "market_snapshot": {
+        "market_tier": 1.25,
+        "tier_label": "New Zealand 被看好 · 净胜约 1–2 球",
+        "totals_line": 2.75,
+        "over_pct": 36,
+        "fair_line": 2,
+        "line_gap": 0.75,
+        "full_cover_pct": 5.3,
+        "spread_level": "skeptical",
+        "spread_market_expect": "净胜≥2",
+        "totals_level": "mild_low",
+        "totals_show_lean": false,
+        "totals_lean_side": "dull"
+      },
+      "depth_calibration": {
+        "tier_home": 1.25,
+        "tier_label": "New Zealand 被看好 · 净胜约 1–2 球",
+        "implied_tier": -0.25,
+        "tier_gap": 1.5,
+        "signal": "blocker_inflate",
+        "signal_cn": "大众心理预期偏高",
+        "signal_color": "#D95F6A",
+        "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+        "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "public_lean_cn": "舆论倾向 Belgium（约 74%）",
+        "analysis": "比利时 2 分须胜 vs 新西兰 1 分。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "0-1",
+              "prob": 13.5
+            },
+            {
+              "score": "0-2",
+              "prob": 11.8
+            },
+            {
+              "score": "1-1",
+              "prob": 11.1
+            }
+          ],
+          "one_goal_win_pct": 12.1,
+          "two_plus_win_pct": 5.3,
+          "full_cover_pct": 5.3,
+          "half_cover_pct": 0,
+          "half_lose_pct": 12.1,
+          "push_pct": null,
+          "margin_full_label": "净胜≥2",
+          "margin_half_label": null,
+          "fav_cover_ev": -0.833,
+          "dog_cover_ev": 0.833,
+          "rational_spread_cn": "客队 守住差距概率略高",
+          "total_xg": 2.57,
+          "fair_totals_line": 2,
+          "over_2_5_pct": 46.9,
+          "over_3_pct": 25,
+          "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
+          "margin_risk_note": "净胜≥2 约 5.3%；仅赢 1 球约 12.1%"
+        },
+        "spread_odds": null,
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 2.75,
+          "market_goals_int": 3,
+          "line_label": "总进球约 2.5–3 个",
+          "implied_xg_total": 2.57,
+          "fair_line": 2,
+          "line_gap": 0.75,
+          "over_pct": 36,
+          "under_pct": 64,
+          "signal": "high_line",
+          "signal_cn": "参考偏高",
+          "signal_color": "#C8A96E",
+          "signal_desc": "总进球参考高于合理值，模型偏小比分。",
+          "public_over_pct": 50,
+          "public_lean_cn": "舆论对总进球看法较分散",
+          "index_note": "大/小比分两侧接近",
+          "totals_odds": null,
+          "rational_cn": "模型略看小比分（超 2.75 约 64% 难达）",
+          "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
+        },
+        "totals_line": 2.75,
+        "applied_delta": {
+          "home_win": -5,
+          "draw": 1,
+          "away_win": 4
+        },
+        "adjustment_note": "模型微调：主胜 -5% · 平 +1% · 客 +4%",
+        "adjusted_probs": {
+          "home_win": 11,
+          "draw": 29,
+          "away_win": 60
+        },
+        "display_summary": {
+          "fav_name": "New Zealand",
+          "expected_total_goals": 2.53,
+          "poisson_fav_win_pct": 17.4,
+          "small_lead_pct": 12.1,
+          "small_example_score": "1-0",
+          "small_example_pct": 6.3,
+          "big_cover_pct": 5.3,
+          "big_example_score": "2-0",
+          "big_example_pct": 2.6,
+          "win_shape": {
+            "fav_name": "New Zealand",
+            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
+            "lead_cn": "取胜时以险胜·控局为主（险胜 · 控局 36.4%）",
+            "shapes": [
+              {
+                "key": "narrow_low",
+                "label": "险胜 · 控局",
+                "example": "如 1-0",
+                "field_pct": 6.3,
+                "pct": 36.4
+              },
+              {
+                "key": "narrow_open",
+                "label": "险胜 · 开放",
+                "example": "如 2-1",
+                "field_pct": 5.8,
+                "pct": 33.2
+              },
+              {
+                "key": "comfort_low",
+                "label": "拉开 · 控局",
+                "example": "如 2-0",
+                "field_pct": 3.3,
+                "pct": 19
+              },
+              {
+                "key": "comfort_open",
+                "label": "拉开 · 开放",
+                "example": "如 3-1+",
+                "field_pct": 2,
+                "pct": 11.4
+              }
+            ],
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 69.6
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 19
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 11.4
+              }
+            ],
+            "fav_win_pct": 11
+          },
+          "excitement": {
+            "label_cn": "中速开局",
+            "label_key": "moderate",
+            "label_color": "#C8A96E",
+            "sub_cn": "预期首球等待约 35 分",
+            "first_goal_wait": 35,
+            "fast_pct": 57.5,
+            "moderate_pct": 14.8,
+            "slow_pct": 27.7,
+            "tiers": [
+              {
+                "key": "fast",
+                "label": "前 30 分内首球",
+                "pct": 57.5
+              },
+              {
+                "key": "moderate",
+                "label": "30–45 分首球",
+                "pct": 14.8
+              },
+              {
+                "key": "slow",
+                "label": "45 分后首球",
+                "pct": 27.7
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "New Zealand 暂无重要伤停 · Belgium 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "— / —（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "气候信息暂无"
+            },
+            {
+              "icon": "⚖️",
+              "label": "平局修正",
+              "note": "回测校准：xG 暗示胶着（平 +4%）"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 0.82,
+            "baseline_away": 1.75,
+            "adjusted_home": 0.82,
+            "adjusted_away": 1.75,
+            "note": "基准 xG 0.82–1.75（未因伤病/气候下调）"
+          },
+          "calibration": {
+            "signal_cn": "大众心理预期偏高",
+            "signal_color": "#D95F6A",
+            "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+            "tier_gap": 1.5,
+            "implied_tier_label": "Belgium 被看好 · 净胜约 0.25 球",
+            "market_tier_label": "New Zealand 被看好 · 净胜约 1–2 球",
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.5 · 模型认为仅小胜 1 球仍约 12.1%"
+          },
+          "win_outlook": {
+            "fav_name": "New Zealand",
+            "state_label": null,
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 69.6
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 19
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 11.4
+              }
+            ],
+            "margin_line_cn": "New Zealand · 赛前净胜参考 净胜≥2（全达标）",
+            "margin_meet_pct": 5.3,
+            "margin_half_pct": 0,
+            "margin_fail_pct": 12.1,
+            "margin_full_label": "净胜≥2",
+            "margin_half_label": null,
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
+            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+            "totals_line": 2.75,
+            "totals_line_cn": "总进球参考 2.75",
+            "fair_totals_line": 2,
+            "model_total_xg": 2.57,
+            "totals_line_gap": 0.75,
+            "totals_high_pct": 36,
+            "totals_low_pct": 64,
+            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+            "win_low_total_pct": 8.9,
+            "win_margin2_low_total_pct": 2.6,
+            "win_margin2_high_total_pct": 2.7,
+            "readout_cn": "取胜约 11%；若取胜，以「险胜收工」为主（69.6%）。 对着赛前净胜参考，净胜≥2（全达标）约 5.3%；对着总进球参考 2.75，模型超线概率约 36%。"
+          },
+          "totals_line": 2.75,
+          "score_patterns": [
+            {
+              "score": "0-1",
+              "pct": 13.5
+            },
+            {
+              "score": "0-2",
+              "pct": 11.8
+            },
+            {
+              "score": "1-1",
+              "pct": 11.1
+            }
+          ],
+          "totals_view": {
+            "expected_total": 2.5,
+            "fair_line": 2,
+            "market_line": 2.75,
+            "line_gap": 0.75,
+            "over_pct": 36,
+            "gap_warning": null,
+            "totals_outlook": {
+              "level": "mild_low",
+              "label_cn": "略倾向沉闷",
+              "color": "#7BB8D4",
+              "meter_label_cn": "略倾向沉闷",
+              "meter_pos": 36,
+              "lean_side": "dull",
+              "lean_strength": "mild",
+              "section_intro_cn": "对照总进球参考 2.75，看偏闷还是偏精彩",
+              "pill_cn": "略偏闷（弱）",
+              "detail_cn": "略偏闷，模型更看小比分（难超线 2.75）；弱信号。",
+              "headline_cn": "进球氛围：略偏闷",
+              "show_lean": false,
+              "over_pct": 36,
+              "line_gap": 0.75,
+              "market_line": 2.75,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.75",
+              "caution_public_high": false
+            },
+            "summary_cn": "预测 2.5 · 合理值 2 · 总进球参考 2.75（高于合理值 0.75） · 高于合理值 0.75 · 模型在常见进球预期附近均衡，不作强倾向"
+          },
+          "customer_reading": {
+            "headline_cn": "New Zealand · 净胜走向：达到预期难度偏大",
+            "sub_cn": "达标概率约 5.3% · 达到预期难度偏大 进球氛围：略偏闷",
+            "spread": {
+              "level": "skeptical",
+              "label_cn": "外界预期偏高",
+              "color": "#D95F6A",
+              "fav_name": "New Zealand",
+              "market_expect_cn": "净胜≥2",
+              "meet_pct": 5.3,
+              "meet_pct_label": "模型推演达标概率",
+              "verdict_cn": "达到预期难度偏大",
+              "headline_cn": "New Zealand · 净胜走向：达到预期难度偏大",
+              "pill_cn": "达标概率约 5.3% · 达到预期难度偏大",
+              "detail_cn": "New Zealand · 赛前外界预期 净胜≥2。模型推演达标概率约 5.3%；外界看法高于 xG 隐含约 1.5 球，达到预期难度偏大。",
+              "extra_stats_cn": "",
+              "full_cover_pct": 5.3,
+              "half_cover_pct": 0,
+              "lose1_pct": 12.1,
+              "margin_full_label": "净胜≥2",
+              "margin_half_label": null,
+              "tier_gap": 1.5,
+              "show_cover": true
+            },
+            "totals": {
+              "level": "mild_low",
+              "label_cn": "略倾向沉闷",
+              "color": "#7BB8D4",
+              "meter_label_cn": "略倾向沉闷",
+              "meter_pos": 36,
+              "lean_side": "dull",
+              "lean_strength": "mild",
+              "section_intro_cn": "对照总进球参考 2.75，看偏闷还是偏精彩",
+              "pill_cn": "略偏闷（弱）",
+              "detail_cn": "略偏闷，模型更看小比分（难超线 2.75）；弱信号。",
+              "headline_cn": "进球氛围：略偏闷",
+              "show_lean": false,
+              "over_pct": 36,
+              "line_gap": 0.75,
+              "market_line": 2.75,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.75",
+              "caution_public_high": false
+            },
+            "draw_risk": null,
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "净胜走向",
+                "outlook": {
+                  "level": "skeptical",
+                  "label_cn": "外界预期偏高",
+                  "color": "#D95F6A",
+                  "fav_name": "New Zealand",
+                  "market_expect_cn": "净胜≥2",
+                  "meet_pct": 5.3,
+                  "meet_pct_label": "模型推演达标概率",
+                  "verdict_cn": "达到预期难度偏大",
+                  "headline_cn": "New Zealand · 净胜走向：达到预期难度偏大",
+                  "pill_cn": "达标概率约 5.3% · 达到预期难度偏大",
+                  "detail_cn": "New Zealand · 赛前外界预期 净胜≥2。模型推演达标概率约 5.3%；外界看法高于 xG 隐含约 1.5 球，达到预期难度偏大。",
+                  "extra_stats_cn": "",
+                  "full_cover_pct": 5.3,
+                  "half_cover_pct": 0,
+                  "lose1_pct": 12.1,
+                  "margin_full_label": "净胜≥2",
+                  "margin_half_label": null,
+                  "tier_gap": 1.5,
+                  "show_cover": true
+                },
+                "text": "达标概率约 5.3% · 达到预期难度偏大",
+                "color": "#D95F6A",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "◎",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "mild_low",
+                  "label_cn": "略倾向沉闷",
+                  "color": "#7BB8D4",
+                  "meter_label_cn": "略倾向沉闷",
+                  "meter_pos": 36,
+                  "lean_side": "dull",
+                  "lean_strength": "mild",
+                  "section_intro_cn": "对照总进球参考 2.75，看偏闷还是偏精彩",
+                  "pill_cn": "略偏闷（弱）",
+                  "detail_cn": "略偏闷，模型更看小比分（难超线 2.75）；弱信号。",
+                  "headline_cn": "进球氛围：略偏闷",
+                  "show_lean": false,
+                  "over_pct": 36,
+                  "line_gap": 0.75,
+                  "market_line": 2.75,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "总进球参考 2.75",
+                  "caution_public_high": false
+                },
+                "text": "略偏闷（弱）",
+                "color": "#7BB8D4",
+                "muted": true
+              }
+            ],
+            "methodology_note": "读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "New Zealand",
+              "first_goal_pct": 31.9,
+              "start_score": "1-0",
+              "fav_name": "New Zealand",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 69,
+              "small_lead_pct": 25.8,
+              "big_lead_pct": 15.4,
+              "fav_win_pct": 41.2,
+              "fav_draw_pct": 27.8,
+              "fav_lose_pct": 31,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "New Zealand 保持胜果（净胜≥1）",
+                  "pct": 41.2
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 27.8
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 31
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 34.2 分",
+                "first_goal_wait": 34.2,
+                "fast_pct": 51.3,
+                "moderate_pct": 14.7,
+                "slow_pct": 34,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 51.3
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.7
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 34
+                  }
+                ]
+              },
+              "big_delta": 10.1,
+              "small_delta": 13.7,
+              "narrative": "New Zealand 先破门（已 1-0） → 「巩固防守」；Belgium 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
+              "live_outlook": {
+                "fav_name": "New Zealand",
+                "state_label": "New Zealand 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 69.6
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 19
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 11.4
+                  }
+                ],
+                "margin_line_cn": "New Zealand · 赛前净胜参考 净胜≥2（全达标）",
+                "margin_meet_pct": 15.4,
+                "margin_half_pct": 0,
+                "margin_fail_pct": 25.8,
+                "margin_full_label": "净胜≥2",
+                "margin_half_label": null,
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.75,
+                "totals_line_cn": "总进球参考 2.75",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 2.16,
+                "totals_line_gap": 0.5,
+                "totals_high_pct": 49.8,
+                "totals_low_pct": 50.2,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 19,
+                "win_margin2_low_total_pct": 7.3,
+                "win_margin2_high_total_pct": 8,
+                "readout_cn": "New Zealand 已 1-0 领先：仍取胜约 41.2%。 对着总进球参考 2.75，模型超线概率约 49.8%。 若再扩大，偏「险胜收工」。"
+              }
+            },
+            {
+              "side": "away",
+              "team": "Belgium",
+              "first_goal_pct": 68.1,
+              "start_score": "0-1",
+              "fav_name": "New Zealand",
+              "scorer_is_fav": false,
+              "expected_key": "upset_hold",
+              "fav_recover_pct": 19.8,
+              "small_lead_pct": 4.4,
+              "big_lead_pct": 1.2,
+              "fav_win_pct": 5.6,
+              "fav_draw_pct": 14.2,
+              "fav_lose_pct": 80.2,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "New Zealand 追平（平局）",
+                  "pct": 14.2
+                },
+                {
+                  "key": "win1",
+                  "label": "New Zealand 净胜1球翻盘（如 2-1）",
+                  "pct": 4.4
+                },
+                {
+                  "key": "win2",
+                  "label": "New Zealand 净胜≥2球翻盘（如 3-1）",
+                  "pct": 1.2
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "Belgium 保持胜果至终场",
+                  "pct": 80.2
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 35.7 分",
+                "first_goal_wait": 35.7,
+                "fast_pct": 49.8,
+                "moderate_pct": 14.6,
+                "slow_pct": 35.6,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 49.8
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.6
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 35.6
+                  }
+                ]
+              },
+              "big_delta": -4.1,
+              "small_delta": -7.7,
+              "narrative": "Belgium 先破门（已 0-1） → 「巩固防守」；New Zealand 「组织反扑」。热门先丢球（已 0-1），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
+              "live_outlook": null
+            }
+          ],
+          "match_preview": {
+            "morphology": {
+              "totals_summary": "预测 2.5 · 合理值 2 · 总进球参考 2.75（高于合理值 0.75） · 高于合理值 0.75 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球参考 2.75",
+              "totals_high_pct": 36,
+              "type_tags": [
+                {
+                  "key": "balanced",
+                  "label": "常规对抗"
+                }
+              ],
+              "depth_label": "深度一般",
+              "draw_trap_pct": 24,
+              "readout_cn": "New Zealand · 常规对抗。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+            },
+            "draw_trap_note": null,
+            "archetype": {
+              "tags": [
+                {
+                  "key": "balanced",
+                  "label": "常规对抗"
+                }
+              ],
+              "depth_score": 0,
+              "depth_label": "深度一般",
+              "draw_trap_pct": 24,
+              "fav_lead_style": "balanced"
+            }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.36,
+            "xg_away_ht": 0.77,
+            "xg_home_2h": 0.46,
+            "xg_away_2h": 0.98,
+            "home_win": 15.9,
+            "draw": 41.9,
+            "away_win": 42.2,
+            "top_score": "0-0",
+            "top_score_prob": 32.3,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 32.3
+              },
+              {
+                "score": "0-1",
+                "prob": 24.9
+              },
+              {
+                "score": "1-0",
+                "prob": 11.6
+              }
+            ],
+            "ht_goals_expected": 1.13,
+            "ht_over_0_5_pct": 67.7,
+            "ht_over_1_5_pct": 31.2,
+            "pick": "away",
+            "pick_name": "Belgium",
+            "summary_cn": "半场 xG 0.36–0.77（约占全场 44%） · 最可能 0-0（32.3%） · 胜平负 15.9/41.9/42.2 · 半场≥1球约 67.7%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
+          }
+        },
+        "public_summary_note": "【推演概要】New Zealand · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.5 · 模型认为仅小胜 1 球仍约 12.1%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
+        "goal_efficiency": {
+          "xg_total": 2.57,
+          "xg_gap": 0.93,
+          "xg_home": 0.82,
+          "xg_away": 1.75,
+          "fav_name": "Belgium",
+          "dog_name": "New Zealand",
+          "fav_xg": 1.75,
+          "dog_xg": 0.82,
+          "fav_goals": 5,
+          "dog_goals": 1,
+          "fav_eff": 2.86,
+          "dog_eff": 1.22,
+          "total_goals": 6,
+          "goal_diff_vs_xg": 3.4,
+          "path_type": "open_game",
+          "path_label": "对攻兑现",
+          "tags": [
+            {
+              "key": "high_scoring",
+              "label": "大比分",
+              "color": "#D95F6A",
+              "bg": "rgba(217,95,106,0.12)"
+            },
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "color": "#E8B84B",
+              "bg": "rgba(232,184,75,0.12)"
+            },
+            {
+              "key": "open_game",
+              "label": "对攻兑现",
+              "color": "#9B7EDE",
+              "bg": "rgba(155,126,222,0.1)"
+            }
+          ],
+          "pattern_note": "热门效率≥1.5 且总进球≥4——样本内高比分硬路径（热门打穿）。",
+          "summary_cn": "赛前 xG 总 2.57（差 0.93）· 热门 Belgium 1.75→5（效率 2.86）· 弱队 New Zealand 0.82→1（效率 1.22）→ 对攻兑现。热门效率≥1.5 且总进球≥4——样本内高比分硬路径（热门打穿）。",
+          "in_mid_band": true
+        },
+        "preview_replay": {
+          "actual_score": "1-5",
+          "ht_score": "0-1",
+          "hits": [],
+          "misses": [
+            "总进球尾部偏差大（赛前已标注无明显倾向）"
+          ],
+          "summary_cn": "偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
+          "totals_actual": 6,
+          "totals_line": 2.75,
+          "spread_level": "skeptical",
+          "totals_level": "mild_low"
+        }
+      },
+      "actualResult": {
+        "home_score": 1,
+        "away_score": 5,
+        "status": "FT",
+        "label": "全场结束",
+        "scorers": "Elijah JUST 84'; Leandro TROSSARD 28'; Leandro TROSSARD 50'; Kevin DE BRUYNE 66'; Romelu LUKAKU 86'; Alexis SAELEMAEKERS 90'+4'",
+        "highlights": "温哥华 · 比利时 5-1 新西兰 · Trossard 双响 · 比利时 5 分 G 组第一",
+        "ht_score": "0-1",
+        "first_goal_min": 28,
+        "fifa_match_id": "400021481",
+        "updated": "2026-06-27T06:00:06+08:00"
+      }
+    },
+    {
+      "id": "m65",
+      "archived": true,
+      "archivedAt": "2026-06-27T06:00:06+08:00",
+      "group": "H",
+      "matchday": 3,
+      "date_beijing": "6月27日",
+      "time_beijing": "08:00",
+      "time_beijing_full": "北京时间 6月27日 08:00",
+      "venue": "NRG Stadium",
+      "city": "Houston, USA",
+      "note": "H组末轮 · 佛得角 vs 沙特 · 休斯顿 · 已结束 0-0",
+      "home": {
+        "name": "Cabo Verde",
+        "iso": "cv",
+        "rating": 66
+      },
+      "away": {
+        "name": "Saudi Arabia",
+        "iso": "sa",
+        "rating": 68
+      },
+      "prediction": {
+        "xg_home": 1.15,
+        "xg_away": 1.45,
+        "home_win": 30,
+        "draw": 26,
+        "away_win": 44,
+        "score": "1-1",
+        "confidence": 68,
+        "key_factor": "【赛后复盘】赛前客胜 44%/首推 1-1；实际 0-0 平局。90 分钟无进球。方向：平局命中（客胜未中）；总球 0（小 2.5 赢）。路径：佛得角 3 分 H 组第二 · 沙特 2 分出局。",
+        "base_home_win": 30,
+        "base_draw": 26.2,
+        "base_away_win": 43.8,
+        "depth_calibrated": true,
+        "score_dist": [
+          {
+            "score": "1-1",
+            "prob": 12.4
+          },
+          {
+            "score": "0-1",
+            "prob": 10.8
+          },
+          {
+            "score": "1-2",
+            "prob": 9
+          },
+          {
+            "score": "1-0",
+            "prob": 8.5
+          },
+          {
+            "score": "0-2",
+            "prob": 7.8
+          },
+          {
+            "score": "0-0",
+            "prob": 7.4
+          },
+          {
+            "score": "2-1",
+            "prob": 7.1
+          }
+        ],
+        "draw_context": {
+          "drawBoost": 0,
+          "ironBucket": false,
+          "closeXg": true,
+          "gap": 0.3,
+          "notes": [],
+          "qual_dynamics": null
+        },
+        "qual_dynamics": null,
+        "xg_poisson_home": 1.15,
+        "xg_poisson_away": 1.45,
+        "xg_tier_calibrated": false,
+        "score_prob": 12.4,
+        "score_top3": [
+          {
+            "score": "1-1",
+            "prob": 12.4
+          },
+          {
+            "score": "0-1",
+            "prob": 10.8
+          },
+          {
+            "score": "1-2",
+            "prob": 9
+          }
+        ],
+        "expected_score": "1-1"
+      },
+      "market_snapshot": {
+        "market_tier": 0.25,
+        "tier_label": "Cabo Verde 被看好 · 净胜约 0.25 球",
+        "totals_line": 2.5,
+        "over_pct": 47.9,
+        "fair_line": 2,
+        "line_gap": 0.5,
+        "full_cover_pct": 30,
+        "spread_level": "uncertain",
+        "spread_market_expect": "净胜≥1",
+        "totals_level": "neutral",
+        "totals_show_lean": false,
+        "totals_lean_side": "neutral"
+      },
+      "depth_calibration": {
+        "tier_home": 0.25,
+        "tier_label": "Cabo Verde 被看好 · 净胜约 0.25 球",
+        "implied_tier": 0,
+        "tier_gap": 0.25,
+        "signal": "neutral",
+        "signal_cn": "均衡",
+        "signal_color": "#7BB8D4",
+        "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
+        "blocker_spread_note": "",
+        "public_lean_cn": "舆论倾向 Saudi Arabia（约 54%）",
+        "analysis": "H 组末轮各争出线。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "1-1",
+              "prob": 12.4
+            },
+            {
+              "score": "0-1",
+              "prob": 10.8
+            },
+            {
+              "score": "1-2",
+              "prob": 9
+            }
+          ],
+          "one_goal_win_pct": 18,
+          "two_plus_win_pct": 12,
+          "full_cover_pct": 30,
+          "half_cover_pct": 0,
+          "half_lose_pct": 0,
+          "push_pct": null,
+          "margin_full_label": "净胜≥1",
+          "margin_half_label": null,
+          "fav_cover_ev": -0.4,
+          "dog_cover_ev": 0.4,
+          "rational_spread_cn": "客队 守住差距概率略高",
+          "total_xg": 2.6,
+          "fair_totals_line": 2,
+          "over_2_5_pct": 47.9,
+          "over_3_pct": 26,
+          "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
+          "margin_risk_note": "净胜≥1 约 30%；仅赢 1 球约 0%"
+        },
+        "spread_odds": null,
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 2.5,
+          "market_goals_int": 3,
+          "line_label": "总进球约 2.5 个",
+          "implied_xg_total": 2.6,
+          "fair_line": 2,
+          "line_gap": 0.5,
+          "over_pct": 47.9,
+          "under_pct": 52.1,
+          "signal": "high_line",
+          "signal_cn": "参考偏高",
+          "signal_color": "#C8A96E",
+          "signal_desc": "总进球参考高于合理值，模型偏小比分。",
+          "public_over_pct": 50,
+          "public_lean_cn": "舆论对总进球看法较分散",
+          "index_note": "大/小比分两侧接近",
+          "totals_odds": null,
+          "rational_cn": "超 2.5 球接近五五开（约 47.9%）",
+          "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
+        },
+        "totals_line": 2.5,
+        "applied_delta": {
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
+        },
+        "adjustment_note": "模型微调：主胜 +0% · 平 +0% · 客 +0%",
+        "adjusted_probs": {
+          "home_win": 30,
+          "draw": 26,
+          "away_win": 44
+        },
+        "display_summary": {
+          "fav_name": "Cabo Verde",
+          "expected_total_goals": 2.58,
+          "poisson_fav_win_pct": 30,
+          "small_lead_pct": 18,
+          "small_example_score": "1-0",
+          "small_example_pct": 8.6,
+          "big_cover_pct": 12,
+          "big_example_score": "2-0",
+          "big_example_pct": 4.9,
+          "win_shape": {
+            "fav_name": "Cabo Verde",
+            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
+            "lead_cn": "取胜时以险胜·开放为主（险胜 · 开放 31.4%）",
+            "shapes": [
+              {
+                "key": "narrow_low",
+                "label": "险胜 · 控局",
+                "example": "如 1-0",
+                "field_pct": 8.6,
+                "pct": 28.6
+              },
+              {
+                "key": "narrow_open",
+                "label": "险胜 · 开放",
+                "example": "如 2-1",
+                "field_pct": 9.4,
+                "pct": 31.4
+              },
+              {
+                "key": "comfort_low",
+                "label": "拉开 · 控局",
+                "example": "如 2-0",
+                "field_pct": 6.8,
+                "pct": 22.8
+              },
+              {
+                "key": "comfort_open",
+                "label": "拉开 · 开放",
+                "example": "如 3-1+",
+                "field_pct": 5.1,
+                "pct": 17.2
+              }
+            ],
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 60
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 22.8
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 17.2
+              }
+            ],
+            "fav_win_pct": 30
+          },
+          "excitement": {
+            "label_cn": "中速开局",
+            "label_key": "moderate",
+            "label_color": "#C8A96E",
+            "sub_cn": "预期首球等待约 34.6 分",
+            "first_goal_wait": 34.6,
+            "fast_pct": 58,
+            "moderate_pct": 14.8,
+            "slow_pct": 27.3,
+            "tiers": [
+              {
+                "key": "fast",
+                "label": "前 30 分内首球",
+                "pct": 58
+              },
+              {
+                "key": "moderate",
+                "label": "30–45 分首球",
+                "pct": 14.8
+              },
+              {
+                "key": "slow",
+                "label": "45 分后首球",
+                "pct": 27.3
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "Cabo Verde 暂无重要伤停 · Saudi Arabia 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "— / —（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "气候信息暂无"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 1.15,
+            "baseline_away": 1.45,
+            "adjusted_home": 1.15,
+            "adjusted_away": 1.45,
+            "note": "基准 xG 1.15–1.45（未因伤病/气候下调）"
+          },
+          "calibration": {
+            "signal_cn": "均衡",
+            "signal_color": "#7BB8D4",
+            "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
+            "tier_gap": 0.25,
+            "implied_tier_label": "势均力敌",
+            "market_tier_label": "Cabo Verde 被看好 · 净胜约 0.25 球",
+            "summary_cn": "与模型 xG 对照：均衡 · 赛前净胜看法略高（约 +0.25）"
+          },
+          "win_outlook": {
+            "fav_name": "Cabo Verde",
+            "state_label": null,
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 60
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 22.8
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 17.2
+              }
+            ],
+            "margin_line_cn": "Cabo Verde · 赛前净胜参考 净胜≥1（全达标）",
+            "margin_meet_pct": 30,
+            "margin_half_pct": 0,
+            "margin_fail_pct": 0,
+            "margin_full_label": "净胜≥1",
+            "margin_half_label": null,
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
+            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+            "totals_line": 2.5,
+            "totals_line_cn": "总进球参考 2.5",
+            "fair_totals_line": 2,
+            "model_total_xg": 2.6,
+            "totals_line_gap": 0.5,
+            "totals_high_pct": 47.9,
+            "totals_low_pct": 52.1,
+            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+            "win_low_total_pct": 13.5,
+            "win_margin2_low_total_pct": 4.9,
+            "win_margin2_high_total_pct": 7,
+            "readout_cn": "取胜约 30%；若取胜，以「险胜收工」为主（60%）。 对着赛前净胜参考，净胜≥1（全达标）约 30%；对着总进球参考 2.5，模型超线概率约 47.9%。"
+          },
+          "totals_line": 2.5,
+          "score_patterns": [
+            {
+              "score": "1-1",
+              "pct": 12.4
+            },
+            {
+              "score": "0-1",
+              "pct": 10.8
+            },
+            {
+              "score": "1-2",
+              "pct": 9
+            }
+          ],
+          "totals_view": {
+            "expected_total": 2.6,
+            "fair_line": 2,
+            "market_line": 2.5,
+            "line_gap": 0.5,
+            "over_pct": 47.9,
+            "gap_warning": null,
+            "totals_outlook": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 47.9,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "summary_cn": "预测 2.6 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
+          },
+          "customer_reading": {
+            "headline_cn": "Cabo Verde · 净胜走向：达标与否难下定论",
+            "sub_cn": "达标概率约 30% · 达标与否难下定论 进球氛围：几乎五五开",
+            "spread": {
+              "level": "uncertain",
+              "label_cn": "净胜幅度难下定论",
+              "color": "#8A96A8",
+              "fav_name": "Cabo Verde",
+              "market_expect_cn": "净胜≥1",
+              "meet_pct": 30,
+              "meet_pct_label": "模型推演达标概率",
+              "verdict_cn": "达标与否难下定论",
+              "headline_cn": "Cabo Verde · 净胜走向：达标与否难下定论",
+              "pill_cn": "达标概率约 30% · 达标与否难下定论",
+              "detail_cn": "Cabo Verde · 赛前外界预期 净胜≥1。模型推演达标概率约 30%。",
+              "extra_stats_cn": "",
+              "full_cover_pct": 30,
+              "half_cover_pct": 0,
+              "lose1_pct": 0,
+              "margin_full_label": "净胜≥1",
+              "margin_half_label": null,
+              "tier_gap": 0.25,
+              "show_cover": true
+            },
+            "totals": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 47.9,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "draw_risk": null,
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "净胜走向",
+                "outlook": {
+                  "level": "uncertain",
+                  "label_cn": "净胜幅度难下定论",
+                  "color": "#8A96A8",
+                  "fav_name": "Cabo Verde",
+                  "market_expect_cn": "净胜≥1",
+                  "meet_pct": 30,
+                  "meet_pct_label": "模型推演达标概率",
+                  "verdict_cn": "达标与否难下定论",
+                  "headline_cn": "Cabo Verde · 净胜走向：达标与否难下定论",
+                  "pill_cn": "达标概率约 30% · 达标与否难下定论",
+                  "detail_cn": "Cabo Verde · 赛前外界预期 净胜≥1。模型推演达标概率约 30%。",
+                  "extra_stats_cn": "",
+                  "full_cover_pct": 30,
+                  "half_cover_pct": 0,
+                  "lose1_pct": 0,
+                  "margin_full_label": "净胜≥1",
+                  "margin_half_label": null,
+                  "tier_gap": 0.25,
+                  "show_cover": true
+                },
+                "text": "达标概率约 30% · 达标与否难下定论",
+                "color": "#8A96A8",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "◎",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "neutral",
+                  "label_cn": "暂无明显倾向",
+                  "color": "#8A96A8",
+                  "meter_label_cn": "几乎五五开",
+                  "meter_pos": 50,
+                  "lean_side": "neutral",
+                  "lean_strength": "none",
+                  "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+                  "pill_cn": "几乎五五开",
+                  "detail_cn": "模型五五开，临场决定节奏。",
+                  "headline_cn": "进球氛围：几乎五五开",
+                  "show_lean": false,
+                  "over_pct": 47.9,
+                  "line_gap": 0.5,
+                  "market_line": 2.5,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "总进球参考 2.5",
+                  "caution_public_high": false
+                },
+                "text": "几乎五五开",
+                "color": "#8A96A8",
+                "muted": true
+              }
+            ],
+            "methodology_note": "读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "Cabo Verde",
+              "first_goal_pct": 44.2,
+              "start_score": "1-0",
+              "fav_name": "Cabo Verde",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 79.7,
+              "small_lead_pct": 28.9,
+              "big_lead_pct": 26.1,
+              "fav_win_pct": 55,
+              "fav_draw_pct": 24.7,
+              "fav_lose_pct": 20.3,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "Cabo Verde 保持胜果（净胜≥1）",
+                  "pct": 55
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 24.7
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 20.3
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 34.4 分",
+                "first_goal_wait": 34.4,
+                "fast_pct": 51.1,
+                "moderate_pct": 14.7,
+                "slow_pct": 34.2,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 51.1
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.7
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 34.2
+                  }
+                ]
+              },
+              "big_delta": 14.1,
+              "small_delta": 10.9,
+              "narrative": "Cabo Verde 先破门（已 1-0） → 「巩固防守」；Saudi Arabia 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
+              "live_outlook": {
+                "fav_name": "Cabo Verde",
+                "state_label": "Cabo Verde 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 60
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 22.8
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 17.2
+                  }
+                ],
+                "margin_line_cn": "Cabo Verde · 赛前净胜参考 净胜≥1（全达标）",
+                "margin_meet_pct": 55,
+                "margin_half_pct": 0,
+                "margin_fail_pct": 28.9,
+                "margin_full_label": "净胜≥1",
+                "margin_half_label": null,
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.5,
+                "totals_line_cn": "总进球参考 2.5",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 2.15,
+                "totals_line_gap": 0.25,
+                "totals_high_pct": 63.2,
+                "totals_low_pct": 36.8,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 22,
+                "win_margin2_low_total_pct": 10.4,
+                "win_margin2_high_total_pct": 15.7,
+                "readout_cn": "Cabo Verde 已 1-0 领先：仍取胜约 55%。 对着总进球参考 2.5，模型超线概率约 63.2%。 常见 2-0 收尾（相对总进球参考 2.5仍偏小比分）。"
+              }
+            },
+            {
+              "side": "away",
+              "team": "Saudi Arabia",
+              "first_goal_pct": 55.8,
+              "start_score": "0-1",
+              "fav_name": "Cabo Verde",
+              "scorer_is_fav": false,
+              "expected_key": "upset_hold",
+              "fav_recover_pct": 32.2,
+              "small_lead_pct": 8.6,
+              "big_lead_pct": 3.4,
+              "fav_win_pct": 12,
+              "fav_draw_pct": 20.2,
+              "fav_lose_pct": 67.8,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "Cabo Verde 追平（平局）",
+                  "pct": 20.2
+                },
+                {
+                  "key": "win1",
+                  "label": "Cabo Verde 净胜1球翻盘（如 2-1）",
+                  "pct": 8.6
+                },
+                {
+                  "key": "win2",
+                  "label": "Cabo Verde 净胜≥2球翻盘（如 3-1）",
+                  "pct": 3.4
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "Saudi Arabia 保持胜果至终场",
+                  "pct": 67.8
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 34.9 分",
+                "first_goal_wait": 34.9,
+                "fast_pct": 50.6,
+                "moderate_pct": 14.7,
+                "slow_pct": 34.7,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 50.6
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.7
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 34.7
+                  }
+                ]
+              },
+              "big_delta": -8.6,
+              "small_delta": -9.4,
+              "narrative": "Saudi Arabia 先破门（已 0-1） → 「巩固防守」；Cabo Verde 「组织反扑」。热门先丢球（已 0-1），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
+              "live_outlook": null
+            }
+          ],
+          "match_preview": {
+            "morphology": {
+              "totals_summary": "预测 2.6 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球参考 2.5",
+              "totals_high_pct": 47.9,
+              "type_tags": [
+                {
+                  "key": "balanced",
+                  "label": "常规对抗"
+                }
+              ],
+              "depth_label": "深度一般",
+              "draw_trap_pct": 22,
+              "readout_cn": "Cabo Verde · 常规对抗。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+            },
+            "draw_trap_note": null,
+            "archetype": {
+              "tags": [
+                {
+                  "key": "balanced",
+                  "label": "常规对抗"
+                }
+              ],
+              "depth_score": 0,
+              "depth_label": "深度一般",
+              "draw_trap_pct": 22,
+              "fav_lead_style": "balanced"
+            }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.51,
+            "xg_away_ht": 0.64,
+            "xg_home_2h": 0.64,
+            "xg_away_2h": 0.81,
+            "home_win": 24.4,
+            "draw": 42.9,
+            "away_win": 32.7,
+            "top_score": "0-0",
+            "top_score_prob": 31.7,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 31.7
+              },
+              {
+                "score": "0-1",
+                "prob": 20.3
+              },
+              {
+                "score": "1-0",
+                "prob": 16.1
+              }
+            ],
+            "ht_goals_expected": 1.15,
+            "ht_over_0_5_pct": 68.3,
+            "ht_over_1_5_pct": 31.9,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.51–0.64（约占全场 44%） · 最可能 0-0（31.7%） · 胜平负 24.4/42.9/32.7 · 半场≥1球约 68.3%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
+          }
+        },
+        "public_summary_note": "【推演概要】Cabo Verde · 常规对抗。 · 与模型 xG 对照：均衡 · 赛前净胜看法略高（约 +0.25）（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
+        "goal_efficiency": {
+          "xg_total": 2.6,
+          "xg_gap": 0.3,
+          "xg_home": 1.15,
+          "xg_away": 1.45,
+          "fav_name": "Saudi Arabia",
+          "dog_name": "Cabo Verde",
+          "fav_xg": 1.45,
+          "dog_xg": 1.15,
+          "fav_goals": 0,
+          "dog_goals": 0,
+          "fav_eff": 0,
+          "dog_eff": 0,
+          "total_goals": 0,
+          "goal_diff_vs_xg": -2.6,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小比分",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "iron",
+              "label": "铁局",
+              "color": "#888899",
+              "bg": "rgba(136,136,153,0.1)"
+            },
+            {
+              "key": "even_xg",
+              "label": "xG接近",
+              "color": "#5BBF8A",
+              "bg": "rgba(91,191,138,0.08)"
+            },
+            {
+              "key": "dog_quiet",
+              "label": "弱队哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "双方效率均低——总进球难起，铁局/小比分概率高。",
+          "summary_cn": "赛前 xG 总 2.6（差 0.3）· 热门 Saudi Arabia 1.45→0（效率 0）· 弱队 Cabo Verde 1.15→0（效率 0）→ 混合路径。双方效率均低——总进球难起，铁局/小比分概率高。",
+          "in_mid_band": true
+        },
+        "preview_replay": {
+          "actual_score": "0-0",
+          "ht_score": "0-0",
+          "hits": [],
+          "misses": [
+            "总进球尾部偏差大（赛前已标注无明显倾向）"
+          ],
+          "summary_cn": "偏差：总进球尾部偏差大（赛前已标注无明显倾向）。",
+          "totals_actual": 0,
+          "totals_line": 2.5,
+          "spread_level": "uncertain",
+          "totals_level": "neutral"
+        }
+      },
+      "actualResult": {
+        "home_score": 0,
+        "away_score": 0,
+        "status": "FT",
+        "label": "全场结束",
+        "scorers": "",
+        "highlights": "休斯顿 · 佛得角 0-0 沙特 · 闷平 · 佛得角 3 分 H 组第二 · 西班牙 7 分第一",
+        "ht_score": "0-0",
+        "first_goal_min": null,
+        "fifa_match_id": "400021485",
+        "updated": "2026-06-27T06:00:06+08:00"
+      }
+    },
+    {
+      "id": "m66",
+      "archived": true,
+      "archivedAt": "2026-06-27T06:00:06+08:00",
+      "group": "H",
+      "matchday": 3,
+      "date_beijing": "6月27日",
+      "time_beijing": "08:00",
+      "time_beijing_full": "北京时间 6月27日 08:00",
+      "venue": "Estadio Akron",
+      "city": "Zapopan, Mexico",
+      "note": "H组末轮 · 乌拉圭 vs 西班牙 · 瓜达拉哈拉 · 已结束 0-1",
+      "home": {
+        "name": "Uruguay",
+        "iso": "uy",
+        "rating": 82
+      },
+      "away": {
+        "name": "Spain",
+        "iso": "es",
+        "rating": 90
+      },
+      "prediction": {
+        "xg_home": 1.05,
+        "xg_away": 1.68,
+        "home_win": 19,
+        "draw": 25,
+        "away_win": 56,
+        "score": "0-1",
+        "confidence": 74,
+        "key_factor": "【赛后复盘】赛前客胜 49%/首推 0-2；实际 0-1 西班牙小胜。Baena 42' 制胜。方向：客胜命中；比分 0-1 在 Top3；总球 1（小 2.5 赢）。路径：西班牙 7 分 H 组第一 · 乌拉圭 2 分第三争八。",
+        "base_home_win": 23.8,
+        "base_draw": 24.4,
+        "base_away_win": 51.8,
+        "depth_calibrated": true,
+        "score_dist": [
+          {
+            "score": "0-1",
+            "prob": 11.1
+          },
+          {
+            "score": "0-2",
+            "prob": 11
+          },
+          {
+            "score": "1-1",
+            "prob": 10
+          },
+          {
+            "score": "1-2",
+            "prob": 9.9
+          },
+          {
+            "score": "0-3",
+            "prob": 7.3
+          },
+          {
+            "score": "1-3",
+            "prob": 6.5
+          },
+          {
+            "score": "0-0",
+            "prob": 5.6
+          }
+        ],
+        "draw_context": {
+          "drawBoost": 0,
+          "ironBucket": false,
+          "closeXg": false,
+          "gap": 0.63,
+          "notes": [],
+          "qual_dynamics": null
+        },
+        "qual_dynamics": null,
+        "xg_poisson_home": 0.9,
+        "xg_poisson_away": 1.98,
+        "xg_tier_calibrated": true,
+        "score_prob": 11.1,
+        "score_top3": [
+          {
+            "score": "0-1",
+            "prob": 11.1
+          },
+          {
+            "score": "0-2",
+            "prob": 11
+          },
+          {
+            "score": "1-1",
+            "prob": 10
+          }
+        ],
+        "expected_score": "1-2"
+      },
+      "market_snapshot": {
+        "market_tier": 0.75,
+        "tier_label": "Uruguay 被看好 · 净胜约 0.5–1 球",
+        "totals_line": 2.5,
+        "over_pct": 51,
+        "fair_line": 2,
+        "line_gap": 0.5,
+        "full_cover_pct": 23.8,
+        "spread_level": "skeptical",
+        "spread_market_expect": "净胜≥1",
+        "totals_level": "neutral",
+        "totals_show_lean": false,
+        "totals_lean_side": "neutral"
+      },
+      "depth_calibration": {
+        "tier_home": 0.75,
+        "tier_label": "Uruguay 被看好 · 净胜约 0.5–1 球",
+        "implied_tier": -0.25,
+        "tier_gap": 1,
+        "signal": "blocker_inflate",
+        "signal_cn": "大众心理预期偏高",
+        "signal_color": "#D95F6A",
+        "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+        "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "public_lean_cn": "舆论倾向 Spain（约 62%）",
+        "analysis": "西班牙 4 分 vs 乌拉圭 2 分须胜。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "1-1",
+              "prob": 11.6
+            },
+            {
+              "score": "0-1",
+              "prob": 11
+            },
+            {
+              "score": "1-2",
+              "prob": 9.7
+            }
+          ],
+          "one_goal_win_pct": 15.1,
+          "two_plus_win_pct": 8.7,
+          "full_cover_pct": 23.8,
+          "half_cover_pct": 0,
+          "half_lose_pct": 0,
+          "push_pct": null,
+          "margin_full_label": "净胜≥1",
+          "margin_half_label": null,
+          "fav_cover_ev": -0.524,
+          "dog_cover_ev": 0.524,
+          "rational_spread_cn": "客队 守住差距概率略高",
+          "total_xg": 2.73,
+          "fair_totals_line": 2,
+          "over_2_5_pct": 51,
+          "over_3_pct": 28.7,
+          "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
+          "margin_risk_note": "净胜≥1 约 23.8%；仅赢 1 球约 0%"
+        },
+        "spread_odds": null,
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 2.5,
+          "market_goals_int": 3,
+          "line_label": "总进球约 2.5 个",
+          "implied_xg_total": 2.73,
+          "fair_line": 2,
+          "line_gap": 0.5,
+          "over_pct": 51,
+          "under_pct": 49,
+          "signal": "high_line",
+          "signal_cn": "参考偏高",
+          "signal_color": "#C8A96E",
+          "signal_desc": "总进球参考高于合理值，模型偏小比分。",
+          "public_over_pct": 50,
+          "public_lean_cn": "舆论对总进球看法较分散",
+          "index_note": "大/小比分两侧接近",
+          "totals_odds": null,
+          "rational_cn": "超 2.5 球接近五五开（约 51%）",
+          "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
+        },
+        "totals_line": 2.5,
+        "applied_delta": {
+          "home_win": -5,
+          "draw": 1,
+          "away_win": 4
+        },
+        "adjustment_note": "模型微调：主胜 -5% · 平 +1% · 客 +4%",
+        "adjusted_probs": {
+          "home_win": 19,
+          "draw": 25,
+          "away_win": 56
+        },
+        "display_summary": {
+          "fav_name": "Uruguay",
+          "expected_total_goals": 2.69,
+          "poisson_fav_win_pct": 23.8,
+          "small_lead_pct": 15.1,
+          "small_example_score": "1-0",
+          "small_example_pct": 6.9,
+          "big_cover_pct": 8.7,
+          "big_example_score": "2-0",
+          "big_example_pct": 3.6,
+          "win_shape": {
+            "fav_name": "Uruguay",
+            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
+            "lead_cn": "取胜时以险胜·开放为主（险胜 · 开放 34.3%）",
+            "shapes": [
+              {
+                "key": "narrow_low",
+                "label": "险胜 · 控局",
+                "example": "如 1-0",
+                "field_pct": 6.9,
+                "pct": 29
+              },
+              {
+                "key": "narrow_open",
+                "label": "险胜 · 开放",
+                "example": "如 2-1",
+                "field_pct": 8.2,
+                "pct": 34.3
+              },
+              {
+                "key": "comfort_low",
+                "label": "拉开 · 控局",
+                "example": "如 2-0",
+                "field_pct": 4.9,
+                "pct": 20.6
+              },
+              {
+                "key": "comfort_open",
+                "label": "拉开 · 开放",
+                "example": "如 3-1+",
+                "field_pct": 3.8,
+                "pct": 16.1
+              }
+            ],
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 63.3
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 20.6
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 16.1
+              }
+            ],
+            "fav_win_pct": 19
+          },
+          "excitement": {
+            "label_cn": "中速开局",
+            "label_key": "moderate",
+            "label_color": "#C8A96E",
+            "sub_cn": "预期首球等待约 33 分",
+            "first_goal_wait": 33,
+            "fast_pct": 59.7,
+            "moderate_pct": 14.7,
+            "slow_pct": 25.5,
+            "tiers": [
+              {
+                "key": "fast",
+                "label": "前 30 分内首球",
+                "pct": 59.7
+              },
+              {
+                "key": "moderate",
+                "label": "30–45 分首球",
+                "pct": 14.7
+              },
+              {
+                "key": "slow",
+                "label": "45 分后首球",
+                "pct": 25.5
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "Uruguay 暂无重要伤停 · Spain 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "— / —（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "气候信息暂无"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 1.05,
+            "baseline_away": 1.68,
+            "adjusted_home": 1.05,
+            "adjusted_away": 1.68,
+            "note": "基准 xG 1.05–1.68（未因伤病/气候下调）"
+          },
+          "calibration": {
+            "signal_cn": "大众心理预期偏高",
+            "signal_color": "#D95F6A",
+            "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+            "tier_gap": 1,
+            "implied_tier_label": "Spain 被看好 · 净胜约 0.25 球",
+            "market_tier_label": "Uruguay 被看好 · 净胜约 0.5–1 球",
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1"
+          },
+          "win_outlook": {
+            "fav_name": "Uruguay",
+            "state_label": null,
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 63.3
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 20.6
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 16.1
+              }
+            ],
+            "margin_line_cn": "Uruguay · 赛前净胜参考 净胜≥1（全达标）",
+            "margin_meet_pct": 23.8,
+            "margin_half_pct": 0,
+            "margin_fail_pct": 0,
+            "margin_full_label": "净胜≥1",
+            "margin_half_label": null,
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
+            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+            "totals_line": 2.5,
+            "totals_line_cn": "总进球参考 2.5",
+            "fair_totals_line": 2,
+            "model_total_xg": 2.73,
+            "totals_line_gap": 0.5,
+            "totals_high_pct": 51,
+            "totals_low_pct": 49,
+            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+            "win_low_total_pct": 10.5,
+            "win_margin2_low_total_pct": 3.6,
+            "win_margin2_high_total_pct": 5.1,
+            "readout_cn": "取胜约 19%；若取胜，以「险胜收工」为主（63.3%）。 对着赛前净胜参考，净胜≥1（全达标）约 23.8%；对着总进球参考 2.5，模型超线概率约 51%。"
+          },
+          "totals_line": 2.5,
+          "score_patterns": [
+            {
+              "score": "1-1",
+              "pct": 11.6
+            },
+            {
+              "score": "0-1",
+              "pct": 11
+            },
+            {
+              "score": "1-2",
+              "pct": 9.7
+            }
+          ],
+          "totals_view": {
+            "expected_total": 2.7,
+            "fair_line": 2,
+            "market_line": 2.5,
+            "line_gap": 0.5,
+            "over_pct": 51,
+            "gap_warning": null,
+            "totals_outlook": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 51,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "summary_cn": "预测 2.7 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
+          },
+          "customer_reading": {
+            "headline_cn": "Uruguay · 净胜走向：达到预期难度偏大",
+            "sub_cn": "达标概率约 23.8% · 达到预期难度偏大 进球氛围：几乎五五开",
+            "spread": {
+              "level": "skeptical",
+              "label_cn": "外界预期偏高",
+              "color": "#D95F6A",
+              "fav_name": "Uruguay",
+              "market_expect_cn": "净胜≥1",
+              "meet_pct": 23.8,
+              "meet_pct_label": "模型推演达标概率",
+              "verdict_cn": "达到预期难度偏大",
+              "headline_cn": "Uruguay · 净胜走向：达到预期难度偏大",
+              "pill_cn": "达标概率约 23.8% · 达到预期难度偏大",
+              "detail_cn": "Uruguay · 赛前外界预期 净胜≥1。模型推演达标概率约 23.8%；外界看法高于 xG 隐含约 1 球，达到预期难度偏大。",
+              "extra_stats_cn": "",
+              "full_cover_pct": 23.8,
+              "half_cover_pct": 0,
+              "lose1_pct": 0,
+              "margin_full_label": "净胜≥1",
+              "margin_half_label": null,
+              "tier_gap": 1,
+              "show_cover": true
+            },
+            "totals": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 51,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "draw_risk": null,
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "净胜走向",
+                "outlook": {
+                  "level": "skeptical",
+                  "label_cn": "外界预期偏高",
+                  "color": "#D95F6A",
+                  "fav_name": "Uruguay",
+                  "market_expect_cn": "净胜≥1",
+                  "meet_pct": 23.8,
+                  "meet_pct_label": "模型推演达标概率",
+                  "verdict_cn": "达到预期难度偏大",
+                  "headline_cn": "Uruguay · 净胜走向：达到预期难度偏大",
+                  "pill_cn": "达标概率约 23.8% · 达到预期难度偏大",
+                  "detail_cn": "Uruguay · 赛前外界预期 净胜≥1。模型推演达标概率约 23.8%；外界看法高于 xG 隐含约 1 球，达到预期难度偏大。",
+                  "extra_stats_cn": "",
+                  "full_cover_pct": 23.8,
+                  "half_cover_pct": 0,
+                  "lose1_pct": 0,
+                  "margin_full_label": "净胜≥1",
+                  "margin_half_label": null,
+                  "tier_gap": 1,
+                  "show_cover": true
+                },
+                "text": "达标概率约 23.8% · 达到预期难度偏大",
+                "color": "#D95F6A",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "◎",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "neutral",
+                  "label_cn": "暂无明显倾向",
+                  "color": "#8A96A8",
+                  "meter_label_cn": "几乎五五开",
+                  "meter_pos": 50,
+                  "lean_side": "neutral",
+                  "lean_strength": "none",
+                  "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+                  "pill_cn": "几乎五五开",
+                  "detail_cn": "模型五五开，临场决定节奏。",
+                  "headline_cn": "进球氛围：几乎五五开",
+                  "show_lean": false,
+                  "over_pct": 51,
+                  "line_gap": 0.5,
+                  "market_line": 2.5,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "总进球参考 2.5",
+                  "caution_public_high": false
+                },
+                "text": "几乎五五开",
+                "color": "#8A96A8",
+                "muted": true
+              }
+            ],
+            "methodology_note": "读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "Uruguay",
+              "first_goal_pct": 38.5,
+              "start_score": "1-0",
+              "fav_name": "Uruguay",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 73.7,
+              "small_lead_pct": 26.8,
+              "big_lead_pct": 20.9,
+              "fav_win_pct": 47.7,
+              "fav_draw_pct": 26,
+              "fav_lose_pct": 26.2,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "Uruguay 保持胜果（净胜≥1）",
+                  "pct": 47.7
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 26
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 26.2
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 32.5 分",
+                "first_goal_wait": 32.5,
+                "fast_pct": 53.1,
+                "moderate_pct": 14.8,
+                "slow_pct": 32.1,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 53.1
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.8
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 32.1
+                  }
+                ]
+              },
+              "big_delta": 12.2,
+              "small_delta": 11.7,
+              "narrative": "Uruguay 先破门（已 1-0） → 「巩固防守」；Spain 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
+              "live_outlook": {
+                "fav_name": "Uruguay",
+                "state_label": "Uruguay 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 63.3
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 20.6
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 16.1
+                  }
+                ],
+                "margin_line_cn": "Uruguay · 赛前净胜参考 净胜≥1（全达标）",
+                "margin_meet_pct": 47.7,
+                "margin_half_pct": 0,
+                "margin_fail_pct": 26.8,
+                "margin_full_label": "净胜≥1",
+                "margin_half_label": null,
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.5,
+                "totals_line_cn": "总进球参考 2.5",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 2.27,
+                "totals_line_gap": 0.25,
+                "totals_high_pct": 66.1,
+                "totals_low_pct": 33.9,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 18.8,
+                "win_margin2_low_total_pct": 8.4,
+                "win_margin2_high_total_pct": 12.5,
+                "readout_cn": "Uruguay 已 1-0 领先：仍取胜约 47.7%。 对着总进球参考 2.5，模型超线概率约 66.1%。 若再扩大，偏「险胜收工」。"
+              }
+            },
+            {
+              "side": "away",
+              "team": "Spain",
+              "first_goal_pct": 61.5,
+              "start_score": "0-1",
+              "fav_name": "Uruguay",
+              "scorer_is_fav": false,
+              "expected_key": "upset_hold",
+              "fav_recover_pct": 26.3,
+              "small_lead_pct": 6.7,
+              "big_lead_pct": 2.3,
+              "fav_win_pct": 9,
+              "fav_draw_pct": 17.3,
+              "fav_lose_pct": 73.8,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "Uruguay 追平（平局）",
+                  "pct": 17.3
+                },
+                {
+                  "key": "win1",
+                  "label": "Uruguay 净胜1球翻盘（如 2-1）",
+                  "pct": 6.7
+                },
+                {
+                  "key": "win2",
+                  "label": "Uruguay 净胜≥2球翻盘（如 3-1）",
+                  "pct": 2.3
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "Spain 保持胜果至终场",
+                  "pct": 73.8
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 33.5 分",
+                "first_goal_wait": 33.5,
+                "fast_pct": 52.1,
+                "moderate_pct": 14.7,
+                "slow_pct": 33.2,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 52.1
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.7
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 33.2
+                  }
+                ]
+              },
+              "big_delta": -6.4,
+              "small_delta": -8.4,
+              "narrative": "Spain 先破门（已 0-1） → 「巩固防守」；Uruguay 「组织反扑」。热门先丢球（已 0-1），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
+              "live_outlook": null
+            }
+          ],
+          "match_preview": {
+            "morphology": {
+              "totals_summary": "预测 2.7 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球参考 2.5",
+              "totals_high_pct": 51,
+              "type_tags": [
+                {
+                  "key": "balanced",
+                  "label": "常规对抗"
+                }
+              ],
+              "depth_label": "深度一般",
+              "draw_trap_pct": 21,
+              "readout_cn": "Uruguay · 常规对抗。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+            },
+            "draw_trap_note": null,
+            "archetype": {
+              "tags": [
+                {
+                  "key": "balanced",
+                  "label": "常规对抗"
+                }
+              ],
+              "depth_score": 0,
+              "depth_label": "深度一般",
+              "draw_trap_pct": 21,
+              "fav_lead_style": "balanced"
+            }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.46,
+            "xg_away_ht": 0.74,
+            "xg_home_2h": 0.59,
+            "xg_away_2h": 0.94,
+            "home_win": 20.5,
+            "draw": 41.3,
+            "away_win": 38.2,
+            "top_score": "0-0",
+            "top_score_prob": 30.1,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 30.1
+              },
+              {
+                "score": "0-1",
+                "prob": 22.3
+              },
+              {
+                "score": "1-0",
+                "prob": 13.9
+              }
+            ],
+            "ht_goals_expected": 1.2,
+            "ht_over_0_5_pct": 69.9,
+            "ht_over_1_5_pct": 33.7,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.46–0.74（约占全场 44%） · 最可能 0-0（30.1%） · 胜平负 20.5/41.3/38.2 · 半场≥1球约 69.9%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
+          }
+        },
+        "public_summary_note": "【推演概要】Uruguay · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
+        "goal_efficiency": {
+          "xg_total": 2.73,
+          "xg_gap": 0.63,
+          "xg_home": 1.05,
+          "xg_away": 1.68,
+          "fav_name": "Spain",
+          "dog_name": "Uruguay",
+          "fav_xg": 1.68,
+          "dog_xg": 1.05,
+          "fav_goals": 1,
+          "dog_goals": 0,
+          "fav_eff": 0.6,
+          "dog_eff": 0,
+          "total_goals": 1,
+          "goal_diff_vs_xg": -1.7,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小比分",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "dog_quiet",
+              "label": "弱队哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "双方效率均低——总进球难起，铁局/小比分概率高。",
+          "summary_cn": "赛前 xG 总 2.73（差 0.63）· 热门 Spain 1.68→1（效率 0.6）· 弱队 Uruguay 1.05→0（效率 0）→ 混合路径。双方效率均低——总进球难起，铁局/小比分概率高。",
+          "in_mid_band": true
+        },
+        "preview_replay": {
+          "actual_score": "0-1",
+          "ht_score": "0-1",
+          "hits": [
+            "赛前进球氛围未强判（符合模型五五开读法）"
+          ],
+          "misses": [],
+          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。",
+          "totals_actual": 1,
+          "totals_line": 2.5,
+          "spread_level": "skeptical",
+          "totals_level": "neutral"
+        }
+      },
+      "actualResult": {
+        "home_score": 0,
+        "away_score": 1,
+        "status": "FT",
+        "label": "全场结束",
+        "scorers": "Alex BAENA 42'",
+        "highlights": "瓜达拉哈拉 · 西班牙 1-0 乌拉圭 · Baena 42' · 西班牙 7 分 H 组第一",
+        "ht_score": "0-1",
+        "first_goal_min": 42,
+        "fifa_match_id": "400021484",
+        "updated": "2026-06-27T06:00:06+08:00"
+      }
     }
   ],
   "groupSnapshots": [
@@ -55228,90 +60230,90 @@ const RESULTS_DATA = {
     },
     {
       "group": "G",
-      "label": "G组 · 第2轮后",
+      "label": "G组 · 末轮后",
       "table": [
         {
-          "team": "Egypt",
-          "pts": 4,
-          "p": 2,
-          "w": 1,
-          "d": 1,
-          "l": 0,
-          "gf": 4,
-          "ga": 3
-        },
-        {
           "team": "Belgium",
-          "pts": 2,
-          "p": 2,
-          "w": 0,
+          "pts": 5,
+          "p": 3,
+          "w": 1,
           "d": 2,
           "l": 0,
-          "gf": 1,
-          "ga": 1
+          "gf": 6,
+          "ga": 2
+        },
+        {
+          "team": "Egypt",
+          "pts": 5,
+          "p": 3,
+          "w": 1,
+          "d": 2,
+          "l": 0,
+          "gf": 5,
+          "ga": 4
         },
         {
           "team": "Iran",
-          "pts": 2,
-          "p": 2,
+          "pts": 3,
+          "p": 3,
           "w": 0,
-          "d": 2,
+          "d": 3,
           "l": 0,
-          "gf": 2,
-          "ga": 2
+          "gf": 3,
+          "ga": 3
         },
         {
           "team": "New Zealand",
           "pts": 1,
-          "p": 2,
+          "p": 3,
           "w": 0,
           "d": 0,
-          "l": 2,
-          "gf": 3,
-          "ga": 5
+          "l": 3,
+          "gf": 4,
+          "ga": 10
         }
       ]
     },
     {
       "group": "H",
-      "label": "H组 · 第2轮后",
+      "label": "H组 · 末轮后",
       "table": [
         {
           "team": "Spain",
-          "pts": 4,
-          "p": 2,
-          "w": 1,
+          "pts": 7,
+          "p": 3,
+          "w": 2,
           "d": 1,
           "l": 0,
-          "gf": 4,
-          "ga": 0
-        },
-        {
-          "team": "Uruguay",
-          "pts": 2,
-          "p": 2,
-          "w": 0,
-          "d": 2,
-          "l": 0,
-          "gf": 3,
-          "ga": 2
+          "gf": 5,
+          "ga": 1
         },
         {
           "team": "Cape Verde",
-          "pts": 2,
-          "p": 2,
+          "pts": 3,
+          "p": 3,
           "w": 0,
-          "d": 2,
+          "d": 3,
           "l": 0,
           "gf": 2,
           "ga": 2
         },
         {
-          "team": "Saudi Arabia",
-          "pts": 1,
-          "p": 2,
+          "team": "Uruguay",
+          "pts": 2,
+          "p": 3,
           "w": 0,
-          "d": 1,
+          "d": 2,
+          "l": 1,
+          "gf": 3,
+          "ga": 3
+        },
+        {
+          "team": "Saudi Arabia",
+          "pts": 2,
+          "p": 3,
+          "w": 0,
+          "d": 2,
           "l": 1,
           "gf": 1,
           "ga": 5
@@ -55320,47 +60322,47 @@ const RESULTS_DATA = {
     },
     {
       "group": "I",
-      "label": "I组 · 第2轮后",
+      "label": "I组 · 末轮后",
       "table": [
         {
           "team": "France",
-          "pts": 6,
-          "p": 2,
-          "w": 2,
+          "pts": 9,
+          "p": 3,
+          "w": 3,
           "d": 0,
           "l": 0,
-          "gf": 6,
-          "ga": 1
+          "gf": 10,
+          "ga": 2
         },
         {
           "team": "Norway",
           "pts": 6,
-          "p": 2,
+          "p": 3,
           "w": 2,
           "d": 0,
-          "l": 0,
-          "gf": 7,
-          "ga": 3
+          "l": 1,
+          "gf": 8,
+          "ga": 7
         },
         {
           "team": "Senegal",
-          "pts": 0,
-          "p": 2,
-          "w": 0,
+          "pts": 3,
+          "p": 3,
+          "w": 1,
           "d": 0,
           "l": 2,
-          "gf": 3,
+          "gf": 8,
           "ga": 6
         },
         {
           "team": "Iraq",
           "pts": 0,
-          "p": 2,
+          "p": 3,
           "w": 0,
           "d": 0,
-          "l": 2,
+          "l": 3,
           "gf": 1,
-          "ga": 7
+          "ga": 12
         }
       ]
     },
