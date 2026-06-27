@@ -46,8 +46,8 @@
         "pick_cn": "奥地利 PK 不败"
       },
       "totals": {
-        "side": "under",
-        "pick_cn": "小球 1.5/2"
+        "side": "over",
+        "pick_cn": "大球 1.5/2"
       }
     },
     {
@@ -98,7 +98,7 @@
     }
   ],
   "results": {
-    "graded_at": "2026-06-27T14:49:29.667Z",
+    "graded_at": "2026-06-27T18:46:42.750Z",
     "spread": {
       "hit": 0,
       "miss": 0,
@@ -161,6 +161,28 @@
       },
       "pending": 6
     },
+    "layer_alignment": {
+      "summary_cn": "大小球三层对齐：pick_side 与 model/market/recommended 赛后反推",
+      "pick_follows_model_market": {
+        "hit": 0,
+        "miss": 0,
+        "n": 0,
+        "pct": null
+      },
+      "pick_vs_recommended": {
+        "hit": 0,
+        "miss": 0,
+        "n": 0,
+        "pct": null
+      },
+      "situation_conflict_resolved": {
+        "hit": 0,
+        "miss": 0,
+        "n": 0,
+        "pct": null
+      },
+      "per_match": []
+    },
     "high_confidence": {
       "n": 4,
       "ids": [
@@ -199,6 +221,12 @@
         "tendency_cn": "更倾向让球盘",
         "high_confidence": true,
         "confidence_cn": "大信心",
+        "model_side": null,
+        "situation_side": null,
+        "market_side": null,
+        "pick_side": "under",
+        "recommended_side": null,
+        "situation_conflict": false,
         "spread": {
           "side": "dog",
           "label_cn": "巴拿马 +2/2.5 守住",
@@ -228,6 +256,12 @@
         "tendency_cn": "更倾向让球盘",
         "high_confidence": false,
         "confidence_cn": null,
+        "model_side": null,
+        "situation_side": null,
+        "market_side": null,
+        "pick_side": "under",
+        "recommended_side": null,
+        "situation_conflict": false,
         "spread": {
           "side": "dog",
           "label_cn": "加纳 +0.5 守住",
@@ -257,6 +291,12 @@
         "tendency_cn": "更倾向大小球",
         "high_confidence": true,
         "confidence_cn": "大信心",
+        "model_side": null,
+        "situation_side": null,
+        "market_side": null,
+        "pick_side": "over",
+        "recommended_side": null,
+        "situation_conflict": false,
         "spread": {
           "side": "fav",
           "label_cn": "奥地利 PK（-0）不败",
@@ -264,9 +304,9 @@
           "grade_note": "未开赛/无赛果"
         },
         "totals": {
-          "side": "under",
-          "label_cn": "小球 1.5/2",
-          "reason_cn": "低线 1.5/2 + 小水 0.91；0-0/1-0/1-1 为模型 Top 路径，默契战下总进球难超 2。",
+          "side": "over",
+          "label_cn": "大球 1.5/2",
+          "reason_cn": "模型超 1.75 约 61%、公允 ~2.0；大 0.97 低水。默契战约束总进球，但低线+定价优先大球（形势已降权）。",
           "grade_note": "未开赛/无赛果"
         },
         "secondary_market": "spread",
@@ -286,6 +326,12 @@
         "tendency_cn": "更倾向让球盘",
         "high_confidence": true,
         "confidence_cn": "大信心",
+        "model_side": null,
+        "situation_side": null,
+        "market_side": null,
+        "pick_side": "under",
+        "recommended_side": null,
+        "situation_conflict": false,
         "spread": {
           "side": "dog",
           "label_cn": "约旦 +2/2.5 守住",
@@ -315,6 +361,12 @@
         "tendency_cn": "更倾向让球盘",
         "high_confidence": false,
         "confidence_cn": null,
+        "model_side": null,
+        "situation_side": null,
+        "market_side": null,
+        "pick_side": "under",
+        "recommended_side": null,
+        "situation_conflict": false,
         "spread": {
           "side": "dog",
           "label_cn": "哥伦比亚 +0.5 守住",
@@ -344,6 +396,12 @@
         "tendency_cn": "更倾向让球盘",
         "high_confidence": true,
         "confidence_cn": "大信心",
+        "model_side": null,
+        "situation_side": null,
+        "market_side": null,
+        "pick_side": "under",
+        "recommended_side": null,
+        "situation_conflict": false,
         "spread": {
           "side": "fav",
           "label_cn": "刚果(金) -0.5/1",

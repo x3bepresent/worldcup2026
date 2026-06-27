@@ -365,6 +365,56 @@ function buildHighConfidenceStats(graded) {
   };
 }
 
+function buildLayerAlignmentStats(graded) {
+  const scored = graded.filter(g => g.totals?.hit === true || g.totals?.hit === false);
+  const buckets = {
+    pick_follows_model_market: { hit: 0, miss: 0, n: 0 },
+    pick_vs_recommended: { hit: 0, miss: 0, n: 0 },
+    situation_conflict_pick: { hit: 0, miss: 0, n: 0 },
+  };
+  for (const g of scored) {
+    const hit = g.totals.hit === true;
+    const pick = g.pick_side;
+    const rec = g.recommended_side;
+    const model = g.model_side;
+    const market = g.market_side;
+    if (pick && model && market && pick === model && pick === market) {
+      buckets.pick_follows_model_market.n += 1;
+      if (hit) buckets.pick_follows_model_market.hit += 1;
+      else buckets.pick_follows_model_market.miss += 1;
+    }
+    if (pick && rec && pick !== rec) {
+      buckets.pick_vs_recommended.n += 1;
+      if (hit) buckets.pick_vs_recommended.hit += 1;
+      else buckets.pick_vs_recommended.miss += 1;
+    }
+    if (g.situation_conflict) {
+      buckets.situation_conflict_pick.n += 1;
+      if (hit) buckets.situation_conflict_pick.hit += 1;
+      else buckets.situation_conflict_pick.miss += 1;
+    }
+  }
+  const fmt = b => ({
+    ...b,
+    pct: b.hit + b.miss ? Math.round((b.hit / (b.hit + b.miss)) * 1000) / 10 : null,
+  });
+  return {
+    summary_cn: '大小球三层对齐：pick_side 与 model/market/recommended 赛后反推',
+    pick_follows_model_market: fmt(buckets.pick_follows_model_market),
+    pick_vs_recommended: fmt(buckets.pick_vs_recommended),
+    situation_conflict_resolved: fmt(buckets.situation_conflict_pick),
+    per_match: scored.map(g => ({
+      id: g.id,
+      model_side: g.model_side,
+      situation_side: g.situation_side,
+      market_side: g.market_side,
+      pick_side: g.pick_side,
+      recommended_side: g.recommended_side,
+      totals_hit: g.totals.hit,
+    })),
+  };
+}
+
 function gradeDay(jsonPath) {
   const data = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
   const handicap = require(path.join(__dirname, 'handicap-data-day17.js'));
@@ -393,6 +443,7 @@ function gradeDay(jsonPath) {
     const gt = gradeLeg('totals', totalsLeg, raw, actual);
     const outcome = classifyMatchOutcome(primary, gs.hit, gt.hit);
     const secondaryHit = outcome.secondary_hit;
+    const pickMeta = ap.pick_meta || null;
 
     spreadT = mergeTally(spreadT, tallyBucket(gs.hit));
     totalsT = mergeTally(totalsT, tallyBucket(gt.hit));
@@ -408,6 +459,12 @@ function gradeDay(jsonPath) {
       tendency_cn: ap.tendency_cn || pick.tendency_cn,
       high_confidence: ap.confidence === 'high',
       confidence_cn: ap.confidence_cn || null,
+      model_side: pickMeta?.model_side || null,
+      situation_side: pickMeta?.situation_side || null,
+      market_side: pickMeta?.market_side || null,
+      pick_side: pickMeta?.pick_side || totalsLeg?.side || null,
+      recommended_side: pickMeta?.recommended_side || null,
+      situation_conflict: pickMeta?.conflict || false,
       spread: { ...spreadLeg, hit: gs.hit, grade_note: gs.note },
       totals: { ...totalsLeg, hit: gt.hit, grade_note: gt.note },
       primary_hit: outcome.primary_hit,
@@ -420,6 +477,7 @@ function gradeDay(jsonPath) {
 
   const crossAnalysis = buildCrossAnalysis(graded);
   const highConfidence = buildHighConfidenceStats(graded);
+  const layerStats = buildLayerAlignmentStats(graded);
 
   data.results = {
     graded_at: new Date().toISOString(),
@@ -429,6 +487,7 @@ function gradeDay(jsonPath) {
     secondary: { ...secondaryT, pct: pct(secondaryT.hit, secondaryT.miss), label_cn: '非倾向项' },
     all_legs: { ...allT, pct: pct(allT.hit, allT.miss) },
     cross_analysis: crossAnalysis,
+    layer_alignment: layerStats,
     high_confidence: highConfidence,
     picks: graded,
   };

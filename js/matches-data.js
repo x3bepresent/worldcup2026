@@ -415,6 +415,25 @@ const MATCH_DATA = {
           "tag_color": "#D95F6A",
           "detail_cn": "英格兰 -2 → -2/2.5，赔率 0.70→0.94 拉平；出线后限损盘，非信心增强。"
         },
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "over",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "over",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 大球(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": {
           "primary": "spread",
           "tendency_cn": "更倾向让球盘",
@@ -432,7 +451,29 @@ const MATCH_DATA = {
             "label_cn": "小球 3/3.5",
             "reason_cn": "模型公允总进球约 2.0，现线 3.25 偏高约 0.75 球；超线概率约 40%，小水 1.02 在卖大球叙事。"
           },
-          "picked_at": "2026-06-28"
+          "picked_at": "2026-06-28",
+          "pick_meta": {
+            "model_side": "under",
+            "situation_side": "neutral",
+            "market_line_side": "under",
+            "market_odds_side": "over",
+            "market_side": "under",
+            "pick_side": "under",
+            "recommended_side": "under",
+            "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
+            "conflict": false,
+            "conflict_cn": null,
+            "votes": {
+              "model": "under",
+              "line": "under",
+              "odds": "over",
+              "situation": "neutral"
+            },
+            "vote_summary_cn": "小球(model) · 小球(line) · 大球(odds) · 观望(situation)",
+            "situation_dampened": false,
+            "over_pct": 39.8,
+            "line_gap": 1.25
+          }
         },
         "applied_delta": {
           "home_win": 3,
@@ -1707,6 +1748,25 @@ const MATCH_DATA = {
           "tag_color": "#7BB8D4",
           "detail_cn": "克罗地亚 -0.5 初现一致；加纳已锁前二，克罗地亚须胜但市场未追深盘。"
         },
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "under",
+          "market_line_side": "neutral",
+          "market_odds_side": "over",
+          "market_side": "over",
+          "recommended_side": "over",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "neutral",
+            "odds": "over",
+            "situation": "under"
+          },
+          "vote_summary_cn": "观望(model) · 观望(line) · 大球(odds) · 小球(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": {
           "primary": "spread",
           "tendency_cn": "更倾向让球盘",
@@ -1719,9 +1779,33 @@ const MATCH_DATA = {
           "totals": {
             "side": "under",
             "label_cn": "小球 2",
-            "reason_cn": "2 整球线下 ≤2 球即全赢；模型有平局/小胜路径，大球 0.86 略诱但出线博弈下闷战概率不低。"
+            "reason_cn": "2 整球线下 ≤2 球即全赢；模型有平局/小胜路径，大球 0.86 略诱但出线博弈下闷战概率不低。",
+            "manual_override": true,
+            "recommended_side": "over"
           },
-          "picked_at": "2026-06-28"
+          "picked_at": "2026-06-28",
+          "pick_meta": {
+            "model_side": "neutral",
+            "situation_side": "under",
+            "market_line_side": "neutral",
+            "market_odds_side": "over",
+            "market_side": "over",
+            "pick_side": "under",
+            "recommended_side": "over",
+            "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
+            "conflict": false,
+            "conflict_cn": null,
+            "votes": {
+              "model": "neutral",
+              "line": "neutral",
+              "odds": "over",
+              "situation": "under"
+            },
+            "vote_summary_cn": "观望(model) · 观望(line) · 大球(odds) · 小球(situation)",
+            "situation_dampened": false,
+            "over_pct": 52.8,
+            "line_gap": 0
+          }
         },
         "applied_delta": {
           "home_win": 2,
@@ -3051,6 +3135,25 @@ const MATCH_DATA = {
           "tag_color": "#7BB8D4",
           "detail_cn": "哥伦比亚 +0/0.5 → +0.5，葡萄牙须胜叙事；但葡 0.84→0.98 抬水，未做低水诱热。"
         },
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "under",
+          "market_line_side": "neutral",
+          "market_odds_side": "under",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "neutral",
+            "odds": "under",
+            "situation": "under"
+          },
+          "vote_summary_cn": "观望(model) · 观望(line) · 小球(odds) · 小球(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": {
           "primary": "spread",
           "tendency_cn": "更倾向让球盘",
@@ -3065,7 +3168,29 @@ const MATCH_DATA = {
             "label_cn": "小球 2.5/3",
             "reason_cn": "已出线双方 xG 略降；小水 0.89 偏小，迈阿密湿热下更可能 1-1/2-1 而非开放对攻。"
           },
-          "picked_at": "2026-06-28"
+          "picked_at": "2026-06-28",
+          "pick_meta": {
+            "model_side": "neutral",
+            "situation_side": "under",
+            "market_line_side": "neutral",
+            "market_odds_side": "under",
+            "market_side": "under",
+            "pick_side": "under",
+            "recommended_side": "under",
+            "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
+            "conflict": false,
+            "conflict_cn": null,
+            "votes": {
+              "model": "neutral",
+              "line": "neutral",
+              "odds": "under",
+              "situation": "under"
+            },
+            "vote_summary_cn": "观望(model) · 观望(line) · 小球(odds) · 小球(situation)",
+            "situation_dampened": false,
+            "over_pct": 48.8,
+            "line_gap": 0
+          }
         },
         "applied_delta": {
           "home_win": -1,
@@ -4305,6 +4430,25 @@ const MATCH_DATA = {
           "tag_color": "#C8A96E",
           "detail_cn": "初盘乌兹别克 0.86 反常低水 → 现刚果 -0.5/1 @0.93，向 xG 1.48 vs 0.72 回归。"
         },
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "neutral",
+          "market_odds_side": "under",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "neutral",
+            "odds": "under",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 观望(line) · 小球(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": {
           "primary": "spread",
           "tendency_cn": "更倾向让球盘",
@@ -4322,7 +4466,29 @@ const MATCH_DATA = {
             "label_cn": "小球 2/2.5",
             "reason_cn": "xG 合计约 2.2，线 2.25 中性；乌兹别克守势下 1-0/2-0 比大比分更合理。"
           },
-          "picked_at": "2026-06-28"
+          "picked_at": "2026-06-28",
+          "pick_meta": {
+            "model_side": "neutral",
+            "situation_side": "neutral",
+            "market_line_side": "neutral",
+            "market_odds_side": "under",
+            "market_side": "under",
+            "pick_side": "under",
+            "recommended_side": "under",
+            "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
+            "conflict": false,
+            "conflict_cn": null,
+            "votes": {
+              "model": "neutral",
+              "line": "neutral",
+              "odds": "under",
+              "situation": "neutral"
+            },
+            "vote_summary_cn": "观望(model) · 观望(line) · 小球(odds) · 观望(situation)",
+            "situation_dampened": false,
+            "over_pct": 50.9,
+            "line_gap": 0
+          }
         },
         "applied_delta": {
           "home_win": 2,
@@ -5590,24 +5756,67 @@ const MATCH_DATA = {
           "tag_color": "#7BB8D4",
           "detail_cn": "阿尔及利亚 +0/0.5 @0.86 → 平手 @1.05；奥地利 0.96→0.84，已出线一方获定价支持。"
         },
+        "totals_pick_layers": {
+          "model_side": "over",
+          "situation_side": "under",
+          "market_line_side": "over",
+          "market_odds_side": "under",
+          "market_side": "over",
+          "recommended_side": "over",
+          "conflict": true,
+          "conflict_cn": "形势偏小球，模型与盘口指向大球 · 形势降权，跟模型+盘面",
+          "situation_dampened": true,
+          "votes": {
+            "model": "over",
+            "line": "over",
+            "odds": "under",
+            "situation": "under"
+          },
+          "vote_summary_cn": "大球(model) · 大球(line) · 小球(odds) · 小球(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": {
           "primary": "totals",
           "tendency_cn": "更倾向大小球",
-          "tendency_reason_cn": "不对称出线默契（奥可低强度、阿尔保平争第三）对总进球约束最强；让球 PK 仅小优奥地利。",
+          "tendency_reason_cn": "模型超线约 61% + 低线 1.5/2 大球低水；出线默契曾指小球，三层校验后以模型+盘面为准。",
           "confidence": "high",
           "confidence_cn": "大信心",
-          "confidence_reason_cn": "出线博弈模型（平局权重 +9%）· 低线 1.5/2 · 盘口向奥地利倾斜但大小球故事更完整；今日唯一「大小倾向」大信心场。",
+          "confidence_reason_cn": "模型大球约 61%、公允线 ~2.0 现 1.75 偏低 · 大 0.97 低水；形势默契与盘口冲突后改跟模型+盘面，为今日「大小倾向」大信心场。",
           "spread": {
             "side": "fav",
             "label_cn": "奥地利 PK（-0）不败",
             "reason_cn": "奥地利已锁前二，盘口 0.96→0.84 获支持；阿尔须胜但模型平局权重 +9%，PK 下更信客队不败。"
           },
           "totals": {
-            "side": "under",
-            "label_cn": "小球 1.5/2",
-            "reason_cn": "低线 1.5/2 + 小水 0.91；0-0/1-0/1-1 为模型 Top 路径，默契战下总进球难超 2。"
+            "side": "over",
+            "label_cn": "大球 1.5/2",
+            "reason_cn": "模型超 1.75 约 61%、公允 ~2.0；大 0.97 低水。默契战约束总进球，但低线+定价优先大球（形势已降权）。",
+            "situation_conflict": true,
+            "situation_conflict_cn": "形势偏小球，模型与盘口指向大球 · 形势降权，跟模型+盘面"
           },
-          "picked_at": "2026-06-28"
+          "picked_at": "2026-06-28",
+          "pick_meta": {
+            "model_side": "over",
+            "situation_side": "under",
+            "market_line_side": "over",
+            "market_odds_side": "under",
+            "market_side": "over",
+            "pick_side": "over",
+            "recommended_side": "over",
+            "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
+            "conflict": true,
+            "conflict_cn": "形势偏小球，模型与盘口指向大球 · 形势降权，跟模型+盘面",
+            "votes": {
+              "model": "over",
+              "line": "over",
+              "odds": "under",
+              "situation": "under"
+            },
+            "vote_summary_cn": "大球(model) · 大球(line) · 小球(odds) · 小球(situation)",
+            "situation_dampened": true,
+            "over_pct": 68,
+            "line_gap": -1
+          }
         },
         "applied_delta": {
           "home_win": 0,
@@ -6433,7 +6642,7 @@ const MATCH_DATA = {
         "agent_pick_tendency_cn": "更倾向大小球",
         "agent_pick_confidence": "high",
         "agent_spread_cn": "奥地利 PK（-0）不败",
-        "agent_totals_cn": "小球 1.5/2",
+        "agent_totals_cn": "大球 1.5/2",
         "totals_level": "mild_high",
         "totals_show_lean": false,
         "totals_lean_side": "exciting"
@@ -6821,6 +7030,25 @@ const MATCH_DATA = {
           "tag_color": "#D95F6A",
           "detail_cn": "阿根廷 -1.5/2 → -2/2.5，0.84→0.99；约旦 +2/2.5 更便宜，典型出线后限损。"
         },
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "over",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "over",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 大球(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": {
           "primary": "spread",
           "tendency_cn": "更倾向让球盘",
@@ -6838,7 +7066,29 @@ const MATCH_DATA = {
             "label_cn": "小球 3",
             "reason_cn": "3 整球走水多；大球 0.83 便宜但模型公允约 2.75，轮换队常见 2-0/3-0 卡线而非开放对攻。"
           },
-          "picked_at": "2026-06-28"
+          "picked_at": "2026-06-28",
+          "pick_meta": {
+            "model_side": "under",
+            "situation_side": "neutral",
+            "market_line_side": "under",
+            "market_odds_side": "over",
+            "market_side": "under",
+            "pick_side": "under",
+            "recommended_side": "under",
+            "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
+            "conflict": false,
+            "conflict_cn": null,
+            "votes": {
+              "model": "under",
+              "line": "under",
+              "odds": "over",
+              "situation": "neutral"
+            },
+            "vote_summary_cn": "小球(model) · 小球(line) · 大球(odds) · 观望(situation)",
+            "situation_dampened": false,
+            "over_pct": 33.7,
+            "line_gap": 0.25
+          }
         },
         "applied_delta": {
           "home_win": 3,

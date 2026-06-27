@@ -905,6 +905,7 @@ function buildMarketPreview(m) {
 
   const lineMove = dc.market_line_movement || null;
   const agentPick = dc.agent_pick || null;
+  const totalsLayers = dc.totals_pick_layers || agentPick?.pick_meta || null;
 
   return {
     available: true,
@@ -931,6 +932,7 @@ function buildMarketPreview(m) {
     signalColor: dc.signal_color,
     lineMove,
     agentPick,
+    totalsLayers,
   };
 }
 
@@ -968,6 +970,8 @@ function renderMarketPreviewStrip(m) {
           <span class="mf-market-preview-pick-tendency">${ap.tendency_cn || (ap.primary === 'totals' ? '更倾向大小球' : '更倾向让球盘')}</span>
         </div>
         ${isHighConf && ap.confidence_reason_cn ? `<p class="mf-market-preview-pick-high-reason">${ap.confidence_reason_cn}</p>` : ''}
+        ${ap.totals?.situation_conflict_cn ? `<p class="mf-market-preview-pick-conflict">${ap.totals.situation_conflict_cn}</p>` : ''}
+        ${ap.pick_meta?.vote_summary_cn ? `<p class="mf-market-preview-pick-layers">三层：${ap.pick_meta.vote_summary_cn}</p>` : ''}
         ${ap.tendency_reason_cn ? `<p class="mf-market-preview-pick-tendency-reason">${ap.tendency_reason_cn}</p>` : ''}
         <div class="mf-market-preview-pick-grid">
           <div class="mf-market-preview-pick-row${ap.primary === 'spread' ? ' mf-market-preview-pick-row--primary' : ''}">

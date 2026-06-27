@@ -705,6 +705,22 @@ footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--bor
   color: var(--txt2);
   line-height: 1.45;
 }
+.mf-market-preview-pick-conflict {
+  font-size: 0.66rem;
+  color: #E8A54B;
+  margin: 0 0 0.35rem;
+  padding: 0.35rem 0.5rem;
+  background: rgba(232, 165, 75, 0.08);
+  border-left: 2px solid #E8A54B;
+  line-height: 1.45;
+}
+.mf-market-preview-pick-layers {
+  font-size: 0.62rem;
+  color: var(--txt2);
+  margin: 0 0 0.35rem;
+  line-height: 1.4;
+  opacity: 0.85;
+}
 .mf-market-preview-pick-grid {
   display: flex;
   flex-direction: column;

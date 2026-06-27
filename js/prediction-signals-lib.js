@@ -3465,6 +3465,132 @@ function buildTotalsDisplay(totals, expectedTotalGoals, xgPair) {
   };
 }
 
+const TOTALS_SIDE_CN = { over: '大球', under: '小球', neutral: '观望' };
+
+function totalsSideFromOverPct(overPct) {
+  if (overPct >= 55) return 'over';
+  if (overPct <= 45) return 'under';
+  return 'neutral';
+}
+
+function totalsSideFromLineGap(gap) {
+  if (gap >= 0.25) return 'under';
+  if (gap <= -0.25) return 'over';
+  return 'neutral';
+}
+
+function totalsSideFromOdds(overOdds, underOdds) {
+  if (overOdds == null || underOdds == null) return 'neutral';
+  if (overOdds <= 0.95 && overOdds < underOdds - 0.02) return 'over';
+  if (underOdds <= 0.95 && underOdds < overOdds - 0.02) return 'under';
+  return 'neutral';
+}
+
+function totalsSideFromSituation(qualDynamics) {
+  if (!qualDynamics?.scenario_type) return 'neutral';
+  const t = qualDynamics.scenario_type;
+  if (t === 'tacit_draw' || t === 'asymmetric_third') return 'under';
+  if (t === 'path_control') return 'under';
+  return 'neutral';
+}
+
+/**
+ * 大小球三层合并：模型 + 盘面（线+水）多数决；形势仅同分或一致时加成，与模型+盘冲突则降权
+ */
+function computeTotalsPickLayers(totalsAnalysis, raw, qualDynamics) {
+  const modelSide = totalsSideFromOverPct(totalsAnalysis.over_pct);
+  const lineSide = totalsSideFromLineGap(totalsAnalysis.line_gap);
+  const overOdds = raw.totals_over_odds ?? raw.totals_now?.over_odds;
+  const underOdds = raw.totals_under_odds ?? raw.totals_now?.under_odds;
+  const oddsSide = totalsSideFromOdds(overOdds, underOdds);
+  const situationSide = totalsSideFromSituation(qualDynamics);
+
+  const votes = { model: modelSide, line: lineSide, odds: oddsSide, situation: situationSide };
+  let overScore = 0;
+  let underScore = 0;
+  [modelSide, lineSide, oddsSide].forEach(s => {
+    if (s === 'over') overScore += 1;
+    if (s === 'under') underScore += 1;
+  });
+
+  let marketSide = 'neutral';
+  if (overScore > underScore) marketSide = 'over';
+  else if (underScore > overScore) marketSide = 'under';
+
+  let recommendedSide = marketSide;
+  if (recommendedSide === 'neutral') {
+    if (modelSide !== 'neutral') recommendedSide = modelSide;
+    else if (situationSide !== 'neutral') recommendedSide = situationSide;
+  }
+
+  const modelMarketAgree = modelSide !== 'neutral' && marketSide !== 'neutral' && modelSide === marketSide;
+  const situationDampened = situationSide !== 'neutral'
+    && marketSide !== 'neutral'
+    && situationSide !== marketSide
+    && (modelMarketAgree || (modelSide === marketSide && modelSide !== 'neutral'));
+  const conflict = situationDampened;
+
+  let conflictCn = null;
+  if (conflict) {
+    conflictCn = '形势偏' + TOTALS_SIDE_CN[situationSide]
+      + '，模型与盘口指向' + TOTALS_SIDE_CN[marketSide]
+      + ' · 形势降权，跟模型+盘面';
+  }
+
+  const voteSummary = ['model', 'line', 'odds', 'situation']
+    .map(k => TOTALS_SIDE_CN[votes[k]] + '(' + k + ')')
+    .join(' · ');
+
+  return {
+    model_side: modelSide,
+    situation_side: situationSide,
+    market_line_side: lineSide,
+    market_odds_side: oddsSide,
+    market_side: marketSide,
+    recommended_side: recommendedSide,
+    conflict,
+    conflict_cn: conflictCn,
+    situation_dampened: situationDampened,
+    votes,
+    vote_summary_cn: voteSummary,
+    merge_rule_cn: '模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权',
+  };
+}
+
+function enrichAgentPickWithLayers(agentPick, layers, totalsAnalysis) {
+  if (!agentPick) return null;
+  const out = JSON.parse(JSON.stringify(agentPick));
+  const pickSide = out.totals?.side || layers.recommended_side;
+  out.pick_meta = {
+    model_side: layers.model_side,
+    situation_side: layers.situation_side,
+    market_line_side: layers.market_line_side,
+    market_odds_side: layers.market_odds_side,
+    market_side: layers.market_side,
+    pick_side: pickSide,
+    recommended_side: layers.recommended_side,
+    merge_rule_cn: layers.merge_rule_cn,
+    conflict: layers.conflict,
+    conflict_cn: layers.conflict_cn,
+    votes: layers.votes,
+    vote_summary_cn: layers.vote_summary_cn,
+    situation_dampened: layers.situation_dampened,
+    over_pct: totalsAnalysis.over_pct,
+    line_gap: totalsAnalysis.line_gap,
+  };
+  if (out.totals) {
+    if (layers.conflict) {
+      out.totals.situation_conflict = true;
+      out.totals.situation_conflict_cn = layers.conflict_cn;
+    }
+    if (pickSide !== layers.recommended_side && layers.recommended_side !== 'neutral') {
+      out.totals.manual_override = true;
+      out.totals.recommended_side = layers.recommended_side;
+    }
+  }
+  return out;
+}
+
 /**
  * 盘路变化展示 — 初盘/现盘（用户录入）+ 世界杯主客说明
  */
@@ -3508,7 +3634,7 @@ function buildMarketLineMovement(raw, homeName, awayName) {
 /**
  * @param {object} raw — 内部录入，含 market_tier / public_lean / public_pct
  */
-function buildDepthCalibration(match, raw) {
+function buildDepthCalibration(match, raw, groupSnapshots) {
   const p = match.prediction || {};
   const xgH = p.xg_home ?? 0;
   const xgA = p.xg_away ?? 0;
@@ -3537,6 +3663,11 @@ function buildDepthCalibration(match, raw) {
 
   const cover = computeSpreadCover(xgH, xgA, tier);
   const totals = computeTotalsAnalysis(xgH, xgA, raw);
+  const qualDynamics = groupSnapshots
+    ? computeQualificationDynamics(match, groupSnapshots)
+    : null;
+  const totalsPickLayers = computeTotalsPickLayers(totals, raw, qualDynamics);
+  const agentPick = enrichAgentPickWithLayers(raw.agent_pick || null, totalsPickLayers, totals);
   const implied = impliedTierFromXg(xgH, xgA);
   const tierGap = tier - implied;
 
@@ -3646,7 +3777,8 @@ function buildDepthCalibration(match, raw) {
     totals_analysis: totals,
     totals_line: raw.totals_line ?? 2.5,
     market_line_movement: buildMarketLineMovement(raw, match.home.name, match.away.name),
-    agent_pick: raw.agent_pick || null,
+    totals_pick_layers: totalsPickLayers,
+    agent_pick: agentPick,
     applied_delta: delta,
     adjustment_note: '模型微调：主胜 ' + (delta.home_win >= 0 ? '+' : '') + delta.home_win
       + '% · 平 ' + (delta.draw >= 0 ? '+' : '') + delta.draw
@@ -4555,6 +4687,8 @@ const exportsObj = {
   enrichActualResultForReview,
   inferMatchArchetype,
   buildDepthCalibration,
+  computeTotalsPickLayers,
+  enrichAgentPickWithLayers,
   buildMarketLineMovement,
   buildPublicSummaryNote,
   buildCalibrationDisplay,

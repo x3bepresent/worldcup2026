@@ -87,7 +87,7 @@ function enrichArchivedFull(m, handicapMap, goalTimingMap, groupSnapshots) {
 
   const raw = handicapMap[copy.id];
   if (raw) {
-    copy.depth_calibration = buildDepthCalibration(copy, raw);
+    copy.depth_calibration = buildDepthCalibration(copy, raw, groupSnapshots);
     copy.market_snapshot = pickMarketSnapshot({ depth_calibration: copy.depth_calibration });
     if (copy.prediction) {
       copy.prediction = applyDepthToPrediction(copy.prediction, copy.depth_calibration);
@@ -128,7 +128,7 @@ function enrichArchivedFull(m, handicapMap, goalTimingMap, groupSnapshots) {
       copy.depth_calibration.goal_efficiency = ge;
     }
     const dc = copy.depth_calibration;
-    const fullDc = raw ? buildDepthCalibration(copy, raw) : dc;
+    const fullDc = raw ? buildDepthCalibration(copy, raw, groupSnapshots) : dc;
     if (fullDc?.display_summary) {
       if (!dc) copy.depth_calibration = fullDc;
       const ar = enrichActualResultForReview(copy);

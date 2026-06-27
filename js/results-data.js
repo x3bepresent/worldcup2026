@@ -214,6 +214,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -1068,6 +1087,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "over",
+          "situation_side": "neutral",
+          "market_line_side": "over",
+          "market_odds_side": "neutral",
+          "market_side": "over",
+          "recommended_side": "over",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "over",
+            "line": "over",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "大球(model) · 大球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -1910,6 +1948,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -2766,6 +2823,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "neutral",
+          "market_odds_side": "neutral",
+          "market_side": "neutral",
+          "recommended_side": "neutral",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "neutral",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 观望(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -3617,6 +3693,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -4478,6 +4573,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "neutral",
+          "market_odds_side": "neutral",
+          "market_side": "neutral",
+          "recommended_side": "neutral",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "neutral",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 观望(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -5336,6 +5450,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.25,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "neutral",
+          "market_odds_side": "neutral",
+          "market_side": "neutral",
+          "recommended_side": "neutral",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "neutral",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 观望(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -6202,6 +6335,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -7041,6 +7193,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 3.25,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "over",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "neutral",
+          "recommended_side": "over",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "over",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "大球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
@@ -7905,6 +8076,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -8763,6 +8953,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "over",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "neutral",
+          "recommended_side": "over",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "over",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "大球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -9595,6 +9804,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -10444,6 +10672,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "neutral",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "neutral",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 观望(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
@@ -11312,6 +11559,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -12172,6 +12438,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -13032,6 +13317,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -13941,6 +14245,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "neutral",
+          "market_odds_side": "under",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "neutral",
+            "odds": "under",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 观望(line) · 小球(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
@@ -14794,6 +15117,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -15663,6 +16005,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 3,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
@@ -16522,6 +16883,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -3,
@@ -17394,6 +17774,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
@@ -18248,6 +18647,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
@@ -19104,6 +19522,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.25,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "over",
+          "situation_side": "neutral",
+          "market_line_side": "neutral",
+          "market_odds_side": "neutral",
+          "market_side": "over",
+          "recommended_side": "over",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "over",
+            "line": "neutral",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "大球(model) · 观望(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
@@ -19960,6 +20397,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -20814,6 +21270,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.25,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "over",
+          "situation_side": "neutral",
+          "market_line_side": "neutral",
+          "market_odds_side": "neutral",
+          "market_side": "over",
+          "recommended_side": "over",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "over",
+            "line": "neutral",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "大球(model) · 观望(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
@@ -21663,6 +22138,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
@@ -22514,6 +23008,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
@@ -23371,6 +23884,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -24264,6 +24796,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "under",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "under",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 小球(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
@@ -25269,6 +25820,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.25,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "over",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "under",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "over",
+            "line": "under",
+            "odds": "under",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "大球(model) · 小球(line) · 小球(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -1,
@@ -26254,6 +26824,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 3.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "under",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "under",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 小球(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
@@ -27260,6 +27849,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "under",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "under",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 小球(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
@@ -28294,6 +28902,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "over",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "over",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 大球(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
@@ -29274,6 +29901,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 3,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "under",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "under",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 小球(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
@@ -30280,6 +30926,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 3,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "under",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "under",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 小球(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
@@ -31283,6 +31948,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.25,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "over",
+          "situation_side": "neutral",
+          "market_line_side": "neutral",
+          "market_odds_side": "over",
+          "market_side": "over",
+          "recommended_side": "over",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "over",
+            "line": "neutral",
+            "odds": "over",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "大球(model) · 观望(line) · 大球(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 3,
@@ -32546,6 +33230,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
@@ -33917,6 +34620,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "neutral",
+          "market_odds_side": "under",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "neutral",
+            "odds": "under",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 观望(line) · 小球(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
@@ -35298,6 +36020,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.25,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "over",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "neutral",
+          "recommended_side": "over",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "over",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "大球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
@@ -36664,6 +37405,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -37740,6 +38500,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "over",
+          "situation_side": "neutral",
+          "market_line_side": "over",
+          "market_odds_side": "neutral",
+          "market_side": "over",
+          "recommended_side": "over",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "over",
+            "line": "over",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "大球(model) · 大球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -38592,6 +39371,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
@@ -39444,6 +40242,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "over",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "neutral",
+          "recommended_side": "over",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "over",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "大球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -40305,6 +41122,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.25,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "over",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "neutral",
+          "recommended_side": "over",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "over",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "大球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -41427,6 +42263,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
@@ -42832,6 +43687,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "neutral",
+          "market_odds_side": "neutral",
+          "market_side": "neutral",
+          "recommended_side": "neutral",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "neutral",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 观望(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
@@ -44215,6 +45089,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.25,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "over",
+          "situation_side": "neutral",
+          "market_line_side": "neutral",
+          "market_odds_side": "neutral",
+          "market_side": "over",
+          "recommended_side": "over",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "over",
+            "line": "neutral",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "大球(model) · 观望(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -45603,6 +46496,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
@@ -46725,6 +47637,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "neutral",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "neutral",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 观望(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -47575,6 +48506,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
@@ -48541,6 +49491,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
@@ -49437,6 +50406,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
@@ -50332,6 +51320,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
@@ -51314,6 +52321,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 2,
@@ -52222,6 +53248,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
@@ -53079,6 +54124,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
@@ -53940,6 +55004,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "over",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "neutral",
+          "recommended_side": "over",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "over",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "大球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -54764,6 +55847,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 3,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
@@ -55695,6 +56797,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
@@ -56556,6 +57677,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -57403,6 +58543,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "neutral",
+          "market_odds_side": "neutral",
+          "market_side": "neutral",
+          "recommended_side": "neutral",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "neutral",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 观望(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -58232,6 +59391,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -4,
@@ -59161,6 +60339,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -60023,6 +61220,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
@@ -60884,6 +62100,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": 0,
@@ -61752,6 +62987,25 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
         "agent_pick": null,
         "applied_delta": {
           "home_win": -5,
