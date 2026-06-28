@@ -3378,8 +3378,8 @@ function renderMatch(m) {
     <!-- MATCH HEADER -->
     <div class="mf-header">
       <div class="mf-meta">
-        ${tag('GROUP ' + m.group, '#7BB8D4')}
-        ${tag('MATCHDAY ' + m.matchday, '#888888')}
+        ${tag(m.group === 'KO' ? (m.round_cn || '32强') : 'GROUP ' + m.group, m.group === 'KO' ? '#C8A96E' : '#7BB8D4')}
+        ${m.matchday ? tag('MATCHDAY ' + m.matchday, '#888888') : (m.knockout_slot ? tag(m.knockout_slot.split(' · ')[0], '#888888') : '')}
         ${finished ? tag('已结束', '#5BBF8A') : tag('待赛', '#C8A96E')}
         <span style="font-size:0.84rem;color:var(--txt2)">${m.venue} · ${m.city}</span>
       </div>
@@ -3574,8 +3574,12 @@ function initMatchesPage() {
 
   const dateEl = document.getElementById('today-date');
   if (dateEl && MATCH_DATA.todayMatches?.length) {
-    const groups = [...new Set(MATCH_DATA.todayMatches.map(m => m.group))].sort().join('/');
-    dateEl.textContent = `📅 ${MATCH_DATA.todayMatches[0].date_beijing || '今日'} — ${MATCH_DATA.todayMatches.length} 场待赛 · ${groups}组`;
+    const phase = MATCH_DATA.phase_cn || '';
+    const first = MATCH_DATA.todayMatches[0];
+    const grpLabel = first.group === 'KO' ? (first.round_cn || '32强') : [...new Set(MATCH_DATA.todayMatches.map(m => m.group))].sort().join('/') + '组';
+    dateEl.textContent = phase
+      ? `📅 ${first.date_beijing || '今日'} — ${MATCH_DATA.todayMatches.length} 场待赛 · ${phase}`
+      : `📅 ${first.date_beijing || '今日'} — ${MATCH_DATA.todayMatches.length} 场待赛 · ${grpLabel}`;
   }
 
   const cont = document.getElementById('matches-container');

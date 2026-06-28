@@ -98,68 +98,102 @@
     }
   ],
   "results": {
-    "graded_at": "2026-06-27T18:46:42.750Z",
+    "graded_at": "2026-06-28T06:03:20.293Z",
+    "grade_rule_cn": "不败即中：全赢/赢半/走水算中，输半/全输算不中",
     "spread": {
-      "hit": 0,
-      "miss": 0,
+      "hit": 5,
+      "miss": 1,
       "push": 0,
-      "pending": 6,
-      "pct": null
+      "pending": 0,
+      "pct": 83.3
     },
     "totals": {
-      "hit": 0,
-      "miss": 0,
+      "hit": 2,
+      "miss": 4,
       "push": 0,
-      "pending": 6,
-      "pct": null
+      "pending": 0,
+      "pct": 33.3
     },
     "primary": {
-      "hit": 0,
-      "miss": 0,
+      "hit": 5,
+      "miss": 1,
       "push": 0,
-      "pending": 6,
-      "pct": null,
+      "pending": 0,
+      "pct": 83.3,
       "label_cn": "倾向项（★）"
     },
     "secondary": {
-      "hit": 0,
-      "miss": 0,
+      "hit": 2,
+      "miss": 4,
       "push": 0,
-      "pending": 6,
-      "pct": null,
+      "pending": 0,
+      "pct": 33.3,
       "label_cn": "非倾向项"
     },
     "all_legs": {
-      "hit": 0,
-      "miss": 0,
+      "hit": 7,
+      "miss": 5,
       "push": 0,
-      "pending": 12,
-      "pct": null
+      "pending": 0,
+      "pct": 58.3
     },
     "cross_analysis": {
       "summary_cn": "交叉赛果用于反推倾向权重：若「倾向错、另一项对」偏多，应下调倾向优先级或改判定规则",
       "primary_miss_secondary_hit": {
         "n": 0,
-        "pct": null,
+        "pct": 0,
         "label_cn": "倾向未中 · 另一项命中",
         "matches": [],
         "analytics_cn": "虽倾向错了，但双选中的另一项对了——实际可命中却被倾向标签误导，是改进重点"
       },
       "primary_hit_secondary_miss": {
-        "n": 0,
-        "pct": null,
+        "n": 3,
+        "pct": 50,
         "label_cn": "倾向命中 · 另一项未中",
-        "matches": []
+        "matches": [
+          {
+            "id": "m69",
+            "match": "Algeria vs Austria",
+            "cn": "★让球盘命中，大小球未中"
+          },
+          {
+            "id": "m70",
+            "match": "Jordan vs Argentina",
+            "cn": "★让球盘命中，大小球未中"
+          },
+          {
+            "id": "m72",
+            "match": "Congo DR vs Uzbekistan",
+            "cn": "★让球盘命中，大小球未中"
+          }
+        ]
       },
       "both_hit": {
-        "n": 0,
-        "matches": []
+        "n": 2,
+        "matches": [
+          {
+            "id": "m67",
+            "match": "Panama vs England",
+            "cn": "★让球盘与大小球均命中"
+          },
+          {
+            "id": "m71",
+            "match": "Colombia vs Portugal",
+            "cn": "★让球盘与大小球均命中"
+          }
+        ]
       },
       "both_miss": {
-        "n": 0,
-        "matches": []
+        "n": 1,
+        "matches": [
+          {
+            "id": "m68",
+            "match": "Croatia vs Ghana",
+            "cn": "★让球盘与大小球均未中"
+          }
+        ]
       },
-      "pending": 6
+      "pending": 0
     },
     "layer_alignment": {
       "summary_cn": "大小球三层对齐：pick_side 与 model/market/recommended 赛后反推",
@@ -181,7 +215,62 @@
         "n": 0,
         "pct": null
       },
-      "per_match": []
+      "per_match": [
+        {
+          "id": "m67",
+          "model_side": null,
+          "situation_side": null,
+          "market_side": null,
+          "pick_side": "under",
+          "recommended_side": null,
+          "totals_hit": true
+        },
+        {
+          "id": "m68",
+          "model_side": null,
+          "situation_side": null,
+          "market_side": null,
+          "pick_side": "under",
+          "recommended_side": null,
+          "totals_hit": false
+        },
+        {
+          "id": "m69",
+          "model_side": null,
+          "situation_side": null,
+          "market_side": null,
+          "pick_side": "under",
+          "recommended_side": null,
+          "totals_hit": false
+        },
+        {
+          "id": "m70",
+          "model_side": null,
+          "situation_side": null,
+          "market_side": null,
+          "pick_side": "under",
+          "recommended_side": null,
+          "totals_hit": false
+        },
+        {
+          "id": "m71",
+          "model_side": null,
+          "situation_side": null,
+          "market_side": null,
+          "pick_side": "under",
+          "recommended_side": null,
+          "totals_hit": true
+        },
+        {
+          "id": "m72",
+          "model_side": null,
+          "situation_side": null,
+          "market_side": null,
+          "pick_side": "under",
+          "recommended_side": null,
+          "totals_hit": false
+        }
+      ]
     },
     "high_confidence": {
       "n": 4,
@@ -192,24 +281,30 @@
         "m72"
       ],
       "spread": {
-        "hit": 0,
+        "hit": 4,
         "miss": 0,
-        "pct": null
+        "pct": 100
       },
       "totals": {
-        "hit": 0,
-        "miss": 0,
-        "pct": null
+        "hit": 1,
+        "miss": 3,
+        "pct": 25
       },
       "primary": {
-        "hit": 0,
+        "hit": 4,
         "miss": 0,
-        "pct": null
+        "pct": 100
       },
       "cross": {
         "primary_miss_secondary_hit": [],
-        "primary_hit_secondary_miss": [],
-        "both_hit": [],
+        "primary_hit_secondary_miss": [
+          "m69",
+          "m70",
+          "m72"
+        ],
+        "both_hit": [
+          "m67"
+        ],
         "both_miss": []
       }
     },
@@ -229,25 +324,31 @@
         "situation_conflict": false,
         "spread": {
           "side": "dog",
-          "label_cn": "巴拿马 +2/2.5 守住",
-          "reason_cn": "英格兰已出线或轮换；模型胜约 70% 但穿 -2.25 校准后约 51%；升盘抬水典型防守，铁桶下 0-1/0-2 仍可守住。",
-          "grade_note": "未开赛/无赛果"
+          "label_cn": "巴拿马 +2/2.5 @1.02",
+          "reason_cn": "FIFA 官方英格兰 5 轮换（Rice/Mainoo/Foden 替补）；xG 客 2.08→1.90。胜约 65% 但穿 -2.25 约 25%；0-1/0-2 仍守住。",
+          "hit": true,
+          "grade_note": "0-2 · 净胜 -2 · 赢半"
         },
         "totals": {
           "side": "under",
           "label_cn": "小球 3/3.5",
           "reason_cn": "模型公允总进球约 2.0，现线 3.25 偏高约 0.75 球；超线概率约 40%，小水 1.02 在卖大球叙事。",
-          "grade_note": "未开赛/无赛果"
+          "hit": true,
+          "grade_note": "0-2 总2 · 线 3.25 · 全赢"
         },
+        "primary_hit": true,
+        "secondary_hit": true,
         "secondary_market": "totals",
         "outcome": {
-          "key": "pending",
-          "cn": "待赛",
-          "analytics_cn": null,
+          "key": "both_hit",
+          "cn": "★让球盘与大小球均命中",
+          "analytics_cn": "倾向正确，双项验证通过",
+          "primary_hit": true,
+          "secondary_hit": true,
           "primary_market": "spread",
           "secondary_market": "totals"
         },
-        "actual_score": null
+        "actual_score": "0-2"
       },
       {
         "id": "m68",
@@ -266,58 +367,70 @@
           "side": "dog",
           "label_cn": "加纳 +0.5 守住",
           "reason_cn": "加纳 4 分已锁前二可接受平局；克罗地亚 3 分须胜易急躁；xG 1.42 vs 1.38 均势，首推 1-1。",
-          "grade_note": "未开赛/无赛果"
+          "hit": false,
+          "grade_note": "2-1 · 净胜 +1 · 全输"
         },
         "totals": {
           "side": "under",
           "label_cn": "小球 2",
           "reason_cn": "2 整球线下 ≤2 球即全赢；模型有平局/小胜路径，大球 0.86 略诱但出线博弈下闷战概率不低。",
-          "grade_note": "未开赛/无赛果"
+          "hit": false,
+          "grade_note": "2-1 总3 · 线 2 · 全输"
         },
+        "primary_hit": false,
+        "secondary_hit": false,
         "secondary_market": "totals",
         "outcome": {
-          "key": "pending",
-          "cn": "待赛",
-          "analytics_cn": null,
+          "key": "both_miss",
+          "cn": "★让球盘与大小球均未中",
+          "analytics_cn": "全盘失误，需复盘模型、盘路与倾向规则",
+          "primary_hit": false,
+          "secondary_hit": false,
           "primary_market": "spread",
           "secondary_market": "totals"
         },
-        "actual_score": null
+        "actual_score": "2-1"
       },
       {
         "id": "m69",
         "match": "Algeria vs Austria",
-        "primary": "totals",
-        "tendency_cn": "更倾向大小球",
+        "primary": "spread",
+        "tendency_cn": "更倾向让球盘",
         "high_confidence": true,
         "confidence_cn": "大信心",
         "model_side": null,
         "situation_side": null,
         "market_side": null,
-        "pick_side": "over",
+        "pick_side": "under",
         "recommended_side": null,
         "situation_conflict": false,
         "spread": {
           "side": "fav",
-          "label_cn": "奥地利 PK（-0）不败",
-          "reason_cn": "奥地利已锁前二，盘口 0.96→0.84 获支持；阿尔须胜但模型平局权重 +9%，PK 下更信客队不败。",
-          "grade_note": "未开赛/无赛果"
+          "label_cn": "奥地利 PK（-0）@0.84",
+          "reason_cn": "已锁前二 · 输球亦出线；阿尔须胜但模型平局 +9% → 不败约 73%。无输半档，符合先不输。",
+          "hit": true,
+          "grade_note": "3-3 · 净胜 0 · 走水"
         },
         "totals": {
-          "side": "over",
-          "label_cn": "大球 1.5/2",
-          "reason_cn": "模型超 1.75 约 61%、公允 ~2.0；大 0.97 低水。默契战约束总进球，但低线+定价优先大球（形势已降权）。",
-          "grade_note": "未开赛/无赛果"
+          "side": "under",
+          "label_cn": "小球 1.5/2 @0.82",
+          "reason_cn": "副项 · 皇冠小 0.82 + 默契战；但 1-1 输半、模型约 68% 超线，不作★。",
+          "hit": false,
+          "grade_note": "3-3 总6 · 线 1.75 · 全输"
         },
-        "secondary_market": "spread",
+        "primary_hit": true,
+        "secondary_hit": false,
+        "secondary_market": "totals",
         "outcome": {
-          "key": "pending",
-          "cn": "待赛",
-          "analytics_cn": null,
-          "primary_market": "totals",
-          "secondary_market": "spread"
+          "key": "primary_hit_secondary_miss",
+          "cn": "★让球盘命中，大小球未中",
+          "analytics_cn": "倾向正确；非倾向项失误，可降权备用项展示",
+          "primary_hit": true,
+          "secondary_hit": false,
+          "primary_market": "spread",
+          "secondary_market": "totals"
         },
-        "actual_score": null
+        "actual_score": "3-3"
       },
       {
         "id": "m70",
@@ -336,23 +449,29 @@
           "side": "dog",
           "label_cn": "约旦 +2/2.5 守住",
           "reason_cn": "阿根廷 6 分已出线必轮换；模型胜 77% 但穿 -2.25 校准后约 49%；升盘 0.99 为限损而非加强。",
-          "grade_note": "未开赛/无赛果"
+          "hit": true,
+          "grade_note": "1-3 · 净胜 -2 · 赢半"
         },
         "totals": {
           "side": "under",
           "label_cn": "小球 3",
           "reason_cn": "3 整球走水多；大球 0.83 便宜但模型公允约 2.75，轮换队常见 2-0/3-0 卡线而非开放对攻。",
-          "grade_note": "未开赛/无赛果"
+          "hit": false,
+          "grade_note": "1-3 总4 · 线 3 · 全输"
         },
+        "primary_hit": true,
+        "secondary_hit": false,
         "secondary_market": "totals",
         "outcome": {
-          "key": "pending",
-          "cn": "待赛",
-          "analytics_cn": null,
+          "key": "primary_hit_secondary_miss",
+          "cn": "★让球盘命中，大小球未中",
+          "analytics_cn": "倾向正确；非倾向项失误，可降权备用项展示",
+          "primary_hit": true,
+          "secondary_hit": false,
           "primary_market": "spread",
           "secondary_market": "totals"
         },
-        "actual_score": null
+        "actual_score": "1-3"
       },
       {
         "id": "m71",
@@ -371,23 +490,29 @@
           "side": "dog",
           "label_cn": "哥伦比亚 +0.5 守住",
           "reason_cn": "哥伦 6 分平局即头名；葡萄牙 4 分须胜但 0.98 抬水未追；xG 1.55 vs 1.58 均势。",
-          "grade_note": "未开赛/无赛果"
+          "hit": true,
+          "grade_note": "0-0 · 净胜 0 · 全赢"
         },
         "totals": {
           "side": "under",
           "label_cn": "小球 2.5/3",
           "reason_cn": "已出线双方 xG 略降；小水 0.89 偏小，迈阿密湿热下更可能 1-1/2-1 而非开放对攻。",
-          "grade_note": "未开赛/无赛果"
+          "hit": true,
+          "grade_note": "0-0 总0 · 线 2.75 · 全赢"
         },
+        "primary_hit": true,
+        "secondary_hit": true,
         "secondary_market": "totals",
         "outcome": {
-          "key": "pending",
-          "cn": "待赛",
-          "analytics_cn": null,
+          "key": "both_hit",
+          "cn": "★让球盘与大小球均命中",
+          "analytics_cn": "倾向正确，双项验证通过",
+          "primary_hit": true,
+          "secondary_hit": true,
           "primary_market": "spread",
           "secondary_market": "totals"
         },
-        "actual_score": null
+        "actual_score": "0-0"
       },
       {
         "id": "m72",
@@ -406,23 +531,29 @@
           "side": "fav",
           "label_cn": "刚果(金) -0.5/1",
           "reason_cn": "双方须胜无控分；盘口向 xG 1.48 vs 0.72 修正，刚果 -0.75 与模型一致，主场生死战信实力方小胜。",
-          "grade_note": "未开赛/无赛果"
+          "hit": true,
+          "grade_note": "3-1 · 净胜 +2 · 全赢"
         },
         "totals": {
           "side": "under",
           "label_cn": "小球 2/2.5",
           "reason_cn": "xG 合计约 2.2，线 2.25 中性；乌兹别克守势下 1-0/2-0 比大比分更合理。",
-          "grade_note": "未开赛/无赛果"
+          "hit": false,
+          "grade_note": "3-1 总4 · 线 2.25 · 全输"
         },
+        "primary_hit": true,
+        "secondary_hit": false,
         "secondary_market": "totals",
         "outcome": {
-          "key": "pending",
-          "cn": "待赛",
-          "analytics_cn": null,
+          "key": "primary_hit_secondary_miss",
+          "cn": "★让球盘命中，大小球未中",
+          "analytics_cn": "倾向正确；非倾向项失误，可降权备用项展示",
+          "primary_hit": true,
+          "secondary_hit": false,
           "primary_market": "spread",
           "secondary_market": "totals"
         },
-        "actual_score": null
+        "actual_score": "3-1"
       }
     ]
   }

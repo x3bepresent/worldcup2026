@@ -1,6 +1,8 @@
 /**
  * 结算 agent 双盘口选项 — node scripts/grade-agent-picks.js [day17]
  * 每场：让球 + 大小球；统计倾向/非倾向/交叉赛果（倾向错但另一项对）
+ *
+ * 结算口径：不败即中 — 全赢 / 赢半 / 走水 → 中；输半 / 全输 → 不中
  */
 const fs = require('fs');
 const path = require('path');
@@ -73,67 +75,107 @@ function totalsOverWeight(totalGoals, line) {
   return t > l ? 1 : t === l ? 0.5 : 0;
 }
 
-function actualSpreadHit(margin, tier, side, publicLean) {
+function invertSpreadOutcome(o) {
+  return {
+    full_win: 'full_lose',
+    half_win: 'half_lose',
+    push: 'push',
+    half_lose: 'half_win',
+    full_lose: 'full_win',
+  }[o];
+}
+
+const OUTCOME_CN = {
+  full_win: '全赢',
+  half_win: '赢半',
+  push: '走水',
+  half_lose: '输半',
+  full_lose: '全输',
+};
+
+function sideHitsNoLoss(outcome) {
+  return outcome === 'full_win' || outcome === 'half_win' || outcome === 'push';
+}
+
+/** 热门方让球结算 @returns {'full_win'|'half_win'|'push'|'half_lose'|'full_lose'} */
+function favSpreadOutcome(favMargin, tier) {
   const abs = Math.abs(Number(tier) || 0);
   const th = lib.getTierCoverThresholds(tier);
-  const favSide = tier > 0 ? 'home' : tier < 0 ? 'away' : (publicLean === 'away' ? 'away' : publicLean === 'home' ? 'home' : null);
+  const frac = Math.round((abs % 1) * 100) / 100;
+  const base = Math.floor(abs);
 
   if (abs < 0.01) {
-    if (side === 'fav' && favSide === 'home') {
-      if (margin > 0) return true;
-      if (margin === 0) return null;
-      return false;
-    }
-    if (side === 'fav' && favSide === 'away') {
-      if (margin < 0) return true;
-      if (margin === 0) return null;
-      return false;
-    }
-    if (side === 'dog' && favSide === 'home') {
-      if (margin < 0) return true;
-      if (margin === 0) return null;
-      return false;
-    }
-    if (side === 'dog' && favSide === 'away') {
-      if (margin > 0) return true;
-      if (margin === 0) return null;
-      return false;
-    }
-    return null;
+    if (favMargin > 0) return 'full_win';
+    if (favMargin === 0) return 'push';
+    return 'full_lose';
   }
+  if (frac < 0.01) {
+    if (favMargin >= th.fullMin) return 'full_win';
+    if (th.pushExact != null && favMargin === th.pushExact) return 'push';
+    return 'full_lose';
+  }
+  if (Math.abs(frac - 0.5) < 0.01) {
+    if (favMargin >= th.fullMin) return 'full_win';
+    if (th.halfExact != null && favMargin === th.halfExact) return 'half_win';
+    return 'full_lose';
+  }
+  if (Math.abs(frac - 0.75) < 0.01) {
+    if (favMargin >= th.fullMin) return 'full_win';
+    if (th.halfExact != null && favMargin === th.halfExact) return 'half_win';
+    if (favMargin === base || (base === 0 && favMargin === 0)) return 'half_lose';
+    return 'full_lose';
+  }
+  if (Math.abs(frac - 0.25) < 0.01) {
+    if (favMargin >= th.fullMin) return 'full_win';
+    if (abs >= 1 && favMargin === base && th.pushExact == null) return 'half_lose';
+    if (abs < 1 && favMargin === 0) return 'half_lose';
+    return 'full_lose';
+  }
+  if (favMargin >= th.fullMin) return 'full_win';
+  return 'full_lose';
+}
 
+function spreadSideOutcome(margin, tier, side, publicLean) {
+  const favSide = tier > 0 ? 'home' : tier < 0 ? 'away' : (publicLean === 'away' ? 'away' : publicLean === 'home' ? 'home' : null);
   const favMargin = favSide === 'home' ? margin : favSide === 'away' ? -margin : margin;
-  const favFull = favMargin >= th.fullMin;
-  const favHalf = th.halfExact != null && favMargin === th.halfExact;
-  const favPush = th.pushExact != null && favMargin === th.pushExact;
-  const dogHold = favFull ? false : (favHalf || favMargin === 1 || favPush || favMargin <= 0);
+  const favOut = favSpreadOutcome(favMargin, tier);
+  if (side === 'fav') return favOut;
+  if (side === 'dog') return invertSpreadOutcome(favOut);
+  return 'full_lose';
+}
 
-  if (side === 'fav') {
-    if (favFull) return true;
-    if (favHalf) return true;
-    if (favPush) return null;
-    return false;
-  }
-  if (side === 'dog') {
-    if (dogHold) return true;
-    return false;
-  }
-  return null;
+/** 大球方结算 */
+function totalsOverOutcome(total, line) {
+  const w = totalsOverWeight(total, line);
+  const l = Number(line);
+  const isInt = Math.abs(l % 1) < 0.01;
+  if (w >= 1) return 'full_win';
+  if (w <= 0) return 'full_lose';
+  if (isInt && total === l) return 'push';
+  const base = Math.floor(l);
+  const frac = Math.round((l % 1) * 100) / 100;
+  if (Math.abs(frac - 0.25) < 0.01 && total === base) return 'half_win';
+  if (Math.abs(frac - 0.75) < 0.01 && total === base + 1) return 'half_win';
+  if (Math.abs(l - 2.75) < 0.01 && total === 3) return 'half_win';
+  if (Math.abs(l - 2.25) < 0.01 && total === 2) return 'half_win';
+  if (Math.abs(l - 3.25) < 0.01 && total === 3) return 'half_win';
+  if (Math.abs(l - 1.75) < 0.01 && total === 1) return 'half_lose';
+  return 'half_lose';
+}
+
+function totalsSideOutcome(total, line, side) {
+  const overOut = totalsOverOutcome(total, line);
+  if (side === 'over') return overOut;
+  if (side === 'under') return invertSpreadOutcome(overOut);
+  return 'full_lose';
+}
+
+function actualSpreadHit(margin, tier, side, publicLean) {
+  return sideHitsNoLoss(spreadSideOutcome(margin, tier, side, publicLean));
 }
 
 function actualTotalsHit(total, line, side) {
-  const w = totalsOverWeight(total, line);
-  if (side === 'over') {
-    if (w >= 1) return true;
-    if (w <= 0) return false;
-    return null;
-  }
-  if (side === 'under') {
-    if (w <= 0) return true;
-    if (w >= 1) return false;
-    return null;
-  }
-  return null;
+  return sideHitsNoLoss(totalsSideOutcome(total, line, side));
 }
 
 function gradeLeg(market, leg, raw, actual) {
@@ -143,13 +185,21 @@ function gradeLeg(market, leg, raw, actual) {
   const score = `${actual.h}-${actual.a}`;
 
   if (market === 'spread') {
-    const hit = actualSpreadHit(actual.margin, tier, leg.side, raw?.public_lean);
-    if (hit === null) return { hit: null, note: `走水/半 ${score} · 净胜 ${actual.margin}` };
-    return { hit, note: `${score} · 净胜 ${actual.margin > 0 ? '+' : ''}${actual.margin}` };
+    const outcome = spreadSideOutcome(actual.margin, tier, leg.side, raw?.public_lean);
+    const hit = sideHitsNoLoss(outcome);
+    return {
+      hit,
+      outcome,
+      note: `${score} · 净胜 ${actual.margin > 0 ? '+' : ''}${actual.margin} · ${OUTCOME_CN[outcome]}`,
+    };
   }
-  const hit = actualTotalsHit(actual.total, line, leg.side);
-  if (hit === null) return { hit: null, note: `走水/半 总${actual.total} · 线 ${line}` };
-  return { hit, note: `${score} 总${actual.total} · 线 ${line}` };
+  const outcome = totalsSideOutcome(actual.total, line, leg.side);
+  const hit = sideHitsNoLoss(outcome);
+  return {
+    hit,
+    outcome,
+    note: `${score} 总${actual.total} · 线 ${line} · ${OUTCOME_CN[outcome]}`,
+  };
 }
 
 function tallyBucket(hit) {
@@ -481,6 +531,7 @@ function gradeDay(jsonPath) {
 
   data.results = {
     graded_at: new Date().toISOString(),
+    grade_rule_cn: '不败即中：全赢/赢半/走水算中，输半/全输算不中',
     spread: { ...spreadT, pct: pct(spreadT.hit, spreadT.miss) },
     totals: { ...totalsT, pct: pct(totalsT.hit, totalsT.miss) },
     primary: { ...primaryT, pct: pct(primaryT.hit, primaryT.miss), label_cn: '倾向项（★）' },

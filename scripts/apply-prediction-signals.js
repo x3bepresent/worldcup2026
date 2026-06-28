@@ -42,6 +42,7 @@ const HANDICAP = {
   ...require('./handicap-data-day15'),
   ...require('./handicap-data-day16'),
   ...require('./handicap-data-day17'),
+  ...require('./handicap-data-day18'),
 };
 const GOAL_TIMING = {
   ...require('./goal-timing-data-day9'),
@@ -134,15 +135,17 @@ function syncSiteMeta(data) {
   }
 
   const rest = (data.todayMatches || []).slice(1);
-  data.upcomingMatches = rest.map(m => ({
-    group: m.group,
-    time_beijing_full: m.time_beijing_full,
-    venue: m.venue,
-    city: m.city,
-    home: { name: m.home.name, iso: m.home.iso },
-    away: { name: m.away.name, iso: m.away.iso },
-    teaser: m.note?.split(' · ')[0] || `${m.group}组：${m.home.name} vs ${m.away.name}`,
-  }));
+  if (rest.length) {
+    data.upcomingMatches = rest.map(m => ({
+      group: m.group,
+      time_beijing_full: m.time_beijing_full,
+      venue: m.venue,
+      city: m.city,
+      home: { name: m.home.name, iso: m.home.iso },
+      away: { name: m.away.name, iso: m.away.iso },
+      teaser: m.note?.split(' · ')[0] || `${m.group}组：${m.home.name} vs ${m.away.name}`,
+    }));
+  }
 
   const baseSync = (data.syncSource || '')
     .replace(/ · 推演概要\+小组形势/g, '')
@@ -322,7 +325,7 @@ syncSiteMeta(MATCH_DATA);
 
 fs.writeFileSync(
   MATCH_PATH,
-  `// 今日赛事 — Day 9 (signals enriched)\n// Last updated: ${TS}\nconst MATCH_DATA = ${JSON.stringify(MATCH_DATA, null, 2)};\n`
+  `// 今日赛事 — ${MATCH_DATA.phase_cn || MATCH_DATA.syncSource || 'preview'} (signals enriched)\n// Last updated: ${TS}\nconst MATCH_DATA = ${JSON.stringify(MATCH_DATA, null, 2)};\n`
 );
 
 console.log('✅ Applied signals to', MATCH_DATA.todayMatches.length, 'matches');
