@@ -1,8 +1,8 @@
-// 今日赛事 — Day 18 · 32强揭幕 (signals enriched)
-// Last updated: 2026-06-28T08:32:07+08:00
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-28T08:37:09.104Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-28T08:32:07+08:00",
-  "syncSource": "FIFA 赛程 · Day 18 · 32强 M73 enriched · 推演概要+小组形势",
+  "lastUpdated": "2026-06-28T08:37:09.104Z",
+  "syncSource": "API-Football",
   "phase": "knockout",
   "phase_cn": "淘汰赛 · 32强",
   "breakingNews": [
