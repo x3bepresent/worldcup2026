@@ -1,8 +1,8 @@
-// 今日赛事 — Day 9 (signals enriched)
-// Last updated: 2026-06-20T14:00:00+08:00
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-28T03:44:42.868Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-20T14:00:00+08:00",
-  "syncSource": "FIFA 官方首发 m67–m68 · Day 17 · 推演概要+小组形势",
+  "lastUpdated": "2026-06-28T03:44:42.868Z",
+  "syncSource": "API-Football",
   "breakingNews": [
     {
       "tag": "UPDATE",
