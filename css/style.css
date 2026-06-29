@@ -1446,6 +1446,96 @@ footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--bor
   background: rgba(255, 255, 255, 0.03);
   line-height: 1.45;
 }
+
+/* ── Agent 双选统计（赛果页） ── */
+.results-stats-bar--agent {
+  margin-bottom: 1.25rem;
+  border-color: rgba(255, 136, 85, 0.35);
+  background: linear-gradient(135deg, rgba(255, 136, 85, 0.12) 0%, rgba(200, 169, 110, 0.08) 50%, rgba(4, 13, 28, 0.4) 100%);
+}
+.results-stats-grid--agent {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 720px) {
+  .results-stats-grid--agent { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.results-stat-card--agent-spread { border-top: 3px solid #5BBF8A; }
+.results-stat-card--agent-totals { border-top: 3px solid #E8A54B; }
+.results-stat-card--agent-primary { border-top: 3px solid #7BB8D4; }
+.results-stat-card--fire {
+  border-color: rgba(255, 136, 85, 0.35);
+  background: rgba(255, 136, 85, 0.06);
+}
+.results-stat-card--agent-hc-spread,
+.results-stat-card--agent-hc-primary,
+.results-stat-card--agent-hc-totals { border-top: 3px solid #FF8855; }
+.results-stat-fire { font-size: 0.85rem; margin-left: auto; }
+.agent-day-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.agent-day-chip {
+  font-size: 0.68rem;
+  color: var(--txt2);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.agent-verdict-strip {
+  margin: 0 0 0.85rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 136, 85, 0.35);
+  background: rgba(255, 136, 85, 0.08);
+}
+.agent-verdict-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.6rem;
+  margin-bottom: 0.45rem;
+}
+.agent-verdict-kicker {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #FF8855;
+}
+.agent-verdict-fire {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #FF8855;
+  padding: 0.1rem 0.35rem;
+  border-radius: 2px;
+  background: rgba(255, 136, 85, 0.15);
+}
+.agent-verdict-star { font-size: 0.72rem; color: var(--gold); font-weight: 700; }
+.agent-verdict-score { font-size: 0.72rem; color: var(--txt2); margin-left: auto; }
+.agent-verdict-legs { display: flex; flex-direction: column; gap: 0.3rem; }
+.agent-verdict-leg {
+  font-size: 0.78rem;
+  color: var(--txt2);
+  line-height: 1.5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  align-items: baseline;
+}
+.agent-verdict-leg--hit { color: #5BBF8A; font-weight: 700; }
+.agent-verdict-leg--miss { color: #D95F6A; font-weight: 700; }
+.agent-verdict-note { font-size: 0.68rem; font-weight: 500; opacity: 0.85; }
+.agent-verdict-outcome {
+  margin-top: 0.4rem;
+  font-size: 0.72rem;
+  color: var(--gold);
+  font-weight: 600;
+}
+
 .pred-verdict-ht-chips {
   display: flex;
   flex-wrap: wrap;

@@ -1,8 +1,8 @@
-// 今日赛事 — 淘汰赛 · 32强 (signals enriched)
-// Last updated: 2026-06-29T14:33:14+08:00
+// 今日赛事 — Day 19 enriched
+// Last updated: 2026-06-29T15:31:12+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-29T14:33:14+08:00",
-  "syncSource": "FIFA 赛程 · Day 19 · 32强 3场 enriched · 推演概要+小组形势",
+  "lastUpdated": "2026-06-29T15:31:12+08:00",
+  "syncSource": "FIFA 赛程 · Day 19 · 32强 3场 enriched",
   "phase": "knockout",
   "phase_cn": "淘汰赛 · 32强",
   "breakingNews": [
@@ -82,14 +82,21 @@ const MATCH_DATA = {
             "pos": "LW",
             "club": "Real Madrid",
             "rating": 9,
-            "desc": "爆点"
+            "desc": "一对一 · 7 分零失球轴心"
           },
           {
             "name": "Raphinha",
             "pos": "RW",
             "club": "Barcelona",
             "rating": 8.6,
-            "desc": "宽度"
+            "desc": "宽度 · 定位球"
+          },
+          {
+            "name": "Bruno Guimarães",
+            "pos": "CDM",
+            "club": "Newcastle",
+            "rating": 8.5,
+            "desc": "屏障 · 转换发起点"
           }
         ],
         "star": {
@@ -97,14 +104,39 @@ const MATCH_DATA = {
           "pos": "LW",
           "club": "Real Madrid",
           "rating": 9,
-          "desc": "C 组头名"
+          "desc": "C 组头名 · 爆点"
         },
-        "injuries": [],
-        "rumors": [
+        "injuries": [
           {
-            "text": "巴西 C 组头名 · 日本 F 组次席不败 · 淘汰赛单场",
-            "tag": "战术"
+            "player": "Vinícius Júnior",
+            "status": "FIT",
+            "note": "C 组头名 · 7 分零失球 · 左路爆点",
+            "confirmed": true
+          },
+          {
+            "player": "Raphinha",
+            "status": "FIT",
+            "note": "宽度+定位球 · 3 球 2 助",
+            "confirmed": true
+          },
+          {
+            "player": "Rodrygo",
+            "status": "FIT",
+            "note": "肋部轮换选项 · 破密集",
+            "confirmed": true
+          },
+          {
+            "player": "Danilo",
+            "status": "DOUBT",
+            "note": "小组赛末段轻微肌肉疲劳 · 赛前队检",
+            "confirmed": false
           }
+        ],
+        "rumors": [
+          "Dorival：「淘汰赛没有容错——日本 F 组不败，须早破门避免加时」",
+          "预计 4-2-3-1 高位 · Vinícius/Raphinha 宽度拉满破日本低位",
+          "C 组曾 1-1 摩洛哥 · 破密集+定位球是今日轴心",
+          "休斯顿夜场 · 体能优势在 70 分钟后或显现"
         ]
       },
       "away": {
@@ -127,14 +159,21 @@ const MATCH_DATA = {
             "pos": "RW",
             "club": "Real Sociedad",
             "rating": 8.2,
-            "desc": "反击"
+            "desc": "肋部 · 破防第一选择"
           },
           {
             "name": "Kaoru Mitoma",
             "pos": "LW",
             "club": "Brighton",
             "rating": 8,
-            "desc": "速度"
+            "desc": "速度 · 纵深"
+          },
+          {
+            "name": "Wataru Endo",
+            "pos": "CDM",
+            "club": "Liverpool",
+            "rating": 7.9,
+            "desc": "绞杀 · 屏障"
           }
         ],
         "star": {
@@ -142,14 +181,39 @@ const MATCH_DATA = {
           "pos": "RW",
           "club": "Real Sociedad",
           "rating": 8.2,
-          "desc": "F 组次席"
+          "desc": "F 组次席 · 反击"
         },
-        "injuries": [],
-        "rumors": [
+        "injuries": [
           {
-            "text": "日本低位+转换 · 巴西须破密集",
-            "tag": "战术"
+            "player": "Takefusa Kubo",
+            "status": "FIT",
+            "note": "F 组次席 · 一对一破局",
+            "confirmed": true
+          },
+          {
+            "player": "Kaoru Mitoma",
+            "status": "FIT",
+            "note": "左翼速度 · 反击第一选择",
+            "confirmed": true
+          },
+          {
+            "player": "Wataru Endo",
+            "status": "FIT",
+            "note": "屏障 · 绞杀巴西中路",
+            "confirmed": true
+          },
+          {
+            "player": "Ko Itakura",
+            "status": "DOUBT",
+            "note": "中卫轻微撞伤 · 末练减量",
+            "confirmed": false
           }
+        ],
+        "rumors": [
+          "Moriyasu：「对巴西须守平争胜——受让 +0.5/1 结构是我们熟悉的」",
+          "预计 4-2-3-1 低位+5 人防线 · Kubo/Mitoma 反击",
+          "F 组对荷兰、瑞典均不败 · 定位球+转换是冷门路径",
+          "Agent 大信心倾向日本受让 · 皇冠热门巴西高水"
         ]
       },
       "h2h": {
@@ -167,12 +231,37 @@ const MATCH_DATA = {
         "note": "日本偶有冷门"
       },
       "referee": {
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA · Match officials · 2026-06-29",
         "name": "Maurizio Mariani",
-        "nation": "意大利",
-        "nation_iso": "it",
-        "note": "FIFA M76 · 巴西 vs 日本 · 休斯顿",
+        "nation": "Italy",
+        "iso": "it",
+        "age": 43,
+        "wc_experience": "2026 世界杯 · 32强 M76 主裁 · 小组赛沙特-乌拉圭、哥伦比亚-刚果(金) · Serie A 精英 · 本届唯一意大利主裁",
+        "avg_yellow": 4.4,
+        "avg_red": 0.12,
+        "avg_penalty": 0.28,
+        "home_win_rate": 51,
+        "bias_index": 52,
+        "bias_note": "意大利主裁执法休斯顿 NRG 夜场。巴西 C 组零失球高位压迫 vs 日本 F 组不败低位转换；对 Vinícius 速度犯规与 Endo 战术犯规尺度受关注，优势判罚利于日本反击。",
+        "tendencies": [
+          "助理：Daniele Bindoni、Alberto Tegoni（意大利）",
+          "第四官员 Sandro Schärer（瑞士）· 候补 Stéphane De Almeida（SUI）",
+          "VAR Marco Di Bello（意大利）· AVAR Juan Martinez（西班牙）",
+          "休斯顿 32°C 封闭 · 补水暂停后体能犯规或升",
+          "小组赛已执法巴西相关场次 · 对南美-欧洲对抗尺度有经验"
+        ],
+        "officials": {
+          "ar1": "Daniele Bindoni (ITA)",
+          "ar2": "Alberto Tegoni (ITA)",
+          "fourth": "Sandro Schärer (SUI)",
+          "var": "Marco Di Bello (ITA)",
+          "avar": "Juan Martinez (ESP)"
+        },
         "fifa_match_id": "400021516",
-        "updated": "2026-06-29T13:49:32+08:00"
+        "note": "FIFA M76 · 巴西 vs 日本 · 休斯顿 NRG Stadium",
+        "updated": "2026-06-29T15:31:12+08:00"
       },
       "prediction": {
         "home_win": 54,
@@ -217,7 +306,7 @@ const MATCH_DATA = {
           {
             "icon": "🌤️",
             "label": "赛场气候",
-            "text": "休斯顿夏夜 · 32°C · 湿度 58% · 降雨概率 20% · 封闭；M76 巴西 vs 日本 · 高温封闭（32°C 封闭）"
+            "text": "休斯顿夏夜 · 32°C · 湿度 58%；M76 巴西 vs 日本 · 高温封闭"
           },
           {
             "icon": "⚽",
@@ -1228,14 +1317,21 @@ const MATCH_DATA = {
             "pos": "AM",
             "club": "Bayern",
             "rating": 8.8,
-            "desc": "肋部"
+            "desc": "肋部 · 深盘破局"
           },
           {
             "name": "Florian Wirtz",
             "pos": "AM",
             "club": "Leverkusen",
             "rating": 8.7,
-            "desc": "组织"
+            "desc": "组织 · 最后一传"
+          },
+          {
+            "name": "Kai Havertz",
+            "pos": "ST",
+            "club": "Arsenal",
+            "rating": 8.4,
+            "desc": "支点 · 定位球"
           }
         ],
         "star": {
@@ -1243,14 +1339,39 @@ const MATCH_DATA = {
           "pos": "AM",
           "club": "Bayern",
           "rating": 8.8,
-          "desc": "E 组头名"
+          "desc": "E 组头名 · 穿盘核心"
         },
-        "injuries": [],
-        "rumors": [
+        "injuries": [
           {
-            "text": "德国 E 组头名深盘 · 巴拉圭 D 组第3 争八出线",
-            "tag": "战术"
+            "player": "Jamal Musiala",
+            "status": "FIT",
+            "note": "E 组头名 · 肋部穿盘核心",
+            "confirmed": true
+          },
+          {
+            "player": "Florian Wirtz",
+            "status": "FIT",
+            "note": "组织+最后一传",
+            "confirmed": true
+          },
+          {
+            "player": "Kai Havertz",
+            "status": "FIT",
+            "note": "锋线支点 · 定位球",
+            "confirmed": true
+          },
+          {
+            "player": "Manuel Neuer",
+            "status": "FIT",
+            "note": "一门 · 小组赛 3 场全勤",
+            "confirmed": true
           }
+        ],
+        "rumors": [
+          "Nagelsmann：「巴拉圭 D 组第3 出线靠防守——须耐心破铁桶」",
+          "预计 4-2-3-1 控球压迫 · Musiala/Wirtz 双 10 号位",
+          "E 组 10 球 2 场后末轮小负 · 淘汰赛须兑现深盘",
+          "Agent 大信心德国 -1/1.5 低水穿盘"
         ]
       },
       "away": {
@@ -1273,7 +1394,21 @@ const MATCH_DATA = {
             "pos": "RW",
             "club": "Newcastle",
             "rating": 7.8,
-            "desc": "反击"
+            "desc": "速度 · 反击第一出口"
+          },
+          {
+            "name": "Diego Gómez",
+            "pos": "CM",
+            "club": "Brighton",
+            "rating": 7.6,
+            "desc": "推进 · 长传"
+          },
+          {
+            "name": "Gustavo Gómez",
+            "pos": "CB",
+            "club": "Palmeiras",
+            "rating": 7.7,
+            "desc": "队长 · 定位球"
           }
         ],
         "star": {
@@ -1281,14 +1416,39 @@ const MATCH_DATA = {
           "pos": "RW",
           "club": "Newcastle",
           "rating": 7.8,
-          "desc": "D 组第3出线"
+          "desc": "D 组第3 · 反击"
         },
-        "injuries": [],
-        "rumors": [
+        "injuries": [
           {
-            "text": "巴拉圭铁桶+定位球",
-            "tag": "战术"
+            "player": "Miguel Almirón",
+            "status": "FIT",
+            "note": "D 组第3 出线 · 反击速度",
+            "confirmed": true
+          },
+          {
+            "player": "Diego Gómez",
+            "status": "FIT",
+            "note": "中场推进 · 长传找 Almirón",
+            "confirmed": true
+          },
+          {
+            "player": "Gustavo Gómez",
+            "status": "FIT",
+            "note": "队长中卫 · 定位球威胁",
+            "confirmed": true
+          },
+          {
+            "player": "Omar Sosa",
+            "status": "FIT",
+            "note": "锋线支点 · 5-4-1 轴心",
+            "confirmed": true
           }
+        ],
+        "rumors": [
+          "Alfaro：「对德国没有包袱——5-4-1 低位+定位球偷一个」",
+          "D 组净胜球劣势靠第3 名横向比较晋级 · 铁桶心态",
+          "预计 5-4-1 极深 · 全场 xG 或低于 1.5",
+          "受让 +1/1.5 高水 · 平局即赢半结构"
         ]
       },
       "h2h": {
@@ -1306,12 +1466,38 @@ const MATCH_DATA = {
         "note": "德国历史占优"
       },
       "referee": {
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA · Match officials · 2026-06-29",
         "name": "Jalal Jayed",
-        "nation": "摩洛哥",
-        "nation_iso": "ma",
-        "note": "FIFA M74 · 德国 vs 巴拉圭 · 波士顿",
+        "nation": "Morocco",
+        "iso": "ma",
+        "age": 41,
+        "wc_experience": "2026 世界杯 · 32强 M74 主裁 · 小组赛德国-库拉索、葡萄牙-乌兹别克 · CAF 精英裁判",
+        "avg_yellow": 4.8,
+        "avg_red": 0.15,
+        "avg_penalty": 0.32,
+        "home_win_rate": 49,
+        "bias_index": 50,
+        "bias_note": "摩洛哥主裁执法波士顿 Gillette 凌晨场。德国 E 组头名深盘穿盘 vs 巴拉圭 D 组第3 铁桶+定位球；对 Musiala 肋部被拉与巴拉圭禁区拉扯判罚尺度是关键。",
+        "tendencies": [
+          "助理：Zakaria Brinsi、Mostafa Akarkad（摩洛哥）",
+          "第四官员 Ma Ning（中国）· 候补 Zhou Fei（CHN）",
+          "VAR Tatiana Guzmán（尼加拉瓜）· AVAR Hamza El-Fariq（摩洛哥）· SVAR Abdullah Al-Shehri（沙特）",
+          "小组赛已执法德国 · 熟悉 Nagelsmann 球队节奏",
+          "深盘场常见早期点球争议 · 定位球犯规需盯紧"
+        ],
+        "officials": {
+          "ar1": "Zakaria Brinsi (MAR)",
+          "ar2": "Mostafa Akarkad (MAR)",
+          "fourth": "Ma Ning (CHN)",
+          "var": "Tatiana Guzmán (NCA)",
+          "avar": "Hamza El-Fariq (MAR)",
+          "svar": "Abdullah Al-Shehri (KSA)"
+        },
         "fifa_match_id": "400021513",
-        "updated": "2026-06-29T13:49:32+08:00"
+        "note": "FIFA M74 · 德国 vs 巴拉圭 · 波士顿 Gillette Stadium",
+        "updated": "2026-06-29T15:31:12+08:00"
       },
       "prediction": {
         "home_win": 62,
@@ -1356,7 +1542,7 @@ const MATCH_DATA = {
           {
             "icon": "🌤️",
             "label": "赛场气候",
-            "text": "波士顿夏晨 · 24°C · 湿度 62% · 降雨概率 25% · 海风 2级；M74 德国 vs 巴拉圭（24°C）"
+            "text": "波士顿夏晨 · 24°C · 湿度 62%；M74 德国 vs 巴拉圭"
           },
           {
             "icon": "⚽",
@@ -2369,14 +2555,21 @@ const MATCH_DATA = {
             "pos": "LW",
             "club": "Liverpool",
             "rating": 8.5,
-            "desc": "宽度"
+            "desc": "内切 · 7 分领跑"
           },
           {
-            "name": "Memphis Depay",
-            "pos": "ST",
-            "club": "Corinthians",
-            "rating": 8.2,
-            "desc": "锋线"
+            "name": "Virgil van Dijk",
+            "pos": "CB",
+            "club": "Liverpool",
+            "rating": 8.7,
+            "desc": "防线领袖"
+          },
+          {
+            "name": "Xavi Simons",
+            "pos": "AM",
+            "club": "RB Leipzig",
+            "rating": 8.4,
+            "desc": "创造力 · 破密集"
           }
         ],
         "star": {
@@ -2384,14 +2577,39 @@ const MATCH_DATA = {
           "pos": "LW",
           "club": "Liverpool",
           "rating": 8.5,
-          "desc": "F 组头名"
+          "desc": "F 组头名 · 宽度"
         },
-        "injuries": [],
-        "rumors": [
+        "injuries": [
           {
-            "text": "荷兰 F 组头名 · 摩洛哥 C 组次席 7 分",
-            "tag": "战术"
+            "player": "Cody Gakpo",
+            "status": "FIT",
+            "note": "F 组头名 · 7 分 · 左路宽度",
+            "confirmed": true
+          },
+          {
+            "player": "Virgil van Dijk",
+            "status": "FIT",
+            "note": "防线领袖 · 定位球",
+            "confirmed": true
+          },
+          {
+            "player": "Xavi Simons",
+            "status": "FIT",
+            "note": "肋部创造力 · 破密集",
+            "confirmed": true
+          },
+          {
+            "player": "Memphis Depay",
+            "status": "DOUBT",
+            "note": "肌肉疲劳延续 · 赛前队检决定首发",
+            "confirmed": false
           }
+        ],
+        "rumors": [
+          "Koeman：「摩洛哥 C 组次席 7 分不败——2022 阴影仍在，但 F 组头名须主动」",
+          "预计 4-3-3 · Gakpo/Simons 宽度 · Depay 或 Brobbey 中锋",
+          "皇冠退档 -0.5→-0/0.5 · 模型倾向摩洛哥受让",
+          "同区胜者 M90 对加拿大 · 16 强半区已清晰"
         ]
       },
       "away": {
@@ -2414,14 +2632,21 @@ const MATCH_DATA = {
             "pos": "RB",
             "club": "PSG",
             "rating": 8.6,
-            "desc": "右路"
+            "desc": "右路速度 · 反击"
           },
           {
-            "name": "Sofiane Boufal",
-            "pos": "LW",
-            "club": "Angers",
+            "name": "Sofyan Amrabat",
+            "pos": "CDM",
+            "club": "Manchester Utd",
+            "rating": 8.2,
+            "desc": "屏障 · 绞杀"
+          },
+          {
+            "name": "Youssef En-Nesyri",
+            "pos": "ST",
+            "club": "Sevilla",
             "rating": 8,
-            "desc": "创造力"
+            "desc": "支点 · 定位球"
           }
         ],
         "star": {
@@ -2429,14 +2654,39 @@ const MATCH_DATA = {
           "pos": "RB",
           "club": "PSG",
           "rating": 8.6,
-          "desc": "C 组次席"
+          "desc": "C 组次席 · 插上"
         },
-        "injuries": [],
-        "rumors": [
+        "injuries": [
           {
-            "text": "摩洛哥小组赛不败 · 淘汰赛经验",
-            "tag": "战术"
+            "player": "Achraf Hakimi",
+            "status": "FIT",
+            "note": "C 组次席 · 右路插上",
+            "confirmed": true
+          },
+          {
+            "player": "Sofyan Amrabat",
+            "status": "FIT",
+            "note": "屏障 · 绞杀 Simons/Gakpo",
+            "confirmed": true
+          },
+          {
+            "player": "Youssef En-Nesyri",
+            "status": "FIT",
+            "note": "锋线支点 · 定位球",
+            "confirmed": true
+          },
+          {
+            "player": "Nayef Aguerd",
+            "status": "DOUBT",
+            "note": "中卫轻微不适 · 末练单独恢复",
+            "confirmed": false
           }
+        ],
+        "rumors": [
+          "Regragui：「对荷兰不摆大巴——小组赛 7 分不败，淘汰赛要进球」",
+          "预计 4-2-3-1 · Amrabat 屏障 + Hakimi 反击",
+          "2022 半决赛阴影 · 荷兰退盘挺受让是盘口叙事",
+          "Agent 双选摩洛哥 +0/0.5 · 小球 2/2.5"
         ]
       },
       "h2h": {
@@ -2454,12 +2704,37 @@ const MATCH_DATA = {
         "note": "2022 摩洛哥胜"
       },
       "referee": {
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA · Match officials · 2026-06-29",
         "name": "Wilton Sampaio",
-        "nation": "巴西",
-        "nation_iso": "br",
-        "note": "FIFA M75 · 荷兰 vs 摩洛哥 · 蒙特雷",
+        "nation": "Brazil",
+        "iso": "br",
+        "age": 43,
+        "wc_experience": "2026 世界杯 · 32强 M75 主裁 · 小组赛墨西哥-南非、挪威-塞内加尔 · CONMEBOL 精英 · 2018/2022 世界杯执法",
+        "avg_yellow": 5.2,
+        "avg_red": 0.18,
+        "avg_penalty": 0.35,
+        "home_win_rate": 48,
+        "bias_index": 49,
+        "bias_note": "巴西主裁执法蒙特雷 BBVA 上午场。荷兰 F 组头名 vs 摩洛哥 C 组次席（2022 阴影）；对 Hakimi 插上犯规与 Amrabat 绞杀 Gakpo 尺度受关注，牌面可能偏紧。",
+        "tendencies": [
+          "助理：Bruno Pires、Bruno Boschilia（巴西）",
+          "第四官员 Cristián Garay（智利）· 候补 Jose Retamal（CHI）",
+          "VAR Juan Gabriel Benítez（巴拉圭）· AVAR Eduardo Cardozo（PAR）",
+          "蒙特雷 28°C · 淘汰赛身体对抗升级",
+          "执法牌面偏多 · 对 Amrabat 累计犯规需预警"
+        ],
+        "officials": {
+          "ar1": "Bruno Pires (BRA)",
+          "ar2": "Bruno Boschilia (BRA)",
+          "fourth": "Cristián Garay (CHI)",
+          "var": "Juan Gabriel Benítez (PAR)",
+          "avar": "Eduardo Cardozo (PAR)"
+        },
         "fifa_match_id": "400021522",
-        "updated": "2026-06-29T13:49:32+08:00"
+        "note": "FIFA M75 · 荷兰 vs 摩洛哥 · 蒙特雷 Estadio BBVA",
+        "updated": "2026-06-29T15:31:12+08:00"
       },
       "prediction": {
         "home_win": 43,
@@ -2504,7 +2779,7 @@ const MATCH_DATA = {
           {
             "icon": "🌤️",
             "label": "赛场气候",
-            "text": "蒙特雷夏午 · 30°C · 湿度 48% · 降雨概率 15% · 微风；M75 荷兰 vs 摩洛哥 · 海拔 540m（30°C · 海拔）"
+            "text": "蒙特雷夏午 · 30°C · 湿度 48%；M75 荷兰 vs 摩洛哥 · 海拔 540m"
           },
           {
             "icon": "⚽",

@@ -1507,6 +1507,89 @@ function computeResultsAggregateStats(matches) {
   };
 }
 
+function renderAgentSummaryStats(agentStats) {
+  if (!agentStats?.aggregate?.spread?.n) return '';
+  const agg = agentStats.aggregate;
+  const hc = agg.high_confidence;
+  const rule = agentStats.grade_rule_cn || '不败即中';
+
+  const card = (key, icon, label, data, sub, featured, fire) => {
+    const muted = !data?.n;
+    return `
+      <div class="results-stat-card results-stat-card--agent results-stat-card--${key}${muted ? ' results-stat-card--muted' : ''}${featured ? ' results-stat-card--featured' : ''}${fire ? ' results-stat-card--fire' : ''}">
+        <div class="results-stat-card-top">
+          <span class="results-stat-icon" aria-hidden="true">${icon}</span>
+          <span class="results-stat-label">${label}</span>
+          ${fire ? '<span class="results-stat-fire">🔥</span>' : ''}
+        </div>
+        <div class="results-stat-pct ${muted ? '' : statPctClass(data.pct)}">${muted ? '—' : `${data.pct}<span class="results-stat-unit">%</span>`}</div>
+        <div class="results-stat-foot">
+          <span class="results-stat-hit">${muted ? '待结算' : `${data.hit} / ${data.n} 项命中`}</span>
+          <span class="results-stat-sub">${sub}</span>
+        </div>
+      </div>`;
+  };
+
+  const dayChips = (agentStats.days || []).map(d =>
+    `<span class="agent-day-chip">Day ${d.day} · 让 ${d.spread.hit}/${d.spread.n} · 大小 ${d.totals.hit}/${d.totals.n}${d.high_confidence ? ` · 🔥${d.high_confidence.primary.hit}/${d.high_confidence.primary.n}` : ''}</span>`
+  ).join('');
+
+  const pendingNote = agentStats.pending?.length
+    ? ` · 待结算 Day ${agentStats.pending.map(p => p.day).join('/')}`
+    : '';
+
+  return `
+    <div class="results-stats-bar results-stats-bar--agent fade-in">
+      <div class="results-stats-head">
+        <span class="results-stats-title">Agent 双选统计</span>
+        <span class="results-stats-meta">${agg.spread.n + agg.totals.n} 项已结算 · ${rule}${pendingNote}</span>
+      </div>
+      <div class="results-stats-grid results-stats-grid--agent">
+        ${card('agent-spread', '📐', '让球盘', agg.spread, '全项让球双选 · 不败即中', true, false)}
+        ${card('agent-totals', '⚽', '大小球', agg.totals, '全项大小双选 · 不败即中', true, false)}
+        ${card('agent-primary', '★', '★倾向项', agg.primary, '每场标★方向（让球或大小）', true, false)}
+        ${card('agent-hc-spread', '🔥', '大信心·让球', hc.spread, `${hc.n} 场大信心样本`, true, true)}
+        ${card('agent-hc-primary', '🔥', '大信心·★倾向', hc.primary, `${hc.n} 场：${(hc.ids || []).join(', ')}`, true, true)}
+        ${card('agent-hc-totals', '🔥', '大信心·大小', hc.totals, '大信心场大小球副项', false, true)}
+      </div>
+      ${dayChips ? `<div class="agent-day-row">${dayChips}</div>` : ''}
+    </div>`;
+}
+
+function getAgentVerdictForMatch(m) {
+  if (typeof AGENT_STATS === 'undefined' || !m?.id) return null;
+  return AGENT_STATS.byId?.[m.id] || null;
+}
+
+function renderAgentVerdictStrip(m) {
+  const g = getAgentVerdictForMatch(m);
+  if (!g) return '';
+  const sHit = g.spread_hit;
+  const tHit = g.totals_hit;
+  const star = g.primary === 'totals' ? '★大小' : '★让球';
+  const hc = g.high_confidence ? '<span class="agent-verdict-fire">🔥大信心</span>' : '';
+  return `
+    <div class="agent-verdict-strip">
+      <div class="agent-verdict-head">
+        <span class="agent-verdict-kicker">Agent 双选</span>
+        ${hc}
+        <span class="agent-verdict-star">${star}</span>
+        ${g.actual_score ? `<span class="agent-verdict-score">${g.actual_score}</span>` : ''}
+      </div>
+      <div class="agent-verdict-legs">
+        <span class="agent-verdict-leg${sHit === true ? ' agent-verdict-leg--hit' : sHit === false ? ' agent-verdict-leg--miss' : ''}">
+          ${sHit === true ? '✓' : sHit === false ? '✗' : '…'} 让球 ${g.spread?.pick_cn || g.spread?.label_cn || '—'}
+          ${g.grade_note_spread ? `<span class="agent-verdict-note">${g.grade_note_spread}</span>` : ''}
+        </span>
+        <span class="agent-verdict-leg${tHit === true ? ' agent-verdict-leg--hit' : tHit === false ? ' agent-verdict-leg--miss' : ''}">
+          ${tHit === true ? '✓' : tHit === false ? '✗' : '…'} 大小 ${g.totals?.pick_cn || g.totals?.label_cn || '—'}
+          ${g.grade_note_totals ? `<span class="agent-verdict-note">${g.grade_note_totals}</span>` : ''}
+        </span>
+      </div>
+      ${g.outcome?.cn ? `<div class="agent-verdict-outcome">${g.outcome.cn}</div>` : ''}
+    </div>`;
+}
+
 function renderResultsSummaryStats(stats, trends) {
   if (!stats?.direction?.n) return '';
   const windowSize = trends?.rolling?.spread?.windowSize ?? trends?.rolling?.primary?.windowSize ?? 6;
@@ -1583,7 +1666,7 @@ function renderResultsSummaryStats(stats, trends) {
   return `
     <div class="results-stats-bar fade-in">
       <div class="results-stats-head">
-        <span class="results-stats-title">累计推演核验</span>
+        <span class="results-stats-title">模型推演核验</span>
         <span class="results-stats-meta">${stats.direction.n} 场已归档 · 主口径以让球/大小球为准${spreadMissNote}${trendNote ? ` · ${trendNote}` : ''}</span>
       </div>
       <div class="results-stats-grid">
@@ -2971,6 +3054,7 @@ function renderScoreCompareHero(m, v) {
 
   return `
     ${renderPrimaryVerdictBanner(v)}
+    ${renderAgentVerdictStrip(m)}
     <div class="score-compare-hero">
       <div class="score-compare-col score-compare-col--official">
         <div class="score-compare-col-head">
@@ -3718,7 +3802,8 @@ function initResultsPage() {
     const finished = RESULTS_DATA.finishedMatches;
     const stats = computeResultsAggregateStats(finished);
     const trends = computeResultsTrendSeries(finished, { window: 6 });
-    statsEl.innerHTML = renderResultsSummaryStats(stats, trends);
+    const agentHtml = typeof AGENT_STATS !== 'undefined' ? renderAgentSummaryStats(AGENT_STATS) : '';
+    statsEl.innerHTML = agentHtml + renderResultsSummaryStats(stats, trends);
   }
 
   const dateEl = document.getElementById('results-date');

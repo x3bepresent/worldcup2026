@@ -582,6 +582,12 @@ function gradeDay(jsonPath) {
 
   if (r.spread.pending === data.picks.length) console.log('\n  暂无赛果，待赛后运行本脚本。');
 
+  try {
+    require('./build-agent-stats.js').build();
+  } catch (e) {
+    console.warn('build-agent-stats skipped:', e.message);
+  }
+
   return data.results;
 }
 
