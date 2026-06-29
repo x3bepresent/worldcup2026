@@ -863,6 +863,42 @@ function resolvePrimaryMarketVerdict(v, ms) {
   return { hit: v.outcomeHit, source: 'direction', label: '胜平负' };
 }
 
+/** 精算让球盘 — 初/现盘去水隐含 vs 模型穿盘 */
+function renderActuarialSpreadPanel(act) {
+  if (!act?.now_devig) return '';
+  const pp = (v) => (v == null ? '—' : (v >= 0 ? '+' : '') + v + 'pp');
+  const roi = (v) => (v == null ? '—' : (v >= 0 ? '+' : '') + v + '%');
+  return `
+    <div class="mf-actuarial-panel">
+      <div class="mf-actuarial-head">精算盘路</div>
+      <div class="mf-actuarial-row">
+        <span class="mf-actuarial-k">盘路定性</span>
+        <span class="mf-actuarial-v" style="color:${act.actuarial_color || '#C8A96E'}">${act.actuarial_cn || '—'}</span>
+      </div>
+      <div class="mf-actuarial-row">
+        <span class="mf-actuarial-k">档位变化</span>
+        <span class="mf-actuarial-v">${act.line_delta_cn || '—'}${act.open_tier_label ? ' · ' + act.open_tier_label + ' → ' + (act.now_tier != null ? act.now_tier : '') : ''}</span>
+      </div>
+      <div class="mf-actuarial-row">
+        <span class="mf-actuarial-k">去水隐含（现）</span>
+        <span class="mf-actuarial-v">${act.fav_name} ${act.now_devig.fav_pct}% · ${act.dog_name} ${act.now_devig.dog_pct}%</span>
+      </div>
+      <div class="mf-actuarial-row">
+        <span class="mf-actuarial-k">模型穿盘（现档）</span>
+        <span class="mf-actuarial-v">${act.fav_name} ${act.model_cover_now_pct}% · ${act.dog_name} ${act.model_dog_cover_now_pct}%</span>
+      </div>
+      <div class="mf-actuarial-row">
+        <span class="mf-actuarial-k">模型−市场</span>
+        <span class="mf-actuarial-v">${act.fav_name} ${pp(act.model_vs_market_fav_pp)} · ${act.dog_name} ${pp(act.model_vs_market_dog_pp)}</span>
+      </div>
+      <div class="mf-actuarial-row">
+        <span class="mf-actuarial-k">期望 ROI@现水</span>
+        <span class="mf-actuarial-v">${act.fav_name} ${roi(act.fav_roi_pct)} · ${act.dog_name} ${roi(act.dog_roi_pct)}</span>
+      </div>
+      ${act.actuarial_desc ? `<p class="mf-actuarial-note">${act.actuarial_desc}</p>` : ''}
+    </div>`;
+}
+
 /** 今日赛事 · 赛前盘口要点（与赛果页主口径一致） */
 function buildMarketPreview(m) {
   const dc = m.depth_calibration;
@@ -956,8 +992,9 @@ function renderMarketPreviewStrip(m) {
         ${lineMove.totals_now_cn ? `<div class="mf-market-preview-line"><span class="mf-market-preview-line-k">大小</span><span class="mf-market-preview-line-v">${lineMove.totals_now_cn}</span></div>` : ''}
         <div class="mf-market-preview-line-move" style="--move-color:${lineMove.tag_color || '#C8A96E'}">
           <span class="mf-market-preview-move-tag">${lineMove.tag_cn}</span>
-          ${lineMove.detail_cn ? `<span class="mf-market-preview-move-detail">${lineMove.detail_cn}</span>` : ''}
+          ${lineMove.actuarial?.water_move_cn ? `<span class="mf-market-preview-move-detail">${lineMove.actuarial.water_move_cn}</span>` : (lineMove.detail_cn ? `<span class="mf-market-preview-move-detail">${lineMove.detail_cn}</span>` : '')}
         </div>
+        ${lineMove.actuarial ? renderActuarialSpreadPanel(lineMove.actuarial) : ''}
         ${lineMove.wc_note ? `<p class="mf-market-preview-wc-note">${lineMove.wc_note}</p>` : ''}
       </div>` : '';
   const ap = preview.agentPick;

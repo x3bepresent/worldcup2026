@@ -615,6 +615,42 @@ footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--bor
   color: var(--txt2);
   line-height: 1.45;
 }
+.mf-actuarial-panel {
+  margin-top: 0.45rem;
+  padding: 0.5rem 0.55rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.mf-actuarial-head {
+  font-size: 0.64rem;
+  font-weight: 800;
+  color: var(--txt2);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+.mf-actuarial-row {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.66rem;
+  line-height: 1.45;
+  margin-bottom: 0.2rem;
+}
+.mf-actuarial-k {
+  flex: 0 0 5.5rem;
+  color: var(--txt2);
+}
+.mf-actuarial-v {
+  flex: 1;
+  color: var(--txt);
+  word-break: break-word;
+}
+.mf-actuarial-note {
+  margin: 0.35rem 0 0;
+  font-size: 0.62rem;
+  color: var(--txt2);
+  line-height: 1.45;
+}
 .mf-market-preview-wc-note {
   margin: 0.35rem 0 0;
   font-size: 0.62rem;

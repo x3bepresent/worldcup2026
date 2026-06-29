@@ -1,7 +1,7 @@
 // 过往赛果 — 精简归档（推演 + 赛果核验 + 复盘概要）
-// Last updated: 2026-06-29T19:48:07+08:00
+// Last updated: 2026-06-29T20:14:46+08:00
 const RESULTS_DATA = {
-  "lastUpdated": "2026-06-29T19:48:07+08:00",
+  "lastUpdated": "2026-06-29T20:14:46+08:00",
   "syncSource": "FIFA 官方赛果 · Day 18 M73 完结 · Day 19 32强 3场",
   "breakingNews": [
     {
@@ -214,6 +214,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -1087,6 +1088,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "over",
           "situation_side": "neutral",
@@ -1948,6 +1950,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -2823,6 +2826,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -3693,6 +3697,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -4573,6 +4578,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -5450,6 +5456,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.25,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -6335,6 +6342,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -7193,6 +7201,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 3.25,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "over",
           "situation_side": "neutral",
@@ -8076,6 +8085,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -8953,6 +8963,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "over",
           "situation_side": "neutral",
@@ -9804,6 +9815,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -10672,6 +10684,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -11559,6 +11572,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -12438,6 +12452,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -13317,6 +13332,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -14245,6 +14261,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -15117,6 +15134,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -16005,6 +16023,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 3,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -16883,6 +16902,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -17774,6 +17794,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -18647,6 +18668,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -19522,6 +19544,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.25,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "over",
           "situation_side": "neutral",
@@ -20397,6 +20420,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -21270,6 +21294,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.25,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "over",
           "situation_side": "neutral",
@@ -22138,6 +22163,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -23008,6 +23034,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -23884,6 +23911,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -24796,6 +24824,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -25820,6 +25849,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.25,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "over",
           "situation_side": "neutral",
@@ -26824,6 +26854,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 3.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -27849,6 +27880,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -28902,6 +28934,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -29901,6 +29934,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 3,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -30926,6 +30960,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 3,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -31948,6 +31983,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.25,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "over",
           "situation_side": "neutral",
@@ -33230,6 +33266,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -34620,6 +34657,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -36020,6 +36058,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.25,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "over",
           "situation_side": "neutral",
@@ -37405,6 +37444,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -38500,6 +38540,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "over",
           "situation_side": "neutral",
@@ -39371,6 +39412,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -40242,6 +40284,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "over",
           "situation_side": "neutral",
@@ -41122,6 +41165,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.25,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "over",
           "situation_side": "neutral",
@@ -42263,6 +42307,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -43687,6 +43732,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -45089,6 +45135,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.25,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "over",
           "situation_side": "neutral",
@@ -46496,6 +46543,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -47637,6 +47685,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -48506,6 +48555,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -49491,6 +49541,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "under",
@@ -50406,6 +50457,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -51320,6 +51372,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -52321,6 +52374,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "under",
@@ -53248,6 +53302,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -54124,6 +54179,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -55004,6 +55060,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "over",
           "situation_side": "neutral",
@@ -55847,6 +55904,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 3,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -56797,6 +56855,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "under",
@@ -57677,6 +57736,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -58543,6 +58603,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -59391,6 +59452,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -60339,6 +60401,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "under",
@@ -61220,6 +61283,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.75,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "under",
           "situation_side": "neutral",
@@ -62100,6 +62164,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -62987,6 +63052,7 @@ const RESULTS_DATA = {
         },
         "totals_line": 2.5,
         "market_line_movement": null,
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -63775,8 +63841,8 @@ const RESULTS_DATA = {
         "cover_given_win_pct": 48.1,
         "spread_level": "uncertain",
         "spread_market_expect": "England -2.25 · 净胜≥3",
-        "line_move_tag": "fav_defense",
-        "line_move_cn": "升盘抬水 · 热门防守",
+        "line_move_tag": "correction",
+        "line_move_cn": "向模型修正",
         "agent_pick_primary": "spread",
         "agent_pick_tendency_cn": "更倾向让球盘",
         "agent_pick_confidence": "high",
@@ -63874,10 +63940,88 @@ const RESULTS_DATA = {
           "spread_open_cn": "Panama +2@1.16 · England -2@0.7",
           "spread_now_cn": "Panama +2/2.5@1.02 · England -2/2.5@0.85",
           "totals_now_cn": "大小 3/3.5 · 大 0.86 / 小 1.02",
-          "tag": "fav_defense",
-          "tag_cn": "升盘抬水 · 热门防守",
-          "tag_color": "#D95F6A",
-          "detail_cn": "初盘英格兰 -2 @0.70 → 现 -2/2.5；皇冠 CROWN 现 英格兰 0.85 / 巴拿马 1.02，热门低水、受让高水，定价偏挺受让。"
+          "tag": "correction",
+          "tag_cn": "向模型修正",
+          "tag_color": "#C8A96E",
+          "detail_cn": "退 4.25 档 · 热门 0.7→0.85（抬水） · 受让 1.16→1.02（降水） 现盘去水隐含：England 52.2% · Panama 47.8%（超收 3.6%） 模型穿盘（现档 England -2.25 · Panama +2.25）：England 25.4% · Panama 74.6% 模型−市场：England -26.8pp · Panama +26.8pp 期望 ROI@现水：England -65.6% · Panama +99.9% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "actuarial": {
+            "actuarial_type": "correction",
+            "actuarial_cn": "向模型修正",
+            "actuarial_color": "#C8A96E",
+            "actuarial_desc": "盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+            "summary_cn": "退 4.25 档 · 热门 0.7→0.85（抬水） · 受让 1.16→1.02（降水） 现盘去水隐含：England 52.2% · Panama 47.8%（超收 3.6%） 模型穿盘（现档 England -2.25 · Panama +2.25）：England 25.4% · Panama 74.6% 模型−市场：England -26.8pp · Panama +26.8pp 期望 ROI@现水：England -65.6% · Panama +99.9% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+            "line_delta": -4.25,
+            "line_delta_cn": "退 4.25 档",
+            "fav_odds_delta": 0.15,
+            "dog_odds_delta": -0.14,
+            "water_move_cn": "热门 0.7→0.85（抬水） · 受让 1.16→1.02（降水）",
+            "open_tier": 2,
+            "open_tier_label": "Panama -2 · England +2",
+            "now_tier": -2.25,
+            "implied_tier": -0.75,
+            "open_tier_gap": 2.75,
+            "now_tier_gap": -1.5,
+            "open_devig": {
+              "fav_pct": 56,
+              "dog_pct": 44,
+              "overround_pct": 5.1
+            },
+            "now_devig": {
+              "fav_pct": 52.2,
+              "dog_pct": 47.8,
+              "overround_pct": 3.6
+            },
+            "model_cover_open_pct": 12.9,
+            "model_cover_now_pct": 25.4,
+            "model_dog_cover_now_pct": 74.6,
+            "market_fav_cover_now_pct": 52.2,
+            "market_dog_cover_now_pct": 47.8,
+            "model_vs_market_fav_pp": -26.8,
+            "model_vs_market_dog_pp": 26.8,
+            "fav_roi_pct": -65.6,
+            "dog_roi_pct": 99.9,
+            "fav_name": "England",
+            "dog_name": "Panama"
+          }
+        },
+        "spread_market_analysis": {
+          "actuarial_type": "correction",
+          "actuarial_cn": "向模型修正",
+          "actuarial_color": "#C8A96E",
+          "actuarial_desc": "盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "summary_cn": "退 4.25 档 · 热门 0.7→0.85（抬水） · 受让 1.16→1.02（降水） 现盘去水隐含：England 52.2% · Panama 47.8%（超收 3.6%） 模型穿盘（现档 England -2.25 · Panama +2.25）：England 25.4% · Panama 74.6% 模型−市场：England -26.8pp · Panama +26.8pp 期望 ROI@现水：England -65.6% · Panama +99.9% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "line_delta": -4.25,
+          "line_delta_cn": "退 4.25 档",
+          "fav_odds_delta": 0.15,
+          "dog_odds_delta": -0.14,
+          "water_move_cn": "热门 0.7→0.85（抬水） · 受让 1.16→1.02（降水）",
+          "open_tier": 2,
+          "open_tier_label": "Panama -2 · England +2",
+          "now_tier": -2.25,
+          "implied_tier": -0.75,
+          "open_tier_gap": 2.75,
+          "now_tier_gap": -1.5,
+          "open_devig": {
+            "fav_pct": 56,
+            "dog_pct": 44,
+            "overround_pct": 5.1
+          },
+          "now_devig": {
+            "fav_pct": 52.2,
+            "dog_pct": 47.8,
+            "overround_pct": 3.6
+          },
+          "model_cover_open_pct": 12.9,
+          "model_cover_now_pct": 25.4,
+          "model_dog_cover_now_pct": 74.6,
+          "market_fav_cover_now_pct": 52.2,
+          "market_dog_cover_now_pct": 47.8,
+          "model_vs_market_fav_pp": -26.8,
+          "model_vs_market_dog_pp": 26.8,
+          "fav_roi_pct": -65.6,
+          "dog_roi_pct": 99.9,
+          "fav_name": "England",
+          "dog_name": "Panama"
         },
         "totals_pick_layers": {
           "model_side": "under",
@@ -64810,8 +64954,10 @@ const RESULTS_DATA = {
           "tag": "flat",
           "tag_cn": "让球不动",
           "tag_color": "#7BB8D4",
-          "detail_cn": "克罗地亚 -0.5 初现一致；加纳已锁前二，克罗地亚须胜但市场未追深盘。"
+          "detail_cn": "克罗地亚 -0.5 初现一致；加纳已锁前二，克罗地亚须胜但市场未追深盘。",
+          "actuarial": null
         },
+        "spread_market_analysis": null,
         "totals_pick_layers": {
           "model_side": "neutral",
           "situation_side": "neutral",
@@ -65641,8 +65787,8 @@ const RESULTS_DATA = {
         "cover_given_win_pct": null,
         "spread_level": "even",
         "spread_market_expect": "势均力敌",
-        "line_move_tag": "away_edge",
-        "line_move_cn": "向奥地利倾斜",
+        "line_move_tag": "correction",
+        "line_move_cn": "向模型修正",
         "agent_pick_primary": "spread",
         "agent_pick_tendency_cn": "更倾向让球盘",
         "agent_pick_confidence": "high",
@@ -65740,10 +65886,88 @@ const RESULTS_DATA = {
           "spread_open_cn": "Algeria +0/0.5@0.86 · Austria -0/0.5@0.96",
           "spread_now_cn": "Algeria +0@1.05 · Austria -0@0.84",
           "totals_now_cn": "大小 1.5/2 · 大 1.06 / 小 0.82",
-          "tag": "away_edge",
-          "tag_cn": "向奥地利倾斜",
-          "tag_color": "#7BB8D4",
-          "detail_cn": "阿尔及利亚 +0/0.5 @0.86 → 平手 @1.05；奥地利 0.96→0.84。大小 1.5/2 皇冠现 大 1.06 / 小 0.82，小球低水与出线默契同向。"
+          "tag": "correction",
+          "tag_cn": "向模型修正",
+          "tag_color": "#C8A96E",
+          "detail_cn": "升 0.25 档 · 热门 0.86→0.84（降水） · 受让 0.96→1.05（抬水） 现盘去水隐含：Algeria 52.7% · Austria 47.3%（超收 3.1%） 模型穿盘（现档 势均力敌）：Algeria 12.6% · Austria 87.4% 模型−市场：Algeria -40.1pp · Austria +40.1pp 期望 ROI@现水：Algeria -76.8% · Austria +166.6% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "actuarial": {
+            "actuarial_type": "correction",
+            "actuarial_cn": "向模型修正",
+            "actuarial_color": "#C8A96E",
+            "actuarial_desc": "盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+            "summary_cn": "升 0.25 档 · 热门 0.86→0.84（降水） · 受让 0.96→1.05（抬水） 现盘去水隐含：Algeria 52.7% · Austria 47.3%（超收 3.1%） 模型穿盘（现档 势均力敌）：Algeria 12.6% · Austria 87.4% 模型−市场：Algeria -40.1pp · Austria +40.1pp 期望 ROI@现水：Algeria -76.8% · Austria +166.6% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+            "line_delta": 0.25,
+            "line_delta_cn": "升 0.25 档",
+            "fav_odds_delta": -0.02,
+            "dog_odds_delta": 0.09,
+            "water_move_cn": "热门 0.86→0.84（降水） · 受让 0.96→1.05（抬水）",
+            "open_tier": -0.25,
+            "open_tier_label": "Austria -0.25 · Algeria +0.25",
+            "now_tier": 0,
+            "implied_tier": 0,
+            "open_tier_gap": -0.25,
+            "now_tier_gap": 0,
+            "open_devig": {
+              "fav_pct": 51.3,
+              "dog_pct": 48.7,
+              "overround_pct": 4.8
+            },
+            "now_devig": {
+              "fav_pct": 52.7,
+              "dog_pct": 47.3,
+              "overround_pct": 3.1
+            },
+            "model_cover_open_pct": 46,
+            "model_cover_now_pct": 12.6,
+            "model_dog_cover_now_pct": 87.4,
+            "market_fav_cover_now_pct": 52.7,
+            "market_dog_cover_now_pct": 47.3,
+            "model_vs_market_fav_pp": -40.1,
+            "model_vs_market_dog_pp": 40.1,
+            "fav_roi_pct": -76.8,
+            "dog_roi_pct": 166.6,
+            "fav_name": "Algeria",
+            "dog_name": "Austria"
+          }
+        },
+        "spread_market_analysis": {
+          "actuarial_type": "correction",
+          "actuarial_cn": "向模型修正",
+          "actuarial_color": "#C8A96E",
+          "actuarial_desc": "盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "summary_cn": "升 0.25 档 · 热门 0.86→0.84（降水） · 受让 0.96→1.05（抬水） 现盘去水隐含：Algeria 52.7% · Austria 47.3%（超收 3.1%） 模型穿盘（现档 势均力敌）：Algeria 12.6% · Austria 87.4% 模型−市场：Algeria -40.1pp · Austria +40.1pp 期望 ROI@现水：Algeria -76.8% · Austria +166.6% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "line_delta": 0.25,
+          "line_delta_cn": "升 0.25 档",
+          "fav_odds_delta": -0.02,
+          "dog_odds_delta": 0.09,
+          "water_move_cn": "热门 0.86→0.84（降水） · 受让 0.96→1.05（抬水）",
+          "open_tier": -0.25,
+          "open_tier_label": "Austria -0.25 · Algeria +0.25",
+          "now_tier": 0,
+          "implied_tier": 0,
+          "open_tier_gap": -0.25,
+          "now_tier_gap": 0,
+          "open_devig": {
+            "fav_pct": 51.3,
+            "dog_pct": 48.7,
+            "overround_pct": 4.8
+          },
+          "now_devig": {
+            "fav_pct": 52.7,
+            "dog_pct": 47.3,
+            "overround_pct": 3.1
+          },
+          "model_cover_open_pct": 46,
+          "model_cover_now_pct": 12.6,
+          "model_dog_cover_now_pct": 87.4,
+          "market_fav_cover_now_pct": 52.7,
+          "market_dog_cover_now_pct": 47.3,
+          "model_vs_market_fav_pp": -40.1,
+          "model_vs_market_dog_pp": 40.1,
+          "fav_roi_pct": -76.8,
+          "dog_roi_pct": 166.6,
+          "fav_name": "Algeria",
+          "dog_name": "Austria"
         },
         "totals_pick_layers": {
           "model_side": "over",
@@ -66558,8 +66782,8 @@ const RESULTS_DATA = {
         "cover_given_win_pct": 57.6,
         "spread_level": "possible",
         "spread_market_expect": "Argentina -2.25 · 净胜≥3",
-        "line_move_tag": "fav_defense",
-        "line_move_cn": "升盘抬水 · 热门防守",
+        "line_move_tag": "correction",
+        "line_move_cn": "向模型修正",
         "agent_pick_primary": "spread",
         "agent_pick_tendency_cn": "更倾向让球盘",
         "agent_pick_confidence": "high",
@@ -66657,10 +66881,88 @@ const RESULTS_DATA = {
           "spread_open_cn": "Jordan +1.5/2@0.98 · Argentina -1.5/2@0.84",
           "spread_now_cn": "Jordan +2/2.5@0.9 · Argentina -2/2.5@0.99",
           "totals_now_cn": "大小 3 · 大 0.83 / 小 1.06",
-          "tag": "fav_defense",
-          "tag_cn": "升盘抬水 · 热门防守",
-          "tag_color": "#D95F6A",
-          "detail_cn": "阿根廷 -1.5/2 → -2/2.5，0.84→0.99；约旦 +2/2.5 更便宜，典型出线后限损。"
+          "tag": "correction",
+          "tag_cn": "向模型修正",
+          "tag_color": "#C8A96E",
+          "detail_cn": "退 4 档 · 热门 0.84→0.99（抬水） · 受让 0.98→0.9（降水） 现盘去水隐含：Argentina 48.8% · Jordan 51.2%（超收 2.9%） 模型穿盘（现档 Argentina -2.25 · Jordan +2.25）：Argentina 40.6% · Jordan 59.4% 模型−市场：Argentina -8.2pp · Jordan +8.2pp 期望 ROI@现水：Argentina -30.7% · Jordan +50.4% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "actuarial": {
+            "actuarial_type": "correction",
+            "actuarial_cn": "向模型修正",
+            "actuarial_color": "#C8A96E",
+            "actuarial_desc": "盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+            "summary_cn": "退 4 档 · 热门 0.84→0.99（抬水） · 受让 0.98→0.9（降水） 现盘去水隐含：Argentina 48.8% · Jordan 51.2%（超收 2.9%） 模型穿盘（现档 Argentina -2.25 · Jordan +2.25）：Argentina 40.6% · Jordan 59.4% 模型−市场：Argentina -8.2pp · Jordan +8.2pp 期望 ROI@现水：Argentina -30.7% · Jordan +50.4% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+            "line_delta": -4,
+            "line_delta_cn": "退 4 档",
+            "fav_odds_delta": 0.15,
+            "dog_odds_delta": -0.08,
+            "water_move_cn": "热门 0.84→0.99（抬水） · 受让 0.98→0.9（降水）",
+            "open_tier": 1.75,
+            "open_tier_label": "Jordan -1.75 · Argentina +1.75",
+            "now_tier": -2.25,
+            "implied_tier": -1.25,
+            "open_tier_gap": 3,
+            "now_tier_gap": -1,
+            "open_devig": {
+              "fav_pct": 51.8,
+              "dog_pct": 48.2,
+              "overround_pct": 4.9
+            },
+            "now_devig": {
+              "fav_pct": 48.8,
+              "dog_pct": 51.2,
+              "overround_pct": 2.9
+            },
+            "model_cover_open_pct": 13.6,
+            "model_cover_now_pct": 40.6,
+            "model_dog_cover_now_pct": 59.4,
+            "market_fav_cover_now_pct": 48.8,
+            "market_dog_cover_now_pct": 51.2,
+            "model_vs_market_fav_pp": -8.2,
+            "model_vs_market_dog_pp": 8.2,
+            "fav_roi_pct": -30.7,
+            "dog_roi_pct": 50.4,
+            "fav_name": "Argentina",
+            "dog_name": "Jordan"
+          }
+        },
+        "spread_market_analysis": {
+          "actuarial_type": "correction",
+          "actuarial_cn": "向模型修正",
+          "actuarial_color": "#C8A96E",
+          "actuarial_desc": "盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "summary_cn": "退 4 档 · 热门 0.84→0.99（抬水） · 受让 0.98→0.9（降水） 现盘去水隐含：Argentina 48.8% · Jordan 51.2%（超收 2.9%） 模型穿盘（现档 Argentina -2.25 · Jordan +2.25）：Argentina 40.6% · Jordan 59.4% 模型−市场：Argentina -8.2pp · Jordan +8.2pp 期望 ROI@现水：Argentina -30.7% · Jordan +50.4% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "line_delta": -4,
+          "line_delta_cn": "退 4 档",
+          "fav_odds_delta": 0.15,
+          "dog_odds_delta": -0.08,
+          "water_move_cn": "热门 0.84→0.99（抬水） · 受让 0.98→0.9（降水）",
+          "open_tier": 1.75,
+          "open_tier_label": "Jordan -1.75 · Argentina +1.75",
+          "now_tier": -2.25,
+          "implied_tier": -1.25,
+          "open_tier_gap": 3,
+          "now_tier_gap": -1,
+          "open_devig": {
+            "fav_pct": 51.8,
+            "dog_pct": 48.2,
+            "overround_pct": 4.9
+          },
+          "now_devig": {
+            "fav_pct": 48.8,
+            "dog_pct": 51.2,
+            "overround_pct": 2.9
+          },
+          "model_cover_open_pct": 13.6,
+          "model_cover_now_pct": 40.6,
+          "model_dog_cover_now_pct": 59.4,
+          "market_fav_cover_now_pct": 48.8,
+          "market_dog_cover_now_pct": 51.2,
+          "model_vs_market_fav_pp": -8.2,
+          "model_vs_market_dog_pp": 8.2,
+          "fav_roi_pct": -30.7,
+          "dog_roi_pct": 50.4,
+          "fav_name": "Argentina",
+          "dog_name": "Jordan"
         },
         "totals_pick_layers": {
           "model_side": "under",
@@ -67492,8 +67794,8 @@ const RESULTS_DATA = {
         "cover_given_win_pct": 100,
         "spread_level": "possible",
         "spread_market_expect": "Portugal -0.5 · 净胜≥1",
-        "line_move_tag": "away_edge",
-        "line_move_cn": "向葡萄牙倾斜 · 赔率不追",
+        "line_move_tag": "book_value_dog",
+        "line_move_cn": "受让低水定价",
         "agent_pick_primary": "spread",
         "agent_pick_tendency_cn": "更倾向让球盘",
         "agent_pick_confidence": null,
@@ -67591,10 +67893,88 @@ const RESULTS_DATA = {
           "spread_open_cn": "Colombia +0/0.5@0.98 · Portugal -0/0.5@0.84",
           "spread_now_cn": "Colombia +0.5@0.91 · Portugal -0.5@0.98",
           "totals_now_cn": "大小 2.5/3 · 大 0.99 / 小 0.89",
-          "tag": "away_edge",
-          "tag_cn": "向葡萄牙倾斜 · 赔率不追",
-          "tag_color": "#7BB8D4",
-          "detail_cn": "哥伦比亚 +0/0.5 → +0.5，葡萄牙须胜叙事；但葡 0.84→0.98 抬水，未做低水诱热。"
+          "tag": "book_value_dog",
+          "tag_cn": "受让低水定价",
+          "tag_color": "#C8A96E",
+          "detail_cn": "退 0.75 档 · 热门 0.84→0.98（抬水） · 受让 0.98→0.91（降水） 现盘去水隐含：Portugal 49.1% · Colombia 50.9%（超收 2.9%） 模型穿盘（现档 Portugal -0.5 · Colombia +0.5）：Portugal 47.4% · Colombia 52.6% 模型−市场：Portugal -1.7pp · Colombia +1.7pp 期望 ROI@现水：Portugal -6.1% · Colombia +53.1% 退档或热门抬水配合受让降水，定价重心在防守侧/受让。",
+          "actuarial": {
+            "actuarial_type": "book_value_dog",
+            "actuarial_cn": "受让低水定价",
+            "actuarial_color": "#C8A96E",
+            "actuarial_desc": "退档或热门抬水配合受让降水，定价重心在防守侧/受让。",
+            "summary_cn": "退 0.75 档 · 热门 0.84→0.98（抬水） · 受让 0.98→0.91（降水） 现盘去水隐含：Portugal 49.1% · Colombia 50.9%（超收 2.9%） 模型穿盘（现档 Portugal -0.5 · Colombia +0.5）：Portugal 47.4% · Colombia 52.6% 模型−市场：Portugal -1.7pp · Colombia +1.7pp 期望 ROI@现水：Portugal -6.1% · Colombia +53.1% 退档或热门抬水配合受让降水，定价重心在防守侧/受让。",
+            "line_delta": -0.75,
+            "line_delta_cn": "退 0.75 档",
+            "fav_odds_delta": 0.14,
+            "dog_odds_delta": -0.07,
+            "water_move_cn": "热门 0.84→0.98（抬水） · 受让 0.98→0.91（降水）",
+            "open_tier": 0.25,
+            "open_tier_label": "Colombia -0.25 · Portugal +0.25",
+            "now_tier": -0.5,
+            "implied_tier": 0,
+            "open_tier_gap": 0.25,
+            "now_tier_gap": -0.5,
+            "open_devig": {
+              "fav_pct": 51.8,
+              "dog_pct": 48.2,
+              "overround_pct": 4.9
+            },
+            "now_devig": {
+              "fav_pct": 49.1,
+              "dog_pct": 50.9,
+              "overround_pct": 2.9
+            },
+            "model_cover_open_pct": 46.7,
+            "model_cover_now_pct": 47.4,
+            "model_dog_cover_now_pct": 52.6,
+            "market_fav_cover_now_pct": 49.1,
+            "market_dog_cover_now_pct": 50.9,
+            "model_vs_market_fav_pp": -1.7,
+            "model_vs_market_dog_pp": 1.7,
+            "fav_roi_pct": -6.1,
+            "dog_roi_pct": 53.1,
+            "fav_name": "Portugal",
+            "dog_name": "Colombia"
+          }
+        },
+        "spread_market_analysis": {
+          "actuarial_type": "book_value_dog",
+          "actuarial_cn": "受让低水定价",
+          "actuarial_color": "#C8A96E",
+          "actuarial_desc": "退档或热门抬水配合受让降水，定价重心在防守侧/受让。",
+          "summary_cn": "退 0.75 档 · 热门 0.84→0.98（抬水） · 受让 0.98→0.91（降水） 现盘去水隐含：Portugal 49.1% · Colombia 50.9%（超收 2.9%） 模型穿盘（现档 Portugal -0.5 · Colombia +0.5）：Portugal 47.4% · Colombia 52.6% 模型−市场：Portugal -1.7pp · Colombia +1.7pp 期望 ROI@现水：Portugal -6.1% · Colombia +53.1% 退档或热门抬水配合受让降水，定价重心在防守侧/受让。",
+          "line_delta": -0.75,
+          "line_delta_cn": "退 0.75 档",
+          "fav_odds_delta": 0.14,
+          "dog_odds_delta": -0.07,
+          "water_move_cn": "热门 0.84→0.98（抬水） · 受让 0.98→0.91（降水）",
+          "open_tier": 0.25,
+          "open_tier_label": "Colombia -0.25 · Portugal +0.25",
+          "now_tier": -0.5,
+          "implied_tier": 0,
+          "open_tier_gap": 0.25,
+          "now_tier_gap": -0.5,
+          "open_devig": {
+            "fav_pct": 51.8,
+            "dog_pct": 48.2,
+            "overround_pct": 4.9
+          },
+          "now_devig": {
+            "fav_pct": 49.1,
+            "dog_pct": 50.9,
+            "overround_pct": 2.9
+          },
+          "model_cover_open_pct": 46.7,
+          "model_cover_now_pct": 47.4,
+          "model_dog_cover_now_pct": 52.6,
+          "market_fav_cover_now_pct": 49.1,
+          "market_dog_cover_now_pct": 50.9,
+          "model_vs_market_fav_pp": -1.7,
+          "model_vs_market_dog_pp": 1.7,
+          "fav_roi_pct": -6.1,
+          "dog_roi_pct": 53.1,
+          "fav_name": "Portugal",
+          "dog_name": "Colombia"
         },
         "totals_pick_layers": {
           "model_side": "neutral",
@@ -68438,8 +68818,8 @@ const RESULTS_DATA = {
         "cover_given_win_pct": 100,
         "spread_level": "possible",
         "spread_market_expect": "Congo DR -0.75 · 净胜≥1",
-        "line_move_tag": "correction",
-        "line_move_cn": "盘口修正 · 刚果加强",
+        "line_move_tag": "book_trap_fav",
+        "line_move_cn": "精算诱上",
         "agent_pick_primary": "spread",
         "agent_pick_tendency_cn": "更倾向让球盘",
         "agent_pick_confidence": "high",
@@ -68537,10 +68917,88 @@ const RESULTS_DATA = {
           "spread_open_cn": "Congo DR -0/0.5@0.96 · Uzbekistan +0/0.5@0.86",
           "spread_now_cn": "Congo DR -0.5/1@0.93 · Uzbekistan +0.5/1@0.96",
           "totals_now_cn": "大小 2/2.5 · 大 0.96 / 小 0.92",
-          "tag": "correction",
-          "tag_cn": "盘口修正 · 刚果加强",
-          "tag_color": "#C8A96E",
-          "detail_cn": "初盘乌兹别克 0.86 反常低水 → 现刚果 -0.5/1 @0.93，向 xG 1.48 vs 0.72 回归。"
+          "tag": "book_trap_fav",
+          "tag_cn": "精算诱上",
+          "tag_color": "#D95F6A",
+          "detail_cn": "升 0.5 档 · 热门 0.96→0.93（降水） · 受让 0.86→0.96（抬水） 现盘去水隐含：Congo DR 50.4% · Uzbekistan 49.6%（超收 2.8%） 模型穿盘（现档 Congo DR -0.75 · Uzbekistan +0.75）：Congo DR 48.5% · Uzbekistan 51.5% 模型−市场：Congo DR -1.9pp · Uzbekistan +1.9pp 期望 ROI@现水：Congo DR -6.4% · Uzbekistan +52.4% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+          "actuarial": {
+            "actuarial_type": "book_trap_fav",
+            "actuarial_cn": "精算诱上",
+            "actuarial_color": "#D95F6A",
+            "actuarial_desc": "升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+            "summary_cn": "升 0.5 档 · 热门 0.96→0.93（降水） · 受让 0.86→0.96（抬水） 现盘去水隐含：Congo DR 50.4% · Uzbekistan 49.6%（超收 2.8%） 模型穿盘（现档 Congo DR -0.75 · Uzbekistan +0.75）：Congo DR 48.5% · Uzbekistan 51.5% 模型−市场：Congo DR -1.9pp · Uzbekistan +1.9pp 期望 ROI@现水：Congo DR -6.4% · Uzbekistan +52.4% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+            "line_delta": 0.5,
+            "line_delta_cn": "升 0.5 档",
+            "fav_odds_delta": -0.03,
+            "dog_odds_delta": 0.1,
+            "water_move_cn": "热门 0.96→0.93（降水） · 受让 0.86→0.96（抬水）",
+            "open_tier": 0.25,
+            "open_tier_label": "Congo DR -0.25 · Uzbekistan +0.25",
+            "now_tier": 0.75,
+            "implied_tier": 0.25,
+            "open_tier_gap": 0,
+            "now_tier_gap": 0.5,
+            "open_devig": {
+              "fav_pct": 48.7,
+              "dog_pct": 51.3,
+              "overround_pct": 4.8
+            },
+            "now_devig": {
+              "fav_pct": 50.4,
+              "dog_pct": 49.6,
+              "overround_pct": 2.8
+            },
+            "model_cover_open_pct": 48.5,
+            "model_cover_now_pct": 48.5,
+            "model_dog_cover_now_pct": 51.5,
+            "market_fav_cover_now_pct": 50.4,
+            "market_dog_cover_now_pct": 49.6,
+            "model_vs_market_fav_pp": -1.9,
+            "model_vs_market_dog_pp": 1.9,
+            "fav_roi_pct": -6.4,
+            "dog_roi_pct": 52.4,
+            "fav_name": "Congo DR",
+            "dog_name": "Uzbekistan"
+          }
+        },
+        "spread_market_analysis": {
+          "actuarial_type": "book_trap_fav",
+          "actuarial_cn": "精算诱上",
+          "actuarial_color": "#D95F6A",
+          "actuarial_desc": "升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+          "summary_cn": "升 0.5 档 · 热门 0.96→0.93（降水） · 受让 0.86→0.96（抬水） 现盘去水隐含：Congo DR 50.4% · Uzbekistan 49.6%（超收 2.8%） 模型穿盘（现档 Congo DR -0.75 · Uzbekistan +0.75）：Congo DR 48.5% · Uzbekistan 51.5% 模型−市场：Congo DR -1.9pp · Uzbekistan +1.9pp 期望 ROI@现水：Congo DR -6.4% · Uzbekistan +52.4% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+          "line_delta": 0.5,
+          "line_delta_cn": "升 0.5 档",
+          "fav_odds_delta": -0.03,
+          "dog_odds_delta": 0.1,
+          "water_move_cn": "热门 0.96→0.93（降水） · 受让 0.86→0.96（抬水）",
+          "open_tier": 0.25,
+          "open_tier_label": "Congo DR -0.25 · Uzbekistan +0.25",
+          "now_tier": 0.75,
+          "implied_tier": 0.25,
+          "open_tier_gap": 0,
+          "now_tier_gap": 0.5,
+          "open_devig": {
+            "fav_pct": 48.7,
+            "dog_pct": 51.3,
+            "overround_pct": 4.8
+          },
+          "now_devig": {
+            "fav_pct": 50.4,
+            "dog_pct": 49.6,
+            "overround_pct": 2.8
+          },
+          "model_cover_open_pct": 48.5,
+          "model_cover_now_pct": 48.5,
+          "model_dog_cover_now_pct": 51.5,
+          "market_fav_cover_now_pct": 50.4,
+          "market_dog_cover_now_pct": 49.6,
+          "model_vs_market_fav_pp": -1.9,
+          "model_vs_market_dog_pp": 1.9,
+          "fav_roi_pct": -6.4,
+          "dog_roi_pct": 52.4,
+          "fav_name": "Congo DR",
+          "dog_name": "Uzbekistan"
         },
         "totals_pick_layers": {
           "model_side": "neutral",
@@ -69383,8 +69841,8 @@ const RESULTS_DATA = {
         "cover_given_win_pct": 100,
         "spread_level": "possible",
         "spread_market_expect": "South Africa -0.25 · 净胜≥1",
-        "line_move_tag": "away_edge",
-        "line_move_cn": "向加拿大倾斜",
+        "line_move_tag": "genuine_strength",
+        "line_move_cn": "真实挺盘",
         "agent_pick_primary": "spread",
         "agent_pick_tendency_cn": "更倾向让球盘",
         "agent_pick_confidence": null,
@@ -69482,10 +69940,88 @@ const RESULTS_DATA = {
           "spread_open_cn": "South Africa +0/0.5@1.02 · Canada -0/0.5@0.88",
           "spread_now_cn": "South Africa +0/0.5@0.98 · Canada -0/0.5@0.92",
           "totals_now_cn": "大小 2/2.5 · 大 0.94 / 小 0.92",
-          "tag": "away_edge",
-          "tag_cn": "向加拿大倾斜",
-          "tag_color": "#7BB8D4",
-          "detail_cn": "初盘平手 → 现加拿大 -0/0.5 @0.92；南非 A 组次席防守型，加拿大 B 组次席进攻更猛但末轮曾闷平。"
+          "tag": "genuine_strength",
+          "tag_cn": "真实挺盘",
+          "tag_color": "#5BBF8A",
+          "detail_cn": "升 0.5 档 · 热门 1.02→0.92（降水） · 受让 0.88→0.98（抬水） 现盘去水隐含：South Africa 50.8% · Canada 49.2%（超收 2.6%） 模型穿盘（现档 South Africa -0.25 · Canada +0.25）：South Africa 39.1% · Canada 60.9% 模型−市场：South Africa -11.7pp · Canada +11.7pp 期望 ROI@现水：South Africa -24.9% · Canada +81.5% 档位向热门加深且热门降水，盘路变化与实力/xG 方向一致，定价支持热门穿盘。",
+          "actuarial": {
+            "actuarial_type": "genuine_strength",
+            "actuarial_cn": "真实挺盘",
+            "actuarial_color": "#5BBF8A",
+            "actuarial_desc": "档位向热门加深且热门降水，盘路变化与实力/xG 方向一致，定价支持热门穿盘。",
+            "summary_cn": "升 0.5 档 · 热门 1.02→0.92（降水） · 受让 0.88→0.98（抬水） 现盘去水隐含：South Africa 50.8% · Canada 49.2%（超收 2.6%） 模型穿盘（现档 South Africa -0.25 · Canada +0.25）：South Africa 39.1% · Canada 60.9% 模型−市场：South Africa -11.7pp · Canada +11.7pp 期望 ROI@现水：South Africa -24.9% · Canada +81.5% 档位向热门加深且热门降水，盘路变化与实力/xG 方向一致，定价支持热门穿盘。",
+            "line_delta": 0.5,
+            "line_delta_cn": "升 0.5 档",
+            "fav_odds_delta": -0.1,
+            "dog_odds_delta": 0.1,
+            "water_move_cn": "热门 1.02→0.92（降水） · 受让 0.88→0.98（抬水）",
+            "open_tier": -0.25,
+            "open_tier_label": "Canada -0.25 · South Africa +0.25",
+            "now_tier": 0.25,
+            "implied_tier": 0,
+            "open_tier_gap": -0.25,
+            "now_tier_gap": 0.25,
+            "open_devig": {
+              "fav_pct": 48.2,
+              "dog_pct": 51.8,
+              "overround_pct": 2.7
+            },
+            "now_devig": {
+              "fav_pct": 50.8,
+              "dog_pct": 49.2,
+              "overround_pct": 2.6
+            },
+            "model_cover_open_pct": 49.1,
+            "model_cover_now_pct": 39.1,
+            "model_dog_cover_now_pct": 60.9,
+            "market_fav_cover_now_pct": 50.8,
+            "market_dog_cover_now_pct": 49.2,
+            "model_vs_market_fav_pp": -11.7,
+            "model_vs_market_dog_pp": 11.7,
+            "fav_roi_pct": -24.9,
+            "dog_roi_pct": 81.5,
+            "fav_name": "South Africa",
+            "dog_name": "Canada"
+          }
+        },
+        "spread_market_analysis": {
+          "actuarial_type": "genuine_strength",
+          "actuarial_cn": "真实挺盘",
+          "actuarial_color": "#5BBF8A",
+          "actuarial_desc": "档位向热门加深且热门降水，盘路变化与实力/xG 方向一致，定价支持热门穿盘。",
+          "summary_cn": "升 0.5 档 · 热门 1.02→0.92（降水） · 受让 0.88→0.98（抬水） 现盘去水隐含：South Africa 50.8% · Canada 49.2%（超收 2.6%） 模型穿盘（现档 South Africa -0.25 · Canada +0.25）：South Africa 39.1% · Canada 60.9% 模型−市场：South Africa -11.7pp · Canada +11.7pp 期望 ROI@现水：South Africa -24.9% · Canada +81.5% 档位向热门加深且热门降水，盘路变化与实力/xG 方向一致，定价支持热门穿盘。",
+          "line_delta": 0.5,
+          "line_delta_cn": "升 0.5 档",
+          "fav_odds_delta": -0.1,
+          "dog_odds_delta": 0.1,
+          "water_move_cn": "热门 1.02→0.92（降水） · 受让 0.88→0.98（抬水）",
+          "open_tier": -0.25,
+          "open_tier_label": "Canada -0.25 · South Africa +0.25",
+          "now_tier": 0.25,
+          "implied_tier": 0,
+          "open_tier_gap": -0.25,
+          "now_tier_gap": 0.25,
+          "open_devig": {
+            "fav_pct": 48.2,
+            "dog_pct": 51.8,
+            "overround_pct": 2.7
+          },
+          "now_devig": {
+            "fav_pct": 50.8,
+            "dog_pct": 49.2,
+            "overround_pct": 2.6
+          },
+          "model_cover_open_pct": 49.1,
+          "model_cover_now_pct": 39.1,
+          "model_dog_cover_now_pct": 60.9,
+          "market_fav_cover_now_pct": 50.8,
+          "market_dog_cover_now_pct": 49.2,
+          "model_vs_market_fav_pp": -11.7,
+          "model_vs_market_dog_pp": 11.7,
+          "fav_roi_pct": -24.9,
+          "dog_roi_pct": 81.5,
+          "fav_name": "South Africa",
+          "dog_name": "Canada"
         },
         "totals_pick_layers": {
           "model_side": "neutral",

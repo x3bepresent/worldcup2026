@@ -1,8 +1,8 @@
-// 今日赛事 — Day 19 enriched
-// Last updated: 2026-06-29T19:48:07+08:00
+// 今日赛事 — 淘汰赛 · 32强 (signals enriched)
+// Last updated: 2026-06-29T20:14:46+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-29T19:48:07+08:00",
-  "syncSource": "FIFA 赛程 · Day 19 · 32强 3场 enriched",
+  "lastUpdated": "2026-06-29T20:14:46+08:00",
+  "syncSource": "FIFA 赛程 · Day 19 · 32强 3场 enriched · 推演概要+小组形势",
   "phase": "knockout",
   "phase_cn": "淘汰赛 · 32强",
   "breakingNews": [
@@ -306,7 +306,7 @@ const MATCH_DATA = {
           {
             "icon": "🌤️",
             "label": "赛场气候",
-            "text": "休斯顿夏夜 · 32°C · 湿度 58%；M76 巴西 vs 日本 · 高温封闭"
+            "text": "休斯顿夏夜 · 32°C · 湿度 58% · 降雨概率 20% · 封闭；M76 巴西 vs 日本 · 高温封闭（32°C 封闭）"
           },
           {
             "icon": "⚽",
@@ -492,10 +492,88 @@ const MATCH_DATA = {
           "spread_open_cn": "Brazil -0.5/1@1.04 · Japan +0.5/1@0.8",
           "spread_now_cn": "Brazil -0.5/1@0.96 · Japan +0.5/1@0.88",
           "totals_now_cn": "大小 2/2.5 · 大 0.88 / 小 1",
-          "tag": "fav_defense",
-          "tag_cn": "降大小 · 巴西高水",
-          "tag_color": "#D95F6A",
-          "detail_cn": "让球 -0.5/1 不动 · 巴西 1.04→0.96 仍高水、日本 0.80→0.88；大小 2.5→2/2.5，大 1.00→0.88、小 0.80→1.00 抬水。"
+          "tag": "genuine_strength",
+          "tag_cn": "真实挺盘",
+          "tag_color": "#5BBF8A",
+          "detail_cn": "档位持平 · 热门 1.04→0.96（降水） · 受让 0.8→0.88（抬水） 现盘去水隐含：Brazil 49% · Japan 51%（超收 4.2%） 模型穿盘（现档 Brazil -0.75 · Japan +0.75）：Brazil 50.1% · Japan 49.9% 模型−市场：Brazil +1.1pp · Japan -1.1pp 期望 ROI@现水：Brazil -1.8% · Japan +43.7% 档位向热门加深且热门降水，盘路变化与实力/xG 方向一致，定价支持热门穿盘。",
+          "actuarial": {
+            "actuarial_type": "genuine_strength",
+            "actuarial_cn": "真实挺盘",
+            "actuarial_color": "#5BBF8A",
+            "actuarial_desc": "档位向热门加深且热门降水，盘路变化与实力/xG 方向一致，定价支持热门穿盘。",
+            "summary_cn": "档位持平 · 热门 1.04→0.96（降水） · 受让 0.8→0.88（抬水） 现盘去水隐含：Brazil 49% · Japan 51%（超收 4.2%） 模型穿盘（现档 Brazil -0.75 · Japan +0.75）：Brazil 50.1% · Japan 49.9% 模型−市场：Brazil +1.1pp · Japan -1.1pp 期望 ROI@现水：Brazil -1.8% · Japan +43.7% 档位向热门加深且热门降水，盘路变化与实力/xG 方向一致，定价支持热门穿盘。",
+            "line_delta": 0,
+            "line_delta_cn": "档位持平",
+            "fav_odds_delta": -0.08,
+            "dog_odds_delta": 0.08,
+            "water_move_cn": "热门 1.04→0.96（降水） · 受让 0.8→0.88（抬水）",
+            "open_tier": 0.75,
+            "open_tier_label": "Brazil -0.75 · Japan +0.75",
+            "now_tier": 0.75,
+            "implied_tier": 0.25,
+            "open_tier_gap": 0.5,
+            "now_tier_gap": 0.5,
+            "open_devig": {
+              "fav_pct": 46.9,
+              "dog_pct": 53.1,
+              "overround_pct": 4.6
+            },
+            "now_devig": {
+              "fav_pct": 49,
+              "dog_pct": 51,
+              "overround_pct": 4.2
+            },
+            "model_cover_open_pct": 50.1,
+            "model_cover_now_pct": 50.1,
+            "model_dog_cover_now_pct": 49.9,
+            "market_fav_cover_now_pct": 49,
+            "market_dog_cover_now_pct": 51,
+            "model_vs_market_fav_pp": 1.1,
+            "model_vs_market_dog_pp": -1.1,
+            "fav_roi_pct": -1.8,
+            "dog_roi_pct": 43.7,
+            "fav_name": "Brazil",
+            "dog_name": "Japan"
+          }
+        },
+        "spread_market_analysis": {
+          "actuarial_type": "genuine_strength",
+          "actuarial_cn": "真实挺盘",
+          "actuarial_color": "#5BBF8A",
+          "actuarial_desc": "档位向热门加深且热门降水，盘路变化与实力/xG 方向一致，定价支持热门穿盘。",
+          "summary_cn": "档位持平 · 热门 1.04→0.96（降水） · 受让 0.8→0.88（抬水） 现盘去水隐含：Brazil 49% · Japan 51%（超收 4.2%） 模型穿盘（现档 Brazil -0.75 · Japan +0.75）：Brazil 50.1% · Japan 49.9% 模型−市场：Brazil +1.1pp · Japan -1.1pp 期望 ROI@现水：Brazil -1.8% · Japan +43.7% 档位向热门加深且热门降水，盘路变化与实力/xG 方向一致，定价支持热门穿盘。",
+          "line_delta": 0,
+          "line_delta_cn": "档位持平",
+          "fav_odds_delta": -0.08,
+          "dog_odds_delta": 0.08,
+          "water_move_cn": "热门 1.04→0.96（降水） · 受让 0.8→0.88（抬水）",
+          "open_tier": 0.75,
+          "open_tier_label": "Brazil -0.75 · Japan +0.75",
+          "now_tier": 0.75,
+          "implied_tier": 0.25,
+          "open_tier_gap": 0.5,
+          "now_tier_gap": 0.5,
+          "open_devig": {
+            "fav_pct": 46.9,
+            "dog_pct": 53.1,
+            "overround_pct": 4.6
+          },
+          "now_devig": {
+            "fav_pct": 49,
+            "dog_pct": 51,
+            "overround_pct": 4.2
+          },
+          "model_cover_open_pct": 50.1,
+          "model_cover_now_pct": 50.1,
+          "model_dog_cover_now_pct": 49.9,
+          "market_fav_cover_now_pct": 49,
+          "market_dog_cover_now_pct": 51,
+          "model_vs_market_fav_pp": 1.1,
+          "model_vs_market_dog_pp": -1.1,
+          "fav_roi_pct": -1.8,
+          "dog_roi_pct": 43.7,
+          "fav_name": "Brazil",
+          "dog_name": "Japan"
         },
         "totals_pick_layers": {
           "model_side": "over",
@@ -1251,8 +1329,8 @@ const MATCH_DATA = {
         "cover_given_win_pct": 100,
         "spread_level": "possible",
         "spread_market_expect": "Brazil -0.75 · 净胜≥1",
-        "line_move_tag": "fav_defense",
-        "line_move_cn": "降大小 · 巴西高水",
+        "line_move_tag": "genuine_strength",
+        "line_move_cn": "真实挺盘",
         "agent_pick_primary": "spread",
         "agent_pick_tendency_cn": "更倾向让球盘",
         "agent_pick_confidence": "high",
@@ -1542,7 +1620,7 @@ const MATCH_DATA = {
           {
             "icon": "🌤️",
             "label": "赛场气候",
-            "text": "波士顿夏晨 · 24°C · 湿度 62%；M74 德国 vs 巴拉圭"
+            "text": "波士顿夏晨 · 24°C · 湿度 62% · 降雨概率 25% · 海风 2级；M74 德国 vs 巴拉圭（24°C）"
           },
           {
             "icon": "⚽",
@@ -1726,10 +1804,88 @@ const MATCH_DATA = {
           "spread_open_cn": "Germany -1/1.5@0.9 · Paraguay +1/1.5@0.92",
           "spread_now_cn": "Germany -1.5@1.04 · Paraguay +1.5@0.85",
           "totals_now_cn": "大小 2.5/3 · 大 0.91 / 小 0.97",
-          "tag": "fav_defense",
-          "tag_cn": "升盘 -1.5 · 德国高水",
+          "tag": "book_trap_fav",
+          "tag_cn": "精算诱上",
           "tag_color": "#D95F6A",
-          "detail_cn": "让球 -1/1.5 → -1.5 升盘 · 德国 0.83→1.04 抬水、巴拉圭 1.06→0.85 降水；深盘配受让低水，穿盘须净胜≥2。"
+          "detail_cn": "升 0.25 档 · 热门 0.9→1.04（抬水） · 受让 0.92→0.85（降水） 现盘去水隐含：Germany 47.6% · Paraguay 52.4%（超收 3.1%） 模型穿盘（现档 Germany -1.5 · Paraguay +1.5）：Germany 46.7% · Paraguay 53.3% 模型−市场：Germany -0.9pp · Paraguay +0.9pp 期望 ROI@现水：Germany +21.9% · Paraguay -9.4% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+          "actuarial": {
+            "actuarial_type": "book_trap_fav",
+            "actuarial_cn": "精算诱上",
+            "actuarial_color": "#D95F6A",
+            "actuarial_desc": "升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+            "summary_cn": "升 0.25 档 · 热门 0.9→1.04（抬水） · 受让 0.92→0.85（降水） 现盘去水隐含：Germany 47.6% · Paraguay 52.4%（超收 3.1%） 模型穿盘（现档 Germany -1.5 · Paraguay +1.5）：Germany 46.7% · Paraguay 53.3% 模型−市场：Germany -0.9pp · Paraguay +0.9pp 期望 ROI@现水：Germany +21.9% · Paraguay -9.4% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+            "line_delta": 0.25,
+            "line_delta_cn": "升 0.25 档",
+            "fav_odds_delta": 0.14,
+            "dog_odds_delta": -0.07,
+            "water_move_cn": "热门 0.9→1.04（抬水） · 受让 0.92→0.85（降水）",
+            "open_tier": 1.25,
+            "open_tier_label": "Germany -1.25 · Paraguay +1.25",
+            "now_tier": 1.5,
+            "implied_tier": 0.75,
+            "open_tier_gap": 0.5,
+            "now_tier_gap": 0.75,
+            "open_devig": {
+              "fav_pct": 50.3,
+              "dog_pct": 49.7,
+              "overround_pct": 4.7
+            },
+            "now_devig": {
+              "fav_pct": 47.6,
+              "dog_pct": 52.4,
+              "overround_pct": 3.1
+            },
+            "model_cover_open_pct": 46.7,
+            "model_cover_now_pct": 46.7,
+            "model_dog_cover_now_pct": 53.3,
+            "market_fav_cover_now_pct": 47.6,
+            "market_dog_cover_now_pct": 52.4,
+            "model_vs_market_fav_pp": -0.9,
+            "model_vs_market_dog_pp": 0.9,
+            "fav_roi_pct": 21.9,
+            "dog_roi_pct": -9.4,
+            "fav_name": "Germany",
+            "dog_name": "Paraguay"
+          }
+        },
+        "spread_market_analysis": {
+          "actuarial_type": "book_trap_fav",
+          "actuarial_cn": "精算诱上",
+          "actuarial_color": "#D95F6A",
+          "actuarial_desc": "升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+          "summary_cn": "升 0.25 档 · 热门 0.9→1.04（抬水） · 受让 0.92→0.85（降水） 现盘去水隐含：Germany 47.6% · Paraguay 52.4%（超收 3.1%） 模型穿盘（现档 Germany -1.5 · Paraguay +1.5）：Germany 46.7% · Paraguay 53.3% 模型−市场：Germany -0.9pp · Paraguay +0.9pp 期望 ROI@现水：Germany +21.9% · Paraguay -9.4% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+          "line_delta": 0.25,
+          "line_delta_cn": "升 0.25 档",
+          "fav_odds_delta": 0.14,
+          "dog_odds_delta": -0.07,
+          "water_move_cn": "热门 0.9→1.04（抬水） · 受让 0.92→0.85（降水）",
+          "open_tier": 1.25,
+          "open_tier_label": "Germany -1.25 · Paraguay +1.25",
+          "now_tier": 1.5,
+          "implied_tier": 0.75,
+          "open_tier_gap": 0.5,
+          "now_tier_gap": 0.75,
+          "open_devig": {
+            "fav_pct": 50.3,
+            "dog_pct": 49.7,
+            "overround_pct": 4.7
+          },
+          "now_devig": {
+            "fav_pct": 47.6,
+            "dog_pct": 52.4,
+            "overround_pct": 3.1
+          },
+          "model_cover_open_pct": 46.7,
+          "model_cover_now_pct": 46.7,
+          "model_dog_cover_now_pct": 53.3,
+          "market_fav_cover_now_pct": 47.6,
+          "market_dog_cover_now_pct": 52.4,
+          "model_vs_market_fav_pp": -0.9,
+          "model_vs_market_dog_pp": 0.9,
+          "fav_roi_pct": 21.9,
+          "dog_roi_pct": -9.4,
+          "fav_name": "Germany",
+          "dog_name": "Paraguay"
         },
         "totals_pick_layers": {
           "model_side": "under",
@@ -2482,8 +2638,8 @@ const MATCH_DATA = {
         "cover_given_win_pct": 58.9,
         "spread_level": "possible",
         "spread_market_expect": "Germany -1.5 · 净胜≥2",
-        "line_move_tag": "fav_defense",
-        "line_move_cn": "升盘 -1.5 · 德国高水",
+        "line_move_tag": "book_trap_fav",
+        "line_move_cn": "精算诱上",
         "agent_pick_primary": "spread",
         "agent_pick_tendency_cn": "更倾向让球盘",
         "agent_pick_confidence": "high",
@@ -2772,7 +2928,7 @@ const MATCH_DATA = {
           {
             "icon": "🌤️",
             "label": "赛场气候",
-            "text": "蒙特雷夏午 · 30°C · 湿度 48%；M75 荷兰 vs 摩洛哥 · 海拔 540m"
+            "text": "蒙特雷夏午 · 30°C · 湿度 48% · 降雨概率 15% · 微风；M75 荷兰 vs 摩洛哥 · 海拔 540m（30°C · 海拔）"
           },
           {
             "icon": "⚽",
@@ -2956,10 +3112,88 @@ const MATCH_DATA = {
           "spread_open_cn": "Netherlands -0.5@1.02 · Morocco +0.5@0.8",
           "spread_now_cn": "Netherlands -0/0.5@0.97 · Morocco +0/0.5@0.92",
           "totals_now_cn": "大小 2/2.5 · 大 0.95 / 小 0.93",
-          "tag": "fav_defense",
-          "tag_cn": "荷兰退半档 · 摩洛哥升水",
-          "tag_color": "#D95F6A",
-          "detail_cn": "让球 -0.5→-0/0.5 · 荷 1.02→0.97、摩 0.80→0.92；大小 2/2.5 不动，小 0.85→0.93 略抬。"
+          "tag": "correction",
+          "tag_cn": "向模型修正",
+          "tag_color": "#C8A96E",
+          "detail_cn": "退 0.25 档 · 热门 1.02→0.97（降水） · 受让 0.8→0.92（抬水） 现盘去水隐含：Netherlands 49.4% · Morocco 50.6%（超收 2.8%） 模型穿盘（现档 Netherlands -0.25 · Morocco +0.25）：Netherlands 49.7% · Morocco 50.3% 模型−市场：Netherlands +0.3pp · Morocco -0.3pp 期望 ROI@现水：Netherlands -2.1% · Morocco +46.9% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "actuarial": {
+            "actuarial_type": "correction",
+            "actuarial_cn": "向模型修正",
+            "actuarial_color": "#C8A96E",
+            "actuarial_desc": "盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+            "summary_cn": "退 0.25 档 · 热门 1.02→0.97（降水） · 受让 0.8→0.92（抬水） 现盘去水隐含：Netherlands 49.4% · Morocco 50.6%（超收 2.8%） 模型穿盘（现档 Netherlands -0.25 · Morocco +0.25）：Netherlands 49.7% · Morocco 50.3% 模型−市场：Netherlands +0.3pp · Morocco -0.3pp 期望 ROI@现水：Netherlands -2.1% · Morocco +46.9% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+            "line_delta": -0.25,
+            "line_delta_cn": "退 0.25 档",
+            "fav_odds_delta": -0.05,
+            "dog_odds_delta": 0.12,
+            "water_move_cn": "热门 1.02→0.97（降水） · 受让 0.8→0.92（抬水）",
+            "open_tier": 0.5,
+            "open_tier_label": "Netherlands -0.5 · Morocco +0.5",
+            "now_tier": 0.25,
+            "implied_tier": 0,
+            "open_tier_gap": 0.5,
+            "now_tier_gap": 0.25,
+            "open_devig": {
+              "fav_pct": 47.1,
+              "dog_pct": 52.9,
+              "overround_pct": 5.1
+            },
+            "now_devig": {
+              "fav_pct": 49.4,
+              "dog_pct": 50.6,
+              "overround_pct": 2.8
+            },
+            "model_cover_open_pct": 49.7,
+            "model_cover_now_pct": 49.7,
+            "model_dog_cover_now_pct": 50.3,
+            "market_fav_cover_now_pct": 49.4,
+            "market_dog_cover_now_pct": 50.6,
+            "model_vs_market_fav_pp": 0.3,
+            "model_vs_market_dog_pp": -0.3,
+            "fav_roi_pct": -2.1,
+            "dog_roi_pct": 46.9,
+            "fav_name": "Netherlands",
+            "dog_name": "Morocco"
+          }
+        },
+        "spread_market_analysis": {
+          "actuarial_type": "correction",
+          "actuarial_cn": "向模型修正",
+          "actuarial_color": "#C8A96E",
+          "actuarial_desc": "盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "summary_cn": "退 0.25 档 · 热门 1.02→0.97（降水） · 受让 0.8→0.92（抬水） 现盘去水隐含：Netherlands 49.4% · Morocco 50.6%（超收 2.8%） 模型穿盘（现档 Netherlands -0.25 · Morocco +0.25）：Netherlands 49.7% · Morocco 50.3% 模型−市场：Netherlands +0.3pp · Morocco -0.3pp 期望 ROI@现水：Netherlands -2.1% · Morocco +46.9% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "line_delta": -0.25,
+          "line_delta_cn": "退 0.25 档",
+          "fav_odds_delta": -0.05,
+          "dog_odds_delta": 0.12,
+          "water_move_cn": "热门 1.02→0.97（降水） · 受让 0.8→0.92（抬水）",
+          "open_tier": 0.5,
+          "open_tier_label": "Netherlands -0.5 · Morocco +0.5",
+          "now_tier": 0.25,
+          "implied_tier": 0,
+          "open_tier_gap": 0.5,
+          "now_tier_gap": 0.25,
+          "open_devig": {
+            "fav_pct": 47.1,
+            "dog_pct": 52.9,
+            "overround_pct": 5.1
+          },
+          "now_devig": {
+            "fav_pct": 49.4,
+            "dog_pct": 50.6,
+            "overround_pct": 2.8
+          },
+          "model_cover_open_pct": 49.7,
+          "model_cover_now_pct": 49.7,
+          "model_dog_cover_now_pct": 50.3,
+          "market_fav_cover_now_pct": 49.4,
+          "market_dog_cover_now_pct": 50.6,
+          "model_vs_market_fav_pp": 0.3,
+          "model_vs_market_dog_pp": -0.3,
+          "fav_roi_pct": -2.1,
+          "dog_roi_pct": 46.9,
+          "fav_name": "Netherlands",
+          "dog_name": "Morocco"
         },
         "totals_pick_layers": {
           "model_side": "over",
@@ -3710,8 +3944,8 @@ const MATCH_DATA = {
         "cover_given_win_pct": 100,
         "spread_level": "possible",
         "spread_market_expect": "Netherlands -0.25 · 净胜≥1",
-        "line_move_tag": "fav_defense",
-        "line_move_cn": "荷兰退半档 · 摩洛哥升水",
+        "line_move_tag": "correction",
+        "line_move_cn": "向模型修正",
         "agent_pick_primary": "spread",
         "agent_pick_tendency_cn": "更倾向让球盘",
         "agent_pick_confidence": null,

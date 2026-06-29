@@ -3591,24 +3591,290 @@ function enrichAgentPickWithLayers(agentPick, layers, totalsAnalysis) {
   return out;
 }
 
+/** 解析亚盘字符串为幅度（如 -1/1.5 → 1.25） */
+function parseHandicapMagnitude(str) {
+  const s = String(str || '').trim().replace(/^[-+]/, '');
+  if (!s) return 0;
+  if (s.includes('/')) {
+    const parts = s.split('/').map(p => parseFloat(p.trim()));
+    if (parts.length >= 2 && parts.every(n => !Number.isNaN(n))) return (parts[0] + parts[1]) / 2;
+  }
+  const n = parseFloat(s);
+  return Number.isNaN(n) ? 0 : n;
+}
+
+/** 由 spread_open 块推算 signed tier（正=主队为热门让球） */
+function signedTierFromSpreadBlock(block, homeIsFav) {
+  if (!block?.home_handicap) return null;
+  const h = String(block.home_handicap).trim();
+  const mag = parseHandicapMagnitude(h);
+  if (h.startsWith('-')) return homeIsFav ? mag : -mag;
+  if (h.startsWith('+')) return homeIsFav ? -mag : mag;
+  return homeIsFav ? mag : -mag;
+}
+
+/** 皇冠/港盘水位 → 十进制回报倍数（投 1 赢 water，总返 1+water） */
+function crownWaterToDecimal(odds) {
+  const o = Number(odds);
+  if (!o || o <= 0) return null;
+  return 1 + o;
+}
+
+/** 两水位去水 → 隐含胜率（%）；输入为皇冠港盘 water */
+function devigTwoWayOdds(oddsA, oddsB) {
+  const dA = crownWaterToDecimal(oddsA);
+  const dB = crownWaterToDecimal(oddsB);
+  if (!dA || !dB) return null;
+  const rA = 1 / dA;
+  const rB = 1 / dB;
+  const sum = rA + rB;
+  return {
+    a_pct: Math.round((rA / sum) * 1000) / 10,
+    b_pct: Math.round((rB / sum) * 1000) / 10,
+    overround_pct: Math.round((sum - 1) * 1000) / 10,
+    decimal_a: Math.round(dA * 1000) / 1000,
+    decimal_b: Math.round(dB * 1000) / 1000,
+  };
+}
+
+/** 模型穿盘期望回报（ROI %，含赢半/输半/走水）；odds 为皇冠 water */
+function expectedSpreadRoiPct(cover, water) {
+  const odds = crownWaterToDecimal(water);
+  if (!cover || odds == null) return null;
+  const w = (cover.full_cover_pct || 0) / 100;
+  const wh = (cover.half_cover_pct || 0) / 100;
+  const hl = (cover.half_lose_pct || 0) / 100;
+  const pu = (cover.push_pct || 0) / 100;
+  const ev = w * odds + wh * odds * 0.5 - hl * 0.5 + pu - 1;
+  return Math.round(ev * 1000) / 10;
+}
+
+function expectedDogSpreadRoiPct(cover, dogWater) {
+  const mult = crownWaterToDecimal(dogWater);
+  if (!cover || !mult) return null;
+  const favFull = (cover.full_cover_pct || 0) / 100;
+  const favHalfCover = (cover.half_cover_pct || 0) / 100;
+  const favHalfLose = (cover.half_lose_pct || 0) / 100;
+  const pu = (cover.push_pct || 0) / 100;
+  const favFullLose = Math.max(0, 1 - favFull - favHalfCover - favHalfLose - pu);
+  const ev = favFullLose * mult + favHalfLose * mult * 0.5 - favFull - favHalfCover * 0.5 + pu;
+  return Math.round(ev * 1000) / 10;
+}
+
+const ACTUARIAL_MOVE_META = {
+  genuine_strength: {
+    tag: 'genuine_strength',
+    cn: '真实挺盘',
+    color: '#5BBF8A',
+    desc: '档位向热门加深且热门降水，盘路变化与实力/xG 方向一致，定价支持热门穿盘。',
+  },
+  sharp_steam: {
+    tag: 'sharp_steam',
+    cn: '资金砸盘',
+    color: '#5BBF8A',
+    desc: '档位明显向热门加深且热门持续降水，典型跟进资金推盘，与模型同向但已透支部分空间。',
+  },
+  book_trap_fav: {
+    tag: 'book_trap_fav',
+    cn: '精算诱上',
+    color: '#D95F6A',
+    desc: '升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。',
+  },
+  book_value_dog: {
+    tag: 'book_value_dog',
+    cn: '受让低水定价',
+    color: '#C8A96E',
+    desc: '退档或热门抬水配合受让降水，定价重心在防守侧/受让。',
+  },
+  correction: {
+    tag: 'correction',
+    cn: '向模型修正',
+    color: '#C8A96E',
+    desc: '盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。',
+  },
+  flat: {
+    tag: 'flat',
+    cn: '盘路平稳',
+    color: '#7BB8D4',
+    desc: '档位与水位变化幅度有限，暂无明确单向资金信号。',
+  },
+};
+
 /**
- * 盘路变化展示 — 初盘/现盘（用户录入）+ 世界杯主客说明
+ * 精算盘路分类 — 初盘→现盘（档位+水）× xG 隐含
+ * lineDelta>0 = 向热门加深；favOddsDelta>0 = 热门抬水
  */
-function buildMarketLineMovement(raw, homeName, awayName) {
+function classifyActuarialSpreadMove(opts) {
+  const {
+    lineDelta, favOddsDelta, dogOddsDelta, openTierGap, nowTierGap,
+  } = opts;
+  const LINE_SIG = 0.2;
+  const WATER_SIG = 0.04;
+  const lineUp = lineDelta > LINE_SIG;
+  const lineDown = lineDelta < -LINE_SIG;
+  const favDown = favOddsDelta < -WATER_SIG;
+  const favUp = favOddsDelta > WATER_SIG;
+  const dogDown = dogOddsDelta < -WATER_SIG;
+  const dogUp = dogOddsDelta > WATER_SIG;
+  const gapClosing = Math.abs(nowTierGap) < Math.abs(openTierGap) - 0.12;
+
+  if (Math.abs(lineDelta) < LINE_SIG && Math.abs(favOddsDelta) < WATER_SIG && Math.abs(dogOddsDelta) < WATER_SIG) {
+    return 'flat';
+  }
+  if (gapClosing && (lineUp || lineDown)) return 'correction';
+  if (lineUp && favDown && Math.abs(nowTierGap) <= Math.abs(openTierGap) + 0.15) return 'genuine_strength';
+  if (lineUp && favDown) return 'sharp_steam';
+  if (lineUp && favUp && dogDown) return 'book_trap_fav';
+  if (lineUp && favUp) return 'book_trap_fav';
+  if (lineDown && dogDown && favUp) return 'book_value_dog';
+  if (!lineUp && !lineDown && favUp && dogDown) return 'book_trap_fav';
+  if (!lineUp && !lineDown && favDown && dogUp) return 'genuine_strength';
+  if (lineDown && favDown) return 'book_value_dog';
+  return lineUp ? 'book_trap_fav' : lineDown ? 'book_value_dog' : 'flat';
+}
+
+/**
+ * 精算让球盘分析 — 初盘/现盘 → 隐含胜率、模型对比、盘路定性
+ */
+function buildSpreadMarketAnalysis(raw, match, xgH, xgA) {
+  const open = raw.spread_open;
+  const now = raw.spread_now;
+  if (!open || !now) return null;
+
+  const tierNow = Number(raw.market_tier) || 0;
+  const homeIsFav = tierNow >= 0;
+  const favName = homeIsFav ? match.home.name : match.away.name;
+  const dogName = homeIsFav ? match.away.name : match.home.name;
+
+  const openTier = signedTierFromSpreadBlock(open, homeIsFav);
+  const lineDelta = openTier != null ? Math.round((tierNow - openTier) * 100) / 100 : 0;
+
+  const openFavOdds = homeIsFav ? open.home_odds : open.away_odds;
+  const openDogOdds = homeIsFav ? open.away_odds : open.home_odds;
+  const nowFavOdds = Number(raw.spread_fav_odds ?? (homeIsFav ? now.home_odds : now.away_odds));
+  const nowDogOdds = Number(raw.spread_dog_odds ?? (homeIsFav ? now.away_odds : now.home_odds));
+  if (!openFavOdds || !openDogOdds || !nowFavOdds || !nowDogOdds) return null;
+
+  const favOddsDelta = Math.round((nowFavOdds - openFavOdds) * 100) / 100;
+  const dogOddsDelta = Math.round((nowDogOdds - openDogOdds) * 100) / 100;
+
+  const impliedTier = impliedTierFromXg(xgH, xgA);
+  const openTierGap = openTier != null ? Math.round((openTier - impliedTier) * 100) / 100 : null;
+  const nowTierGap = Math.round((tierNow - impliedTier) * 100) / 100;
+
+  const coverOpen = openTier != null ? computeSpreadCover(xgH, xgA, openTier) : null;
+  const coverNow = computeSpreadCover(xgH, xgA, tierNow);
+
+  const openDevig = devigTwoWayOdds(openFavOdds, openDogOdds);
+  const nowDevig = devigTwoWayOdds(nowFavOdds, nowDogOdds);
+  if (!nowDevig) return null;
+
+  const actuarialType = classifyActuarialSpreadMove({
+    lineDelta,
+    favOddsDelta,
+    dogOddsDelta,
+    openTierGap: openTierGap ?? nowTierGap,
+    nowTierGap,
+  });
+  const meta = ACTUARIAL_MOVE_META[actuarialType] || ACTUARIAL_MOVE_META.flat;
+
+  const modelFavCover = coverNow.full_cover_pct;
+  const modelDogCover = coverNow.dog_hold_pct;
+  const modelFavOpen = coverOpen?.full_cover_pct ?? null;
+  const marketFavNow = nowDevig.a_pct;
+  const marketDogNow = nowDevig.b_pct;
+  const favEdge = Math.round((modelFavCover - marketFavNow) * 10) / 10;
+  const dogEdge = Math.round((modelDogCover - marketDogNow) * 10) / 10;
+
+  const favRoi = expectedSpreadRoiPct(coverNow, nowFavOdds);
+  const dogRoi = expectedDogSpreadRoiPct(coverNow, nowDogOdds);
+
+  const lineDeltaCn = lineDelta > 0.05
+    ? '升 ' + lineDelta + ' 档'
+    : lineDelta < -0.05
+      ? '退 ' + Math.abs(lineDelta) + ' 档'
+      : '档位持平';
+  const waterCn =
+    '热门 ' + openFavOdds + '→' + nowFavOdds
+    + (favOddsDelta > 0 ? '（抬水）' : favOddsDelta < 0 ? '（降水）' : '')
+    + ' · 受让 ' + openDogOdds + '→' + nowDogOdds
+    + (dogOddsDelta > 0 ? '（抬水）' : dogOddsDelta < 0 ? '（降水）' : '');
+
+  const summaryCn = [
+    lineDeltaCn + ' · ' + waterCn,
+    '现盘去水隐含：' + favName + ' ' + marketFavNow + '% · ' + dogName + ' ' + marketDogNow + '%（超收 ' + nowDevig.overround_pct + '%）',
+    '模型穿盘（现档 ' + formatTierLabel(tierNow, match.home.name, match.away.name) + '）：'
+      + favName + ' ' + modelFavCover + '% · ' + dogName + ' ' + modelDogCover + '%',
+    '模型−市场：' + favName + ' ' + (favEdge >= 0 ? '+' : '') + favEdge + 'pp · '
+      + dogName + ' ' + (dogEdge >= 0 ? '+' : '') + dogEdge + 'pp',
+    favRoi != null ? '期望 ROI@现水：' + favName + ' ' + (favRoi >= 0 ? '+' : '') + favRoi + '% · '
+      + dogName + ' ' + (dogRoi >= 0 ? '+' : '') + dogRoi + '%' : '',
+    meta.desc,
+  ].filter(Boolean).join(' ');
+
+  return {
+    actuarial_type: actuarialType,
+    actuarial_cn: meta.cn,
+    actuarial_color: meta.color,
+    actuarial_desc: meta.desc,
+    summary_cn: summaryCn,
+    line_delta: lineDelta,
+    line_delta_cn: lineDeltaCn,
+    fav_odds_delta: favOddsDelta,
+    dog_odds_delta: dogOddsDelta,
+    water_move_cn: waterCn,
+    open_tier: openTier,
+    open_tier_label: openTier != null ? formatTierLabel(openTier, match.home.name, match.away.name) : null,
+    now_tier: tierNow,
+    implied_tier: impliedTier,
+    open_tier_gap: openTierGap,
+    now_tier_gap: nowTierGap,
+    open_devig: openDevig
+      ? { fav_pct: openDevig.a_pct, dog_pct: openDevig.b_pct, overround_pct: openDevig.overround_pct }
+      : null,
+    now_devig: {
+      fav_pct: marketFavNow,
+      dog_pct: marketDogNow,
+      overround_pct: nowDevig.overround_pct,
+    },
+    model_cover_open_pct: modelFavOpen,
+    model_cover_now_pct: modelFavCover,
+    model_dog_cover_now_pct: modelDogCover,
+    market_fav_cover_now_pct: marketFavNow,
+    market_dog_cover_now_pct: marketDogNow,
+    model_vs_market_fav_pp: favEdge,
+    model_vs_market_dog_pp: dogEdge,
+    fav_roi_pct: favRoi,
+    dog_roi_pct: dogRoi,
+    fav_name: favName,
+    dog_name: dogName,
+  };
+}
+
+/**
+ * 盘路变化展示 — 初盘/现盘（用户录入）+ 精算分析 + 世界杯主客说明
+ */
+function buildMarketLineMovement(raw, homeName, awayName, spreadAnalysis) {
   if (!raw?.spread_now && !raw?.line_move) return null;
   const tagMeta = {
     flat: { cn: '盘口平稳', color: '#7BB8D4' },
     fav_defense: { cn: '热门防守', color: '#D95F6A' },
     fav_strength: { cn: '热门加强', color: '#5BBF8A' },
+    fav_steam: { cn: '热门降水', color: '#5BBF8A' },
     dog_value: { cn: '受让增值', color: '#5BBF8A' },
     correction: { cn: '盘口修正', color: '#C8A96E' },
     away_edge: { cn: '向客队倾斜', color: '#7BB8D4' },
     home_edge: { cn: '向主队倾斜', color: '#7BB8D4' },
+    genuine_strength: { cn: '真实挺盘', color: '#5BBF8A' },
+    sharp_steam: { cn: '资金砸盘', color: '#5BBF8A' },
+    book_trap_fav: { cn: '精算诱上', color: '#D95F6A' },
+    book_value_dog: { cn: '受让低水定价', color: '#C8A96E' },
   };
   const open = raw.spread_open;
   const now = raw.spread_now;
   const tn = raw.totals_now;
-  const tag = raw.line_move?.tag || 'flat';
+  const act = spreadAnalysis;
+  const tag = act?.actuarial_type || raw.line_move?.tag || 'flat';
   const meta = tagMeta[tag] || tagMeta.flat;
   const fmtSpread = block => {
     if (!block) return null;
@@ -3616,6 +3882,9 @@ function buildMarketLineMovement(raw, homeName, awayName) {
     const aOdds = block.away_odds != null ? '@' + block.away_odds : '';
     return homeName + ' ' + block.home_handicap + hOdds + ' · ' + awayName + ' ' + block.away_handicap + aOdds;
   };
+  const detailParts = [];
+  if (act?.summary_cn) detailParts.push(act.summary_cn);
+  else if (raw.line_move?.detail) detailParts.push(raw.line_move.detail);
   return {
     wc_note: raw.wc_venue_note
       || '世界杯中立赛场 · FIFA 主/客仅为赛历标签，不等于真实主场优势',
@@ -3625,9 +3894,10 @@ function buildMarketLineMovement(raw, homeName, awayName) {
       ? '大小 ' + (tn.line_display || tn.line) + ' · 大 ' + tn.over_odds + ' / 小 ' + tn.under_odds
       : null,
     tag,
-    tag_cn: raw.line_move?.cn || meta.cn,
-    tag_color: meta.color,
-    detail_cn: raw.line_move?.detail || '',
+    tag_cn: act?.actuarial_cn || raw.line_move?.cn || meta.cn,
+    tag_color: act?.actuarial_color || meta.color,
+    detail_cn: detailParts.join(' '),
+    actuarial: act,
   };
 }
 
@@ -3670,6 +3940,8 @@ function buildDepthCalibration(match, raw, groupSnapshots) {
   const agentPick = enrichAgentPickWithLayers(raw.agent_pick || null, totalsPickLayers, totals);
   const implied = impliedTierFromXg(xgH, xgA);
   const tierGap = tier - implied;
+
+  const spreadMarketAnalysis = buildSpreadMarketAnalysis(raw, match, xgH, xgA);
 
   const favOdds = raw.spread_fav_odds;
   const dogOdds = raw.spread_dog_odds;
@@ -3776,7 +4048,8 @@ function buildDepthCalibration(match, raw, groupSnapshots) {
     spread_alt: spreadAlt,
     totals_analysis: totals,
     totals_line: raw.totals_line ?? 2.5,
-    market_line_movement: buildMarketLineMovement(raw, match.home.name, match.away.name),
+    market_line_movement: buildMarketLineMovement(raw, match.home.name, match.away.name, spreadMarketAnalysis),
+    spread_market_analysis: spreadMarketAnalysis,
     totals_pick_layers: totalsPickLayers,
     agent_pick: agentPick,
     applied_delta: delta,
@@ -4690,6 +4963,9 @@ const exportsObj = {
   computeTotalsPickLayers,
   enrichAgentPickWithLayers,
   buildMarketLineMovement,
+  buildSpreadMarketAnalysis,
+  classifyActuarialSpreadMove,
+  devigTwoWayOdds,
   buildPublicSummaryNote,
   buildCalibrationDisplay,
   buildTotalsDisplay,
