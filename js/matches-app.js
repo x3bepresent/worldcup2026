@@ -2600,6 +2600,102 @@ function renderDepthCalibrationBlock(dc, upsetAlert, prediction, homeName, awayN
     </div>`;
 }
 
+/** 淘汰赛 / 小组形势 — 按赛段切换 */
+function renderContextPanel(m) {
+  if (typeof KnockoutBracket !== 'undefined' && KnockoutBracket.isKnockoutMatch(m)) {
+    return renderKnockoutPathPanel(m);
+  }
+  return renderGroupContextPanel(m.group_context);
+}
+
+function renderKnockoutPathPanel(m) {
+  if (typeof KnockoutBracket === 'undefined') return '';
+  const data = KnockoutBracket.buildWinnerPath(m);
+  if (!data) return '';
+
+  const slotTag = m.knockout_slot || `M${m.fifa_match_number}`;
+  const nextHint = m.knockout_next ? m.knockout_next.replace(/^胜者\s*→\s*/, '') : '';
+
+  const pathRow = (teamName, path, side) => {
+    if (!path?.length) return '';
+    const cells = path.map((step, i) => `
+      <div class="ko-path-step${step.active ? ' ko-path-step--active' : ''}">
+        <span class="ko-path-step-round">${step.round_cn}</span>
+        <span class="ko-path-step-tag">${step.tag}</span>
+        <span class="ko-path-step-text">${step.text}</span>
+        ${i < path.length - 1 ? '<span class="ko-path-arrow" aria-hidden="true">→</span>' : ''}
+      </div>`).join('');
+    return `
+      <div class="ko-path-track ko-path-track--${side}">
+        <div class="ko-path-track-head">
+          <span class="ko-path-team">${teamName}</span>
+          <span class="ko-path-track-sub">若本场晋级</span>
+        </div>
+        <div class="ko-path-flow">${cells}</div>
+      </div>`;
+  };
+
+  const gridCells = (data.r32_grid || []).map((cell) => `
+    <div class="ko-r32-cell${cell.highlight ? ' ko-r32-cell--here' : ''}${cell.done ? ' ko-r32-cell--done' : ''}">
+      <div class="ko-r32-cell-no">M${cell.no}</div>
+      <div class="ko-r32-cell-teams">${cell.home}<span class="ko-r32-vs">vs</span>${cell.away}</div>
+      ${cell.score ? `<div class="ko-r32-cell-score">${cell.score}</div>` : ''}
+      ${cell.winner ? `<div class="ko-r32-cell-win">✓ ${cell.winner}</div>` : ''}
+    </div>`).join('');
+
+  const branchNodes = (data.branch || []).map((node, i) => {
+    let label;
+    if (node.no === m.fifa_match_number) {
+      label = `${m.home?.name} vs ${m.away?.name}`;
+    } else if (node.winner) {
+      label = `✓ ${node.winner}`;
+    } else if (node.home && node.away && !String(node.home).includes('胜者')) {
+      label = `${node.home} vs ${node.away}`;
+    } else {
+      label = `M${node.no} 待定`;
+    }
+    return `
+    <div class="ko-branch-node${node.no === m.fifa_match_number ? ' ko-branch-node--here' : ''}">
+      <span class="ko-branch-tag">${node.round_cn || '32强'}</span>
+      <span class="ko-branch-no">M${node.no}</span>
+      <span class="ko-branch-label">${label}</span>
+    </div>
+    ${i < data.branch.length - 1 ? '<span class="ko-branch-arrow" aria-hidden="true">→</span>' : ''}`;
+  }).join('');
+
+  return `
+    <div class="ko-path-panel">
+      <header class="ko-path-header">
+        <div class="ko-path-header-left">
+          <span class="ko-path-icon">⚔️</span>
+          <div>
+            <div class="ko-path-title">32强淘汰赛 · 晋级路径矩阵</div>
+            <div class="ko-path-sub">${slotTag}${nextHint ? ` · 下轮 ${nextHint}` : ''}</div>
+          </div>
+        </div>
+        <div class="ko-format-pills">
+          <span class="ko-format-pill">单场淘汰</span>
+          <span class="ko-format-pill ko-format-pill--gold">胜者知下一场</span>
+        </div>
+      </header>
+      ${panelLegend('FIFA 2026 官方对阵树 · 队名随赛果自动更新 · 未赛场次显示槽位/预览对手')}
+
+      <div class="ko-path-body">
+        <div class="ko-section-label">本场两队 · 若胜后续对手</div>
+        <div class="ko-path-dual">
+          ${pathRow(data.home_name, data.home_path, 'home')}
+          ${pathRow(data.away_name, data.away_path, 'away')}
+        </div>
+
+        <div class="ko-section-label">本队半区 · 晋级走廊</div>
+        <div class="ko-branch-strip">${branchNodes}</div>
+
+        <div class="ko-section-label">32强全景矩阵 <span class="ko-section-hint">（本场高亮）</span></div>
+        <div class="ko-r32-grid">${gridCells}</div>
+      </div>
+    </div>`;
+}
+
 /** 小组形势 & 晋级路径预判 — UI helpers */
 function gcPathBody(text) {
   if (!text) return '—';
@@ -3452,7 +3548,7 @@ function renderMatch(m) {
 
     </div><!-- end detail grid -->
 
-    ${renderGroupContextPanel(m.group_context)}
+    ${renderContextPanel(m)}
 
     <!-- 灵力分析已下线（无回测口径，与 xG 推演重复） -->
     ${mysticPanel(m.mystic, m.home.name, m.away.name)}

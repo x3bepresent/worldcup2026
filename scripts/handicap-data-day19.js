@@ -4,7 +4,7 @@
  */
 module.exports = {
   m76: {
-    market_tier: 1.25,
+    market_tier: 0.75,
     totals_line: 2.25,
     public_lean: 'home',
     public_pct: 62,

@@ -1,7 +1,7 @@
 // 今日赛事 — 淘汰赛 · 32强 (signals enriched)
-// Last updated: 2026-06-29T14:12:20+08:00
+// Last updated: 2026-06-29T14:33:14+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-29T14:12:20+08:00",
+  "lastUpdated": "2026-06-29T14:33:14+08:00",
   "syncSource": "FIFA 赛程 · Day 19 · 32强 3场 enriched · 推演概要+小组形势",
   "phase": "knockout",
   "phase_cn": "淘汰赛 · 32强",
@@ -175,50 +175,45 @@ const MATCH_DATA = {
         "updated": "2026-06-29T13:49:32+08:00"
       },
       "prediction": {
-        "home_win": 48,
-        "draw": 31,
-        "away_win": 22,
-        "score": "2-0",
+        "home_win": 54,
+        "draw": 29,
+        "away_win": 17,
+        "score": "1-0",
         "confidence": 76,
         "xg_home": 1.88,
         "xg_away": 0.98,
         "key_factor": "32强 M76 · 巴西 C1（7 分零失球）vs 日本 F2（5 分不败）· 日本低位+转换 · 泊松 2-0/1-0",
         "score_dist": [
           {
-            "score": "2-0",
-            "prob": 13.8
-          },
-          {
             "score": "1-0",
             "prob": 13.3
           },
           {
-            "score": "3-0",
-            "prob": 9.6
-          },
-          {
-            "score": "2-1",
-            "prob": 9.3
+            "score": "2-0",
+            "prob": 13
           },
           {
             "score": "1-1",
-            "prob": 8.9
+            "prob": 9.7
           },
           {
-            "score": "3-1",
-            "prob": 6.4
+            "score": "2-1",
+            "prob": 9.5
+          },
+          {
+            "score": "3-0",
+            "prob": 8.5
           },
           {
             "score": "0-0",
-            "prob": 6.4
+            "prob": 6.8
+          },
+          {
+            "score": "3-1",
+            "prob": 6.2
           }
         ],
         "insight_factors": [
-          {
-            "icon": "📊",
-            "label": "小组积分",
-            "text": "Brazil 暂列 KO 组第 —（0 分 · 已赛 0 场） vs Japan 第 —（0 分 · 已赛 0 场）"
-          },
           {
             "icon": "🌤️",
             "label": "赛场气候",
@@ -245,22 +240,22 @@ const MATCH_DATA = {
           "qual_dynamics": null
         },
         "qual_dynamics": null,
-        "xg_poisson_home": 2.08,
-        "xg_poisson_away": 0.67,
+        "xg_poisson_home": 1.96,
+        "xg_poisson_away": 0.73,
         "xg_tier_calibrated": true,
-        "score_prob": 13.8,
+        "score_prob": 13.3,
         "score_top3": [
-          {
-            "score": "2-0",
-            "prob": 13.8
-          },
           {
             "score": "1-0",
             "prob": 13.3
           },
           {
-            "score": "3-0",
-            "prob": 9.6
+            "score": "2-0",
+            "prob": 13
+          },
+          {
+            "score": "1-1",
+            "prob": 9.7
           }
         ],
         "expected_score": "2-1"
@@ -321,17 +316,17 @@ const MATCH_DATA = {
         "disclaimer": "文化解读 · 非竞技推演"
       },
       "depth_calibration": {
-        "tier_home": 1.25,
-        "tier_label": "Brazil -1.25 · Japan +1.25",
+        "tier_home": 0.75,
+        "tier_label": "Brazil -0.75 · Japan +0.75",
         "implied_tier": 0.25,
-        "tier_gap": 1,
-        "signal": "blocker_inflate",
-        "signal_cn": "大众心理预期偏高",
-        "signal_color": "#D95F6A",
-        "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
-        "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "tier_gap": 0.5,
+        "signal": "genuine_favorite",
+        "signal_cn": "实力吻合",
+        "signal_color": "#5BBF8A",
+        "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
+        "blocker_spread_note": "",
         "public_lean_cn": "舆论倾向 Brazil（约 62%）",
-        "analysis": "M76 · 巴西 vs 日本 · 皇冠 -0.5/1 巴 0.96 / 日 0.88 · 大小 2/2.5 大 0.88 小 1.00。 赛前净胜参考高于 xG 隐含（+1），且净胜 1 球占 24.3%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "analysis": "M76 · 巴西 vs 日本 · 皇冠 -0.5/1 巴 0.96 / 日 0.88 · 大小 2/2.5 大 0.88 小 1.00。",
         "spread_cover": {
           "top3_scores": [
             {
@@ -349,28 +344,28 @@ const MATCH_DATA = {
           ],
           "one_goal_win_pct": 24.3,
           "two_plus_win_pct": 34,
-          "full_cover_pct": 42.1,
-          "dog_hold_pct": 57.9,
+          "full_cover_pct": 50.1,
+          "dog_hold_pct": 49.9,
           "fav_win_pct": 58.3,
-          "cover_given_win_pct": 58.3,
+          "cover_given_win_pct": 100,
           "grid_max_goals": 6,
           "grid_tail_pct": 0.3,
           "half_cover_pct": 0,
-          "half_lose_pct": 24.3,
+          "half_lose_pct": 0,
           "push_pct": null,
-          "margin_full_label": "净胜≥2",
+          "margin_full_label": "净胜≥1",
           "margin_half_label": null,
-          "fav_cover_ev": -0.198,
-          "dog_cover_ev": 0.198,
-          "rational_spread_cn": "客队 守住差距概率略高",
+          "fav_cover_ev": 0.166,
+          "dog_cover_ev": -0.166,
+          "rational_spread_cn": "主队 净胜达标概率略高",
           "total_xg": 2.86,
           "fair_totals_line": 2,
           "over_2_5_pct": 54.3,
           "over_3_pct": 31.9,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 24.3%：常见「赢球但净胜仅 1 球」",
-          "full_cover_pct_raw": 34,
-          "dog_hold_pct_raw": 66
+          "margin_risk_note": "净胜≥1 约 58.3%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 58.3,
+          "dog_hold_pct_raw": 41.7
         },
         "spread_odds": {
           "fav": 0.96,
@@ -474,15 +469,15 @@ const MATCH_DATA = {
           }
         },
         "applied_delta": {
-          "home_win": -5,
-          "draw": 1,
-          "away_win": 4
+          "home_win": 2,
+          "draw": -1,
+          "away_win": -1
         },
-        "adjustment_note": "模型微调：主胜 -5% · 平 +1% · 客 +4%",
+        "adjustment_note": "模型微调：主胜 +2% · 平 -1% · 客 -1%",
         "adjusted_probs": {
-          "home_win": 48,
-          "draw": 31,
-          "away_win": 22
+          "home_win": 54,
+          "draw": 29,
+          "away_win": 17
         },
         "display_summary": {
           "fav_name": "Brazil",
@@ -548,7 +543,7 @@ const MATCH_DATA = {
                 "pct": 23.5
               }
             ],
-            "fav_win_pct": 48
+            "fav_win_pct": 54
           },
           "excitement": {
             "label_cn": "中速开局",
@@ -608,13 +603,13 @@ const MATCH_DATA = {
             "note": "基准 xG 1.88–0.98 → 调整后 1.66–0.88"
           },
           "calibration": {
-            "signal_cn": "大众心理预期偏高",
-            "signal_color": "#D95F6A",
-            "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
-            "tier_gap": 1,
+            "signal_cn": "实力吻合",
+            "signal_color": "#5BBF8A",
+            "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
+            "tier_gap": 0.5,
             "implied_tier_label": "Brazil -0.25 · Japan +0.25",
-            "market_tier_label": "Brazil -1.25 · Japan +1.25",
-            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1 · 模型认为仅小胜 1 球仍约 25.3%"
+            "market_tier_label": "Brazil -0.75 · Japan +0.75",
+            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5"
           },
           "win_outlook": {
             "fav_name": "Brazil",
@@ -639,11 +634,11 @@ const MATCH_DATA = {
                 "pct": 23.5
               }
             ],
-            "margin_line_cn": "Brazil · 赛前净胜参考 净胜≥2（全达标）",
-            "margin_meet_pct": 39.9,
+            "margin_line_cn": "Brazil · 赛前净胜参考 净胜≥1（全达标）",
+            "margin_meet_pct": 48.5,
             "margin_half_pct": 0,
-            "margin_fail_pct": 25.5,
-            "margin_full_label": "净胜≥2",
+            "margin_fail_pct": 0,
+            "margin_full_label": "净胜≥1",
             "margin_half_label": null,
             "final_2_0_pct": null,
             "final_3_0_plus_pct": null,
@@ -659,7 +654,7 @@ const MATCH_DATA = {
             "win_low_total_pct": 24.1,
             "win_margin2_low_total_pct": 10.9,
             "win_margin2_high_total_pct": 30,
-            "readout_cn": "取胜约 48%；若取胜，以「险胜收工」为主（45.9%）。 对着赛前净胜参考，净胜≥2（全达标）约 39.9%；对着总进球参考 2.25，模型超线概率约 59.1%。"
+            "readout_cn": "取胜约 54%；若取胜，以「险胜收工」为主（45.9%）。 对着赛前净胜参考，净胜≥1（全达标）约 48.5%；对着总进球参考 2.25，模型超线概率约 59.1%。"
           },
           "totals_line": 2.25,
           "score_patterns": [
@@ -706,37 +701,37 @@ const MATCH_DATA = {
             "summary_cn": "预测 2.5 · 合理值 2 · 总进球参考 2.25（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Brazil -1.25 穿盘：有达标可能",
-            "sub_cn": "Brazil 胜 55.7% · 胜后穿 54.6% · Japan +1.25 守 59.9% 进球氛围：几乎五五开 平局权重约 31%，小组赛易出守平——勿只盯胜负一方。",
+            "headline_cn": "Brazil -0.75 穿盘：有达标可能",
+            "sub_cn": "Brazil 胜 55.7% · 胜后穿 100% · Japan +0.75 守 51.4% 进球氛围：几乎五五开",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
               "color": "#C8A96E",
               "fav_name": "Brazil",
               "dog_name": "Japan",
-              "fav_handicap_cn": "Brazil -1.25",
-              "dog_handicap_cn": "Japan +1.25",
-              "market_expect_cn": "Brazil -1.25 · 净胜≥2",
-              "meet_pct": 40.1,
-              "dog_hold_pct": 59.9,
+              "fav_handicap_cn": "Brazil -0.75",
+              "dog_handicap_cn": "Japan +0.75",
+              "market_expect_cn": "Brazil -0.75 · 净胜≥1",
+              "meet_pct": 48.6,
+              "dog_hold_pct": 51.4,
               "fav_win_pct": 55.7,
-              "cover_given_win_pct": 54.6,
-              "full_cover_pct_raw": 30.4,
-              "meet_pct_label": "Brazil -1.25 穿盘概率（校准）",
-              "dog_hold_label": "Japan +1.25 守住概率（校准）",
-              "two_stage_cn": "Brazil 取胜约 55.7% · 赢球后穿盘约 54.6% · Japan +1.25 守住约 59.9%",
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 55.7,
+              "meet_pct_label": "Brazil -0.75 穿盘概率（校准）",
+              "dog_hold_label": "Japan +0.75 守住概率（校准）",
+              "two_stage_cn": "Brazil 取胜约 55.7% · 赢球后穿盘约 100% · Japan +0.75 守住约 51.4%",
               "grid_tail_pct": null,
               "verdict_cn": "有达标可能",
-              "headline_cn": "Brazil -1.25 穿盘：有达标可能",
-              "pill_cn": "Brazil 胜 55.7% · 胜后穿 54.6% · Japan +1.25 守 59.9%",
-              "detail_cn": "Brazil 取胜约 55.7% · 赢球后穿盘约 54.6% · Japan +1.25 守住约 59.9%（泊松 raw 30.4% → 校准 40.1%）；穿盘与受让守住均有一定空间（仅胜 1 球约 25.3%）。",
-              "extra_stats_cn": "仅胜 1 球约 25.3%",
-              "full_cover_pct": 40.1,
+              "headline_cn": "Brazil -0.75 穿盘：有达标可能",
+              "pill_cn": "Brazil 胜 55.7% · 胜后穿 100% · Japan +0.75 守 51.4%",
+              "detail_cn": "Brazil 取胜约 55.7% · 赢球后穿盘约 100% · Japan +0.75 守住约 51.4%（泊松 raw 55.7% → 校准 48.6%）；穿盘与受让守住均有一定空间。",
+              "extra_stats_cn": "",
+              "full_cover_pct": 48.6,
               "half_cover_pct": 0,
-              "lose1_pct": 25.3,
-              "margin_full_label": "净胜≥2",
+              "lose1_pct": 0,
+              "margin_full_label": "净胜≥1",
               "margin_half_label": null,
-              "tier_gap": 1,
+              "tier_gap": 0.5,
               "show_cover": true
             },
             "totals": {
@@ -759,11 +754,7 @@ const MATCH_DATA = {
               "market_goals_cn": "总进球参考 2.25",
               "caution_public_high": false
             },
-            "draw_risk": {
-              "level": "high",
-              "color": "#C8A96E",
-              "note": "平局权重约 31%，小组赛易出守平——勿只盯胜负一方。"
-            },
+            "draw_risk": null,
             "pills": [
               {
                 "key": "spread",
@@ -775,32 +766,32 @@ const MATCH_DATA = {
                   "color": "#C8A96E",
                   "fav_name": "Brazil",
                   "dog_name": "Japan",
-                  "fav_handicap_cn": "Brazil -1.25",
-                  "dog_handicap_cn": "Japan +1.25",
-                  "market_expect_cn": "Brazil -1.25 · 净胜≥2",
-                  "meet_pct": 40.1,
-                  "dog_hold_pct": 59.9,
+                  "fav_handicap_cn": "Brazil -0.75",
+                  "dog_handicap_cn": "Japan +0.75",
+                  "market_expect_cn": "Brazil -0.75 · 净胜≥1",
+                  "meet_pct": 48.6,
+                  "dog_hold_pct": 51.4,
                   "fav_win_pct": 55.7,
-                  "cover_given_win_pct": 54.6,
-                  "full_cover_pct_raw": 30.4,
-                  "meet_pct_label": "Brazil -1.25 穿盘概率（校准）",
-                  "dog_hold_label": "Japan +1.25 守住概率（校准）",
-                  "two_stage_cn": "Brazil 取胜约 55.7% · 赢球后穿盘约 54.6% · Japan +1.25 守住约 59.9%",
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 55.7,
+                  "meet_pct_label": "Brazil -0.75 穿盘概率（校准）",
+                  "dog_hold_label": "Japan +0.75 守住概率（校准）",
+                  "two_stage_cn": "Brazil 取胜约 55.7% · 赢球后穿盘约 100% · Japan +0.75 守住约 51.4%",
                   "grid_tail_pct": null,
                   "verdict_cn": "有达标可能",
-                  "headline_cn": "Brazil -1.25 穿盘：有达标可能",
-                  "pill_cn": "Brazil 胜 55.7% · 胜后穿 54.6% · Japan +1.25 守 59.9%",
-                  "detail_cn": "Brazil 取胜约 55.7% · 赢球后穿盘约 54.6% · Japan +1.25 守住约 59.9%（泊松 raw 30.4% → 校准 40.1%）；穿盘与受让守住均有一定空间（仅胜 1 球约 25.3%）。",
-                  "extra_stats_cn": "仅胜 1 球约 25.3%",
-                  "full_cover_pct": 40.1,
+                  "headline_cn": "Brazil -0.75 穿盘：有达标可能",
+                  "pill_cn": "Brazil 胜 55.7% · 胜后穿 100% · Japan +0.75 守 51.4%",
+                  "detail_cn": "Brazil 取胜约 55.7% · 赢球后穿盘约 100% · Japan +0.75 守住约 51.4%（泊松 raw 55.7% → 校准 48.6%）；穿盘与受让守住均有一定空间。",
+                  "extra_stats_cn": "",
+                  "full_cover_pct": 48.6,
                   "half_cover_pct": 0,
-                  "lose1_pct": 25.3,
-                  "margin_full_label": "净胜≥2",
+                  "lose1_pct": 0,
+                  "margin_full_label": "净胜≥1",
                   "margin_half_label": null,
-                  "tier_gap": 1,
+                  "tier_gap": 0.5,
                   "show_cover": true
                 },
-                "text": "Brazil 胜 55.7% · 胜后穿 54.6% · Japan +1.25 守 59.9%",
+                "text": "Brazil 胜 55.7% · 胜后穿 100% · Japan +0.75 守 51.4%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -920,11 +911,11 @@ const MATCH_DATA = {
                     "pct": 23.5
                   }
                 ],
-                "margin_line_cn": "Brazil · 赛前净胜参考 净胜≥2（全达标）",
-                "margin_meet_pct": 48.6,
+                "margin_line_cn": "Brazil · 赛前净胜参考 净胜≥1（全达标）",
+                "margin_meet_pct": 77.7,
                 "margin_half_pct": 0,
                 "margin_fail_pct": 29.1,
-                "margin_full_label": "净胜≥2",
+                "margin_full_label": "净胜≥1",
                 "margin_half_label": null,
                 "final_2_0_pct": null,
                 "final_3_0_plus_pct": null,
@@ -1075,7 +1066,7 @@ const MATCH_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Brazil · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1 · 模型认为仅小胜 1 球仍约 25.3%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
+        "public_summary_note": "【推演概要】Brazil · 常规对抗。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
         "goal_efficiency_preview": {
           "mode": "preview",
           "xg_total": 2.86,
@@ -1160,17 +1151,17 @@ const MATCH_DATA = {
         }
       },
       "market_snapshot": {
-        "market_tier": 1.25,
-        "tier_label": "Brazil -1.25 · Japan +1.25",
+        "market_tier": 0.75,
+        "tier_label": "Brazil -0.75 · Japan +0.75",
         "totals_line": 2.25,
         "over_pct": 59.1,
         "fair_line": 2,
         "line_gap": 0.25,
-        "full_cover_pct": 40.1,
+        "full_cover_pct": 48.6,
         "fav_win_pct": 55.7,
-        "cover_given_win_pct": 54.6,
+        "cover_given_win_pct": 100,
         "spread_level": "possible",
-        "spread_market_expect": "Brazil -1.25 · 净胜≥2",
+        "spread_market_expect": "Brazil -0.75 · 净胜≥1",
         "line_move_tag": "fav_defense",
         "line_move_cn": "降大小 · 巴西高水",
         "agent_pick_primary": "spread",
@@ -1181,61 +1172,6 @@ const MATCH_DATA = {
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
-      },
-      "group_context": {
-        "group": "KO",
-        "label": "KO组 · 第 1 轮",
-        "matchday": 1,
-        "standings": [],
-        "home": {
-          "team": "Brazil",
-          "rank": "—",
-          "pts": 0,
-          "played": 0,
-          "if_1st": "32强路径待定",
-          "if_1st_r16": "—",
-          "if_1st_corridor": "",
-          "if_2nd": "32强路径待定",
-          "if_2nd_r16": "—",
-          "if_2nd_corridor": "",
-          "if_3rd": "32强路径待定",
-          "if_3rd_r16": "—"
-        },
-        "away": {
-          "team": "Japan",
-          "rank": "—",
-          "pts": 0,
-          "played": 0,
-          "if_1st": "32强路径待定",
-          "if_1st_r16": "—",
-          "if_1st_corridor": "",
-          "if_2nd": "32强路径待定",
-          "if_2nd_r16": "—",
-          "if_2nd_corridor": "",
-          "if_3rd": "32强路径待定",
-          "if_3rd_r16": "—"
-        },
-        "cross_group_notes": [
-          "G 组 Belgium 5 分领跑",
-          "H 组 Spain 7 分领跑",
-          "E 组 Germany 6 分领跑",
-          "F 组 Netherlands 7 分领跑",
-          "I 组 France 9 分领跑",
-          "D 组 USA 6 分领跑"
-        ],
-        "path_tradeoff": null,
-        "manipulation_risk": {
-          "level": "LOW",
-          "level_cn": "低",
-          "focus_team": null,
-          "reason": "小组赛第 1 轮，各队普遍抢分意愿强，故意控分动机低；以下路径预判供后续轮次参考。"
-        },
-        "knockout_note": "48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。",
-        "scenarios": [
-          "Brazil 若取胜：积分 3，KO 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
-          "Japan 若取胜：积分 3，客场抢分将改变 KO 组格局与淘汰赛半区。",
-          "平局：双方各 +1 分；在 绑定组 背景下，名次差 1 位可能改变 32 强对手。"
-        ]
       }
     },
     {
@@ -1417,11 +1353,6 @@ const MATCH_DATA = {
           }
         ],
         "insight_factors": [
-          {
-            "icon": "📊",
-            "label": "小组积分",
-            "text": "Germany 暂列 KO 组第 —（0 分 · 已赛 0 场） vs Paraguay 第 —（0 分 · 已赛 0 场）"
-          },
           {
             "icon": "🌤️",
             "label": "赛场气候",
@@ -2382,61 +2313,6 @@ const MATCH_DATA = {
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
-      },
-      "group_context": {
-        "group": "KO",
-        "label": "KO组 · 第 1 轮",
-        "matchday": 1,
-        "standings": [],
-        "home": {
-          "team": "Germany",
-          "rank": "—",
-          "pts": 0,
-          "played": 0,
-          "if_1st": "32强路径待定",
-          "if_1st_r16": "—",
-          "if_1st_corridor": "",
-          "if_2nd": "32强路径待定",
-          "if_2nd_r16": "—",
-          "if_2nd_corridor": "",
-          "if_3rd": "32强路径待定",
-          "if_3rd_r16": "—"
-        },
-        "away": {
-          "team": "Paraguay",
-          "rank": "—",
-          "pts": 0,
-          "played": 0,
-          "if_1st": "32强路径待定",
-          "if_1st_r16": "—",
-          "if_1st_corridor": "",
-          "if_2nd": "32强路径待定",
-          "if_2nd_r16": "—",
-          "if_2nd_corridor": "",
-          "if_3rd": "32强路径待定",
-          "if_3rd_r16": "—"
-        },
-        "cross_group_notes": [
-          "G 组 Belgium 5 分领跑",
-          "H 组 Spain 7 分领跑",
-          "E 组 Germany 6 分领跑",
-          "F 组 Netherlands 7 分领跑",
-          "I 组 France 9 分领跑",
-          "D 组 USA 6 分领跑"
-        ],
-        "path_tradeoff": null,
-        "manipulation_risk": {
-          "level": "LOW",
-          "level_cn": "低",
-          "focus_team": null,
-          "reason": "小组赛第 1 轮，各队普遍抢分意愿强，故意控分动机低；以下路径预判供后续轮次参考。"
-        },
-        "knockout_note": "48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。",
-        "scenarios": [
-          "Germany 若取胜：积分 3，KO 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
-          "Paraguay 若取胜：积分 3，客场抢分将改变 KO 组格局与淘汰赛半区。",
-          "平局：双方各 +1 分；在 绑定组 背景下，名次差 1 位可能改变 32 强对手。"
-        ]
       }
     },
     {
@@ -2625,11 +2501,6 @@ const MATCH_DATA = {
           }
         ],
         "insight_factors": [
-          {
-            "icon": "📊",
-            "label": "小组积分",
-            "text": "Netherlands 暂列 KO 组第 —（0 分 · 已赛 0 场） vs Morocco 第 —（0 分 · 已赛 0 场）"
-          },
           {
             "icon": "🌤️",
             "label": "赛场气候",
@@ -3581,61 +3452,6 @@ const MATCH_DATA = {
         "totals_level": "mild_high",
         "totals_show_lean": false,
         "totals_lean_side": "exciting"
-      },
-      "group_context": {
-        "group": "KO",
-        "label": "KO组 · 第 1 轮",
-        "matchday": 1,
-        "standings": [],
-        "home": {
-          "team": "Netherlands",
-          "rank": "—",
-          "pts": 0,
-          "played": 0,
-          "if_1st": "32强路径待定",
-          "if_1st_r16": "—",
-          "if_1st_corridor": "",
-          "if_2nd": "32强路径待定",
-          "if_2nd_r16": "—",
-          "if_2nd_corridor": "",
-          "if_3rd": "32强路径待定",
-          "if_3rd_r16": "—"
-        },
-        "away": {
-          "team": "Morocco",
-          "rank": "—",
-          "pts": 0,
-          "played": 0,
-          "if_1st": "32强路径待定",
-          "if_1st_r16": "—",
-          "if_1st_corridor": "",
-          "if_2nd": "32强路径待定",
-          "if_2nd_r16": "—",
-          "if_2nd_corridor": "",
-          "if_3rd": "32强路径待定",
-          "if_3rd_r16": "—"
-        },
-        "cross_group_notes": [
-          "G 组 Belgium 5 分领跑",
-          "H 组 Spain 7 分领跑",
-          "E 组 Germany 6 分领跑",
-          "F 组 Netherlands 7 分领跑",
-          "I 组 France 9 分领跑",
-          "D 组 USA 6 分领跑"
-        ],
-        "path_tradeoff": null,
-        "manipulation_risk": {
-          "level": "LOW",
-          "level_cn": "低",
-          "focus_team": null,
-          "reason": "小组赛第 1 轮，各队普遍抢分意愿强，故意控分动机低；以下路径预判供后续轮次参考。"
-        },
-        "knockout_note": "48 队制：12 组各前 2（24 支）+ 12 个小组第 3 中成绩最好的 8 支 = 32 强起淘汰赛（非以往 32 队直接 16 强）；第 3 名横向比积分→净胜球→进球。C↔F 等绑定组末轮或算分选半区。",
-        "scenarios": [
-          "Netherlands 若取胜：积分 3，KO 组排名有望上升；32 强/16 强槽位随最终名次（第 1/第 2）切换，见下方路径。",
-          "Morocco 若取胜：积分 3，客场抢分将改变 KO 组格局与淘汰赛半区。",
-          "平局：双方各 +1 分；在 绑定组 背景下，名次差 1 位可能改变 32 强对手。"
-        ]
       }
     }
   ],
@@ -3664,10 +3480,10 @@ const MATCH_DATA = {
       "rating": 78
     },
     "teaser": "32强 M76 · 巴西 vs 日本",
-    "home_win": 48,
-    "draw": 31,
-    "away_win": 22,
-    "predicted_score": "2-0",
+    "home_win": 54,
+    "draw": 29,
+    "away_win": 17,
+    "predicted_score": "1-0",
     "key_player_home": "Vinícius Júnior",
     "key_player_away": "Takefusa Kubo"
   },

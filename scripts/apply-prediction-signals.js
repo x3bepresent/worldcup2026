@@ -231,8 +231,10 @@ function enrichMatchSignals(m, handicapMap, snapshots) {
     if (ctx.qual_dynamics) copy.prediction.qual_dynamics = ctx.qual_dynamics;
     copy.prediction = applyPoissonToPrediction(copy.prediction, ctx.xg_home, ctx.xg_away, 0);
   }
-  if (snapshots?.length) {
+  if (snapshots?.length && copy.group !== 'KO') {
     copy.group_context = buildGroupContext(copy, snapshots);
+  } else if (copy.group === 'KO') {
+    delete copy.group_context;
   }
   if (copy.prediction) {
     const baseKf = stripDepthCalibrationFromKeyFactor(copy.prediction.key_factor || '');
@@ -317,7 +319,7 @@ MATCH_DATA.lastUpdated = TS;
 if (!MATCH_DATA.breakingNews.some(n => /推演升级|推演概要/.test(n.text || ''))) {
   MATCH_DATA.breakingNews.unshift({
     tag: 'UPDATE',
-    text: '📊 推演升级：模型概要 + 小组形势/晋级路径已纳入今日赛事',
+    text: '📊 推演升级：模型概要 + 淘汰赛晋级路径矩阵',
     time: '模型',
   });
 }
