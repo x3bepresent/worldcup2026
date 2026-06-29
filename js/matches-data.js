@@ -1,8 +1,8 @@
-// 今日赛事 — 淘汰赛 · 32强 (signals enriched)
-// Last updated: 2026-06-29T20:14:46+08:00
+// 今日赛事 — Day 19 enriched
+// Last updated: 2026-06-29T20:20:37+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-29T20:14:46+08:00",
-  "syncSource": "FIFA 赛程 · Day 19 · 32强 3场 enriched · 推演概要+小组形势",
+  "lastUpdated": "2026-06-29T20:20:37+08:00",
+  "syncSource": "FIFA 赛程 · Day 19 · 32强 3场 enriched",
   "phase": "knockout",
   "phase_cn": "淘汰赛 · 32强",
   "breakingNews": [
@@ -261,7 +261,7 @@ const MATCH_DATA = {
         },
         "fifa_match_id": "400021516",
         "note": "FIFA M76 · 巴西 vs 日本 · 休斯顿 NRG Stadium",
-        "updated": "2026-06-29T19:48:07+08:00"
+        "updated": "2026-06-29T20:20:37+08:00"
       },
       "prediction": {
         "home_win": 54,
@@ -306,7 +306,7 @@ const MATCH_DATA = {
           {
             "icon": "🌤️",
             "label": "赛场气候",
-            "text": "休斯顿夏夜 · 32°C · 湿度 58% · 降雨概率 20% · 封闭；M76 巴西 vs 日本 · 高温封闭（32°C 封闭）"
+            "text": "休斯顿夏夜 · 32°C · 湿度 58%；M76 巴西 vs 日本 · 高温封闭"
           },
           {
             "icon": "⚽",
@@ -595,21 +595,21 @@ const MATCH_DATA = {
           "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
         },
         "agent_pick": {
-          "primary": "spread",
-          "tendency_cn": "更倾向让球盘",
-          "tendency_reason_cn": "巴西 -0.5/1 @0.96 高水穿盘难 · 日本 +0.5/1 不败/赢半结构优于大小降盘后的噪音。",
+          "primary": "totals",
+          "tendency_cn": "更倾向大小球",
+          "tendency_reason_cn": "模型超线 65.7% · 总 xG 约 2.9 · 让球 50/50 日本受让为副选。",
           "confidence": "high",
           "confidence_cn": "大信心",
-          "confidence_reason_cn": "皇冠热门高水 + 模型「大众心理预期偏高」· 日本小组赛 5 分不败 · 受让 +0.5/1 @0.88 为今日最清晰「热门防守」样本。",
+          "confidence_reason_cn": "★大球：降盘后大 0.88 低水 · 模型 65.7%。让球：巴西高水 + 日本 +0.5/1 不败结构，副选。",
           "spread": {
             "side": "dog",
             "label_cn": "日本 +0.5/1 @0.88",
-            "reason_cn": "巴西 1.04→0.96 仍高水；日本低位+转换 · 平局/小负赢半区 · 符合先不输。"
+            "reason_cn": "巴西 0.96 仍高水 · 日本 F 组不败 · 平局/小负赢半，49.9% 守住。"
           },
           "totals": {
             "side": "over",
             "label_cn": "大球 2/2.5 @0.88",
-            "reason_cn": "线 2.5→2/2.5 降盘但大 1.00→0.88 低水 · 小 0.80→1.00 抬水卖小球 · 模型总 xG 约 2.9。"
+            "reason_cn": "xG 约 2.9 vs 线 2.25 · 大 0.88 低水 · 2-1/1-1 路径。"
           },
           "picked_at": "2026-06-30",
           "pick_meta": {
@@ -1331,8 +1331,8 @@ const MATCH_DATA = {
         "spread_market_expect": "Brazil -0.75 · 净胜≥1",
         "line_move_tag": "genuine_strength",
         "line_move_cn": "真实挺盘",
-        "agent_pick_primary": "spread",
-        "agent_pick_tendency_cn": "更倾向让球盘",
+        "agent_pick_primary": "totals",
+        "agent_pick_tendency_cn": "更倾向大小球",
         "agent_pick_confidence": "high",
         "agent_spread_cn": "日本 +0.5/1 @0.88",
         "agent_totals_cn": "大球 2/2.5 @0.88",
@@ -1449,7 +1449,7 @@ const MATCH_DATA = {
           "Nagelsmann：「巴拉圭 D 组第3 出线靠防守——须耐心破铁桶」",
           "预计 4-2-3-1 控球压迫 · Musiala/Wirtz 双 10 号位",
           "E 组 10 球 2 场后末轮小负 · 淘汰赛须兑现深盘",
-          "Agent 大信心德国 -1.5 @1.04 升盘穿盘"
+          "Agent ★小球 2.5/3 · 副选巴拉圭 +1.5 @0.85（诱上结构）"
         ]
       },
       "away": {
@@ -1575,7 +1575,7 @@ const MATCH_DATA = {
         },
         "fifa_match_id": "400021513",
         "note": "FIFA M74 · 德国 vs 巴拉圭 · 波士顿 Gillette Stadium",
-        "updated": "2026-06-29T19:48:07+08:00"
+        "updated": "2026-06-29T20:20:37+08:00"
       },
       "prediction": {
         "home_win": 59,
@@ -1620,7 +1620,7 @@ const MATCH_DATA = {
           {
             "icon": "🌤️",
             "label": "赛场气候",
-            "text": "波士顿夏晨 · 24°C · 湿度 62% · 降雨概率 25% · 海风 2级；M74 德国 vs 巴拉圭（24°C）"
+            "text": "波士顿夏晨 · 24°C · 湿度 62%；M74 德国 vs 巴拉圭"
           },
           {
             "icon": "⚽",
@@ -1907,23 +1907,21 @@ const MATCH_DATA = {
           "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
         },
         "agent_pick": {
-          "primary": "spread",
-          "tendency_cn": "更倾向让球盘",
-          "tendency_reason_cn": "德国 -1.5 升盘 · 须净胜≥2 穿盘 · 大小 2.5/3 仍胶着定价。",
+          "primary": "totals",
+          "tendency_cn": "更倾向大小球",
+          "tendency_reason_cn": "模型超 2.75 仅 35% · 小球线+水双支持 · 让球仅略偏受让无大 edge。",
           "confidence": "high",
           "confidence_cn": "大信心",
-          "confidence_reason_cn": "皇冠 -1.5 德 1.04 升盘高水 · 巴拉圭 0.85 低水 · 模型主胜 62% 仍同向但穿盘门槛提高。",
+          "confidence_reason_cn": "★小球：模型 64.8% 低线 · 泊松 2-0/1-0 主路径 · 5-4-1 铁桶。让球：诱上结构 + 53.3% 守住，副选。",
           "spread": {
-            "side": "fav",
-            "label_cn": "德国 -1.5 @1.04",
-            "reason_cn": "E1 vs D 组第3 · 升盘 -1.5 高水 · 小组赛 10 球火力仍支撑穿盘叙事。"
+            "side": "dog",
+            "label_cn": "巴拉圭 +1.5 @0.85",
+            "reason_cn": "精算诱上 · 升 -1.5 德高水 · 模型/市场守住 53% · 德国赢球≠穿盘。"
           },
           "totals": {
-            "side": "over",
-            "label_cn": "大球 2.5/3 @0.91",
-            "reason_cn": "小 0.82→0.97 抬水 · 德国进攻火力 + 巴拉圭须对攻 · 副项跟盘路进球上修。",
-            "manual_override": true,
-            "recommended_side": "under"
+            "side": "under",
+            "label_cn": "小球 2.5/3 @0.97",
+            "reason_cn": "xG 2.54 vs 线 2.75 · 模型+盘面多数小球 · 1-0/2-0 路径。"
           },
           "picked_at": "2026-06-30",
           "pick_meta": {
@@ -1932,7 +1930,7 @@ const MATCH_DATA = {
             "market_line_side": "under",
             "market_odds_side": "over",
             "market_side": "under",
-            "pick_side": "over",
+            "pick_side": "under",
             "recommended_side": "under",
             "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
             "conflict": false,
@@ -2640,11 +2638,11 @@ const MATCH_DATA = {
         "spread_market_expect": "Germany -1.5 · 净胜≥2",
         "line_move_tag": "book_trap_fav",
         "line_move_cn": "精算诱上",
-        "agent_pick_primary": "spread",
-        "agent_pick_tendency_cn": "更倾向让球盘",
+        "agent_pick_primary": "totals",
+        "agent_pick_tendency_cn": "更倾向大小球",
         "agent_pick_confidence": "high",
-        "agent_spread_cn": "德国 -1.5 @1.04",
-        "agent_totals_cn": "大球 2.5/3 @0.91",
+        "agent_spread_cn": "巴拉圭 +1.5 @0.85",
+        "agent_totals_cn": "小球 2.5/3 @0.97",
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -2883,7 +2881,7 @@ const MATCH_DATA = {
         },
         "fifa_match_id": "400021522",
         "note": "FIFA M75 · 荷兰 vs 摩洛哥 · 蒙特雷 Estadio BBVA",
-        "updated": "2026-06-29T19:48:07+08:00"
+        "updated": "2026-06-29T20:20:37+08:00"
       },
       "prediction": {
         "home_win": 43,
@@ -2928,7 +2926,7 @@ const MATCH_DATA = {
           {
             "icon": "🌤️",
             "label": "赛场气候",
-            "text": "蒙特雷夏午 · 30°C · 湿度 48% · 降雨概率 15% · 微风；M75 荷兰 vs 摩洛哥 · 海拔 540m（30°C · 海拔）"
+            "text": "蒙特雷夏午 · 30°C · 湿度 48%；M75 荷兰 vs 摩洛哥 · 海拔 540m"
           },
           {
             "icon": "⚽",
@@ -3215,20 +3213,21 @@ const MATCH_DATA = {
           "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
         },
         "agent_pick": {
-          "primary": "spread",
-          "tendency_cn": "更倾向让球盘",
-          "tendency_reason_cn": "荷兰退档 -0.5→-0/0.5 · 摩洛哥 +0/0.5 不败结构优于大小 2/2.5 五五开。",
+          "primary": "totals",
+          "tendency_cn": "更倾向大小球",
+          "tendency_reason_cn": "模型超线 64.7% · 让球 50/50 退档修正 · 大小信号更清晰。",
+          "confidence": "high",
+          "confidence_cn": "大信心",
+          "confidence_reason_cn": "★大球：xG 合计约 2.8 · 模型+线指向超 2.25。让球：摩洛哥 +0/0.5 退档修正副选，五五开。",
           "spread": {
             "side": "dog",
             "label_cn": "摩洛哥 +0/0.5 @0.92",
-            "reason_cn": "皇冠退档挺受让 · 2022 阴影 + 摩洛哥 7 分不败 · PK/小负不输半。"
+            "reason_cn": "向模型退档 · 不败/赢半结构 · 50.3% 守住，edge 有限。"
           },
           "totals": {
-            "side": "under",
-            "label_cn": "小球 2/2.5 @0.93",
-            "reason_cn": "淘汰赛胶着 · 大小大 0.95 无低水优势 · ≤2 球全赢路径仍在。",
-            "manual_override": true,
-            "recommended_side": "over"
+            "side": "over",
+            "label_cn": "大球 2/2.5 @0.95",
+            "reason_cn": "模型 64.7% 超线 · 荷摩进攻属性 · 2-1/1-1 路径。"
           },
           "picked_at": "2026-06-30",
           "pick_meta": {
@@ -3237,7 +3236,7 @@ const MATCH_DATA = {
             "market_line_side": "under",
             "market_odds_side": "neutral",
             "market_side": "neutral",
-            "pick_side": "under",
+            "pick_side": "over",
             "recommended_side": "over",
             "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
             "conflict": false,
@@ -3946,11 +3945,11 @@ const MATCH_DATA = {
         "spread_market_expect": "Netherlands -0.25 · 净胜≥1",
         "line_move_tag": "correction",
         "line_move_cn": "向模型修正",
-        "agent_pick_primary": "spread",
-        "agent_pick_tendency_cn": "更倾向让球盘",
-        "agent_pick_confidence": null,
+        "agent_pick_primary": "totals",
+        "agent_pick_tendency_cn": "更倾向大小球",
+        "agent_pick_confidence": "high",
         "agent_spread_cn": "摩洛哥 +0/0.5 @0.92",
-        "agent_totals_cn": "小球 2/2.5 @0.93",
+        "agent_totals_cn": "大球 2/2.5 @0.95",
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"

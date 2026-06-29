@@ -1,14 +1,14 @@
 {
   "day": 19,
   "date": "2026-06-30",
-  "note": "每场 2 项（让球+大小）+ ★倾向 + 可选大信心 · node scripts/grade-agent-picks.js day19",
+  "note": "Agent 投注单 · 每场让球+大小双选 · ★=大信心主项 · node scripts/grade-agent-picks.js day19",
   "wc_home_away_note": "世界杯中立赛场；FIFA 主/客仅为赛历标签。",
   "picks": [
     {
       "id": "m76",
       "match": "Brazil vs Japan",
-      "primary": "spread",
-      "tendency_cn": "更倾向让球盘",
+      "primary": "totals",
+      "tendency_cn": "更倾向大小球",
       "confidence": "high",
       "confidence_cn": "大信心",
       "spread": { "side": "dog", "pick_cn": "日本 +0.5/1 @0.88" },
@@ -17,20 +17,22 @@
     {
       "id": "m74",
       "match": "Germany vs Paraguay",
-      "primary": "spread",
-      "tendency_cn": "更倾向让球盘",
+      "primary": "totals",
+      "tendency_cn": "更倾向大小球",
       "confidence": "high",
       "confidence_cn": "大信心",
-      "spread": { "side": "fav", "pick_cn": "德国 -1.5 @1.04" },
-      "totals": { "side": "over", "pick_cn": "大球 2.5/3 @0.91" }
+      "spread": { "side": "dog", "pick_cn": "巴拉圭 +1.5 @0.85" },
+      "totals": { "side": "under", "pick_cn": "小球 2.5/3 @0.97" }
     },
     {
       "id": "m75",
       "match": "Netherlands vs Morocco",
-      "primary": "spread",
-      "tendency_cn": "更倾向让球盘",
+      "primary": "totals",
+      "tendency_cn": "更倾向大小球",
+      "confidence": "high",
+      "confidence_cn": "大信心",
       "spread": { "side": "dog", "pick_cn": "摩洛哥 +0/0.5 @0.92" },
-      "totals": { "side": "under", "pick_cn": "小球 2/2.5 @0.93" }
+      "totals": { "side": "over", "pick_cn": "大球 2/2.5 @0.95" }
     }
   ]
 }
