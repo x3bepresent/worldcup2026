@@ -1,7 +1,7 @@
 // Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
-// Last API sync: 2026-06-29T03:52:41.973Z
+// Last API sync: 2026-06-29T10:16:08.128Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-29T03:52:41.973Z",
+  "lastUpdated": "2026-06-29T10:16:08.128Z",
   "syncSource": "API-Football",
   "phase": "knockout",
   "phase_cn": "淘汰赛 · 32强",
