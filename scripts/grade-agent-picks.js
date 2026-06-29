@@ -589,3 +589,6 @@ const arg = process.argv[2] || 'day17';
 if (arg === 'day17' || arg === 'all') {
   gradeDay(path.join(__dirname, 'agent-picks-day17.json'));
 }
+if (arg === 'day19' || arg === 'all') {
+  gradeDay(path.join(__dirname, 'agent-picks-day19.json'));
+}

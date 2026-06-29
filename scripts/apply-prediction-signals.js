@@ -43,6 +43,7 @@ const HANDICAP = {
   ...require('./handicap-data-day16'),
   ...require('./handicap-data-day17'),
   ...require('./handicap-data-day18'),
+  ...require('./handicap-data-day19'),
 };
 const GOAL_TIMING = {
   ...require('./goal-timing-data-day9'),
@@ -52,7 +53,7 @@ const GOAL_TIMING = {
 const ROOT = path.join(__dirname, '..');
 const MATCH_PATH = path.join(ROOT, 'js', 'matches-data.js');
 const RESULTS_PATH = path.join(ROOT, 'js', 'results-data.js');
-const TS = '2026-06-20T14:00:00+08:00';
+const TS = new Date().toISOString().replace(/\.\d{3}Z$/, '+08:00');
 
 /** 与 matches-app.js SHOW_DEPTH_CALIBRATION_PANEL 对齐：交稿时可设为 false */
 const APPEND_SUMMARY_TO_KEY_FACTOR = false;

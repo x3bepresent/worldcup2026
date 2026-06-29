@@ -1,27 +1,22 @@
 // 过往赛果 — 精简归档（推演 + 赛果核验 + 复盘概要）
-// Last updated: 2026-06-20T14:00:00+08:00
+// Last updated: 2026-06-29T14:12:20+08:00
 const RESULTS_DATA = {
-  "lastUpdated": "2026-06-20T14:00:00+08:00",
-  "syncSource": "FIFA 官方赛果 · Day 17 完结 · Day 18 32强预览",
+  "lastUpdated": "2026-06-29T14:12:20+08:00",
+  "syncSource": "FIFA 官方赛果 · Day 18 M73 完结 · Day 19 32强 3场",
   "breakingNews": [
     {
       "tag": "OFFICIAL",
-      "text": "🏁 小组赛收官：阿根廷/哥伦比亚/英格兰头名 · 48→32 强对阵已定",
-      "time": "6月28日"
+      "text": "🏁 昨日 M73：南非 0-1 加拿大 · Eustaquio 90+2'",
+      "time": "6月29日"
     },
     {
       "tag": "PREVIEW",
-      "text": "⚔️ 6月29日 03:00 32强揭幕 · 南非 vs 加拿大（M73 · A2 vs B2）· 洛杉矶",
-      "time": "今日赛程"
+      "text": "⚔️ 今日 3 场：巴西-日本(01:00) · 德国-巴拉圭(04:30) · 荷兰-摩洛哥(09:00)",
+      "time": "6月30日"
     },
     {
       "tag": "PREVIEW",
-      "text": "📅 6月30日：德国-巴拉圭 · 巴西-日本 · 荷兰-摩洛哥 · 32强连战",
-      "time": "明日预告"
-    },
-    {
-      "tag": "PREVIEW",
-      "text": "M73 胜者 → 16强 M90 · 对 M75 胜者（荷兰/摩洛哥走廊）",
+      "text": "M75 胜者 vs 加拿大(M73) · M90 16强走廊",
       "time": "路径"
     }
   ],
@@ -69268,6 +69263,972 @@ const RESULTS_DATA = {
         "first_goal_min": 10,
         "fifa_match_id": "400021500",
         "updated": "2026-06-28T06:03:17+08:00"
+      }
+    },
+    {
+      "id": "m73",
+      "archived": true,
+      "archivedAt": "2026-06-29T13:49:31+08:00",
+      "group": "KO",
+      "matchday": null,
+      "date_beijing": "6月29日",
+      "time_beijing": "03:00",
+      "time_beijing_full": "北京时间 6月29日 03:00",
+      "venue": "SoFi Stadium",
+      "city": "Inglewood, USA",
+      "note": "32强 M73 · 南非 vs 加拿大 · 洛杉矶 · A2 vs B2 · 已结束 0-1",
+      "home": {
+        "name": "South Africa",
+        "iso": "za",
+        "rating": 65,
+        "rumors": [
+          {
+            "text": "南非延续 A 组末轮低位+反击思路 · 淘汰赛加时规则生效",
+            "tag": "战术"
+          }
+        ]
+      },
+      "away": {
+        "name": "Canada",
+        "iso": "ca",
+        "rating": 78,
+        "rumors": [
+          {
+            "text": "加拿大 B 组次席出线 · Davies 宽度+David 终结为破局点",
+            "tag": "战术"
+          }
+        ]
+      },
+      "prediction": {
+        "xg_home": 0.92,
+        "xg_away": 1.18,
+        "home_win": 29,
+        "draw": 30,
+        "away_win": 42,
+        "score": "0-1",
+        "confidence": 68,
+        "key_factor": "【赛后复盘】赛前模型客胜 42%/首推 1-1；实际 0-1 加拿大胜。Eustaquio 90+2' 绝杀 · 半场 0-0。方向：客胜命中；比分 0-1 在 Top3；总球 1（小 2/2.5 全赢）。加拿大 -0/0.5 穿。路径：胜者 M90 对 M75 胜者。",
+        "base_home_win": 28.6,
+        "base_draw": 29.7,
+        "base_away_win": 41.8,
+        "depth_calibrated": true,
+        "score_dist": [
+          {
+            "score": "0-1",
+            "prob": 14.4
+          },
+          {
+            "score": "1-1",
+            "prob": 13.3
+          },
+          {
+            "score": "0-0",
+            "prob": 12.2
+          },
+          {
+            "score": "1-0",
+            "prob": 11.3
+          },
+          {
+            "score": "0-2",
+            "prob": 8.5
+          },
+          {
+            "score": "1-2",
+            "prob": 7.8
+          },
+          {
+            "score": "2-1",
+            "prob": 6.1
+          }
+        ],
+        "draw_context": {
+          "drawBoost": 0,
+          "ironBucket": false,
+          "closeXg": true,
+          "gap": 0.26,
+          "notes": [],
+          "qual_dynamics": null
+        },
+        "qual_dynamics": null,
+        "xg_poisson_home": 0.92,
+        "xg_poisson_away": 1.18,
+        "xg_tier_calibrated": false,
+        "score_prob": 14.4,
+        "score_top3": [
+          {
+            "score": "0-1",
+            "prob": 14.4
+          },
+          {
+            "score": "1-1",
+            "prob": 13.3
+          },
+          {
+            "score": "0-0",
+            "prob": 12.2
+          }
+        ],
+        "expected_score": "1-1"
+      },
+      "market_snapshot": {
+        "market_tier": 0.25,
+        "tier_label": "South Africa -0.25 · Canada +0.25",
+        "totals_line": 2.25,
+        "over_pct": 48.4,
+        "fair_line": 2.25,
+        "line_gap": 0,
+        "full_cover_pct": 39.1,
+        "fav_win_pct": 28.5,
+        "cover_given_win_pct": 100,
+        "spread_level": "possible",
+        "spread_market_expect": "South Africa -0.25 · 净胜≥1",
+        "line_move_tag": "away_edge",
+        "line_move_cn": "向加拿大倾斜",
+        "agent_pick_primary": "spread",
+        "agent_pick_tendency_cn": "更倾向让球盘",
+        "agent_pick_confidence": null,
+        "agent_spread_cn": "南非 +0/0.5 @0.98",
+        "agent_totals_cn": "小球 2/2.5",
+        "totals_level": "neutral",
+        "totals_show_lean": false,
+        "totals_lean_side": "neutral"
+      },
+      "depth_calibration": {
+        "tier_home": 0.25,
+        "tier_label": "South Africa -0.25 · Canada +0.25",
+        "implied_tier": 0,
+        "tier_gap": 0.25,
+        "signal": "neutral",
+        "signal_cn": "均衡",
+        "signal_color": "#7BB8D4",
+        "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
+        "blocker_spread_note": "",
+        "public_lean_cn": "舆论倾向 Canada（约 54%）",
+        "analysis": "32强 M73 · 南非 vs 加拿大 · A2 vs B2 · 胜者 M90 碰 M75 胜者（荷兰/摩洛哥走廊）。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "0-1",
+              "prob": 14.5
+            },
+            {
+              "score": "1-1",
+              "prob": 13.3
+            },
+            {
+              "score": "0-0",
+              "prob": 12.2
+            }
+          ],
+          "one_goal_win_pct": 18.6,
+          "two_plus_win_pct": 9.9,
+          "full_cover_pct": 39.1,
+          "dog_hold_pct": 60.9,
+          "fav_win_pct": 28.5,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0,
+          "half_cover_pct": 0,
+          "half_lose_pct": 0,
+          "push_pct": null,
+          "margin_full_label": "净胜≥1",
+          "margin_half_label": null,
+          "fav_cover_ev": -0.43,
+          "dog_cover_ev": 0.43,
+          "rational_spread_cn": "客队 守住差距概率略高",
+          "total_xg": 2.1,
+          "fair_totals_line": 2.25,
+          "over_2_5_pct": 35,
+          "over_3_pct": 16.1,
+          "totals_lean_cn": "超 2.5 偏小比分（约 65%）；4球+偏少",
+          "margin_risk_note": "净胜≥1 约 28.5%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 28.5,
+          "dog_hold_pct_raw": 71.5
+        },
+        "spread_odds": {
+          "fav": 0.92,
+          "dog": 0.98,
+          "note": "South Africa 0.92 · Canada 0.98"
+        },
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 2.25,
+          "market_goals_int": 3,
+          "line_label": "总进球约 2–2.5 个",
+          "implied_xg_total": 2.1,
+          "fair_line": 2.25,
+          "line_gap": 0,
+          "over_pct": 48.4,
+          "under_pct": 51.6,
+          "signal": "aligned",
+          "signal_cn": "线与模型贴合",
+          "signal_color": "#5BBF8A",
+          "signal_desc": "总进球参考与合理值接近。",
+          "public_over_pct": 50,
+          "public_lean_cn": "舆论对总进球看法较分散",
+          "index_note": "大比分侧 0.94 / 小比分侧 0.92",
+          "totals_odds": {
+            "over": 0.94,
+            "under": 0.92,
+            "note": "大比分 0.94 · 小比分 0.92"
+          },
+          "rational_cn": "超 2.25 球接近五五开（约 48.4%）",
+          "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
+        },
+        "totals_line": 2.25,
+        "market_line_movement": {
+          "wc_note": "洛杉矶 neutral · 主客仅为 FIFA 标记",
+          "spread_open_cn": "South Africa +0/0.5@1.02 · Canada -0/0.5@0.88",
+          "spread_now_cn": "South Africa +0/0.5@0.98 · Canada -0/0.5@0.92",
+          "totals_now_cn": "大小 2/2.5 · 大 0.94 / 小 0.92",
+          "tag": "away_edge",
+          "tag_cn": "向加拿大倾斜",
+          "tag_color": "#7BB8D4",
+          "detail_cn": "初盘平手 → 现加拿大 -0/0.5 @0.92；南非 A 组次席防守型，加拿大 B 组次席进攻更猛但末轮曾闷平。"
+        },
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "neutral",
+          "market_odds_side": "neutral",
+          "market_side": "neutral",
+          "recommended_side": "neutral",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "neutral",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 观望(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
+        "agent_pick": {
+          "primary": "spread",
+          "tendency_cn": "更倾向让球盘",
+          "tendency_reason_cn": "淘汰赛首轮平局概率高，受让 +0/0.5 比 2/2.5 大小结构更清晰。",
+          "spread": {
+            "side": "dog",
+            "label_cn": "南非 +0/0.5 @0.98",
+            "reason_cn": "A 组次席 4 分出线 · 小组赛 2 失球偏稳；加拿大须破局但 -0/0.5 低水未必穿。模型平局约 32%。"
+          },
+          "totals": {
+            "side": "under",
+            "label_cn": "小球 2/2.5",
+            "reason_cn": "32 强首轮双方偏谨慎 · 模型总 xG 约 2.1 · 2/2.5 线下 ≤2 球即全赢。"
+          },
+          "picked_at": "2026-06-29",
+          "pick_meta": {
+            "model_side": "neutral",
+            "situation_side": "neutral",
+            "market_line_side": "neutral",
+            "market_odds_side": "neutral",
+            "market_side": "neutral",
+            "pick_side": "under",
+            "recommended_side": "neutral",
+            "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
+            "conflict": false,
+            "conflict_cn": null,
+            "votes": {
+              "model": "neutral",
+              "line": "neutral",
+              "odds": "neutral",
+              "situation": "neutral"
+            },
+            "vote_summary_cn": "观望(model) · 观望(line) · 观望(odds) · 观望(situation)",
+            "situation_dampened": false,
+            "over_pct": 48.4,
+            "line_gap": 0
+          }
+        },
+        "applied_delta": {
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
+        },
+        "adjustment_note": "模型微调：主胜 +0% · 平 +0% · 客 +0%",
+        "adjusted_probs": {
+          "home_win": 29,
+          "draw": 30,
+          "away_win": 42
+        },
+        "display_summary": {
+          "fav_name": "South Africa",
+          "expected_total_goals": 2.09,
+          "poisson_fav_win_pct": 28.6,
+          "small_lead_pct": 18.6,
+          "small_example_score": "1-0",
+          "small_example_pct": 11.3,
+          "big_cover_pct": 9.9,
+          "big_example_score": "2-0",
+          "big_example_pct": 5.2,
+          "win_shape": {
+            "fav_name": "South Africa",
+            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
+            "lead_cn": "取胜时以险胜·控局为主（险胜 · 控局 39.5%）",
+            "shapes": [
+              {
+                "key": "narrow_low",
+                "label": "险胜 · 控局",
+                "example": "如 1-0",
+                "field_pct": 11.3,
+                "pct": 39.5
+              },
+              {
+                "key": "narrow_open",
+                "label": "险胜 · 开放",
+                "example": "如 2-1",
+                "field_pct": 7.3,
+                "pct": 25.7
+              },
+              {
+                "key": "comfort_low",
+                "label": "拉开 · 控局",
+                "example": "如 2-0",
+                "field_pct": 6.8,
+                "pct": 23.8
+              },
+              {
+                "key": "comfort_open",
+                "label": "拉开 · 开放",
+                "example": "如 3-1+",
+                "field_pct": 3.1,
+                "pct": 11
+              }
+            ],
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 65.2
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 23.8
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 11
+              }
+            ],
+            "fav_win_pct": 29
+          },
+          "excitement": {
+            "label_cn": "偏晚",
+            "label_key": "slow",
+            "label_color": "#7BB8D4",
+            "sub_cn": "预期首球等待约 42.9 分",
+            "first_goal_wait": 42.9,
+            "fast_pct": 50.3,
+            "moderate_pct": 14.7,
+            "slow_pct": 35,
+            "tiers": [
+              {
+                "key": "fast",
+                "label": "前 30 分内首球",
+                "pct": 50.3
+              },
+              {
+                "key": "moderate",
+                "label": "30–45 分首球",
+                "pct": 14.7
+              },
+              {
+                "key": "slow",
+                "label": "45 分后首球",
+                "pct": 35
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "South Africa 暂无重要伤停 · Canada 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "— / —（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "气候信息暂无"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 0.92,
+            "baseline_away": 1.18,
+            "adjusted_home": 0.92,
+            "adjusted_away": 1.18,
+            "note": "基准 xG 0.92–1.18（未因伤病/气候下调）"
+          },
+          "calibration": {
+            "signal_cn": "均衡",
+            "signal_color": "#7BB8D4",
+            "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
+            "tier_gap": 0.25,
+            "implied_tier_label": "势均力敌",
+            "market_tier_label": "South Africa -0.25 · Canada +0.25",
+            "summary_cn": "与模型 xG 对照：均衡 · 赛前净胜看法略高（约 +0.25）"
+          },
+          "win_outlook": {
+            "fav_name": "South Africa",
+            "state_label": null,
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 65.2
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 23.8
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 11
+              }
+            ],
+            "margin_line_cn": "South Africa · 赛前净胜参考 净胜≥1（全达标）",
+            "margin_meet_pct": 39.1,
+            "margin_half_pct": 0,
+            "margin_fail_pct": 0,
+            "margin_full_label": "净胜≥1",
+            "margin_half_label": null,
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
+            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+            "totals_line": 2.25,
+            "totals_line_cn": "总进球参考 2.25",
+            "fair_totals_line": 2.25,
+            "model_total_xg": 2.1,
+            "totals_line_gap": 0,
+            "totals_high_pct": 48.4,
+            "totals_low_pct": 51.6,
+            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+            "win_low_total_pct": 16.5,
+            "win_margin2_low_total_pct": 5.2,
+            "win_margin2_high_total_pct": 9.9,
+            "readout_cn": "取胜约 29%；若取胜，以「险胜收工」为主（65.2%）。 对着赛前净胜参考，净胜≥1（全达标）约 39.1%；对着总进球参考 2.25，模型超线概率约 48.4%。"
+          },
+          "totals_line": 2.25,
+          "score_patterns": [
+            {
+              "score": "0-1",
+              "pct": 14.5
+            },
+            {
+              "score": "1-1",
+              "pct": 13.3
+            },
+            {
+              "score": "0-0",
+              "pct": 12.2
+            }
+          ],
+          "totals_view": {
+            "expected_total": 2.1,
+            "fair_line": 2.25,
+            "market_line": 2.25,
+            "line_gap": 0,
+            "over_pct": 48.4,
+            "gap_warning": null,
+            "totals_outlook": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.25，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 48.4,
+              "line_gap": 0,
+              "market_line": 2.25,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.25",
+              "caution_public_high": false
+            },
+            "summary_cn": "预测 2.1 · 合理值 2.25 · 总进球参考 2.25 · 模型在常见进球预期附近均衡，不作强倾向"
+          },
+          "customer_reading": {
+            "headline_cn": "South Africa -0.25 穿盘：有达标可能",
+            "sub_cn": "South Africa 胜 28.5% · 胜后穿 100% · Canada +0.25 守 60.9% 进球氛围：几乎五五开 平局权重约 30%，小组赛易出守平——勿只盯胜负一方。",
+            "spread": {
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
+              "fav_name": "South Africa",
+              "dog_name": "Canada",
+              "fav_handicap_cn": "South Africa -0.25",
+              "dog_handicap_cn": "Canada +0.25",
+              "market_expect_cn": "South Africa -0.25 · 净胜≥1",
+              "meet_pct": 39.1,
+              "dog_hold_pct": 60.9,
+              "fav_win_pct": 28.5,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 28.5,
+              "meet_pct_label": "South Africa -0.25 穿盘概率（校准）",
+              "dog_hold_label": "Canada +0.25 守住概率（校准）",
+              "two_stage_cn": "South Africa 取胜约 28.5% · 赢球后穿盘约 100% · Canada +0.25 守住约 60.9%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "South Africa -0.25 穿盘：有达标可能",
+              "pill_cn": "South Africa 胜 28.5% · 胜后穿 100% · Canada +0.25 守 60.9%",
+              "detail_cn": "South Africa 取胜约 28.5% · 赢球后穿盘约 100% · Canada +0.25 守住约 60.9%（泊松 raw 28.5% → 校准 39.1%）；穿盘与受让守住均有一定空间。",
+              "extra_stats_cn": "",
+              "full_cover_pct": 39.1,
+              "half_cover_pct": 0,
+              "lose1_pct": 0,
+              "margin_full_label": "净胜≥1",
+              "margin_half_label": null,
+              "tier_gap": 0.25,
+              "show_cover": true
+            },
+            "totals": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.25，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 48.4,
+              "line_gap": 0,
+              "market_line": 2.25,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.25",
+              "caution_public_high": false
+            },
+            "draw_risk": {
+              "level": "high",
+              "color": "#C8A96E",
+              "note": "平局权重约 30%，小组赛易出守平——勿只盯胜负一方。"
+            },
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "让球盘",
+                "outlook": {
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
+                  "fav_name": "South Africa",
+                  "dog_name": "Canada",
+                  "fav_handicap_cn": "South Africa -0.25",
+                  "dog_handicap_cn": "Canada +0.25",
+                  "market_expect_cn": "South Africa -0.25 · 净胜≥1",
+                  "meet_pct": 39.1,
+                  "dog_hold_pct": 60.9,
+                  "fav_win_pct": 28.5,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 28.5,
+                  "meet_pct_label": "South Africa -0.25 穿盘概率（校准）",
+                  "dog_hold_label": "Canada +0.25 守住概率（校准）",
+                  "two_stage_cn": "South Africa 取胜约 28.5% · 赢球后穿盘约 100% · Canada +0.25 守住约 60.9%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "South Africa -0.25 穿盘：有达标可能",
+                  "pill_cn": "South Africa 胜 28.5% · 胜后穿 100% · Canada +0.25 守 60.9%",
+                  "detail_cn": "South Africa 取胜约 28.5% · 赢球后穿盘约 100% · Canada +0.25 守住约 60.9%（泊松 raw 28.5% → 校准 39.1%）；穿盘与受让守住均有一定空间。",
+                  "extra_stats_cn": "",
+                  "full_cover_pct": 39.1,
+                  "half_cover_pct": 0,
+                  "lose1_pct": 0,
+                  "margin_full_label": "净胜≥1",
+                  "margin_half_label": null,
+                  "tier_gap": 0.25,
+                  "show_cover": true
+                },
+                "text": "South Africa 胜 28.5% · 胜后穿 100% · Canada +0.25 守 60.9%",
+                "color": "#C8A96E",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "◎",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "neutral",
+                  "label_cn": "暂无明显倾向",
+                  "color": "#8A96A8",
+                  "meter_label_cn": "几乎五五开",
+                  "meter_pos": 50,
+                  "lean_side": "neutral",
+                  "lean_strength": "none",
+                  "section_intro_cn": "对照总进球参考 2.25，看偏闷还是偏精彩",
+                  "pill_cn": "几乎五五开",
+                  "detail_cn": "模型五五开，临场决定节奏。",
+                  "headline_cn": "进球氛围：几乎五五开",
+                  "show_lean": false,
+                  "over_pct": 48.4,
+                  "line_gap": 0,
+                  "market_line": 2.25,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "总进球参考 2.25",
+                  "caution_public_high": false
+                },
+                "text": "几乎五五开",
+                "color": "#8A96A8",
+                "muted": true
+              }
+            ],
+            "methodology_note": "读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "South Africa",
+              "first_goal_pct": 43.8,
+              "start_score": "1-0",
+              "fav_name": "South Africa",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 83.3,
+              "small_lead_pct": 33.1,
+              "big_lead_pct": 24.7,
+              "fav_win_pct": 57.7,
+              "fav_draw_pct": 25.6,
+              "fav_lose_pct": 16.7,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "South Africa 保持胜果（净胜≥1）",
+                  "pct": 57.7
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 25.6
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 16.7
+                }
+              ],
+              "excitement": {
+                "label_cn": "偏晚",
+                "label_key": "slow",
+                "label_color": "#7BB8D4",
+                "sub_cn": "预期首球等待约 42.7 分",
+                "first_goal_wait": 42.7,
+                "fast_pct": 43.8,
+                "moderate_pct": 14.1,
+                "slow_pct": 42.1,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 43.8
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.1
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 42.1
+                  }
+                ]
+              },
+              "big_delta": 14.8,
+              "small_delta": 14.5,
+              "narrative": "South Africa 先破门（已 1-0） → 「巩固防守」；Canada 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
+              "live_outlook": {
+                "fav_name": "South Africa",
+                "state_label": "South Africa 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 65.2
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 23.8
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 11
+                  }
+                ],
+                "margin_line_cn": "South Africa · 赛前净胜参考 净胜≥1（全达标）",
+                "margin_meet_pct": 57.7,
+                "margin_half_pct": 0,
+                "margin_fail_pct": 33.1,
+                "margin_full_label": "净胜≥1",
+                "margin_half_label": null,
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.25,
+                "totals_line_cn": "总进球参考 2.25",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 1.73,
+                "totals_line_gap": 0,
+                "totals_high_pct": 66.9,
+                "totals_low_pct": 33.1,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 30.2,
+                "win_margin2_low_total_pct": 12.5,
+                "win_margin2_high_total_pct": 24.7,
+                "readout_cn": "South Africa 已 1-0 领先：仍取胜约 57.7%。 对着总进球参考 2.25，模型超线概率约 66.9%。 常见 2-0 收尾（相对总进球参考 2.25仍偏小比分）。"
+              }
+            },
+            {
+              "side": "away",
+              "team": "Canada",
+              "first_goal_pct": 56.2,
+              "start_score": "0-1",
+              "fav_name": "South Africa",
+              "scorer_is_fav": false,
+              "expected_key": "upset_hold",
+              "fav_recover_pct": 30.2,
+              "small_lead_pct": 7.4,
+              "big_lead_pct": 2.3,
+              "fav_win_pct": 9.7,
+              "fav_draw_pct": 20.5,
+              "fav_lose_pct": 69.9,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "South Africa 追平（平局）",
+                  "pct": 20.5
+                },
+                {
+                  "key": "win1",
+                  "label": "South Africa 净胜1球翻盘（如 2-1）",
+                  "pct": 7.4
+                },
+                {
+                  "key": "win2",
+                  "label": "South Africa 净胜≥2球翻盘（如 3-1）",
+                  "pct": 2.3
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "Canada 保持胜果至终场",
+                  "pct": 69.9
+                }
+              ],
+              "excitement": {
+                "label_cn": "偏晚",
+                "label_key": "slow",
+                "label_color": "#7BB8D4",
+                "sub_cn": "预期首球等待约 43.1 分",
+                "first_goal_wait": 43.1,
+                "fast_pct": 43.5,
+                "moderate_pct": 14,
+                "slow_pct": 42.4,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 43.5
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 42.4
+                  }
+                ]
+              },
+              "big_delta": -7.6,
+              "small_delta": -11.2,
+              "narrative": "Canada 先破门（已 0-1） → 「巩固防守」；South Africa 「组织反扑」。热门先丢球（已 0-1），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
+              "live_outlook": null
+            }
+          ],
+          "match_preview": {
+            "morphology": {
+              "totals_summary": "预测 2.1 · 合理值 2.25 · 总进球参考 2.25 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球参考 2.25",
+              "totals_high_pct": 48.4,
+              "type_tags": [
+                {
+                  "key": "low_scoring",
+                  "label": "进球偏少"
+                }
+              ],
+              "depth_label": "深度一般",
+              "draw_trap_pct": 25,
+              "readout_cn": "South Africa · 进球偏少。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+            },
+            "draw_trap_note": null,
+            "archetype": {
+              "tags": [
+                {
+                  "key": "low_scoring",
+                  "label": "进球偏少"
+                }
+              ],
+              "depth_score": 0,
+              "depth_label": "深度一般",
+              "draw_trap_pct": 25,
+              "fav_lead_style": "balanced"
+            }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.4,
+            "xg_away_ht": 0.52,
+            "xg_home_2h": 0.52,
+            "xg_away_2h": 0.66,
+            "home_win": 21.6,
+            "draw": 48.6,
+            "away_win": 29.8,
+            "top_score": "0-0",
+            "top_score_prob": 39.9,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 39.9
+              },
+              {
+                "score": "0-1",
+                "prob": 20.7
+              },
+              {
+                "score": "1-0",
+                "prob": 15.9
+              }
+            ],
+            "ht_goals_expected": 0.92,
+            "ht_over_0_5_pct": 60.1,
+            "ht_over_1_5_pct": 23.5,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.4–0.52（约占全场 44%） · 最可能 0-0（39.9%） · 胜平负 21.6/48.6/29.8 · 半场≥1球约 60.1%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
+          }
+        },
+        "public_summary_note": "【推演概要】South Africa · 进球偏少。 · 与模型 xG 对照：均衡 · 赛前净胜看法略高（约 +0.25）（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
+        "goal_efficiency": {
+          "xg_total": 2.1,
+          "xg_gap": 0.26,
+          "xg_home": 0.92,
+          "xg_away": 1.18,
+          "fav_name": "Canada",
+          "dog_name": "South Africa",
+          "fav_xg": 1.18,
+          "dog_xg": 0.92,
+          "fav_goals": 1,
+          "dog_goals": 0,
+          "fav_eff": 0.85,
+          "dog_eff": 0,
+          "total_goals": 1,
+          "goal_diff_vs_xg": -1.1,
+          "path_type": "mixed",
+          "path_label": "混合路径",
+          "tags": [
+            {
+              "key": "low_scoring",
+              "label": "小比分",
+              "color": "#7BB8D4",
+              "bg": "rgba(123,184,212,0.1)"
+            },
+            {
+              "key": "even_xg",
+              "label": "xG接近",
+              "color": "#5BBF8A",
+              "bg": "rgba(91,191,138,0.08)"
+            },
+            {
+              "key": "dog_quiet",
+              "label": "弱队哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "双方效率均低——总进球难起，铁局/小比分概率高。",
+          "summary_cn": "赛前 xG 总 2.1（差 0.26）· 热门 Canada 1.18→1（效率 0.85）· 弱队 South Africa 0.92→0（效率 0）→ 混合路径。双方效率均低——总进球难起，铁局/小比分概率高。",
+          "in_mid_band": true
+        },
+        "preview_replay": {
+          "actual_score": "0-1",
+          "ht_score": "0-0",
+          "hits": [
+            "赛前进球氛围未强判（符合模型五五开读法）"
+          ],
+          "misses": [],
+          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。",
+          "totals_actual": 1,
+          "totals_line": 2.25,
+          "spread_level": "possible",
+          "totals_level": "neutral"
+        }
+      },
+      "actualResult": {
+        "home_score": 0,
+        "away_score": 1,
+        "status": "FT",
+        "label": "全场结束",
+        "scorers": "Stephen EUSTAQUIO 90'+2'",
+        "highlights": "洛杉矶 · 南非 0-1 加拿大 · Eustaquio 90+2' 绝杀 · 加拿大 -0/0.5 穿 · 小球 2/2.5 赢",
+        "ht_score": "0-0",
+        "first_goal_min": 902,
+        "fifa_match_id": "400021518",
+        "updated": "2026-06-29T13:49:31+08:00"
+      },
+      "pre_match_context": {
+        "key_factor_pre": null,
+        "home_rumors": [
+          {
+            "text": "南非延续 A 组末轮低位+反击思路 · 淘汰赛加时规则生效",
+            "tag": "战术"
+          }
+        ],
+        "away_rumors": [
+          {
+            "text": "加拿大 B 组次席出线 · Davies 宽度+David 终结为破局点",
+            "tag": "战术"
+          }
+        ]
       }
     }
   ],
