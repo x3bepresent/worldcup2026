@@ -1,8 +1,8 @@
-// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
-// Last API sync: 2026-06-29T16:48:53.564Z
+// 今日赛事 — Day 19 enriched
+// Last updated: 2026-06-29T19:48:07+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-29T16:48:53.564Z",
-  "syncSource": "API-Football",
+  "lastUpdated": "2026-06-29T19:48:07+08:00",
+  "syncSource": "FIFA 赛程 · Day 19 · 32强 3场 enriched",
   "phase": "knockout",
   "phase_cn": "淘汰赛 · 32强",
   "breakingNews": [
@@ -261,7 +261,7 @@ const MATCH_DATA = {
         },
         "fifa_match_id": "400021516",
         "note": "FIFA M76 · 巴西 vs 日本 · 休斯顿 NRG Stadium",
-        "updated": "2026-06-29T15:31:12+08:00"
+        "updated": "2026-06-29T19:48:07+08:00"
       },
       "prediction": {
         "home_win": 54,
@@ -275,19 +275,19 @@ const MATCH_DATA = {
         "score_dist": [
           {
             "score": "1-0",
-            "prob": 13.3
+            "prob": 14.1
           },
           {
             "score": "2-0",
-            "prob": 13
+            "prob": 13.4
           },
           {
             "score": "1-1",
-            "prob": 9.7
+            "prob": 9.9
           },
           {
             "score": "2-1",
-            "prob": 9.5
+            "prob": 9.4
           },
           {
             "score": "3-0",
@@ -295,11 +295,11 @@ const MATCH_DATA = {
           },
           {
             "score": "0-0",
-            "prob": 6.8
+            "prob": 7.4
           },
           {
             "score": "3-1",
-            "prob": 6.2
+            "prob": 5.9
           }
         ],
         "insight_factors": [
@@ -329,22 +329,22 @@ const MATCH_DATA = {
           "qual_dynamics": null
         },
         "qual_dynamics": null,
-        "xg_poisson_home": 1.96,
-        "xg_poisson_away": 0.73,
+        "xg_poisson_home": 1.9,
+        "xg_poisson_away": 0.7,
         "xg_tier_calibrated": true,
-        "score_prob": 13.3,
+        "score_prob": 14.1,
         "score_top3": [
           {
             "score": "1-0",
-            "prob": 13.3
+            "prob": 14.1
           },
           {
             "score": "2-0",
-            "prob": 13
+            "prob": 13.4
           },
           {
             "score": "1-1",
-            "prob": 9.7
+            "prob": 9.9
           }
         ],
         "expected_score": "2-1"
@@ -570,46 +570,46 @@ const MATCH_DATA = {
         },
         "display_summary": {
           "fav_name": "Brazil",
-          "expected_total_goals": 2.51,
-          "poisson_fav_win_pct": 55.5,
-          "small_lead_pct": 25.5,
+          "expected_total_goals": 2.42,
+          "poisson_fav_win_pct": 54.8,
+          "small_lead_pct": 25.7,
           "small_example_score": "1-0",
-          "small_example_pct": 13.2,
-          "big_cover_pct": 30,
+          "small_example_pct": 13.9,
+          "big_cover_pct": 29.1,
           "big_example_score": "2-0",
-          "big_example_pct": 10.9,
+          "big_example_pct": 11.1,
           "win_shape": {
             "fav_name": "Brazil",
             "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 30.6%）",
+            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 31.1%）",
             "shapes": [
               {
                 "key": "narrow_low",
                 "label": "险胜 · 控局",
                 "example": "如 1-0",
-                "field_pct": 13.2,
-                "pct": 23.8
+                "field_pct": 13.9,
+                "pct": 25.3
               },
               {
                 "key": "narrow_open",
                 "label": "险胜 · 开放",
                 "example": "如 2-1",
-                "field_pct": 12.3,
-                "pct": 22.1
+                "field_pct": 11.8,
+                "pct": 21.6
               },
               {
                 "key": "comfort_low",
                 "label": "拉开 · 控局",
                 "example": "如 2-0",
                 "field_pct": 17,
-                "pct": 30.6
+                "pct": 31.1
               },
               {
                 "key": "comfort_open",
                 "label": "拉开 · 开放",
                 "example": "如 3-1+",
-                "field_pct": 13,
-                "pct": 23.5
+                "field_pct": 12,
+                "pct": 22
               }
             ],
             "paths": [
@@ -617,19 +617,19 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 45.9
+                "pct": 46.9
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 30.6
+                "pct": 31.1
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 23.5
+                "pct": 22
               }
             ],
             "fav_win_pct": 54
@@ -638,16 +638,16 @@ const MATCH_DATA = {
             "label_cn": "中速开局",
             "label_key": "moderate",
             "label_color": "#C8A96E",
-            "sub_cn": "预期首球等待约 35.4 分",
-            "first_goal_wait": 35.4,
-            "fast_pct": 57.1,
+            "sub_cn": "预期首球等待约 36.7 分",
+            "first_goal_wait": 36.7,
+            "fast_pct": 55.8,
             "moderate_pct": 14.8,
-            "slow_pct": 28.1,
+            "slow_pct": 29.4,
             "tiers": [
               {
                 "key": "fast",
                 "label": "前 30 分内首球",
-                "pct": 57.1
+                "pct": 55.8
               },
               {
                 "key": "moderate",
@@ -657,7 +657,7 @@ const MATCH_DATA = {
               {
                 "key": "slow",
                 "label": "45 分后首球",
-                "pct": 28.1
+                "pct": 29.4
               }
             ]
           },
@@ -666,7 +666,7 @@ const MATCH_DATA = {
             {
               "icon": "🏥",
               "label": "伤病",
-              "note": "Brazil 暂无重要伤停 · Japan 暂无重要伤停"
+              "note": "Brazil：Danilo 存疑 · Japan：Ko Itakura 存疑"
             },
             {
               "icon": "👔",
@@ -687,9 +687,9 @@ const MATCH_DATA = {
           "xg_context": {
             "baseline_home": 1.88,
             "baseline_away": 0.98,
-            "adjusted_home": 1.66,
-            "adjusted_away": 0.88,
-            "note": "基准 xG 1.88–0.98 → 调整后 1.66–0.88"
+            "adjusted_home": 1.6,
+            "adjusted_away": 0.85,
+            "note": "基准 xG 1.88–0.98 → 调整后 1.6–0.85"
           },
           "calibration": {
             "signal_cn": "实力吻合",
@@ -708,23 +708,23 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 45.9
+                "pct": 46.9
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 30.6
+                "pct": 31.1
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 23.5
+                "pct": 22
               }
             ],
             "margin_line_cn": "Brazil · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 48.5,
+            "margin_meet_pct": 49,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -735,37 +735,37 @@ const MATCH_DATA = {
             "totals_line": 2.25,
             "totals_line_cn": "总进球参考 2.25",
             "fair_totals_line": 2,
-            "model_total_xg": 2.54,
+            "model_total_xg": 2.45,
             "totals_line_gap": 0.25,
-            "totals_high_pct": 59.1,
-            "totals_low_pct": 40.9,
+            "totals_high_pct": 57,
+            "totals_low_pct": 43,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 24.1,
-            "win_margin2_low_total_pct": 10.9,
-            "win_margin2_high_total_pct": 30,
-            "readout_cn": "取胜约 54%；若取胜，以「险胜收工」为主（45.9%）。 对着赛前净胜参考，净胜≥1（全达标）约 48.5%；对着总进球参考 2.25，模型超线概率约 59.1%。"
+            "win_low_total_pct": 25,
+            "win_margin2_low_total_pct": 11.1,
+            "win_margin2_high_total_pct": 29.1,
+            "readout_cn": "取胜约 54%；若取胜，以「险胜收工」为主（46.9%）。 对着赛前净胜参考，净胜≥1（全达标）约 49%；对着总进球参考 2.25，模型超线概率约 57%。"
           },
           "totals_line": 2.25,
           "score_patterns": [
             {
               "score": "1-0",
-              "pct": 13.1
+              "pct": 13.8
             },
             {
               "score": "1-1",
-              "pct": 11.5
+              "pct": 11.8
             },
             {
               "score": "2-0",
-              "pct": 10.9
+              "pct": 11.1
             }
           ],
           "totals_view": {
-            "expected_total": 2.5,
+            "expected_total": 2.4,
             "fair_line": 2,
             "market_line": 2.25,
             "line_gap": 0.25,
-            "over_pct": 59.1,
+            "over_pct": 57,
             "gap_warning": null,
             "totals_outlook": {
               "level": "neutral",
@@ -780,18 +780,18 @@ const MATCH_DATA = {
               "detail_cn": "模型五五开，临场决定节奏。",
               "headline_cn": "进球氛围：几乎五五开",
               "show_lean": false,
-              "over_pct": 59.1,
+              "over_pct": 57,
               "line_gap": 0.25,
               "market_line": 2.25,
               "market_goals_int": 3,
               "market_goals_cn": "总进球参考 2.25",
               "caution_public_high": false
             },
-            "summary_cn": "预测 2.5 · 合理值 2 · 总进球参考 2.25（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向"
+            "summary_cn": "预测 2.4 · 合理值 2 · 总进球参考 2.25（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
             "headline_cn": "Brazil -0.75 穿盘：有达标可能",
-            "sub_cn": "Brazil 胜 55.7% · 胜后穿 100% · Japan +0.75 守 51.4% 进球氛围：几乎五五开",
+            "sub_cn": "Brazil 胜 55% · 胜后穿 100% · Japan +0.75 守 51.7% 进球氛围：几乎五五开",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -801,21 +801,21 @@ const MATCH_DATA = {
               "fav_handicap_cn": "Brazil -0.75",
               "dog_handicap_cn": "Japan +0.75",
               "market_expect_cn": "Brazil -0.75 · 净胜≥1",
-              "meet_pct": 48.6,
-              "dog_hold_pct": 51.4,
-              "fav_win_pct": 55.7,
+              "meet_pct": 48.3,
+              "dog_hold_pct": 51.7,
+              "fav_win_pct": 55,
               "cover_given_win_pct": 100,
-              "full_cover_pct_raw": 55.7,
+              "full_cover_pct_raw": 55,
               "meet_pct_label": "Brazil -0.75 穿盘概率（校准）",
               "dog_hold_label": "Japan +0.75 守住概率（校准）",
-              "two_stage_cn": "Brazil 取胜约 55.7% · 赢球后穿盘约 100% · Japan +0.75 守住约 51.4%",
+              "two_stage_cn": "Brazil 取胜约 55% · 赢球后穿盘约 100% · Japan +0.75 守住约 51.7%",
               "grid_tail_pct": null,
               "verdict_cn": "有达标可能",
               "headline_cn": "Brazil -0.75 穿盘：有达标可能",
-              "pill_cn": "Brazil 胜 55.7% · 胜后穿 100% · Japan +0.75 守 51.4%",
-              "detail_cn": "Brazil 取胜约 55.7% · 赢球后穿盘约 100% · Japan +0.75 守住约 51.4%（泊松 raw 55.7% → 校准 48.6%）；穿盘与受让守住均有一定空间。",
+              "pill_cn": "Brazil 胜 55% · 胜后穿 100% · Japan +0.75 守 51.7%",
+              "detail_cn": "Brazil 取胜约 55% · 赢球后穿盘约 100% · Japan +0.75 守住约 51.7%（泊松 raw 55% → 校准 48.3%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 48.6,
+              "full_cover_pct": 48.3,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -836,7 +836,7 @@ const MATCH_DATA = {
               "detail_cn": "模型五五开，临场决定节奏。",
               "headline_cn": "进球氛围：几乎五五开",
               "show_lean": false,
-              "over_pct": 59.1,
+              "over_pct": 57,
               "line_gap": 0.25,
               "market_line": 2.25,
               "market_goals_int": 3,
@@ -858,21 +858,21 @@ const MATCH_DATA = {
                   "fav_handicap_cn": "Brazil -0.75",
                   "dog_handicap_cn": "Japan +0.75",
                   "market_expect_cn": "Brazil -0.75 · 净胜≥1",
-                  "meet_pct": 48.6,
-                  "dog_hold_pct": 51.4,
-                  "fav_win_pct": 55.7,
+                  "meet_pct": 48.3,
+                  "dog_hold_pct": 51.7,
+                  "fav_win_pct": 55,
                   "cover_given_win_pct": 100,
-                  "full_cover_pct_raw": 55.7,
+                  "full_cover_pct_raw": 55,
                   "meet_pct_label": "Brazil -0.75 穿盘概率（校准）",
                   "dog_hold_label": "Japan +0.75 守住概率（校准）",
-                  "two_stage_cn": "Brazil 取胜约 55.7% · 赢球后穿盘约 100% · Japan +0.75 守住约 51.4%",
+                  "two_stage_cn": "Brazil 取胜约 55% · 赢球后穿盘约 100% · Japan +0.75 守住约 51.7%",
                   "grid_tail_pct": null,
                   "verdict_cn": "有达标可能",
                   "headline_cn": "Brazil -0.75 穿盘：有达标可能",
-                  "pill_cn": "Brazil 胜 55.7% · 胜后穿 100% · Japan +0.75 守 51.4%",
-                  "detail_cn": "Brazil 取胜约 55.7% · 赢球后穿盘约 100% · Japan +0.75 守住约 51.4%（泊松 raw 55.7% → 校准 48.6%）；穿盘与受让守住均有一定空间。",
+                  "pill_cn": "Brazil 胜 55% · 胜后穿 100% · Japan +0.75 守 51.7%",
+                  "detail_cn": "Brazil 取胜约 55% · 赢球后穿盘约 100% · Japan +0.75 守住约 51.7%（泊松 raw 55% → 校准 48.3%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 48.6,
+                  "full_cover_pct": 48.3,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -880,7 +880,7 @@ const MATCH_DATA = {
                   "tier_gap": 0.5,
                   "show_cover": true
                 },
-                "text": "Brazil 胜 55.7% · 胜后穿 100% · Japan +0.75 守 51.4%",
+                "text": "Brazil 胜 55% · 胜后穿 100% · Japan +0.75 守 51.7%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -901,7 +901,7 @@ const MATCH_DATA = {
                   "detail_cn": "模型五五开，临场决定节奏。",
                   "headline_cn": "进球氛围：几乎五五开",
                   "show_lean": false,
-                  "over_pct": 59.1,
+                  "over_pct": 57,
                   "line_gap": 0.25,
                   "market_line": 2.25,
                   "market_goals_int": 3,
@@ -919,17 +919,17 @@ const MATCH_DATA = {
             {
               "side": "home",
               "team": "Brazil",
-              "first_goal_pct": 65.4,
+              "first_goal_pct": 65.3,
               "start_score": "1-0",
               "fav_name": "Brazil",
               "scorer_is_fav": true,
               "expected_key": "hold_win",
-              "fav_recover_pct": 93.3,
-              "small_lead_pct": 29.1,
-              "big_lead_pct": 48.6,
+              "fav_recover_pct": 93.5,
+              "small_lead_pct": 29.9,
+              "big_lead_pct": 47.8,
               "fav_win_pct": 77.7,
-              "fav_draw_pct": 15.6,
-              "fav_lose_pct": 6.6,
+              "fav_draw_pct": 15.8,
+              "fav_lose_pct": 6.5,
               "outcomes": [
                 {
                   "key": "hold_win",
@@ -939,43 +939,43 @@ const MATCH_DATA = {
                 {
                   "key": "drawn",
                   "label": "被扳平",
-                  "pct": 15.6
+                  "pct": 15.8
                 },
                 {
                   "key": "lost",
                   "label": "被逆转落败",
-                  "pct": 6.6
+                  "pct": 6.5
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 36.1 分",
-                "first_goal_wait": 36.1,
-                "fast_pct": 49.4,
-                "moderate_pct": 14.6,
-                "slow_pct": 36,
+                "sub_cn": "预期首球等待约 37.5 分",
+                "first_goal_wait": 37.5,
+                "fast_pct": 48.1,
+                "moderate_pct": 14.5,
+                "slow_pct": 37.4,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 49.4
+                    "pct": 48.1
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 14.6
+                    "pct": 14.5
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 36
+                    "pct": 37.4
                   }
                 ]
               },
-              "big_delta": 18.6,
-              "small_delta": 3.6,
+              "big_delta": 18.7,
+              "small_delta": 4.2,
               "narrative": "Brazil 先破门（已 1-0） → 「巩固防守」；Japan 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
               "live_outlook": {
                 "fav_name": "Brazil",
@@ -985,25 +985,25 @@ const MATCH_DATA = {
                     "key": "narrow",
                     "label": "险胜收工",
                     "example": "如 1-0、2-1",
-                    "pct": 45.9
+                    "pct": 46.9
                   },
                   {
                     "key": "clean",
                     "label": "零封拉开",
                     "example": "如 2-0、3-0",
-                    "pct": 30.6
+                    "pct": 31.1
                   },
                   {
                     "key": "open",
                     "label": "开放拉开",
                     "example": "如 3-1+",
-                    "pct": 23.5
+                    "pct": 22
                   }
                 ],
                 "margin_line_cn": "Brazil · 赛前净胜参考 净胜≥1（全达标）",
                 "margin_meet_pct": 77.7,
                 "margin_half_pct": 0,
-                "margin_fail_pct": 29.1,
+                "margin_fail_pct": 29.9,
                 "margin_full_label": "净胜≥1",
                 "margin_half_label": null,
                 "final_2_0_pct": null,
@@ -1012,91 +1012,91 @@ const MATCH_DATA = {
                 "totals_line": 2.25,
                 "totals_line_cn": "总进球参考 2.25",
                 "fair_totals_line": 2.25,
-                "model_total_xg": 2.04,
+                "model_total_xg": 1.97,
                 "totals_line_gap": 0,
-                "totals_high_pct": 73.7,
-                "totals_low_pct": 26.3,
+                "totals_high_pct": 72.2,
+                "totals_low_pct": 27.8,
                 "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-                "win_low_total_pct": 29.6,
-                "win_margin2_low_total_pct": 16.6,
-                "win_margin2_high_total_pct": 48.6,
-                "readout_cn": "Brazil 已 1-0 领先：仍取胜约 77.7%。 对着总进球参考 2.25，模型超线概率约 73.7%。 常见 2-0 收尾（相对总进球参考 2.25仍偏小比分）。"
+                "win_low_total_pct": 31.2,
+                "win_margin2_low_total_pct": 17.2,
+                "win_margin2_high_total_pct": 47.8,
+                "readout_cn": "Brazil 已 1-0 领先：仍取胜约 77.7%。 对着总进球参考 2.25，模型超线概率约 72.2%。 常见 2-0 收尾（相对总进球参考 2.25仍偏小比分）。"
               }
             },
             {
               "side": "away",
               "team": "Japan",
-              "first_goal_pct": 34.6,
+              "first_goal_pct": 34.7,
               "start_score": "0-1",
               "fav_name": "Brazil",
               "scorer_is_fav": false,
               "expected_key": "fav_recover",
-              "fav_recover_pct": 55.3,
-              "small_lead_pct": 17.1,
-              "big_lead_pct": 10.9,
-              "fav_win_pct": 28,
-              "fav_draw_pct": 27.3,
-              "fav_lose_pct": 44.7,
+              "fav_recover_pct": 54.7,
+              "small_lead_pct": 16.8,
+              "big_lead_pct": 10.3,
+              "fav_win_pct": 27.1,
+              "fav_draw_pct": 27.6,
+              "fav_lose_pct": 45.3,
               "outcomes": [
                 {
                   "key": "draw",
                   "label": "Brazil 追平（平局）",
-                  "pct": 27.3
+                  "pct": 27.6
                 },
                 {
                   "key": "win1",
                   "label": "Brazil 净胜1球翻盘（如 2-1）",
-                  "pct": 17.1
+                  "pct": 16.8
                 },
                 {
                   "key": "win2",
                   "label": "Brazil 净胜≥2球翻盘（如 3-1）",
-                  "pct": 10.9
+                  "pct": 10.3
                 },
                 {
                   "key": "upset_hold",
                   "label": "Japan 保持胜果至终场",
-                  "pct": 44.7
+                  "pct": 45.3
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 34.7 分",
-                "first_goal_wait": 34.7,
-                "fast_pct": 50.7,
-                "moderate_pct": 14.7,
-                "slow_pct": 34.6,
+                "sub_cn": "预期首球等待约 36 分",
+                "first_goal_wait": 36,
+                "fast_pct": 49.5,
+                "moderate_pct": 14.6,
+                "slow_pct": 35.9,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 50.7
+                    "pct": 49.5
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 14.7
+                    "pct": 14.6
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 34.6
+                    "pct": 35.9
                   }
                 ]
               },
-              "big_delta": -19.1,
-              "small_delta": -8.4,
+              "big_delta": -18.8,
+              "small_delta": -8.9,
               "narrative": "Japan 先破门（已 0-1） → 「巩固防守」；Brazil 「组织反扑」。热门先丢球（已 0-1），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
               "live_outlook": null
             }
           ],
           "match_preview": {
             "morphology": {
-              "totals_summary": "预测 2.5 · 合理值 2 · 总进球参考 2.25（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_summary": "预测 2.4 · 合理值 2 · 总进球参考 2.25（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向",
               "totals_line_cn": "总进球参考 2.25",
-              "totals_high_pct": 59.1,
+              "totals_high_pct": 57,
               "type_tags": [
                 {
                   "key": "balanced",
@@ -1123,35 +1123,35 @@ const MATCH_DATA = {
           },
           "halftime_preview": {
             "ht_xg_share": 0.44,
-            "xg_home_ht": 0.73,
-            "xg_away_ht": 0.39,
-            "xg_home_2h": 0.93,
-            "xg_away_2h": 0.49,
-            "home_win": 39.7,
-            "draw": 42.6,
-            "away_win": 17.7,
+            "xg_home_ht": 0.7,
+            "xg_away_ht": 0.37,
+            "xg_home_2h": 0.9,
+            "xg_away_2h": 0.48,
+            "home_win": 38.9,
+            "draw": 43.8,
+            "away_win": 17.3,
             "top_score": "0-0",
-            "top_score_prob": 32.6,
+            "top_score_prob": 34.3,
             "top3_scores": [
               {
                 "score": "0-0",
-                "prob": 32.6
+                "prob": 34.3
               },
               {
                 "score": "1-0",
-                "prob": 23.8
+                "prob": 24
               },
               {
                 "score": "0-1",
                 "prob": 12.7
               }
             ],
-            "ht_goals_expected": 1.12,
-            "ht_over_0_5_pct": 67.4,
-            "ht_over_1_5_pct": 30.8,
+            "ht_goals_expected": 1.07,
+            "ht_over_0_5_pct": 65.7,
+            "ht_over_1_5_pct": 29,
             "pick": "draw",
             "pick_name": "平局",
-            "summary_cn": "半场 xG 0.73–0.39（约占全场 44%） · 最可能 0-0（32.6%） · 胜平负 39.7/42.6/17.7 · 半场≥1球约 67.4%",
+            "summary_cn": "半场 xG 0.7–0.37（约占全场 44%） · 最可能 0-0（34.3%） · 胜平负 38.9/43.8/17.3 · 半场≥1球约 65.7%",
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
@@ -1164,7 +1164,7 @@ const MATCH_DATA = {
           "xg_away": 0.98,
           "xg_baseline_home": 1.88,
           "xg_baseline_away": 0.98,
-          "xg_note": "结构推演用基准 xG 1.88–0.98（进球氛围用调整后 1.66–0.88）",
+          "xg_note": "结构推演用基准 xG 1.88–0.98（进球氛围用调整后 1.6–0.85）",
           "lean_note": "总进球大/小标签未达强信号（基准 xG · 需≥60% 或 ≤40%），以下以进球故事线为主。",
           "fav_name": "Brazil",
           "dog_name": "Japan",
@@ -1243,11 +1243,11 @@ const MATCH_DATA = {
         "market_tier": 0.75,
         "tier_label": "Brazil -0.75 · Japan +0.75",
         "totals_line": 2.25,
-        "over_pct": 59.1,
+        "over_pct": 57,
         "fair_line": 2,
         "line_gap": 0.25,
-        "full_cover_pct": 48.6,
-        "fav_win_pct": 55.7,
+        "full_cover_pct": 48.3,
+        "fav_win_pct": 55,
         "cover_given_win_pct": 100,
         "spread_level": "possible",
         "spread_market_expect": "Brazil -0.75 · 净胜≥1",
@@ -1371,7 +1371,7 @@ const MATCH_DATA = {
           "Nagelsmann：「巴拉圭 D 组第3 出线靠防守——须耐心破铁桶」",
           "预计 4-2-3-1 控球压迫 · Musiala/Wirtz 双 10 号位",
           "E 组 10 球 2 场后末轮小负 · 淘汰赛须兑现深盘",
-          "Agent 大信心德国 -1/1.5 低水穿盘"
+          "Agent 大信心德国 -1.5 @1.04 升盘穿盘"
         ]
       },
       "away": {
@@ -1497,12 +1497,12 @@ const MATCH_DATA = {
         },
         "fifa_match_id": "400021513",
         "note": "FIFA M74 · 德国 vs 巴拉圭 · 波士顿 Gillette Stadium",
-        "updated": "2026-06-29T15:31:12+08:00"
+        "updated": "2026-06-29T19:48:07+08:00"
       },
       "prediction": {
-        "home_win": 62,
-        "draw": 25,
-        "away_win": 13,
+        "home_win": 59,
+        "draw": 23,
+        "away_win": 17,
         "score": "2-0",
         "confidence": 78,
         "xg_home": 1.82,
@@ -1511,7 +1511,7 @@ const MATCH_DATA = {
         "score_dist": [
           {
             "score": "2-0",
-            "prob": 16
+            "prob": 16.4
           },
           {
             "score": "1-0",
@@ -1519,23 +1519,23 @@ const MATCH_DATA = {
           },
           {
             "score": "3-0",
-            "prob": 12
+            "prob": 12.6
           },
           {
             "score": "2-1",
-            "prob": 8.2
-          },
-          {
-            "score": "1-1",
-            "prob": 7.3
+            "prob": 7.9
           },
           {
             "score": "4-0",
-            "prob": 6.7
+            "prob": 7.2
+          },
+          {
+            "score": "1-1",
+            "prob": 6.8
           },
           {
             "score": "0-0",
-            "prob": 6.4
+            "prob": 6.2
           }
         ],
         "insight_factors": [
@@ -1550,29 +1550,27 @@ const MATCH_DATA = {
             "text": "32强 M74 · 德国 E1 vs 巴拉圭 D 组第3 · 深盘 -1/1.5 · 泊松 2-0/3-0"
           }
         ],
-        "base_home_win": 60,
-        "base_draw": 26,
-        "base_away_win": 14,
+        "base_home_win": 63.3,
+        "base_draw": 22.4,
+        "base_away_win": 14.4,
         "depth_calibrated": true,
         "draw_context": {
-          "drawBoost": 4,
-          "ironBucket": false,
+          "drawBoost": 0,
+          "ironBucket": true,
           "closeXg": false,
           "gap": 1.1,
-          "notes": [
-            "xG 暗示胶着"
-          ],
+          "notes": [],
           "qual_dynamics": null
         },
         "qual_dynamics": null,
-        "xg_poisson_home": 2.24,
-        "xg_poisson_away": 0.51,
+        "xg_poisson_home": 2.3,
+        "xg_poisson_away": 0.48,
         "xg_tier_calibrated": true,
-        "score_prob": 16,
+        "score_prob": 16.4,
         "score_top3": [
           {
             "score": "2-0",
-            "prob": 16
+            "prob": 16.4
           },
           {
             "score": "1-0",
@@ -1580,10 +1578,10 @@ const MATCH_DATA = {
           },
           {
             "score": "3-0",
-            "prob": 12
+            "prob": 12.6
           }
         ],
-        "expected_score": "2-1"
+        "expected_score": "2-0"
       },
       "weather": {
         "city": "波士顿",
@@ -1641,17 +1639,17 @@ const MATCH_DATA = {
         "disclaimer": "文化解读 · 非竞技推演"
       },
       "depth_calibration": {
-        "tier_home": 1.25,
-        "tier_label": "Germany -1.25 · Paraguay +1.25",
+        "tier_home": 1.5,
+        "tier_label": "Germany -1.5 · Paraguay +1.5",
         "implied_tier": 0.75,
-        "tier_gap": 0.5,
-        "signal": "genuine_favorite",
-        "signal_cn": "实力吻合",
-        "signal_color": "#5BBF8A",
-        "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
-        "blocker_spread_note": "",
+        "tier_gap": 0.75,
+        "signal": "blocker_inflate",
+        "signal_cn": "大众心理预期偏高",
+        "signal_color": "#D95F6A",
+        "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+        "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "public_lean_cn": "舆论倾向 Germany（约 70%）",
-        "analysis": "M74 · 德国 vs 巴拉圭 · 皇冠 -1/1.5 德 0.83 / 巴 1.06 · 大小 2.5/3 大 0.91 小 0.97。 赛前净胜参考高于 xG 隐含（+0.5），且净胜 1 球占 26.1%——热门净胜拉开偏难。",
+        "analysis": "M74 · 德国 vs 巴拉圭 · 皇冠 -1.5 德 1.04 / 巴 0.85 · 大小 2.5/3 大 0.91 小 0.97。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "spread_cover": {
           "top3_scores": [
             {
@@ -1675,27 +1673,27 @@ const MATCH_DATA = {
           "cover_given_win_pct": 58.9,
           "grid_max_goals": 6,
           "grid_tail_pct": 0.3,
-          "half_cover_pct": 0,
-          "half_lose_pct": 26.1,
+          "half_cover_pct": 26.1,
+          "half_lose_pct": 0,
           "push_pct": null,
           "margin_full_label": "净胜≥2",
-          "margin_half_label": null,
-          "fav_cover_ev": -0.121,
-          "dog_cover_ev": 0.122,
-          "rational_spread_cn": "客队 守住差距概率略高",
+          "margin_half_label": "部分达标净胜=1",
+          "fav_cover_ev": 0,
+          "dog_cover_ev": 0,
+          "rational_spread_cn": "两边净胜达标概率接近",
           "total_xg": 2.54,
           "fair_totals_line": 2,
           "over_2_5_pct": 46.5,
           "over_3_pct": 24.9,
           "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
-          "margin_risk_note": "净胜 1 球概率 26.1%：常见「赢球但净胜仅 1 球」",
+          "margin_risk_note": "净胜≥2 约 37.4%；部分达标净胜=1 约 26.1%；仅赢 1 球约 0%",
           "full_cover_pct_raw": 37.4,
           "dog_hold_pct_raw": 62.6
         },
         "spread_odds": {
-          "fav": 0.83,
-          "dog": 1.06,
-          "note": "Germany 0.83 · Paraguay 1.06"
+          "fav": 1.04,
+          "dog": 0.85,
+          "note": "Germany 1.04 · Paraguay 0.85"
         },
         "spread_alt": null,
         "totals_analysis": {
@@ -1726,12 +1724,12 @@ const MATCH_DATA = {
         "market_line_movement": {
           "wc_note": "波士顿 neutral · 主客仅为 FIFA 标记",
           "spread_open_cn": "Germany -1/1.5@0.9 · Paraguay +1/1.5@0.92",
-          "spread_now_cn": "Germany -1/1.5@0.83 · Paraguay +1/1.5@1.06",
+          "spread_now_cn": "Germany -1.5@1.04 · Paraguay +1.5@0.85",
           "totals_now_cn": "大小 2.5/3 · 大 0.91 / 小 0.97",
-          "tag": "fav_steam",
-          "tag_cn": "德国低水加深 · 小球抬水",
-          "tag_color": "#7BB8D4",
-          "detail_cn": "让球 -1/1.5 不动 · 德国 0.90→0.83 低水、巴拉圭 0.92→1.06 高水；大小 2.5/3 不动，小 0.82→0.97 抬水向进球上修。"
+          "tag": "fav_defense",
+          "tag_cn": "升盘 -1.5 · 德国高水",
+          "tag_color": "#D95F6A",
+          "detail_cn": "让球 -1/1.5 → -1.5 升盘 · 德国 0.83→1.04 抬水、巴拉圭 1.06→0.85 降水；深盘配受让低水，穿盘须净胜≥2。"
         },
         "totals_pick_layers": {
           "model_side": "under",
@@ -1755,14 +1753,14 @@ const MATCH_DATA = {
         "agent_pick": {
           "primary": "spread",
           "tendency_cn": "更倾向让球盘",
-          "tendency_reason_cn": "德国 0.83 低水穿盘预期明确 · 深于大小 2.5/3 胶着定价。",
+          "tendency_reason_cn": "德国 -1.5 升盘 · 须净胜≥2 穿盘 · 大小 2.5/3 仍胶着定价。",
           "confidence": "high",
           "confidence_cn": "大信心",
-          "confidence_reason_cn": "皇冠 -1/1.5 德 0.83 降水 · 巴拉圭 1.06 高水 · 模型主胜 62% 与盘路同向。",
+          "confidence_reason_cn": "皇冠 -1.5 德 1.04 升盘高水 · 巴拉圭 0.85 低水 · 模型主胜 62% 仍同向但穿盘门槛提高。",
           "spread": {
             "side": "fav",
-            "label_cn": "德国 -1/1.5 @0.83",
-            "reason_cn": "E1 vs D 组第3 · 小组赛 10 球 · 低水穿盘叙事强于受让守平。"
+            "label_cn": "德国 -1.5 @1.04",
+            "reason_cn": "E1 vs D 组第3 · 升盘 -1.5 高水 · 小组赛 10 球火力仍支撑穿盘叙事。"
           },
           "totals": {
             "side": "over",
@@ -1796,15 +1794,15 @@ const MATCH_DATA = {
           }
         },
         "applied_delta": {
-          "home_win": 2,
-          "draw": -1,
-          "away_win": -1
+          "home_win": -4,
+          "draw": 1,
+          "away_win": 3
         },
-        "adjustment_note": "模型微调：主胜 +2% · 平 -1% · 客 -1%",
+        "adjustment_note": "模型微调：主胜 -4% · 平 +1% · 客 +3%",
         "adjusted_probs": {
-          "home_win": 62,
-          "draw": 25,
-          "away_win": 13
+          "home_win": 59,
+          "draw": 23,
+          "away_win": 17
         },
         "display_summary": {
           "fav_name": "Germany",
@@ -1870,7 +1868,7 @@ const MATCH_DATA = {
                 "pct": 24.8
               }
             ],
-            "fav_win_pct": 62
+            "fav_win_pct": 59
           },
           "excitement": {
             "label_cn": "中速开局",
@@ -1915,11 +1913,6 @@ const MATCH_DATA = {
               "icon": "🌤️",
               "label": "气候",
               "note": "M74 德国 vs 巴拉圭"
-            },
-            {
-              "icon": "⚖️",
-              "label": "平局修正",
-              "note": "回测校准：xG 暗示胶着（平 +4%）"
             }
           ],
           "xg_context": {
@@ -1930,13 +1923,13 @@ const MATCH_DATA = {
             "note": "基准 xG 1.82–0.72（未因伤病/气候下调）"
           },
           "calibration": {
-            "signal_cn": "实力吻合",
-            "signal_color": "#5BBF8A",
-            "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
-            "tier_gap": 0.5,
+            "signal_cn": "大众心理预期偏高",
+            "signal_color": "#D95F6A",
+            "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+            "tier_gap": 0.75,
             "implied_tier_label": "Germany -0.75 · Paraguay +0.75",
-            "market_tier_label": "Germany -1.25 · Paraguay +1.25",
-            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 26.1%"
+            "market_tier_label": "Germany -1.5 · Paraguay +1.5",
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 部分达标净胜=1 约 26.1%"
           },
           "win_outlook": {
             "fav_name": "Germany",
@@ -1961,12 +1954,12 @@ const MATCH_DATA = {
                 "pct": 24.8
               }
             ],
-            "margin_line_cn": "Germany · 赛前净胜参考 净胜≥2（全达标）",
+            "margin_line_cn": "Germany · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
             "margin_meet_pct": 46.4,
-            "margin_half_pct": 0,
-            "margin_fail_pct": 26.3,
+            "margin_half_pct": 26.3,
+            "margin_fail_pct": 0,
             "margin_full_label": "净胜≥2",
-            "margin_half_label": null,
+            "margin_half_label": "部分达标净胜=1",
             "final_2_0_pct": null,
             "final_3_0_plus_pct": null,
             "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
@@ -1981,7 +1974,7 @@ const MATCH_DATA = {
             "win_low_total_pct": 27.7,
             "win_margin2_low_total_pct": 13.2,
             "win_margin2_high_total_pct": 23.7,
-            "readout_cn": "取胜约 62%；若取胜，以「险胜收工」为主（41.6%）。 对着赛前净胜参考，净胜≥2（全达标）约 46.4%；对着总进球参考 2.75，模型超线概率约 35.2%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.75。"
+            "readout_cn": "取胜约 59%；若取胜，以「险胜收工」为主（41.6%）。 对着赛前净胜参考，净胜≥2（全达标）约 46.4%；部分达标净胜=1 约 26.3%；对着总进球参考 2.75，模型超线概率约 35.2%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.75。"
           },
           "totals_line": 2.75,
           "score_patterns": [
@@ -2028,37 +2021,37 @@ const MATCH_DATA = {
             "summary_cn": "预测 2.5 · 合理值 2 · 总进球参考 2.75（高于合理值 0.75） · 高于合理值 0.75 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Germany -1.25 穿盘：有达标可能",
-            "sub_cn": "Germany 胜 63.5% · 胜后穿 58.9% · Paraguay +1.25 守 53.3% 进球氛围：略偏闷",
+            "headline_cn": "Germany -1.5 穿盘：有达标可能",
+            "sub_cn": "Germany 胜 63.5% · 胜后穿 58.9% · Paraguay +1.5 守 53.3% 进球氛围：略偏闷",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
               "color": "#C8A96E",
               "fav_name": "Germany",
               "dog_name": "Paraguay",
-              "fav_handicap_cn": "Germany -1.25",
-              "dog_handicap_cn": "Paraguay +1.25",
-              "market_expect_cn": "Germany -1.25 · 净胜≥2",
+              "fav_handicap_cn": "Germany -1.5",
+              "dog_handicap_cn": "Paraguay +1.5",
+              "market_expect_cn": "Germany -1.5 · 净胜≥2",
               "meet_pct": 46.7,
               "dog_hold_pct": 53.3,
               "fav_win_pct": 63.5,
               "cover_given_win_pct": 58.9,
               "full_cover_pct_raw": 37.4,
-              "meet_pct_label": "Germany -1.25 穿盘概率（校准）",
-              "dog_hold_label": "Paraguay +1.25 守住概率（校准）",
-              "two_stage_cn": "Germany 取胜约 63.5% · 赢球后穿盘约 58.9% · Paraguay +1.25 守住约 53.3%",
+              "meet_pct_label": "Germany -1.5 穿盘概率（校准）",
+              "dog_hold_label": "Paraguay +1.5 守住概率（校准）",
+              "two_stage_cn": "Germany 取胜约 63.5% · 赢球后穿盘约 58.9% · Paraguay +1.5 守住约 53.3%",
               "grid_tail_pct": null,
               "verdict_cn": "有达标可能",
-              "headline_cn": "Germany -1.25 穿盘：有达标可能",
-              "pill_cn": "Germany 胜 63.5% · 胜后穿 58.9% · Paraguay +1.25 守 53.3%",
-              "detail_cn": "Germany 取胜约 63.5% · 赢球后穿盘约 58.9% · Paraguay +1.25 守住约 53.3%（泊松 raw 37.4% → 校准 46.7%）；穿盘与受让守住均有一定空间（仅胜 1 球约 26.1%）。",
-              "extra_stats_cn": "仅胜 1 球约 26.1%",
+              "headline_cn": "Germany -1.5 穿盘：有达标可能",
+              "pill_cn": "Germany 胜 63.5% · 胜后穿 58.9% · Paraguay +1.5 守 53.3%",
+              "detail_cn": "Germany 取胜约 63.5% · 赢球后穿盘约 58.9% · Paraguay +1.5 守住约 53.3%（泊松 raw 37.4% → 校准 46.7%）；穿盘与受让守住均有一定空间（部分达标净胜=1 约 26.1%）。",
+              "extra_stats_cn": "部分达标净胜=1 约 26.1%",
               "full_cover_pct": 46.7,
-              "half_cover_pct": 0,
-              "lose1_pct": 26.1,
+              "half_cover_pct": 26.1,
+              "lose1_pct": 0,
               "margin_full_label": "净胜≥2",
-              "margin_half_label": null,
-              "tier_gap": 0.5,
+              "margin_half_label": "部分达标净胜=1",
+              "tier_gap": 0.75,
               "show_cover": true
             },
             "totals": {
@@ -2093,32 +2086,32 @@ const MATCH_DATA = {
                   "color": "#C8A96E",
                   "fav_name": "Germany",
                   "dog_name": "Paraguay",
-                  "fav_handicap_cn": "Germany -1.25",
-                  "dog_handicap_cn": "Paraguay +1.25",
-                  "market_expect_cn": "Germany -1.25 · 净胜≥2",
+                  "fav_handicap_cn": "Germany -1.5",
+                  "dog_handicap_cn": "Paraguay +1.5",
+                  "market_expect_cn": "Germany -1.5 · 净胜≥2",
                   "meet_pct": 46.7,
                   "dog_hold_pct": 53.3,
                   "fav_win_pct": 63.5,
                   "cover_given_win_pct": 58.9,
                   "full_cover_pct_raw": 37.4,
-                  "meet_pct_label": "Germany -1.25 穿盘概率（校准）",
-                  "dog_hold_label": "Paraguay +1.25 守住概率（校准）",
-                  "two_stage_cn": "Germany 取胜约 63.5% · 赢球后穿盘约 58.9% · Paraguay +1.25 守住约 53.3%",
+                  "meet_pct_label": "Germany -1.5 穿盘概率（校准）",
+                  "dog_hold_label": "Paraguay +1.5 守住概率（校准）",
+                  "two_stage_cn": "Germany 取胜约 63.5% · 赢球后穿盘约 58.9% · Paraguay +1.5 守住约 53.3%",
                   "grid_tail_pct": null,
                   "verdict_cn": "有达标可能",
-                  "headline_cn": "Germany -1.25 穿盘：有达标可能",
-                  "pill_cn": "Germany 胜 63.5% · 胜后穿 58.9% · Paraguay +1.25 守 53.3%",
-                  "detail_cn": "Germany 取胜约 63.5% · 赢球后穿盘约 58.9% · Paraguay +1.25 守住约 53.3%（泊松 raw 37.4% → 校准 46.7%）；穿盘与受让守住均有一定空间（仅胜 1 球约 26.1%）。",
-                  "extra_stats_cn": "仅胜 1 球约 26.1%",
+                  "headline_cn": "Germany -1.5 穿盘：有达标可能",
+                  "pill_cn": "Germany 胜 63.5% · 胜后穿 58.9% · Paraguay +1.5 守 53.3%",
+                  "detail_cn": "Germany 取胜约 63.5% · 赢球后穿盘约 58.9% · Paraguay +1.5 守住约 53.3%（泊松 raw 37.4% → 校准 46.7%）；穿盘与受让守住均有一定空间（部分达标净胜=1 约 26.1%）。",
+                  "extra_stats_cn": "部分达标净胜=1 约 26.1%",
                   "full_cover_pct": 46.7,
-                  "half_cover_pct": 0,
-                  "lose1_pct": 26.1,
+                  "half_cover_pct": 26.1,
+                  "lose1_pct": 0,
                   "margin_full_label": "净胜≥2",
-                  "margin_half_label": null,
-                  "tier_gap": 0.5,
+                  "margin_half_label": "部分达标净胜=1",
+                  "tier_gap": 0.75,
                   "show_cover": true
                 },
-                "text": "Germany 胜 63.5% · 胜后穿 58.9% · Paraguay +1.25 守 53.3%",
+                "text": "Germany 胜 63.5% · 胜后穿 58.9% · Paraguay +1.5 守 53.3%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -2238,12 +2231,12 @@ const MATCH_DATA = {
                     "pct": 24.8
                   }
                 ],
-                "margin_line_cn": "Germany · 赛前净胜参考 净胜≥2（全达标）",
+                "margin_line_cn": "Germany · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
                 "margin_meet_pct": 55.8,
-                "margin_half_pct": 0,
+                "margin_half_pct": 27.6,
                 "margin_fail_pct": 27.6,
                 "margin_full_label": "净胜≥2",
-                "margin_half_label": null,
+                "margin_half_label": "部分达标净胜=1",
                 "final_2_0_pct": null,
                 "final_3_0_plus_pct": null,
                 "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
@@ -2342,7 +2335,7 @@ const MATCH_DATA = {
                 }
               ],
               "depth_label": "深度一般",
-              "draw_trap_pct": 22,
+              "draw_trap_pct": 19,
               "readout_cn": "Germany · 压制局。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
             },
             "draw_trap_note": null,
@@ -2355,7 +2348,7 @@ const MATCH_DATA = {
               ],
               "depth_score": 0,
               "depth_label": "深度一般",
-              "draw_trap_pct": 22,
+              "draw_trap_pct": 19,
               "fav_lead_style": "balanced"
             }
           },
@@ -2393,7 +2386,7 @@ const MATCH_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Germany · 压制局。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 26.1%（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
+        "public_summary_note": "【推演概要】Germany · 压制局。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 部分达标净胜=1 约 26.1%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
         "goal_efficiency_preview": {
           "mode": "preview",
           "xg_total": 2.54,
@@ -2478,8 +2471,8 @@ const MATCH_DATA = {
         }
       },
       "market_snapshot": {
-        "market_tier": 1.25,
-        "tier_label": "Germany -1.25 · Paraguay +1.25",
+        "market_tier": 1.5,
+        "tier_label": "Germany -1.5 · Paraguay +1.5",
         "totals_line": 2.75,
         "over_pct": 35.2,
         "fair_line": 2,
@@ -2488,13 +2481,13 @@ const MATCH_DATA = {
         "fav_win_pct": 63.5,
         "cover_given_win_pct": 58.9,
         "spread_level": "possible",
-        "spread_market_expect": "Germany -1.25 · 净胜≥2",
-        "line_move_tag": "fav_steam",
-        "line_move_cn": "德国低水加深 · 小球抬水",
+        "spread_market_expect": "Germany -1.5 · 净胜≥2",
+        "line_move_tag": "fav_defense",
+        "line_move_cn": "升盘 -1.5 · 德国高水",
         "agent_pick_primary": "spread",
         "agent_pick_tendency_cn": "更倾向让球盘",
         "agent_pick_confidence": "high",
-        "agent_spread_cn": "德国 -1/1.5 @0.83",
+        "agent_spread_cn": "德国 -1.5 @1.04",
         "agent_totals_cn": "大球 2.5/3 @0.91",
         "totals_level": "mild_low",
         "totals_show_lean": false,
@@ -2734,7 +2727,7 @@ const MATCH_DATA = {
         },
         "fifa_match_id": "400021522",
         "note": "FIFA M75 · 荷兰 vs 摩洛哥 · 蒙特雷 Estadio BBVA",
-        "updated": "2026-06-29T15:31:12+08:00"
+        "updated": "2026-06-29T19:48:07+08:00"
       },
       "prediction": {
         "home_win": 43,
@@ -2748,31 +2741,31 @@ const MATCH_DATA = {
         "score_dist": [
           {
             "score": "1-1",
-            "prob": 12.4
+            "prob": 12.6
           },
           {
             "score": "1-0",
-            "prob": 10.3
-          },
-          {
-            "score": "2-1",
-            "prob": 8.8
+            "prob": 10.9
           },
           {
             "score": "0-1",
-            "prob": 8.6
+            "prob": 9.1
           },
           {
-            "score": "1-2",
-            "prob": 7.4
-          },
-          {
-            "score": "2-0",
-            "prob": 7.4
+            "score": "2-1",
+            "prob": 8.7
           },
           {
             "score": "0-0",
-            "prob": 7.2
+            "prob": 7.9
+          },
+          {
+            "score": "2-0",
+            "prob": 7.5
+          },
+          {
+            "score": "1-2",
+            "prob": 7.3
           }
         ],
         "insight_factors": [
@@ -2800,22 +2793,22 @@ const MATCH_DATA = {
           "qual_dynamics": null
         },
         "qual_dynamics": null,
-        "xg_poisson_home": 1.43,
-        "xg_poisson_away": 1.2,
+        "xg_poisson_home": 1.38,
+        "xg_poisson_away": 1.16,
         "xg_tier_calibrated": false,
-        "score_prob": 12.4,
+        "score_prob": 12.6,
         "score_top3": [
           {
             "score": "1-1",
-            "prob": 12.4
+            "prob": 12.6
           },
           {
             "score": "1-0",
-            "prob": 10.3
+            "prob": 10.9
           },
           {
-            "score": "2-1",
-            "prob": 8.8
+            "score": "0-1",
+            "prob": 9.1
           }
         ],
         "expected_score": "1-1"
@@ -3040,46 +3033,46 @@ const MATCH_DATA = {
         },
         "display_summary": {
           "fav_name": "Netherlands",
-          "expected_total_goals": 2.61,
-          "poisson_fav_win_pct": 42.2,
-          "small_lead_pct": 22.2,
+          "expected_total_goals": 2.52,
+          "poisson_fav_win_pct": 41.8,
+          "small_lead_pct": 22.3,
           "small_example_score": "1-0",
-          "small_example_pct": 10.4,
-          "big_cover_pct": 20,
+          "small_example_pct": 10.9,
+          "big_cover_pct": 19.4,
           "big_example_score": "2-0",
-          "big_example_pct": 7.4,
+          "big_example_pct": 7.5,
           "win_shape": {
             "fav_name": "Netherlands",
             "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
-            "lead_cn": "取胜时以险胜·开放为主（险胜 · 开放 28.1%）",
+            "lead_cn": "取胜时以险胜·开放为主（险胜 · 开放 27.3%）",
             "shapes": [
               {
                 "key": "narrow_low",
                 "label": "险胜 · 控局",
                 "example": "如 1-0",
-                "field_pct": 10.4,
-                "pct": 24.5
+                "field_pct": 10.9,
+                "pct": 26.2
               },
               {
                 "key": "narrow_open",
                 "label": "险胜 · 开放",
                 "example": "如 2-1",
-                "field_pct": 11.8,
-                "pct": 28.1
+                "field_pct": 11.4,
+                "pct": 27.3
               },
               {
                 "key": "comfort_low",
                 "label": "拉开 · 控局",
                 "example": "如 2-0",
-                "field_pct": 10.9,
-                "pct": 25.9
+                "field_pct": 11,
+                "pct": 26.3
               },
               {
                 "key": "comfort_open",
                 "label": "拉开 · 开放",
                 "example": "如 3-1+",
-                "field_pct": 9.1,
-                "pct": 21.5
+                "field_pct": 8.4,
+                "pct": 20.2
               }
             ],
             "paths": [
@@ -3087,19 +3080,19 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 52.6
+                "pct": 53.5
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 25.9
+                "pct": 26.3
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 21.5
+                "pct": 20.2
               }
             ],
             "fav_win_pct": 43
@@ -3108,16 +3101,16 @@ const MATCH_DATA = {
             "label_cn": "中速开局",
             "label_key": "moderate",
             "label_color": "#C8A96E",
-            "sub_cn": "预期首球等待约 34.2 分",
-            "first_goal_wait": 34.2,
-            "fast_pct": 58.4,
+            "sub_cn": "预期首球等待约 35.4 分",
+            "first_goal_wait": 35.4,
+            "fast_pct": 57.1,
             "moderate_pct": 14.8,
-            "slow_pct": 26.8,
+            "slow_pct": 28.1,
             "tiers": [
               {
                 "key": "fast",
                 "label": "前 30 分内首球",
-                "pct": 58.4
+                "pct": 57.1
               },
               {
                 "key": "moderate",
@@ -3127,7 +3120,7 @@ const MATCH_DATA = {
               {
                 "key": "slow",
                 "label": "45 分后首球",
-                "pct": 26.8
+                "pct": 28.1
               }
             ]
           },
@@ -3136,7 +3129,7 @@ const MATCH_DATA = {
             {
               "icon": "🏥",
               "label": "伤病",
-              "note": "Netherlands 暂无重要伤停 · Morocco 暂无重要伤停"
+              "note": "Netherlands：Memphis Depay 存疑 · Morocco：Nayef Aguerd 存疑"
             },
             {
               "icon": "👔",
@@ -3152,9 +3145,9 @@ const MATCH_DATA = {
           "xg_context": {
             "baseline_home": 1.52,
             "baseline_away": 1.28,
-            "adjusted_home": 1.43,
-            "adjusted_away": 1.2,
-            "note": "基准 xG 1.52–1.28 → 调整后 1.43–1.2"
+            "adjusted_home": 1.38,
+            "adjusted_away": 1.16,
+            "note": "基准 xG 1.52–1.28 → 调整后 1.38–1.16"
           },
           "calibration": {
             "signal_cn": "均衡",
@@ -3173,23 +3166,23 @@ const MATCH_DATA = {
                 "key": "narrow",
                 "label": "险胜收工",
                 "example": "如 1-0、2-1",
-                "pct": 52.6
+                "pct": 53.5
               },
               {
                 "key": "clean",
                 "label": "零封拉开",
                 "example": "如 2-0、3-0",
-                "pct": 25.9
+                "pct": 26.3
               },
               {
                 "key": "open",
                 "label": "开放拉开",
                 "example": "如 3-1+",
-                "pct": 21.5
+                "pct": 20.2
               }
             ],
             "margin_line_cn": "Netherlands · 赛前净胜参考 净胜≥1（全达标）",
-            "margin_meet_pct": 49.3,
+            "margin_meet_pct": 49.1,
             "margin_half_pct": 0,
             "margin_fail_pct": 0,
             "margin_full_label": "净胜≥1",
@@ -3200,63 +3193,63 @@ const MATCH_DATA = {
             "totals_line": 2.25,
             "totals_line_cn": "总进球参考 2.25",
             "fair_totals_line": 2,
-            "model_total_xg": 2.63,
+            "model_total_xg": 2.54,
             "totals_line_gap": 0.25,
-            "totals_high_pct": 61.2,
-            "totals_low_pct": 38.8,
+            "totals_high_pct": 59.2,
+            "totals_low_pct": 40.8,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-            "win_low_total_pct": 17.8,
-            "win_margin2_low_total_pct": 7.4,
-            "win_margin2_high_total_pct": 20,
-            "readout_cn": "取胜约 43%；若取胜，以「险胜收工」为主（52.6%）。 对着赛前净胜参考，净胜≥1（全达标）约 49.3%；对着总进球参考 2.25，模型超线概率约 61.2%。"
+            "win_low_total_pct": 18.5,
+            "win_margin2_low_total_pct": 7.5,
+            "win_margin2_high_total_pct": 19.4,
+            "readout_cn": "取胜约 43%；若取胜，以「险胜收工」为主（53.5%）。 对着赛前净胜参考，净胜≥1（全达标）约 49.1%；对着总进球参考 2.25，模型超线概率约 59.2%。"
           },
           "totals_line": 2.25,
           "score_patterns": [
             {
               "score": "1-1",
-              "pct": 12.4
+              "pct": 12.6
             },
             {
               "score": "1-0",
-              "pct": 10.3
+              "pct": 10.9
             },
             {
-              "score": "2-1",
-              "pct": 8.9
+              "score": "0-1",
+              "pct": 9.2
             }
           ],
           "totals_view": {
-            "expected_total": 2.6,
+            "expected_total": 2.5,
             "fair_line": 2,
             "market_line": 2.25,
             "line_gap": 0.25,
-            "over_pct": 61.2,
+            "over_pct": 59.2,
             "gap_warning": null,
             "totals_outlook": {
-              "level": "mild_high",
-              "label_cn": "略倾向精彩",
-              "color": "#E8A54B",
-              "meter_label_cn": "略倾向精彩",
-              "meter_pos": 61,
-              "lean_side": "exciting",
-              "lean_strength": "mild",
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
               "section_intro_cn": "对照总进球参考 2.25，看偏闷还是偏精彩",
-              "pill_cn": "略偏精彩（弱）",
-              "detail_cn": "略偏精彩，较易超线走大比分；弱信号。",
-              "headline_cn": "进球氛围：略偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
               "show_lean": false,
-              "over_pct": 61.2,
+              "over_pct": 59.2,
               "line_gap": 0.25,
               "market_line": 2.25,
               "market_goals_int": 3,
               "market_goals_cn": "总进球参考 2.25",
               "caution_public_high": false
             },
-            "summary_cn": "预测 2.6 · 合理值 2 · 总进球参考 2.25（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向"
+            "summary_cn": "预测 2.5 · 合理值 2 · 总进球参考 2.25（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
             "headline_cn": "Netherlands -0.25 穿盘：有达标可能",
-            "sub_cn": "Netherlands 胜 42.3% · 胜后穿 100% · Morocco +0.25 守 50.6% 进球氛围：略偏精彩",
+            "sub_cn": "Netherlands 胜 41.9% · 胜后穿 100% · Morocco +0.25 守 50.9% 进球氛围：几乎五五开",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -3266,21 +3259,21 @@ const MATCH_DATA = {
               "fav_handicap_cn": "Netherlands -0.25",
               "dog_handicap_cn": "Morocco +0.25",
               "market_expect_cn": "Netherlands -0.25 · 净胜≥1",
-              "meet_pct": 49.4,
-              "dog_hold_pct": 50.6,
-              "fav_win_pct": 42.3,
+              "meet_pct": 49.1,
+              "dog_hold_pct": 50.9,
+              "fav_win_pct": 41.9,
               "cover_given_win_pct": 100,
-              "full_cover_pct_raw": 42.3,
+              "full_cover_pct_raw": 41.9,
               "meet_pct_label": "Netherlands -0.25 穿盘概率（校准）",
               "dog_hold_label": "Morocco +0.25 守住概率（校准）",
-              "two_stage_cn": "Netherlands 取胜约 42.3% · 赢球后穿盘约 100% · Morocco +0.25 守住约 50.6%",
+              "two_stage_cn": "Netherlands 取胜约 41.9% · 赢球后穿盘约 100% · Morocco +0.25 守住约 50.9%",
               "grid_tail_pct": null,
               "verdict_cn": "有达标可能",
               "headline_cn": "Netherlands -0.25 穿盘：有达标可能",
-              "pill_cn": "Netherlands 胜 42.3% · 胜后穿 100% · Morocco +0.25 守 50.6%",
-              "detail_cn": "Netherlands 取胜约 42.3% · 赢球后穿盘约 100% · Morocco +0.25 守住约 50.6%（泊松 raw 42.3% → 校准 49.4%）；穿盘与受让守住均有一定空间。",
+              "pill_cn": "Netherlands 胜 41.9% · 胜后穿 100% · Morocco +0.25 守 50.9%",
+              "detail_cn": "Netherlands 取胜约 41.9% · 赢球后穿盘约 100% · Morocco +0.25 守住约 50.9%（泊松 raw 41.9% → 校准 49.1%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
-              "full_cover_pct": 49.4,
+              "full_cover_pct": 49.1,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
@@ -3289,19 +3282,19 @@ const MATCH_DATA = {
               "show_cover": true
             },
             "totals": {
-              "level": "mild_high",
-              "label_cn": "略倾向精彩",
-              "color": "#E8A54B",
-              "meter_label_cn": "略倾向精彩",
-              "meter_pos": 61,
-              "lean_side": "exciting",
-              "lean_strength": "mild",
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
               "section_intro_cn": "对照总进球参考 2.25，看偏闷还是偏精彩",
-              "pill_cn": "略偏精彩（弱）",
-              "detail_cn": "略偏精彩，较易超线走大比分；弱信号。",
-              "headline_cn": "进球氛围：略偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
               "show_lean": false,
-              "over_pct": 61.2,
+              "over_pct": 59.2,
               "line_gap": 0.25,
               "market_line": 2.25,
               "market_goals_int": 3,
@@ -3323,21 +3316,21 @@ const MATCH_DATA = {
                   "fav_handicap_cn": "Netherlands -0.25",
                   "dog_handicap_cn": "Morocco +0.25",
                   "market_expect_cn": "Netherlands -0.25 · 净胜≥1",
-                  "meet_pct": 49.4,
-                  "dog_hold_pct": 50.6,
-                  "fav_win_pct": 42.3,
+                  "meet_pct": 49.1,
+                  "dog_hold_pct": 50.9,
+                  "fav_win_pct": 41.9,
                   "cover_given_win_pct": 100,
-                  "full_cover_pct_raw": 42.3,
+                  "full_cover_pct_raw": 41.9,
                   "meet_pct_label": "Netherlands -0.25 穿盘概率（校准）",
                   "dog_hold_label": "Morocco +0.25 守住概率（校准）",
-                  "two_stage_cn": "Netherlands 取胜约 42.3% · 赢球后穿盘约 100% · Morocco +0.25 守住约 50.6%",
+                  "two_stage_cn": "Netherlands 取胜约 41.9% · 赢球后穿盘约 100% · Morocco +0.25 守住约 50.9%",
                   "grid_tail_pct": null,
                   "verdict_cn": "有达标可能",
                   "headline_cn": "Netherlands -0.25 穿盘：有达标可能",
-                  "pill_cn": "Netherlands 胜 42.3% · 胜后穿 100% · Morocco +0.25 守 50.6%",
-                  "detail_cn": "Netherlands 取胜约 42.3% · 赢球后穿盘约 100% · Morocco +0.25 守住约 50.6%（泊松 raw 42.3% → 校准 49.4%）；穿盘与受让守住均有一定空间。",
+                  "pill_cn": "Netherlands 胜 41.9% · 胜后穿 100% · Morocco +0.25 守 50.9%",
+                  "detail_cn": "Netherlands 取胜约 41.9% · 赢球后穿盘约 100% · Morocco +0.25 守住约 50.9%（泊松 raw 41.9% → 校准 49.1%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
-                  "full_cover_pct": 49.4,
+                  "full_cover_pct": 49.1,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
@@ -3345,7 +3338,7 @@ const MATCH_DATA = {
                   "tier_gap": 0.25,
                   "show_cover": true
                 },
-                "text": "Netherlands 胜 42.3% · 胜后穿 100% · Morocco +0.25 守 50.6%",
+                "text": "Netherlands 胜 41.9% · 胜后穿 100% · Morocco +0.25 守 50.9%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -3354,27 +3347,27 @@ const MATCH_DATA = {
                 "icon": "◎",
                 "label": "进球氛围",
                 "outlook": {
-                  "level": "mild_high",
-                  "label_cn": "略倾向精彩",
-                  "color": "#E8A54B",
-                  "meter_label_cn": "略倾向精彩",
-                  "meter_pos": 61,
-                  "lean_side": "exciting",
-                  "lean_strength": "mild",
+                  "level": "neutral",
+                  "label_cn": "暂无明显倾向",
+                  "color": "#8A96A8",
+                  "meter_label_cn": "几乎五五开",
+                  "meter_pos": 50,
+                  "lean_side": "neutral",
+                  "lean_strength": "none",
                   "section_intro_cn": "对照总进球参考 2.25，看偏闷还是偏精彩",
-                  "pill_cn": "略偏精彩（弱）",
-                  "detail_cn": "略偏精彩，较易超线走大比分；弱信号。",
-                  "headline_cn": "进球氛围：略偏精彩",
+                  "pill_cn": "几乎五五开",
+                  "detail_cn": "模型五五开，临场决定节奏。",
+                  "headline_cn": "进球氛围：几乎五五开",
                   "show_lean": false,
-                  "over_pct": 61.2,
+                  "over_pct": 59.2,
                   "line_gap": 0.25,
                   "market_line": 2.25,
                   "market_goals_int": 3,
                   "market_goals_cn": "总进球参考 2.25",
                   "caution_public_high": false
                 },
-                "text": "略偏精彩（弱）",
-                "color": "#E8A54B",
+                "text": "几乎五五开",
+                "color": "#8A96A8",
                 "muted": true
               }
             ],
@@ -3384,22 +3377,22 @@ const MATCH_DATA = {
             {
               "side": "home",
               "team": "Netherlands",
-              "first_goal_pct": 54.4,
+              "first_goal_pct": 54.3,
               "start_score": "1-0",
               "fav_name": "Netherlands",
               "scorer_is_fav": true,
               "expected_key": "hold_win",
-              "fav_recover_pct": 87.1,
-              "small_lead_pct": 29.7,
-              "big_lead_pct": 36.6,
-              "fav_win_pct": 66.3,
+              "fav_recover_pct": 87.4,
+              "small_lead_pct": 30.2,
+              "big_lead_pct": 36.4,
+              "fav_win_pct": 66.6,
               "fav_draw_pct": 20.8,
-              "fav_lose_pct": 13,
+              "fav_lose_pct": 12.6,
               "outcomes": [
                 {
                   "key": "hold_win",
                   "label": "Netherlands 保持胜果（净胜≥1）",
-                  "pct": 66.3
+                  "pct": 66.6
                 },
                 {
                   "key": "drawn",
@@ -3409,38 +3402,38 @@ const MATCH_DATA = {
                 {
                   "key": "lost",
                   "label": "被逆转落败",
-                  "pct": 13
+                  "pct": 12.6
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 34.5 分",
-                "first_goal_wait": 34.5,
-                "fast_pct": 51,
-                "moderate_pct": 14.7,
-                "slow_pct": 34.3,
+                "sub_cn": "预期首球等待约 35.6 分",
+                "first_goal_wait": 35.6,
+                "fast_pct": 49.9,
+                "moderate_pct": 14.6,
+                "slow_pct": 35.4,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 51
+                    "pct": 49.9
                   },
                   {
                     "key": "moderate",
                     "label": "30–45 分首球",
-                    "pct": 14.7
+                    "pct": 14.6
                   },
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 34.3
+                    "pct": 35.4
                   }
                 ]
               },
-              "big_delta": 16.6,
-              "small_delta": 7.5,
+              "big_delta": 17,
+              "small_delta": 7.9,
               "narrative": "Netherlands 先破门（已 1-0） → 「巩固防守」；Morocco 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
               "live_outlook": {
                 "fav_name": "Netherlands",
@@ -3450,25 +3443,25 @@ const MATCH_DATA = {
                     "key": "narrow",
                     "label": "险胜收工",
                     "example": "如 1-0、2-1",
-                    "pct": 52.6
+                    "pct": 53.5
                   },
                   {
                     "key": "clean",
                     "label": "零封拉开",
                     "example": "如 2-0、3-0",
-                    "pct": 25.9
+                    "pct": 26.3
                   },
                   {
                     "key": "open",
                     "label": "开放拉开",
                     "example": "如 3-1+",
-                    "pct": 21.5
+                    "pct": 20.2
                   }
                 ],
                 "margin_line_cn": "Netherlands · 赛前净胜参考 净胜≥1（全达标）",
-                "margin_meet_pct": 66.3,
+                "margin_meet_pct": 66.6,
                 "margin_half_pct": 0,
-                "margin_fail_pct": 29.7,
+                "margin_fail_pct": 30.2,
                 "margin_full_label": "净胜≥1",
                 "margin_half_label": null,
                 "final_2_0_pct": null,
@@ -3477,67 +3470,67 @@ const MATCH_DATA = {
                 "totals_line": 2.25,
                 "totals_line_cn": "总进球参考 2.25",
                 "fair_totals_line": 2.25,
-                "model_total_xg": 2.14,
+                "model_total_xg": 2.07,
                 "totals_line_gap": 0,
-                "totals_high_pct": 75.6,
-                "totals_low_pct": 24.4,
+                "totals_high_pct": 74.4,
+                "totals_low_pct": 25.6,
                 "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
-                "win_low_total_pct": 24.7,
-                "win_margin2_low_total_pct": 12.9,
-                "win_margin2_high_total_pct": 36.6,
-                "readout_cn": "Netherlands 已 1-0 领先：仍取胜约 66.3%。 对着总进球参考 2.25，模型超线概率约 75.6%。 常见 2-0 收尾（相对总进球参考 2.25仍偏小比分）。"
+                "win_low_total_pct": 26,
+                "win_margin2_low_total_pct": 13.4,
+                "win_margin2_high_total_pct": 36.4,
+                "readout_cn": "Netherlands 已 1-0 领先：仍取胜约 66.6%。 对着总进球参考 2.25，模型超线概率约 74.4%。 常见 2-0 收尾（相对总进球参考 2.25仍偏小比分）。"
               }
             },
             {
               "side": "away",
               "team": "Morocco",
-              "first_goal_pct": 45.6,
+              "first_goal_pct": 45.7,
               "start_score": "0-1",
               "fav_name": "Netherlands",
               "scorer_is_fav": false,
               "expected_key": "upset_hold",
-              "fav_recover_pct": 43.6,
-              "small_lead_pct": 12.8,
-              "big_lead_pct": 6.6,
-              "fav_win_pct": 19.4,
-              "fav_draw_pct": 24.2,
-              "fav_lose_pct": 56.5,
+              "fav_recover_pct": 42.9,
+              "small_lead_pct": 12.5,
+              "big_lead_pct": 6.1,
+              "fav_win_pct": 18.6,
+              "fav_draw_pct": 24.3,
+              "fav_lose_pct": 57.1,
               "outcomes": [
                 {
                   "key": "draw",
                   "label": "Netherlands 追平（平局）",
-                  "pct": 24.2
+                  "pct": 24.3
                 },
                 {
                   "key": "win1",
                   "label": "Netherlands 净胜1球翻盘（如 2-1）",
-                  "pct": 12.8
+                  "pct": 12.5
                 },
                 {
                   "key": "win2",
                   "label": "Netherlands 净胜≥2球翻盘（如 3-1）",
-                  "pct": 6.6
+                  "pct": 6.1
                 },
                 {
                   "key": "upset_hold",
                   "label": "Morocco 保持胜果至终场",
-                  "pct": 56.5
+                  "pct": 57.1
                 }
               ],
               "excitement": {
                 "label_cn": "中速开局",
                 "label_key": "moderate",
                 "label_color": "#C8A96E",
-                "sub_cn": "预期首球等待约 34 分",
-                "first_goal_wait": 34,
-                "fast_pct": 51.5,
+                "sub_cn": "预期首球等待约 35.3 分",
+                "first_goal_wait": 35.3,
+                "fast_pct": 50.2,
                 "moderate_pct": 14.7,
-                "slow_pct": 33.7,
+                "slow_pct": 35.2,
                 "tiers": [
                   {
                     "key": "fast",
                     "label": "前 30 分内首球",
-                    "pct": 51.5
+                    "pct": 50.2
                   },
                   {
                     "key": "moderate",
@@ -3547,21 +3540,21 @@ const MATCH_DATA = {
                   {
                     "key": "slow",
                     "label": "45 分后首球",
-                    "pct": 33.7
+                    "pct": 35.2
                   }
                 ]
               },
-              "big_delta": -13.4,
-              "small_delta": -9.4,
+              "big_delta": -13.3,
+              "small_delta": -9.8,
               "narrative": "Morocco 先破门（已 0-1） → 「巩固防守」；Netherlands 「组织反扑」。热门先丢球（已 0-1），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
               "live_outlook": null
             }
           ],
           "match_preview": {
             "morphology": {
-              "totals_summary": "预测 2.6 · 合理值 2 · 总进球参考 2.25（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_summary": "预测 2.5 · 合理值 2 · 总进球参考 2.25（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向",
               "totals_line_cn": "总进球参考 2.25",
-              "totals_high_pct": 61.2,
+              "totals_high_pct": 59.2,
               "type_tags": [
                 {
                   "key": "balanced",
@@ -3588,35 +3581,35 @@ const MATCH_DATA = {
           },
           "halftime_preview": {
             "ht_xg_share": 0.44,
-            "xg_home_ht": 0.63,
-            "xg_away_ht": 0.53,
-            "xg_home_2h": 0.8,
-            "xg_away_2h": 0.67,
-            "home_win": 31.8,
-            "draw": 42.7,
-            "away_win": 25.4,
+            "xg_home_ht": 0.61,
+            "xg_away_ht": 0.51,
+            "xg_home_2h": 0.77,
+            "xg_away_2h": 0.65,
+            "home_win": 31.4,
+            "draw": 43.6,
+            "away_win": 25,
             "top_score": "0-0",
-            "top_score_prob": 31.4,
+            "top_score_prob": 32.6,
             "top3_scores": [
               {
                 "score": "0-0",
-                "prob": 31.4
+                "prob": 32.6
               },
               {
                 "score": "1-0",
-                "prob": 19.8
+                "prob": 19.9
               },
               {
                 "score": "0-1",
                 "prob": 16.6
               }
             ],
-            "ht_goals_expected": 1.16,
-            "ht_over_0_5_pct": 68.6,
-            "ht_over_1_5_pct": 32.3,
+            "ht_goals_expected": 1.12,
+            "ht_over_0_5_pct": 67.4,
+            "ht_over_1_5_pct": 30.8,
             "pick": "draw",
             "pick_name": "平局",
-            "summary_cn": "半场 xG 0.63–0.53（约占全场 44%） · 最可能 0-0（31.4%） · 胜平负 31.8/42.7/25.4 · 半场≥1球约 68.6%",
+            "summary_cn": "半场 xG 0.61–0.51（约占全场 44%） · 最可能 0-0（32.6%） · 胜平负 31.4/43.6/25 · 半场≥1球约 67.4%",
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
@@ -3629,7 +3622,7 @@ const MATCH_DATA = {
           "xg_away": 1.28,
           "xg_baseline_home": 1.52,
           "xg_baseline_away": 1.28,
-          "xg_note": "结构推演用基准 xG 1.52–1.28（进球氛围用调整后 1.43–1.2）",
+          "xg_note": "结构推演用基准 xG 1.52–1.28（进球氛围用调整后 1.38–1.16）",
           "lean_note": "大/小概率接近或路径互斥——不作单边大/小标签。",
           "fav_name": "Netherlands",
           "dog_name": "Morocco",
@@ -3709,11 +3702,11 @@ const MATCH_DATA = {
         "market_tier": 0.25,
         "tier_label": "Netherlands -0.25 · Morocco +0.25",
         "totals_line": 2.25,
-        "over_pct": 61.2,
+        "over_pct": 59.2,
         "fair_line": 2,
         "line_gap": 0.25,
-        "full_cover_pct": 49.4,
-        "fav_win_pct": 42.3,
+        "full_cover_pct": 49.1,
+        "fav_win_pct": 41.9,
         "cover_given_win_pct": 100,
         "spread_level": "possible",
         "spread_market_expect": "Netherlands -0.25 · 净胜≥1",
@@ -3724,9 +3717,9 @@ const MATCH_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": "摩洛哥 +0/0.5 @0.92",
         "agent_totals_cn": "小球 2/2.5 @0.93",
-        "totals_level": "mild_high",
+        "totals_level": "neutral",
         "totals_show_lean": false,
-        "totals_lean_side": "exciting"
+        "totals_lean_side": "neutral"
       }
     }
   ],
