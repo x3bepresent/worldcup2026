@@ -1,6 +1,10 @@
 /**
- * Daily / scheduled sync from API-Football
- * Updates: js/live-data.js + js/matches-data.js (todayMatches, injuries, predictions, results)
+ * API-Football 同步脚本（本地调试用）
+ *
+ * ⚠️ GitHub Actions 定时自动更新已停用 — 数据改用手动：
+ *   sync-dayN-results.js → roll-dayN.js → enrich-dayN.js → apply-prediction-signals.js
+ *
+ * 会覆盖 js/live-data.js、js/matches-data.js，勿在已 enrich 的赛程日上运行。
  *
  * Usage: API_KEY=xxx node scripts/update-data.js
  */
