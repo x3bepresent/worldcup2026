@@ -1,7 +1,7 @@
-// 过往赛果 — 精简归档（推演 + 赛果核验 + 复盘概要）
-// Last updated: 2026-06-30T17:03:04+08:00
+// 过往赛果
+// Last updated: 2026-06-30T19:03:25+08:00
 const RESULTS_DATA = {
-  "lastUpdated": "2026-06-30T17:03:04+08:00",
+  "lastUpdated": "2026-06-30T19:03:25+08:00",
   "syncSource": "FIFA 官方赛果 · Day 19 完结 · Day 20 32强 3场",
   "breakingNews": [
     {
@@ -73801,6 +73801,170 @@ const RESULTS_DATA = {
         "pk_winner": "Morocco",
         "fifa_match_id": "400021522",
         "updated": "2026-06-30T04:00:21+08:00"
+      }
+    },
+    {
+      "id": "m78",
+      "archived": true,
+      "archivedAt": "2026-06-30T19:03:25+08:00",
+      "group": "KO",
+      "matchday": null,
+      "date_beijing": "7月1日",
+      "time_beijing": "01:00",
+      "time_beijing_full": "北京时间 7月1日 01:00",
+      "venue": "AT&T Stadium",
+      "city": "Arlington, USA",
+      "note": "32强 M78 · 已结束 1-2",
+      "home": {
+        "name": "Côte d'Ivoire",
+        "iso": "ci",
+        "rating": 76
+      },
+      "away": {
+        "name": "Norway",
+        "iso": "no",
+        "rating": 74
+      },
+      "prediction": {
+        "xg_home": 1.42,
+        "xg_away": 1.38,
+        "home_win": 36,
+        "draw": 29,
+        "away_win": 34,
+        "score": "1-1",
+        "confidence": 68,
+        "key_factor": "【赛后复盘】半场 0-1 挪领先 · 73' 1-1 · 85' 1-2 挪胜。Agent：挪威 -0/0.5 全赢；小 2.5 总3穿。滚球：42'/65' 挪平手1.14 两次预警 1-1（非诱盘，诚实定价）；73' 大0.85 后 1-2 路径。诱盘嫌疑：临场挪低水非深诱上；68' 小0.80 为情境盘非锁死。",
+        "base_home_win": 36,
+        "base_draw": 29,
+        "base_away_win": 34,
+        "depth_calibrated": true
+      },
+      "market_snapshot": {
+        "market_tier": -0.25,
+        "tier_label": "Norway -0.25 · Côte d'Ivoire +0.25",
+        "totals_line": 2.5,
+        "over_pct": 44.7,
+        "fair_line": 2,
+        "line_gap": 0.5,
+        "full_cover_pct": 45.7,
+        "fav_win_pct": 35.7,
+        "cover_given_win_pct": 100,
+        "spread_level": "possible",
+        "spread_market_expect": "Norway -0.25 · 净胜≥1",
+        "line_move_tag": "correction",
+        "line_move_cn": "向模型修正",
+        "agent_pick_primary": "spread",
+        "agent_pick_tendency_cn": "更倾向让球盘",
+        "agent_pick_confidence": null,
+        "agent_spread_cn": "挪威 -0/0.5 @0.84",
+        "agent_totals_cn": "小球 2.5 @0.95",
+        "totals_level": "neutral",
+        "totals_show_lean": false,
+        "totals_lean_side": "neutral"
+      },
+      "depth_calibration": {
+        "public_summary_note": "【推演概要】Norway · 常规对抗。 · 与模型 xG 对照：均衡 · 赛前净胜看法略低（约 -0.25）（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
+        "preview_replay": {
+          "actual_score": "1-2",
+          "ht_score": "0-1",
+          "hits": [
+            "净胜全达标方向一致",
+            "赛前进球氛围未强判（符合模型五五开读法）"
+          ],
+          "misses": [],
+          "summary_cn": "命中：净胜全达标方向一致 · 赛前进球氛围未强判（符合模型五五开读法）。",
+          "totals_actual": 3,
+          "totals_line": 2.5,
+          "spread_level": "possible",
+          "totals_level": "neutral"
+        },
+        "goal_efficiency": {
+          "xg_total": 2.8,
+          "xg_gap": 0.04,
+          "xg_home": 1.42,
+          "xg_away": 1.38,
+          "fav_name": "Côte d'Ivoire",
+          "dog_name": "Norway",
+          "fav_xg": 1.42,
+          "dog_xg": 1.38,
+          "fav_goals": 1,
+          "dog_goals": 2,
+          "fav_eff": 0.7,
+          "dog_eff": 1.45,
+          "total_goals": 3,
+          "goal_diff_vs_xg": 0.2,
+          "path_type": "dog_bloom",
+          "path_label": "弱队开花",
+          "tags": [
+            {
+              "key": "three_goals",
+              "label": "3球",
+              "color": "#C8A96E",
+              "bg": "rgba(200,169,110,0.1)"
+            },
+            {
+              "key": "even_xg",
+              "label": "xG接近",
+              "color": "#5BBF8A",
+              "bg": "rgba(91,191,138,0.08)"
+            },
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "color": "#E8B84B",
+              "bg": "rgba(232,184,75,0.12)"
+            },
+            {
+              "key": "fav_quiet",
+              "label": "热门哑火",
+              "color": "#6B8FA3",
+              "bg": "rgba(107,143,163,0.12)"
+            }
+          ],
+          "pattern_note": "总进球 3 个——介于大/小之间，对照 xG 总偏差 +0.2。",
+          "summary_cn": "赛前 xG 总 2.8（差 0.04）· 热门 Côte d'Ivoire 1.42→1（效率 0.7）· 弱队 Norway 1.38→2（效率 1.45）→ 弱队开花。总进球 3 个——介于大/小之间，对照 xG 总偏差 +0.2。",
+          "in_mid_band": true
+        },
+        "goal_efficiency_preview": null,
+        "display_summary": {
+          "baseline_label": "全场预期（含伤病·气候）",
+          "customer_reading": {
+            "spread": {
+              "show_cover": true,
+              "level": "possible",
+              "full_cover_pct": 45.7,
+              "fav_win_pct": 35.7,
+              "cover_given_win_pct": 100,
+              "dog_hold_pct": 54.3,
+              "market_expect_cn": "Norway -0.25 · 净胜≥1",
+              "pill_cn": "Norway 胜 35.7% · 胜后穿 100% · Côte d'Ivoire +0.25 守 54.3%"
+            },
+            "totals": {
+              "level": "neutral",
+              "show_lean": false,
+              "lean_side": "neutral",
+              "pill_cn": "几乎五五开"
+            }
+          },
+          "totals_view": {
+            "over_pct": 44.7,
+            "market_line": 2.5,
+            "fair_line": 2,
+            "line_gap": 0.5
+          },
+          "totals_line": 2.5
+        }
+      },
+      "actualResult": {
+        "home_score": 1,
+        "away_score": 2,
+        "status": "FT",
+        "label": "全场结束",
+        "scorers": "科特迪瓦扳平 · 挪威再进（73'/85' 段）",
+        "highlights": "达拉斯 · 科特迪瓦 1-2 挪威 · 半场 0-1 · 挪 -0/0.5 全赢 · 小 2.5 穿",
+        "ht_score": "0-1",
+        "fifa_match_id": "400021514",
+        "updated": "2026-06-30T19:03:25+08:00"
       }
     }
   ],
