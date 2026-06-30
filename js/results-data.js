@@ -1,7 +1,7 @@
-// 过往赛果
-// Last updated: 2026-06-30T19:03:25+08:00
+// 过往赛果 — 精简归档（推演 + 赛果核验 + 复盘概要）
+// Last updated: 2026-06-30T19:30:13+08:00
 const RESULTS_DATA = {
-  "lastUpdated": "2026-06-30T19:03:25+08:00",
+  "lastUpdated": "2026-06-30T19:30:13+08:00",
   "syncSource": "FIFA 官方赛果 · Day 19 完结 · Day 20 32强 3场",
   "breakingNews": [
     {
@@ -73837,17 +73837,77 @@ const RESULTS_DATA = {
         "base_home_win": 36,
         "base_draw": 29,
         "base_away_win": 34,
-        "depth_calibrated": true
+        "depth_calibrated": true,
+        "score_dist": [
+          {
+            "score": "1-1",
+            "prob": 11.9
+          },
+          {
+            "score": "1-0",
+            "prob": 8.6
+          },
+          {
+            "score": "2-1",
+            "prob": 8.5
+          },
+          {
+            "score": "0-1",
+            "prob": 8.4
+          },
+          {
+            "score": "1-2",
+            "prob": 8.2
+          },
+          {
+            "score": "2-0",
+            "prob": 6.1
+          },
+          {
+            "score": "0-0",
+            "prob": 6.1
+          }
+        ],
+        "draw_context": {
+          "drawBoost": 4,
+          "ironBucket": false,
+          "closeXg": true,
+          "gap": 0.04,
+          "notes": [
+            "xG 极接近"
+          ],
+          "qual_dynamics": null
+        },
+        "qual_dynamics": null,
+        "xg_poisson_home": 1.42,
+        "xg_poisson_away": 1.38,
+        "xg_tier_calibrated": false,
+        "score_prob": 11.9,
+        "score_top3": [
+          {
+            "score": "1-1",
+            "prob": 11.9
+          },
+          {
+            "score": "1-0",
+            "prob": 8.6
+          },
+          {
+            "score": "2-1",
+            "prob": 8.5
+          }
+        ],
+        "expected_score": "1-1"
       },
       "market_snapshot": {
         "market_tier": -0.25,
         "tier_label": "Norway -0.25 · Côte d'Ivoire +0.25",
         "totals_line": 2.5,
-        "over_pct": 44.7,
+        "over_pct": 52.8,
         "fair_line": 2,
         "line_gap": 0.5,
-        "full_cover_pct": 45.7,
-        "fav_win_pct": 35.7,
+        "full_cover_pct": 46.1,
+        "fav_win_pct": 36.4,
         "cover_given_win_pct": 100,
         "spread_level": "possible",
         "spread_market_expect": "Norway -0.25 · 净胜≥1",
@@ -73863,21 +73923,836 @@ const RESULTS_DATA = {
         "totals_lean_side": "neutral"
       },
       "depth_calibration": {
-        "public_summary_note": "【推演概要】Norway · 常规对抗。 · 与模型 xG 对照：均衡 · 赛前净胜看法略低（约 -0.25）（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
-        "preview_replay": {
-          "actual_score": "1-2",
-          "ht_score": "0-1",
-          "hits": [
-            "净胜全达标方向一致",
-            "赛前进球氛围未强判（符合模型五五开读法）"
+        "tier_home": -0.25,
+        "tier_label": "Norway -0.25 · Côte d'Ivoire +0.25",
+        "implied_tier": 0,
+        "tier_gap": -0.25,
+        "signal": "neutral",
+        "signal_cn": "均衡",
+        "signal_color": "#7BB8D4",
+        "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
+        "blocker_spread_note": "",
+        "public_lean_cn": "舆论倾向 Norway（约 58%）",
+        "analysis": "M78 · 科特迪瓦 vs 挪威 · 临场 -0/0.5 挪 0.84 / 象 1.05 · 大小 2.5 大 0.93 小 0.95。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "1-1",
+              "prob": 11.9
+            },
+            {
+              "score": "1-0",
+              "prob": 8.6
+            },
+            {
+              "score": "2-1",
+              "prob": 8.5
+            }
           ],
-          "misses": [],
-          "summary_cn": "命中：净胜全达标方向一致 · 赛前进球氛围未强判（符合模型五五开读法）。",
-          "totals_actual": 3,
-          "totals_line": 2.5,
-          "spread_level": "possible",
-          "totals_level": "neutral"
+          "one_goal_win_pct": 20.4,
+          "two_plus_win_pct": 17.9,
+          "full_cover_pct": 46.1,
+          "dog_hold_pct": 53.9,
+          "fav_win_pct": 36.4,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
+          "half_cover_pct": 0,
+          "half_lose_pct": 0,
+          "push_pct": null,
+          "margin_full_label": "净胜≥1",
+          "margin_half_label": null,
+          "fav_cover_ev": -0.272,
+          "dog_cover_ev": 0.272,
+          "rational_spread_cn": "主队 守住差距概率略高",
+          "total_xg": 2.8,
+          "fair_totals_line": 2,
+          "over_2_5_pct": 53,
+          "over_3_pct": 30.7,
+          "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
+          "margin_risk_note": "净胜≥1 约 36.4%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 36.4,
+          "dog_hold_pct_raw": 63.6
         },
+        "spread_odds": {
+          "fav": 0.84,
+          "dog": 1.05,
+          "note": "Côte d'Ivoire 0.84 · Norway 1.05"
+        },
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 2.5,
+          "market_goals_int": 3,
+          "line_label": "总进球约 2.5 个",
+          "implied_xg_total": 2.8,
+          "fair_line": 2,
+          "line_gap": 0.5,
+          "over_pct": 52.8,
+          "under_pct": 47.2,
+          "signal": "high_line",
+          "signal_cn": "参考偏高",
+          "signal_color": "#C8A96E",
+          "signal_desc": "总进球参考高于合理值，模型偏小比分。",
+          "public_over_pct": 50,
+          "public_lean_cn": "舆论对总进球看法较分散",
+          "index_note": "大比分侧 0.93 / 小比分侧 0.95",
+          "totals_odds": {
+            "over": 0.93,
+            "under": 0.95,
+            "note": "大比分 0.93 · 小比分 0.95"
+          },
+          "rational_cn": "超 2.5 球接近五五开（约 52.8%）",
+          "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
+        },
+        "totals_line": 2.5,
+        "market_line_movement": {
+          "wc_note": "达拉斯 neutral · 主客仅为 FIFA 标记",
+          "spread_open_cn": "Côte d'Ivoire +0.5@0.96 · Norway -0.5@0.86",
+          "spread_now_cn": "Côte d'Ivoire +0/0.5@1.05 · Norway -0/0.5@0.84",
+          "totals_now_cn": "大小 2.5 · 大 0.93 / 小 0.95",
+          "tag": "correction",
+          "tag_cn": "向模型修正",
+          "tag_color": "#C8A96E",
+          "detail_cn": "退 0.75 档 · 热门 0.86→0.84（降水） · 受让 0.96→1.05（抬水） 现盘去水隐含：Norway 52.7% · Côte d'Ivoire 47.3%（超收 3.1%） 模型穿盘（现档 Norway -0.25 · Côte d'Ivoire +0.25）：Norway 46.1% · Côte d'Ivoire 53.9% 模型−市场：Norway -6.6pp · Côte d'Ivoire +6.6pp 期望 ROI@现水：Norway -15.2% · Côte d'Ivoire +64.4% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "actuarial": {
+            "actuarial_type": "correction",
+            "actuarial_cn": "向模型修正",
+            "actuarial_color": "#C8A96E",
+            "actuarial_desc": "盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+            "summary_cn": "退 0.75 档 · 热门 0.86→0.84（降水） · 受让 0.96→1.05（抬水） 现盘去水隐含：Norway 52.7% · Côte d'Ivoire 47.3%（超收 3.1%） 模型穿盘（现档 Norway -0.25 · Côte d'Ivoire +0.25）：Norway 46.1% · Côte d'Ivoire 53.9% 模型−市场：Norway -6.6pp · Côte d'Ivoire +6.6pp 期望 ROI@现水：Norway -15.2% · Côte d'Ivoire +64.4% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+            "line_delta": -0.75,
+            "line_delta_cn": "退 0.75 档",
+            "fav_odds_delta": -0.02,
+            "dog_odds_delta": 0.09,
+            "water_move_cn": "热门 0.86→0.84（降水） · 受让 0.96→1.05（抬水）",
+            "open_tier": 0.5,
+            "open_tier_label": "Côte d'Ivoire -0.5 · Norway +0.5",
+            "now_tier": -0.25,
+            "implied_tier": 0,
+            "open_tier_gap": 0.5,
+            "now_tier_gap": -0.25,
+            "open_devig": {
+              "fav_pct": 51.3,
+              "dog_pct": 48.7,
+              "overround_pct": 4.8
+            },
+            "now_devig": {
+              "fav_pct": 52.7,
+              "dog_pct": 47.3,
+              "overround_pct": 3.1
+            },
+            "model_cover_open_pct": 47.1,
+            "model_cover_now_pct": 46.1,
+            "model_dog_cover_now_pct": 53.9,
+            "market_fav_cover_now_pct": 52.7,
+            "market_dog_cover_now_pct": 47.3,
+            "model_vs_market_fav_pp": -6.6,
+            "model_vs_market_dog_pp": 6.6,
+            "fav_roi_pct": -15.2,
+            "dog_roi_pct": 64.4,
+            "fav_name": "Norway",
+            "dog_name": "Côte d'Ivoire"
+          }
+        },
+        "spread_market_analysis": {
+          "actuarial_type": "correction",
+          "actuarial_cn": "向模型修正",
+          "actuarial_color": "#C8A96E",
+          "actuarial_desc": "盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "summary_cn": "退 0.75 档 · 热门 0.86→0.84（降水） · 受让 0.96→1.05（抬水） 现盘去水隐含：Norway 52.7% · Côte d'Ivoire 47.3%（超收 3.1%） 模型穿盘（现档 Norway -0.25 · Côte d'Ivoire +0.25）：Norway 46.1% · Côte d'Ivoire 53.9% 模型−市场：Norway -6.6pp · Côte d'Ivoire +6.6pp 期望 ROI@现水：Norway -15.2% · Côte d'Ivoire +64.4% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "line_delta": -0.75,
+          "line_delta_cn": "退 0.75 档",
+          "fav_odds_delta": -0.02,
+          "dog_odds_delta": 0.09,
+          "water_move_cn": "热门 0.86→0.84（降水） · 受让 0.96→1.05（抬水）",
+          "open_tier": 0.5,
+          "open_tier_label": "Côte d'Ivoire -0.5 · Norway +0.5",
+          "now_tier": -0.25,
+          "implied_tier": 0,
+          "open_tier_gap": 0.5,
+          "now_tier_gap": -0.25,
+          "open_devig": {
+            "fav_pct": 51.3,
+            "dog_pct": 48.7,
+            "overround_pct": 4.8
+          },
+          "now_devig": {
+            "fav_pct": 52.7,
+            "dog_pct": 47.3,
+            "overround_pct": 3.1
+          },
+          "model_cover_open_pct": 47.1,
+          "model_cover_now_pct": 46.1,
+          "model_dog_cover_now_pct": 53.9,
+          "market_fav_cover_now_pct": 52.7,
+          "market_dog_cover_now_pct": 47.3,
+          "model_vs_market_fav_pp": -6.6,
+          "model_vs_market_dog_pp": 6.6,
+          "fav_roi_pct": -15.2,
+          "dog_roi_pct": 64.4,
+          "fav_name": "Norway",
+          "dog_name": "Côte d'Ivoire"
+        },
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
+        "agent_pick": {
+          "primary": "spread",
+          "tendency_cn": "更倾向让球盘",
+          "tendency_reason_cn": "挪威退档后仍低水 · 临场 0.84 穿盘结构 · 大小 2.5 临盘大球降水但线位中性，edge 仍让球侧。",
+          "spread": {
+            "side": "fav",
+            "label_cn": "挪威 -0/0.5 @0.84",
+            "reason_cn": "初→临档 -0/0.5 挺挪 · 0.84 低水 · xG 均势盘口偏挪 · 模型穿盘约 53%。"
+          },
+          "totals": {
+            "side": "under",
+            "label_cn": "小球 2.5 @0.95",
+            "reason_cn": "2.5 整球线 · 模型 xG 约 2.8 但临盘小 0.95 高水 · 副项 · 1-1/1-0 路径仍合理。"
+          },
+          "picked_at": "2026-07-01-kickoff",
+          "pick_meta": {
+            "model_side": "neutral",
+            "situation_side": "neutral",
+            "market_line_side": "under",
+            "market_odds_side": "neutral",
+            "market_side": "under",
+            "pick_side": "under",
+            "recommended_side": "under",
+            "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
+            "conflict": false,
+            "conflict_cn": null,
+            "votes": {
+              "model": "neutral",
+              "line": "under",
+              "odds": "neutral",
+              "situation": "neutral"
+            },
+            "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
+            "situation_dampened": false,
+            "over_pct": 52.8,
+            "line_gap": 0.5
+          }
+        },
+        "applied_delta": {
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
+        },
+        "adjustment_note": "模型微调：主胜 +0% · 平 +0% · 客 +0%",
+        "adjusted_probs": {
+          "home_win": 36,
+          "draw": 29,
+          "away_win": 34
+        },
+        "display_summary": {
+          "fav_name": "Norway",
+          "expected_total_goals": 2.77,
+          "poisson_fav_win_pct": 36.4,
+          "small_lead_pct": 19.9,
+          "small_example_score": "0-1",
+          "small_example_pct": 8.4,
+          "big_cover_pct": 16.5,
+          "big_example_score": "0-2",
+          "big_example_pct": 5.8,
+          "win_shape": {
+            "fav_name": "Norway",
+            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
+            "lead_cn": "取胜时以险胜·开放为主（险胜 · 开放 31.5%）",
+            "shapes": [
+              {
+                "key": "narrow_low",
+                "label": "险胜 · 控局",
+                "example": "如 1-0",
+                "field_pct": 8.4,
+                "pct": 23.2
+              },
+              {
+                "key": "narrow_open",
+                "label": "险胜 · 开放",
+                "example": "如 2-1",
+                "field_pct": 11.5,
+                "pct": 31.5
+              },
+              {
+                "key": "comfort_low",
+                "label": "拉开 · 控局",
+                "example": "如 2-0",
+                "field_pct": 8.5,
+                "pct": 23.4
+              },
+              {
+                "key": "comfort_open",
+                "label": "拉开 · 开放",
+                "example": "如 3-1+",
+                "field_pct": 8,
+                "pct": 21.9
+              }
+            ],
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 54.7
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 23.4
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 21.9
+              }
+            ],
+            "fav_win_pct": 34
+          },
+          "excitement": {
+            "label_cn": "中速开局",
+            "label_key": "moderate",
+            "label_color": "#C8A96E",
+            "sub_cn": "预期首球等待约 32.1 分",
+            "first_goal_wait": 32.1,
+            "fast_pct": 60.7,
+            "moderate_pct": 14.7,
+            "slow_pct": 24.7,
+            "tiers": [
+              {
+                "key": "fast",
+                "label": "前 30 分内首球",
+                "pct": 60.7
+              },
+              {
+                "key": "moderate",
+                "label": "30–45 分首球",
+                "pct": 14.7
+              },
+              {
+                "key": "slow",
+                "label": "45 分后首球",
+                "pct": 24.7
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "Côte d'Ivoire 暂无重要伤停 · Norway 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "— / —（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "气候信息暂无"
+            },
+            {
+              "icon": "⚖️",
+              "label": "平局修正",
+              "note": "回测校准：xG 极接近（平 +4%）"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 1.42,
+            "baseline_away": 1.38,
+            "adjusted_home": 1.42,
+            "adjusted_away": 1.38,
+            "note": "基准 xG 1.42–1.38（未因伤病/气候下调）"
+          },
+          "calibration": {
+            "signal_cn": "均衡",
+            "signal_color": "#7BB8D4",
+            "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
+            "tier_gap": -0.25,
+            "implied_tier_label": "势均力敌",
+            "market_tier_label": "Norway -0.25 · Côte d'Ivoire +0.25",
+            "summary_cn": "与模型 xG 对照：均衡 · 赛前净胜看法略低（约 -0.25）"
+          },
+          "win_outlook": {
+            "fav_name": "Norway",
+            "state_label": null,
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 54.7
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 23.4
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 21.9
+              }
+            ],
+            "margin_line_cn": "Norway · 赛前净胜参考 净胜≥1（全达标）",
+            "margin_meet_pct": 46.1,
+            "margin_half_pct": 0,
+            "margin_fail_pct": 0,
+            "margin_full_label": "净胜≥1",
+            "margin_half_label": null,
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
+            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+            "totals_line": 2.5,
+            "totals_line_cn": "总进球参考 2.5",
+            "fair_totals_line": 2,
+            "model_total_xg": 2.8,
+            "totals_line_gap": 0.5,
+            "totals_high_pct": 52.8,
+            "totals_low_pct": 47.2,
+            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+            "win_low_total_pct": 14.3,
+            "win_margin2_low_total_pct": 5.8,
+            "win_margin2_high_total_pct": 10.7,
+            "readout_cn": "取胜约 34%；若取胜，以「险胜收工」为主（54.7%）。 对着赛前净胜参考，净胜≥1（全达标）约 46.1%；对着总进球参考 2.5，模型超线概率约 52.8%。"
+          },
+          "totals_line": 2.5,
+          "score_patterns": [
+            {
+              "score": "1-1",
+              "pct": 11.9
+            },
+            {
+              "score": "1-0",
+              "pct": 8.6
+            },
+            {
+              "score": "2-1",
+              "pct": 8.5
+            }
+          ],
+          "totals_view": {
+            "expected_total": 2.8,
+            "fair_line": 2,
+            "market_line": 2.5,
+            "line_gap": 0.5,
+            "over_pct": 52.8,
+            "gap_warning": null,
+            "totals_outlook": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 52.8,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "summary_cn": "预测 2.8 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
+          },
+          "customer_reading": {
+            "headline_cn": "Norway -0.25 穿盘：有达标可能",
+            "sub_cn": "Norway 胜 36.4% · 胜后穿 100% · Côte d'Ivoire +0.25 守 53.9% 进球氛围：几乎五五开 平局约 29%，与热门取胜概率接近（Top2 区间），存在「赢球变平局」空间。",
+            "spread": {
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
+              "fav_name": "Norway",
+              "dog_name": "Côte d'Ivoire",
+              "fav_handicap_cn": "Norway -0.25",
+              "dog_handicap_cn": "Côte d'Ivoire +0.25",
+              "market_expect_cn": "Norway -0.25 · 净胜≥1",
+              "meet_pct": 46.1,
+              "dog_hold_pct": 53.9,
+              "fav_win_pct": 36.4,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 36.4,
+              "meet_pct_label": "Norway -0.25 穿盘概率（校准）",
+              "dog_hold_label": "Côte d'Ivoire +0.25 守住概率（校准）",
+              "two_stage_cn": "Norway 取胜约 36.4% · 赢球后穿盘约 100% · Côte d'Ivoire +0.25 守住约 53.9%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Norway -0.25 穿盘：有达标可能",
+              "pill_cn": "Norway 胜 36.4% · 胜后穿 100% · Côte d'Ivoire +0.25 守 53.9%",
+              "detail_cn": "Norway 取胜约 36.4% · 赢球后穿盘约 100% · Côte d'Ivoire +0.25 守住约 53.9%（泊松 raw 36.4% → 校准 46.1%）；穿盘与受让守住均有一定空间。",
+              "extra_stats_cn": "",
+              "full_cover_pct": 46.1,
+              "half_cover_pct": 0,
+              "lose1_pct": 0,
+              "margin_full_label": "净胜≥1",
+              "margin_half_label": null,
+              "tier_gap": -0.25,
+              "show_cover": true
+            },
+            "totals": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 52.8,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "draw_risk": {
+              "level": "medium",
+              "color": "#C8A96E",
+              "note": "平局约 29%，与热门取胜概率接近（Top2 区间），存在「赢球变平局」空间。"
+            },
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "让球盘",
+                "outlook": {
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
+                  "fav_name": "Norway",
+                  "dog_name": "Côte d'Ivoire",
+                  "fav_handicap_cn": "Norway -0.25",
+                  "dog_handicap_cn": "Côte d'Ivoire +0.25",
+                  "market_expect_cn": "Norway -0.25 · 净胜≥1",
+                  "meet_pct": 46.1,
+                  "dog_hold_pct": 53.9,
+                  "fav_win_pct": 36.4,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 36.4,
+                  "meet_pct_label": "Norway -0.25 穿盘概率（校准）",
+                  "dog_hold_label": "Côte d'Ivoire +0.25 守住概率（校准）",
+                  "two_stage_cn": "Norway 取胜约 36.4% · 赢球后穿盘约 100% · Côte d'Ivoire +0.25 守住约 53.9%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Norway -0.25 穿盘：有达标可能",
+                  "pill_cn": "Norway 胜 36.4% · 胜后穿 100% · Côte d'Ivoire +0.25 守 53.9%",
+                  "detail_cn": "Norway 取胜约 36.4% · 赢球后穿盘约 100% · Côte d'Ivoire +0.25 守住约 53.9%（泊松 raw 36.4% → 校准 46.1%）；穿盘与受让守住均有一定空间。",
+                  "extra_stats_cn": "",
+                  "full_cover_pct": 46.1,
+                  "half_cover_pct": 0,
+                  "lose1_pct": 0,
+                  "margin_full_label": "净胜≥1",
+                  "margin_half_label": null,
+                  "tier_gap": -0.25,
+                  "show_cover": true
+                },
+                "text": "Norway 胜 36.4% · 胜后穿 100% · Côte d'Ivoire +0.25 守 53.9%",
+                "color": "#C8A96E",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "◎",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "neutral",
+                  "label_cn": "暂无明显倾向",
+                  "color": "#8A96A8",
+                  "meter_label_cn": "几乎五五开",
+                  "meter_pos": 50,
+                  "lean_side": "neutral",
+                  "lean_strength": "none",
+                  "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+                  "pill_cn": "几乎五五开",
+                  "detail_cn": "模型五五开，临场决定节奏。",
+                  "headline_cn": "进球氛围：几乎五五开",
+                  "show_lean": false,
+                  "over_pct": 52.8,
+                  "line_gap": 0.5,
+                  "market_line": 2.5,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "总进球参考 2.5",
+                  "caution_public_high": false
+                },
+                "text": "几乎五五开",
+                "color": "#8A96A8",
+                "muted": true
+              }
+            ],
+            "methodology_note": "读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "Côte d'Ivoire",
+              "first_goal_pct": 50.7,
+              "start_score": "1-0",
+              "fav_name": "Norway",
+              "scorer_is_fav": false,
+              "expected_key": "upset_hold",
+              "fav_recover_pct": 38.4,
+              "small_lead_pct": 11,
+              "big_lead_pct": 5.3,
+              "fav_win_pct": 16.3,
+              "fav_draw_pct": 22.1,
+              "fav_lose_pct": 61.6,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "Norway 追平（平局）",
+                  "pct": 22.1
+                },
+                {
+                  "key": "win1",
+                  "label": "Norway 净胜1球翻盘（如 2-1）",
+                  "pct": 11
+                },
+                {
+                  "key": "win2",
+                  "label": "Norway 净胜≥2球翻盘（如 3-1）",
+                  "pct": 5.3
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "Côte d'Ivoire 保持胜果至终场",
+                  "pct": 61.6
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 32.3 分",
+                "first_goal_wait": 32.3,
+                "fast_pct": 53.4,
+                "moderate_pct": 14.8,
+                "slow_pct": 31.9,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 53.4
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.8
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 31.9
+                  }
+                ]
+              },
+              "big_delta": -11.2,
+              "small_delta": -8.9,
+              "narrative": "Côte d'Ivoire 先破门（已 1-0） → 「巩固防守」；Norway 「组织反扑」。热门先丢球（已 1-0），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
+              "live_outlook": null
+            },
+            {
+              "side": "away",
+              "team": "Norway",
+              "first_goal_pct": 49.3,
+              "start_score": "0-1",
+              "fav_name": "Norway",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 82.5,
+              "small_lead_pct": 28.3,
+              "big_lead_pct": 31.7,
+              "fav_win_pct": 59.9,
+              "fav_draw_pct": 22.6,
+              "fav_lose_pct": 17.5,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "Norway 保持胜果（净胜≥1）",
+                  "pct": 59.9
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 22.6
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 17.5
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 32 分",
+                "first_goal_wait": 32,
+                "fast_pct": 53.6,
+                "moderate_pct": 14.8,
+                "slow_pct": 31.6,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 53.6
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.8
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 31.6
+                  }
+                ]
+              },
+              "big_delta": 15.2,
+              "small_delta": 8.4,
+              "narrative": "Norway 先破门（已 0-1） → 「巩固防守」；Côte d'Ivoire 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
+              "live_outlook": {
+                "fav_name": "Norway",
+                "state_label": "Norway 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 54.7
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 23.4
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 21.9
+                  }
+                ],
+                "margin_line_cn": "Norway · 赛前净胜参考 净胜≥1（全达标）",
+                "margin_meet_pct": 59.9,
+                "margin_half_pct": 0,
+                "margin_fail_pct": 28.3,
+                "margin_full_label": "净胜≥1",
+                "margin_half_label": null,
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.5,
+                "totals_line_cn": "总进球参考 2.5",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 2.3,
+                "totals_line_gap": 0.25,
+                "totals_high_pct": 66.9,
+                "totals_low_pct": 33.1,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 20.7,
+                "win_margin2_low_total_pct": 10.7,
+                "win_margin2_high_total_pct": 21,
+                "readout_cn": "Norway 已 1-0 领先：仍取胜约 59.9%。 对着总进球参考 2.5，模型超线概率约 66.9%。 常见 2-0 收尾（相对总进球参考 2.5仍偏小比分）。"
+              }
+            }
+          ],
+          "match_preview": {
+            "morphology": {
+              "totals_summary": "预测 2.8 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球参考 2.5",
+              "totals_high_pct": 52.8,
+              "type_tags": [
+                {
+                  "key": "even_open",
+                  "label": "均势开放"
+                }
+              ],
+              "depth_label": "深度一般",
+              "draw_trap_pct": 25,
+              "readout_cn": "Norway · 均势开放。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+            },
+            "draw_trap_note": null,
+            "archetype": {
+              "tags": [
+                {
+                  "key": "even_open",
+                  "label": "均势开放"
+                }
+              ],
+              "depth_score": 0,
+              "depth_label": "深度一般",
+              "draw_trap_pct": 25,
+              "fav_lead_style": "balanced"
+            }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.62,
+            "xg_away_ht": 0.61,
+            "xg_home_2h": 0.8,
+            "xg_away_2h": 0.77,
+            "home_win": 29.6,
+            "draw": 41.4,
+            "away_win": 29,
+            "top_score": "0-0",
+            "top_score_prob": 29.2,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 29.2
+              },
+              {
+                "score": "1-0",
+                "prob": 18.1
+              },
+              {
+                "score": "0-1",
+                "prob": 17.8
+              }
+            ],
+            "ht_goals_expected": 1.23,
+            "ht_over_0_5_pct": 70.8,
+            "ht_over_1_5_pct": 34.8,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.62–0.61（约占全场 44%） · 最可能 0-0（29.2%） · 胜平负 29.6/41.4/29 · 半场≥1球约 70.8%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
+          }
+        },
+        "public_summary_note": "【推演概要】Norway · 均势开放。 · 与模型 xG 对照：均衡 · 赛前净胜看法略低（约 -0.25）（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
         "goal_efficiency": {
           "xg_total": 2.8,
           "xg_gap": 0.04,
@@ -73925,34 +74800,19 @@ const RESULTS_DATA = {
           "summary_cn": "赛前 xG 总 2.8（差 0.04）· 热门 Côte d'Ivoire 1.42→1（效率 0.7）· 弱队 Norway 1.38→2（效率 1.45）→ 弱队开花。总进球 3 个——介于大/小之间，对照 xG 总偏差 +0.2。",
           "in_mid_band": true
         },
-        "goal_efficiency_preview": null,
-        "display_summary": {
-          "baseline_label": "全场预期（含伤病·气候）",
-          "customer_reading": {
-            "spread": {
-              "show_cover": true,
-              "level": "possible",
-              "full_cover_pct": 45.7,
-              "fav_win_pct": 35.7,
-              "cover_given_win_pct": 100,
-              "dog_hold_pct": 54.3,
-              "market_expect_cn": "Norway -0.25 · 净胜≥1",
-              "pill_cn": "Norway 胜 35.7% · 胜后穿 100% · Côte d'Ivoire +0.25 守 54.3%"
-            },
-            "totals": {
-              "level": "neutral",
-              "show_lean": false,
-              "lean_side": "neutral",
-              "pill_cn": "几乎五五开"
-            }
-          },
-          "totals_view": {
-            "over_pct": 44.7,
-            "market_line": 2.5,
-            "fair_line": 2,
-            "line_gap": 0.5
-          },
-          "totals_line": 2.5
+        "preview_replay": {
+          "actual_score": "1-2",
+          "ht_score": "0-1",
+          "hits": [
+            "净胜全达标方向一致",
+            "赛前进球氛围未强判（符合模型五五开读法）"
+          ],
+          "misses": [],
+          "summary_cn": "命中：净胜全达标方向一致 · 赛前进球氛围未强判（符合模型五五开读法）。",
+          "totals_actual": 3,
+          "totals_line": 2.5,
+          "spread_level": "possible",
+          "totals_level": "neutral"
         }
       },
       "actualResult": {

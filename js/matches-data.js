@@ -1,7 +1,7 @@
-// 今日赛事 — Day 20
-// Last updated: 2026-06-30T19:03:25+08:00
+// 今日赛事 — 淘汰赛 · 32强 (signals enriched)
+// Last updated: 2026-06-30T19:30:13+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-30T19:03:25+08:00",
+  "lastUpdated": "2026-06-30T19:30:13+08:00",
   "syncSource": "FIFA 赛程 · Day 20 · 32强 3场 enriched · 推演概要+小组形势",
   "phase": "knockout",
   "phase_cn": "淘汰赛 · 32强",
@@ -309,7 +309,7 @@ const MATCH_DATA = {
         "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
         "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "public_lean_cn": "舆论倾向 France（约 72%）",
-        "analysis": "M77 · 法国 vs 瑞典 · 临场 -1.5/2 法 1.04 / 瑞 0.85 · 大小 3/3.5 大 0.83 小 1.05。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "analysis": "M77 · 法国 vs 瑞典 · 临场 -1.5/2 法 0.98 / 瑞 0.91 · 大小 3.5 大 1.05 小 0.83。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "spread_cover": {
           "top3_scores": [
             {
@@ -351,56 +351,56 @@ const MATCH_DATA = {
           "dog_hold_pct_raw": 62.5
         },
         "spread_odds": {
-          "fav": 1.04,
-          "dog": 0.85,
-          "note": "France 1.04 · Sweden 0.85"
+          "fav": 0.98,
+          "dog": 0.91,
+          "note": "France 0.98 · Sweden 0.91"
         },
         "spread_alt": null,
         "totals_analysis": {
-          "market_line": 3.25,
+          "market_line": 3.5,
           "market_goals_int": 4,
-          "line_label": "总进球约 3–3.5 个",
+          "line_label": "总进球约 3.5 个",
           "implied_xg_total": 2.83,
           "fair_line": 2,
-          "line_gap": 1.25,
-          "over_pct": 41.7,
-          "under_pct": 58.3,
+          "line_gap": 1.5,
+          "over_pct": 30.4,
+          "under_pct": 69.6,
           "signal": "high_line",
           "signal_cn": "参考偏高",
           "signal_color": "#C8A96E",
           "signal_desc": "总进球参考高于合理值，模型偏小比分。",
           "public_over_pct": 50,
           "public_lean_cn": "舆论对总进球看法较分散",
-          "index_note": "大比分侧 0.83 / 小比分侧 1.05",
+          "index_note": "大比分侧 1.05 / 小比分侧 0.83 · 小比分侧更热",
           "totals_odds": {
-            "over": 0.83,
-            "under": 1.05,
-            "note": "大比分 0.83 · 小比分 1.05"
+            "over": 1.05,
+            "under": 0.83,
+            "note": "大比分 1.05 · 小比分 0.83"
           },
-          "rational_cn": "模型略看小比分（超 3.25 约 58.3% 难达）",
+          "rational_cn": "模型略看小比分（超 3.5 约 69.6% 难达）；参考高于合理值但模型仍偏小比分",
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
-        "totals_line": 3.25,
+        "totals_line": 3.5,
         "market_line_movement": {
           "wc_note": "纽约 neutral · 主客仅为 FIFA 标记",
           "spread_open_cn": "France -1/1.5@0.9 · Sweden +1/1.5@0.92",
-          "spread_now_cn": "France -1.5/2@1.04 · Sweden +1.5/2@0.85",
-          "totals_now_cn": "大小 3/3.5 · 大 0.83 / 小 1.05",
+          "spread_now_cn": "France -1.5/2@0.98 · Sweden +1.5/2@0.91",
+          "totals_now_cn": "大小 3.5 · 大 1.05 / 小 0.83",
           "tag": "book_trap_fav",
           "tag_cn": "精算诱上",
           "tag_color": "#D95F6A",
-          "detail_cn": "升 0.5 档 · 热门 0.9→1.04（抬水） · 受让 0.92→0.85（降水） 现盘去水隐含：France 47.6% · Sweden 52.4%（超收 3.1%） 模型穿盘（现档 France -1.75 · Sweden +1.75）：France 46.7% · Sweden 53.3% 模型−市场：France -0.9pp · Sweden +0.9pp 期望 ROI@现水：France +20.5% · Sweden -6.1% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+          "detail_cn": "升 0.5 档 · 热门 0.9→0.98（抬水） · 受让 0.92→0.91（降水） 现盘去水隐含：France 49.1% · Sweden 50.9%（超收 2.9%） 模型穿盘（现档 France -1.75 · Sweden +1.75）：France 46.7% · Sweden 53.3% 模型−市场：France -2.4pp · Sweden +2.4pp 期望 ROI@现水：France +16.9% · Sweden -4.4% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
           "actuarial": {
             "actuarial_type": "book_trap_fav",
             "actuarial_cn": "精算诱上",
             "actuarial_color": "#D95F6A",
             "actuarial_desc": "升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
-            "summary_cn": "升 0.5 档 · 热门 0.9→1.04（抬水） · 受让 0.92→0.85（降水） 现盘去水隐含：France 47.6% · Sweden 52.4%（超收 3.1%） 模型穿盘（现档 France -1.75 · Sweden +1.75）：France 46.7% · Sweden 53.3% 模型−市场：France -0.9pp · Sweden +0.9pp 期望 ROI@现水：France +20.5% · Sweden -6.1% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+            "summary_cn": "升 0.5 档 · 热门 0.9→0.98（抬水） · 受让 0.92→0.91（降水） 现盘去水隐含：France 49.1% · Sweden 50.9%（超收 2.9%） 模型穿盘（现档 France -1.75 · Sweden +1.75）：France 46.7% · Sweden 53.3% 模型−市场：France -2.4pp · Sweden +2.4pp 期望 ROI@现水：France +16.9% · Sweden -4.4% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
             "line_delta": 0.5,
             "line_delta_cn": "升 0.5 档",
-            "fav_odds_delta": 0.14,
-            "dog_odds_delta": -0.07,
-            "water_move_cn": "热门 0.9→1.04（抬水） · 受让 0.92→0.85（降水）",
+            "fav_odds_delta": 0.08,
+            "dog_odds_delta": -0.01,
+            "water_move_cn": "热门 0.9→0.98（抬水） · 受让 0.92→0.91（降水）",
             "open_tier": 1.25,
             "open_tier_label": "France -1.25 · Sweden +1.25",
             "now_tier": 1.75,
@@ -413,19 +413,19 @@ const MATCH_DATA = {
               "overround_pct": 4.7
             },
             "now_devig": {
-              "fav_pct": 47.6,
-              "dog_pct": 52.4,
-              "overround_pct": 3.1
+              "fav_pct": 49.1,
+              "dog_pct": 50.9,
+              "overround_pct": 2.9
             },
             "model_cover_open_pct": 46.7,
             "model_cover_now_pct": 46.7,
             "model_dog_cover_now_pct": 53.3,
-            "market_fav_cover_now_pct": 47.6,
-            "market_dog_cover_now_pct": 52.4,
-            "model_vs_market_fav_pp": -0.9,
-            "model_vs_market_dog_pp": 0.9,
-            "fav_roi_pct": 20.5,
-            "dog_roi_pct": -6.1,
+            "market_fav_cover_now_pct": 49.1,
+            "market_dog_cover_now_pct": 50.9,
+            "model_vs_market_fav_pp": -2.4,
+            "model_vs_market_dog_pp": 2.4,
+            "fav_roi_pct": 16.9,
+            "dog_roi_pct": -4.4,
             "fav_name": "France",
             "dog_name": "Sweden"
           }
@@ -435,12 +435,12 @@ const MATCH_DATA = {
           "actuarial_cn": "精算诱上",
           "actuarial_color": "#D95F6A",
           "actuarial_desc": "升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
-          "summary_cn": "升 0.5 档 · 热门 0.9→1.04（抬水） · 受让 0.92→0.85（降水） 现盘去水隐含：France 47.6% · Sweden 52.4%（超收 3.1%） 模型穿盘（现档 France -1.75 · Sweden +1.75）：France 46.7% · Sweden 53.3% 模型−市场：France -0.9pp · Sweden +0.9pp 期望 ROI@现水：France +20.5% · Sweden -6.1% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+          "summary_cn": "升 0.5 档 · 热门 0.9→0.98（抬水） · 受让 0.92→0.91（降水） 现盘去水隐含：France 49.1% · Sweden 50.9%（超收 2.9%） 模型穿盘（现档 France -1.75 · Sweden +1.75）：France 46.7% · Sweden 53.3% 模型−市场：France -2.4pp · Sweden +2.4pp 期望 ROI@现水：France +16.9% · Sweden -4.4% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
           "line_delta": 0.5,
           "line_delta_cn": "升 0.5 档",
-          "fav_odds_delta": 0.14,
-          "dog_odds_delta": -0.07,
-          "water_move_cn": "热门 0.9→1.04（抬水） · 受让 0.92→0.85（降水）",
+          "fav_odds_delta": 0.08,
+          "dog_odds_delta": -0.01,
+          "water_move_cn": "热门 0.9→0.98（抬水） · 受让 0.92→0.91（降水）",
           "open_tier": 1.25,
           "open_tier_label": "France -1.25 · Sweden +1.25",
           "now_tier": 1.75,
@@ -453,19 +453,19 @@ const MATCH_DATA = {
             "overround_pct": 4.7
           },
           "now_devig": {
-            "fav_pct": 47.6,
-            "dog_pct": 52.4,
-            "overround_pct": 3.1
+            "fav_pct": 49.1,
+            "dog_pct": 50.9,
+            "overround_pct": 2.9
           },
           "model_cover_open_pct": 46.7,
           "model_cover_now_pct": 46.7,
           "model_dog_cover_now_pct": 53.3,
-          "market_fav_cover_now_pct": 47.6,
-          "market_dog_cover_now_pct": 52.4,
-          "model_vs_market_fav_pp": -0.9,
-          "model_vs_market_dog_pp": 0.9,
-          "fav_roi_pct": 20.5,
-          "dog_roi_pct": -6.1,
+          "market_fav_cover_now_pct": 49.1,
+          "market_dog_cover_now_pct": 50.9,
+          "model_vs_market_fav_pp": -2.4,
+          "model_vs_market_dog_pp": 2.4,
+          "fav_roi_pct": 16.9,
+          "dog_roi_pct": -4.4,
           "fav_name": "France",
           "dog_name": "Sweden"
         },
@@ -473,7 +473,7 @@ const MATCH_DATA = {
           "model_side": "under",
           "situation_side": "neutral",
           "market_line_side": "under",
-          "market_odds_side": "over",
+          "market_odds_side": "under",
           "market_side": "under",
           "recommended_side": "under",
           "conflict": false,
@@ -482,37 +482,39 @@ const MATCH_DATA = {
           "votes": {
             "model": "under",
             "line": "under",
-            "odds": "over",
+            "odds": "under",
             "situation": "neutral"
           },
-          "vote_summary_cn": "小球(model) · 小球(line) · 大球(odds) · 观望(situation)",
+          "vote_summary_cn": "小球(model) · 小球(line) · 小球(odds) · 观望(situation)",
           "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
         },
         "agent_pick": {
           "primary": "totals",
-          "tendency_cn": "更倾向大小球",
-          "tendency_reason_cn": "精算诱上法国深盘维持 · ★小球 3/3.5 模型超线约 42% · 瑞典 +1.5/2 @0.85 副选。",
-          "confidence": "high",
-          "confidence_cn": "大信心",
-          "confidence_reason_cn": "★小球：xG 2.83 vs 线 3.25 · 大 0.83 再降水但模型仅 42% 超线 · 小 1.05 高水。让球：诱上续 · 瑞典 +1.5/2（1-1 全赢；1-0/2-0 输半）。",
+          "tendency_cn": "更倾向大小球（大）",
+          "tendency_reason_cn": "初2.5大低水→升线3.5整后小0.83再降=共识收小嫌疑 · ★大1.05高水反结构 · 瑞+1.5/2@0.91副选。",
+          "confidence": "medium",
+          "confidence_cn": "中信心",
+          "confidence_reason_cn": "★大3.5：盘路对调非纯模型偏小；xG2.83仍压大但3-1/2-2路径+诱小叙事支撑。让球：法0.98均衡，瑞1.1穿盘结构。",
           "spread": {
             "side": "dog",
-            "label_cn": "瑞典 +1.5/2 @0.85",
-            "reason_cn": "临 -1.5/2 法 1.04 高水 · 诱上续。比分推演：2-0 → 瑞典 +1.5/2 输半；1-0 → 输半；1-1 → 全赢。"
+            "label_cn": "瑞典 +1.5/2 @0.91",
+            "reason_cn": "临 -1.5/2 法 0.98/瑞 0.91 · 深盘诱上减弱。1-1 → 瑞典 +1.5/2 全赢；2-0 → 输半；3-1 → 输半。"
           },
           "totals": {
-            "side": "under",
-            "label_cn": "小球 3/3.5 @1.05",
-            "reason_cn": "线 3/3.5 模型超线约 42% · 大 0.83 低水叙事 vs 模型 · 2-0/1-0 总≤3 · ★主项。"
+            "side": "over",
+            "label_cn": "大球 3.5 @1.05",
+            "reason_cn": "初2.5→3.5升1球 · 大1.05/小0.83对调 · 淘汰赛共识收小嫌疑。3-1/2-2/4-0 穿大 · ★主项。",
+            "manual_override": true,
+            "recommended_side": "under"
           },
-          "picked_at": "2026-07-01-kickoff",
+          "picked_at": "2026-07-01-kickoff-final",
           "pick_meta": {
             "model_side": "under",
             "situation_side": "neutral",
             "market_line_side": "under",
-            "market_odds_side": "over",
+            "market_odds_side": "under",
             "market_side": "under",
-            "pick_side": "under",
+            "pick_side": "over",
             "recommended_side": "under",
             "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
             "conflict": false,
@@ -520,13 +522,13 @@ const MATCH_DATA = {
             "votes": {
               "model": "under",
               "line": "under",
-              "odds": "over",
+              "odds": "under",
               "situation": "neutral"
             },
-            "vote_summary_cn": "小球(model) · 小球(line) · 大球(odds) · 观望(situation)",
+            "vote_summary_cn": "小球(model) · 小球(line) · 小球(odds) · 观望(situation)",
             "situation_dampened": false,
-            "over_pct": 41.7,
-            "line_gap": 1.25
+            "over_pct": 30.4,
+            "line_gap": 1.5
           }
         },
         "applied_delta": {
@@ -699,20 +701,20 @@ const MATCH_DATA = {
             "final_2_0_pct": null,
             "final_3_0_plus_pct": null,
             "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-            "totals_line": 3.25,
-            "totals_line_cn": "总进球参考 3.25",
+            "totals_line": 3.5,
+            "totals_line_cn": "总进球参考 3.5",
             "fair_totals_line": 2,
             "model_total_xg": 2.83,
-            "totals_line_gap": 1.25,
-            "totals_high_pct": 41.7,
-            "totals_low_pct": 58.3,
+            "totals_line_gap": 1.5,
+            "totals_high_pct": 30.4,
+            "totals_low_pct": 69.6,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
             "win_low_total_pct": 23.1,
             "win_margin2_low_total_pct": 11.4,
-            "win_margin2_high_total_pct": 25.5,
-            "readout_cn": "取胜约 57%；若取胜，以「险胜收工」为主（40.5%）。 对着赛前净胜参考，净胜≥2（全达标）约 46.3%；部分达标净胜=1 约 25%；对着总进球参考 3.25，模型超线概率约 41.7%。"
+            "win_margin2_high_total_pct": 18.1,
+            "readout_cn": "取胜约 57%；若取胜，以「险胜收工」为主（40.5%）。 对着赛前净胜参考，净胜≥2（全达标）约 46.3%；部分达标净胜=1 约 25%；对着总进球参考 3.5，模型超线概率约 30.4%。"
           },
-          "totals_line": 3.25,
+          "totals_line": 3.5,
           "score_patterns": [
             {
               "score": "1-0",
@@ -730,38 +732,38 @@ const MATCH_DATA = {
           "totals_view": {
             "expected_total": 2.8,
             "fair_line": 2,
-            "market_line": 3.25,
-            "line_gap": 1.25,
-            "over_pct": 41.7,
+            "market_line": 3.5,
+            "line_gap": 1.5,
+            "over_pct": 30.4,
             "gap_warning": {
               "level": "high",
-              "cn": "总进球参考 3.25，合理值 2——高于合理值 1.25，模型宜谨慎"
+              "cn": "总进球参考 3.5，合理值 2——高于合理值 1.5，模型宜谨慎"
             },
             "totals_outlook": {
-              "level": "neutral",
-              "label_cn": "暂无明显倾向",
-              "color": "#8A96A8",
-              "meter_label_cn": "几乎五五开",
-              "meter_pos": 50,
-              "lean_side": "neutral",
-              "lean_strength": "none",
-              "section_intro_cn": "对照总进球参考 3.25，看偏闷还是偏精彩",
-              "pill_cn": "几乎五五开",
-              "detail_cn": "模型五五开，临场决定节奏。 参考高于合理值，但模型仍五五开。",
-              "headline_cn": "进球氛围：五五开 · 参考偏高",
+              "level": "mild_low",
+              "label_cn": "略倾向沉闷",
+              "color": "#7BB8D4",
+              "meter_label_cn": "略倾向沉闷",
+              "meter_pos": 30,
+              "lean_side": "dull",
+              "lean_strength": "mild",
+              "section_intro_cn": "对照总进球参考 3.5，看偏闷还是偏精彩",
+              "pill_cn": "略偏闷（弱）",
+              "detail_cn": "略偏闷，模型更看小比分（难超线 3.5）；弱信号。 警惕参考定得偏高、实际仍走小比分。",
+              "headline_cn": "进球氛围：略偏闷",
               "show_lean": false,
-              "over_pct": 41.7,
-              "line_gap": 1.25,
-              "market_line": 3.25,
+              "over_pct": 30.4,
+              "line_gap": 1.5,
+              "market_line": 3.5,
               "market_goals_int": 4,
-              "market_goals_cn": "总进球参考 3.25",
+              "market_goals_cn": "总进球参考 3.5",
               "caution_public_high": true
             },
-            "summary_cn": "预测 2.8 · 合理值 2 · 总进球参考 3.25（高于合理值 1.25） · ⚠ 高于合理值 1.25 · 模型在常见进球预期附近均衡，不作强倾向"
+            "summary_cn": "预测 2.8 · 合理值 2 · 总进球参考 3.5（高于合理值 1.5） · ⚠ 高于合理值 1.5 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
             "headline_cn": "France -1.75 穿盘：有达标可能",
-            "sub_cn": "France 胜 62.3% · 胜后穿 60.3% · Sweden +1.75 守 53.3% 进球氛围：五五开 · 参考偏高",
+            "sub_cn": "France 胜 62.3% · 胜后穿 60.3% · Sweden +1.75 守 53.3% 进球氛围：略偏闷",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
@@ -794,23 +796,23 @@ const MATCH_DATA = {
               "show_cover": true
             },
             "totals": {
-              "level": "neutral",
-              "label_cn": "暂无明显倾向",
-              "color": "#8A96A8",
-              "meter_label_cn": "几乎五五开",
-              "meter_pos": 50,
-              "lean_side": "neutral",
-              "lean_strength": "none",
-              "section_intro_cn": "对照总进球参考 3.25，看偏闷还是偏精彩",
-              "pill_cn": "几乎五五开",
-              "detail_cn": "模型五五开，临场决定节奏。 参考高于合理值，但模型仍五五开。",
-              "headline_cn": "进球氛围：五五开 · 参考偏高",
+              "level": "mild_low",
+              "label_cn": "略倾向沉闷",
+              "color": "#7BB8D4",
+              "meter_label_cn": "略倾向沉闷",
+              "meter_pos": 30,
+              "lean_side": "dull",
+              "lean_strength": "mild",
+              "section_intro_cn": "对照总进球参考 3.5，看偏闷还是偏精彩",
+              "pill_cn": "略偏闷（弱）",
+              "detail_cn": "略偏闷，模型更看小比分（难超线 3.5）；弱信号。 警惕参考定得偏高、实际仍走小比分。",
+              "headline_cn": "进球氛围：略偏闷",
               "show_lean": false,
-              "over_pct": 41.7,
-              "line_gap": 1.25,
-              "market_line": 3.25,
+              "over_pct": 30.4,
+              "line_gap": 1.5,
+              "market_line": 3.5,
               "market_goals_int": 4,
-              "market_goals_cn": "总进球参考 3.25",
+              "market_goals_cn": "总进球参考 3.5",
               "caution_public_high": true
             },
             "draw_risk": null,
@@ -859,27 +861,27 @@ const MATCH_DATA = {
                 "icon": "◎",
                 "label": "进球氛围",
                 "outlook": {
-                  "level": "neutral",
-                  "label_cn": "暂无明显倾向",
-                  "color": "#8A96A8",
-                  "meter_label_cn": "几乎五五开",
-                  "meter_pos": 50,
-                  "lean_side": "neutral",
-                  "lean_strength": "none",
-                  "section_intro_cn": "对照总进球参考 3.25，看偏闷还是偏精彩",
-                  "pill_cn": "几乎五五开",
-                  "detail_cn": "模型五五开，临场决定节奏。 参考高于合理值，但模型仍五五开。",
-                  "headline_cn": "进球氛围：五五开 · 参考偏高",
+                  "level": "mild_low",
+                  "label_cn": "略倾向沉闷",
+                  "color": "#7BB8D4",
+                  "meter_label_cn": "略倾向沉闷",
+                  "meter_pos": 30,
+                  "lean_side": "dull",
+                  "lean_strength": "mild",
+                  "section_intro_cn": "对照总进球参考 3.5，看偏闷还是偏精彩",
+                  "pill_cn": "略偏闷（弱）",
+                  "detail_cn": "略偏闷，模型更看小比分（难超线 3.5）；弱信号。 警惕参考定得偏高、实际仍走小比分。",
+                  "headline_cn": "进球氛围：略偏闷",
                   "show_lean": false,
-                  "over_pct": 41.7,
-                  "line_gap": 1.25,
-                  "market_line": 3.25,
+                  "over_pct": 30.4,
+                  "line_gap": 1.5,
+                  "market_line": 3.5,
                   "market_goals_int": 4,
-                  "market_goals_cn": "总进球参考 3.25",
+                  "market_goals_cn": "总进球参考 3.5",
                   "caution_public_high": true
                 },
-                "text": "几乎五五开",
-                "color": "#8A96A8",
+                "text": "略偏闷（弱）",
+                "color": "#7BB8D4",
                 "muted": true
               }
             ],
@@ -979,18 +981,18 @@ const MATCH_DATA = {
                 "final_2_0_pct": null,
                 "final_3_0_plus_pct": null,
                 "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-                "totals_line": 3.25,
-                "totals_line_cn": "总进球参考 3.25",
+                "totals_line": 3.5,
+                "totals_line_cn": "总进球参考 3.5",
                 "fair_totals_line": 2.25,
                 "model_total_xg": 2.26,
-                "totals_line_gap": 1,
-                "totals_high_pct": 52.5,
-                "totals_low_pct": 47.5,
+                "totals_line_gap": 1.25,
+                "totals_high_pct": 39.1,
+                "totals_low_pct": 60.9,
                 "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
                 "win_low_total_pct": 26.1,
                 "win_margin2_low_total_pct": 15.7,
-                "win_margin2_high_total_pct": 38.9,
-                "readout_cn": "France 已 1-0 领先：仍取胜约 80.9%。 对着总进球参考 3.25，模型超线概率约 52.5%。 常见 2-0 收尾（相对总进球参考 3.25仍偏小比分）。"
+                "win_margin2_high_total_pct": 27.2,
+                "readout_cn": "France 已 1-0 领先：仍取胜约 80.9%。 对着总进球参考 3.5，模型超线概率约 39.1%。 常见 2-0 收尾（相对总进球参考 3.5仍偏小比分）。"
               }
             },
             {
@@ -1064,9 +1066,9 @@ const MATCH_DATA = {
           ],
           "match_preview": {
             "morphology": {
-              "totals_summary": "预测 2.8 · 合理值 2 · 总进球参考 3.25（高于合理值 1.25） · ⚠ 高于合理值 1.25 · 模型在常见进球预期附近均衡，不作强倾向",
-              "totals_line_cn": "总进球参考 3.25",
-              "totals_high_pct": 41.7,
+              "totals_summary": "预测 2.8 · 合理值 2 · 总进球参考 3.5（高于合理值 1.5） · ⚠ 高于合理值 1.5 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球参考 3.5",
+              "totals_high_pct": 30.4,
               "type_tags": [
                 {
                   "key": "dominance",
@@ -1135,7 +1137,7 @@ const MATCH_DATA = {
           "xg_baseline_home": 1.95,
           "xg_baseline_away": 0.88,
           "xg_note": "结构推演用基准 xG 1.95–0.88",
-          "lean_note": null,
+          "lean_note": "与进球氛围同向——可参考权重提高",
           "fav_name": "France",
           "dog_name": "Sweden",
           "fav_xg": 1.95,
@@ -1147,15 +1149,15 @@ const MATCH_DATA = {
           "lean_mode": "prediction",
           "lean_confidence": 69.6,
           "prevention_reason_cn": null,
-          "atmosphere_link_cn": null,
-          "modules_aligned": false,
+          "atmosphere_link_cn": "与进球氛围同向——可参考权重提高",
+          "modules_aligned": true,
           "live_watch": [],
-          "prob_over_line": 41.7,
+          "prob_over_line": 30.4,
           "prob_meet_guess": 30.4,
           "guess_n": 4,
           "prob_4_plus": 30.4,
           "prob_2_or_less": 46.9,
-          "totals_line": 3.25,
+          "totals_line": 3.5,
           "scenarios": [
             {
               "key": "low",
@@ -1211,7 +1213,7 @@ const MATCH_DATA = {
             "xG 差≥1.0——样本多为小比分"
           ],
           "pattern_note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
-          "summary_cn": "【路径·基准 xG】合计 2.83 · France 1.95 / Sweden 0.88 → 主路径「铁局/小比分」约 54% · 小比分预测。 至少 4 球约 30.4% · 超 3.25 约 41.7% · ≤2球 46.9%。样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
+          "summary_cn": "【路径·基准 xG】合计 2.83 · France 1.95 / Sweden 0.88 → 主路径「铁局/小比分」约 54% · 小比分预测。 超 3.5 约 30.4% · ≤2球 46.9%。样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
           "in_mid_band": true,
           "sample_note": "结构规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27）· 大/小标签用基准 xG 泊松 ≥60%/≤40%"
         }
@@ -1219,10 +1221,10 @@ const MATCH_DATA = {
       "market_snapshot": {
         "market_tier": 1.75,
         "tier_label": "France -1.75 · Sweden +1.75",
-        "totals_line": 3.25,
-        "over_pct": 41.7,
+        "totals_line": 3.5,
+        "over_pct": 30.4,
         "fair_line": 2,
-        "line_gap": 1.25,
+        "line_gap": 1.5,
         "full_cover_pct": 46.7,
         "fav_win_pct": 62.3,
         "cover_given_win_pct": 60.3,
@@ -1231,13 +1233,13 @@ const MATCH_DATA = {
         "line_move_tag": "book_trap_fav",
         "line_move_cn": "精算诱上",
         "agent_pick_primary": "totals",
-        "agent_pick_tendency_cn": "更倾向大小球",
-        "agent_pick_confidence": "high",
-        "agent_spread_cn": "瑞典 +1.5/2 @0.85",
-        "agent_totals_cn": "小球 3/3.5 @1.05",
-        "totals_level": "neutral",
+        "agent_pick_tendency_cn": "更倾向大小球（大）",
+        "agent_pick_confidence": "medium",
+        "agent_spread_cn": "瑞典 +1.5/2 @0.91",
+        "agent_totals_cn": "大球 3.5 @1.05",
+        "totals_level": "mild_low",
         "totals_show_lean": false,
-        "totals_lean_side": "neutral"
+        "totals_lean_side": "dull"
       }
     },
     {
@@ -2474,50 +2476,35 @@ const MATCH_DATA = {
     "group": "KO",
     "matchday": null,
     "date": "2026-06-30",
-    "time": "12:00",
-    "time_local": "12:00 CT",
-    "timezone": "CDT (UTC-5)",
-    "time_beijing": "01:00",
+    "time": "16:00",
+    "time_local": "16:00 ET",
+    "timezone": "EDT (UTC-4)",
+    "time_beijing": "05:00",
     "date_beijing": "7月1日",
-    "time_beijing_full": "北京时间 7月1日 01:00",
-    "venue": "AT&T Stadium",
-    "city": "Arlington, USA",
+    "time_beijing_full": "北京时间 7月1日 05:00",
+    "venue": "MetLife Stadium",
+    "city": "East Rutherford, USA",
     "home": {
-      "name": "Côte d'Ivoire",
-      "iso": "ci",
-      "fifaRank": 36,
-      "rating": 76
+      "name": "France",
+      "iso": "fr",
+      "fifaRank": 2,
+      "rating": 90
     },
     "away": {
-      "name": "Norway",
-      "iso": "no",
-      "fifaRank": 45,
-      "rating": 74
+      "name": "Sweden",
+      "iso": "se",
+      "fifaRank": 26,
+      "rating": 78
     },
-    "teaser": "32强 M78 · 科特迪瓦 vs 挪威",
-    "home_win": 36,
-    "draw": 29,
-    "away_win": 34,
-    "predicted_score": "1-1",
-    "key_player_home": "Sébastien Haller",
-    "key_player_away": "Erling Haaland"
+    "teaser": "32强 M77 · 法国 vs 瑞典",
+    "home_win": 57,
+    "draw": 23,
+    "away_win": 21,
+    "predicted_score": "2-0",
+    "key_player_home": "Kylian Mbappé",
+    "key_player_away": "Alexander Isak"
   },
   "upcomingMatches": [
-    {
-      "group": "KO",
-      "time_beijing_full": "北京时间 7月1日 05:00",
-      "venue": "MetLife Stadium",
-      "city": "East Rutherford, USA",
-      "home": {
-        "name": "France",
-        "iso": "fr"
-      },
-      "away": {
-        "name": "Sweden",
-        "iso": "se"
-      },
-      "teaser": "32强 M77"
-    },
     {
       "group": "KO",
       "time_beijing_full": "北京时间 7月1日 09:00",
