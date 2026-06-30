@@ -1,8 +1,8 @@
-// 今日赛事 — Day 19 enriched
-// Last updated: 2026-06-29T20:20:37+08:00
+// Auto-synced by scripts/update-data.js — manual edits may be overwritten on next sync
+// Last API sync: 2026-06-30T03:36:09.917Z
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-29T20:20:37+08:00",
-  "syncSource": "FIFA 赛程 · Day 19 · 32强 3场 enriched",
+  "lastUpdated": "2026-06-30T03:36:09.916Z",
+  "syncSource": "API-Football",
   "phase": "knockout",
   "phase_cn": "淘汰赛 · 32强",
   "breakingNews": [
