@@ -22,7 +22,7 @@
       "id": "m77",
       "match": "France vs Sweden",
       "primary": "totals",
-      "tendency_cn": "更倾向大小球（大）",
+      "tendency_cn": "更倾向大小球（小）",
       "confidence": "medium",
       "confidence_cn": "中信心",
       "spread": {
@@ -30,8 +30,8 @@
         "pick_cn": "瑞典 +1.5/2 @0.91"
       },
       "totals": {
-        "side": "over",
-        "pick_cn": "大球 3.5 @1.05"
+        "side": "under",
+        "pick_cn": "小球 3.5 @0.83"
       }
     },
     {
