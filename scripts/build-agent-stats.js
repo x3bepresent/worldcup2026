@@ -109,6 +109,40 @@ function build() {
     pick_ids: (d.picks || []).map(p => p.id),
   }));
 
+  const KO_IDS = ['m73', 'm74', 'm75', 'm76'];
+  function summarizeIds(ids) {
+    let spread = { hit: 0, miss: 0 };
+    let totals = { hit: 0, miss: 0 };
+    let primary = { hit: 0, miss: 0 };
+    let bothHit = 0;
+    let atLeastOne = 0;
+    const matches = [];
+    for (const id of ids) {
+      const g = byId[id];
+      if (!g || g.spread_hit == null) continue;
+      matches.push(id);
+      if (g.spread_hit) spread.hit += 1; else spread.miss += 1;
+      if (g.totals_hit) totals.hit += 1; else totals.miss += 1;
+      if (g.primary_hit) primary.hit += 1; else primary.miss += 1;
+      if (g.spread_hit && g.totals_hit) bothHit += 1;
+      if (g.spread_hit || g.totals_hit) atLeastOne += 1;
+    }
+    const n = matches.length;
+    const legs = spread.hit + spread.miss + totals.hit + totals.miss;
+    const legHit = spread.hit + totals.hit;
+    return {
+      label_cn: '32强 · Agent 双选',
+      match_count: n,
+      ids: matches,
+      spread: withPct(spread),
+      totals: withPct(totals),
+      primary: { ...withPct(primary), label_cn: '★倾向项' },
+      both_hit: { n: bothHit, pct: n ? Math.round((bothHit / n) * 1000) / 10 : null },
+      at_least_one: { n: atLeastOne, pct: n ? Math.round((atLeastOne / n) * 1000) / 10 : null },
+      all_legs: { hit: legHit, n: legs, pct: legs ? Math.round((legHit / legs) * 1000) / 10 : null },
+    };
+  }
+
   const payload = {
     lastUpdated: TS,
     grade_rule_cn: gradedDays[0]?.results?.grade_rule_cn || '不败即中：全赢/赢半/走水算中，输半/全输算不中',
@@ -129,6 +163,7 @@ function build() {
     },
     days: daysSummary,
     pending: pendingDays,
+    knockout: summarizeIds(KO_IDS),
     byId,
   };
 

@@ -536,6 +536,140 @@ function getTierCoverThresholds(tier) {
   return { fullMin, halfExact: null, pushExact: null, fullLabel: '净胜≥' + fullMin, halfLabel: null };
 }
 
+const SPREAD_SIDE_OUTCOME_CN = {
+  full_win: '全赢',
+  half_win: '赢半',
+  push: '走水',
+  half_lose: '输半',
+  full_lose: '全输',
+};
+
+function invertSpreadSideOutcome(outcome) {
+  return {
+    full_win: 'full_lose',
+    half_win: 'half_lose',
+    push: 'push',
+    half_lose: 'half_win',
+    full_lose: 'full_win',
+  }[outcome];
+}
+
+function spreadSideHitsNoLoss(outcome) {
+  return outcome === 'full_win' || outcome === 'half_win' || outcome === 'push';
+}
+
+/** 热门方让球结算（亚洲盘，与 grade-agent-picks 口径一致） */
+function favSpreadSideOutcome(favMargin, tier) {
+  const abs = Math.abs(Number(tier) || 0);
+  const th = getTierCoverThresholds(tier);
+  const frac = Math.round((abs % 1) * 100) / 100;
+  const base = Math.floor(abs);
+
+  if (abs < 0.01) {
+    if (favMargin > 0) return 'full_win';
+    if (favMargin === 0) return 'push';
+    return 'full_lose';
+  }
+  if (frac < 0.01) {
+    if (favMargin >= th.fullMin) return 'full_win';
+    if (th.pushExact != null && favMargin === th.pushExact) return 'push';
+    return 'full_lose';
+  }
+  if (Math.abs(frac - 0.5) < 0.01) {
+    if (favMargin >= th.fullMin) return 'full_win';
+    if (th.halfExact != null && favMargin === th.halfExact) return 'half_win';
+    return 'full_lose';
+  }
+  if (Math.abs(frac - 0.75) < 0.01) {
+    if (favMargin > th.fullMin) return 'full_win';
+    if (favMargin === th.fullMin) return 'half_win';
+    if (th.halfExact != null && favMargin === th.halfExact) return 'half_win';
+    if (favMargin === base || (base === 0 && favMargin === 0)) return 'half_lose';
+    return 'full_lose';
+  }
+  if (Math.abs(frac - 0.25) < 0.01) {
+    if (favMargin >= th.fullMin) return 'full_win';
+    if (abs >= 1 && favMargin === base && th.pushExact == null) return 'half_lose';
+    if (abs < 1 && favMargin === 0) return 'half_lose';
+    return 'full_lose';
+  }
+  if (favMargin >= th.fullMin) return 'full_win';
+  return 'full_lose';
+}
+
+/**
+ * 给定赛果比分，结算让球方（side=fav|dog）结果。
+ * homeMargin = 主队进球 − 客队进球；tier 正=主让。
+ */
+function gradeSpreadSideOutcome(homeMargin, tier, side, publicLean) {
+  const favSide = tier > 0 ? 'home' : tier < 0 ? 'away' : (publicLean === 'away' ? 'away' : publicLean === 'home' ? 'home' : null);
+  const favMargin = favSide === 'home' ? homeMargin : favSide === 'away' ? -homeMargin : homeMargin;
+  const favOut = favSpreadSideOutcome(favMargin, tier);
+  if (side === 'fav') return favOut;
+  if (side === 'dog') return invertSpreadSideOutcome(favOut);
+  return 'full_lose';
+}
+
+function gradeSpreadForScore(homeGoals, awayGoals, tier, side, publicLean) {
+  const margin = homeGoals - awayGoals;
+  const outcome = gradeSpreadSideOutcome(margin, tier, side, publicLean);
+  return {
+    score: homeGoals + '-' + awayGoals,
+    margin,
+    outcome,
+    outcome_cn: SPREAD_SIDE_OUTCOME_CN[outcome],
+    hits_no_loss: spreadSideHitsNoLoss(outcome),
+  };
+}
+
+function scoreClaimWindow(text, matchIndex, matchLen) {
+  let after = text.slice(matchIndex + matchLen, Math.min(text.length, matchIndex + matchLen + 56));
+  const nextScore = after.search(/\d+-\d+/);
+  if (nextScore > 0) after = after.slice(0, nextScore);
+  return after;
+}
+
+/**
+ * 校验 Agent 让球文案中引用的比分，是否与盘口数学一致。
+ * 规则：文案若在某比分旁写「赢/守住/全赢」等，该 side 须 hits_no_loss；写「输半/全输」则须未中。
+ */
+function validateSpreadReasonScoreClaims(reasonCn, tier, side, publicLean) {
+  const text = String(reasonCn || '');
+  const issues = [];
+  const checks = [];
+  const scoreRe = /(\d+)-(\d+)/g;
+  let m;
+  while ((m = scoreRe.exec(text)) !== null) {
+    const h = parseInt(m[1], 10);
+    const a = parseInt(m[2], 10);
+    const window = scoreClaimWindow(text, m.index, m[0].length);
+    const graded = gradeSpreadForScore(h, a, tier, side, publicLean);
+    const claimsWin = /(?:全赢|赢半|才算中|才全赢|仍赢盘|仍赢)/.test(window)
+      || (/(?:守住|支持)/.test(window) && !/%/.test(window.slice(0, 12)));
+    const claimsLoss = /(?:输半|全输|未达标|难赢|穿盘)/.test(window);
+    checks.push({ ...graded, window: window.trim(), claimsWin, claimsLoss });
+    if (claimsWin && !graded.hits_no_loss) {
+      issues.push({
+        type: 'false_win_claim',
+        score: graded.score,
+        outcome_cn: graded.outcome_cn,
+        snippet: window.trim(),
+        fix_cn: '该比分下选项为「' + graded.outcome_cn + '」，不可写赢/守住；应改文案或改选项。',
+      });
+    }
+    if (claimsLoss && graded.hits_no_loss) {
+      issues.push({
+        type: 'false_loss_claim',
+        score: graded.score,
+        outcome_cn: graded.outcome_cn,
+        snippet: window.trim(),
+        fix_cn: '该比分下选项为「' + graded.outcome_cn + '」（不败即中），不可写输半/全输。',
+      });
+    }
+  }
+  return { ok: issues.length === 0, issues, checks };
+}
+
 /** 净胜差距参考文案（中性，无盘口用语） */
 function formatMarginOutlookLabel(marketTier, favName) {
   const t = Number(marketTier) || 0;
@@ -4924,6 +5058,12 @@ const exportsObj = {
   computeDynamicMaxGoals,
   calibrateSpreadCoverPct,
   getTierCoverThresholds,
+  SPREAD_SIDE_OUTCOME_CN,
+  favSpreadSideOutcome,
+  gradeSpreadSideOutcome,
+  gradeSpreadForScore,
+  spreadSideHitsNoLoss,
+  validateSpreadReasonScoreClaims,
   computeTotalsAnalysis,
   classifyExcitementLabel,
   buildExcitementView,

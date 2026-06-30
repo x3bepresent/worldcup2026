@@ -3,6 +3,9 @@
  * 每场：让球 + 大小球；统计倾向/非倾向/交叉赛果（倾向错但另一项对）
  *
  * 结算口径：不败即中 — 全赢 / 赢半 / 走水 → 中；输半 / 全输 → 不中
+ *
+ * 写单前校验：node scripts/audit-agent-spread-reason.js day20
+ * — 让球 reason_cn 引用的比分须与 gradeSpreadForScore 一致，避免「2-0 仍赢盘」类错误。
  */
 const fs = require('fs');
 const path = require('path');
@@ -54,8 +57,8 @@ function totalsOverWeight(totalGoals, line) {
     return 0;
   }
   if (Math.abs(l - 1.75) < 0.01) {
-    if (t >= 2) return 1;
-    if (t === 1) return 0.5;
+    if (t >= 3) return 1;
+    if (t === 2) return 0.5;
     return 0;
   }
   if (Math.abs(l % 1 - 0.75) < 0.01) {
@@ -120,7 +123,8 @@ function favSpreadOutcome(favMargin, tier) {
     return 'full_lose';
   }
   if (Math.abs(frac - 0.75) < 0.01) {
-    if (favMargin >= th.fullMin) return 'full_win';
+    if (favMargin > th.fullMin) return 'full_win';
+    if (favMargin === th.fullMin) return 'half_win';
     if (th.halfExact != null && favMargin === th.halfExact) return 'half_win';
     if (favMargin === base || (base === 0 && favMargin === 0)) return 'half_lose';
     return 'full_lose';
@@ -144,7 +148,7 @@ function spreadSideOutcome(margin, tier, side, publicLean) {
   return 'full_lose';
 }
 
-/** 大球方结算 */
+/** 大球方结算 — x/x+0.5（.25）恰 base 球：大球输半；x+0.5/x+1（.75）恰 base+1 球：大球赢半 */
 function totalsOverOutcome(total, line) {
   const w = totalsOverWeight(total, line);
   const l = Number(line);
@@ -154,12 +158,10 @@ function totalsOverOutcome(total, line) {
   if (isInt && total === l) return 'push';
   const base = Math.floor(l);
   const frac = Math.round((l % 1) * 100) / 100;
-  if (Math.abs(frac - 0.25) < 0.01 && total === base) return 'half_win';
+  if (Math.abs(frac - 0.25) < 0.01 && total === base) return 'half_lose';
   if (Math.abs(frac - 0.75) < 0.01 && total === base + 1) return 'half_win';
-  if (Math.abs(l - 2.75) < 0.01 && total === 3) return 'half_win';
-  if (Math.abs(l - 2.25) < 0.01 && total === 2) return 'half_win';
-  if (Math.abs(l - 3.25) < 0.01 && total === 3) return 'half_win';
-  if (Math.abs(l - 1.75) < 0.01 && total === 1) return 'half_lose';
+  if (Math.abs(l - 1.75) < 0.01 && total === 2) return 'half_win';
+  if (Math.abs(l - 1.75) < 0.01 && total === 1) return 'full_lose';
   return 'half_lose';
 }
 
@@ -465,9 +467,17 @@ function buildLayerAlignmentStats(graded) {
   };
 }
 
+function loadHandicapForDay(dayNum) {
+  const p = path.join(__dirname, `handicap-data-day${dayNum}.js`);
+  if (fs.existsSync(p)) {
+    return require(p);
+  }
+  return {};
+}
+
 function gradeDay(jsonPath) {
   const data = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-  const handicap = require(path.join(__dirname, 'handicap-data-day17.js'));
+  const handicap = loadHandicapForDay(data.day);
   const results = loadResults();
   const today = loadMatches();
   const byId = {};
@@ -595,6 +605,12 @@ const arg = process.argv[2] || 'day17';
 if (arg === 'day17' || arg === 'all') {
   gradeDay(path.join(__dirname, 'agent-picks-day17.json'));
 }
+if (arg === 'day18' || arg === 'all') {
+  gradeDay(path.join(__dirname, 'agent-picks-day18.json'));
+}
 if (arg === 'day19' || arg === 'all') {
   gradeDay(path.join(__dirname, 'agent-picks-day19.json'));
+}
+if (arg === 'day20' || arg === 'all') {
+  gradeDay(path.join(__dirname, 'agent-picks-day20.json'));
 }

@@ -11,8 +11,14 @@
       "tendency_cn": "更倾向大小球",
       "confidence": "high",
       "confidence_cn": "大信心",
-      "spread": { "side": "dog", "pick_cn": "日本 +0.5/1 @0.88" },
-      "totals": { "side": "over", "pick_cn": "大球 2/2.5 @0.88" }
+      "spread": {
+        "side": "dog",
+        "pick_cn": "日本 +0.5/1 @0.88"
+      },
+      "totals": {
+        "side": "over",
+        "pick_cn": "大球 2/2.5 @0.88"
+      }
     },
     {
       "id": "m74",
@@ -21,8 +27,14 @@
       "tendency_cn": "更倾向大小球",
       "confidence": "high",
       "confidence_cn": "大信心",
-      "spread": { "side": "dog", "pick_cn": "巴拉圭 +1.5 @0.85" },
-      "totals": { "side": "under", "pick_cn": "小球 2.5/3 @0.97" }
+      "spread": {
+        "side": "dog",
+        "pick_cn": "巴拉圭 +1.5 @0.85"
+      },
+      "totals": {
+        "side": "under",
+        "pick_cn": "小球 2.5/3 @0.97"
+      }
     },
     {
       "id": "m75",
@@ -31,8 +43,308 @@
       "tendency_cn": "更倾向大小球",
       "confidence": "high",
       "confidence_cn": "大信心",
-      "spread": { "side": "dog", "pick_cn": "摩洛哥 +0/0.5 @0.92" },
-      "totals": { "side": "over", "pick_cn": "大球 2/2.5 @0.95" }
+      "spread": {
+        "side": "dog",
+        "pick_cn": "摩洛哥 +0/0.5 @0.92"
+      },
+      "totals": {
+        "side": "over",
+        "pick_cn": "大球 2/2.5 @0.95"
+      }
     }
-  ]
+  ],
+  "results": {
+    "graded_at": "2026-06-30T04:30:44.589Z",
+    "grade_rule_cn": "不败即中：全赢/赢半/走水算中，输半/全输算不中",
+    "spread": {
+      "hit": 2,
+      "miss": 1,
+      "push": 0,
+      "pending": 0,
+      "pct": 66.7
+    },
+    "totals": {
+      "hit": 2,
+      "miss": 1,
+      "push": 0,
+      "pending": 0,
+      "pct": 66.7
+    },
+    "primary": {
+      "hit": 2,
+      "miss": 1,
+      "push": 0,
+      "pending": 0,
+      "pct": 66.7,
+      "label_cn": "倾向项（★）"
+    },
+    "secondary": {
+      "hit": 2,
+      "miss": 1,
+      "push": 0,
+      "pending": 0,
+      "pct": 66.7,
+      "label_cn": "非倾向项"
+    },
+    "all_legs": {
+      "hit": 4,
+      "miss": 2,
+      "push": 0,
+      "pending": 0,
+      "pct": 66.7
+    },
+    "cross_analysis": {
+      "summary_cn": "交叉赛果用于反推倾向权重：若「倾向错、另一项对」偏多，应下调倾向优先级或改判定规则",
+      "primary_miss_secondary_hit": {
+        "n": 1,
+        "pct": 33.3,
+        "label_cn": "倾向未中 · 另一项命中",
+        "matches": [
+          {
+            "id": "m75",
+            "match": "Netherlands vs Morocco",
+            "cn": "★大小球未中，让球盘项命中"
+          }
+        ],
+        "analytics_cn": "虽倾向错了，但双选中的另一项对了——实际可命中却被倾向标签误导，是改进重点"
+      },
+      "primary_hit_secondary_miss": {
+        "n": 1,
+        "pct": 33.3,
+        "label_cn": "倾向命中 · 另一项未中",
+        "matches": [
+          {
+            "id": "m76",
+            "match": "Brazil vs Japan",
+            "cn": "★大小球命中，让球盘未中"
+          }
+        ]
+      },
+      "both_hit": {
+        "n": 1,
+        "matches": [
+          {
+            "id": "m74",
+            "match": "Germany vs Paraguay",
+            "cn": "★大小球与让球盘均命中"
+          }
+        ]
+      },
+      "both_miss": {
+        "n": 0,
+        "matches": []
+      },
+      "pending": 0
+    },
+    "layer_alignment": {
+      "summary_cn": "大小球三层对齐：pick_side 与 model/market/recommended 赛后反推",
+      "pick_follows_model_market": {
+        "hit": 0,
+        "miss": 0,
+        "n": 0,
+        "pct": null
+      },
+      "pick_vs_recommended": {
+        "hit": 0,
+        "miss": 0,
+        "n": 0,
+        "pct": null
+      },
+      "situation_conflict_resolved": {
+        "hit": 0,
+        "miss": 0,
+        "n": 0,
+        "pct": null
+      },
+      "per_match": [
+        {
+          "id": "m76",
+          "model_side": null,
+          "situation_side": null,
+          "market_side": null,
+          "pick_side": "over",
+          "recommended_side": null,
+          "totals_hit": true
+        },
+        {
+          "id": "m74",
+          "model_side": null,
+          "situation_side": null,
+          "market_side": null,
+          "pick_side": "under",
+          "recommended_side": null,
+          "totals_hit": true
+        },
+        {
+          "id": "m75",
+          "model_side": null,
+          "situation_side": null,
+          "market_side": null,
+          "pick_side": "over",
+          "recommended_side": null,
+          "totals_hit": false
+        }
+      ]
+    },
+    "high_confidence": {
+      "n": 3,
+      "ids": [
+        "m76",
+        "m74",
+        "m75"
+      ],
+      "spread": {
+        "hit": 2,
+        "miss": 1,
+        "pct": 66.7
+      },
+      "totals": {
+        "hit": 2,
+        "miss": 1,
+        "pct": 66.7
+      },
+      "primary": {
+        "hit": 2,
+        "miss": 1,
+        "pct": 66.7
+      },
+      "cross": {
+        "primary_miss_secondary_hit": [
+          "m75"
+        ],
+        "primary_hit_secondary_miss": [
+          "m76"
+        ],
+        "both_hit": [
+          "m74"
+        ],
+        "both_miss": []
+      }
+    },
+    "picks": [
+      {
+        "id": "m76",
+        "match": "Brazil vs Japan",
+        "primary": "totals",
+        "tendency_cn": "更倾向大小球",
+        "high_confidence": true,
+        "confidence_cn": "大信心",
+        "model_side": null,
+        "situation_side": null,
+        "market_side": null,
+        "pick_side": "over",
+        "recommended_side": null,
+        "situation_conflict": false,
+        "spread": {
+          "side": "dog",
+          "label_cn": "日本 +0.5/1 @0.88",
+          "reason_cn": "巴西 0.96 仍高水 · 日本 F 组不败 · 平局/小负赢半，49.9% 守住。",
+          "hit": false,
+          "grade_note": "2-1 · 净胜 +1 · 输半"
+        },
+        "totals": {
+          "side": "over",
+          "label_cn": "大球 2/2.5 @0.88",
+          "reason_cn": "xG 约 2.9 vs 线 2.25 · 大 0.88 低水 · 2-1/1-1 路径。",
+          "hit": true,
+          "grade_note": "2-1 总3 · 线 2.25 · 全赢"
+        },
+        "primary_hit": true,
+        "secondary_hit": false,
+        "secondary_market": "spread",
+        "outcome": {
+          "key": "primary_hit_secondary_miss",
+          "cn": "★大小球命中，让球盘未中",
+          "analytics_cn": "倾向正确；非倾向项失误，可降权备用项展示",
+          "primary_hit": true,
+          "secondary_hit": false,
+          "primary_market": "totals",
+          "secondary_market": "spread"
+        },
+        "actual_score": "2-1"
+      },
+      {
+        "id": "m74",
+        "match": "Germany vs Paraguay",
+        "primary": "totals",
+        "tendency_cn": "更倾向大小球",
+        "high_confidence": true,
+        "confidence_cn": "大信心",
+        "model_side": null,
+        "situation_side": null,
+        "market_side": null,
+        "pick_side": "under",
+        "recommended_side": null,
+        "situation_conflict": false,
+        "spread": {
+          "side": "dog",
+          "label_cn": "巴拉圭 +1.5 @0.85",
+          "reason_cn": "精算诱上 · 升 -1.5 德高水 · 模型/市场守住 53% · 德国赢球≠穿盘。",
+          "hit": true,
+          "grade_note": "1-1 · 净胜 0 · 全赢"
+        },
+        "totals": {
+          "side": "under",
+          "label_cn": "小球 2.5/3 @0.97",
+          "reason_cn": "xG 2.54 vs 线 2.75 · 模型+盘面多数小球 · 1-0/2-0 路径。",
+          "hit": true,
+          "grade_note": "1-1 总2 · 线 2.75 · 全赢"
+        },
+        "primary_hit": true,
+        "secondary_hit": true,
+        "secondary_market": "spread",
+        "outcome": {
+          "key": "both_hit",
+          "cn": "★大小球与让球盘均命中",
+          "analytics_cn": "倾向正确，双项验证通过",
+          "primary_hit": true,
+          "secondary_hit": true,
+          "primary_market": "totals",
+          "secondary_market": "spread"
+        },
+        "actual_score": "1-1"
+      },
+      {
+        "id": "m75",
+        "match": "Netherlands vs Morocco",
+        "primary": "totals",
+        "tendency_cn": "更倾向大小球",
+        "high_confidence": true,
+        "confidence_cn": "大信心",
+        "model_side": null,
+        "situation_side": null,
+        "market_side": null,
+        "pick_side": "over",
+        "recommended_side": null,
+        "situation_conflict": false,
+        "spread": {
+          "side": "dog",
+          "label_cn": "摩洛哥 +0/0.5 @0.92",
+          "reason_cn": "向模型退档 · 不败/赢半结构 · 50.3% 守住，edge 有限。",
+          "hit": true,
+          "grade_note": "1-1 · 净胜 0 · 赢半"
+        },
+        "totals": {
+          "side": "over",
+          "label_cn": "大球 2/2.5 @0.95",
+          "reason_cn": "模型 64.7% 超线 · 荷摩进攻属性 · 2-1/1-1 路径。",
+          "hit": false,
+          "grade_note": "1-1 总2 · 线 2.25 · 输半"
+        },
+        "primary_hit": false,
+        "secondary_hit": true,
+        "secondary_market": "spread",
+        "outcome": {
+          "key": "primary_miss_secondary_hit",
+          "cn": "★大小球未中，让球盘项命中",
+          "analytics_cn": "倾向权重可能偏高——复盘时应优先看命中项，并反推是否应改倾向或降低倾向在决策中的权重",
+          "primary_hit": false,
+          "secondary_hit": true,
+          "primary_market": "totals",
+          "secondary_market": "spread"
+        },
+        "actual_score": "1-1"
+      }
+    ]
+  }
 }
