@@ -1,7 +1,7 @@
 // 今日赛事 — 淘汰赛 · 32强 (signals enriched)
-// Last updated: 2026-06-30T04:15:01+08:00
+// Last updated: 2026-06-30T16:06:43+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-30T04:15:01+08:00",
+  "lastUpdated": "2026-06-30T16:06:43+08:00",
   "syncSource": "FIFA 赛程 · Day 20 · 32强 3场 enriched · 推演概要+小组形势",
   "phase": "knockout",
   "phase_cn": "淘汰赛 · 32强",
@@ -306,7 +306,7 @@ const MATCH_DATA = {
         "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
         "blocker_spread_note": "",
         "public_lean_cn": "舆论倾向 Norway（约 58%）",
-        "analysis": "M78 · 科特迪瓦 vs 挪威 · 皇冠 -0/0.5 挪 0.82 / 象 1.06 · 大小 2.5 大 0.98 小 0.89。",
+        "analysis": "M78 · 科特迪瓦 vs 挪威 · 临场 -0/0.5 挪 0.84 / 象 1.05 · 大小 2.5 大 0.93 小 0.95。",
         "spread_cover": {
           "top3_scores": [
             {
@@ -348,9 +348,9 @@ const MATCH_DATA = {
           "dog_hold_pct_raw": 63.6
         },
         "spread_odds": {
-          "fav": 0.82,
-          "dog": 1.06,
-          "note": "Côte d'Ivoire 0.82 · Norway 1.06"
+          "fav": 0.84,
+          "dog": 1.05,
+          "note": "Côte d'Ivoire 0.84 · Norway 1.05"
         },
         "spread_alt": null,
         "totals_analysis": {
@@ -368,36 +368,36 @@ const MATCH_DATA = {
           "signal_desc": "总进球参考高于合理值，模型偏小比分。",
           "public_over_pct": 50,
           "public_lean_cn": "舆论对总进球看法较分散",
-          "index_note": "大比分侧 0.98 / 小比分侧 0.89 · 小比分侧更热",
+          "index_note": "大比分侧 0.93 / 小比分侧 0.95",
           "totals_odds": {
-            "over": 0.98,
-            "under": 0.89,
-            "note": "大比分 0.98 · 小比分 0.89"
+            "over": 0.93,
+            "under": 0.95,
+            "note": "大比分 0.93 · 小比分 0.95"
           },
-          "rational_cn": "超 2.5 球接近五五开（约 52.8%）；参考高于合理值但模型仍偏小比分",
+          "rational_cn": "超 2.5 球接近五五开（约 52.8%）",
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
         "market_line_movement": {
           "wc_note": "达拉斯 neutral · 主客仅为 FIFA 标记",
           "spread_open_cn": "Côte d'Ivoire +0.5@0.96 · Norway -0.5@0.86",
-          "spread_now_cn": "Côte d'Ivoire +0/0.5@1.06 · Norway -0/0.5@0.82",
-          "totals_now_cn": "大小 2.5 · 大 0.98 / 小 0.89",
+          "spread_now_cn": "Côte d'Ivoire +0/0.5@1.05 · Norway -0/0.5@0.84",
+          "totals_now_cn": "大小 2.5 · 大 0.93 / 小 0.95",
           "tag": "correction",
           "tag_cn": "向模型修正",
           "tag_color": "#C8A96E",
-          "detail_cn": "退 0.75 档 · 热门 0.86→0.82（降水） · 受让 0.96→1.06（抬水） 现盘去水隐含：Norway 53.1% · Côte d'Ivoire 46.9%（超收 3.5%） 模型穿盘（现档 Norway -0.25 · Côte d'Ivoire +0.25）：Norway 46.1% · Côte d'Ivoire 53.9% 模型−市场：Norway -7pp · Côte d'Ivoire +7pp 期望 ROI@现水：Norway -16.1% · Côte d'Ivoire +64.9% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "detail_cn": "退 0.75 档 · 热门 0.86→0.84（降水） · 受让 0.96→1.05（抬水） 现盘去水隐含：Norway 52.7% · Côte d'Ivoire 47.3%（超收 3.1%） 模型穿盘（现档 Norway -0.25 · Côte d'Ivoire +0.25）：Norway 46.1% · Côte d'Ivoire 53.9% 模型−市场：Norway -6.6pp · Côte d'Ivoire +6.6pp 期望 ROI@现水：Norway -15.2% · Côte d'Ivoire +64.4% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
           "actuarial": {
             "actuarial_type": "correction",
             "actuarial_cn": "向模型修正",
             "actuarial_color": "#C8A96E",
             "actuarial_desc": "盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
-            "summary_cn": "退 0.75 档 · 热门 0.86→0.82（降水） · 受让 0.96→1.06（抬水） 现盘去水隐含：Norway 53.1% · Côte d'Ivoire 46.9%（超收 3.5%） 模型穿盘（现档 Norway -0.25 · Côte d'Ivoire +0.25）：Norway 46.1% · Côte d'Ivoire 53.9% 模型−市场：Norway -7pp · Côte d'Ivoire +7pp 期望 ROI@现水：Norway -16.1% · Côte d'Ivoire +64.9% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+            "summary_cn": "退 0.75 档 · 热门 0.86→0.84（降水） · 受让 0.96→1.05（抬水） 现盘去水隐含：Norway 52.7% · Côte d'Ivoire 47.3%（超收 3.1%） 模型穿盘（现档 Norway -0.25 · Côte d'Ivoire +0.25）：Norway 46.1% · Côte d'Ivoire 53.9% 模型−市场：Norway -6.6pp · Côte d'Ivoire +6.6pp 期望 ROI@现水：Norway -15.2% · Côte d'Ivoire +64.4% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
             "line_delta": -0.75,
             "line_delta_cn": "退 0.75 档",
-            "fav_odds_delta": -0.04,
-            "dog_odds_delta": 0.1,
-            "water_move_cn": "热门 0.86→0.82（降水） · 受让 0.96→1.06（抬水）",
+            "fav_odds_delta": -0.02,
+            "dog_odds_delta": 0.09,
+            "water_move_cn": "热门 0.86→0.84（降水） · 受让 0.96→1.05（抬水）",
             "open_tier": 0.5,
             "open_tier_label": "Côte d'Ivoire -0.5 · Norway +0.5",
             "now_tier": -0.25,
@@ -410,19 +410,19 @@ const MATCH_DATA = {
               "overround_pct": 4.8
             },
             "now_devig": {
-              "fav_pct": 53.1,
-              "dog_pct": 46.9,
-              "overround_pct": 3.5
+              "fav_pct": 52.7,
+              "dog_pct": 47.3,
+              "overround_pct": 3.1
             },
             "model_cover_open_pct": 47.1,
             "model_cover_now_pct": 46.1,
             "model_dog_cover_now_pct": 53.9,
-            "market_fav_cover_now_pct": 53.1,
-            "market_dog_cover_now_pct": 46.9,
-            "model_vs_market_fav_pp": -7,
-            "model_vs_market_dog_pp": 7,
-            "fav_roi_pct": -16.1,
-            "dog_roi_pct": 64.9,
+            "market_fav_cover_now_pct": 52.7,
+            "market_dog_cover_now_pct": 47.3,
+            "model_vs_market_fav_pp": -6.6,
+            "model_vs_market_dog_pp": 6.6,
+            "fav_roi_pct": -15.2,
+            "dog_roi_pct": 64.4,
             "fav_name": "Norway",
             "dog_name": "Côte d'Ivoire"
           }
@@ -432,12 +432,12 @@ const MATCH_DATA = {
           "actuarial_cn": "向模型修正",
           "actuarial_color": "#C8A96E",
           "actuarial_desc": "盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
-          "summary_cn": "退 0.75 档 · 热门 0.86→0.82（降水） · 受让 0.96→1.06（抬水） 现盘去水隐含：Norway 53.1% · Côte d'Ivoire 46.9%（超收 3.5%） 模型穿盘（现档 Norway -0.25 · Côte d'Ivoire +0.25）：Norway 46.1% · Côte d'Ivoire 53.9% 模型−市场：Norway -7pp · Côte d'Ivoire +7pp 期望 ROI@现水：Norway -16.1% · Côte d'Ivoire +64.9% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "summary_cn": "退 0.75 档 · 热门 0.86→0.84（降水） · 受让 0.96→1.05（抬水） 现盘去水隐含：Norway 52.7% · Côte d'Ivoire 47.3%（超收 3.1%） 模型穿盘（现档 Norway -0.25 · Côte d'Ivoire +0.25）：Norway 46.1% · Côte d'Ivoire 53.9% 模型−市场：Norway -6.6pp · Côte d'Ivoire +6.6pp 期望 ROI@现水：Norway -15.2% · Côte d'Ivoire +64.4% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
           "line_delta": -0.75,
           "line_delta_cn": "退 0.75 档",
-          "fav_odds_delta": -0.04,
-          "dog_odds_delta": 0.1,
-          "water_move_cn": "热门 0.86→0.82（降水） · 受让 0.96→1.06（抬水）",
+          "fav_odds_delta": -0.02,
+          "dog_odds_delta": 0.09,
+          "water_move_cn": "热门 0.86→0.84（降水） · 受让 0.96→1.05（抬水）",
           "open_tier": 0.5,
           "open_tier_label": "Côte d'Ivoire -0.5 · Norway +0.5",
           "now_tier": -0.25,
@@ -450,19 +450,19 @@ const MATCH_DATA = {
             "overround_pct": 4.8
           },
           "now_devig": {
-            "fav_pct": 53.1,
-            "dog_pct": 46.9,
-            "overround_pct": 3.5
+            "fav_pct": 52.7,
+            "dog_pct": 47.3,
+            "overround_pct": 3.1
           },
           "model_cover_open_pct": 47.1,
           "model_cover_now_pct": 46.1,
           "model_dog_cover_now_pct": 53.9,
-          "market_fav_cover_now_pct": 53.1,
-          "market_dog_cover_now_pct": 46.9,
-          "model_vs_market_fav_pp": -7,
-          "model_vs_market_dog_pp": 7,
-          "fav_roi_pct": -16.1,
-          "dog_roi_pct": 64.9,
+          "market_fav_cover_now_pct": 52.7,
+          "market_dog_cover_now_pct": 47.3,
+          "model_vs_market_fav_pp": -6.6,
+          "model_vs_market_dog_pp": 6.6,
+          "fav_roi_pct": -15.2,
+          "dog_roi_pct": 64.4,
           "fav_name": "Norway",
           "dog_name": "Côte d'Ivoire"
         },
@@ -470,7 +470,7 @@ const MATCH_DATA = {
           "model_side": "neutral",
           "situation_side": "neutral",
           "market_line_side": "under",
-          "market_odds_side": "under",
+          "market_odds_side": "neutral",
           "market_side": "under",
           "recommended_side": "under",
           "conflict": false,
@@ -479,32 +479,32 @@ const MATCH_DATA = {
           "votes": {
             "model": "neutral",
             "line": "under",
-            "odds": "under",
+            "odds": "neutral",
             "situation": "neutral"
           },
-          "vote_summary_cn": "观望(model) · 小球(line) · 小球(odds) · 观望(situation)",
+          "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
           "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
         },
         "agent_pick": {
           "primary": "spread",
           "tendency_cn": "更倾向让球盘",
-          "tendency_reason_cn": "挪威退档降水 · 模型 ROI@现水 +64.9% · 大小 2.5 三层偏小球但 edge 弱于让球。",
+          "tendency_reason_cn": "挪威退档后仍低水 · 临场 0.84 穿盘结构 · 大小 2.5 临盘大球降水但线位中性，edge 仍让球侧。",
           "spread": {
             "side": "fav",
-            "label_cn": "挪威 -0/0.5 @0.82",
-            "reason_cn": "向模型修正 · 挪 0.82 低水 · xG 1.38≈1.42 均势但盘口挺挪威 · 53.9% 穿盘。"
+            "label_cn": "挪威 -0/0.5 @0.84",
+            "reason_cn": "初→临档 -0/0.5 挺挪 · 0.84 低水 · xG 均势盘口偏挪 · 模型穿盘约 53%。"
           },
           "totals": {
             "side": "under",
-            "label_cn": "小球 2.5 @0.89",
-            "reason_cn": "模型+线+水多数小球 · xG 合计约 2.8 但盘口小 0.89 低水 · 1-1/1-0 路径。"
+            "label_cn": "小球 2.5 @0.95",
+            "reason_cn": "2.5 整球线 · 模型 xG 约 2.8 但临盘小 0.95 高水 · 副项 · 1-1/1-0 路径仍合理。"
           },
-          "picked_at": "2026-07-01",
+          "picked_at": "2026-07-01-kickoff",
           "pick_meta": {
             "model_side": "neutral",
             "situation_side": "neutral",
             "market_line_side": "under",
-            "market_odds_side": "under",
+            "market_odds_side": "neutral",
             "market_side": "under",
             "pick_side": "under",
             "recommended_side": "under",
@@ -514,10 +514,10 @@ const MATCH_DATA = {
             "votes": {
               "model": "neutral",
               "line": "under",
-              "odds": "under",
+              "odds": "neutral",
               "situation": "neutral"
             },
-            "vote_summary_cn": "观望(model) · 小球(line) · 小球(odds) · 观望(situation)",
+            "vote_summary_cn": "观望(model) · 小球(line) · 观望(odds) · 观望(situation)",
             "situation_dampened": false,
             "over_pct": 52.8,
             "line_gap": 0.5
@@ -1226,8 +1226,8 @@ const MATCH_DATA = {
         "agent_pick_primary": "spread",
         "agent_pick_tendency_cn": "更倾向让球盘",
         "agent_pick_confidence": null,
-        "agent_spread_cn": "挪威 -0/0.5 @0.82",
-        "agent_totals_cn": "小球 2.5 @0.89",
+        "agent_spread_cn": "挪威 -0/0.5 @0.84",
+        "agent_totals_cn": "小球 2.5 @0.95",
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -1509,7 +1509,7 @@ const MATCH_DATA = {
         "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
         "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "public_lean_cn": "舆论倾向 France（约 72%）",
-        "analysis": "M77 · 法国 vs 瑞典 · 皇冠 -1.5/2 法 1.02 / 瑞 0.86 · 大小 3/3.5 大 0.94 小 0.93。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "analysis": "M77 · 法国 vs 瑞典 · 临场 -1.5/2 法 1.04 / 瑞 0.85 · 大小 3/3.5 大 0.88 小 1.00。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "spread_cover": {
           "top3_scores": [
             {
@@ -1551,9 +1551,9 @@ const MATCH_DATA = {
           "dog_hold_pct_raw": 62.5
         },
         "spread_odds": {
-          "fav": 1.02,
-          "dog": 0.86,
-          "note": "France 1.02 · Sweden 0.86"
+          "fav": 1.04,
+          "dog": 0.85,
+          "note": "France 1.04 · Sweden 0.85"
         },
         "spread_alt": null,
         "totals_analysis": {
@@ -1571,11 +1571,11 @@ const MATCH_DATA = {
           "signal_desc": "总进球参考高于合理值，模型偏小比分。",
           "public_over_pct": 50,
           "public_lean_cn": "舆论对总进球看法较分散",
-          "index_note": "大比分侧 0.94 / 小比分侧 0.93",
+          "index_note": "大比分侧 0.88 / 小比分侧 1",
           "totals_odds": {
-            "over": 0.94,
-            "under": 0.93,
-            "note": "大比分 0.94 · 小比分 0.93"
+            "over": 0.88,
+            "under": 1,
+            "note": "大比分 0.88 · 小比分 1"
           },
           "rational_cn": "模型略看小比分（超 3.25 约 58.3% 难达）",
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
@@ -1584,23 +1584,23 @@ const MATCH_DATA = {
         "market_line_movement": {
           "wc_note": "纽约 neutral · 主客仅为 FIFA 标记",
           "spread_open_cn": "France -1/1.5@0.9 · Sweden +1/1.5@0.92",
-          "spread_now_cn": "France -1.5/2@1.02 · Sweden +1.5/2@0.86",
-          "totals_now_cn": "大小 3/3.5 · 大 0.94 / 小 0.93",
+          "spread_now_cn": "France -1.5/2@1.04 · Sweden +1.5/2@0.85",
+          "totals_now_cn": "大小 3/3.5 · 大 0.88 / 小 1",
           "tag": "book_trap_fav",
           "tag_cn": "精算诱上",
           "tag_color": "#D95F6A",
-          "detail_cn": "升 0.5 档 · 热门 0.9→1.02（抬水） · 受让 0.92→0.86（降水） 现盘去水隐含：France 47.9% · Sweden 52.1%（超收 3.3%） 模型穿盘（现档 France -1.75 · Sweden +1.75）：France 46.7% · Sweden 53.3% 模型−市场：France -1.2pp · Sweden +1.2pp 期望 ROI@现水：France +19.3% · Sweden -5.9% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+          "detail_cn": "升 0.5 档 · 热门 0.9→1.04（抬水） · 受让 0.92→0.85（降水） 现盘去水隐含：France 47.6% · Sweden 52.4%（超收 3.1%） 模型穿盘（现档 France -1.75 · Sweden +1.75）：France 46.7% · Sweden 53.3% 模型−市场：France -0.9pp · Sweden +0.9pp 期望 ROI@现水：France +20.5% · Sweden -6.1% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
           "actuarial": {
             "actuarial_type": "book_trap_fav",
             "actuarial_cn": "精算诱上",
             "actuarial_color": "#D95F6A",
             "actuarial_desc": "升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
-            "summary_cn": "升 0.5 档 · 热门 0.9→1.02（抬水） · 受让 0.92→0.86（降水） 现盘去水隐含：France 47.9% · Sweden 52.1%（超收 3.3%） 模型穿盘（现档 France -1.75 · Sweden +1.75）：France 46.7% · Sweden 53.3% 模型−市场：France -1.2pp · Sweden +1.2pp 期望 ROI@现水：France +19.3% · Sweden -5.9% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+            "summary_cn": "升 0.5 档 · 热门 0.9→1.04（抬水） · 受让 0.92→0.85（降水） 现盘去水隐含：France 47.6% · Sweden 52.4%（超收 3.1%） 模型穿盘（现档 France -1.75 · Sweden +1.75）：France 46.7% · Sweden 53.3% 模型−市场：France -0.9pp · Sweden +0.9pp 期望 ROI@现水：France +20.5% · Sweden -6.1% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
             "line_delta": 0.5,
             "line_delta_cn": "升 0.5 档",
-            "fav_odds_delta": 0.12,
-            "dog_odds_delta": -0.06,
-            "water_move_cn": "热门 0.9→1.02（抬水） · 受让 0.92→0.86（降水）",
+            "fav_odds_delta": 0.14,
+            "dog_odds_delta": -0.07,
+            "water_move_cn": "热门 0.9→1.04（抬水） · 受让 0.92→0.85（降水）",
             "open_tier": 1.25,
             "open_tier_label": "France -1.25 · Sweden +1.25",
             "now_tier": 1.75,
@@ -1613,19 +1613,19 @@ const MATCH_DATA = {
               "overround_pct": 4.7
             },
             "now_devig": {
-              "fav_pct": 47.9,
-              "dog_pct": 52.1,
-              "overround_pct": 3.3
+              "fav_pct": 47.6,
+              "dog_pct": 52.4,
+              "overround_pct": 3.1
             },
             "model_cover_open_pct": 46.7,
             "model_cover_now_pct": 46.7,
             "model_dog_cover_now_pct": 53.3,
-            "market_fav_cover_now_pct": 47.9,
-            "market_dog_cover_now_pct": 52.1,
-            "model_vs_market_fav_pp": -1.2,
-            "model_vs_market_dog_pp": 1.2,
-            "fav_roi_pct": 19.3,
-            "dog_roi_pct": -5.9,
+            "market_fav_cover_now_pct": 47.6,
+            "market_dog_cover_now_pct": 52.4,
+            "model_vs_market_fav_pp": -0.9,
+            "model_vs_market_dog_pp": 0.9,
+            "fav_roi_pct": 20.5,
+            "dog_roi_pct": -6.1,
             "fav_name": "France",
             "dog_name": "Sweden"
           }
@@ -1635,12 +1635,12 @@ const MATCH_DATA = {
           "actuarial_cn": "精算诱上",
           "actuarial_color": "#D95F6A",
           "actuarial_desc": "升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
-          "summary_cn": "升 0.5 档 · 热门 0.9→1.02（抬水） · 受让 0.92→0.86（降水） 现盘去水隐含：France 47.9% · Sweden 52.1%（超收 3.3%） 模型穿盘（现档 France -1.75 · Sweden +1.75）：France 46.7% · Sweden 53.3% 模型−市场：France -1.2pp · Sweden +1.2pp 期望 ROI@现水：France +19.3% · Sweden -5.9% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+          "summary_cn": "升 0.5 档 · 热门 0.9→1.04（抬水） · 受让 0.92→0.85（降水） 现盘去水隐含：France 47.6% · Sweden 52.4%（超收 3.1%） 模型穿盘（现档 France -1.75 · Sweden +1.75）：France 46.7% · Sweden 53.3% 模型−市场：France -0.9pp · Sweden +0.9pp 期望 ROI@现水：France +20.5% · Sweden -6.1% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
           "line_delta": 0.5,
           "line_delta_cn": "升 0.5 档",
-          "fav_odds_delta": 0.12,
-          "dog_odds_delta": -0.06,
-          "water_move_cn": "热门 0.9→1.02（抬水） · 受让 0.92→0.86（降水）",
+          "fav_odds_delta": 0.14,
+          "dog_odds_delta": -0.07,
+          "water_move_cn": "热门 0.9→1.04（抬水） · 受让 0.92→0.85（降水）",
           "open_tier": 1.25,
           "open_tier_label": "France -1.25 · Sweden +1.25",
           "now_tier": 1.75,
@@ -1653,19 +1653,19 @@ const MATCH_DATA = {
             "overround_pct": 4.7
           },
           "now_devig": {
-            "fav_pct": 47.9,
-            "dog_pct": 52.1,
-            "overround_pct": 3.3
+            "fav_pct": 47.6,
+            "dog_pct": 52.4,
+            "overround_pct": 3.1
           },
           "model_cover_open_pct": 46.7,
           "model_cover_now_pct": 46.7,
           "model_dog_cover_now_pct": 53.3,
-          "market_fav_cover_now_pct": 47.9,
-          "market_dog_cover_now_pct": 52.1,
-          "model_vs_market_fav_pp": -1.2,
-          "model_vs_market_dog_pp": 1.2,
-          "fav_roi_pct": 19.3,
-          "dog_roi_pct": -5.9,
+          "market_fav_cover_now_pct": 47.6,
+          "market_dog_cover_now_pct": 52.4,
+          "model_vs_market_fav_pp": -0.9,
+          "model_vs_market_dog_pp": 0.9,
+          "fav_roi_pct": 20.5,
+          "dog_roi_pct": -6.1,
           "fav_name": "France",
           "dog_name": "Sweden"
         },
@@ -1673,7 +1673,7 @@ const MATCH_DATA = {
           "model_side": "under",
           "situation_side": "neutral",
           "market_line_side": "under",
-          "market_odds_side": "neutral",
+          "market_odds_side": "over",
           "market_side": "under",
           "recommended_side": "under",
           "conflict": false,
@@ -1682,35 +1682,35 @@ const MATCH_DATA = {
           "votes": {
             "model": "under",
             "line": "under",
-            "odds": "neutral",
+            "odds": "over",
             "situation": "neutral"
           },
-          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "vote_summary_cn": "小球(model) · 小球(line) · 大球(odds) · 观望(situation)",
           "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
         },
         "agent_pick": {
           "primary": "totals",
           "tendency_cn": "更倾向大小球",
-          "tendency_reason_cn": "精算诱上法国深盘 · ★小球 3/3.5 模型超线仅 41.7% · 瑞典 +1.5/2 副选。",
+          "tendency_reason_cn": "精算诱上法国深盘维持 · ★小球 3/3.5 模型超线约 42% · 瑞典 +1.5/2 @0.85 副选。",
           "confidence": "high",
           "confidence_cn": "大信心",
-          "confidence_reason_cn": "★小球：xG 2.83 vs 线 3.25 · 模型+线同向低比分。让球：诱上结构 · 瑞典 +1.5/2 综合守住 53.3%（含 1-0 赢半/1-1 全赢）。",
+          "confidence_reason_cn": "★小球：xG 2.83 vs 线 3.25 · 临盘小 1.00 高水仍偏「卖大」叙事。让球：诱上结构续 · 瑞典 +1.5/2（1-1 全赢；1-0/2-0 输半）。",
           "spread": {
             "side": "dog",
-            "label_cn": "瑞典 +1.5/2 @0.86",
-            "reason_cn": "升 -1.5/2 法 1.02 高水 · 53.3% 守住。注意：2-0 主路径 → 瑞典 +1.5/2 **输半**（净胜2 赢半档+全赢档各半）；1-0/1-1 才全赢。"
+            "label_cn": "瑞典 +1.5/2 @0.85",
+            "reason_cn": "临 -1.5/2 法 1.04 高水 · 诱上续。比分推演：2-0 → 瑞典 +1.5/2 输半；1-0 → 输半；1-1 → 全赢。"
           },
           "totals": {
             "side": "under",
-            "label_cn": "小球 3/3.5 @0.93",
-            "reason_cn": "线抬至 3/3.5 · 模型 41.7% 超线 · 2-0/1-0 总≤3 偏小；★主项在此。"
+            "label_cn": "小球 3/3.5 @1.00",
+            "reason_cn": "线 3/3.5 模型超线约 42% · 临盘大 0.88 降水但线高 · 2-0/1-0 总≤3 · ★主项。"
           },
-          "picked_at": "2026-07-01",
+          "picked_at": "2026-07-01-kickoff",
           "pick_meta": {
             "model_side": "under",
             "situation_side": "neutral",
             "market_line_side": "under",
-            "market_odds_side": "neutral",
+            "market_odds_side": "over",
             "market_side": "under",
             "pick_side": "under",
             "recommended_side": "under",
@@ -1720,10 +1720,10 @@ const MATCH_DATA = {
             "votes": {
               "model": "under",
               "line": "under",
-              "odds": "neutral",
+              "odds": "over",
               "situation": "neutral"
             },
-            "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+            "vote_summary_cn": "小球(model) · 小球(line) · 大球(odds) · 观望(situation)",
             "situation_dampened": false,
             "over_pct": 41.7,
             "line_gap": 1.25
@@ -2433,8 +2433,8 @@ const MATCH_DATA = {
         "agent_pick_primary": "totals",
         "agent_pick_tendency_cn": "更倾向大小球",
         "agent_pick_confidence": "high",
-        "agent_spread_cn": "瑞典 +1.5/2 @0.86",
-        "agent_totals_cn": "小球 3/3.5 @0.93",
+        "agent_spread_cn": "瑞典 +1.5/2 @0.85",
+        "agent_totals_cn": "小球 3/3.5 @1.00",
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -2716,7 +2716,7 @@ const MATCH_DATA = {
         "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
         "blocker_spread_note": "",
         "public_lean_cn": "舆论倾向 Mexico（约 60%）",
-        "analysis": "M79 · 墨西哥 vs 厄瓜多尔 · 皇冠 -0/0.5 墨 0.85 / 厄 1.03 · 大小 1.5/2 大 0.85 小 1.02。",
+        "analysis": "M79 · 墨西哥 vs 厄瓜多尔 · 临场 -0/0.5 墨 0.87 / 厄 1.02 · 大小 1.5/2 大 0.83 小 1.05。",
         "spread_cover": {
           "top3_scores": [
             {
@@ -2758,9 +2758,9 @@ const MATCH_DATA = {
           "dog_hold_pct_raw": 48
         },
         "spread_odds": {
-          "fav": 0.85,
-          "dog": 1.03,
-          "note": "Mexico 0.85 · Ecuador 1.03"
+          "fav": 0.87,
+          "dog": 1.02,
+          "note": "Mexico 0.87 · Ecuador 1.02"
         },
         "spread_alt": null,
         "totals_analysis": {
@@ -2778,11 +2778,11 @@ const MATCH_DATA = {
           "signal_desc": "总进球参考低于合理值，模型偏大比分。",
           "public_over_pct": 50,
           "public_lean_cn": "舆论对总进球看法较分散",
-          "index_note": "大比分侧 0.85 / 小比分侧 1.02",
+          "index_note": "大比分侧 0.83 / 小比分侧 1.05",
           "totals_odds": {
-            "over": 0.85,
-            "under": 1.02,
-            "note": "大比分 0.85 · 小比分 1.02"
+            "over": 0.83,
+            "under": 1.05,
+            "note": "大比分 0.83 · 小比分 1.05"
           },
           "rational_cn": "模型略看大比分（超 1.75 约 63.2%）",
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
@@ -2791,23 +2791,23 @@ const MATCH_DATA = {
         "market_line_movement": {
           "wc_note": "墨西哥城 · 墨西哥主场 · FIFA 主/客标签",
           "spread_open_cn": "Mexico -0/0.5@0.8 · Ecuador +0/0.5@1.02",
-          "spread_now_cn": "Mexico -0/0.5@0.85 · Ecuador +0/0.5@1.03",
-          "totals_now_cn": "大小 1.5/2 · 大 0.85 / 小 1.02",
+          "spread_now_cn": "Mexico -0/0.5@0.87 · Ecuador +0/0.5@1.02",
+          "totals_now_cn": "大小 1.5/2 · 大 0.83 / 小 1.05",
           "tag": "flat",
           "tag_cn": "盘路平稳",
           "tag_color": "#7BB8D4",
-          "detail_cn": "档位持平 · 热门 0.8→0.85（抬水） · 受让 1.02→1.03（抬水） 现盘去水隐含：Mexico 52.3% · Ecuador 47.7%（超收 3.3%） 模型穿盘（现档 Mexico -0.25 · Ecuador +0.25）：Mexico 47.5% · Ecuador 52.5% 模型−市场：Mexico -4.8pp · Ecuador +4.8pp 期望 ROI@现水：Mexico -12.1% · Ecuador +59.1% 档位与水位变化幅度有限，暂无明确单向资金信号。",
+          "detail_cn": "档位持平 · 热门 0.8→0.87（抬水） · 受让 1.02→1.02 现盘去水隐含：Mexico 51.9% · Ecuador 48.1%（超收 3%） 模型穿盘（现档 Mexico -0.25 · Ecuador +0.25）：Mexico 47.5% · Ecuador 52.5% 模型−市场：Mexico -4.4pp · Ecuador +4.4pp 期望 ROI@现水：Mexico -11.2% · Ecuador +58.6% 档位与水位变化幅度有限，暂无明确单向资金信号。",
           "actuarial": {
             "actuarial_type": "flat",
             "actuarial_cn": "盘路平稳",
             "actuarial_color": "#7BB8D4",
             "actuarial_desc": "档位与水位变化幅度有限，暂无明确单向资金信号。",
-            "summary_cn": "档位持平 · 热门 0.8→0.85（抬水） · 受让 1.02→1.03（抬水） 现盘去水隐含：Mexico 52.3% · Ecuador 47.7%（超收 3.3%） 模型穿盘（现档 Mexico -0.25 · Ecuador +0.25）：Mexico 47.5% · Ecuador 52.5% 模型−市场：Mexico -4.8pp · Ecuador +4.8pp 期望 ROI@现水：Mexico -12.1% · Ecuador +59.1% 档位与水位变化幅度有限，暂无明确单向资金信号。",
+            "summary_cn": "档位持平 · 热门 0.8→0.87（抬水） · 受让 1.02→1.02 现盘去水隐含：Mexico 51.9% · Ecuador 48.1%（超收 3%） 模型穿盘（现档 Mexico -0.25 · Ecuador +0.25）：Mexico 47.5% · Ecuador 52.5% 模型−市场：Mexico -4.4pp · Ecuador +4.4pp 期望 ROI@现水：Mexico -11.2% · Ecuador +58.6% 档位与水位变化幅度有限，暂无明确单向资金信号。",
             "line_delta": 0,
             "line_delta_cn": "档位持平",
-            "fav_odds_delta": 0.05,
-            "dog_odds_delta": 0.01,
-            "water_move_cn": "热门 0.8→0.85（抬水） · 受让 1.02→1.03（抬水）",
+            "fav_odds_delta": 0.07,
+            "dog_odds_delta": 0,
+            "water_move_cn": "热门 0.8→0.87（抬水） · 受让 1.02→1.02",
             "open_tier": 0.25,
             "open_tier_label": "Mexico -0.25 · Ecuador +0.25",
             "now_tier": 0.25,
@@ -2820,19 +2820,19 @@ const MATCH_DATA = {
               "overround_pct": 5.1
             },
             "now_devig": {
-              "fav_pct": 52.3,
-              "dog_pct": 47.7,
-              "overround_pct": 3.3
+              "fav_pct": 51.9,
+              "dog_pct": 48.1,
+              "overround_pct": 3
             },
             "model_cover_open_pct": 47.5,
             "model_cover_now_pct": 47.5,
             "model_dog_cover_now_pct": 52.5,
-            "market_fav_cover_now_pct": 52.3,
-            "market_dog_cover_now_pct": 47.7,
-            "model_vs_market_fav_pp": -4.8,
-            "model_vs_market_dog_pp": 4.8,
-            "fav_roi_pct": -12.1,
-            "dog_roi_pct": 59.1,
+            "market_fav_cover_now_pct": 51.9,
+            "market_dog_cover_now_pct": 48.1,
+            "model_vs_market_fav_pp": -4.4,
+            "model_vs_market_dog_pp": 4.4,
+            "fav_roi_pct": -11.2,
+            "dog_roi_pct": 58.6,
             "fav_name": "Mexico",
             "dog_name": "Ecuador"
           }
@@ -2842,12 +2842,12 @@ const MATCH_DATA = {
           "actuarial_cn": "盘路平稳",
           "actuarial_color": "#7BB8D4",
           "actuarial_desc": "档位与水位变化幅度有限，暂无明确单向资金信号。",
-          "summary_cn": "档位持平 · 热门 0.8→0.85（抬水） · 受让 1.02→1.03（抬水） 现盘去水隐含：Mexico 52.3% · Ecuador 47.7%（超收 3.3%） 模型穿盘（现档 Mexico -0.25 · Ecuador +0.25）：Mexico 47.5% · Ecuador 52.5% 模型−市场：Mexico -4.8pp · Ecuador +4.8pp 期望 ROI@现水：Mexico -12.1% · Ecuador +59.1% 档位与水位变化幅度有限，暂无明确单向资金信号。",
+          "summary_cn": "档位持平 · 热门 0.8→0.87（抬水） · 受让 1.02→1.02 现盘去水隐含：Mexico 51.9% · Ecuador 48.1%（超收 3%） 模型穿盘（现档 Mexico -0.25 · Ecuador +0.25）：Mexico 47.5% · Ecuador 52.5% 模型−市场：Mexico -4.4pp · Ecuador +4.4pp 期望 ROI@现水：Mexico -11.2% · Ecuador +58.6% 档位与水位变化幅度有限，暂无明确单向资金信号。",
           "line_delta": 0,
           "line_delta_cn": "档位持平",
-          "fav_odds_delta": 0.05,
-          "dog_odds_delta": 0.01,
-          "water_move_cn": "热门 0.8→0.85（抬水） · 受让 1.02→1.03（抬水）",
+          "fav_odds_delta": 0.07,
+          "dog_odds_delta": 0,
+          "water_move_cn": "热门 0.8→0.87（抬水） · 受让 1.02→1.02",
           "open_tier": 0.25,
           "open_tier_label": "Mexico -0.25 · Ecuador +0.25",
           "now_tier": 0.25,
@@ -2860,19 +2860,19 @@ const MATCH_DATA = {
             "overround_pct": 5.1
           },
           "now_devig": {
-            "fav_pct": 52.3,
-            "dog_pct": 47.7,
-            "overround_pct": 3.3
+            "fav_pct": 51.9,
+            "dog_pct": 48.1,
+            "overround_pct": 3
           },
           "model_cover_open_pct": 47.5,
           "model_cover_now_pct": 47.5,
           "model_dog_cover_now_pct": 52.5,
-          "market_fav_cover_now_pct": 52.3,
-          "market_dog_cover_now_pct": 47.7,
-          "model_vs_market_fav_pp": -4.8,
-          "model_vs_market_dog_pp": 4.8,
-          "fav_roi_pct": -12.1,
-          "dog_roi_pct": 59.1,
+          "market_fav_cover_now_pct": 51.9,
+          "market_dog_cover_now_pct": 48.1,
+          "model_vs_market_fav_pp": -4.4,
+          "model_vs_market_dog_pp": 4.4,
+          "fav_roi_pct": -11.2,
+          "dog_roi_pct": 58.6,
           "fav_name": "Mexico",
           "dog_name": "Ecuador"
         },
@@ -2898,21 +2898,21 @@ const MATCH_DATA = {
         "agent_pick": {
           "primary": "totals",
           "tendency_cn": "更倾向大小球",
-          "tendency_reason_cn": "降线 1.5/2 大 0.85 低水 · 模型 63.2% 超线 · 让球五五开厄瓜多尔 ROI 更优为副选。",
+          "tendency_reason_cn": "降线 1.5/2 临盘大 0.83 再降水 · 模型超线约 63% · 让球墨升水穿盘信心一般，厄 +0/0.5 副选。",
           "confidence": "high",
           "confidence_cn": "大信心",
-          "confidence_reason_cn": "★大球：模型+线+水三层同向 over · xG 2.73 vs 线 1.75。让球：厄瓜多尔 +0/0.5 @1.03 模型 ROI 正。",
+          "confidence_reason_cn": "★大球：xG 2.73 vs 线 1.75 · 临 大 0.83 三层仍 over。让球：厄瓜多尔 +0/0.5 @1.02。",
           "spread": {
             "side": "dog",
-            "label_cn": "厄瓜多尔 +0/0.5 @1.03",
-            "reason_cn": "墨 -0/0.5 仅 47.5% 穿盘 · 阿兹特克主场但盘口未追深 · 受让低赔结构。"
+            "label_cn": "厄瓜多尔 +0/0.5 @1.02",
+            "reason_cn": "墨 -0/0.5 临 0.87 升水 · 穿盘约 47% · 主场但未追深 · 受让结构。"
           },
           "totals": {
             "side": "over",
-            "label_cn": "大球 1.5/2 @0.85",
-            "reason_cn": "降盘大 0.85 低水 · 模型 63.2% 超 1.75 · 2-0/2-1 路径。"
+            "label_cn": "大球 1.5/2 @0.83",
+            "reason_cn": "1.5/2 大 0.83 低水续 · 模型 63% 超 1.75 · 2-0/2-1 路径 · ★主项。"
           },
-          "picked_at": "2026-07-01",
+          "picked_at": "2026-07-01-kickoff",
           "pick_meta": {
             "model_side": "over",
             "situation_side": "neutral",
@@ -3662,8 +3662,8 @@ const MATCH_DATA = {
         "agent_pick_primary": "totals",
         "agent_pick_tendency_cn": "更倾向大小球",
         "agent_pick_confidence": "high",
-        "agent_spread_cn": "厄瓜多尔 +0/0.5 @1.03",
-        "agent_totals_cn": "大球 1.5/2 @0.85",
+        "agent_spread_cn": "厄瓜多尔 +0/0.5 @1.02",
+        "agent_totals_cn": "大球 1.5/2 @0.83",
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"

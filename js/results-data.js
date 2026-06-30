@@ -1,7 +1,7 @@
 // 过往赛果 — 精简归档（推演 + 赛果核验 + 复盘概要）
-// Last updated: 2026-06-30T04:15:01+08:00
+// Last updated: 2026-06-30T16:06:43+08:00
 const RESULTS_DATA = {
-  "lastUpdated": "2026-06-30T04:15:01+08:00",
+  "lastUpdated": "2026-06-30T16:06:43+08:00",
   "syncSource": "FIFA 官方赛果 · Day 19 完结 · Day 20 32强 3场",
   "breakingNews": [
     {

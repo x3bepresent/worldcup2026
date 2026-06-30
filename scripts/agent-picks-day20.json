@@ -1,7 +1,7 @@
 {
   "day": 20,
   "date": "2026-07-01",
-  "note": "Agent 投注单 · 每场让球+大小双选 · ★=大信心主项 · node scripts/grade-agent-picks.js day20",
+  "note": "Agent 投注单 · 临场盘 2026-07-01 · node scripts/grade-agent-picks.js day20",
   "wc_home_away_note": "世界杯中立赛场；FIFA 主/客仅为赛历标签。",
   "picks": [
     {
@@ -9,8 +9,8 @@
       "match": "Côte d'Ivoire vs Norway",
       "primary": "spread",
       "tendency_cn": "更倾向让球盘",
-      "spread": { "side": "fav", "pick_cn": "挪威 -0/0.5 @0.82" },
-      "totals": { "side": "under", "pick_cn": "小球 2.5 @0.89" }
+      "spread": { "side": "fav", "pick_cn": "挪威 -0/0.5 @0.84" },
+      "totals": { "side": "under", "pick_cn": "小球 2.5 @0.95" }
     },
     {
       "id": "m77",
@@ -19,8 +19,8 @@
       "tendency_cn": "更倾向大小球",
       "confidence": "high",
       "confidence_cn": "大信心",
-      "spread": { "side": "dog", "pick_cn": "瑞典 +1.5/2 @0.86" },
-      "totals": { "side": "under", "pick_cn": "小球 3/3.5 @0.93" }
+      "spread": { "side": "dog", "pick_cn": "瑞典 +1.5/2 @0.85" },
+      "totals": { "side": "under", "pick_cn": "小球 3/3.5 @1.00" }
     },
     {
       "id": "m79",
@@ -29,8 +29,8 @@
       "tendency_cn": "更倾向大小球",
       "confidence": "high",
       "confidence_cn": "大信心",
-      "spread": { "side": "dog", "pick_cn": "厄瓜多尔 +0/0.5 @1.03" },
-      "totals": { "side": "over", "pick_cn": "大球 1.5/2 @0.85" }
+      "spread": { "side": "dog", "pick_cn": "厄瓜多尔 +0/0.5 @1.02" },
+      "totals": { "side": "over", "pick_cn": "大球 1.5/2 @0.83" }
     }
   ]
 }
