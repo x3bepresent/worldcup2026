@@ -1,7 +1,7 @@
 // 今日赛事 — 淘汰赛 · 32强 (signals enriched)
-// Last updated: 2026-06-30T16:06:43+08:00
+// Last updated: 2026-06-30T17:03:04+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-06-30T16:06:43+08:00",
+  "lastUpdated": "2026-06-30T17:03:04+08:00",
   "syncSource": "FIFA 赛程 · Day 20 · 32强 3场 enriched · 推演概要+小组形势",
   "phase": "knockout",
   "phase_cn": "淘汰赛 · 32强",
@@ -1509,7 +1509,7 @@ const MATCH_DATA = {
         "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
         "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "public_lean_cn": "舆论倾向 France（约 72%）",
-        "analysis": "M77 · 法国 vs 瑞典 · 临场 -1.5/2 法 1.04 / 瑞 0.85 · 大小 3/3.5 大 0.88 小 1.00。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "analysis": "M77 · 法国 vs 瑞典 · 临场 -1.5/2 法 1.04 / 瑞 0.85 · 大小 3/3.5 大 0.83 小 1.05。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "spread_cover": {
           "top3_scores": [
             {
@@ -1571,11 +1571,11 @@ const MATCH_DATA = {
           "signal_desc": "总进球参考高于合理值，模型偏小比分。",
           "public_over_pct": 50,
           "public_lean_cn": "舆论对总进球看法较分散",
-          "index_note": "大比分侧 0.88 / 小比分侧 1",
+          "index_note": "大比分侧 0.83 / 小比分侧 1.05",
           "totals_odds": {
-            "over": 0.88,
-            "under": 1,
-            "note": "大比分 0.88 · 小比分 1"
+            "over": 0.83,
+            "under": 1.05,
+            "note": "大比分 0.83 · 小比分 1.05"
           },
           "rational_cn": "模型略看小比分（超 3.25 约 58.3% 难达）",
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
@@ -1585,7 +1585,7 @@ const MATCH_DATA = {
           "wc_note": "纽约 neutral · 主客仅为 FIFA 标记",
           "spread_open_cn": "France -1/1.5@0.9 · Sweden +1/1.5@0.92",
           "spread_now_cn": "France -1.5/2@1.04 · Sweden +1.5/2@0.85",
-          "totals_now_cn": "大小 3/3.5 · 大 0.88 / 小 1",
+          "totals_now_cn": "大小 3/3.5 · 大 0.83 / 小 1.05",
           "tag": "book_trap_fav",
           "tag_cn": "精算诱上",
           "tag_color": "#D95F6A",
@@ -1694,7 +1694,7 @@ const MATCH_DATA = {
           "tendency_reason_cn": "精算诱上法国深盘维持 · ★小球 3/3.5 模型超线约 42% · 瑞典 +1.5/2 @0.85 副选。",
           "confidence": "high",
           "confidence_cn": "大信心",
-          "confidence_reason_cn": "★小球：xG 2.83 vs 线 3.25 · 临盘小 1.00 高水仍偏「卖大」叙事。让球：诱上结构续 · 瑞典 +1.5/2（1-1 全赢；1-0/2-0 输半）。",
+          "confidence_reason_cn": "★小球：xG 2.83 vs 线 3.25 · 大 0.83 再降水但模型仅 42% 超线 · 小 1.05 高水。让球：诱上续 · 瑞典 +1.5/2（1-1 全赢；1-0/2-0 输半）。",
           "spread": {
             "side": "dog",
             "label_cn": "瑞典 +1.5/2 @0.85",
@@ -1702,8 +1702,8 @@ const MATCH_DATA = {
           },
           "totals": {
             "side": "under",
-            "label_cn": "小球 3/3.5 @1.00",
-            "reason_cn": "线 3/3.5 模型超线约 42% · 临盘大 0.88 降水但线高 · 2-0/1-0 总≤3 · ★主项。"
+            "label_cn": "小球 3/3.5 @1.05",
+            "reason_cn": "线 3/3.5 模型超线约 42% · 大 0.83 低水叙事 vs 模型 · 2-0/1-0 总≤3 · ★主项。"
           },
           "picked_at": "2026-07-01-kickoff",
           "pick_meta": {
@@ -2434,7 +2434,7 @@ const MATCH_DATA = {
         "agent_pick_tendency_cn": "更倾向大小球",
         "agent_pick_confidence": "high",
         "agent_spread_cn": "瑞典 +1.5/2 @0.85",
-        "agent_totals_cn": "小球 3/3.5 @1.00",
+        "agent_totals_cn": "小球 3/3.5 @1.05",
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
