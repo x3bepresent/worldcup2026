@@ -16,8 +16,8 @@ const TS = new Date().toISOString().replace(/\.\d{3}Z$/, '+08:00');
 
 const R32_PREVIEW = [
   { no: 80, id: 'm80', home: 'England', away: 'Congo DR', date_beijing: '7月2日', time_beijing: '00:00', venue: 'Mercedes-Benz Stadium', city: '亚特兰大', slot: 'L1 vs 3rd' },
-  { no: 81, id: 'm81', home: 'USA', away: 'Portugal', date_beijing: '7月2日', time_beijing: '04:00', venue: 'SoFi Stadium', city: '洛杉矶', slot: 'B1 vs 3rd' },
-  { no: 82, id: 'm82', home: 'Argentina', away: 'Colombia', date_beijing: '7月2日', time_beijing: '08:00', venue: 'Hard Rock Stadium', city: '迈阿密', slot: 'D1 vs G2' },
+  { no: 81, id: 'm81', home: 'USA', away: 'Bosnia & Herz.', date_beijing: '7月2日', time_beijing: '08:00', venue: "Levi's Stadium", city: '旧金山湾区', slot: 'D1 vs 3rd' },
+  { no: 82, id: 'm82', home: 'Belgium', away: 'Senegal', date_beijing: '7月2日', time_beijing: '04:00', venue: 'Lumen Field', city: '西雅图', slot: 'G1 vs 3rd' },
 ];
 
 function loadData(filePath, varName) {

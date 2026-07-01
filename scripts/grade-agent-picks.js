@@ -614,3 +614,6 @@ if (arg === 'day19' || arg === 'all') {
 if (arg === 'day20' || arg === 'all') {
   gradeDay(path.join(__dirname, 'agent-picks-day20.json'));
 }
+if (arg === 'day21' || arg === 'all') {
+  gradeDay(path.join(__dirname, 'agent-picks-day21.json'));
+}

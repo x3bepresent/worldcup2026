@@ -1,0 +1,56 @@
+{
+  "day": 21,
+  "date": "2026-07-02",
+  "note": "Agent 投注单 · 临场盘 2026-07-02 · node scripts/grade-agent-picks.js day21",
+  "wc_home_away_note": "世界杯中立赛场；FIFA 主/客仅为赛历标签。",
+  "picks": [
+    {
+      "id": "m80",
+      "match": "England vs Congo DR",
+      "primary": "totals",
+      "tendency_cn": "更倾向大小球",
+      "confidence": "medium",
+      "confidence_cn": "中信心",
+      "spread": {
+        "side": "dog",
+        "pick_cn": "刚果（金） +1.5 @0.93"
+      },
+      "totals": {
+        "side": "over",
+        "pick_cn": "大球 2/2.5 @0.84"
+      }
+    },
+    {
+      "id": "m81",
+      "match": "USA vs Bosnia & Herz.",
+      "primary": "spread",
+      "tendency_cn": "更倾向让球盘",
+      "confidence": "high",
+      "confidence_cn": "大信心",
+      "spread": {
+        "side": "dog",
+        "pick_cn": "波黑 +1/1.5 @0.99"
+      },
+      "totals": {
+        "side": "under",
+        "pick_cn": "小球 2.5/3 @0.97"
+      }
+    },
+    {
+      "id": "m82",
+      "match": "Belgium vs Senegal",
+      "primary": "totals",
+      "tendency_cn": "更倾向大小球（小）",
+      "confidence": "medium",
+      "confidence_cn": "中信心",
+      "spread": {
+        "side": "dog",
+        "pick_cn": "塞内加尔 +0/0.5 @1.04"
+      },
+      "totals": {
+        "side": "under",
+        "pick_cn": "小球 2.5 @0.87"
+      }
+    }
+  ]
+}

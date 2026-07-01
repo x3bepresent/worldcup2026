@@ -1492,9 +1492,66 @@ footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--bor
 .results-stats-grid--agent {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
+.results-stats-grid--agent-eval {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+@media (max-width: 900px) {
+  .results-stats-grid--agent-eval { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (max-width: 720px) {
   .results-stats-grid--agent { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+.agent-eval-panel { margin-bottom: 1.5rem; }
+.agent-eval-ko {
+  margin-top: 0.75rem;
+  font-size: 0.72rem;
+  color: var(--txt2);
+  padding: 0.45rem 0.65rem;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.agent-eval-table-wrap {
+  margin-top: 1rem;
+  overflow-x: auto;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 136, 85, 0.22);
+  background: rgba(0, 0, 0, 0.22);
+}
+.agent-eval-table-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #FF8855;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.agent-eval-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.72rem;
+}
+.agent-eval-table th,
+.agent-eval-table td {
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  vertical-align: top;
+}
+.agent-eval-table th {
+  color: var(--txt2);
+  font-weight: 600;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.03);
+}
+.agent-eval-table tbody tr:last-child td { border-bottom: none; }
+.agent-eval-match { min-width: 8rem; color: var(--txt); }
+.agent-eval-score { color: var(--txt2); font-size: 0.68rem; }
+.agent-eval-hit { color: #5BBF8A; font-weight: 700; text-align: center; }
+.agent-eval-miss { color: #D95F6A; font-weight: 700; text-align: center; }
+.agent-eval-pending { color: var(--txt2); text-align: center; }
+.agent-eval-outcome { color: var(--txt2); font-size: 0.68rem; max-width: 10rem; }
+.agent-eval-row--pending { opacity: 0.72; }
 .results-stat-card--agent-spread { border-top: 3px solid #5BBF8A; }
 .results-stat-card--agent-totals { border-top: 3px solid #E8A54B; }
 .results-stat-card--agent-primary { border-top: 3px solid #7BB8D4; }

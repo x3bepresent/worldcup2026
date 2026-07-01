@@ -107,9 +107,53 @@ function build() {
     day: d.day,
     date: d.date,
     pick_ids: (d.picks || []).map(p => p.id),
+    picks: (d.picks || []).map(p => ({
+      id: p.id,
+      match: p.match,
+      primary: p.primary,
+      high_confidence: p.confidence === 'high',
+      confidence_cn: p.confidence_cn || null,
+      spread: p.spread,
+      totals: p.totals,
+    })),
   }));
 
-  const KO_IDS = ['m73', 'm74', 'm75', 'm76'];
+  const matchCount = withPct(spread).n;
+  const evaluation = {
+    label_cn: 'Agent 双选评估',
+    match_count: matchCount,
+    grade_rule_cn: gradedDays[0]?.results?.grade_rule_cn || '不败即中：全赢/赢半/走水算中，输半/全输算不中',
+    spread: {
+      ...withPct(spread),
+      label_cn: '让球盘胜率',
+      desc_cn: `全部 ${matchCount} 场 Agent 双选 · 让球项`,
+    },
+    totals: {
+      ...withPct(totals),
+      label_cn: '大小盘胜率',
+      desc_cn: `全部 ${matchCount} 场 Agent 双选 · 大小项`,
+    },
+    primary: {
+      ...withPct(primary),
+      label_cn: '倾向盘胜率',
+      desc_cn: '每场标★方向（让球或大小）',
+    },
+    high_confidence: {
+      match_count: highIds.length,
+      ids: highIds,
+      primary: {
+        ...withPct(highPrimary),
+        label_cn: '大信心胜率',
+        desc_cn: '大信心场 · ★倾向项命中率',
+      },
+    },
+  };
+
+  const KO_IDS = [
+    'm67', 'm68', 'm69', 'm70', 'm71', 'm72',
+    'm73', 'm74', 'm75', 'm76',
+    'm77', 'm78', 'm79',
+  ];
   function summarizeIds(ids) {
     let spread = { hit: 0, miss: 0 };
     let totals = { hit: 0, miss: 0 };
@@ -163,6 +207,7 @@ function build() {
     },
     days: daysSummary,
     pending: pendingDays,
+    evaluation,
     knockout: summarizeIds(KO_IDS),
     byId,
   };

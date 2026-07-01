@@ -1545,15 +1545,20 @@ function computeResultsAggregateStats(matches) {
 }
 
 function renderAgentSummaryStats(agentStats) {
-  if (!agentStats?.aggregate?.spread?.n) return '';
-  const agg = agentStats.aggregate;
-  const hc = agg.high_confidence;
-  const rule = agentStats.grade_rule_cn || '不败即中';
+  const ev = agentStats?.evaluation;
+  if (!ev?.match_count && !agentStats?.aggregate?.spread?.n) return '';
 
-  const card = (key, icon, label, data, sub, featured, fire) => {
+  const spread = ev?.spread || agentStats.aggregate.spread;
+  const totals = ev?.totals || agentStats.aggregate.totals;
+  const primary = ev?.primary || agentStats.aggregate.primary;
+  const hcPrimary = ev?.high_confidence?.primary || agentStats.aggregate.high_confidence?.primary;
+  const hcN = ev?.high_confidence?.match_count ?? agentStats.aggregate.high_confidence?.n ?? 0;
+  const rule = ev?.grade_rule_cn || agentStats.grade_rule_cn || '不败即中';
+
+  const card = (key, icon, label, data, sub, fire) => {
     const muted = !data?.n;
     return `
-      <div class="results-stat-card results-stat-card--agent results-stat-card--${key}${muted ? ' results-stat-card--muted' : ''}${featured ? ' results-stat-card--featured' : ''}${fire ? ' results-stat-card--fire' : ''}">
+      <div class="results-stat-card results-stat-card--agent results-stat-card--${key}${muted ? ' results-stat-card--muted' : ''}${fire ? ' results-stat-card--fire' : ''}">
         <div class="results-stat-card-top">
           <span class="results-stat-icon" aria-hidden="true">${icon}</span>
           <span class="results-stat-label">${label}</span>
@@ -1561,35 +1566,106 @@ function renderAgentSummaryStats(agentStats) {
         </div>
         <div class="results-stat-pct ${muted ? '' : statPctClass(data.pct)}">${muted ? '—' : `${data.pct}<span class="results-stat-unit">%</span>`}</div>
         <div class="results-stat-foot">
-          <span class="results-stat-hit">${muted ? '待结算' : `${data.hit} / ${data.n} 项命中`}</span>
+          <span class="results-stat-hit">${muted ? '待样本' : `${data.hit} / ${data.n} 中`}</span>
           <span class="results-stat-sub">${sub}</span>
         </div>
       </div>`;
   };
 
-  const dayChips = (agentStats.days || []).map(d =>
-    `<span class="agent-day-chip">Day ${d.day} · 让 ${d.spread.hit}/${d.spread.n} · 大小 ${d.totals.hit}/${d.totals.n}${d.high_confidence ? ` · 🔥${d.high_confidence.primary.hit}/${d.high_confidence.primary.n}` : ''}</span>`
-  ).join('');
+  const hitIcon = v => (v === true ? '✓' : v === false ? '✗' : '…');
+  const hitCls = v => (v === true ? 'agent-eval-hit' : v === false ? 'agent-eval-miss' : 'agent-eval-pending');
+
+  const gradedRows = Object.entries(agentStats.byId || {})
+    .map(([id, g]) => ({ id, ...g }))
+    .sort((a, b) => (a.day - b.day) || (parseInt(a.id.slice(1), 10) - parseInt(b.id.slice(1), 10)));
+
+  const pendingRows = (agentStats.pending || []).flatMap(d =>
+    (d.picks || d.pick_ids?.map(pid => ({ id: pid })) || []).map(p => {
+      if (agentStats.byId?.[p.id]) return null;
+      return {
+        id: p.id,
+        day: d.day,
+        match: p.match || p.id,
+        primary: p.primary,
+        high_confidence: p.high_confidence,
+        confidence_cn: p.confidence_cn,
+        spread: p.spread,
+        totals: p.totals,
+        pending: true,
+      };
+    }).filter(Boolean)
+  );
+
+  const tableRows = [...gradedRows, ...pendingRows].map(g => {
+    if (g.pending) {
+      return `<tr class="agent-eval-row agent-eval-row--pending">
+        <td>${g.id}</td>
+        <td class="agent-eval-match">${g.match}</td>
+        <td>${g.spread?.pick_cn || '—'}</td>
+        <td class="agent-eval-pending">待赛</td>
+        <td>${g.totals?.pick_cn || '—'}</td>
+        <td class="agent-eval-pending">待赛</td>
+        <td>${g.primary === 'totals' ? '★大小' : '★让球'}</td>
+        <td>${g.high_confidence ? '🔥' : '—'}</td>
+        <td>—</td>
+      </tr>`;
+    }
+    const star = g.primary === 'totals' ? '★大小' : '★让球';
+    const starHit = g.primary_hit === true ? ' agent-eval-hit' : g.primary_hit === false ? ' agent-eval-miss' : '';
+    return `<tr class="agent-eval-row">
+      <td>${g.id}</td>
+      <td class="agent-eval-match">${g.match}${g.actual_score ? ` <span class="agent-eval-score">${g.actual_score}</span>` : ''}</td>
+      <td>${g.spread?.pick_cn || g.spread?.label_cn || '—'}</td>
+      <td class="${hitCls(g.spread_hit)}">${hitIcon(g.spread_hit)}</td>
+      <td>${g.totals?.pick_cn || g.totals?.label_cn || '—'}</td>
+      <td class="${hitCls(g.totals_hit)}">${hitIcon(g.totals_hit)}</td>
+      <td class="${starHit}">${star}</td>
+      <td>${g.high_confidence ? '🔥' : '—'}</td>
+      <td class="agent-eval-outcome">${g.outcome?.cn || '—'}</td>
+    </tr>`;
+  }).join('');
 
   const pendingNote = agentStats.pending?.length
-    ? ` · 待结算 Day ${agentStats.pending.map(p => p.day).join('/')}`
+    ? ` · 待结算 ${agentStats.pending.reduce((n, d) => n + (d.picks?.length || d.pick_ids?.length || 0), 0)} 场`
+    : '';
+
+  const ko = agentStats.knockout;
+  const koNote = ko?.match_count
+    ? `<div class="agent-eval-ko">32强已评 ${ko.match_count} 场 · 让 ${ko.spread.hit}/${ko.spread.n}（${ko.spread.pct}%）· 大小 ${ko.totals.hit}/${ko.totals.n}（${ko.totals.pct}%）· ★ ${ko.primary.hit}/${ko.primary.n}（${ko.primary.pct}%）</div>`
     : '';
 
   return `
-    <div class="results-stats-bar results-stats-bar--agent fade-in">
+    <div class="results-stats-bar results-stats-bar--agent agent-eval-panel fade-in">
       <div class="results-stats-head">
-        <span class="results-stats-title">Agent 双选统计</span>
-        <span class="results-stats-meta">${agg.spread.n + agg.totals.n} 项已结算 · ${rule}${pendingNote}</span>
+        <span class="results-stats-title">${ev?.label_cn || 'Agent 双选评估'}</span>
+        <span class="results-stats-meta">${ev?.match_count || spread.n} 场已结算 · ${rule}${pendingNote}</span>
       </div>
-      <div class="results-stats-grid results-stats-grid--agent">
-        ${card('agent-spread', '📐', '让球盘', agg.spread, '全项让球双选 · 不败即中', true, false)}
-        ${card('agent-totals', '⚽', '大小球', agg.totals, '全项大小双选 · 不败即中', true, false)}
-        ${card('agent-primary', '★', '★倾向项', agg.primary, '每场标★方向（让球或大小）', true, false)}
-        ${card('agent-hc-spread', '🔥', '大信心·让球', hc.spread, `${hc.n} 场大信心样本`, true, true)}
-        ${card('agent-hc-primary', '🔥', '大信心·★倾向', hc.primary, `${hc.n} 场：${(hc.ids || []).join(', ')}`, true, true)}
-        ${card('agent-hc-totals', '🔥', '大信心·大小', hc.totals, '大信心场大小球副项', false, true)}
+      <div class="results-stats-grid results-stats-grid--agent-eval">
+        ${card('agent-spread', '📐', '让球盘胜率', spread, spread.desc_cn || '每场让球项', false)}
+        ${card('agent-totals', '⚽', '大小盘胜率', totals, totals.desc_cn || '每场大小项', false)}
+        ${card('agent-primary', '★', '倾向盘胜率', primary, primary.desc_cn || '★倾向项', false)}
+        ${card('agent-hc-primary', '🔥', '大信心胜率', hcPrimary, hcN ? `大信心 ${hcN} 场 · ★倾向` : '暂无大信心样本', true)}
       </div>
-      ${dayChips ? `<div class="agent-day-row">${dayChips}</div>` : ''}
+      ${koNote}
+      <div class="agent-eval-table-wrap">
+        <div class="agent-eval-table-title">逐场明细 · 全部 Agent 双选</div>
+        <table class="agent-eval-table">
+          <thead>
+            <tr>
+              <th>场次</th>
+              <th>对阵</th>
+              <th>让球选项</th>
+              <th>让球</th>
+              <th>大小选项</th>
+              <th>大小</th>
+              <th>★倾向</th>
+              <th>信心</th>
+              <th>交叉赛果</th>
+            </tr>
+          </thead>
+          <tbody>${tableRows}</tbody>
+        </table>
+      </div>
     </div>`;
 }
 
