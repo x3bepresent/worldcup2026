@@ -3,6 +3,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { getReferee } = require('./referee-data-day21');
 
 const ROOT = path.join(__dirname, '..');
 const MATCH_PATH = path.join(ROOT, 'js', 'matches-data.js');
@@ -54,7 +55,7 @@ for (const m of MATCH_DATA.todayMatches || []) {
   ensureInsightFactors(m);
   patchKnockoutInsight(m);
   patchWeatherInsight(m);
-  m.referee = { ...(m.referee || {}), updated: TS };
+  m.referee = { ...getReferee(m.id), updated: TS };
 }
 
 MATCH_DATA.lastUpdated = TS;

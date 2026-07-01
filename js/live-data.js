@@ -1,7 +1,7 @@
-// Auto-synced by scripts/enrich-day21.js
-// Updated: 2026-07-01T10:04:36+08:00
+// Auto-synced · Day 21 live lines
+// Updated: 2026-07-02T09:00+08:00
 const LIVE_DATA = {
-  "lastUpdated": "2026-07-01T10:04:36+08:00",
+  "lastUpdated": "2026-07-02T09:00+08:00",
   "todayDate": "2026-07-02",
   "fixtures": [
     {
@@ -14,8 +14,9 @@ const LIVE_DATA = {
       "away_score": null,
       "group": "KO",
       "round": "R32",
-      "spread_live_cn": "England -1.5@0.96 ? Congo DR +1.5@0.93",
-      "totals_live_cn": "?? 2/2.5 ? ? 0.84 / ? 1.04"
+      "spread_live_cn": "England -1.5@0.96 · Congo DR +1.5@0.93",
+      "totals_live_cn": "大小 2.5 · 大 1.03 / 小 0.85",
+      "lineup_confirmed": true
     },
     {
       "id": "m82",
@@ -27,8 +28,8 @@ const LIVE_DATA = {
       "away_score": null,
       "group": "KO",
       "round": "R32",
-      "spread_live_cn": "Belgium -0/0.5@0.85 ? Senegal +0/0.5@1.04",
-      "totals_live_cn": "?? 2.5 ? ? 1.01 / ? 0.87"
+      "spread_live_cn": "Belgium -0/0.5@0.83 · Senegal +0/0.5@1.06",
+      "totals_live_cn": "大小 2.5 · 大 0.88 / 小 1.00"
     },
     {
       "id": "m81",
@@ -40,8 +41,8 @@ const LIVE_DATA = {
       "away_score": null,
       "group": "KO",
       "round": "R32",
-      "spread_live_cn": "USA -1/1.5@0.90 � Bosnia +1/1.5@0.99",
-      "totals_live_cn": "?? 2.5/3 � ? 0.91 / ? 0.97"
+      "spread_live_cn": "USA -1/1.5@0.82 · Bosnia +1/1.5@1.07",
+      "totals_live_cn": "大小 2.5/3 · 大 0.85 / 小 1.03"
     }
   ],
   "allResults": [

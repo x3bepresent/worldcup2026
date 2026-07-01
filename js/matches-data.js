@@ -1,11 +1,26 @@
 // 今日赛事 — 淘汰赛 · 32强 (signals enriched)
-// Last updated: 2026-07-01T10:21:31+08:00
+// Last updated: 2026-07-01T15:39:29+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-07-01T10:21:31+08:00",
-  "syncSource": "FIFA 赛程 · Day 21 · 32强 3场 enriched · 推演概要+小组形势",
+  "lastUpdated": "2026-07-01T15:39:29+08:00",
+  "syncSource": "FIFA 官方 · Day 21 裁判/首发 · M80 临场盘 · 推演概要+小组形势",
   "phase": "knockout",
   "phase_cn": "淘汰赛 · 32强",
   "breakingNews": [
+    {
+      "tag": "LINE",
+      "text": "M80 临场：大小 2.5 大1.03小0.85（回整球线收小）· 英 -1.5 不变",
+      "time": "皇冠"
+    },
+    {
+      "tag": "OFFICIAL",
+      "text": "🏁 Day21 裁判：M80 Makhadmeh(约) · M81 Claus(巴) · M82 Martinez(洪)",
+      "time": "7月2日"
+    },
+    {
+      "tag": "OFFICIAL",
+      "text": "✅ m80 FIFA 官方首发：英格兰轮换（无 Walker/Stones/Saka）· 刚果 Wissa 领衔",
+      "time": "7月2日"
+    },
     {
       "tag": "UPDATE",
       "text": "📊 推演升级：模型概要 + 淘汰赛晋级路径矩阵",
@@ -47,13 +62,16 @@ const MATCH_DATA = {
       "time_beijing_full": "北京时间 7月2日 00:00",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta, USA",
-      "note": "32强 M80 · 英格兰 vs 刚果（金）· 亚特兰大",
+      "note": "32强 M80 · 英格兰 vs 刚果（金）· 亚特兰大 · FIFA 官方首发已确认",
       "lineup": {
-        "confirmed": false,
-        "formation": null,
-        "home": "等待官方确认",
-        "away": "等待官方确认",
-        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
+        "confirmed": true,
+        "formation": "4-2-3-1 / 4-3-3",
+        "home": "Jordan PICKFORD, Ezri KONSA, Nico OREILLY, Declan RICE, Marc GUEHI, Elliot ANDERSON, Harry KANE, Jude BELLINGHAM, Marcus RASHFORD, Noni MADUEKE, Djed SPENCE",
+        "away": "Lionel MPASI, Aaron WAN-BISSAKA, Axel Tuanzebe, Ngalayel MUKAU, Nathanael MBUKU, Samuel Moutoussamy, Brian CIPENGA, Noah SADIKI, Yoane WISSA, Chancel MBEMBA, Arthur MASUAKU",
+        "note": "✅ FIFA 官方 team sheet（Match 80 · 400021512 · 2026-07-01T15:29:03+08:00）",
+        "source": "FIFA Match Centre · api.fifa.com · 2026-07-02",
+        "updated": "2026-07-01T15:29:03+08:00",
+        "fifa_match_id": "400021512",
         "predicted": {
           "formation": "4-2-3-1 / 4-2-3-1",
           "home": "Pickford; Walker, Stones, Guehi, Shaw; Rice, Mainoo; Saka, Bellingham, Foden; Kane",
@@ -92,8 +110,32 @@ const MATCH_DATA = {
           "desc": "L 组头名",
           "rating": 9
         },
-        "injuries": [],
-        "rumors": []
+        "injuries": [
+          {
+            "player": "Kyle Walker",
+            "status": "BENCH",
+            "note": "FIFA 未进首发 XI",
+            "confirmed": true
+          },
+          {
+            "player": "John Stones",
+            "status": "BENCH",
+            "note": "FIFA 未进首发 XI",
+            "confirmed": true
+          },
+          {
+            "player": "Bukayo Saka",
+            "status": "BENCH",
+            "note": "FIFA 未进首发 XI",
+            "confirmed": true
+          }
+        ],
+        "rumors": [
+          "【FIFA 官方 XI】4-2-3-1：Kane #9 · Rashford/Madueke 两翼 · Bellingham #10",
+          "Konsta/Oreilly/Guehi/Spence 四后卫 · Rice/Anderson 双后腰",
+          "Walker · Stones · Saka · Foden · Mainoo 均未首发 — 轮换幅度大",
+          "Pickford 一门 · 深盘 -1.5 仍须净胜 2+"
+        ]
       },
       "away": {
         "name": "Congo DR",
@@ -126,7 +168,11 @@ const MATCH_DATA = {
           "rating": 7.8
         },
         "injuries": [],
-        "rumors": []
+        "rumors": [
+          "【FIFA 官方 XI】4-3-3：Wissa #11 · Cipenga 锋线",
+          "Wan-Bissaka · Tuanzebe · Mbemba · Masuaku 防线",
+          "Mukau/Mbuku/Moutoussamy/Sadiki 中场"
+        ]
       },
       "h2h": {
         "home_wins": 1,
@@ -143,16 +189,30 @@ const MATCH_DATA = {
         "note": "英格兰占优"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "FIFA Match 80 · 待官方确认",
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA Match Centre · api.fifa.com · 2026-07-02",
+        "name": "Adham Makhadmeh",
+        "nation": "Jordan",
+        "iso": "jo",
+        "wc_experience": "2026 世界杯 · 32强 M80 主裁 · AFC 精英 · 执法英格兰 vs 刚果（金）",
+        "avg_yellow": 4.2,
+        "avg_red": 0.1,
+        "avg_penalty": 0.3,
+        "home_win_rate": 50,
+        "bias_index": 50,
+        "bias_note": "约旦主裁执法亚特兰大 Mercedes-Benz 夜场。英格兰深盘热门 vs 刚果反击；对非洲球队身体对抗与英格兰定位球犯规尺度需关注。",
         "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+          "FIFA 官方主裁 · Adham Makhadmeh（约旦）",
+          "32强单场淘汰 · 亚特兰大湿热夜场",
+          "深盘场常见早期进球改盘口节奏"
         ],
-        "updated": "2026-07-01T10:04:36+08:00"
+        "officials": {
+          "referee": "Adham Makhadmeh (JOR)"
+        },
+        "fifa_match_id": "400021512",
+        "note": "FIFA M80 · 英格兰 vs 刚果（金）· Atlanta",
+        "updated": "2026-07-01T15:29:03+08:00"
       },
       "prediction": {
         "home_win": 56,
@@ -162,7 +222,7 @@ const MATCH_DATA = {
         "confidence": 78,
         "xg_home": 1.82,
         "xg_away": 0.72,
-        "key_factor": "32强 M80 · 英格兰 L1 vs 刚果(金)(3rd) · 深盘 · 泊松 2-0/2-1",
+        "key_factor": "FIFA 官方：英格兰 4-2-3-1（Kane/Rashford/Madueke · 无 Walker/Stones/Saka 首发） vs 刚果 4-3-3（Wissa · Wan-Bissaka/Mbemba）",
         "score_dist": [
           {
             "score": "2-0",
@@ -202,7 +262,7 @@ const MATCH_DATA = {
           {
             "icon": "⚽",
             "label": "战术与阵容",
-            "text": "32强 M80 · 英格兰 L1 vs 刚果(金)(3rd) · 深盘 · 泊松 2-0/2-1"
+            "text": "FIFA 官方：英格兰 4-2-3-1（Kane/Rashford/Madueke · 无 Walker/Stones/Saka 首发） vs 刚果 4-3-3（Wissa · Wan-Bissaka/Mbemba）"
           }
         ],
         "base_home_win": 60,
@@ -289,7 +349,7 @@ const MATCH_DATA = {
         "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
         "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "public_lean_cn": "舆论倾向 England（约 68%）",
-        "analysis": "M80 · 英格兰 vs 刚果（金） · 现 -1.5 英 0.96 / 刚果 0.93 · 大小 2/2.5 大 0.84 小 1.04 · Agent：★大2/2.5+刚果受让。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "analysis": "M80 · 英格兰 vs 刚果（金） · 现 -1.5 英 0.96 / 刚果 0.93 · 大小 2.5 大 1.03 小 0.85 · Agent终选：★小2.5+刚果受让。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "spread_cover": {
           "top3_scores": [
             {
@@ -337,35 +397,35 @@ const MATCH_DATA = {
         },
         "spread_alt": null,
         "totals_analysis": {
-          "market_line": 2.25,
+          "market_line": 2.5,
           "market_goals_int": 3,
-          "line_label": "总进球约 2–2.5 个",
+          "line_label": "总进球约 2.5 个",
           "implied_xg_total": 2.54,
           "fair_line": 2,
-          "line_gap": 0.25,
-          "over_pct": 58.9,
-          "under_pct": 41.1,
+          "line_gap": 0.5,
+          "over_pct": 46,
+          "under_pct": 54,
           "signal": "high_line",
           "signal_cn": "参考偏高",
           "signal_color": "#C8A96E",
           "signal_desc": "总进球参考高于合理值，模型偏小比分。",
           "public_over_pct": 50,
           "public_lean_cn": "舆论对总进球看法较分散",
-          "index_note": "大比分侧 0.84 / 小比分侧 1.04",
+          "index_note": "大比分侧 1.03 / 小比分侧 0.85 · 小比分侧更热",
           "totals_odds": {
-            "over": 0.84,
-            "under": 1.04,
-            "note": "大比分 0.84 · 小比分 1.04"
+            "over": 1.03,
+            "under": 0.85,
+            "note": "大比分 1.03 · 小比分 0.85"
           },
-          "rational_cn": "模型略看大比分（超 2.25 约 58.9%）",
+          "rational_cn": "超 2.5 球接近五五开（约 46%）；参考高于合理值但模型仍偏小比分",
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
-        "totals_line": 2.25,
+        "totals_line": 2.5,
         "market_line_movement": {
           "wc_note": "亚特兰大 neutral · 主客仅为 FIFA 标记",
           "spread_open_cn": "England -1.5@0.88 · Congo DR +1.5@0.94",
           "spread_now_cn": "England -1.5@0.96 · Congo DR +1.5@0.93",
-          "totals_now_cn": "大小 2/2.5 · 大 0.84 / 小 1.04",
+          "totals_now_cn": "大小 2.5 · 大 1.03 / 小 0.85",
           "tag": "flat",
           "tag_cn": "盘路平稳",
           "tag_color": "#7BB8D4",
@@ -450,64 +510,64 @@ const MATCH_DATA = {
           "dog_name": "Congo DR"
         },
         "totals_pick_layers": {
-          "model_side": "over",
+          "model_side": "neutral",
           "situation_side": "neutral",
           "market_line_side": "under",
-          "market_odds_side": "over",
-          "market_side": "over",
-          "recommended_side": "over",
+          "market_odds_side": "under",
+          "market_side": "under",
+          "recommended_side": "under",
           "conflict": false,
           "conflict_cn": null,
           "situation_dampened": false,
           "votes": {
-            "model": "over",
+            "model": "neutral",
             "line": "under",
-            "odds": "over",
+            "odds": "under",
             "situation": "neutral"
           },
-          "vote_summary_cn": "大球(model) · 小球(line) · 大球(odds) · 观望(situation)",
+          "vote_summary_cn": "观望(model) · 小球(line) · 小球(odds) · 观望(situation)",
           "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
         },
         "agent_pick": {
           "primary": "totals",
-          "tendency_cn": "更倾向大小球",
-          "tendency_reason_cn": "模型超2/2.5约58.9%+大0.84低水 · 2-0赢半/2-1·3-0全赢 · ★大2/2.5 · 刚果+1.5(53.3%·blocker)。",
+          "tendency_cn": "更倾向大小球（小）",
+          "tendency_reason_cn": "临场2/2.5→2.5小0.85低水+英FIFA轮换大 · 撤销日盘★大 · ★小2.5 · 刚果+1.5副项。",
           "confidence": "medium",
           "confidence_cn": "中信心",
-          "confidence_reason_cn": "★大：xG2.54·公平线2·大0.84与模型同向；让球：英升水非低诱·53.3%挺刚果但ROI@现水偏负。",
+          "confidence_reason_cn": "★小2.5：线回整球+小0.85=共识收小(非诱小极端但推翻日盘大) · 英无Walker/Stones/Saka削弱穿盘；让球：53.3%挺刚果。",
           "spread": {
             "side": "dog",
             "label_cn": "刚果（金） +1.5 @0.93",
-            "reason_cn": "blocker_inflate·英-1.5穿46.7%·1-0全赢盘/2-0全输 · 英0.96升水 · 模型53.3%穿受让。"
+            "reason_cn": "blocker_inflate·英-1.5穿46.7%·1-0全赢/2-0全输 · 英0.96升水+轮换 · 模型53.3% · 副项。"
           },
           "totals": {
-            "side": "over",
-            "label_cn": "大球 2/2.5 @0.84",
-            "reason_cn": "公平线~2·现2.25·超线58.9% · 大0.84低水 · 2-0赢半/2-1·3-0全赢 · 0-0·1-0总≤1小全输 · ★主项。"
+            "side": "under",
+            "label_cn": "小球 2.5 @0.85",
+            "reason_cn": "初2.5→2/2.5大0.84→临2.5小0.85(线+水双收小) · 公平线~2 · 2-0仍小全赢 · 3球+小全输 · ★主项。"
           },
           "pick_meta": {
-            "model_side": "over",
+            "model_side": "neutral",
             "situation_side": "neutral",
             "market_line_side": "under",
-            "market_odds_side": "over",
-            "market_side": "over",
-            "pick_side": "over",
-            "recommended_side": "over",
+            "market_odds_side": "under",
+            "market_side": "under",
+            "pick_side": "under",
+            "recommended_side": "under",
             "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
             "conflict": false,
             "conflict_cn": null,
             "votes": {
-              "model": "over",
+              "model": "neutral",
               "line": "under",
-              "odds": "over",
+              "odds": "under",
               "situation": "neutral"
             },
-            "vote_summary_cn": "大球(model) · 小球(line) · 大球(odds) · 观望(situation)",
+            "vote_summary_cn": "观望(model) · 小球(line) · 小球(odds) · 观望(situation)",
             "situation_dampened": false,
-            "over_pct": 58.9,
-            "line_gap": 0.25
+            "over_pct": 46,
+            "line_gap": 0.5
           },
-          "picked_at": "2026-07-02-kickoff"
+          "picked_at": "2026-07-02-agent-final"
         },
         "applied_delta": {
           "home_win": -4,
@@ -684,20 +744,20 @@ const MATCH_DATA = {
             "final_2_0_pct": null,
             "final_3_0_plus_pct": null,
             "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-            "totals_line": 2.25,
-            "totals_line_cn": "总进球参考 2.25",
+            "totals_line": 2.5,
+            "totals_line_cn": "总进球参考 2.5",
             "fair_totals_line": 2,
             "model_total_xg": 2.54,
-            "totals_line_gap": 0.25,
-            "totals_high_pct": 58.9,
-            "totals_low_pct": 41.1,
+            "totals_line_gap": 0.5,
+            "totals_high_pct": 46,
+            "totals_low_pct": 54,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
             "win_low_total_pct": 27.7,
             "win_margin2_low_total_pct": 13.2,
-            "win_margin2_high_total_pct": 36.9,
-            "readout_cn": "取胜约 56%；若取胜，以「险胜收工」为主（41.6%）。 对着赛前净胜参考，净胜≥2（全达标）约 46.4%；部分达标净胜=1 约 26.3%；对着总进球参考 2.25，模型超线概率约 58.9%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.25。"
+            "win_margin2_high_total_pct": 23.7,
+            "readout_cn": "取胜约 56%；若取胜，以「险胜收工」为主（41.6%）。 对着赛前净胜参考，净胜≥2（全达标）约 46.4%；部分达标净胜=1 约 26.3%；对着总进球参考 2.5，模型超线概率约 46%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.5。"
           },
-          "totals_line": 2.25,
+          "totals_line": 2.5,
           "score_patterns": [
             {
               "score": "1-0",
@@ -715,9 +775,9 @@ const MATCH_DATA = {
           "totals_view": {
             "expected_total": 2.5,
             "fair_line": 2,
-            "market_line": 2.25,
-            "line_gap": 0.25,
-            "over_pct": 58.9,
+            "market_line": 2.5,
+            "line_gap": 0.5,
+            "over_pct": 46,
             "gap_warning": null,
             "totals_outlook": {
               "level": "neutral",
@@ -727,19 +787,19 @@ const MATCH_DATA = {
               "meter_pos": 50,
               "lean_side": "neutral",
               "lean_strength": "none",
-              "section_intro_cn": "对照总进球参考 2.25，看偏闷还是偏精彩",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
               "pill_cn": "几乎五五开",
               "detail_cn": "模型五五开，临场决定节奏。",
               "headline_cn": "进球氛围：几乎五五开",
               "show_lean": false,
-              "over_pct": 58.9,
-              "line_gap": 0.25,
-              "market_line": 2.25,
+              "over_pct": 46,
+              "line_gap": 0.5,
+              "market_line": 2.5,
               "market_goals_int": 3,
-              "market_goals_cn": "总进球参考 2.25",
+              "market_goals_cn": "总进球参考 2.5",
               "caution_public_high": false
             },
-            "summary_cn": "预测 2.5 · 合理值 2 · 总进球参考 2.25（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向"
+            "summary_cn": "预测 2.5 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
             "headline_cn": "England -1.5 穿盘：有达标可能",
@@ -783,16 +843,16 @@ const MATCH_DATA = {
               "meter_pos": 50,
               "lean_side": "neutral",
               "lean_strength": "none",
-              "section_intro_cn": "对照总进球参考 2.25，看偏闷还是偏精彩",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
               "pill_cn": "几乎五五开",
               "detail_cn": "模型五五开，临场决定节奏。",
               "headline_cn": "进球氛围：几乎五五开",
               "show_lean": false,
-              "over_pct": 58.9,
-              "line_gap": 0.25,
-              "market_line": 2.25,
+              "over_pct": 46,
+              "line_gap": 0.5,
+              "market_line": 2.5,
               "market_goals_int": 3,
-              "market_goals_cn": "总进球参考 2.25",
+              "market_goals_cn": "总进球参考 2.5",
               "caution_public_high": false
             },
             "draw_risk": null,
@@ -848,16 +908,16 @@ const MATCH_DATA = {
                   "meter_pos": 50,
                   "lean_side": "neutral",
                   "lean_strength": "none",
-                  "section_intro_cn": "对照总进球参考 2.25，看偏闷还是偏精彩",
+                  "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
                   "pill_cn": "几乎五五开",
                   "detail_cn": "模型五五开，临场决定节奏。",
                   "headline_cn": "进球氛围：几乎五五开",
                   "show_lean": false,
-                  "over_pct": 58.9,
-                  "line_gap": 0.25,
-                  "market_line": 2.25,
+                  "over_pct": 46,
+                  "line_gap": 0.5,
+                  "market_line": 2.5,
                   "market_goals_int": 3,
-                  "market_goals_cn": "总进球参考 2.25",
+                  "market_goals_cn": "总进球参考 2.5",
                   "caution_public_high": false
                 },
                 "text": "几乎五五开",
@@ -961,18 +1021,18 @@ const MATCH_DATA = {
                 "final_2_0_pct": null,
                 "final_3_0_plus_pct": null,
                 "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-                "totals_line": 2.25,
-                "totals_line_cn": "总进球参考 2.25",
+                "totals_line": 2.5,
+                "totals_line_cn": "总进球参考 2.5",
                 "fair_totals_line": 2.25,
                 "model_total_xg": 2.03,
-                "totals_line_gap": 0,
-                "totals_high_pct": 73.4,
-                "totals_low_pct": 26.6,
+                "totals_line_gap": 0.25,
+                "totals_high_pct": 60,
+                "totals_low_pct": 40,
                 "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
                 "win_low_total_pct": 31.8,
                 "win_margin2_low_total_pct": 18.6,
-                "win_margin2_high_total_pct": 55.8,
-                "readout_cn": "England 已 1-0 领先：仍取胜约 83.4%。 对着总进球参考 2.25，模型超线概率约 73.4%。 常见 2-0 收尾（相对总进球参考 2.25仍偏小比分）。"
+                "win_margin2_high_total_pct": 37.3,
+                "readout_cn": "England 已 1-0 领先：仍取胜约 83.4%。 对着总进球参考 2.5，模型超线概率约 60%。 常见 2-0 收尾（相对总进球参考 2.5仍偏小比分）。"
               }
             },
             {
@@ -1046,9 +1106,9 @@ const MATCH_DATA = {
           ],
           "match_preview": {
             "morphology": {
-              "totals_summary": "预测 2.5 · 合理值 2 · 总进球参考 2.25（高于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向",
-              "totals_line_cn": "总进球参考 2.25",
-              "totals_high_pct": 58.9,
+              "totals_summary": "预测 2.5 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球参考 2.5",
+              "totals_high_pct": 46,
               "type_tags": [
                 {
                   "key": "dominance",
@@ -1132,12 +1192,12 @@ const MATCH_DATA = {
           "atmosphere_link_cn": null,
           "modules_aligned": false,
           "live_watch": [],
-          "prob_over_line": 58.9,
+          "prob_over_line": 46,
           "prob_meet_guess": 46,
           "guess_n": 3,
           "prob_4_plus": 24.3,
           "prob_2_or_less": 54,
-          "totals_line": 2.25,
+          "totals_line": 2.5,
           "scenarios": [
             {
               "key": "low",
@@ -1185,8 +1245,8 @@ const MATCH_DATA = {
           "watch_notes": [
             "xG 差≥1.0——样本多为小比分"
           ],
-          "pattern_note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
-          "summary_cn": "【路径·基准 xG】合计 2.54 · England 1.82 / Congo DR 0.72 → 主路径「铁局/小比分」约 69%。 至少 3 球约 46% · 超 2.25 约 58.9% · ≤2球 54%。样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
+          "pattern_note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。 已纳入官方首发变阵对 xG 的修正。",
+          "summary_cn": "【路径·基准 xG】合计 2.54 · England 1.82 / Congo DR 0.72 → 主路径「铁局/小比分」约 69%。 超 2.5 约 46% · ≤2球 54%。样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。 已纳入官方首发变阵对 xG 的修正。",
           "in_mid_band": true,
           "sample_note": "结构规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27）· 大/小标签用基准 xG 泊松 ≥60%/≤40%"
         }
@@ -1194,10 +1254,10 @@ const MATCH_DATA = {
       "market_snapshot": {
         "market_tier": 1.5,
         "tier_label": "England -1.5 · Congo DR +1.5",
-        "totals_line": 2.25,
-        "over_pct": 58.9,
+        "totals_line": 2.5,
+        "over_pct": 46,
         "fair_line": 2,
-        "line_gap": 0.25,
+        "line_gap": 0.5,
         "full_cover_pct": 46.7,
         "fav_win_pct": 63.5,
         "cover_given_win_pct": 58.9,
@@ -1206,10 +1266,10 @@ const MATCH_DATA = {
         "line_move_tag": "flat",
         "line_move_cn": "盘路平稳",
         "agent_pick_primary": "totals",
-        "agent_pick_tendency_cn": "更倾向大小球",
+        "agent_pick_tendency_cn": "更倾向大小球（小）",
         "agent_pick_confidence": "medium",
         "agent_spread_cn": "刚果（金） +1.5 @0.93",
-        "agent_totals_cn": "大球 2/2.5 @0.84",
+        "agent_totals_cn": "小球 2.5 @0.85",
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -1240,14 +1300,15 @@ const MATCH_DATA = {
         "formation": null,
         "home": "等待官方确认",
         "away": "等待官方确认",
-        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
+        "note": "裁判已确认 · 首发待 FIFA 公布（2026-07-01T15:29:03+08:00）",
         "predicted": {
           "formation": "4-2-3-1 / 4-3-3",
           "home": "Courtois; Castagne, Alderweireld, Vertonghen, Theate; Tielemans, Onana; Doku, De Bruyne, Trossard; Lukaku",
           "away": "Mendy; Koulibaly, Diallo, Mendy; Gueye, Ndiaye, Sarr; Jackson, Mané, Dia",
           "source": "媒体预测",
           "alt": null
-        }
+        },
+        "updated": "2026-07-01T15:29:03+08:00"
       },
       "home": {
         "name": "Belgium",
@@ -1330,16 +1391,30 @@ const MATCH_DATA = {
         "note": "塞内加尔曾爆冷比利时"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "FIFA Match 82 · 待官方确认",
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA Match Centre · api.fifa.com · 2026-07-02",
+        "name": "Said Martinez",
+        "nation": "Honduras",
+        "iso": "hn",
+        "wc_experience": "2026 世界杯 · 32强 M82 主裁 · CONCACAF · 执法比利时 vs 塞内加尔",
+        "avg_yellow": 4.5,
+        "avg_red": 0.14,
+        "avg_penalty": 0.32,
+        "home_win_rate": 49,
+        "bias_index": 50,
+        "bias_note": "洪都拉斯主裁执法西雅图 · 比利时退档平半低水 vs 塞内加尔马内轴；对非洲速度犯规与欧洲战术犯规平衡执法。",
         "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+          "FIFA 官方主裁 · Said Martinez（洪都拉斯）",
+          "西雅图夏晨 · 气候温和",
+          "均衡盘常见 1-1 / 1-0 路径"
         ],
-        "updated": "2026-07-01T10:04:36+08:00"
+        "officials": {
+          "referee": "Said Martinez (HON)"
+        },
+        "fifa_match_id": "400021525",
+        "note": "FIFA M82 · 比利时 vs 塞内加尔 · Seattle",
+        "updated": "2026-07-01T15:29:03+08:00"
       },
       "prediction": {
         "home_win": 53,
@@ -1474,7 +1549,7 @@ const MATCH_DATA = {
         "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
         "blocker_spread_note": "",
         "public_lean_cn": "舆论倾向 Belgium（约 58%）",
-        "analysis": "M82 · 比利时 vs 塞内加尔 · 现 -0/0.5 比 0.85 / 塞 1.04 · 大小 2.5 大 1.01 小 0.87 · Agent：★小2.5+塞受让。",
+        "analysis": "M82 · 比利时 vs 塞内加尔 · 现 -0/0.5 比 0.83 / 塞 1.06 · 大小 2.5 大 0.88 小 1.00 · Agent终选：★塞受让+大2.5。",
         "spread_cover": {
           "top3_scores": [
             {
@@ -1516,9 +1591,9 @@ const MATCH_DATA = {
           "dog_hold_pct_raw": 47
         },
         "spread_odds": {
-          "fav": 0.85,
-          "dog": 1.04,
-          "note": "Belgium 0.85 · Senegal 1.04"
+          "fav": 0.83,
+          "dog": 1.06,
+          "note": "Belgium 0.83 · Senegal 1.06"
         },
         "spread_alt": null,
         "totals_analysis": {
@@ -1536,36 +1611,36 @@ const MATCH_DATA = {
           "signal_desc": "总进球参考高于合理值，模型偏小比分。",
           "public_over_pct": 50,
           "public_lean_cn": "舆论对总进球看法较分散",
-          "index_note": "大比分侧 1.01 / 小比分侧 0.87 · 小比分侧更热",
+          "index_note": "大比分侧 0.88 / 小比分侧 1",
           "totals_odds": {
-            "over": 1.01,
-            "under": 0.87,
-            "note": "大比分 1.01 · 小比分 0.87"
+            "over": 0.88,
+            "under": 1,
+            "note": "大比分 0.88 · 小比分 1"
           },
-          "rational_cn": "超 2.5 球接近五五开（约 51.9%）；参考高于合理值但模型仍偏小比分",
+          "rational_cn": "超 2.5 球接近五五开（约 51.9%）",
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
         "totals_line": 2.5,
         "market_line_movement": {
           "wc_note": "西雅图 neutral · 主客仅为 FIFA 标记",
           "spread_open_cn": "Belgium -0.5@1.02 · Senegal +0.5@0.8",
-          "spread_now_cn": "Belgium -0/0.5@0.85 · Senegal +0/0.5@1.04",
-          "totals_now_cn": "大小 2.5 · 大 1.01 / 小 0.87",
+          "spread_now_cn": "Belgium -0/0.5@0.83 · Senegal +0/0.5@1.06",
+          "totals_now_cn": "大小 2.5 · 大 0.88 / 小 1",
           "tag": "correction",
           "tag_cn": "向模型修正",
           "tag_color": "#C8A96E",
-          "detail_cn": "退 0.25 档 · 热门 1.02→0.85（降水） · 受让 0.8→1.04（抬水） 现盘去水隐含：Belgium 52.4% · Senegal 47.6%（超收 3.1%） 模型穿盘（现档 Belgium -0.25 · Senegal +0.25）：Belgium 48.1% · Senegal 51.9% 模型−市场：Belgium -4.3pp · Senegal +4.3pp 期望 ROI@现水：Belgium -11% · Senegal +57.8% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "detail_cn": "退 0.25 档 · 热门 1.02→0.83（降水） · 受让 0.8→1.06（抬水） 现盘去水隐含：Belgium 53% · Senegal 47%（超收 3.2%） 模型穿盘（现档 Belgium -0.25 · Senegal +0.25）：Belgium 48.1% · Senegal 51.9% 模型−市场：Belgium -4.9pp · Senegal +4.9pp 期望 ROI@现水：Belgium -12% · Senegal +58.8% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
           "actuarial": {
             "actuarial_type": "correction",
             "actuarial_cn": "向模型修正",
             "actuarial_color": "#C8A96E",
             "actuarial_desc": "盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
-            "summary_cn": "退 0.25 档 · 热门 1.02→0.85（降水） · 受让 0.8→1.04（抬水） 现盘去水隐含：Belgium 52.4% · Senegal 47.6%（超收 3.1%） 模型穿盘（现档 Belgium -0.25 · Senegal +0.25）：Belgium 48.1% · Senegal 51.9% 模型−市场：Belgium -4.3pp · Senegal +4.3pp 期望 ROI@现水：Belgium -11% · Senegal +57.8% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+            "summary_cn": "退 0.25 档 · 热门 1.02→0.83（降水） · 受让 0.8→1.06（抬水） 现盘去水隐含：Belgium 53% · Senegal 47%（超收 3.2%） 模型穿盘（现档 Belgium -0.25 · Senegal +0.25）：Belgium 48.1% · Senegal 51.9% 模型−市场：Belgium -4.9pp · Senegal +4.9pp 期望 ROI@现水：Belgium -12% · Senegal +58.8% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
             "line_delta": -0.25,
             "line_delta_cn": "退 0.25 档",
-            "fav_odds_delta": -0.17,
-            "dog_odds_delta": 0.24,
-            "water_move_cn": "热门 1.02→0.85（降水） · 受让 0.8→1.04（抬水）",
+            "fav_odds_delta": -0.19,
+            "dog_odds_delta": 0.26,
+            "water_move_cn": "热门 1.02→0.83（降水） · 受让 0.8→1.06（抬水）",
             "open_tier": 0.5,
             "open_tier_label": "Belgium -0.5 · Senegal +0.5",
             "now_tier": 0.25,
@@ -1578,19 +1653,19 @@ const MATCH_DATA = {
               "overround_pct": 5.1
             },
             "now_devig": {
-              "fav_pct": 52.4,
-              "dog_pct": 47.6,
-              "overround_pct": 3.1
+              "fav_pct": 53,
+              "dog_pct": 47,
+              "overround_pct": 3.2
             },
             "model_cover_open_pct": 48.1,
             "model_cover_now_pct": 48.1,
             "model_dog_cover_now_pct": 51.9,
-            "market_fav_cover_now_pct": 52.4,
-            "market_dog_cover_now_pct": 47.6,
-            "model_vs_market_fav_pp": -4.3,
-            "model_vs_market_dog_pp": 4.3,
-            "fav_roi_pct": -11,
-            "dog_roi_pct": 57.8,
+            "market_fav_cover_now_pct": 53,
+            "market_dog_cover_now_pct": 47,
+            "model_vs_market_fav_pp": -4.9,
+            "model_vs_market_dog_pp": 4.9,
+            "fav_roi_pct": -12,
+            "dog_roi_pct": 58.8,
             "fav_name": "Belgium",
             "dog_name": "Senegal"
           }
@@ -1600,12 +1675,12 @@ const MATCH_DATA = {
           "actuarial_cn": "向模型修正",
           "actuarial_color": "#C8A96E",
           "actuarial_desc": "盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
-          "summary_cn": "退 0.25 档 · 热门 1.02→0.85（降水） · 受让 0.8→1.04（抬水） 现盘去水隐含：Belgium 52.4% · Senegal 47.6%（超收 3.1%） 模型穿盘（现档 Belgium -0.25 · Senegal +0.25）：Belgium 48.1% · Senegal 51.9% 模型−市场：Belgium -4.3pp · Senegal +4.3pp 期望 ROI@现水：Belgium -11% · Senegal +57.8% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "summary_cn": "退 0.25 档 · 热门 1.02→0.83（降水） · 受让 0.8→1.06（抬水） 现盘去水隐含：Belgium 53% · Senegal 47%（超收 3.2%） 模型穿盘（现档 Belgium -0.25 · Senegal +0.25）：Belgium 48.1% · Senegal 51.9% 模型−市场：Belgium -4.9pp · Senegal +4.9pp 期望 ROI@现水：Belgium -12% · Senegal +58.8% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
           "line_delta": -0.25,
           "line_delta_cn": "退 0.25 档",
-          "fav_odds_delta": -0.17,
-          "dog_odds_delta": 0.24,
-          "water_move_cn": "热门 1.02→0.85（降水） · 受让 0.8→1.04（抬水）",
+          "fav_odds_delta": -0.19,
+          "dog_odds_delta": 0.26,
+          "water_move_cn": "热门 1.02→0.83（降水） · 受让 0.8→1.06（抬水）",
           "open_tier": 0.5,
           "open_tier_label": "Belgium -0.5 · Senegal +0.5",
           "now_tier": 0.25,
@@ -1618,19 +1693,19 @@ const MATCH_DATA = {
             "overround_pct": 5.1
           },
           "now_devig": {
-            "fav_pct": 52.4,
-            "dog_pct": 47.6,
-            "overround_pct": 3.1
+            "fav_pct": 53,
+            "dog_pct": 47,
+            "overround_pct": 3.2
           },
           "model_cover_open_pct": 48.1,
           "model_cover_now_pct": 48.1,
           "model_dog_cover_now_pct": 51.9,
-          "market_fav_cover_now_pct": 52.4,
-          "market_dog_cover_now_pct": 47.6,
-          "model_vs_market_fav_pp": -4.3,
-          "model_vs_market_dog_pp": 4.3,
-          "fav_roi_pct": -11,
-          "dog_roi_pct": 57.8,
+          "market_fav_cover_now_pct": 53,
+          "market_dog_cover_now_pct": 47,
+          "model_vs_market_fav_pp": -4.9,
+          "model_vs_market_dog_pp": 4.9,
+          "fav_roi_pct": -12,
+          "dog_roi_pct": 58.8,
           "fav_name": "Belgium",
           "dog_name": "Senegal"
         },
@@ -1638,61 +1713,61 @@ const MATCH_DATA = {
           "model_side": "neutral",
           "situation_side": "neutral",
           "market_line_side": "under",
-          "market_odds_side": "under",
-          "market_side": "under",
-          "recommended_side": "under",
+          "market_odds_side": "over",
+          "market_side": "neutral",
+          "recommended_side": "neutral",
           "conflict": false,
           "conflict_cn": null,
           "situation_dampened": false,
           "votes": {
             "model": "neutral",
             "line": "under",
-            "odds": "under",
+            "odds": "over",
             "situation": "neutral"
           },
-          "vote_summary_cn": "观望(model) · 小球(line) · 小球(odds) · 观望(situation)",
+          "vote_summary_cn": "观望(model) · 小球(line) · 大球(odds) · 观望(situation)",
           "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
         },
         "agent_pick": {
-          "primary": "totals",
-          "tendency_cn": "更倾向大小球（小）",
-          "tendency_reason_cn": "公平线2 vs 现2.5·high_line信号 · 初小0.80收小叙事仍在 · ★小2.5 · 塞+0/0.5(51.9%·均衡副项)。",
+          "primary": "spread",
+          "tendency_cn": "更倾向让球盘",
+          "tendency_reason_cn": "比0.83极低水退档后仍挺=诱比嫌疑 · 1-1(11.3%)平半输半 · ★塞+0/0.5 · 大2.5副项随均衡盘。",
           "confidence": "medium",
           "confidence_cn": "中信心",
-          "confidence_reason_cn": "★小：线高于公平值+小0.87仍偏低；让球：比退档低水vs模型塞51.9%·1-1(11%)输半路径·非大信心。",
+          "confidence_reason_cn": "★塞受让：模型51.9%+比低水非 massacre · 非大信心因1-1/2-1分化；副项大0.88略低水。",
           "spread": {
             "side": "dog",
-            "label_cn": "塞内加尔 +0/0.5 @1.04",
-            "reason_cn": "比-0.5→-0/0.5退档 · 模型塞51.9% · 1-1输半/0-0·0-1全赢/比赢全输 · 副项·高水。"
+            "label_cn": "塞内加尔 +0/0.5 @1.06",
+            "reason_cn": "比-0.5→-0/0.5仍0.83 · 1-1输半/0-0·0-1·塞赢全赢/比赢全输 · ★主项。"
           },
           "totals": {
-            "side": "under",
-            "label_cn": "小球 2.5 @0.87",
-            "reason_cn": "xG2.77·公平线2 · 欠2.5约48%但线位偏高 · 1-0·1-1·0-0小全赢/3球+小全输 · ★主项。"
+            "side": "over",
+            "label_cn": "大球 2.5 @0.88",
+            "reason_cn": "小1.00升水趋均衡 · 大0.88略低 · 模型超2.5约52% · 3球+全赢 · 副项。"
           },
           "pick_meta": {
             "model_side": "neutral",
             "situation_side": "neutral",
             "market_line_side": "under",
-            "market_odds_side": "under",
-            "market_side": "under",
-            "pick_side": "under",
-            "recommended_side": "under",
+            "market_odds_side": "over",
+            "market_side": "neutral",
+            "pick_side": "over",
+            "recommended_side": "neutral",
             "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
             "conflict": false,
             "conflict_cn": null,
             "votes": {
               "model": "neutral",
               "line": "under",
-              "odds": "under",
+              "odds": "over",
               "situation": "neutral"
             },
-            "vote_summary_cn": "观望(model) · 小球(line) · 小球(odds) · 观望(situation)",
+            "vote_summary_cn": "观望(model) · 小球(line) · 大球(odds) · 观望(situation)",
             "situation_dampened": false,
             "over_pct": 51.9,
             "line_gap": 0.5
           },
-          "picked_at": "2026-07-02-kickoff"
+          "picked_at": "2026-07-02-agent-final"
         },
         "applied_delta": {
           "home_win": 0,
@@ -2385,11 +2460,11 @@ const MATCH_DATA = {
         "spread_market_expect": "Belgium -0.25 · 净胜≥1",
         "line_move_tag": "correction",
         "line_move_cn": "向模型修正",
-        "agent_pick_primary": "totals",
-        "agent_pick_tendency_cn": "更倾向大小球（小）",
+        "agent_pick_primary": "spread",
+        "agent_pick_tendency_cn": "更倾向让球盘",
         "agent_pick_confidence": "medium",
-        "agent_spread_cn": "塞内加尔 +0/0.5 @1.04",
-        "agent_totals_cn": "小球 2.5 @0.87",
+        "agent_spread_cn": "塞内加尔 +0/0.5 @1.06",
+        "agent_totals_cn": "大球 2.5 @0.88",
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -2420,14 +2495,15 @@ const MATCH_DATA = {
         "formation": null,
         "home": "等待官方确认",
         "away": "等待官方确认",
-        "note": "官方首发尚未确认；下方为媒体预测，不计入已确认推演权重。",
+        "note": "裁判已确认 · 首发待 FIFA 公布（2026-07-01T15:29:03+08:00）",
         "predicted": {
           "formation": "4-3-3 / 4-2-3-1",
           "home": "Turner; Dest, Richards, Ream, Robinson; Adams, Musah, McKennie; Pulisic, Pepi, Weah",
           "away": "Petkovic; Dedic, Hadzikadunic, Kolasinac; Tahirovic, Bajraktarevic; Dzeko, Tadic, Krunic",
           "source": "媒体预测",
           "alt": null
-        }
+        },
+        "updated": "2026-07-01T15:29:03+08:00"
       },
       "home": {
         "name": "USA",
@@ -2510,16 +2586,31 @@ const MATCH_DATA = {
         "note": "美国近年占优"
       },
       "referee": {
-        "confirmed": false,
-        "pending": true,
-        "name": "等待官方确认",
-        "nation": "待公布",
-        "iso": null,
-        "bias_note": "FIFA Match 81 · 待官方确认",
+        "confirmed": true,
+        "pending": false,
+        "source": "FIFA Match Centre · api.fifa.com · 2026-07-02",
+        "name": "Raphael Claus",
+        "nation": "Brazil",
+        "iso": "br",
+        "wc_experience": "2026 世界杯 · 32强 M81 主裁 · CONMEBOL · 执法美国 vs 波黑",
+        "avg_yellow": 4.6,
+        "avg_red": 0.12,
+        "avg_penalty": 0.35,
+        "home_win_rate": 52,
+        "bias_index": 51,
+        "bias_note": "巴西主裁执法旧金山湾区 · 美国 -1/1.5 深盘 vs 波黑铁桶；对主队有利判罚与禁区拉扯尺度是关键。",
         "tendencies": [
-          "更新来源：FIFA 官方裁判名单 · 赛前新闻发布会"
+          "FIFA 官方主裁 · Raphael Claus（巴西）",
+          "第四官员 Darío Herrera（阿根廷）",
+          "湾区晨场 · 美国主场标签"
         ],
-        "updated": "2026-07-01T10:04:36+08:00"
+        "officials": {
+          "referee": "Raphael Claus (BRA)",
+          "fourth": "Darío Herrera (ARG)"
+        },
+        "fifa_match_id": "400021524",
+        "note": "FIFA M81 · 美国 vs 波黑 · SF Bay Area",
+        "updated": "2026-07-01T15:29:03+08:00"
       },
       "prediction": {
         "home_win": 44,
@@ -2654,7 +2745,7 @@ const MATCH_DATA = {
         "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
         "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "public_lean_cn": "舆论倾向 USA（约 55%）",
-        "analysis": "M81 · 美国 vs 波黑 · 现 -1/1.5 美 0.90 / 波 0.99 · 大小 2.5/3 大 0.91 小 0.97 · Agent：★波+1/1.5+小2.5/3。 赛前净胜参考高于 xG 隐含（+1），且净胜 1 球占 23.6%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "analysis": "M81 · 美国 vs 波黑 · 现 -1/1.5 美 0.82 / 波 1.07 · 大小 2.5/3 大 0.85 小 1.03 · Agent终选：★波+1/1.5+大2.5/3。 赛前净胜参考高于 xG 隐含（+1），且净胜 1 球占 23.6%——热门净胜拉开偏难。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
         "spread_cover": {
           "top3_scores": [
             {
@@ -2696,9 +2787,9 @@ const MATCH_DATA = {
           "dog_hold_pct_raw": 74.7
         },
         "spread_odds": {
-          "fav": 0.9,
-          "dog": 0.99,
-          "note": "USA 0.9 · Bosnia & Herz. 0.99"
+          "fav": 0.82,
+          "dog": 1.07,
+          "note": "USA 0.82 · Bosnia & Herz. 1.07"
         },
         "spread_alt": null,
         "totals_analysis": {
@@ -2716,11 +2807,11 @@ const MATCH_DATA = {
           "signal_desc": "总进球参考高于合理值，模型偏小比分。",
           "public_over_pct": 50,
           "public_lean_cn": "舆论对总进球看法较分散",
-          "index_note": "大比分侧 0.91 / 小比分侧 0.97",
+          "index_note": "大比分侧 0.85 / 小比分侧 1.03",
           "totals_odds": {
-            "over": 0.91,
-            "under": 0.97,
-            "note": "大比分 0.91 · 小比分 0.97"
+            "over": 0.85,
+            "under": 1.03,
+            "note": "大比分 0.85 · 小比分 1.03"
           },
           "rational_cn": "模型略看小比分（超 2.75 约 61.7% 难达）",
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
@@ -2729,23 +2820,23 @@ const MATCH_DATA = {
         "market_line_movement": {
           "wc_note": "旧金山湾区 neutral · 主客仅为 FIFA 标记",
           "spread_open_cn": "USA -1@0.92 · Bosnia & Herz. +1@0.9",
-          "spread_now_cn": "USA -1/1.5@0.9 · Bosnia & Herz. +1/1.5@0.99",
-          "totals_now_cn": "大小 2.5/3 · 大 0.91 / 小 0.97",
-          "tag": "book_trap_fav",
-          "tag_cn": "精算诱上",
-          "tag_color": "#D95F6A",
-          "detail_cn": "升 0.25 档 · 热门 0.92→0.9（降水） · 受让 0.9→0.99（抬水） 现盘去水隐含：USA 51.2% · Bosnia & Herz. 48.8%（超收 2.9%） 模型穿盘（现档 USA -1.25 · Bosnia & Herz. +1.25）：USA 37.3% · Bosnia & Herz. 62.7% 模型−市场：USA -13.9pp · Bosnia & Herz. +13.9pp 期望 ROI@现水：USA -40.9% · Bosnia & Herz. +64% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+          "spread_now_cn": "USA -1/1.5@0.82 · Bosnia & Herz. +1/1.5@1.07",
+          "totals_now_cn": "大小 2.5/3 · 大 0.85 / 小 1.03",
+          "tag": "sharp_steam",
+          "tag_cn": "资金砸盘",
+          "tag_color": "#5BBF8A",
+          "detail_cn": "升 0.25 档 · 热门 0.92→0.82（降水） · 受让 0.9→1.07（抬水） 现盘去水隐含：USA 53.2% · Bosnia & Herz. 46.8%（超收 3.3%） 模型穿盘（现档 USA -1.25 · Bosnia & Herz. +1.25）：USA 37.3% · Bosnia & Herz. 62.7% 模型−市场：USA -15.9pp · Bosnia & Herz. +15.9pp 期望 ROI@现水：USA -43.9% · Bosnia & Herz. +68.1% 档位明显向热门加深且热门持续降水，典型跟进资金推盘，与模型同向但已透支部分空间。",
           "actuarial": {
-            "actuarial_type": "book_trap_fav",
-            "actuarial_cn": "精算诱上",
-            "actuarial_color": "#D95F6A",
-            "actuarial_desc": "升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
-            "summary_cn": "升 0.25 档 · 热门 0.92→0.9（降水） · 受让 0.9→0.99（抬水） 现盘去水隐含：USA 51.2% · Bosnia & Herz. 48.8%（超收 2.9%） 模型穿盘（现档 USA -1.25 · Bosnia & Herz. +1.25）：USA 37.3% · Bosnia & Herz. 62.7% 模型−市场：USA -13.9pp · Bosnia & Herz. +13.9pp 期望 ROI@现水：USA -40.9% · Bosnia & Herz. +64% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+            "actuarial_type": "sharp_steam",
+            "actuarial_cn": "资金砸盘",
+            "actuarial_color": "#5BBF8A",
+            "actuarial_desc": "档位明显向热门加深且热门持续降水，典型跟进资金推盘，与模型同向但已透支部分空间。",
+            "summary_cn": "升 0.25 档 · 热门 0.92→0.82（降水） · 受让 0.9→1.07（抬水） 现盘去水隐含：USA 53.2% · Bosnia & Herz. 46.8%（超收 3.3%） 模型穿盘（现档 USA -1.25 · Bosnia & Herz. +1.25）：USA 37.3% · Bosnia & Herz. 62.7% 模型−市场：USA -15.9pp · Bosnia & Herz. +15.9pp 期望 ROI@现水：USA -43.9% · Bosnia & Herz. +68.1% 档位明显向热门加深且热门持续降水，典型跟进资金推盘，与模型同向但已透支部分空间。",
             "line_delta": 0.25,
             "line_delta_cn": "升 0.25 档",
-            "fav_odds_delta": -0.02,
-            "dog_odds_delta": 0.09,
-            "water_move_cn": "热门 0.92→0.9（降水） · 受让 0.9→0.99（抬水）",
+            "fav_odds_delta": -0.1,
+            "dog_odds_delta": 0.17,
+            "water_move_cn": "热门 0.92→0.82（降水） · 受让 0.9→1.07（抬水）",
             "open_tier": 1,
             "open_tier_label": "USA -1 · Bosnia & Herz. +1",
             "now_tier": 1.25,
@@ -2758,34 +2849,34 @@ const MATCH_DATA = {
               "overround_pct": 4.7
             },
             "now_devig": {
-              "fav_pct": 51.2,
-              "dog_pct": 48.8,
-              "overround_pct": 2.9
+              "fav_pct": 53.2,
+              "dog_pct": 46.8,
+              "overround_pct": 3.3
             },
             "model_cover_open_pct": 37.3,
             "model_cover_now_pct": 37.3,
             "model_dog_cover_now_pct": 62.7,
-            "market_fav_cover_now_pct": 51.2,
-            "market_dog_cover_now_pct": 48.8,
-            "model_vs_market_fav_pp": -13.9,
-            "model_vs_market_dog_pp": 13.9,
-            "fav_roi_pct": -40.9,
-            "dog_roi_pct": 64,
+            "market_fav_cover_now_pct": 53.2,
+            "market_dog_cover_now_pct": 46.8,
+            "model_vs_market_fav_pp": -15.9,
+            "model_vs_market_dog_pp": 15.9,
+            "fav_roi_pct": -43.9,
+            "dog_roi_pct": 68.1,
             "fav_name": "USA",
             "dog_name": "Bosnia & Herz."
           }
         },
         "spread_market_analysis": {
-          "actuarial_type": "book_trap_fav",
-          "actuarial_cn": "精算诱上",
-          "actuarial_color": "#D95F6A",
-          "actuarial_desc": "升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
-          "summary_cn": "升 0.25 档 · 热门 0.92→0.9（降水） · 受让 0.9→0.99（抬水） 现盘去水隐含：USA 51.2% · Bosnia & Herz. 48.8%（超收 2.9%） 模型穿盘（现档 USA -1.25 · Bosnia & Herz. +1.25）：USA 37.3% · Bosnia & Herz. 62.7% 模型−市场：USA -13.9pp · Bosnia & Herz. +13.9pp 期望 ROI@现水：USA -40.9% · Bosnia & Herz. +64% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+          "actuarial_type": "sharp_steam",
+          "actuarial_cn": "资金砸盘",
+          "actuarial_color": "#5BBF8A",
+          "actuarial_desc": "档位明显向热门加深且热门持续降水，典型跟进资金推盘，与模型同向但已透支部分空间。",
+          "summary_cn": "升 0.25 档 · 热门 0.92→0.82（降水） · 受让 0.9→1.07（抬水） 现盘去水隐含：USA 53.2% · Bosnia & Herz. 46.8%（超收 3.3%） 模型穿盘（现档 USA -1.25 · Bosnia & Herz. +1.25）：USA 37.3% · Bosnia & Herz. 62.7% 模型−市场：USA -15.9pp · Bosnia & Herz. +15.9pp 期望 ROI@现水：USA -43.9% · Bosnia & Herz. +68.1% 档位明显向热门加深且热门持续降水，典型跟进资金推盘，与模型同向但已透支部分空间。",
           "line_delta": 0.25,
           "line_delta_cn": "升 0.25 档",
-          "fav_odds_delta": -0.02,
-          "dog_odds_delta": 0.09,
-          "water_move_cn": "热门 0.92→0.9（降水） · 受让 0.9→0.99（抬水）",
+          "fav_odds_delta": -0.1,
+          "dog_odds_delta": 0.17,
+          "water_move_cn": "热门 0.92→0.82（降水） · 受让 0.9→1.07（抬水）",
           "open_tier": 1,
           "open_tier_label": "USA -1 · Bosnia & Herz. +1",
           "now_tier": 1.25,
@@ -2798,19 +2889,19 @@ const MATCH_DATA = {
             "overround_pct": 4.7
           },
           "now_devig": {
-            "fav_pct": 51.2,
-            "dog_pct": 48.8,
-            "overround_pct": 2.9
+            "fav_pct": 53.2,
+            "dog_pct": 46.8,
+            "overround_pct": 3.3
           },
           "model_cover_open_pct": 37.3,
           "model_cover_now_pct": 37.3,
           "model_dog_cover_now_pct": 62.7,
-          "market_fav_cover_now_pct": 51.2,
-          "market_dog_cover_now_pct": 48.8,
-          "model_vs_market_fav_pp": -13.9,
-          "model_vs_market_dog_pp": 13.9,
-          "fav_roi_pct": -40.9,
-          "dog_roi_pct": 64,
+          "market_fav_cover_now_pct": 53.2,
+          "market_dog_cover_now_pct": 46.8,
+          "model_vs_market_fav_pp": -15.9,
+          "model_vs_market_dog_pp": 15.9,
+          "fav_roi_pct": -43.9,
+          "dog_roi_pct": 68.1,
           "fav_name": "USA",
           "dog_name": "Bosnia & Herz."
         },
@@ -2836,19 +2927,21 @@ const MATCH_DATA = {
         "agent_pick": {
           "primary": "spread",
           "tendency_cn": "更倾向让球盘",
-          "tendency_reason_cn": "精算诱上+升档仍美0.90低水 · 模型波+1/1.5穿62.7% · ROI@波0.99约+64% · ★波受让 · 小2.5/3副项。",
+          "tendency_reason_cn": "美0.82极低水+升档-1/1.5=book_trap_fav加强 · 波1.07赔付升 · ★波+1/1.5 · 大2.5/3副项随盘。",
           "confidence": "high",
           "confidence_cn": "大信心",
-          "confidence_reason_cn": "★波+1/1.5：book_trap_fav·模型−市场13.9pp·1-0/1-1全赢/2-0输半。小2.5/3：公平线2·欠62%但非诱小极端。",
+          "confidence_reason_cn": "★波+1/1.5：模型穿62.7%·美0.82再降水非真穿盘信号 · 1-0/1-1全赢/2-0输半；副项大随盘0.85低水。",
           "spread": {
             "side": "dog",
-            "label_cn": "波黑 +1/1.5 @0.99",
-            "reason_cn": "美-1→-1/1.5升档仍0.90 · 穿盘37.3% · 1-0·1-1全赢/2-0输半/3-0全输 · ★主项。"
+            "label_cn": "波黑 +1/1.5 @1.07",
+            "reason_cn": "美-1→-1/1.5仍0.82 · 穿盘37.3% · 1-0·1-1全赢/2-0输半/3-0全输 · ★主项。"
           },
           "totals": {
-            "side": "under",
-            "label_cn": "小球 2.5/3 @0.97",
-            "reason_cn": "公平线~2·现2.75偏高 · 欠2.5/3约62% · 1-0·1-1·2-0小全赢/3球小输半 · 副项。"
+            "side": "over",
+            "label_cn": "大球 2.5/3 @0.85",
+            "reason_cn": "临盘小0.97→大0.85翻转 · 模型仍偏小但盘面跟大 · 3球大赢半/4+全赢 · 副项。",
+            "manual_override": true,
+            "recommended_side": "under"
           },
           "pick_meta": {
             "model_side": "under",
@@ -2856,7 +2949,7 @@ const MATCH_DATA = {
             "market_line_side": "under",
             "market_odds_side": "over",
             "market_side": "under",
-            "pick_side": "under",
+            "pick_side": "over",
             "recommended_side": "under",
             "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
             "conflict": false,
@@ -2872,7 +2965,7 @@ const MATCH_DATA = {
             "over_pct": 38.3,
             "line_gap": 0.75
           },
-          "picked_at": "2026-07-02-kickoff"
+          "picked_at": "2026-07-02-agent-final"
         },
         "applied_delta": {
           "home_win": -5,
@@ -3589,13 +3682,13 @@ const MATCH_DATA = {
         "cover_given_win_pct": 51.7,
         "spread_level": "possible",
         "spread_market_expect": "USA -1.25 · 净胜≥2",
-        "line_move_tag": "book_trap_fav",
-        "line_move_cn": "精算诱上",
+        "line_move_tag": "sharp_steam",
+        "line_move_cn": "资金砸盘",
         "agent_pick_primary": "spread",
         "agent_pick_tendency_cn": "更倾向让球盘",
         "agent_pick_confidence": "high",
-        "agent_spread_cn": "波黑 +1/1.5 @0.99",
-        "agent_totals_cn": "小球 2.5/3 @0.97",
+        "agent_spread_cn": "波黑 +1/1.5 @1.07",
+        "agent_totals_cn": "大球 2.5/3 @0.85",
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"

@@ -3,211 +3,348 @@
  *  agent_pick：每场 spread + totals 双选项，primary 标★倾向
  */
 module.exports = {
-  m80: {
-    market_tier: 1.5,
-    totals_line: 2.25,
-    public_lean: 'home',
-    public_pct: 68,
-    spread_fav_odds: 0.96,
-    spread_dog_odds: 0.93,
-    totals_over_odds: 0.84,
-    totals_under_odds: 1.04,
-    spread_open: { home_handicap: '-1.5', home_odds: 0.88, away_handicap: '+1.5', away_odds: 0.94 },
-    spread_mid: { home_handicap: '-1.5', home_odds: 0.88, away_handicap: '+1.5', away_odds: 0.94 },
-    spread_now: { home_handicap: '-1.5', home_odds: 0.96, away_handicap: '+1.5', away_odds: 0.93 },
-    totals_open: { line: 2.5, line_display: '2.5', over_odds: 0.85, under_odds: 0.95 },
-    totals_mid: { line: 2.5, line_display: '2.5', over_odds: 0.85, under_odds: 0.95 },
-    totals_now: { line: 2.25, line_display: '2/2.5', over_odds: 0.84, under_odds: 1.04 },
-    line_move: {
-      tag: 'fav_water_up',
-      cn: '现盘：英升水 · 大小降2/2.5小高水',
-      detail: '让球 档 -1.5 不动 · 英 0.88→0.96（升水）、刚果 0.94→0.93。大小 2.5→2/2.5 · 大 0.85→0.84、小 0.95→1.04（小高水）。',
+  "m80": {
+    "market_tier": 1.5,
+    "totals_line": 2.5,
+    "public_lean": "home",
+    "public_pct": 68,
+    "spread_fav_odds": 0.96,
+    "spread_dog_odds": 0.93,
+    "totals_over_odds": 1.03,
+    "totals_under_odds": 0.85,
+    "spread_open": {
+      "home_handicap": "-1.5",
+      "home_odds": 0.88,
+      "away_handicap": "+1.5",
+      "away_odds": 0.94
     },
-    wc_venue_note: '亚特兰大 neutral · 主客仅为 FIFA 标记',
-    agent_pick: {
-      primary: 'totals',
-      tendency_cn: '更倾向大小球',
-      tendency_reason_cn: '模型超2/2.5约58.9%+大0.84低水 · 2-0赢半/2-1·3-0全赢 · ★大2/2.5 · 刚果+1.5(53.3%·blocker)。',
-      confidence: 'medium',
-      confidence_cn: '中信心',
-      confidence_reason_cn: '★大：xG2.54·公平线2·大0.84与模型同向；让球：英升水非低诱·53.3%挺刚果但ROI@现水偏负。',
-      spread: {
-        side: 'dog',
-        label_cn: '刚果（金） +1.5 @0.93',
-        reason_cn: 'blocker_inflate·英-1.5穿46.7%·1-0全赢盘/2-0全输 · 英0.96升水 · 模型53.3%穿受让。',
-      },
-      totals: {
-        side: 'over',
-        label_cn: '大球 2/2.5 @0.84',
-        reason_cn: '公平线~2·现2.25·超线58.9% · 大0.84低水 · 2-0赢半/2-1·3-0全赢 · 0-0·1-0总≤1小全输 · ★主项。',
-      },
-      pick_meta: {
-        model_side: 'over',
-        market_side: 'over',
-        pick_side: 'over',
-        recommended_side: 'over',
-        conflict: false,
-      },
-      picked_at: '2026-07-02-kickoff',
+    "spread_mid": {
+      "home_handicap": "-1.5",
+      "home_odds": 0.88,
+      "away_handicap": "+1.5",
+      "away_odds": 0.94
     },
-    _source: 'crown_day21_agent',
-    analysis: 'M80 · 英格兰 vs 刚果（金） · 现 -1.5 英 0.96 / 刚果 0.93 · 大小 2/2.5 大 0.84 小 1.04 · Agent：★大2/2.5+刚果受让。',
-    live_timeline: [
-      { min: 0, score: '0-0', spread: '英-1.5@0.96/刚果0.93', totals: '2/2.5 大0.84小1.04', trap_note: '英升水；小高水' },
+    "spread_now": {
+      "home_handicap": "-1.5",
+      "home_odds": 0.96,
+      "away_handicap": "+1.5",
+      "away_odds": 0.93
+    },
+    "totals_open": {
+      "line": 2.5,
+      "line_display": "2.5",
+      "over_odds": 0.85,
+      "under_odds": 0.95
+    },
+    "totals_mid": {
+      "line": 2.5,
+      "line_display": "2.5",
+      "over_odds": 0.85,
+      "under_odds": 0.95
+    },
+    "totals_now": {
+      "line": 2.5,
+      "line_display": "2.5",
+      "over_odds": 1.03,
+      "under_odds": 0.85
+    },
+    "line_move": {
+      "tag": "totals_rise_under_chase",
+      "cn": "临场：大小回2.5小低水 · 英-1.5稳",
+      "detail": "让球 英 -1.5 0.96/刚果0.93 不动。大小 2/2.5→2.5 · 大1.03小0.85（升整球线、小降水=收小）。"
+    },
+    "wc_venue_note": "亚特兰大 neutral · 主客仅为 FIFA 标记",
+    "agent_pick": {
+      "primary": "totals",
+      "tendency_cn": "更倾向大小球（小）",
+      "tendency_reason_cn": "临场2/2.5→2.5小0.85低水+英FIFA轮换大 · 撤销日盘★大 · ★小2.5 · 刚果+1.5副项。",
+      "confidence": "medium",
+      "confidence_cn": "中信心",
+      "confidence_reason_cn": "★小2.5：线回整球+小0.85=共识收小(非诱小极端但推翻日盘大) · 英无Walker/Stones/Saka削弱穿盘；让球：53.3%挺刚果。",
+      "spread": {
+        "side": "dog",
+        "label_cn": "刚果（金） +1.5 @0.93",
+        "reason_cn": "blocker_inflate·英-1.5穿46.7%·1-0全赢/2-0全输 · 英0.96升水+轮换 · 模型53.3% · 副项。"
+      },
+      "totals": {
+        "side": "under",
+        "label_cn": "小球 2.5 @0.85",
+        "reason_cn": "初2.5→2/2.5大0.84→临2.5小0.85(线+水双收小) · 公平线~2 · 2-0仍小全赢 · 3球+小全输 · ★主项。"
+      },
+      "pick_meta": {
+        "model_side": "over",
+        "market_side": "under",
+        "pick_side": "under",
+        "recommended_side": "under",
+        "conflict": true
+      },
+      "picked_at": "2026-07-02-agent-final"
+    },
+    "_source": "crown_day21_agent_final",
+    "analysis": "M80 · 英格兰 vs 刚果（金） · 现 -1.5 英 0.96 / 刚果 0.93 · 大小 2.5 大 1.03 小 0.85 · Agent终选：★小2.5+刚果受让。",
+    "live_timeline": [
+      {
+        "min": 0,
+        "score": "0-0",
+        "spread": "英-1.5@0.96/刚果0.93",
+        "totals": "2.5 大1.03小0.85",
+        "trap_note": "大小回2.5小0.85低水"
+      }
     ],
-    live: {
-      period: 'PRE',
-      minute: 0,
-      score: '0-0',
-      captured_at: '2026-07-02T00:00+08:00',
-      spread_live: {
-        home_handicap: '-1.5',
-        home_odds: 0.96,
-        away_handicap: '+1.5',
-        away_odds: 0.93,
-        line_display: '英 -1.5',
+    "live": {
+      "period": "PRE",
+      "minute": 0,
+      "score": "0-0",
+      "captured_at": "2026-07-01T15:29:03+08:00",
+      "spread_live": {
+        "home_handicap": "-1.5",
+        "home_odds": 0.96,
+        "away_handicap": "+1.5",
+        "away_odds": 0.93,
+        "line_display": "英 -1.5"
       },
-      totals_live: { line: 2.25, line_display: '2/2.5', over_odds: 0.84, under_odds: 1.04 },
-      line_move_live_cn: '现：英 -1.5 0.96 / 刚果 0.93 · 2/2.5 大 0.84 小 1.04',
-      read_cn: '英0.88→0.96升水非低诱；大小降线小1.04高水。',
-    },
+      "totals_live": {
+        "line": 2.5,
+        "line_display": "2.5",
+        "over_odds": 1.03,
+        "under_odds": 0.85
+      },
+      "line_move_live_cn": "现：英 -1.5 0.96 / 刚果 0.93 · 2.5 大 1.03 小 0.85",
+      "read_cn": "大小2/2.5→2.5小0.85收小；英首发轮换大。"
+    }
   },
-  m81: {
-    market_tier: 1.25,
-    totals_line: 2.75,
-    public_lean: 'home',
-    public_pct: 55,
-    spread_fav_odds: 0.9,
-    spread_dog_odds: 0.99,
-    totals_over_odds: 0.91,
-    totals_under_odds: 0.97,
-    spread_open: { home_handicap: '-1', home_odds: 0.92, away_handicap: '+1', away_odds: 0.9 },
-    spread_mid: { home_handicap: '-1', home_odds: 0.92, away_handicap: '+1', away_odds: 0.9 },
-    spread_now: { home_handicap: '-1/1.5', home_odds: 0.9, away_handicap: '+1/1.5', away_odds: 0.99 },
-    totals_open: { line: 2.5, line_display: '2.5', over_odds: 0.92, under_odds: 0.88 },
-    totals_mid: { line: 2.5, line_display: '2.5', over_odds: 0.92, under_odds: 0.88 },
-    totals_now: { line: 2.75, line_display: '2.5/3', over_odds: 0.91, under_odds: 0.97 },
-    line_move: {
-      tag: 'fav_line_rise',
-      cn: '现盘：美升-1/1.5低水 · 大小升2.5/3',
-      detail: '让球 初 -1 美0.92/波0.90 → 现 -1/1.5 美0.90/波0.99（升档+美略降水+波升水）。大小 2.5 大0.92小0.88 → 2.5/3 大0.91小0.97（升线、小升水）。',
+  "m81": {
+    "market_tier": 1.25,
+    "totals_line": 2.75,
+    "public_lean": "home",
+    "public_pct": 55,
+    "spread_fav_odds": 0.82,
+    "spread_dog_odds": 1.07,
+    "totals_over_odds": 0.85,
+    "totals_under_odds": 1.03,
+    "spread_open": {
+      "home_handicap": "-1",
+      "home_odds": 0.92,
+      "away_handicap": "+1",
+      "away_odds": 0.9
     },
-    wc_venue_note: '旧金山湾区 neutral · 主客仅为 FIFA 标记',
-    agent_pick: {
-      primary: 'spread',
-      tendency_cn: '更倾向让球盘',
-      tendency_reason_cn: '精算诱上+升档仍美0.90低水 · 模型波+1/1.5穿62.7% · ROI@波0.99约+64% · ★波受让 · 小2.5/3副项。',
-      confidence: 'high',
-      confidence_cn: '大信心',
-      confidence_reason_cn: '★波+1/1.5：book_trap_fav·模型−市场13.9pp·1-0/1-1全赢/2-0输半。小2.5/3：公平线2·欠62%但非诱小极端。',
-      spread: {
-        side: 'dog',
-        label_cn: '波黑 +1/1.5 @0.99',
-        reason_cn: '美-1→-1/1.5升档仍0.90 · 穿盘37.3% · 1-0·1-1全赢/2-0输半/3-0全输 · ★主项。',
-      },
-      totals: {
-        side: 'under',
-        label_cn: '小球 2.5/3 @0.97',
-        reason_cn: '公平线~2·现2.75偏高 · 欠2.5/3约62% · 1-0·1-1·2-0小全赢/3球小输半 · 副项。',
-      },
-      pick_meta: {
-        model_side: 'under',
-        market_side: 'over',
-        pick_side: 'under',
-        recommended_side: 'under',
-        conflict: true,
-      },
-      picked_at: '2026-07-02-kickoff',
+    "spread_mid": {
+      "home_handicap": "-1",
+      "home_odds": 0.92,
+      "away_handicap": "+1",
+      "away_odds": 0.9
     },
-    _source: 'crown_day21_agent',
-    analysis: 'M81 · 美国 vs 波黑 · 现 -1/1.5 美 0.90 / 波 0.99 · 大小 2.5/3 大 0.91 小 0.97 · Agent：★波+1/1.5+小2.5/3。',
-    live_timeline: [
-      { min: 0, score: '0-0', spread: '美-1/1.5@0.90/波0.99', totals: '2.5/3 大0.91小0.97', trap_note: '美升档低水；大小升线' },
+    "spread_now": {
+      "home_handicap": "-1/1.5",
+      "home_odds": 0.82,
+      "away_handicap": "+1/1.5",
+      "away_odds": 1.07
+    },
+    "totals_open": {
+      "line": 2.5,
+      "line_display": "2.5",
+      "over_odds": 0.92,
+      "under_odds": 0.88
+    },
+    "totals_mid": {
+      "line": 2.5,
+      "line_display": "2.5",
+      "over_odds": 0.92,
+      "under_odds": 0.88
+    },
+    "totals_now": {
+      "line": 2.75,
+      "line_display": "2.5/3",
+      "over_odds": 0.85,
+      "under_odds": 1.03
+    },
+    "line_move": {
+      "tag": "fav_water_down",
+      "cn": "现盘：美0.82再降水 · 大0.85略低",
+      "detail": "让球 -1/1.5 档不动 · 美 0.90→0.82、波 0.99→1.07（美再降水+波升水）。大小 2.5/3 大0.91→0.85、小0.97→1.03（大略降、小升）。"
+    },
+    "wc_venue_note": "旧金山湾区 neutral · 主客仅为 FIFA 标记",
+    "agent_pick": {
+      "primary": "spread",
+      "tendency_cn": "更倾向让球盘",
+      "tendency_reason_cn": "美0.82极低水+升档-1/1.5=book_trap_fav加强 · 波1.07赔付升 · ★波+1/1.5 · 大2.5/3副项随盘。",
+      "confidence": "high",
+      "confidence_cn": "大信心",
+      "confidence_reason_cn": "★波+1/1.5：模型穿62.7%·美0.82再降水非真穿盘信号 · 1-0/1-1全赢/2-0输半；副项大随盘0.85低水。",
+      "spread": {
+        "side": "dog",
+        "label_cn": "波黑 +1/1.5 @1.07",
+        "reason_cn": "美-1→-1/1.5仍0.82 · 穿盘37.3% · 1-0·1-1全赢/2-0输半/3-0全输 · ★主项。"
+      },
+      "totals": {
+        "side": "over",
+        "label_cn": "大球 2.5/3 @0.85",
+        "reason_cn": "临盘小0.97→大0.85翻转 · 模型仍偏小但盘面跟大 · 3球大赢半/4+全赢 · 副项。"
+      },
+      "pick_meta": {
+        "model_side": "under",
+        "market_side": "over",
+        "pick_side": "over",
+        "recommended_side": "under",
+        "conflict": true
+      },
+      "picked_at": "2026-07-02-agent-final"
+    },
+    "_source": "crown_day21_agent_final",
+    "analysis": "M81 · 美国 vs 波黑 · 现 -1/1.5 美 0.82 / 波 1.07 · 大小 2.5/3 大 0.85 小 1.03 · Agent终选：★波+1/1.5+大2.5/3。",
+    "live_timeline": [
+      {
+        "min": 0,
+        "score": "0-0",
+        "spread": "美-1/1.5@0.90/波0.99",
+        "totals": "2.5/3 大0.91小0.97",
+        "trap_note": "美升档低水；大小升线"
+      },
+      {
+        "min": 0,
+        "score": "0-0",
+        "spread": "美-1/1.5@0.82/波1.07",
+        "totals": "2.5/3 大0.85小1.03",
+        "trap_note": "美再降水；大略低"
+      }
     ],
-    live: {
-      period: 'PRE',
-      minute: 0,
-      score: '0-0',
-      captured_at: '2026-07-02T08:00+08:00',
-      spread_live: {
-        home_handicap: '-1/1.5',
-        home_odds: 0.9,
-        away_handicap: '+1/1.5',
-        away_odds: 0.99,
-        line_display: '美 -1/1.5',
+    "live": {
+      "period": "PRE",
+      "minute": 0,
+      "score": "0-0",
+      "captured_at": "2026-07-02T08:00+08:00",
+      "spread_live": {
+        "home_handicap": "-1/1.5",
+        "home_odds": 0.82,
+        "away_handicap": "+1/1.5",
+        "away_odds": 1.07,
+        "line_display": "美 -1/1.5"
       },
-      totals_live: { line: 2.75, line_display: '2.5/3', over_odds: 0.91, under_odds: 0.97 },
-      line_move_live_cn: '现：美 -1/1.5 0.90 / 波 0.99 · 2.5/3 大 0.91 小 0.97',
-      read_cn: '美-1→-1/1.5升档仍0.90低水；大小2.5→2.5/3大0.91略低。',
-    },
+      "totals_live": {
+        "line": 2.75,
+        "line_display": "2.5/3",
+        "over_odds": 0.85,
+        "under_odds": 1.03
+      },
+      "line_move_live_cn": "现：美 -1/1.5 0.82 / 波 1.07 · 2.5/3 大 0.85 小 1.03",
+      "read_cn": "美0.82极低水仍挺深盘；大0.85略低 vs Agent小副项。"
+    }
   },
-  m82: {
-    market_tier: 0.25,
-    totals_line: 2.5,
-    public_lean: 'home',
-    public_pct: 58,
-    spread_fav_odds: 0.85,
-    spread_dog_odds: 1.04,
-    totals_over_odds: 1.01,
-    totals_under_odds: 0.87,
-    spread_open: { home_handicap: '-0.5', home_odds: 1.02, away_handicap: '+0.5', away_odds: 0.8 },
-    spread_mid: { home_handicap: '-0.5', home_odds: 1.02, away_handicap: '+0.5', away_odds: 0.8 },
-    spread_now: { home_handicap: '-0/0.5', home_odds: 0.85, away_handicap: '+0/0.5', away_odds: 1.04 },
-    totals_open: { line: 2.25, line_display: '2/2.5', over_odds: 1.0, under_odds: 0.8 },
-    totals_mid: { line: 2.25, line_display: '2/2.5', over_odds: 1.0, under_odds: 0.8 },
-    totals_now: { line: 2.5, line_display: '2.5', over_odds: 1.01, under_odds: 0.87 },
-    line_move: {
-      tag: 'fav_line_weaken',
-      cn: '现盘：比退平半低水 · 大小升2.5小升水',
-      detail: '让球 初 -0.5 比1.02/塞0.80 → 现 -0/0.5 比0.85/塞1.04（退档+比降水+塞升水）。大小 2/2.5 大1.00小0.80 → 2.5 大1.01小0.87（升线、小升水）。',
+  "m82": {
+    "market_tier": 0.25,
+    "totals_line": 2.5,
+    "public_lean": "home",
+    "public_pct": 58,
+    "spread_fav_odds": 0.83,
+    "spread_dog_odds": 1.06,
+    "totals_over_odds": 0.88,
+    "totals_under_odds": 1,
+    "spread_open": {
+      "home_handicap": "-0.5",
+      "home_odds": 1.02,
+      "away_handicap": "+0.5",
+      "away_odds": 0.8
     },
-    wc_venue_note: '西雅图 neutral · 主客仅为 FIFA 标记',
-    agent_pick: {
-      primary: 'totals',
-      tendency_cn: '更倾向大小球（小）',
-      tendency_reason_cn: '公平线2 vs 现2.5·high_line信号 · 初小0.80收小叙事仍在 · ★小2.5 · 塞+0/0.5(51.9%·均衡副项)。',
-      confidence: 'medium',
-      confidence_cn: '中信心',
-      confidence_reason_cn: '★小：线高于公平值+小0.87仍偏低；让球：比退档低水vs模型塞51.9%·1-1(11%)输半路径·非大信心。',
-      spread: {
-        side: 'dog',
-        label_cn: '塞内加尔 +0/0.5 @1.04',
-        reason_cn: '比-0.5→-0/0.5退档 · 模型塞51.9% · 1-1输半/0-0·0-1全赢/比赢全输 · 副项·高水。',
-      },
-      totals: {
-        side: 'under',
-        label_cn: '小球 2.5 @0.87',
-        reason_cn: 'xG2.77·公平线2 · 欠2.5约48%但线位偏高 · 1-0·1-1·0-0小全赢/3球+小全输 · ★主项。',
-      },
-      pick_meta: {
-        model_side: 'over',
-        market_side: 'under',
-        pick_side: 'under',
-        recommended_side: 'under',
-        conflict: true,
-      },
-      picked_at: '2026-07-02-kickoff',
+    "spread_mid": {
+      "home_handicap": "-0.5",
+      "home_odds": 1.02,
+      "away_handicap": "+0.5",
+      "away_odds": 0.8
     },
-    _source: 'crown_day21_agent',
-    analysis: 'M82 · 比利时 vs 塞内加尔 · 现 -0/0.5 比 0.85 / 塞 1.04 · 大小 2.5 大 1.01 小 0.87 · Agent：★小2.5+塞受让。',
-    live_timeline: [
-      { min: 0, score: '0-0', spread: '比-0/0.5@0.85/塞1.04', totals: '2.5 大1.01小0.87', trap_note: '比退档低水；大小升线' },
+    "spread_now": {
+      "home_handicap": "-0/0.5",
+      "home_odds": 0.83,
+      "away_handicap": "+0/0.5",
+      "away_odds": 1.06
+    },
+    "totals_open": {
+      "line": 2.25,
+      "line_display": "2/2.5",
+      "over_odds": 1,
+      "under_odds": 0.8
+    },
+    "totals_mid": {
+      "line": 2.25,
+      "line_display": "2/2.5",
+      "over_odds": 1,
+      "under_odds": 0.8
+    },
+    "totals_now": {
+      "line": 2.5,
+      "line_display": "2.5",
+      "over_odds": 0.88,
+      "under_odds": 1
+    },
+    "line_move": {
+      "tag": "fav_water_down",
+      "cn": "现盘：比0.83再降水 · 大小均衡",
+      "detail": "让球 -0/0.5 档不动 · 比 0.85→0.83、塞 1.04→1.06。大小 2.5 大1.01→0.88、小0.87→1.00（大略降、小升水趋均衡）。"
+    },
+    "wc_venue_note": "西雅图 neutral · 主客仅为 FIFA 标记",
+    "agent_pick": {
+      "primary": "spread",
+      "tendency_cn": "更倾向让球盘",
+      "tendency_reason_cn": "比0.83极低水退档后仍挺=诱比嫌疑 · 1-1(11.3%)平半输半 · ★塞+0/0.5 · 大2.5副项随均衡盘。",
+      "confidence": "medium",
+      "confidence_cn": "中信心",
+      "confidence_reason_cn": "★塞受让：模型51.9%+比低水非 massacre · 非大信心因1-1/2-1分化；副项大0.88略低水。",
+      "spread": {
+        "side": "dog",
+        "label_cn": "塞内加尔 +0/0.5 @1.06",
+        "reason_cn": "比-0.5→-0/0.5仍0.83 · 1-1输半/0-0·0-1·塞赢全赢/比赢全输 · ★主项。"
+      },
+      "totals": {
+        "side": "over",
+        "label_cn": "大球 2.5 @0.88",
+        "reason_cn": "小1.00升水趋均衡 · 大0.88略低 · 模型超2.5约52% · 3球+全赢 · 副项。"
+      },
+      "pick_meta": {
+        "model_side": "over",
+        "market_side": "over",
+        "pick_side": "over",
+        "recommended_side": "over",
+        "conflict": false
+      },
+      "picked_at": "2026-07-02-agent-final"
+    },
+    "_source": "crown_day21_agent_final",
+    "analysis": "M82 · 比利时 vs 塞内加尔 · 现 -0/0.5 比 0.83 / 塞 1.06 · 大小 2.5 大 0.88 小 1.00 · Agent终选：★塞受让+大2.5。",
+    "live_timeline": [
+      {
+        "min": 0,
+        "score": "0-0",
+        "spread": "比-0/0.5@0.85/塞1.04",
+        "totals": "2.5 大1.01小0.87",
+        "trap_note": "比退档低水；大小升线"
+      },
+      {
+        "min": 0,
+        "score": "0-0",
+        "spread": "比-0/0.5@0.83/塞1.06",
+        "totals": "2.5 大0.88小1.00",
+        "trap_note": "比再降水；大小趋均衡"
+      }
     ],
-    live: {
-      period: 'PRE',
-      minute: 0,
-      score: '0-0',
-      captured_at: '2026-07-02T04:00+08:00',
-      spread_live: {
-        home_handicap: '-0/0.5',
-        home_odds: 0.85,
-        away_handicap: '+0/0.5',
-        away_odds: 1.04,
-        line_display: '比 -0/0.5',
+    "live": {
+      "period": "PRE",
+      "minute": 0,
+      "score": "0-0",
+      "captured_at": "2026-07-02T04:00+08:00",
+      "spread_live": {
+        "home_handicap": "-0/0.5",
+        "home_odds": 0.83,
+        "away_handicap": "+0/0.5",
+        "away_odds": 1.06,
+        "line_display": "比 -0/0.5"
       },
-      totals_live: { line: 2.5, line_display: '2.5', over_odds: 1.01, under_odds: 0.87 },
-      line_move_live_cn: '现：比 -0/0.5 0.85 / 塞 1.04 · 2.5 大 1.01 小 0.87',
-      read_cn: '比初-0.5退平半且低水；大小2/2.5→2.5小0.87仍偏低。',
-    },
-  },
+      "totals_live": {
+        "line": 2.5,
+        "line_display": "2.5",
+        "over_odds": 0.88,
+        "under_odds": 1
+      },
+      "line_move_live_cn": "现：比 -0/0.5 0.83 / 塞 1.06 · 2.5 大 0.88 小 1.00",
+      "read_cn": "比0.83极低水挺比；大小2.5均衡略偏大0.88。"
+    }
+  }
 };
