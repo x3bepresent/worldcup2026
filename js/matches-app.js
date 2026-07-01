@@ -1002,7 +1002,7 @@ function renderMarketPreviewStrip(m) {
   const agentPickHtml = ap?.spread && ap?.totals ? `
       <div class="mf-market-preview-pick${isHighConf ? ' mf-market-preview-pick--high' : ''}">
         <div class="mf-market-preview-pick-head">
-          <span class="mf-market-preview-pick-k">赛前双选</span>
+          <span class="mf-market-preview-pick-k">Agent 双选</span>
           ${isHighConf ? `<span class="mf-market-preview-pick-high">大信心</span>` : ''}
           <span class="mf-market-preview-pick-tendency">${ap.tendency_cn || (ap.primary === 'totals' ? '更倾向大小球' : '更倾向让球盘')}</span>
         </div>
