@@ -1,9 +1,14 @@
 // 过往赛果 — 精简归档（推演 + 赛果核验 + 复盘概要）
-// Last updated: 2026-07-01T15:39:29+08:00
+// Last updated: 2026-07-01T18:24:42+08:00
 const RESULTS_DATA = {
-  "lastUpdated": "2026-07-01T15:39:29+08:00",
-  "syncSource": "FIFA 官方赛果 · Day 20 完结 · Day 21 32强 3场",
+  "lastUpdated": "2026-07-01T18:24:42+08:00",
+  "syncSource": "FIFA 官方 · Day 21 M80 完场",
   "breakingNews": [
+    {
+      "tag": "OFFICIAL",
+      "text": "🏁 M80：英格兰 2-1 刚果（金）· 半场 0-1 · Agent ★小2.5✗ 刚果+1.5✓",
+      "time": "7月2日"
+    },
     {
       "tag": "OFFICIAL",
       "text": "🏁 昨日：法国 3-0 瑞典 · 墨西哥 2-0 厄瓜多尔 · 科特迪瓦 1-2 挪威",
@@ -76842,6 +76847,1047 @@ const RESULTS_DATA = {
         "ht_score": "2-0",
         "fifa_match_id": "400021520",
         "updated": "2026-07-01T10:00:44+08:00"
+      }
+    },
+    {
+      "id": "m80",
+      "archived": true,
+      "archivedAt": "2026-07-01T18:12:55+08:00",
+      "group": "KO",
+      "matchday": null,
+      "date_beijing": "7月2日",
+      "time_beijing": "00:00",
+      "time_beijing_full": "北京时间 7月2日 00:00",
+      "venue": "Mercedes-Benz Stadium",
+      "city": "Atlanta, USA",
+      "note": "32强 M80 · 已结束 2-1",
+      "home": {
+        "name": "England",
+        "iso": "gb-eng",
+        "rating": 88,
+        "rumors": [
+          "【FIFA 官方 XI】4-2-3-1：Kane #9 · Rashford/Madueke 两翼 · Bellingham #10",
+          "Konsta/Oreilly/Guehi/Spence 四后卫 · Rice/Anderson 双后腰",
+          "Walker · Stones · Saka · Foden · Mainoo 均未首发 — 轮换幅度大",
+          "Pickford 一门 · 深盘 -1.5 仍须净胜 2+"
+        ]
+      },
+      "away": {
+        "name": "Congo DR",
+        "iso": "cd",
+        "rating": 68,
+        "rumors": [
+          "【FIFA 官方 XI】4-3-3：Wissa #11 · Cipenga 锋线",
+          "Wan-Bissaka · Tuanzebe · Mbemba · Masuaku 防线",
+          "Mukau/Mbuku/Moutoussamy/Sadiki 中场"
+        ]
+      },
+      "prediction": {
+        "xg_home": 1.82,
+        "xg_away": 0.72,
+        "home_win": 56,
+        "draw": 27,
+        "away_win": 17,
+        "score": "2-0",
+        "confidence": 78,
+        "key_factor": "【赛后复盘】英格兰 2-1 刚果（金）· 半场 0-1 · 下半场扳平后小胜。Agent：★小 2.5 总3全输；刚果 +1.5 全赢（英仅净胜1）。滚球路径 1-1→2-1 分裂点兑现。",
+        "base_home_win": 60,
+        "base_draw": 26,
+        "base_away_win": 14,
+        "depth_calibrated": true,
+        "score_dist": [
+          {
+            "score": "2-0",
+            "prob": 16.4
+          },
+          {
+            "score": "1-0",
+            "prob": 14.3
+          },
+          {
+            "score": "3-0",
+            "prob": 12.6
+          },
+          {
+            "score": "2-1",
+            "prob": 7.9
+          },
+          {
+            "score": "4-0",
+            "prob": 7.2
+          },
+          {
+            "score": "1-1",
+            "prob": 6.8
+          },
+          {
+            "score": "0-0",
+            "prob": 6.2
+          }
+        ],
+        "draw_context": {
+          "drawBoost": 4,
+          "ironBucket": false,
+          "closeXg": false,
+          "gap": 1.1,
+          "notes": [
+            "xG 暗示胶着"
+          ],
+          "qual_dynamics": null
+        },
+        "qual_dynamics": null,
+        "xg_poisson_home": 2.3,
+        "xg_poisson_away": 0.48,
+        "xg_tier_calibrated": true,
+        "score_prob": 16.4,
+        "score_top3": [
+          {
+            "score": "2-0",
+            "prob": 16.4
+          },
+          {
+            "score": "1-0",
+            "prob": 14.3
+          },
+          {
+            "score": "3-0",
+            "prob": 12.6
+          }
+        ],
+        "expected_score": "2-0"
+      },
+      "market_snapshot": {
+        "market_tier": 1.5,
+        "tier_label": "England -1.5 · Congo DR +1.5",
+        "totals_line": 2.5,
+        "over_pct": 46,
+        "fair_line": 2,
+        "line_gap": 0.5,
+        "full_cover_pct": 46.7,
+        "fav_win_pct": 63.5,
+        "cover_given_win_pct": 58.9,
+        "spread_level": "possible",
+        "spread_market_expect": "England -1.5 · 净胜≥2",
+        "line_move_tag": "flat",
+        "line_move_cn": "盘路平稳",
+        "agent_pick_primary": "totals",
+        "agent_pick_tendency_cn": "更倾向大小球（小）",
+        "agent_pick_confidence": "medium",
+        "agent_spread_cn": "刚果（金） +1.5 @0.93",
+        "agent_totals_cn": "小球 2.5 @0.85",
+        "totals_level": "neutral",
+        "totals_show_lean": false,
+        "totals_lean_side": "neutral"
+      },
+      "depth_calibration": {
+        "tier_home": 1.5,
+        "tier_label": "England -1.5 · Congo DR +1.5",
+        "implied_tier": 0.75,
+        "tier_gap": 0.75,
+        "signal": "blocker_inflate",
+        "signal_cn": "大众心理预期偏高",
+        "signal_color": "#D95F6A",
+        "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+        "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "public_lean_cn": "舆论倾向 England（约 68%）",
+        "analysis": "M80 · 75' 2-1 · （未报） · 3.5 大1.69 小0.46 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "1-0",
+              "prob": 14.4
+            },
+            {
+              "score": "2-0",
+              "prob": 13.1
+            },
+            {
+              "score": "1-1",
+              "prob": 10.4
+            }
+          ],
+          "one_goal_win_pct": 26.1,
+          "two_plus_win_pct": 37.4,
+          "full_cover_pct": 46.7,
+          "dog_hold_pct": 53.3,
+          "fav_win_pct": 63.5,
+          "cover_given_win_pct": 58.9,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.3,
+          "half_cover_pct": 26.1,
+          "half_lose_pct": 0,
+          "push_pct": null,
+          "margin_full_label": "净胜≥2",
+          "margin_half_label": "部分达标净胜=1",
+          "fav_cover_ev": 0,
+          "dog_cover_ev": 0,
+          "rational_spread_cn": "两边净胜达标概率接近",
+          "total_xg": 2.54,
+          "fair_totals_line": 2,
+          "over_2_5_pct": 46.5,
+          "over_3_pct": 24.9,
+          "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
+          "margin_risk_note": "净胜≥2 约 37.4%；部分达标净胜=1 约 26.1%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 37.4,
+          "dog_hold_pct_raw": 62.6
+        },
+        "spread_odds": {
+          "fav": 0.96,
+          "dog": 0.93,
+          "note": "England 0.96 · Congo DR 0.93"
+        },
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 2.5,
+          "market_goals_int": 3,
+          "line_label": "总进球约 2.5 个",
+          "implied_xg_total": 2.54,
+          "fair_line": 2,
+          "line_gap": 0.5,
+          "over_pct": 46,
+          "under_pct": 54,
+          "signal": "high_line",
+          "signal_cn": "参考偏高",
+          "signal_color": "#C8A96E",
+          "signal_desc": "总进球参考高于合理值，模型偏小比分。",
+          "public_over_pct": 50,
+          "public_lean_cn": "舆论对总进球看法较分散",
+          "index_note": "大比分侧 1.03 / 小比分侧 0.85 · 小比分侧更热",
+          "totals_odds": {
+            "over": 1.03,
+            "under": 0.85,
+            "note": "大比分 1.03 · 小比分 0.85"
+          },
+          "rational_cn": "超 2.5 球接近五五开（约 46%）；参考高于合理值但模型仍偏小比分",
+          "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
+        },
+        "totals_line": 2.5,
+        "market_line_movement": {
+          "wc_note": "亚特兰大 neutral · 主客仅为 FIFA 标记",
+          "spread_open_cn": "England -1.5@0.88 · Congo DR +1.5@0.94",
+          "spread_now_cn": "England -1.5@0.96 · Congo DR +1.5@0.93",
+          "totals_now_cn": "大小 2.5 · 大 1.03 / 小 0.85",
+          "tag": "flat",
+          "tag_cn": "盘路平稳",
+          "tag_color": "#7BB8D4",
+          "detail_cn": "档位持平 · 热门 0.88→0.96（抬水） · 受让 0.94→0.93（降水） 现盘去水隐含：England 49.6% · Congo DR 50.4%（超收 2.8%） 模型穿盘（现档 England -1.5 · Congo DR +1.5）：England 46.7% · Congo DR 53.3% 模型−市场：England -2.9pp · Congo DR +2.9pp 期望 ROI@现水：England +17.1% · Congo DR -7.3% 档位与水位变化幅度有限，暂无明确单向资金信号。",
+          "actuarial": {
+            "actuarial_type": "flat",
+            "actuarial_cn": "盘路平稳",
+            "actuarial_color": "#7BB8D4",
+            "actuarial_desc": "档位与水位变化幅度有限，暂无明确单向资金信号。",
+            "summary_cn": "档位持平 · 热门 0.88→0.96（抬水） · 受让 0.94→0.93（降水） 现盘去水隐含：England 49.6% · Congo DR 50.4%（超收 2.8%） 模型穿盘（现档 England -1.5 · Congo DR +1.5）：England 46.7% · Congo DR 53.3% 模型−市场：England -2.9pp · Congo DR +2.9pp 期望 ROI@现水：England +17.1% · Congo DR -7.3% 档位与水位变化幅度有限，暂无明确单向资金信号。",
+            "line_delta": 0,
+            "line_delta_cn": "档位持平",
+            "fav_odds_delta": 0.08,
+            "dog_odds_delta": -0.01,
+            "water_move_cn": "热门 0.88→0.96（抬水） · 受让 0.94→0.93（降水）",
+            "open_tier": 1.5,
+            "open_tier_label": "England -1.5 · Congo DR +1.5",
+            "now_tier": 1.5,
+            "implied_tier": 0.75,
+            "open_tier_gap": 0.75,
+            "now_tier_gap": 0.75,
+            "open_devig": {
+              "fav_pct": 50.8,
+              "dog_pct": 49.2,
+              "overround_pct": 4.7
+            },
+            "now_devig": {
+              "fav_pct": 49.6,
+              "dog_pct": 50.4,
+              "overround_pct": 2.8
+            },
+            "model_cover_open_pct": 46.7,
+            "model_cover_now_pct": 46.7,
+            "model_dog_cover_now_pct": 53.3,
+            "market_fav_cover_now_pct": 49.6,
+            "market_dog_cover_now_pct": 50.4,
+            "model_vs_market_fav_pp": -2.9,
+            "model_vs_market_dog_pp": 2.9,
+            "fav_roi_pct": 17.1,
+            "dog_roi_pct": -7.3,
+            "fav_name": "England",
+            "dog_name": "Congo DR"
+          }
+        },
+        "spread_market_analysis": {
+          "actuarial_type": "flat",
+          "actuarial_cn": "盘路平稳",
+          "actuarial_color": "#7BB8D4",
+          "actuarial_desc": "档位与水位变化幅度有限，暂无明确单向资金信号。",
+          "summary_cn": "档位持平 · 热门 0.88→0.96（抬水） · 受让 0.94→0.93（降水） 现盘去水隐含：England 49.6% · Congo DR 50.4%（超收 2.8%） 模型穿盘（现档 England -1.5 · Congo DR +1.5）：England 46.7% · Congo DR 53.3% 模型−市场：England -2.9pp · Congo DR +2.9pp 期望 ROI@现水：England +17.1% · Congo DR -7.3% 档位与水位变化幅度有限，暂无明确单向资金信号。",
+          "line_delta": 0,
+          "line_delta_cn": "档位持平",
+          "fav_odds_delta": 0.08,
+          "dog_odds_delta": -0.01,
+          "water_move_cn": "热门 0.88→0.96（抬水） · 受让 0.94→0.93（降水）",
+          "open_tier": 1.5,
+          "open_tier_label": "England -1.5 · Congo DR +1.5",
+          "now_tier": 1.5,
+          "implied_tier": 0.75,
+          "open_tier_gap": 0.75,
+          "now_tier_gap": 0.75,
+          "open_devig": {
+            "fav_pct": 50.8,
+            "dog_pct": 49.2,
+            "overround_pct": 4.7
+          },
+          "now_devig": {
+            "fav_pct": 49.6,
+            "dog_pct": 50.4,
+            "overround_pct": 2.8
+          },
+          "model_cover_open_pct": 46.7,
+          "model_cover_now_pct": 46.7,
+          "model_dog_cover_now_pct": 53.3,
+          "market_fav_cover_now_pct": 49.6,
+          "market_dog_cover_now_pct": 50.4,
+          "model_vs_market_fav_pp": -2.9,
+          "model_vs_market_dog_pp": 2.9,
+          "fav_roi_pct": 17.1,
+          "dog_roi_pct": -7.3,
+          "fav_name": "England",
+          "dog_name": "Congo DR"
+        },
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "under",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "under",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 小球(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
+        "agent_pick": {
+          "primary": "totals",
+          "tendency_cn": "更倾向大小球（小）",
+          "tendency_reason_cn": "临场2/2.5→2.5小0.85低水+英FIFA轮换大 · 撤销日盘★大 · ★小2.5 · 刚果+1.5副项。",
+          "confidence": "medium",
+          "confidence_cn": "中信心",
+          "confidence_reason_cn": "★小2.5：线回整球+小0.85=共识收小(非诱小极端但推翻日盘大) · 英无Walker/Stones/Saka削弱穿盘；让球：53.3%挺刚果。",
+          "spread": {
+            "side": "dog",
+            "label_cn": "刚果（金） +1.5 @0.93",
+            "reason_cn": "blocker_inflate·英-1.5穿46.7%·1-0全赢/2-0全输 · 英0.96升水+轮换 · 模型53.3% · 副项。"
+          },
+          "totals": {
+            "side": "under",
+            "label_cn": "小球 2.5 @0.85",
+            "reason_cn": "初2.5→2/2.5大0.84→临2.5小0.85(线+水双收小) · 公平线~2 · 2-0仍小全赢 · 3球+小全输 · ★主项。"
+          },
+          "pick_meta": {
+            "model_side": "neutral",
+            "situation_side": "neutral",
+            "market_line_side": "under",
+            "market_odds_side": "under",
+            "market_side": "under",
+            "pick_side": "under",
+            "recommended_side": "under",
+            "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
+            "conflict": false,
+            "conflict_cn": null,
+            "votes": {
+              "model": "neutral",
+              "line": "under",
+              "odds": "under",
+              "situation": "neutral"
+            },
+            "vote_summary_cn": "观望(model) · 小球(line) · 小球(odds) · 观望(situation)",
+            "situation_dampened": false,
+            "over_pct": 46,
+            "line_gap": 0.5
+          },
+          "picked_at": "2026-07-02-agent-final"
+        },
+        "applied_delta": {
+          "home_win": -4,
+          "draw": 1,
+          "away_win": 3
+        },
+        "adjustment_note": "模型微调：主胜 -4% · 平 +1% · 客 +3%",
+        "adjusted_probs": {
+          "home_win": 56,
+          "draw": 27,
+          "away_win": 17
+        },
+        "display_summary": {
+          "fav_name": "England",
+          "expected_total_goals": 2.49,
+          "poisson_fav_win_pct": 63.3,
+          "small_lead_pct": 26.3,
+          "small_example_score": "1-0",
+          "small_example_pct": 14.5,
+          "big_cover_pct": 36.9,
+          "big_example_score": "2-0",
+          "big_example_pct": 13.2,
+          "win_shape": {
+            "fav_name": "England",
+            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
+            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 33.6%）",
+            "shapes": [
+              {
+                "key": "narrow_low",
+                "label": "险胜 · 控局",
+                "example": "如 1-0",
+                "field_pct": 14.5,
+                "pct": 22.9
+              },
+              {
+                "key": "narrow_open",
+                "label": "险胜 · 开放",
+                "example": "如 2-1",
+                "field_pct": 11.8,
+                "pct": 18.7
+              },
+              {
+                "key": "comfort_low",
+                "label": "拉开 · 控局",
+                "example": "如 2-0",
+                "field_pct": 21.2,
+                "pct": 33.6
+              },
+              {
+                "key": "comfort_open",
+                "label": "拉开 · 开放",
+                "example": "如 3-1+",
+                "field_pct": 15.7,
+                "pct": 24.8
+              }
+            ],
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 41.6
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 33.6
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 24.8
+              }
+            ],
+            "fav_win_pct": 56
+          },
+          "excitement": {
+            "label_cn": "中速开局",
+            "label_key": "moderate",
+            "label_color": "#C8A96E",
+            "sub_cn": "预期首球等待约 35.4 分",
+            "first_goal_wait": 35.4,
+            "fast_pct": 57.1,
+            "moderate_pct": 14.8,
+            "slow_pct": 28.1,
+            "tiers": [
+              {
+                "key": "fast",
+                "label": "前 30 分内首球",
+                "pct": 57.1
+              },
+              {
+                "key": "moderate",
+                "label": "30–45 分首球",
+                "pct": 14.8
+              },
+              {
+                "key": "slow",
+                "label": "45 分后首球",
+                "pct": 28.1
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "England 暂无重要伤停 · Congo DR 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "— / —（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "气候信息暂无"
+            },
+            {
+              "icon": "⚖️",
+              "label": "平局修正",
+              "note": "回测校准：xG 暗示胶着（平 +4%）"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 1.82,
+            "baseline_away": 0.72,
+            "adjusted_home": 1.82,
+            "adjusted_away": 0.72,
+            "note": "基准 xG 1.82–0.72（未因伤病/气候下调）"
+          },
+          "calibration": {
+            "signal_cn": "大众心理预期偏高",
+            "signal_color": "#D95F6A",
+            "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+            "tier_gap": 0.75,
+            "implied_tier_label": "England -0.75 · Congo DR +0.75",
+            "market_tier_label": "England -1.5 · Congo DR +1.5",
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 部分达标净胜=1 约 26.1%"
+          },
+          "win_outlook": {
+            "fav_name": "England",
+            "state_label": null,
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 41.6
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 33.6
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 24.8
+              }
+            ],
+            "margin_line_cn": "England · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
+            "margin_meet_pct": 46.4,
+            "margin_half_pct": 26.3,
+            "margin_fail_pct": 0,
+            "margin_full_label": "净胜≥2",
+            "margin_half_label": "部分达标净胜=1",
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
+            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+            "totals_line": 2.5,
+            "totals_line_cn": "总进球参考 2.5",
+            "fair_totals_line": 2,
+            "model_total_xg": 2.54,
+            "totals_line_gap": 0.5,
+            "totals_high_pct": 46,
+            "totals_low_pct": 54,
+            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+            "win_low_total_pct": 27.7,
+            "win_margin2_low_total_pct": 13.2,
+            "win_margin2_high_total_pct": 23.7,
+            "readout_cn": "取胜约 56%；若取胜，以「险胜收工」为主（41.6%）。 对着赛前净胜参考，净胜≥2（全达标）约 46.4%；部分达标净胜=1 约 26.3%；对着总进球参考 2.5，模型超线概率约 46%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.5。"
+          },
+          "totals_line": 2.5,
+          "score_patterns": [
+            {
+              "score": "1-0",
+              "pct": 14.4
+            },
+            {
+              "score": "2-0",
+              "pct": 13.1
+            },
+            {
+              "score": "1-1",
+              "pct": 10.4
+            }
+          ],
+          "totals_view": {
+            "expected_total": 2.5,
+            "fair_line": 2,
+            "market_line": 2.5,
+            "line_gap": 0.5,
+            "over_pct": 46,
+            "gap_warning": null,
+            "totals_outlook": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 46,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "summary_cn": "预测 2.5 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
+          },
+          "customer_reading": {
+            "headline_cn": "England -1.5 穿盘：有达标可能",
+            "sub_cn": "England 胜 63.5% · 胜后穿 58.9% · Congo DR +1.5 守 53.3% 进球氛围：几乎五五开",
+            "spread": {
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
+              "fav_name": "England",
+              "dog_name": "Congo DR",
+              "fav_handicap_cn": "England -1.5",
+              "dog_handicap_cn": "Congo DR +1.5",
+              "market_expect_cn": "England -1.5 · 净胜≥2",
+              "meet_pct": 46.7,
+              "dog_hold_pct": 53.3,
+              "fav_win_pct": 63.5,
+              "cover_given_win_pct": 58.9,
+              "full_cover_pct_raw": 37.4,
+              "meet_pct_label": "England -1.5 穿盘概率（校准）",
+              "dog_hold_label": "Congo DR +1.5 守住概率（校准）",
+              "two_stage_cn": "England 取胜约 63.5% · 赢球后穿盘约 58.9% · Congo DR +1.5 守住约 53.3%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "England -1.5 穿盘：有达标可能",
+              "pill_cn": "England 胜 63.5% · 胜后穿 58.9% · Congo DR +1.5 守 53.3%",
+              "detail_cn": "England 取胜约 63.5% · 赢球后穿盘约 58.9% · Congo DR +1.5 守住约 53.3%（泊松 raw 37.4% → 校准 46.7%）；穿盘与受让守住均有一定空间（部分达标净胜=1 约 26.1%）。",
+              "extra_stats_cn": "部分达标净胜=1 约 26.1%",
+              "full_cover_pct": 46.7,
+              "half_cover_pct": 26.1,
+              "lose1_pct": 0,
+              "margin_full_label": "净胜≥2",
+              "margin_half_label": "部分达标净胜=1",
+              "tier_gap": 0.75,
+              "show_cover": true
+            },
+            "totals": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 46,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "draw_risk": null,
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "让球盘",
+                "outlook": {
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
+                  "fav_name": "England",
+                  "dog_name": "Congo DR",
+                  "fav_handicap_cn": "England -1.5",
+                  "dog_handicap_cn": "Congo DR +1.5",
+                  "market_expect_cn": "England -1.5 · 净胜≥2",
+                  "meet_pct": 46.7,
+                  "dog_hold_pct": 53.3,
+                  "fav_win_pct": 63.5,
+                  "cover_given_win_pct": 58.9,
+                  "full_cover_pct_raw": 37.4,
+                  "meet_pct_label": "England -1.5 穿盘概率（校准）",
+                  "dog_hold_label": "Congo DR +1.5 守住概率（校准）",
+                  "two_stage_cn": "England 取胜约 63.5% · 赢球后穿盘约 58.9% · Congo DR +1.5 守住约 53.3%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "England -1.5 穿盘：有达标可能",
+                  "pill_cn": "England 胜 63.5% · 胜后穿 58.9% · Congo DR +1.5 守 53.3%",
+                  "detail_cn": "England 取胜约 63.5% · 赢球后穿盘约 58.9% · Congo DR +1.5 守住约 53.3%（泊松 raw 37.4% → 校准 46.7%）；穿盘与受让守住均有一定空间（部分达标净胜=1 约 26.1%）。",
+                  "extra_stats_cn": "部分达标净胜=1 约 26.1%",
+                  "full_cover_pct": 46.7,
+                  "half_cover_pct": 26.1,
+                  "lose1_pct": 0,
+                  "margin_full_label": "净胜≥2",
+                  "margin_half_label": "部分达标净胜=1",
+                  "tier_gap": 0.75,
+                  "show_cover": true
+                },
+                "text": "England 胜 63.5% · 胜后穿 58.9% · Congo DR +1.5 守 53.3%",
+                "color": "#C8A96E",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "◎",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "neutral",
+                  "label_cn": "暂无明显倾向",
+                  "color": "#8A96A8",
+                  "meter_label_cn": "几乎五五开",
+                  "meter_pos": 50,
+                  "lean_side": "neutral",
+                  "lean_strength": "none",
+                  "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+                  "pill_cn": "几乎五五开",
+                  "detail_cn": "模型五五开，临场决定节奏。",
+                  "headline_cn": "进球氛围：几乎五五开",
+                  "show_lean": false,
+                  "over_pct": 46,
+                  "line_gap": 0.5,
+                  "market_line": 2.5,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "总进球参考 2.5",
+                  "caution_public_high": false
+                },
+                "text": "几乎五五开",
+                "color": "#8A96A8",
+                "muted": true
+              }
+            ],
+            "methodology_note": "读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "England",
+              "first_goal_pct": 71.7,
+              "start_score": "1-0",
+              "fav_name": "England",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 95.8,
+              "small_lead_pct": 27.6,
+              "big_lead_pct": 55.8,
+              "fav_win_pct": 83.4,
+              "fav_draw_pct": 12.4,
+              "fav_lose_pct": 4.2,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "England 保持胜果（净胜≥1）",
+                  "pct": 83.4
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 12.4
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 4.2
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 36.4 分",
+                "first_goal_wait": 36.4,
+                "fast_pct": 49.1,
+                "moderate_pct": 14.6,
+                "slow_pct": 36.3,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 49.1
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.6
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 36.3
+                  }
+                ]
+              },
+              "big_delta": 18.9,
+              "small_delta": 1.3,
+              "narrative": "England 先破门（已 1-0） → 「巩固防守」；Congo DR 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
+              "live_outlook": {
+                "fav_name": "England",
+                "state_label": "England 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 41.6
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 33.6
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 24.8
+                  }
+                ],
+                "margin_line_cn": "England · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
+                "margin_meet_pct": 55.8,
+                "margin_half_pct": 27.6,
+                "margin_fail_pct": 27.6,
+                "margin_full_label": "净胜≥2",
+                "margin_half_label": "部分达标净胜=1",
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.5,
+                "totals_line_cn": "总进球参考 2.5",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 2.03,
+                "totals_line_gap": 0.25,
+                "totals_high_pct": 60,
+                "totals_low_pct": 40,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 31.8,
+                "win_margin2_low_total_pct": 18.6,
+                "win_margin2_high_total_pct": 37.3,
+                "readout_cn": "England 已 1-0 领先：仍取胜约 83.4%。 对着总进球参考 2.5，模型超线概率约 60%。 常见 2-0 收尾（相对总进球参考 2.5仍偏小比分）。"
+              }
+            },
+            {
+              "side": "away",
+              "team": "Congo DR",
+              "first_goal_pct": 28.3,
+              "start_score": "0-1",
+              "fav_name": "England",
+              "scorer_is_fav": false,
+              "expected_key": "fav_recover",
+              "fav_recover_pct": 62.3,
+              "small_lead_pct": 19.7,
+              "big_lead_pct": 14.3,
+              "fav_win_pct": 34,
+              "fav_draw_pct": 28.3,
+              "fav_lose_pct": 37.7,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "England 追平（平局）",
+                  "pct": 28.3
+                },
+                {
+                  "key": "win1",
+                  "label": "England 净胜1球翻盘（如 2-1）",
+                  "pct": 19.7
+                },
+                {
+                  "key": "win2",
+                  "label": "England 净胜≥2球翻盘（如 3-1）",
+                  "pct": 14.3
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "Congo DR 保持胜果至终场",
+                  "pct": 37.7
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 34.5 分",
+                "first_goal_wait": 34.5,
+                "fast_pct": 51,
+                "moderate_pct": 14.7,
+                "slow_pct": 34.3,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 51
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.7
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 34.3
+                  }
+                ]
+              },
+              "big_delta": -22.6,
+              "small_delta": -6.6,
+              "narrative": "Congo DR 先破门（已 0-1） → 「巩固防守」；England 「组织反扑」。热门先丢球（已 0-1），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
+              "live_outlook": null
+            }
+          ],
+          "match_preview": {
+            "morphology": {
+              "totals_summary": "预测 2.5 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球参考 2.5",
+              "totals_high_pct": 46,
+              "type_tags": [
+                {
+                  "key": "dominance",
+                  "label": "压制局"
+                }
+              ],
+              "depth_label": "深度一般",
+              "draw_trap_pct": 22,
+              "readout_cn": "England · 压制局。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+            },
+            "draw_trap_note": null,
+            "archetype": {
+              "tags": [
+                {
+                  "key": "dominance",
+                  "label": "压制局"
+                }
+              ],
+              "depth_score": 0,
+              "depth_label": "深度一般",
+              "draw_trap_pct": 22,
+              "fav_lead_style": "balanced"
+            }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.8,
+            "xg_away_ht": 0.32,
+            "xg_home_2h": 1.02,
+            "xg_away_2h": 0.4,
+            "home_win": 44.6,
+            "draw": 41.5,
+            "away_win": 13.9,
+            "top_score": "0-0",
+            "top_score_prob": 32.6,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 32.6
+              },
+              {
+                "score": "1-0",
+                "prob": 26.1
+              },
+              {
+                "score": "0-1",
+                "prob": 10.4
+              }
+            ],
+            "ht_goals_expected": 1.12,
+            "ht_over_0_5_pct": 67.4,
+            "ht_over_1_5_pct": 30.8,
+            "pick": "home",
+            "pick_name": "England",
+            "summary_cn": "半场 xG 0.8–0.32（约占全场 44%） · 最可能 0-0（32.6%） · 胜平负 44.6/41.5/13.9 · 半场≥1球约 67.4%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
+          }
+        },
+        "public_summary_note": "【推演概要】England · 压制局。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 部分达标净胜=1 约 26.1%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
+        "goal_efficiency": {
+          "xg_total": 2.54,
+          "xg_gap": 1.1,
+          "xg_home": 1.82,
+          "xg_away": 0.72,
+          "fav_name": "England",
+          "dog_name": "Congo DR",
+          "fav_xg": 1.82,
+          "dog_xg": 0.72,
+          "fav_goals": 2,
+          "dog_goals": 1,
+          "fav_eff": 1.1,
+          "dog_eff": 1.39,
+          "total_goals": 3,
+          "goal_diff_vs_xg": 0.5,
+          "path_type": "dog_bloom",
+          "path_label": "弱队开花",
+          "tags": [
+            {
+              "key": "three_goals",
+              "label": "3球",
+              "color": "#C8A96E",
+              "bg": "rgba(200,169,110,0.1)"
+            },
+            {
+              "key": "dog_bloom",
+              "label": "弱队开花",
+              "color": "#E8B84B",
+              "bg": "rgba(232,184,75,0.12)"
+            }
+          ],
+          "pattern_note": "总进球 3 个——介于大/小之间，对照 xG 总偏差 +0.5。",
+          "summary_cn": "赛前 xG 总 2.54（差 1.1）· 热门 England 1.82→2（效率 1.1）· 弱队 Congo DR 0.72→1（效率 1.39）→ 弱队开花。总进球 3 个——介于大/小之间，对照 xG 总偏差 +0.5。",
+          "in_mid_band": true
+        },
+        "preview_replay": {
+          "actual_score": "2-1",
+          "ht_score": "0-1",
+          "hits": [
+            "赛前进球氛围未强判（符合模型五五开读法）"
+          ],
+          "misses": [],
+          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。",
+          "totals_actual": 3,
+          "totals_line": 2.5,
+          "spread_level": "possible",
+          "totals_level": "neutral"
+        }
+      },
+      "actualResult": {
+        "home_score": 2,
+        "away_score": 1,
+        "status": "FT",
+        "label": "全场结束",
+        "scorers": "Harry KANE 75'; Harry KANE 86'; Brian CIPENGA 7'",
+        "highlights": "亚特兰大 · 英格兰 2-1 刚果（金）· 半场 0-1 · 晚场扳平后小胜",
+        "ht_score": "0-1",
+        "fifa_match_id": "400021512",
+        "updated": "2026-07-01T18:12:55+08:00"
+      },
+      "lineup": {
+        "confirmed": true,
+        "formation": "4-2-3-1 / 4-3-3",
+        "impact": null
+      },
+      "pre_match_context": {
+        "key_factor_pre": null,
+        "home_rumors": [
+          "【FIFA 官方 XI】4-2-3-1：Kane #9 · Rashford/Madueke 两翼 · Bellingham #10",
+          "Konsta/Oreilly/Guehi/Spence 四后卫 · Rice/Anderson 双后腰",
+          "Walker · Stones · Saka · Foden · Mainoo 均未首发 — 轮换幅度大",
+          "Pickford 一门 · 深盘 -1.5 仍须净胜 2+"
+        ],
+        "away_rumors": [
+          "【FIFA 官方 XI】4-3-3：Wissa #11 · Cipenga 锋线",
+          "Wan-Bissaka · Tuanzebe · Mbemba · Masuaku 防线",
+          "Mukau/Mbuku/Moutoussamy/Sadiki 中场"
+        ],
+        "lineup_formation": "4-2-3-1 / 4-3-3"
       }
     }
   ],

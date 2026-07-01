@@ -1,7 +1,7 @@
-// Auto-synced · Day 21 live lines
-// Updated: 2026-07-02T09:00+08:00
+// Day 21 � M80 FT
+// Updated: 2026-07-01T18:12:55+08:00
 const LIVE_DATA = {
-  "lastUpdated": "2026-07-02T09:00+08:00",
+  "lastUpdated": "2026-07-01T18:12:55+08:00",
   "todayDate": "2026-07-02",
   "fixtures": [
     {
@@ -9,14 +9,15 @@ const LIVE_DATA = {
       "fifa_match_number": 80,
       "home": "England",
       "away": "Congo DR",
-      "status": "NS",
-      "home_score": null,
-      "away_score": null,
+      "status": "FT",
+      "home_score": 2,
+      "away_score": 1,
       "group": "KO",
       "round": "R32",
-      "spread_live_cn": "England -1.5@0.96 · Congo DR +1.5@0.93",
-      "totals_live_cn": "大小 2.5 · 大 1.03 / 小 0.85",
-      "lineup_confirmed": true
+      "spread_live_cn": "England 2-1 Congo DR � spread TBD",
+      "totals_live_cn": "?? 3.5 � ? 1.69 / ? 0.46",
+      "lineup_confirmed": true,
+      "elapsed": 90
     },
     {
       "id": "m82",
@@ -28,8 +29,8 @@ const LIVE_DATA = {
       "away_score": null,
       "group": "KO",
       "round": "R32",
-      "spread_live_cn": "Belgium -0/0.5@0.83 · Senegal +0/0.5@1.06",
-      "totals_live_cn": "大小 2.5 · 大 0.88 / 小 1.00"
+      "spread_live_cn": "Belgium -0/0.5@0.83 � Senegal +0/0.5@1.06",
+      "totals_live_cn": "?? 2.5 � ? 0.88 / ? 1.00"
     },
     {
       "id": "m81",
@@ -41,11 +42,18 @@ const LIVE_DATA = {
       "away_score": null,
       "group": "KO",
       "round": "R32",
-      "spread_live_cn": "USA -1/1.5@0.82 · Bosnia +1/1.5@1.07",
-      "totals_live_cn": "大小 2.5/3 · 大 0.85 / 小 1.03"
+      "spread_live_cn": "USA -1.5@1.03 � Bosnia +1.5@0.86",
+      "totals_live_cn": "?? 2.5/3 � ? 0.82 / ? 1.06"
     }
   ],
   "allResults": [
+    {
+      "id": "m80",
+      "home": "England",
+      "away": "Congo DR",
+      "score": "2-1",
+      "group": "KO"
+    },
     {
       "id": "m77",
       "home": "France",
