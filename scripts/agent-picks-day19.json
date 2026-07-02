@@ -54,44 +54,49 @@
     }
   ],
   "results": {
-    "graded_at": "2026-07-01T10:19:39.421Z",
-    "grade_rule_cn": "不败即中：全赢/赢半/走水算中，输半/全输算不中",
+    "graded_at": "2026-07-02T05:16:42.277Z",
+    "grade_rule_cn": "统计：全赢1 · 赢半0.5 · 输半0.5 · 走水不计；单场✓/✗仍按不败即中（含赢半）",
     "spread": {
-      "hit": 2,
-      "miss": 1,
+      "hit": 1.5,
+      "miss": 0.5,
       "push": 0,
       "pending": 0,
-      "pct": 66.7
+      "legs": 3,
+      "pct": 50
     },
     "totals": {
       "hit": 2,
-      "miss": 1,
+      "miss": 0.5,
       "push": 0,
       "pending": 0,
+      "legs": 3,
       "pct": 66.7
     },
     "primary": {
       "hit": 2,
-      "miss": 1,
+      "miss": 0.5,
       "push": 0,
       "pending": 0,
+      "legs": 3,
       "pct": 66.7,
       "label_cn": "倾向项（★）"
     },
     "secondary": {
-      "hit": 2,
-      "miss": 1,
+      "hit": 1.5,
+      "miss": 0.5,
       "push": 0,
       "pending": 0,
-      "pct": 66.7,
+      "legs": 3,
+      "pct": 50,
       "label_cn": "非倾向项"
     },
     "all_legs": {
-      "hit": 4,
-      "miss": 2,
+      "hit": 3.5,
+      "miss": 1,
       "push": 0,
       "pending": 0,
-      "pct": 66.7
+      "legs": 6,
+      "pct": 58.3
     },
     "cross_analysis": {
       "summary_cn": "交叉赛果用于反推倾向权重：若「倾向错、另一项对」偏多，应下调倾向优先级或改判定规则",
@@ -194,18 +199,27 @@
         "m75"
       ],
       "spread": {
-        "hit": 2,
-        "miss": 1,
-        "pct": 66.7
+        "hit": 1.5,
+        "miss": 0.5,
+        "push": 0,
+        "pending": null,
+        "legs": 3,
+        "pct": 50
       },
       "totals": {
         "hit": 2,
-        "miss": 1,
+        "miss": 0.5,
+        "push": 0,
+        "pending": null,
+        "legs": 3,
         "pct": 66.7
       },
       "primary": {
         "hit": 2,
-        "miss": 1,
+        "miss": 0.5,
+        "push": 0,
+        "pending": null,
+        "legs": 3,
         "pct": 66.7
       },
       "cross": {
@@ -240,6 +254,7 @@
           "label_cn": "日本 +0.5/1 @0.88",
           "reason_cn": "巴西 0.96 仍高水 · 日本 F 组不败 · 平局/小负赢半，49.9% 守住。",
           "hit": false,
+          "outcome": "half_lose",
           "grade_note": "2-1 · 净胜 +1 · 输半"
         },
         "totals": {
@@ -247,6 +262,7 @@
           "label_cn": "大球 2/2.5 @0.88",
           "reason_cn": "xG 约 2.9 vs 线 2.25 · 大 0.88 低水 · 2-1/1-1 路径。",
           "hit": true,
+          "outcome": "full_win",
           "grade_note": "2-1 总3 · 线 2.25 · 全赢"
         },
         "primary_hit": true,
@@ -281,6 +297,7 @@
           "label_cn": "巴拉圭 +1.5 @0.85",
           "reason_cn": "精算诱上 · 升 -1.5 德高水 · 模型/市场守住 53% · 德国赢球≠穿盘。",
           "hit": true,
+          "outcome": "full_win",
           "grade_note": "1-1 · 净胜 0 · 全赢"
         },
         "totals": {
@@ -288,6 +305,7 @@
           "label_cn": "小球 2.5/3 @0.97",
           "reason_cn": "xG 2.54 vs 线 2.75 · 模型+盘面多数小球 · 1-0/2-0 路径。",
           "hit": true,
+          "outcome": "full_win",
           "grade_note": "1-1 总2 · 线 2.75 · 全赢"
         },
         "primary_hit": true,
@@ -322,6 +340,7 @@
           "label_cn": "摩洛哥 +0/0.5 @0.92",
           "reason_cn": "向模型退档 · 不败/赢半结构 · 50.3% 守住，edge 有限。",
           "hit": true,
+          "outcome": "half_win",
           "grade_note": "1-1 · 净胜 0 · 赢半"
         },
         "totals": {
@@ -329,6 +348,7 @@
           "label_cn": "大球 2/2.5 @0.95",
           "reason_cn": "模型 64.7% 超线 · 荷摩进攻属性 · 2-1/1-1 路径。",
           "hit": false,
+          "outcome": "half_lose",
           "grade_note": "1-1 总2 · 线 2.25 · 输半"
         },
         "primary_hit": false,

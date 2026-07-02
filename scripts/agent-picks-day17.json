@@ -98,28 +98,31 @@
     }
   ],
   "results": {
-    "graded_at": "2026-07-01T10:33:08.120Z",
-    "grade_rule_cn": "不败即中：全赢/赢半/走水算中，输半/全输算不中",
+    "graded_at": "2026-07-02T05:16:42.215Z",
+    "grade_rule_cn": "统计：全赢1 · 赢半0.5 · 输半0.5 · 走水不计；单场✓/✗仍按不败即中（含赢半）",
     "spread": {
-      "hit": 5,
+      "hit": 4,
       "miss": 1,
-      "push": 0,
+      "push": 1,
       "pending": 0,
-      "pct": 83.3
+      "legs": 5,
+      "pct": 80
     },
     "totals": {
       "hit": 2,
       "miss": 4,
       "push": 0,
       "pending": 0,
+      "legs": 6,
       "pct": 33.3
     },
     "primary": {
-      "hit": 5,
+      "hit": 4,
       "miss": 1,
-      "push": 0,
+      "push": 1,
       "pending": 0,
-      "pct": 83.3,
+      "legs": 5,
+      "pct": 80,
       "label_cn": "倾向项（★）"
     },
     "secondary": {
@@ -127,15 +130,17 @@
       "miss": 4,
       "push": 0,
       "pending": 0,
+      "legs": 6,
       "pct": 33.3,
       "label_cn": "非倾向项"
     },
     "all_legs": {
-      "hit": 7,
+      "hit": 6,
       "miss": 5,
-      "push": 0,
+      "push": 1,
       "pending": 0,
-      "pct": 58.3
+      "legs": 11,
+      "pct": 54.5
     },
     "cross_analysis": {
       "summary_cn": "交叉赛果用于反推倾向权重：若「倾向错、另一项对」偏多，应下调倾向优先级或改判定规则",
@@ -281,18 +286,27 @@
         "m72"
       ],
       "spread": {
-        "hit": 4,
+        "hit": 3,
         "miss": 0,
+        "push": 1,
+        "pending": null,
+        "legs": 3,
         "pct": 100
       },
       "totals": {
         "hit": 1,
         "miss": 3,
+        "push": 0,
+        "pending": null,
+        "legs": 4,
         "pct": 25
       },
       "primary": {
-        "hit": 4,
+        "hit": 3,
         "miss": 0,
+        "push": 1,
+        "pending": null,
+        "legs": 3,
         "pct": 100
       },
       "cross": {
@@ -327,13 +341,15 @@
           "label_cn": "巴拿马 +2/2.5 @1.02",
           "reason_cn": "FIFA 官方英格兰 5 轮换（Rice/Mainoo/Foden 替补）；xG 客 2.08→1.90。胜约 65% 但穿 -2.25 约 25%；0-1/0-2 仍守住。",
           "hit": true,
-          "grade_note": "0-2 · 净胜 -2 · 赢半"
+          "outcome": "full_win",
+          "grade_note": "0-2 · 净胜 -2 · 全赢"
         },
         "totals": {
           "side": "under",
           "label_cn": "小球 3/3.5",
           "reason_cn": "模型公允总进球约 2.0，现线 3.25 偏高约 0.75 球；超线概率约 40%，小水 1.02 在卖大球叙事。",
           "hit": true,
+          "outcome": "full_win",
           "grade_note": "0-2 总2 · 线 3.25 · 全赢"
         },
         "primary_hit": true,
@@ -368,6 +384,7 @@
           "label_cn": "加纳 +0.5 守住",
           "reason_cn": "加纳 4 分已锁前二可接受平局；克罗地亚 3 分须胜易急躁；xG 1.42 vs 1.38 均势，首推 1-1。",
           "hit": false,
+          "outcome": "full_lose",
           "grade_note": "2-1 · 净胜 +1 · 全输"
         },
         "totals": {
@@ -375,6 +392,7 @@
           "label_cn": "小球 2",
           "reason_cn": "2 整球线下 ≤2 球即全赢；模型有平局/小胜路径，大球 0.86 略诱但出线博弈下闷战概率不低。",
           "hit": false,
+          "outcome": "full_lose",
           "grade_note": "2-1 总3 · 线 2 · 全输"
         },
         "primary_hit": false,
@@ -409,6 +427,7 @@
           "label_cn": "奥地利 PK（-0）@0.84",
           "reason_cn": "已锁前二 · 输球亦出线；阿尔须胜但模型平局 +9% → 不败约 73%。无输半档，符合先不输。",
           "hit": true,
+          "outcome": "push",
           "grade_note": "3-3 · 净胜 0 · 走水"
         },
         "totals": {
@@ -416,6 +435,7 @@
           "label_cn": "小球 1.5/2 @0.82",
           "reason_cn": "副项 · 皇冠小 0.82 + 默契战；但 1-1 输半、模型约 68% 超线，不作★。",
           "hit": false,
+          "outcome": "full_lose",
           "grade_note": "3-3 总6 · 线 1.75 · 全输"
         },
         "primary_hit": true,
@@ -450,13 +470,15 @@
           "label_cn": "约旦 +2/2.5 守住",
           "reason_cn": "阿根廷 6 分已出线必轮换；模型胜 77% 但穿 -2.25 校准后约 49%；升盘 0.99 为限损而非加强。",
           "hit": true,
-          "grade_note": "1-3 · 净胜 -2 · 赢半"
+          "outcome": "full_win",
+          "grade_note": "1-3 · 净胜 -2 · 全赢"
         },
         "totals": {
           "side": "under",
           "label_cn": "小球 3",
           "reason_cn": "3 整球走水多；大球 0.83 便宜但模型公允约 2.75，轮换队常见 2-0/3-0 卡线而非开放对攻。",
           "hit": false,
+          "outcome": "full_lose",
           "grade_note": "1-3 总4 · 线 3 · 全输"
         },
         "primary_hit": true,
@@ -491,6 +513,7 @@
           "label_cn": "哥伦比亚 +0.5 守住",
           "reason_cn": "哥伦 6 分平局即头名；葡萄牙 4 分须胜但 0.98 抬水未追；xG 1.55 vs 1.58 均势。",
           "hit": true,
+          "outcome": "full_win",
           "grade_note": "0-0 · 净胜 0 · 全赢"
         },
         "totals": {
@@ -498,6 +521,7 @@
           "label_cn": "小球 2.5/3",
           "reason_cn": "已出线双方 xG 略降；小水 0.89 偏小，迈阿密湿热下更可能 1-1/2-1 而非开放对攻。",
           "hit": true,
+          "outcome": "full_win",
           "grade_note": "0-0 总0 · 线 2.75 · 全赢"
         },
         "primary_hit": true,
@@ -532,6 +556,7 @@
           "label_cn": "刚果(金) -0.5/1",
           "reason_cn": "双方须胜无控分；盘口向 xG 1.48 vs 0.72 修正，刚果 -0.75 与模型一致，主场生死战信实力方小胜。",
           "hit": true,
+          "outcome": "full_win",
           "grade_note": "3-1 · 净胜 +2 · 全赢"
         },
         "totals": {
@@ -539,6 +564,7 @@
           "label_cn": "小球 2/2.5",
           "reason_cn": "xG 合计约 2.2，线 2.25 中性；乌兹别克守势下 1-0/2-0 比大比分更合理。",
           "hit": false,
+          "outcome": "full_lose",
           "grade_note": "3-1 总4 · 线 2.25 · 全输"
         },
         "primary_hit": true,

@@ -3724,17 +3724,20 @@ function enrichAgentPickWithLayers(agentPick, layers, totalsAnalysis) {
   if (!agentPick) return null;
   const out = JSON.parse(JSON.stringify(agentPick));
   const pickSide = out.totals?.side || layers.recommended_side;
+  const manualConflict = agentPick?.pick_meta?.conflict === true;
   out.pick_meta = {
-    model_side: layers.model_side,
+    model_side: agentPick?.pick_meta?.model_side || layers.model_side,
     situation_side: layers.situation_side,
     market_line_side: layers.market_line_side,
     market_odds_side: layers.market_odds_side,
-    market_side: layers.market_side,
+    market_side: agentPick?.pick_meta?.market_side || layers.market_side,
     pick_side: pickSide,
     recommended_side: layers.recommended_side,
     merge_rule_cn: layers.merge_rule_cn,
-    conflict: layers.conflict,
-    conflict_cn: layers.conflict_cn,
+    conflict: layers.conflict || manualConflict,
+    conflict_cn: manualConflict && agentPick.pick_meta?.conflict_cn
+      ? agentPick.pick_meta.conflict_cn
+      : layers.conflict_cn,
     votes: layers.votes,
     vote_summary_cn: layers.vote_summary_cn,
     situation_dampened: layers.situation_dampened,
@@ -3751,6 +3754,89 @@ function enrichAgentPickWithLayers(agentPick, layers, totalsAnalysis) {
       out.totals.recommended_side = layers.recommended_side;
     }
   }
+  return out;
+}
+
+/** 淘汰赛 Agent 大小球 R9（回测 75% · 已默认开启） */
+const KNOCKOUT_TOTALS_POLICY = {
+  enabled: true,
+  rule_id: 'R9',
+  rule_cn: '★=大小无模型/盘冲突 · 副项仅大球 · 大信心仅绑★=大小',
+};
+
+function isKnockoutMatch(match) {
+  if (!match) return false;
+  if (match.group === 'KO') return true;
+  return ['R32', 'R16', 'QF', 'SF', 'F'].includes(match.round);
+}
+
+function detectTotalsModelMarketConflict(layers, agentPick) {
+  const meta = agentPick?.pick_meta;
+  if (meta?.conflict === true) {
+    return { conflict: true, cn: meta.conflict_cn || '模型/盘/人工标注冲突' };
+  }
+  const model = meta?.model_side || layers?.model_side;
+  const market = meta?.market_side || layers?.market_side;
+  if (model && model !== 'neutral' && market && market !== 'neutral' && model !== market) {
+    return {
+      conflict: true,
+      cn: '模型偏' + TOTALS_SIDE_CN[model] + ' · 盘面偏' + TOTALS_SIDE_CN[market],
+    };
+  }
+  if (layers?.conflict || meta?.conflict) {
+    return { conflict: true, cn: layers?.conflict_cn || meta?.conflict_cn || '形势与模型/盘冲突' };
+  }
+  return { conflict: false, cn: null };
+}
+
+function applyKnockoutTotalsR9Policy(agentPick, layers, match, raw) {
+  if (!agentPick || !KNOCKOUT_TOTALS_POLICY.enabled) return agentPick;
+  if (raw?.ko_totals_policy === 'off') return agentPick;
+  if (!isKnockoutMatch(match)) return agentPick;
+
+  const out = JSON.parse(JSON.stringify(agentPick));
+  out.ko_totals_policy = { ...KNOCKOUT_TOTALS_POLICY, applied_at: 'buildDepthCalibration' };
+
+  const primary = out.primary || 'spread';
+  const conflictInfo = detectTotalsModelMarketConflict(layers, out);
+
+  let skipTotals = false;
+  let skipReason = null;
+
+  if (out.confidence === 'high' && primary === 'spread') {
+    skipTotals = true;
+    skipReason = '大信心仅绑★=大小，副项大小不出（R9）';
+  } else if (primary === 'spread' && out.totals?.side === 'under') {
+    skipTotals = true;
+    skipReason = '淘汰赛副项不打小球（R9）';
+  } else   if (primary === 'totals' && conflictInfo.conflict) {
+    skipTotals = true;
+    skipReason = '★大小与模型/盘冲突，淘汰赛跳过（R9）';
+  }
+
+  if (skipTotals && out.totals) {
+    out.totals.skipped = true;
+    out.totals.skip_reason_cn = skipReason;
+    if (conflictInfo.cn && primary === 'totals') out.totals.skip_detail_cn = conflictInfo.cn;
+  }
+
+  // R9：大信心降级（副项大小 或 ★大小被跳过）
+  if (out.confidence === 'high' && (primary !== 'totals' || skipTotals)) {
+    out.confidence_before_ko = out.confidence;
+    out.confidence = 'medium';
+    out.confidence_cn = '中信心';
+    out.confidence_downgrade_cn = primary !== 'totals'
+      ? '淘汰赛大信心仅绑★=大小（R9）'
+      : '★大小已跳过，大信心降级（R9）';
+  }
+
+  if (skipTotals && primary === 'totals' && out.spread) {
+    out.primary_before_ko = 'totals';
+    out.primary = 'spread';
+    out.tendency_cn = '更倾向让球盘（★大小已跳过 · R9）';
+    out.primary_switched_cn = skipReason;
+  }
+
   return out;
 }
 
@@ -4100,7 +4186,12 @@ function buildDepthCalibration(match, raw, groupSnapshots) {
     ? computeQualificationDynamics(match, groupSnapshots)
     : null;
   const totalsPickLayers = computeTotalsPickLayers(totals, raw, qualDynamics);
-  const agentPick = enrichAgentPickWithLayers(raw.agent_pick || null, totalsPickLayers, totals);
+  const agentPick = applyKnockoutTotalsR9Policy(
+    enrichAgentPickWithLayers(raw.agent_pick || null, totalsPickLayers, totals),
+    totalsPickLayers,
+    match,
+    raw,
+  );
   const implied = impliedTierFromXg(xgH, xgA);
   const tierGap = tier - implied;
 
@@ -5132,6 +5223,9 @@ const exportsObj = {
   buildDepthCalibration,
   computeTotalsPickLayers,
   enrichAgentPickWithLayers,
+  applyKnockoutTotalsR9Policy,
+  isKnockoutMatch,
+  KNOCKOUT_TOTALS_POLICY,
   buildMarketLineMovement,
   buildSpreadMarketAnalysis,
   classifyActuarialSpreadMove,

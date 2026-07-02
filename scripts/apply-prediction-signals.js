@@ -318,6 +318,14 @@ syncSiteMeta(MATCH_DATA);
 
 MATCH_DATA.lastUpdated = TS;
 
+if (!MATCH_DATA.breakingNews.some(n => /R9|淘汰赛大小/.test(n.text || ''))) {
+  MATCH_DATA.breakingNews.unshift({
+    tag: 'UPDATE',
+    text: '🎯 淘汰赛大小球 R9 已开启：副项不打小 · ★冲突跳过 · 大信心仅绑★大小',
+    time: 'Agent',
+  });
+}
+
 if (!MATCH_DATA.breakingNews.some(n => /推演升级|推演概要/.test(n.text || ''))) {
   MATCH_DATA.breakingNews.unshift({
     tag: 'UPDATE',

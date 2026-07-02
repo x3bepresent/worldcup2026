@@ -49,7 +49,12 @@ function pickMarketSnapshot(m) {
     agent_pick_tendency_cn: dc.agent_pick?.tendency_cn ?? null,
     agent_pick_confidence: dc.agent_pick?.confidence ?? null,
     agent_spread_cn: dc.agent_pick?.spread?.label_cn ?? null,
-    agent_totals_cn: dc.agent_pick?.totals?.label_cn ?? null,
+    agent_totals_cn: dc.agent_pick?.totals?.skipped
+      ? null
+      : (dc.agent_pick?.totals?.label_cn ?? null),
+    agent_totals_skipped: dc.agent_pick?.totals?.skipped ?? false,
+    agent_totals_skip_cn: dc.agent_pick?.totals?.skip_reason_cn ?? null,
+    ko_totals_policy: dc.agent_pick?.ko_totals_policy?.rule_id ?? null,
     totals_level: to.level ?? null,
     totals_show_lean: to.show_lean ?? false,
     totals_lean_side: to.lean_side ?? null,

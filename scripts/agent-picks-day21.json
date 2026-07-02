@@ -54,28 +54,31 @@
     }
   ],
   "results": {
-    "graded_at": "2026-07-02T05:07:46.505Z",
-    "grade_rule_cn": "不败即中：全赢/赢半/走水算中，输半/全输算不中",
+    "graded_at": "2026-07-02T05:16:42.323Z",
+    "grade_rule_cn": "统计：全赢1 · 赢半0.5 · 输半0.5 · 走水不计；单场✓/✗仍按不败即中（含赢半）",
     "spread": {
-      "hit": 2,
+      "hit": 1.5,
       "miss": 1,
       "push": 0,
       "pending": 0,
-      "pct": 66.7
+      "legs": 3,
+      "pct": 50
     },
     "totals": {
       "hit": 1,
       "miss": 2,
       "push": 0,
       "pending": 0,
+      "legs": 3,
       "pct": 33.3
     },
     "primary": {
-      "hit": 1,
+      "hit": 0.5,
       "miss": 2,
       "push": 0,
       "pending": 0,
-      "pct": 33.3,
+      "legs": 3,
+      "pct": 16.7,
       "label_cn": "倾向项（★）"
     },
     "secondary": {
@@ -83,15 +86,17 @@
       "miss": 1,
       "push": 0,
       "pending": 0,
+      "legs": 3,
       "pct": 66.7,
       "label_cn": "非倾向项"
     },
     "all_legs": {
-      "hit": 3,
+      "hit": 2.5,
       "miss": 3,
       "push": 0,
       "pending": 0,
-      "pct": 50
+      "legs": 6,
+      "pct": 41.7
     },
     "cross_analysis": {
       "summary_cn": "交叉赛果用于反推倾向权重：若「倾向错、另一项对」偏多，应下调倾向优先级或改判定规则",
@@ -194,16 +199,25 @@
       "spread": {
         "hit": 0,
         "miss": 1,
+        "push": 0,
+        "pending": null,
+        "legs": 1,
         "pct": 0
       },
       "totals": {
         "hit": 0,
         "miss": 1,
+        "push": 0,
+        "pending": null,
+        "legs": 1,
         "pct": 0
       },
       "primary": {
         "hit": 0,
         "miss": 1,
+        "push": 0,
+        "pending": null,
+        "legs": 1,
         "pct": 0
       },
       "cross": {
@@ -234,6 +248,7 @@
           "label_cn": "刚果（金） +1.5 @0.93",
           "reason_cn": "blocker_inflate·英-1.5穿46.7%·1-0全赢/2-0全输 · 英0.96升水+轮换 · 模型53.3% · 副项。",
           "hit": true,
+          "outcome": "full_win",
           "grade_note": "2-1 · 净胜 +1 · 全赢"
         },
         "totals": {
@@ -241,6 +256,7 @@
           "label_cn": "小球 2.5 @0.85",
           "reason_cn": "初2.5→2/2.5大0.84→临2.5小0.85(线+水双收小) · 公平线~2 · 2-0仍小全赢 · 3球+小全输 · ★主项。",
           "hit": false,
+          "outcome": "full_lose",
           "grade_note": "2-1 总3 · 线 2.5 · 全输"
         },
         "primary_hit": false,
@@ -275,6 +291,7 @@
           "label_cn": "波黑 +1.5 @0.86",
           "reason_cn": "美-1/1.5→-1.5@1.03高水 · 穿盘37%档 · 1-0·1-1·2-1全赢/2-0·3-0全输 · ★主项。",
           "hit": false,
+          "outcome": "full_lose",
           "grade_note": "2-0 · 净胜 +2 · 全输"
         },
         "totals": {
@@ -282,6 +299,7 @@
           "label_cn": "大球 2.5/3 @0.82",
           "reason_cn": "大0.82再降水 · 小1.06升水 · 3球大赢半/4+全赢 · 副项。",
           "hit": false,
+          "outcome": "full_lose",
           "grade_note": "2-0 总2 · 线 2.75 · 全输"
         },
         "primary_hit": false,
@@ -316,6 +334,7 @@
           "label_cn": "塞内加尔 +0/0.5 @1.06",
           "reason_cn": "比-0.5→-0/0.5仍0.83 · 1-1赢半/0-0·0-1·塞全赢/比1-0·2-1·2-2赢半（90'） · 加时3-2不计盘 · ★主项。",
           "hit": true,
+          "outcome": "half_win",
           "grade_note": "2-2 · 净胜 0 · 赢半"
         },
         "totals": {
@@ -323,6 +342,7 @@
           "label_cn": "大球 2.5 @0.88",
           "reason_cn": "小1.00升水趋均衡 · 大0.88略低 · 模型超2.5约52% · 3球+全赢 · 副项。",
           "hit": true,
+          "outcome": "full_win",
           "grade_note": "2-2 总4 · 线 2.5 · 全赢"
         },
         "primary_hit": true,

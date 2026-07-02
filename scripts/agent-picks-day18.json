@@ -20,13 +20,14 @@
     }
   ],
   "results": {
-    "graded_at": "2026-07-01T10:19:39.397Z",
-    "grade_rule_cn": "不败即中：全赢/赢半/走水算中，输半/全输算不中",
+    "graded_at": "2026-07-02T05:16:42.252Z",
+    "grade_rule_cn": "统计：全赢1 · 赢半0.5 · 输半0.5 · 走水不计；单场✓/✗仍按不败即中（含赢半）",
     "spread": {
       "hit": 1,
       "miss": 0,
       "push": 0,
       "pending": 0,
+      "legs": 1,
       "pct": 100
     },
     "totals": {
@@ -34,6 +35,7 @@
       "miss": 0,
       "push": 0,
       "pending": 0,
+      "legs": 1,
       "pct": 100
     },
     "primary": {
@@ -41,6 +43,7 @@
       "miss": 0,
       "push": 0,
       "pending": 0,
+      "legs": 1,
       "pct": 100,
       "label_cn": "倾向项（★）"
     },
@@ -49,6 +52,7 @@
       "miss": 0,
       "push": 0,
       "pending": 0,
+      "legs": 1,
       "pct": 100,
       "label_cn": "非倾向项"
     },
@@ -57,6 +61,7 @@
       "miss": 0,
       "push": 0,
       "pending": 0,
+      "legs": 2,
       "pct": 100
     },
     "cross_analysis": {
@@ -142,6 +147,7 @@
           "label_cn": "南非 +0/0.5 @0.98",
           "reason_cn": "A 组次席 4 分出线 · 小组赛 2 失球偏稳；加拿大须破局但 -0/0.5 低水未必穿。模型平局约 32%。",
           "hit": true,
+          "outcome": "full_win",
           "grade_note": "0-1 · 净胜 -1 · 全赢"
         },
         "totals": {
@@ -149,6 +155,7 @@
           "label_cn": "小球 2/2.5",
           "reason_cn": "32 强首轮双方偏谨慎 · 模型总 xG 约 2.1 · 2/2.5 线下 ≤2 球即全赢。",
           "hit": true,
+          "outcome": "full_win",
           "grade_note": "0-1 总1 · 线 2.25 · 全赢"
         },
         "primary_hit": true,

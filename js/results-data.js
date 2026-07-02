@@ -1,7 +1,7 @@
-// 过往赛果
-// Last updated: 2026-07-02T05:08:01+08:00
+// 过往赛果 — 精简归档（推演 + 赛果核验 + 复盘概要）
+// Last updated: 2026-07-02T05:30:43+08:00
 const RESULTS_DATA = {
-  "lastUpdated": "2026-07-02T05:08:01+08:00",
+  "lastUpdated": "2026-07-02T05:30:43+08:00",
   "syncSource": "FIFA 官方 · Day 21 M80–M82 完结",
   "breakingNews": [
     {
@@ -149,6 +149,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -887,6 +890,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "2-0",
+          "match_score": null,
           "ht_score": "1-0",
           "hits": [
             "净胜全达标方向一致",
@@ -1023,6 +1027,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -1749,6 +1756,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "2-1",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [
             "净胜全达标方向一致",
@@ -1885,6 +1893,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -2617,6 +2628,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-1",
+          "match_score": null,
           "ht_score": "0-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -2761,6 +2773,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -3493,6 +3508,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "4-1",
+          "match_score": null,
           "ht_score": "3-0",
           "hits": [
             "净胜全达标方向一致"
@@ -3632,6 +3648,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -4369,6 +4388,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-1",
+          "match_score": null,
           "ht_score": "0-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -4513,6 +4533,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -5245,6 +5268,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-1",
+          "match_score": null,
           "ht_score": "1-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -5391,6 +5415,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -6129,6 +6156,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "0-1",
+          "match_score": null,
           "ht_score": "1-1",
           "hits": [
             "净胜全达标方向一致",
@@ -6277,6 +6305,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -6992,6 +7023,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "2-0",
+          "match_score": null,
           "ht_score": "0-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -7136,6 +7168,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "mild_high",
         "totals_show_lean": false,
         "totals_lean_side": "exciting"
@@ -7874,6 +7909,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "7-1",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [
             "净胜全达标方向一致"
@@ -8020,6 +8056,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -8752,6 +8791,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "2-2",
+          "match_score": null,
           "ht_score": "3-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -8898,6 +8938,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -9615,6 +9658,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-0",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -9750,6 +9794,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -10482,6 +10529,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "5-1",
+          "match_score": null,
           "ht_score": "2-1",
           "hits": [
             "净胜全达标方向一致"
@@ -10619,6 +10667,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -11363,6 +11414,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "0-0",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [],
           "misses": [
@@ -11507,6 +11559,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -12239,6 +12294,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-1",
+          "match_score": null,
           "ht_score": "0-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -12387,6 +12443,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -13130,6 +13189,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-1",
+          "match_score": null,
           "ht_score": "1-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -13267,6 +13327,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -14005,6 +14068,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "2-2",
+          "match_score": null,
           "ht_score": "1-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -14140,6 +14204,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -14922,6 +14989,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "3-1",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [
             "净胜全达标方向一致",
@@ -15069,6 +15137,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -15812,6 +15883,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-4",
+          "match_score": null,
           "ht_score": "1-2",
           "hits": [
             "净胜全达标方向一致"
@@ -15958,6 +16030,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -16690,6 +16765,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "3-0",
+          "match_score": null,
           "ht_score": "1-0",
           "hits": [
             "净胜全达标方向一致",
@@ -16837,6 +16913,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -17584,6 +17663,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "3-1",
+          "match_score": null,
           "ht_score": "1-0",
           "hits": [
             "净胜全达标方向一致",
@@ -17729,6 +17809,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -18467,6 +18550,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-1",
+          "match_score": null,
           "ht_score": "1-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -18603,6 +18687,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -19341,6 +19428,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "4-2",
+          "match_score": null,
           "ht_score": "2-2",
           "hits": [
             "净胜全达标方向一致"
@@ -19479,6 +19567,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -20217,6 +20308,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-0",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -20355,6 +20447,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -21092,6 +21187,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-3",
+          "match_score": null,
           "ht_score": "0-1",
           "hits": [
             "净胜全达标方向一致",
@@ -21229,6 +21325,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -21961,6 +22060,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-1",
+          "match_score": null,
           "ht_score": "1-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -22098,6 +22198,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -22830,6 +22933,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "4-1",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [
             "净胜全达标方向一致"
@@ -22969,6 +23073,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -23707,6 +23814,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "6-0",
+          "match_score": null,
           "ht_score": "3-0",
           "hits": [
             "净胜全达标方向一致"
@@ -23846,6 +23954,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -24590,6 +24701,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-0",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [
             "净胜全达标方向一致",
@@ -24751,6 +24863,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -25553,6 +25668,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "2-0",
+          "match_score": null,
           "ht_score": "2-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -25776,6 +25892,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "mild_high",
         "totals_show_lean": false,
         "totals_lean_side": "exciting"
@@ -26581,6 +26700,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "0-1",
+          "match_score": null,
           "ht_score": "0-1",
           "hits": [
             "净胜全达标方向一致",
@@ -26781,6 +26901,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "clear_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -27583,6 +27706,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "3-0",
+          "match_score": null,
           "ht_score": "3-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -27807,6 +27931,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -28626,6 +28753,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "0-1",
+          "match_score": null,
           "ht_score": "0-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -28861,6 +28989,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -29659,6 +29790,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "5-1",
+          "match_score": null,
           "ht_score": "2-0",
           "hits": [
             "净胜全达标方向一致"
@@ -29861,6 +29993,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -30664,6 +30799,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "2-1",
+          "match_score": null,
           "ht_score": "0-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -30887,6 +31023,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "clear_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -31706,6 +31845,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "0-0",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [],
           "misses": [
@@ -31910,6 +32050,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -32726,6 +32869,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "0-4",
+          "match_score": null,
           "ht_score": "0-2",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -33906,6 +34050,7 @@ const RESULTS_DATA = {
         "public_summary_note": "【推演概要】Spain · 压制局 · 低位反击。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5 · 部分达标净胜=1 约 26.5%（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
         "preview_replay": {
           "actual_score": "4-0",
+          "match_score": null,
           "ht_score": "3-0",
           "hits": [
             "净胜全达标方向一致",
@@ -34212,6 +34357,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -35289,6 +35437,7 @@ const RESULTS_DATA = {
         "public_summary_note": "【推演概要】Belgium · 低位反击。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1 · 模型认为仅小胜 1 球仍约 25%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
         "preview_replay": {
           "actual_score": "0-0",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [],
           "misses": [
@@ -35599,6 +35748,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -36707,6 +36859,7 @@ const RESULTS_DATA = {
         "public_summary_note": "【推演概要】Uruguay · 低位反击 · 进球偏少。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
         "preview_replay": {
           "actual_score": "2-2",
+          "match_score": null,
           "ht_score": "2-1",
           "hits": [],
           "misses": [
@@ -37006,6 +37159,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -38053,6 +38209,7 @@ const RESULTS_DATA = {
         "public_summary_note": "【推演概要】Egypt · 低位反击。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
         "preview_replay": {
           "actual_score": "1-3",
+          "match_score": null,
           "ht_score": "1-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -38357,6 +38514,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -38475,6 +38635,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "mild_high",
         "totals_show_lean": false,
         "totals_lean_side": "exciting"
@@ -39207,6 +39370,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "2-0",
+          "match_score": null,
           "ht_score": "1-0",
           "hits": [
             "净胜全达标方向一致",
@@ -39347,6 +39511,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -40079,6 +40246,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "3-0",
+          "match_score": null,
           "ht_score": "1-0",
           "hits": [
             "净胜全达标方向一致",
@@ -40219,6 +40387,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -40957,6 +41128,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "3-2",
+          "match_score": null,
           "ht_score": "1-0",
           "hits": [
             "净胜全达标方向一致"
@@ -41100,6 +41272,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "mild_high",
         "totals_show_lean": false,
         "totals_lean_side": "exciting"
@@ -41821,6 +41996,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-2",
+          "match_score": null,
           "ht_score": "1-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -42952,6 +43128,7 @@ const RESULTS_DATA = {
         "public_summary_note": "【推演概要】Portugal · 压制局 · 低位反击。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.5 · 模型认为仅小胜 1 球仍约 25.7%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
         "preview_replay": {
           "actual_score": "5-0",
+          "match_score": null,
           "ht_score": "3-0",
           "hits": [
             "净胜全达标方向一致"
@@ -43260,6 +43437,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -44369,6 +44549,7 @@ const RESULTS_DATA = {
         "public_summary_note": "【推演概要】England · 低位反击。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法高于 xG 隐含约 0.5（模型微调：主胜 +2% · 平 -1% · 客 -1%）",
         "preview_replay": {
           "actual_score": "0-0",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [],
           "misses": [
@@ -44681,6 +44862,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -45784,6 +45968,7 @@ const RESULTS_DATA = {
         "public_summary_note": "【推演概要】Panama · 低位反击 · 进球偏少。 · 与模型 xG 对照：均衡 · 赛前净胜看法略高（约 +0.25）（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
         "preview_replay": {
           "actual_score": "0-1",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -46090,6 +46275,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -47184,6 +47372,7 @@ const RESULTS_DATA = {
         "public_summary_note": "【推演概要】Colombia · 低位反击。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
         "preview_replay": {
           "actual_score": "1-0",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -47490,6 +47679,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -47620,6 +47812,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -48320,6 +48515,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "2-1",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -48490,6 +48686,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -49237,6 +49436,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "3-1",
+          "match_score": null,
           "ht_score": "2-1",
           "hits": [
             "净胜全达标方向一致",
@@ -49476,6 +49676,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -50223,6 +50426,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "0-3",
+          "match_score": null,
           "ht_score": "0-2",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -50392,6 +50596,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -51139,6 +51346,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "4-2",
+          "match_score": null,
           "ht_score": "2-2",
           "hits": [
             "净胜全达标方向一致"
@@ -51307,6 +51515,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -52050,6 +52261,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "0-3",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -52309,6 +52521,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -53061,6 +53276,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-0",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [
             "净胜全达标方向一致",
@@ -53237,6 +53453,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -53974,6 +54193,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "0-2",
+          "match_score": null,
           "ht_score": "0-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -54114,6 +54334,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -54857,6 +55080,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "2-1",
+          "match_score": null,
           "ht_score": "1-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -54995,6 +55219,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -55701,6 +55928,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-1",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -55839,6 +56067,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "clear_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -56580,6 +56811,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-3",
+          "match_score": null,
           "ht_score": "0-2",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -56790,6 +57022,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -57531,6 +57766,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "3-2",
+          "match_score": null,
           "ht_score": "2-1",
           "hits": [],
           "misses": [
@@ -57671,6 +57907,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -58398,6 +58637,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "0-0",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [],
           "misses": [
@@ -58538,6 +58778,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -59249,6 +59492,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-4",
+          "match_score": null,
           "ht_score": "1-3",
           "hits": [],
           "misses": [
@@ -59387,6 +59631,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -60125,6 +60372,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "5-0",
+          "match_score": null,
           "ht_score": "1-0",
           "hits": [
             "净胜全达标方向一致"
@@ -60336,6 +60584,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -61078,6 +61329,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-1",
+          "match_score": null,
           "ht_score": "1-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -61218,6 +61470,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -61961,6 +62216,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-5",
+          "match_score": null,
           "ht_score": "0-1",
           "hits": [],
           "misses": [
@@ -62099,6 +62355,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -62849,6 +63108,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "0-0",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [],
           "misses": [
@@ -62987,6 +63247,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": null,
         "agent_totals_cn": null,
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -63725,6 +63988,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "0-1",
+          "match_score": null,
           "ht_score": "0-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -63863,6 +64127,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": "high",
         "agent_spread_cn": "巴拿马 +2/2.5 @1.02",
         "agent_totals_cn": "小球 3/3.5",
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -64738,6 +65005,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "0-2",
+          "match_score": null,
           "ht_score": null,
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -64878,6 +65146,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": "加纳 +0.5 守住",
         "agent_totals_cn": "小球 2",
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -65668,6 +65939,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "2-1",
+          "match_score": null,
           "ht_score": "1-0",
           "hits": [
             "净胜全达标方向一致",
@@ -65809,6 +66081,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": "high",
         "agent_spread_cn": "奥地利 PK（-0）@0.84",
         "agent_totals_cn": "小球 1.5/2 @0.82",
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "mild_high",
         "totals_show_lean": false,
         "totals_lean_side": "exciting"
@@ -66666,6 +66941,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "3-3",
+          "match_score": null,
           "ht_score": "1-1",
           "hits": [],
           "misses": [
@@ -66804,6 +67080,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": "high",
         "agent_spread_cn": "约旦 +2/2.5 守住",
         "agent_totals_cn": "小球 3",
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -67676,6 +67955,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-3",
+          "match_score": null,
           "ht_score": "0-2",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -67816,6 +68096,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": null,
         "agent_spread_cn": "哥伦比亚 +0.5 守住",
         "agent_totals_cn": "小球 2.5/3",
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -68702,6 +68985,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "0-0",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [],
           "misses": [
@@ -68840,6 +69124,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": "high",
         "agent_spread_cn": "刚果(金) -0.5/1",
         "agent_totals_cn": "小球 2/2.5",
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": null,
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -69712,6 +69999,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "3-1",
+          "match_score": null,
           "ht_score": "0-1",
           "hits": [
             "净胜全达标方向一致",
@@ -69862,7 +70150,10 @@ const RESULTS_DATA = {
         "agent_pick_tendency_cn": "更倾向让球盘",
         "agent_pick_confidence": null,
         "agent_spread_cn": "南非 +0/0.5 @0.98",
-        "agent_totals_cn": "小球 2/2.5",
+        "agent_totals_cn": null,
+        "agent_totals_skipped": true,
+        "agent_totals_skip_cn": "淘汰赛副项不打小球（R9）",
+        "ko_totals_policy": "R9",
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -70069,7 +70360,9 @@ const RESULTS_DATA = {
           "totals": {
             "side": "under",
             "label_cn": "小球 2/2.5",
-            "reason_cn": "32 强首轮双方偏谨慎 · 模型总 xG 约 2.1 · 2/2.5 线下 ≤2 球即全赢。"
+            "reason_cn": "32 强首轮双方偏谨慎 · 模型总 xG 约 2.1 · 2/2.5 线下 ≤2 球即全赢。",
+            "skipped": true,
+            "skip_reason_cn": "淘汰赛副项不打小球（R9）"
           },
           "picked_at": "2026-06-29",
           "pick_meta": {
@@ -70093,6 +70386,12 @@ const RESULTS_DATA = {
             "situation_dampened": false,
             "over_pct": 48.4,
             "line_gap": 0
+          },
+          "ko_totals_policy": {
+            "enabled": true,
+            "rule_id": "R9",
+            "rule_cn": "★=大小无模型/盘冲突 · 副项仅大球 · 大信心仅绑★=大小",
+            "applied_at": "buildDepthCalibration"
           }
         },
         "applied_delta": {
@@ -70742,6 +71041,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "0-1",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -70897,6 +71197,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": "high",
         "agent_spread_cn": "日本 +0.5/1 @0.88",
         "agent_totals_cn": "大球 2/2.5 @0.88",
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": "R9",
         "totals_level": "mild_high",
         "totals_show_lean": false,
         "totals_lean_side": "exciting"
@@ -71130,6 +71433,12 @@ const RESULTS_DATA = {
             "situation_dampened": false,
             "over_pct": 65.7,
             "line_gap": 0.25
+          },
+          "ko_totals_policy": {
+            "enabled": true,
+            "rule_id": "R9",
+            "rule_cn": "★=大小无模型/盘冲突 · 副项仅大球 · 大信心仅绑★=大小",
+            "applied_at": "buildDepthCalibration"
           }
         },
         "applied_delta": {
@@ -71762,6 +72071,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "2-1",
+          "match_score": null,
           "ht_score": "0-1",
           "hits": [
             "净胜全达标方向一致",
@@ -71904,6 +72214,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": "high",
         "agent_spread_cn": "巴拉圭 +1.5 @0.85",
         "agent_totals_cn": "小球 2.5/3 @0.97",
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": "R9",
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -72137,6 +72450,12 @@ const RESULTS_DATA = {
             "situation_dampened": false,
             "over_pct": 35.2,
             "line_gap": 0.75
+          },
+          "ko_totals_policy": {
+            "enabled": true,
+            "rule_id": "R9",
+            "rule_cn": "★=大小无模型/盘冲突 · 副项仅大球 · 大信心仅绑★=大小",
+            "applied_at": "buildDepthCalibration"
           }
         },
         "applied_delta": {
@@ -72781,6 +73100,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-1",
+          "match_score": null,
           "ht_score": "0-1",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -72920,6 +73240,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": "high",
         "agent_spread_cn": "摩洛哥 +0/0.5 @0.92",
         "agent_totals_cn": "大球 2/2.5 @0.95",
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": "R9",
         "totals_level": "mild_high",
         "totals_show_lean": false,
         "totals_lean_side": "exciting"
@@ -73153,6 +73476,12 @@ const RESULTS_DATA = {
             "situation_dampened": false,
             "over_pct": 64.7,
             "line_gap": 0.25
+          },
+          "ko_totals_policy": {
+            "enabled": true,
+            "rule_id": "R9",
+            "rule_cn": "★=大小无模型/盘冲突 · 副项仅大球 · 大信心仅绑★=大小",
+            "applied_at": "buildDepthCalibration"
           }
         },
         "applied_delta": {
@@ -73792,6 +74121,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-1",
+          "match_score": null,
           "ht_score": "0-0",
           "hits": [
             "赛前进球氛围未强判（符合模型五五开读法）"
@@ -73932,7 +74262,10 @@ const RESULTS_DATA = {
         "agent_pick_tendency_cn": "更倾向让球盘",
         "agent_pick_confidence": null,
         "agent_spread_cn": "挪威 -0/0.5 @0.84",
-        "agent_totals_cn": "小球 2.5 @0.95",
+        "agent_totals_cn": null,
+        "agent_totals_skipped": true,
+        "agent_totals_skip_cn": "淘汰赛副项不打小球（R9）",
+        "ko_totals_policy": "R9",
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
@@ -74139,7 +74472,9 @@ const RESULTS_DATA = {
           "totals": {
             "side": "under",
             "label_cn": "小球 2.5 @0.95",
-            "reason_cn": "2.5 整球线 · 模型 xG 约 2.8 但临盘小 0.95 高水 · 副项 · 1-1/1-0 路径仍合理。"
+            "reason_cn": "2.5 整球线 · 模型 xG 约 2.8 但临盘小 0.95 高水 · 副项 · 1-1/1-0 路径仍合理。",
+            "skipped": true,
+            "skip_reason_cn": "淘汰赛副项不打小球（R9）"
           },
           "picked_at": "2026-07-01-kickoff",
           "pick_meta": {
@@ -74163,6 +74498,12 @@ const RESULTS_DATA = {
             "situation_dampened": false,
             "over_pct": 52.8,
             "line_gap": 0.5
+          },
+          "ko_totals_policy": {
+            "enabled": true,
+            "rule_id": "R9",
+            "rule_cn": "★=大小无模型/盘冲突 · 副项仅大球 · 大信心仅绑★=大小",
+            "applied_at": "buildDepthCalibration"
           }
         },
         "applied_delta": {
@@ -74817,6 +75158,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "1-2",
+          "match_score": null,
           "ht_score": "0-1",
           "hits": [
             "净胜全达标方向一致",
@@ -74955,6 +75297,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": "medium",
         "agent_spread_cn": "瑞典 +1.5/2 @0.91",
         "agent_totals_cn": "小球 3.5 @0.83",
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": "R9",
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
@@ -75188,6 +75533,12 @@ const RESULTS_DATA = {
             "situation_dampened": false,
             "over_pct": 30.4,
             "line_gap": 1.5
+          },
+          "ko_totals_policy": {
+            "enabled": true,
+            "rule_id": "R9",
+            "rule_cn": "★=大小无模型/盘冲突 · 副项仅大球 · 大信心仅绑★=大小",
+            "applied_at": "buildDepthCalibration"
           }
         },
         "applied_delta": {
@@ -75830,6 +76181,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "3-0",
+          "match_score": null,
           "ht_score": "1-0",
           "hits": [
             "净胜全达标方向一致",
@@ -75968,6 +76320,9 @@ const RESULTS_DATA = {
         "agent_pick_confidence": "high",
         "agent_spread_cn": "厄瓜多尔 +0/0.5 @1.02",
         "agent_totals_cn": "大球 1.5/2 @0.83",
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": "R9",
         "totals_level": "mild_high",
         "totals_show_lean": false,
         "totals_lean_side": "exciting"
@@ -76201,6 +76556,12 @@ const RESULTS_DATA = {
             "situation_dampened": false,
             "over_pct": 63.2,
             "line_gap": -0.25
+          },
+          "ko_totals_policy": {
+            "enabled": true,
+            "rule_id": "R9",
+            "rule_cn": "★=大小无模型/盘冲突 · 副项仅大球 · 大信心仅绑★=大小",
+            "applied_at": "buildDepthCalibration"
           }
         },
         "applied_delta": {
@@ -76834,6 +77195,7 @@ const RESULTS_DATA = {
         },
         "preview_replay": {
           "actual_score": "2-0",
+          "match_score": null,
           "ht_score": "2-0",
           "hits": [
             "净胜全达标方向一致",
@@ -76874,12 +77236,23 @@ const RESULTS_DATA = {
       "home": {
         "name": "England",
         "iso": "gb-eng",
-        "rating": 88
+        "rating": 88,
+        "rumors": [
+          "【FIFA 官方 XI】4-2-3-1：Kane #9 · Rashford/Madueke 两翼 · Bellingham #10",
+          "Konsta/Oreilly/Guehi/Spence 四后卫 · Rice/Anderson 双后腰",
+          "Walker · Stones · Saka · Foden · Mainoo 均未首发 — 轮换幅度大",
+          "Pickford 一门 · 深盘 -1.5 仍须净胜 2+"
+        ]
       },
       "away": {
         "name": "Congo DR",
         "iso": "cd",
-        "rating": 68
+        "rating": 68,
+        "rumors": [
+          "【FIFA 官方 XI】4-3-3：Wissa #11 · Cipenga 锋线",
+          "Wan-Bissaka · Tuanzebe · Mbemba · Masuaku 防线",
+          "Mukau/Mbuku/Moutoussamy/Sadiki 中场"
+        ]
       },
       "prediction": {
         "xg_home": 1.82,
@@ -76893,7 +77266,67 @@ const RESULTS_DATA = {
         "base_home_win": 60,
         "base_draw": 26,
         "base_away_win": 14,
-        "depth_calibrated": true
+        "depth_calibrated": true,
+        "score_dist": [
+          {
+            "score": "2-0",
+            "prob": 16.4
+          },
+          {
+            "score": "1-0",
+            "prob": 14.3
+          },
+          {
+            "score": "3-0",
+            "prob": 12.6
+          },
+          {
+            "score": "2-1",
+            "prob": 7.9
+          },
+          {
+            "score": "4-0",
+            "prob": 7.2
+          },
+          {
+            "score": "1-1",
+            "prob": 6.8
+          },
+          {
+            "score": "0-0",
+            "prob": 6.2
+          }
+        ],
+        "draw_context": {
+          "drawBoost": 4,
+          "ironBucket": false,
+          "closeXg": false,
+          "gap": 1.1,
+          "notes": [
+            "xG 暗示胶着"
+          ],
+          "qual_dynamics": null
+        },
+        "qual_dynamics": null,
+        "xg_poisson_home": 2.3,
+        "xg_poisson_away": 0.48,
+        "xg_tier_calibrated": true,
+        "score_prob": 16.4,
+        "score_top3": [
+          {
+            "score": "2-0",
+            "prob": 16.4
+          },
+          {
+            "score": "1-0",
+            "prob": 14.3
+          },
+          {
+            "score": "3-0",
+            "prob": 12.6
+          }
+        ],
+        "expected_score": "2-0"
       },
       "market_snapshot": {
         "market_tier": 1.5,
@@ -76909,31 +77342,859 @@ const RESULTS_DATA = {
         "spread_market_expect": "England -1.5 · 净胜≥2",
         "line_move_tag": "flat",
         "line_move_cn": "盘路平稳",
-        "agent_pick_primary": "totals",
-        "agent_pick_tendency_cn": "更倾向大小球（小）",
+        "agent_pick_primary": "spread",
+        "agent_pick_tendency_cn": "更倾向让球盘（★大小已跳过 · R9）",
         "agent_pick_confidence": "medium",
         "agent_spread_cn": "刚果（金） +1.5 @0.93",
-        "agent_totals_cn": "小球 2.5 @0.85",
+        "agent_totals_cn": null,
+        "agent_totals_skipped": true,
+        "agent_totals_skip_cn": "★大小与模型/盘冲突，淘汰赛跳过（R9）",
+        "ko_totals_policy": "R9",
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
       },
       "depth_calibration": {
-        "public_summary_note": "【推演概要】England · 压制局。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 部分达标净胜=1 约 26.1%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
-        "preview_replay": {
-          "actual_score": "2-1",
-          "match_score": null,
-          "ht_score": "0-1",
-          "hits": [
-            "赛前进球氛围未强判（符合模型五五开读法）"
+        "tier_home": 1.5,
+        "tier_label": "England -1.5 · Congo DR +1.5",
+        "implied_tier": 0.75,
+        "tier_gap": 0.75,
+        "signal": "blocker_inflate",
+        "signal_cn": "大众心理预期偏高",
+        "signal_color": "#D95F6A",
+        "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+        "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "public_lean_cn": "舆论倾向 England（约 68%）",
+        "analysis": "M80 · 75' 2-1 · （未报） · 3.5 大1.69 小0.46 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "1-0",
+              "prob": 14.4
+            },
+            {
+              "score": "2-0",
+              "prob": 13.1
+            },
+            {
+              "score": "1-1",
+              "prob": 10.4
+            }
           ],
-          "misses": [],
-          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。",
-          "totals_actual": 3,
-          "totals_line": 2.5,
-          "spread_level": "possible",
-          "totals_level": "neutral"
+          "one_goal_win_pct": 26.1,
+          "two_plus_win_pct": 37.4,
+          "full_cover_pct": 46.7,
+          "dog_hold_pct": 53.3,
+          "fav_win_pct": 63.5,
+          "cover_given_win_pct": 58.9,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.3,
+          "half_cover_pct": 26.1,
+          "half_lose_pct": 0,
+          "push_pct": null,
+          "margin_full_label": "净胜≥2",
+          "margin_half_label": "部分达标净胜=1",
+          "fav_cover_ev": 0,
+          "dog_cover_ev": 0,
+          "rational_spread_cn": "两边净胜达标概率接近",
+          "total_xg": 2.54,
+          "fair_totals_line": 2,
+          "over_2_5_pct": 46.5,
+          "over_3_pct": 24.9,
+          "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
+          "margin_risk_note": "净胜≥2 约 37.4%；部分达标净胜=1 约 26.1%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 37.4,
+          "dog_hold_pct_raw": 62.6
         },
+        "spread_odds": {
+          "fav": 0.96,
+          "dog": 0.93,
+          "note": "England 0.96 · Congo DR 0.93"
+        },
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 2.5,
+          "market_goals_int": 3,
+          "line_label": "总进球约 2.5 个",
+          "implied_xg_total": 2.54,
+          "fair_line": 2,
+          "line_gap": 0.5,
+          "over_pct": 46,
+          "under_pct": 54,
+          "signal": "high_line",
+          "signal_cn": "参考偏高",
+          "signal_color": "#C8A96E",
+          "signal_desc": "总进球参考高于合理值，模型偏小比分。",
+          "public_over_pct": 50,
+          "public_lean_cn": "舆论对总进球看法较分散",
+          "index_note": "大比分侧 1.03 / 小比分侧 0.85 · 小比分侧更热",
+          "totals_odds": {
+            "over": 1.03,
+            "under": 0.85,
+            "note": "大比分 1.03 · 小比分 0.85"
+          },
+          "rational_cn": "超 2.5 球接近五五开（约 46%）；参考高于合理值但模型仍偏小比分",
+          "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
+        },
+        "totals_line": 2.5,
+        "market_line_movement": {
+          "wc_note": "亚特兰大 neutral · 主客仅为 FIFA 标记",
+          "spread_open_cn": "England -1.5@0.88 · Congo DR +1.5@0.94",
+          "spread_now_cn": "England -1.5@0.96 · Congo DR +1.5@0.93",
+          "totals_now_cn": "大小 2.5 · 大 1.03 / 小 0.85",
+          "tag": "flat",
+          "tag_cn": "盘路平稳",
+          "tag_color": "#7BB8D4",
+          "detail_cn": "档位持平 · 热门 0.88→0.96（抬水） · 受让 0.94→0.93（降水） 现盘去水隐含：England 49.6% · Congo DR 50.4%（超收 2.8%） 模型穿盘（现档 England -1.5 · Congo DR +1.5）：England 46.7% · Congo DR 53.3% 模型−市场：England -2.9pp · Congo DR +2.9pp 期望 ROI@现水：England +17.1% · Congo DR -7.3% 档位与水位变化幅度有限，暂无明确单向资金信号。",
+          "actuarial": {
+            "actuarial_type": "flat",
+            "actuarial_cn": "盘路平稳",
+            "actuarial_color": "#7BB8D4",
+            "actuarial_desc": "档位与水位变化幅度有限，暂无明确单向资金信号。",
+            "summary_cn": "档位持平 · 热门 0.88→0.96（抬水） · 受让 0.94→0.93（降水） 现盘去水隐含：England 49.6% · Congo DR 50.4%（超收 2.8%） 模型穿盘（现档 England -1.5 · Congo DR +1.5）：England 46.7% · Congo DR 53.3% 模型−市场：England -2.9pp · Congo DR +2.9pp 期望 ROI@现水：England +17.1% · Congo DR -7.3% 档位与水位变化幅度有限，暂无明确单向资金信号。",
+            "line_delta": 0,
+            "line_delta_cn": "档位持平",
+            "fav_odds_delta": 0.08,
+            "dog_odds_delta": -0.01,
+            "water_move_cn": "热门 0.88→0.96（抬水） · 受让 0.94→0.93（降水）",
+            "open_tier": 1.5,
+            "open_tier_label": "England -1.5 · Congo DR +1.5",
+            "now_tier": 1.5,
+            "implied_tier": 0.75,
+            "open_tier_gap": 0.75,
+            "now_tier_gap": 0.75,
+            "open_devig": {
+              "fav_pct": 50.8,
+              "dog_pct": 49.2,
+              "overround_pct": 4.7
+            },
+            "now_devig": {
+              "fav_pct": 49.6,
+              "dog_pct": 50.4,
+              "overround_pct": 2.8
+            },
+            "model_cover_open_pct": 46.7,
+            "model_cover_now_pct": 46.7,
+            "model_dog_cover_now_pct": 53.3,
+            "market_fav_cover_now_pct": 49.6,
+            "market_dog_cover_now_pct": 50.4,
+            "model_vs_market_fav_pp": -2.9,
+            "model_vs_market_dog_pp": 2.9,
+            "fav_roi_pct": 17.1,
+            "dog_roi_pct": -7.3,
+            "fav_name": "England",
+            "dog_name": "Congo DR"
+          }
+        },
+        "spread_market_analysis": {
+          "actuarial_type": "flat",
+          "actuarial_cn": "盘路平稳",
+          "actuarial_color": "#7BB8D4",
+          "actuarial_desc": "档位与水位变化幅度有限，暂无明确单向资金信号。",
+          "summary_cn": "档位持平 · 热门 0.88→0.96（抬水） · 受让 0.94→0.93（降水） 现盘去水隐含：England 49.6% · Congo DR 50.4%（超收 2.8%） 模型穿盘（现档 England -1.5 · Congo DR +1.5）：England 46.7% · Congo DR 53.3% 模型−市场：England -2.9pp · Congo DR +2.9pp 期望 ROI@现水：England +17.1% · Congo DR -7.3% 档位与水位变化幅度有限，暂无明确单向资金信号。",
+          "line_delta": 0,
+          "line_delta_cn": "档位持平",
+          "fav_odds_delta": 0.08,
+          "dog_odds_delta": -0.01,
+          "water_move_cn": "热门 0.88→0.96（抬水） · 受让 0.94→0.93（降水）",
+          "open_tier": 1.5,
+          "open_tier_label": "England -1.5 · Congo DR +1.5",
+          "now_tier": 1.5,
+          "implied_tier": 0.75,
+          "open_tier_gap": 0.75,
+          "now_tier_gap": 0.75,
+          "open_devig": {
+            "fav_pct": 50.8,
+            "dog_pct": 49.2,
+            "overround_pct": 4.7
+          },
+          "now_devig": {
+            "fav_pct": 49.6,
+            "dog_pct": 50.4,
+            "overround_pct": 2.8
+          },
+          "model_cover_open_pct": 46.7,
+          "model_cover_now_pct": 46.7,
+          "model_dog_cover_now_pct": 53.3,
+          "market_fav_cover_now_pct": 49.6,
+          "market_dog_cover_now_pct": 50.4,
+          "model_vs_market_fav_pp": -2.9,
+          "model_vs_market_dog_pp": 2.9,
+          "fav_roi_pct": 17.1,
+          "dog_roi_pct": -7.3,
+          "fav_name": "England",
+          "dog_name": "Congo DR"
+        },
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "under",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "under",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 小球(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
+        "agent_pick": {
+          "primary": "spread",
+          "tendency_cn": "更倾向让球盘（★大小已跳过 · R9）",
+          "tendency_reason_cn": "临场2/2.5→2.5小0.85低水+英FIFA轮换大 · 撤销日盘★大 · ★小2.5 · 刚果+1.5副项。",
+          "confidence": "medium",
+          "confidence_cn": "中信心",
+          "confidence_reason_cn": "★小2.5：线回整球+小0.85=共识收小(非诱小极端但推翻日盘大) · 英无Walker/Stones/Saka削弱穿盘；让球：53.3%挺刚果。",
+          "spread": {
+            "side": "dog",
+            "label_cn": "刚果（金） +1.5 @0.93",
+            "reason_cn": "blocker_inflate·英-1.5穿46.7%·1-0全赢/2-0全输 · 英0.96升水+轮换 · 模型53.3% · 副项。"
+          },
+          "totals": {
+            "side": "under",
+            "label_cn": "小球 2.5 @0.85",
+            "reason_cn": "初2.5→2/2.5大0.84→临2.5小0.85(线+水双收小) · 公平线~2 · 2-0仍小全赢 · 3球+小全输 · ★主项。",
+            "skipped": true,
+            "skip_reason_cn": "★大小与模型/盘冲突，淘汰赛跳过（R9）",
+            "skip_detail_cn": "模型/盘/人工标注冲突"
+          },
+          "pick_meta": {
+            "model_side": "over",
+            "situation_side": "neutral",
+            "market_line_side": "under",
+            "market_odds_side": "under",
+            "market_side": "under",
+            "pick_side": "under",
+            "recommended_side": "under",
+            "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
+            "conflict": true,
+            "conflict_cn": null,
+            "votes": {
+              "model": "neutral",
+              "line": "under",
+              "odds": "under",
+              "situation": "neutral"
+            },
+            "vote_summary_cn": "观望(model) · 小球(line) · 小球(odds) · 观望(situation)",
+            "situation_dampened": false,
+            "over_pct": 46,
+            "line_gap": 0.5
+          },
+          "picked_at": "2026-07-02-agent-final",
+          "ko_totals_policy": {
+            "enabled": true,
+            "rule_id": "R9",
+            "rule_cn": "★=大小无模型/盘冲突 · 副项仅大球 · 大信心仅绑★=大小",
+            "applied_at": "buildDepthCalibration"
+          },
+          "primary_before_ko": "totals",
+          "primary_switched_cn": "★大小与模型/盘冲突，淘汰赛跳过（R9）"
+        },
+        "applied_delta": {
+          "home_win": -4,
+          "draw": 1,
+          "away_win": 3
+        },
+        "adjustment_note": "模型微调：主胜 -4% · 平 +1% · 客 +3%",
+        "adjusted_probs": {
+          "home_win": 56,
+          "draw": 27,
+          "away_win": 17
+        },
+        "display_summary": {
+          "fav_name": "England",
+          "expected_total_goals": 2.49,
+          "poisson_fav_win_pct": 63.3,
+          "small_lead_pct": 26.3,
+          "small_example_score": "1-0",
+          "small_example_pct": 14.5,
+          "big_cover_pct": 36.9,
+          "big_example_score": "2-0",
+          "big_example_pct": 13.2,
+          "win_shape": {
+            "fav_name": "England",
+            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
+            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 33.6%）",
+            "shapes": [
+              {
+                "key": "narrow_low",
+                "label": "险胜 · 控局",
+                "example": "如 1-0",
+                "field_pct": 14.5,
+                "pct": 22.9
+              },
+              {
+                "key": "narrow_open",
+                "label": "险胜 · 开放",
+                "example": "如 2-1",
+                "field_pct": 11.8,
+                "pct": 18.7
+              },
+              {
+                "key": "comfort_low",
+                "label": "拉开 · 控局",
+                "example": "如 2-0",
+                "field_pct": 21.2,
+                "pct": 33.6
+              },
+              {
+                "key": "comfort_open",
+                "label": "拉开 · 开放",
+                "example": "如 3-1+",
+                "field_pct": 15.7,
+                "pct": 24.8
+              }
+            ],
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 41.6
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 33.6
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 24.8
+              }
+            ],
+            "fav_win_pct": 56
+          },
+          "excitement": {
+            "label_cn": "中速开局",
+            "label_key": "moderate",
+            "label_color": "#C8A96E",
+            "sub_cn": "预期首球等待约 35.4 分",
+            "first_goal_wait": 35.4,
+            "fast_pct": 57.1,
+            "moderate_pct": 14.8,
+            "slow_pct": 28.1,
+            "tiers": [
+              {
+                "key": "fast",
+                "label": "前 30 分内首球",
+                "pct": 57.1
+              },
+              {
+                "key": "moderate",
+                "label": "30–45 分首球",
+                "pct": 14.8
+              },
+              {
+                "key": "slow",
+                "label": "45 分后首球",
+                "pct": 28.1
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "England 暂无重要伤停 · Congo DR 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "— / —（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "气候信息暂无"
+            },
+            {
+              "icon": "⚖️",
+              "label": "平局修正",
+              "note": "回测校准：xG 暗示胶着（平 +4%）"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 1.82,
+            "baseline_away": 0.72,
+            "adjusted_home": 1.82,
+            "adjusted_away": 0.72,
+            "note": "基准 xG 1.82–0.72（未因伤病/气候下调）"
+          },
+          "calibration": {
+            "signal_cn": "大众心理预期偏高",
+            "signal_color": "#D95F6A",
+            "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+            "tier_gap": 0.75,
+            "implied_tier_label": "England -0.75 · Congo DR +0.75",
+            "market_tier_label": "England -1.5 · Congo DR +1.5",
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 部分达标净胜=1 约 26.1%"
+          },
+          "win_outlook": {
+            "fav_name": "England",
+            "state_label": null,
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 41.6
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 33.6
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 24.8
+              }
+            ],
+            "margin_line_cn": "England · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
+            "margin_meet_pct": 46.4,
+            "margin_half_pct": 26.3,
+            "margin_fail_pct": 0,
+            "margin_full_label": "净胜≥2",
+            "margin_half_label": "部分达标净胜=1",
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
+            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+            "totals_line": 2.5,
+            "totals_line_cn": "总进球参考 2.5",
+            "fair_totals_line": 2,
+            "model_total_xg": 2.54,
+            "totals_line_gap": 0.5,
+            "totals_high_pct": 46,
+            "totals_low_pct": 54,
+            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+            "win_low_total_pct": 27.7,
+            "win_margin2_low_total_pct": 13.2,
+            "win_margin2_high_total_pct": 23.7,
+            "readout_cn": "取胜约 56%；若取胜，以「险胜收工」为主（41.6%）。 对着赛前净胜参考，净胜≥2（全达标）约 46.4%；部分达标净胜=1 约 26.3%；对着总进球参考 2.5，模型超线概率约 46%。 2-0 类：净胜扩大但总进球仍可能低于总进球参考 2.5。"
+          },
+          "totals_line": 2.5,
+          "score_patterns": [
+            {
+              "score": "1-0",
+              "pct": 14.4
+            },
+            {
+              "score": "2-0",
+              "pct": 13.1
+            },
+            {
+              "score": "1-1",
+              "pct": 10.4
+            }
+          ],
+          "totals_view": {
+            "expected_total": 2.5,
+            "fair_line": 2,
+            "market_line": 2.5,
+            "line_gap": 0.5,
+            "over_pct": 46,
+            "gap_warning": null,
+            "totals_outlook": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 46,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "summary_cn": "预测 2.5 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
+          },
+          "customer_reading": {
+            "headline_cn": "England -1.5 穿盘：有达标可能",
+            "sub_cn": "England 胜 63.5% · 胜后穿 58.9% · Congo DR +1.5 守 53.3% 进球氛围：几乎五五开",
+            "spread": {
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
+              "fav_name": "England",
+              "dog_name": "Congo DR",
+              "fav_handicap_cn": "England -1.5",
+              "dog_handicap_cn": "Congo DR +1.5",
+              "market_expect_cn": "England -1.5 · 净胜≥2",
+              "meet_pct": 46.7,
+              "dog_hold_pct": 53.3,
+              "fav_win_pct": 63.5,
+              "cover_given_win_pct": 58.9,
+              "full_cover_pct_raw": 37.4,
+              "meet_pct_label": "England -1.5 穿盘概率（校准）",
+              "dog_hold_label": "Congo DR +1.5 守住概率（校准）",
+              "two_stage_cn": "England 取胜约 63.5% · 赢球后穿盘约 58.9% · Congo DR +1.5 守住约 53.3%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "England -1.5 穿盘：有达标可能",
+              "pill_cn": "England 胜 63.5% · 胜后穿 58.9% · Congo DR +1.5 守 53.3%",
+              "detail_cn": "England 取胜约 63.5% · 赢球后穿盘约 58.9% · Congo DR +1.5 守住约 53.3%（泊松 raw 37.4% → 校准 46.7%）；穿盘与受让守住均有一定空间（部分达标净胜=1 约 26.1%）。",
+              "extra_stats_cn": "部分达标净胜=1 约 26.1%",
+              "full_cover_pct": 46.7,
+              "half_cover_pct": 26.1,
+              "lose1_pct": 0,
+              "margin_full_label": "净胜≥2",
+              "margin_half_label": "部分达标净胜=1",
+              "tier_gap": 0.75,
+              "show_cover": true
+            },
+            "totals": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 46,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "draw_risk": null,
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "让球盘",
+                "outlook": {
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
+                  "fav_name": "England",
+                  "dog_name": "Congo DR",
+                  "fav_handicap_cn": "England -1.5",
+                  "dog_handicap_cn": "Congo DR +1.5",
+                  "market_expect_cn": "England -1.5 · 净胜≥2",
+                  "meet_pct": 46.7,
+                  "dog_hold_pct": 53.3,
+                  "fav_win_pct": 63.5,
+                  "cover_given_win_pct": 58.9,
+                  "full_cover_pct_raw": 37.4,
+                  "meet_pct_label": "England -1.5 穿盘概率（校准）",
+                  "dog_hold_label": "Congo DR +1.5 守住概率（校准）",
+                  "two_stage_cn": "England 取胜约 63.5% · 赢球后穿盘约 58.9% · Congo DR +1.5 守住约 53.3%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "England -1.5 穿盘：有达标可能",
+                  "pill_cn": "England 胜 63.5% · 胜后穿 58.9% · Congo DR +1.5 守 53.3%",
+                  "detail_cn": "England 取胜约 63.5% · 赢球后穿盘约 58.9% · Congo DR +1.5 守住约 53.3%（泊松 raw 37.4% → 校准 46.7%）；穿盘与受让守住均有一定空间（部分达标净胜=1 约 26.1%）。",
+                  "extra_stats_cn": "部分达标净胜=1 约 26.1%",
+                  "full_cover_pct": 46.7,
+                  "half_cover_pct": 26.1,
+                  "lose1_pct": 0,
+                  "margin_full_label": "净胜≥2",
+                  "margin_half_label": "部分达标净胜=1",
+                  "tier_gap": 0.75,
+                  "show_cover": true
+                },
+                "text": "England 胜 63.5% · 胜后穿 58.9% · Congo DR +1.5 守 53.3%",
+                "color": "#C8A96E",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "◎",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "neutral",
+                  "label_cn": "暂无明显倾向",
+                  "color": "#8A96A8",
+                  "meter_label_cn": "几乎五五开",
+                  "meter_pos": 50,
+                  "lean_side": "neutral",
+                  "lean_strength": "none",
+                  "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+                  "pill_cn": "几乎五五开",
+                  "detail_cn": "模型五五开，临场决定节奏。",
+                  "headline_cn": "进球氛围：几乎五五开",
+                  "show_lean": false,
+                  "over_pct": 46,
+                  "line_gap": 0.5,
+                  "market_line": 2.5,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "总进球参考 2.5",
+                  "caution_public_high": false
+                },
+                "text": "几乎五五开",
+                "color": "#8A96A8",
+                "muted": true
+              }
+            ],
+            "methodology_note": "读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "England",
+              "first_goal_pct": 71.7,
+              "start_score": "1-0",
+              "fav_name": "England",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 95.8,
+              "small_lead_pct": 27.6,
+              "big_lead_pct": 55.8,
+              "fav_win_pct": 83.4,
+              "fav_draw_pct": 12.4,
+              "fav_lose_pct": 4.2,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "England 保持胜果（净胜≥1）",
+                  "pct": 83.4
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 12.4
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 4.2
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 36.4 分",
+                "first_goal_wait": 36.4,
+                "fast_pct": 49.1,
+                "moderate_pct": 14.6,
+                "slow_pct": 36.3,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 49.1
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.6
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 36.3
+                  }
+                ]
+              },
+              "big_delta": 18.9,
+              "small_delta": 1.3,
+              "narrative": "England 先破门（已 1-0） → 「巩固防守」；Congo DR 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
+              "live_outlook": {
+                "fav_name": "England",
+                "state_label": "England 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 41.6
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 33.6
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 24.8
+                  }
+                ],
+                "margin_line_cn": "England · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
+                "margin_meet_pct": 55.8,
+                "margin_half_pct": 27.6,
+                "margin_fail_pct": 27.6,
+                "margin_full_label": "净胜≥2",
+                "margin_half_label": "部分达标净胜=1",
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.5,
+                "totals_line_cn": "总进球参考 2.5",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 2.03,
+                "totals_line_gap": 0.25,
+                "totals_high_pct": 60,
+                "totals_low_pct": 40,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 31.8,
+                "win_margin2_low_total_pct": 18.6,
+                "win_margin2_high_total_pct": 37.3,
+                "readout_cn": "England 已 1-0 领先：仍取胜约 83.4%。 对着总进球参考 2.5，模型超线概率约 60%。 常见 2-0 收尾（相对总进球参考 2.5仍偏小比分）。"
+              }
+            },
+            {
+              "side": "away",
+              "team": "Congo DR",
+              "first_goal_pct": 28.3,
+              "start_score": "0-1",
+              "fav_name": "England",
+              "scorer_is_fav": false,
+              "expected_key": "fav_recover",
+              "fav_recover_pct": 62.3,
+              "small_lead_pct": 19.7,
+              "big_lead_pct": 14.3,
+              "fav_win_pct": 34,
+              "fav_draw_pct": 28.3,
+              "fav_lose_pct": 37.7,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "England 追平（平局）",
+                  "pct": 28.3
+                },
+                {
+                  "key": "win1",
+                  "label": "England 净胜1球翻盘（如 2-1）",
+                  "pct": 19.7
+                },
+                {
+                  "key": "win2",
+                  "label": "England 净胜≥2球翻盘（如 3-1）",
+                  "pct": 14.3
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "Congo DR 保持胜果至终场",
+                  "pct": 37.7
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 34.5 分",
+                "first_goal_wait": 34.5,
+                "fast_pct": 51,
+                "moderate_pct": 14.7,
+                "slow_pct": 34.3,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 51
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.7
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 34.3
+                  }
+                ]
+              },
+              "big_delta": -22.6,
+              "small_delta": -6.6,
+              "narrative": "Congo DR 先破门（已 0-1） → 「巩固防守」；England 「组织反扑」。热门先丢球（已 0-1），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
+              "live_outlook": null
+            }
+          ],
+          "match_preview": {
+            "morphology": {
+              "totals_summary": "预测 2.5 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球参考 2.5",
+              "totals_high_pct": 46,
+              "type_tags": [
+                {
+                  "key": "dominance",
+                  "label": "压制局"
+                }
+              ],
+              "depth_label": "深度一般",
+              "draw_trap_pct": 22,
+              "readout_cn": "England · 压制局。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+            },
+            "draw_trap_note": null,
+            "archetype": {
+              "tags": [
+                {
+                  "key": "dominance",
+                  "label": "压制局"
+                }
+              ],
+              "depth_score": 0,
+              "depth_label": "深度一般",
+              "draw_trap_pct": 22,
+              "fav_lead_style": "balanced"
+            }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.8,
+            "xg_away_ht": 0.32,
+            "xg_home_2h": 1.02,
+            "xg_away_2h": 0.4,
+            "home_win": 44.6,
+            "draw": 41.5,
+            "away_win": 13.9,
+            "top_score": "0-0",
+            "top_score_prob": 32.6,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 32.6
+              },
+              {
+                "score": "1-0",
+                "prob": 26.1
+              },
+              {
+                "score": "0-1",
+                "prob": 10.4
+              }
+            ],
+            "ht_goals_expected": 1.12,
+            "ht_over_0_5_pct": 67.4,
+            "ht_over_1_5_pct": 30.8,
+            "pick": "home",
+            "pick_name": "England",
+            "summary_cn": "半场 xG 0.8–0.32（约占全场 44%） · 最可能 0-0（32.6%） · 胜平负 44.6/41.5/13.9 · 半场≥1球约 67.4%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
+          }
+        },
+        "public_summary_note": "【推演概要】England · 压制局。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 0.75 · 部分达标净胜=1 约 26.1%（模型微调：主胜 -4% · 平 +1% · 客 +3%）",
         "goal_efficiency": {
           "xg_total": 2.54,
           "xg_gap": 1.1,
@@ -76969,34 +78230,19 @@ const RESULTS_DATA = {
           "summary_cn": "赛前 xG 总 2.54（差 1.1）· 热门 England 1.82→2（效率 1.1）· 弱队 Congo DR 0.72→1（效率 1.39）→ 弱队开花。总进球 3 个——介于大/小之间，对照 xG 总偏差 +0.5。",
           "in_mid_band": true
         },
-        "goal_efficiency_preview": null,
-        "display_summary": {
-          "baseline_label": "全场预期（含伤病·气候）",
-          "customer_reading": {
-            "spread": {
-              "show_cover": true,
-              "level": "possible",
-              "full_cover_pct": 46.7,
-              "fav_win_pct": 63.5,
-              "cover_given_win_pct": 58.9,
-              "dog_hold_pct": 53.3,
-              "market_expect_cn": "England -1.5 · 净胜≥2",
-              "pill_cn": "England 胜 63.5% · 胜后穿 58.9% · Congo DR +1.5 守 53.3%"
-            },
-            "totals": {
-              "level": "neutral",
-              "show_lean": false,
-              "lean_side": "neutral",
-              "pill_cn": "几乎五五开"
-            }
-          },
-          "totals_view": {
-            "over_pct": 46,
-            "market_line": 2.5,
-            "fair_line": 2,
-            "line_gap": 0.5
-          },
-          "totals_line": 2.5
+        "preview_replay": {
+          "actual_score": "2-1",
+          "match_score": null,
+          "ht_score": "0-1",
+          "hits": [
+            "赛前进球氛围未强判（符合模型五五开读法）"
+          ],
+          "misses": [],
+          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。",
+          "totals_actual": 3,
+          "totals_line": 2.5,
+          "spread_level": "possible",
+          "totals_level": "neutral"
         }
       },
       "actualResult": {
@@ -77067,7 +78313,65 @@ const RESULTS_DATA = {
         "base_home_win": 48.7,
         "base_draw": 25.3,
         "base_away_win": 26.1,
-        "depth_calibrated": true
+        "depth_calibrated": true,
+        "score_dist": [
+          {
+            "score": "2-0",
+            "prob": 11.7
+          },
+          {
+            "score": "1-0",
+            "prob": 11.3
+          },
+          {
+            "score": "2-1",
+            "prob": 9.8
+          },
+          {
+            "score": "1-1",
+            "prob": 9.5
+          },
+          {
+            "score": "3-0",
+            "prob": 8
+          },
+          {
+            "score": "3-1",
+            "prob": 6.7
+          },
+          {
+            "score": "0-0",
+            "prob": 5.5
+          }
+        ],
+        "draw_context": {
+          "drawBoost": 0,
+          "ironBucket": false,
+          "closeXg": false,
+          "gap": 0.5,
+          "notes": [],
+          "qual_dynamics": null
+        },
+        "qual_dynamics": null,
+        "xg_poisson_home": 2.06,
+        "xg_poisson_away": 0.84,
+        "xg_tier_calibrated": true,
+        "score_prob": 11.7,
+        "score_top3": [
+          {
+            "score": "2-0",
+            "prob": 11.7
+          },
+          {
+            "score": "1-0",
+            "prob": 11.3
+          },
+          {
+            "score": "2-1",
+            "prob": 9.8
+          }
+        ],
+        "expected_score": "2-1"
       },
       "market_snapshot": {
         "market_tier": 1.5,
@@ -77085,30 +78389,853 @@ const RESULTS_DATA = {
         "line_move_cn": "精算诱上",
         "agent_pick_primary": "spread",
         "agent_pick_tendency_cn": "更倾向让球盘",
-        "agent_pick_confidence": "high",
+        "agent_pick_confidence": "medium",
         "agent_spread_cn": "波黑 +1.5 @0.86",
-        "agent_totals_cn": "大球 2.5/3 @0.82",
+        "agent_totals_cn": null,
+        "agent_totals_skipped": true,
+        "agent_totals_skip_cn": "大信心仅绑★=大小，副项大小不出（R9）",
+        "ko_totals_policy": "R9",
         "totals_level": "mild_low",
         "totals_show_lean": false,
         "totals_lean_side": "dull"
       },
       "depth_calibration": {
-        "public_summary_note": "【推演概要】USA · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.25 · 部分达标净胜=1 约 23.6%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
-        "preview_replay": {
-          "actual_score": "2-0",
-          "match_score": null,
-          "ht_score": "1-0",
-          "hits": [
-            "净胜全达标方向一致",
-            "赛前进球氛围未强判（符合模型五五开读法）"
+        "tier_home": 1.5,
+        "tier_label": "USA -1.5 · Bosnia & Herz. +1.5",
+        "implied_tier": 0.25,
+        "tier_gap": 1.25,
+        "signal": "blocker_inflate",
+        "signal_cn": "大众心理预期偏高",
+        "signal_color": "#D95F6A",
+        "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+        "blocker_spread_note": "说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "public_lean_cn": "舆论倾向 USA（约 55%）",
+        "analysis": "M81 · 美国 vs 波黑 · 现 -1.5 美 1.03 / 波 0.86 · 大小 2.5/3 大 0.82 小 1.06 · Agent终选：★波+1.5+大2.5/3。 说明：赛前净胜参考高于模型隐含时，仅赢一球的比例仍不可忽视；赢球与净胜拉开须分开看。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "1-1",
+              "prob": 12
+            },
+            {
+              "score": "1-0",
+              "prob": 11.1
+            },
+            {
+              "score": "2-1",
+              "prob": 9.4
+            }
           ],
-          "misses": [],
-          "summary_cn": "命中：净胜全达标方向一致 · 赛前进球氛围未强判（符合模型五五开读法）。",
-          "totals_actual": 2,
-          "totals_line": 2.75,
-          "spread_level": "possible",
-          "totals_level": "mild_low"
+          "one_goal_win_pct": 23.6,
+          "two_plus_win_pct": 25.3,
+          "full_cover_pct": 37.3,
+          "dog_hold_pct": 62.7,
+          "fav_win_pct": 48.9,
+          "cover_given_win_pct": 51.7,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.1,
+          "half_cover_pct": 23.6,
+          "half_lose_pct": 0,
+          "push_pct": null,
+          "margin_full_label": "净胜≥2",
+          "margin_half_label": "部分达标净胜=1",
+          "fav_cover_ev": 0,
+          "dog_cover_ev": 0,
+          "rational_spread_cn": "两边净胜达标概率接近",
+          "total_xg": 2.66,
+          "fair_totals_line": 2,
+          "over_2_5_pct": 49.6,
+          "over_3_pct": 27.6,
+          "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
+          "margin_risk_note": "净胜≥2 约 25.3%；部分达标净胜=1 约 23.6%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 25.3,
+          "dog_hold_pct_raw": 74.7
         },
+        "spread_odds": {
+          "fav": 1.03,
+          "dog": 0.86,
+          "note": "USA 1.03 · Bosnia & Herz. 0.86"
+        },
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 2.75,
+          "market_goals_int": 3,
+          "line_label": "总进球约 2.5–3 个",
+          "implied_xg_total": 2.66,
+          "fair_line": 2,
+          "line_gap": 0.75,
+          "over_pct": 38.3,
+          "under_pct": 61.7,
+          "signal": "high_line",
+          "signal_cn": "参考偏高",
+          "signal_color": "#C8A96E",
+          "signal_desc": "总进球参考高于合理值，模型偏小比分。",
+          "public_over_pct": 50,
+          "public_lean_cn": "舆论对总进球看法较分散",
+          "index_note": "大比分侧 0.82 / 小比分侧 1.06",
+          "totals_odds": {
+            "over": 0.82,
+            "under": 1.06,
+            "note": "大比分 0.82 · 小比分 1.06"
+          },
+          "rational_cn": "模型略看小比分（超 2.75 约 61.7% 难达）",
+          "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
+        },
+        "totals_line": 2.75,
+        "market_line_movement": {
+          "wc_note": "旧金山湾区 neutral · 主客仅为 FIFA 标记",
+          "spread_open_cn": "USA -1@0.92 · Bosnia & Herz. +1@0.9",
+          "spread_now_cn": "USA -1.5@1.03 · Bosnia & Herz. +1.5@0.86",
+          "totals_now_cn": "大小 2.5/3 · 大 0.82 / 小 1.06",
+          "tag": "book_trap_fav",
+          "tag_cn": "精算诱上",
+          "tag_color": "#D95F6A",
+          "detail_cn": "升 0.5 档 · 热门 0.92→1.03（抬水） · 受让 0.9→0.86（降水） 现盘去水隐含：USA 47.8% · Bosnia & Herz. 52.2%（超收 3%） 模型穿盘（现档 USA -1.5 · Bosnia & Herz. +1.5）：USA 37.3% · Bosnia & Herz. 62.7% 模型−市场：USA -10.5pp · Bosnia & Herz. +10.5pp 期望 ROI@现水：USA -0.3% · Bosnia & Herz. +23.6% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+          "actuarial": {
+            "actuarial_type": "book_trap_fav",
+            "actuarial_cn": "精算诱上",
+            "actuarial_color": "#D95F6A",
+            "actuarial_desc": "升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+            "summary_cn": "升 0.5 档 · 热门 0.92→1.03（抬水） · 受让 0.9→0.86（降水） 现盘去水隐含：USA 47.8% · Bosnia & Herz. 52.2%（超收 3%） 模型穿盘（现档 USA -1.5 · Bosnia & Herz. +1.5）：USA 37.3% · Bosnia & Herz. 62.7% 模型−市场：USA -10.5pp · Bosnia & Herz. +10.5pp 期望 ROI@现水：USA -0.3% · Bosnia & Herz. +23.6% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+            "line_delta": 0.5,
+            "line_delta_cn": "升 0.5 档",
+            "fav_odds_delta": 0.11,
+            "dog_odds_delta": -0.04,
+            "water_move_cn": "热门 0.92→1.03（抬水） · 受让 0.9→0.86（降水）",
+            "open_tier": 1,
+            "open_tier_label": "USA -1 · Bosnia & Herz. +1",
+            "now_tier": 1.5,
+            "implied_tier": 0.25,
+            "open_tier_gap": 0.75,
+            "now_tier_gap": 1.25,
+            "open_devig": {
+              "fav_pct": 49.7,
+              "dog_pct": 50.3,
+              "overround_pct": 4.7
+            },
+            "now_devig": {
+              "fav_pct": 47.8,
+              "dog_pct": 52.2,
+              "overround_pct": 3
+            },
+            "model_cover_open_pct": 37.3,
+            "model_cover_now_pct": 37.3,
+            "model_dog_cover_now_pct": 62.7,
+            "market_fav_cover_now_pct": 47.8,
+            "market_dog_cover_now_pct": 52.2,
+            "model_vs_market_fav_pp": -10.5,
+            "model_vs_market_dog_pp": 10.5,
+            "fav_roi_pct": -0.3,
+            "dog_roi_pct": 23.6,
+            "fav_name": "USA",
+            "dog_name": "Bosnia & Herz."
+          }
+        },
+        "spread_market_analysis": {
+          "actuarial_type": "book_trap_fav",
+          "actuarial_cn": "精算诱上",
+          "actuarial_color": "#D95F6A",
+          "actuarial_desc": "升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+          "summary_cn": "升 0.5 档 · 热门 0.92→1.03（抬水） · 受让 0.9→0.86（降水） 现盘去水隐含：USA 47.8% · Bosnia & Herz. 52.2%（超收 3%） 模型穿盘（现档 USA -1.5 · Bosnia & Herz. +1.5）：USA 37.3% · Bosnia & Herz. 62.7% 模型−市场：USA -10.5pp · Bosnia & Herz. +10.5pp 期望 ROI@现水：USA -0.3% · Bosnia & Herz. +23.6% 升档或维持深盘但热门抬水、受让降水，庄家限损热门方向、引导资金接受让。",
+          "line_delta": 0.5,
+          "line_delta_cn": "升 0.5 档",
+          "fav_odds_delta": 0.11,
+          "dog_odds_delta": -0.04,
+          "water_move_cn": "热门 0.92→1.03（抬水） · 受让 0.9→0.86（降水）",
+          "open_tier": 1,
+          "open_tier_label": "USA -1 · Bosnia & Herz. +1",
+          "now_tier": 1.5,
+          "implied_tier": 0.25,
+          "open_tier_gap": 0.75,
+          "now_tier_gap": 1.25,
+          "open_devig": {
+            "fav_pct": 49.7,
+            "dog_pct": 50.3,
+            "overround_pct": 4.7
+          },
+          "now_devig": {
+            "fav_pct": 47.8,
+            "dog_pct": 52.2,
+            "overround_pct": 3
+          },
+          "model_cover_open_pct": 37.3,
+          "model_cover_now_pct": 37.3,
+          "model_dog_cover_now_pct": 62.7,
+          "market_fav_cover_now_pct": 47.8,
+          "market_dog_cover_now_pct": 52.2,
+          "model_vs_market_fav_pp": -10.5,
+          "model_vs_market_dog_pp": 10.5,
+          "fav_roi_pct": -0.3,
+          "dog_roi_pct": 23.6,
+          "fav_name": "USA",
+          "dog_name": "Bosnia & Herz."
+        },
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "over",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "over",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 大球(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
+        "agent_pick": {
+          "primary": "spread",
+          "tendency_cn": "更倾向让球盘",
+          "tendency_reason_cn": "美升-1.5@1.03高水=诱热穿盘弱 · 波+1.5@0.86低水 · ★波+1.5不变 · 大2.5/3@0.82副项。",
+          "confidence": "medium",
+          "confidence_cn": "中信心",
+          "confidence_reason_cn": "★波+1.5：模型穿盘仍低+美1.03高水确认 · 1-0/1-1/2-1全赢/2-0·3-0全输；副项大0.82再低水。",
+          "spread": {
+            "side": "dog",
+            "label_cn": "波黑 +1.5 @0.86",
+            "reason_cn": "美-1/1.5→-1.5@1.03高水 · 穿盘37%档 · 1-0·1-1·2-1全赢/2-0·3-0全输 · ★主项。"
+          },
+          "totals": {
+            "side": "over",
+            "label_cn": "大球 2.5/3 @0.82",
+            "reason_cn": "大0.82再降水 · 小1.06升水 · 3球大赢半/4+全赢 · 副项。",
+            "manual_override": true,
+            "recommended_side": "under",
+            "skipped": true,
+            "skip_reason_cn": "大信心仅绑★=大小，副项大小不出（R9）"
+          },
+          "pick_meta": {
+            "model_side": "under",
+            "situation_side": "neutral",
+            "market_line_side": "under",
+            "market_odds_side": "over",
+            "market_side": "over",
+            "pick_side": "over",
+            "recommended_side": "under",
+            "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
+            "conflict": true,
+            "conflict_cn": null,
+            "votes": {
+              "model": "under",
+              "line": "under",
+              "odds": "over",
+              "situation": "neutral"
+            },
+            "vote_summary_cn": "小球(model) · 小球(line) · 大球(odds) · 观望(situation)",
+            "situation_dampened": false,
+            "over_pct": 38.3,
+            "line_gap": 0.75
+          },
+          "picked_at": "2026-07-02-kickoff",
+          "ko_totals_policy": {
+            "enabled": true,
+            "rule_id": "R9",
+            "rule_cn": "★=大小无模型/盘冲突 · 副项仅大球 · 大信心仅绑★=大小",
+            "applied_at": "buildDepthCalibration"
+          },
+          "confidence_before_ko": "high",
+          "confidence_downgrade_cn": "淘汰赛大信心仅绑★=大小（R9）"
+        },
+        "applied_delta": {
+          "home_win": -5,
+          "draw": 1,
+          "away_win": 4
+        },
+        "adjustment_note": "模型微调：主胜 -5% · 平 +1% · 客 +4%",
+        "adjusted_probs": {
+          "home_win": 44,
+          "draw": 26,
+          "away_win": 30
+        },
+        "display_summary": {
+          "fav_name": "USA",
+          "expected_total_goals": 2.63,
+          "poisson_fav_win_pct": 48.7,
+          "small_lead_pct": 23.7,
+          "small_example_score": "1-0",
+          "small_example_pct": 11.1,
+          "big_cover_pct": 24.9,
+          "big_example_score": "2-0",
+          "big_example_pct": 8.8,
+          "win_shape": {
+            "fav_name": "USA",
+            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
+            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 27.5%）",
+            "shapes": [
+              {
+                "key": "narrow_low",
+                "label": "险胜 · 控局",
+                "example": "如 1-0",
+                "field_pct": 11.1,
+                "pct": 22.9
+              },
+              {
+                "key": "narrow_open",
+                "label": "险胜 · 开放",
+                "example": "如 2-1",
+                "field_pct": 12.6,
+                "pct": 25.9
+              },
+              {
+                "key": "comfort_low",
+                "label": "拉开 · 控局",
+                "example": "如 2-0",
+                "field_pct": 13.4,
+                "pct": 27.5
+              },
+              {
+                "key": "comfort_open",
+                "label": "拉开 · 开放",
+                "example": "如 3-1+",
+                "field_pct": 11.5,
+                "pct": 23.7
+              }
+            ],
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 48.8
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 27.5
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 23.7
+              }
+            ],
+            "fav_win_pct": 44
+          },
+          "excitement": {
+            "label_cn": "中速开局",
+            "label_key": "moderate",
+            "label_color": "#C8A96E",
+            "sub_cn": "预期首球等待约 33.8 分",
+            "first_goal_wait": 33.8,
+            "fast_pct": 58.8,
+            "moderate_pct": 14.8,
+            "slow_pct": 26.4,
+            "tiers": [
+              {
+                "key": "fast",
+                "label": "前 30 分内首球",
+                "pct": 58.8
+              },
+              {
+                "key": "moderate",
+                "label": "30–45 分首球",
+                "pct": 14.8
+              },
+              {
+                "key": "slow",
+                "label": "45 分后首球",
+                "pct": 26.4
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "USA 暂无重要伤停 · Bosnia & Herz. 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "— / —（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "气候信息暂无"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 1.58,
+            "baseline_away": 1.08,
+            "adjusted_home": 1.58,
+            "adjusted_away": 1.08,
+            "note": "基准 xG 1.58–1.08（未因伤病/气候下调）"
+          },
+          "calibration": {
+            "signal_cn": "大众心理预期偏高",
+            "signal_color": "#D95F6A",
+            "signal_desc": "外界赛前净胜/舆论参考显著高于 xG 隐含差距，模型警惕热门方「小胜不足」。",
+            "tier_gap": 1.25,
+            "implied_tier_label": "USA -0.25 · Bosnia & Herz. +0.25",
+            "market_tier_label": "USA -1.5 · Bosnia & Herz. +1.5",
+            "summary_cn": "与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.25 · 部分达标净胜=1 约 23.6%"
+          },
+          "win_outlook": {
+            "fav_name": "USA",
+            "state_label": null,
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 48.8
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 27.5
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 23.7
+              }
+            ],
+            "margin_line_cn": "USA · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
+            "margin_meet_pct": 26.3,
+            "margin_half_pct": 23.7,
+            "margin_fail_pct": 0,
+            "margin_full_label": "净胜≥2",
+            "margin_half_label": "部分达标净胜=1",
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
+            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+            "totals_line": 2.75,
+            "totals_line_cn": "总进球参考 2.75",
+            "fair_totals_line": 2,
+            "model_total_xg": 2.66,
+            "totals_line_gap": 0.75,
+            "totals_high_pct": 38.3,
+            "totals_low_pct": 61.7,
+            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+            "win_low_total_pct": 19.9,
+            "win_margin2_low_total_pct": 8.8,
+            "win_margin2_high_total_pct": 16.2,
+            "readout_cn": "取胜约 44%；若取胜，以「险胜收工」为主（48.8%）。 对着赛前净胜参考，净胜≥2（全达标）约 26.3%；部分达标净胜=1 约 23.7%；对着总进球参考 2.75，模型超线概率约 38.3%。"
+          },
+          "totals_line": 2.75,
+          "score_patterns": [
+            {
+              "score": "1-1",
+              "pct": 12
+            },
+            {
+              "score": "1-0",
+              "pct": 11.1
+            },
+            {
+              "score": "2-1",
+              "pct": 9.4
+            }
+          ],
+          "totals_view": {
+            "expected_total": 2.6,
+            "fair_line": 2,
+            "market_line": 2.75,
+            "line_gap": 0.75,
+            "over_pct": 38.3,
+            "gap_warning": null,
+            "totals_outlook": {
+              "level": "mild_low",
+              "label_cn": "略倾向沉闷",
+              "color": "#7BB8D4",
+              "meter_label_cn": "略倾向沉闷",
+              "meter_pos": 38,
+              "lean_side": "dull",
+              "lean_strength": "mild",
+              "section_intro_cn": "对照总进球参考 2.75，看偏闷还是偏精彩",
+              "pill_cn": "略偏闷（弱）",
+              "detail_cn": "略偏闷，模型更看小比分（难超线 2.75）；弱信号。",
+              "headline_cn": "进球氛围：略偏闷",
+              "show_lean": false,
+              "over_pct": 38.3,
+              "line_gap": 0.75,
+              "market_line": 2.75,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.75",
+              "caution_public_high": false
+            },
+            "summary_cn": "预测 2.6 · 合理值 2 · 总进球参考 2.75（高于合理值 0.75） · 高于合理值 0.75 · 模型在常见进球预期附近均衡，不作强倾向"
+          },
+          "customer_reading": {
+            "headline_cn": "USA -1.5 穿盘：有达标可能",
+            "sub_cn": "USA 胜 48.9% · 胜后穿 51.7% · Bosnia & Herz. +1.5 守 62.7% 进球氛围：略偏闷",
+            "spread": {
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
+              "fav_name": "USA",
+              "dog_name": "Bosnia & Herz.",
+              "fav_handicap_cn": "USA -1.5",
+              "dog_handicap_cn": "Bosnia & Herz. +1.5",
+              "market_expect_cn": "USA -1.5 · 净胜≥2",
+              "meet_pct": 37.3,
+              "dog_hold_pct": 62.7,
+              "fav_win_pct": 48.9,
+              "cover_given_win_pct": 51.7,
+              "full_cover_pct_raw": 25.3,
+              "meet_pct_label": "USA -1.5 穿盘概率（校准）",
+              "dog_hold_label": "Bosnia & Herz. +1.5 守住概率（校准）",
+              "two_stage_cn": "USA 取胜约 48.9% · 赢球后穿盘约 51.7% · Bosnia & Herz. +1.5 守住约 62.7%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "USA -1.5 穿盘：有达标可能",
+              "pill_cn": "USA 胜 48.9% · 胜后穿 51.7% · Bosnia & Herz. +1.5 守 62.7%",
+              "detail_cn": "USA 取胜约 48.9% · 赢球后穿盘约 51.7% · Bosnia & Herz. +1.5 守住约 62.7%（泊松 raw 25.3% → 校准 37.3%）；穿盘与受让守住均有一定空间（部分达标净胜=1 约 23.6%）。",
+              "extra_stats_cn": "部分达标净胜=1 约 23.6%",
+              "full_cover_pct": 37.3,
+              "half_cover_pct": 23.6,
+              "lose1_pct": 0,
+              "margin_full_label": "净胜≥2",
+              "margin_half_label": "部分达标净胜=1",
+              "tier_gap": 1.25,
+              "show_cover": true
+            },
+            "totals": {
+              "level": "mild_low",
+              "label_cn": "略倾向沉闷",
+              "color": "#7BB8D4",
+              "meter_label_cn": "略倾向沉闷",
+              "meter_pos": 38,
+              "lean_side": "dull",
+              "lean_strength": "mild",
+              "section_intro_cn": "对照总进球参考 2.75，看偏闷还是偏精彩",
+              "pill_cn": "略偏闷（弱）",
+              "detail_cn": "略偏闷，模型更看小比分（难超线 2.75）；弱信号。",
+              "headline_cn": "进球氛围：略偏闷",
+              "show_lean": false,
+              "over_pct": 38.3,
+              "line_gap": 0.75,
+              "market_line": 2.75,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.75",
+              "caution_public_high": false
+            },
+            "draw_risk": null,
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "让球盘",
+                "outlook": {
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
+                  "fav_name": "USA",
+                  "dog_name": "Bosnia & Herz.",
+                  "fav_handicap_cn": "USA -1.5",
+                  "dog_handicap_cn": "Bosnia & Herz. +1.5",
+                  "market_expect_cn": "USA -1.5 · 净胜≥2",
+                  "meet_pct": 37.3,
+                  "dog_hold_pct": 62.7,
+                  "fav_win_pct": 48.9,
+                  "cover_given_win_pct": 51.7,
+                  "full_cover_pct_raw": 25.3,
+                  "meet_pct_label": "USA -1.5 穿盘概率（校准）",
+                  "dog_hold_label": "Bosnia & Herz. +1.5 守住概率（校准）",
+                  "two_stage_cn": "USA 取胜约 48.9% · 赢球后穿盘约 51.7% · Bosnia & Herz. +1.5 守住约 62.7%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "USA -1.5 穿盘：有达标可能",
+                  "pill_cn": "USA 胜 48.9% · 胜后穿 51.7% · Bosnia & Herz. +1.5 守 62.7%",
+                  "detail_cn": "USA 取胜约 48.9% · 赢球后穿盘约 51.7% · Bosnia & Herz. +1.5 守住约 62.7%（泊松 raw 25.3% → 校准 37.3%）；穿盘与受让守住均有一定空间（部分达标净胜=1 约 23.6%）。",
+                  "extra_stats_cn": "部分达标净胜=1 约 23.6%",
+                  "full_cover_pct": 37.3,
+                  "half_cover_pct": 23.6,
+                  "lose1_pct": 0,
+                  "margin_full_label": "净胜≥2",
+                  "margin_half_label": "部分达标净胜=1",
+                  "tier_gap": 1.25,
+                  "show_cover": true
+                },
+                "text": "USA 胜 48.9% · 胜后穿 51.7% · Bosnia & Herz. +1.5 守 62.7%",
+                "color": "#C8A96E",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "◎",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "mild_low",
+                  "label_cn": "略倾向沉闷",
+                  "color": "#7BB8D4",
+                  "meter_label_cn": "略倾向沉闷",
+                  "meter_pos": 38,
+                  "lean_side": "dull",
+                  "lean_strength": "mild",
+                  "section_intro_cn": "对照总进球参考 2.75，看偏闷还是偏精彩",
+                  "pill_cn": "略偏闷（弱）",
+                  "detail_cn": "略偏闷，模型更看小比分（难超线 2.75）；弱信号。",
+                  "headline_cn": "进球氛围：略偏闷",
+                  "show_lean": false,
+                  "over_pct": 38.3,
+                  "line_gap": 0.75,
+                  "market_line": 2.75,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "总进球参考 2.75",
+                  "caution_public_high": false
+                },
+                "text": "略偏闷（弱）",
+                "color": "#7BB8D4",
+                "muted": true
+              }
+            ],
+            "methodology_note": "读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "USA",
+              "first_goal_pct": 59.4,
+              "start_score": "1-0",
+              "fav_name": "USA",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 90.1,
+              "small_lead_pct": 29.1,
+              "big_lead_pct": 42.6,
+              "fav_win_pct": 71.8,
+              "fav_draw_pct": 18.3,
+              "fav_lose_pct": 9.9,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "USA 保持胜果（净胜≥1）",
+                  "pct": 71.8
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 18.3
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 9.9
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 34.2 分",
+                "first_goal_wait": 34.2,
+                "fast_pct": 51.3,
+                "moderate_pct": 14.7,
+                "slow_pct": 34,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 51.3
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.7
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 34
+                  }
+                ]
+              },
+              "big_delta": 17.7,
+              "small_delta": 5.4,
+              "narrative": "USA 先破门（已 1-0） → 「巩固防守」；Bosnia & Herz. 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
+              "live_outlook": {
+                "fav_name": "USA",
+                "state_label": "USA 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 48.8
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 27.5
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 23.7
+                  }
+                ],
+                "margin_line_cn": "USA · 赛前净胜参考 净胜≥2（全达标） · 部分达标净胜=1",
+                "margin_meet_pct": 42.6,
+                "margin_half_pct": 29.1,
+                "margin_fail_pct": 29.1,
+                "margin_full_label": "净胜≥2",
+                "margin_half_label": "部分达标净胜=1",
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.75,
+                "totals_line_cn": "总进球参考 2.75",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 2.16,
+                "totals_line_gap": 0.5,
+                "totals_high_pct": 49.9,
+                "totals_low_pct": 50.1,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 25.8,
+                "win_margin2_low_total_pct": 14.2,
+                "win_margin2_high_total_pct": 28.5,
+                "readout_cn": "USA 已 1-0 领先：仍取胜约 71.8%。 对着总进球参考 2.75，模型超线概率约 49.9%。 常见 2-0 收尾（相对总进球参考 2.75仍偏小比分）。"
+              }
+            },
+            {
+              "side": "away",
+              "team": "Bosnia & Herz.",
+              "first_goal_pct": 40.6,
+              "start_score": "0-1",
+              "fav_name": "USA",
+              "scorer_is_fav": false,
+              "expected_key": "upset_hold",
+              "fav_recover_pct": 49.2,
+              "small_lead_pct": 14.9,
+              "big_lead_pct": 8.7,
+              "fav_win_pct": 23.6,
+              "fav_draw_pct": 25.6,
+              "fav_lose_pct": 50.8,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "USA 追平（平局）",
+                  "pct": 25.6
+                },
+                {
+                  "key": "win1",
+                  "label": "USA 净胜1球翻盘（如 2-1）",
+                  "pct": 14.9
+                },
+                {
+                  "key": "win2",
+                  "label": "USA 净胜≥2球翻盘（如 3-1）",
+                  "pct": 8.7
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "Bosnia & Herz. 保持胜果至终场",
+                  "pct": 50.8
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 33.5 分",
+                "first_goal_wait": 33.5,
+                "fast_pct": 52.1,
+                "moderate_pct": 14.7,
+                "slow_pct": 33.2,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 52.1
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.7
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 33.2
+                  }
+                ]
+              },
+              "big_delta": -16.2,
+              "small_delta": -8.8,
+              "narrative": "Bosnia & Herz. 先破门（已 0-1） → 「巩固防守」；USA 「组织反扑」。热门先丢球（已 0-1），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
+              "live_outlook": null
+            }
+          ],
+          "match_preview": {
+            "morphology": {
+              "totals_summary": "预测 2.6 · 合理值 2 · 总进球参考 2.75（高于合理值 0.75） · 高于合理值 0.75 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球参考 2.75",
+              "totals_high_pct": 38.3,
+              "type_tags": [
+                {
+                  "key": "balanced",
+                  "label": "常规对抗"
+                }
+              ],
+              "depth_label": "深度一般",
+              "draw_trap_pct": 22,
+              "readout_cn": "USA · 常规对抗。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+            },
+            "draw_trap_note": null,
+            "archetype": {
+              "tags": [
+                {
+                  "key": "balanced",
+                  "label": "常规对抗"
+                }
+              ],
+              "depth_score": 0,
+              "depth_label": "深度一般",
+              "draw_trap_pct": 22,
+              "fav_lead_style": "balanced"
+            }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.7,
+            "xg_away_ht": 0.48,
+            "xg_home_2h": 0.88,
+            "xg_away_2h": 0.6,
+            "home_win": 36,
+            "draw": 42,
+            "away_win": 22,
+            "top_score": "0-0",
+            "top_score_prob": 30.7,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 30.7
+              },
+              {
+                "score": "1-0",
+                "prob": 21.5
+              },
+              {
+                "score": "0-1",
+                "prob": 14.8
+              }
+            ],
+            "ht_goals_expected": 1.18,
+            "ht_over_0_5_pct": 69.3,
+            "ht_over_1_5_pct": 33,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.7–0.48（约占全场 44%） · 最可能 0-0（30.7%） · 胜平负 36/42/22 · 半场≥1球约 69.3%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
+          }
+        },
+        "public_summary_note": "【推演概要】USA · 常规对抗。 · 与模型 xG 对照：大众心理预期偏高 · 赛前净胜看法高于 xG 隐含约 1.25 · 部分达标净胜=1 约 23.6%（模型微调：主胜 -5% · 平 +1% · 客 +4%）",
         "goal_efficiency": {
           "xg_total": 2.66,
           "xg_gap": 0.5,
@@ -77144,34 +79271,20 @@ const RESULTS_DATA = {
           "summary_cn": "赛前 xG 总 2.66（差 0.5）· 热门 USA 1.58→2（效率 1.27）· 弱队 Bosnia & Herz. 1.08→0（效率 0）→ 混合路径。弱队哑火（效率<0.6）——样本内总进球难破 3。",
           "in_mid_band": true
         },
-        "goal_efficiency_preview": null,
-        "display_summary": {
-          "baseline_label": "全场预期（含伤病·气候）",
-          "customer_reading": {
-            "spread": {
-              "show_cover": true,
-              "level": "possible",
-              "full_cover_pct": 37.3,
-              "fav_win_pct": 48.9,
-              "cover_given_win_pct": 51.7,
-              "dog_hold_pct": 62.7,
-              "market_expect_cn": "USA -1.5 · 净胜≥2",
-              "pill_cn": "USA 胜 48.9% · 胜后穿 51.7% · Bosnia & Herz. +1.5 守 62.7%"
-            },
-            "totals": {
-              "level": "mild_low",
-              "show_lean": false,
-              "lean_side": "dull",
-              "pill_cn": "略偏闷（弱）"
-            }
-          },
-          "totals_view": {
-            "over_pct": 38.3,
-            "market_line": 2.75,
-            "fair_line": 2,
-            "line_gap": 0.75
-          },
-          "totals_line": 2.75
+        "preview_replay": {
+          "actual_score": "2-0",
+          "match_score": null,
+          "ht_score": "1-0",
+          "hits": [
+            "净胜全达标方向一致",
+            "赛前进球氛围未强判（符合模型五五开读法）"
+          ],
+          "misses": [],
+          "summary_cn": "命中：净胜全达标方向一致 · 赛前进球氛围未强判（符合模型五五开读法）。",
+          "totals_actual": 2,
+          "totals_line": 2.75,
+          "spread_level": "possible",
+          "totals_level": "mild_low"
         }
       },
       "actualResult": {
@@ -77225,7 +79338,65 @@ const RESULTS_DATA = {
         "base_home_win": 52.7,
         "base_draw": 24.1,
         "base_away_win": 23.2,
-        "depth_calibrated": true
+        "depth_calibrated": true,
+        "score_dist": [
+          {
+            "score": "1-1",
+            "prob": 11.3
+          },
+          {
+            "score": "1-0",
+            "prob": 10.8
+          },
+          {
+            "score": "2-1",
+            "prob": 9.7
+          },
+          {
+            "score": "2-0",
+            "prob": 9.3
+          },
+          {
+            "score": "0-1",
+            "prob": 6.6
+          },
+          {
+            "score": "0-0",
+            "prob": 6.3
+          },
+          {
+            "score": "1-2",
+            "prob": 5.9
+          }
+        ],
+        "draw_context": {
+          "drawBoost": 0,
+          "ironBucket": false,
+          "closeXg": false,
+          "gap": 0.67,
+          "notes": [],
+          "qual_dynamics": null
+        },
+        "qual_dynamics": null,
+        "xg_poisson_home": 1.72,
+        "xg_poisson_away": 1.05,
+        "xg_tier_calibrated": false,
+        "score_prob": 11.3,
+        "score_top3": [
+          {
+            "score": "1-1",
+            "prob": 11.3
+          },
+          {
+            "score": "1-0",
+            "prob": 10.8
+          },
+          {
+            "score": "2-1",
+            "prob": 9.7
+          }
+        ],
+        "expected_score": "2-1"
       },
       "market_snapshot": {
         "market_tier": 0.25,
@@ -77246,26 +79417,844 @@ const RESULTS_DATA = {
         "agent_pick_confidence": "medium",
         "agent_spread_cn": "塞内加尔 +0/0.5 @1.06",
         "agent_totals_cn": "大球 2.5 @0.88",
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": "R9",
         "totals_level": "neutral",
         "totals_show_lean": false,
         "totals_lean_side": "neutral"
       },
       "depth_calibration": {
-        "public_summary_note": "【推演概要】Belgium · 均势开放。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
-        "preview_replay": {
-          "actual_score": "2-2",
-          "match_score": "3-2",
-          "ht_score": "0-1",
-          "hits": [
-            "赛前进球氛围未强判（符合模型五五开读法）"
+        "tier_home": 0.25,
+        "tier_label": "Belgium -0.25 · Senegal +0.25",
+        "implied_tier": 0.25,
+        "tier_gap": 0,
+        "signal": "neutral",
+        "signal_cn": "均衡",
+        "signal_color": "#7BB8D4",
+        "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
+        "blocker_spread_note": "",
+        "public_lean_cn": "舆论倾向 Belgium（约 58%）",
+        "analysis": "M82 · 比利时 vs 塞内加尔 · 现 -0/0.5 比 0.83 / 塞 1.06 · 大小 2.5 大 0.88 小 1.00 · Agent终选：★塞受让+大2.5。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "1-1",
+              "prob": 11.3
+            },
+            {
+              "score": "1-0",
+              "prob": 10.8
+            },
+            {
+              "score": "2-1",
+              "prob": 9.8
+            }
           ],
-          "misses": [],
-          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。",
-          "totals_actual": 4,
-          "totals_line": 2.5,
-          "spread_level": "possible",
-          "totals_level": "neutral"
+          "one_goal_win_pct": 24,
+          "two_plus_win_pct": 29,
+          "full_cover_pct": 48.1,
+          "dog_hold_pct": 51.9,
+          "fav_win_pct": 53,
+          "cover_given_win_pct": 100,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0.2,
+          "half_cover_pct": 0,
+          "half_lose_pct": 0,
+          "push_pct": null,
+          "margin_full_label": "净胜≥1",
+          "margin_half_label": null,
+          "fav_cover_ev": 0.06,
+          "dog_cover_ev": -0.06,
+          "rational_spread_cn": "主队 净胜达标概率略高",
+          "total_xg": 2.77,
+          "fair_totals_line": 2,
+          "over_2_5_pct": 52.2,
+          "over_3_pct": 30,
+          "totals_lean_cn": "超 2.5 接近均衡；4球+偏少",
+          "margin_risk_note": "净胜≥1 约 53%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 53,
+          "dog_hold_pct_raw": 47
         },
+        "spread_odds": {
+          "fav": 0.83,
+          "dog": 1.06,
+          "note": "Belgium 0.83 · Senegal 1.06"
+        },
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 2.5,
+          "market_goals_int": 3,
+          "line_label": "总进球约 2.5 个",
+          "implied_xg_total": 2.77,
+          "fair_line": 2,
+          "line_gap": 0.5,
+          "over_pct": 51.9,
+          "under_pct": 48.1,
+          "signal": "high_line",
+          "signal_cn": "参考偏高",
+          "signal_color": "#C8A96E",
+          "signal_desc": "总进球参考高于合理值，模型偏小比分。",
+          "public_over_pct": 50,
+          "public_lean_cn": "舆论对总进球看法较分散",
+          "index_note": "大比分侧 0.88 / 小比分侧 1",
+          "totals_odds": {
+            "over": 0.88,
+            "under": 1,
+            "note": "大比分 0.88 · 小比分 1"
+          },
+          "rational_cn": "超 2.5 球接近五五开（约 51.9%）",
+          "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
+        },
+        "totals_line": 2.5,
+        "market_line_movement": {
+          "wc_note": "西雅图 neutral · 主客仅为 FIFA 标记",
+          "spread_open_cn": "Belgium -0.5@1.02 · Senegal +0.5@0.8",
+          "spread_now_cn": "Belgium -0/0.5@0.83 · Senegal +0/0.5@1.06",
+          "totals_now_cn": "大小 2.5 · 大 0.88 / 小 1",
+          "tag": "correction",
+          "tag_cn": "向模型修正",
+          "tag_color": "#C8A96E",
+          "detail_cn": "退 0.25 档 · 热门 1.02→0.83（降水） · 受让 0.8→1.06（抬水） 现盘去水隐含：Belgium 53% · Senegal 47%（超收 3.2%） 模型穿盘（现档 Belgium -0.25 · Senegal +0.25）：Belgium 48.1% · Senegal 51.9% 模型−市场：Belgium -4.9pp · Senegal +4.9pp 期望 ROI@现水：Belgium -12% · Senegal +58.8% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "actuarial": {
+            "actuarial_type": "correction",
+            "actuarial_cn": "向模型修正",
+            "actuarial_color": "#C8A96E",
+            "actuarial_desc": "盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+            "summary_cn": "退 0.25 档 · 热门 1.02→0.83（降水） · 受让 0.8→1.06（抬水） 现盘去水隐含：Belgium 53% · Senegal 47%（超收 3.2%） 模型穿盘（现档 Belgium -0.25 · Senegal +0.25）：Belgium 48.1% · Senegal 51.9% 模型−市场：Belgium -4.9pp · Senegal +4.9pp 期望 ROI@现水：Belgium -12% · Senegal +58.8% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+            "line_delta": -0.25,
+            "line_delta_cn": "退 0.25 档",
+            "fav_odds_delta": -0.19,
+            "dog_odds_delta": 0.26,
+            "water_move_cn": "热门 1.02→0.83（降水） · 受让 0.8→1.06（抬水）",
+            "open_tier": 0.5,
+            "open_tier_label": "Belgium -0.5 · Senegal +0.5",
+            "now_tier": 0.25,
+            "implied_tier": 0.25,
+            "open_tier_gap": 0.25,
+            "now_tier_gap": 0,
+            "open_devig": {
+              "fav_pct": 47.1,
+              "dog_pct": 52.9,
+              "overround_pct": 5.1
+            },
+            "now_devig": {
+              "fav_pct": 53,
+              "dog_pct": 47,
+              "overround_pct": 3.2
+            },
+            "model_cover_open_pct": 48.1,
+            "model_cover_now_pct": 48.1,
+            "model_dog_cover_now_pct": 51.9,
+            "market_fav_cover_now_pct": 53,
+            "market_dog_cover_now_pct": 47,
+            "model_vs_market_fav_pp": -4.9,
+            "model_vs_market_dog_pp": 4.9,
+            "fav_roi_pct": -12,
+            "dog_roi_pct": 58.8,
+            "fav_name": "Belgium",
+            "dog_name": "Senegal"
+          }
+        },
+        "spread_market_analysis": {
+          "actuarial_type": "correction",
+          "actuarial_cn": "向模型修正",
+          "actuarial_color": "#C8A96E",
+          "actuarial_desc": "盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "summary_cn": "退 0.25 档 · 热门 1.02→0.83（降水） · 受让 0.8→1.06（抬水） 现盘去水隐含：Belgium 53% · Senegal 47%（超收 3.2%） 模型穿盘（现档 Belgium -0.25 · Senegal +0.25）：Belgium 48.1% · Senegal 51.9% 模型−市场：Belgium -4.9pp · Senegal +4.9pp 期望 ROI@现水：Belgium -12% · Senegal +58.8% 盘路向 xG 隐含档位收敛，属于定价修正而非单向诱盘。",
+          "line_delta": -0.25,
+          "line_delta_cn": "退 0.25 档",
+          "fav_odds_delta": -0.19,
+          "dog_odds_delta": 0.26,
+          "water_move_cn": "热门 1.02→0.83（降水） · 受让 0.8→1.06（抬水）",
+          "open_tier": 0.5,
+          "open_tier_label": "Belgium -0.5 · Senegal +0.5",
+          "now_tier": 0.25,
+          "implied_tier": 0.25,
+          "open_tier_gap": 0.25,
+          "now_tier_gap": 0,
+          "open_devig": {
+            "fav_pct": 47.1,
+            "dog_pct": 52.9,
+            "overround_pct": 5.1
+          },
+          "now_devig": {
+            "fav_pct": 53,
+            "dog_pct": 47,
+            "overround_pct": 3.2
+          },
+          "model_cover_open_pct": 48.1,
+          "model_cover_now_pct": 48.1,
+          "model_dog_cover_now_pct": 51.9,
+          "market_fav_cover_now_pct": 53,
+          "market_dog_cover_now_pct": 47,
+          "model_vs_market_fav_pp": -4.9,
+          "model_vs_market_dog_pp": 4.9,
+          "fav_roi_pct": -12,
+          "dog_roi_pct": 58.8,
+          "fav_name": "Belgium",
+          "dog_name": "Senegal"
+        },
+        "totals_pick_layers": {
+          "model_side": "neutral",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "over",
+          "market_side": "neutral",
+          "recommended_side": "neutral",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "neutral",
+            "line": "under",
+            "odds": "over",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "观望(model) · 小球(line) · 大球(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
+        "agent_pick": {
+          "primary": "spread",
+          "tendency_cn": "更倾向让球盘",
+          "tendency_reason_cn": "比0.83极低水退档后仍挺=诱比嫌疑 · 1-1(11.3%)平半赢半 · ★塞+0/0.5 · 大2.5副项随均衡盘。",
+          "confidence": "medium",
+          "confidence_cn": "中信心",
+          "confidence_reason_cn": "★塞受让：模型51.9%+比低水非 massacre · 非大信心因2-2常规平局仅赢半；1-1赢半仍中；副项大0.88略低水。",
+          "spread": {
+            "side": "dog",
+            "label_cn": "塞内加尔 +0/0.5 @1.06",
+            "reason_cn": "比-0.5→-0/0.5仍0.83 · 1-1赢半/0-0·0-1·塞全赢/比1-0·2-1·2-2赢半（90'） · 加时3-2不计盘 · ★主项。"
+          },
+          "totals": {
+            "side": "over",
+            "label_cn": "大球 2.5 @0.88",
+            "reason_cn": "小1.00升水趋均衡 · 大0.88略低 · 模型超2.5约52% · 3球+全赢 · 副项。"
+          },
+          "pick_meta": {
+            "model_side": "over",
+            "situation_side": "neutral",
+            "market_line_side": "under",
+            "market_odds_side": "over",
+            "market_side": "over",
+            "pick_side": "over",
+            "recommended_side": "neutral",
+            "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
+            "conflict": false,
+            "conflict_cn": null,
+            "votes": {
+              "model": "neutral",
+              "line": "under",
+              "odds": "over",
+              "situation": "neutral"
+            },
+            "vote_summary_cn": "观望(model) · 小球(line) · 大球(odds) · 观望(situation)",
+            "situation_dampened": false,
+            "over_pct": 51.9,
+            "line_gap": 0.5
+          },
+          "picked_at": "2026-07-02-agent-final",
+          "ko_totals_policy": {
+            "enabled": true,
+            "rule_id": "R9",
+            "rule_cn": "★=大小无模型/盘冲突 · 副项仅大球 · 大信心仅绑★=大小",
+            "applied_at": "buildDepthCalibration"
+          }
+        },
+        "applied_delta": {
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
+        },
+        "adjustment_note": "模型微调：主胜 +0% · 平 +0% · 客 +0%",
+        "adjusted_probs": {
+          "home_win": 53,
+          "draw": 24,
+          "away_win": 23
+        },
+        "display_summary": {
+          "fav_name": "Belgium",
+          "expected_total_goals": 2.73,
+          "poisson_fav_win_pct": 52.7,
+          "small_lead_pct": 24.1,
+          "small_example_score": "1-0",
+          "small_example_pct": 10.9,
+          "big_cover_pct": 28.6,
+          "big_example_score": "2-0",
+          "big_example_pct": 9.4,
+          "win_shape": {
+            "fav_name": "Belgium",
+            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
+            "lead_cn": "取胜时以拉开·控局为主（拉开 · 控局 27.9%）",
+            "shapes": [
+              {
+                "key": "narrow_low",
+                "label": "险胜 · 控局",
+                "example": "如 1-0",
+                "field_pct": 10.9,
+                "pct": 20.6
+              },
+              {
+                "key": "narrow_open",
+                "label": "险胜 · 开放",
+                "example": "如 2-1",
+                "field_pct": 13.3,
+                "pct": 25.2
+              },
+              {
+                "key": "comfort_low",
+                "label": "拉开 · 控局",
+                "example": "如 2-0",
+                "field_pct": 14.7,
+                "pct": 27.9
+              },
+              {
+                "key": "comfort_open",
+                "label": "拉开 · 开放",
+                "example": "如 3-1+",
+                "field_pct": 13.8,
+                "pct": 26.3
+              }
+            ],
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 45.8
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 27.9
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 26.3
+              }
+            ],
+            "fav_win_pct": 53
+          },
+          "excitement": {
+            "label_cn": "中速开局",
+            "label_key": "moderate",
+            "label_color": "#C8A96E",
+            "sub_cn": "预期首球等待约 32.5 分",
+            "first_goal_wait": 32.5,
+            "fast_pct": 60.3,
+            "moderate_pct": 14.7,
+            "slow_pct": 25,
+            "tiers": [
+              {
+                "key": "fast",
+                "label": "前 30 分内首球",
+                "pct": 60.3
+              },
+              {
+                "key": "moderate",
+                "label": "30–45 分首球",
+                "pct": 14.7
+              },
+              {
+                "key": "slow",
+                "label": "45 分后首球",
+                "pct": 25
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "Belgium 暂无重要伤停 · Senegal 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "— / —（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "气候信息暂无"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 1.72,
+            "baseline_away": 1.05,
+            "adjusted_home": 1.72,
+            "adjusted_away": 1.05,
+            "note": "基准 xG 1.72–1.05（未因伤病/气候下调）"
+          },
+          "calibration": {
+            "signal_cn": "均衡",
+            "signal_color": "#7BB8D4",
+            "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
+            "tier_gap": 0,
+            "implied_tier_label": "Belgium -0.25 · Senegal +0.25",
+            "market_tier_label": "Belgium -0.25 · Senegal +0.25",
+            "summary_cn": "与模型 xG 对照：均衡 · 与赛前净胜看法基本一致"
+          },
+          "win_outlook": {
+            "fav_name": "Belgium",
+            "state_label": null,
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 45.8
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 27.9
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 26.3
+              }
+            ],
+            "margin_line_cn": "Belgium · 赛前净胜参考 净胜≥1（全达标）",
+            "margin_meet_pct": 47.9,
+            "margin_half_pct": 0,
+            "margin_fail_pct": 0,
+            "margin_full_label": "净胜≥1",
+            "margin_half_label": null,
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
+            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+            "totals_line": 2.5,
+            "totals_line_cn": "总进球参考 2.5",
+            "fair_totals_line": 2,
+            "model_total_xg": 2.77,
+            "totals_line_gap": 0.5,
+            "totals_high_pct": 51.9,
+            "totals_low_pct": 48.1,
+            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+            "win_low_total_pct": 20.2,
+            "win_margin2_low_total_pct": 9.4,
+            "win_margin2_high_total_pct": 19.2,
+            "readout_cn": "取胜约 53%；若取胜，以「险胜收工」为主（45.8%）。 对着赛前净胜参考，净胜≥1（全达标）约 47.9%；对着总进球参考 2.5，模型超线概率约 51.9%。"
+          },
+          "totals_line": 2.5,
+          "score_patterns": [
+            {
+              "score": "1-1",
+              "pct": 11.3
+            },
+            {
+              "score": "1-0",
+              "pct": 10.8
+            },
+            {
+              "score": "2-1",
+              "pct": 9.8
+            }
+          ],
+          "totals_view": {
+            "expected_total": 2.7,
+            "fair_line": 2,
+            "market_line": 2.5,
+            "line_gap": 0.5,
+            "over_pct": 51.9,
+            "gap_warning": null,
+            "totals_outlook": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 51.9,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "summary_cn": "预测 2.7 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向"
+          },
+          "customer_reading": {
+            "headline_cn": "Belgium -0.25 穿盘：有达标可能",
+            "sub_cn": "Belgium 胜 53% · 胜后穿 100% · Senegal +0.25 守 51.9% 进球氛围：几乎五五开",
+            "spread": {
+              "level": "possible",
+              "label_cn": "有达标可能",
+              "color": "#C8A96E",
+              "fav_name": "Belgium",
+              "dog_name": "Senegal",
+              "fav_handicap_cn": "Belgium -0.25",
+              "dog_handicap_cn": "Senegal +0.25",
+              "market_expect_cn": "Belgium -0.25 · 净胜≥1",
+              "meet_pct": 48.1,
+              "dog_hold_pct": 51.9,
+              "fav_win_pct": 53,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 53,
+              "meet_pct_label": "Belgium -0.25 穿盘概率（校准）",
+              "dog_hold_label": "Senegal +0.25 守住概率（校准）",
+              "two_stage_cn": "Belgium 取胜约 53% · 赢球后穿盘约 100% · Senegal +0.25 守住约 51.9%",
+              "grid_tail_pct": null,
+              "verdict_cn": "有达标可能",
+              "headline_cn": "Belgium -0.25 穿盘：有达标可能",
+              "pill_cn": "Belgium 胜 53% · 胜后穿 100% · Senegal +0.25 守 51.9%",
+              "detail_cn": "Belgium 取胜约 53% · 赢球后穿盘约 100% · Senegal +0.25 守住约 51.9%（泊松 raw 53% → 校准 48.1%）；穿盘与受让守住均有一定空间。",
+              "extra_stats_cn": "",
+              "full_cover_pct": 48.1,
+              "half_cover_pct": 0,
+              "lose1_pct": 0,
+              "margin_full_label": "净胜≥1",
+              "margin_half_label": null,
+              "tier_gap": 0,
+              "show_cover": true
+            },
+            "totals": {
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
+              "show_lean": false,
+              "over_pct": 51.9,
+              "line_gap": 0.5,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "draw_risk": null,
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "让球盘",
+                "outlook": {
+                  "level": "possible",
+                  "label_cn": "有达标可能",
+                  "color": "#C8A96E",
+                  "fav_name": "Belgium",
+                  "dog_name": "Senegal",
+                  "fav_handicap_cn": "Belgium -0.25",
+                  "dog_handicap_cn": "Senegal +0.25",
+                  "market_expect_cn": "Belgium -0.25 · 净胜≥1",
+                  "meet_pct": 48.1,
+                  "dog_hold_pct": 51.9,
+                  "fav_win_pct": 53,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 53,
+                  "meet_pct_label": "Belgium -0.25 穿盘概率（校准）",
+                  "dog_hold_label": "Senegal +0.25 守住概率（校准）",
+                  "two_stage_cn": "Belgium 取胜约 53% · 赢球后穿盘约 100% · Senegal +0.25 守住约 51.9%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "有达标可能",
+                  "headline_cn": "Belgium -0.25 穿盘：有达标可能",
+                  "pill_cn": "Belgium 胜 53% · 胜后穿 100% · Senegal +0.25 守 51.9%",
+                  "detail_cn": "Belgium 取胜约 53% · 赢球后穿盘约 100% · Senegal +0.25 守住约 51.9%（泊松 raw 53% → 校准 48.1%）；穿盘与受让守住均有一定空间。",
+                  "extra_stats_cn": "",
+                  "full_cover_pct": 48.1,
+                  "half_cover_pct": 0,
+                  "lose1_pct": 0,
+                  "margin_full_label": "净胜≥1",
+                  "margin_half_label": null,
+                  "tier_gap": 0,
+                  "show_cover": true
+                },
+                "text": "Belgium 胜 53% · 胜后穿 100% · Senegal +0.25 守 51.9%",
+                "color": "#C8A96E",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "◎",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "neutral",
+                  "label_cn": "暂无明显倾向",
+                  "color": "#8A96A8",
+                  "meter_label_cn": "几乎五五开",
+                  "meter_pos": 50,
+                  "lean_side": "neutral",
+                  "lean_strength": "none",
+                  "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+                  "pill_cn": "几乎五五开",
+                  "detail_cn": "模型五五开，临场决定节奏。",
+                  "headline_cn": "进球氛围：几乎五五开",
+                  "show_lean": false,
+                  "over_pct": 51.9,
+                  "line_gap": 0.5,
+                  "market_line": 2.5,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "总进球参考 2.5",
+                  "caution_public_high": false
+                },
+                "text": "几乎五五开",
+                "color": "#8A96A8",
+                "muted": true
+              }
+            ],
+            "methodology_note": "读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "Belgium",
+              "first_goal_pct": 62.1,
+              "start_score": "1-0",
+              "fav_name": "Belgium",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 91.2,
+              "small_lead_pct": 28.1,
+              "big_lead_pct": 46.2,
+              "fav_win_pct": 74.3,
+              "fav_draw_pct": 16.9,
+              "fav_lose_pct": 8.7,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "Belgium 保持胜果（净胜≥1）",
+                  "pct": 74.3
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 16.9
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 8.7
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 33 分",
+                "first_goal_wait": 33,
+                "fast_pct": 52.6,
+                "moderate_pct": 14.8,
+                "slow_pct": 32.7,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 52.6
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.8
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 32.7
+                  }
+                ]
+              },
+              "big_delta": 17.6,
+              "small_delta": 4,
+              "narrative": "Belgium 先破门（已 1-0） → 「巩固防守」；Senegal 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
+              "live_outlook": {
+                "fav_name": "Belgium",
+                "state_label": "Belgium 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 45.8
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 27.9
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 26.3
+                  }
+                ],
+                "margin_line_cn": "Belgium · 赛前净胜参考 净胜≥1（全达标）",
+                "margin_meet_pct": 74.3,
+                "margin_half_pct": 0,
+                "margin_fail_pct": 28.1,
+                "margin_full_label": "净胜≥1",
+                "margin_half_label": null,
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.5,
+                "totals_line_cn": "总进球参考 2.5",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 2.24,
+                "totals_line_gap": 0.25,
+                "totals_high_pct": 65.4,
+                "totals_low_pct": 34.6,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 24.9,
+                "win_margin2_low_total_pct": 14.2,
+                "win_margin2_high_total_pct": 32,
+                "readout_cn": "Belgium 已 1-0 领先：仍取胜约 74.3%。 对着总进球参考 2.5，模型超线概率约 65.4%。 常见 2-0 收尾（相对总进球参考 2.5仍偏小比分）。"
+              }
+            },
+            {
+              "side": "away",
+              "team": "Senegal",
+              "first_goal_pct": 37.9,
+              "start_score": "0-1",
+              "fav_name": "Belgium",
+              "scorer_is_fav": false,
+              "expected_key": "fav_recover",
+              "fav_recover_pct": 53.2,
+              "small_lead_pct": 16.4,
+              "big_lead_pct": 10.6,
+              "fav_win_pct": 27.1,
+              "fav_draw_pct": 26.1,
+              "fav_lose_pct": 46.9,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "Belgium 追平（平局）",
+                  "pct": 26.1
+                },
+                {
+                  "key": "win1",
+                  "label": "Belgium 净胜1球翻盘（如 2-1）",
+                  "pct": 16.4
+                },
+                {
+                  "key": "win2",
+                  "label": "Belgium 净胜≥2球翻盘（如 3-1）",
+                  "pct": 10.6
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "Senegal 保持胜果至终场",
+                  "pct": 46.9
+                }
+              ],
+              "excitement": {
+                "label_cn": "中速开局",
+                "label_key": "moderate",
+                "label_color": "#C8A96E",
+                "sub_cn": "预期首球等待约 32 分",
+                "first_goal_wait": 32,
+                "fast_pct": 53.6,
+                "moderate_pct": 14.8,
+                "slow_pct": 31.6,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 53.6
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 14.8
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 31.6
+                  }
+                ]
+              },
+              "big_delta": -18,
+              "small_delta": -7.7,
+              "narrative": "Senegal 先破门（已 0-1） → 「巩固防守」；Belgium 「组织反扑」。热门先丢球（已 0-1），需再进至少两球才能净胜两球以上，该路径概率明显下降。",
+              "live_outlook": null
+            }
+          ],
+          "match_preview": {
+            "morphology": {
+              "totals_summary": "预测 2.7 · 合理值 2 · 总进球参考 2.5（高于合理值 0.5） · 高于合理值 0.5 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球参考 2.5",
+              "totals_high_pct": 51.9,
+              "type_tags": [
+                {
+                  "key": "even_open",
+                  "label": "均势开放"
+                }
+              ],
+              "depth_label": "深度一般",
+              "draw_trap_pct": 20,
+              "readout_cn": "Belgium · 均势开放。总进球走向模型暂无明确倾向；进球时间段娱乐解读见下方「灵力分析」。"
+            },
+            "draw_trap_note": null,
+            "archetype": {
+              "tags": [
+                {
+                  "key": "even_open",
+                  "label": "均势开放"
+                }
+              ],
+              "depth_score": 0,
+              "depth_label": "深度一般",
+              "draw_trap_pct": 20,
+              "fav_lead_style": "balanced"
+            }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.76,
+            "xg_away_ht": 0.46,
+            "xg_home_2h": 0.96,
+            "xg_away_2h": 0.59,
+            "home_win": 39,
+            "draw": 40.8,
+            "away_win": 20.2,
+            "top_score": "0-0",
+            "top_score_prob": 29.5,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 29.5
+              },
+              {
+                "score": "1-0",
+                "prob": 22.4
+              },
+              {
+                "score": "0-1",
+                "prob": 13.6
+              }
+            ],
+            "ht_goals_expected": 1.22,
+            "ht_over_0_5_pct": 70.5,
+            "ht_over_1_5_pct": 34.4,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.76–0.46（约占全场 44%） · 最可能 0-0（29.5%） · 胜平负 39/40.8/20.2 · 半场≥1球约 70.5%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
+          }
+        },
+        "public_summary_note": "【推演概要】Belgium · 均势开放。 · 与模型 xG 对照：均衡 · 与赛前净胜看法基本一致（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
         "goal_efficiency": {
           "xg_total": 2.77,
           "xg_gap": 0.67,
@@ -77307,34 +80296,19 @@ const RESULTS_DATA = {
           "summary_cn": "赛前 xG 总 2.77（差 0.67）· 热门 Belgium 1.72→3（效率 1.74）· 弱队 Senegal 1.05→2（效率 1.9）→ 对攻兑现。热门效率≥1.5 且总进球≥4——样本内高比分硬路径（热门打穿）。",
           "in_mid_band": true
         },
-        "goal_efficiency_preview": null,
-        "display_summary": {
-          "baseline_label": "全场预期（含伤病·气候）",
-          "customer_reading": {
-            "spread": {
-              "show_cover": true,
-              "level": "possible",
-              "full_cover_pct": 48.1,
-              "fav_win_pct": 53,
-              "cover_given_win_pct": 100,
-              "dog_hold_pct": 51.9,
-              "market_expect_cn": "Belgium -0.25 · 净胜≥1",
-              "pill_cn": "Belgium 胜 53% · 胜后穿 100% · Senegal +0.25 守 51.9%"
-            },
-            "totals": {
-              "level": "neutral",
-              "show_lean": false,
-              "lean_side": "neutral",
-              "pill_cn": "几乎五五开"
-            }
-          },
-          "totals_view": {
-            "over_pct": 51.9,
-            "market_line": 2.5,
-            "fair_line": 2,
-            "line_gap": 0.5
-          },
-          "totals_line": 2.5
+        "preview_replay": {
+          "actual_score": "2-2",
+          "match_score": "3-2",
+          "ht_score": "0-1",
+          "hits": [
+            "赛前进球氛围未强判（符合模型五五开读法）"
+          ],
+          "misses": [],
+          "summary_cn": "命中：赛前进球氛围未强判（符合模型五五开读法）。",
+          "totals_actual": 4,
+          "totals_line": 2.5,
+          "spread_level": "possible",
+          "totals_level": "neutral"
         }
       },
       "actualResult": {

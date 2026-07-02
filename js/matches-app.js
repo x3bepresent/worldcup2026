@@ -999,15 +999,20 @@ function renderMarketPreviewStrip(m) {
       </div>` : '';
   const ap = preview.agentPick;
   const isHighConf = ap?.confidence === 'high';
-  const agentPickHtml = ap?.spread && ap?.totals ? `
-      <div class="mf-market-preview-pick${isHighConf ? ' mf-market-preview-pick--high' : ''}">
+  const koPolicy = ap?.ko_totals_policy?.enabled;
+  const totalsSkipped = ap?.totals?.skipped;
+  const showAgentDual = ap?.spread && ap?.totals;
+  const agentPickHtml = showAgentDual ? `
+      <div class="mf-market-preview-pick${isHighConf ? ' mf-market-preview-pick--high' : ''}${koPolicy ? ' mf-market-preview-pick--ko-r9' : ''}">
         <div class="mf-market-preview-pick-head">
           <span class="mf-market-preview-pick-k">Agent 双选</span>
+          ${koPolicy ? `<span class="mf-market-preview-pick-ko">R9</span>` : ''}
           ${isHighConf ? `<span class="mf-market-preview-pick-high">大信心</span>` : ''}
           <span class="mf-market-preview-pick-tendency">${ap.tendency_cn || (ap.primary === 'totals' ? '更倾向大小球' : '更倾向让球盘')}</span>
         </div>
+        ${ap.confidence_downgrade_cn ? `<p class="mf-market-preview-pick-ko-note">${ap.confidence_downgrade_cn}</p>` : ''}
         ${isHighConf && ap.confidence_reason_cn ? `<p class="mf-market-preview-pick-high-reason">${ap.confidence_reason_cn}</p>` : ''}
-        ${ap.totals?.situation_conflict_cn ? `<p class="mf-market-preview-pick-conflict">${ap.totals.situation_conflict_cn}</p>` : ''}
+        ${ap.totals?.situation_conflict_cn && !totalsSkipped ? `<p class="mf-market-preview-pick-conflict">${ap.totals.situation_conflict_cn}</p>` : ''}
         ${ap.pick_meta?.vote_summary_cn ? `<p class="mf-market-preview-pick-layers">三层：${ap.pick_meta.vote_summary_cn}</p>` : ''}
         ${ap.tendency_reason_cn ? `<p class="mf-market-preview-pick-tendency-reason">${ap.tendency_reason_cn}</p>` : ''}
         <div class="mf-market-preview-pick-grid">
@@ -1016,10 +1021,10 @@ function renderMarketPreviewStrip(m) {
             <span class="mf-market-preview-pick-val">${ap.spread.label_cn}</span>
             <p class="mf-market-preview-pick-reason">${ap.spread.reason_cn || ''}</p>
           </div>
-          <div class="mf-market-preview-pick-row${ap.primary === 'totals' ? ' mf-market-preview-pick-row--primary' : ''}">
-            <span class="mf-market-preview-pick-type">大小${ap.primary === 'totals' ? ' ★' : ''}</span>
-            <span class="mf-market-preview-pick-val">${ap.totals.label_cn}</span>
-            <p class="mf-market-preview-pick-reason">${ap.totals.reason_cn || ''}</p>
+          <div class="mf-market-preview-pick-row${ap.primary === 'totals' && !totalsSkipped ? ' mf-market-preview-pick-row--primary' : ''}${totalsSkipped ? ' mf-market-preview-pick-row--skipped' : ''}">
+            <span class="mf-market-preview-pick-type">大小${ap.primary === 'totals' && !totalsSkipped ? ' ★' : ''}${totalsSkipped ? ' · 跳过' : ''}</span>
+            <span class="mf-market-preview-pick-val">${ap.totals.label_cn}${totalsSkipped ? '' : ''}</span>
+            <p class="mf-market-preview-pick-reason">${totalsSkipped ? (ap.totals.skip_reason_cn || '淘汰赛 R9 不出单') : (ap.totals.reason_cn || '')}${ap.totals.ko_auto_side_cn ? ' · ' + ap.totals.ko_auto_side_cn : ''}${ap.totals.skip_detail_cn ? ' · ' + ap.totals.skip_detail_cn : ''}</p>
           </div>
         </div>
       </div>` : (ap ? `
@@ -1259,6 +1264,11 @@ function statPctClass(pct) {
   if (pct >= 55) return 'results-stat-pct--good';
   if (pct >= 45) return 'results-stat-pct--mid';
   return 'results-stat-pct--low';
+}
+
+function fmtAgentUnits(n) {
+  if (n == null || Number.isNaN(n)) return '—';
+  return Number.isInteger(n) ? String(n) : String(Math.round(n * 10) / 10);
 }
 
 function matchSortKey(m) {
@@ -1553,7 +1563,7 @@ function renderAgentSummaryStats(agentStats) {
   const primary = ev?.primary || agentStats.aggregate.primary;
   const hcPrimary = ev?.high_confidence?.primary || agentStats.aggregate.high_confidence?.primary;
   const hcN = ev?.high_confidence?.match_count ?? agentStats.aggregate.high_confidence?.n ?? 0;
-  const rule = ev?.grade_rule_cn || agentStats.grade_rule_cn || '不败即中';
+  const rule = ev?.grade_rule_cn || agentStats.grade_rule_cn || '统计：全赢1 · 赢半0.5 · 输半0.5';
 
   const card = (key, icon, label, data, sub, fire) => {
     const muted = !data?.n;
@@ -1566,14 +1576,22 @@ function renderAgentSummaryStats(agentStats) {
         </div>
         <div class="results-stat-pct ${muted ? '' : statPctClass(data.pct)}">${muted ? '—' : `${data.pct}<span class="results-stat-unit">%</span>`}</div>
         <div class="results-stat-foot">
-          <span class="results-stat-hit">${muted ? '待样本' : `${data.hit} / ${data.n} 中`}</span>
+          <span class="results-stat-hit">${muted ? '待样本' : `${fmtAgentUnits(data.hit)} / ${data.n} 注`}</span>
           <span class="results-stat-sub">${sub}</span>
         </div>
       </div>`;
   };
 
-  const hitIcon = v => (v === true ? '✓' : v === false ? '✗' : '…');
-  const hitCls = v => (v === true ? 'agent-eval-hit' : v === false ? 'agent-eval-miss' : 'agent-eval-pending');
+  const hitIcon = (v, outcome) => {
+    if (outcome === 'half_win') return '◑';
+    if (outcome === 'half_lose') return '◔';
+    return v === true ? '✓' : v === false ? '✗' : '…';
+  };
+  const hitCls = (v, outcome) => {
+    if (outcome === 'half_win') return 'agent-eval-half-win';
+    if (outcome === 'half_lose') return 'agent-eval-half-lose';
+    return v === true ? 'agent-eval-hit' : v === false ? 'agent-eval-miss' : 'agent-eval-pending';
+  };
 
   const gradedRows = Object.entries(agentStats.byId || {})
     .map(([id, g]) => ({ id, ...g }))
@@ -1616,9 +1634,9 @@ function renderAgentSummaryStats(agentStats) {
       <td>${g.id}</td>
       <td class="agent-eval-match">${g.match}${g.actual_score ? ` <span class="agent-eval-score">${g.actual_score}</span>` : ''}</td>
       <td>${g.spread?.pick_cn || g.spread?.label_cn || '—'}</td>
-      <td class="${hitCls(g.spread_hit)}">${hitIcon(g.spread_hit)}</td>
+      <td class="${hitCls(g.spread_hit, g.spread_outcome)}">${hitIcon(g.spread_hit, g.spread_outcome)}</td>
       <td>${g.totals?.pick_cn || g.totals?.label_cn || '—'}</td>
-      <td class="${hitCls(g.totals_hit)}">${hitIcon(g.totals_hit)}</td>
+      <td class="${hitCls(g.totals_hit, g.totals_outcome)}">${hitIcon(g.totals_hit, g.totals_outcome)}</td>
       <td class="${starHit}">${star}</td>
       <td>${g.high_confidence ? '🔥' : '—'}</td>
       <td class="agent-eval-outcome">${g.outcome?.cn || '—'}</td>
@@ -1631,7 +1649,7 @@ function renderAgentSummaryStats(agentStats) {
 
   const ko = agentStats.knockout;
   const koNote = ko?.match_count
-    ? `<div class="agent-eval-ko">32强已评 ${ko.match_count} 场 · 让 ${ko.spread.hit}/${ko.spread.n}（${ko.spread.pct}%）· 大小 ${ko.totals.hit}/${ko.totals.n}（${ko.totals.pct}%）· ★ ${ko.primary.hit}/${ko.primary.n}（${ko.primary.pct}%）</div>`
+    ? `<div class="agent-eval-ko">32强已评 ${ko.match_count} 场 · 让 ${fmtAgentUnits(ko.spread.hit)}/${ko.spread.n}（${ko.spread.pct}%）· 大小 ${fmtAgentUnits(ko.totals.hit)}/${ko.totals.n}（${ko.totals.pct}%）· ★ ${fmtAgentUnits(ko.primary.hit)}/${ko.primary.n}（${ko.primary.pct}%）</div>`
     : '';
 
   return `

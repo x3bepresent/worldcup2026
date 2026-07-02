@@ -1,0 +1,1363 @@
+{
+  "generated_at": "2026-07-02T05:22:51.261Z",
+  "sample": {
+    "matches": 16,
+    "days": [
+      17,
+      18,
+      19,
+      20,
+      21
+    ]
+  },
+  "overview": {
+    "totals": {
+      "hit": 7.5,
+      "legs": 16,
+      "pct": 46.9
+    },
+    "spread": {
+      "hit": 8.5,
+      "legs": 15,
+      "pct": 56.7
+    }
+  },
+  "buckets": {
+    "by_role": [
+      {
+        "bucket": "副项",
+        "label": "副项",
+        "hit": 4,
+        "legs": 10,
+        "pct": 40,
+        "n": 10,
+        "skipped": 0,
+        "rows": [
+          "m67",
+          "m68",
+          "m69",
+          "m70",
+          "m71",
+          "m72",
+          "m73",
+          "m78",
+          "m81",
+          "m82"
+        ]
+      },
+      {
+        "bucket": "★主项",
+        "label": "★主项",
+        "hit": 3.5,
+        "legs": 6,
+        "pct": 58.3,
+        "n": 6,
+        "skipped": 0,
+        "rows": [
+          "m76",
+          "m74",
+          "m75",
+          "m77",
+          "m79",
+          "m80"
+        ]
+      }
+    ],
+    "by_side": [
+      {
+        "bucket": "under",
+        "label": "under",
+        "hit": 5,
+        "legs": 11,
+        "pct": 45.5,
+        "n": 11,
+        "skipped": 0,
+        "rows": [
+          "m67",
+          "m68",
+          "m69",
+          "m70",
+          "m71",
+          "m72",
+          "m73",
+          "m74",
+          "m78",
+          "m77",
+          "m80"
+        ]
+      },
+      {
+        "bucket": "over",
+        "label": "over",
+        "hit": 2.5,
+        "legs": 5,
+        "pct": 50,
+        "n": 5,
+        "skipped": 0,
+        "rows": [
+          "m76",
+          "m75",
+          "m79",
+          "m81",
+          "m82"
+        ]
+      }
+    ],
+    "by_star_side": [
+      {
+        "bucket": "★让球/under",
+        "label": "★让球/under",
+        "hit": 3,
+        "legs": 8,
+        "pct": 37.5,
+        "n": 8,
+        "skipped": 0,
+        "rows": [
+          "m67",
+          "m68",
+          "m69",
+          "m70",
+          "m71",
+          "m72",
+          "m73",
+          "m78"
+        ]
+      },
+      {
+        "bucket": "★大小/over",
+        "label": "★大小/over",
+        "hit": 1.5,
+        "legs": 3,
+        "pct": 50,
+        "n": 3,
+        "skipped": 0,
+        "rows": [
+          "m76",
+          "m75",
+          "m79"
+        ]
+      },
+      {
+        "bucket": "★大小/under",
+        "label": "★大小/under",
+        "hit": 2,
+        "legs": 3,
+        "pct": 66.7,
+        "n": 3,
+        "skipped": 0,
+        "rows": [
+          "m74",
+          "m77",
+          "m80"
+        ]
+      },
+      {
+        "bucket": "★让球/over",
+        "label": "★让球/over",
+        "hit": 1,
+        "legs": 2,
+        "pct": 50,
+        "n": 2,
+        "skipped": 0,
+        "rows": [
+          "m81",
+          "m82"
+        ]
+      }
+    ]
+  },
+  "rows": [
+    {
+      "day": 17,
+      "date": "2026-06-28",
+      "id": "m67",
+      "match": "Panama vs England",
+      "score": "0-2",
+      "primary": "spread",
+      "star_cn": "★让球",
+      "totals_role": "副项",
+      "totals_side": "under",
+      "totals_pick": "小球 3/3.5",
+      "totals_out": "full_win",
+      "totals_cn": "全赢",
+      "totals_hit": 1,
+      "spread_pick": "巴拿马 +2/2.5 @1.02",
+      "spread_out": "full_win",
+      "spread_cn": "全赢",
+      "spread_hit": 1,
+      "high_confidence": true,
+      "model_side": null,
+      "market_side": null,
+      "pick_side": "under",
+      "recommended_side": null,
+      "situation_conflict": false,
+      "outcome_key": "both_hit",
+      "outcome_cn": "★让球盘与大小球均命中"
+    },
+    {
+      "day": 17,
+      "date": "2026-06-28",
+      "id": "m68",
+      "match": "Croatia vs Ghana",
+      "score": "2-1",
+      "primary": "spread",
+      "star_cn": "★让球",
+      "totals_role": "副项",
+      "totals_side": "under",
+      "totals_pick": "小球 2",
+      "totals_out": "full_lose",
+      "totals_cn": "全输",
+      "totals_hit": 0,
+      "spread_pick": "加纳 +0.5 守住",
+      "spread_out": "full_lose",
+      "spread_cn": "全输",
+      "spread_hit": 0,
+      "high_confidence": false,
+      "model_side": null,
+      "market_side": null,
+      "pick_side": "under",
+      "recommended_side": null,
+      "situation_conflict": false,
+      "outcome_key": "both_miss",
+      "outcome_cn": "★让球盘与大小球均未中"
+    },
+    {
+      "day": 17,
+      "date": "2026-06-28",
+      "id": "m69",
+      "match": "Algeria vs Austria",
+      "score": "3-3",
+      "primary": "spread",
+      "star_cn": "★让球",
+      "totals_role": "副项",
+      "totals_side": "under",
+      "totals_pick": "小球 1.5/2 @0.82",
+      "totals_out": "full_lose",
+      "totals_cn": "全输",
+      "totals_hit": 0,
+      "spread_pick": "奥地利 PK（-0）@0.84",
+      "spread_out": "push",
+      "spread_cn": "走水",
+      "spread_hit": 0,
+      "high_confidence": true,
+      "model_side": null,
+      "market_side": null,
+      "pick_side": "under",
+      "recommended_side": null,
+      "situation_conflict": false,
+      "outcome_key": "primary_hit_secondary_miss",
+      "outcome_cn": "★让球盘命中，大小球未中"
+    },
+    {
+      "day": 17,
+      "date": "2026-06-28",
+      "id": "m70",
+      "match": "Jordan vs Argentina",
+      "score": "1-3",
+      "primary": "spread",
+      "star_cn": "★让球",
+      "totals_role": "副项",
+      "totals_side": "under",
+      "totals_pick": "小球 3",
+      "totals_out": "full_lose",
+      "totals_cn": "全输",
+      "totals_hit": 0,
+      "spread_pick": "约旦 +2/2.5 守住",
+      "spread_out": "full_win",
+      "spread_cn": "全赢",
+      "spread_hit": 1,
+      "high_confidence": true,
+      "model_side": null,
+      "market_side": null,
+      "pick_side": "under",
+      "recommended_side": null,
+      "situation_conflict": false,
+      "outcome_key": "primary_hit_secondary_miss",
+      "outcome_cn": "★让球盘命中，大小球未中"
+    },
+    {
+      "day": 17,
+      "date": "2026-06-28",
+      "id": "m71",
+      "match": "Colombia vs Portugal",
+      "score": "0-0",
+      "primary": "spread",
+      "star_cn": "★让球",
+      "totals_role": "副项",
+      "totals_side": "under",
+      "totals_pick": "小球 2.5/3",
+      "totals_out": "full_win",
+      "totals_cn": "全赢",
+      "totals_hit": 1,
+      "spread_pick": "哥伦比亚 +0.5 守住",
+      "spread_out": "full_win",
+      "spread_cn": "全赢",
+      "spread_hit": 1,
+      "high_confidence": false,
+      "model_side": null,
+      "market_side": null,
+      "pick_side": "under",
+      "recommended_side": null,
+      "situation_conflict": false,
+      "outcome_key": "both_hit",
+      "outcome_cn": "★让球盘与大小球均命中"
+    },
+    {
+      "day": 17,
+      "date": "2026-06-28",
+      "id": "m72",
+      "match": "Congo DR vs Uzbekistan",
+      "score": "3-1",
+      "primary": "spread",
+      "star_cn": "★让球",
+      "totals_role": "副项",
+      "totals_side": "under",
+      "totals_pick": "小球 2/2.5",
+      "totals_out": "full_lose",
+      "totals_cn": "全输",
+      "totals_hit": 0,
+      "spread_pick": "刚果(金) -0.5/1",
+      "spread_out": "full_win",
+      "spread_cn": "全赢",
+      "spread_hit": 1,
+      "high_confidence": true,
+      "model_side": null,
+      "market_side": null,
+      "pick_side": "under",
+      "recommended_side": null,
+      "situation_conflict": false,
+      "outcome_key": "primary_hit_secondary_miss",
+      "outcome_cn": "★让球盘命中，大小球未中"
+    },
+    {
+      "day": 18,
+      "date": "2026-06-29",
+      "id": "m73",
+      "match": "South Africa vs Canada",
+      "score": "0-1",
+      "primary": "spread",
+      "star_cn": "★让球",
+      "totals_role": "副项",
+      "totals_side": "under",
+      "totals_pick": "小球 2/2.5",
+      "totals_out": "full_win",
+      "totals_cn": "全赢",
+      "totals_hit": 1,
+      "spread_pick": "南非 +0/0.5 @0.98",
+      "spread_out": "full_win",
+      "spread_cn": "全赢",
+      "spread_hit": 1,
+      "high_confidence": false,
+      "model_side": null,
+      "market_side": null,
+      "pick_side": "under",
+      "recommended_side": null,
+      "situation_conflict": false,
+      "outcome_key": "both_hit",
+      "outcome_cn": "★让球盘与大小球均命中"
+    },
+    {
+      "day": 19,
+      "date": "2026-06-30",
+      "id": "m76",
+      "match": "Brazil vs Japan",
+      "score": "2-1",
+      "primary": "totals",
+      "star_cn": "★大小",
+      "totals_role": "★主项",
+      "totals_side": "over",
+      "totals_pick": "大球 2/2.5 @0.88",
+      "totals_out": "full_win",
+      "totals_cn": "全赢",
+      "totals_hit": 1,
+      "spread_pick": "日本 +0.5/1 @0.88",
+      "spread_out": "half_lose",
+      "spread_cn": "输半",
+      "spread_hit": 0,
+      "high_confidence": true,
+      "model_side": null,
+      "market_side": null,
+      "pick_side": "over",
+      "recommended_side": null,
+      "situation_conflict": false,
+      "outcome_key": "primary_hit_secondary_miss",
+      "outcome_cn": "★大小球命中，让球盘未中"
+    },
+    {
+      "day": 19,
+      "date": "2026-06-30",
+      "id": "m74",
+      "match": "Germany vs Paraguay",
+      "score": "1-1",
+      "primary": "totals",
+      "star_cn": "★大小",
+      "totals_role": "★主项",
+      "totals_side": "under",
+      "totals_pick": "小球 2.5/3 @0.97",
+      "totals_out": "full_win",
+      "totals_cn": "全赢",
+      "totals_hit": 1,
+      "spread_pick": "巴拉圭 +1.5 @0.85",
+      "spread_out": "full_win",
+      "spread_cn": "全赢",
+      "spread_hit": 1,
+      "high_confidence": true,
+      "model_side": null,
+      "market_side": null,
+      "pick_side": "under",
+      "recommended_side": null,
+      "situation_conflict": false,
+      "outcome_key": "both_hit",
+      "outcome_cn": "★大小球与让球盘均命中"
+    },
+    {
+      "day": 19,
+      "date": "2026-06-30",
+      "id": "m75",
+      "match": "Netherlands vs Morocco",
+      "score": "1-1",
+      "primary": "totals",
+      "star_cn": "★大小",
+      "totals_role": "★主项",
+      "totals_side": "over",
+      "totals_pick": "大球 2/2.5 @0.95",
+      "totals_out": "half_lose",
+      "totals_cn": "输半",
+      "totals_hit": 0,
+      "spread_pick": "摩洛哥 +0/0.5 @0.92",
+      "spread_out": "half_win",
+      "spread_cn": "赢半",
+      "spread_hit": 0.5,
+      "high_confidence": true,
+      "model_side": null,
+      "market_side": null,
+      "pick_side": "over",
+      "recommended_side": null,
+      "situation_conflict": false,
+      "outcome_key": "primary_miss_secondary_hit",
+      "outcome_cn": "★大小球未中，让球盘项命中"
+    },
+    {
+      "day": 20,
+      "date": "2026-07-01",
+      "id": "m78",
+      "match": "Côte d'Ivoire vs Norway",
+      "score": "1-2",
+      "primary": "spread",
+      "star_cn": "★让球",
+      "totals_role": "副项",
+      "totals_side": "under",
+      "totals_pick": "小球 2.5 @0.95",
+      "totals_out": "full_lose",
+      "totals_cn": "全输",
+      "totals_hit": 0,
+      "spread_pick": "挪威 -0/0.5 @0.84",
+      "spread_out": "half_win",
+      "spread_cn": "赢半",
+      "spread_hit": 0.5,
+      "high_confidence": false,
+      "model_side": null,
+      "market_side": null,
+      "pick_side": "under",
+      "recommended_side": null,
+      "situation_conflict": false,
+      "outcome_key": "primary_hit_secondary_miss",
+      "outcome_cn": "★让球盘命中，大小球未中"
+    },
+    {
+      "day": 20,
+      "date": "2026-07-01",
+      "id": "m77",
+      "match": "France vs Sweden",
+      "score": "3-0",
+      "primary": "totals",
+      "star_cn": "★大小",
+      "totals_role": "★主项",
+      "totals_side": "under",
+      "totals_pick": "小球 3.5 @0.83",
+      "totals_out": "full_win",
+      "totals_cn": "全赢",
+      "totals_hit": 1,
+      "spread_pick": "瑞典 +1.5/2 @0.91",
+      "spread_out": "full_lose",
+      "spread_cn": "全输",
+      "spread_hit": 0,
+      "high_confidence": false,
+      "model_side": null,
+      "market_side": null,
+      "pick_side": "under",
+      "recommended_side": null,
+      "situation_conflict": false,
+      "outcome_key": "primary_hit_secondary_miss",
+      "outcome_cn": "★大小球命中，让球盘未中"
+    },
+    {
+      "day": 20,
+      "date": "2026-07-01",
+      "id": "m79",
+      "match": "Mexico vs Ecuador",
+      "score": "2-0",
+      "primary": "totals",
+      "star_cn": "★大小",
+      "totals_role": "★主项",
+      "totals_side": "over",
+      "totals_pick": "大球 1.5/2 @0.83",
+      "totals_out": "half_win",
+      "totals_cn": "赢半",
+      "totals_hit": 0.5,
+      "spread_pick": "厄瓜多尔 +0/0.5 @1.02",
+      "spread_out": "full_lose",
+      "spread_cn": "全输",
+      "spread_hit": 0,
+      "high_confidence": true,
+      "model_side": null,
+      "market_side": null,
+      "pick_side": "over",
+      "recommended_side": null,
+      "situation_conflict": false,
+      "outcome_key": "primary_hit_secondary_miss",
+      "outcome_cn": "★大小球命中，让球盘未中"
+    },
+    {
+      "day": 21,
+      "date": "2026-07-02",
+      "id": "m80",
+      "match": "England vs Congo DR",
+      "score": "2-1",
+      "primary": "totals",
+      "star_cn": "★大小",
+      "totals_role": "★主项",
+      "totals_side": "under",
+      "totals_pick": "小球 2.5 @0.85",
+      "totals_out": "full_lose",
+      "totals_cn": "全输",
+      "totals_hit": 0,
+      "spread_pick": "刚果（金） +1.5 @0.93",
+      "spread_out": "full_win",
+      "spread_cn": "全赢",
+      "spread_hit": 1,
+      "high_confidence": false,
+      "model_side": "over",
+      "market_side": "under",
+      "pick_side": "under",
+      "recommended_side": "under",
+      "situation_conflict": true,
+      "outcome_key": "primary_miss_secondary_hit",
+      "outcome_cn": "★大小球未中，让球盘项命中"
+    },
+    {
+      "day": 21,
+      "date": "2026-07-02",
+      "id": "m81",
+      "match": "USA vs Bosnia & Herz.",
+      "score": "2-0",
+      "primary": "spread",
+      "star_cn": "★让球",
+      "totals_role": "副项",
+      "totals_side": "over",
+      "totals_pick": "大球 2.5/3 @0.82",
+      "totals_out": "full_lose",
+      "totals_cn": "全输",
+      "totals_hit": 0,
+      "spread_pick": "波黑 +1.5 @0.86",
+      "spread_out": "full_lose",
+      "spread_cn": "全输",
+      "spread_hit": 0,
+      "high_confidence": true,
+      "model_side": "under",
+      "market_side": "over",
+      "pick_side": "over",
+      "recommended_side": "under",
+      "situation_conflict": true,
+      "outcome_key": "both_miss",
+      "outcome_cn": "★让球盘与大小球均未中"
+    },
+    {
+      "day": 21,
+      "date": "2026-07-02",
+      "id": "m82",
+      "match": "Belgium vs Senegal",
+      "score": "2-2",
+      "primary": "spread",
+      "star_cn": "★让球",
+      "totals_role": "副项",
+      "totals_side": "over",
+      "totals_pick": "大球 2.5 @0.88",
+      "totals_out": "full_win",
+      "totals_cn": "全赢",
+      "totals_hit": 1,
+      "spread_pick": "塞内加尔 +0/0.5 @1.06",
+      "spread_out": "half_win",
+      "spread_cn": "赢半",
+      "spread_hit": 0.5,
+      "high_confidence": false,
+      "model_side": "over",
+      "market_side": "over",
+      "pick_side": "over",
+      "recommended_side": "over",
+      "situation_conflict": false,
+      "outcome_key": "both_hit",
+      "outcome_cn": "★让球盘与大小球均命中"
+    }
+  ],
+  "rule_results": [
+    {
+      "id": "R0",
+      "name": "现状（全打）",
+      "hit": 7.5,
+      "legs": 16,
+      "pct": 46.9,
+      "played": 16,
+      "skipped": 0,
+      "picks": [
+        {
+          "id": "m67",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "副项"
+        },
+        {
+          "id": "m68",
+          "side": "under",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "副项"
+        },
+        {
+          "id": "m69",
+          "side": "under",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "副项"
+        },
+        {
+          "id": "m70",
+          "side": "under",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "副项"
+        },
+        {
+          "id": "m71",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "副项"
+        },
+        {
+          "id": "m72",
+          "side": "under",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "副项"
+        },
+        {
+          "id": "m73",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "副项"
+        },
+        {
+          "id": "m76",
+          "side": "over",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m74",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m75",
+          "side": "over",
+          "out": "half_lose",
+          "hit": 0,
+          "star": "★主项"
+        },
+        {
+          "id": "m78",
+          "side": "under",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "副项"
+        },
+        {
+          "id": "m77",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m79",
+          "side": "over",
+          "out": "half_win",
+          "hit": 0.5,
+          "star": "★主项"
+        },
+        {
+          "id": "m80",
+          "side": "under",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "★主项"
+        },
+        {
+          "id": "m81",
+          "side": "over",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "副项"
+        },
+        {
+          "id": "m82",
+          "side": "over",
+          "out": "full_win",
+          "hit": 1,
+          "star": "副项"
+        }
+      ]
+    },
+    {
+      "id": "R1",
+      "name": "仅★=大小时打大小（放弃副项）",
+      "hit": 3.5,
+      "legs": 6,
+      "pct": 58.3,
+      "played": 6,
+      "skipped": 10,
+      "picks": [
+        {
+          "id": "m76",
+          "side": "over",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m74",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m75",
+          "side": "over",
+          "out": "half_lose",
+          "hit": 0,
+          "star": "★主项"
+        },
+        {
+          "id": "m77",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m79",
+          "side": "over",
+          "out": "half_win",
+          "hit": 0.5,
+          "star": "★主项"
+        },
+        {
+          "id": "m80",
+          "side": "under",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "★主项"
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "name": "放弃副项小球（★=让球 且 选小 → 跳过）",
+      "hit": 4.5,
+      "legs": 8,
+      "pct": 56.3,
+      "played": 8,
+      "skipped": 8,
+      "picks": [
+        {
+          "id": "m76",
+          "side": "over",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m74",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m75",
+          "side": "over",
+          "out": "half_lose",
+          "hit": 0,
+          "star": "★主项"
+        },
+        {
+          "id": "m77",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m79",
+          "side": "over",
+          "out": "half_win",
+          "hit": 0.5,
+          "star": "★主项"
+        },
+        {
+          "id": "m80",
+          "side": "under",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "★主项"
+        },
+        {
+          "id": "m81",
+          "side": "over",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "副项"
+        },
+        {
+          "id": "m82",
+          "side": "over",
+          "out": "full_win",
+          "hit": 1,
+          "star": "副项"
+        }
+      ]
+    },
+    {
+      "id": "R3",
+      "name": "副项大小只打大（★=让球时仅保留 over）",
+      "hit": 4.5,
+      "legs": 8,
+      "pct": 56.3,
+      "played": 8,
+      "skipped": 8,
+      "picks": [
+        {
+          "id": "m76",
+          "side": "over",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m74",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m75",
+          "side": "over",
+          "out": "half_lose",
+          "hit": 0,
+          "star": "★主项"
+        },
+        {
+          "id": "m77",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m79",
+          "side": "over",
+          "out": "half_win",
+          "hit": 0.5,
+          "star": "★主项"
+        },
+        {
+          "id": "m80",
+          "side": "under",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "★主项"
+        },
+        {
+          "id": "m81",
+          "side": "over",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "副项"
+        },
+        {
+          "id": "m82",
+          "side": "over",
+          "out": "full_win",
+          "hit": 1,
+          "star": "副项"
+        }
+      ]
+    },
+    {
+      "id": "R4",
+      "name": "淘汰赛不打小球（全部 under 跳过）",
+      "hit": 2.5,
+      "legs": 5,
+      "pct": 50,
+      "played": 5,
+      "skipped": 11,
+      "picks": [
+        {
+          "id": "m76",
+          "side": "over",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m75",
+          "side": "over",
+          "out": "half_lose",
+          "hit": 0,
+          "star": "★主项"
+        },
+        {
+          "id": "m79",
+          "side": "over",
+          "out": "half_win",
+          "hit": 0.5,
+          "star": "★主项"
+        },
+        {
+          "id": "m81",
+          "side": "over",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "副项"
+        },
+        {
+          "id": "m82",
+          "side": "over",
+          "out": "full_win",
+          "hit": 1,
+          "star": "副项"
+        }
+      ]
+    },
+    {
+      "id": "R5",
+      "name": "★=大小 OR 副项大（R1∪副项over）",
+      "hit": 4.5,
+      "legs": 8,
+      "pct": 56.3,
+      "played": 8,
+      "skipped": 8,
+      "picks": [
+        {
+          "id": "m76",
+          "side": "over",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m74",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m75",
+          "side": "over",
+          "out": "half_lose",
+          "hit": 0,
+          "star": "★主项"
+        },
+        {
+          "id": "m77",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m79",
+          "side": "over",
+          "out": "half_win",
+          "hit": 0.5,
+          "star": "★主项"
+        },
+        {
+          "id": "m80",
+          "side": "under",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "★主项"
+        },
+        {
+          "id": "m81",
+          "side": "over",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "副项"
+        },
+        {
+          "id": "m82",
+          "side": "over",
+          "out": "full_win",
+          "hit": 1,
+          "star": "副项"
+        }
+      ]
+    },
+    {
+      "id": "R6",
+      "name": "★=大小且非冲突（situation_conflict 则跳过）",
+      "hit": 3.5,
+      "legs": 5,
+      "pct": 70,
+      "played": 5,
+      "skipped": 11,
+      "picks": [
+        {
+          "id": "m76",
+          "side": "over",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m74",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m75",
+          "side": "over",
+          "out": "half_lose",
+          "hit": 0,
+          "star": "★主项"
+        },
+        {
+          "id": "m77",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m79",
+          "side": "over",
+          "out": "half_win",
+          "hit": 0.5,
+          "star": "★主项"
+        }
+      ]
+    },
+    {
+      "id": "R7",
+      "name": "有 recommended 时改跟推荐方向（模拟）",
+      "hit": 8.5,
+      "legs": 16,
+      "pct": 53.1,
+      "played": 16,
+      "skipped": 0,
+      "picks": [
+        {
+          "id": "m67",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "副项"
+        },
+        {
+          "id": "m68",
+          "side": "under",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "副项"
+        },
+        {
+          "id": "m69",
+          "side": "under",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "副项"
+        },
+        {
+          "id": "m70",
+          "side": "under",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "副项"
+        },
+        {
+          "id": "m71",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "副项"
+        },
+        {
+          "id": "m72",
+          "side": "under",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "副项"
+        },
+        {
+          "id": "m73",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "副项"
+        },
+        {
+          "id": "m76",
+          "side": "over",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m74",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m75",
+          "side": "over",
+          "out": "half_lose",
+          "hit": 0,
+          "star": "★主项"
+        },
+        {
+          "id": "m78",
+          "side": "under",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "副项"
+        },
+        {
+          "id": "m77",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m79",
+          "side": "over",
+          "out": "half_win",
+          "hit": 0.5,
+          "star": "★主项"
+        },
+        {
+          "id": "m80",
+          "side": "under",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "★主项"
+        },
+        {
+          "id": "m81",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "副项"
+        },
+        {
+          "id": "m82",
+          "side": "over",
+          "out": "full_win",
+          "hit": 1,
+          "star": "副项"
+        }
+      ]
+    },
+    {
+      "id": "R8",
+      "name": "组合：★=大小无冲突 + 副项仅大球",
+      "hit": 4.5,
+      "legs": 7,
+      "pct": 64.3,
+      "played": 7,
+      "skipped": 9,
+      "picks": [
+        {
+          "id": "m76",
+          "side": "over",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m74",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m75",
+          "side": "over",
+          "out": "half_lose",
+          "hit": 0,
+          "star": "★主项"
+        },
+        {
+          "id": "m77",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m79",
+          "side": "over",
+          "out": "half_win",
+          "hit": 0.5,
+          "star": "★主项"
+        },
+        {
+          "id": "m81",
+          "side": "over",
+          "out": "full_lose",
+          "hit": 0,
+          "star": "副项"
+        },
+        {
+          "id": "m82",
+          "side": "over",
+          "out": "full_win",
+          "hit": 1,
+          "star": "副项"
+        }
+      ]
+    },
+    {
+      "id": "R9",
+      "name": "组合：R8 + 大信心大小仅当★=大小",
+      "hit": 4.5,
+      "legs": 6,
+      "pct": 75,
+      "played": 6,
+      "skipped": 10,
+      "picks": [
+        {
+          "id": "m76",
+          "side": "over",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m74",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m75",
+          "side": "over",
+          "out": "half_lose",
+          "hit": 0,
+          "star": "★主项"
+        },
+        {
+          "id": "m77",
+          "side": "under",
+          "out": "full_win",
+          "hit": 1,
+          "star": "★主项"
+        },
+        {
+          "id": "m79",
+          "side": "over",
+          "out": "half_win",
+          "hit": 0.5,
+          "star": "★主项"
+        },
+        {
+          "id": "m82",
+          "side": "over",
+          "out": "full_win",
+          "hit": 1,
+          "star": "副项"
+        }
+      ]
+    }
+  ],
+  "recommended_rule": {
+    "id": "R9",
+    "name": "组合：R8 + 大信心大小仅当★=大小",
+    "hit": 4.5,
+    "legs": 6,
+    "pct": 75,
+    "played": 6,
+    "skipped": 10,
+    "picks": [
+      {
+        "id": "m76",
+        "side": "over",
+        "out": "full_win",
+        "hit": 1,
+        "star": "★主项"
+      },
+      {
+        "id": "m74",
+        "side": "under",
+        "out": "full_win",
+        "hit": 1,
+        "star": "★主项"
+      },
+      {
+        "id": "m75",
+        "side": "over",
+        "out": "half_lose",
+        "hit": 0,
+        "star": "★主项"
+      },
+      {
+        "id": "m77",
+        "side": "under",
+        "out": "full_win",
+        "hit": 1,
+        "star": "★主项"
+      },
+      {
+        "id": "m79",
+        "side": "over",
+        "out": "half_win",
+        "hit": 0.5,
+        "star": "★主项"
+      },
+      {
+        "id": "m82",
+        "side": "over",
+        "out": "full_win",
+        "hit": 1,
+        "star": "副项"
+      }
+    ]
+  }
+}

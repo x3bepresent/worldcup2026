@@ -1,11 +1,21 @@
-// 今日赛事 — Day 21 全部完场
-// Last updated: 2026-07-02T05:08:01+08:00
+// 今日赛事 — 淘汰赛 · 32强 (signals enriched)
+// Last updated: 2026-07-02T05:30:43+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-07-02T05:08:01+08:00",
-  "syncSource": "Day 21 完结 · M80–M82 全部完场",
+  "lastUpdated": "2026-07-02T05:30:43+08:00",
+  "syncSource": "Day 21 完结 · M80–M82 全部完场 · 推演概要+小组形势",
   "phase": "knockout",
   "phase_cn": "淘汰赛 · 32强",
   "breakingNews": [
+    {
+      "tag": "UPDATE",
+      "text": "📊 推演升级：模型概要 + 淘汰赛晋级路径矩阵",
+      "time": "模型"
+    },
+    {
+      "tag": "UPDATE",
+      "text": "🎯 淘汰赛大小球 R9 已开启：副项不打小 · ★冲突跳过 · 大信心仅绑★大小",
+      "time": "Agent"
+    },
     {
       "tag": "OFFICIAL",
       "text": "🏁 Day21 完结：英格兰2-1刚果 · 美国2-0波黑 · 比利时常规2-2加时3-2塞内加尔",

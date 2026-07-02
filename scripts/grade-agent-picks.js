@@ -92,6 +92,23 @@ function sideHitsNoLoss(outcome) {
   return outcome === 'full_win' || outcome === 'half_win' || outcome === 'push';
 }
 
+/** 统计用有效单位：全赢1 · 赢半0.5 · 输半0.5 · 全输1 · 走水不计入分子分母 */
+function outcomeToUnits(outcome) {
+  switch (outcome) {
+    case 'full_win': return { hit: 1, miss: 0, push: 0, legs: 1 };
+    case 'half_win': return { hit: 0.5, miss: 0, push: 0, legs: 1 };
+    case 'half_lose': return { hit: 0, miss: 0.5, push: 0, legs: 1 };
+    case 'full_lose': return { hit: 0, miss: 1, push: 0, legs: 1 };
+    case 'push': return { hit: 0, miss: 0, push: 1, legs: 0 };
+    default: return { hit: 0, miss: 0, push: 0, legs: 0, pending: 1 };
+  }
+}
+
+function fmtStatUnits(n) {
+  if (n == null || Number.isNaN(n)) return '—';
+  return Number.isInteger(n) ? String(n) : String(Math.round(n * 10) / 10);
+}
+
 /** 热门方让球结算 @returns {'full_win'|'half_win'|'push'|'half_lose'|'full_lose'} */
 function favSpreadOutcome(favMargin, tier) {
   const abs = Math.abs(Number(tier) || 0);
@@ -202,12 +219,10 @@ function gradeLeg(market, leg, raw, actual) {
   };
 }
 
-function tallyBucket(hit) {
-  if (hit === undefined) return { hit: 0, miss: 0, push: 0, pending: 1 };
-  if (hit === true) return { hit: 1, miss: 0, push: 0, pending: 0 };
-  if (hit === false) return { hit: 0, miss: 1, push: 0, pending: 0 };
-  if (hit === null) return { hit: 0, miss: 0, push: 1, pending: 0 };
-  return { hit: 0, miss: 0, push: 0, pending: 1 };
+function tallyOutcome(outcome) {
+  const u = outcomeToUnits(outcome);
+  if (u.pending) return { hit: 0, miss: 0, push: 0, pending: 1, legs: 0 };
+  return { hit: u.hit, miss: u.miss, push: u.push, pending: 0, legs: u.legs };
 }
 
 function mergeTally(a, b) {
@@ -216,12 +231,13 @@ function mergeTally(a, b) {
     miss: a.miss + b.miss,
     push: a.push + b.push,
     pending: a.pending + b.pending,
+    legs: (a.legs || 0) + (b.legs || 0),
   };
 }
 
-function pct(hit, miss) {
-  const n = hit + miss;
-  return n ? Math.round((hit / n) * 1000) / 10 : null;
+function pct(tally) {
+  const denom = tally.legs || (tally.hit + tally.miss);
+  return denom ? Math.round((tally.hit / denom) * 1000) / 10 : null;
 }
 
 /** 单场双项赛果归类 — 含「倾向未中、另一项命中」 */
@@ -391,26 +407,24 @@ function buildCrossAnalysis(graded) {
 function buildHighConfidenceStats(graded) {
   const hc = graded.filter(g => g.high_confidence);
   if (!hc.length) return null;
-  let spreadT = { hit: 0, miss: 0 };
-  let totalsT = { hit: 0, miss: 0 };
-  let primaryT = { hit: 0, miss: 0 };
+  let spreadT = { hit: 0, miss: 0, push: 0, legs: 0 };
+  let totalsT = { hit: 0, miss: 0, push: 0, legs: 0 };
+  let primaryT = { hit: 0, miss: 0, push: 0, legs: 0 };
   const cross = { primary_miss_secondary_hit: [], primary_hit_secondary_miss: [], both_hit: [], both_miss: [] };
   for (const g of hc) {
-    spreadT.hit += g.spread.hit === true ? 1 : 0;
-    spreadT.miss += g.spread.hit === false ? 1 : 0;
-    totalsT.hit += g.totals.hit === true ? 1 : 0;
-    totalsT.miss += g.totals.hit === false ? 1 : 0;
-    if (g.primary_hit === true) primaryT.hit += 1;
-    if (g.primary_hit === false) primaryT.miss += 1;
+    spreadT = mergeTally(spreadT, tallyOutcome(g.spread.outcome));
+    totalsT = mergeTally(totalsT, tallyOutcome(g.totals.outcome));
+    const primaryOutcome = g.primary === 'totals' ? g.totals.outcome : g.spread.outcome;
+    primaryT = mergeTally(primaryT, tallyOutcome(primaryOutcome));
     const k = g.outcome?.key;
     if (k && cross[k]) cross[k].push(g.id);
   }
   return {
     n: hc.length,
     ids: hc.map(g => g.id),
-    spread: { ...spreadT, pct: pct(spreadT.hit, spreadT.miss) },
-    totals: { ...totalsT, pct: pct(totalsT.hit, totalsT.miss) },
-    primary: { ...primaryT, pct: pct(primaryT.hit, primaryT.miss) },
+    spread: { ...spreadT, pct: pct(spreadT) },
+    totals: { ...totalsT, pct: pct(totalsT) },
+    primary: { ...primaryT, pct: pct(primaryT) },
     cross,
   };
 }
@@ -503,12 +517,15 @@ function gradeDay(jsonPath) {
     const secondaryHit = outcome.secondary_hit;
     const pickMeta = ap.pick_meta || null;
 
-    spreadT = mergeTally(spreadT, tallyBucket(gs.hit));
-    totalsT = mergeTally(totalsT, tallyBucket(gt.hit));
-    primaryT = mergeTally(primaryT, tallyBucket(outcome.primary_hit));
-    secondaryT = mergeTally(secondaryT, tallyBucket(secondaryHit));
-    allT = mergeTally(allT, tallyBucket(gs.hit));
-    allT = mergeTally(allT, tallyBucket(gt.hit));
+    const primaryOutcome = primary === 'totals' ? gt.outcome : gs.outcome;
+    const secondaryOutcome = primary === 'totals' ? gs.outcome : gt.outcome;
+
+    spreadT = mergeTally(spreadT, tallyOutcome(gs.outcome));
+    totalsT = mergeTally(totalsT, tallyOutcome(gt.outcome));
+    primaryT = mergeTally(primaryT, tallyOutcome(primaryOutcome));
+    secondaryT = mergeTally(secondaryT, tallyOutcome(secondaryOutcome));
+    allT = mergeTally(allT, tallyOutcome(gs.outcome));
+    allT = mergeTally(allT, tallyOutcome(gt.outcome));
 
     graded.push({
       id: pick.id,
@@ -523,8 +540,8 @@ function gradeDay(jsonPath) {
       pick_side: pickMeta?.pick_side || totalsLeg?.side || null,
       recommended_side: pickMeta?.recommended_side || null,
       situation_conflict: pickMeta?.conflict || false,
-      spread: { ...spreadLeg, hit: gs.hit, grade_note: gs.note },
-      totals: { ...totalsLeg, hit: gt.hit, grade_note: gt.note },
+      spread: { ...spreadLeg, hit: gs.hit, outcome: gs.outcome, grade_note: gs.note },
+      totals: { ...totalsLeg, hit: gt.hit, outcome: gt.outcome, grade_note: gt.note },
       primary_hit: outcome.primary_hit,
       secondary_hit: secondaryHit,
       secondary_market: outcome.secondary_market,
@@ -539,12 +556,12 @@ function gradeDay(jsonPath) {
 
   data.results = {
     graded_at: new Date().toISOString(),
-    grade_rule_cn: '不败即中：全赢/赢半/走水算中，输半/全输算不中',
-    spread: { ...spreadT, pct: pct(spreadT.hit, spreadT.miss) },
-    totals: { ...totalsT, pct: pct(totalsT.hit, totalsT.miss) },
-    primary: { ...primaryT, pct: pct(primaryT.hit, primaryT.miss), label_cn: '倾向项（★）' },
-    secondary: { ...secondaryT, pct: pct(secondaryT.hit, secondaryT.miss), label_cn: '非倾向项' },
-    all_legs: { ...allT, pct: pct(allT.hit, allT.miss) },
+    grade_rule_cn: '统计：全赢1 · 赢半0.5 · 输半0.5 · 走水不计；单场✓/✗仍按不败即中（含赢半）',
+    spread: { ...spreadT, pct: pct(spreadT) },
+    totals: { ...totalsT, pct: pct(totalsT) },
+    primary: { ...primaryT, pct: pct(primaryT), label_cn: '倾向项（★）' },
+    secondary: { ...secondaryT, pct: pct(secondaryT), label_cn: '非倾向项' },
+    all_legs: { ...allT, pct: pct(allT) },
     cross_analysis: crossAnalysis,
     layer_alignment: layerStats,
     high_confidence: highConfidence,
@@ -567,12 +584,12 @@ function gradeDay(jsonPath) {
   });
 
   const r = data.results;
-  console.log('\n── 命中率 ──');
-  console.log(`  让球盘：${r.spread.hit}/${r.spread.hit + r.spread.miss} = ${r.spread.pct ?? '—'}%`);
-  console.log(`  大小球：${r.totals.hit}/${r.totals.hit + r.totals.miss} = ${r.totals.pct ?? '—'}%`);
-  console.log(`  倾向项★：${r.primary.hit}/${r.primary.hit + r.primary.miss} = ${r.primary.pct ?? '—'}%`);
-  console.log(`  非倾向项：${r.secondary.hit}/${r.secondary.hit + r.secondary.miss} = ${r.secondary.pct ?? '—'}%`);
-  console.log(`  全部 12 项：${r.all_legs.hit}/${r.all_legs.hit + r.all_legs.miss} = ${r.all_legs.pct ?? '—'}%`);
+  console.log('\n── 命中率（赢半计0.5）──');
+  console.log(`  让球盘：${fmtStatUnits(r.spread.hit)}/${r.spread.legs} = ${r.spread.pct ?? '—'}%`);
+  console.log(`  大小球：${fmtStatUnits(r.totals.hit)}/${r.totals.legs} = ${r.totals.pct ?? '—'}%`);
+  console.log(`  倾向项★：${fmtStatUnits(r.primary.hit)}/${r.primary.legs} = ${r.primary.pct ?? '—'}%`);
+  console.log(`  非倾向项：${fmtStatUnits(r.secondary.hit)}/${r.secondary.legs} = ${r.secondary.pct ?? '—'}%`);
+  console.log(`  全部项：${fmtStatUnits(r.all_legs.hit)}/${r.all_legs.legs} = ${r.all_legs.pct ?? '—'}%`);
 
   const ca = r.cross_analysis;
   console.log('\n── 交叉赛果（反推用）──');
@@ -584,8 +601,8 @@ function gradeDay(jsonPath) {
   if (r.high_confidence) {
     const h = r.high_confidence;
     console.log(`\n── 大信心场 (${h.n} 场: ${h.ids.join(', ')}) ──`);
-    console.log(`  倾向★：${h.primary.hit}/${h.primary.hit + h.primary.miss} = ${h.primary.pct ?? '—'}%`);
-    console.log(`  让球：${h.spread.hit}/${h.spread.hit + h.spread.miss} = ${h.spread.pct ?? '—'}% · 大小：${h.totals.hit}/${h.totals.hit + h.totals.miss} = ${h.totals.pct ?? '—'}%`);
+    console.log(`  倾向★：${fmtStatUnits(h.primary.hit)}/${h.primary.legs} = ${h.primary.pct ?? '—'}%`);
+    console.log(`  让球：${fmtStatUnits(h.spread.hit)}/${h.spread.legs} = ${h.spread.pct ?? '—'}% · 大小：${fmtStatUnits(h.totals.hit)}/${h.totals.legs} = ${h.totals.pct ?? '—'}%`);
   }
 
   if (r.spread.pending === data.picks.length) console.log('\n  暂无赛果，待赛后运行本脚本。');

@@ -10,17 +10,29 @@ const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'js', 'agent-stats.js');
 const TS = new Date().toISOString().replace(/\.\d{3}Z$/, '+08:00');
 
+function outcomeToUnits(outcome) {
+  switch (outcome) {
+    case 'full_win': return { hit: 1, miss: 0, legs: 1 };
+    case 'half_win': return { hit: 0.5, miss: 0, legs: 1 };
+    case 'half_lose': return { hit: 0, miss: 0.5, legs: 1 };
+    case 'full_lose': return { hit: 0, miss: 1, legs: 1 };
+    case 'push': return { hit: 0, miss: 0, legs: 0 };
+    default: return { hit: 0, miss: 0, legs: 0 };
+  }
+}
+
 function mergeBucket(a, b) {
   return {
     hit: (a.hit || 0) + (b.hit || 0),
     miss: (a.miss || 0) + (b.miss || 0),
     push: (a.push || 0) + (b.push || 0),
     pending: (a.pending || 0) + (b.pending || 0),
+    legs: (a.legs || 0) + (b.legs || 0),
   };
 }
 
 function withPct(b) {
-  const n = (b.hit || 0) + (b.miss || 0);
+  const n = b.legs ?? ((b.hit || 0) + (b.miss || 0));
   return {
     ...b,
     n,
@@ -44,13 +56,13 @@ function build() {
   const byId = {};
   const daysSummary = [];
 
-  let spread = { hit: 0, miss: 0, push: 0, pending: 0 };
-  let totals = { hit: 0, miss: 0, push: 0, pending: 0 };
-  let primary = { hit: 0, miss: 0, push: 0, pending: 0 };
-  let secondary = { hit: 0, miss: 0, push: 0, pending: 0 };
-  let highSpread = { hit: 0, miss: 0 };
-  let highTotals = { hit: 0, miss: 0 };
-  let highPrimary = { hit: 0, miss: 0 };
+  let spread = { hit: 0, miss: 0, push: 0, pending: 0, legs: 0 };
+  let totals = { hit: 0, miss: 0, push: 0, pending: 0, legs: 0 };
+  let primary = { hit: 0, miss: 0, push: 0, pending: 0, legs: 0 };
+  let secondary = { hit: 0, miss: 0, push: 0, pending: 0, legs: 0 };
+  let highSpread = { hit: 0, miss: 0, legs: 0 };
+  let highTotals = { hit: 0, miss: 0, legs: 0 };
+  let highPrimary = { hit: 0, miss: 0, legs: 0 };
   const highIds = [];
 
   for (const day of gradedDays) {
@@ -79,6 +91,8 @@ function build() {
         primary_hit: g.primary_hit,
         spread_hit: g.spread?.hit,
         totals_hit: g.totals?.hit,
+        spread_outcome: g.spread?.outcome || null,
+        totals_outcome: g.totals?.outcome || null,
         grade_note_spread: g.spread?.grade_note,
         grade_note_totals: g.totals?.grade_note,
         actual_score: g.actual_score,
@@ -122,7 +136,7 @@ function build() {
   const evaluation = {
     label_cn: 'Agent 双选评估',
     match_count: matchCount,
-    grade_rule_cn: gradedDays[0]?.results?.grade_rule_cn || '不败即中：全赢/赢半/走水算中，输半/全输算不中',
+    grade_rule_cn: gradedDays[0]?.results?.grade_rule_cn || '统计：全赢1 · 赢半0.5 · 输半0.5 · 走水不计；单场✓/✗仍按不败即中（含赢半）',
     spread: {
       ...withPct(spread),
       label_cn: '让球盘胜率',
@@ -155,9 +169,9 @@ function build() {
     'm77', 'm78', 'm79',
   ];
   function summarizeIds(ids) {
-    let spread = { hit: 0, miss: 0 };
-    let totals = { hit: 0, miss: 0 };
-    let primary = { hit: 0, miss: 0 };
+    let spread = { hit: 0, miss: 0, legs: 0 };
+    let totals = { hit: 0, miss: 0, legs: 0 };
+    let primary = { hit: 0, miss: 0, legs: 0 };
     let bothHit = 0;
     let atLeastOne = 0;
     const matches = [];
@@ -165,14 +179,24 @@ function build() {
       const g = byId[id];
       if (!g || g.spread_hit == null) continue;
       matches.push(id);
-      if (g.spread_hit) spread.hit += 1; else spread.miss += 1;
-      if (g.totals_hit) totals.hit += 1; else totals.miss += 1;
-      if (g.primary_hit) primary.hit += 1; else primary.miss += 1;
+      const su = outcomeToUnits(g.spread_outcome || (g.spread_hit ? 'full_win' : 'full_lose'));
+      const tu = outcomeToUnits(g.totals_outcome || (g.totals_hit ? 'full_win' : 'full_lose'));
+      spread.hit += su.hit;
+      spread.miss += su.miss;
+      spread.legs += su.legs;
+      totals.hit += tu.hit;
+      totals.miss += tu.miss;
+      totals.legs += tu.legs;
+      const pu = outcomeToUnits(g.primary === 'totals' ? g.totals_outcome : g.spread_outcome
+        || (g.primary_hit ? 'full_win' : 'full_lose'));
+      primary.hit += pu.hit;
+      primary.miss += pu.miss;
+      primary.legs += pu.legs;
       if (g.spread_hit && g.totals_hit) bothHit += 1;
       if (g.spread_hit || g.totals_hit) atLeastOne += 1;
     }
     const n = matches.length;
-    const legs = spread.hit + spread.miss + totals.hit + totals.miss;
+    const legs = spread.legs + totals.legs;
     const legHit = spread.hit + totals.hit;
     return {
       label_cn: '32强 · Agent 双选',
@@ -189,7 +213,7 @@ function build() {
 
   const payload = {
     lastUpdated: TS,
-    grade_rule_cn: gradedDays[0]?.results?.grade_rule_cn || '不败即中：全赢/赢半/走水算中，输半/全输算不中',
+    grade_rule_cn: gradedDays[0]?.results?.grade_rule_cn || '统计：全赢1 · 赢半0.5 · 输半0.5 · 走水不计；单场✓/✗仍按不败即中（含赢半）',
     days_graded: gradedDays.length,
     days_pending: pendingDays.length,
     aggregate: {
