@@ -1,8 +1,8 @@
 // Auto-generated — do not edit manually
 // Run: node scripts/build-schedule-scores.js
-// Last updated: 2026-07-02T05:08:02+08:00
+// Last updated: 2026-07-02T09:01:36+08:00
 const SCHEDULE_SCORES = {
-  "lastUpdated": "2026-07-02T05:08:02+08:00",
+  "lastUpdated": "2026-07-02T09:01:36+08:00",
   "source": "results-data.js × FIFA MatchNumber (fifa-match-index.json)",
   "count": 82,
   "byFifaNo": {

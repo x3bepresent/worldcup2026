@@ -1,8 +1,8 @@
 // 过往赛果 — 精简归档（推演 + 赛果核验 + 复盘概要）
-// Last updated: 2026-07-02T05:30:43+08:00
+// Last updated: 2026-07-02T12:22:22+08:00
 const RESULTS_DATA = {
-  "lastUpdated": "2026-07-02T05:30:43+08:00",
-  "syncSource": "FIFA 官方 · Day 21 M80–M82 完结",
+  "lastUpdated": "2026-07-02T12:22:22+08:00",
+  "syncSource": "FIFA 官方赛果 · Day 21 完结 · Day 22 32强 3场",
   "breakingNews": [
     {
       "tag": "OFFICIAL",
@@ -20,19 +20,19 @@ const RESULTS_DATA = {
       "time": "7月2日"
     },
     {
-      "tag": "OFFICIAL",
-      "text": "🏁 昨日：法国 3-0 瑞典 · 墨西哥 2-0 厄瓜多尔 · 科特迪瓦 1-2 挪威",
-      "time": "7月1日"
+      "tag": "PREVIEW",
+      "text": "⚔️ 今日 3 场：西班牙-奥地利(03:00) · 葡萄牙-克罗地亚(07:00) · 瑞士-阿尔及利亚(11:00)",
+      "time": "7月3日"
     },
     {
       "tag": "PREVIEW",
-      "text": "⚔️ 今日 3 场：英格兰-刚果(金)(00:00) · 比利时-塞内加尔(04:00) · 美国-波黑(08:00)",
-      "time": "7月2日"
-    },
-    {
-      "tag": "PREVIEW",
-      "text": "M80 胜者 → M92 对墨西哥 · M81/M82 胜者 → M94",
+      "text": "M83/M84 胜者 → M93 · M85 胜者 → M96",
       "time": "路径"
+    },
+    {
+      "tag": "UPDATE",
+      "text": "🎯 淘汰赛大小球 R9 已开启：副项不打小 · ★冲突跳过 · 大信心仅绑★大小",
+      "time": "Agent"
     }
   ],
   "finishedMatches": [

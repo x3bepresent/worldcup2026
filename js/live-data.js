@@ -1,9 +1,43 @@
-// Day 21 FT · M80–M82
-// Updated: 2026-07-02T05:08:01+08:00
+// Auto-synced by scripts/enrich-day22.js
+// Updated: 2026-07-02T08:56:28+08:00
 const LIVE_DATA = {
-  "lastUpdated": "2026-07-02T05:08:01+08:00",
-  "todayDate": "2026-07-02",
-  "fixtures": [],
+  "lastUpdated": "2026-07-02T08:56:28+08:00",
+  "todayDate": "2026-07-03",
+  "fixtures": [
+    {
+      "id": "m84",
+      "fifa_match_number": 84,
+      "home": "Spain",
+      "away": "Austria",
+      "status": "NS",
+      "home_score": null,
+      "away_score": null,
+      "group": "KO",
+      "round": "R32"
+    },
+    {
+      "id": "m83",
+      "fifa_match_number": 83,
+      "home": "Portugal",
+      "away": "Croatia",
+      "status": "NS",
+      "home_score": null,
+      "away_score": null,
+      "group": "KO",
+      "round": "R32"
+    },
+    {
+      "id": "m85",
+      "fifa_match_number": 85,
+      "home": "Switzerland",
+      "away": "Algeria",
+      "status": "NS",
+      "home_score": null,
+      "away_score": null,
+      "group": "KO",
+      "round": "R32"
+    }
+  ],
   "allResults": [
     {
       "id": "m80",
@@ -23,8 +57,9 @@ const LIVE_DATA = {
       "id": "m82",
       "home": "Belgium",
       "away": "Senegal",
-      "score": "2-2(90')→3-2",
-      "group": "KO"
+      "score": "3-2",
+      "group": "KO",
+      "note": "常规2-2 · 加时3-2"
     }
   ],
   "yesterdayResults": [
@@ -38,7 +73,7 @@ const LIVE_DATA = {
     },
     {
       "id": "m82",
-      "score": "2-2(90')→3-2"
+      "score": "3-2"
     }
   ],
   "standings": [
@@ -596,6 +631,6 @@ const LIVE_DATA = {
     }
   ],
   "injuries": {
-    "note": "Day 21 全部完场 · M80–M82 已归档"
+    "note": "Day 22 · 32强 3 场 enriched · 待临场盘"
   }
 };
