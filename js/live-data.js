@@ -1,51 +1,9 @@
-// Day 21 � M80 FT
-// Updated: 2026-07-01T18:12:55+08:00
+// Day 21 FT · M80–M82
+// Updated: 2026-07-02T05:08:01+08:00
 const LIVE_DATA = {
-  "lastUpdated": "2026-07-01T18:12:55+08:00",
+  "lastUpdated": "2026-07-02T05:08:01+08:00",
   "todayDate": "2026-07-02",
-  "fixtures": [
-    {
-      "id": "m80",
-      "fifa_match_number": 80,
-      "home": "England",
-      "away": "Congo DR",
-      "status": "FT",
-      "home_score": 2,
-      "away_score": 1,
-      "group": "KO",
-      "round": "R32",
-      "spread_live_cn": "England 2-1 Congo DR � spread TBD",
-      "totals_live_cn": "?? 3.5 � ? 1.69 / ? 0.46",
-      "lineup_confirmed": true,
-      "elapsed": 90
-    },
-    {
-      "id": "m82",
-      "fifa_match_number": 82,
-      "home": "Belgium",
-      "away": "Senegal",
-      "status": "NS",
-      "home_score": null,
-      "away_score": null,
-      "group": "KO",
-      "round": "R32",
-      "spread_live_cn": "Belgium -0/0.5@0.83 � Senegal +0/0.5@1.06",
-      "totals_live_cn": "?? 2.5 � ? 0.88 / ? 1.00"
-    },
-    {
-      "id": "m81",
-      "fifa_match_number": 81,
-      "home": "USA",
-      "away": "Bosnia & Herz.",
-      "status": "NS",
-      "home_score": null,
-      "away_score": null,
-      "group": "KO",
-      "round": "R32",
-      "spread_live_cn": "USA -1.5@1.03 � Bosnia +1.5@0.86",
-      "totals_live_cn": "?? 2.5/3 � ? 0.82 / ? 1.06"
-    }
-  ],
+  "fixtures": [],
   "allResults": [
     {
       "id": "m80",
@@ -55,45 +13,38 @@ const LIVE_DATA = {
       "group": "KO"
     },
     {
-      "id": "m77",
-      "home": "France",
-      "away": "Sweden",
-      "score": "3-0",
-      "group": "KO"
-    },
-    {
-      "id": "m78",
-      "home": "C?te d'Ivoire",
-      "away": "Norway",
-      "score": "1-2",
-      "group": "KO"
-    },
-    {
-      "id": "m79",
-      "home": "Mexico",
-      "away": "Ecuador",
+      "id": "m81",
+      "home": "USA",
+      "away": "Bosnia & Herz.",
       "score": "2-0",
+      "group": "KO"
+    },
+    {
+      "id": "m82",
+      "home": "Belgium",
+      "away": "Senegal",
+      "score": "2-2(90')→3-2",
       "group": "KO"
     }
   ],
   "yesterdayResults": [
     {
-      "id": "m77",
-      "score": "3-0"
+      "id": "m80",
+      "score": "2-1"
     },
     {
-      "id": "m78",
-      "score": "1-2"
-    },
-    {
-      "id": "m79",
+      "id": "m81",
       "score": "2-0"
+    },
+    {
+      "id": "m82",
+      "score": "2-2(90')→3-2"
     }
   ],
   "standings": [
     {
       "group": "A",
-      "label": "A? ? ???",
+      "label": "A组 · 末轮后",
       "table": [
         {
           "team": "Mexico",
@@ -139,7 +90,7 @@ const LIVE_DATA = {
     },
     {
       "group": "B",
-      "label": "B? ? ???",
+      "label": "B组 · 末轮后",
       "table": [
         {
           "team": "Switzerland",
@@ -185,7 +136,7 @@ const LIVE_DATA = {
     },
     {
       "group": "D",
-      "label": "D? ? ???",
+      "label": "D组 · 末轮后",
       "table": [
         {
           "team": "USA",
@@ -218,7 +169,7 @@ const LIVE_DATA = {
           "ga": 4
         },
         {
-          "team": "T?rkiye",
+          "team": "Türkiye",
           "pts": 3,
           "p": 3,
           "w": 1,
@@ -231,7 +182,7 @@ const LIVE_DATA = {
     },
     {
       "group": "C",
-      "label": "C? ? ???",
+      "label": "C组 · 末轮后",
       "table": [
         {
           "team": "Brazil",
@@ -277,7 +228,7 @@ const LIVE_DATA = {
     },
     {
       "group": "E",
-      "label": "E? ? ???",
+      "label": "E组 · 末轮后",
       "table": [
         {
           "team": "Germany",
@@ -290,7 +241,7 @@ const LIVE_DATA = {
           "ga": 4
         },
         {
-          "team": "C?te d'Ivoire",
+          "team": "Côte d'Ivoire",
           "pts": 6,
           "p": 3,
           "w": 2,
@@ -310,7 +261,7 @@ const LIVE_DATA = {
           "ga": 3
         },
         {
-          "team": "Cura?ao",
+          "team": "Curaçao",
           "pts": 1,
           "p": 3,
           "w": 0,
@@ -323,7 +274,7 @@ const LIVE_DATA = {
     },
     {
       "group": "F",
-      "label": "F? ? ???",
+      "label": "F组 · 末轮后",
       "table": [
         {
           "team": "Netherlands",
@@ -369,7 +320,7 @@ const LIVE_DATA = {
     },
     {
       "group": "G",
-      "label": "G? ? ???",
+      "label": "G组 · 末轮后",
       "table": [
         {
           "team": "Belgium",
@@ -415,7 +366,7 @@ const LIVE_DATA = {
     },
     {
       "group": "H",
-      "label": "H? ? ???",
+      "label": "H组 · 末轮后",
       "table": [
         {
           "team": "Spain",
@@ -461,7 +412,7 @@ const LIVE_DATA = {
     },
     {
       "group": "I",
-      "label": "I? ? ???",
+      "label": "I组 · 末轮后",
       "table": [
         {
           "team": "France",
@@ -507,7 +458,7 @@ const LIVE_DATA = {
     },
     {
       "group": "J",
-      "label": "J? ? ???",
+      "label": "J组 · 末轮后",
       "table": [
         {
           "team": "Argentina",
@@ -553,7 +504,7 @@ const LIVE_DATA = {
     },
     {
       "group": "K",
-      "label": "K? ? ???",
+      "label": "K组 · 末轮后",
       "table": [
         {
           "team": "Colombia",
@@ -599,7 +550,7 @@ const LIVE_DATA = {
     },
     {
       "group": "L",
-      "label": "L? ? ???",
+      "label": "L组 · 末轮后",
       "table": [
         {
           "team": "England",
@@ -645,6 +596,6 @@ const LIVE_DATA = {
     }
   ],
   "injuries": {
-    "note": "Day 21 ? 32? 3 ? enriched ? ????"
+    "note": "Day 21 全部完场 · M80–M82 已归档"
   }
 };

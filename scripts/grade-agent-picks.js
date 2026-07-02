@@ -26,16 +26,8 @@ function loadMatches() {
 }
 
 function getActual(m) {
-  const ar = m.actualResult;
-  if (ar?.home_score != null && ar?.away_score != null) {
-    return {
-      h: ar.home_score,
-      a: ar.away_score,
-      total: ar.home_score + ar.away_score,
-      margin: ar.home_score - ar.away_score,
-    };
-  }
-  return null;
+  const bs = lib.getBettingScoreFromResult(m?.actualResult);
+  return bs ? { h: bs.h, a: bs.a, total: bs.total, margin: bs.margin } : null;
 }
 
 function totalsOverWeight(totalGoals, line) {
@@ -119,7 +111,6 @@ function favSpreadOutcome(favMargin, tier) {
   }
   if (Math.abs(frac - 0.5) < 0.01) {
     if (favMargin >= th.fullMin) return 'full_win';
-    if (th.halfExact != null && favMargin === th.halfExact) return 'half_win';
     return 'full_lose';
   }
   if (Math.abs(frac - 0.75) < 0.01) {
@@ -130,9 +121,10 @@ function favSpreadOutcome(favMargin, tier) {
     return 'full_lose';
   }
   if (Math.abs(frac - 0.25) < 0.01) {
-    if (favMargin >= th.fullMin) return 'full_win';
-    if (abs >= 1 && favMargin === base && th.pushExact == null) return 'half_lose';
-    if (abs < 1 && favMargin === 0) return 'half_lose';
+    const fullMin = base === 0 ? 2 : base + 1;
+    if (favMargin >= fullMin) return 'full_win';
+    if (favMargin === 1) return base === 0 ? 'half_win' : 'half_lose';
+    if (favMargin === 0) return 'half_lose';
     return 'full_lose';
   }
   if (favMargin >= th.fullMin) return 'full_win';
@@ -144,7 +136,13 @@ function spreadSideOutcome(margin, tier, side, publicLean) {
   const favMargin = favSide === 'home' ? margin : favSide === 'away' ? -margin : margin;
   const favOut = favSpreadOutcome(favMargin, tier);
   if (side === 'fav') return favOut;
-  if (side === 'dog') return invertSpreadOutcome(favOut);
+  if (side === 'dog') {
+    const abs = Math.abs(Number(tier) || 0);
+    const frac = Math.round((abs % 1) * 100) / 100;
+    const base = Math.floor(abs);
+    if (Math.abs(frac - 0.25) < 0.01 && base === 0 && favMargin === 1) return 'half_win';
+    return invertSpreadOutcome(favOut);
+  }
   return 'full_lose';
 }
 

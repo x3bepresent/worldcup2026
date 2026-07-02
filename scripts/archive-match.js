@@ -174,7 +174,11 @@ function archiveFinishedMatch(m, opts = {}) {
     .replace(/ · 已结束.*$/, '')
     .replace(/ · 官方.*$/, '');
   if (ar?.home_score != null) {
-    note += ` · 已结束 ${ar.home_score}-${ar.away_score}`;
+    if (ar.regulation_home_score != null && ar.regulation_away_score != null) {
+      note += ` · 已结束 ${ar.regulation_home_score}-${ar.regulation_away_score}(90')→${ar.home_score}-${ar.away_score}(加时)`;
+    } else {
+      note += ` · 已结束 ${ar.home_score}-${ar.away_score}`;
+    }
   }
 
   const out = {

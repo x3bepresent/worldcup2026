@@ -54,52 +54,58 @@
     }
   ],
   "results": {
-    "graded_at": "2026-07-01T18:12:56.308Z",
+    "graded_at": "2026-07-02T05:07:46.505Z",
     "grade_rule_cn": "不败即中：全赢/赢半/走水算中，输半/全输算不中",
     "spread": {
-      "hit": 0,
+      "hit": 2,
       "miss": 1,
       "push": 0,
-      "pending": 2,
-      "pct": 0
+      "pending": 0,
+      "pct": 66.7
     },
     "totals": {
-      "hit": 0,
-      "miss": 1,
+      "hit": 1,
+      "miss": 2,
       "push": 0,
-      "pending": 2,
-      "pct": 0
+      "pending": 0,
+      "pct": 33.3
     },
     "primary": {
-      "hit": 0,
-      "miss": 1,
+      "hit": 1,
+      "miss": 2,
       "push": 0,
-      "pending": 2,
-      "pct": 0,
+      "pending": 0,
+      "pct": 33.3,
       "label_cn": "倾向项（★）"
     },
     "secondary": {
-      "hit": 0,
+      "hit": 2,
       "miss": 1,
       "push": 0,
-      "pending": 2,
-      "pct": 0,
+      "pending": 0,
+      "pct": 66.7,
       "label_cn": "非倾向项"
     },
     "all_legs": {
-      "hit": 0,
-      "miss": 2,
+      "hit": 3,
+      "miss": 3,
       "push": 0,
-      "pending": 4,
-      "pct": 0
+      "pending": 0,
+      "pct": 50
     },
     "cross_analysis": {
       "summary_cn": "交叉赛果用于反推倾向权重：若「倾向错、另一项对」偏多，应下调倾向优先级或改判定规则",
       "primary_miss_secondary_hit": {
-        "n": 0,
-        "pct": 0,
+        "n": 1,
+        "pct": 33.3,
         "label_cn": "倾向未中 · 另一项命中",
-        "matches": [],
+        "matches": [
+          {
+            "id": "m80",
+            "match": "England vs Congo DR",
+            "cn": "★大小球未中，让球盘项命中"
+          }
+        ],
         "analytics_cn": "虽倾向错了，但双选中的另一项对了——实际可命中却被倾向标签误导，是改进重点"
       },
       "primary_hit_secondary_miss": {
@@ -109,39 +115,45 @@
         "matches": []
       },
       "both_hit": {
-        "n": 0,
-        "matches": []
+        "n": 1,
+        "matches": [
+          {
+            "id": "m82",
+            "match": "Belgium vs Senegal",
+            "cn": "★让球盘与大小球均命中"
+          }
+        ]
       },
       "both_miss": {
         "n": 1,
         "matches": [
           {
-            "id": "m80",
-            "match": "England vs Congo DR",
-            "cn": "★大小球与让球盘均未中"
+            "id": "m81",
+            "match": "USA vs Bosnia & Herz.",
+            "cn": "★让球盘与大小球均未中"
           }
         ]
       },
-      "pending": 2
+      "pending": 0
     },
     "layer_alignment": {
       "summary_cn": "大小球三层对齐：pick_side 与 model/market/recommended 赛后反推",
       "pick_follows_model_market": {
-        "hit": 0,
+        "hit": 1,
         "miss": 0,
-        "n": 0,
-        "pct": null
+        "n": 1,
+        "pct": 100
       },
       "pick_vs_recommended": {
         "hit": 0,
-        "miss": 0,
-        "n": 0,
-        "pct": null
+        "miss": 1,
+        "n": 1,
+        "pct": 0
       },
       "situation_conflict_resolved": {
         "hit": 0,
-        "miss": 1,
-        "n": 1,
+        "miss": 2,
+        "n": 2,
         "pct": 0
       },
       "per_match": [
@@ -153,6 +165,24 @@
           "pick_side": "under",
           "recommended_side": "under",
           "totals_hit": false
+        },
+        {
+          "id": "m81",
+          "model_side": "under",
+          "situation_side": null,
+          "market_side": "over",
+          "pick_side": "over",
+          "recommended_side": "under",
+          "totals_hit": false
+        },
+        {
+          "id": "m82",
+          "model_side": "over",
+          "situation_side": null,
+          "market_side": "over",
+          "pick_side": "over",
+          "recommended_side": "over",
+          "totals_hit": true
         }
       ]
     },
@@ -163,24 +193,26 @@
       ],
       "spread": {
         "hit": 0,
-        "miss": 0,
-        "pct": null
+        "miss": 1,
+        "pct": 0
       },
       "totals": {
         "hit": 0,
-        "miss": 0,
-        "pct": null
+        "miss": 1,
+        "pct": 0
       },
       "primary": {
         "hit": 0,
-        "miss": 0,
-        "pct": null
+        "miss": 1,
+        "pct": 0
       },
       "cross": {
         "primary_miss_secondary_hit": [],
         "primary_hit_secondary_miss": [],
         "both_hit": [],
-        "both_miss": []
+        "both_miss": [
+          "m81"
+        ]
       }
     },
     "picks": [
@@ -201,8 +233,8 @@
           "side": "dog",
           "label_cn": "刚果（金） +1.5 @0.93",
           "reason_cn": "blocker_inflate·英-1.5穿46.7%·1-0全赢/2-0全输 · 英0.96升水+轮换 · 模型53.3% · 副项。",
-          "hit": false,
-          "grade_note": "2-1 · 净胜 +1 · 输半"
+          "hit": true,
+          "grade_note": "2-1 · 净胜 +1 · 全赢"
         },
         "totals": {
           "side": "under",
@@ -212,14 +244,14 @@
           "grade_note": "2-1 总3 · 线 2.5 · 全输"
         },
         "primary_hit": false,
-        "secondary_hit": false,
+        "secondary_hit": true,
         "secondary_market": "spread",
         "outcome": {
-          "key": "both_miss",
-          "cn": "★大小球与让球盘均未中",
-          "analytics_cn": "全盘失误，需复盘模型、盘路与倾向规则",
+          "key": "primary_miss_secondary_hit",
+          "cn": "★大小球未中，让球盘项命中",
+          "analytics_cn": "倾向权重可能偏高——复盘时应优先看命中项，并反推是否应改倾向或降低倾向在决策中的权重",
           "primary_hit": false,
-          "secondary_hit": false,
+          "secondary_hit": true,
           "primary_market": "totals",
           "secondary_market": "spread"
         },
@@ -240,25 +272,31 @@
         "situation_conflict": true,
         "spread": {
           "side": "dog",
-          "label_cn": "波黑 +1/1.5 @1.07",
-          "reason_cn": "美-1→-1/1.5仍0.82 · 穿盘37.3% · 1-0·1-1全赢/2-0输半/3-0全输 · ★主项。",
-          "grade_note": "未开赛/无赛果"
+          "label_cn": "波黑 +1.5 @0.86",
+          "reason_cn": "美-1/1.5→-1.5@1.03高水 · 穿盘37%档 · 1-0·1-1·2-1全赢/2-0·3-0全输 · ★主项。",
+          "hit": false,
+          "grade_note": "2-0 · 净胜 +2 · 全输"
         },
         "totals": {
           "side": "over",
-          "label_cn": "大球 2.5/3 @0.85",
-          "reason_cn": "临盘小0.97→大0.85翻转 · 模型仍偏小但盘面跟大 · 3球大赢半/4+全赢 · 副项。",
-          "grade_note": "未开赛/无赛果"
+          "label_cn": "大球 2.5/3 @0.82",
+          "reason_cn": "大0.82再降水 · 小1.06升水 · 3球大赢半/4+全赢 · 副项。",
+          "hit": false,
+          "grade_note": "2-0 总2 · 线 2.75 · 全输"
         },
+        "primary_hit": false,
+        "secondary_hit": false,
         "secondary_market": "totals",
         "outcome": {
-          "key": "pending",
-          "cn": "待赛",
-          "analytics_cn": null,
+          "key": "both_miss",
+          "cn": "★让球盘与大小球均未中",
+          "analytics_cn": "全盘失误，需复盘模型、盘路与倾向规则",
+          "primary_hit": false,
+          "secondary_hit": false,
           "primary_market": "spread",
           "secondary_market": "totals"
         },
-        "actual_score": null
+        "actual_score": "2-0"
       },
       {
         "id": "m82",
@@ -276,24 +314,30 @@
         "spread": {
           "side": "dog",
           "label_cn": "塞内加尔 +0/0.5 @1.06",
-          "reason_cn": "比-0.5→-0/0.5仍0.83 · 1-1输半/0-0·0-1·塞赢全赢/比赢全输 · ★主项。",
-          "grade_note": "未开赛/无赛果"
+          "reason_cn": "比-0.5→-0/0.5仍0.83 · 1-1赢半/0-0·0-1·塞全赢/比1-0·2-1·2-2赢半（90'） · 加时3-2不计盘 · ★主项。",
+          "hit": true,
+          "grade_note": "2-2 · 净胜 0 · 赢半"
         },
         "totals": {
           "side": "over",
           "label_cn": "大球 2.5 @0.88",
           "reason_cn": "小1.00升水趋均衡 · 大0.88略低 · 模型超2.5约52% · 3球+全赢 · 副项。",
-          "grade_note": "未开赛/无赛果"
+          "hit": true,
+          "grade_note": "2-2 总4 · 线 2.5 · 全赢"
         },
+        "primary_hit": true,
+        "secondary_hit": true,
         "secondary_market": "totals",
         "outcome": {
-          "key": "pending",
-          "cn": "待赛",
-          "analytics_cn": null,
+          "key": "both_hit",
+          "cn": "★让球盘与大小球均命中",
+          "analytics_cn": "倾向正确，双项验证通过",
+          "primary_hit": true,
+          "secondary_hit": true,
           "primary_market": "spread",
           "secondary_market": "totals"
         },
-        "actual_score": null
+        "actual_score": "2-2"
       }
     ]
   }

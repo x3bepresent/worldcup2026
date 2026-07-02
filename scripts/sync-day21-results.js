@@ -1,5 +1,5 @@
 /**
- * Day 21 赛果同步 — m80（单场，m81/m82 待赛）
+ * Day 21 赛果同步 — m80–m82
  * Run: node scripts/sync-day21-results.js && node scripts/grade-agent-picks.js day21 && node scripts/build-agent-stats.js
  */
 const fs = require('fs');
@@ -16,24 +16,43 @@ const LIVE_PATH = path.join(ROOT, 'js', 'live-data.js');
 const TS = new Date().toISOString().replace(/\.\d{3}Z$/, '+08:00');
 
 const HANDICAP = { ...require('./handicap-data-day21.js') };
-const SYNC_IDS = ['m80'];
-const FIFA_IDS = { m80: '400021512' };
+const SYNC_IDS = ['m80', 'm81', 'm82'];
+
+const FIFA_IDS = {
+  m80: '400021512',
+  m81: '400021524',
+  m82: '400021525',
+};
 
 const MANUAL = {
   m80: {
     home_score: 2,
     away_score: 1,
-    status: 'FT',
-    label: '全场结束',
-    scorers: '（待 FIFA 进球者补全）',
-    highlights: '亚特兰大 · 英格兰 2-1 刚果（金）· 半场 0-1 · 晚场扳平后小胜',
     ht_score: '0-1',
-    fifa_id: '400021512',
+    highlights: '亚特兰大 · 英格兰 2-1 刚果（金）· 半场 0-1',
+  },
+  m81: {
+    home_score: 2,
+    away_score: 0,
+    ht_score: '1-0',
+    highlights: '旧金山湾区 · 美国 2-0 波黑 · 半场 1-0',
+  },
+  m82: {
+    home_score: 3,
+    away_score: 2,
+    regulation_home_score: 2,
+    regulation_away_score: 2,
+    status: 'AET',
+    label: '加时结束',
+    ht_score: '0-1',
+    highlights: '西雅图 · 比利时 常规2-2 · 加时3-2 塞内加尔 · 半场 0-1',
   },
 };
 
 const REVIEW = {
-  m80: '【赛后复盘】英格兰 2-1 刚果（金）· 半场 0-1 · 下半场扳平后小胜。Agent：★小 2.5 总3全输；刚果 +1.5 全赢（英仅净胜1）。滚球路径 1-1→2-1 分裂点兑现。',
+  m80: '【复盘】英格兰 2-1 刚果（金）· 半场 0-1 · Kane 75\'/86\'。Agent：★小2.5✗ · 刚果+1.5✓（英仅净胜1）。',
+  m81: '【复盘】美国 2-0 波黑 · Balogun 45\' · Tillman 82\'。Agent：★波+1.5✗ · 大2.5/3✗（总2球）。',
+  m82: '【复盘】比利时 常规2-2 · 加时3-2 塞内加尔 · 半场 0-1 · Diarra 24\'/Sarr 51\' · Lukaku 86\'/Tielemans 89\'。球盘按90分钟：★塞+0/0.5赢半 · 大2.5✓（总4球）。',
 };
 
 function loadData(filePath, varName) {
@@ -62,14 +81,14 @@ function playerName(j, idPlayer) {
 function formatScorers(j) {
   const rows = [];
   for (const g of j.HomeTeam?.Goals || []) {
-    if ((g.Type !== 2 && g.Type !== 3) || !g.Minute) continue;
-    const n = playerName(j, g.IdPlayer);
-    rows.push(`${n} ${g.Minute}${g.Type === 3 ? ' (og)' : ''}`);
+    if ((g.Type === 2 || g.Type === 3) && g.Minute) {
+      rows.push(`${playerName(j, g.IdPlayer)} ${g.Minute}${g.Type === 3 ? ' (og)' : ''}`);
+    }
   }
   for (const g of j.AwayTeam?.Goals || []) {
-    if ((g.Type !== 2 && g.Type !== 3) || !g.Minute) continue;
-    const n = playerName(j, g.IdPlayer);
-    rows.push(`${n} ${g.Minute}${g.Type === 3 ? ' (og)' : ''}`);
+    if ((g.Type === 2 || g.Type === 3) && g.Minute) {
+      rows.push(`${playerName(j, g.IdPlayer)} ${g.Minute}${g.Type === 3 ? ' (og)' : ''}`);
+    }
   }
   return rows.join('; ');
 }
@@ -83,8 +102,7 @@ function inferHt(j) {
   for (const g of j.AwayTeam?.Goals || []) {
     if ((g.Type === 2 || g.Type === 3) && g.Minute && (g.Period === 3 || parseInt(g.Minute, 10) <= 45)) a++;
   }
-  if (h + a > 0) return `${h}-${a}`;
-  return '0-1';
+  return `${h}-${a}`;
 }
 
 function isFinished(j) {
@@ -102,6 +120,8 @@ function applyResult(m, r, reviewKey) {
   m.actualResult = {
     home_score: r.home_score,
     away_score: r.away_score,
+    regulation_home_score: r.regulation_home_score ?? null,
+    regulation_away_score: r.regulation_away_score ?? null,
     status: r.status,
     label: r.label,
     scorers: r.scorers,
@@ -114,8 +134,10 @@ function applyResult(m, r, reviewKey) {
     m.prediction = m.prediction || {};
     m.prediction.key_factor = REVIEW[reviewKey];
   }
-  const score = `${r.home_score}-${r.away_score}`;
-  m.note = `32强 M80 · 已结束 ${score} · 英格兰 vs 刚果（金）`;
+  const score = r.regulation_home_score != null
+    ? `${r.regulation_home_score}-${r.regulation_away_score}（90'）→ ${r.home_score}-${r.away_score}（加时）`
+    : `${r.home_score}-${r.away_score}`;
+  m.note = `32强 ${m.id?.toUpperCase()} · 已结束 ${score}`;
   if (m.home?.form) {
     m.home.form = pushForm(m.home.form, r.home_score > r.away_score ? 'W' : r.home_score < r.away_score ? 'L' : 'D');
   }
@@ -126,23 +148,28 @@ function applyResult(m, r, reviewKey) {
 }
 
 async function main() {
-  const resolved = { ...MANUAL };
+  const resolved = {};
+  for (const id of SYNC_IDS) {
+    resolved[id] = {
+      ...MANUAL[id],
+      status: MANUAL[id].status || 'FT',
+      label: MANUAL[id].label || '全场结束',
+      fifa_id: FIFA_IDS[id],
+    };
+  }
 
   for (const [mid, fid] of Object.entries(FIFA_IDS)) {
     try {
       const j = await fetchFifa(fid);
       if (!isFinished(j)) continue;
-      const hs = j.HomeTeam?.Score ?? resolved[mid]?.home_score;
-      const as = j.AwayTeam?.Score ?? resolved[mid]?.away_score;
-      const scorers = formatScorers(j);
       resolved[mid] = {
         ...resolved[mid],
-        home_score: hs,
-        away_score: as,
-        scorers: scorers || resolved[mid]?.scorers,
-        ht_score: inferHt(j) || resolved[mid]?.ht_score,
-        status: 'FT',
-        label: '全场结束',
+        home_score: j.HomeTeam?.Score ?? resolved[mid].home_score,
+        away_score: j.AwayTeam?.Score ?? resolved[mid].away_score,
+        scorers: formatScorers(j) || resolved[mid].scorers,
+        ht_score: inferHt(j) || resolved[mid].ht_score,
+        status: resolved[mid].status || 'FT',
+        label: resolved[mid].label || '全场结束',
         fifa_id: fid,
       };
     } catch (e) {
@@ -154,9 +181,12 @@ async function main() {
   const RESULTS_DATA = loadData(RESULTS_PATH, 'RESULTS_DATA');
 
   for (const id of SYNC_IDS) {
-    const m = MATCH_DATA.todayMatches?.find((x) => x.id === id);
+    let m = MATCH_DATA.todayMatches?.find((x) => x.id === id);
+    if (!m) {
+      m = (RESULTS_DATA.finishedMatches || []).find((x) => x.id === id);
+    }
     const r = resolved[id];
-    if (!m || !r || r.status !== 'FT') continue;
+    if (!m || !r || !['FT', 'AET', 'PEN'].includes(r.status)) continue;
     const patched = applyResult(JSON.parse(JSON.stringify(m)), r, id);
     const enriched = enrichArchivedFull(patched, HANDICAP);
     const archived = archiveFinishedMatch(enriched, { archivedAt: TS });
@@ -167,47 +197,57 @@ async function main() {
 
   MATCH_DATA.todayMatches = (MATCH_DATA.todayMatches || []).filter((m) => !SYNC_IDS.includes(m.id));
   MATCH_DATA.lastUpdated = TS;
-  MATCH_DATA.syncSource = 'Day 21 · M80 完场 · M81/M82 待赛';
-
-  const ftNews = {
-    tag: 'OFFICIAL',
-    text: '🏁 M80：英格兰 2-1 刚果（金）· 半场 0-1 · Agent ★小2.5✗ 刚果+1.5✓',
-    time: '7月2日',
-  };
-  const filterM80 = (n) => !/M80.*2-1|M80.*英格兰.*刚果.*完/.test(n.text || '');
-  RESULTS_DATA.lastUpdated = TS;
-  RESULTS_DATA.syncSource = 'FIFA 官方 · Day 21 M80 完场';
-  RESULTS_DATA.breakingNews = [
-    ftNews,
-    ...(RESULTS_DATA.breakingNews || []).filter(filterM80),
-  ].slice(0, 12);
-  MATCH_DATA.breakingNews = [
-    ftNews,
-    ...(MATCH_DATA.breakingNews || []).filter(filterM80),
-  ].slice(0, 12);
-
-  const remaining = MATCH_DATA.todayMatches || [];
-  const LIVE_DATA = loadData(LIVE_PATH, 'LIVE_DATA');
-  LIVE_DATA.lastUpdated = TS;
-  const m80fix = LIVE_DATA.fixtures?.find((f) => f.id === 'm80');
-  if (m80fix) {
-    m80fix.status = 'FT';
-    m80fix.home_score = 2;
-    m80fix.away_score = 1;
-    m80fix.elapsed = 90;
+  MATCH_DATA.syncSource = 'Day 21 完结 · M80–M82 全部完场';
+  MATCH_DATA.phase_cn = '淘汰赛 · 32强';
+  if (!MATCH_DATA.todayMatches?.length) {
+    MATCH_DATA.breakingNews = [
+      { tag: 'OFFICIAL', text: '🏁 Day21 完结：英格兰2-1刚果 · 美国2-0波黑 · 比利时常规2-2加时3-2塞内加尔', time: '7月2日' },
+      { tag: 'PREVIEW', text: '📊 Day21 Agent 双选已全部结算', time: '复盘' },
+    ];
   }
-  const ftRow = { id: 'm80', home: 'England', away: 'Congo DR', score: '2-1', group: 'KO' };
-  LIVE_DATA.allResults = [ftRow, ...(LIVE_DATA.allResults || []).filter((r) => r.id !== 'm80')];
+
+  RESULTS_DATA.lastUpdated = TS;
+  RESULTS_DATA.syncSource = 'FIFA 官方 · Day 21 M80–M82 完结';
+  RESULTS_DATA.breakingNews = [
+    { tag: 'OFFICIAL', text: '🏁 M80：英格兰 2-1 刚果（金）· Kane 双响 · 半场 0-1', time: '7月2日' },
+    { tag: 'OFFICIAL', text: '🏁 M81：美国 2-0 波黑 · Balogun 45\' · Tillman 82\'', time: '7月2日' },
+    { tag: 'OFFICIAL', text: '🏁 M82：比利时 常规2-2 · 加时3-2 塞内加尔 · 球盘按90分钟结算 · 半场 0-1', time: '7月2日' },
+    ...(RESULTS_DATA.breakingNews || []).filter((n) => !/^🏁 M8[012]/.test(n.text || '')),
+  ].slice(0, 12);
+
+  const day21Ft = SYNC_IDS.map((id) => {
+    const r = resolved[id];
+    const m = (RESULTS_DATA.finishedMatches || []).find((x) => x.id === id);
+    const score = r.regulation_home_score != null
+      ? `${r.regulation_home_score}-${r.regulation_away_score}(90')→${r.home_score}-${r.away_score}`
+      : `${r.home_score}-${r.away_score}`;
+    return {
+      id,
+      home: m?.home?.name || id,
+      away: m?.away?.name || id,
+      score,
+      group: 'KO',
+    };
+  });
+
+  const LIVE_DATA = {
+    lastUpdated: TS,
+    todayDate: '2026-07-02',
+    fixtures: [],
+    allResults: day21Ft,
+    yesterdayResults: day21Ft.map((r) => ({ id: r.id, score: r.score })),
+    standings: RESULTS_DATA.groupSnapshots || [],
+    injuries: { note: 'Day 21 全部完场 · M80–M82 已归档' },
+  };
 
   fs.writeFileSync(RESULTS_PATH, `// 过往赛果\n// Last updated: ${TS}\nconst RESULTS_DATA = ${JSON.stringify(RESULTS_DATA, null, 2)};\n`);
-  fs.writeFileSync(MATCH_PATH, `// 今日赛事 — Day 21 M80 FT\n// Last updated: ${TS}\nconst MATCH_DATA = ${JSON.stringify(MATCH_DATA, null, 2)};\n`);
-  fs.writeFileSync(LIVE_PATH, `// Day 21 · M80 FT\n// Updated: ${TS}\nconst LIVE_DATA = ${JSON.stringify(LIVE_DATA, null, 2)};\n`);
+  fs.writeFileSync(MATCH_PATH, `// 今日赛事 — Day 21 全部完场\n// Last updated: ${TS}\nconst MATCH_DATA = ${JSON.stringify(MATCH_DATA, null, 2)};\n`);
+  fs.writeFileSync(LIVE_PATH, `// Day 21 FT · M80–M82\n// Updated: ${TS}\nconst LIVE_DATA = ${JSON.stringify(LIVE_DATA, null, 2)};\n`);
 
   for (const id of SYNC_IDS) {
     const r = resolved[id];
     console.log(`✅ ${id} FT ${r.home_score}-${r.away_score} · HT ${r.ht_score} · ${r.scorers || ''}`);
   }
-  console.log(`   今日剩余 ${remaining.length} 场：${remaining.map((m) => m.id).join(', ') || '—'}`);
   try { rebuildScheduleScores(); } catch (e) { console.warn('schedule-scores:', e.message); }
 }
 
