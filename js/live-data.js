@@ -1,7 +1,7 @@
 // Auto-synced by scripts/enrich-day22.js
-// Updated: 2026-07-02T08:56:28+08:00
+// Updated: 2026-07-02T13:35:21+08:00
 const LIVE_DATA = {
-  "lastUpdated": "2026-07-02T08:56:28+08:00",
+  "lastUpdated": "2026-07-02T13:35:21+08:00",
   "todayDate": "2026-07-03",
   "fixtures": [
     {
@@ -631,6 +631,9 @@ const LIVE_DATA = {
     }
   ],
   "injuries": {
-    "note": "Day 22 · 32强 3 场 enriched · 待临场盘"
+    "note": "Day 22 · M84/M83/M85 · FIFA 裁判已确认 · 伤病/更衣室/赛场已更新",
+    "m84": "西班牙：Carvajal 队检 · 奥地利：Laimer 减量",
+    "m83": "葡萄牙：Pepe 体能轮换 · 克罗地亚：Brozović 队检",
+    "m85": "瑞士：Embolo 膝伤管理 · 阿尔及利亚：Bounedjah 队检"
   }
 };
