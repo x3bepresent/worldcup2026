@@ -1,0 +1,364 @@
+{
+  "day": 22,
+  "date": "2026-07-03",
+  "note": "Agent 终选 · 临场盘 2026-07-03 · node scripts/grade-agent-picks.js day22",
+  "wc_home_away_note": "世界杯中立赛场；FIFA 主/客仅为赛历标签。",
+  "picks": [
+    {
+      "id": "m84",
+      "match": "Spain vs Austria",
+      "primary": "spread",
+      "tendency_cn": "更倾向让球盘（西班牙穿盘）",
+      "confidence": "high",
+      "confidence_cn": "高信心",
+      "spread": {
+        "side": "fav",
+        "pick_cn": "西班牙 -1.5 @0.87"
+      },
+      "totals": {
+        "side": "over",
+        "pick_cn": "大球 2.5/3 @0.86"
+      }
+    },
+    {
+      "id": "m83",
+      "match": "Portugal vs Croatia",
+      "primary": "spread",
+      "tendency_cn": "更倾向让球盘（克罗地亚受让）",
+      "confidence": "medium",
+      "confidence_cn": "中信心",
+      "spread": {
+        "side": "dog",
+        "pick_cn": "克罗地亚 +0.5/1 @0.99"
+      },
+      "totals": {
+        "side": "over",
+        "pick_cn": "大球 2.5/3 @0.95"
+      }
+    },
+    {
+      "id": "m85",
+      "match": "Switzerland vs Algeria",
+      "primary": "spread",
+      "tendency_cn": "更倾向让球盘（阿尔及利亚受让）",
+      "confidence": "medium",
+      "confidence_cn": "中信心",
+      "spread": {
+        "side": "dog",
+        "pick_cn": "阿尔及利亚 +0.5 @0.91"
+      },
+      "totals": {
+        "side": "over",
+        "pick_cn": "大球 2/2.5 @0.98"
+      }
+    }
+  ],
+  "results": {
+    "graded_at": "2026-07-03T11:49:22.527Z",
+    "grade_rule_cn": "统计：全赢1 · 赢半0.5 · 输半0.5 · 走水不计；单场✓/✗仍按不败即中（含赢半）",
+    "spread": {
+      "hit": 1,
+      "miss": 1.5,
+      "push": 0,
+      "pending": 0,
+      "legs": 3,
+      "pct": 33.3
+    },
+    "totals": {
+      "hit": 1,
+      "miss": 0.5,
+      "push": 0,
+      "pending": 0,
+      "legs": 3,
+      "pct": 33.3
+    },
+    "primary": {
+      "hit": 1,
+      "miss": 1.5,
+      "push": 0,
+      "pending": 0,
+      "legs": 3,
+      "pct": 33.3,
+      "label_cn": "倾向项（★）"
+    },
+    "secondary": {
+      "hit": 1,
+      "miss": 0.5,
+      "push": 0,
+      "pending": 0,
+      "legs": 3,
+      "pct": 33.3,
+      "label_cn": "非倾向项"
+    },
+    "all_legs": {
+      "hit": 2,
+      "miss": 2,
+      "push": 0,
+      "pending": 0,
+      "legs": 6,
+      "pct": 33.3
+    },
+    "cross_analysis": {
+      "summary_cn": "交叉赛果用于反推倾向权重：若「倾向错、另一项对」偏多，应下调倾向优先级或改判定规则",
+      "primary_miss_secondary_hit": {
+        "n": 1,
+        "pct": 33.3,
+        "label_cn": "倾向未中 · 另一项命中",
+        "matches": [
+          {
+            "id": "m83",
+            "match": "Portugal vs Croatia",
+            "cn": "★让球盘未中，大小球项命中"
+          }
+        ],
+        "analytics_cn": "虽倾向错了，但双选中的另一项对了——实际可命中却被倾向标签误导，是改进重点"
+      },
+      "primary_hit_secondary_miss": {
+        "n": 0,
+        "pct": 0,
+        "label_cn": "倾向命中 · 另一项未中",
+        "matches": []
+      },
+      "both_hit": {
+        "n": 1,
+        "matches": [
+          {
+            "id": "m84",
+            "match": "Spain vs Austria",
+            "cn": "★让球盘与大小球均命中"
+          }
+        ]
+      },
+      "both_miss": {
+        "n": 1,
+        "matches": [
+          {
+            "id": "m85",
+            "match": "Switzerland vs Algeria",
+            "cn": "★让球盘与大小球均未中"
+          }
+        ]
+      },
+      "pending": 0
+    },
+    "layer_alignment": {
+      "summary_cn": "大小球三层对齐：pick_side 与 model/market/recommended 赛后反推",
+      "pick_follows_model_market": {
+        "hit": 1,
+        "miss": 1,
+        "n": 2,
+        "pct": 50
+      },
+      "pick_vs_recommended": {
+        "hit": 2,
+        "miss": 1,
+        "n": 3,
+        "pct": 66.7
+      },
+      "situation_conflict_resolved": {
+        "hit": 1,
+        "miss": 0,
+        "n": 1,
+        "pct": 100
+      },
+      "per_match": [
+        {
+          "id": "m84",
+          "model_side": "over",
+          "situation_side": null,
+          "market_side": "over",
+          "pick_side": "over",
+          "recommended_side": "fav",
+          "totals_hit": true
+        },
+        {
+          "id": "m83",
+          "model_side": "under",
+          "situation_side": null,
+          "market_side": "over",
+          "pick_side": "over",
+          "recommended_side": "dog",
+          "totals_hit": true
+        },
+        {
+          "id": "m85",
+          "model_side": "under",
+          "situation_side": null,
+          "market_side": "under",
+          "pick_side": "under",
+          "recommended_side": "dog",
+          "totals_hit": false
+        }
+      ]
+    },
+    "high_confidence": {
+      "n": 1,
+      "ids": [
+        "m84"
+      ],
+      "spread": {
+        "hit": 1,
+        "miss": 0,
+        "push": 0,
+        "pending": null,
+        "legs": 1,
+        "pct": 100
+      },
+      "totals": {
+        "hit": 0.5,
+        "miss": 0,
+        "push": 0,
+        "pending": null,
+        "legs": 1,
+        "pct": 50
+      },
+      "primary": {
+        "hit": 1,
+        "miss": 0,
+        "push": 0,
+        "pending": null,
+        "legs": 1,
+        "pct": 100
+      },
+      "cross": {
+        "primary_miss_secondary_hit": [],
+        "primary_hit_secondary_miss": [],
+        "both_hit": [
+          "m84"
+        ],
+        "both_miss": []
+      }
+    },
+    "picks": [
+      {
+        "id": "m84",
+        "match": "Spain vs Austria",
+        "primary": "spread",
+        "tendency_cn": "更倾向让球盘（西班牙穿盘）",
+        "high_confidence": true,
+        "confidence_cn": "高信心",
+        "model_side": "over",
+        "situation_side": null,
+        "market_side": "over",
+        "pick_side": "over",
+        "recommended_side": "fav",
+        "situation_conflict": false,
+        "spread": {
+          "side": "fav",
+          "label_cn": "西班牙 -1.5 @0.87",
+          "reason_cn": "H1 vs J2 · -1.5 0.87 低水 · 2-0/3-0 穿盘路径 · 模型约58% · ★主项。",
+          "hit": true,
+          "outcome": "full_win",
+          "grade_note": "3-0 · 净胜 +3 · 全赢"
+        },
+        "totals": {
+          "side": "over",
+          "label_cn": "大球 2.5/3 @0.86",
+          "reason_cn": "2.5→2.5/3升线+大0.86低水 · 3球大赢半/4+全赢 · 副项 · R9不打副项小。",
+          "hit": true,
+          "outcome": "half_win",
+          "grade_note": "3-0 总3 · 线 2.75 · 赢半"
+        },
+        "primary_hit": true,
+        "secondary_hit": true,
+        "secondary_market": "totals",
+        "outcome": {
+          "key": "both_hit",
+          "cn": "★让球盘与大小球均命中",
+          "analytics_cn": "倾向正确，双项验证通过",
+          "primary_hit": true,
+          "secondary_hit": true,
+          "primary_market": "spread",
+          "secondary_market": "totals"
+        },
+        "actual_score": "3-0"
+      },
+      {
+        "id": "m83",
+        "match": "Portugal vs Croatia",
+        "primary": "spread",
+        "tendency_cn": "更倾向让球盘（克罗地亚受让）",
+        "high_confidence": false,
+        "confidence_cn": "中信心",
+        "model_side": "under",
+        "situation_side": null,
+        "market_side": "over",
+        "pick_side": "over",
+        "recommended_side": "dog",
+        "situation_conflict": true,
+        "spread": {
+          "side": "dog",
+          "label_cn": "克罗地亚 +0.5/1 @0.99",
+          "reason_cn": "K2 vs L2 · 葡升-0.5/1仍0.99高水侧 · 1-1全赢/1-0输半/0-1全赢 · 模型守盘约54% · ★主项。",
+          "hit": false,
+          "outcome": "half_lose",
+          "grade_note": "2-1 · 净胜 +1 · 输半"
+        },
+        "totals": {
+          "side": "over",
+          "label_cn": "大球 2.5/3 @0.95",
+          "reason_cn": "2/2.5→2.5/3升线 · 大0.95小0.93近均衡略偏大 · 副项 · R9不打副项小。",
+          "hit": true,
+          "outcome": "half_win",
+          "grade_note": "2-1 总3 · 线 2.75 · 赢半"
+        },
+        "primary_hit": false,
+        "secondary_hit": true,
+        "secondary_market": "totals",
+        "outcome": {
+          "key": "primary_miss_secondary_hit",
+          "cn": "★让球盘未中，大小球项命中",
+          "analytics_cn": "倾向权重可能偏高——复盘时应优先看命中项，并反推是否应改倾向或降低倾向在决策中的权重",
+          "primary_hit": false,
+          "secondary_hit": true,
+          "primary_market": "spread",
+          "secondary_market": "totals"
+        },
+        "actual_score": "2-1"
+      },
+      {
+        "id": "m85",
+        "match": "Switzerland vs Algeria",
+        "primary": "spread",
+        "tendency_cn": "更倾向让球盘（阿尔及利亚受让）",
+        "high_confidence": false,
+        "confidence_cn": "中信心",
+        "model_side": "under",
+        "situation_side": null,
+        "market_side": "under",
+        "pick_side": "under",
+        "recommended_side": "dog",
+        "situation_conflict": false,
+        "spread": {
+          "side": "dog",
+          "label_cn": "阿尔及利亚 +0.5 @0.91",
+          "reason_cn": "瑞 -1→-0.5退档 · 阿+0.5@0.91低水 · 1-1/0-1全赢/1-0输 · 马赫雷斯反击轴 · ★主项。",
+          "hit": false,
+          "outcome": "full_lose",
+          "grade_note": "2-0 · 净胜 +2 · 全输"
+        },
+        "totals": {
+          "side": "over",
+          "label_cn": "大球 2/2.5 @0.98",
+          "reason_cn": "降线后大0.98高水=市场偏小球 · 仅作副项占位 · R9跳过副项小故不打小2/2.5。",
+          "hit": false,
+          "outcome": "half_lose",
+          "grade_note": "2-0 总2 · 线 2.25 · 输半"
+        },
+        "primary_hit": false,
+        "secondary_hit": false,
+        "secondary_market": "totals",
+        "outcome": {
+          "key": "both_miss",
+          "cn": "★让球盘与大小球均未中",
+          "analytics_cn": "全盘失误，需复盘模型、盘路与倾向规则",
+          "primary_hit": false,
+          "secondary_hit": false,
+          "primary_market": "spread",
+          "secondary_market": "totals"
+        },
+        "actual_score": "2-0"
+      }
+    ]
+  }
+}

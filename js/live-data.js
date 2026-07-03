@@ -1,14 +1,14 @@
-// Auto-synced by scripts/enrich-day22.js
-// Updated: 2026-07-02T13:35:21+08:00
+// Auto-synced by scripts/enrich-day23.js
+// Updated: 2026-07-03T14:36:13+08:00
 const LIVE_DATA = {
-  "lastUpdated": "2026-07-02T13:35:21+08:00",
-  "todayDate": "2026-07-03",
+  "lastUpdated": "2026-07-03T14:36:13+08:00",
+  "todayDate": "2026-07-04",
   "fixtures": [
     {
-      "id": "m84",
-      "fifa_match_number": 84,
-      "home": "Spain",
-      "away": "Austria",
+      "id": "m88",
+      "fifa_match_number": 88,
+      "home": "Australia",
+      "away": "Egypt",
       "status": "NS",
       "home_score": null,
       "away_score": null,
@@ -16,10 +16,10 @@ const LIVE_DATA = {
       "round": "R32"
     },
     {
-      "id": "m83",
-      "fifa_match_number": 83,
-      "home": "Portugal",
-      "away": "Croatia",
+      "id": "m86",
+      "fifa_match_number": 86,
+      "home": "Argentina",
+      "away": "Cape Verde",
       "status": "NS",
       "home_score": null,
       "away_score": null,
@@ -27,10 +27,10 @@ const LIVE_DATA = {
       "round": "R32"
     },
     {
-      "id": "m85",
-      "fifa_match_number": 85,
-      "home": "Switzerland",
-      "away": "Algeria",
+      "id": "m87",
+      "fifa_match_number": 87,
+      "home": "Colombia",
+      "away": "Ghana",
       "status": "NS",
       "home_score": null,
       "away_score": null,
@@ -40,40 +40,39 @@ const LIVE_DATA = {
   ],
   "allResults": [
     {
-      "id": "m80",
-      "home": "England",
-      "away": "Congo DR",
+      "id": "m84",
+      "home": "Spain",
+      "away": "Austria",
+      "score": "3-0",
+      "group": "KO"
+    },
+    {
+      "id": "m83",
+      "home": "Portugal",
+      "away": "Croatia",
       "score": "2-1",
       "group": "KO"
     },
     {
-      "id": "m81",
-      "home": "USA",
-      "away": "Bosnia & Herz.",
+      "id": "m85",
+      "home": "Switzerland",
+      "away": "Algeria",
       "score": "2-0",
       "group": "KO"
-    },
-    {
-      "id": "m82",
-      "home": "Belgium",
-      "away": "Senegal",
-      "score": "3-2",
-      "group": "KO",
-      "note": "常规2-2 · 加时3-2"
     }
   ],
   "yesterdayResults": [
     {
-      "id": "m80",
+      "id": "m84",
+      "score": "3-0"
+    },
+    {
+      "id": "m83",
       "score": "2-1"
     },
     {
-      "id": "m81",
+      "id": "m85",
       "score": "2-0"
-    },
-    {
-      "id": "m82",
-      "score": "3-2"
     }
   ],
   "standings": [
@@ -631,9 +630,9 @@ const LIVE_DATA = {
     }
   ],
   "injuries": {
-    "note": "Day 22 · M84/M83/M85 · FIFA 裁判已确认 · 伤病/更衣室/赛场已更新",
-    "m84": "西班牙：Carvajal 队检 · 奥地利：Laimer 减量",
-    "m83": "葡萄牙：Pepe 体能轮换 · 克罗地亚：Brozović 队检",
-    "m85": "瑞士：Embolo 膝伤管理 · 阿尔及利亚：Bounedjah 队检"
+    "note": "Day 23 · M88/M86/M87 · FIFA 裁判已确认 · 哥伦比亚 vs 加纳(官方)",
+    "m86": "阿根廷：Paredes 队检",
+    "m87": "加纳：Inaki Williams 队检",
+    "m88": "澳大利亚：Souttar 减量"
   }
 };
