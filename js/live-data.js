@@ -1,78 +1,67 @@
-// Auto-synced by scripts/enrich-day23.js
-// Updated: 2026-07-03T14:36:13+08:00
+// Auto-synced by scripts/enrich-day24.js
+// Updated: 2026-07-04T11:32:51+08:00
 const LIVE_DATA = {
-  "lastUpdated": "2026-07-03T14:36:13+08:00",
-  "todayDate": "2026-07-04",
+  "lastUpdated": "2026-07-04T11:32:51+08:00",
+  "todayDate": "2026-07-05",
   "fixtures": [
     {
-      "id": "m88",
-      "fifa_match_number": 88,
-      "home": "Australia",
-      "away": "Egypt",
+      "id": "m90",
+      "fifa_match_number": 90,
+      "home": "Canada",
+      "away": "Morocco",
       "status": "NS",
       "home_score": null,
       "away_score": null,
       "group": "KO",
-      "round": "R32"
+      "round": "R16"
     },
     {
-      "id": "m86",
-      "fifa_match_number": 86,
-      "home": "Argentina",
-      "away": "Cape Verde",
+      "id": "m89",
+      "fifa_match_number": 89,
+      "home": "Paraguay",
+      "away": "France",
       "status": "NS",
       "home_score": null,
       "away_score": null,
       "group": "KO",
-      "round": "R32"
-    },
-    {
-      "id": "m87",
-      "fifa_match_number": 87,
-      "home": "Colombia",
-      "away": "Ghana",
-      "status": "NS",
-      "home_score": null,
-      "away_score": null,
-      "group": "KO",
-      "round": "R32"
+      "round": "R16"
     }
   ],
   "allResults": [
     {
-      "id": "m84",
-      "home": "Spain",
-      "away": "Austria",
-      "score": "3-0",
+      "id": "m86",
+      "home": "Argentina",
+      "away": "Cape Verde",
+      "score": "3-2",
       "group": "KO"
     },
     {
-      "id": "m83",
-      "home": "Portugal",
-      "away": "Croatia",
-      "score": "2-1",
+      "id": "m87",
+      "home": "Colombia",
+      "away": "Ghana",
+      "score": "1-0",
       "group": "KO"
     },
     {
-      "id": "m85",
-      "home": "Switzerland",
-      "away": "Algeria",
-      "score": "2-0",
+      "id": "m88",
+      "home": "Australia",
+      "away": "Egypt",
+      "score": "1-1",
       "group": "KO"
     }
   ],
   "yesterdayResults": [
     {
-      "id": "m84",
-      "score": "3-0"
+      "id": "m86",
+      "score": "3-2"
     },
     {
-      "id": "m83",
-      "score": "2-1"
+      "id": "m87",
+      "score": "1-0"
     },
     {
-      "id": "m85",
-      "score": "2-0"
+      "id": "m88",
+      "score": "1-1"
     }
   ],
   "standings": [
@@ -630,9 +619,8 @@ const LIVE_DATA = {
     }
   ],
   "injuries": {
-    "note": "Day 23 · M88/M86/M87 · FIFA 裁判已确认 · 哥伦比亚 vs 加纳(官方)",
-    "m86": "阿根廷：Paredes 队检",
-    "m87": "加纳：Inaki Williams 队检",
-    "m88": "澳大利亚：Souttar 减量"
+    "note": "Day 24 · M89/M90 · FIFA 裁判已确认 · 16强开赛",
+    "m90": "加拿大：Eustáquio 黄牌累积 · 摩洛哥：Aguerd 队检",
+    "m89": "法国：Dembélé 队检（或 Coman 顶替）· 巴拉圭：铁桶全员"
   }
 };

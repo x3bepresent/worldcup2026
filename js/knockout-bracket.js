@@ -20,9 +20,9 @@
     83: { round: 'R32', round_cn: '32强', desc: 'K组亚军 vs L组亚军', homeSlot: 'K2', awaySlot: 'L2', home: 'Portugal', away: 'Croatia', score: '2-1', status: 'FT', winner: 'Portugal' },
     84: { round: 'R32', round_cn: '32强', desc: 'H组冠军 vs J组亚军', homeSlot: 'H1', awaySlot: 'J2', home: 'Spain', away: 'Austria', score: '3-0', status: 'FT', winner: 'Spain' },
     85: { round: 'R32', round_cn: '32强', desc: 'B组冠军 vs 最佳第3', homeSlot: 'B1', awaySlot: '3rd', home: 'Switzerland', away: 'Algeria', score: '2-0', status: 'FT', winner: 'Switzerland' },
-    86: { round: 'R32', round_cn: '32强', desc: 'J组冠军 vs H组亚军', homeSlot: 'J1', awaySlot: 'H2', home: 'Argentina', away: 'Cape Verde' },
-    87: { round: 'R32', round_cn: '32强', desc: 'K组冠军 vs 最佳第3', homeSlot: 'K1', awaySlot: '3rd', home: 'Colombia', away: 'Ghana' },
-    88: { round: 'R32', round_cn: '32强', desc: 'D组亚军 vs G组亚军', homeSlot: 'D2', awaySlot: 'G2', home: 'Australia', away: 'Egypt' },
+    86: { round: 'R32', round_cn: '32强', desc: 'J组冠军 vs H组亚军', homeSlot: 'J1', awaySlot: 'H2', home: 'Argentina', away: 'Cape Verde', score: '3-2', status: 'AET', winner: 'Argentina' },
+    87: { round: 'R32', round_cn: '32强', desc: 'K组冠军 vs 最佳第3', homeSlot: 'K1', awaySlot: '3rd', home: 'Colombia', away: 'Ghana', score: '1-0', status: 'FT', winner: 'Colombia' },
+    88: { round: 'R32', round_cn: '32强', desc: 'D组亚军 vs G组亚军', homeSlot: 'D2', awaySlot: 'G2', home: 'Australia', away: 'Egypt', score: '1-1', status: 'PEN', winner: 'Egypt' },
   };
 
   /** parent match: { no, homeFrom, awayFrom } — homeFrom/awayFrom = source match no */

@@ -48,6 +48,7 @@ const HANDICAP = {
   ...require('./handicap-data-day21'),
   ...require('./handicap-data-day22'),
   ...require('./handicap-data-day23'),
+  ...require('./handicap-data-day24'),
 };
 const GOAL_TIMING = {
   ...require('./goal-timing-data-day9'),
