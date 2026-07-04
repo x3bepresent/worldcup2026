@@ -1,7 +1,7 @@
 // 过往赛果 — 精简归档（推演 + 赛果核验 + 复盘概要）
-// Last updated: 2026-07-04T11:32:50+08:00
+// Last updated: 2026-07-04T14:28:02+08:00
 const RESULTS_DATA = {
-  "lastUpdated": "2026-07-04T11:32:50+08:00",
+  "lastUpdated": "2026-07-04T14:28:02+08:00",
   "syncSource": "FIFA 官方赛果 · Day 23 完结 · Day 24 16强开赛 2场",
   "breakingNews": [
     {

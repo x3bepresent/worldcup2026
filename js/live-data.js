@@ -1,7 +1,7 @@
 // Auto-synced by scripts/enrich-day24.js
-// Updated: 2026-07-04T11:32:51+08:00
+// Updated: 2026-07-04T14:28:02+08:00
 const LIVE_DATA = {
-  "lastUpdated": "2026-07-04T11:32:51+08:00",
+  "lastUpdated": "2026-07-04T14:28:02+08:00",
   "todayDate": "2026-07-05",
   "fixtures": [
     {

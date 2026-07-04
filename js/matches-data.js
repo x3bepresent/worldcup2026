@@ -1,16 +1,11 @@
-// 今日赛事 — Day 24 enriched
-// Last updated: 2026-07-04T11:32:51+08:00
+// 今日赛事 — 淘汰赛 · 16强 (signals enriched)
+// Last updated: 2026-07-04T14:28:02+08:00
 const MATCH_DATA = {
-  "lastUpdated": "2026-07-04T11:32:51+08:00",
-  "syncSource": "FIFA 赛程 · Day 24 · 16强开赛 enriched · 裁判/伤病/球星/赛场",
+  "lastUpdated": "2026-07-04T14:28:02+08:00",
+  "syncSource": "FIFA 赛程 · Day 24 · 16强开赛 enriched · 裁判/伤病/球星/赛场 · 推演概要+小组形势",
   "phase": "knockout",
   "phase_cn": "淘汰赛 · 16强",
   "breakingNews": [
-    {
-      "tag": "UPDATE",
-      "text": "📊 Day23 Agent：让球1.5/3 · 大小1/2 · 倾向★50% · 佛+2/2.5✓/哥-0.5✓/澳-0/0.5输半",
-      "time": "复盘"
-    },
     {
       "tag": "UPDATE",
       "text": "📊 推演升级：模型概要 + 淘汰赛晋级路径矩阵",
@@ -20,6 +15,11 @@ const MATCH_DATA = {
       "tag": "UPDATE",
       "text": "🎯 淘汰赛大小球 R9 已开启：副项不打小 · ★冲突跳过 · 大信心仅绑★大小",
       "time": "Agent"
+    },
+    {
+      "tag": "UPDATE",
+      "text": "📊 Day23 Agent：让球1.5/3 · 大小1/2 · 倾向★50% · 佛+2/2.5✓/哥-0.5✓/澳-0/0.5输半",
+      "time": "复盘"
     },
     {
       "tag": "OFFICIAL",
@@ -269,12 +269,12 @@ const MATCH_DATA = {
         },
         "fifa_match_id": "400021530",
         "note": "FIFA M90 · 加拿大 vs 摩洛哥 · Houston",
-        "updated": "2026-07-04T11:32:51+08:00"
+        "updated": "2026-07-04T14:28:02+08:00"
       },
       "prediction": {
-        "home_win": 27,
-        "draw": 37,
-        "away_win": 36,
+        "home_win": 26,
+        "draw": 36,
+        "away_win": 38,
         "score": "0-1",
         "confidence": 68,
         "xg_home": 1.15,
@@ -283,39 +283,34 @@ const MATCH_DATA = {
         "score_dist": [
           {
             "score": "0-1",
-            "prob": 14.6
+            "prob": 15.7
           },
           {
             "score": "1-1",
-            "prob": 13.4
+            "prob": 12.6
           },
           {
             "score": "0-0",
-            "prob": 13.1
-          },
-          {
-            "score": "1-0",
-            "prob": 12.1
+            "prob": 11.6
           },
           {
             "score": "0-2",
-            "prob": 8.1
+            "prob": 10.6
+          },
+          {
+            "score": "1-0",
+            "prob": 9.3
           },
           {
             "score": "1-2",
-            "prob": 7.4
+            "prob": 8.5
           },
           {
             "score": "2-1",
-            "prob": 6.2
+            "prob": 5
           }
         ],
         "insight_factors": [
-          {
-            "icon": "⚔️",
-            "label": "淘汰赛形势",
-            "text": "M90 · 16强 · 加拿大 vs 摩洛哥 · 胜者 M97 对 M89 胜者"
-          },
           {
             "icon": "🌤️",
             "label": "赛场气候",
@@ -343,22 +338,22 @@ const MATCH_DATA = {
           "qual_dynamics": null
         },
         "qual_dynamics": null,
-        "xg_poisson_home": 0.92,
-        "xg_poisson_away": 1.11,
-        "xg_tier_calibrated": false,
-        "score_prob": 14.6,
+        "xg_poisson_home": 0.8,
+        "xg_poisson_away": 1.35,
+        "xg_tier_calibrated": true,
+        "score_prob": 15.7,
         "score_top3": [
           {
             "score": "0-1",
-            "prob": 14.6
+            "prob": 15.7
           },
           {
             "score": "1-1",
-            "prob": 13.4
+            "prob": 12.6
           },
           {
             "score": "0-0",
-            "prob": 13.1
+            "prob": 11.6
           }
         ],
         "expected_score": "1-1"
@@ -419,17 +414,17 @@ const MATCH_DATA = {
         "disclaimer": "文化解读 · 非竞技推演"
       },
       "depth_calibration": {
-        "tier_home": -0.25,
-        "tier_label": "Morocco -0.25 · Canada +0.25",
+        "tier_home": -0.5,
+        "tier_label": "Morocco -0.5 · Canada +0.5",
         "implied_tier": 0,
-        "tier_gap": -0.25,
-        "signal": "neutral",
-        "signal_cn": "均衡",
-        "signal_color": "#7BB8D4",
-        "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
+        "tier_gap": -0.5,
+        "signal": "genuine_favorite",
+        "signal_cn": "实力吻合",
+        "signal_color": "#5BBF8A",
+        "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
         "blocker_spread_note": "",
-        "public_lean_cn": "舆论倾向 Morocco（约 56%）",
-        "analysis": "M90 · 加拿大 vs 摩洛哥 · 摩-0/0.5@0.92/加+0/0.5@0.90 · 大小 2 大0.90小0.94。",
+        "public_lean_cn": "舆论倾向 Morocco（约 63%）",
+        "analysis": "M90 · 加拿大 vs 摩洛哥 · 摩-0.5@0.83/加+0.5@1.05 · 大小 2/2.5 大0.92小0.95。",
         "spread_cover": {
           "top3_scores": [
             {
@@ -471,77 +466,77 @@ const MATCH_DATA = {
           "dog_hold_pct_raw": 58.7
         },
         "spread_odds": {
-          "fav": 0.92,
-          "dog": 0.9,
-          "note": "Canada 0.92 · Morocco 0.9"
+          "fav": 0.83,
+          "dog": 1.05,
+          "note": "Canada 0.83 · Morocco 1.05"
         },
         "spread_alt": null,
         "totals_analysis": {
-          "market_line": 2,
-          "market_goals_int": 2,
-          "line_label": "总进球约 2 个",
+          "market_line": 2.25,
+          "market_goals_int": 3,
+          "line_label": "总进球约 2–2.5 个",
           "implied_xg_total": 2.5,
           "fair_line": 2,
-          "line_gap": 0,
-          "over_pct": 45.4,
-          "under_pct": 54.6,
-          "signal": "aligned",
-          "signal_cn": "线与模型贴合",
-          "signal_color": "#5BBF8A",
-          "signal_desc": "总进球参考与合理值接近。",
+          "line_gap": 0.25,
+          "over_pct": 58.3,
+          "under_pct": 41.7,
+          "signal": "high_line",
+          "signal_cn": "参考偏高",
+          "signal_color": "#C8A96E",
+          "signal_desc": "总进球参考高于合理值，模型偏小比分。",
           "public_over_pct": 50,
           "public_lean_cn": "舆论对总进球看法较分散",
           "index_note": "大/小比分两侧接近",
           "totals_odds": null,
-          "rational_cn": "超 2 球接近五五开（约 45.4%）",
+          "rational_cn": "模型略看大比分（超 2.25 约 58.3%）",
           "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
         },
-        "totals_line": 2,
+        "totals_line": 2.25,
         "market_line_movement": {
           "wc_note": "世界杯中立赛场 · FIFA 主/客仅为赛历标签，不等于真实主场优势",
-          "spread_open_cn": "Canada +0/0.5@0.9 · Morocco -0/0.5@0.92",
-          "spread_now_cn": "Canada +0/0.5@0.9 · Morocco -0/0.5@0.92",
-          "totals_now_cn": "大小 2 · 大 0.9 / 小 0.94",
+          "spread_open_cn": "Canada +0.5@0.89 · Morocco -0.5@0.93",
+          "spread_now_cn": "Canada +0.5@1.05 · Morocco -0.5@0.83",
+          "totals_now_cn": "大小 2/2.5 · 大 0.92 / 小 0.95",
           "tag": "book_value_dog",
           "tag_cn": "受让低水定价",
           "tag_color": "#C8A96E",
-          "detail_cn": "退 0.5 档 · 热门 0.92→0.92 · 受让 0.9→0.9 现盘去水隐含：Morocco 49.7% · Canada 50.3%（超收 4.7%） 模型穿盘（现档 Morocco -0.25 · Canada +0.25）：Morocco 48.8% · Canada 51.2% 模型−市场：Morocco -0.9pp · Canada +0.9pp 期望 ROI@现水：Morocco -6.3% · Canada +48.5% 退档或热门抬水配合受让降水，定价重心在防守侧/受让。",
+          "detail_cn": "退 1 档 · 热门 0.93→0.83（降水） · 受让 0.89→1.05（抬水） 现盘去水隐含：Morocco 52.8% · Canada 47.2%（超收 3.4%） 模型穿盘（现档 Morocco -0.5 · Canada +0.5）：Morocco 48.8% · Canada 51.2% 模型−市场：Morocco -4pp · Canada +4pp 期望 ROI@现水：Morocco -10.7% · Canada +56.2% 退档或热门抬水配合受让降水，定价重心在防守侧/受让。",
           "actuarial": {
             "actuarial_type": "book_value_dog",
             "actuarial_cn": "受让低水定价",
             "actuarial_color": "#C8A96E",
             "actuarial_desc": "退档或热门抬水配合受让降水，定价重心在防守侧/受让。",
-            "summary_cn": "退 0.5 档 · 热门 0.92→0.92 · 受让 0.9→0.9 现盘去水隐含：Morocco 49.7% · Canada 50.3%（超收 4.7%） 模型穿盘（现档 Morocco -0.25 · Canada +0.25）：Morocco 48.8% · Canada 51.2% 模型−市场：Morocco -0.9pp · Canada +0.9pp 期望 ROI@现水：Morocco -6.3% · Canada +48.5% 退档或热门抬水配合受让降水，定价重心在防守侧/受让。",
-            "line_delta": -0.5,
-            "line_delta_cn": "退 0.5 档",
-            "fav_odds_delta": 0,
-            "dog_odds_delta": 0,
-            "water_move_cn": "热门 0.92→0.92 · 受让 0.9→0.9",
-            "open_tier": 0.25,
-            "open_tier_label": "Canada -0.25 · Morocco +0.25",
-            "now_tier": -0.25,
+            "summary_cn": "退 1 档 · 热门 0.93→0.83（降水） · 受让 0.89→1.05（抬水） 现盘去水隐含：Morocco 52.8% · Canada 47.2%（超收 3.4%） 模型穿盘（现档 Morocco -0.5 · Canada +0.5）：Morocco 48.8% · Canada 51.2% 模型−市场：Morocco -4pp · Canada +4pp 期望 ROI@现水：Morocco -10.7% · Canada +56.2% 退档或热门抬水配合受让降水，定价重心在防守侧/受让。",
+            "line_delta": -1,
+            "line_delta_cn": "退 1 档",
+            "fav_odds_delta": -0.1,
+            "dog_odds_delta": 0.16,
+            "water_move_cn": "热门 0.93→0.83（降水） · 受让 0.89→1.05（抬水）",
+            "open_tier": 0.5,
+            "open_tier_label": "Canada -0.5 · Morocco +0.5",
+            "now_tier": -0.5,
             "implied_tier": 0,
-            "open_tier_gap": 0.25,
-            "now_tier_gap": -0.25,
+            "open_tier_gap": 0.5,
+            "now_tier_gap": -0.5,
             "open_devig": {
-              "fav_pct": 49.7,
-              "dog_pct": 50.3,
+              "fav_pct": 49.5,
+              "dog_pct": 50.5,
               "overround_pct": 4.7
             },
             "now_devig": {
-              "fav_pct": 49.7,
-              "dog_pct": 50.3,
-              "overround_pct": 4.7
+              "fav_pct": 52.8,
+              "dog_pct": 47.2,
+              "overround_pct": 3.4
             },
             "model_cover_open_pct": 40.9,
             "model_cover_now_pct": 48.8,
             "model_dog_cover_now_pct": 51.2,
-            "market_fav_cover_now_pct": 49.7,
-            "market_dog_cover_now_pct": 50.3,
-            "model_vs_market_fav_pp": -0.9,
-            "model_vs_market_dog_pp": 0.9,
-            "fav_roi_pct": -6.3,
-            "dog_roi_pct": 48.5,
+            "market_fav_cover_now_pct": 52.8,
+            "market_dog_cover_now_pct": 47.2,
+            "model_vs_market_fav_pp": -4,
+            "model_vs_market_dog_pp": 4,
+            "fav_roi_pct": -10.7,
+            "dog_roi_pct": 56.2,
             "fav_name": "Morocco",
             "dog_name": "Canada"
           }
@@ -551,44 +546,44 @@ const MATCH_DATA = {
           "actuarial_cn": "受让低水定价",
           "actuarial_color": "#C8A96E",
           "actuarial_desc": "退档或热门抬水配合受让降水，定价重心在防守侧/受让。",
-          "summary_cn": "退 0.5 档 · 热门 0.92→0.92 · 受让 0.9→0.9 现盘去水隐含：Morocco 49.7% · Canada 50.3%（超收 4.7%） 模型穿盘（现档 Morocco -0.25 · Canada +0.25）：Morocco 48.8% · Canada 51.2% 模型−市场：Morocco -0.9pp · Canada +0.9pp 期望 ROI@现水：Morocco -6.3% · Canada +48.5% 退档或热门抬水配合受让降水，定价重心在防守侧/受让。",
-          "line_delta": -0.5,
-          "line_delta_cn": "退 0.5 档",
-          "fav_odds_delta": 0,
-          "dog_odds_delta": 0,
-          "water_move_cn": "热门 0.92→0.92 · 受让 0.9→0.9",
-          "open_tier": 0.25,
-          "open_tier_label": "Canada -0.25 · Morocco +0.25",
-          "now_tier": -0.25,
+          "summary_cn": "退 1 档 · 热门 0.93→0.83（降水） · 受让 0.89→1.05（抬水） 现盘去水隐含：Morocco 52.8% · Canada 47.2%（超收 3.4%） 模型穿盘（现档 Morocco -0.5 · Canada +0.5）：Morocco 48.8% · Canada 51.2% 模型−市场：Morocco -4pp · Canada +4pp 期望 ROI@现水：Morocco -10.7% · Canada +56.2% 退档或热门抬水配合受让降水，定价重心在防守侧/受让。",
+          "line_delta": -1,
+          "line_delta_cn": "退 1 档",
+          "fav_odds_delta": -0.1,
+          "dog_odds_delta": 0.16,
+          "water_move_cn": "热门 0.93→0.83（降水） · 受让 0.89→1.05（抬水）",
+          "open_tier": 0.5,
+          "open_tier_label": "Canada -0.5 · Morocco +0.5",
+          "now_tier": -0.5,
           "implied_tier": 0,
-          "open_tier_gap": 0.25,
-          "now_tier_gap": -0.25,
+          "open_tier_gap": 0.5,
+          "now_tier_gap": -0.5,
           "open_devig": {
-            "fav_pct": 49.7,
-            "dog_pct": 50.3,
+            "fav_pct": 49.5,
+            "dog_pct": 50.5,
             "overround_pct": 4.7
           },
           "now_devig": {
-            "fav_pct": 49.7,
-            "dog_pct": 50.3,
-            "overround_pct": 4.7
+            "fav_pct": 52.8,
+            "dog_pct": 47.2,
+            "overround_pct": 3.4
           },
           "model_cover_open_pct": 40.9,
           "model_cover_now_pct": 48.8,
           "model_dog_cover_now_pct": 51.2,
-          "market_fav_cover_now_pct": 49.7,
-          "market_dog_cover_now_pct": 50.3,
-          "model_vs_market_fav_pp": -0.9,
-          "model_vs_market_dog_pp": 0.9,
-          "fav_roi_pct": -6.3,
-          "dog_roi_pct": 48.5,
+          "market_fav_cover_now_pct": 52.8,
+          "market_dog_cover_now_pct": 47.2,
+          "model_vs_market_fav_pp": -4,
+          "model_vs_market_dog_pp": 4,
+          "fav_roi_pct": -10.7,
+          "dog_roi_pct": 56.2,
           "fav_name": "Morocco",
           "dog_name": "Canada"
         },
         "totals_pick_layers": {
-          "model_side": "neutral",
+          "model_side": "over",
           "situation_side": "neutral",
-          "market_line_side": "neutral",
+          "market_line_side": "under",
           "market_odds_side": "over",
           "market_side": "over",
           "recommended_side": "over",
@@ -596,56 +591,52 @@ const MATCH_DATA = {
           "conflict_cn": null,
           "situation_dampened": false,
           "votes": {
-            "model": "neutral",
-            "line": "neutral",
+            "model": "over",
+            "line": "under",
             "odds": "over",
             "situation": "neutral"
           },
-          "vote_summary_cn": "观望(model) · 观望(line) · 大球(odds) · 观望(situation)",
+          "vote_summary_cn": "大球(model) · 小球(line) · 大球(odds) · 观望(situation)",
           "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
         },
         "agent_pick": {
           "primary": "spread",
           "tendency_cn": "更倾向让球盘（加拿大受让）",
-          "tendency_reason_cn": "浅盘 -0/0.5 · 加拿大主场大陆+Davies 反击 · ★加+0/0.5 · 小2副项。",
+          "tendency_reason_cn": "档位 -0.5 摩洛哥低水(0.83)资金进，但模型近均势(加胜27%+平37%=加+0.5约64%守住)且受让抬到 1.05 高水，价值在受让侧 · ★加+0.5 · 大2/2.5副项。",
           "confidence": "medium",
           "confidence_cn": "中信心",
           "spread": {
             "side": "dog",
-            "label_cn": "加拿大 +0/0.5 @0.90",
-            "reason_cn": "摩洛哥仅浅让 -0/0.5 说明市场认可加拿大；Davies 反击轴 · 1-1/1-0 路径 · ★主项。"
+            "label_cn": "加拿大 +0.5 @1.05",
+            "reason_cn": "摩洛哥低水但须净胜1球(-0.5)；模型平局权重高(37%)，加拿大平或胜即全赢(约64%)，1.05 高水放大价值 · 1-1/0-0/1-0 路径 · ★主项。"
           },
           "totals": {
-            "side": "under",
-            "label_cn": "小球 2 @0.94",
-            "reason_cn": "两队防守均不俗 · 线仅 2 · 铁局/小比分路径 · 副项。",
-            "manual_override": true,
-            "recommended_side": "over",
-            "skipped": true,
-            "skip_reason_cn": "淘汰赛副项不打小球（R9）"
+            "side": "over",
+            "label_cn": "大球 2/2.5 @0.92",
+            "reason_cn": "over 1.00→0.92 降水资金偏大 · Davies/Hakimi 双翼卫对攻 · 模型总 xG 约2.5 · 3球全赢/2球赢半 · 副项。"
           },
-          "picked_at": "2026-07-05-open",
+          "picked_at": "2026-07-05-prematch",
           "pick_meta": {
-            "model_side": "neutral",
+            "model_side": "over",
             "situation_side": "neutral",
-            "market_line_side": "neutral",
+            "market_line_side": "under",
             "market_odds_side": "over",
             "market_side": "over",
-            "pick_side": "under",
+            "pick_side": "over",
             "recommended_side": "over",
             "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
             "conflict": false,
             "conflict_cn": null,
             "votes": {
-              "model": "neutral",
-              "line": "neutral",
+              "model": "over",
+              "line": "under",
               "odds": "over",
               "situation": "neutral"
             },
-            "vote_summary_cn": "观望(model) · 观望(line) · 大球(odds) · 观望(situation)",
+            "vote_summary_cn": "大球(model) · 小球(line) · 大球(odds) · 观望(situation)",
             "situation_dampened": false,
-            "over_pct": 45.4,
-            "line_gap": 0
+            "over_pct": 58.3,
+            "line_gap": 0.25
           },
           "ko_totals_policy": {
             "enabled": true,
@@ -655,15 +646,15 @@ const MATCH_DATA = {
           }
         },
         "applied_delta": {
-          "home_win": 0,
-          "draw": 0,
-          "away_win": 0
+          "home_win": -1,
+          "draw": -1,
+          "away_win": 2
         },
-        "adjustment_note": "模型微调：主胜 +0% · 平 +0% · 客 +0%",
+        "adjustment_note": "模型微调：主胜 -1% · 平 -1% · 客 +2%",
         "adjusted_probs": {
-          "home_win": 27,
-          "draw": 37,
-          "away_win": 36
+          "home_win": 26,
+          "draw": 36,
+          "away_win": 38
         },
         "display_summary": {
           "fav_name": "Morocco",
@@ -729,7 +720,7 @@ const MATCH_DATA = {
                 "pct": 13
               }
             ],
-            "fav_win_pct": 36
+            "fav_win_pct": 38
           },
           "excitement": {
             "label_cn": "偏晚",
@@ -789,13 +780,13 @@ const MATCH_DATA = {
             "note": "基准 xG 1.15–1.35 → 调整后 0.92–1.11"
           },
           "calibration": {
-            "signal_cn": "均衡",
-            "signal_color": "#7BB8D4",
-            "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
-            "tier_gap": -0.25,
+            "signal_cn": "实力吻合",
+            "signal_color": "#5BBF8A",
+            "signal_desc": "赛前舆论与 xG 实力差基本一致，模型信任该方向。",
+            "tier_gap": -0.5,
             "implied_tier_label": "势均力敌",
-            "market_tier_label": "Morocco -0.25 · Canada +0.25",
-            "summary_cn": "与模型 xG 对照：均衡 · 赛前净胜看法略低（约 -0.25）"
+            "market_tier_label": "Morocco -0.5 · Canada +0.5",
+            "summary_cn": "与模型 xG 对照：实力吻合 · 赛前净胜看法低于 xG 隐含约 0.5"
           },
           "win_outlook": {
             "fav_name": "Morocco",
@@ -829,20 +820,20 @@ const MATCH_DATA = {
             "final_2_0_pct": null,
             "final_3_0_plus_pct": null,
             "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-            "totals_line": 2,
-            "totals_line_cn": "总进球参考 2",
+            "totals_line": 2.25,
+            "totals_line_cn": "总进球参考 2.25",
             "fair_totals_line": 2.25,
             "model_total_xg": 2.03,
-            "totals_line_gap": -0.25,
-            "totals_high_pct": 33.1,
-            "totals_low_pct": 66.9,
+            "totals_line_gap": 0,
+            "totals_high_pct": 46.6,
+            "totals_low_pct": 53.4,
             "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
             "win_low_total_pct": 22.7,
             "win_margin2_low_total_pct": 8.1,
-            "win_margin2_high_total_pct": 8.2,
-            "readout_cn": "取胜约 36%；若取胜，以「险胜收工」为主（59%）。 对着赛前净胜参考，净胜≥1（全达标）约 47.9%；对着总进球参考 2，模型超线概率约 33.1%。"
+            "win_margin2_high_total_pct": 16.3,
+            "readout_cn": "取胜约 38%；若取胜，以「险胜收工」为主（59%）。 对着赛前净胜参考，净胜≥1（全达标）约 47.9%；对着总进球参考 2.25，模型超线概率约 46.6%。"
           },
-          "totals_line": 2,
+          "totals_line": 2.25,
           "score_patterns": [
             {
               "score": "0-1",
@@ -860,90 +851,90 @@ const MATCH_DATA = {
           "totals_view": {
             "expected_total": 2,
             "fair_line": 2.25,
-            "market_line": 2,
-            "line_gap": -0.25,
-            "over_pct": 33.1,
+            "market_line": 2.25,
+            "line_gap": 0,
+            "over_pct": 46.6,
             "gap_warning": null,
             "totals_outlook": {
-              "level": "mild_low",
-              "label_cn": "略倾向沉闷",
-              "color": "#7BB8D4",
-              "meter_label_cn": "略倾向沉闷",
-              "meter_pos": 33,
-              "lean_side": "dull",
-              "lean_strength": "mild",
-              "section_intro_cn": "对照总进球参考 2，看偏闷还是偏精彩",
-              "pill_cn": "略偏闷（弱）",
-              "detail_cn": "略偏闷，模型更看小比分（难超线 2）；弱信号。",
-              "headline_cn": "进球氛围：略偏闷",
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.25，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
               "show_lean": false,
-              "over_pct": 33.1,
-              "line_gap": -0.25,
-              "market_line": 2,
-              "market_goals_int": 2,
-              "market_goals_cn": "总进球参考 2",
+              "over_pct": 46.6,
+              "line_gap": 0,
+              "market_line": 2.25,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.25",
               "caution_public_high": false
             },
-            "summary_cn": "预测 2 · 合理值 2.25 · 总进球参考 2（低于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向"
+            "summary_cn": "预测 2 · 合理值 2.25 · 总进球参考 2.25 · 模型在常见进球预期附近均衡，不作强倾向"
           },
           "customer_reading": {
-            "headline_cn": "Morocco -0.25 穿盘：有达标可能",
-            "sub_cn": "Morocco 胜 39.7% · 胜后穿 100% · Canada +0.25 守 52.1% 进球氛围：略偏闷 平局权重约 37%，小组赛易出守平——勿只盯胜负一方。",
+            "headline_cn": "Morocco -0.5 穿盘：有达标可能",
+            "sub_cn": "Morocco 胜 39.7% · 胜后穿 100% · Canada +0.5 守 52.1% 进球氛围：几乎五五开 平局权重约 36%，小组赛易出守平——勿只盯胜负一方。",
             "spread": {
               "level": "possible",
               "label_cn": "有达标可能",
               "color": "#C8A96E",
               "fav_name": "Morocco",
               "dog_name": "Canada",
-              "fav_handicap_cn": "Morocco -0.25",
-              "dog_handicap_cn": "Canada +0.25",
-              "market_expect_cn": "Morocco -0.25 · 净胜≥1",
+              "fav_handicap_cn": "Morocco -0.5",
+              "dog_handicap_cn": "Canada +0.5",
+              "market_expect_cn": "Morocco -0.5 · 净胜≥1",
               "meet_pct": 47.9,
               "dog_hold_pct": 52.1,
               "fav_win_pct": 39.7,
               "cover_given_win_pct": 100,
               "full_cover_pct_raw": 39.7,
-              "meet_pct_label": "Morocco -0.25 穿盘概率（校准）",
-              "dog_hold_label": "Canada +0.25 守住概率（校准）",
-              "two_stage_cn": "Morocco 取胜约 39.7% · 赢球后穿盘约 100% · Canada +0.25 守住约 52.1%",
+              "meet_pct_label": "Morocco -0.5 穿盘概率（校准）",
+              "dog_hold_label": "Canada +0.5 守住概率（校准）",
+              "two_stage_cn": "Morocco 取胜约 39.7% · 赢球后穿盘约 100% · Canada +0.5 守住约 52.1%",
               "grid_tail_pct": null,
               "verdict_cn": "有达标可能",
-              "headline_cn": "Morocco -0.25 穿盘：有达标可能",
-              "pill_cn": "Morocco 胜 39.7% · 胜后穿 100% · Canada +0.25 守 52.1%",
-              "detail_cn": "Morocco 取胜约 39.7% · 赢球后穿盘约 100% · Canada +0.25 守住约 52.1%（泊松 raw 39.7% → 校准 47.9%）；穿盘与受让守住均有一定空间。",
+              "headline_cn": "Morocco -0.5 穿盘：有达标可能",
+              "pill_cn": "Morocco 胜 39.7% · 胜后穿 100% · Canada +0.5 守 52.1%",
+              "detail_cn": "Morocco 取胜约 39.7% · 赢球后穿盘约 100% · Canada +0.5 守住约 52.1%（泊松 raw 39.7% → 校准 47.9%）；穿盘与受让守住均有一定空间。",
               "extra_stats_cn": "",
               "full_cover_pct": 47.9,
               "half_cover_pct": 0,
               "lose1_pct": 0,
               "margin_full_label": "净胜≥1",
               "margin_half_label": null,
-              "tier_gap": -0.25,
+              "tier_gap": -0.5,
               "show_cover": true
             },
             "totals": {
-              "level": "mild_low",
-              "label_cn": "略倾向沉闷",
-              "color": "#7BB8D4",
-              "meter_label_cn": "略倾向沉闷",
-              "meter_pos": 33,
-              "lean_side": "dull",
-              "lean_strength": "mild",
-              "section_intro_cn": "对照总进球参考 2，看偏闷还是偏精彩",
-              "pill_cn": "略偏闷（弱）",
-              "detail_cn": "略偏闷，模型更看小比分（难超线 2）；弱信号。",
-              "headline_cn": "进球氛围：略偏闷",
+              "level": "neutral",
+              "label_cn": "暂无明显倾向",
+              "color": "#8A96A8",
+              "meter_label_cn": "几乎五五开",
+              "meter_pos": 50,
+              "lean_side": "neutral",
+              "lean_strength": "none",
+              "section_intro_cn": "对照总进球参考 2.25，看偏闷还是偏精彩",
+              "pill_cn": "几乎五五开",
+              "detail_cn": "模型五五开，临场决定节奏。",
+              "headline_cn": "进球氛围：几乎五五开",
               "show_lean": false,
-              "over_pct": 33.1,
-              "line_gap": -0.25,
-              "market_line": 2,
-              "market_goals_int": 2,
-              "market_goals_cn": "总进球参考 2",
+              "over_pct": 46.6,
+              "line_gap": 0,
+              "market_line": 2.25,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.25",
               "caution_public_high": false
             },
             "draw_risk": {
               "level": "high",
               "color": "#C8A96E",
-              "note": "平局权重约 37%，小组赛易出守平——勿只盯胜负一方。"
+              "note": "平局权重约 36%，小组赛易出守平——勿只盯胜负一方。"
             },
             "pills": [
               {
@@ -956,32 +947,32 @@ const MATCH_DATA = {
                   "color": "#C8A96E",
                   "fav_name": "Morocco",
                   "dog_name": "Canada",
-                  "fav_handicap_cn": "Morocco -0.25",
-                  "dog_handicap_cn": "Canada +0.25",
-                  "market_expect_cn": "Morocco -0.25 · 净胜≥1",
+                  "fav_handicap_cn": "Morocco -0.5",
+                  "dog_handicap_cn": "Canada +0.5",
+                  "market_expect_cn": "Morocco -0.5 · 净胜≥1",
                   "meet_pct": 47.9,
                   "dog_hold_pct": 52.1,
                   "fav_win_pct": 39.7,
                   "cover_given_win_pct": 100,
                   "full_cover_pct_raw": 39.7,
-                  "meet_pct_label": "Morocco -0.25 穿盘概率（校准）",
-                  "dog_hold_label": "Canada +0.25 守住概率（校准）",
-                  "two_stage_cn": "Morocco 取胜约 39.7% · 赢球后穿盘约 100% · Canada +0.25 守住约 52.1%",
+                  "meet_pct_label": "Morocco -0.5 穿盘概率（校准）",
+                  "dog_hold_label": "Canada +0.5 守住概率（校准）",
+                  "two_stage_cn": "Morocco 取胜约 39.7% · 赢球后穿盘约 100% · Canada +0.5 守住约 52.1%",
                   "grid_tail_pct": null,
                   "verdict_cn": "有达标可能",
-                  "headline_cn": "Morocco -0.25 穿盘：有达标可能",
-                  "pill_cn": "Morocco 胜 39.7% · 胜后穿 100% · Canada +0.25 守 52.1%",
-                  "detail_cn": "Morocco 取胜约 39.7% · 赢球后穿盘约 100% · Canada +0.25 守住约 52.1%（泊松 raw 39.7% → 校准 47.9%）；穿盘与受让守住均有一定空间。",
+                  "headline_cn": "Morocco -0.5 穿盘：有达标可能",
+                  "pill_cn": "Morocco 胜 39.7% · 胜后穿 100% · Canada +0.5 守 52.1%",
+                  "detail_cn": "Morocco 取胜约 39.7% · 赢球后穿盘约 100% · Canada +0.5 守住约 52.1%（泊松 raw 39.7% → 校准 47.9%）；穿盘与受让守住均有一定空间。",
                   "extra_stats_cn": "",
                   "full_cover_pct": 47.9,
                   "half_cover_pct": 0,
                   "lose1_pct": 0,
                   "margin_full_label": "净胜≥1",
                   "margin_half_label": null,
-                  "tier_gap": -0.25,
+                  "tier_gap": -0.5,
                   "show_cover": true
                 },
-                "text": "Morocco 胜 39.7% · 胜后穿 100% · Canada +0.25 守 52.1%",
+                "text": "Morocco 胜 39.7% · 胜后穿 100% · Canada +0.5 守 52.1%",
                 "color": "#C8A96E",
                 "primary": true
               },
@@ -990,27 +981,27 @@ const MATCH_DATA = {
                 "icon": "◎",
                 "label": "进球氛围",
                 "outlook": {
-                  "level": "mild_low",
-                  "label_cn": "略倾向沉闷",
-                  "color": "#7BB8D4",
-                  "meter_label_cn": "略倾向沉闷",
-                  "meter_pos": 33,
-                  "lean_side": "dull",
-                  "lean_strength": "mild",
-                  "section_intro_cn": "对照总进球参考 2，看偏闷还是偏精彩",
-                  "pill_cn": "略偏闷（弱）",
-                  "detail_cn": "略偏闷，模型更看小比分（难超线 2）；弱信号。",
-                  "headline_cn": "进球氛围：略偏闷",
+                  "level": "neutral",
+                  "label_cn": "暂无明显倾向",
+                  "color": "#8A96A8",
+                  "meter_label_cn": "几乎五五开",
+                  "meter_pos": 50,
+                  "lean_side": "neutral",
+                  "lean_strength": "none",
+                  "section_intro_cn": "对照总进球参考 2.25，看偏闷还是偏精彩",
+                  "pill_cn": "几乎五五开",
+                  "detail_cn": "模型五五开，临场决定节奏。",
+                  "headline_cn": "进球氛围：几乎五五开",
                   "show_lean": false,
-                  "over_pct": 33.1,
-                  "line_gap": -0.25,
-                  "market_line": 2,
-                  "market_goals_int": 2,
-                  "market_goals_cn": "总进球参考 2",
+                  "over_pct": 46.6,
+                  "line_gap": 0,
+                  "market_line": 2.25,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "总进球参考 2.25",
                   "caution_public_high": false
                 },
-                "text": "略偏闷（弱）",
-                "color": "#7BB8D4",
+                "text": "几乎五五开",
+                "color": "#8A96A8",
                 "muted": true
               }
             ],
@@ -1178,26 +1169,26 @@ const MATCH_DATA = {
                 "final_2_0_pct": null,
                 "final_3_0_plus_pct": null,
                 "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
-                "totals_line": 2,
-                "totals_line_cn": "总进球参考 2",
+                "totals_line": 2.25,
+                "totals_line_cn": "总进球参考 2.25",
                 "fair_totals_line": 2.25,
                 "model_total_xg": 1.66,
-                "totals_line_gap": -0.25,
-                "totals_high_pct": 49.3,
-                "totals_low_pct": 50.7,
+                "totals_line_gap": 0,
+                "totals_high_pct": 65.1,
+                "totals_low_pct": 34.9,
                 "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
                 "win_low_total_pct": 35.4,
                 "win_margin2_low_total_pct": 16.3,
-                "win_margin2_high_total_pct": 17.8,
-                "readout_cn": "Morocco 已 1-0 领先：仍取胜约 68.7%。 对着总进球参考 2，模型超线概率约 49.3%。 常见 2-0 收尾（相对总进球参考 2仍偏小比分）。"
+                "win_margin2_high_total_pct": 34.1,
+                "readout_cn": "Morocco 已 1-0 领先：仍取胜约 68.7%。 对着总进球参考 2.25，模型超线概率约 65.1%。 常见 2-0 收尾（相对总进球参考 2.25仍偏小比分）。"
               }
             }
           ],
           "match_preview": {
             "morphology": {
-              "totals_summary": "预测 2 · 合理值 2.25 · 总进球参考 2（低于合理值 0.25） · 模型在常见进球预期附近均衡，不作强倾向",
-              "totals_line_cn": "总进球参考 2",
-              "totals_high_pct": 33.1,
+              "totals_summary": "预测 2 · 合理值 2.25 · 总进球参考 2.25 · 模型在常见进球预期附近均衡，不作强倾向",
+              "totals_line_cn": "总进球参考 2.25",
+              "totals_high_pct": 46.6,
               "type_tags": [
                 {
                   "key": "low_scoring",
@@ -1256,7 +1247,7 @@ const MATCH_DATA = {
             "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
           }
         },
-        "public_summary_note": "【推演概要】Morocco · 进球偏少。 · 与模型 xG 对照：均衡 · 赛前净胜看法略低（约 -0.25）（模型微调：主胜 +0% · 平 +0% · 客 +0%）",
+        "public_summary_note": "【推演概要】Morocco · 进球偏少。 · 与模型 xG 对照：实力吻合 · 赛前净胜看法低于 xG 隐含约 0.5（模型微调：主胜 -1% · 平 -1% · 客 +2%）",
         "goal_efficiency_preview": {
           "mode": "preview",
           "xg_total": 2.5,
@@ -1266,46 +1257,27 @@ const MATCH_DATA = {
           "xg_baseline_home": 1.15,
           "xg_baseline_away": 1.35,
           "xg_note": "结构推演用基准 xG 1.15–1.35（进球氛围用调整后 0.92–1.11）",
-          "lean_note": "基准 xG 结构偏多球，但进球氛围偏闷（预测约 2）——作岔路预警，非默认剧本",
+          "lean_note": "总进球大/小标签未达强信号（基准 xG · 需≥60% 或 ≤40%），以下以进球故事线为主。",
           "fav_name": "Morocco",
           "dog_name": "Canada",
           "fav_xg": 1.35,
           "dog_xg": 1.15,
           "path_type": "low",
           "path_label": "铁局/小比分",
-          "lean": "prevention_high",
-          "lean_cn": "预防大比分",
-          "lean_mode": "prevention",
-          "lean_confidence": 71.2,
-          "prevention_reason_cn": "基准 xG 结构偏多球，但进球氛围偏闷（预测约 2）——作岔路预警，非默认剧本",
+          "lean": "neutral",
+          "lean_cn": "中性",
+          "lean_mode": "neutral",
+          "lean_confidence": null,
+          "prevention_reason_cn": null,
           "atmosphere_link_cn": null,
           "modules_aligned": false,
-          "live_watch": [
-            {
-              "key": "dog_goal",
-              "label": "Canada进球",
-              "detail": "弱队破门 → 预防大比分抬升；对照弱队开花/对攻路径",
-              "severity": "high"
-            },
-            {
-              "key": "dog_eff",
-              "label": "弱队效率≥1.0",
-              "detail": "弱队射门兑现超预期 → 上调大比分留意（样本：效率≥1.2 易凑 3 球+）",
-              "severity": "high"
-            },
-            {
-              "key": "fav_only",
-              "label": "仅Morocco进球",
-              "detail": "热门单榜领先、弱队仍无球 → 仍按进球氛围小比分，不必因路径升级",
-              "severity": "calm"
-            }
-          ],
-          "prob_over_line": 45.4,
-          "prob_meet_guess": 71.2,
-          "guess_n": 2,
+          "live_watch": [],
+          "prob_over_line": 58.3,
+          "prob_meet_guess": 45.4,
+          "guess_n": 3,
           "prob_4_plus": 23.9,
           "prob_2_or_less": 54.6,
-          "totals_line": 2,
+          "totals_line": 2.25,
           "scenarios": [
             {
               "key": "low",
@@ -1338,12 +1310,6 @@ const MATCH_DATA = {
           ],
           "tags": [
             {
-              "key": "prevention_high",
-              "label": "预防大比分",
-              "color": "#E8A54B",
-              "bg": "rgba(232,165,75,0.12)"
-            },
-            {
               "key": "even_xg",
               "label": "xG接近",
               "color": "#5BBF8A",
@@ -1360,36 +1326,36 @@ const MATCH_DATA = {
             "弱队上半场效率≥1.0 → 关注弱队开花路径"
           ],
           "pattern_note": "样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
-          "summary_cn": "【路径·基准 xG】合计 2.5 · Morocco 1.35 / Canada 1.15 → 主路径「铁局/小比分」约 56% · 预防大比分。 至少 2 球约 71.2% · 超 2 约 45.4% · ≤2球 54.6%。样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
+          "summary_cn": "【路径·基准 xG】合计 2.5 · Morocco 1.35 / Canada 1.15 → 主路径「铁局/小比分」约 56%。 至少 3 球约 45.4% · 超 2.25 约 58.3% · ≤2球 54.6%。样本：弱队效率<0.6 时总进球难破 3；xG 差≥1.0 时小比分更常见。",
           "in_mid_band": true,
           "sample_note": "结构规则来自已赛 22 场（xG 2.0–3.0 · 排除 m27）· 大/小标签用基准 xG 泊松 ≥60%/≤40%"
         }
       },
       "market_snapshot": {
-        "market_tier": -0.25,
-        "tier_label": "Morocco -0.25 · Canada +0.25",
-        "totals_line": 2,
-        "over_pct": 33.1,
+        "market_tier": -0.5,
+        "tier_label": "Morocco -0.5 · Canada +0.5",
+        "totals_line": 2.25,
+        "over_pct": 46.6,
         "fair_line": 2.25,
-        "line_gap": -0.25,
+        "line_gap": 0,
         "full_cover_pct": 47.9,
         "fav_win_pct": 39.7,
         "cover_given_win_pct": 100,
         "spread_level": "possible",
-        "spread_market_expect": "Morocco -0.25 · 净胜≥1",
+        "spread_market_expect": "Morocco -0.5 · 净胜≥1",
         "line_move_tag": "book_value_dog",
         "line_move_cn": "受让低水定价",
         "agent_pick_primary": "spread",
         "agent_pick_tendency_cn": "更倾向让球盘（加拿大受让）",
         "agent_pick_confidence": "medium",
-        "agent_spread_cn": "加拿大 +0/0.5 @0.90",
-        "agent_totals_cn": null,
-        "agent_totals_skipped": true,
-        "agent_totals_skip_cn": "淘汰赛副项不打小球（R9）",
+        "agent_spread_cn": "加拿大 +0.5 @1.05",
+        "agent_totals_cn": "大球 2/2.5 @0.92",
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
         "ko_totals_policy": "R9",
-        "totals_level": "mild_low",
+        "totals_level": "neutral",
         "totals_show_lean": false,
-        "totals_lean_side": "dull"
+        "totals_lean_side": "neutral"
       }
     },
     {
@@ -1612,7 +1578,7 @@ const MATCH_DATA = {
         },
         "fifa_match_id": "400021533",
         "note": "FIFA M89 · 巴拉圭 vs 法国 · Philadelphia",
-        "updated": "2026-07-04T11:32:51+08:00"
+        "updated": "2026-07-04T14:28:02+08:00"
       },
       "prediction": {
         "home_win": 17,
@@ -1654,11 +1620,6 @@ const MATCH_DATA = {
           }
         ],
         "insight_factors": [
-          {
-            "icon": "⚔️",
-            "label": "淘汰赛形势",
-            "text": "M89 · 16强 · 巴拉圭 vs 法国 · 胜者 M97 对 M90 胜者"
-          },
           {
             "icon": "🌤️",
             "label": "赛场气候",
@@ -2723,9 +2684,9 @@ const MATCH_DATA = {
       "rating": 84
     },
     "teaser": "16强 M90 · 加拿大 vs 摩洛哥",
-    "home_win": 27,
-    "draw": 37,
-    "away_win": 36,
+    "home_win": 26,
+    "draw": 36,
+    "away_win": 38,
     "predicted_score": "0-1",
     "key_player_home": "Alphonso Davies",
     "key_player_away": "Achraf Hakimi"
