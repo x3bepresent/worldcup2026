@@ -25,6 +25,12 @@
     88: { round: 'R32', round_cn: '32强', desc: 'D组亚军 vs G组亚军', homeSlot: 'D2', awaySlot: 'G2', home: 'Australia', away: 'Egypt', score: '1-1', status: 'PEN', winner: 'Egypt' },
   };
 
+  /** R16+ 完场赛果（FIFA 官方 · 手动同步） */
+  const KO_RESULTS = {
+    89: { home: 'Paraguay', away: 'France', score: '0-1', status: 'FT', winner: 'France' },
+    90: { home: 'Canada', away: 'Morocco', score: '0-3', status: 'FT', winner: 'Morocco' },
+  };
+
   /** parent match: { no, homeFrom, awayFrom } — homeFrom/awayFrom = source match no */
   const LINKS = {
     89: { round: 'R16', round_cn: '16强', homeFrom: 74, awayFrom: 77 },
@@ -196,6 +202,15 @@
       label: `M${no} · ${homeName} vs ${awayName}`,
       thirdPlace: !!link.thirdPlace,
     };
+    const ko = KO_RESULTS[no];
+    if (ko) {
+      node.home = ko.home;
+      node.away = ko.away;
+      node.score = ko.score;
+      node.status = ko.status;
+      node.winner = ko.winner;
+      node.label = `M${no} · ${ko.home} vs ${ko.away} (${ko.score})`;
+    }
     cache[no] = node;
     return node;
   }

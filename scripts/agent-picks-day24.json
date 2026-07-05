@@ -1,0 +1,253 @@
+{
+  "day": 24,
+  "date": "2026-07-05",
+  "note": "Agent 终选 · 临场盘 2026-07-05 · node scripts/grade-agent-picks.js day24",
+  "wc_home_away_note": "世界杯中立赛场；FIFA 主/客仅为赛历标签。淘汰赛让球/大小球按90分钟结算。",
+  "picks": [
+    {
+      "id": "m90",
+      "match": "Canada vs Morocco",
+      "primary": "spread",
+      "tendency_cn": "更倾向让球盘（加拿大受让）",
+      "confidence": "medium",
+      "confidence_cn": "中信心",
+      "spread": {
+        "side": "dog",
+        "pick_cn": "加拿大 +0.5 @1.05"
+      },
+      "totals": {
+        "side": "over",
+        "pick_cn": "大球 2/2.5 @0.92"
+      }
+    },
+    {
+      "id": "m89",
+      "match": "Paraguay vs France",
+      "primary": "spread",
+      "tendency_cn": "更倾向让球盘（巴拉圭受让）",
+      "confidence": "medium",
+      "confidence_cn": "中信心",
+      "spread": {
+        "side": "dog",
+        "pick_cn": "巴拉圭 +2 @0.80"
+      },
+      "totals": {
+        "side": "under",
+        "pick_cn": "小球 3 @0.83"
+      }
+    }
+  ],
+  "results": {
+    "graded_at": "2026-07-05T17:25:14.439Z",
+    "grade_rule_cn": "统计：全赢1 · 赢半0.5 · 输半0.5 · 走水不计；单场✓/✗仍按不败即中（含赢半）",
+    "spread": {
+      "hit": 1,
+      "miss": 1,
+      "push": 0,
+      "pending": 0,
+      "legs": 2,
+      "pct": 50
+    },
+    "totals": {
+      "hit": 2,
+      "miss": 0,
+      "push": 0,
+      "pending": 0,
+      "legs": 2,
+      "pct": 100
+    },
+    "primary": {
+      "hit": 1,
+      "miss": 1,
+      "push": 0,
+      "pending": 0,
+      "legs": 2,
+      "pct": 50,
+      "label_cn": "倾向项（★）"
+    },
+    "secondary": {
+      "hit": 2,
+      "miss": 0,
+      "push": 0,
+      "pending": 0,
+      "legs": 2,
+      "pct": 100,
+      "label_cn": "非倾向项"
+    },
+    "all_legs": {
+      "hit": 3,
+      "miss": 1,
+      "push": 0,
+      "pending": 0,
+      "legs": 4,
+      "pct": 75
+    },
+    "cross_analysis": {
+      "summary_cn": "交叉赛果用于反推倾向权重：若「倾向错、另一项对」偏多，应下调倾向优先级或改判定规则",
+      "primary_miss_secondary_hit": {
+        "n": 1,
+        "pct": 50,
+        "label_cn": "倾向未中 · 另一项命中",
+        "matches": [
+          {
+            "id": "m90",
+            "match": "Canada vs Morocco",
+            "cn": "★让球盘未中，大小球项命中"
+          }
+        ],
+        "analytics_cn": "虽倾向错了，但双选中的另一项对了——实际可命中却被倾向标签误导，是改进重点"
+      },
+      "primary_hit_secondary_miss": {
+        "n": 0,
+        "pct": 0,
+        "label_cn": "倾向命中 · 另一项未中",
+        "matches": []
+      },
+      "both_hit": {
+        "n": 1,
+        "matches": [
+          {
+            "id": "m89",
+            "match": "Paraguay vs France",
+            "cn": "★让球盘与大小球均命中"
+          }
+        ]
+      },
+      "both_miss": {
+        "n": 0,
+        "matches": []
+      },
+      "pending": 0
+    },
+    "layer_alignment": {
+      "summary_cn": "大小球三层对齐：pick_side 与 model/market/recommended 赛后反推",
+      "pick_follows_model_market": {
+        "hit": 0,
+        "miss": 0,
+        "n": 0,
+        "pct": null
+      },
+      "pick_vs_recommended": {
+        "hit": 0,
+        "miss": 0,
+        "n": 0,
+        "pct": null
+      },
+      "situation_conflict_resolved": {
+        "hit": 0,
+        "miss": 0,
+        "n": 0,
+        "pct": null
+      },
+      "per_match": [
+        {
+          "id": "m90",
+          "model_side": null,
+          "situation_side": null,
+          "market_side": null,
+          "pick_side": "over",
+          "recommended_side": null,
+          "totals_hit": true
+        },
+        {
+          "id": "m89",
+          "model_side": null,
+          "situation_side": null,
+          "market_side": null,
+          "pick_side": "under",
+          "recommended_side": null,
+          "totals_hit": true
+        }
+      ]
+    },
+    "high_confidence": null,
+    "picks": [
+      {
+        "id": "m90",
+        "match": "Canada vs Morocco",
+        "primary": "spread",
+        "tendency_cn": "更倾向让球盘（加拿大受让）",
+        "high_confidence": false,
+        "confidence_cn": "中信心",
+        "model_side": null,
+        "situation_side": null,
+        "market_side": null,
+        "pick_side": "over",
+        "recommended_side": null,
+        "situation_conflict": false,
+        "spread": {
+          "side": "dog",
+          "label_cn": "加拿大 +0.5 @1.05",
+          "reason_cn": "摩洛哥低水但须净胜1球(-0.5)；模型平局权重高(37%)，加拿大平或胜即全赢(约64%)，1.05 高水放大价值 · 1-1/0-0/1-0 路径 · ★主项。",
+          "hit": false,
+          "outcome": "full_lose",
+          "grade_note": "0-3 · 净胜 -3 · 全输"
+        },
+        "totals": {
+          "side": "over",
+          "label_cn": "大球 2/2.5 @0.92",
+          "reason_cn": "over 1.00→0.92 降水资金偏大 · Davies/Hakimi 双翼卫对攻 · 模型总 xG 约2.5 · 3球全赢/2球赢半 · 副项。",
+          "hit": true,
+          "outcome": "full_win",
+          "grade_note": "0-3 总3 · 线 2.25 · 全赢"
+        },
+        "primary_hit": false,
+        "secondary_hit": true,
+        "secondary_market": "totals",
+        "outcome": {
+          "key": "primary_miss_secondary_hit",
+          "cn": "★让球盘未中，大小球项命中",
+          "analytics_cn": "倾向权重可能偏高——复盘时应优先看命中项，并反推是否应改倾向或降低倾向在决策中的权重",
+          "primary_hit": false,
+          "secondary_hit": true,
+          "primary_market": "spread",
+          "secondary_market": "totals"
+        },
+        "actual_score": "0-3"
+      },
+      {
+        "id": "m89",
+        "match": "Paraguay vs France",
+        "primary": "spread",
+        "tendency_cn": "更倾向让球盘（巴拉圭受让）",
+        "high_confidence": false,
+        "confidence_cn": "中信心",
+        "model_side": null,
+        "situation_side": null,
+        "market_side": null,
+        "pick_side": "under",
+        "recommended_side": null,
+        "situation_conflict": false,
+        "spread": {
+          "side": "dog",
+          "label_cn": "巴拉圭 +2 @0.80",
+          "reason_cn": "法国 -2 须净胜3球是硬指标；巴拉圭 Alfaro 低位铁桶（点球淘汰德国），受让 +2 降水低水 0.80 市场压受让。法国 0-1/0-2/1-2 皆守住（净胜2走水）· ★主项。",
+          "hit": true,
+          "outcome": "full_win",
+          "grade_note": "0-1 · 净胜 -1 · 全赢"
+        },
+        "totals": {
+          "side": "under",
+          "label_cn": "小球 3 @0.83",
+          "reason_cn": "over 0.96→1.05 抬水资金偏小；法国破铁桶常见 1-0/2-1 · 线 3 整数（2球内全赢、恰3走水）· 副项。",
+          "hit": true,
+          "outcome": "full_win",
+          "grade_note": "0-1 总1 · 线 3 · 全赢"
+        },
+        "primary_hit": true,
+        "secondary_hit": true,
+        "secondary_market": "totals",
+        "outcome": {
+          "key": "both_hit",
+          "cn": "★让球盘与大小球均命中",
+          "analytics_cn": "倾向正确，双项验证通过",
+          "primary_hit": true,
+          "secondary_hit": true,
+          "primary_market": "spread",
+          "secondary_market": "totals"
+        },
+        "actual_score": "0-1"
+      }
+    ]
+  }
+}

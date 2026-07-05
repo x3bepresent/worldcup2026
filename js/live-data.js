@@ -1,14 +1,14 @@
-// Auto-synced by scripts/enrich-day24.js
-// Updated: 2026-07-04T15:04:18+08:00
+// Auto-synced · enrich-day25
+// Updated: 2026-07-05T17:28:38+08:00
 const LIVE_DATA = {
-  "lastUpdated": "2026-07-04T15:04:18+08:00",
-  "todayDate": "2026-07-05",
+  "lastUpdated": "2026-07-05T17:28:38+08:00",
+  "todayDate": "2026-07-06",
   "fixtures": [
     {
-      "id": "m90",
-      "fifa_match_number": 90,
-      "home": "Canada",
-      "away": "Morocco",
+      "id": "m91",
+      "fifa_match_number": 91,
+      "home": "Brazil",
+      "away": "Norway",
       "status": "NS",
       "home_score": null,
       "away_score": null,
@@ -16,10 +16,10 @@ const LIVE_DATA = {
       "round": "R16"
     },
     {
-      "id": "m89",
-      "fifa_match_number": 89,
-      "home": "Paraguay",
-      "away": "France",
+      "id": "m92",
+      "fifa_match_number": 92,
+      "home": "Mexico",
+      "away": "England",
       "status": "NS",
       "home_score": null,
       "away_score": null,
@@ -29,39 +29,28 @@ const LIVE_DATA = {
   ],
   "allResults": [
     {
-      "id": "m86",
-      "home": "Argentina",
-      "away": "Cape Verde",
-      "score": "3-2",
+      "id": "m89",
+      "home": "Paraguay",
+      "away": "France",
+      "score": "0-1",
       "group": "KO"
     },
     {
-      "id": "m87",
-      "home": "Colombia",
-      "away": "Ghana",
-      "score": "1-0",
-      "group": "KO"
-    },
-    {
-      "id": "m88",
-      "home": "Australia",
-      "away": "Egypt",
-      "score": "1-1",
+      "id": "m90",
+      "home": "Canada",
+      "away": "Morocco",
+      "score": "0-3",
       "group": "KO"
     }
   ],
   "yesterdayResults": [
     {
-      "id": "m86",
-      "score": "3-2"
+      "id": "m89",
+      "score": "0-1"
     },
     {
-      "id": "m87",
-      "score": "1-0"
-    },
-    {
-      "id": "m88",
-      "score": "1-1"
+      "id": "m90",
+      "score": "0-3"
     }
   ],
   "standings": [
@@ -619,8 +608,6 @@ const LIVE_DATA = {
     }
   ],
   "injuries": {
-    "note": "Day 24 · M89/M90 · FIFA 裁判已确认 · 16强开赛",
-    "m90": "加拿大：Eustáquio 黄牌累积 · 摩洛哥：Aguerd 队检",
-    "m89": "法国：Dembélé 队检（或 Coman 顶替）· 巴拉圭：铁桶全员"
+    "note": "Day 25 enriched · 巴西/挪威/墨西哥/英格兰"
   }
 };
