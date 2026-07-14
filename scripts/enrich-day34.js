@@ -1,13 +1,13 @@
 /**
- * Enrich Day 25 todayMatches (m91–m92 · 16强续战)
- * Run: node scripts/enrich-day25.js && node scripts/apply-prediction-signals.js && node scripts/enrich-day25.js
+ * Enrich Day 34 todayMatches (m101 · 半决赛法国 vs 西班牙)
+ * Run: node scripts/enrich-day34.js && node scripts/apply-prediction-signals.js && node scripts/enrich-day34.js
  */
 const fs = require('fs');
 const path = require('path');
-const { venueWeather } = require('./venue-weather-day25');
-const { getTeamNews } = require('./injuries-rumors-day25');
-const { getReferee } = require('./referee-data-day25');
-const { getTeamStars } = require('./star-data-day25');
+const { venueWeather } = require('./venue-weather-day34');
+const { getTeamNews } = require('./injuries-rumors-day34');
+const { getReferee } = require('./referee-data-day34');
+const { getTeamStars } = require('./star-data-day34');
 
 const ROOT = path.join(__dirname, '..');
 const MATCH_PATH = path.join(ROOT, 'js', 'matches-data.js');
@@ -15,8 +15,7 @@ const LIVE_PATH = path.join(ROOT, 'js', 'live-data.js');
 const TS = new Date().toISOString().replace(/\.\d{3}Z$/, '+08:00');
 
 const KNOCKOUT_CTX = {
-  m91: 'M91 · 16强 · 巴西 vs 挪威 · 胜者 M99 对 M92 胜者',
-  m92: 'M92 · 16强 · 墨西哥 vs 英格兰 · 胜者 M99 对 M91 胜者',
+  m101: 'M101 · 半决赛 · 法国 vs 西班牙 · 胜者进决赛 M104 · 负者季军赛 M103',
 };
 
 function loadData(filePath, varName) {
@@ -42,16 +41,16 @@ function patchWeatherInsight(match) {
     w.temp != null ? `${w.temp}°C` : null,
     w.humidity != null ? `湿度 ${w.humidity}%` : null,
     w.rain_chance != null ? `降雨概率 ${w.rain_chance}%` : null,
-    w.altitude_m > 1000 ? `海拔 ${w.altitude_m}m` : null,
     w.wind || null,
   ].filter(Boolean);
   const factorBits = (w.weather_factors || []).map((f) => f.label).slice(0, 2);
   const text = `${bits.join(' · ')}；${w.impact_summary || ''}${factorBits.length ? `（${factorBits.join(' · ')}）` : ''}`;
   const idx = match.prediction.insight_factors.findIndex((f) => f.label === '赛场气候');
   if (idx >= 0) match.prediction.insight_factors[idx].text = text;
+  else match.prediction.insight_factors.push({ icon: '🌤️', label: '赛场气候', text });
 }
 
-const ids = ['m91', 'm92'];
+const ids = ['m101'];
 const MATCH_DATA = loadData(MATCH_PATH, 'MATCH_DATA');
 
 for (const m of MATCH_DATA.todayMatches || []) {
@@ -84,25 +83,15 @@ for (const m of MATCH_DATA.todayMatches || []) {
 }
 
 MATCH_DATA.lastUpdated = TS;
-MATCH_DATA.syncSource = 'FIFA 赛程 · Day 25 · 16强续战 enriched · 裁判/伤病/球星/赛场气候(Open-Meteo)';
+MATCH_DATA.syncSource = 'FIFA 赛程 · Day 34 · 半决赛 enriched · 裁判/伤病/球星/赛场气候';
 
-const agentDay24Note = {
-  tag: 'UPDATE',
-  text: '📊 Day24 Agent：让球1/2 · 大小2/2 · 倾向★50% · 巴+2✓/加+0.5✗',
-  time: '复盘',
-};
-MATCH_DATA.breakingNews = [
-  agentDay24Note,
-  ...(MATCH_DATA.breakingNews || []).filter((n) => !n.text?.includes('Day24 Agent') && !n.text?.includes('Day23 Agent')),
-].slice(0, 12);
-
-fs.writeFileSync(MATCH_PATH, `// 今日赛事 — Day 25 · 16强续战 enriched\n// Last updated: ${TS}\nconst MATCH_DATA = ${JSON.stringify(MATCH_DATA, null, 2)};\n`);
+fs.writeFileSync(MATCH_PATH, `// 今日赛事 — Day 34 · 半决赛 enriched\n// Last updated: ${TS}\nconst MATCH_DATA = ${JSON.stringify(MATCH_DATA, null, 2)};\n`);
 
 if (fs.existsSync(LIVE_PATH)) {
   const LIVE_DATA = loadData(LIVE_PATH, 'LIVE_DATA');
   LIVE_DATA.lastUpdated = TS;
-  LIVE_DATA.injuries = { note: 'Day 25 enriched · 巴西/挪威/墨西哥/英格兰' };
-  fs.writeFileSync(LIVE_PATH, `// Auto-synced · enrich-day25\n// Updated: ${TS}\nconst LIVE_DATA = ${JSON.stringify(LIVE_DATA, null, 2)};\n`);
+  LIVE_DATA.injuries = { note: 'Day 34 enriched · 法国/西班牙 半决赛' };
+  fs.writeFileSync(LIVE_PATH, `// Auto-synced · enrich-day34\n// Updated: ${TS}\nconst LIVE_DATA = ${JSON.stringify(LIVE_DATA, null, 2)};\n`);
 }
 
-console.log('✅ Day 25 enriched — m91, m92');
+console.log('✅ Day 34 enriched — m101');

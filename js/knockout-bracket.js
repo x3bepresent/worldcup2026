@@ -29,6 +29,16 @@
   const KO_RESULTS = {
     89: { home: 'Paraguay', away: 'France', score: '0-1', status: 'FT', winner: 'France' },
     90: { home: 'Canada', away: 'Morocco', score: '0-3', status: 'FT', winner: 'Morocco' },
+    91: { home: 'Brazil', away: 'Norway', score: '1-2', status: 'FT', winner: 'Norway' },
+    92: { home: 'Mexico', away: 'England', score: '2-3', status: 'FT', winner: 'England' },
+    93: { home: 'Portugal', away: 'Spain', score: '0-1', status: 'FT', winner: 'Spain' },
+    94: { home: 'USA', away: 'Belgium', score: '1-4', status: 'FT', winner: 'Belgium' },
+    95: { home: 'Argentina', away: 'Egypt', score: '3-2', status: 'FT', winner: 'Argentina' },
+    96: { home: 'Switzerland', away: 'Colombia', score: '0-0', status: 'PEN', winner: 'Switzerland' },
+    97: { home: 'France', away: 'Morocco', score: '2-0', status: 'FT', winner: 'France' },
+    98: { home: 'Spain', away: 'Belgium', score: '2-1', status: 'FT', winner: 'Spain' },
+    99: { home: 'Norway', away: 'England', score: '1-2', status: 'AET', winner: 'England' },
+    100: { home: 'Argentina', away: 'Switzerland', score: '3-1', status: 'AET', winner: 'Argentina' },
   };
 
   /** parent match: { no, homeFrom, awayFrom } — homeFrom/awayFrom = source match no */

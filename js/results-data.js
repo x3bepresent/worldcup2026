@@ -1,33 +1,23 @@
 // 过往赛果 — 精简归档（推演 + 赛果核验 + 复盘概要）
-// Last updated: 2026-07-05T17:28:37+08:00
+// Last updated: 2026-07-14T14:20:24+08:00
 const RESULTS_DATA = {
-  "lastUpdated": "2026-07-05T17:28:37+08:00",
-  "syncSource": "FIFA 官方赛果 · Day 24 完结 · Day 25 16强续战 2场",
+  "lastUpdated": "2026-07-14T14:20:24+08:00",
+  "syncSource": "FIFA 官方 · 4强对阵已定 · Day 34 半决赛开赛",
   "breakingNews": [
     {
-      "tag": "OFFICIAL",
-      "text": "🏁 M89：巴拉圭 0-1 法国 · Mbappé 70'点球 · 法国晋级8强",
-      "time": "7月5日"
-    },
-    {
-      "tag": "OFFICIAL",
-      "text": "🏁 M90：加拿大 0-3 摩洛哥 · Ounahi 双响 · 摩洛哥晋级8强",
-      "time": "7月5日"
+      "tag": "PREVIEW",
+      "text": "⚔️ 半决赛：法国 vs 西班牙 · 北京时间 7月15日 03:00 · 达拉斯 AT&T",
+      "time": "7月15日"
     },
     {
       "tag": "PREVIEW",
-      "text": "⚔️ 16强 7/6：巴西-挪威(04:00) · 墨西哥-英格兰(08:00)",
-      "time": "7月6日"
+      "text": "⚔️ 半决赛：英格兰 vs 阿根廷 · 北京时间 7月16日 03:00 · 亚特兰大",
+      "time": "7月16日"
     },
     {
-      "tag": "PREVIEW",
-      "text": "8强预告：法国 vs 摩洛哥(7/9) · 巴西/挪威 vs 墨西哥/英格兰(7/12)",
+      "tag": "OFFICIAL",
+      "text": "🏁 8强：法国2-0摩洛哥 · 西班牙2-1比利时 · 挪威加时1-2英格兰 · 阿根廷加时3-1瑞士",
       "time": "路径"
-    },
-    {
-      "tag": "UPDATE",
-      "text": "📊 Day24 Agent 双选已全部结算",
-      "time": "Agent"
     }
   ],
   "finishedMatches": [

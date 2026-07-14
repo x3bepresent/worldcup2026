@@ -1,56 +1,67 @@
-// Auto-synced · enrich-day25
-// Updated: 2026-07-05T17:28:38+08:00
+// Auto-synced · enrich-day34
+// Updated: 2026-07-14T14:20:24+08:00
 const LIVE_DATA = {
-  "lastUpdated": "2026-07-05T17:28:38+08:00",
-  "todayDate": "2026-07-06",
+  "lastUpdated": "2026-07-14T14:20:24+08:00",
+  "todayDate": "2026-07-15",
   "fixtures": [
     {
-      "id": "m91",
-      "fifa_match_number": 91,
-      "home": "Brazil",
-      "away": "Norway",
+      "id": "m101",
+      "fifa_match_number": 101,
+      "home": "France",
+      "away": "Spain",
       "status": "NS",
       "home_score": null,
       "away_score": null,
       "group": "KO",
-      "round": "R16"
-    },
-    {
-      "id": "m92",
-      "fifa_match_number": 92,
-      "home": "Mexico",
-      "away": "England",
-      "status": "NS",
-      "home_score": null,
-      "away_score": null,
-      "group": "KO",
-      "round": "R16"
+      "round": "SF"
     }
   ],
   "allResults": [
     {
-      "id": "m89",
-      "home": "Paraguay",
-      "away": "France",
-      "score": "0-1",
+      "id": "m97",
+      "home": "France",
+      "away": "Morocco",
+      "score": "2-0",
       "group": "KO"
     },
     {
-      "id": "m90",
-      "home": "Canada",
-      "away": "Morocco",
-      "score": "0-3",
+      "id": "m98",
+      "home": "Spain",
+      "away": "Belgium",
+      "score": "2-1",
+      "group": "KO"
+    },
+    {
+      "id": "m99",
+      "home": "Norway",
+      "away": "England",
+      "score": "1-2",
+      "group": "KO"
+    },
+    {
+      "id": "m100",
+      "home": "Argentina",
+      "away": "Switzerland",
+      "score": "3-1",
       "group": "KO"
     }
   ],
   "yesterdayResults": [
     {
-      "id": "m89",
-      "score": "0-1"
+      "id": "m97",
+      "score": "2-0"
     },
     {
-      "id": "m90",
-      "score": "0-3"
+      "id": "m98",
+      "score": "2-1"
+    },
+    {
+      "id": "m99",
+      "score": "1-2"
+    },
+    {
+      "id": "m100",
+      "score": "3-1"
     }
   ],
   "standings": [
@@ -608,6 +619,6 @@ const LIVE_DATA = {
     }
   ],
   "injuries": {
-    "note": "Day 25 enriched · 巴西/挪威/墨西哥/英格兰"
+    "note": "Day 34 enriched · 法国/西班牙 半决赛"
   }
 };
