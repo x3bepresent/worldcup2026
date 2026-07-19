@@ -1,23 +1,23 @@
 // 过往赛果 — 精简归档（推演 + 赛果核验 + 复盘概要）
-// Last updated: 2026-07-14T14:20:24+08:00
+// Last updated: 2026-07-19T14:34:41+08:00
 const RESULTS_DATA = {
-  "lastUpdated": "2026-07-14T14:20:24+08:00",
-  "syncSource": "FIFA 官方 · 4强对阵已定 · Day 34 半决赛开赛",
+  "lastUpdated": "2026-07-19T14:34:41+08:00",
+  "syncSource": "FIFA 官方 · 决赛对阵已定 · Day 38 决赛开赛",
   "breakingNews": [
     {
       "tag": "PREVIEW",
-      "text": "⚔️ 半决赛：法国 vs 西班牙 · 北京时间 7月15日 03:00 · 达拉斯 AT&T",
-      "time": "7月15日"
-    },
-    {
-      "tag": "PREVIEW",
-      "text": "⚔️ 半决赛：英格兰 vs 阿根廷 · 北京时间 7月16日 03:00 · 亚特兰大",
-      "time": "7月16日"
+      "text": "🏆 决赛：西班牙 vs 阿根廷 · 北京时间 7月20日 03:00 · MetLife",
+      "time": "7月20日"
     },
     {
       "tag": "OFFICIAL",
-      "text": "🏁 8强：法国2-0摩洛哥 · 西班牙2-1比利时 · 挪威加时1-2英格兰 · 阿根廷加时3-1瑞士",
+      "text": "🏁 半决赛：西班牙2-0法国 · 阿根廷2-1英格兰",
       "time": "路径"
+    },
+    {
+      "tag": "OFFICIAL",
+      "text": "🥉 季军赛：英格兰6-4法国 · 英格兰获季军",
+      "time": "7月18日"
     }
   ],
   "finishedMatches": [
@@ -88648,6 +88648,1014 @@ const RESULTS_DATA = {
           "2022 四强班底 · 淘汰赛经验占优",
           "须防 Davies 反击速度 · Hakimi 攻守平衡是胜负手"
         ]
+      }
+    },
+    {
+      "id": "m101",
+      "archived": true,
+      "archivedAt": "2026-07-19T14:34:41+08:00",
+      "group": "KO",
+      "matchday": null,
+      "fifa_match_number": 101,
+      "date_beijing": "7月15日",
+      "time_beijing": "03:00",
+      "note": "半决赛 M101 · 西班牙淘汰法国",
+      "home": {
+        "name": "France",
+        "iso": "fr"
+      },
+      "away": {
+        "name": "Spain",
+        "iso": "es"
+      },
+      "prediction": {
+        "key_factor": "【补档】半决赛 M101 · 西班牙淘汰法国",
+        "home_win": 33,
+        "draw": 34,
+        "away_win": 33,
+        "depth_calibrated": true,
+        "xg_poisson_home": 0,
+        "xg_poisson_away": 0,
+        "xg_tier_calibrated": false,
+        "score": "0-0",
+        "score_prob": 100,
+        "score_top3": [
+          {
+            "score": "0-0",
+            "prob": 100
+          },
+          {
+            "score": "0-1",
+            "prob": 0
+          },
+          {
+            "score": "0-2",
+            "prob": 0
+          }
+        ],
+        "expected_score": "0-0",
+        "score_dist": [
+          {
+            "score": "0-0",
+            "prob": 100
+          },
+          {
+            "score": "0-1",
+            "prob": 0
+          },
+          {
+            "score": "0-2",
+            "prob": 0
+          },
+          {
+            "score": "0-3",
+            "prob": 0
+          },
+          {
+            "score": "0-4",
+            "prob": 0
+          },
+          {
+            "score": "0-5",
+            "prob": 0
+          },
+          {
+            "score": "1-0",
+            "prob": 0
+          }
+        ]
+      },
+      "actualResult": {
+        "home_score": 0,
+        "away_score": 2,
+        "status": "FT",
+        "label": "全场结束",
+        "fifa_match_id": "400021541",
+        "updated": "2026-07-19T14:34:41+08:00"
+      },
+      "depth_calibration": {
+        "tier_home": 0.25,
+        "tier_label": "France -0.25 · Spain +0.25",
+        "implied_tier": 0,
+        "tier_gap": 0.25,
+        "signal": "neutral",
+        "signal_cn": "均衡",
+        "signal_color": "#7BB8D4",
+        "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
+        "blocker_spread_note": "",
+        "public_lean_cn": "舆论倾向 France（约 55%）",
+        "analysis": "M101 · 法国 vs 西班牙 · 法-0/0.5@1.04/西+0/0.5@0.85 · 大小 2.5 大0.95小0.93。",
+        "spread_cover": {
+          "top3_scores": [
+            {
+              "score": "0-0",
+              "prob": 100
+            },
+            {
+              "score": "0-1",
+              "prob": 0
+            },
+            {
+              "score": "0-2",
+              "prob": 0
+            }
+          ],
+          "one_goal_win_pct": 0,
+          "two_plus_win_pct": 0,
+          "full_cover_pct": 12.6,
+          "dog_hold_pct": 87.4,
+          "fav_win_pct": 0,
+          "cover_given_win_pct": null,
+          "grid_max_goals": 6,
+          "grid_tail_pct": 0,
+          "half_cover_pct": 0,
+          "half_lose_pct": 0,
+          "push_pct": null,
+          "margin_full_label": "净胜≥1",
+          "margin_half_label": null,
+          "fav_cover_ev": -1,
+          "dog_cover_ev": 1,
+          "rational_spread_cn": "客队 守住差距概率略高",
+          "total_xg": 0,
+          "fair_totals_line": 2,
+          "over_2_5_pct": 0,
+          "over_3_pct": 0,
+          "totals_lean_cn": "超 2.5 偏小比分（约 100%）；4球+偏少",
+          "margin_risk_note": "净胜≥1 约 0%；仅赢 1 球约 0%",
+          "full_cover_pct_raw": 0,
+          "dog_hold_pct_raw": 100
+        },
+        "spread_odds": {
+          "fav": 1.04,
+          "dog": 0.85,
+          "note": "France 1.04 · Spain 0.85"
+        },
+        "spread_alt": null,
+        "totals_analysis": {
+          "market_line": 2.5,
+          "market_goals_int": 3,
+          "line_label": "总进球约 2.5 个",
+          "implied_xg_total": 0,
+          "fair_line": 2,
+          "line_gap": 0.5,
+          "over_pct": 0,
+          "under_pct": 100,
+          "signal": "high_line",
+          "signal_cn": "参考偏高",
+          "signal_color": "#C8A96E",
+          "signal_desc": "总进球参考高于合理值，模型偏小比分。",
+          "public_over_pct": 50,
+          "public_lean_cn": "舆论对总进球看法较分散",
+          "index_note": "大/小比分两侧接近",
+          "totals_odds": null,
+          "rational_cn": "模型略看小比分（超 2.5 约 100% 难达）",
+          "score_link_cn": "小比分 1-0/1-1 · 2-0/2-1 居中 · 3球+ 大比分"
+        },
+        "totals_line": 2.5,
+        "market_line_movement": {
+          "wc_note": "世界杯中立赛场 · FIFA 主/客仅为赛历标签，不等于真实主场优势",
+          "spread_open_cn": "France -0/0.5@1 · Spain +0/0.5@0.82",
+          "spread_now_cn": "France -0/0.5@1.04 · Spain +0/0.5@0.85",
+          "totals_now_cn": "大小 2.5 · 大 0.95 / 小 0.93",
+          "tag": "flat",
+          "tag_cn": "盘路平稳",
+          "tag_color": "#7BB8D4",
+          "detail_cn": "档位持平 · 热门 1→1.04（抬水） · 受让 0.82→0.85（抬水） 现盘去水隐含：France 47.6% · Spain 52.4%（超收 3.1%） 模型穿盘（现档 France -0.25 · Spain +0.25）：France 12.6% · Spain 87.4% 模型−市场：France -35pp · Spain +35pp 期望 ROI@现水：France -74.3% · Spain +149.1% 档位与水位变化幅度有限，暂无明确单向资金信号。",
+          "actuarial": {
+            "actuarial_type": "flat",
+            "actuarial_cn": "盘路平稳",
+            "actuarial_color": "#7BB8D4",
+            "actuarial_desc": "档位与水位变化幅度有限，暂无明确单向资金信号。",
+            "summary_cn": "档位持平 · 热门 1→1.04（抬水） · 受让 0.82→0.85（抬水） 现盘去水隐含：France 47.6% · Spain 52.4%（超收 3.1%） 模型穿盘（现档 France -0.25 · Spain +0.25）：France 12.6% · Spain 87.4% 模型−市场：France -35pp · Spain +35pp 期望 ROI@现水：France -74.3% · Spain +149.1% 档位与水位变化幅度有限，暂无明确单向资金信号。",
+            "line_delta": 0,
+            "line_delta_cn": "档位持平",
+            "fav_odds_delta": 0.04,
+            "dog_odds_delta": 0.03,
+            "water_move_cn": "热门 1→1.04（抬水） · 受让 0.82→0.85（抬水）",
+            "open_tier": 0.25,
+            "open_tier_label": "France -0.25 · Spain +0.25",
+            "now_tier": 0.25,
+            "implied_tier": 0,
+            "open_tier_gap": 0.25,
+            "now_tier_gap": 0.25,
+            "open_devig": {
+              "fav_pct": 47.6,
+              "dog_pct": 52.4,
+              "overround_pct": 4.9
+            },
+            "now_devig": {
+              "fav_pct": 47.6,
+              "dog_pct": 52.4,
+              "overround_pct": 3.1
+            },
+            "model_cover_open_pct": 12.6,
+            "model_cover_now_pct": 12.6,
+            "model_dog_cover_now_pct": 87.4,
+            "market_fav_cover_now_pct": 47.6,
+            "market_dog_cover_now_pct": 52.4,
+            "model_vs_market_fav_pp": -35,
+            "model_vs_market_dog_pp": 35,
+            "fav_roi_pct": -74.3,
+            "dog_roi_pct": 149.1,
+            "fav_name": "France",
+            "dog_name": "Spain"
+          }
+        },
+        "spread_market_analysis": {
+          "actuarial_type": "flat",
+          "actuarial_cn": "盘路平稳",
+          "actuarial_color": "#7BB8D4",
+          "actuarial_desc": "档位与水位变化幅度有限，暂无明确单向资金信号。",
+          "summary_cn": "档位持平 · 热门 1→1.04（抬水） · 受让 0.82→0.85（抬水） 现盘去水隐含：France 47.6% · Spain 52.4%（超收 3.1%） 模型穿盘（现档 France -0.25 · Spain +0.25）：France 12.6% · Spain 87.4% 模型−市场：France -35pp · Spain +35pp 期望 ROI@现水：France -74.3% · Spain +149.1% 档位与水位变化幅度有限，暂无明确单向资金信号。",
+          "line_delta": 0,
+          "line_delta_cn": "档位持平",
+          "fav_odds_delta": 0.04,
+          "dog_odds_delta": 0.03,
+          "water_move_cn": "热门 1→1.04（抬水） · 受让 0.82→0.85（抬水）",
+          "open_tier": 0.25,
+          "open_tier_label": "France -0.25 · Spain +0.25",
+          "now_tier": 0.25,
+          "implied_tier": 0,
+          "open_tier_gap": 0.25,
+          "now_tier_gap": 0.25,
+          "open_devig": {
+            "fav_pct": 47.6,
+            "dog_pct": 52.4,
+            "overround_pct": 4.9
+          },
+          "now_devig": {
+            "fav_pct": 47.6,
+            "dog_pct": 52.4,
+            "overround_pct": 3.1
+          },
+          "model_cover_open_pct": 12.6,
+          "model_cover_now_pct": 12.6,
+          "model_dog_cover_now_pct": 87.4,
+          "market_fav_cover_now_pct": 47.6,
+          "market_dog_cover_now_pct": 52.4,
+          "model_vs_market_fav_pp": -35,
+          "model_vs_market_dog_pp": 35,
+          "fav_roi_pct": -74.3,
+          "dog_roi_pct": 149.1,
+          "fav_name": "France",
+          "dog_name": "Spain"
+        },
+        "totals_pick_layers": {
+          "model_side": "under",
+          "situation_side": "neutral",
+          "market_line_side": "under",
+          "market_odds_side": "neutral",
+          "market_side": "under",
+          "recommended_side": "under",
+          "conflict": false,
+          "conflict_cn": null,
+          "situation_dampened": false,
+          "votes": {
+            "model": "under",
+            "line": "under",
+            "odds": "neutral",
+            "situation": "neutral"
+          },
+          "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+          "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权"
+        },
+        "agent_pick": {
+          "primary": "spread",
+          "tendency_cn": "更倾向让球盘（西班牙受让）",
+          "tendency_reason_cn": "法国升为让方 -0/0.5 但抬到 1.04 高水，西班牙 +0/0.5 维持 0.85 低水；分盘结算：平局法输半/西赢半，任一方取胜即该边全赢 · ★西+0/0.5 · 大2.5副项(R9不打小)。",
+          "confidence": "medium",
+          "confidence_cn": "中信心",
+          "spread": {
+            "side": "dog",
+            "label_cn": "西班牙 +0/0.5 @0.85",
+            "reason_cn": "分盘 -0/0.5：平局法国输半、西班牙赢半；法国胜→法全赢/西全输，西班牙胜→西全赢/法全输。法1.04高水·西0.85低水 · Yamal破局 · ★主项。"
+          },
+          "totals": {
+            "side": "over",
+            "label_cn": "大球 2.5 @0.95",
+            "reason_cn": "over 1.01→0.95 降水资金偏大 · Mbappé/Yamal 对攻 · 关顶空调利于进攻 · R9副项不打小 · 副项。",
+            "manual_override": true,
+            "recommended_side": "under"
+          },
+          "picked_at": "2026-07-15-prematch",
+          "pick_meta": {
+            "model_side": "under",
+            "situation_side": "neutral",
+            "market_line_side": "under",
+            "market_odds_side": "neutral",
+            "market_side": "under",
+            "pick_side": "over",
+            "recommended_side": "under",
+            "merge_rule_cn": "模型+盘面（线+水）多数决；形势仅同分或一致时加成，冲突则降权",
+            "conflict": false,
+            "conflict_cn": null,
+            "votes": {
+              "model": "under",
+              "line": "under",
+              "odds": "neutral",
+              "situation": "neutral"
+            },
+            "vote_summary_cn": "小球(model) · 小球(line) · 观望(odds) · 观望(situation)",
+            "situation_dampened": false,
+            "over_pct": 0,
+            "line_gap": 0.5
+          },
+          "ko_totals_policy": {
+            "enabled": true,
+            "rule_id": "R9",
+            "rule_cn": "★=大小无模型/盘冲突 · 副项仅大球 · 大信心仅绑★=大小",
+            "applied_at": "buildDepthCalibration"
+          }
+        },
+        "applied_delta": {
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
+        },
+        "adjustment_note": "模型微调：主胜 +0% · 平 +0% · 客 +0%",
+        "adjusted_probs": {
+          "home_win": 33,
+          "draw": 34,
+          "away_win": 33
+        },
+        "display_summary": {
+          "fav_name": "France",
+          "expected_total_goals": 0.3,
+          "poisson_fav_win_pct": 12.1,
+          "small_lead_pct": 11.2,
+          "small_example_score": "1-0",
+          "small_example_pct": 11.1,
+          "big_cover_pct": 0.9,
+          "big_example_score": "2-0",
+          "big_example_pct": 0.8,
+          "win_shape": {
+            "fav_name": "France",
+            "note": "以下为模型在「该队取胜」假设下的路径分布，三项合计 100%。",
+            "lead_cn": "取胜时以险胜·控局为主（险胜 · 控局 91.7%）",
+            "shapes": [
+              {
+                "key": "narrow_low",
+                "label": "险胜 · 控局",
+                "example": "如 1-0",
+                "field_pct": 11.1,
+                "pct": 91.7
+              },
+              {
+                "key": "narrow_open",
+                "label": "险胜 · 开放",
+                "example": "如 2-1",
+                "field_pct": 0.1,
+                "pct": 1
+              },
+              {
+                "key": "comfort_low",
+                "label": "拉开 · 控局",
+                "example": "如 2-0",
+                "field_pct": 0.9,
+                "pct": 7.2
+              },
+              {
+                "key": "comfort_open",
+                "label": "拉开 · 开放",
+                "example": "如 3-1+",
+                "field_pct": 0,
+                "pct": 0.1
+              }
+            ],
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 92.7
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 7.2
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 0.1
+              }
+            ],
+            "fav_win_pct": 33
+          },
+          "excitement": {
+            "label_cn": "偏晚",
+            "label_key": "slow",
+            "label_color": "#7BB8D4",
+            "sub_cn": "预期首球等待约 300 分",
+            "first_goal_wait": 300,
+            "fast_pct": 9.5,
+            "moderate_pct": 4.4,
+            "slow_pct": 86.1,
+            "tiers": [
+              {
+                "key": "fast",
+                "label": "前 30 分内首球",
+                "pct": 9.5
+              },
+              {
+                "key": "moderate",
+                "label": "30–45 分首球",
+                "pct": 4.4
+              },
+              {
+                "key": "slow",
+                "label": "45 分后首球",
+                "pct": 86.1
+              }
+            ]
+          },
+          "baseline_label": "全场预期（含伤病·气候）",
+          "context_factors": [
+            {
+              "icon": "🏥",
+              "label": "伤病",
+              "note": "France 暂无重要伤停 · Spain 暂无重要伤停"
+            },
+            {
+              "icon": "👔",
+              "label": "教练风格",
+              "note": "— / —（领先时）"
+            },
+            {
+              "icon": "🌤️",
+              "label": "气候",
+              "note": "气候信息暂无"
+            },
+            {
+              "icon": "⚖️",
+              "label": "平局修正",
+              "note": "回测校准：xG 极接近（平 +4%）"
+            }
+          ],
+          "xg_context": {
+            "baseline_home": 0,
+            "baseline_away": 0,
+            "adjusted_home": 0.15,
+            "adjusted_away": 0.15,
+            "note": "基准 xG 0–0 → 调整后 0.15–0.15"
+          },
+          "calibration": {
+            "signal_cn": "均衡",
+            "signal_color": "#7BB8D4",
+            "signal_desc": "赛前舆论与模型评估接近，未做方向性微调。",
+            "tier_gap": 0.25,
+            "implied_tier_label": "势均力敌",
+            "market_tier_label": "France -0.25 · Spain +0.25",
+            "summary_cn": "与模型 xG 对照：均衡 · 赛前净胜看法略高（约 +0.25）"
+          },
+          "win_outlook": {
+            "fav_name": "France",
+            "state_label": null,
+            "paths": [
+              {
+                "key": "narrow",
+                "label": "险胜收工",
+                "example": "如 1-0、2-1",
+                "pct": 92.7
+              },
+              {
+                "key": "clean",
+                "label": "零封拉开",
+                "example": "如 2-0、3-0",
+                "pct": 7.2
+              },
+              {
+                "key": "open",
+                "label": "开放拉开",
+                "example": "如 3-1+",
+                "pct": 0.1
+              }
+            ],
+            "margin_line_cn": "France · 赛前净胜参考 净胜≥1（全达标）",
+            "margin_meet_pct": 19.3,
+            "margin_half_pct": 0,
+            "margin_fail_pct": 0,
+            "margin_full_label": "净胜≥1",
+            "margin_half_label": null,
+            "final_2_0_pct": null,
+            "final_3_0_plus_pct": null,
+            "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+            "totals_line": 2.5,
+            "totals_line_cn": "总进球参考 2.5",
+            "fair_totals_line": 2.25,
+            "model_total_xg": 0.3,
+            "totals_line_gap": 0.25,
+            "totals_high_pct": 0.4,
+            "totals_low_pct": 99.6,
+            "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+            "win_low_total_pct": 11.9,
+            "win_margin2_low_total_pct": 0.8,
+            "win_margin2_high_total_pct": 0,
+            "readout_cn": "取胜约 33%；若取胜，以「险胜收工」为主（92.7%）。 对着赛前净胜参考，净胜≥1（全达标）约 19.3%；对着总进球参考 2.5，模型超线概率约 0.4%。"
+          },
+          "totals_line": 2.5,
+          "score_patterns": [
+            {
+              "score": "0-0",
+              "pct": 74.1
+            },
+            {
+              "score": "0-1",
+              "pct": 11.1
+            },
+            {
+              "score": "1-0",
+              "pct": 11.1
+            }
+          ],
+          "totals_view": {
+            "expected_total": 0.3,
+            "fair_line": 2.25,
+            "market_line": 2.5,
+            "line_gap": 0.25,
+            "over_pct": 0.4,
+            "gap_warning": null,
+            "totals_outlook": {
+              "level": "clear_low",
+              "label_cn": "倾向沉闷",
+              "color": "#7BB8D4",
+              "meter_label_cn": "倾向沉闷",
+              "meter_pos": 14,
+              "lean_side": "dull",
+              "lean_strength": "clear",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "倾向沉闷",
+              "detail_cn": "倾向沉闷——小比分概率高（合理值 2.25）。",
+              "headline_cn": "进球氛围：倾向沉闷",
+              "show_lean": true,
+              "over_pct": 0.4,
+              "line_gap": 0.25,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "summary_cn": "预测 0.3 · 合理值 2.25 · 总进球参考 2.5（高于合理值 0.25） · 进球氛围：倾向沉闷"
+          },
+          "customer_reading": {
+            "headline_cn": "France -0.25 穿盘：达标与否难下定论",
+            "sub_cn": "France 胜 12.1% · 胜后穿 100% · Spain +0.25 守 80.7% 进球氛围：倾向沉闷 平局权重约 34%，小组赛易出守平——勿只盯胜负一方。",
+            "spread": {
+              "level": "uncertain",
+              "label_cn": "净胜幅度难下定论",
+              "color": "#8A96A8",
+              "fav_name": "France",
+              "dog_name": "Spain",
+              "fav_handicap_cn": "France -0.25",
+              "dog_handicap_cn": "Spain +0.25",
+              "market_expect_cn": "France -0.25 · 净胜≥1",
+              "meet_pct": 19.3,
+              "dog_hold_pct": 80.7,
+              "fav_win_pct": 12.1,
+              "cover_given_win_pct": 100,
+              "full_cover_pct_raw": 12.1,
+              "meet_pct_label": "France -0.25 穿盘概率（校准）",
+              "dog_hold_label": "Spain +0.25 守住概率（校准）",
+              "two_stage_cn": "France 取胜约 12.1% · 赢球后穿盘约 100% · Spain +0.25 守住约 80.7%",
+              "grid_tail_pct": null,
+              "verdict_cn": "达标与否难下定论",
+              "headline_cn": "France -0.25 穿盘：达标与否难下定论",
+              "pill_cn": "France 胜 12.1% · 胜后穿 100% · Spain +0.25 守 80.7%",
+              "detail_cn": "France 取胜约 12.1% · 赢球后穿盘约 100% · Spain +0.25 守住约 80.7%（泊松 raw 12.1% → 校准 19.3%）。",
+              "extra_stats_cn": "",
+              "full_cover_pct": 19.3,
+              "half_cover_pct": 0,
+              "lose1_pct": 0,
+              "margin_full_label": "净胜≥1",
+              "margin_half_label": null,
+              "tier_gap": 0.25,
+              "show_cover": true
+            },
+            "totals": {
+              "level": "clear_low",
+              "label_cn": "倾向沉闷",
+              "color": "#7BB8D4",
+              "meter_label_cn": "倾向沉闷",
+              "meter_pos": 14,
+              "lean_side": "dull",
+              "lean_strength": "clear",
+              "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+              "pill_cn": "倾向沉闷",
+              "detail_cn": "倾向沉闷——小比分概率高（合理值 2.25）。",
+              "headline_cn": "进球氛围：倾向沉闷",
+              "show_lean": true,
+              "over_pct": 0.4,
+              "line_gap": 0.25,
+              "market_line": 2.5,
+              "market_goals_int": 3,
+              "market_goals_cn": "总进球参考 2.5",
+              "caution_public_high": false
+            },
+            "draw_risk": {
+              "level": "high",
+              "color": "#C8A96E",
+              "note": "平局权重约 34%，小组赛易出守平——勿只盯胜负一方。"
+            },
+            "pills": [
+              {
+                "key": "spread",
+                "icon": "⚖️",
+                "label": "让球盘",
+                "outlook": {
+                  "level": "uncertain",
+                  "label_cn": "净胜幅度难下定论",
+                  "color": "#8A96A8",
+                  "fav_name": "France",
+                  "dog_name": "Spain",
+                  "fav_handicap_cn": "France -0.25",
+                  "dog_handicap_cn": "Spain +0.25",
+                  "market_expect_cn": "France -0.25 · 净胜≥1",
+                  "meet_pct": 19.3,
+                  "dog_hold_pct": 80.7,
+                  "fav_win_pct": 12.1,
+                  "cover_given_win_pct": 100,
+                  "full_cover_pct_raw": 12.1,
+                  "meet_pct_label": "France -0.25 穿盘概率（校准）",
+                  "dog_hold_label": "Spain +0.25 守住概率（校准）",
+                  "two_stage_cn": "France 取胜约 12.1% · 赢球后穿盘约 100% · Spain +0.25 守住约 80.7%",
+                  "grid_tail_pct": null,
+                  "verdict_cn": "达标与否难下定论",
+                  "headline_cn": "France -0.25 穿盘：达标与否难下定论",
+                  "pill_cn": "France 胜 12.1% · 胜后穿 100% · Spain +0.25 守 80.7%",
+                  "detail_cn": "France 取胜约 12.1% · 赢球后穿盘约 100% · Spain +0.25 守住约 80.7%（泊松 raw 12.1% → 校准 19.3%）。",
+                  "extra_stats_cn": "",
+                  "full_cover_pct": 19.3,
+                  "half_cover_pct": 0,
+                  "lose1_pct": 0,
+                  "margin_full_label": "净胜≥1",
+                  "margin_half_label": null,
+                  "tier_gap": 0.25,
+                  "show_cover": true
+                },
+                "text": "France 胜 12.1% · 胜后穿 100% · Spain +0.25 守 80.7%",
+                "color": "#8A96A8",
+                "primary": true
+              },
+              {
+                "key": "totals",
+                "icon": "🌙",
+                "label": "进球氛围",
+                "outlook": {
+                  "level": "clear_low",
+                  "label_cn": "倾向沉闷",
+                  "color": "#7BB8D4",
+                  "meter_label_cn": "倾向沉闷",
+                  "meter_pos": 14,
+                  "lean_side": "dull",
+                  "lean_strength": "clear",
+                  "section_intro_cn": "对照总进球参考 2.5，看偏闷还是偏精彩",
+                  "pill_cn": "倾向沉闷",
+                  "detail_cn": "倾向沉闷——小比分概率高（合理值 2.25）。",
+                  "headline_cn": "进球氛围：倾向沉闷",
+                  "show_lean": true,
+                  "over_pct": 0.4,
+                  "line_gap": 0.25,
+                  "market_line": 2.5,
+                  "market_goals_int": 3,
+                  "market_goals_cn": "总进球参考 2.5",
+                  "caution_public_high": false
+                },
+                "text": "倾向沉闷",
+                "color": "#7BB8D4",
+                "muted": false
+              }
+            ],
+            "methodology_note": "读场：净胜走向 ＞ 进球氛围。仅供娱乐推演。"
+          },
+          "first_goal_scenarios": [
+            {
+              "side": "home",
+              "team": "France",
+              "first_goal_pct": 50,
+              "start_score": "1-0",
+              "fav_name": "France",
+              "scorer_is_fav": true,
+              "expected_key": "hold_win",
+              "fav_recover_pct": 99.3,
+              "small_lead_pct": 79.4,
+              "big_lead_pct": 9.6,
+              "fav_win_pct": 89,
+              "fav_draw_pct": 10.3,
+              "fav_lose_pct": 0.7,
+              "outcomes": [
+                {
+                  "key": "hold_win",
+                  "label": "France 保持胜果（净胜≥1）",
+                  "pct": 89
+                },
+                {
+                  "key": "drawn",
+                  "label": "被扳平",
+                  "pct": 10.3
+                },
+                {
+                  "key": "lost",
+                  "label": "被逆转落败",
+                  "pct": 0.7
+                }
+              ],
+              "excitement": {
+                "label_cn": "偏晚",
+                "label_key": "slow",
+                "label_color": "#7BB8D4",
+                "sub_cn": "预期首球等待约 300 分",
+                "first_goal_wait": 300,
+                "fast_pct": 7.9,
+                "moderate_pct": 3.7,
+                "slow_pct": 88.4,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 7.9
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 3.7
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 88.4
+                  }
+                ]
+              },
+              "big_delta": 8.7,
+              "small_delta": 68.2,
+              "narrative": "France 先破门（已 1-0） → 「巩固防守」；Spain 「组织反扑」。领先方继续进攻，仍有较大空间扩大比分。",
+              "live_outlook": {
+                "fav_name": "France",
+                "state_label": "France 已 1-0 领先",
+                "paths": [
+                  {
+                    "key": "narrow",
+                    "label": "险胜收工",
+                    "example": "如 1-0、2-1",
+                    "pct": 92.7
+                  },
+                  {
+                    "key": "clean",
+                    "label": "零封拉开",
+                    "example": "如 2-0、3-0",
+                    "pct": 7.2
+                  },
+                  {
+                    "key": "open",
+                    "label": "开放拉开",
+                    "example": "如 3-1+",
+                    "pct": 0.1
+                  }
+                ],
+                "margin_line_cn": "France · 赛前净胜参考 净胜≥1（全达标）",
+                "margin_meet_pct": 89,
+                "margin_half_pct": 0,
+                "margin_fail_pct": 79.4,
+                "margin_full_label": "净胜≥1",
+                "margin_half_label": null,
+                "final_2_0_pct": null,
+                "final_3_0_plus_pct": null,
+                "margin_fail_note": "常见：仅赢 1 球（如 1-0、2-1）",
+                "totals_line": 2.5,
+                "totals_line_cn": "总进球参考 2.5",
+                "fair_totals_line": 2.25,
+                "model_total_xg": 0.25,
+                "totals_line_gap": 0.25,
+                "totals_high_pct": 2.6,
+                "totals_low_pct": 97.4,
+                "totals_fail_note": "常见：总进球 ≤2（如 1-0、2-0）",
+                "win_low_total_pct": 87.2,
+                "win_margin2_low_total_pct": 9,
+                "win_margin2_high_total_pct": 0.6,
+                "readout_cn": "France 已 1-0 领先：仍取胜约 89%。 对着总进球参考 2.5，模型超线概率约 2.6%。 若再扩大，偏「险胜收工」。"
+              }
+            },
+            {
+              "side": "away",
+              "team": "Spain",
+              "first_goal_pct": 50,
+              "start_score": "0-1",
+              "fav_name": "France",
+              "scorer_is_fav": false,
+              "expected_key": "upset_hold",
+              "fav_recover_pct": 11,
+              "small_lead_pct": 0.7,
+              "big_lead_pct": 0,
+              "fav_win_pct": 0.7,
+              "fav_draw_pct": 10.3,
+              "fav_lose_pct": 89,
+              "outcomes": [
+                {
+                  "key": "draw",
+                  "label": "France 追平（平局）",
+                  "pct": 10.3
+                },
+                {
+                  "key": "win1",
+                  "label": "France 净胜1球翻盘（如 2-1）",
+                  "pct": 0.7
+                },
+                {
+                  "key": "win2",
+                  "label": "France 净胜≥2球翻盘（如 3-1）",
+                  "pct": 0
+                },
+                {
+                  "key": "upset_hold",
+                  "label": "Spain 保持胜果至终场",
+                  "pct": 89
+                }
+              ],
+              "excitement": {
+                "label_cn": "偏晚",
+                "label_key": "slow",
+                "label_color": "#7BB8D4",
+                "sub_cn": "预期首球等待约 300 分",
+                "first_goal_wait": 300,
+                "fast_pct": 7.9,
+                "moderate_pct": 3.7,
+                "slow_pct": 88.4,
+                "tiers": [
+                  {
+                    "key": "fast",
+                    "label": "前 30 分内首球",
+                    "pct": 7.9
+                  },
+                  {
+                    "key": "moderate",
+                    "label": "30–45 分首球",
+                    "pct": 3.7
+                  },
+                  {
+                    "key": "slow",
+                    "label": "45 分后首球",
+                    "pct": 88.4
+                  }
+                ]
+              },
+              "big_delta": -0.9,
+              "small_delta": -10.5,
+              "narrative": "Spain 先破门（已 0-1） → 「巩固防守」；France 「组织反扑」。净胜两球及以上概率与全场预期接近。",
+              "live_outlook": null
+            }
+          ],
+          "match_preview": {
+            "morphology": {
+              "totals_summary": "预测 0.3 · 合理值 2.25 · 总进球参考 2.5（高于合理值 0.25） · 进球氛围：倾向沉闷",
+              "totals_line_cn": "总进球参考 2.5",
+              "totals_high_pct": 0.4,
+              "type_tags": [
+                {
+                  "key": "low_scoring",
+                  "label": "进球偏少"
+                }
+              ],
+              "depth_label": "深度一般",
+              "draw_trap_pct": 17,
+              "readout_cn": "France · 进球偏少。进球氛围倾向沉闷（模型推演）；时间段分布见下方历史节奏参考。"
+            },
+            "draw_trap_note": null,
+            "archetype": {
+              "tags": [
+                {
+                  "key": "low_scoring",
+                  "label": "进球偏少"
+                }
+              ],
+              "depth_score": 0,
+              "depth_label": "深度一般",
+              "draw_trap_pct": 17,
+              "fav_lead_style": "balanced"
+            }
+          },
+          "halftime_preview": {
+            "ht_xg_share": 0.44,
+            "xg_home_ht": 0.07,
+            "xg_away_ht": 0.07,
+            "xg_home_2h": 0.08,
+            "xg_away_2h": 0.08,
+            "home_win": 6.3,
+            "draw": 87.4,
+            "away_win": 6.3,
+            "top_score": "0-0",
+            "top_score_prob": 86.9,
+            "top3_scores": [
+              {
+                "score": "0-0",
+                "prob": 86.9
+              },
+              {
+                "score": "0-1",
+                "prob": 6.1
+              },
+              {
+                "score": "1-0",
+                "prob": 6.1
+              }
+            ],
+            "ht_goals_expected": 0.14,
+            "ht_over_0_5_pct": 13.1,
+            "ht_over_1_5_pct": 0.9,
+            "pick": "draw",
+            "pick_name": "平局",
+            "summary_cn": "半场 xG 0.07–0.07（约占全场 44%） · 最可能 0-0（86.9%） · 胜平负 6.3/87.4/6.3 · 半场≥1球约 13.1%",
+            "disclaimer_cn": "按世界杯历史上下半进球比例拆分全场 xG；供节奏读场，非官方半场盘口。"
+          }
+        },
+        "public_summary_note": "【推演概要】France · 进球偏少。 · 与模型 xG 对照：均衡 · 赛前净胜看法略高（约 +0.25）（模型微调：主胜 +0% · 平 +0% · 客 +0%）"
+      },
+      "market_snapshot": {
+        "market_tier": 0.25,
+        "tier_label": "France -0.25 · Spain +0.25",
+        "totals_line": 2.5,
+        "over_pct": 0.4,
+        "fair_line": 2.25,
+        "line_gap": 0.25,
+        "full_cover_pct": 19.3,
+        "fav_win_pct": 12.1,
+        "cover_given_win_pct": 100,
+        "spread_level": "uncertain",
+        "spread_market_expect": "France -0.25 · 净胜≥1",
+        "line_move_tag": "flat",
+        "line_move_cn": "盘路平稳",
+        "agent_pick_primary": "spread",
+        "agent_pick_tendency_cn": "更倾向让球盘（西班牙受让）",
+        "agent_pick_confidence": "medium",
+        "agent_spread_cn": "西班牙 +0/0.5 @0.85",
+        "agent_totals_cn": "大球 2.5 @0.95",
+        "agent_totals_skipped": false,
+        "agent_totals_skip_cn": null,
+        "ko_totals_policy": "R9",
+        "totals_level": "clear_low",
+        "totals_show_lean": true,
+        "totals_lean_side": "dull"
+      }
+    },
+    {
+      "id": "m102",
+      "archived": true,
+      "archivedAt": "2026-07-19T14:34:41+08:00",
+      "group": "KO",
+      "matchday": null,
+      "fifa_match_number": 102,
+      "date_beijing": "7月16日",
+      "time_beijing": "03:00",
+      "note": "半决赛 M102 · 阿根廷淘汰英格兰",
+      "home": {
+        "name": "England",
+        "iso": "gb-eng"
+      },
+      "away": {
+        "name": "Argentina",
+        "iso": "ar"
+      },
+      "prediction": {
+        "key_factor": "【补档】半决赛 M102 · 阿根廷淘汰英格兰"
+      },
+      "actualResult": {
+        "home_score": 1,
+        "away_score": 2,
+        "status": "FT",
+        "label": "全场结束",
+        "fifa_match_id": "400021540",
+        "updated": "2026-07-19T14:34:41+08:00"
+      }
+    },
+    {
+      "id": "m103",
+      "archived": true,
+      "archivedAt": "2026-07-19T14:34:41+08:00",
+      "group": "KO",
+      "matchday": null,
+      "fifa_match_number": 103,
+      "date_beijing": "7月19日",
+      "time_beijing": "05:00",
+      "note": "季军赛 M103 · 英格兰6-4法国获季军",
+      "home": {
+        "name": "France",
+        "iso": "fr"
+      },
+      "away": {
+        "name": "England",
+        "iso": "gb-eng"
+      },
+      "prediction": {
+        "key_factor": "【补档】季军赛 M103 · 英格兰6-4法国获季军"
+      },
+      "actualResult": {
+        "home_score": 4,
+        "away_score": 6,
+        "status": "FT",
+        "label": "全场结束",
+        "fifa_match_id": "400021542",
+        "updated": "2026-07-19T14:34:41+08:00"
       }
     }
   ],

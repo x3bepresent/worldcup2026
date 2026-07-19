@@ -39,6 +39,9 @@
     98: { home: 'Spain', away: 'Belgium', score: '2-1', status: 'FT', winner: 'Spain' },
     99: { home: 'Norway', away: 'England', score: '1-2', status: 'AET', winner: 'England' },
     100: { home: 'Argentina', away: 'Switzerland', score: '3-1', status: 'AET', winner: 'Argentina' },
+    101: { home: 'France', away: 'Spain', score: '0-2', status: 'FT', winner: 'Spain' },
+    102: { home: 'England', away: 'Argentina', score: '1-2', status: 'FT', winner: 'Argentina' },
+    103: { home: 'France', away: 'England', score: '4-6', status: 'FT', winner: 'England' },
   };
 
   /** parent match: { no, homeFrom, awayFrom } — homeFrom/awayFrom = source match no */

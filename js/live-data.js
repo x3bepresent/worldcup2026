@@ -1,67 +1,48 @@
-// Auto-synced · enrich-day34
-// Updated: 2026-07-14T14:20:24+08:00
+// Auto-synced · enrich-day38
+// Updated: 2026-07-19T14:34:41+08:00
 const LIVE_DATA = {
-  "lastUpdated": "2026-07-14T14:20:24+08:00",
-  "todayDate": "2026-07-15",
+  "lastUpdated": "2026-07-19T14:34:41+08:00",
+  "todayDate": "2026-07-20",
   "fixtures": [
     {
-      "id": "m101",
-      "fifa_match_number": 101,
-      "home": "France",
-      "away": "Spain",
+      "id": "m104",
+      "fifa_match_number": 104,
+      "home": "Spain",
+      "away": "Argentina",
       "status": "NS",
       "home_score": null,
       "away_score": null,
       "group": "KO",
-      "round": "SF"
+      "round": "FINAL"
     }
   ],
   "allResults": [
     {
-      "id": "m97",
+      "id": "m101",
       "home": "France",
-      "away": "Morocco",
-      "score": "2-0",
+      "away": "Spain",
+      "score": "0-2",
       "group": "KO"
     },
     {
-      "id": "m98",
-      "home": "Spain",
-      "away": "Belgium",
-      "score": "2-1",
-      "group": "KO"
-    },
-    {
-      "id": "m99",
-      "home": "Norway",
-      "away": "England",
+      "id": "m102",
+      "home": "England",
+      "away": "Argentina",
       "score": "1-2",
       "group": "KO"
     },
     {
-      "id": "m100",
-      "home": "Argentina",
-      "away": "Switzerland",
-      "score": "3-1",
+      "id": "m103",
+      "home": "France",
+      "away": "England",
+      "score": "4-6",
       "group": "KO"
     }
   ],
   "yesterdayResults": [
     {
-      "id": "m97",
-      "score": "2-0"
-    },
-    {
-      "id": "m98",
-      "score": "2-1"
-    },
-    {
-      "id": "m99",
-      "score": "1-2"
-    },
-    {
-      "id": "m100",
-      "score": "3-1"
+      "id": "m103",
+      "score": "4-6"
     }
   ],
   "standings": [
@@ -619,6 +600,6 @@ const LIVE_DATA = {
     }
   ],
   "injuries": {
-    "note": "Day 34 enriched · 法国/西班牙 半决赛"
+    "note": "Day 38 enriched · 西班牙/阿根廷 决赛"
   }
 };
